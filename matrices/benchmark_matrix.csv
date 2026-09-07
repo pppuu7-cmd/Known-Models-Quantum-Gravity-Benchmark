@@ -1,0 +1,10 @@
+index,benchmark_id,model_realization,control_role,state,terminal,first_blocking_or_failing_gate,comparator_relation,quotient_residual,next_action
+1,RQIR7-M01-GR-EH-MINK,"4D Einstein-Hilbert GR; Lambda=0; weak-field Minkowski",null_control,BLOCKED_PROTOCOL_MISMATCH,false,FROZEN_PROTOCOL_LITERAL_MAPPING,provisional_exact_identity,unmeasured,"recover literal Q1-Q7/comparator/quotient authority"
+2,KMQGB-M02-GR-QG-EFT,"GR + low-energy quantum-gravity EFT; concrete Donoghue/Burgess realization",eft_control,QUEUED,false,NOT_STARTED,unknown,unknown,"start after GR protocol mapping"
+3,KMQGB-M03-SEMICLASSICAL,"Semiclassical gravity; concrete realization",source_backreaction_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact realization"
+4,KMQGB-M04-STOCHASTIC,"Stochastic gravity; Einstein-Langevin/noise-kernel realization",fluctuation_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact realization"
+5,KMQGB-M05-FR,"Concrete f(R) gravity realization",extra_dof_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact action and parameters"
+6,KMQGB-M06-BRANS-DICKE,"Concrete Brans-Dicke/scalar-tensor realization",extra_scalar_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact realization"
+7,KMQGB-M07-STELLE,"Stelle quadratic gravity",pathological_pole_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact conventions and regime"
+8,KMQGB-M08-HIGHER-CURVATURE,"Concrete higher-curvature EFT/action",eft_positive_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact action"
+9,KMQGB-M09-STRING-EFT,"Concrete string low-energy/scattering realization",qg_eft_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact amplitude/effective action"
