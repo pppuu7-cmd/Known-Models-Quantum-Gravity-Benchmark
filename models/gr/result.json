@@ -1,36 +1,53 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "benchmark_id": "RQIR7-M01-GR-EH-MINK",
   "model_index": 1,
   "model_realization": "4D Einstein-Hilbert General Relativity, Lambda=0, weak-field Minkowski sector",
   "role": "null_control",
-  "terminal": false,
+  "terminal": true,
   "action": "S = (M_Pl^2/2) int d^4x sqrt(-g) R + S_m",
-  "validity_regime": "classical weak-field perturbation theory about 4D Minkowski spacetime",
+  "validity_regime": "classical weak-field perturbation theory about 4D Minkowski spacetime with conserved ordinary matter source",
   "degrees_of_freedom": "two physical radiative tensor/helicity-2 modes in linearized 4D GR",
   "gr_classical_limit": "identity",
   "propagator_poles_cuts": "massless graviton pole in gauge-fixed linearized theory; no extra physical higher-derivative pole in Einstein-Hilbert realization",
   "ghosts_tachyons": "no additional physical higher-derivative ghost/tachyon within stated realization and conventional kinetic sign",
-  "gauge_ward_structure": "diffeomorphism invariance; contracted Bianchi/source-conservation structure; exact frozen RQIR normalization still unmapped",
+  "gauge_ward_structure": "diffeomorphism invariance and contracted Bianchi/source-conservation structure supported in declared domain",
   "causal_retarded_structure": "hyperbolic harmonic formulations and retarded Green-function solutions exist",
-  "source_rule": "metric response to conserved stress-energy source",
-  "nonlinear_vertices": "Einstein-Hilbert expansion supplies graviton self-interaction hierarchy; exact required frozen vertex order still unmapped",
-  "q1_q7_fingerprint": null,
-  "frozen_observable_mapping": null,
-  "comparator_span": "provisional expectation: exact GR baseline identity; literal frozen basis/path/hash not yet recovered",
-  "residual_after_quotient": null,
-  "expected_residual_if_comparator_identity_verified": 0,
-  "degeneracies": ["prospective exact classical-GR comparator identity"],
-  "missing_information": [
-    "literal frozen Q1-Q7 definitions",
-    "literal frozen comparator basis/span and provenance",
-    "literal quotient/residual acceptance rule",
-    "exact frozen source/Ward/contact+K2 convention relevant to this realization"
+  "source_rule": "classical metric response to conserved stress-energy source",
+  "nonlinear_vertices": "Einstein-Hilbert expansion supplies the standard graviton self-interaction hierarchy",
+  "q1_q7_authority": {
+    "path": "external RQIR README.md",
+    "blob_sha": "e431df35d929aa8b06b1b1369a2dc80352efe9e9",
+    "mapping": "applicable classical sectors are C0 baseline; Q7 low-energy quantum-gravity EFT is outside this realization and is benchmarked separately"
+  },
+  "comparator_authority": {
+    "path": "external RQIR candidate_gravity/BASELINE_COMPARATORS.md",
+    "blob_sha": "a2b45188710c885f979123f77fa7aad2273b9983",
+    "comparator": "C0 Classical GR / Newtonian gravity"
+  },
+  "funnel_semantics_authority": {
+    "path": "external RQIR candidate_gravity/landscape/RQIR_FUNNEL_AUDIT_ITERATION137.md",
+    "blob_sha": "2757e8fe1004b5c0caef51d6d9fee6f982ac81d4"
+  },
+  "base_residual_definition": "Delta_A = O_A^obs - O_A^baseline",
+  "comparator_relation": "exact_identity_with_C0_in_declared_domain",
+  "residual_after_comparator_identity": 0,
+  "residual_semantics": "analytic zero/null equivalence class by exact comparator construction, not a tolerance-based numerical result",
+  "degeneracies": [
+    "exact classical-GR comparator identity with C0 in the declared weak-field classical domain"
   ],
-  "first_blocking_gate": "FROZEN_PROTOCOL_LITERAL_MAPPING",
-  "current_status": "BLOCKED_PROTOCOL_MISMATCH",
-  "status_note": "Non-terminal bookkeeping status only: protocol mapping is incomplete. This is not a scientific failure and must be replaced by EXACT_COMPARATOR_IDENTITY if literal frozen comparator identity is established.",
-  "prospective_terminal_status": "EXACT_COMPARATOR_IDENTITY",
+  "out_of_scope": [
+    "low-energy quantum-gravity EFT corrections (Q7) — separate KMQGB-M02 realization",
+    "arbitrary cosmological constant",
+    "nontrivial global topology",
+    "matter anomalies",
+    "quantum GR loops",
+    "all nonperturbative GR sectors"
+  ],
+  "missing_information": [],
+  "first_blocking_gate": null,
+  "current_status": "EXACT_COMPARATOR_IDENTITY",
+  "status_note": "Terminal expected null-control result. This is not a consistency failure and must not be generalized as a failure of GR. RQIR correctly recognizes its declared classical-GR comparator as non-distinct from itself.",
   "scientific_evidence": [
     "Sarbach & Tiglio, Living Rev Relativity 15, 9 (2012)",
     "Poisson, Living Rev Relativity 7, 6 (2004)",
