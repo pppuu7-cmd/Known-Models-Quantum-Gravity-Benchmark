@@ -94,3 +94,63 @@
 - M03 current-task completion: `100%`.
 - M04 current-task completion: `100%`.
 - New active task M05 operational completion estimate: `40%`.
+
+## 2026-09-08 — KMQGB-004 — f(R) calibration-resistant discriminator
+
+### Frozen weak-field observable
+
+For `FR-R2-MINK-001`, froze the weak-field potential ratio
+
+`gamma(r)=Psi(r)/Phi(r)`
+
+with
+
+`Phi(r)=-G m_s/r [1+(1/3)e^{-Mr}]`,
+
+`Psi(r)=-G m_s/r [1-(1/3)e^{-Mr}]`.
+
+Therefore
+
+`gamma_fR(r)=(3-e^{-Mr})/(3+e^{-Mr})`,
+
+while C0/GR predicts `gamma=1`.
+
+The exact C0-subtracted residual is
+
+`Delta_gamma(r)=-2e^{-Mr}/(3+e^{-Mr})`.
+
+This residual is nonzero for finite `Mr`; common `G`, source mass and `1/r` normalization cancel exactly. Thus the simplest source-amplitude/calibration degeneracy is analytically removed.
+
+Limits:
+- `Mr -> infinity`: `Delta_gamma -> 0` (GR recovery);
+- `Mr -> 0`: `gamma -> 1/2`, `Delta_gamma -> -1/2`.
+
+### Multi-radius shape
+
+Inversion gives
+
+`e^{-Mr}=3(1-gamma)/(1+gamma)`
+
+and hence
+
+`ln[3(1-gamma(r))/(1+gamma(r))]=-Mr`.
+
+A multi-radius measurement therefore tests a one-parameter exponential shape instead of a freely rescaled force amplitude.
+
+### Exact scalar-tensor representation equivalence
+
+Metric f(R) is dynamically equivalent to a scalar-tensor theory with `omega_BD=0` and a mapped potential/matter coupling. This is a representation identity, not two independent physical theories.
+
+Queue consequence: M06 must not duplicate M05 by merely rewriting the same f(R) dynamics in scalar-tensor variables. It must use a genuinely distinct Brans-Dicke/scalar-tensor realization.
+
+### Remaining blocker
+
+New first blocker: `FR_BROADER_COMPARATOR_QUOTIENT`.
+
+The model is robustly distinct from C0 in the frozen `gamma(r)` observable, but a generic scalar/Yukawa nuisance or broader scalar-tensor model can mimic part or all of the response after parameter matching; low-q overlap with higher-curvature/C5 EFT directions also remains to be mapped.
+
+### Progress
+
+- Terminal queue coverage remains `4/9 = 44.44%`.
+- M05 operational completion estimate advances from `40%` to **`70%`**.
+- Candidate Gravity RQIR remains separate at `24%` readiness.
