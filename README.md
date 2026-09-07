@@ -16,30 +16,27 @@ Recovery entrypoint: `recovery/RESTORE_FROM_NEW_CHAT.md`.
 | 2 | `ANSATZ-PQG-EFT-001` v0.1, perturbative low-energy quantum GR EFT | EFT/comparator control C5 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
 | 3 | `SCG-MINK-SCALAR-LR-001`, renormalized semiclassical Einstein gravity with conformal scalar / Minkowski linear response | source/backreaction control C1 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
 | 4 | `SG-MINK-CONFORMAL-EL-001`, Einstein–Langevin/noise-kernel stochastic gravity | fluctuation control C2 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 5 | `FR-R2-MINK-001`, metric `R+R^2/(6M^2)` gravity | extra-DOF control | **active audit** |
-| 6 | concrete Brans-Dicke/scalar–tensor | extra-scalar control | queued |
+| 5 | `FR-R2-MINK-001`, metric `R+R^2/(6M^2)` gravity | extra-DOF control | **CLOSED — OPERATIONALLY_DEGENERATE** |
+| 6 | `BD-MASSLESS-OMEGA50000-MINK-001`, massless Brans–Dicke, `V=0`, `omega_BD=50000` | extra long-range scalar control | **active audit** |
 | 7 | Stelle quadratic gravity | pathological-pole control | queued |
 | 8 | concrete higher-curvature EFT/action | EFT positive control | queued |
 | 9 | concrete string low-energy/scattering realization | QG/EFT control | queued |
 
-Terminal queue coverage: **4/9 = 44.44%**. This is exact queue coverage, not a probability that quantum gravity is 44.44% solved.
+Terminal queue coverage: **5/9 = 55.56%**. This is exact queue coverage, not a probability that quantum gravity is 55.56% solved.
 
 ## Status vocabulary
 
 `PASS_RQIR_GATE`, `FAIL_RQIR_CONSISTENCY`, `EXACT_COMPARATOR_IDENTITY`, `OPERATIONALLY_DEGENERATE`, `ROBUST_NONZERO_RESIDUAL`, `BLOCKED_MISSING_REQUIRED_OBJECT`, `BLOCKED_PROTOCOL_MISMATCH`, `OPERATIONAL_FAILURE`.
 
-`BLOCKED` is never scientific invalidation. Exact comparator identity is a retained control/negative result, not a consistency failure.
+`BLOCKED` is never scientific invalidation. Exact comparator identity is a retained control/negative result, not a consistency failure. `OPERATIONALLY_DEGENERATE` means the frozen observable is exactly reproducible after the allowed comparator/nuisance quotient even though the underlying theories need not be identical.
 
-## Current lesson from controls M01–M04
+## Current lessons
 
-The first four controls validate the benchmark semantics rather than falsify their source theories:
+The first four controls validate the benchmark semantics rather than falsify their source theories: GR maps to C0, perturbative QG EFT to C5, semiclassical mean gravity to C1, and Einstein-Langevin stochastic gravity to C2.
 
-- C0 correctly recognizes ordinary GR as the null classical baseline;
-- C5 correctly recognizes perturbative quantum GR EFT as the standard low-energy quantum reference;
-- C1 correctly recognizes mean semiclassical backreaction while retaining its mean-only hierarchy limitation;
-- C2 correctly recognizes stochastic gravity as a stronger classical-stochastic fluctuation/noise comparator.
+M05 adds the first nontrivial modified-gravity lesson. `R+R^2` produces a genuine finite GR-subtracted weak-field residual in `gamma(r)=Psi/Phi`, but the entire multi-radius shape is exactly reproduced by a broader one-scalar Yukawa family at `alpha=1/3`, `m=M`. Therefore a nonzero deviation from GR is not automatically a unique theory discriminator.
 
-Therefore noise or symmetrized metric fluctuations alone are not sufficient evidence for a quantum gravitational mediator. A stronger discriminator must survive C2 and the rest of the comparator/nuisance quotient.
+M06 is deliberately nonduplicate: massless Brans-Dicke with `omega_BD=50000`, `V=0`, long-range scalar. Its exact static C0 residual is `Delta_gamma=-1/50002`; the next gate links that static coupling to scalar dipole radiation from the same action.
 
 ## Mandatory output table
 
