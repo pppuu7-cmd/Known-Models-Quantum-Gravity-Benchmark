@@ -1,9 +1,9 @@
 index,benchmark_id,model_realization,control_role,state,terminal,first_blocking_or_failing_gate,comparator_relation,quotient_residual,next_action
 1,RQIR7-M01-GR-EH-MINK,"4D Einstein-Hilbert GR; Lambda=0; weak-field Minkowski",null_control,EXACT_COMPARATOR_IDENTITY,true,NONE,exact_identity_C0,0,"closed; retain as null control"
 2,KMQGB-M02-GR-QG-EFT,"ANSATZ-PQG-EFT-001 v0.1; perturbative low-energy quantum GR EFT",eft_control,EXACT_COMPARATOR_IDENTITY,true,QG-007_REFERENCE_DEGENERACY_C5,exact_identity_C5,0,"closed; retain as C5 reference/control"
-3,KMQGB-M03-SEMICLASSICAL,"Semiclassical gravity; concrete realization",source_backreaction_control,ACTIVE,false,REALIZATION_SELECTION,expected_C1_control,unknown,"select exact semiclassical realization and import prior RQIR evidence"
-4,KMQGB-M04-STOCHASTIC,"Stochastic gravity; Einstein-Langevin/noise-kernel realization",fluctuation_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact realization"
-5,KMQGB-M05-FR,"Concrete f(R) gravity realization",extra_dof_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact action and parameters"
+3,KMQGB-M03-SEMICLASSICAL,"SCG-MINK-SCALAR-LR-001; m=0 xi=1/6 scalar; Minkowski vacuum; renormalized semiclassical Einstein equation",source_backreaction_control,EXACT_COMPARATOR_IDENTITY,true,F4_EXACT_COMPARATOR_IDENTITY_C1,exact_identity_C1,0,"closed; retain mean-only F3 limitation without theory FAIL"
+4,KMQGB-M04-STOCHASTIC,"SG-MINK-CONFORMAL-EL-001; Einstein-Langevin/noise-kernel Minkowski control",fluctuation_control,EXACT_COMPARATOR_IDENTITY,true,F4_EXACT_COMPARATOR_IDENTITY_C2,exact_identity_C2,0,"closed; retain as strong noise/fluctuation control"
+5,KMQGB-M05-FR,"FR-R2-MINK-001; metric f(R)=R+R^2/(6M^2), M^2>0",extra_dof_control,ACTIVE,false,FR_QUOTIENT_OBSERVABLE_FREEZE,preliminary_distinct_C0_broader_span_open,unknown,"freeze scalar-trace observable and comparator/calibration quotient"
 6,KMQGB-M06-BRANS-DICKE,"Concrete Brans-Dicke/scalar-tensor realization",extra_scalar_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact realization"
 7,KMQGB-M07-STELLE,"Stelle quadratic gravity",pathological_pole_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact conventions and regime"
 8,KMQGB-M08-HIGHER-CURVATURE,"Concrete higher-curvature EFT/action",eft_positive_control,QUEUED,false,NOT_STARTED,unknown,unknown,"select exact action"
