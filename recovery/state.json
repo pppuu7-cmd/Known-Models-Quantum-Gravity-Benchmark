@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 5,
+  "kmqgb_iteration": 6,
   "migration": {
     "status": "complete",
     "source_repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
@@ -25,8 +25,8 @@
     "migration_percent": 100,
     "terminal_queue_coverage_percent": 55.56,
     "terminal_queue_fraction": "5/9",
-    "current_M06_task_percent_estimate": 60,
-    "percent_note": "terminal coverage is exact queue coverage; M06 task percent is an operational completion estimate for its current audit, not a physics confidence probability"
+    "current_M06_task_percent_estimate": 80,
+    "percent_note": "terminal coverage is exact queue coverage; M06 task percent is an operational completion estimate, not a physics confidence probability"
   },
   "queue": {
     "total": 9,
@@ -47,17 +47,18 @@
   ],
   "active_model": {
     "benchmark_id": "KMQGB-M06-BRANS-DICKE",
-    "concrete_realization_id": "BD-MASSLESS-OMEGA50000-MINK-001",
-    "model_realization": "massless Jordan-frame Brans-Dicke, V=0, omega_BD=50000, Minkowski weak-field",
+    "concrete_realization_id": "BD-MASSLESS-OMEGA200000-MINK-001",
+    "model_realization": "massless Jordan-frame Brans-Dicke, V=0, omega_BD=200000, Minkowski weak-field",
     "role": "extra_long_range_scalar_control",
     "terminal": false,
     "current_status": "ACTIVE",
-    "first_blocking_gate": "BD_MULTI_CHANNEL_DISCRIMINATOR_FREEZE",
-    "frozen_static_observable": "gamma_BD=(omega_BD+1)/(omega_BD+2)=50001/50002",
-    "exact_C0_residual": "Delta_gamma=-1/50002",
-    "scalar_coupling": "alpha_0^2=1/(2 omega_BD+3)=1/100003",
-    "next_linked_channel": "scalar dipole radiation for unequal-sensitivity compact binaries",
-    "nonduplication_from_M05": "omega_BD=50000,V=0,massless long-range scalar versus f(R)-equivalent omega_BD=0 with massive potential"
+    "first_blocking_gate": "BD_BROADER_SCALAR_TENSOR_QUOTIENT",
+    "frozen_static_observable": "gamma_BD=(omega_BD+1)/(omega_BD+2)=200001/200002",
+    "exact_C0_residual": "Delta_gamma=-1/200002",
+    "scalar_coupling": "alpha_0^2=1/(2 omega_BD+3)=1/400003",
+    "linked_radiative_channel": "leading dipole energy flux proportional to (1-gamma_BD)(s1-s2)^2 = (1/200002)(s1-s2)^2 in the frozen convention",
+    "current_bound_refresh": "provisional omega_BD=50000 retired because 2024 pulsar-triple review gives conservative lower limit near 150000; active point moved to 200000",
+    "nonduplication_from_M05": "omega_BD=200000,V=0,massless long-range scalar versus f(R)-equivalent omega_BD=0 with massive potential"
   },
   "recovered_protocol_authority": {
     "q1_q7_and_base_residual_blob": "e431df35d929aa8b06b1b1369a2dc80352efe9e9",
@@ -66,9 +67,8 @@
     "comparator_preflight_commit": "9af20b657eb89114a954b55b75b59bb3cf284777"
   },
   "next_actions": [
-    "Freeze exact Brans-Dicke scalar dipole-radiation normalization in terms of omega_BD and body sensitivities",
-    "Link the static gamma residual and radiative dipole channel to the same scalar coupling rather than independent nuisance amplitudes",
-    "Test whether that two-channel fingerprint remains degenerate with a broader scalar-tensor family",
+    "Profile the linked static gamma and scalar dipole fingerprint against a broader scalar-tensor family without treating trivial theory-class containment as an observable degeneracy",
+    "Assess F6/F7 using current pulsar and Solar-System resource/constraint information for the omega_BD=200000 point",
     "Terminally classify M06 before starting M07 Stelle quadratic gravity",
     "Do not launch competing KMQGB heavy work while RQIR rank11 is active"
   ],
