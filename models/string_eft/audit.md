@@ -1,83 +1,110 @@
 # Model Audit — type-II closed-string four-graviton / low-energy matching control
 
 Benchmark ID: KMQGB-M09-STRING-EFT
-Provisional concrete realization ID: TYPEII-T6-GRAV4-TREE-001
+Concrete realization ID: TYPEII-T6-GRAV4-TREE-001
 Role: string quantum-gravity scattering / UV-completion versus low-energy EFT control
-State: ACTIVE / NONTERMINAL
+State: CLOSED / TERMINAL UNDER CURRENT FROZEN COMPARATOR PROTOCOL
+Terminal status: BLOCKED_PROTOCOL_MISMATCH
 
-## Why this target is more delicate than M01-M08
+## Frozen 4D realization
 
-A string-theory benchmark cannot be made concrete by writing only the word "string theory". The directly calculable universal object is the closed-string four-graviton amplitude in ten dimensions. RQIR, however, is currently organized around a four-dimensional observable/interface benchmark. A legitimate M09 therefore has to freeze both
+Use type-II closed superstring theory at tree level (genus zero), with six spatial dimensions compactified on a flat generic six-torus `T^6`. External states are the four-dimensional **zero-mode gravitons**: momenta and polarizations lie entirely in the noncompact four dimensions and carry no internal KK/winding quantum numbers.
 
-1. the exact string scattering object, and
-2. the compactification/light-spectrum map that turns it into a four-dimensional source-to-detector observable.
+The observable is the normalized four-graviton scattering form factor after matching the four-dimensional Einstein normalization. The compactification volume and `kappa_10 -> kappa_4` normalization cancel in the normalized string/GR ratio.
 
-The first object is well defined; the second is the current blocker.
+A classic direct calculation shows that, after compactifying six dimensions, the zero-slope limit of the four-particle type-II string amplitude agrees with the four-dimensional GR graviton helicity amplitudes. This supplies the required 4D low-energy anchor without inventing a compactification-dependent GR limit.
 
-## Frozen ancestor amplitude
+The audit is deliberately **tree-level four-graviton only**. Loop-sensitive torus moduli sums, compactification thresholds and non-graviton observables are not silently imported into this realization.
 
-Use the tree-level type-II closed-superstring four-graviton amplitude with constant dilaton and external NS-NS gravitons. Up to the standard polarization kinematic factor `K`, the universal Virasoro-Shapiro factor can be written schematically as
+## Exact tree-level string object
 
-`A_tree ~ K * [64/(alpha'^3 s t u)] * Gamma(1-alpha' s/4) Gamma(1-alpha' t/4) Gamma(1-alpha' u/4) / [Gamma(1+alpha' s/4) Gamma(1+alpha' t/4) Gamma(1+alpha' u/4)]`,
+Up to the standard external-polarization kinematic factor, the type-II tree four-graviton amplitude contains the Virasoro-Shapiro factor
 
-with massless external gravitons and `s+t+u=0`.
+`A_tree ~ K * [64/(alpha'^3 s t u)] * Π_{x=s,t,u} Gamma(1-alpha' x/4)/Gamma(1+alpha' x/4)`,
 
-This fixes an all-orders analytic tree-level scattering object rather than an arbitrary list of Wilson coefficients.
+with `s+t+u=0` for massless external gravitons.
 
-## Low-energy expansion
+After dividing by the matched four-dimensional GR/supergravity tree amplitude, define the dimensionless normalized form factor
 
-For `alpha' s, alpha' t, alpha' u << 1`, the amplitude reduces to the supergravity/Einstein massless exchange structure plus a correlated infinite derivative expansion. The first characteristic local type-II correction is at order `alpha'^3 R^4`, with coefficient proportional to `zeta(3)`, followed by higher `D^(2k) R^4` structures with string-fixed relations.
+`F_VS(s,t,u) = Π_{x=s,t,u} Gamma(1-alpha' x/4)/Gamma(1+alpha' x/4)`,
 
-This produces an important comparator lesson already:
+so
 
-- at any **fixed finite low-energy order**, the local analytic string corrections can be represented by ordinary gravitational EFT Wilson coefficients and therefore need not be uniquely string-identifying relative to C5;
-- the full string amplitude additionally contains the non-polynomial Gamma-function structure and an infinite tower of massive string poles, which a finite local low-energy C5 truncation is not intended to reproduce once the string threshold is resolved.
+`F_VS -> 1` as `alpha' -> 0`.
 
-A claim of a robust string-specific residual must therefore compare models only in a common domain. It is invalid to call C5 "wrong" merely because it ceases to apply at the string scale.
+This is the frozen M09 observable.
 
-## Intended 4D projection — not yet fully frozen
+## Low-energy analytic fingerprint
 
-The current intended realization is a toroidal compactification to four noncompact dimensions with external graviton momenta and polarizations purely in the noncompact directions and with all external energies below the first KK/winding/string threshold used in the matched low-energy slice.
+Using the Gamma-function expansion and `s+t+u=0`,
 
-However, a toroidal type-II compactification also contains additional massless/light fields and moduli. Their exchange/couplings and the exact relation between the ten-dimensional kinematic factor and the four-dimensional observable must be declared before assigning a final RQIR comparator residual.
+`ln F_VS = [zeta(3) alpha'^3/32] s t u + O(alpha'^5 E^10)`
 
-Therefore the present realization ID is provisional until the compactification/light-spectrum ledger is explicit.
+in the small-`alpha'` domain (up to the fixed Mandelstam convention above). Equivalently the first characteristic local type-II correction is the familiar tree-level `alpha'^3 zeta(3) R^4` interaction, followed by correlated higher `D^(2k) R^4` terms.
 
-## F0-F7 current map
+The exact numerical normalization of a particular operator basis is convention-dependent, but the Gamma-function form factor and its correlated zeta-valued expansion are the invariant benchmark object.
+
+## Common-domain C5 quotient
+
+The frozen RQIR C5 comparator is **low-energy perturbative quantum GR / gravitational EFT**. Its valid common domain with M09 is the sub-string-threshold region
+
+`|alpha' s|, |alpha' t|, |alpha' u| << 1`.
+
+In that domain, the analytic string corrections are precisely higher-derivative local EFT data. At any fixed finite order, C5 with the allowed Wilson coefficients can reproduce the corresponding `R^4`, `D^(2k)R^4`, ... coefficients. Therefore a finite-order low-energy deviation from pure Einstein gravity is **not uniquely string-identifying**.
+
+Retained scoped result:
+
+`M09 low-energy slice -> OPERATIONALLY_DEGENERATE_WITH_C5_EFT`.
+
+This is the same general EFT principle seen in M08, now with string theory supplying a highly correlated UV-matched set of Wilson coefficients.
+
+## Why the full string pole tower cannot be used to 'beat C5'
+
+The full Virasoro-Shapiro amplitude contains non-polynomial Gamma-function structure and an infinite tower of massive string poles. Those are genuinely beyond any finite local low-energy EFT truncation.
+
+However, resolving the first massive string pole requires leaving the domain in which C5 was defined as a low-energy comparator. Comparing the full threshold-resolving string amplitude to a C5 truncation outside its validity range would be a straw-man comparison and violates the RQIR common-domain discipline.
+
+The current frozen comparator registry has no explicit UV-completion comparator class spanning alternative high-energy quantum-gravity S-matrices at the string scale. Therefore the benchmark cannot honestly turn the string pole tower into a **unique** RQIR residual against a valid competing UV model.
+
+## F0-F7 terminal map
 
 | Gate | State | Reason |
 |---|---|---|
-| F0 — dynamics | PASS_ANCESTOR / PARTIAL_4D | exact tree-level closed-string four-graviton amplitude exists; exact 4D compactified observable still to freeze |
-| F1 — required limits | PASS_SCOPED | low-energy `alpha' E^2 -> 0` gives the corresponding supergravity/Einstein limit |
-| F2 — consistency | PASS_SCOPED_PERTURBATIVE_TREE | tree-level string amplitude has the expected crossing/factorization structure; full compactification/unitarity ledger not yet the active blocker |
-| F3 — RQIR hierarchy | BLOCKED_4D_INTERFACE | scattering amplitude is concrete, but source/state/detector mapping and full Q1-Q7 hierarchy are not yet frozen |
-| F4 — comparator distinction | PARTIAL | finite-order low-energy local terms are C5-EFT-degenerate; full string pole tower is outside finite C5 truncation but must be compared only in overlapping validity domains |
-| F5 | BLOCKED | exact 4D quotient observable not frozen |
-| F6 | BLOCKED | identifiability cannot precede the compactification/light-field quotient |
-| F7 | BLOCKED | resources forbidden before F5/F6 |
+| F0 — dynamics | PASS_SCOPED | exact genus-zero type-II four-graviton S-matrix object and 4D zero-mode external sector frozen |
+| F1 — required limits | PASS | compactified zero-slope limit agrees with 4D GR helicity amplitude |
+| F2 — consistency | PASS_SCOPED_TREE | tree amplitude has standard crossing/factorization pole structure; no M07-like standard massive-spin-2 ghost gate is encountered |
+| F3 — RQIR hierarchy | PASS_SCATTERING_SUBCHANNEL / PARTIAL_FULL_INTERFACE | exact scattering object exists; full laboratory Q1-Q7 source-detector hierarchy is not claimed |
+| F4 — comparator distinction | LOW_ENERGY_DEGENERATE_WITH_C5 | finite-order sub-threshold analytic corrections are ordinary C5 EFT Wilson data |
+| F5 — hard discriminator | BLOCKED_NO_COMMON_DOMAIN_UV_COMPARATOR | string pole tower becomes distinctive only where low-energy C5 is no longer an admissible comparator |
+| F6 — identifiability | BLOCKED_PROTOCOL | no frozen UV comparator/nuisance family at the string threshold |
+| F7 — resources | NOT_REACHED | no unique common-domain discriminator to resource-certify |
 
-## Current first blocker
+## Terminal decision under the current protocol
 
-`STRING_4D_COMPACTIFICATION_INTERFACE_FREEZE`:
+`BLOCKED_PROTOCOL_MISMATCH`.
 
-1. choose one explicit 4D compactification point or controlled truncation rather than a program label;
-2. list all light fields that can participate in the four-graviton/source-to-detector channel;
-3. freeze the external-state normalization and four-dimensional gravitational coupling;
-4. decide whether the benchmark observable remains purely low-energy (`E << M_string`) or intentionally resolves the first string threshold;
-5. compare only against comparators valid in the same energy domain;
-6. then determine whether the terminal result is C5/EFT degeneracy, a robust string-specific amplitude fingerprint, or a protocol/interface blocker.
+This terminal first-queue classification contains two retained subresults:
 
-## Candidate discriminators retained for the next iteration
+1. **sub-string-threshold common domain:** string tree corrections are `OPERATIONALLY_DEGENERATE` with C5 EFT after Wilson-coefficient profiling;
+2. **string-threshold/full-pole domain:** the amplitude has genuinely new string structure, but the current frozen RQIR comparator registry lacks a valid UV-completion comparator in the same domain, so no unique RQIR residual is authorized.
 
-- correlated low-energy coefficient pattern beginning with `zeta(3) alpha'^3 R^4`;
-- absence/presence pattern of lower-order local terms in the supersymmetric type-II four-graviton sector;
-- all-orders Gamma-function dependence of the Virasoro-Shapiro factor;
-- infinite massive string pole tower and residues/factorization;
-- compactification-induced KK/winding/light-moduli contaminants that must not be mistaken for string-specific quantum-gravity evidence.
+This is not a failure of string theory and not evidence against its consistency. It is a limitation of the current benchmark/comparator scope.
+
+## What would unblock a future M09-UV branch
+
+A future second-wave benchmark may add a standalone KMQGB UV comparator overlay (without modifying core RQIR) containing concrete high-energy alternatives, for example:
+
+- a fixed ghost-free/nonlocal form-factor model;
+- a concrete asymptotic-safety trajectory/truncation with an S-matrix/kernel;
+- another explicit string compactification or string-inspired UV amplitude;
+- any other UV completion with a common external-state and energy domain.
+
+Then the string pole/residue pattern, Regge behavior, coefficient correlations and crossing/factorization structure can be compared fairly.
 
 ## Sources
 
-1. M. B. Green and P. Vanhove, low-energy expansion of the type-II four-graviton amplitude: explicit Virasoro-Shapiro tree factor and higher-derivative `R^4`, `D^(2k)R^4` expansion.
-2. Type-II effective-action literature: leading tree-level `alpha'^3 zeta(3) R^4` correction.
-3. E. Claasen and M. Doroudiani, Phys. Rev. Lett. 134, 201601 (2025): modern one-loop type-II four-graviton low-energy expansion and transcendental structure.
-4. External RQIR C5 comparator authority: low-energy perturbative quantum GR/EFT, valid only in its declared low-energy domain.
+1. S. Sannan, *Gravity as the limit of the type-II superstring theory*, Phys. Rev. D 34, 1749 (1986): after compactifying six spatial dimensions, the four-particle string amplitude agrees with 4D GR helicity amplitudes in the zero-slope limit.
+2. M. B. Green and P. Vanhove, type-II four-graviton amplitude literature: explicit Virasoro-Shapiro tree factor and low-energy higher-derivative expansion.
+3. Type-II effective-action literature: leading tree-level `alpha'^3 zeta(3) R^4` interaction.
+4. E. Claasen and M. Doroudiani, Phys. Rev. Lett. 134, 201601 (2025): modern one-loop type-II four-graviton low-energy expansion and transcendental structure; retained as context, not silently included in this tree-level realization.
+5. External RQIR C5 comparator authority: perturbative quantum GR / low-energy gravity EFT, valid only in its declared low-energy domain.
