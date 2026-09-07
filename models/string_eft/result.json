@@ -1,0 +1,25 @@
+{
+  "benchmark_id": "KMQGB-M09-STRING-EFT",
+  "concrete_realization_id": "TYPEII-T6-GRAV4-TREE-001",
+  "terminal_under_current_protocol": true,
+  "current_status": "BLOCKED_PROTOCOL_MISMATCH",
+  "observable": "normalized 4D zero-mode type-II tree four-graviton Virasoro-Shapiro form factor",
+  "low_energy_limit": "4D GR helicity amplitude in the zero-slope limit",
+  "low_energy_subresult": {
+    "status": "OPERATIONALLY_DEGENERATE_WITH_C5_EFT",
+    "reason": "at fixed finite sub-string-threshold order the analytic alpha' expansion is reproducible by allowed gravitational EFT Wilson coefficients",
+    "profiled_residual": 0
+  },
+  "uv_subresult": {
+    "status": "BLOCKED_NO_COMMON_DOMAIN_UV_COMPARATOR",
+    "string_structure": "Gamma-function amplitude with infinite massive string pole tower and correlated residues/Regge behavior",
+    "reason": "the frozen C5 comparator is low-energy only and cannot be used outside its validity domain; no UV-completion comparator is frozen in the current registry"
+  },
+  "consistency_failure": false,
+  "interpretation": "the current benchmark neither falsifies string theory nor proves a unique string signature; low-energy data are EFT-degenerate and threshold-resolving claims require a fair UV comparator overlay",
+  "missing_information_for_future_uv_branch": [
+    "explicit common-domain UV comparator family",
+    "UV nuisance/profile rule",
+    "resource/identifiability model at the string threshold"
+  ]
+}
