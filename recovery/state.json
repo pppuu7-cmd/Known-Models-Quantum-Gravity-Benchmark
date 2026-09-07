@@ -1,16 +1,10 @@
 {
-  "schema_version": "1.6",
+  "schema_version": "1.7",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 9,
-  "migration": {
-    "status": "complete",
-    "source_repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "source_branch": "rqir7-known-models-benchmark",
-    "source_benchmark_head_sha": "782df9af3af1ca55ca4f9bf143e2723a7a8f18bc",
-    "source_repository_modified_by_migration": false
-  },
+  "kmqgb_iteration": 10,
+  "phase": "FIRST_QUEUE_TERMINALLY_CLASSIFIED",
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
     "main_sha_observed": "94f9e6735036c96275ea7d170fbee7c2cc5bd579",
@@ -20,19 +14,19 @@
     "active_heavy_work": "rank11 run 34168897005 directly verified in_progress"
   },
   "progress": {
-    "migration_percent": 100,
-    "terminal_queue_coverage_percent": 88.89,
-    "terminal_queue_fraction": "8/9",
-    "current_M09_task_percent_estimate": 45,
-    "percent_note": "terminal coverage is exact queue coverage; M09 task percent is an operational completion estimate, not physics-confidence probability"
+    "first_queue_terminal_coverage_percent": 100.0,
+    "first_queue_terminal_fraction": "9/9",
+    "current_M09_task_percent_estimate": 100,
+    "percent_note": "100% means every model in the frozen first nine-model queue has a terminal classification under the current protocol; it does not mean quantum gravity is solved or every model is fully phenomenologically exhausted"
   },
   "queue": {
     "total": 9,
-    "terminal_completed": 8,
+    "terminal_completed": 9,
     "terminal_rollup": {
       "EXACT_COMPARATOR_IDENTITY": 5,
       "OPERATIONALLY_DEGENERATE": 2,
       "FAIL_RQIR_CONSISTENCY": 1,
+      "BLOCKED_PROTOCOL_MISMATCH": 1,
       "ROBUST_NONZERO_RESIDUAL": 0
     }
   },
@@ -41,38 +35,30 @@
     {"benchmark_id":"KMQGB-M02-GR-QG-EFT","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C5","residual":0},
     {"benchmark_id":"KMQGB-M03-SEMICLASSICAL","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C1","residual":0},
     {"benchmark_id":"KMQGB-M04-STOCHASTIC","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C2","residual":0},
-    {"benchmark_id":"KMQGB-M05-FR","status":"OPERATIONALLY_DEGENERATE","profiled_comparator":"single-scalar Yukawa parent","profiled_residual":0},
-    {"benchmark_id":"KMQGB-M06-BRANS-DICKE","status":"OPERATIONALLY_DEGENERATE","profiled_comparator":"general massless scalar-tensor parent","profiled_residual":0,"note":"nested-model degeneracy, not global equivalence of scalar-tensor theories"},
-    {"benchmark_id":"KMQGB-M07-STELLE","status":"FAIL_RQIR_CONSISTENCY","first_failing_gate":"F2_STANDARD_MASSIVE_SPIN2_GHOST","note":"standard fundamental Feynman/Hilbert-space interpretation only; EFT and modified prescriptions excluded from this verdict"},
-    {"benchmark_id":"KMQGB-M08-HIGHER-CURVATURE","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C5 low-energy gravity EFT","profiled_residual":0,"note":"Riemann-cubed Wilson insertion treated perturbatively below cutoff; no spurious high-scale pole promoted into EFT state space"}
+    {"benchmark_id":"KMQGB-M05-FR","status":"OPERATIONALLY_DEGENERATE","profiled_residual":0,"scope":"frozen gamma(r) versus one-scalar Yukawa parent"},
+    {"benchmark_id":"KMQGB-M06-BRANS-DICKE","status":"OPERATIONALLY_DEGENERATE","profiled_residual":0,"scope":"BD submodel versus general massless scalar-tensor parent"},
+    {"benchmark_id":"KMQGB-M07-STELLE","status":"FAIL_RQIR_CONSISTENCY","first_failing_gate":"F2_STANDARD_MASSIVE_SPIN2_GHOST","scope":"standard fundamental Feynman/Hilbert-space interpretation"},
+    {"benchmark_id":"KMQGB-M08-HIGHER-CURVATURE","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C5 low-energy gravity EFT","profiled_residual":0},
+    {"benchmark_id":"KMQGB-M09-STRING-EFT","status":"BLOCKED_PROTOCOL_MISMATCH","low_energy_subresult":"OPERATIONALLY_DEGENERATE_WITH_C5_EFT","low_energy_profiled_residual":0,"uv_subresult":"BLOCKED_NO_COMMON_DOMAIN_UV_COMPARATOR"}
   ],
-  "active_model": {
-    "benchmark_id": "KMQGB-M09-STRING-EFT",
-    "concrete_realization_id": "TYPEII-T6-GRAV4-TREE-001_PROVISIONAL",
-    "model_realization": "type-II closed-string tree-level four-graviton Virasoro-Shapiro ancestor with intended 4D toroidal projection",
-    "role": "string_qg_scattering_control",
-    "terminal": false,
-    "current_status": "ACTIVE",
-    "first_blocking_gate": "STRING_4D_COMPACTIFICATION_INTERFACE_FREEZE",
-    "frozen_ancestor": "tree-level type-II four-graviton Gamma-function/Virasoro-Shapiro factor",
-    "low_energy_signature": "supergravity/Einstein leading structure plus correlated alpha'^3 zeta(3) R^4 and higher D^(2k)R^4 corrections",
-    "current_comparator_result": "at fixed finite low-energy order local analytic terms are absorbable by C5 EFT Wilson coefficients; full massive string pole tower is potentially distinctive only when compared in a domain where the comparator is also valid",
-    "missing_objects": [
-      "explicit 4D compactification point or controlled truncation",
-      "complete light-field/moduli ledger for the chosen external-graviton channel",
-      "4D external-state normalization and gravitational coupling map",
-      "frozen decision between sub-string-threshold EFT observable and threshold-resolving amplitude observable",
-      "literal Q1-Q7/source-detector mapping"
-    ]
+  "first_queue_global_lesson": {
+    "consistency_failures_found": 1,
+    "consistency_failure_models": ["KMQGB-M07-STELLE standard fundamental quantization"],
+    "robust_unique_residuals_found": 0,
+    "summary": "The funnel distinguishes consistency failure, comparator identity, observable degeneracy, EFT validity boundaries and protocol incompleteness; none of the first nine controls produced an authorized robust unique quantum-gravity residual under the frozen comparator quotient."
   },
-  "next_actions": [
-    "Freeze one explicit 4D type-II compactification/truncation for M09",
-    "List light KK/winding/moduli/dilaton/vector contaminants and decide which are retained or integrated out",
-    "Construct the common-domain C5 versus full-string comparator quotient",
-    "Do not claim a robust string residual by comparing full string threshold physics to an EFT outside its validity domain",
-    "Terminally classify M09 only after the 4D interface is explicit",
-    "Do not launch competing KMQGB heavy work while external RQIR rank11 remains active"
-  ],
+  "next_research_front": {
+    "status": "SECOND_WAVE_NOT_YET_FROZEN",
+    "priority_candidates": [
+      "concrete ghost-free nonlocal/form-factor gravity",
+      "concrete asymptotic-safety trajectory/truncation with Lorentzian observable kernel",
+      "classical-channel measurement-feedback gravity",
+      "modern postquantum classical gravity realization",
+      "additional string/UV completion comparator for M09-UV",
+      "loop/canonical/discrete quantum-gravity realization only if a concrete observable kernel can be frozen"
+    ],
+    "rule": "Do not change the first-queue 9/9 denominator retroactively. Freeze a separate second-wave denominator when the next queue is instantiated."
+  },
   "heavy_compute_policy": "do_not_compete_with_active_RQIR_shared_runner",
   "write_firewall": "KMQGB writes only to this repository; RQIR is read-only"
 }
