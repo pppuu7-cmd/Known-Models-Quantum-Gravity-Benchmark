@@ -5,44 +5,38 @@ Purpose: audit concrete gravity and quantum-gravity realizations through the sam
 Repository: `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`
 Default branch: `main`
 Source migration: `pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction`, branch `rqir7-known-models-benchmark`, source HEAD `782df9af3af1ca55ca4f9bf143e2723a7a8f18bc`.
-Original branch base SHA: `02ad31e89f1df0d5515779e6b7526e8eb5505667`.
 Recovery entrypoint: `recovery/RESTORE_FROM_NEW_CHAT.md`.
 
 ## First queue
 
 | # | Concrete target | Control role | State |
 |---|---|---|---|
-| 1 | 4D Einstein–Hilbert GR, Lambda=0, weak-field Minkowski sector | null control C0 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 2 | `ANSATZ-PQG-EFT-001` v0.1, perturbative low-energy quantum GR EFT | EFT/comparator control C5 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 3 | `SCG-MINK-SCALAR-LR-001`, renormalized semiclassical Einstein gravity with conformal scalar / Minkowski linear response | source/backreaction control C1 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 4 | `SG-MINK-CONFORMAL-EL-001`, Einstein–Langevin/noise-kernel stochastic gravity | fluctuation control C2 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 5 | `FR-R2-MINK-001`, metric `R+R^2/(6M^2)` gravity | extra-DOF control | **CLOSED — OPERATIONALLY_DEGENERATE** |
-| 6 | `BD-MASSLESS-OMEGA200000-MINK-001`, massless Brans–Dicke, `V=0`, `omega_BD=200000` | extra long-range scalar control | **active audit** |
-| 7 | Stelle quadratic gravity | pathological-pole control | queued |
-| 8 | concrete higher-curvature EFT/action | EFT positive control | queued |
-| 9 | concrete string low-energy/scattering realization | QG/EFT control | queued |
+| 1 | 4D Einstein–Hilbert GR, Lambda=0, weak-field Minkowski | null control C0 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
+| 2 | `ANSATZ-PQG-EFT-001` v0.1, perturbative low-energy quantum GR EFT | C5 EFT control | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
+| 3 | `SCG-MINK-SCALAR-LR-001` semiclassical Einstein gravity | C1 mean-backreaction control | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
+| 4 | `SG-MINK-CONFORMAL-EL-001` Einstein–Langevin stochastic gravity | C2 fluctuation control | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
+| 5 | `FR-R2-MINK-001`, metric `R+R^2/(6M^2)` | extra-scalar modified gravity | **CLOSED — OPERATIONALLY_DEGENERATE** |
+| 6 | `BD-MASSLESS-OMEGA200000-MINK-001`, massless Brans–Dicke | long-range scalar control | **CLOSED — OPERATIONALLY_DEGENERATE** |
+| 7 | `STELLE-MINK-STANDARD-FEYNMAN-001`, standard fundamental Stelle quadratic gravity | pathological-pole control | **CLOSED — FAIL_RQIR_CONSISTENCY** |
+| 8 | `GR-EFT-RIEMANN3-MINK-001`, perturbative higher-curvature EFT | EFT boundary/positive control | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
+| 9 | `TYPEII-T6-GRAV4-TREE-001` provisional, type-II string four-graviton scattering with intended 4D projection | string/QG scattering control | **active audit** |
 
-Terminal queue coverage: **5/9 = 55.56%**. This is exact queue coverage, not a probability that quantum gravity is 55.56% solved.
+Terminal queue coverage: **8/9 = 88.89%**. This is exact queue coverage, not a probability that quantum gravity is 88.89% solved.
 
 ## Status vocabulary
 
 `PASS_RQIR_GATE`, `FAIL_RQIR_CONSISTENCY`, `EXACT_COMPARATOR_IDENTITY`, `OPERATIONALLY_DEGENERATE`, `ROBUST_NONZERO_RESIDUAL`, `BLOCKED_MISSING_REQUIRED_OBJECT`, `BLOCKED_PROTOCOL_MISMATCH`, `OPERATIONAL_FAILURE`.
 
-`BLOCKED` is never scientific invalidation. Exact comparator identity is a retained control/negative result, not a consistency failure. `OPERATIONALLY_DEGENERATE` means the frozen observable is exactly reproducible after the allowed comparator/nuisance quotient even though the underlying theories need not be identical.
+`BLOCKED` is never scientific invalidation. `EXACT_COMPARATOR_IDENTITY` is a control/non-novelty result. `OPERATIONALLY_DEGENERATE` means a frozen observable/model-identification residual is exactly absorbed by an allowed broader comparator even though the theories need not be globally equivalent. `FAIL_RQIR_CONSISTENCY` is reserved for a mandatory physical consistency gate such as the standard massive spin-2 ghost in M07.
 
 ## Current lessons
 
-The first four controls validate the benchmark semantics rather than falsify their source theories: GR maps to C0, perturbative QG EFT to C5, semiclassical mean gravity to C1, and Einstein-Langevin stochastic gravity to C2.
-
-M05 adds the first nontrivial modified-gravity lesson. `R+R^2` produces a genuine finite GR-subtracted weak-field residual in `gamma(r)=Psi/Phi`, but the entire multi-radius shape is exactly reproduced by a broader one-scalar Yukawa family at `alpha=1/3`, `m=M`. Therefore a nonzero deviation from GR is not automatically a unique theory discriminator.
-
-M06 is deliberately nonduplicate: massless Brans-Dicke with `omega_BD=200000`, `V=0`, long-range scalar. The active point was raised from a provisional `50000` after a current literature refresh found the 2024 conservative pulsar-triple lower limit near `150000`; the old value is retained only as an excluded diagnostic point.
-
-For the active M06 point,
-
-`Delta_gamma^C0 = -1/200002`,
-
-and the same exact factor `1/(omega_BD+2)=1/200002` controls the leading scalar dipole-radiation coefficient multiplied by the binary sensitivity-difference factor. The current gate therefore uses a linked static+radiative fingerprint rather than one free force amplitude.
+1. GR, semiclassical gravity, stochastic gravity and perturbative QG EFT are correctly recognized as their own comparator/control classes rather than falsely rejected.
+2. A nonzero deviation from GR is not enough for theory identification: M05 `R+R^2` is exactly absorbed in its frozen `gamma(r)` observable by a broader one-scalar Yukawa family.
+3. A linked multi-channel signal still may not identify a nested submodel: M06 Brans–Dicke has a nonzero static PPN shift and linked scalar dipole channel, but the general massless scalar-tensor parent family contains the exact BD point.
+4. M07 is the first true consistency failure: standard fundamental Stelle quadratic gravity retains the UV-improving opposite-residue massive spin-2 pole, which fails the frozen positivity/unitarity gate under the standard physical-state interpretation.
+5. M08 prevents overgeneralization of M07: a higher-curvature term used as a perturbative EFT Wilson insertion below a cutoff is not the same object as a resummed fundamental higher-derivative theory. The concrete `Riemann^3` EFT slice belongs to C5.
+6. M09 must compare string theory only in a common validity domain: finite-order low-energy string corrections may be absorbed by C5 Wilson coefficients, whereas genuinely string-specific massive pole structure appears when the string threshold is resolved, where a finite low-energy C5 truncation is no longer the proper comparator.
 
 ## Mandatory output table
 
@@ -50,6 +44,4 @@ Every concrete realization must ultimately populate: exact realization/paper; ac
 
 ## Repository firewall
 
-This repository may read the frozen RQIR protocol and current Candidate Gravity authority as external inputs, but benchmark writes belong here only. It must not modify Candidate Gravity readiness, recovery state, iteration numbering, workflows, active runner state, or scientific authority files in `Relativity-Quantum-Interface-Reconstruction`.
-
-Prior RQIR comparator/model audits may be imported here as explicitly provenance-tagged evidence snapshots. Such imports never change the source RQIR repository.
+KMQGB may read frozen RQIR protocol and current Candidate Gravity authority as external inputs, but all benchmark writes belong here only. It must not modify Candidate Gravity readiness, recovery state, iteration numbering, workflows, active runner state, or scientific authority in `Relativity-Quantum-Interface-Reconstruction`.
