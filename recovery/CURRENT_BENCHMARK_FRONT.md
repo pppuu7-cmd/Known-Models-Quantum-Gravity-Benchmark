@@ -1,114 +1,107 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-08  
-**KMQGB iteration:** 009  
+**KMQGB iteration:** 010  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Migration/firewall:** COMPLETE — all benchmark writes remain isolated from RQIR.
+**Phase:** FIRST QUEUE TERMINALLY CLASSIFIED  
+**Repository firewall:** KMQGB writes only here; RQIR remains read-only external authority.
 
-## Current benchmark state
+## Progress
 
-- Terminal queue coverage: **8/9 = 88.89%**.
-- M01 GR: `EXACT_COMPARATOR_IDENTITY` with C0.
-- M02 perturbative quantum GR EFT: `EXACT_COMPARATOR_IDENTITY` with C5.
-- M03 semiclassical gravity: `EXACT_COMPARATOR_IDENTITY` with C1.
-- M04 stochastic gravity: `EXACT_COMPARATOR_IDENTITY` with C2.
-- M05 metric `R+R^2`: `OPERATIONALLY_DEGENERATE` after scalar/Yukawa quotient.
-- M06 massless Brans-Dicke: `OPERATIONALLY_DEGENERATE` against the broader massless scalar-tensor parent class.
-- M07 standard fundamental Stelle quadratic gravity: **`FAIL_RQIR_CONSISTENCY`** at F2 due the massive spin-2 ghost under the frozen standard physical-state/Feynman interpretation.
-- M08 perturbative higher-curvature EFT: `EXACT_COMPARATOR_IDENTITY` with C5 at low-energy EFT theory-class level.
-- Active target: **M09 type-II string four-graviton / 4D compactification control**.
-- M09 operational completion estimate: **45%**.
-- M09 first blocker: **`STRING_4D_COMPACTIFICATION_INTERFACE_FREEZE`**.
+- First-queue terminal coverage: **9/9 = 100%**.
+- Current M09 task: **100% terminally classified under the current frozen protocol**.
+- Candidate Gravity RQIR readiness remains a separate metric: last observed **24%**.
 
-## New terminal result — M06 Brans-Dicke
+The 100% first-queue number is only benchmark coverage. It does not mean quantum gravity is solved or that all possible schools/models have been audited.
 
-Frozen point: `omega_BD=200000`, `V=0`, massless long-range scalar.
+## First-queue terminal matrix
 
-Static residual versus C0:
+1. M01 GR — `EXACT_COMPARATOR_IDENTITY` with C0.
+2. M02 perturbative quantum GR EFT — `EXACT_COMPARATOR_IDENTITY` with C5.
+3. M03 semiclassical gravity — `EXACT_COMPARATOR_IDENTITY` with C1.
+4. M04 stochastic gravity — `EXACT_COMPARATOR_IDENTITY` with C2.
+5. M05 metric `R+R^2` — `OPERATIONALLY_DEGENERATE` after single-scalar Yukawa quotient.
+6. M06 massless Brans-Dicke — `OPERATIONALLY_DEGENERATE` against the general massless scalar-tensor parent class.
+7. M07 standard fundamental Stelle quadratic gravity — **`FAIL_RQIR_CONSISTENCY`** at F2 due the massive spin-2 ghost under the frozen standard physical-state/Feynman interpretation.
+8. M08 perturbative `Riemann^3` gravity EFT — `EXACT_COMPARATOR_IDENTITY` with C5 at low-energy EFT theory-class level.
+9. M09 type-II tree four-graviton string control — **`BLOCKED_PROTOCOL_MISMATCH`** for a unique UV string claim; its low-energy sub-threshold slice is `OPERATIONALLY_DEGENERATE_WITH_C5_EFT`.
 
-`Delta_gamma = -1/200002 != 0`.
+Rollup:
+- exact comparator identities: **5**;
+- operational degeneracies: **2**;
+- real consistency failures: **1**;
+- protocol/domain blocks: **1**;
+- authorized robust unique QG residuals: **0**.
 
-The same scalar sector controls the leading dipole-radiation response for unequal-sensitivity binaries. This linked two-channel signal survives a simple C0 comparison.
+## M06 final lesson
 
-However general massless scalar-tensor gravity is a parent family containing Brans-Dicke as a special parameter slice. With the Brans-Dicke value of `alpha_0` and the corresponding constant-coupling specialization, the parent class contains an exact point reproducing all Brans-Dicke observables. Thus the profiled residual for identifying **BD versus its parent scalar-tensor class** is zero.
+`BD-MASSLESS-OMEGA200000-MINK-001` has a real C0/GR difference,
 
-Terminal status: `OPERATIONALLY_DEGENERATE`.
+`Delta_gamma=-1/200002`,
 
-Guardrail: this is nested-model non-identifiability, not a statement that all scalar-tensor theories are equivalent to Brans-Dicke. Nonzero nonlinear coupling can generate additional strong-field behavior such as scalarization and can be separately tested.
+and a linked scalar dipole-radiation channel from the same coupling. Yet general massless scalar-tensor gravity contains the exact Brans-Dicke point. Therefore the model cannot be uniquely identified as "Brans-Dicke rather than its parent scalar-tensor class" from the frozen fingerprint. This is nesting/non-identifiability, not inconsistency and not global equivalence of all scalar-tensor theories.
 
-The literature refresh is retained: the provisional `omega_BD=50000` point was retired because the 2024 pulsar Living Review reports a conservative lower limit near `150000`; `200000` is the active benchmark point. No non-GR deviation is claimed detected.
+## M07 final lesson — first true consistency failure
 
-## New terminal result — M07 standard Stelle quadratic gravity
+`STELLE-MINK-STANDARD-FEYNMAN-001` freezes local quadratic gravity as a fundamental theory under standard perturbative Feynman/Hilbert-space state interpretation.
 
-Frozen realization: `STELLE-MINK-STANDARD-FEYNMAN-001`.
+Its spin-2 propagator contains opposite residues,
 
-The standard local quadratic action about Minkowski contains
+`D_2 ~ 1/(p^2+i0) - 1/(p^2-M_2^2+i0)`,
 
-- the ordinary massless graviton;
-- a massive scalar;
-- a massive spin-2 mode.
+which provides the `1/p^4` UV behavior but makes the massive spin-2 state a ghost in the frozen conventional interpretation. This fails the mandatory RQIR positivity/unitarity consistency gate at F2.
 
-The spin-2 propagator has the structural form
+Scope: this verdict does not silently transfer to pure `R+R^2`, low-energy EFT below cutoff, or nonstandard ghost prescriptions.
 
-`D_2 ~ 1/(p^2+i0) - 1/(p^2-M_2^2+i0)`.
+## M08 final lesson — EFT boundary
 
-The opposite residue is tied to the `1/p^4` ultraviolet behavior that gives the theory its power-counting renormalizability. In the frozen standard physical-state/Feynman interpretation, the massive spin-2 state is therefore a ghost and fails the mandatory RQIR positivity/unitarity consistency gate.
+`GR-EFT-RIEMANN3-MINK-001` treats a curvature-cubed operator perturbatively for `Q << Lambda`. Extra roots obtained by resumming the finite truncated equation are not promoted as physical EFT states. The realization is a concrete higher-curvature Wilson slice of C5; its C5-profiled theory-class residual is zero.
 
-Terminal status: **`FAIL_RQIR_CONSISTENCY`** at `F2_STANDARD_MASSIVE_SPIN2_GHOST`.
+This protects the benchmark from the false rule "higher derivatives imply an RQIR ghost failure".
 
-This is the first true consistency failure in the nine-model queue.
+## M09 final lesson — string/common-domain boundary
 
-Scope guardrail: the result does not automatically apply to pure `R+R^2`, low-energy higher-curvature EFT below its cutoff, or fakeon/Lee-Wick/modified-inner-product prescriptions. Those change the theory/prescription and require separate audits.
+Freeze type-II tree-level four-graviton scattering with six dimensions compactified on flat `T^6` and external four-dimensional zero-mode gravitons. The normalized tree form factor is
 
-## New terminal result — M08 higher-curvature EFT
+`F_VS(s,t,u)=Π Gamma(1-alpha' x/4)/Gamma(1+alpha' x/4)`, `x in {s,t,u}`,
 
-Frozen realization: `GR-EFT-RIEMANN3-MINK-001`, with `Q << Lambda` and a curvature-cubed Wilson operator treated perturbatively at fixed EFT order.
+with `s+t+u=0` and `F_VS -> 1` in the zero-slope limit. The compactified zero-slope amplitude agrees with 4D GR graviton helicity amplitudes.
 
-The low-energy state space retains the massless spin-2 graviton. Extra roots generated by illegitimately resumming a finite higher-derivative truncation are not promoted as physical states inside the EFT domain.
+Low-energy expansion begins with
 
-This concrete model is already a Wilson-coefficient slice of the RQIR C5 low-energy gravitational EFT architecture. It can differ from pure C0/Einstein at nonzero coefficient, but after the C5 Wilson-coefficient quotient the theory-class residual is zero.
+`ln F_VS = [zeta(3) alpha'^3/32] s t u + ...`,
 
-Terminal status: `EXACT_COMPARATOR_IDENTITY` with C5.
+corresponding to the characteristic type-II `alpha'^3 zeta(3) R^4` correction and higher correlated derivative operators.
 
-Key boundary lesson: **M07 and M08 use superficially similar higher derivatives but are scientifically different objects** — fundamental/resummed spectrum versus ordered EFT expansion below a cutoff.
+### Common-domain decision
 
-## Active M09 — string scattering
+- For `|alpha' s|,|alpha't|,|alpha'u| << 1`, these analytic corrections are gravitational EFT Wilson data. C5 can reproduce any fixed finite low-energy order after Wilson-coefficient matching. Result: **low-energy operational degeneracy with C5**.
+- When the full massive string pole tower is resolved, finite low-energy C5 is outside its validity range. The current RQIR comparator registry has no explicit alternative UV-completion comparator valid at those energies. Result: **UV claim blocked by protocol/common-domain mismatch**.
 
-Frozen ancestor object: the type-II tree-level four-graviton Virasoro-Shapiro amplitude,
+Terminal M09 status under the current protocol: `BLOCKED_PROTOCOL_MISMATCH`, not inconsistency.
 
-`A_tree ~ K * [64/(alpha'^3 s t u)] * Π Gamma(1-alpha' x/4)/Gamma(1+alpha' x/4)`, `x in {s,t,u}`.
+## First-queue global conclusion
 
-At low energy it reduces to the supergravity/Einstein exchange structure plus a correlated derivative expansion beginning with the characteristic type-II `alpha'^3 zeta(3) R^4` correction and higher `D^(2k) R^4` terms.
+No member of the first nine-model queue produced an authorized `ROBUST_NONZERO_RESIDUAL` that survives the applicable comparator/validity-domain quotient and can be called a unique quantum-gravity signature.
 
-Two domains must not be conflated:
+That statement does **not** mean all existing theories are wrong. The actual distribution is the opposite: most are valid controls/comparators or observationally degenerate; one specifically frozen standard Stelle realization fails a consistency gate; the string UV claim is blocked because the current comparator infrastructure does not yet contain a fair high-energy competitor.
 
-1. **finite-order sub-string-threshold EFT:** local analytic corrections can be encoded in C5 Wilson coefficients, so they are not automatically string-unique;
-2. **threshold-resolving full string amplitude:** the Gamma-function structure and massive string pole tower become relevant, but finite low-energy C5 is then not an admissible comparator outside its validity range.
+## External RQIR state
 
-### Current blocker
+Last observed external RQIR authority: Iteration **566**, Candidate Gravity `MODEL_READINESS = 24%`. Rank11 run `34168897005`, job `101885271903`, coordinate `(+2.5e-6,-1.25e-6)` was directly verified `in_progress` during this benchmark cycle.
 
-`STRING_4D_COMPACTIFICATION_INTERFACE_FREEZE`:
+No KMQGB heavy computation was launched on the shared runner.
 
-- choose one explicit four-dimensional compactification point/truncation;
-- list all light moduli/dilaton/vectors and KK/winding thresholds participating in the external-graviton channel;
-- freeze `kappa_10 -> kappa_4` and external-state normalization;
-- choose whether the observable is strictly `E << M_string` or resolves a string threshold;
-- build the comparator quotient only over a common validity domain;
-- map the result into the RQIR Q1-Q7/source-detector language.
+## Exact next research front
 
-No terminal string-theory claim is authorized until that interface is explicit.
+Freeze a separate **second-wave queue** without retroactively changing the historical 9/9 denominator. Highest-priority candidates:
 
-## External RQIR Candidate Gravity authority
+1. concrete ghost-free nonlocal/form-factor gravity;
+2. concrete asymptotic-safety trajectory/truncation with Lorentzian observable kernel;
+3. classical-channel/measurement-feedback gravity;
+4. modern postquantum classical gravity;
+5. explicit UV-completion comparator for the M09 string-threshold branch;
+6. additional loop/canonical/discrete QG programs only when a concrete observable kernel can be instantiated.
 
-External RQIR remains read-only for KMQGB. Last observed authority: Iteration **566**, Candidate Gravity `MODEL_READINESS = 24%`.
-
-Rank11 run `34168897005`, job `101885271903`, coordinate `(+2.5e-6,-1.25e-6)` was directly verified `in_progress` during this research iteration. KMQGB has not launched competing heavy work on the shared runner.
-
-## Exact next gate
-
-For M09:
-1. freeze the explicit 4D type-II compactification/light spectrum;
-2. derive the common-domain four-graviton/source-detector comparator object;
-3. decide whether the low-energy result is absorbed by C5 or whether an allowed string-specific linked pattern survives;
-4. only then assign the ninth terminal classification.
+The second-wave percentage starts only after its denominator and exact realizations are frozen.
