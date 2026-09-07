@@ -1,0 +1,21 @@
+{
+  "benchmark_id": "KMQGB-M06-BRANS-DICKE",
+  "concrete_realization_id": "BD-MASSLESS-OMEGA200000-MINK-001",
+  "terminal": true,
+  "current_status": "OPERATIONALLY_DEGENERATE",
+  "scope": "massless Brans-Dicke at omega_BD=200000; weak-field static gamma plus linked leading scalar dipole channel",
+  "c0_residual": {
+    "observable": "gamma_BD-1",
+    "exact": "-1/200002",
+    "nonzero": true
+  },
+  "parent_comparator": "general massless scalar-tensor family",
+  "parent_relation": "nested_submodel",
+  "parent_matching_point": "beta_0=0 with alpha_0^2=1/400003 and the Brans-Dicke coupling map",
+  "profiled_parent_residual": 0,
+  "first_terminal_gate": "F6_FAIL_UNIQUENESS_VS_PARENT_ST",
+  "consistency_failure": false,
+  "interpretation": "Brans-Dicke is not falsified; the frozen signal cannot uniquely identify the Brans-Dicke submodel against a parent scalar-tensor class that contains the exact candidate point.",
+  "empirical_note": "omega_BD=200000 was selected above the conservative ~150000 lower benchmark bound summarized in the 2024 pulsar Living Review; this is not a detection claim.",
+  "missing_information": []
+}
