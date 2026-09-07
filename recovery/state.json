@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.3",
+  "schema_version": "1.4",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 4,
+  "kmqgb_iteration": 5,
   "migration": {
     "status": "complete",
     "source_repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
@@ -15,71 +15,49 @@
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "main_sha_observed": "6839864cc6a2fa66616696db6b9f78b7b8b019f2",
-    "authoritative_research_iteration": 564,
+    "main_sha_observed": "94f9e6735036c96275ea7d170fbee7c2cc5bd579",
+    "authoritative_research_iteration": 566,
     "model_readiness_percent": 24,
     "access_mode": "read_only",
-    "active_heavy_work": "rank10 run 34165534613 verified in_progress"
+    "active_heavy_work": "rank11 run 34168897005 active at (+2.5e-6,-1.25e-6)"
   },
-  "state_written_from_kmqgb_sha": "2f2725683ec79bc01fa04e7d0bf5fd35bce5fdfe",
   "progress": {
     "migration_percent": 100,
-    "terminal_queue_coverage_percent": 44.44,
-    "terminal_queue_fraction": "4/9",
-    "current_M05_task_percent_estimate": 70,
-    "percent_note": "terminal coverage is exact queue coverage; M05 task percent is an operational completion estimate for its current audit, not a physics confidence probability"
+    "terminal_queue_coverage_percent": 55.56,
+    "terminal_queue_fraction": "5/9",
+    "current_M06_task_percent_estimate": 60,
+    "percent_note": "terminal coverage is exact queue coverage; M06 task percent is an operational completion estimate for its current audit, not a physics confidence probability"
   },
   "queue": {
     "total": 9,
-    "terminal_completed": 4,
+    "terminal_completed": 5,
     "terminal_rollup": {
       "EXACT_COMPARATOR_IDENTITY": 4,
+      "OPERATIONALLY_DEGENERATE": 1,
       "FAIL_RQIR_CONSISTENCY": 0,
       "ROBUST_NONZERO_RESIDUAL": 0
     }
   },
   "closed_models": [
-    {
-      "benchmark_id": "RQIR7-M01-GR-EH-MINK",
-      "status": "EXACT_COMPARATOR_IDENTITY",
-      "comparator": "C0 Classical GR / Newtonian gravity",
-      "residual": 0
-    },
-    {
-      "benchmark_id": "KMQGB-M02-GR-QG-EFT",
-      "model_realization": "ANSATZ-PQG-EFT-001 v0.1",
-      "status": "EXACT_COMPARATOR_IDENTITY",
-      "comparator": "C5 Perturbative quantum gravity / low-energy quantum GR",
-      "residual": 0
-    },
-    {
-      "benchmark_id": "KMQGB-M03-SEMICLASSICAL",
-      "model_realization": "SCG-MINK-SCALAR-LR-001",
-      "status": "EXACT_COMPARATOR_IDENTITY",
-      "comparator": "C1 Semiclassical gravity",
-      "residual": 0
-    },
-    {
-      "benchmark_id": "KMQGB-M04-STOCHASTIC",
-      "model_realization": "SG-MINK-CONFORMAL-EL-001",
-      "status": "EXACT_COMPARATOR_IDENTITY",
-      "comparator": "C2 Stochastic gravity / noise-kernel baseline",
-      "residual": 0
-    }
+    {"benchmark_id":"RQIR7-M01-GR-EH-MINK","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C0 Classical GR / Newtonian gravity","residual":0},
+    {"benchmark_id":"KMQGB-M02-GR-QG-EFT","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C5 Perturbative quantum gravity / low-energy quantum GR","residual":0},
+    {"benchmark_id":"KMQGB-M03-SEMICLASSICAL","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C1 Semiclassical gravity","residual":0},
+    {"benchmark_id":"KMQGB-M04-STOCHASTIC","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C2 Stochastic gravity / noise-kernel baseline","residual":0},
+    {"benchmark_id":"KMQGB-M05-FR","model_realization":"FR-R2-MINK-001","status":"OPERATIONALLY_DEGENERATE","c0_residual":"Delta_gamma=-2 exp(-Mr)/(3+exp(-Mr))","profiled_comparator":"single-scalar Yukawa alpha=1/3,m=M","profiled_residual":0}
   ],
   "active_model": {
-    "benchmark_id": "KMQGB-M05-FR",
-    "concrete_realization_id": "FR-R2-MINK-001",
-    "model_realization": "metric f(R)=R+R^2/(6M^2), M^2>0, weak-field Minkowski",
-    "role": "extra_scalar_modified_gravity_control",
+    "benchmark_id": "KMQGB-M06-BRANS-DICKE",
+    "concrete_realization_id": "BD-MASSLESS-OMEGA50000-MINK-001",
+    "model_realization": "massless Jordan-frame Brans-Dicke, V=0, omega_BD=50000, Minkowski weak-field",
+    "role": "extra_long_range_scalar_control",
     "terminal": false,
     "current_status": "ACTIVE",
-    "first_blocking_gate": "FR_BROADER_COMPARATOR_QUOTIENT",
-    "frozen_c0_observable": "gamma(r)=Psi/Phi=(3-exp(-Mr))/(3+exp(-Mr))",
-    "exact_C0_residual": "Delta_gamma(r)=-2 exp(-Mr)/(3+exp(-Mr))",
-    "calibration_result": "common G and source-mass normalization cancel exactly in gamma",
-    "representation_equivalence": "metric f(R) is dynamically equivalent to scalar-tensor/Brans-Dicke omega_BD=0 with mapped potential and matter coupling",
-    "preliminary_result": "robustly distinct from C0 for finite Mr in gamma, but not yet unique against broader scalar/Yukawa, scalar-tensor, C4/C5 and higher-curvature directions"
+    "first_blocking_gate": "BD_MULTI_CHANNEL_DISCRIMINATOR_FREEZE",
+    "frozen_static_observable": "gamma_BD=(omega_BD+1)/(omega_BD+2)=50001/50002",
+    "exact_C0_residual": "Delta_gamma=-1/50002",
+    "scalar_coupling": "alpha_0^2=1/(2 omega_BD+3)=1/100003",
+    "next_linked_channel": "scalar dipole radiation for unequal-sensitivity compact binaries",
+    "nonduplication_from_M05": "omega_BD=50000,V=0,massless long-range scalar versus f(R)-equivalent omega_BD=0 with massive potential"
   },
   "recovered_protocol_authority": {
     "q1_q7_and_base_residual_blob": "e431df35d929aa8b06b1b1369a2dc80352efe9e9",
@@ -88,11 +66,11 @@
     "comparator_preflight_commit": "9af20b657eb89114a954b55b75b59bb3cf284777"
   },
   "next_actions": [
-    "Compare frozen gamma(r) and radial-shape relation against a generic scalar/Yukawa nuisance",
-    "Instantiate M06 as a genuinely nonduplicate scalar-tensor model rather than the exact f(R)-equivalent omega_BD=0 rewrite",
-    "Separate physical degeneracy from mere frame/field-redefinition identity",
-    "Map the low-q R+R^2 response against C5 and higher-curvature EFT directions",
-    "Terminally classify M05 only after this broader quotient is explicit"
+    "Freeze exact Brans-Dicke scalar dipole-radiation normalization in terms of omega_BD and body sensitivities",
+    "Link the static gamma residual and radiative dipole channel to the same scalar coupling rather than independent nuisance amplitudes",
+    "Test whether that two-channel fingerprint remains degenerate with a broader scalar-tensor family",
+    "Terminally classify M06 before starting M07 Stelle quadratic gravity",
+    "Do not launch competing KMQGB heavy work while RQIR rank11 is active"
   ],
   "heavy_compute_policy": "do_not_compete_with_active_RQIR_shared_runner",
   "write_firewall": "KMQGB writes only to this repository; RQIR is read-only"
