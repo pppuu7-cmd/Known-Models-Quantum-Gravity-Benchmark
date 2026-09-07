@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "KMQGB-M04-STOCHASTIC",
+  "concrete_realization_id": "SG-MINK-CONFORMAL-EL-001",
+  "terminal": true,
+  "status": "EXACT_COMPARATOR_IDENTITY",
+  "role": "fluctuation_noise_kernel_control_C2",
+  "realization": {
+    "dimension": 4,
+    "metric": "classical stochastic perturbation about Minkowski",
+    "matter": "one free real quantized scalar",
+    "mass": 0,
+    "curvature_coupling_xi": "1/6",
+    "state": "Minkowski vacuum",
+    "Lambda_ren": 0,
+    "renormalization_condition": "<0|T_ab^R[eta]|0>=0",
+    "stochastic_source": "zero-mean Gaussian tensor source xi_ab with covariance equal to the stress-tensor noise kernel",
+    "domain": "linearized Einstein-Langevin; low curvature; scales much larger than Planck length"
+  },
+  "comparator": {
+    "class": "C2",
+    "name": "Stochastic gravity / noise-kernel baseline",
+    "relation": "exact_identity_in_matched_state_scheme_parameter_domain",
+    "quotient_residual": 0
+  },
+  "funnel": {
+    "F0": "PASS_SCOPED",
+    "F1": "PASS_SCOPED",
+    "F2": "PASS_SCOPED",
+    "F3": "STRONG_PASS_COMPARATOR",
+    "F4": "EXACT_COMPARATOR_IDENTITY_C2",
+    "F5": "N/A_AFTER_F4_IDENTITY",
+    "F6": "N/A_AFTER_F4_IDENTITY",
+    "F7": "N/A_AFTER_F4_IDENTITY"
+  },
+  "critical_interpretation": "C2 is stronger than mean semiclassical C1 because it includes stress-tensor noise and linked dissipative/retarded response, but the metric remains classical stochastic in the declared realization. Noise alone is not a quantum-gravity certificate.",
+  "missing_information": [],
+  "next_model": "KMQGB-M05-FR"
+}
