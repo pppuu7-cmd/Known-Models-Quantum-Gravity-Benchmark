@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "KMQGB-M02-GR-QG-EFT",
+  "model_index": 2,
+  "model_realization": "ANSATZ-PQG-EFT-001 v0.1 — perturbative quantum GR EFT reference",
+  "role": "eft_comparator_control",
+  "terminal": true,
+  "source_repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
+  "source_instantiation_commit": "8f5051b8f9041ba0164b7e734be246188e664e62",
+  "source_blobs": {
+    "MODEL.md": "33b922d209d78a23c1c8086c16a2db9d1dfce818",
+    "GATE_STATUS.yaml": "6958f8769aed9381c21a6bf7fa45ceecbfb97c01",
+    "ASSUMPTIONS_LEDGER.md": "1fc9b40d1f0ddb2c2db104489cf39340fa409ddb",
+    "DERIVATION_MAP.md": "263ae66f07c2c211dd39e1c2b66ab1726bf094c3"
+  },
+  "action": "Einstein-Hilbert + minimally coupled real scalar + covariant gauge fixing + ghosts + EFT higher-dimension operators",
+  "validity_regime": "weak-field asymptotically Minkowski perturbation theory, energies/momenta well below Planck scale, finite declared EFT order",
+  "state_space": "matter Fock space times gauge-fixed graviton Fock/BRST space; physical states in BRST cohomology / transverse positive-norm graviton sector",
+  "source_hierarchy": {
+    "J": "Tr[rho_m T_mn]",
+    "N": "centered symmetrized stress-tensor noise kernel",
+    "chi_R": "retarded stress-tensor commutator response",
+    "higher": "connected correlators from the same Schwinger-Keldysh/CTP generating functional"
+  },
+  "historical_gate_state": {
+    "QG-001": "PASS",
+    "QG-002": "PASS",
+    "QG-003": "PASS",
+    "QG-004": "NOT_TESTED",
+    "QG-005": "BLOCKED",
+    "QG-006": "NOT_TESTED",
+    "QG-007": "FAIL_REFERENCE_DEGENERACY_C5",
+    "QG-008": "BLOCKED_NO_INDEPENDENT_BETA",
+    "QG-009": "BLOCKED_NO_INDEPENDENT_BETA",
+    "QG-010": "BLOCKED_NO_INDEPENDENT_BETA"
+  },
+  "comparator": "C5 Perturbative quantum gravity / low-energy quantum GR",
+  "comparator_relation": "exact_identity_at_declared_theory_class_level",
+  "identity_authority": "RQIR MODEL.md explicitly states ANSATZ-PQG-EFT-001 == C5; DERIVATION_MAP D-008 marks comparator identity PROVED_BY_DEFINITION",
+  "residual_after_comparator_identity": 0,
+  "independent_beta_direction": false,
+  "consistency_failure": false,
+  "novelty_relative_to_C5": false,
+  "current_status": "EXACT_COMPARATOR_IDENTITY",
+  "status_note": "Terminal expected comparator-control result. Historical QG-007 FAIL means failure of novelty/promotion versus identical C5, not inconsistency of perturbative quantum GR EFT.",
+  "out_of_scope_or_unfinished_reference_validation": [
+    "complete relational/gauge-invariant detector-observable audit",
+    "explicit QG-004 perturbative positivity/unitarity repository audit",
+    "full QG-006 limit derivation set",
+    "fixed renormalization and smearing for numerical local stress-tensor composite observables"
+  ],
+  "next_benchmark": "KMQGB-M03-SEMICLASSICAL"
+}
