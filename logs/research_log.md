@@ -47,3 +47,50 @@
 - Terminal queue coverage: `2/9 = 22.22%`.
 - Current active target: M03 semiclassical control.
 - No heavy KMQGB job dispatched because external RQIR still reports shared-runner heavy rank10 work.
+
+## 2026-09-08 — KMQGB-003 — semiclassical/stochastic closure and first nontrivial modified-gravity target
+
+### M03 — semiclassical gravity closed
+
+- Froze `SCG-MINK-SCALAR-LR-001` to one massless (`m=0`) conformally coupled (`xi=1/6`) free real scalar in the Minkowski vacuum.
+- Froze `Lambda_ren=0` and renormalization condition `<0|T_ab^R[eta]|0>=0` while retaining finite curvature-squared coefficients `alpha(mu), beta(mu)` explicitly rather than hiding or zero-filling them.
+- Declared low-curvature, gauge-invariant linear response on scales much larger than the Planck length as the validity domain.
+- Anderson–Molina-París–Mottola's arbitrary-mass/arbitrary-curvature-coupling Minkowski analysis contains this parameter slice and supports scoped flat-space stability after unphysical Planck-scale runaway handling.
+- Hu–Verdaguer supplies the renormalized semiclassical equation and the exact mean-vs-stochastic distinction.
+- F0–F2: scoped pass in the declared domain.
+- F3: mean source `J=<T>` is present; mean-only closure remains insufficient for full QG promotion when an independent quantum/stochastic metric-noise/operator hierarchy is required.
+- F4: exact identity with C1 by comparator definition.
+- Terminal status: `EXACT_COMPARATOR_IDENTITY`; matched C1 quotient residual `0`.
+- Semantic guardrail: this is not a general failure of semiclassical gravity.
+
+### M04 — stochastic gravity instantiated and closed
+
+- Froze `SG-MINK-CONFORMAL-EL-001` using the same conformal-scalar Minkowski state but the Einstein-Langevin stochastic extension.
+- Added zero-mean classical stochastic tensor source `xi_ab` with covariance equal to the stress-tensor noise kernel `N_abcd=(1/2)<{t_ab,t_cd}>`.
+- Retained the CTP/influence-functional linkage of mean source, fluctuations/noise and dissipative/retarded response.
+- F3 is a strong comparator pass because `J`, `N` and response are derived from one open-system parent structure.
+- F4 is exact identity with C2 by comparator definition.
+- Terminal status: `EXACT_COMPARATOR_IDENTITY`; matched C2 quotient residual `0`.
+- Design lesson: classical stochastic metric noise and symmetrized two-point metric fluctuations alone are not sufficient evidence for a quantum gravitational mediator.
+
+### M05 — metric f(R) activated
+
+- Froze `FR-R2-MINK-001` with action `S=(M_Pl^2/2) int sqrt(-g)[R+R^2/(6M^2)] + S_m`, `M^2>0`.
+- Around Minkowski, `F(0)=1>0` and `f_RR=1/(3M^2)>0`; the weak-field spectrum contains the GR massless spin-2 mode plus one extra scalaron of mass `M`, with no extra massive spin-2 pole from the pure `R^2` correction.
+- F0–F2 are preliminarily scoped-pass in the declared Minkowski domain.
+- F3 is classical/partial: deterministic modified gravity does not provide an independent QG noise/operator hierarchy.
+- F4 is preliminarily distinct from C0 for traceful sources at finite `M`, but broader identifiability is open.
+- First blocker: `FR_QUOTIENT_OBSERVABLE_FREEZE` — derive one explicit scalar-trace observable, exact GR-subtracted residual and full nuisance/comparator quotient.
+
+### External RQIR state and compute firewall
+
+- External RQIR `main` observed at `6839864cc6a2fa66616696db6b9f78b7b8b019f2`, authoritative research Iteration 564, MODEL_READINESS 24%.
+- Rank10 run `34165534613` was directly checked and remains `in_progress`.
+- No KMQGB heavy job was dispatched to the shared runner.
+
+### Progress
+
+- Terminal queue coverage: `4/9 = 44.44%`.
+- M03 current-task completion: `100%`.
+- M04 current-task completion: `100%`.
+- New active task M05 operational completion estimate: `40%`.
