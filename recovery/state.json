@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 1,
+  "kmqgb_iteration": 2,
   "migration": {
     "status": "complete",
     "source_repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
@@ -21,33 +21,60 @@
     "access_mode": "read_only",
     "active_heavy_work": "rank10 reported running in CURRENT_QG_FRONT.md"
   },
-  "state_written_from_kmqgb_sha": "5d0c360620d0649d3a946e53e5155f5c1a19217c",
+  "state_written_from_kmqgb_sha": "58994f326e512ede848476cad573a4e9ef214e11",
+  "progress": {
+    "migration_percent": 100,
+    "terminal_queue_coverage_percent": 22.22,
+    "terminal_queue_fraction": "2/9",
+    "current_M03_task_percent_estimate": 35,
+    "percent_note": "terminal coverage is exact queue coverage; M03 task percent is an operational estimate, not a physics confidence probability"
+  },
   "queue": {
     "total": 9,
-    "terminal_completed": 0
+    "terminal_completed": 2,
+    "terminal_rollup": {
+      "EXACT_COMPARATOR_IDENTITY": 2,
+      "FAIL_RQIR_CONSISTENCY": 0,
+      "ROBUST_NONZERO_RESIDUAL": 0
+    }
   },
+  "closed_models": [
+    {
+      "benchmark_id": "RQIR7-M01-GR-EH-MINK",
+      "status": "EXACT_COMPARATOR_IDENTITY",
+      "comparator": "C0 Classical GR / Newtonian gravity",
+      "residual": 0
+    },
+    {
+      "benchmark_id": "KMQGB-M02-GR-QG-EFT",
+      "model_realization": "ANSATZ-PQG-EFT-001 v0.1",
+      "status": "EXACT_COMPARATOR_IDENTITY",
+      "comparator": "C5 Perturbative quantum gravity / low-energy quantum GR",
+      "residual": 0
+    }
+  ],
   "active_model": {
-    "benchmark_id": "RQIR7-M01-GR-EH-MINK",
-    "model_realization": "4D Einstein-Hilbert General Relativity, Lambda=0, weak-field Minkowski sector",
-    "role": "null_control",
+    "benchmark_id": "KMQGB-M03-SEMICLASSICAL",
+    "concrete_realization_id": "SCG-MINK-SCALAR-LR-001",
+    "model_realization": "renormalized semiclassical Einstein gravity with free scalar quantum matter and Minkowski linear-response control",
+    "role": "source_backreaction_control_C1",
     "terminal": false,
-    "current_status": "BLOCKED_PROTOCOL_MISMATCH",
-    "first_blocking_gate": "FROZEN_PROTOCOL_LITERAL_MAPPING",
-    "prospective_terminal_status_if_identity_verified": "EXACT_COMPARATOR_IDENTITY"
+    "current_status": "ACTIVE",
+    "first_blocking_gate": "SCG_REALIZATION_FREEZE"
   },
-  "legacy_source_progress_snapshot": {
-    "benchmark_readiness_percent": 10,
-    "current_model_check_percent": 40,
-    "note": "historical source checkpoint only; not silently promoted by migration"
+  "recovered_protocol_authority": {
+    "q1_q7_and_base_residual_blob": "e431df35d929aa8b06b1b1369a2dc80352efe9e9",
+    "comparator_registry_blob": "a2b45188710c885f979123f77fa7aad2273b9983",
+    "existing_model_funnel_blob": "2757e8fe1004b5c0caef51d6d9fee6f982ac81d4",
+    "comparator_preflight_commit": "9af20b657eb89114a954b55b75b59bb3cf284777"
   },
   "next_actions": [
-    "Recover literal frozen Q1-Q7 definitions from external RQIR repository authority",
-    "Recover literal frozen comparator basis/span and provenance",
-    "Recover literal quotient/residual definition and acceptance rule",
-    "Recover exact Source/Ward/contact+K2 target contract relevant to GR mapping",
-    "Pin recovered objects by exact path and SHA in protocol/FROZEN_RQIR_PROTOCOL_REFERENCE.md",
-    "Re-evaluate and terminally classify GR null control only after literal mapping",
-    "Start concrete Donoghue/Burgess low-energy GR+QG EFT benchmark after GR closure"
+    "Freeze exact scalar mass and curvature-coupling choice for SCG-MINK-SCALAR-LR-001",
+    "Freeze Minkowski-vacuum state and renormalized counterterm convention/domain",
+    "Map M03 literally to C1, F0-F7 and Q1-Q7",
+    "Terminally classify M03 without confusing mean-only hierarchy limitation with consistency failure",
+    "Start concrete Einstein-Langevin/noise-kernel M04 after M03 closure",
+    "Continue importing prior RQIR model-control work only as provenance-tagged evidence"
   ],
   "heavy_compute_policy": "do_not_compete_with_active_RQIR_shared_runner",
   "write_firewall": "KMQGB writes only to this repository; RQIR is read-only"
