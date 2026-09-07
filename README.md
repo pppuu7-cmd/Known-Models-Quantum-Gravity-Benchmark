@@ -14,21 +14,32 @@ Recovery entrypoint: `recovery/RESTORE_FROM_NEW_CHAT.md`.
 |---|---|---|---|
 | 1 | 4D Einstein–Hilbert GR, Lambda=0, weak-field Minkowski sector | null control C0 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
 | 2 | `ANSATZ-PQG-EFT-001` v0.1, perturbative low-energy quantum GR EFT | EFT/comparator control C5 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 3 | SCG-MINK-SCALAR-LR-001, semiclassical Einstein gravity with renormalized scalar source / Minkowski linear response | source/backreaction control C1 | **active audit** |
-| 4 | Stochastic gravity, Einstein–Langevin/noise-kernel realization | fluctuation control C2 | queued |
-| 5 | concrete f(R) gravity | extra-DOF control | queued |
-| 6 | concrete Brans–Dicke/scalar–tensor | extra-scalar control | queued |
+| 3 | `SCG-MINK-SCALAR-LR-001`, renormalized semiclassical Einstein gravity with conformal scalar / Minkowski linear response | source/backreaction control C1 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
+| 4 | `SG-MINK-CONFORMAL-EL-001`, Einstein–Langevin/noise-kernel stochastic gravity | fluctuation control C2 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
+| 5 | `FR-R2-MINK-001`, metric `R+R^2/(6M^2)` gravity | extra-DOF control | **active audit** |
+| 6 | concrete Brans-Dicke/scalar–tensor | extra-scalar control | queued |
 | 7 | Stelle quadratic gravity | pathological-pole control | queued |
 | 8 | concrete higher-curvature EFT/action | EFT positive control | queued |
 | 9 | concrete string low-energy/scattering realization | QG/EFT control | queued |
 
-Terminal queue coverage: **2/9 = 22.22%**. This is coverage, not a claim that 22.22% of quantum-gravity theory is solved.
+Terminal queue coverage: **4/9 = 44.44%**. This is exact queue coverage, not a probability that quantum gravity is 44.44% solved.
 
 ## Status vocabulary
 
 `PASS_RQIR_GATE`, `FAIL_RQIR_CONSISTENCY`, `EXACT_COMPARATOR_IDENTITY`, `OPERATIONALLY_DEGENERATE`, `ROBUST_NONZERO_RESIDUAL`, `BLOCKED_MISSING_REQUIRED_OBJECT`, `BLOCKED_PROTOCOL_MISMATCH`, `OPERATIONAL_FAILURE`.
 
 `BLOCKED` is never scientific invalidation. Exact comparator identity is a retained control/negative result, not a consistency failure.
+
+## Current lesson from controls M01–M04
+
+The first four controls validate the benchmark semantics rather than falsify their source theories:
+
+- C0 correctly recognizes ordinary GR as the null classical baseline;
+- C5 correctly recognizes perturbative quantum GR EFT as the standard low-energy quantum reference;
+- C1 correctly recognizes mean semiclassical backreaction while retaining its mean-only hierarchy limitation;
+- C2 correctly recognizes stochastic gravity as a stronger classical-stochastic fluctuation/noise comparator.
+
+Therefore noise or symmetrized metric fluctuations alone are not sufficient evidence for a quantum gravitational mediator. A stronger discriminator must survive C2 and the rest of the comparator/nuisance quotient.
 
 ## Mandatory output table
 
