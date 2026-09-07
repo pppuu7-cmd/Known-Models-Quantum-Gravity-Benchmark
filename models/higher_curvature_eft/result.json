@@ -1,0 +1,15 @@
+{
+  "benchmark_id": "KMQGB-M08-HIGHER-CURVATURE",
+  "concrete_realization_id": "GR-EFT-RIEMANN3-MINK-001",
+  "terminal": true,
+  "current_status": "EXACT_COMPARATOR_IDENTITY",
+  "comparator": "C5 perturbative quantum gravity / low-energy quantum GR EFT",
+  "scope": "weak-field Minkowski, Q << Lambda, curvature-cubed operator treated perturbatively to fixed EFT order",
+  "c0_relation": "generically distinct if d_3 != 0 in an observable sensitive to the operator",
+  "c5_relation": "concrete Wilson-coefficient slice of the same low-energy gravity EFT class",
+  "profiled_c5_residual": 0,
+  "extra_physical_poles_in_eft_domain": false,
+  "consistency_failure": false,
+  "boundary_from_M07": "do not interpret high-scale roots of a truncated EFT equation as the physical ghost spectrum of a fundamental resummed theory",
+  "missing_information": []
+}
