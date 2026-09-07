@@ -2,67 +2,95 @@
 
 Benchmark ID: RQIR7-M01-GR-EH-MINK
 Role: null control
-State: ACTIVE / NOT YET TERMINAL
-Scope: four-dimensional Einstein–Hilbert gravity, Lambda=0, weak-field expansion about Minkowski spacetime, ordinary conserved matter stress tensor.
+State: TERMINAL
+Final status: `EXACT_COMPARATOR_IDENTITY`
+Scope: four-dimensional classical Einstein–Hilbert gravity, Lambda=0, weak-field expansion about Minkowski spacetime, ordinary conserved matter stress tensor.
 
 ## Concrete realization
-
-Action:
 
 \[
 S[g,\psi]=\frac{M_{\rm Pl}^2}{2}\int d^4x\sqrt{-g}\,R + S_m[g,\psi].
 \]
 
-This audit does not claim to cover arbitrary cosmological constant, nontrivial global topology, matter anomalies, quantum GR loops, or every nonperturbative GR sector. Those require separate realizations if relevant to frozen RQIR observables.
+This audit does not claim to cover arbitrary cosmological constant, nontrivial global topology, matter anomalies, quantum GR loops, low-energy QG EFT corrections, or every nonperturbative GR sector. Those require separate realizations.
+
+## Literal RQIR protocol authority recovered
+
+1. `README.md`, blob `e431df35d929aa8b06b1b1369a2dc80352efe9e9`: defines Q1–Q7, the operational fingerprint hierarchy, and the base residual `Delta_A = O_A^obs - O_A^baseline` with explicit baseline discipline.
+2. `candidate_gravity/BASELINE_COMPARATORS.md`, blob `a2b45188710c885f979123f77fa7aad2273b9983`: defines `C0 — Classical GR / Newtonian gravity` as the controlled classical baseline appropriate to the experimental regime.
+3. `candidate_gravity/landscape/RQIR_FUNNEL_AUDIT_ITERATION137.md`, blob `2757e8fe1004b5c0caef51d6d9fee6f982ac81d4`: defines F0–F7 and distinguishes consistency failure from comparator/novelty identity and operational blocking.
+4. Iteration-504 comparator preflight, commit `9af20b657eb89114a954b55b75b59bb3cf284777`: missing upstream comparator target is BLOCKED rather than zero/FAIL; exact comparator identity, when established, is a distinct scientific category.
+
+See `protocol/FROZEN_RQIR_PROTOCOL_REFERENCE.md` for the full ledger.
 
 ## Evidence table
 
 | Field | Evidence-level result | RQIR interpretation | State |
 |---|---|---|---|
-| Action/equations | Einstein–Hilbert action; Einstein field equations | intended classical GR baseline candidate | supported |
-| Validity regime | classical GR; here restricted to weak-field Minkowski sector | matches first null-control realization | frozen scope |
-| Physical DOF | two physical radiative tensor polarizations/helicities after gauge constraints in 4D linearized GR | no extra scalar/vector physical pole expected | supported |
-| Propagator/poles | gauge-fixed linearized theory has the massless graviton pole; gauge-dependent components are not extra physical modes | positive control for recognizing gauge artifacts vs physical poles | supported; exact RQIR pole convention still to map |
-| Ghost/tachyon | no additional higher-derivative physical ghost/tachyon is introduced by Einstein–Hilbert action with conventional sign | null-control expectation | supported within stated perturbative scope |
-| Gauge/Ward | diffeomorphism invariance; Bianchi identity enforces compatibility with covariantly conserved source | should satisfy frozen source/Ward consistency if conventions align | supported; literal gate mapping open |
-| Causal/retarded structure | harmonic/generalized-harmonic formulations cast Einstein equations into a hyperbolic wave system; linearized gravitational perturbations admit retarded Green-function solutions | causal response object exists | supported |
-| Source rule | metric couples to matter stress-energy; linearized field equation sourced by conserved stress-energy | candidate match to GR source baseline | supported |
-| Nonlinear vertices | expansion of Einstein–Hilbert action generates the standard infinite hierarchy of graviton self-interaction vertices | required objects exist in principle/order by order | supported; exact frozen vertex order open |
-| GR/classical limit | realization is GR itself | identity limit | exact |
-| Q1–Q7 fingerprint | literal Q1–Q7 definitions not yet pinned from frozen repo authority | must not infer from memory | OPEN BLOCKER TO FINALIZATION |
-| Frozen observable map | exact frozen mapping not yet pinned | cannot declare complete funnel | OPEN |
-| Comparator span | expected to contain classical GR baseline, but literal basis/path/hash not yet recovered | exact identity remains provisional | OPEN |
-| Quotient residual | expected zero if literal comparator contains this exact realization in the tested domain | not yet a measured/frozen result | PROVISIONAL ZERO ONLY |
+| Action/equations | Einstein–Hilbert action; Einstein field equations | concrete declared dynamics | PASS F0 in declared domain |
+| Validity regime | classical weak-field GR about Minkowski | exactly overlaps the declared C0 weak-field classical control domain | frozen scope |
+| Physical DOF | two physical radiative tensor polarizations/helicities after gauge constraints in 4D linearized GR | no extra physical scalar/vector pole | supported |
+| Propagator/poles | gauge-fixed linearized theory has the massless graviton pole; gauge-dependent pieces are not extra physical modes | null-control pole structure | supported |
+| Ghost/tachyon | no additional higher-derivative physical ghost/tachyon introduced by Einstein–Hilbert action with conventional sign | no pathology trigger from extra EH poles | supported within scope |
+| Gauge/Ward | diffeomorphism invariance; contracted Bianchi identity is compatible with conserved source | F2 structural conservation/gauge requirement | supported |
+| Causal/retarded structure | harmonic/generalized-harmonic formulations are hyperbolic; linearized perturbations admit retarded Green-function solutions | causal response object exists | supported |
+| Source rule | metric couples to stress-energy; linearized equation is sourced by conserved stress-energy | classical GR source baseline | supported |
+| Nonlinear vertices | Einstein–Hilbert expansion generates the standard graviton self-interaction hierarchy | concrete parent dynamics exists | supported |
+| GR/classical limit | realization is GR itself | identity | exact |
+| Q1–Q7 atlas | literal definitions recovered from RQIR README | applicable classical pieces are evaluated as C0 baseline; Q7 quantum-EFT correction is outside this realization | mapped |
+| Comparator span | literal C0 is Classical GR / Newtonian gravity | this realization is the comparator itself in the declared domain | EXACT IDENTITY |
+| Base residual | `Delta_A = O_A^model - O_A^C0` | identically zero wherever this exact C0 realization is the declared baseline | EXACT ZERO |
+| F4 novelty | no model-specific direction relative to C0 | retained null-control degeneracy, not inconsistency | TERMINAL |
 
-## Causal evidence
+## Q1–Q7 fingerprint for this control
 
-Living Reviews sources document that harmonic gauge reduces Einstein's equations to a wave/hyperbolic system and that linearized gravitational equations can be solved with retarded Green functions. These facts establish the existence of an appropriate causal-response structure for this realization; they do not by themselves prove a particular RQIR comparator identity.
+The purpose of this row is not to claim that classical GR predicts every quantum-interface observable. It records the relation to the RQIR atlas:
 
-## Source / gauge evidence
+- Q1 quantum clocks/proper time: classical spacetime/proper-time part is C0 baseline; quantum-clock state dynamics belongs to the declared matter/QFT baseline layered on top.
+- Q2 superposed sources: pure classical GR does not by itself specify a quantum source rule; only the classical controlled response sector is part of this control.
+- Q3 backreaction/source rule: classical Einstein response to the declared conserved stress-energy source is the C0 rule tested here.
+- Q4 gravity-mediated quantum information: no independent claim of a quantum gravitational channel is made by this classical control.
+- Q5 geometry fluctuations: no fundamental quantum metric-noise sector is part of this realization.
+- Q6 causal/process structure: ordinary classical Lorentzian causal structure is the C0 baseline.
+- Q7 low-energy quantum-gravity EFT: outside the present classical realization and benchmarked separately as `KMQGB-M02-GR-QG-EFT`.
 
-Diffeomorphism invariance and the contracted Bianchi identity supply the structural conservation identity associated with the Einstein equation. The exact frozen RQIR Ward/source normalization and contact-term convention must still be read from repository authority before this row can be marked gate-complete.
+Therefore this model is not marked `PASS_RQIR_GATE` as a quantum-gravity candidate. It is terminal because it succeeds as the intended **null comparator control**.
 
-## Comparator decision rule for this control
+## Exact comparator identity proof
 
-If and only if the literal frozen comparator contains the same Einstein–Hilbert weak-field baseline in the tested domain and the quotient definition removes it exactly, finalize:
+The literal comparator registry defines C0 as Classical GR / Newtonian gravity in the controlled classical regime. This benchmark realization is classical Einstein–Hilbert GR in one such controlled regime.
 
-- comparator relation: exact identity;
-- quotient residual: zero by frozen construction;
-- final status: `EXACT_COMPARATOR_IDENTITY`;
-- benchmark rollup: blue/null-control degeneracy, not FAIL.
+For every observable in the overlap domain whose baseline is this same C0 realization,
 
-If the required frozen protocol cannot be mapped to this realization, use the applicable BLOCKED status rather than guessing. If a nonzero residual appears, first audit protocol/domain/comparator mismatch before any scientific FAIL claim.
+\[
+O_A^{\rm model}=O_A^{C0}.
+\]
 
-## Current first blocker
+The RQIR residual definition then gives
 
-`FROZEN_PROTOCOL_LITERAL_MAPPING`: exact repository authority for Q1–Q7, comparator span, quotient definition, and acceptance conditions has not yet been pinned into `protocol/FROZEN_RQIR_PROTOCOL_REFERENCE.md`.
+\[
+\Delta_A=O_A^{\rm model}-O_A^{C0}=0.
+\]
 
-This blocker prevents terminal status but is NOT evidence against GR.
+No numerical tolerance is needed: this is an analytic identity by comparator construction. Any later calibration/comparator quotient cannot turn exact equality with the comparator into a distinctive nonzero model direction; the equivalence class is the comparator/null class.
 
-## Authoritative scientific sources currently used
+## Final classification
+
+- comparator relation: exact identity with C0 in declared domain;
+- quotient/null residual: zero class by comparator construction;
+- consistency failure: no;
+- novelty/model-distinction claim: no;
+- terminal status: `EXACT_COMPARATOR_IDENTITY`;
+- benchmark interpretation: expected successful null control.
+
+This result must never be paraphrased as “GR is false” or “GR failed RQIR.” It says the opposite methodological thing: RQIR correctly recognizes its declared classical-GR baseline as non-distinct from itself.
+
+## Authoritative scientific sources
 
 1. O. Sarbach and M. Tiglio, *Continuum and Discrete Initial-Boundary Value Problems and Einstein's Field Equations*, Living Reviews in Relativity 15, 9 (2012), harmonic formulation / well-posed hyperbolic reductions: https://link.springer.com/article/10.12942/lrr-2012-9
 2. E. Poisson, *The Motion of Point Particles in Curved Spacetime*, Living Reviews in Relativity 7, 6 (2004), linearized gravitational equations and retarded gravitational Green functions: https://link.springer.com/article/10.12942/lrr-2004-6
 3. C. P. Burgess, *Quantum Gravity in Everyday Life: General Relativity as an Effective Field Theory*, Living Reviews in Relativity 7, 5 (2004), Einstein gravity as the low-energy gravitational EFT baseline: https://link.springer.com/article/10.12942/lrr-2004-5
 
-Additional primary/reference sources should be attached when exact frozen propagator/vertex/Q1–Q7 conventions are recovered.
+## Next benchmark
+
+Start `KMQGB-M02-GR-QG-EFT`: one concrete low-energy quantum-GR EFT realization, tested separately against C5 rather than conflated with classical C0 GR.
