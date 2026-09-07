@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 2,
+  "kmqgb_iteration": 3,
   "migration": {
     "status": "complete",
     "source_repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
@@ -15,25 +15,25 @@
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "main_sha_observed": "5fed1f52c013e9e469be73596e2c80932289c725",
-    "authoritative_research_iteration": 563,
+    "main_sha_observed": "6839864cc6a2fa66616696db6b9f78b7b8b019f2",
+    "authoritative_research_iteration": 564,
     "model_readiness_percent": 24,
     "access_mode": "read_only",
-    "active_heavy_work": "rank10 reported running in CURRENT_QG_FRONT.md"
+    "active_heavy_work": "rank10 run 34165534613 verified in_progress"
   },
-  "state_written_from_kmqgb_sha": "58994f326e512ede848476cad573a4e9ef214e11",
+  "state_written_from_kmqgb_sha": "ef40a2f49fcda3ee01b5c51f79e68093f819ad80",
   "progress": {
     "migration_percent": 100,
-    "terminal_queue_coverage_percent": 22.22,
-    "terminal_queue_fraction": "2/9",
-    "current_M03_task_percent_estimate": 35,
-    "percent_note": "terminal coverage is exact queue coverage; M03 task percent is an operational estimate, not a physics confidence probability"
+    "terminal_queue_coverage_percent": 44.44,
+    "terminal_queue_fraction": "4/9",
+    "current_M05_task_percent_estimate": 40,
+    "percent_note": "terminal coverage is exact queue coverage; M05 task percent is an operational completion estimate for its current audit, not a physics confidence probability"
   },
   "queue": {
     "total": 9,
-    "terminal_completed": 2,
+    "terminal_completed": 4,
     "terminal_rollup": {
-      "EXACT_COMPARATOR_IDENTITY": 2,
+      "EXACT_COMPARATOR_IDENTITY": 4,
       "FAIL_RQIR_CONSISTENCY": 0,
       "ROBUST_NONZERO_RESIDUAL": 0
     }
@@ -51,16 +51,31 @@
       "status": "EXACT_COMPARATOR_IDENTITY",
       "comparator": "C5 Perturbative quantum gravity / low-energy quantum GR",
       "residual": 0
+    },
+    {
+      "benchmark_id": "KMQGB-M03-SEMICLASSICAL",
+      "model_realization": "SCG-MINK-SCALAR-LR-001",
+      "status": "EXACT_COMPARATOR_IDENTITY",
+      "comparator": "C1 Semiclassical gravity",
+      "residual": 0
+    },
+    {
+      "benchmark_id": "KMQGB-M04-STOCHASTIC",
+      "model_realization": "SG-MINK-CONFORMAL-EL-001",
+      "status": "EXACT_COMPARATOR_IDENTITY",
+      "comparator": "C2 Stochastic gravity / noise-kernel baseline",
+      "residual": 0
     }
   ],
   "active_model": {
-    "benchmark_id": "KMQGB-M03-SEMICLASSICAL",
-    "concrete_realization_id": "SCG-MINK-SCALAR-LR-001",
-    "model_realization": "renormalized semiclassical Einstein gravity with free scalar quantum matter and Minkowski linear-response control",
-    "role": "source_backreaction_control_C1",
+    "benchmark_id": "KMQGB-M05-FR",
+    "concrete_realization_id": "FR-R2-MINK-001",
+    "model_realization": "metric f(R)=R+R^2/(6M^2), M^2>0, weak-field Minkowski",
+    "role": "extra_scalar_modified_gravity_control",
     "terminal": false,
     "current_status": "ACTIVE",
-    "first_blocking_gate": "SCG_REALIZATION_FREEZE"
+    "first_blocking_gate": "FR_QUOTIENT_OBSERVABLE_FREEZE",
+    "preliminary_result": "finite-M scalaron is distinct from pure C0 GR for traceful sources, but wider comparator/nuisance identifiability remains open"
   },
   "recovered_protocol_authority": {
     "q1_q7_and_base_residual_blob": "e431df35d929aa8b06b1b1369a2dc80352efe9e9",
@@ -69,12 +84,12 @@
     "comparator_preflight_commit": "9af20b657eb89114a954b55b75b59bb3cf284777"
   },
   "next_actions": [
-    "Freeze exact scalar mass and curvature-coupling choice for SCG-MINK-SCALAR-LR-001",
-    "Freeze Minkowski-vacuum state and renormalized counterterm convention/domain",
-    "Map M03 literally to C1, F0-F7 and Q1-Q7",
-    "Terminally classify M03 without confusing mean-only hierarchy limitation with consistency failure",
-    "Start concrete Einstein-Langevin/noise-kernel M04 after M03 closure",
-    "Continue importing prior RQIR model-control work only as provenance-tagged evidence"
+    "Freeze an explicit weak-field scalar-trace source-to-detector observable for FR-R2-MINK-001",
+    "Derive its finite-M response and exact C0-subtracted residual",
+    "Profile scalaron mass M plus source/calibration amplitude freedom",
+    "Test overlap with applicable C4/C5 and higher-curvature nuisance directions",
+    "Terminally classify M05 only after the comparator/calibration quotient is explicit",
+    "Then instantiate M06 Brans-Dicke/scalar-tensor as a separate comparator rather than conflating it with metric f(R)"
   ],
   "heavy_compute_policy": "do_not_compete_with_active_RQIR_shared_runner",
   "write_firewall": "KMQGB writes only to this repository; RQIR is read-only"
