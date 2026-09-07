@@ -2,45 +2,61 @@
 
 Purpose: audit concrete gravity and quantum-gravity realizations through the same frozen RQIR funnel used for Candidate Gravity, while keeping benchmark work physically separated from the main RQIR development repository.
 
-Repository: `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`
-Default branch: `main`
-Source migration: `pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction`, branch `rqir7-known-models-benchmark`, source HEAD `782df9af3af1ca55ca4f9bf143e2723a7a8f18bc`.
+Repository: `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
+Default branch: `main`  
 Recovery entrypoint: `recovery/RESTORE_FROM_NEW_CHAT.md`.
 
-## First queue
+## First queue — terminally classified
 
-| # | Concrete target | Control role | State |
+| # | Concrete target | Control role | Terminal state |
 |---|---|---|---|
-| 1 | 4D Einstein–Hilbert GR, Lambda=0, weak-field Minkowski | null control C0 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 2 | `ANSATZ-PQG-EFT-001` v0.1, perturbative low-energy quantum GR EFT | C5 EFT control | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 3 | `SCG-MINK-SCALAR-LR-001` semiclassical Einstein gravity | C1 mean-backreaction control | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 4 | `SG-MINK-CONFORMAL-EL-001` Einstein–Langevin stochastic gravity | C2 fluctuation control | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 5 | `FR-R2-MINK-001`, metric `R+R^2/(6M^2)` | extra-scalar modified gravity | **CLOSED — OPERATIONALLY_DEGENERATE** |
-| 6 | `BD-MASSLESS-OMEGA200000-MINK-001`, massless Brans–Dicke | long-range scalar control | **CLOSED — OPERATIONALLY_DEGENERATE** |
-| 7 | `STELLE-MINK-STANDARD-FEYNMAN-001`, standard fundamental Stelle quadratic gravity | pathological-pole control | **CLOSED — FAIL_RQIR_CONSISTENCY** |
-| 8 | `GR-EFT-RIEMANN3-MINK-001`, perturbative higher-curvature EFT | EFT boundary/positive control | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
-| 9 | `TYPEII-T6-GRAV4-TREE-001` provisional, type-II string four-graviton scattering with intended 4D projection | string/QG scattering control | **active audit** |
+| 1 | 4D Einstein–Hilbert GR, weak-field Minkowski | C0 null control | **EXACT_COMPARATOR_IDENTITY** |
+| 2 | `ANSATZ-PQG-EFT-001` perturbative low-energy QG EFT | C5 control | **EXACT_COMPARATOR_IDENTITY** |
+| 3 | `SCG-MINK-SCALAR-LR-001` semiclassical Einstein gravity | C1 mean control | **EXACT_COMPARATOR_IDENTITY** |
+| 4 | `SG-MINK-CONFORMAL-EL-001` stochastic Einstein–Langevin gravity | C2 fluctuation control | **EXACT_COMPARATOR_IDENTITY** |
+| 5 | `FR-R2-MINK-001` metric `R+R^2/(6M^2)` | extra scalar | **OPERATIONALLY_DEGENERATE** |
+| 6 | `BD-MASSLESS-OMEGA200000-MINK-001` Brans–Dicke | long-range scalar | **OPERATIONALLY_DEGENERATE** |
+| 7 | `STELLE-MINK-STANDARD-FEYNMAN-001` standard fundamental Stelle gravity | pathological spin-2 pole | **FAIL_RQIR_CONSISTENCY** |
+| 8 | `GR-EFT-RIEMANN3-MINK-001` perturbative higher-curvature EFT | EFT positive/boundary control | **EXACT_COMPARATOR_IDENTITY** |
+| 9 | `TYPEII-T6-GRAV4-TREE-001` type-II tree four-graviton string amplitude | UV/string scattering control | **BLOCKED_PROTOCOL_MISMATCH** |
 
-Terminal queue coverage: **8/9 = 88.89%**. This is exact queue coverage, not a probability that quantum gravity is 88.89% solved.
+**First-queue terminal coverage: 9/9 = 100%.**
+
+This 100% means only that every member of the frozen first queue has a terminal classification under the current benchmark protocol. It does **not** mean quantum gravity is solved, that every known school has been exhausted, or that the Candidate Gravity model is complete.
+
+## First-queue rollup
+
+- `EXACT_COMPARATOR_IDENTITY`: 5
+- `OPERATIONALLY_DEGENERATE`: 2
+- `FAIL_RQIR_CONSISTENCY`: 1
+- `BLOCKED_PROTOCOL_MISMATCH`: 1
+- `ROBUST_NONZERO_RESIDUAL`: 0
+
+## Main scientific lessons
+
+1. **The funnel does not automatically reject known theories.** GR, semiclassical gravity, stochastic gravity and standard low-energy QG EFT are recognized as their own comparator/control classes.
+2. **Different from GR is not the same as uniquely identified.** `R+R^2` has a real nonzero GR residual in the frozen weak-field slip observable, but a broader one-scalar Yukawa family reproduces the whole curve exactly.
+3. **Even linked multi-channel signatures can identify only a parent class.** Brans–Dicke links the weak-field PPN shift and scalar dipole radiation, but the exact BD point is nested in general massless scalar-tensor gravity.
+4. **M07 is the first genuine consistency failure.** In standard fundamental Stelle quadratic gravity the UV-improving massive spin-2 pole has the opposite residue and fails the frozen positivity/unitarity gate under the standard physical-state interpretation.
+5. **That failure must not be overgeneralized to EFT.** A higher-curvature Wilson operator treated perturbatively below a cutoff does not inherit the M07 verdict merely because a resummed truncated equation has extra formal roots. M08 is a C5 EFT slice, not a new fundamental ghost spectrum.
+6. **String theory exposes a comparator-domain boundary.** In the sub-string-threshold domain its analytic corrections are ordinary gravitational EFT Wilson data and hence not uniquely string-identifying versus C5. At string thresholds the full Virasoro–Shapiro pole tower becomes relevant, but C5 is no longer a valid high-energy comparator. The current protocol lacks a frozen UV-completion comparator class, so M09 is blocked rather than falsely promoted or rejected.
 
 ## Status vocabulary
 
 `PASS_RQIR_GATE`, `FAIL_RQIR_CONSISTENCY`, `EXACT_COMPARATOR_IDENTITY`, `OPERATIONALLY_DEGENERATE`, `ROBUST_NONZERO_RESIDUAL`, `BLOCKED_MISSING_REQUIRED_OBJECT`, `BLOCKED_PROTOCOL_MISMATCH`, `OPERATIONAL_FAILURE`.
 
-`BLOCKED` is never scientific invalidation. `EXACT_COMPARATOR_IDENTITY` is a control/non-novelty result. `OPERATIONALLY_DEGENERATE` means a frozen observable/model-identification residual is exactly absorbed by an allowed broader comparator even though the theories need not be globally equivalent. `FAIL_RQIR_CONSISTENCY` is reserved for a mandatory physical consistency gate such as the standard massive spin-2 ghost in M07.
+`BLOCKED` is not scientific invalidation. `EXACT_COMPARATOR_IDENTITY` is a control/non-novelty result. `OPERATIONALLY_DEGENERATE` is an observable/model-identification limitation. `FAIL_RQIR_CONSISTENCY` is reserved for a mandatory consistency failure.
 
-## Current lessons
+## Second wave
 
-1. GR, semiclassical gravity, stochastic gravity and perturbative QG EFT are correctly recognized as their own comparator/control classes rather than falsely rejected.
-2. A nonzero deviation from GR is not enough for theory identification: M05 `R+R^2` is exactly absorbed in its frozen `gamma(r)` observable by a broader one-scalar Yukawa family.
-3. A linked multi-channel signal still may not identify a nested submodel: M06 Brans–Dicke has a nonzero static PPN shift and linked scalar dipole channel, but the general massless scalar-tensor parent family contains the exact BD point.
-4. M07 is the first true consistency failure: standard fundamental Stelle quadratic gravity retains the UV-improving opposite-residue massive spin-2 pole, which fails the frozen positivity/unitarity gate under the standard physical-state interpretation.
-5. M08 prevents overgeneralization of M07: a higher-curvature term used as a perturbative EFT Wilson insertion below a cutoff is not the same object as a resummed fundamental higher-derivative theory. The concrete `Riemann^3` EFT slice belongs to C5.
-6. M09 must compare string theory only in a common validity domain: finite-order low-energy string corrections may be absorbed by C5 Wilson coefficients, whereas genuinely string-specific massive pole structure appears when the string threshold is resolved, where a finite low-energy C5 truncation is no longer the proper comparator.
+The first 9-model denominator is frozen historically and will not be retroactively changed. A separate second-wave queue will be frozen before its own percentage is reported. Priority candidates currently retained are:
 
-## Mandatory output table
-
-Every concrete realization must ultimately populate: exact realization/paper; action/equations; regime; DOF; GR limit; poles/cuts; ghosts/tachyons; gauge/Ward; causal/retarded structure; source rule; nonlinear vertices; Q1–Q7 fingerprint; frozen-observable mapping; comparator span; quotient residual; degeneracies; missing objects; first blocking/failing gate; final status.
+- a concrete ghost-free nonlocal/form-factor gravity model;
+- a concrete asymptotic-safety trajectory/truncation with a Lorentzian observable kernel;
+- classical-channel / measurement-feedback gravity;
+- a modern postquantum classical-gravity realization;
+- a genuine UV comparator for the M09 string-threshold branch;
+- additional loop/canonical/discrete QG programs only after a concrete observable realization can be frozen.
 
 ## Repository firewall
 
