@@ -3,154 +3,99 @@
 ## 2026-09-08 — KMQGB-001 — standalone migration and authority isolation
 
 - Created standalone benchmark authority in `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`.
-- Identified the exact source as RQIR branch `rqir7-known-models-benchmark`, source HEAD `782df9af3af1ca55ca4f9bf143e2723a7a8f18bc`, base `02ad31e89f1df0d5515779e6b7526e8eb5505667`.
-- Migrated all seven benchmark artifacts from `known_models_benchmark/` into root-level standalone paths.
-- Rewrote recovery plumbing so future KMQGB work cannot accidentally write benchmark state into the main RQIR repository.
-- Preserved RQIR source branch and `main` unchanged.
-- Observed external RQIR authority at SHA `5fed1f52c013e9e469be73596e2c80932289c725`, authoritative research Iteration 563, MODEL_READINESS 24%, with rank10 heavy computation active.
-- KMQGB heavy-compute policy therefore remains lightweight/read-only with respect to the shared runner until RQIR heavy work is no longer active or a separate runner is explicitly available.
-- Current benchmark realization remained GR Einstein–Hilbert, Lambda=0, weak-field Minkowski.
-- Initial scientific blocker was literal recovery of frozen Q1–Q7, comparator span, quotient/residual rule, and source/Ward/contact/K2 target contract.
+- Identified exact source RQIR branch `rqir7-known-models-benchmark`; migrated seven benchmark artifacts while preserving source RQIR unchanged.
+- Established write firewall: KMQGB writes only to standalone repo; RQIR is read-only external authority.
+- External Candidate Gravity readiness observed at 24%.
 
 ## 2026-09-08 — KMQGB-002 — protocol recovery, two terminal controls, semiclassical start
 
-### Literal protocol recovery
+- Recovered Q1–Q7, comparator registry C0–C6, and F0–F7 funnel authority from RQIR.
+- M01 GR weak-field null control closed `EXACT_COMPARATOR_IDENTITY` with C0; residual 0.
+- M02 perturbative quantum GR EFT closed `EXACT_COMPARATOR_IDENTITY` with C5; residual 0.
+- Activated M03 semiclassical gravity.
+- Terminal coverage reached 2/9 = 22.22%.
 
-- Recovered Q1–Q7 and base residual authority from external RQIR `README.md`, blob `e431df35d929aa8b06b1b1369a2dc80352efe9e9`.
-- Recovered comparator registry C0–C6 from `candidate_gravity/BASELINE_COMPARATORS.md`, blob `a2b45188710c885f979123f77fa7aad2273b9983`, introduction commit `fa841b0f5c4dc9a3f17af52f0ec5477c00b1502a`.
-- Recovered F0–F7 existing-model funnel semantics from `candidate_gravity/landscape/RQIR_FUNNEL_AUDIT_ITERATION137.md`, blob `2757e8fe1004b5c0caef51d6d9fee6f982ac81d4`.
-- Recovered the fail-closed fixed-comparator preflight semantics from Iteration 504 commit `9af20b657eb89114a954b55b75b59bb3cf284777` and the current RQIR front.
+## 2026-09-08 — KMQGB-003 — semiclassical/stochastic closure and f(R) activation
 
-### M01 — GR null control
-
-- The declared classical Einstein–Hilbert weak-field realization is literally the C0 Classical GR comparator in its overlap domain.
-- By the RQIR residual definition `Delta_A = O_A^model - O_A^baseline`, exact C0 identity gives analytic zero residual in the declared baseline domain.
-- Terminal status: `EXACT_COMPARATOR_IDENTITY`.
-- Interpretation: successful null-control recognition, not a consistency failure of GR.
-
-### M02 — perturbative quantum GR EFT
-
-- Located the existing RQIR concrete reference `ANSATZ-PQG-EFT-001` v0.1, instantiated at Iteration 133 commit `8f5051b8f9041ba0164b7e734be246188e664e62`.
-- Imported provenance for MODEL, GATE_STATUS, ASSUMPTIONS_LEDGER and DERIVATION_MAP without modifying RQIR.
-- Source RQIR explicitly states `ANSATZ-PQG-EFT-001 == C5`; D-008 marks this comparator identity `PROVED_BY_DEFINITION` and QG-007 records `REFERENCE_DEGENERACY_C5`.
-- KMQGB terminal status: `EXACT_COMPARATOR_IDENTITY`.
-- Interpretation: exact non-novelty relative to identical C5, not an inconsistency of perturbative quantum GR EFT.
-
-### M03 — semiclassical gravity
-
-- Activated concrete control `SCG-MINK-SCALAR-LR-001`: renormalized semiclassical Einstein equation with free scalar quantum matter and Minkowski linear-response control.
-- Added initial audit using Hu–Verdaguer semiclassical equation/renormalization and Anderson–Molina-París–Mottola flat-space linear-response stability evidence.
-- Current blocker: freeze exact scalar mass/coupling, state, renormalization/counterterm convention and observable domain before terminal comparator classification.
-
-### Progress
-
-- Terminal queue coverage: `2/9 = 22.22%`.
-- Current active target: M03 semiclassical control.
-- No heavy KMQGB job dispatched because external RQIR still reports shared-runner heavy rank10 work.
-
-## 2026-09-08 — KMQGB-003 — semiclassical/stochastic closure and first nontrivial modified-gravity target
-
-### M03 — semiclassical gravity closed
-
-- Froze `SCG-MINK-SCALAR-LR-001` to one massless (`m=0`) conformally coupled (`xi=1/6`) free real scalar in the Minkowski vacuum.
-- Froze `Lambda_ren=0` and renormalization condition `<0|T_ab^R[eta]|0>=0` while retaining finite curvature-squared coefficients `alpha(mu), beta(mu)` explicitly rather than hiding or zero-filling them.
-- Declared low-curvature, gauge-invariant linear response on scales much larger than the Planck length as the validity domain.
-- Anderson–Molina-París–Mottola's arbitrary-mass/arbitrary-curvature-coupling Minkowski analysis contains this parameter slice and supports scoped flat-space stability after unphysical Planck-scale runaway handling.
-- Hu–Verdaguer supplies the renormalized semiclassical equation and the exact mean-vs-stochastic distinction.
-- F0–F2: scoped pass in the declared domain.
-- F3: mean source `J=<T>` is present; mean-only closure remains insufficient for full QG promotion when an independent quantum/stochastic metric-noise/operator hierarchy is required.
-- F4: exact identity with C1 by comparator definition.
-- Terminal status: `EXACT_COMPARATOR_IDENTITY`; matched C1 quotient residual `0`.
-- Semantic guardrail: this is not a general failure of semiclassical gravity.
-
-### M04 — stochastic gravity instantiated and closed
-
-- Froze `SG-MINK-CONFORMAL-EL-001` using the same conformal-scalar Minkowski state but the Einstein-Langevin stochastic extension.
-- Added zero-mean classical stochastic tensor source `xi_ab` with covariance equal to the stress-tensor noise kernel `N_abcd=(1/2)<{t_ab,t_cd}>`.
-- Retained the CTP/influence-functional linkage of mean source, fluctuations/noise and dissipative/retarded response.
-- F3 is a strong comparator pass because `J`, `N` and response are derived from one open-system parent structure.
-- F4 is exact identity with C2 by comparator definition.
-- Terminal status: `EXACT_COMPARATOR_IDENTITY`; matched C2 quotient residual `0`.
-- Design lesson: classical stochastic metric noise and symmetrized two-point metric fluctuations alone are not sufficient evidence for a quantum gravitational mediator.
-
-### M05 — metric f(R) activated
-
-- Froze `FR-R2-MINK-001` with action `S=(M_Pl^2/2) int sqrt(-g)[R+R^2/(6M^2)] + S_m`, `M^2>0`.
-- Around Minkowski, `F(0)=1>0` and `f_RR=1/(3M^2)>0`; the weak-field spectrum contains the GR massless spin-2 mode plus one extra scalaron of mass `M`, with no extra massive spin-2 pole from the pure `R^2` correction.
-- F0–F2 are preliminarily scoped-pass in the declared Minkowski domain.
-- F3 is classical/partial: deterministic modified gravity does not provide an independent QG noise/operator hierarchy.
-- F4 is preliminarily distinct from C0 for traceful sources at finite `M`, but broader identifiability is open.
-- First blocker: `FR_QUOTIENT_OBSERVABLE_FREEZE` — derive one explicit scalar-trace observable, exact GR-subtracted residual and full nuisance/comparator quotient.
-
-### External RQIR state and compute firewall
-
-- External RQIR `main` observed at `6839864cc6a2fa66616696db6b9f78b7b8b019f2`, authoritative research Iteration 564, MODEL_READINESS 24%.
-- Rank10 run `34165534613` was directly checked and remains `in_progress`.
-- No KMQGB heavy job was dispatched to the shared runner.
-
-### Progress
-
-- Terminal queue coverage: `4/9 = 44.44%`.
-- M03 current-task completion: `100%`.
-- M04 current-task completion: `100%`.
-- New active task M05 operational completion estimate: `40%`.
+- M03 `SCG-MINK-SCALAR-LR-001` frozen to massless conformally coupled scalar in Minkowski vacuum and closed `EXACT_COMPARATOR_IDENTITY` with C1.
+- Mean-only semiclassical closure retained as insufficient for full QG promotion, not a theory consistency failure.
+- M04 `SG-MINK-CONFORMAL-EL-001` Einstein-Langevin/noise-kernel control closed `EXACT_COMPARATOR_IDENTITY` with C2.
+- Design lesson: classical stochastic metric noise and symmetrized two-point fluctuations alone do not certify a quantum gravitational mediator.
+- Activated M05 metric `R+R^2/(6M^2)` gravity.
+- Terminal coverage reached 4/9 = 44.44%.
 
 ## 2026-09-08 — KMQGB-004 — f(R) calibration-resistant discriminator
 
-### Frozen weak-field observable
+For `FR-R2-MINK-001`, froze
 
-For `FR-R2-MINK-001`, froze the weak-field potential ratio
+`gamma(r)=Psi/Phi=(3-exp(-Mr))/(3+exp(-Mr))`
 
-`gamma(r)=Psi(r)/Phi(r)`
+with C0 residual
 
-with
+`Delta_gamma=-2 exp(-Mr)/(3+exp(-Mr))`.
 
-`Phi(r)=-G m_s/r [1+(1/3)e^{-Mr}]`,
+Common `G`, source mass and `1/r` normalization cancel. Multi-radius inversion gives
 
-`Psi(r)=-G m_s/r [1-(1/3)e^{-Mr}]`.
+`ln[3(1-gamma)/(1+gamma)]=-Mr`.
 
-Therefore
+Metric f(R) exact scalar-tensor representation equivalence (`omega_BD=0` plus mapped potential) was recorded; M06 was prohibited from duplicating this representation.
 
-`gamma_fR(r)=(3-e^{-Mr})/(3+e^{-Mr})`,
+M05 remained active pending broader scalar/Yukawa quotient.
 
-while C0/GR predicts `gamma=1`.
+## 2026-09-08 — KMQGB-005 — M05 terminal broader-comparator closure
 
-The exact C0-subtracted residual is
+- Defined the admissible single-scalar Yukawa response family
+  `gamma_Y=[1-alpha exp(-mr)]/[1+alpha exp(-mr)]`.
+- Proved exact frozen-observable identity with M05 for all radii at `alpha=1/3`, `m=M`.
+- Therefore M05 is genuinely distinct from C0/GR at finite `Mr`, but its full multi-radius `gamma(r)` signature is exactly absorbed by the broader scalar/Yukawa quotient.
+- Terminal status: `OPERATIONALLY_DEGENERATE`.
+- Broader-profiled residual: 0.
+- This is not a consistency failure of f(R); it is failure of unique identification in the chosen observable.
+- Terminal coverage advanced to 5/9 = 55.56%.
+- Began nonduplicate massless Brans-Dicke M06.
 
-`Delta_gamma(r)=-2e^{-Mr}/(3+e^{-Mr})`.
+## 2026-09-08 — KMQGB-006 — current-bound refresh and linked Brans-Dicke static/radiative fingerprint
 
-This residual is nonzero for finite `Mr`; common `G`, source mass and `1/r` normalization cancel exactly. Thus the simplest source-amplitude/calibration degeneracy is analytically removed.
+### Literature refresh changed the concrete point
 
-Limits:
-- `Mr -> infinity`: `Delta_gamma -> 0` (GR recovery);
-- `Mr -> 0`: `gamma -> 1/2`, `Delta_gamma -> -1/2`.
+- Initial provisional M06 used `omega_BD=50000`, based on the classic Cassini lower bound near 40000.
+- Current 2024 Living Reviews pulsar authority reports a conservative strong-field/triple-system lower limit around `omega_BD >= 150000`, with neutron-star EoS dependence.
+- Therefore `omega_BD=50000` was retired as the active point and retained only as an observationally excluded diagnostic point.
+- Active realization is now `BD-MASSLESS-OMEGA200000-MINK-001`, with `V=0` and a massless long-range scalar.
 
-### Multi-radius shape
+### Static channel
 
-Inversion gives
+`gamma_BD=(omega_BD+1)/(omega_BD+2)=200001/200002`.
 
-`e^{-Mr}=3(1-gamma)/(1+gamma)`
+`Delta_gamma^C0=-1/200002 ≈ -4.9999500005e-6`.
 
-and hence
+`alpha_0^2=1/(2omega_BD+3)=1/400003 ≈ 2.4999812501e-6`.
 
-`ln[3(1-gamma(r))/(1+gamma(r))]=-Mr`.
+### Linked dipole-radiation channel
 
-A multi-radius measurement therefore tests a one-parameter exponential shape instead of a freely rescaled force amplitude.
+Using the standard compact-binary Brans-Dicke convention,
 
-### Exact scalar-tensor representation equivalence
+`dot(E)_BD^dip = -(2/3) G_12^2 eta^2 (m^4/r^4) (1-gamma_BD) (s_1-s_2)^2`.
 
-Metric f(R) is dynamically equivalent to a scalar-tensor theory with `omega_BD=0` and a mapped potential/matter coupling. This is a representation identity, not two independent physical theories.
+Since `1-gamma_BD=1/(omega_BD+2)=1/200002`, the static PPN shift and leading dipole coefficient are controlled by the same exact coupling. They are not independent nuisance amplitudes.
 
-Queue consequence: M06 must not duplicate M05 by merely rewriting the same f(R) dynamics in scalar-tensor variables. It must use a genuinely distinct Brans-Dicke/scalar-tensor realization.
+### Current gate
 
-### Remaining blocker
+- M06 F0–F2: scoped pass.
+- F3: classical partial; no intrinsic QG operator/noise hierarchy.
+- F4: analytic nonzero distinction from C0.
+- F5: linked static+radiative fingerprint frozen.
+- F6: broader nonlinear scalar-tensor quotient still open.
+- F7: current observational resources/identifiability still to be mapped without confusing a theoretical residual with a detected deviation.
 
-New first blocker: `FR_BROADER_COMPARATOR_QUOTIENT`.
+Current blocker: `BD_BROADER_SCALAR_TENSOR_QUOTIENT`.
 
-The model is robustly distinct from C0 in the frozen `gamma(r)` observable, but a generic scalar/Yukawa nuisance or broader scalar-tensor model can mimic part or all of the response after parameter matching; low-q overlap with higher-curvature/C5 EFT directions also remains to be mapped.
+M06 operational completion estimate: 80%.
+Terminal queue coverage remains 5/9 = 55.56%.
 
-### Progress
+### External RQIR state
 
-- Terminal queue coverage remains `4/9 = 44.44%`.
-- M05 operational completion estimate advances from `40%` to **`70%`**.
-- Candidate Gravity RQIR remains separate at `24%` readiness.
+- External RQIR main observed at `94f9e6735036c96275ea7d170fbee7c2cc5bd579`.
+- Authoritative Candidate Gravity research iteration 566; MODEL_READINESS 24%.
+- Rank10 raw-PASSed; rank11 coordinate `(+2.5e-6,-1.25e-6)` is active in run `34168897005`, job `101885271903`.
+- No KMQGB heavy work dispatched to the shared runner.
