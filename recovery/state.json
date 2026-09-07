@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-09-08",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "branch": "main",
+  "kmqgb_iteration": 1,
+  "migration": {
+    "status": "complete",
+    "source_repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
+    "source_branch": "rqir7-known-models-benchmark",
+    "source_benchmark_head_sha": "782df9af3af1ca55ca4f9bf143e2723a7a8f18bc",
+    "source_branch_base_sha": "02ad31e89f1df0d5515779e6b7526e8eb5505667",
+    "source_artifacts_migrated": 7,
+    "source_repository_modified_by_migration": false
+  },
+  "external_candidate_gravity_authority": {
+    "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
+    "main_sha_observed": "5fed1f52c013e9e469be73596e2c80932289c725",
+    "authoritative_research_iteration": 563,
+    "model_readiness_percent": 24,
+    "access_mode": "read_only",
+    "active_heavy_work": "rank10 reported running in CURRENT_QG_FRONT.md"
+  },
+  "state_written_from_kmqgb_sha": "5d0c360620d0649d3a946e53e5155f5c1a19217c",
+  "queue": {
+    "total": 9,
+    "terminal_completed": 0
+  },
+  "active_model": {
+    "benchmark_id": "RQIR7-M01-GR-EH-MINK",
+    "model_realization": "4D Einstein-Hilbert General Relativity, Lambda=0, weak-field Minkowski sector",
+    "role": "null_control",
+    "terminal": false,
+    "current_status": "BLOCKED_PROTOCOL_MISMATCH",
+    "first_blocking_gate": "FROZEN_PROTOCOL_LITERAL_MAPPING",
+    "prospective_terminal_status_if_identity_verified": "EXACT_COMPARATOR_IDENTITY"
+  },
+  "legacy_source_progress_snapshot": {
+    "benchmark_readiness_percent": 10,
+    "current_model_check_percent": 40,
+    "note": "historical source checkpoint only; not silently promoted by migration"
+  },
+  "next_actions": [
+    "Recover literal frozen Q1-Q7 definitions from external RQIR repository authority",
+    "Recover literal frozen comparator basis/span and provenance",
+    "Recover literal quotient/residual definition and acceptance rule",
+    "Recover exact Source/Ward/contact+K2 target contract relevant to GR mapping",
+    "Pin recovered objects by exact path and SHA in protocol/FROZEN_RQIR_PROTOCOL_REFERENCE.md",
+    "Re-evaluate and terminally classify GR null control only after literal mapping",
+    "Start concrete Donoghue/Burgess low-energy GR+QG EFT benchmark after GR closure"
+  ],
+  "heavy_compute_policy": "do_not_compete_with_active_RQIR_shared_runner",
+  "write_firewall": "KMQGB writes only to this repository; RQIR is read-only"
+}
