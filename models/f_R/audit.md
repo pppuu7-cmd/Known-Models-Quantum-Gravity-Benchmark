@@ -29,25 +29,22 @@ Metric f(R) is dynamically equivalent to a scalar-tensor theory with Brans-Dicke
 
 ## Why this model is useful
 
-Unlike M01–M04, this is not defined to be one of the frozen C0/C1/C2/C5 comparator classes. It is therefore the first queue item expected to produce a genuine finite model-vs-GR direction before broader nuisance/comparator profiling.
+Unlike M01–M04, this is not defined to be one of the frozen C0/C1/C2/C5 comparator classes. It is therefore the first queue item to produce a finite model-vs-GR direction before broader nuisance/comparator profiling.
 
-For traceful matter and finite `M`, the extra scalaron modifies the weak-field response. In the long-distance/large-M limit the extra scalar is Yukawa-suppressed and GR is recovered. Thus the benchmark can explicitly test the difference between
+For traceful matter and finite `M`, the extra scalaron modifies the weak-field response. In the large-`Mr` / large-mass limit the Yukawa contribution is exponentially suppressed and GR is recovered.
 
-- a real nonzero modified-gravity residual relative to C0, and
-- a signal that is not uniquely identifiable after scalar-force/nuisance comparators are admitted.
-
-## Initial F0–F7 map
+## F0–F7 map — current
 
 | Gate | Current state | Reason |
 |---|---|---|
 | F0 — dynamics | PASS_SCOPED | exact local metric action frozen |
-| F1 — required limits | PASS_SCOPED | GR recovered for `M -> infinity` / momentum well below the scalaron mass, while matter remains ordinarily coupled |
-| F2 — consistency | PASS_SCOPED_AROUND_MINKOWSKI | `F>0`, `f_RR>0`, `M^2>0`; extra mode is a scalar rather than the massive spin-2 ghost of generic quadratic Ricci-tensor gravity |
+| F1 — required limits | PASS_SCOPED | GR recovered for `M -> infinity` or `Mr >> 1`, while matter remains ordinarily coupled |
+| F2 — consistency | PASS_SCOPED_AROUND_MINKOWSKI | `F>0`, `f_RR>0`, `M^2>0`; extra mode is a scalar rather than the massive spin-2 ghost of generic Ricci-tensor quadratic gravity |
 | F3 — RQIR hierarchy | CLASSICAL_PARTIAL | deterministic classical modified gravity supplies mean/retarded response but no independent quantum gravitational noise/operator hierarchy |
-| F4 — comparator distinction | PRELIMINARY_DISTINCT_FROM_C0 | finite-M scalaron response differs from pure GR for traceful sources; broader comparator/nuisance span not yet closed |
-| F5 — hard-constraint discriminator | BLOCKED | exact RQIR-facing observable and calibration quotient still to freeze |
-| F6 — statistical identifiability | BLOCKED | parameter `M` and nuisance scalar-force directions not yet profiled |
-| F7 — physical resources | BLOCKED | forbidden before F5/F6 closure |
+| F4 — comparator distinction | DISTINCT_FROM_C0_SCOPED | finite-M scalaron changes the ratio of the two weak-field metric potentials for traceful sources |
+| F5 — hard-constraint discriminator | PASS_VS_C0 / BROADER_QUOTIENT_OPEN | a dimensionless potential-ratio observable cancels common source-mass/Newton-constant normalization, leaving an analytic nonzero C0 residual; broader scalar-force/ST/C4/C5 quotient remains open |
+| F6 — statistical identifiability | BLOCKED_BROADER_COMPARATORS | `M` is identifiable from radial shape in the ideal model, but representation-equivalent/general scalar-tensor and nuisance directions have not yet been fully profiled |
+| F7 — physical resources | BLOCKED | forbidden before broader F5/F6 closure |
 
 ## Pole / response fingerprint
 
@@ -55,12 +52,67 @@ Declared weak-field content:
 
 - massless spin-2 GR pole;
 - one additional scalar pole at mass scale `M`;
-- no additional massive spin-2 pole from this pure `R^2` correction;
+- no additional massive spin-2 pole from the pure `R^2` correction;
 - scalar response couples to the trace sector of the matter stress tensor.
 
-This already predicts a controlled direction that vanishes in the GR limit. However, a Yukawa-like scalar response is not automatically a unique quantum-gravity signature: conventional scalar-force or apparatus nuisance models may occupy a similar observable direction.
+## Frozen C0 quotient observable
 
-## Q1–Q7 fingerprint — preliminary
+Use the standard weak-field isotropic metric convention
+
+`ds^2 = -(1+2 Phi) dt^2 + (1-2 Psi) d x^2`.
+
+For a localized nonrelativistic traceful source in the linear Minkowski regime of `R+R^2/(6M^2)` gravity,
+
+`Phi(r) = - G m_s/r [1 + (1/3) exp(-M r)]`,
+
+`Psi(r) = - G m_s/r [1 - (1/3) exp(-M r)]`.
+
+The calibration-resistant observable is
+
+`gamma(r) = Psi(r)/Phi(r)`
+
+so the common factors `G`, source mass `m_s`, and `1/r` cancel exactly:
+
+`gamma_fR(r) = [3 - exp(-M r)]/[3 + exp(-M r)]`.
+
+Pure GR/C0 gives
+
+`gamma_C0(r)=1`.
+
+Therefore the exact C0-subtracted residual is
+
+`Delta_gamma(r) = gamma_fR(r) - 1 = - 2 exp(-M r)/[3 + exp(-M r)]`.
+
+Properties:
+
+- for every finite `M r`, `Delta_gamma(r) < 0`;
+- `M r -> infinity`: `Delta_gamma -> 0` and GR is recovered;
+- `M r -> 0`: `gamma -> 1/2`, hence `Delta_gamma -> -1/2`;
+- the residual cannot be removed by a common rescaling of `G` or the source mass.
+
+This closes the simplest source-normalization/calibration degeneracy against C0 analytically.
+
+## Radial shape consistency relation
+
+The same formula can be inverted:
+
+`x(r) = exp(-M r) = 3[1-gamma(r)]/[1+gamma(r)]`.
+
+Hence an ideal multi-radius measurement must satisfy
+
+`ln( 3[1-gamma(r)]/[1+gamma(r)] ) = - M r`.
+
+The radial slope is fixed by one parameter `M`; the Yukawa amplitude in this metric-f(R) realization is not an independent free parameter. This supplies a stronger shape test than a one-point force-amplitude measurement.
+
+## Exact representation-equivalence warning
+
+Metric f(R) gravity is dynamically equivalent to a scalar-tensor formulation with `omega_BD=0` and a specific scalar potential. Therefore no physical observable can distinguish these two **representations of the same dynamics** when the field redefinition, potential and matter coupling are mapped consistently.
+
+This is not an operational failure of f(R). It means the benchmark must not count the equivalent scalar-tensor rewrite as an independent successful theory. M06 should therefore use a genuinely different scalar-tensor realization (for example a distinct Brans-Dicke parameter/potential class) rather than duplicating M05 under another field variable.
+
+A generic scalar/Yukawa nuisance can also imitate part of the weak-field radial structure if its coupling and range are allowed to match. The current `gamma(r)` residual is therefore robust against C0 normalization freedom but is **not yet a unique modified-gravity or quantum-gravity certificate** against the full comparator span.
+
+## Q1–Q7 fingerprint — current
 
 | Channel | M05 role |
 |---|---|
@@ -69,22 +121,22 @@ This already predicts a controlled direction that vanishes in the GR limit. Howe
 | Q3 | strong classical source/backreaction modification through the scalar trace channel |
 | Q4 | no quantum-mediator certificate |
 | Q5 | extra classical scalar metric/curvature degree of freedom, not intrinsic quantum geometry noise |
-| Q6 | causal retarded classical response to be frozen in the exact observable convention |
-| Q7 | not itself standard quantized GR EFT C5; low-energy expansion can overlap higher-curvature EFT directions and must be comparator-profiled |
+| Q6 | causal classical weak-field response; exact retarded convention still to be written if needed for a time-dependent observable |
+| Q7 | not itself standard quantized GR EFT C5; at low momentum its expansion overlaps higher-curvature EFT structure and must be comparator-profiled |
 
 ## Current first blocker
 
-`FR_QUOTIENT_OBSERVABLE_FREEZE`:
+`FR_BROADER_COMPARATOR_QUOTIENT`:
 
-1. freeze one weak-field source-to-detector observable sensitive to the scalar trace channel;
-2. derive its finite-M response and GR-subtracted residual;
-3. profile `M` and calibration/source-amplitude freedom;
-4. test whether the residual is only C0-distinct or remains identifiable against applicable C4/C5/higher-curvature nuisance directions;
-5. only then assign a terminal KMQGB state.
+1. retain `gamma(r)` and its multi-radius shape as the frozen C0 discriminator;
+2. explicitly compare against a generic scalar/Yukawa nuisance and the non-duplicate M06 scalar-tensor family;
+3. determine which distinctions are physical and which are merely frame/field-redefinition identities;
+4. map the low-momentum expansion against C5/higher-curvature EFT directions;
+5. assign terminal status only after this broader quotient is explicit.
 
 ## Sources
 
-1. A. De Felice and S. Tsujikawa, *f(R) Theories*, Living Reviews in Relativity 13, 3 (2010).
-2. Standard metric-f(R) scalar-tensor equivalence and Minkowski stability results summarized in the same review.
+1. A. De Felice and S. Tsujikawa, *f(R) Theories*, Living Reviews in Relativity 13, 3 (2010): metric-f(R) scalar-tensor equivalence, stability conditions and the light-scalaron `gamma -> 1/2` limit.
+2. Standard weak-field quadratic-gravity result specialized to the `m_W -> infinity` pure-f(R) limit: `gamma(r)=[3-exp(-M r)]/[3+exp(-M r)]`.
 3. External RQIR comparator authority: `candidate_gravity/BASELINE_COMPARATORS.md`, blob `a2b45188710c885f979123f77fa7aad2273b9983`.
 4. External RQIR funnel authority: `candidate_gravity/landscape/RQIR_FUNNEL_AUDIT_ITERATION137.md`, blob `2757e8fe1004b5c0caef51d6d9fee6f982ac81d4`.
