@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "KMQGB-M03-SEMICLASSICAL",
+  "concrete_realization_id": "SCG-MINK-SCALAR-LR-001",
+  "terminal": true,
+  "status": "EXACT_COMPARATOR_IDENTITY",
+  "role": "source_backreaction_control_C1",
+  "realization": {
+    "dimension": 4,
+    "metric": "classical",
+    "matter": "one free real quantized scalar",
+    "mass": 0,
+    "curvature_coupling_xi": "1/6",
+    "state": "Minkowski vacuum",
+    "background": "Minkowski",
+    "Lambda_ren": 0,
+    "renormalization_condition": "<0|T_ab^R[eta]|0>=0",
+    "curvature_squared_couplings": "alpha(mu), beta(mu) retained as explicit finite renormalized parameters",
+    "domain": "gauge-invariant linear response; low curvature; scales much larger than Planck length"
+  },
+  "comparator": {
+    "class": "C1",
+    "name": "Semiclassical gravity",
+    "relation": "exact_identity_in_matched_state_scheme_parameter_domain",
+    "quotient_residual": 0
+  },
+  "funnel": {
+    "F0": "PASS_SCOPED",
+    "F1": "PASS_SCOPED",
+    "F2": "PASS_SCOPED",
+    "F3": "PARTIAL_INSUFFICIENT_FOR_FULL_QG_PROMOTION",
+    "F4": "EXACT_COMPARATOR_IDENTITY_C1",
+    "F5": "N/A_AFTER_F4_IDENTITY",
+    "F6": "N/A_AFTER_F4_IDENTITY",
+    "F7": "N/A_AFTER_F4_IDENTITY"
+  },
+  "critical_interpretation": "Mean-only semiclassical closure can be valid in its declared regime while lacking an independent fundamental quantum/stochastic metric-noise/operator hierarchy. This is not a consistency failure.",
+  "missing_information": [],
+  "next_model": "KMQGB-M04-STOCHASTIC"
+}
