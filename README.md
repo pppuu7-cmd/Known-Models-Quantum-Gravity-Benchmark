@@ -12,21 +12,23 @@ Recovery entrypoint: `recovery/RESTORE_FROM_NEW_CHAT.md`.
 
 | # | Concrete target | Control role | State |
 |---|---|---|---|
-| 1 | 4D Einstein–Hilbert GR, Lambda=0, weak-field Minkowski sector | null control | active audit |
-| 2 | GR + low-energy quantum-gravity EFT, concrete Donoghue/Burgess realization | EFT/comparator control | queued |
-| 3 | Semiclassical gravity, concrete realization | source/backreaction control | queued |
-| 4 | Stochastic gravity, Einstein–Langevin/noise-kernel realization | fluctuation control | queued |
+| 1 | 4D Einstein–Hilbert GR, Lambda=0, weak-field Minkowski sector | null control C0 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
+| 2 | `ANSATZ-PQG-EFT-001` v0.1, perturbative low-energy quantum GR EFT | EFT/comparator control C5 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
+| 3 | SCG-MINK-SCALAR-LR-001, semiclassical Einstein gravity with renormalized scalar source / Minkowski linear response | source/backreaction control C1 | **active audit** |
+| 4 | Stochastic gravity, Einstein–Langevin/noise-kernel realization | fluctuation control C2 | queued |
 | 5 | concrete f(R) gravity | extra-DOF control | queued |
 | 6 | concrete Brans–Dicke/scalar–tensor | extra-scalar control | queued |
 | 7 | Stelle quadratic gravity | pathological-pole control | queued |
 | 8 | concrete higher-curvature EFT/action | EFT positive control | queued |
 | 9 | concrete string low-energy/scattering realization | QG/EFT control | queued |
 
+Terminal queue coverage: **2/9 = 22.22%**. This is coverage, not a claim that 22.22% of quantum-gravity theory is solved.
+
 ## Status vocabulary
 
 `PASS_RQIR_GATE`, `FAIL_RQIR_CONSISTENCY`, `EXACT_COMPARATOR_IDENTITY`, `OPERATIONALLY_DEGENERATE`, `ROBUST_NONZERO_RESIDUAL`, `BLOCKED_MISSING_REQUIRED_OBJECT`, `BLOCKED_PROTOCOL_MISMATCH`, `OPERATIONAL_FAILURE`.
 
-`BLOCKED` is never scientific invalidation.
+`BLOCKED` is never scientific invalidation. Exact comparator identity is a retained control/negative result, not a consistency failure.
 
 ## Mandatory output table
 
@@ -34,4 +36,6 @@ Every concrete realization must ultimately populate: exact realization/paper; ac
 
 ## Repository firewall
 
-This repository may read the frozen RQIR protocol and current Candidate Gravity authority as external inputs, but benchmark writes belong here only. It must not modify Candidate Gravity readiness, recovery state, iteration numbering, or scientific authority files in `Relativity-Quantum-Interface-Reconstruction`.
+This repository may read the frozen RQIR protocol and current Candidate Gravity authority as external inputs, but benchmark writes belong here only. It must not modify Candidate Gravity readiness, recovery state, iteration numbering, workflows, active runner state, or scientific authority files in `Relativity-Quantum-Interface-Reconstruction`.
+
+Prior RQIR comparator/model audits may be imported here as explicitly provenance-tagged evidence snapshots. Such imports never change the source RQIR repository.
