@@ -17,7 +17,7 @@ Recovery entrypoint: `recovery/RESTORE_FROM_NEW_CHAT.md`.
 | 3 | `SCG-MINK-SCALAR-LR-001`, renormalized semiclassical Einstein gravity with conformal scalar / Minkowski linear response | source/backreaction control C1 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
 | 4 | `SG-MINK-CONFORMAL-EL-001`, Einstein–Langevin/noise-kernel stochastic gravity | fluctuation control C2 | **CLOSED — EXACT_COMPARATOR_IDENTITY** |
 | 5 | `FR-R2-MINK-001`, metric `R+R^2/(6M^2)` gravity | extra-DOF control | **CLOSED — OPERATIONALLY_DEGENERATE** |
-| 6 | `BD-MASSLESS-OMEGA50000-MINK-001`, massless Brans–Dicke, `V=0`, `omega_BD=50000` | extra long-range scalar control | **active audit** |
+| 6 | `BD-MASSLESS-OMEGA200000-MINK-001`, massless Brans–Dicke, `V=0`, `omega_BD=200000` | extra long-range scalar control | **active audit** |
 | 7 | Stelle quadratic gravity | pathological-pole control | queued |
 | 8 | concrete higher-curvature EFT/action | EFT positive control | queued |
 | 9 | concrete string low-energy/scattering realization | QG/EFT control | queued |
@@ -36,7 +36,13 @@ The first four controls validate the benchmark semantics rather than falsify the
 
 M05 adds the first nontrivial modified-gravity lesson. `R+R^2` produces a genuine finite GR-subtracted weak-field residual in `gamma(r)=Psi/Phi`, but the entire multi-radius shape is exactly reproduced by a broader one-scalar Yukawa family at `alpha=1/3`, `m=M`. Therefore a nonzero deviation from GR is not automatically a unique theory discriminator.
 
-M06 is deliberately nonduplicate: massless Brans-Dicke with `omega_BD=50000`, `V=0`, long-range scalar. Its exact static C0 residual is `Delta_gamma=-1/50002`; the next gate links that static coupling to scalar dipole radiation from the same action.
+M06 is deliberately nonduplicate: massless Brans-Dicke with `omega_BD=200000`, `V=0`, long-range scalar. The active point was raised from a provisional `50000` after a current literature refresh found the 2024 conservative pulsar-triple lower limit near `150000`; the old value is retained only as an excluded diagnostic point.
+
+For the active M06 point,
+
+`Delta_gamma^C0 = -1/200002`,
+
+and the same exact factor `1/(omega_BD+2)=1/200002` controls the leading scalar dipole-radiation coefficient multiplied by the binary sensitivity-difference factor. The current gate therefore uses a linked static+radiative fingerprint rather than one free force amplitude.
 
 ## Mandatory output table
 
