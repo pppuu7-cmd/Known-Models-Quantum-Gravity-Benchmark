@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "KMQGB-M07-STELLE",
+  "concrete_realization_id": "STELLE-MINK-STANDARD-FEYNMAN-001",
+  "terminal": true,
+  "current_status": "FAIL_RQIR_CONSISTENCY",
+  "first_terminal_gate": "F2_STANDARD_MASSIVE_SPIN2_GHOST",
+  "scope": "4D local quadratic gravity about Minkowski with real finite scalar and massive-spin-2 poles under standard perturbative Feynman/Hilbert-space physical-state interpretation",
+  "spectrum": [
+    "massless spin-2 graviton",
+    "massive scalar",
+    "massive spin-2 ghost"
+  ],
+  "spin2_propagator_schematic": "1/(p^2+i0) - 1/(p^2-M2^2+i0)",
+  "uv_behavior": "1/p^4",
+  "renormalizable": true,
+  "consistency_failure": true,
+  "failure_reason": "the massive spin-2 pole has residue opposite to the ordinary graviton; in the frozen standard physical-state interpretation this violates the RQIR positivity/unitarity requirement",
+  "scope_guardrail": "does not apply automatically to curvature-squared EFT below cutoff, pure R+R^2, or modified ghost prescriptions such as fakeon/Lee-Wick/modified-inner-product approaches",
+  "missing_information": []
+}
