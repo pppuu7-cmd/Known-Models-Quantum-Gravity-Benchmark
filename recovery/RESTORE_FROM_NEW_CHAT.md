@@ -9,19 +9,19 @@ This file assumes no usable chat memory.
 3. Read `protocol/READINESS_METRICS.md` before reporting progress.
 4. Read `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md` as the single high-level construction route.
 5. Read `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md`, `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md` and permanent protocols referenced by the playbook/current state.
-6. Read candidate schema/validator and highest-numbered immutable recovery delta.
+6. Read `external_rqir_checks/iter620_projective_native_bridge_audit.md`, candidate schema/validator and highest-numbered immutable recovery delta.
 7. Treat waves 1–38 as terminal historical authority.
 8. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before R3/readiness/heavy-compute claims.
 9. Resume from `next_actions` in `recovery/state.json`; do not reconstruct state from chat memory.
 
-## Stable percentages at Iteration 060
+## Stable percentages at Iteration 061
 
 - `R1 Repository readiness = 92%`;
 - `R2 KMQGB methodology/material readiness = 89%`;
-- `R3 Candidate Gravity scientific readiness = 24%` from external RQIR Iter616;
+- `R3 Candidate Gravity scientific readiness = 24%` from external RQIR Iter620;
 - `R4 current minimal-novel-parent-principle search = 45%`.
 
-Iter060 changes only R2: consolidated construction playbook/synthesis `6/10 -> 7/10`, yielding `88 -> 89%`. R4 remains frozen until a real constructive P4 survivor exists.
+Last score change: Iter060 raised R2 by one point via consolidated playbook/synthesis. Iter061 is an external-authority refresh and does not change a score.
 
 ## Immutable coverage
 
@@ -35,7 +35,7 @@ Coverage is not Candidate Gravity readiness.
 
 Use `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md`.
 
-The pre-G0 order is mandatory:
+Mandatory pre-G0 order:
 
 `A1 explicit parent capsule`
 
@@ -49,46 +49,43 @@ The pre-G0 order is mandatory:
 
 If `FF_D(P)=dim N_P(D)` grows without bound with hard/EFT cutoff, classify `FUNCTIONAL_FREEDOM_BLOCKED` and stop.
 
-## Current architecture
+## External RQIR state — Iter620
 
-`Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG`,
+RQIR remains `MODEL_READINESS=24%`.
 
-with preferred search target
+Iter617 proves existing authority does not contain the missing absolute source-response -> gravitational retarded/1PI `Gamma3` normalization. Therefore `N_native` remains `BLOCKED__NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY` and may not be guessed or fit from Candidate values.
 
-`full matched C5 through 3-point + first candidate-specific independent 4-point/higher structure`,
+Iter618–620 legitimately preserve normalization-invariant information:
 
-and shared parameters across order/configuration/representation/background/holdout blocks.
+- five independent projective root ratios relative to smallest-s `D_b^-`:
+  `[-2.966563737084728, -0.7800526753639322, -5.158207913624242, +2.997420912767025, +8.57973421373656]`;
+- raw sign pattern `[-,+,+,+,-,-]`;
+- independent ratio reproduction at floating-point precision;
+- threshold-free projective conditioning diagnostic.
+
+General guardrail:
+
+`one unknown common nonzero normalization -> projective ratio/conditioning diagnostics are allowed, absolute residual/comparator subtraction remains blocked`.
+
+Do not fit the missing normalization from the same Candidate values used to test the residual.
 
 ## Heavy-compute policy
 
 Do not launch heavy runs for missing parent, growing functional freedom, unresolved normalization/sign, incomplete response, missing exact kinematic mapping, unfrozen comparator domain or missing attribution proof.
 
-Use heavy compute only to discriminate a frozen object under pre-registered success/fail/block thresholds.
-
-## Strong comparator/precedent set
-
-- major LQG/GFT/tensor/CFS/QFT-vector programs have scoped hard-observable audits;
-- BFSS/IKKT set a strong benchmark for microscopic parent -> gravity-observable derivation;
-- self-sourced spectral closure substantially overlaps asymptotic-safety spectral RG;
-- causal-diamond gluing, associator/nonassociativity, UV/IR/Born reciprocity and overlap-spectrum consistency are not standalone new P4 selectors;
-- arbitrary hard functions/spectral measures/form factors/Wilson towers fail A2 unless fixed by a finite microscopic parent.
-
-## Repository CI
-
-`.github/workflows/methodology-ci.yml` runs on GitHub-hosted `ubuntu-latest`, includes the P4 functional-freedom self-test and now requires the construction playbook entrypoint. Do not infer current-run success without directly observing the workflow conclusion.
-
-## External RQIR state
-
-Latest directly observed authority: **Iteration 616**, R3 **24%**.
-
-Iter616 closes exact source/Iter582 q2-bucket identity and exact external scalar endpoint amputation. The remaining native-binding ambiguity is exactly one common nonzero normalization/phase scalar `N_native`.
-
-The next external gate is an independent lower-order/common-field normalization identity fixing `N_native` prospectively. No robust residual/ANSATZ/Fisher/resources yet; no heavy compute required for this gate.
+RQIR's current blocker is algebraic/authority-level, so heavy compute cannot close it. KMQGB likewise waits for a frozen finite-freedom P4 object.
 
 ## Next research front
 
-The main bottleneck is now scientific, not procedural: identify a finite microscopic dynamical selector that survives A1-A3 and produces the A4 hard relation. Only then enter detailed G0-G10 construction and P5/P6 scoring.
+The main bottleneck is the scientific parent principle:
+
+1. formulate a finite microscopic/equally constructive dynamical selector;
+2. freeze A1;
+3. apply A2 `FF_D`;
+4. apply A3 architecture containment;
+5. for a survivor derive A4 normalized hard/cross-representation relation and same-parent CTP/retarded block;
+6. then perform P5 comparator survival and P6 pre-ansatz record.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB с Iter060. Восстанови current front/state/handoff/latest delta, READINESS_METRICS и CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK. Всегда сообщай R1=92, R2=89, R3=24 (обновив RQIR), R4=45 пока rubric не изменился. Для нового parent: A1 explicit object -> A2 FF_D -> A3 containment -> A4 normalized hard 4pt/higher relation. Рост FF_D => FUNCTIONAL_FREEDOM_BLOCKED. Не запускать heavy compute для структурных blockers.`
+`Продолжай KMQGB с Iter061. Восстанови current front/state/handoff/latest delta, READINESS_METRICS, construction playbook, P4_FUNCTIONAL_FREEDOM_NO_GO и external RQIR620 audit. Всегда сообщай R1=92, R2=89, R3=24 после свежего RQIR refresh, R4=45 пока rubric не изменился. Для нового parent: A1 -> A2 FF_D -> A3 containment -> A4 normalized hard relation. Projective invariants не заменяют missing absolute normalization. Heavy compute только для frozen discriminating object.`
