@@ -7,19 +7,20 @@ This is the continuation entrypoint for KMQGB as a design/red-team layer for a f
 1. Read `recovery/RESTORE_FROM_NEW_CHAT.md`.
 2. Read `recovery/CURRENT_BENCHMARK_FRONT.md` and `recovery/state.json`.
 3. Read `protocol/READINESS_METRICS.md` and `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md` before reporting percentages.
-4. Read Candidate Gravity design priors and all permanent protocols named by current front/state.
-5. Read especially the latest search/audit layer:
+4. Read Candidate Gravity design priors and permanent protocols named by current front/state.
+5. Read especially the latest constructive-search layer:
    - `protocol/P4_CONSTRUCTIVE_SEARCH_NEGATIVE_LEDGER.md`;
+   - `protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md`;
    - `protocol/MAJOR_QG_PROGRAMS_HARD_OBSERVABLE_AUDIT.md`;
    - `protocol/MATRIX_MODEL_MICROSCOPIC_PARENT_PRECEDENT.md`;
    - `protocol/SELF_SOURCED_SPECTRAL_CLOSURE_AUDIT.md`;
    - `protocol/SPECTRAL_ORIGIN_COMPLETENESS.md`.
 6. Read candidate schema/validator and latest immutable recovery delta.
-7. Treat waves 1–37 as terminal historical authority.
+7. Treat waves 1–38 as terminal historical authority.
 8. Refresh external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before R3/heavy-compute claims.
 9. Resume from `next_actions` in `recovery/state.json`.
 
-## Stable readiness at Iteration 057
+## Stable readiness at Iteration 058
 
 - **R1 repository readiness: 92%**;
 - **R2 KMQGB methodology/material readiness: 88%**;
@@ -32,71 +33,76 @@ R4 cannot increase from additional negative audits. P1–P3 are saturated; the n
 
 - Wave 1: `9/9 = 100%`.
 - Waves 2–37: each `5/5 = 100%`.
+- Wave 38: `5/5 = 100%`, constructive prefilter / no R4 credit.
 - Robust unique-QG residuals: `0`.
 - KMQGB-promoted KG ansatz: none.
 
-## Current construction target
+## Preferred construction architecture
 
-Preferred architecture:
+Bookkeeping remains
+
+`Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG`.
+
+The preferred search architecture is
 
 `full matched C5 through 3-point + first candidate-specific independent 4-point/higher structure`,
 
-with few shared physical parameters across order/configuration/representation/background/holdout blocks.
-
-The parent must derive rather than fit its hierarchy.
-
-## New benchmark coverage
-
-Wave35 gives scoped modern terminal audits for covariant LQG/spinfoams, GFT/TGFT, random tensor models, causal fermion systems and QFT-vector/triangulated induced gravity. Their current KMQGB status is `BLOCKED_MISSING_REQUIRED_OBJECT` at the complete hard 4D Lorentzian spin-2 observable gate, not school-wide FAIL.
-
-This closes the benchmark-evidence subscore to `15/15` and raises R2 to 88%.
+unless a genuinely new cross-representation identity is derived. Parameters must remain shared across order/configuration/representation/background/holdout blocks.
 
 ## Parent-derivation standard
 
-Wave36 freezes BFSS/IKKT as strong microscopic parent precedents.
+BFSS/IKKT remain the strong microscopic-parent precedents. A future KG parent should aspire to the chain
 
-BFSS now directly links microscopic matrix dynamics to concrete graviton amplitudes in modern 2026 calculations. Therefore a future KG parent should aspire to an equally explicit chain
-
-`microscopic/equally constructive rule -> states/boundary data -> hard gravity observable -> linked higher-point/CTP predictions`.
+`finite microscopic/equally constructive rule -> states/boundary data -> uniquely normalized hard gravity observable -> linked higher-point/CTP predictions`.
 
 Matrix emergence itself is not novelty; BFSS/IKKT/M-theory/string are comparators.
 
-## Self-sourced spectral closure
+## Wave 38 narrowing
 
-Wave37 tested a no-hand-chosen-form-factor spectral self-consistency idea.
+Wave 38 terminally prefiltered five tempting parent motifs:
 
-Strong self-consistent graviton spectral closure is already substantially realized by Lorentzian spectral-RG/asymptotic-safety calculations, while unitarized-GR/graviball approaches provide collective spectral structure without uniquely closing the full parent.
+- null-slab / causal-diamond projector gluing;
+- associator / curved composition;
+- nonassociative star/R-flux gravity;
+- UV/IR reciprocal spectral self-duality / Born reciprocity;
+- causal-diamond overlap-spectrum consistency.
 
-Thus SSC is not a novel P4 survivor.
+All fail as **standalone novel P4 selectors** because close known architectures already realize the structural idea while leaving multiple dynamics open. The common failure is
+
+`structural consistency principle -> many admissible dynamics`.
+
+Therefore the next P4 proposal must contain a **finite dynamical selector**, not merely another abstract symmetry, gluing law, associator, duality or overlap condition.
 
 ## External RQIR authority
 
-Latest directly observed authority: **Iteration 615**, R3 **24%**.
+Latest directly observed authority: **Iteration 616**, R3 **24%**.
 
-The previous Iter611 kinematic-rank blocker has been prospectively resolved:
+The source/native bridge is now substantially narrower:
 
-- Iter612 proved the historical auxiliary constraints were absent;
-- Iter613 froze a new same-parent native trajectory before roots were inspected;
+- Iter613 prospectively froze the same-parent native trajectory;
 - Iter614 closed simple-root support/Jacobians;
-- Iter615 obtained six finite nonzero aggregate normalized source-side internal-pole coefficients, independently cross-checked.
+- Iter615 closed six finite nonzero source-side routed internal scalar-pole coefficients with independent implementation agreement;
+- Iter616 closed exact source/Iter582 q2-bucket identity and exact external scalar endpoint amputation.
 
-The exact next external gate is the identity-preserving source-side distribution -> native `Y/T_cut` binding, including normalization/sign, source-q versus Iter582-q2 correspondence, external endpoint/amputation convention and local K3/contact treatment.
+The remaining ambiguity is exactly one common nonzero scalar `N_native`, the source-response versus Iter582 effective-action/retarded phase and absolute normalization.
 
-Readiness remains 24% because no matched residual/comparator quotient exists yet. No heavy job is currently required.
+Full native binding remains `BLOCKED`, not FAIL and not residual. The exact next gate is an independent lower-order/common-field normalization identity fixing `N_native` without fitting Iter615 Candidate values.
+
+No heavy job is currently required.
 
 ## Exact next KMQGB front — constructive P4
 
-Find one explicit low-freedom physical principle that
+Find one explicit low-freedom **dynamical** parent that
 
-1. has BFSS-level derivational explicitness but is outside known M/string/matrix/C5/AS comparator manifolds;
-2. derives a tensor/momentum/state hierarchy rather than selecting a function by taste;
-3. declares S-local spectral support or D-nonlocal escape;
-4. produces at least one nontrivial hard/cross-representation relation;
-5. has radiative/CTP/Ward/causality/kinematic-lift authority in scope;
-6. survives immediate containment checks against full registered comparators.
+1. starts from a finite microscopic object or equally explicit constructive rule;
+2. derives a uniquely normalized hard 4-point/higher or cross-representation gravitational relation before fitting;
+3. derives a same-parent CTP/retarded block with the same parameters;
+4. declares `S-local` or `D-nonlocal` origin;
+5. closes radiative/CTP/Ward/causality/kinematic-lift authority;
+6. survives immediate containment against full C5, C4/C6, string/M-theory/matrix, amplitude/bootstrap, asymptotic safety, LQG/discrete, HST/causal-diamond, spectral/noncommutative and modern nonlocal comparators.
 
 Only then can R4 rise above 45% and a fail-closed pre-ansatz record be created.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB и поиск будущей Candidate Gravity. Восстанови current front/state/handoff/latest delta, READINESS_METRICS и R4 rubric. Считай волны 1–37 терминальными. Всегда сообщай R1/R2/R3/R4. Обнови внешний RQIR read-only. Следующий фронт — конструктивный P4: explicit low-freedom parent principle с BFSS-level derivation, но вне известных comparator manifolds; отрицательные аудиты сами по себе R4 не повышают.`
+`Продолжай KMQGB и поиск будущей Candidate Gravity. Восстанови current front/state/handoff/latest delta, READINESS_METRICS и R4 rubric. Считай волны 1–38 терминальными. Всегда сообщай R1/R2/R3/R4. Обнови внешний RQIR read-only. Следующий фронт — конструктивный P4: finite microscopic dynamical selector -> normalized hard 4pt/higher relation -> same-parent CTP/retarded block, с BFSS-level derivation и вне известных comparator manifolds. Gluing/associator/nonassociativity/UVIR reciprocity/overlap consistency сами по себе не P4. Отрицательные аудиты R4 не повышают.`
