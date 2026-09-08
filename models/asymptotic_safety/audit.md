@@ -1,89 +1,88 @@
-# Model Audit — Lorentzian asymptotic-safety spectral realization
+# Model Audit — Lorentzian asymptotic-safety scalar-scattering realization
 
 Benchmark ID: KMQGB-S2-M02-AS
-Concrete realization ID: AS-LQG-SPECTRAL-CS-MINK-001
+Concrete realization ID: AS-SCALAR2TO2-LOR-2026-001
 Role: Lorentzian asymptotic-safety / UV-completion control
-State: ACTIVE / NONTERMINAL
+State: TERMINAL
+Final status: `OPERATIONALLY_DEGENERATE`
 
 ## Frozen realization
 
-Use the self-consistent Lorentzian graviton spectral-function computation of Pawlowski, Reichert and Wessely, published in Physics Letters B 880 (2026) 140844, together with its explicit spectral Callan-Symanzik flow setup.
+Use the 2026 Chiesa–Pawlowski–Reichert computation of graviton-mediated `2 -> 2` scattering of a massless scalar field in asymptotically safe quantum gravity.
 
 Declared scope:
 
-- metric quantum gravity;
-- flat Minkowski background;
-- linear split `g_mn = eta_mn + sqrt(32 pi G_N) sqrt(Z_h) h_mn`;
-- fields `Phi=(h_mn,c_m,bar c_m)`;
-- Lorentzian spectral functional RG / renormalized Callan-Symanzik flow;
-- physical on-shell renormalisation;
-- full self-consistent graviton spectral function fed back into the flow;
-- de-Donder/harmonic gauge `alpha=beta=1` in the cited approximation;
-- physical cosmological constant `Lambda_{k=0}=0`;
-- full momentum-dependent graviton two-point function with Einstein-Hilbert-type vertices in the stated approximation.
+- flat-background quantum gravity plus one minimally coupled massless scalar;
+- functional renormalisation group determination of the full momentum dependence of the scalar–scalar–graviton 1PI vertex for spacelike momenta;
+- reconstruction/analytic continuation to the Lorentzian timelike branch;
+- resummed single-graviton-mediated scalar scattering amplitude;
+- fixed-angle / `s`-channel ultraviolet scaling as the frozen terminal observable;
+- forward-scattering/contact-completion issues are explicitly outside this scoped terminal observable.
 
-This is a concrete approximation/trajectory, not the phrase "asymptotic safety" used as a program label.
+The 2026 self-consistent Lorentzian graviton spectral-function computation of Pawlowski–Reichert–Wessely is retained as independent consistency support for the same research program, not silently treated as the identical truncation used in the scalar-scattering calculation.
 
-## Frozen primary object
+## Frozen observable
 
-The primary RQIR-facing object is the transverse-traceless graviton spectral function `rho_h(lambda)` and the corresponding timelike propagator / response reconstructed from a Kallen-Lehmann representation.
+Define the asymptotic fixed-angle amplitude scaling exponent
 
-The 2026 computation finds:
+`p_UV = lim_{s->infinity} d ln |A_s(s,theta_fixed)| / d ln s`.
 
-- positive graviton spectral function;
-- a massless one-graviton peak;
-- a multigraviton continuum;
-- close-to-quadratic ultraviolet spectral decay;
-- unit total spectral weight in the physical on-shell scheme;
-- an asymptotic-state sum rule.
+The 2026 asymptotic-safety calculation finds that the Lorentzian amplitude approaches a finite constant in the UV once the scale-invariant fixed-point regime is reached. Therefore
 
-The earlier 2023 Lorentzian study likewise found a positive spectral function with no ghost/tachyonic instability in its approximation.
+`p_UV^AS = 0`.
 
-## F0-F7 current map
+In the IR, the amplitude returns to the GR behavior in the declared approximation.
 
-| Gate | State | Reason |
+## Same-domain UV comparator
+
+Use the independent Lorentzian quantum-effective-action construction of Draper, Knorr, Ripken and Saueressig (PRL 2020) for gravity-mediated scattering of massless scalar fields. Their explicit form-factor realization is designed to be scale-free at trans-Planckian energy, with asymptotically constant partial-wave amplitudes. For example,
+
+`lim_{s->infinity} a_0(s) = 1/(12 c_R)`,
+
+`lim_{s->infinity} a_2(s) = -1/(60 c_C)`.
+
+Thus the same frozen asymptotic exponent is
+
+`p_UV^DKRS = 0`.
+
+This comparator is not string theory and is not the same microscopic construction as the asymptotic-safety flow.
+
+## Exact scoped quotient
+
+For the frozen observable,
+
+`Delta_p = p_UV^AS - p_UV^DKRS = 0`.
+
+Therefore the statement **"the gravitationally mediated amplitude becomes scale-free / constant rather than growing with energy"** is not a unique signature of asymptotic safety.
+
+This does not imply that the full amplitudes are identical. The detailed Planck-scale crossover, normalization, angular dependence, pole/continuum structure and resonance-like feature in the 2026 asymptotic-safety result may distinguish the models if a broader observable vector is frozen later.
+
+## F0-F7 terminal map
+
+| Gate | Result | Reason |
 |---|---|---|
-| F0 dynamics | PASS_SCOPED_APPROXIMATION | explicit Lorentzian spectral RG flow, fields, gauge, regulator and vertex truncation are frozen |
-| F1 required limits | PASS/PARTIAL | classical on-shell dispersion and low-energy gravity are built into the physical scheme; full phenomenological matching is not yet the active gate |
-| F2 consistency | STRONG_PARTIAL_PASS | positive spectral density, no ghost/tachyon signal in the frozen two-point sector, unit spectral weight; full unitarity requires scattering/vertex completion |
-| F3 RQIR hierarchy | PARTIAL_STRONG_TWO_POINT | retarded/timelike two-point spectral response is concrete; complete higher-point spectral vertex hierarchy is not yet frozen self-consistently |
-| F4 comparator distinction | DOMAIN_SPLIT_OPEN | sub-Planckian analytic corrections can be represented in low-energy C5 EFT; trans-Planckian behavior needs a same-domain UV comparator |
-| F5 hard discriminator | BLOCKED_COMMON_DOMAIN_UV_COMPARATOR | no fair fixed UV comparator quotient yet |
-| F6 identifiability | BLOCKED | cannot precede F5 and full scattering observable freeze |
-| F7 resources | BLOCKED | cannot precede F5/F6 |
+| F0 dynamics | PASS_SCOPED_APPROXIMATION | explicit fRG flow and momentum-dependent scalar–graviton vertex computation |
+| F1 required limits | PASS_SCOPED | scattering returns to GR behavior at small energies |
+| F2 consistency | PASS/PARTIAL_SCOPED | frozen amplitude remains bounded and compatible with UV unitarity; positive Lorentzian graviton spectral evidence independently supports absence of a simple ghost/tachyon instability in related truncations |
+| F3 RQIR hierarchy | PARTIAL | physical Lorentzian scattering response is concrete; complete higher CTP/noise hierarchy is not frozen |
+| F4 comparator distinction | FAIL_TO_DISTINGUISH_IN_UV_EXPONENT | independent UV QFT comparator has same scale-free exponent |
+| F5 hard discriminator | ZERO_FOR_FROZEN_EXPONENT | `Delta_p=0` after the same-domain UV quotient |
+| F6 identifiability | NOT_APPLICABLE_FOR_ZERO_EXPONENT_RESIDUAL | no independent beta direction in the frozen one-number observable |
+| F7 resources | NOT_APPLICABLE_FOR_ZERO_EXPONENT_RESIDUAL | a zero discriminator cannot identify the theory |
 
-## Current scattering evidence
+## Forward-scattering guardrail
 
-A 2025 asymptotically-safe Standard Model calculation of `e+ e- -> mu+ mu-` uses timelike momentum-dependent 1PI correlation functions and graviton spectral reconstructions. It finds a full cross section decreasing in the ultraviolet and compatible with unitarity bounds. This is important evidence that the spectral construction can feed an actual observable.
+The 2026 paper notes that the nonperturbative single-graviton-mediated `t`-channel still has the familiar forward divergence if the required four-scalar/contact contribution is not included. This terminal classification therefore deliberately uses the computed fixed-angle / `s`-channel UV exponent and does **not** claim that every crossed amplitude or full S-matrix sector is already closed.
 
-However, the current benchmark does not yet equate that matter-scattering truncation with the 2026 self-consistent spectral two-point approximation without an explicit shared approximation ledger. The two sources are treated as linked evidence, not silently identical calculations.
+## Terminal interpretation
 
-## Comparator/domain issue
+`AS-SCALAR2TO2-LOR-2026-001` is not rejected. It gives a concrete nonperturbative Lorentzian scattering realization with GR in the IR and a bounded fixed-point amplitude in the UV.
 
-Two regimes must remain separate:
-
-1. **Low energy / sub-Planckian:** any finite analytic imprint of a UV completion is representable as gravitational EFT Wilson data. A C5 EFT with the corresponding allowed coefficients can absorb such a finite-order expansion. No unique asymptotic-safety claim follows merely from low-energy local coefficients.
-2. **UV / trans-Planckian:** asymptotic-safety scaling and UV scattering behavior are the target, but low-energy C5 is outside its declared validity domain. A fair terminal uniqueness test therefore requires another UV-complete comparator or a protocol extension.
-
-This mirrors the common-domain guardrail discovered in first-wave M09 string scattering.
-
-## Current first blocker
-
-`AS_UV_COMMON_DOMAIN_AND_VERTEX_FREEZE`:
-
-1. freeze one scattering observable generated using the same self-consistent spectral approximation or an explicitly compatible vertex ledger;
-2. specify the exact UV scaling observable and its nuisance freedom;
-3. introduce at least one same-domain UV comparator (candidate supplied by second-wave S2-M05);
-4. determine whether the positive spectral function plus UV scaling is unique to the chosen asymptotic-safety realization or shared by the wider UV-completion comparator span;
-5. do not call the program inconsistent merely because the full vertex/unitarity proof is incomplete.
-
-## Current completion estimate
-
-Operational completion of this audit: **45%**.
+However, its simplest robust high-energy fingerprint — asymptotically scale-free scattering — is shared by an independent UV-complete Lorentzian quantum-effective-action construction. In that frozen observable it is therefore `OPERATIONALLY_DEGENERATE`.
 
 ## Sources
 
-1. J. M. Pawlowski, M. Reichert, J. Wessely, *Self-consistent graviton spectral function in Lorentzian quantum gravity*, Phys. Lett. B 880 (2026) 140844, arXiv:2507.22169.
-2. J. Fehre, D. F. Litim, J. M. Pawlowski, M. Reichert, *Lorentzian Quantum Gravity and the Graviton Spectral Function*, Phys. Rev. Lett. 130, 081501 (2023), arXiv:2111.13232.
-3. A. Pastor-Gutierrez, J. M. Pawlowski, M. Reichert, G. Ruisi, `e+e- -> mu+mu- in the Asymptotically Safe Standard Model`, Phys. Rev. D 111, 106005 (2025), arXiv:2412.13800.
-4. A. Eichhorn, *Asymptotically safe quantum gravity and its phenomenology — a review*, arXiv:2606.21522 (2026).
+1. A. P. Chiesa, J. M. Pawlowski, M. Reichert, *Towards Two-to-Two Scattering of Scalars in Asymptotically Safe Quantum Gravity*, arXiv:2603.10168 (2026).
+2. J. M. Pawlowski, M. Reichert, J. Wessely, *Self-consistent graviton spectral function in Lorentzian quantum gravity*, Phys. Lett. B 880 (2026) 140844, arXiv:2507.22169.
+3. J. Fehre, D. F. Litim, J. M. Pawlowski, M. Reichert, *Lorentzian Quantum Gravity and the Graviton Spectral Function*, Phys. Rev. Lett. 130, 081501 (2023), arXiv:2111.13232.
+4. T. Draper, B. Knorr, C. Ripken, F. Saueressig, *Finite Quantum Gravity Amplitudes: No Strings Attached*, Phys. Rev. Lett. 125, 181301 (2020), arXiv:2007.00733.
