@@ -1,90 +1,83 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "2.1",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 16,
-  "phase": "SECOND_WAVE_TERMINALLY_CLASSIFIED",
+  "kmqgb_iteration": 17,
+  "phase": "THIRD_WAVE_ACTIVE",
   "firewall": {
     "writes": "KMQGB repository only",
     "external_rqir_access": "read_only",
     "shared_runner_policy": "do_not_compete_while_RQIR_heavy_chain_active"
+  },
+  "design_recovery": {
+    "design_priors": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
+    "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
+    "purpose": "retain benchmark-derived lessons for future Candidate Gravity without modifying RQIR Candidate Gravity authority"
   },
   "first_wave": {
     "denominator_frozen": true,
     "total": 9,
     "terminal_completed": 9,
     "terminal_coverage_percent": 100.0,
+    "historical_status_immutable": true,
     "rollup": {
       "EXACT_COMPARATOR_IDENTITY": 5,
       "OPERATIONALLY_DEGENERATE": 2,
       "FAIL_RQIR_CONSISTENCY": 1,
       "BLOCKED_PROTOCOL_MISMATCH": 1,
       "ROBUST_NONZERO_RESIDUAL": 0
-    },
-    "historical_status_immutable": true
+    }
   },
   "second_wave": {
     "denominator_frozen": true,
     "total": 5,
     "terminal_completed": 5,
     "terminal_coverage_percent": 100.0,
-    "current_task_percent": 100,
+    "historical_status_immutable": true,
     "rollup": {
       "EXACT_COMPARATOR_IDENTITY": 2,
       "OPERATIONALLY_DEGENERATE": 2,
       "PASS_RQIR_GATE_COMPARATOR_INFRASTRUCTURE": 1,
       "FAIL_RQIR_CONSISTENCY": 0,
       "ROBUST_NONZERO_RESIDUAL": 0
-    },
-    "terminal_targets": [
-      {
-        "benchmark_id": "KMQGB-S2-M01-NONLOCAL",
-        "realization": "NL-EOM-ENTIRE-MINK-001",
-        "status": "OPERATIONALLY_DEGENERATE",
-        "observable": "all on-shell tree n-point amplitudes in frozen EOM-squared class",
-        "residual": 0,
-        "guardrail": "loops/off-shell/microcausality not claimed equivalent to GR"
-      },
-      {
-        "benchmark_id": "KMQGB-S2-M02-AS",
-        "realization": "AS-SCALAR2TO2-LOR-2026-001",
-        "status": "OPERATIONALLY_DEGENERATE",
-        "observable": "fixed-angle UV amplitude scaling exponent p_UV",
-        "value": 0,
-        "profiled_residual": 0,
-        "guardrail": "full Planck crossover/angular/contact S-matrix not claimed degenerate"
-      },
-      {
-        "benchmark_id": "KMQGB-S2-M03-CLASSICAL-CHANNEL",
-        "realization": "KTM-OSCILLATOR-MEASUREMENT-FEEDBACK-001",
-        "status": "EXACT_COMPARATOR_IDENTITY",
-        "comparator": "C3 classical-channel / measurement-feedback gravity",
-        "residual": 0
-      },
-      {
-        "benchmark_id": "KMQGB-S2-M04-POSTQUANTUM-CLASSICAL",
-        "realization": "PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001",
-        "status": "EXACT_COMPARATOR_IDENTITY",
-        "comparator": "C3b postquantum classical gravity",
-        "residual": 0,
-        "biana_chi_result": "local conserved transverse kernel in 2026 source yields same linearized OM action and two-point function; no scoped F2 failure"
-      },
-      {
-        "benchmark_id": "KMQGB-S2-M05-UV-COMPARATOR",
-        "realization": "HR-TRIPLE-SINGLE-MASS-GRAV4-001",
-        "status": "PASS_RQIR_GATE",
-        "objective": "SAME_DOMAIN_UV_COMPARATOR_ESTABLISHED",
-        "cross_wave_result": "type-II VS distinct from HR comparator in UV pole support",
-        "guardrail": "bootstrap amplitude is not claimed to be a complete microscopic theory and does not establish global string uniqueness"
-      }
-    ]
+    }
   },
-  "cross_wave": {
-    "M09_historical_first_wave_status": "BLOCKED_PROTOCOL_MISMATCH",
-    "historical_status_changed": false,
-    "prospective_second_wave_extension": "DISTINCT_FROM_HR_SINGLE_MASS_UV_COMPARATOR",
-    "global_string_uniqueness": false,
+  "third_wave": {
+    "denominator_frozen": true,
+    "total": 5,
+    "terminal_completed": 0,
+    "terminal_coverage_percent": 0.0,
+    "queue_file": "third_wave/README.md",
+    "targets": [
+      "T3-01 generalized bespoke / dual-resonance UV amplitudes",
+      "T3-02 full Planck-crossover asymptotic-safety amplitude vector",
+      "T3-03 nonclassical interface discriminator against C2/C3/C3b",
+      "T3-04 nonlinear postquantum-classical consistency",
+      "T3-05 concrete loop/canonical/discrete QG Lorentzian observable"
+    ],
+    "active_model": {
+      "benchmark_id": "KMQGB-T3-M01-BESPOKE-UV",
+      "research_target": "BESPOKE-DUAL-RESONANCE-UV-001",
+      "status": "ACTIVE",
+      "current_task_percent_estimate": 45,
+      "first_blocker": "BESPOKE_CONCRETE_UNITARY_POINT_AND_JOINT_VECTOR_FREEZE",
+      "new_result": "pole support alone is insufficient for global UV identification because broader bespoke dual-resonance constructions admit customizable mass spectra; stronger joint invariant needed",
+      "joint_target": "I_UV={pole support,residues/spins,crossing/duality,Regge trajectory,high-energy bounds/sum rules,low-energy coefficient correlations}"
+    }
+  },
+  "candidate_gravity_design_lessons": {
+    "core_rule": "Do not build KG novelty around new noise, Yukawa behavior, decoherence, UV softness, scale-free UV scaling, pole support, higher derivatives, or a mere nonzero GR residual alone.",
+    "preferred_direction": "linked multi-channel nonclassical interface signature from one parent dynamics",
+    "priority_components": [
+      "J mean source",
+      "N symmetrized noise",
+      "retarded response",
+      "ordered/noncommuting response",
+      "higher cumulants",
+      "entanglement/non-LOCC witness",
+      "Ward/Bianchi/contact identities"
+    ],
     "globally_authorized_robust_unique_qg_residuals": 0
   },
   "external_candidate_gravity_authority": {
@@ -95,9 +88,10 @@
     "coordinate": "(+2.5e-6,-1.25e-6)"
   },
   "next_actions": [
-    "Do not alter frozen first-wave 9/9 or second-wave 5/5 denominators",
-    "Before any third wave, freeze a new denominator and exact concrete realizations",
-    "Highest-value third-wave directions: generalized dual-resonance/Virasoro alternatives for string uniqueness, concrete loop/canonical/discrete QG observables, stronger entanglement/noncommutativity discriminators that survive C2/C3/C3b, and full Planck-crossover observable vectors for asymptotic safety",
-    "Do not launch KMQGB heavy shared-runner jobs while RQIR rank11 remains active"
+    "T3-01: freeze one concrete non-string bespoke amplitude point/subclass surviving published unitarity restrictions",
+    "T3-01: compare type-II string and bespoke comparator using joint I_UV rather than pole support alone",
+    "Update Candidate Gravity design priors whenever a reusable comparator/no-go lesson survives exact-realization audit",
+    "Do not alter historical first-wave 9/9 or second-wave 5/5 denominators",
+    "Do not launch KMQGB heavy shared-runner jobs while external RQIR rank11 remains active"
   ]
 }
