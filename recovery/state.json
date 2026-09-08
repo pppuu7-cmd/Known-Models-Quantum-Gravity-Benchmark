@@ -1,64 +1,103 @@
 {
-  "schema_version": "1.7",
+  "schema_version": "2.0",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 10,
-  "phase": "FIRST_QUEUE_TERMINALLY_CLASSIFIED",
-  "external_candidate_gravity_authority": {
-    "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "main_sha_observed": "94f9e6735036c96275ea7d170fbee7c2cc5bd579",
-    "authoritative_research_iteration": 566,
-    "model_readiness_percent": 24,
-    "access_mode": "read_only",
-    "active_heavy_work": "rank11 run 34168897005 directly verified in_progress"
+  "kmqgb_iteration": 16,
+  "phase": "SECOND_WAVE_TERMINALLY_CLASSIFIED",
+  "firewall": {
+    "writes": "KMQGB repository only",
+    "external_rqir_access": "read_only",
+    "shared_runner_policy": "do_not_compete_while_RQIR_heavy_chain_active"
   },
-  "progress": {
-    "first_queue_terminal_coverage_percent": 100.0,
-    "first_queue_terminal_fraction": "9/9",
-    "current_M09_task_percent_estimate": 100,
-    "percent_note": "100% means every model in the frozen first nine-model queue has a terminal classification under the current protocol; it does not mean quantum gravity is solved or every model is fully phenomenologically exhausted"
-  },
-  "queue": {
+  "first_wave": {
+    "denominator_frozen": true,
     "total": 9,
     "terminal_completed": 9,
-    "terminal_rollup": {
+    "terminal_coverage_percent": 100.0,
+    "rollup": {
       "EXACT_COMPARATOR_IDENTITY": 5,
       "OPERATIONALLY_DEGENERATE": 2,
       "FAIL_RQIR_CONSISTENCY": 1,
       "BLOCKED_PROTOCOL_MISMATCH": 1,
       "ROBUST_NONZERO_RESIDUAL": 0
-    }
+    },
+    "historical_status_immutable": true
   },
-  "closed_models": [
-    {"benchmark_id":"RQIR7-M01-GR-EH-MINK","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C0","residual":0},
-    {"benchmark_id":"KMQGB-M02-GR-QG-EFT","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C5","residual":0},
-    {"benchmark_id":"KMQGB-M03-SEMICLASSICAL","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C1","residual":0},
-    {"benchmark_id":"KMQGB-M04-STOCHASTIC","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C2","residual":0},
-    {"benchmark_id":"KMQGB-M05-FR","status":"OPERATIONALLY_DEGENERATE","profiled_residual":0,"scope":"frozen gamma(r) versus one-scalar Yukawa parent"},
-    {"benchmark_id":"KMQGB-M06-BRANS-DICKE","status":"OPERATIONALLY_DEGENERATE","profiled_residual":0,"scope":"BD submodel versus general massless scalar-tensor parent"},
-    {"benchmark_id":"KMQGB-M07-STELLE","status":"FAIL_RQIR_CONSISTENCY","first_failing_gate":"F2_STANDARD_MASSIVE_SPIN2_GHOST","scope":"standard fundamental Feynman/Hilbert-space interpretation"},
-    {"benchmark_id":"KMQGB-M08-HIGHER-CURVATURE","status":"EXACT_COMPARATOR_IDENTITY","comparator":"C5 low-energy gravity EFT","profiled_residual":0},
-    {"benchmark_id":"KMQGB-M09-STRING-EFT","status":"BLOCKED_PROTOCOL_MISMATCH","low_energy_subresult":"OPERATIONALLY_DEGENERATE_WITH_C5_EFT","low_energy_profiled_residual":0,"uv_subresult":"BLOCKED_NO_COMMON_DOMAIN_UV_COMPARATOR"}
-  ],
-  "first_queue_global_lesson": {
-    "consistency_failures_found": 1,
-    "consistency_failure_models": ["KMQGB-M07-STELLE standard fundamental quantization"],
-    "robust_unique_residuals_found": 0,
-    "summary": "The funnel distinguishes consistency failure, comparator identity, observable degeneracy, EFT validity boundaries and protocol incompleteness; none of the first nine controls produced an authorized robust unique quantum-gravity residual under the frozen comparator quotient."
+  "second_wave": {
+    "denominator_frozen": true,
+    "total": 5,
+    "terminal_completed": 5,
+    "terminal_coverage_percent": 100.0,
+    "current_task_percent": 100,
+    "rollup": {
+      "EXACT_COMPARATOR_IDENTITY": 2,
+      "OPERATIONALLY_DEGENERATE": 2,
+      "PASS_RQIR_GATE_COMPARATOR_INFRASTRUCTURE": 1,
+      "FAIL_RQIR_CONSISTENCY": 0,
+      "ROBUST_NONZERO_RESIDUAL": 0
+    },
+    "terminal_targets": [
+      {
+        "benchmark_id": "KMQGB-S2-M01-NONLOCAL",
+        "realization": "NL-EOM-ENTIRE-MINK-001",
+        "status": "OPERATIONALLY_DEGENERATE",
+        "observable": "all on-shell tree n-point amplitudes in frozen EOM-squared class",
+        "residual": 0,
+        "guardrail": "loops/off-shell/microcausality not claimed equivalent to GR"
+      },
+      {
+        "benchmark_id": "KMQGB-S2-M02-AS",
+        "realization": "AS-SCALAR2TO2-LOR-2026-001",
+        "status": "OPERATIONALLY_DEGENERATE",
+        "observable": "fixed-angle UV amplitude scaling exponent p_UV",
+        "value": 0,
+        "profiled_residual": 0,
+        "guardrail": "full Planck crossover/angular/contact S-matrix not claimed degenerate"
+      },
+      {
+        "benchmark_id": "KMQGB-S2-M03-CLASSICAL-CHANNEL",
+        "realization": "KTM-OSCILLATOR-MEASUREMENT-FEEDBACK-001",
+        "status": "EXACT_COMPARATOR_IDENTITY",
+        "comparator": "C3 classical-channel / measurement-feedback gravity",
+        "residual": 0
+      },
+      {
+        "benchmark_id": "KMQGB-S2-M04-POSTQUANTUM-CLASSICAL",
+        "realization": "PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001",
+        "status": "EXACT_COMPARATOR_IDENTITY",
+        "comparator": "C3b postquantum classical gravity",
+        "residual": 0,
+        "biana_chi_result": "local conserved transverse kernel in 2026 source yields same linearized OM action and two-point function; no scoped F2 failure"
+      },
+      {
+        "benchmark_id": "KMQGB-S2-M05-UV-COMPARATOR",
+        "realization": "HR-TRIPLE-SINGLE-MASS-GRAV4-001",
+        "status": "PASS_RQIR_GATE",
+        "objective": "SAME_DOMAIN_UV_COMPARATOR_ESTABLISHED",
+        "cross_wave_result": "type-II VS distinct from HR comparator in UV pole support",
+        "guardrail": "bootstrap amplitude is not claimed to be a complete microscopic theory and does not establish global string uniqueness"
+      }
+    ]
   },
-  "next_research_front": {
-    "status": "SECOND_WAVE_NOT_YET_FROZEN",
-    "priority_candidates": [
-      "concrete ghost-free nonlocal/form-factor gravity",
-      "concrete asymptotic-safety trajectory/truncation with Lorentzian observable kernel",
-      "classical-channel measurement-feedback gravity",
-      "modern postquantum classical gravity realization",
-      "additional string/UV completion comparator for M09-UV",
-      "loop/canonical/discrete quantum-gravity realization only if a concrete observable kernel can be frozen"
-    ],
-    "rule": "Do not change the first-queue 9/9 denominator retroactively. Freeze a separate second-wave denominator when the next queue is instantiated."
+  "cross_wave": {
+    "M09_historical_first_wave_status": "BLOCKED_PROTOCOL_MISMATCH",
+    "historical_status_changed": false,
+    "prospective_second_wave_extension": "DISTINCT_FROM_HR_SINGLE_MASS_UV_COMPARATOR",
+    "global_string_uniqueness": false,
+    "globally_authorized_robust_unique_qg_residuals": 0
   },
-  "heavy_compute_policy": "do_not_compete_with_active_RQIR_shared_runner",
-  "write_firewall": "KMQGB writes only to this repository; RQIR is read-only"
+  "external_candidate_gravity_authority": {
+    "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
+    "authoritative_research_iteration_observed": 566,
+    "model_readiness_percent": 24,
+    "active_heavy_work": "rank11 run 34168897005 directly verified in_progress",
+    "coordinate": "(+2.5e-6,-1.25e-6)"
+  },
+  "next_actions": [
+    "Do not alter frozen first-wave 9/9 or second-wave 5/5 denominators",
+    "Before any third wave, freeze a new denominator and exact concrete realizations",
+    "Highest-value third-wave directions: generalized dual-resonance/Virasoro alternatives for string uniqueness, concrete loop/canonical/discrete QG observables, stronger entanglement/noncommutativity discriminators that survive C2/C3/C3b, and full Planck-crossover observable vectors for asymptotic safety",
+    "Do not launch KMQGB heavy shared-runner jobs while RQIR rank11 remains active"
+  ]
 }
