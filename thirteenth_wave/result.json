@@ -1,0 +1,16 @@
+{
+  "wave": 13,
+  "status": "TERMINAL",
+  "terminal_coverage": "5/5",
+  "terminal_coverage_percent": 100.0,
+  "targets": [
+    {"id":"KMQGB-T13-M01-PROSPECTIVE-SPLIT","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T13-M02-NO-HOLDOUT-RETUNE","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T13-M03-PREDICTIVE-COVARIANCE","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T13-M04-LOCO-VALIDATION","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T13-M05-TRAINING-IDENTIFIABILITY","status":"PASS_RQIR_GATE"}
+  ],
+  "protocol":"protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md",
+  "reference_code":"code/predictive_holdout_reference.py",
+  "kg_lesson":"A future KG parent should predict held-out response orders/configurations with shared parameters fixed elsewhere; predictive rigidity complements COR and prevents hidden per-block retuning."
+}
