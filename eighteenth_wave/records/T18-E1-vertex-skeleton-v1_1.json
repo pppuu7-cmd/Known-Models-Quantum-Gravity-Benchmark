@@ -1,0 +1,132 @@
+{
+  "record_schema_version": "1.1",
+  "candidate_id": "KMQGB-T18-E1-VERTEX-SKELETON",
+  "authority": {
+    "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+    "commit_or_blob": "prospective wave18 skeleton",
+    "parent_object_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md"
+  },
+  "parent_dynamics": {
+    "representation": "action_skeleton",
+    "object_ref": "S_EH + (lambda/M^2) int sqrt(-g) V3[C,nabla;Phi_M]",
+    "declared_domain": "Minkowski-connected massless-spin-2 sector; prospective cross-regime E/M~O(1); exact Phi_M and CTP parent not yet derived"
+  },
+  "escape_doors": ["E1"],
+  "escape_claim": "Potential beyond-C5 information is restricted to a parent-fixed all-orders nonlocal Weyl/Riemann vertex shape at E~M; the low-energy Taylor expansion is explicitly treated as C5 EFT and is not novelty.",
+  "escape_evidence_refs": [
+    "protocol/BEYOND_C5_ESCAPE_TAXONOMY.md",
+    "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md"
+  ],
+  "door_specific_blockers": [
+    "PARENT_FIXED_KERNEL_DERIVATION",
+    "LORENTZIAN_CTP_COMPLETION",
+    "CAUSALITY_AND_GLOBAL_BACKGROUND_AUDIT",
+    "COMPLETE_4GRAVITON_WARD_RESPONSE",
+    "SAME_DOMAIN_NONLOCAL_UV_COMPARATOR"
+  ],
+  "parameters": [
+    {"id": "lambda", "role": "dynamics", "sharing_scope": "global"},
+    {"id": "M", "role": "dynamics", "sharing_scope": "global"}
+  ],
+  "observable_blocks": [
+    {
+      "id": "B2_FREE_GRAVITON",
+      "response_order": 2,
+      "configuration_id": "MINKOWSKI_FREE",
+      "physical_dimension": 1,
+      "routing_ref": "flat-background quadratic action",
+      "completeness": {
+        "status": "PASS",
+        "parent_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#2",
+        "expected_families": ["Einstein-Hilbert quadratic term"],
+        "included_families": ["Einstein-Hilbert quadratic term"],
+        "omitted_family_zero_proofs": ["regular cubic-curvature deformation starts at O(h^3)"]
+      },
+      "origin_classification": "GR_MASSLESS_SPIN2_POLE_UNCHANGED",
+      "constraint_status": "PASS_SCOPED_FREE_GAUGE_STRUCTURE",
+      "attribution_tags": ["gravity_spin2_anchor", "not_novelty"],
+      "prospective_role": "mandatory_anchor"
+    },
+    {
+      "id": "B4_4GRAVITON_CROSSREGIME",
+      "response_order": 4,
+      "configuration_id": "MULTI_KINEMATIC_E_OVER_M",
+      "physical_dimension": null,
+      "routing_ref": "prospective real 4-graviton scattering kinematics",
+      "completeness": {
+        "status": "BLOCKED",
+        "parent_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#5",
+        "expected_families": [
+          "V3-derived quartic contact",
+          "EH-cubic x V3-cubic exchange in required channels/orientations",
+          "Ward/contact completion",
+          "higher-lambda parent-required families when included"
+        ],
+        "included_families": [],
+        "omitted_family_zero_proofs": []
+      },
+      "origin_classification": "BLOCKED_PARENT_KERNEL_AND_COMPLETE_AMPLITUDE",
+      "constraint_status": "BLOCKED",
+      "attribution_tags": ["on_shell", "spin2", "cross_regime", "holdout_candidate"],
+      "prospective_role": "holdout"
+    }
+  ],
+  "comparators": [
+    {
+      "id": "C5_FULL_GRAVITATIONAL_EFT",
+      "validity_domain": "E << M local derivative expansion",
+      "parameter_ids": [],
+      "prediction_ref": "all finite Taylor coefficients belong to matched gravitational EFT directions",
+      "jacobian_ref": "numeric tangent pending exact observable",
+      "state_sector": "matched"
+    },
+    {
+      "id": "SAME_DOMAIN_NONLOCAL_UV_FAMILY",
+      "validity_domain": "E~M cross-regime",
+      "parameter_ids": [],
+      "prediction_ref": "BLOCKED comparator registry to be frozen after exact parent kernel",
+      "jacobian_ref": "BLOCKED",
+      "state_sector": "matched"
+    }
+  ],
+  "covariance": {
+    "matrix_ref": null,
+    "provenance": "no numerical residual object yet",
+    "cross_block_correlations_included": true
+  },
+  "attribution_stack": {
+    "quantum": "BLOCKED_CTP_PARENT",
+    "mediator": "PASS_METRIC_ONLY_SKELETON",
+    "gravity_spin2": "PASS_FREE_SECTOR_ANCHOR",
+    "locality": "BLOCKED_E1_CAUSALITY",
+    "relational_qrf": "BLOCKED_OBSERVABLE_COMPLETION",
+    "detector": "N_A_SCATTERING_STAGE",
+    "state": "PASS_NOT_STATE_ONLY_BY_CONSTRUCTION",
+    "rigidity": "BLOCKED_KERNEL_DERIVATION"
+  },
+  "rigidity": {
+    "cross_order": {"status": "BLOCKED", "stack_ref": null, "shared_parameter_incidence": ["lambda", "M"], "R_shared": null},
+    "intervention": {"status": "BLOCKED", "design_variables": ["E/M", "scattering_angle", "helicity"]},
+    "holdout": {"status": "BLOCKED", "split_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#6", "no_shared_retune": true, "shared_parameter_retuning_on_holdout": false, "predictive_covariance_ref": null},
+    "minimal_suite": {"status": "BLOCKED", "library_ref": null, "selected_suite_ref": null, "leave_one_block_robustness": null}
+  },
+  "promotion_gates": {
+    "G0": {"status": "BLOCKED", "evidence_refs": ["protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md"], "scope": "structural action skeleton exists but Phi_M/CTP parent is not derived"},
+    "G1": {"status": "BLOCKED", "evidence_refs": ["protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#5"], "scope": "four-point complete response missing"},
+    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "full Ward physical basis missing"},
+    "G3": {"status": "BLOCKED", "evidence_refs": [], "scope": "same-domain E~M comparator incomplete"},
+    "G4": {"status": "BLOCKED", "evidence_refs": [], "scope": "CTP causality/relational attribution incomplete"},
+    "G5": {"status": "BLOCKED", "evidence_refs": ["protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#3"], "scope": "IR C5 containment known; cross-regime full quotient missing"},
+    "G6": {"status": "BLOCKED", "evidence_refs": [], "scope": "no residual/covariance/Jacobian"},
+    "G7": {"status": "BLOCKED", "evidence_refs": [], "scope": "no global profile"},
+    "G8": {"status": "BLOCKED", "evidence_refs": [], "scope": "no projected identifiability"},
+    "G9": {"status": "BLOCKED", "evidence_refs": [], "scope": "kernel and predictive rigidity unproven"},
+    "G10": {"status": "BLOCKED", "evidence_refs": [], "scope": "pre-ansatz skeleton only; promotion forbidden"}
+  },
+  "promotion": {
+    "ansatz_promoted": false,
+    "robust_global_residual": false,
+    "fisher_promoted": false,
+    "resources_promoted": false
+  }
+}
