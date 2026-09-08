@@ -6,115 +6,85 @@ This is the continuation entrypoint for KMQGB as a design/red-team layer for a f
 
 1. Read `recovery/RESTORE_FROM_NEW_CHAT.md`.
 2. Read `recovery/CURRENT_BENCHMARK_FRONT.md` and `recovery/state.json`.
-3. Read `protocol/READINESS_METRICS.md` before reporting percentages.
-4. Read both Candidate Gravity design-prior files and permanent protocols named in current front/state.
-5. Read especially the post-wave24 protocols:
-   - `protocol/AMPLITUDE_PARENT_PRINCIPLE_SATURATION.md`;
+3. Read `protocol/READINESS_METRICS.md` and `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md` before reporting percentages.
+4. Read both Candidate Gravity design-prior files and all permanent protocols named by current front/state.
+5. Read especially:
    - `protocol/CROSS_REPRESENTATION_RIGIDITY.md`;
    - `protocol/CROSS_REPRESENTATION_COMPARATOR_COVERAGE.md`;
    - `protocol/CROSS_BACKGROUND_RIGIDITY.md`;
-   - `models/state_dependent_nonlocal/audit.md`.
+   - `protocol/IR_SOFT_MEMORY_CROSS_REPRESENTATION_AUDIT.md`;
+   - `protocol/SPECTRAL_ORIGIN_COMPLETENESS.md`;
+   - `protocol/KERNEL_SELECTION_MECHANISM_AUDIT.md`.
 6. Read candidate schema/validator and latest immutable recovery delta.
-7. Treat waves 1–29 as terminal historical authority.
-8. Refresh external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before R3/readiness/heavy-compute claims.
+7. Treat waves 1–32 as terminal historical authority.
+8. Refresh external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before R3/heavy-compute claims.
 9. Resume from `next_actions` in `recovery/state.json`.
 
-## Stable readiness reporting
+## Stable readiness at Iteration 052
 
-At KMQGB Iteration 050:
+- **R1 repository readiness: 92%**;
+- **R2 KMQGB methodology/material readiness: 87%**;
+- **R3 external Candidate Gravity scientific readiness: 24%**;
+- **R4 minimal novel parent-principle search: 45%**.
 
-- **R1 repository readiness: 90%**;
-- **R2 KMQGB methodology/material readiness: 86%**;
-- **R3 external Candidate Gravity scientific readiness: 24%**.
-
-Also report current finite-task completion `R4` every research iteration.
-
-R1/R2 may change only by the weighted rubric in `protocol/READINESS_METRICS.md`. R3 may change only from refreshed external RQIR authority.
+R4 is no longer allowed to grow from additional negative audits. P1–P3 are saturated; the next scoreable deliverable is an explicit constructive P4 survivor.
 
 ## Historical coverage
 
 - Wave 1: `9/9 = 100%`.
-- Waves 2–29: each `5/5 = 100%`.
+- Waves 2–32: each `5/5 = 100%`.
 - Robust unique-QG residuals: `0`.
 - KMQGB-promoted KG ansatz: none.
 
-Coverage is not Candidate Gravity readiness.
+## Current scientific search rule
 
-## Current construction target
+Preferred language:
 
-Preferred language remains
+`full matched C5 through 3-point + first candidate-specific independent 4-point/higher structure`.
 
-`full matched C5 through 3-point + first candidate-specific independent 4-point/higher parent structure`,
+The parent must derive rather than fit its hierarchy and must share physical parameters across order/configuration/representation/background/holdout blocks.
 
-but the parent must now be tested across several rigidity axes simultaneously:
+## Spectral-origin boundary
 
-- cross-order;
-- cross-configuration/intervention;
-- cross-representation;
-- cross-background;
-- prospective holdout.
+For coefficient combinations covered by a valid local gravitational dispersion relation, a candidate-specific beyond-C5 hard shift requires different UV spectral/Regge support. If the candidate does not supply such support, it must explicitly use a nonlocal/exponentially bounded dispersion class or remain `BLOCKED`.
 
-The model must derive rather than fit its tensor/kernel hierarchy and must provide radiative/RG closure, Lorentzian/CTP prescription, dispersion class, Ward completeness and exact parent-to-native kinematic lift.
+No-new-spectral-support + identical local sum-rule/asymptotic data cannot generate an independent covered dispersive shift.
 
-## New lessons from Waves 25–29
+## Current failed P4 mechanisms
 
-### Amplitude parent-principle saturation
+No survivor among
 
-- universal generalized double copy is too broad to select a low-dimensional four-graviton hierarchy;
-- self-dual gravity is a strong integrable but scoped/truncated sector;
-- minimal Regge-zero bootstrap selects string;
-- controlled nonminimal-zero/trajectory deformations already enter Coon/bespoke/generalized dual-resonance spaces.
+- cutoff/zeta spectral action;
+- semigroup/diffusion exponential;
+- retarded Stieltjes class;
+- minimal spectral support;
+- amplitude-only bootstrap/double-copy/self-dual/dual-resonance principles.
 
-Hence amplitude-only search is not sufficient.
+This is negative evidence, not a physical no-go for all possible theories.
 
-### Cross-representation rigidity
+## Repository automation
 
-One parent parameter set must be shared across scattering, CTP/real-time and relational/channel blocks.
-
-`R_XR = rank(J_sep)-rank(J_shared) >= 0`.
-
-Do not clone shared dynamics per representation.
-
-### Comparator coverage
-
-- full C5 is the primary cross-representation null;
-- C4/C6 remain strong ordinary-quantum-mediator nulls;
-- C2/C3/C3b cover stochastic/CQ real-time/relational sectors;
-- string and asymptotic safety have strong subobjects but exact full multi-representation KMQGB coverage remains partly blocked.
-
-Missing comparator representations are `BLOCKED`, never zero.
-
-### Cross-background rigidity
-
-Use the same parent/Wilson parameters across flat-space and allowed curved-background observables. Black-hole entropy/extremality consistency is useful but not KG novelty by itself.
-
-### Fresh 2026 state-dependent nonlocal comparator
-
-The curvature-history construction with fields `{g,Phi,Delta,C,chi}` proves a scoped Bianchi/conservation mechanism for state-dependent nonlocality, but `M_eff(C)` is not uniquely selected and full ghost/spectrum/quantum completion is absent.
-
-Lesson:
-
-`covariant state dependence != kernel rigidity != quantum completion`.
+`.github/workflows/methodology-ci.yml` is active on GitHub-hosted runners.
+First run `34266786359` completed `success` and validated repository JSON, reference algebra/self-tests and recovery entrypoints.
 
 ## External RQIR authority
 
-Latest directly observed authority: **Iteration 611**, readiness **24%**.
+Latest directly observed authority: **Iteration 611**, R3 **24%**.
 
-Current blocker is kinematic projection rank: three independent source invariants must map to one native hard variable, requiring two same-parent auxiliary constraints or an equivalent trajectory before native roots/Jacobians and comparator quotient are authoritative.
+Current blocker is still the source-to-native kinematic-rank bridge: 3 independent source invariants to one native `s`, requiring two same-parent auxiliary constraints or equivalent prospective trajectory. No Source/Born subtraction, comparator quotient, ANSATZ-003, Fisher/resources until that bridge closes.
 
-No Source/Born subtraction, ANSATZ-003, Fisher/resources until the bridge closes.
+## Exact next KMQGB front — P4 constructive search
 
-## Exact next KMQGB front
+Find one explicit low-freedom physical principle that
 
-Search for a minimal novel parent principle that
+1. derives a tensor/momentum/state hierarchy rather than selecting a function by taste;
+2. declares its local spectral support or D-nonlocal escape;
+3. produces at least one nontrivial hard/cross-representation relation;
+4. has radiative/CTP/Ward/kinematic-lift authority in scope;
+5. survives immediate containment checks against full C5, C4/C6, string/dual resonance/bootstrap, asymptotic safety, spectral geometry and modern nonlocal comparators.
 
-1. fixes rather than parameterizes the quartic/higher and any state-dependent kernel hierarchy;
-2. uses few shared parameters across scattering + CTP + relational/channel and, where valid, curved-background blocks;
-3. is radiatively/RG closed;
-4. survives full C5, C4/C6, string-like/dual-resonance, asymptotic-safety and modern nonlocal/state-dependent comparators;
-5. supplies exact kinematic projection authority;
-6. yields a real comparator-orthogonal residual before ansatz promotion.
+Only then can R4 rise above 45% and a new fail-closed pre-ansatz record be created.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB и наработки для будущей Candidate Gravity. Восстанови current front/state/handoff/latest delta и READINESS_METRICS. Считай волны 1–29 терминальными. Всегда сообщай R1/R2/R3/R4. Обнови внешний RQIR read-only. Следующий фронт — minimal novel parent principle with cross-representation/cross-background rigidity; KG ansatz не продвигать до полного promotion gate.`
+`Продолжай KMQGB и наработки для будущей Candidate Gravity. Восстанови current front/state/handoff/latest delta, READINESS_METRICS и R4 rubric. Считай волны 1–32 терминальными. Всегда сообщай R1/R2/R3/R4. Обнови внешний RQIR read-only. Следующий фронт — конструктивный P4: explicit low-freedom parent principle; отрицательные аудиты сами по себе R4 больше не повышают.`
