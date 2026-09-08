@@ -1,0 +1,17 @@
+{
+  "wave": 32,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "RIGID_RELATIVE_COEFFICIENTS__REMAINS_FUNCTIONAL_INPUT_AND_KNOWN_ARCHITECTURE": 1,
+    "REMOVES_CUTOFF_FUNCTION__KNOWN_LOCAL_SPECTRAL_GEOMETRY_COMPARATOR": 1,
+    "EXPONENTIAL_SELECTED__GENERATOR_AND_CAUSALITY_NOT_SELECTED": 1,
+    "CAUSAL_SPECTRAL_CLASS__ARBITRARY_RHO_REMAINS": 1,
+    "LOW_RANK_SPECTRAL_MINIMALITY__EXTRA_STATE_OR_CONTINUUM_COMPARATOR": 1
+  },
+  "main_lesson": "Reducing functional freedom is not sufficient. None of the audited spectral-action, semigroup, Stieltjes or minimal-spectral-support mechanisms currently provides a novel low-freedom parent principle that survives known comparator classes.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false,
+  "R4_change": 0
+}
