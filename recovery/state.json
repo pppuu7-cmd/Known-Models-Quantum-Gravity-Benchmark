@@ -1,14 +1,14 @@
 {
-  "schema_version": "4.7",
+  "schema_version": "4.8",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 53,
-  "phase": "WAVES_1_TO_33_TERMINAL__CONSTRUCTIVE_P4_PARENT_PRINCIPLE_REQUIRED",
+  "kmqgb_iteration": 56,
+  "phase": "WAVES_1_TO_37_TERMINAL__CONSTRUCTIVE_P4_PARENT_PRINCIPLE_REQUIRED",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
-    "kmqgb_methodology_material_readiness_R2_percent": 87,
+    "kmqgb_methodology_material_readiness_R2_percent": 88,
     "candidate_gravity_scientific_readiness_R3_percent": 24,
     "current_task_R4_percent": 45,
     "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md"
@@ -23,16 +23,17 @@
   },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
-    "waves2_to_33": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
+    "waves2_to_37": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
     "preferred_preansatz_architecture": "full_matched_C5_through_3point + candidate_specific_4point_or_higher parent with shared cross_order/cross_representation/cross_background parameters",
     "hard_origin_gate": "protocol/SPECTRAL_ORIGIN_COMPLETENESS.md",
-    "D_nonlocal_result": "admissible escape class but no unique kernel-selection principle found",
-    "kernel_selection_audit": "protocol/KERNEL_SELECTION_MECHANISM_AUDIT.md",
-    "constructive_requirement": "one explicit low-freedom physical parent principle with derived hard or cross-representation relation and first-pass comparator survival"
+    "major_program_audit": "protocol/MAJOR_QG_PROGRAMS_HARD_OBSERVABLE_AUDIT.md",
+    "matrix_parent_precedent": "protocol/MATRIX_MODEL_MICROSCOPIC_PARENT_PRECEDENT.md",
+    "self_sourced_spectral_audit": "protocol/SELF_SOURCED_SPECTRAL_CLOSURE_AUDIT.md",
+    "constructive_requirement": "an explicit low-freedom microscopic or equally derivational parent that produces a concrete hard/cross-representation gravitational relation and survives registered comparator spaces"
   },
   "repository_automation": {
     "workflow": ".github/workflows/methodology-ci.yml",
@@ -56,16 +57,16 @@
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
     "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_053.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_056.md"
   },
   "next_wave_status": "NO_MORE_NEGATIVE_WAVE_CREDIT__CONSTRUCTIVE_P4_REQUIRED",
   "next_actions": [
     "Refresh external RQIR before every R3/heavy-compute statement",
-    "Identify or formulate one explicit low-freedom physical parent principle rather than another generic constraint class",
-    "Require it to derive a specific quartic/higher or cross-representation relation with few shared parameters",
-    "Classify hard origin as local spectral support or D-nonlocal and provide radiative/CTP/causality/kinematic-lift scope",
-    "Immediately profile against full C5, C4/C6, string/dual-resonance/bootstrap, asymptotic safety, spectral geometry and modern nonlocal comparators",
-    "Only after a P4 object exists create a new pre-ansatz candidate record and score P5/P6",
+    "Formulate or identify one explicit low-freedom parent principle with BFSS-level derivational explicitness but outside known M/string/matrix/AS/C5 comparator manifolds",
+    "Require a concrete quartic/higher or cross-representation gravitational relation with few shared parameters",
+    "Classify hard origin as S-local spectral support or D-nonlocal and close radiative/CTP/causality/kinematic-lift scope",
+    "Immediately profile any P4 proposal against full C5, C4/C6, string/dual-resonance/M-theory/matrix, asymptotic safety, LQG/discrete, spectral geometry and modern nonlocal comparators",
+    "Only after P4 survival create a pre-ansatz machine record and score P5/P6",
     "Keep heavy compute idle until a concrete structural object justifies it",
     "Do not promote KG before a robust global comparator-subtracted residual exists"
   ]
