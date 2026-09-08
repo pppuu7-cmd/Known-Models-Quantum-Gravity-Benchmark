@@ -1,0 +1,8 @@
+{
+  "benchmark_id": "KMQGB-T7-M02-SQUEEZED-STATE",
+  "status": "OPERATIONALLY_DEGENERATE",
+  "claim": "SQUEEZED_OR_EXOTIC_GRAVITON_STATE_AS_NEW_DYNAMICS",
+  "result": "Squeezed/coherent graviton signatures can arise from admissible non-vacuum states of ordinary quantized gravity; vacuum-only C5 is an insufficient comparator.",
+  "profile_over": "physically admissible C5 graviton state rho_h and preparation/history nuisance",
+  "kg_lesson": "Separate state novelty from dynamics novelty; squeezing can amplify a signal but does not identify DeltaGamma_KG by itself."
+}
