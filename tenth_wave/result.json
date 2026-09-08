@@ -1,0 +1,16 @@
+{
+  "wave": 10,
+  "status": "TERMINAL",
+  "terminal_coverage": "5/5",
+  "terminal_coverage_percent": 100.0,
+  "targets": [
+    {"id":"KMQGB-T10-M01-INVERSE-KERNEL-IDENTITY","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T10-M02-ORDERED-PARTITION-GENERATOR","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T10-M03-CHANNEL-ORIGIN-CLASSIFIER","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T10-M04-WARD-CONTACT-COMPLETENESS","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T10-M05-SYMMETRIC-C5-MATCHING","status":"PASS_RQIR_GATE"}
+  ],
+  "protocol":"protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md",
+  "reference_code":"code/inverse_kernel_ordered_partitions.py",
+  "kg_lesson":"Every future KG source/contact observable must be generated from the complete same-parent ordered-partition response before Ward reduction and comparator subtraction."
+}
