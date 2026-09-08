@@ -107,3 +107,60 @@ Current blocker: `BESPOKE_CONCRETE_UNITARY_POINT_AND_JOINT_VECTOR_FREEZE`.
 - active T3-01 task: `60%`;
 - globally authorized robust unique-QG residuals: `0`;
 - Candidate Gravity readiness: external/read-only metric, last observed `24%`.
+
+## 2026-09-08 — KMQGB-018 — mediator attribution and nonclassical-interface preflight
+
+### Current entanglement-witness landscape
+
+Started `models/nonclassical_interface/preflight.md` for T3-03.
+
+Current 2025–2026 literature is actively contested:
+
+- standard information-theoretic witness arguments treat gravity-mediated entanglement under locality/channel assumptions as evidence of nonclassical mediator features;
+- Aziz–Howl (Nature 2025) claim a local classical-gravity/QFT-matter construction can generate entanglement;
+- Marletto–Oppenheim–Vedral–Wilson dispute that conclusion and argue any entangling transfer in the discussed construction is not mediated by classical gravity;
+- 2026 papers continue to defend or challenge theory-independence under different classical/collapse/QFT assumptions.
+
+KMQGB therefore refuses to use final probe entanglement alone as a universal Candidate Gravity discriminator.
+
+### New frozen KG requirement — mediator attribution
+
+The target is not merely
+
+`E_AB > 0`.
+
+A future KG test must identify the channel carrying nonclassical information and exclude ordinary quantized-matter/non-gravitational transfer and classical-interface alternatives.
+
+Provisional vector:
+
+`I_NC={E_AB,chi_R^grav,O_ordered^grav,N_grav,C3_plus,Ward/contact,mediator-null controls}`.
+
+Comparator preflight must include C2, C3, C3b, C4 and C6 before proposing a KG ansatz.
+
+This adds a permanent design principle to `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`:
+
+> **entanglement + mediator attribution**, not entanglement alone.
+
+T3-03 preflight completion estimate: **20%**. It is not terminal and does not change third-wave terminal coverage.
+
+### External RQIR refresh
+
+Direct GitHub workflow check found rank11 run `34168897005` is now `completed/success`.
+
+However, authoritative RQIR `CURRENT_QG_FRONT.md` is now Iteration 568 and still lists rank11 as active, explicitly requiring raw-valid artifact consumption before rank12 authorization.
+
+Therefore KMQGB preserves the fail-closed rule:
+
+- workflow success is not scientific authority;
+- no heavy shared-runner KMQGB job is launched until RQIR raw authority advances and the next chain state is explicit.
+
+Candidate Gravity readiness remains externally reported at **24%**.
+
+### Current progress
+
+- first wave: `9/9 = 100%` immutable;
+- second wave: `5/5 = 100%` immutable;
+- third wave: `0/5 = 0%` terminal coverage;
+- T3-01 primary audit: `60%`;
+- T3-03 preflight: `20%`;
+- globally authorized robust unique-QG residuals: `0`.
