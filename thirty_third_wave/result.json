@@ -1,0 +1,16 @@
+{
+  "wave": 33,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "FAIL_PARTIAL_WAVE_UNITARITY_AT_HIGH_ENERGY": 1,
+    "PASS_EXISTENCE_SCOPED": 2,
+    "BLOCKED_NO_SELECTION_THEOREM__FAMILY_REMAINS": 1,
+    "NO_SURVIVOR__D_NONLOCAL_IS_ESCAPE_CLASS_NOT_SELECTOR": 1
+  },
+  "main_lesson": "Exponentially bounded nonlocal amplitudes can be unitary and asymptotically causal, but exponential boundedness/minimal growth does not uniquely select the kernel. D-nonlocal remains an escape class rather than a P4 parent-selection principle.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false,
+  "R4_change": 0
+}
