@@ -1,10 +1,10 @@
 {
-  "schema_version": "5.0",
+  "schema_version": "5.1",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 58,
-  "phase": "WAVES_1_TO_38_TERMINAL__FINITE_DYNAMICAL_SELECTOR_P4_REQUIRED",
+  "kmqgb_iteration": 59,
+  "phase": "P4_FUNCTIONAL_FREEDOM_GATE_ACTIVE__FINITE_DYNAMICAL_SELECTOR_REQUIRED",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
@@ -21,14 +21,15 @@
       "P1_known_principle_saturation",
       "P2_multi_representation_background_rigidity",
       "P3_spectral_origin_dispersion",
-      "wave38_composition_gluing_duality_prefilter"
+      "wave38_composition_gluing_duality_prefilter",
+      "functional_freedom_no_go_prefilter"
     ],
     "open": [
       "P4_explicit_novel_parent_principle",
       "P5_structural_comparator_survival",
       "P6_preansatz_machine_record_for_survivor"
     ],
-    "anti_gaming_rule": "additional negative audits after P1-P3 do not increase R4"
+    "anti_gaming_rule": "additional negative audits or prefilters after P1-P3 do not increase R4"
   },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
@@ -43,14 +44,18 @@
     "matrix_parent_precedent": "protocol/MATRIX_MODEL_MICROSCOPIC_PARENT_PRECEDENT.md",
     "self_sourced_spectral_audit": "protocol/SELF_SOURCED_SPECTRAL_CLOSURE_AUDIT.md",
     "composition_gluing_duality_prefilter": "protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md",
+    "functional_freedom_no_go": "protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md",
+    "functional_freedom_reference": "code/p4_functional_freedom_reference.py",
     "constructive_requirement": "a finite low-freedom microscopic dynamical selector that directly derives a uniquely normalized hard/cross-representation gravitational relation and same-parent CTP/retarded block, then survives registered comparator spaces",
-    "new_exclusion": "do not promote projector gluing, associator/nonassociativity, UVIR/Born reciprocity or causal-diamond overlap consistency alone as novel P4 parents"
+    "pre_P4_kill_test": "if structural-null hard freedom FF_D grows without bound as hard/EFT basis cutoff D increases, classify FUNCTIONAL_FREEDOM_BLOCKED",
+    "new_exclusion": "do not promote projector gluing, associator/nonassociativity, UVIR/Born reciprocity, causal-diamond overlap consistency, arbitrary spectral measures or arbitrary hard functions alone as novel P4 parents"
   },
   "repository_automation": {
     "workflow": ".github/workflows/methodology-ci.yml",
     "first_run_id": 34266786359,
     "first_run_conclusion": "success",
     "runner": "github-hosted ubuntu-latest",
+    "functional_freedom_self_test_added_iteration": 59,
     "self_hosted_RQIR_runner_used": false
   },
   "external_candidate_gravity_authority": {
@@ -73,18 +78,20 @@
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
     "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_058.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_059.md"
   },
-  "next_wave_status": "NO_MORE_NEGATIVE_WAVE_CREDIT__FINITE_DYNAMICAL_SELECTOR_REQUIRED",
+  "next_wave_status": "NO_MORE_NEGATIVE_WAVE_CREDIT__APPLY_FF_D_BEFORE_P4_DEVELOPMENT",
   "next_actions": [
     "Refresh external RQIR before every R3/heavy-compute statement",
+    "For each new parent proposal define its physical hard basis and apply P4_FUNCTIONAL_FREEDOM_NO_GO before detailed development",
+    "Reject FUNCTIONAL_FREEDOM_BLOCKED proposals whose FF_D grows without bound with hard/EFT cutoff",
     "Search for a finite microscopic dynamical selector rather than another abstract gluing/composition/duality/overlap consistency principle",
     "Require one uniquely normalized hard 4-point/higher or cross-representation gravitational relation before fitting",
     "Require the same parent to determine a CTP/retarded response block with shared parameters",
     "Classify hard origin as S-local or D-nonlocal and close Ward/causality/radiative/kinematic-lift scope",
-    "Immediately profile any P4 proposal against full C5, C4/C6, string/M-theory/matrix, amplitude/bootstrap, asymptotic safety, LQG/discrete, HST/causal-diamond, spectral/noncommutative and modern nonlocal comparators",
+    "Immediately profile any surviving P4 proposal against full C5, C4/C6, string/M-theory/matrix, amplitude/bootstrap, asymptotic safety, LQG/discrete, HST/causal-diamond, spectral/noncommutative and modern nonlocal comparators",
     "Only after P4 survival create a pre-ansatz machine record and score P5/P6",
-    "Keep heavy compute idle until a concrete structural object justifies it",
+    "Keep heavy compute idle until a concrete finite-freedom structural object justifies it",
     "Do not promote KG before a robust global comparator-subtracted residual exists"
   ]
 }
