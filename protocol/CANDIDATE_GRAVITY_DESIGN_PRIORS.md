@@ -63,6 +63,19 @@ If the model has both low-energy and UV predictions, freeze a relation connectin
 
 A useful UV fingerprint must include more than pole locations: candidate additions include residues, spin content, crossing relations, Regge behavior, sum rules, and low-energy coefficient correlations.
 
+### D6 — Rigidity by overconstraint
+
+Prefer a model in which several independent physical requirements force the same parameter/function relations instead of allowing each observable to be tuned separately.
+
+Third-wave amplitude evidence gives the prototype:
+
+- broad bespoke dual-resonance constructions can tune mass spectra and therefore defeat pole-support uniqueness;
+- yet a more restrictive generalized-Virasoro analysis yields an overdetermined system of nonlinear spectral recursions whose only consistent spectrum is the string spectrum.
+
+The lesson is not “copy string theory.” The lesson is structural: **a credible KG discriminator should arise because analyticity/causality/positivity/Ward structure and several observables overconstrain the same parent dynamics**.
+
+A strong KG model should therefore seek a small-dimensional solution manifold — ideally an isolated solution — after all comparator and consistency constraints are imposed.
+
 ## 4. Minimum viable novelty vector (MVNV)
 
 Before a KG ansatz is promoted, require all of the following:
@@ -76,7 +89,8 @@ Before a KG ansatz is promoted, require all of the following:
 7. **No trivial field-redefinition novelty:** on-shell equivalence classes are checked before claiming a new S-matrix direction.
 8. **No domain cheating:** a UV completion is never compared against a low-energy EFT outside the EFT validity domain.
 9. **Identifiability:** nuisance/calibration/source freedoms cannot absorb the joint residual.
-10. **Resources:** only after the above, calculate finite experimental/resource requirements.
+10. **Rigidity test:** count remaining functional/parameter freedom after all consistency and comparator constraints; prefer overconstrained or isolated solutions rather than freely tunable fingerprints.
+11. **Resources:** only after the above, calculate finite experimental/resource requirements.
 
 ## 5. Red-team questions every new KG ansatz must answer
 
@@ -94,6 +108,7 @@ Before accepting a proposed novelty mechanism, attempt to kill it with the follo
 - Is the S-matrix difference removed by analytic field redefinition?
 - Is the UV signature only softness, a scaling exponent, or a pole-support pattern shared by a broader amplitude family?
 - Are the compared theories actually valid in the same kinematic/energy domain?
+- After all constraints, how many independent tunable functions/parameters remain? If many remain, the claimed fingerprint is probably not rigid enough.
 
 Only after surviving this red-team sequence should the feature be called a candidate KG-specific residual.
 
@@ -109,7 +124,8 @@ Priority order:
 4. add at least one higher-statistics observable;
 5. impose Ward/Bianchi/contact identities before comparator fitting;
 6. profile C2/C3/C3b first, because they are the strongest known mimics of apparently quantum gravitational noise/decoherence;
-7. only then compare to C5 and UV-completion families.
+7. impose a rigidity audit: determine whether the surviving relations are forced by the dynamics or can still be freely tuned;
+8. only then compare to C5 and UV-completion families.
 
 ## 7. Claims that are explicitly forbidden from current evidence
 
