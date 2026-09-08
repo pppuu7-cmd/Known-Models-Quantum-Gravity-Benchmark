@@ -74,7 +74,7 @@ jobs:
       - name: Run P4 functional-freedom self-test
         run: python code/p4_functional_freedom_reference.py
 
-      - name: Check recovery entrypoints exist
+      - name: Check recovery and construction entrypoints exist
         run: |
           test -s recovery/CURRENT_BENCHMARK_FRONT.md
           test -s recovery/state.json
@@ -82,3 +82,4 @@ jobs:
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
           test -s protocol/READINESS_METRICS.md
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
+          test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
