@@ -1,0 +1,79 @@
+{
+  "schema_name": "KMQGB_KG_CANDIDATE_RECORD",
+  "schema_version": "1.1",
+  "purpose": "Prospective fail-closed Candidate Gravity record with explicit beyond-C5 escape-door declaration.",
+  "required_top_level": [
+    "record_schema_version",
+    "candidate_id",
+    "authority",
+    "parent_dynamics",
+    "escape_doors",
+    "escape_claim",
+    "escape_evidence_refs",
+    "door_specific_blockers",
+    "parameters",
+    "observable_blocks",
+    "comparators",
+    "covariance",
+    "attribution_stack",
+    "rigidity",
+    "promotion_gates",
+    "promotion"
+  ],
+  "escape_contract": {
+    "allowed_doors": ["E1", "E2", "E3", "E4", "E5"],
+    "rule": "At least one door is required for any prospective beyond-C5 seed. The escape claim must state which full-C5 assumption is left and may remain BLOCKED if the required theorem/object is missing.",
+    "door_meanings": {
+      "E1": "nonlocal/nonanalytic dynamics beyond matched C5 loop/EFT structure",
+      "E2": "additional propagating degree of freedom/mediator",
+      "E3": "genuinely nonperturbative/transseries sector",
+      "E4": "modified fundamental quantum dynamics",
+      "E5": "modified symmetry/causal/microstructure"
+    }
+  },
+  "field_contract": {
+    "record_schema_version": "must equal 1.1 for new prospective seeds using this contract",
+    "candidate_id": "stable string identifier",
+    "authority": {
+      "required": ["repository", "commit_or_blob", "parent_object_ref"],
+      "rule": "exact provenance; no chat-memory-only authority"
+    },
+    "parent_dynamics": {
+      "required": ["representation", "object_ref", "declared_domain"],
+      "rule": "all linked responses derive from the same parent except explicitly external detector/source objects"
+    },
+    "parameters": {
+      "item_required": ["id", "role", "sharing_scope"],
+      "roles": ["dynamics", "shared_nuisance", "configuration_local_nuisance", "state", "detector", "calibration", "mediator"],
+      "rule": "sharing scope is prospective authority for cross-order/intervention/holdout tests"
+    },
+    "observable_blocks": {
+      "item_required": ["id", "response_order", "configuration_id", "physical_dimension", "routing_ref", "completeness", "origin_classification", "constraint_status", "attribution_tags", "prospective_role"],
+      "completeness_status": ["PASS", "BLOCKED", "FAIL", "N_A"],
+      "rule": "BLOCKED/FAIL is a valid scientific record state but cannot support contradictory downstream PASS gates"
+    },
+    "comparators": {
+      "item_required": ["id", "validity_domain", "parameter_ids", "prediction_ref", "jacobian_ref", "state_sector"],
+      "rule": "same observable/order/routing/domain as the candidate block"
+    },
+    "covariance": {
+      "required": ["matrix_ref", "provenance", "cross_block_correlations_included"],
+      "rule": "deterministic nuisance in Jacobian registry; stochastic uncertainty in covariance; no silent double counting"
+    },
+    "promotion_gates": {
+      "gate_ids": ["G0", "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10"],
+      "allowed_status": ["PASS", "BLOCKED", "FAIL", "N_A"],
+      "rule": "missing mandatory evidence is BLOCKED"
+    }
+  },
+  "hard_forbidden_states": [
+    "empty_escape_doors_for_a_new_beyond_C5_seed",
+    "escape_claim_missing_or_empty",
+    "promoted_ansatz_with_any_mandatory_gate_nonPASS",
+    "Fisher_or_resources_promoted_without_robust_global_comparator_subtracted_residual",
+    "comparator_residual_computed_from_incomplete_same_parent_response",
+    "holdout_shared_parameter_retuning_not_declared_by_parent_model",
+    "missing_required_object_interpreted_as_zero"
+  ],
+  "legacy_policy": "Schema v1.0 records remain historical-valid. New prospective seed records should use v1.1."
+}
