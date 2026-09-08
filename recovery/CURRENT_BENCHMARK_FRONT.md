@@ -1,10 +1,10 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-08  
-**KMQGB iteration:** 060  
+**KMQGB iteration:** 061  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Phase:** CONSTRUCTION PLAYBOOK FROZEN / P4 FINITE DYNAMICAL SELECTOR REQUIRED
+**Phase:** CONSTRUCTION PLAYBOOK FROZEN / RQIR620 SYNCED / P4 FINITE DYNAMICAL SELECTOR REQUIRED
 
 ## Stable readiness metrics
 
@@ -12,10 +12,10 @@ Authority: `protocol/READINESS_METRICS.md`.
 
 - **R1 — Repository readiness for future KG construction: 92%.**
 - **R2 — KMQGB methodology/material readiness: 89%.**
-- **R3 — Candidate Gravity scientific readiness: 24%** at directly observed external RQIR Iteration 616.
+- **R3 — Candidate Gravity scientific readiness: 24%** at directly observed external RQIR Iteration 620.
 - **R4 — current task `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`: 45%.**
 
-Iter060 changes only R2: consolidated construction playbook/synthesis moves `6/10 -> 7/10`, hence R2 `88 -> 89`. R1, R3 and R4 do not change.
+The last score change was Iter060: R2 `88 -> 89` from consolidated construction playbook/synthesis `6/10 -> 7/10`. Iter061 changes no score.
 
 ## Coverage
 
@@ -25,82 +25,89 @@ Iter060 changes only R2: consolidated construction playbook/synthesis moves `6/1
 - Globally authorized robust unique-QG residuals: **0**.
 - KMQGB-promoted Candidate Gravity ansatz: **none**.
 
-## Iter059 retained result — Functional-Freedom No-Go
+## Current construction authority
 
-Authorities:
+Use `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md` as the sole high-level route.
 
-- `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md`;
-- `code/p4_functional_freedom_reference.py`.
+Pre-G0 sequence:
 
-For proposed principle `P`, define
+`A1 explicit parent capsule -> A2 FF_D functional-freedom gate -> A3 architecture containment -> A4 explicit normalized hard 4pt/higher or cross-representation relation -> G0-G10`.
 
-`N_P = {delta A4 != 0 | every stated P-constraint remains satisfied by A4 + delta A4}`
+If `FF_D(P)=dim N_P(D)` grows without bound, classify `FUNCTIONAL_FREEDOM_BLOCKED` and stop.
 
-and at hard/EFT cutoff `D`
+Heavy compute is not used to solve structural/authority blockers.
 
-`FF_D(P)=dim N_P(D)`.
+## External RQIR authority — Iteration 620
 
-If the surviving hard freedom keeps growing as `D` increases, classify
+Authority snapshot: `external_rqir_checks/iter620_projective_native_bridge_audit.md`.
 
-`FUNCTIONAL_FREEDOM_BLOCKED`.
+Latest RQIR state remains `MODEL_READINESS=24%`.
 
-This rejects principles that leave an arbitrary hard function, spectral density, form factor or independently tunable Wilson tower. Infinite predicted terms are allowed; infinite independent choices are not a low-freedom parent.
+### Iter617 — absolute normalization authority is genuinely absent
 
-The executable scalar crossing-symmetric witness passes methodology CI.
+Existing authority fixes the local phase/sign/source conventions, relative source factors, q2 identity and endpoint amputation, but there is no frozen absolute source-response -> retarded/1PI `Gamma3` phase/coupling bridge.
 
-## Iter060 permanent result — construction playbook
+Therefore
 
-Authority: `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md`.
+`N_native = BLOCKED__NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY`.
 
-The distributed KMQGB protocols now have one high-level operational route.
+It may not be set to `1`, `+i`, `-i`, tuned per root/q2 bucket, or fit from Candidate values.
 
-### Pre-G0 Phase A
+### Iter618 — projective source-shape certificate
 
-- **A1 parent capsule:** explicit microscopic/equally constructive object, finite data, domain, GR/IR anchor, escape door and same-parent hard/CTP route. Missing object -> `BLOCKED_NO_PARENT_OBJECT`.
-- **A2 functional-freedom gate:** apply `FF_D` before detailed development. Unbounded growth -> `FUNCTIONAL_FREEDOM_BLOCKED`.
-- **A3 architecture containment:** compare the parent object immediately against full C5/C4/C6, string/M-theory/matrix, amplitude/bootstrap, asymptotic safety, LQG/discrete, HST/causal-diamond, spectral/noncommutative/nonassociative and modern nonlocal comparator spaces.
-- **A4 P4 checkpoint:** only an A1-A3 survivor may claim the scored P4 deliverable — a prospectively derived normalized hard 4-point/higher or cross-representation relation with low finite freedom.
+With smallest-s `D_b^-` as a pre-coefficient anchor, the five independent normalization-invariant root ratios are
 
-### Promotion Phase B
+`[-2.966563737084728, -0.7800526753639322, -5.158207913624242, +2.997420912767025, +8.57973421373656]`.
 
-The existing G0-G10 order is preserved and operationalized with required artifacts/stop conditions:
+Raw sign pattern remains `[-,+,+,+,-,-]`.
 
-`G0 parent -> G1 complete response -> G2 exact physical reduction -> G3 common domain -> G4 attribution -> G5 full comparator matching -> G6 COR -> G7 global separation -> G8 projected identifiability -> G9 rigidity -> G10 promotion`.
+### Iter619 — independent reproducibility
 
-Any unsupported required object remains `BLOCKED`; no zero-fill, gate skipping or post-hoc convention fitting is allowed.
+An independent coefficient representation reproduces those ratios with maximum absolute difference `5.329070518200751e-15` and maximum relative difference `6.211230307890725e-16`.
 
-### Predictive holdout and compute triage
+### Iter620 — projective conditioning
 
-Shared parent parameters may not be retuned on a holdout.
+For
 
-Heavy compute is forbidden for structural blockers such as missing parent object, growing functional freedom, unresolved normalization/sign, incomplete response, missing exact kinematic map, unfrozen comparator domain or missing attribution proof.
+`M=|A_aggregate|/(|A_pair|+sum|A_K1cubed|)`, `kappa=1/M`,
 
-Heavy compute becomes justified only when it discriminates a frozen object: e.g. a derived hard kernel, global comparator manifold, projected singular spectrum, fixed holdout or regulator/continuum convergence.
+rootwise `kappa` values are
 
-## External RQIR authority — Iteration 616
+`[1.227051600482995, 1.093790319820292, 1.0, 1.272764987610942, 2.45679285736057, 1.279568269456018]`.
 
-Latest directly observed scientific authority: **Iteration 616**, `MODEL_READINESS=24%`.
+Minimum cancellation margin is `0.40703472293319004`; absolute projective coefficient dynamic range is `10.998916463857647`.
 
-Iter616 closes exact source/Iter582 q2-bucket identity and exact external scalar endpoint amputation. The remaining native-binding ambiguity is exactly one common nonzero scalar
+These Iter618–620 results are **PASS/non-promoting**. They protect relative shape and implementation consistency but do not determine the missing absolute normalization.
 
-`N_native = source-response <-> Iter582 effective-action/retarded phase and absolute normalization`.
+## General KMQGB lesson from RQIR620
 
-The full native binding remains **BLOCKED**, not FAIL and not residual. The next RQIR gate is an independent lower-order/common-field normalization identity fixing `N_native` prospectively without fitting Iter615 Candidate values.
+For a vector known only up to one common nonzero scalar,
 
-No heavy RQIR numerical job is scientifically required at this gate.
+`a_native=N a`, `N!=0`,
+
+projective ratios `a_i/a_j` are legitimate normalization-invariant diagnostics. They can validate routing, relative signs, identity preservation, reproducibility and cancellation sensitivity.
+
+They **cannot** authorize an absolute residual or comparator subtraction that depends on `N`.
+
+Fitting `N` from the same Candidate values later used to claim an anomaly is circular and forbidden.
+
+## Exact next RQIR gate
+
+Only an independent, non-biasing derivation/audit of the missing source-to-`Gamma3` absolute phase/coupling bridge may close native binding.
+
+Until then, full native projection, Source/Born subtraction, fixed comparator quotient, ANSATZ/Fisher/resources remain forbidden.
+
+No scientifically useful heavy numerical job is authorized for this algebraic/convention-level blocker.
 
 ## Exact next KMQGB front
 
-Process ambiguity is no longer the main bottleneck. The next scored scientific deliverable is still P4.
+The main scientific bottleneck remains P4:
 
-For each new parent proposal:
+1. formulate a finite microscopic/equally constructive dynamical selector;
+2. freeze A1 parent capsule;
+3. apply A2 `FF_D`; reject unbounded freedom;
+4. apply A3 immediate architecture containment;
+5. only for an A1-A3 survivor derive A4 normalized hard/cross-representation data plus same-parent CTP/retarded block;
+6. then perform P5 comparator survival and P6 pre-ansatz machine record.
 
-1. freeze A1 parent capsule;
-2. apply A2 `FF_D` and stop if freedom grows without bound;
-3. apply A3 immediate architecture containment;
-4. only for an A1-A3 survivor derive a uniquely normalized hard 4-point/higher or cross-representation gravitational relation;
-5. derive the same-parent CTP/retarded block and close `S-local`/`D-nonlocal`, Ward/contact, causality, radiative and exact kinematic-lift scope;
-6. perform P5 comparator survival;
-7. only then create the P6 pre-ansatz machine record.
-
-Heavy compute remains idle until a concrete finite-freedom structural survivor exists.
+Process ambiguity is substantially reduced; the missing object is now the actual finite-freedom parent principle.
