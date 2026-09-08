@@ -2,29 +2,21 @@
 
 ## 2026-09-08 — KMQGB-001 to KMQGB-010 — first-wave authority
 
-Historical first wave was migrated, protocol-frozen and terminally classified at `9/9 = 100%`. Retained rollup: five exact comparator identities, two operational degeneracies, one real consistency failure (standard fundamental Stelle under conventional ghost interpretation), one protocol/domain block (type-II string UV branch under the then-available comparator registry), and zero globally authorized robust unique-QG residuals.
-
-The detailed first-wave artifacts remain authoritative in their model directories and recovery files. The first-wave denominator is immutable.
+Historical first wave was migrated, protocol-frozen and terminally classified at `9/9 = 100%`. Retained rollup: five exact comparator identities, two operational degeneracies, one real consistency failure, one protocol/domain block, and zero globally authorized robust unique-QG residuals.
 
 ## 2026-09-08 — KMQGB-011 to KMQGB-016 — second-wave authority
 
-Second-wave denominator was frozen at five targets and terminally classified at `5/5 = 100%` without altering the historical first-wave denominator.
-
-Retained second-wave results:
-
-- `NL-EOM-ENTIRE-MINK-001`: no extra Stelle-like pole, but frozen on-shell tree amplitudes are field-redefinition-degenerate with GR/local theory -> `OPERATIONALLY_DEGENERATE`.
-- `AS-SCALAR2TO2-LOR-2026-001`: fixed-angle UV exponent `p_UV=0` is shared by an independent Lorentzian quantum-effective-action construction -> `OPERATIONALLY_DEGENERATE` in that observable.
-- `KTM-OSCILLATOR-MEASUREMENT-FEEDBACK-001`: exact C3 comparator identity.
-- `PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001`: exact C3b comparator identity in the scoped linearized conserved-kernel formulation.
-- `HR-TRIPLE-SINGLE-MASS-GRAV4-001`: same-domain UV comparator infrastructure installed for the string branch.
+Second-wave denominator was frozen at five and terminally closed `5/5 = 100%`. Detailed model audits remain authoritative in their model directories.
 
 ## 2026-09-08 — KMQGB-017 to KMQGB-027 — design-prior maturation
 
-Iterations 017–027 created the persistent Candidate Gravity design/recovery layer and developed rigidity, mediator attribution, quantum-channel, ordered-response, continuum and geometry-attribution guardrails. Detailed steps remain preserved in earlier immutable recovery deltas.
+Created the persistent Candidate Gravity design/recovery layer and developed rigidity, mediator attribution, quantum-channel, ordered-response, continuum and geometry-attribution guardrails.
 
 ## 2026-09-08 — KMQGB-028 — waves 3–5 terminal
 
-Wave 3 closed `5/5`, Wave 4 closed `5/5`, Wave 5 closed `5/5`. The resulting compact objects were frozen as
+Waves 3, 4 and 5 each closed `5/5 = 100%`.
+
+Compact design objects froze as
 
 `K_rel={N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}`
 
@@ -32,82 +24,143 @@ and
 
 `G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}`.
 
-The key attribution stack became quantum -> mediator -> gravity/spin-2 -> locality -> relational/QRF -> geometry -> regulator -> rigidity.
-
 ## 2026-09-08 — KMQGB-029 — sixth wave / full-C5 pre-ansatz gate
 
-Sixth-wave denominator froze at five and terminally closed `5/5 = 100%`.
+Wave 6 closed `5/5 = 100%`.
 
-### T6-01 — massless spin-2 attribution completeness
+The critical rule became
 
-`PASS_RQIR_GATE` / `SPIN2_ATTRIBUTION_COMPLETENESS_SCOPED`.
+`Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG`.
 
-Under the frozen single-long-range-massless-spin-2, locality/factorization, unitarity, Lorentz/gauge-consistency, universal-stress-energy-coupling and leading-IR assumptions, the long-range interaction sector collapses to GR/C5 structure. Higher-derivative EFT directions and theories outside the assumptions remain possible.
+Gaussian C5 is only a two-point control subsector. Higher-point/non-Gaussian structure is not automatically beyond C5.
 
-Design lesson: massless-spin-2 universality is a **gravity-attribution anchor**, not Candidate Gravity novelty.
+## 2026-09-08 — KMQGB-030 — seventh wave residual taxonomy
 
-### T6-02 — quantized-GR CTP null parent
+Wave 7 closed `5/5 = 100%`, all five candidate feature classes `OPERATIONALLY_DEGENERATE` as standalone novelty claims:
 
-`EXACT_COMPARATOR_IDENTITY` with the Gaussian linearized C5 subsector.
+- higher-point/non-Gaussian;
+- squeezed/exotic graviton state;
+- memory/non-Markovianity;
+- parity/chirality;
+- nonanalyticity/cross-regime structure.
 
-For conserved `J_mn=(kappa/2)T_mn`, the graviton influence action has the schematic structure
+Result: stop searching for `DeltaGamma_KG` by qualitative labels. Search instead for explicit cross-order/cross-attribution relations outside the full comparator tangent/manifold.
 
-`S_IF = int J^- D_R J^+ + (i/2) int J^- N J^-`.
+## 2026-09-08 — KMQGB-031 — residual-space geometry
 
-Thus ordinary quantized GR already supplies quantum noise, commutator/spectral structure, retarded response and causal detector correlations. These objects by themselves cannot be Candidate Gravity novelty.
+Wave 8 closed `5/5 = 100%`, all methodology `PASS_RQIR_GATE`.
 
-### T6-03 — KMS/FDR adversary
+Frozen Comparator-Orthogonal Residual:
 
-`OPERATIONALLY_DEGENERATE` for the claim that a linked noise-response relation is KG-specific.
+`A=Sigma^(-1/2)J_union`,
 
-For stationary KMS environments, schematically `N(omega) ~ coth(beta omega/2) Im D_R(omega)`. This is generic quantum-bath structure and must be treated as state/consistency information, not gravity attribution. The equilibrium formula is not exported to arbitrary nonstationary/squeezed states.
+`Pi_perp=I-AA^+`,
 
-### T6-04 — nonlocal causality
+`COR=Pi_perp Sigma^(-1/2)r`.
 
-`PASS_RQIR_GATE` / `NONLOCAL_CAUSALITY_SEPARATE_GATE_ESTABLISHED`.
+Local candidate survival fraction:
 
-Ghost freedom, UV health and healthy perturbative propagation do not close the entire causal problem. Freeze separate checks of retarded support, front velocity, spacelike tails, no-signalling, global chronology/CTCs, initial-value well-posedness and background dependence.
+`eta(s)=||Pi_perp Sigma^(-1/2)s||/||Sigma^(-1/2)s||`.
 
-### T6-05 — minimal pre-ansatz parent template
+Exact constraints are imposed before comparator rank counting. Nonzero local COR requires later finite/global comparator-manifold profiling.
 
-`PASS_RQIR_GATE` / `MINIMAL_PREANSATZ_PARENT_TEMPLATE_ESTABLISHED`; **no ansatz promoted**.
+Created `protocol/RESIDUAL_SPACE_GEOMETRY.md`, RQIR COR pre-registration, and `code/residual_space_geometry_reference.py`.
 
-A critical correction was frozen during this audit. The Gaussian C5 graviton influence functional is only a two-point/null subsector. Perturbative quantum GR also has nonlinear graviton self-interactions, loops, higher-point/non-Gaussian structures and higher-curvature/EFT/contact terms.
+External RQIR read-only authority reached Iteration 587; three q2 buckets were explicitly pre-registered as **not residual data** until complete source/Ward closure.
 
-Therefore
+## 2026-09-08 — KMQGB-032 — optimal comparator-annihilating observable design
 
-`higher-point/non-Gaussian != automatically beyond C5`.
+Wave 9 closed `5/5 = 100%`, methodology PASS.
 
-The only valid future decomposition is
+Frozen protocol: `protocol/OPTIMAL_COMPARATOR_CONTRASTS.md`.
 
-`Gamma_parent[T_r,T_a] = Gamma_C5,full_matched[T_r,T_a] + DeltaGamma_KG[T_r,T_a]`.
+Key results:
 
-`DeltaGamma_KG` means only what remains after matching the largest applicable C5 parent in the same perturbative/kinematic order and validity domain, followed by the rest of the comparator quotient.
+- exact local comparator-null contrast: `J_union^T w=0`;
+- covariance-optimal signal contrast:
+  `w_opt proportional to Sigma^(-1/2)Pi_perp Sigma^(-1/2)s`;
+- maximum local post-comparator SNR:
+  `||Pi_perp Sigma^(-1/2)s||`;
+- observable augmentation:
+  `Delta d_perp = k - Delta rank(J_union)`.
 
-### Sixth-wave rollup
+Reference implementation: `code/optimal_comparator_contrasts_reference.py`.
 
-- `PASS_RQIR_GATE`: 3;
-- `EXACT_COMPARATOR_IDENTITY`: 1;
-- `OPERATIONALLY_DEGENERATE`: 1;
-- globally authorized robust unique-QG residuals: `0`;
-- Candidate Gravity ansatz promoted: `false`.
+Design lesson: choose observables by **post-comparator dimension/conditioning/SNR**, not raw sensitivity.
 
-### External RQIR refresh
+## 2026-09-08 — KMQGB-033 — parent-response completeness and KG promotion gate
 
-Read-only RQIR advanced substantially. Latest scientific front directly observed was Iteration `583`, with `MODEL_READINESS=24%`. Frozen Iter424 is `5/5 PASS`, Iter581 exact15 `Tr U1^2` raw-valid PASS, Iter582 q2-resolved `D_s Gamma_e2` PASS/non-residual, and Iter583 quadratic MSSC-001 source/contact `K2` prerequisite raw-valid PASS.
+Wave 10 closed `5/5 = 100%`, methodology PASS.
 
-A later Iter584 mixed-bilinear-K2 workflow run `34202930558` was directly observed `completed/success`, but workflow success was not promoted to scientific authority because the observed RQIR recovery front had not yet raw-consumed it.
+External RQIR Iter590 independently demonstrated that a six-K1/K2 subset does not exhaust the cubic same-parent source response; local `K3` and ordered `K1^3` families are nonzero.
 
-No competing KMQGB heavy job was launched.
+KMQGB froze the general inverse-kernel identity
 
-### Exact next KMQGB front
+`D_S G = sum_k (-1)^k sum_(B1,...,Bk in OP(S,k)) G K_B1 G ... K_Bk G`, `G=K^-1`.
 
-Freeze a residual-taxonomy wave attacking candidate `DeltaGamma_KG` classes only after full-C5 matching:
+Every ordered set partition appears once.
 
-1. higher-point/non-Gaussian;
-2. squeezed/exotic graviton state;
-3. non-Markovian/memory;
-4. parity/chiral ordered structure;
-5. nonanalytic/cross-regime structure.
+Verified ordered-partition term totals at response orders 1–5:
 
-Only a class surviving this taxonomy may motivate an actual Candidate Gravity ansatz proposal.
+`1, 3, 13, 75, 541`.
+
+Created
+
+- `protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`;
+- `code/inverse_kernel_ordered_partitions.py`;
+- `protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md`.
+
+Frozen order:
+
+`complete same-parent response -> analytic/cut origin -> Ward/contact physical reduction -> matched observable -> comparator/COR quotient`.
+
+No KG ansatz promoted.
+
+External RQIR authority observed at Iter590, readiness `24%`. Its next gate is K3 hard-channel origin plus K1^3 linked-cut classification before complete nonlinear Ward/source closure.
+
+## 2026-09-08 — KMQGB-034 — cross-order rigidity
+
+Wave 11 closed `5/5 = 100%`, methodology PASS.
+
+Frozen `protocol/CROSS_ORDER_RIGIDITY.md` and `code/cross_order_rigidity_reference.py`.
+
+For complete physical response blocks with shared parent parameters,
+
+`R_shared = sum_ell rank(J_ell) - rank(J_stack) >= 0`.
+
+`R_shared>0` quantifies extra comparator-orthogonal directions created by shared cross-order consistency.
+
+For exact monomial scaling
+
+`c_i=A_i product_j theta_j^(P_ij)`,
+
+vectors `u` with `u^T P=0` give exact global nuisance-free invariants
+
+`I_u=product_i(c_i/A_i)^(u_i)`.
+
+Design lesson: prefer **few shared parent parameters predicting many orders/channels**, not an independent coefficient for every observable.
+
+Main `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md` was consolidated through this authority.
+
+## 2026-09-08 — KMQGB-035 — multi-configuration/intervention rigidity and RQIR K3 precheck
+
+Wave 12 closed `5/5 = 100%`, methodology PASS.
+
+Created
+
+- `protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md`;
+- `code/intervention_design_reference.py`.
+
+Controlled masses, separations, orientations, frequencies, proper times, probe states and detector settings are treated as **design variables**, not fit nuisance when known.
+
+Same dynamics parameters remain shared across configurations; only genuinely local nuisances may vary independently.
+
+Adding a configuration with `k` physical coordinates again obeys
+
+`Delta d_perp = k - Delta rank(J_union)`.
+
+Interventions are chosen prospectively to maximize post-comparator rank, projected singular values or projected SNR.
+
+A KMQGB-only read-only external cross-check was added for RQIR Iter590 local MSSC `K3`: locality of the minimally coupled parent kernel implies the isolated local K3 coefficient is analytic in the hard channel and should have zero standalone branch discontinuity, subject to exact RQIR routing/parameterization verification. This is **not** RQIR authority and does not classify the larger `G K3 G` composite automatically.
+
+External RQIR remained at Iter590/readiness `24%` during this check; no active/queued Actions were observed. No heavy KMQGB job was launched without a justified numerical target.
