@@ -22,14 +22,14 @@ Current score:
 - recovery/provenance/versioning: `20/20`;
 - benchmark/comparator corpus: `15/15`;
 - permanent protocols: `20/20`;
-- executable layer: `12/15` — schema, fail-closed validator and reference implementations exist; full candidate end-to-end numerical pipeline is not yet frozen;
+- executable layer: `12/15` — schema, fail-closed validator and reference implementations exist; Iter059 adds an executable P4 functional-freedom prefilter, but a full candidate end-to-end numerical pipeline is not yet frozen;
 - candidate/pre-ansatz scaffold: `7/10` — exploratory machine records exist, but no promoted candidate package exists;
-- automated reproducibility/tests/CI/artifact packaging: `8/10` — `.github/workflows/methodology-ci.yml` validates repository JSON, compiles reference code, runs validator/completeness/COR/contrast/cross-order/intervention/holdout/minimal-suite/cross-representation self-tests and checks recovery entrypoints on GitHub-hosted runners. First run `34266786359` completed `success`. Remaining gap: richer artifact packaging/end-to-end candidate fixture/coverage reporting;
+- automated reproducibility/tests/CI/artifact packaging: `8/10` — `.github/workflows/methodology-ci.yml` validates repository JSON, compiles reference code, runs validator/completeness/COR/contrast/cross-order/intervention/holdout/minimal-suite/cross-representation and P4 functional-freedom self-tests, and checks recovery entrypoints on GitHub-hosted runners. First historical run `34266786359` completed `success`. Remaining gap: richer artifact packaging/end-to-end candidate fixture/coverage reporting;
 - external firewall/synchronization: `10/10`.
 
 **R1 = 92/100 = 92%.**
 
-Scientific model progress alone does not increase R1.
+Iter059 does not raise R1 because the remaining rubric gaps are end-to-end candidate execution/packaging rather than absence of another reference self-test.
 
 ## R2 — KMQGB methodology/material readiness for building a future KG
 
@@ -45,23 +45,23 @@ Weights:
 
 Current score:
 
-- benchmark/comparator evidence: `15/15` — the corpus now includes scoped terminal audits of the first/second-wave controls plus major previously underrepresented programs: covariant LQG/spinfoams, GFT/TGFT, random tensor models, causal fermion systems, QFT-vector/induced gravity and matrix-model parent precedents. This does **not** mean literally every model in the literature is exhausted; it means the benchmark now covers the major architecture classes needed for the current construction methodology;
+- benchmark/comparator evidence: `15/15` — the corpus includes scoped terminal audits of the first/second-wave controls plus major architecture classes including covariant LQG/spinfoams, GFT/TGFT, random tensor models, causal fermion systems, QFT-vector/induced gravity and matrix-model parent precedents. This does **not** mean literally every model in the literature is exhausted;
 - comparator/attribution taxonomy: `15/15`;
 - completeness/constraints/projection: `15/15`;
 - residual/identifiability/rigidity: `19/20` — global nonlinear application to a real KG residual is still absent;
-- escape/parent-principle methodology: `10/15` — amplitude-principle saturation, cross-representation/background audits and spectral-origin completeness freeze how a hard candidate relation must exit C5/local dispersion, but no novel parent-selection principle has survived known comparators;
-- executable methodology: `8/10` — fail-closed records/validators, reference implementations and methodology CI exist, but full end-to-end candidate promotion automation is incomplete;
+- escape/parent-principle methodology: `10/15` — amplitude-principle saturation, cross-representation/background audits, spectral-origin completeness, Wave38 structural-prefiltering and the Iter059 `P4_FUNCTIONAL_FREEDOM_NO_GO` now give a reproducible necessary-condition kill test for arbitrary hard-function/tower proposals, but no novel parent-selection principle has survived known comparators and produced the required explicit hard relation;
+- executable methodology: `8/10` — fail-closed records/validators, reference implementations, functional-freedom diagnostic and methodology CI exist, but full end-to-end candidate promotion automation is incomplete;
 - consolidated playbook/synthesis: `6/10` — design priors/recovery are strong, but final compact construction manual/paper-grade synthesis is not yet complete.
 
 **R2 = 88/100 = 88%.**
 
-Change from 87%: `+1 percentage point` from benchmark/comparator evidence `14/15 -> 15/15` after the scoped Wave35 major-program hard-observable audit. Waves34/36/37 provide useful negative/comparator precedents but do not independently raise R2.
+Iter059 improves rigor inside already-scored methodology components but does not close a missing point under the frozen rubric. The last score increase remains `+1 percentage point` at Wave35, from benchmark/comparator evidence `14/15 -> 15/15`.
 
 ## R3 — Scientific readiness of Candidate Gravity itself
 
 Controlled **only by external RQIR Candidate Gravity authority** and its stable rubric. KMQGB cannot promote this value.
 
-Latest directly observed authority must be refreshed before every report. The last confirmed value before the next refresh was RQIR Iteration 611 with
+Latest directly observed authority at KMQGB Iter059 is **RQIR Iteration 616**:
 
 - comparator foundation `24/25`;
 - robust unique residual `0/20`;
@@ -70,9 +70,11 @@ Latest directly observed authority must be refreshed before every report. The la
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-Thus the last confirmed value is
+Iter616 closes exact source/Iter582 q2-bucket identity and exact external scalar endpoint amputation, narrowing the remaining native binding ambiguity to one common nonzero scalar `N_native`. The full native binding is still `BLOCKED`, not FAIL and not residual; no robust comparator-subtracted residual has therefore been authorized.
 
 **R3 = 24%.**
+
+Before every future R3/heavy-compute report, refresh external RQIR authority again.
 
 ## R4 — Current research-task completion
 
@@ -91,7 +93,7 @@ Current score:
 
 **R4 = 45%.**
 
-Negative audits after P1–P3 do not increase R4 until an actual constructive P4 survivor is identified.
+Wave38 and Iter059 reduce false-positive search space but do not raise R4. The new rule is fail-closed: a parent whose structural-null hard freedom `FF_D(P)` grows without bound with hard/EFT cutoff is `FUNCTIONAL_FREEDOM_BLOCKED` before P4. Only an actual explicit finite-freedom constructive survivor may raise R4.
 
 ## Reporting format
 
