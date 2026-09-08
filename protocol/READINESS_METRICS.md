@@ -7,8 +7,6 @@ These percentages measure different objects and must never be merged.
 
 ## R1 — Repository readiness for future Candidate Gravity construction
 
-This measures whether the KMQGB repository is a reliable, reproducible workspace from which a future KG candidate can be built, audited and restored.
-
 Weights:
 
 1. recovery/provenance/versioning: 20 points;
@@ -19,23 +17,21 @@ Weights:
 6. automated reproducibility/tests/CI/artifact packaging: 10 points;
 7. external RQIR firewall/authority synchronization: 10 points.
 
-Current score at KMQGB Iteration 049:
+Current score at KMQGB Iteration 052:
 
 - recovery/provenance/versioning: `20/20`;
 - benchmark/comparator corpus: `15/15`;
 - permanent protocols: `20/20`;
-- executable layer: `12/15` — schema, validator and multiple reference implementations exist, including cross-representation rigidity, but full CI/end-to-end automated scientific checks are incomplete;
-- candidate/pre-ansatz scaffold: `7/10` — fail-closed records exist, but no promoted candidate package exists;
-- automated reproducibility/CI/artifact packaging: `6/10` — reference scripts exist, but complete automated pipeline/CI coverage is not frozen;
+- executable layer: `12/15` — schema, fail-closed validator and reference implementations exist; full candidate end-to-end numerical pipeline is not yet frozen;
+- candidate/pre-ansatz scaffold: `7/10` — exploratory machine records exist, but no promoted candidate package exists;
+- automated reproducibility/tests/CI/artifact packaging: `8/10` — `.github/workflows/methodology-ci.yml` now validates all repository JSON, compiles reference code, runs validator/completeness/COR/contrast/cross-order/intervention/holdout/minimal-suite/cross-representation self-tests and checks recovery entrypoints on GitHub-hosted runners. First run `34266786359` completed `success`. Remaining gap: richer artifact packaging/end-to-end candidate fixture/coverage reporting;
 - external firewall/synchronization: `10/10`.
 
-**R1 = 90/100 = 90%.**
+**R1 = 92/100 = 92%.**
 
-R1 may increase only when one of the scored infrastructure gaps is actually closed. Scientific model progress alone does not increase R1.
+Change from Iteration 050: `+2 percentage points`, entirely from automated reproducibility/CI. Scientific research alone does not increase R1.
 
 ## R2 — KMQGB methodology/material readiness for building a future KG
-
-This measures how mature the benchmark-derived construction method is, not whether a new theory has been found.
 
 Weights:
 
@@ -47,25 +43,25 @@ Weights:
 6. executable/machine-readable methodology: 10 points;
 7. consolidated construction playbook/article-ready synthesis: 10 points.
 
-Current score at KMQGB Iteration 049:
+Current score at KMQGB Iteration 052:
 
 - benchmark/comparator evidence: `14/15` — broad but not literally exhaustive of all QG realizations;
 - comparator/attribution taxonomy: `15/15`;
 - completeness/constraints/projection: `15/15`;
 - residual/identifiability/rigidity: `19/20` — global nonlinear application to a real KG residual is still absent;
-- escape/parent-principle methodology: `9/15` — amplitude-principle saturation and cross-representation rigidity are now frozen, but no genuinely novel parent-selection principle has survived known comparators;
-- executable methodology: `8/10` — fail-closed records/validators and reference implementations exist but full automated end-to-end scientific pipeline is incomplete;
-- consolidated playbook/synthesis: `6/10` — design priors and recovery are strong, but final compact construction manual/paper-grade synthesis is not yet complete.
+- escape/parent-principle methodology: `10/15` — amplitude-principle saturation, cross-representation/background audits and spectral-origin completeness now freeze how a hard candidate relation must exit C5/local dispersion, but no novel parent-selection principle has survived known comparators;
+- executable methodology: `8/10` — fail-closed records/validators, reference implementations and methodology CI exist, but full end-to-end candidate promotion automation is incomplete;
+- consolidated playbook/synthesis: `6/10` — design priors/recovery are strong, but final compact construction manual/paper-grade synthesis is not yet complete.
 
-**R2 = 86/100 = 86%.**
+**R2 = 87/100 = 87%.**
 
-Change from Iteration 048: `+1 percentage point`, entirely from the parent-principle/escape methodology component. No scientific KG readiness was promoted.
+Change from Iteration 050: `+1 percentage point`, from the parent-principle/escape methodology component after Waves 30–31. Wave 32 is a negative P4 audit and does not independently raise R2.
 
 ## R3 — Scientific readiness of Candidate Gravity itself
 
-This is controlled **only by external RQIR Candidate Gravity authority** and its own stable rubric. KMQGB cannot promote this value.
+Controlled **only by external RQIR Candidate Gravity authority** and its stable rubric. KMQGB cannot promote this value.
 
-At the latest directly observed authority used when freezing this metric, RQIR reports
+Latest directly observed authority must be refreshed before every report. The last authority used before the next refresh was RQIR Iteration 611 with
 
 - comparator foundation `24/25`;
 - robust unique residual `0/20`;
@@ -74,21 +70,32 @@ At the latest directly observed authority used when freezing this metric, RQIR r
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-Therefore
+Thus the last confirmed value is
 
-**R3 = MODEL_READINESS = 24%.**
-
-Always refresh external `candidate_gravity/recovery/CURRENT_QG_FRONT.md` before reporting R3.
+**R3 = 24%.**
 
 ## R4 — Current research-task completion
 
-Every research iteration should additionally report the percentage completion of the currently active finite task/wave.
+Current task: `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`.
 
-R4 is task-local and resets when a new task is frozen. It must not be confused with R1, R2 or R3.
+Authority: `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md`.
+
+Current score:
+
+- P1 known-principle saturation `15/15`;
+- P2 multi-representation/background rigidity `15/15`;
+- P3 spectral-origin/dispersion requirements `15/15`;
+- P4 explicit novel low-freedom parent principle `0/25`;
+- P5 immediate comparator survival `0/20`;
+- P6 pre-ansatz machine record for a genuine survivor `0/10`.
+
+**R4 = 45%.**
+
+Negative audits after P1–P3 do not increase R4 until an actual constructive P4 survivor is identified.
 
 ## Reporting format
 
-Every future KMQGB/Candidate Gravity iteration should include at least:
+Every future KMQGB/Candidate Gravity iteration must report:
 
 - `Repository readiness (R1): XX%`;
 - `KMQGB methodology/material readiness (R2): XX%`;
