@@ -24,16 +24,20 @@ Positive evidence:
 
 - weakly nonlocal gravity shows that zero-free form factors can preserve the local pole spectrum and perturbative unitarity in scoped constructions;
 - Riemann-sector form factors can alter on-shell amplitudes, so not every nonlocal metric deformation is field-redefinition trivial;
-- causal-set scalar d'Alembertian constructions show that Lorentz-invariant **retarded** nonlocality with one nonlocality scale is possible in principle.
+- causal-set scalar d'Alembertian constructions show that Lorentz-invariant **retarded** nonlocality with a nonlocality scale is possible in principle.
 
 Main blockers:
 
 - arbitrary entire form factors destroy rigidity;
 - EOM-squared/Ricci-type classes can be on-shell tree-degenerate with GR;
 - global/microcausality remains independent;
-- a complete finite-parameter spin-2 CTP/Ward parent and same-domain comparator are still required.
+- a complete finite-parameter spin-2 CTP/Ward parent and same-domain comparator are still required;
+- the original four-dimensional causal-set d'Alembertian has published evidence of instability, and the existence of a stable generalized 4D subfamily remains open in the standard review literature;
+- newer causal-set work also explores local d'Alembertian constructions, so causal-set microstructure does **not** establish that the future KG operator must be nonlocal.
 
 Preferred version of E1: **propagator-preserving or pole-controlled, parent-fixed nonlocality whose higher-point response is not field-redefinition/EFT contained.**
+
+Causal sets are retained only as a structural precedent for parent-fixed Lorentz/causal microstructure, not as a ready-made kernel for KG.
 
 ## E2 — extra propagating DOF / mediator
 
@@ -90,29 +94,35 @@ Use only if a concrete law forces a gravity-specific spin-2 relation that cannot
 
 ## E5 — modified causal/symmetry/microstructure
 
-**Priority: MEDIUM, with a promising E1+E5 intersection.**
+**Priority: MEDIUM; useful mainly as a source of rigidity principles, not a ready parent.**
 
 Positive precedent:
 
 - causal-set theory provides discrete Lorentz-compatible causal structure;
 - Benincasa-Dowker/Glaser constructions recover Einstein-Hilbert bulk behavior in the continuum in controlled settings;
-- the generalized causal-set d'Alembertian is retarded, Lorentz invariant and governed by a nonlocality scale.
+- generalized causal-set d'Alembertians provide retarded Lorentz-invariant nonlocal scalar operators.
+
+Important correction:
+
+- the original 4D causal-set d'Alembertian has evidence of unstable evolution;
+- a stable generalized 4D subfamily was still an open question in the causal-set review;
+- later work proposes local causal-set d'Alembertian constructions, so nonlocality is not uniquely dictated by the microstructure.
 
 Blockers:
 
 - complete quantum dynamics/interpretation remains open;
-- current scalar nonlocal operators are not yet the required massless-spin-2 CTP parent;
+- current scalar operators are not the required massless-spin-2 CTP parent;
 - nonlinear Ward/constraint and relational detector observables must be derived;
 - continuum/regulator attribution is mandatory.
 
 ## Current priority conclusion
 
-The strongest present search region is
+The strongest present search region is still **E1 with selected E5-style rigidity lessons**, but no specific causal-set operator is imported into KG.
 
-**E1 + selected E5 structure**:
+Desired properties:
 
 - preserve the GR massless spin-2 pole and IR limit;
-- use a parent-fixed, low-parameter nonlocal structure rather than an arbitrary form factor;
+- use a parent-fixed, low-parameter structure rather than an arbitrary form factor;
 - enforce retarded/causal support or derive the controlled replacement;
 - make the same parent fix higher-point vertices through diffeomorphism/Ward structure;
 - seek cross-order and cross-configuration predictions;
@@ -123,4 +133,4 @@ E3 nonperturbative structure remains the second major search direction once a co
 
 ## Important scope
 
-This ranking does not assert that causal sets or nonlocal gravity are the future Candidate Gravity model.  They supply structural precedents for ingredients that survived the first prospective screening.
+This ranking does not assert that causal sets or nonlocal gravity are the future Candidate Gravity model. They supply structural precedents and counterexamples for ingredients that survived the first prospective screening.
