@@ -6,130 +6,104 @@ Historical first wave was migrated, protocol-frozen and terminally classified at
 
 The detailed first-wave artifacts remain authoritative in their model directories and recovery files. The first-wave denominator is immutable.
 
-## 2026-09-08 — KMQGB-011 — second-wave queue freeze and nonlocal form-factor closure
+## 2026-09-08 — KMQGB-011 to KMQGB-016 — second-wave authority
 
-### Second-wave denominator
+Second-wave denominator was frozen at five targets and terminally classified at `5/5 = 100%` without altering the historical first-wave denominator.
 
-Froze a separate five-target second-wave queue in `protocol/SECOND_WAVE_QUEUE.md`:
+Retained second-wave results:
 
-1. weakly nonlocal / entire-form-factor gravity;
-2. concrete Lorentzian asymptotic safety;
-3. classical-channel measurement-feedback gravity;
-4. modern postquantum classical gravity;
-5. same-domain UV comparator for the first-wave M09 string-threshold branch.
+- `NL-EOM-ENTIRE-MINK-001`: no extra Stelle-like pole, but frozen on-shell tree amplitudes are field-redefinition-degenerate with GR/local theory -> `OPERATIONALLY_DEGENERATE`.
+- `AS-SCALAR2TO2-LOR-2026-001`: fixed-angle UV exponent `p_UV=0` is shared by an independent Lorentzian quantum-effective-action comparator -> `OPERATIONALLY_DEGENERATE` in that observable.
+- `KTM-OSCILLATOR-MEASUREMENT-FEEDBACK-001`: exact C3 comparator identity; classical channel can generate interaction plus compulsory decoherence/noise without an entangling quantum mediator.
+- `PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001`: exact C3b comparator identity in the scoped linearized conserved-kernel formulation; no blanket Bianchi consistency failure.
+- `HR-TRIPLE-SINGLE-MASS-GRAV4-001`: same-domain UV comparator infrastructure installed for the string branch.
 
-The historical first-wave `9/9` denominator remains unchanged.
+Cross-wave result: type-II Virasoro-Shapiro is distinct from the simple Huang-Remmen single-mass comparator in pole support, but global string uniqueness remains unproven.
 
-### S2-M01 — weakly nonlocal gravity
+External RQIR remained read-only, last observed Candidate Gravity readiness 24%, with rank11 heavy work active. No KMQGB heavy shared-runner job was launched.
 
-Froze `NL-EOM-ENTIRE-MINK-001`, the special EOM-squared weakly-nonlocal class with zero-free entire form factor, explicit `H(z)=z/M_*^2`, and Euclidean-amplitude/analytic-continuation prescription.
+## 2026-09-08 — KMQGB-017 — Candidate Gravity design-prior layer and third-wave activation
 
-The entire form factor avoids the extra Stelle-like massive spin-2 propagator pole. Modern spectral work supports positive spectral density for the corresponding entire-form-factor class under the stated construction.
+### Persistent KG-design artifacts
 
-However, the Modesto–Calcagni field-redefinition theorem gives
+Created:
 
-`A_n^nonlocal(tree,on-shell)=A_n^local(tree,on-shell)`
+- `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`;
+- `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`.
 
-for all frozen tree-level on-shell `n`-point amplitudes of the EOM-squared class.
+Updated `recovery/RESTORE_FROM_NEW_CHAT.md` so a new chat must read both files before continuing.
 
-Terminal status: `OPERATIONALLY_DEGENERATE`; tree-level comparator residual 0.
+These artifacts preserve benchmark-derived design evidence for future Candidate Gravity while remaining strictly outside the separate RQIR Candidate Gravity authority/readiness.
 
-Guardrail: no claim of loop/off-shell/microcausal equivalence to GR.
+### Core design lesson frozen
 
-## 2026-09-08 — KMQGB-012 / KMQGB-015 — concrete Lorentzian asymptotic-safety audit and closure
+A future KG model must not be justified merely by any one of:
 
-Initially instantiated the 2026 self-consistent Lorentzian graviton spectral-function computation as a strong two-point realization with positive spectral density, massless graviton peak, multigraviton continuum and unit spectral weight in its physical on-shell scheme.
+- a nonzero deviation from GR;
+- a new Yukawa/scalar force;
+- new noise/decoherence;
+- a positive two-point spectral density;
+- UV softness or scale-free UV behavior;
+- absence of extra poles;
+- a special pole spectrum;
+- higher derivatives;
+- finite low-energy Wilson coefficients.
 
-A more direct RQIR-facing observable became available from Chiesa–Pawlowski–Reichert (2026): graviton-mediated `2->2` scalar scattering with a momentum-dependent fRG scalar–graviton vertex reconstructed to the Lorentzian branch.
+The strongest current design direction is a linked nonclassical interface hierarchy from one parent dynamics:
 
-Froze `AS-SCALAR2TO2-LOR-2026-001` and the fixed-angle ultraviolet scaling exponent
+`O_KG={J,N,chi_R,ordered/noncommuting response,higher cumulants,entanglement/non-LOCC witness,Ward/Bianchi/contact structure}`.
 
-`p_UV=lim_{s->infinity} d ln|A_s|/d ln s`.
+This is a design target, not yet a Candidate Gravity model.
 
-The asymptotic-safety amplitude approaches a constant, hence `p_UV^AS=0`.
+### Third-wave denominator frozen
 
-The independent Draper–Knorr–Ripken–Saueressig Lorentzian quantum-effective-action scalar-scattering construction is also asymptotically scale-free, with constant UV partial waves, hence `p_UV^DKRS=0`.
+Created `third_wave/README.md` with five targets:
 
-Therefore the frozen UV-exponent quotient gives `Delta_p=0`.
+1. generalized bespoke / dual-resonance UV amplitudes;
+2. full Planck-crossover asymptotic-safety amplitude vector;
+3. nonclassical interface discriminator surviving C2/C3/C3b;
+4. nonlinear postquantum-classical consistency;
+5. concrete loop/canonical/discrete QG Lorentzian observable.
 
-Terminal status: `OPERATIONALLY_DEGENERATE` in this scoped observable.
+Third-wave terminal coverage starts at `0/5 = 0%`.
 
-Guardrail: full Planck crossover, normalization, angular dependence, resonance-like structure and contact-completed crossed amplitudes are not claimed degenerate. The 2026 asymptotic-safety paper itself notes that forward scattering requires the missing four-scalar/contact completion.
+### T3-01 — bespoke dual resonance
 
-## 2026-09-08 — KMQGB-013 — KTM classical-channel closure
+Created `models/bespoke_dual_resonance/audit.md`.
 
-Froze `KTM-OSCILLATOR-MEASUREMENT-FEEDBACK-001`.
+Initial result: the Cheung-Remmen construction permits customizable mass spectra with dual resonance, simple-pole locality structure and acceptable UV behavior, with open unitary non-string regions in the original analysis. Therefore pole support alone is insufficient for a global UV/string uniqueness claim.
 
-The continuous weak-measurement + reciprocal classical-feedback construction reproduces the Newtonian bilinear coupling `K x_1 x_2` and ties it to a minimum decoherence/noise rate. The standard symmetric Gaussian KTM channel does not generate entanglement.
+The later Bhardwaj-Spradlin-Volovich-Weng unitarity audit sharply restricts the family, ruling out the analyzed asymptotically nonlinear Regge trajectories and constraining asymptotically linear subclasses; many unitary bespoke amplitudes also fail stronger Regge sum rules.
 
-Because RQIR C3 explicitly contains classical-channel / measurement-feedback gravity, this realization is literally a C3 member.
+A complementary Geiser-Lindwasser generalized Veneziano/Virasoro analysis provides the key new **rigidity** result: under the generalized-Virasoro physical assumptions, an overdetermined nonlinear recursion system admits only the string spectrum, while the generalized-Veneziano branch admits nontrivial families including Coon-like deformations.
 
-Terminal status: `EXACT_COMPARATOR_IDENTITY`; residual 0.
+Benchmark interpretation:
 
-Lesson: gravitational decoherence, heating, noise or even quantum discord are not by themselves certificates of a quantum gravitational mediator.
+- broad parent families can make a single fingerprint tunable;
+- a sufficiently rich simultaneous constraint set can collapse the allowed solution space and create rigidity;
+- future KG design should seek the same structural property: independent consistency and observable relations must overconstrain one parent dynamics.
 
-## 2026-09-08 — KMQGB-014 — postquantum classical Bianchi reconciliation and closure
+Frozen stronger UV vector:
 
-Activated the 2026 Oppenheim–Sajjad stochastic-mode realization and initially retained a Bianchi/PSD blocker because Hirotani–Matsumura criticize a naive delta-correlated white-noise tensor kernel.
+`I_UV={pole support,residues/spins,crossing/duality,Regge trajectory,high-energy boundedness/sum rules,low-energy coefficient correlations}`.
 
-Direct source inspection resolved the issue at the exact frozen linearized level:
+T3-01 operational completion estimate advanced to **60%**.
 
-- Oppenheim–Sajjad explicitly acknowledge that the naive generalized-DeWitt diffusion covariance is not conserved as an SDE kernel;
-- in the OM action, saturation with the conserved Einstein tensor eliminates longitudinal contributions;
-- the same paper constructs a local transverse/conserved diffusion kernel using spin projectors;
-- the conserved kernel yields the same OM action and two-point function in the declared linearized pure-gravity sector;
-- the analyzed action is positive semi-definite on all dynamical modes.
+Current blocker: `BESPOKE_CONCRETE_UNITARY_POINT_AND_JOINT_VECTOR_FREEZE`.
 
-Froze the conserved formulation as `PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001`.
+### KG rigidity prior added
 
-Because modern postquantum classical gravity is an explicit C3b comparator class, terminal status is `EXACT_COMPARATOR_IDENTITY`; residual 0.
+`protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md` now requires a rigidity audit:
 
-Guardrail: this does not prove full nonlinear matter-coupled constraint closure for every postquantum model.
+- count remaining tunable functions/parameters after consistency and comparator constraints;
+- prefer low-dimensional or isolated solution manifolds;
+- reject novelty claims whose fingerprint remains freely tunable by a broader physically admissible parent class.
 
-## 2026-09-08 — KMQGB-016 — same-domain UV comparator for string and second-wave completion
+### Progress
 
-### S2-M05 comparator construction
-
-Froze the simplest Huang–Remmen gravitational triple-product amplitude
-
-`A_HR(s)=1/s+1/(m^2-s)`,
-
-`M_HR=kappa^2 R^4 A_HR(s)A_HR(t)A_HR(u)`.
-
-It shares the exact four-graviton external channel with first-wave M09, reduces to Einstein gravity in the IR, is defined through its UV/massive-pole region, has positive partial-wave residues in the cited construction, and softens fixed-angle UV scattering to `E^-4` when the coupling sum rule is satisfied.
-
-This closes the second-wave objective `SAME_DOMAIN_UV_COMPARATOR_ESTABLISHED` with status `PASS_RQIR_GATE` as **comparator infrastructure**.
-
-The authors do not identify a complete microscopic Hamiltonian/Lagrangian behind the amplitude, so it is not promoted as a fully validated microscopic QG model.
-
-### Cross-wave M09 result
-
-Historical first-wave M09 remains immutable as `BLOCKED_PROTOCOL_MISMATCH` under its original comparator registry.
-
-Prospectively, the missing-comparator problem is repaired for one explicit UV comparison. Define the positive-mass s-channel pole-support set after removing the universal massless graviton pole:
-
-- HR single-mass comparator: `P_s^HR={m^2}` with an infinite spin accumulation at that one mass;
-- type-II Virasoro–Shapiro: an infinite sequence of distinct massive string levels.
-
-No finite `m^2` makes the two pole-support sets equal. Thus type-II string is `DISTINCT_FROM_HR_SINGLE_MASS_UV_COMPARATOR` in the full UV pole-support observable.
-
-This is not global string uniqueness because generalized Virasoro/Coon/bespoke dual-resonance and other UV amplitudes remain unprofiled.
-
-### Second-wave final progress
-
-Second-wave terminal coverage: **5/5 = 100%**.
-
-Second-wave rollup:
-- `OPERATIONALLY_DEGENERATE`: 2;
-- `EXACT_COMPARATOR_IDENTITY`: 2;
-- `PASS_RQIR_GATE` comparator infrastructure: 1;
-- `FAIL_RQIR_CONSISTENCY`: 0;
-- globally authorized `ROBUST_NONZERO_RESIDUAL`: 0.
-
-### External RQIR state
-
-Rechecked external RQIR authority: Iteration 566, Candidate Gravity `MODEL_READINESS=24%`.
-
-Rank11 run `34168897005`, job `101885271903`, coordinate `(+2.5e-6,-1.25e-6)` remains directly verified `in_progress`.
-
-No KMQGB heavy shared-runner work was launched.
+- first wave: `9/9 = 100%` historical immutable;
+- second wave: `5/5 = 100%` historical immutable;
+- third wave: `0/5 = 0%` terminal coverage;
+- active T3-01 task: `60%`;
+- globally authorized robust unique-QG residuals: `0`;
+- Candidate Gravity readiness: external/read-only metric, last observed `24%`.
