@@ -1,10 +1,10 @@
 {
-  "schema_version": "3.3",
+  "schema_version": "3.5",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 31,
-  "phase": "WAVES_1_TO_8_TERMINAL__RESIDUAL_SPACE_GEOMETRY_FROZEN",
+  "kmqgb_iteration": 33,
+  "phase": "WAVES_1_TO_10_TERMINAL__KG_PROMOTION_GATE_FROZEN__CROSS_ORDER_RIGIDITY_NEXT",
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
     "wave2": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
@@ -13,42 +13,70 @@
     "wave5": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
     "wave6": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
     "wave7": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
-    "wave8": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true, "rollup": {"PASS_RQIR_GATE": 5}}
+    "wave8": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
+    "wave9": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true, "rollup": {"PASS_RQIR_GATE": 5}},
+    "wave10": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true, "rollup": {"PASS_RQIR_GATE": 5}}
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
     "parent_template": "Gamma_parent=Gamma_C5,full_matched+DeltaGamma_KG",
-    "residual_geometry_protocol": "protocol/RESIDUAL_SPACE_GEOMETRY.md",
-    "local_residual": "COR=(I-AA^+)Sigma^(-1/2)r with A=Sigma^(-1/2)J_C after exact physical-constraint reduction",
-    "signal_separation": "eta(s)=||Pi_perp Sigma^(-1/2)s||/||Sigma^(-1/2)s||",
-    "global_gate": "finite common-domain comparator-manifold profiling after local COR",
-    "parameter_identifiability": "singular values of Pi_perp Sigma^(-1/2)J_KG",
-    "next_method": "optimal comparator-annihilating contrasts and observable-set design"
+    "promotion_gate": "protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md",
+    "residual_geometry": "protocol/RESIDUAL_SPACE_GEOMETRY.md",
+    "optimal_contrasts": "protocol/OPTIMAL_COMPARATOR_CONTRASTS.md",
+    "response_completeness": "protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md",
+    "local_residual": "COR=(I-AA^+)Sigma^(-1/2)r, A=Sigma^(-1/2)J_union after exact physical-constraint reduction",
+    "observable_augmentation_rule": "Delta d_perp = k - Delta rank(J_union)",
+    "projected_identifiability": "B_KG=Pi_perp Sigma^(-1/2)J_KG",
+    "response_identity": "D_S K^-1 = sum over all ordered set partitions with alternating block-count sign",
+    "next_method": "cross-order rigidity from stacked same-parent response orders"
+  },
+  "external_candidate_gravity_authority": {
+    "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
+    "authoritative_research_iteration_observed": 590,
+    "model_readiness_percent": 24,
+    "iter424_physical_gate": "5/5 PASS",
+    "iteration582": "q2-resolved operator coordinate PASS non-residual",
+    "iteration590": "cubic source-response completeness PASS; K3 and K1^3 omitted families nonzero",
+    "next_scientific_gate": "classify K3 hard-channel discontinuity origin and K1^3 linked-cut origin before complete nonlinear Ward/source block and comparator quotient"
   },
   "rqir_cor_precheck": {
-    "file": "protocol/RQIR_COR_APPLICATION_PRECHECK.md",
     "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
-    "missing_object": "RQIR_MATCHED_SOURCE_WARD_COMPARATOR_RESIDUAL_VECTOR",
-    "latest_scientific_iteration_observed": 587,
-    "model_readiness_percent": 24,
-    "dimension_warning": "for an imaginary-only three-bucket residual, local complement dimension is 3-rank(A_union)"
+    "missing_object": "COMPLETE_MATCHED_SOURCE_WARD_COMPARATOR_RESIDUAL_VECTOR",
+    "three_bucket_warning": "d_perp=3-rank(A_union); rank 3 means no local residual direction regardless of precision"
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "design_priors": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
+    "promotion_gate": "protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md",
     "residual_geometry": "protocol/RESIDUAL_SPACE_GEOMETRY.md",
-    "rqir_precheck": "protocol/RQIR_COR_APPLICATION_PRECHECK.md",
-    "reference_code": "code/residual_space_geometry_reference.py",
-    "latest_delta": "recovery/RECOVERY_DELTA_031.md",
-    "waves": ["third_wave/README.md", "fourth_wave/README.md", "fifth_wave/README.md", "sixth_wave/README.md", "seventh_wave/README.md", "eighth_wave/README.md"]
+    "optimal_contrasts": "protocol/OPTIMAL_COMPARATOR_CONTRASTS.md",
+    "response_completeness": "protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md",
+    "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
+    "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
+    "reference_code": [
+      "code/residual_space_geometry_reference.py",
+      "code/optimal_comparator_contrasts_reference.py",
+      "code/inverse_kernel_ordered_partitions.py"
+    ],
+    "waves": [
+      "third_wave/README.md",
+      "fourth_wave/README.md",
+      "fifth_wave/README.md",
+      "sixth_wave/README.md",
+      "seventh_wave/README.md",
+      "eighth_wave/README.md",
+      "ninth_wave/README.md",
+      "tenth_wave/README.md"
+    ]
   },
   "next_actions": [
-    "Construct exact left-nullspace comparator-annihilating contrasts",
-    "Derive covariance-optimal contrast for a proposed signal direction",
-    "Freeze dimension-gain rule for observable augmentation",
-    "Add correlated-noise common-mode contrast optimization",
-    "Freeze projected singular-value criterion for future observable-set selection",
-    "Refresh external RQIR scientific authority before current readiness statements"
+    "Freeze stacked multi-order observable/covariance/Jacobian notation for same-parent dynamics",
+    "Forbid artificial independent per-order retuning of shared parent parameters",
+    "Derive cross-order comparator-null contrasts and exact dimension gain",
+    "Include cross-order covariance/common theory-systematic modes",
+    "Define cross-order projected rank/singular-value rigidity certificate",
+    "Maintain promotion gate and response-completeness ledger for every future KG idea",
+    "Refresh external RQIR authority before readiness/heavy-compute decisions"
   ]
 }
