@@ -1,0 +1,13 @@
+{
+  "benchmark_id": "KMQGB-T4-M05-C4C6-ATTRIBUTION",
+  "realization": "C4-MASSLESS-SCALAR-MASSCHARGE-001",
+  "terminal": true,
+  "status": "OPERATIONALLY_DEGENERATE",
+  "frozen_claim": "NEWTONIAN_PHASE_PLUS_NON_EB_PLUS_COMMUTATOR_AS_GRAVITY_ATTRIBUTION",
+  "exact_scoped_match": "massless scalar exchange with g_i=sqrt(4*pi*G)m_i gives V=-G m_A m_B/r and exact branch-phase Theta match",
+  "quantum_match": "quantized scalar has nonzero operator commutator and can support non-EB quantum-information transfer",
+  "profiled_residual": 0,
+  "surviving_requirement": "spin-2/tensor response + universal stress-energy coupling + equivalence/universality + gravitational Ward/contact + relational/QRF invariance",
+  "global_qg_uniqueness": false,
+  "candidate_gravity_lesson": "quantumness attribution is not gravity attribution"
+}
