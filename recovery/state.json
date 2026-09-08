@@ -1,31 +1,30 @@
 {
-  "schema_version": "4.3",
+  "schema_version": "4.4",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 46,
-  "phase": "WAVES_1_TO_23_TERMINAL__QUARTIC_FIRST_WITH_STRING_AND_RADIATIVE_GATES",
+  "kmqgb_iteration": 47,
+  "phase": "WAVES_1_TO_24_TERMINAL__PARENT_PRINCIPLE_SEARCH_FRONT",
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
-    "waves2_to_23": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
+    "waves2_to_24": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
     "preferred_preansatz_architecture": "full_matched_C5_through_3point + parent_fixed_candidate_specific_quartic_or_higher_cross_regime_structure",
-    "escape_taxonomy": "protocol/BEYOND_C5_ESCAPE_TAXONOMY.md",
-    "quartic_spec": "protocol/QUARTIC_FIRST_E1_SEARCH_SPECIFICATION.md",
-    "quartic_moment_rigidity": "protocol/QUARTIC_HELICITY_MOMENT_RIGIDITY.md",
-    "projection_rank_gate": "protocol/KINEMATIC_PROJECTION_RANK_COMPLETENESS.md",
     "string_adversary": "protocol/QUARTIC_FIRST_STRING_STRUCTURAL_ADVERSARY.md",
     "radiative_protection": "protocol/RADIATIVE_PROTECTION_AND_FULL_C5_THREE_POINT_GATE.md",
+    "parent_principle_audit": "protocol/PARENT_PRINCIPLE_AUDIT.md",
+    "parent_principle_requirements": {
+      "rigidity": "derive a finite/low-dimensional tensor and momentum hierarchy before data",
+      "novelty": "leave a common-domain relation outside full C5, string-like/dual-resonance, asymptotic-safety and other comparator manifolds"
+    },
     "mandatory_rules": [
-      "candidate_seed_must_declare_beyond_C5_escape",
-      "new_cubic_graviton_deformation_requires_high_energy_causality_escape",
       "quartic_first_means_no_candidate_specific_cubic_beyond_full_C5_not_literal_total_C3_zero",
       "radiative_operator_mixing_and_RG_closure_are_mandatory",
-      "quartic_helicity_ratio_is_IR_anchor_not_novelty",
       "string_like_quartic_first_rigidity_is_a_mandatory_structural_comparator",
+      "parent_principle_must_select_not_merely_constrain_kernel",
       "dispersion_growth_class_must_be_declared_before_positivity_or_moment_tests",
       "native_projection_requires_invariant_rank_completion"
     ]
@@ -37,8 +36,7 @@
     "scientific_status": "BLOCKED prerequisite narrowed to two missing same-parent auxiliary kinematic constraints",
     "parent_invariant_dimension": 3,
     "native_target_dimension": 1,
-    "required_auxiliary_constraints": 2,
-    "next_scientific_gate": "recover or prospectively freeze two same-parent constraints / one-parameter trajectory before native pole roots and D_s projection"
+    "required_auxiliary_constraints": 2
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
@@ -46,21 +44,18 @@
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "design_priors": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
     "design_priors_postwave15": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS_POSTWAVE15.md",
-    "quartic_moment_rigidity": "protocol/QUARTIC_HELICITY_MOMENT_RIGIDITY.md",
-    "projection_rank_gate": "protocol/KINEMATIC_PROJECTION_RANK_COMPLETENESS.md",
-    "string_adversary": "protocol/QUARTIC_FIRST_STRING_STRUCTURAL_ADVERSARY.md",
-    "radiative_protection": "protocol/RADIATIVE_PROTECTION_AND_FULL_C5_THREE_POINT_GATE.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_046.md"
+    "parent_principle_audit": "protocol/PARENT_PRINCIPLE_AUDIT.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_047.md"
   },
-  "next_wave_status": "PARENT_PRINCIPLE_SEARCH__NO_ANSATZ_PROMOTION",
+  "next_wave_status": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH__NO_ANSATZ_PROMOTION",
   "next_actions": [
     "Refresh external RQIR authority before every readiness/heavy-compute claim",
-    "Search for a parent principle that fixes quartic/higher tensor and kernel hierarchy with few shared parameters",
-    "Demand radiative protection or explicit full-C5 matching for lower-order structures",
-    "Profile any quartic-first rigidity against type-II/string-like and broader dual-resonance comparators",
-    "Require correct local/nonlocal dispersion-class attribution",
-    "Require explicit parent-to-native invariant-rank completion in candidate records",
-    "Keep heavy compute idle until a concrete numerical object passes structural gates",
-    "Do not promote KG ansatz before a concrete robust global comparator-subtracted residual"
+    "Search for a minimal parent principle not already equivalent to known string/bootstrap or asymptotic-safety architectures",
+    "Require the principle to derive quartic/higher tensor and momentum relations with few parameters",
+    "Require radiative protection/closure relative to full C5",
+    "Profile derived hierarchy immediately against string-like, asymptotic-safety and full-C5 comparator spaces",
+    "Require correct dispersion class and exact kinematic lift",
+    "Reject principles that only constrain but do not select kernel",
+    "Do not promote KG or launch heavy compute until a concrete structural object survives all upstream gates"
   ]
 }
