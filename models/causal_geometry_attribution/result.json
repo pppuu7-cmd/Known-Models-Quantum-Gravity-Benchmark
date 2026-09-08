@@ -1,0 +1,12 @@
+{
+  "benchmark_id": "KMQGB-T4-M02-CAUSAL-GEOMETRY",
+  "realization": "ICO-PROPERTIME-ORDER-OPTICAL-VS-GRAV-001",
+  "terminal": true,
+  "status": "OPERATIONALLY_DEGENERATE",
+  "frozen_claim": "INDEFINITE_CAUSAL_ORDER_AS_QUANTUM_GEOMETRY_CERTIFICATE",
+  "profiled_comparator": "ordinary optical quantum switch",
+  "profiled_residual": 0,
+  "main_result": "the relativistic causal-order observable does not distinguish optical and gravitational quantum switches",
+  "surviving_requirement": "geometry attribution through an independent relational gravitational observable such as curvature/source/proper-time response, with an optical-switch null",
+  "candidate_gravity_lesson": "indefinite causal order is not geometry attribution"
+}
