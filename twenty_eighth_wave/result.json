@@ -1,0 +1,14 @@
+{
+  "wave": 28,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "PASS_RQIR_GATE": 3,
+    "OPERATIONALLY_DEGENERATE_WITH_EFT_CONSISTENCY": 1,
+    "PASS_RQIR_GATE_MANDATORY": 1
+  },
+  "main_lesson": "Cross-background observables can add rigidity when one parent parameter set must fit flat-space and curved-background sectors, but black-hole entropy/extremality consistency is not KG-specific and may overlap ordinary EFT positivity/causality bounds.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
