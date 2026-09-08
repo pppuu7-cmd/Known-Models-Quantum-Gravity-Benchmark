@@ -1,0 +1,10 @@
+{
+  "wave": 26,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {"PASS_RQIR_GATE": 5},
+  "main_lesson": "One parent should be tested across scattering, CTP and relational/channel representations with genuinely shared physical parameters. The cross-representation rank gain R_XR quantifies extra consistency directions created by prohibiting independent retuning across representations.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
