@@ -3,11 +3,13 @@
   "status": "PASS_RQIR_GATE",
   "objective": "MINIMAL_PREANSATZ_PARENT_TEMPLATE_ESTABLISHED",
   "ansatz_promoted": false,
-  "parent_decomposition": "Gamma_parent = Gamma_C5,Gaussian + DeltaGamma",
-  "novelty_gate": "A concrete DeltaGamma_KG must satisfy CTP/gauge/causal/relational/gravity-attribution constraints and yield a nonzero joint residual after the full comparator quotient.",
+  "parent_decomposition": "Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG",
+  "gaussian_control": "Gamma_C5,Gaussian remains an exact two-point null subsector only",
+  "critical_guardrail": "Higher CTP vertices or non-Gaussian graviton statistics are not automatically beyond C5 because perturbative quantum GR already contains graviton self-interactions, loops and higher-point/EFT structures.",
+  "novelty_gate": "A concrete DeltaGamma_KG must be nonzero after matching the full applicable C5 parent at the same perturbative/kinematic order, satisfy CTP/gauge/causal/relational/gravity-attribution constraints, and yield a nonzero joint residual after the full comparator quotient.",
   "compact_objects": {
     "K_rel": "{N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}",
     "G_attr": "{Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}"
   },
-  "kg_lesson": "Model building may now begin at the level of a constrained beyond-C5 DeltaGamma, but no Candidate Gravity ansatz is authorized yet."
+  "kg_lesson": "Model building may begin only at the level of a constrained DeltaGamma_KG beyond the full matched C5 parent; no Candidate Gravity ansatz is authorized yet."
 }
