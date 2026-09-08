@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "KMQGB-S2-M05-UV-COMPARATOR",
+  "concrete_comparator_id": "HR-TRIPLE-SINGLE-MASS-GRAV4-001",
+  "wave": 2,
+  "terminal": true,
+  "status": "PASS_RQIR_GATE",
+  "terminal_objective": "SAME_DOMAIN_UV_COMPARATOR_ESTABLISHED",
+  "amplitude": "M=kappa^2 R^4 A(s)A(t)A(u), A(s)=1/s+1/(m^2-s)",
+  "same_external_state_as_M09": true,
+  "same_uv_domain_as_M09": true,
+  "ir_gr_limit": true,
+  "uv_fixed_angle_scaling": "E^-4",
+  "string_comparison": {
+    "status": "DISTINCT_IN_POLE_SUPPORT",
+    "HR_positive_mass_levels": "{m^2}",
+    "VS_positive_mass_levels": "infinite sequence {4n/alpha'} under frozen convention",
+    "exact_identity_possible": false
+  },
+  "scope_guardrail": "comparator amplitude is bootstrap-level and does not supply a complete microscopic Hamiltonian/Lagrangian theory; one UV comparator does not prove global string uniqueness"
+}
