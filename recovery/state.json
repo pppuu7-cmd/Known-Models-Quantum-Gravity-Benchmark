@@ -1,10 +1,10 @@
 {
-  "schema_version": "5.4",
+  "schema_version": "5.5",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 62,
-  "phase": "MISP2_QCA_Q1_Q2_FRONT__RQIR621_SYNC__P4_OPEN",
+  "kmqgb_iteration": 63,
+  "phase": "MISP2_Q1_LOCAL_TT_NO_GO_CLOSED__Q1_GRAPH_REGISTER_FREEZE_NEXT",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
@@ -17,14 +17,12 @@
     "iteration": 60,
     "metric": "R2",
     "delta_percentage_points": 1,
-    "component": "consolidated construction playbook/article-ready synthesis",
-    "component_score_before": "6/10",
-    "component_score_after": "7/10"
+    "component": "consolidated construction playbook/article-ready synthesis"
   },
   "current_task": {
     "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
     "completion_R4_percent": 45,
-    "status": "MISP2_QCA_CONSTRUCTIVE_CLASSIFICATION__P4_NOT_YET_SURVIVED",
+    "status": "MISP2_Q1_Q2_CONSTRUCTIVE_CLASSIFICATION__P4_NOT_YET_SURVIVED",
     "closed": [
       "P1_known_principle_saturation",
       "P2_multi_representation_background_rigidity",
@@ -32,13 +30,13 @@
       "wave38_composition_gluing_duality_prefilter",
       "functional_freedom_no_go_prefilter",
       "construction_playbook_process_freeze",
-      "RQIR620_projective_native_bridge_sync",
       "RQIR621_normalization_graph_rank_sync",
-      "finite_rule_QCA_control_triage"
+      "finite_rule_QCA_control_triage",
+      "exact_finite_range_local_TT_projector_no_go"
     ],
     "open": [
-      "MISP2_Q1_local_register_graph_selection",
-      "MISP2_Q2_free_two_helicity_classification",
+      "MISP2_Q1_prospective_BCC_graph_register_freeze",
+      "MISP2_Q2_free_two_helicity_control_classification",
       "MISP2_Q3_interacting_constraint_preserving_update",
       "MISP2_Q4_cubic_to_quartic_rigidity",
       "MISP2_Q5_hard_4pt_CTP_derivation",
@@ -46,62 +44,43 @@
       "P5_structural_comparator_survival",
       "P6_preansatz_machine_record_for_survivor"
     ],
-    "anti_gaming_rule": "constructive targets/near-survivors do not increase R4 until an explicit finite-freedom parent derives the required hard relation"
-  },
-  "wave_coverage": {
-    "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
-    "waves2_to_37": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true},
-    "wave38": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true, "role": "constructive_prefilter_no_R4_credit"}
+    "anti_gaming_rule": "free spin2/QCA existence is a comparator/control gate; R4 can increase only from an interacting finite-freedom parent deriving the required hard relation"
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
     "finite_rule_qca_triage": "protocol/P4_FINITE_RULE_QCA_TRIAGE.md",
+    "local_tt_projector_no_go": "protocol/LOCAL_TT_PROJECTOR_NO_GO.md",
+    "local_tt_projector_reference": "code/local_tt_projector_no_go_reference.py",
     "functional_freedom_no_go": "protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md",
-    "functional_freedom_reference": "code/p4_functional_freedom_reference.py",
     "current_constructive_target_id": "MISP2-QCA",
-    "current_constructive_target_expansion": "Minimal Isotropic Self-interacting Physical-spin-2 Quantum Cellular Automaton",
     "current_constructive_target_status": "RESEARCH_TARGET_NOT_PROMOTED_PARENT",
-    "preferred_preansatz_architecture": "finite local constrained unitary with exactly two gapless helicity-2 modes -> GR cubic self-coupling -> derived quartic/higher hierarchy -> hard 2to2 plus same-parent CTP",
-    "pre_P4_sequence": [
-      "A1_explicit_parent_capsule",
-      "A2_functional_freedom_gate",
-      "A3_architecture_containment_prefilter",
-      "A4_explicit_P4_hard_relation_checkpoint"
-    ],
+    "Q1_locality_result": "exact translation-invariant finite-range TT projector impossible; S-local microarchitecture must use local redundant/constrained variables",
+    "Q1_fail_code": "BLOCKED__MICROSCOPIC_TT_PROJECTION_IS_NONLOCAL",
+    "free_spin2_novelty_guardrail": "higher-spin local unitary cellular automata have historical precedents; free Q2 solutions are comparator/control evidence, not KG novelty",
     "MISP2_program": [
-      "Q1_minimal_graph_and_local_gauge_redundant_spin2_register",
+      "Q1_freeze_minimal_graph_and_local_redundant_spin2_register",
       "Q2_free_constrained_two_helicity_classification",
       "Q3_interacting_constraint_preserving_local_update_and_GR_cubic",
       "Q4_quartic_higher_rigidity_from_same_update",
       "Q5_physical_4graviton_Floquet_and_same_parent_CTP"
-    ],
-    "locality_guardrail": "exact TT-only local register is not accepted on S-local branch; physical helicities must emerge after local gauge/constraint reduction or nonlocal kinematics must be explicitly declared",
-    "microscopic_freedom_rule": "fixed local dimension/radius/depth and finite theta; increasing hard order must add predictions rather than independent gate parameters",
-    "finite_rule_controls": {
-      "Chrono_Grid": "A3_FAIL_DISCRETE_LQG_SPINFOAM_BF_CONTAINED__A4_BLOCKED",
-      "QICT_gauge_coded_QCA": "A1_A2_PROVISIONAL_NEAR_SURVIVOR__A3_UNRESOLVED__A4_BLOCKED",
-      "Strings_from_Almost_Nothing": "A2_A4_POSITIVE_CONTROL__A3_STRING_CONTAINED"
-    }
+    ]
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_BY_SCIENTIFIC_DESIGN",
-    "current_reason": "MISP2 Q1-Q4 are structural symbolic classification gates; no frozen interacting spin2 update exists",
+    "current_reason": "Q1/Q2 are exact symbolic/representation classification gates; no frozen interacting spin2 update exists",
     "allowed_when": "Q1-Q4 freeze a finite-freedom update and numerical work can discriminate its hard scattering, convergence or holdout prediction"
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
     "authoritative_research_iteration_observed": 621,
     "model_readiness_percent": 24,
-    "scientific_status": "normalization authority graph has exactly two connected sectors and zero cross-sector bridges, leaving exactly one relative complex normalization N_native; projective diagnostics remain non-promoting",
     "remaining_native_binding_dimension_complex": 1,
     "remaining_native_binding_parameter": "N_native",
     "remaining_native_binding_status": "BLOCKED__ONE_COMMON_COMPLEX_CROSS_SECTOR_SCALE_NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY",
-    "normalization_components": 2,
-    "frozen_cross_sector_bridge_rank": 0,
     "root_or_q2_specific_normalization_allowed": false,
-    "next_scientific_gate": "derive one common source-to-Gamma3 absolute phase/coupling bridge prospectively from generating-functional/Legendre/in-in conventions without Candidate/comparator fitting"
+    "next_scientific_gate": "derive one common source-to-Gamma3 absolute phase/coupling bridge prospectively without Candidate/comparator fitting"
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
@@ -110,21 +89,20 @@
     "readiness_metrics": "protocol/READINESS_METRICS.md",
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
     "finite_rule_qca_triage": "protocol/P4_FINITE_RULE_QCA_TRIAGE.md",
+    "local_tt_no_go": "protocol/LOCAL_TT_PROJECTOR_NO_GO.md",
     "latest_external_rqir_check": "external_rqir_checks/iter621_normalization_graph_rank_audit.md",
-    "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_062.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_063.md"
   },
-  "next_wave_status": "MISP2_Q1_Q2_SYMBOLIC_CLASSIFICATION_REQUIRED",
+  "next_wave_status": "MISP2_Q1_BCC_REGISTER_PROSPECTIVE_FREEZE_REQUIRED",
   "next_actions": [
     "Refresh external RQIR before every R3/heavy-compute statement",
-    "Formalize the exact finite-range local-TT projection obstruction as a permanent MISP2 design lemma",
-    "Choose the smallest prospective homogeneous/isotropic 3D graph and local gauge-redundant spin2 register",
-    "Classify the free finite-range unitary symbol after exact constraints and require exactly two gapless helicity-2 physical modes with no extra gapless gravitational scalar/vector",
-    "Apply microscopic d_gate and hard FF_D freedom counting before interacting development",
-    "Only after Q2 survival classify a local interacting update preserving the physical constraint/code subspace",
-    "Match the cubic IR self-coupling to GR with shared parameters and derive rather than add quartic gates",
-    "Only after Q1-Q4 freeze compute hard 2to2/Floquet and same-parent CTP",
-    "Keep heavy compute idle until a frozen finite-freedom interacting update exists",
-    "Do not promote KG before P4/P5/P6 and a robust global comparator-subtracted residual exist"
+    "Prospectively freeze BCC as the first MISP2 Q1 graph control before solving the spin2 unitary",
+    "Choose a local constrained spin2 ambient representation rather than an exact TT-only cell",
+    "Audit historical higher-spin QCA constructions as Q2 comparators before claiming novelty",
+    "Classify exact finite-range unitary symbols preserving the local constraint kernel and require exactly two gapless physical helicity-2 modes",
+    "Require shared microscopic clock/light-cone matching before coupling to matter",
+    "Only after Q2 survival classify an interacting local update preserving the constraint/code subspace",
+    "Match GR cubic self-coupling and derive rather than add quartic/higher gates",
+    "Keep heavy compute idle until a frozen interacting finite-freedom update exists"
   ]
 }
