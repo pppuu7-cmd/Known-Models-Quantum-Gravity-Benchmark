@@ -1,0 +1,11 @@
+{
+  "benchmark_id": "KMQGB-T5-M02-TENSOR-POLARIZATION",
+  "realization": "SPIN012-TIDAL-NETWORK-001",
+  "terminal": true,
+  "status": "PASS_RQIR_GATE",
+  "objective": "TENSOR_POLARIZATION_ATTRIBUTION_ESTABLISHED",
+  "main_result": "a static scalar/vector quantum force can mimic a 1/r potential but does not automatically reproduce the helicity-2 tensor tidal/polarization response of massless spin-2 gravity",
+  "cross_regime_vector": "{Theta_static,kappa_soft,T_mn universality,R_0i0j tensor pattern,F_plus,F_cross,response phase/lag,scalar-vector bounds}",
+  "candidate_gravity_lesson": "gravity attribution should link static, soft, and radiative/tidal sectors through one parent coupling",
+  "global_qg_uniqueness": false
+}
