@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.1",
+  "schema_version": "2.2",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
@@ -20,28 +20,14 @@
     "total": 9,
     "terminal_completed": 9,
     "terminal_coverage_percent": 100.0,
-    "historical_status_immutable": true,
-    "rollup": {
-      "EXACT_COMPARATOR_IDENTITY": 5,
-      "OPERATIONALLY_DEGENERATE": 2,
-      "FAIL_RQIR_CONSISTENCY": 1,
-      "BLOCKED_PROTOCOL_MISMATCH": 1,
-      "ROBUST_NONZERO_RESIDUAL": 0
-    }
+    "historical_status_immutable": true
   },
   "second_wave": {
     "denominator_frozen": true,
     "total": 5,
     "terminal_completed": 5,
     "terminal_coverage_percent": 100.0,
-    "historical_status_immutable": true,
-    "rollup": {
-      "EXACT_COMPARATOR_IDENTITY": 2,
-      "OPERATIONALLY_DEGENERATE": 2,
-      "PASS_RQIR_GATE_COMPARATOR_INFRASTRUCTURE": 1,
-      "FAIL_RQIR_CONSISTENCY": 0,
-      "ROBUST_NONZERO_RESIDUAL": 0
-    }
+    "historical_status_immutable": true
   },
   "third_wave": {
     "denominator_frozen": true,
@@ -60,15 +46,20 @@
       "benchmark_id": "KMQGB-T3-M01-BESPOKE-UV",
       "research_target": "BESPOKE-DUAL-RESONANCE-UV-001",
       "status": "ACTIVE",
-      "current_task_percent_estimate": 45,
+      "current_task_percent_estimate": 60,
       "first_blocker": "BESPOKE_CONCRETE_UNITARY_POINT_AND_JOINT_VECTOR_FREEZE",
-      "new_result": "pole support alone is insufficient for global UV identification because broader bespoke dual-resonance constructions admit customizable mass spectra; stronger joint invariant needed",
+      "new_results": [
+        "pole support alone is insufficient for global UV identification because broader bespoke dual-resonance constructions admit customizable mass spectra",
+        "published unitarity work rules out the analyzed asymptotically nonlinear Regge trajectories and restricts viable asymptotically linear bespoke subclasses",
+        "under generalized-Virasoro assumptions, overdetermined nonlinear spectral constraints select the string spectrum, establishing a rigidity-by-overconstraint prototype"
+      ],
       "joint_target": "I_UV={pole support,residues/spins,crossing/duality,Regge trajectory,high-energy bounds/sum rules,low-energy coefficient correlations}"
     }
   },
   "candidate_gravity_design_lessons": {
     "core_rule": "Do not build KG novelty around new noise, Yukawa behavior, decoherence, UV softness, scale-free UV scaling, pole support, higher derivatives, or a mere nonzero GR residual alone.",
     "preferred_direction": "linked multi-channel nonclassical interface signature from one parent dynamics",
+    "rigidity_principle": "prefer overconstrained or isolated solution manifolds after consistency plus comparator constraints; count remaining tunable functions/parameters explicitly",
     "priority_components": [
       "J mean source",
       "N symmetrized noise",
@@ -84,14 +75,15 @@
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
     "authoritative_research_iteration_observed": 566,
     "model_readiness_percent": 24,
-    "active_heavy_work": "rank11 run 34168897005 directly verified in_progress",
+    "active_heavy_work": "rank11 run 34168897005 last directly verified in_progress",
     "coordinate": "(+2.5e-6,-1.25e-6)"
   },
   "next_actions": [
     "T3-01: freeze one concrete non-string bespoke amplitude point/subclass surviving published unitarity restrictions",
-    "T3-01: compare type-II string and bespoke comparator using joint I_UV rather than pole support alone",
-    "Update Candidate Gravity design priors whenever a reusable comparator/no-go lesson survives exact-realization audit",
+    "T3-01: compare the concrete point and type-II string using I_UV and state which assumptions produce generalized-Virasoro rigidity",
+    "Continue maintaining Candidate Gravity design priors and rigidity audit requirements",
+    "After T3-01 closure prioritize T3-03 nonclassical interface discriminator because it is most directly useful for future KG construction",
     "Do not alter historical first-wave 9/9 or second-wave 5/5 denominators",
-    "Do not launch KMQGB heavy shared-runner jobs while external RQIR rank11 remains active"
+    "Do not launch KMQGB heavy shared-runner jobs while external RQIR heavy chain remains active"
   ]
 }
