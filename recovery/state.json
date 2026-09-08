@@ -1,18 +1,20 @@
 {
-  "schema_version": "2.3",
+  "schema_version": "2.7",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 18,
-  "phase": "THIRD_WAVE_ACTIVE",
+  "kmqgb_iteration": 27,
+  "phase": "THIRD_WAVE_ACTIVE__FOURTH_WAVE_PREFLIGHT_ONLY",
   "firewall": {
     "writes": "KMQGB repository only",
     "external_rqir_access": "read_only",
-    "shared_runner_policy": "do_not_compete_until_RQIR_raw_authority_advances_or_chain_is_explicitly_free"
+    "shared_runner_policy": "do_not_compete_while_RQIR_rank12_or_successor_heavy_chain_is_active"
   },
   "design_recovery": {
     "design_priors": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
-    "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md"
+    "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
+    "third_wave": "third_wave/README.md",
+    "fourth_wave_preflight": "fourth_wave/PREFLIGHT.md"
   },
   "first_wave": {
     "denominator_frozen": true,
@@ -33,44 +35,92 @@
     "total": 5,
     "terminal_completed": 0,
     "terminal_coverage_percent": 0.0,
-    "primary_active": {
-      "benchmark_id": "KMQGB-T3-M01-BESPOKE-UV",
-      "status": "ACTIVE",
-      "current_task_percent_estimate": 60,
-      "first_blocker": "BESPOKE_CONCRETE_UNITARY_POINT_AND_JOINT_VECTOR_FREEZE",
-      "joint_target": "I_UV={pole support,residues/spins,crossing/duality,Regge trajectory,high-energy bounds/sum rules,low-energy coefficient correlations}"
-    },
-    "parallel_preflight": {
-      "benchmark_id": "KMQGB-T3-M03-NONCLASSICAL-INTERFACE",
-      "status": "PREFLIGHT",
-      "current_task_percent_estimate": 20,
-      "file": "models/nonclassical_interface/preflight.md",
-      "new_result": "end-state probe entanglement alone is not accepted as theory-independent KG evidence; mediator attribution against C4/C6 and classical-gravity/quantum-matter alternatives is required",
-      "provisional_vector": "I_NC={E_AB,chi_R^grav,O_ordered^grav,N_grav,C3_plus,Ward/contact,mediator-null controls}"
-    }
+    "targets": [
+      {
+        "benchmark_id": "KMQGB-T3-M01-BESPOKE-UV",
+        "status": "ACTIVE",
+        "task_percent_estimate": 70,
+        "first_blocker": "BESPOKE_CLOSED_CHANNEL_RIGIDITY_BOUNDARY",
+        "new_result": "concrete non-string Coon q=1/2 point frozen in published unitary generalized-Veneziano region; not misused as same-channel closed-string comparator"
+      },
+      {
+        "benchmark_id": "KMQGB-T3-M02-AS-CROSSOVER",
+        "status": "ACTIVE",
+        "task_percent_estimate": 50,
+        "first_blocker": "AS_CONTACT_COMPLETE_CROSSOVER_VECTOR",
+        "joint_target": "I_AS={IR_GR,E_x,H_peak,W_peak,theta_dependence,A_UV,p_UV,contact_fraction,crossing_completion}"
+      },
+      {
+        "benchmark_id": "KMQGB-T3-M03-NONCLASSICAL-INTERFACE",
+        "status": "ACTIVE_PREFLIGHT",
+        "task_percent_estimate": 60,
+        "first_blocker": "ORDERED_COMPONENT_AND_COMPARATOR_VECTOR_FREEZE",
+        "joint_target": "I_NC={Theta,E_AB,Q_channel,chi_R^grav,rho_comm^grav,N_grav,K3_plus,Ward/contact,mediator-null controls}",
+        "new_result": "two-mass branch double-difference Theta plus supplementary optomechanical entanglement-breaking/non-EB channel readout frozen"
+      },
+      {
+        "benchmark_id": "KMQGB-T3-M04-PQCG-NONLINEAR",
+        "status": "ACTIVE",
+        "task_percent_estimate": 45,
+        "first_blocker": "PQCG_SAME_REALIZATION_NONLINEAR_CONSTRAINT_CLOSURE",
+        "joint_target": "I_PQNL={CP,DiffCov,H_i,H_0,Closure,Bianchi,MatterBackreaction,DOF}"
+      },
+      {
+        "benchmark_id": "KMQGB-T3-M05-CDT",
+        "status": "ACTIVE",
+        "task_percent_estimate": 50,
+        "first_blocker": "CDT_GEON_CONTINUUM_AND_LOR_REALTIME_MAP",
+        "realization": "CDT-4D-CURVATURE-CORRELATOR-GEON-2026-001"
+      }
+    ]
+  },
+  "fourth_wave": {
+    "status": "PREFLIGHT_ONLY",
+    "denominator_frozen": false,
+    "terminal_coverage_percent": null,
+    "file": "fourth_wave/PREFLIGHT.md",
+    "priority_pool": [
+      "non-Gaussian stochastic gravity comparator for K3_plus",
+      "causal/process structure with geometry attribution",
+      "cross-detector spacetime-fluctuation geometry",
+      "quantum-reference-frame/relational invariance",
+      "separate gravity quantum-channel target only if independent after T3-03",
+      "strong-field KG consistency deferred until a concrete KG ansatz exists"
+    ]
   },
   "candidate_gravity_design_lessons": {
-    "core_rule": "Do not build KG novelty around a single qualitative feature.",
-    "preferred_direction": "linked multi-channel nonclassical interface signature from one parent dynamics",
-    "rigidity_principle": "prefer overconstrained or isolated solution manifolds after consistency plus comparator constraints",
-    "mediator_attribution_principle": "if entanglement/nonclassical transfer is used, identify the gravitational transfer channel and profile quantized-matter/non-gravitational C4/C6 explanations",
+    "core_rule": "Do not build KG novelty around a single qualitative feature or endpoint statistic.",
+    "preferred_direction": "rigid multi-channel nonclassical gravitational interface from one parent dynamics",
+    "rigidity_principle": "independent consistency and observable relations should collapse comparator freedom to a low-dimensional or isolated solution manifold",
+    "mediator_attribution": "entanglement or non-EB quantum communication must be attributed to gravity after C4/C6 and hidden quantum-channel profiling",
+    "geometry_attribution": "indefinite causal order/process structure requires evidence tying the effect to quantum geometry rather than ordinary quantum control",
+    "full_crossover": "prefer time/frequency/Planck-crossover vectors to asymptotic or endpoint scalars",
+    "constraint_rule": "manifest covariance/complete positivity does not substitute for nonlinear constraint-algebra closure in the same realization",
+    "continuum_rule": "discrete/numerical signatures require regulator/volume/continuum mapping before model-level novelty claims",
     "globally_authorized_robust_unique_qg_residuals": 0
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "authoritative_research_iteration_observed": 568,
+    "authoritative_research_iteration_observed": 569,
     "model_readiness_percent": 24,
-    "rank11_workflow_run": 34168897005,
-    "rank11_workflow_state": "completed_success",
-    "raw_authority_state": "CURRENT_QG_FRONT still lists rank11 active and requires raw-valid consumption before rank12 authorization",
-    "scientific_guardrail": "workflow success alone is not RQIR authority"
+    "quarter_new_coordinates_raw_closed": "11/12",
+    "quarter_total_coordinate_coverage": "15/16",
+    "rank11": "raw-consumed PASS Iteration 569",
+    "active_heavy_work": {
+      "rank": 12,
+      "coordinate": "(+2.5e-6,+1.25e-6)",
+      "run": 34175330006,
+      "job": 101903475600
+    }
   },
   "next_actions": [
-    "T3-01: freeze one concrete non-string bespoke amplitude point/subclass surviving published unitarity restrictions",
-    "T3-01: compare type-II string and the concrete point using full I_UV",
-    "T3-03 preflight: freeze explicit two-probe setup and mediator-attribution/null-control protocol",
-    "T3-03: derive comparator predictions for C2/C3/C3b/C4/C6 before any KG ansatz proposal",
-    "Maintain KG design-prior and recovery artifacts on every reusable lesson",
-    "Do not launch a competing KMQGB heavy shared-runner job until RQIR raw authority consumes rank11 and the next heavy-chain state is explicit"
+    "T3-01: identify the minimal closed-channel assumption set that forces string rigidity or admits a same-channel non-string alternative",
+    "T3-02: extract and normalize the published Planck-crossover vector and wait for reproducible contact-complete A4 before terminal S-matrix classification",
+    "T3-03: derive I_NC for C2 and C3 first, translate the gravity-induced channel EB condition into the same response/noise notation, then profile C3b/C4/C6",
+    "T3-04: locate or derive same-realization nonlinear constraint content for the 2026 covariant classical-quantum gravity formulation",
+    "T3-05: extract CDT correlator fit values and audit volume/coupling/continuum and Lorentzian interpretation",
+    "Fourth-wave preflight: prioritize a non-Gaussian stochastic comparator against K3_plus but do not freeze a denominator before third wave is terminal 5/5",
+    "Maintain protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md and recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md after every reusable lesson",
+    "Do not dispatch competing KMQGB heavy work while RQIR rank12 or its authorized successor chain is active"
   ]
 }
