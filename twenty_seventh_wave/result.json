@@ -1,0 +1,16 @@
+{
+  "wave": 27,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "STRONG_CROSS_REPRESENTATION_NULL": 1,
+    "PARTIAL_COVERAGE__BLOCKED_SAME_REALIZATION_LINK": 1,
+    "STRONG_SCATTERING__BLOCKED_OPERATIONAL_REALTIME_LINK": 1,
+    "STRONG_CTP_RELATIONAL_NULL__NO_FUNDAMENTAL_QGRAVITON_SMATRIX": 1,
+    "STRONG_MEDIATOR_CROSS_REPRESENTATION_NULL": 1
+  },
+  "main_lesson": "Cross-representation KG claims must first beat fully populated C5 and ordinary quantum-mediator nulls; missing string/AS operational blocks remain BLOCKED rather than being interpreted as zero or evidence for uniqueness.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
