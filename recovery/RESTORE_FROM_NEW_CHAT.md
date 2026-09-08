@@ -1,125 +1,97 @@
 # KMQGB — Restore from a New Chat
 
-This file is the shortest recovery entrypoint. It intentionally assumes no usable chat memory.
+This is the shortest recovery entrypoint and assumes no usable chat memory.
 
 ## Required order
 
-1. Use repository `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`, branch `main`.
-2. Read `protocol/BACKUP_AND_RECOVERY_METHOD.md` completely.
-3. Read `protocol/KMQGB_CANDIDATE_GRAVITY_SEPARATION.md`.
-4. Read `recovery/CURRENT_BENCHMARK_FRONT.md`.
-5. Read `recovery/state.json`.
-6. Read `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`.
-7. Read `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md` completely.
-8. Read the highest-numbered immutable `recovery/RECOVERY_DELTA_NNN.md`.
-9. Read `protocol/FROZEN_RQIR_PROTOCOL_REFERENCE.md`.
-10. Read historical wave summaries `third_wave/README.md`, `fourth_wave/README.md`, `fifth_wave/README.md`, `sixth_wave/README.md`.
-11. Read the model audit/result files named in the current front/state only when needed for the active next-wave target.
-12. Fetch external repository `pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction` `main`, its `candidate_gravity/recovery/CURRENT_QG_FRONT.md`, and latest Actions state separately and read-only before any heavy-compute decision.
-13. Resume from `next_actions` in `recovery/state.json`; do not reconstruct the front from chat memory.
+1. Open `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`, branch `main`.
+2. Read `protocol/BACKUP_AND_RECOVERY_METHOD.md` and `protocol/KMQGB_CANDIDATE_GRAVITY_SEPARATION.md`.
+3. Read `recovery/CURRENT_BENCHMARK_FRONT.md`.
+4. Read `recovery/state.json`.
+5. Read `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`.
+6. Read completely:
+   - `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`;
+   - `protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md`;
+   - `protocol/RESIDUAL_SPACE_GEOMETRY.md`;
+   - `protocol/OPTIMAL_COMPARATOR_CONTRASTS.md`;
+   - `protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`.
+7. Read the highest-numbered immutable `recovery/RECOVERY_DELTA_NNN.md`.
+8. Read `protocol/FROZEN_RQIR_PROTOCOL_REFERENCE.md`.
+9. Treat waves 1–10 as historical terminal authority; read a wave README/result only when needed by the current front.
+10. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` separately and read-only before readiness/heavy-compute claims.
+11. Resume only from `next_actions` in `recovery/state.json`.
 
 ## Immutable benchmark history
 
-- Wave 1: `9/9 = 100%`, immutable.
-- Wave 2: `5/5 = 100%`, immutable.
-- Wave 3: `5/5 = 100%`, immutable.
-- Wave 4: `5/5 = 100%`, immutable.
-- Wave 5: `5/5 = 100%`, immutable.
-- Wave 6: `5/5 = 100%`, immutable.
+- Wave 1: `9/9 = 100%`.
+- Waves 2–10: each `5/5 = 100%`.
 
-Wave coverage is finite queue coverage, not Candidate Gravity readiness and not theory probability.
+Wave coverage is not Candidate Gravity readiness and not theory probability.
 
-## Candidate Gravity design layer
+## Current non-negotiable Candidate Gravity rules
 
-Benchmark lessons live in
+1. No qualitative feature is a KG residual by itself.
+2. Use one explicit parent dynamics.
+3. Generate the **complete same-parent response** at every used order.
+4. Impose Ward/Bianchi/contact/constraint physical reduction before comparator profiling.
+5. Match the largest applicable same-order `Gamma_C5,full_matched` plus C0-C6/C3b/stronger comparators in the same validity domain.
+6. Preserve the full attribution stack: quantum, mediator, spin-2 gravity, locality, relational/QRF, geometry, detector, state, regulator and rigidity.
+7. Compute local COR only after the above:
+   `COR=(I-AA^+)Sigma^(-1/2)r`, `A=Sigma^(-1/2)J_union`.
+8. Require global/nonlinear comparator separation after local COR.
+9. Select observables by comparator-orthogonal dimension/conditioning/SNR, not raw sensitivity.
+10. Do not promote a KG ansatz or Fisher/resources until the full `protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md` is satisfied.
 
-- `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`;
-- `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`.
+## Full-C5 rule
 
-They must not change external RQIR Candidate Gravity readiness or promote an ansatz without an independent derivation.
+The valid bookkeeping decomposition is
 
-The compact design objects remain
+`Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG`.
 
-`K_rel={N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}`
+The Gaussian graviton influence functional is only a two-point control subsector. Higher-point, non-Gaussian, squeezed-state, memory, parity/chiral and nonanalytic effects are not automatically beyond C5.
 
-and
+## Response-completeness rule
 
-`G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}`.
+For `G=K^-1`, the complete mixed response is the ordered-set-partition sum in `protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`.
 
-The future target is a rigid relation
+At order 3 this includes `K3`, all six ordered `K1/K2` placements and all six ordered `K1^3` chains. Never omit a family without an exact zero/origin proof in the frozen observable.
 
-`F(K_rel,G_attr,supporting statistics)=0`.
+## Observable-design rule
 
-## Critical full-C5 rule
+For union comparator Jacobian `J_union`, exact comparator-null contrasts satisfy
 
-Do not use
+`J_union^T w=0`.
 
-`Gamma_C5,Gaussian + arbitrary higher vertices`
+Adding `k` physical observables changes local complement dimension by
 
-as a novelty definition.
+`Delta d_perp = k - Delta rank(J_union)`.
 
-The Gaussian graviton influence functional is only a two-point C5 null subsector. Perturbative quantum GR already contains nonlinear self-interactions, loops, higher-point correlators, memory/non-Gaussian effects and higher-curvature/EFT/contact structures.
+A future source/detector configuration is useful when it increases comparator-orthogonal rank, projected singular values or projected SNR.
 
-The only valid pre-ansatz decomposition is
+## External RQIR status at KMQGB Iteration 033
 
-`Gamma_parent=Gamma_C5,full_matched+DeltaGamma_KG`.
+Latest directly observed scientific front: RQIR **Iteration 590**, Candidate Gravity readiness **24%**.
 
-`DeltaGamma_KG` means only what survives the **full applicable C5 parent in the same kinematic/perturbative order and validity domain**, plus all other benchmark comparators.
+Iter590 proves the cubic same-parent source response is incomplete if only K1/K2 terms are retained; local K3 and ordered K1^3 families are nonzero on the frozen fixture.
 
-## Attribution stack that must be preserved
+External next gate: classify K3 hard-channel discontinuity origin and K1^3 linked-cut origin, then close the complete nonlinear source Ward object before mapping to Iter582/comparator subtraction.
 
-A future KG novelty claim must survive
+KMQGB writes nothing to external RQIR.
 
-1. quantum attribution;
-2. mediator attribution;
-3. gravity / massless-spin-2 attribution;
-4. locality / microcausality attribution;
-5. relational / QRF attribution;
-6. geometry attribution for causal/process claims;
-7. regulator / continuum attribution when relevant;
-8. detector/backaction attribution;
-9. rigidity / identifiability;
-10. full-C5 nonlinear/EFT order matching.
+## Next research front
 
-## Hard constraints
+Cross-order rigidity:
 
-- All KMQGB writes go only to the standalone KMQGB repository.
-- External RQIR is read-only for KMQGB work.
-- Never reconstruct frozen gates/Q1–Q7/comparator rules from chat memory.
-- Never silently change a frozen gate or denominator.
-- Never equate BLOCKED with FAIL.
-- A missing mandatory public object may terminate as `BLOCKED_MISSING_REQUIRED_OBJECT`.
-- Never generalize a concrete realization to a whole model family.
-- Never use benchmark coverage percentages as Candidate Gravity readiness.
-- Never claim noise, decoherence, non-Gaussianity, entanglement, a non-EB channel, KMS/FDR, indefinite causal order, cross-correlation, a pole tower, higher-point graviton statistics, or a Newtonian-looking quantum force individually proves quantum gravity.
-- A quantum mediator is not automatically gravity.
-- Ghost freedom/UV health is not automatically full causal consistency.
-- Relational/locality/mediator/full-C5 attribution requirements are part of the observable definition.
-
-## Heavy compute guardrail
-
-Before any KMQGB heavy job, refresh external RQIR authority and actual Actions state. Workflow success alone is not scientific authority.
-
-At KMQGB iteration 029 the latest scientific front observed was RQIR Iteration 583 with Candidate Gravity readiness `24%`. A later Iter584 mixed-K2 workflow run `34202930558` was observed `completed/success`, but had not yet been promoted by the observed RQIR recovery front. Do not compete until the successor raw-authority/heavy-chain state is explicit.
-
-## Next-wave rule
-
-A new wave may be frozen only around **candidate `DeltaGamma_KG` residual taxonomy after full-C5 matching**, not broad model cataloguing.
-
-Highest-value classes:
-
-1. higher-point/non-Gaussian structure;
-2. squeezed/exotic graviton-state signatures;
-3. memory/non-Markovian kernels;
-4. parity/chiral ordered structures;
-5. genuinely nonanalytic/cross-regime relations.
-
-Only a class surviving this taxonomy may justify proposing an actual Candidate Gravity ansatz.
+- stack multiple response orders from the same parent dynamics;
+- keep shared parent parameters shared across orders;
+- include cross-order covariance;
+- build cross-order comparator-null contrasts;
+- quantify projected rank/singular-value gain.
 
 ## Migration provenance
 
-The standalone repository was initialized from source branch `rqir7-known-models-benchmark` at source HEAD `782df9af3af1ca55ca4f9bf143e2723a7a8f18bc`, with original branch base `02ad31e89f1df0d5515779e6b7526e8eb5505667`.
+Standalone KMQGB was initialized from source branch `rqir7-known-models-benchmark` at source HEAD `782df9af3af1ca55ca4f9bf143e2723a7a8f18bc`, original branch base `02ad31e89f1df0d5515779e6b7526e8eb5505667`.
 
 ## Minimal new-chat instruction
 
-`Продолжай KMQGB и полезные наработки для будущей Candidate Gravity. Восстанови состояние по recovery/RESTORE_FROM_NEW_CHAT.md, recovery/CURRENT_BENCHMARK_FRONT.md, recovery/state.json, recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md и protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md; прочитай последний RECOVERY_DELTA. Считай волны 1–6 терминальными, обновляй внешний RQIR read-only перед heavy compute и не создавай KG ansatz до прохождения residual-taxonomy против full C5.`
+`Продолжай KMQGB и полезные наработки для будущей Candidate Gravity. Восстанови CURRENT_BENCHMARK_FRONT/state/handoff, прочитай KG promotion gate, residual geometry, optimal contrasts и parent-response completeness. Считай волны 1–10 терминальными. Внешний RQIR read-only. Продолжай cross-order rigidity; не продвигай KG ansatz до robust comparator-subtracted residual.`
