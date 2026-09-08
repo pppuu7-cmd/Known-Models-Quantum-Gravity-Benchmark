@@ -1,0 +1,16 @@
+{
+  "wave": 12,
+  "status": "TERMINAL",
+  "terminal_coverage": "5/5",
+  "terminal_coverage_percent": 100.0,
+  "targets": [
+    {"id":"KMQGB-T12-M01-CONFIG-STACK","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T12-M02-PARAMETER-INCIDENCE","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T12-M03-CONFIG-NULL-CONTRASTS","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T12-M04-CROSS-CONFIG-COVARIANCE","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T12-M05-INTERVENTION-DESIGN","status":"PASS_RQIR_GATE"}
+  ],
+  "protocol":"protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md",
+  "reference_code":"code/intervention_design_reference.py",
+  "kg_lesson":"Use controlled configuration changes to rotate signal/comparator geometry; keep dynamics parameters shared and choose interventions by projected post-comparator information gain."
+}
