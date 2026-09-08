@@ -1,0 +1,68 @@
+{
+  "candidate_id": "KMQGB-T16-02-ENTIRE-NONLOCAL",
+  "screening_classification": "OPERATIONALLY_DEGENERATE",
+  "authority": {
+    "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+    "commit_or_blob": "sixteenth_wave frozen record",
+    "parent_object_ref": "sixteenth_wave/README.md#t16-02--zero-free-entire-nonlocal-metric-kernel"
+  },
+  "parent_dynamics": {
+    "representation": "action",
+    "object_ref": "weakly nonlocal EOM-squared/entire-form-factor metric gravity class",
+    "declared_domain": "weak-field Minkowski; frozen on-shell tree observable for screening"
+  },
+  "parameters": [
+    {"id": "form_factor", "role": "dynamics", "sharing_scope": "global"}
+  ],
+  "observable_blocks": [],
+  "comparators": [
+    {
+      "id": "C5_LOCAL_UNDERLYING_TREE",
+      "validity_domain": "same frozen on-shell tree sector",
+      "parameter_ids": [],
+      "prediction_ref": "tree amplitudes of the frozen stable nonlocal class coincide with the underlying local theory",
+      "jacobian_ref": "tree observable identity; numeric Jacobian not required for structural screening",
+      "state_sector": "matched"
+    }
+  ],
+  "covariance": {
+    "matrix_ref": null,
+    "provenance": "no numeric residual permitted for the frozen tree identity",
+    "cross_block_correlations_included": true
+  },
+  "attribution_stack": {
+    "quantum": "BLOCKED",
+    "mediator": "PASS_METRIC_ONLY_SCOPED",
+    "gravity_spin2": "PASS_SCOPED",
+    "locality": "BLOCKED_NONLOCAL_CAUSALITY_SEPARATE",
+    "relational_qrf": "BLOCKED",
+    "detector": "BLOCKED",
+    "state": "BLOCKED",
+    "rigidity": "FAIL_ARBITRARY_FORM_FACTOR_OR_TREE_DEGENERACY"
+  },
+  "rigidity": {
+    "cross_order": {"status": "BLOCKED"},
+    "intervention": {"status": "BLOCKED"},
+    "holdout": {"status": "BLOCKED", "shared_parameter_retuning_on_holdout": false},
+    "minimal_suite": {"status": "BLOCKED"}
+  },
+  "promotion_gates": {
+    "G0": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-02"], "scope": "parent class fixed for scoped screening"},
+    "G1": {"status": "BLOCKED", "evidence_refs": [], "scope": "no beyond-tree complete residual block authorized"},
+    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "not promoted to physical residual"},
+    "G3": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-02"], "scope": "same-sector local comparator identified"},
+    "G4": {"status": "BLOCKED", "evidence_refs": [], "scope": "global causality/attribution remains separate"},
+    "G5": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-02"], "scope": "frozen tree observable is comparator-degenerate"},
+    "G6": {"status": "BLOCKED", "evidence_refs": [], "scope": "COR not authorized"},
+    "G7": {"status": "BLOCKED", "evidence_refs": [], "scope": "global separation absent"},
+    "G8": {"status": "BLOCKED", "evidence_refs": [], "scope": "identifiability absent"},
+    "G9": {"status": "BLOCKED", "evidence_refs": [], "scope": "form-factor rigidity not established"},
+    "G10": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-02"], "scope": "screening rejection; promotion forbidden"}
+  },
+  "promotion": {
+    "ansatz_promoted": false,
+    "robust_global_residual": false,
+    "fisher_promoted": false,
+    "resources_promoted": false
+  }
+}
