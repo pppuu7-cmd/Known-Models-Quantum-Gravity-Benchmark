@@ -6,30 +6,22 @@ This is the continuation entrypoint for KMQGB as a design/red-team layer for a f
 
 1. Read `recovery/RESTORE_FROM_NEW_CHAT.md`.
 2. Read `recovery/CURRENT_BENCHMARK_FRONT.md` and `recovery/state.json`.
-3. Read `protocol/READINESS_METRICS.md` and `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md` before reporting percentages.
-4. Read Candidate Gravity design priors and permanent protocols named by current front/state.
-5. Read especially:
-   - `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md`;
-   - `code/p4_functional_freedom_reference.py`;
-   - `protocol/P4_CONSTRUCTIVE_SEARCH_NEGATIVE_LEDGER.md`;
-   - `protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md`;
-   - `protocol/MAJOR_QG_PROGRAMS_HARD_OBSERVABLE_AUDIT.md`;
-   - `protocol/MATRIX_MODEL_MICROSCOPIC_PARENT_PRECEDENT.md`;
-   - `protocol/SELF_SOURCED_SPECTRAL_CLOSURE_AUDIT.md`;
-   - `protocol/SPECTRAL_ORIGIN_COMPLETENESS.md`.
-6. Read candidate schema/validator and latest immutable recovery delta.
+3. Read `protocol/READINESS_METRICS.md` before reporting percentages.
+4. Read `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md` as the high-level construction route.
+5. Read `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md` and `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md` before evaluating a new parent.
+6. Read permanent protocols named by the playbook/current state, candidate schema/validator and latest immutable recovery delta.
 7. Treat waves 1–38 as terminal historical authority.
 8. Refresh external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before R3/heavy-compute claims.
 9. Resume from `next_actions` in `recovery/state.json`.
 
-## Stable readiness at Iteration 059
+## Stable readiness at Iteration 060
 
 - **R1 repository readiness: 92%**;
-- **R2 KMQGB methodology/material readiness: 88%**;
+- **R2 KMQGB methodology/material readiness: 89%**;
 - **R3 external Candidate Gravity scientific readiness: 24%** at RQIR Iter616;
 - **R4 minimal novel parent-principle search: 45%**.
 
-Wave38 and Iter059 improve search discipline but do not create a P4 survivor. P1–P3 are saturated; P4–P6 remain open.
+Only R2 changes at Iter060: `+1` point from consolidated playbook/synthesis `6/10 -> 7/10`. No scientific-model score changes.
 
 ## Historical coverage
 
@@ -39,67 +31,64 @@ Wave38 and Iter059 improve search discipline but do not create a P4 survivor. P1
 - Robust unique-QG residuals: `0`.
 - KMQGB-promoted KG ansatz: none.
 
-## Preferred construction architecture
+## Current construction authority
+
+Primary high-level route:
+
+`protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md`.
 
 Bookkeeping remains
 
 `Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG`.
 
-Preferred search architecture:
+Preferred architecture remains
 
 `full matched C5 through 3-point + first candidate-specific independent 4-point/higher structure`,
 
-unless a genuinely new cross-representation identity is derived. Parameters must remain shared across order/configuration/representation/background/holdout blocks.
+unless a genuinely new cross-representation identity is derived.
 
-BFSS/IKKT remain strong microscopic-parent precedents: the target is a finite microscopic/equally constructive rule that derives normalized hard gravitational observables and linked higher-point/CTP predictions rather than fitting a function.
+## Pre-G0 kill gates
 
-## Wave38 narrowing
+Before promotion gate G0, every new parent must pass:
 
-Causal-diamond/projector gluing, associator/curved composition, nonassociative star/R-flux gravity, UV/IR/Born reciprocity and causal-diamond overlap-spectrum consistency all fail as standalone novel P4 selectors. The common failure is
+- **A1 explicit parent capsule** — no slogan-only dynamics;
+- **A2 functional-freedom gate** — `FF_D(P)=dim N_P(D)` must not grow without bound;
+- **A3 architecture containment** — reject/reclassify known comparator architectures immediately;
+- **A4 explicit P4 checkpoint** — derive a normalized hard 4-point/higher or cross-representation relation before fitting.
 
-`structural consistency principle -> many admissible dynamics`.
+Unbounded `FF_D` -> `FUNCTIONAL_FREEDOM_BLOCKED`.
 
-These structures may be used as completion/validation layers, but not promoted as the dynamical selector without an additional microscopic rule.
+## G0-G10 route
 
-## Iter059 functional-freedom gate
+After A1-A4, preserve exact order:
 
-For proposed principle `P`, define
+`G0 parent -> G1 response completeness -> G2 physical reduction -> G3 common domain -> G4 attribution -> G5 full comparator matching -> G6 COR -> G7 global separation -> G8 projected identifiability -> G9 rigidity -> G10 promotion`.
 
-`N_P = {delta A4 != 0 | every stated P-constraint remains satisfied by A4 + delta A4}`.
+No unsupported object is zero-filled. No mandatory gate is skipped.
 
-If `N_P` contains an infinite linearly independent hard-deformation tower, classify the proposal `FUNCTIONAL_FREEDOM_BLOCKED` before P4.
+## Heavy-compute rule
 
-At finite hard/EFT cutoff `D`, use
-
-`FF_D(P)=dim N_P(D)`.
-
-If `FF_D` grows without bound as `D` increases, the proposal leaves an arbitrary function/tower and is not a low-freedom parent. A finite small limiting dimension may proceed only if those parameters are explicitly declared and shared across all required blocks.
-
-Executable scalar crossing-symmetric witness: with `s+t+u=0`, symmetric polynomials are generated by `sigma2=s^2+t^2+u^2` and `sigma3=stu`. Fixing all scalar coefficients through degree 3 still gives counts `[1,4,7,11,16,34,58,88]` at cutoffs `[4,6,8,10,12,18,24,30]` when higher directions are left free.
-
-This test is now part of methodology CI. It is a prefilter, not a complete graviton contact-basis proof for any specific candidate.
+Heavy compute remains idle for structural/authority blockers. It becomes useful only when a frozen object exists and a numerical run can discriminate a pre-registered physical/comparator/holdout question.
 
 ## External RQIR authority
 
 Latest directly observed authority: **Iteration 616**, R3 **24%**.
 
-Iter616 closes exact source/Iter582 q2-bucket identity and exact external scalar endpoint amputation. The remaining source/native ambiguity is exactly one common nonzero scalar `N_native`, representing source-response versus Iter582 effective-action/retarded phase and absolute normalization.
+Iter616 closes exact source/Iter582 q2-bucket identity and exact external scalar endpoint amputation. Remaining source/native ambiguity is one common nonzero scalar `N_native` representing phase/absolute normalization between source-response and Iter582 effective-action/retarded conventions.
 
-Full native binding remains `BLOCKED`, not FAIL and not residual. The exact next gate is an independent lower-order/common-field normalization identity fixing `N_native` without fitting Iter615 Candidate values. No heavy job is currently required.
+Full binding remains `BLOCKED`, not FAIL and not residual. The next RQIR gate is an independent lower-order/common-field normalization identity fixing `N_native` prospectively. No heavy job is currently required.
 
 ## Exact next KMQGB front
 
-For every new parent proposal:
+The process is now frozen. Search only for a real P4 object:
 
-1. freeze its physical hard basis and complete constraint set;
-2. apply `P4_FUNCTIONAL_FREEDOM_NO_GO` first;
-3. reject if `FF_D` grows without bound;
-4. only for a finite-freedom survivor derive a uniquely normalized hard 4-point/higher or cross-representation relation;
-5. derive the same-parent CTP/retarded block;
-6. close `S-local`/`D-nonlocal`, Ward/contact, causality, radiative and kinematic-lift scope;
-7. immediately profile against full C5, C4/C6, string/M-theory/matrix, amplitude/bootstrap, asymptotic safety, LQG/discrete, HST/causal-diamond, spectral/noncommutative and modern nonlocal comparators;
-8. only a surviving explicit object can score P4/P5 and justify a P6 pre-ansatz machine record.
+1. formulate a finite microscopic/equally constructive dynamical selector;
+2. freeze A1;
+3. apply A2 `FF_D`;
+4. apply A3 architecture containment;
+5. only for a survivor derive A4 normalized hard/cross-representation relation and same-parent CTP/retarded block;
+6. then enter G0-G10/P5/P6.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB. Восстанови Iter059 current front/state/handoff/latest delta и READINESS_METRICS. Считай волны 1–38 терминальными. Всегда сообщай R1/R2/R3/R4. Обнови внешний RQIR read-only. Для каждого нового P4-кандидата сначала применяй P4_FUNCTIONAL_FREEDOM_NO_GO: если FF_D растет без ограничения, FUNCTIONAL_FREEDOM_BLOCKED. Ищи finite microscopic dynamical selector -> normalized hard 4pt/higher relation -> same-parent CTP/retarded block. Отрицательные аудиты и prefilters R4 не повышают.`
+`Продолжай KMQGB с Iter060. Сначала восстанови state/current front/handoff/latest delta, READINESS_METRICS и CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK. R1=92, R2=89, R3=24 по RQIR616, R4=45. Для любого нового P4-кандидата сначала A1 explicit parent, затем A2 FF_D; рост свободы => FUNCTIONAL_FREEDOM_BLOCKED; затем A3 comparator containment; только survivor получает A4 hard 4pt/higher derivation. Тяжёлый счёт не запускать для структурного blocker.`
