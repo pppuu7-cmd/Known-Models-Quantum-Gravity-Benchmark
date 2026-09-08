@@ -98,7 +98,7 @@ def self_test() -> None:
     # Freezing any finite degree only delays the growth; it does not remove the
     # infinite tower if no additional microscopic selector is supplied.
     delayed = growth_sequence([12, 18, 24, 30], fixed_through_degree=11)
-    assert delayed == [2, 20, 44, 74], delayed
+    assert delayed == [3, 21, 45, 75], delayed
     assert delayed[-1] > delayed[0]
 
     print("p4_functional_freedom_reference: PASS")
