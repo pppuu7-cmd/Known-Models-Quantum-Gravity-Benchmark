@@ -1,35 +1,40 @@
-# KMQGB Fifth Wave — Gravity-Attribution Queue
+# KMQGB Fifth Wave — Historical Terminal Gravity-Attribution Queue
 
-**Frozen denominator:** 5 targets.  
-**Historical first wave:** `9/9 = 100%`, immutable.  
-**Historical second wave:** `5/5 = 100%`, immutable.  
-**Historical third wave:** `5/5 = 100%`, immutable.  
-**Historical fourth wave:** `5/5 = 100%`, immutable.
+**Frozen denominator:** 5.  
+**Terminal coverage:** **5/5 = 100%**.  
+**Historical status:** immutable after KMQGB iteration 028.
 
-The fifth wave starts from the T4-05 result: a generic quantum mediator can mimic Newtonian `1/r` branch phase, quantum-channel transmission, and commutator-sensitive response. Therefore the next question is not merely **is the mediator quantum?** but **what makes it specifically gravitational?**
-
-| # | Target | Gravity-attribution question | Initial state |
+| # | Target | Terminal status | Main lesson |
 |---|---|---|---|
-| T5-01 | massless spin-2 soft theorem / universal coupling | does spin-2 Lorentz/gauge consistency force universal gravitational charge and a stronger signature than a tuned scalar? | ACTIVE |
-| T5-02 | polarization/tidal spin discriminator | can an operational source-detector response distinguish scalar/vector quantum forces from helicity-2 gravity in the same weak-field geometry? | QUEUED |
-| T5-03 | unsymmetrized-noise detector/backaction adversary | can classical/ordinary quantum detector physics fake `A_comm`, and what calibration makes the gravitational commutator claim robust? | QUEUED |
-| T5-04 | nonlocal classical-CQ / locality loophole | do nonlocal or globally constrained classical-gravity/quantum-matter models evade the local-classical-field non-entanglement logic? | QUEUED |
-| T5-05 | relational ordered cross-spectral geometry | can `S^-_ij(omega)` be defined as a QRF-invariant multi-detector observable linked to spin-2 Ward structure? | QUEUED |
+| T5-01 | massless spin-2 soft universality | `PASS_RQIR_GATE` | leading soft spin-2 gauge/Lorentz consistency forces universal coupling; gravity attribution should be consistency-derived |
+| T5-02 | tensor/tidal polarization | `PASS_RQIR_GATE` | static scalar/vector quantum forces do not automatically reproduce helicity-2 tidal/polarization response; use cross-regime linkage |
+| T5-03 | detector/backaction quotient | `PASS_RQIR_GATE` | raw sideband asymmetry is not a commutator; use calibrated opposite-frequency transition-rate spectroscopy or a complete detector model |
+| T5-04 | nonlocal classical-CQ locality loophole | `OPERATIONALLY_DEGENERATE` | nonlocal hybrid classical-gravity models can generate entanglement; locality/microcausality is part of the witness |
+| T5-05 | relational ordered cross-spectrum | `PASS_RQIR_GATE` | ordered quantum structure should be defined as a causal, relational detector-worldline kernel |
 
-**Fifth-wave terminal coverage at freeze: 0/5 = 0%.**
+Rollup: **4 methodology PASS, 1 operational degeneracy**.
 
-## Entering attribution stack
+## Gravity-attribution stack after T5
 
-The surviving Candidate Gravity design stack entering T5 is:
+A future KG claim should survive:
 
-1. `quantum attribution`: non-EB channel + ordered/commutator-sensitive response;
-2. `mediator attribution`: exclude C4/C6 ordinary quantum transfer;
-3. `gravity attribution`: spin-2/tensor Ward/contact + universal stress-energy coupling;
-4. `relational attribution`: QRF/diffeomorphism-invariant source-detector observables;
-5. `geometry attribution` for causal/process claims.
+1. quantum attribution;
+2. mediator attribution;
+3. spin-2/gravity attribution;
+4. locality/microcausality;
+5. relational/QRF attribution;
+6. geometry attribution for causal/process claims;
+7. regulator/continuum attribution;
+8. rigidity/identifiability.
 
-T5 tests layer 3 directly and also strengthens layers 1 and 4.
+## Preferred compact design object
 
-## Completion rule
+`K_rel={N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}`
 
-As in earlier waves, a missing mandatory public object is a valid terminal `BLOCKED_MISSING_REQUIRED_OBJECT`; tasks are not kept artificially half-finished. Every reusable result updates the Candidate Gravity design-prior ledger.
+linked to
+
+`G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}`.
+
+The future Candidate Gravity task is to derive a rigid relation between these structures from one parent dynamics rather than to add more independent phenomenological knobs.
+
+See individual audit/result files for exact assumptions and caveats.
