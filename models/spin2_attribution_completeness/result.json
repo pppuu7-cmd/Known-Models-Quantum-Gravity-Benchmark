@@ -1,0 +1,15 @@
+{
+  "benchmark_id": "KMQGB-T6-M01-SPIN2-COMPLETENESS",
+  "status": "PASS_RQIR_GATE",
+  "objective": "SPIN2_ATTRIBUTION_COMPLETENESS_SCOPED",
+  "scope": [
+    "single interacting long-range massless spin-2 around Minkowski",
+    "locality/consistent factorization",
+    "unitarity",
+    "Lorentz/gauge consistency",
+    "universal leading coupling to conserved stress energy",
+    "leading low-derivative infrared sector"
+  ],
+  "result": "Within the frozen scope, the leading spin-2 gravity sector collapses to GR/C5 structure; higher-derivative EFT corrections or theories outside the assumptions remain possible.",
+  "kg_lesson": "Use massless spin-2 universality as gravity attribution and IR baseline, not as Candidate Gravity novelty."
+}
