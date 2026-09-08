@@ -12,14 +12,7 @@ Before inspecting the residual in the target blocks, partition complete physical
 
 The split and allowed local nuisance structure must be pre-registered.
 
-Suitable holdouts include
-
-- one response order;
-- one source/detector geometry;
-- one frequency/proper-time band;
-- one source species/composition;
-- one polarization/orientation;
-- one state-preparation setting.
+Suitable holdouts include one response order, source/detector geometry, frequency/proper-time band, source species/composition, polarization/orientation, or state-preparation setting.
 
 ## 2. Fit only on training blocks
 
@@ -41,42 +34,63 @@ Define
 
 `r_H^pred = y_H - c_H(theta_hat_T)`.
 
-The predictive score must use the uncertainty of both
+The predictive score must propagate both held-out noise and uncertainty/correlation induced by fitting the shared parameters on `T`.
 
-- held-out data/noise;
-- the parameter prediction propagated from training.
+For an independent-block linear-Gaussian model,
 
-For a linear-Gaussian model with independent training/holdout noise, a common approximation is
-
-`Cov(theta_hat_T) = (J_T^T Sigma_T^(-1) J_T)^+`
+`Cov(theta_hat_T) = (J_T^T Sigma_TT^(-1) J_T)^+`
 
 on the identified subspace and
 
-`Sigma_pred,H = Sigma_H + J_H Cov(theta_hat_T) J_H^T`.
+`Sigma_pred,H = Sigma_HH + J_H Cov(theta_hat_T) J_H^T`.
 
 Then
 
 `chi2_pred = (r_H^pred)^T Sigma_pred,H^+ r_H^pred`.
 
-This displayed covariance formula is **not** used blindly when training and holdout noise are correlated.
+## 4. Exact correlated linear-Gaussian reference
 
-## 4. Correlated training/holdout blocks
+Let
 
-If `Sigma_TH != 0`, derive the predictive covariance from the full joint Gaussian/generative model.
+`y_T = J_T theta + eps_T`,
 
-For fixed known parameters, the Gaussian conditional covariance is
+`y_H = J_H theta + eps_H`,
 
-`Sigma_H|T = Sigma_HH - Sigma_HT Sigma_TT^+ Sigma_TH`.
+with joint noise covariance blocks `Sigma_TT, Sigma_TH, Sigma_HT, Sigma_HH`.
 
-When parameters are estimated from training data, their estimator covariance and correlations with the held-out residual must also be propagated. Use the exact linear estimator algebra, joint likelihood, bootstrap/Monte Carlo, or equivalent validated method.
+For generalized least squares on training data, define
 
-Never claim independent holdout evidence while reusing strongly correlated numerical/systematic noise without accounting for it.
+`M = (J_T^T Sigma_TT^(-1) J_T)^+ J_T^T Sigma_TT^(-1)`.
+
+Then
+
+`theta_hat_T = theta + M eps_T`
+
+on the represented identifiable subspace, and the held-out prediction residual is exactly
+
+`e_H = eps_H - J_H M eps_T`.
+
+Therefore
+
+`Sigma_pred,H = Sigma_HH`
+
+`+ J_H M Sigma_TT M^T J_H^T`
+
+`- J_H M Sigma_TH`
+
+`- Sigma_HT M^T J_H^T`.
+
+When `Sigma_TH=0`, this reduces to the familiar held-out noise plus propagated parameter covariance.
+
+This formula shows that shared numerical/systematic noise can either increase or reduce predictive uncertainty through the cross terms. Do not claim independent holdout evidence while ignoring such correlations.
+
+For nonlinear models or singular/complex hierarchical nuisance structures, derive the predictive distribution from the full joint generative model, validated linearization, bootstrap/Monte Carlo, or equivalent authority rather than forcing this linear formula outside its domain.
 
 ## 5. Predictive rigidity versus flexible retuning
 
 A flexible comparator may fit the joint dataset only by effectively assigning separate shared-parameter values to different blocks.
 
-Define two conceptually distinct tests:
+Distinguish:
 
 1. **predictive test:** shared parameters fixed by `T`, predict `H`;
 2. **retuned fit:** allow the comparator to re-optimize shared parameters including `H`.
@@ -91,12 +105,7 @@ For blocks `a=1,...,A`, perform leave-one-configuration/order-out (LOCO) validat
 - predict block `a` without shared-parameter retuning;
 - compute its predictive residual/score with the full covariance model.
 
-Aggregate diagnostics may include
-
-- maximum standardized predictive residual;
-- sum of held-out predictive chi-square/log-score terms where statistically valid;
-- fraction of blocks inside pre-registered predictive intervals;
-- stability of fitted shared parameters across folds.
+Aggregate diagnostics may include maximum standardized predictive residual, held-out predictive log scores where statistically valid, interval coverage, and stability of fitted shared parameters across folds.
 
 ## 7. Training identifiability prerequisite
 
@@ -120,10 +129,10 @@ A KG model with many independent coefficients that merely fits every block separ
 
 Apply the same predictive protocol to Candidate Gravity and every comparator.
 
-- use the same training/holdout split;
-- give each model only its genuinely shared/local parameters;
-- use the same physical observable and covariance authority;
-- do not penalize a comparator for a legitimate local nuisance or give KG an undeclared extra retuning freedom.
+- same training/holdout split;
+- only genuinely shared/local parameters for each model;
+- same physical observable/covariance authority;
+- no undeclared extra retuning freedom for KG or artificial penalties for comparators.
 
 ## 10. Relation to COR/global profiling
 
