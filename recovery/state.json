@@ -1,10 +1,10 @@
 {
-  "schema_version": "4.9",
+  "schema_version": "5.0",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 57,
-  "phase": "WAVES_1_TO_37_TERMINAL__CONSTRUCTIVE_P4_PARENT_PRINCIPLE_REQUIRED",
+  "kmqgb_iteration": 58,
+  "phase": "WAVES_1_TO_38_TERMINAL__FINITE_DYNAMICAL_SELECTOR_P4_REQUIRED",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
@@ -16,14 +16,24 @@
   "current_task": {
     "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
     "completion_R4_percent": 45,
-    "status": "CONSTRUCTIVE_P4_REQUIRED",
-    "closed": ["P1_known_principle_saturation", "P2_multi_representation_background_rigidity", "P3_spectral_origin_dispersion"],
-    "open": ["P4_explicit_novel_parent_principle", "P5_structural_comparator_survival", "P6_preansatz_machine_record_for_survivor"],
+    "status": "CONSTRUCTIVE_P4_FINITE_DYNAMICAL_SELECTOR_REQUIRED",
+    "closed": [
+      "P1_known_principle_saturation",
+      "P2_multi_representation_background_rigidity",
+      "P3_spectral_origin_dispersion",
+      "wave38_composition_gluing_duality_prefilter"
+    ],
+    "open": [
+      "P4_explicit_novel_parent_principle",
+      "P5_structural_comparator_survival",
+      "P6_preansatz_machine_record_for_survivor"
+    ],
     "anti_gaming_rule": "additional negative audits after P1-P3 do not increase R4"
   },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
-    "waves2_to_37": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
+    "waves2_to_37": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true},
+    "wave38": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true, "role": "constructive_prefilter_no_R4_credit"}
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
@@ -32,7 +42,9 @@
     "major_program_audit": "protocol/MAJOR_QG_PROGRAMS_HARD_OBSERVABLE_AUDIT.md",
     "matrix_parent_precedent": "protocol/MATRIX_MODEL_MICROSCOPIC_PARENT_PRECEDENT.md",
     "self_sourced_spectral_audit": "protocol/SELF_SOURCED_SPECTRAL_CLOSURE_AUDIT.md",
-    "constructive_requirement": "an explicit low-freedom microscopic or equally derivational parent that produces a concrete hard/cross-representation gravitational relation and survives registered comparator spaces"
+    "composition_gluing_duality_prefilter": "protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md",
+    "constructive_requirement": "a finite low-freedom microscopic dynamical selector that directly derives a uniquely normalized hard/cross-representation gravitational relation and same-parent CTP/retarded block, then survives registered comparator spaces",
+    "new_exclusion": "do not promote projector gluing, associator/nonassociativity, UVIR/Born reciprocity or causal-diamond overlap consistency alone as novel P4 parents"
   },
   "repository_automation": {
     "workflow": ".github/workflows/methodology-ci.yml",
@@ -43,14 +55,17 @@
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "authoritative_research_iteration_observed": 615,
+    "authoritative_research_iteration_observed": 616,
     "model_readiness_percent": 24,
-    "scientific_status": "kinematic rank blocker prospectively resolved; next gate is native Y/T_cut binding before matched observable/residual",
+    "scientific_status": "q2 bucket identity and external scalar endpoint amputation closed; full native binding remains BLOCKED on one common nonzero normalization scalar N_native",
     "previous_kinematic_rank_blocker_resolved": true,
     "prospective_trajectory_iteration": 613,
     "root_jacobian_iteration": 614,
     "source_internal_pole_coefficient_iteration": 615,
-    "next_scientific_gate": "freeze identity-preserving source-side distribution to native Y/T_cut binding including normalization/sign, q-bucket correspondence, endpoint/amputation and local K3/contact treatment"
+    "endpoint_amputation_and_q2_binding_iteration": 616,
+    "remaining_native_binding_dimension": 1,
+    "remaining_native_binding_parameter": "N_native",
+    "next_scientific_gate": "fix N_native prospectively from an independent lower-order/common-field normalization identity using the same physical metric perturbation and retarded/effective-action convention, without fitting Iter615 Candidate values"
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
@@ -58,15 +73,16 @@
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
     "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_057.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_058.md"
   },
-  "next_wave_status": "NO_MORE_NEGATIVE_WAVE_CREDIT__CONSTRUCTIVE_P4_REQUIRED",
+  "next_wave_status": "NO_MORE_NEGATIVE_WAVE_CREDIT__FINITE_DYNAMICAL_SELECTOR_REQUIRED",
   "next_actions": [
     "Refresh external RQIR before every R3/heavy-compute statement",
-    "Formulate or identify one explicit low-freedom parent principle with BFSS-level derivational explicitness but outside known M/string/matrix/AS/C5 comparator manifolds",
-    "Require a concrete quartic/higher or cross-representation gravitational relation with few shared parameters",
-    "Classify hard origin as S-local spectral support or D-nonlocal and close radiative/CTP/causality/kinematic-lift scope",
-    "Immediately profile any P4 proposal against full C5, C4/C6, string/dual-resonance/M-theory/matrix, asymptotic safety, LQG/discrete, spectral geometry and modern nonlocal comparators",
+    "Search for a finite microscopic dynamical selector rather than another abstract gluing/composition/duality/overlap consistency principle",
+    "Require one uniquely normalized hard 4-point/higher or cross-representation gravitational relation before fitting",
+    "Require the same parent to determine a CTP/retarded response block with shared parameters",
+    "Classify hard origin as S-local or D-nonlocal and close Ward/causality/radiative/kinematic-lift scope",
+    "Immediately profile any P4 proposal against full C5, C4/C6, string/M-theory/matrix, amplitude/bootstrap, asymptotic safety, LQG/discrete, HST/causal-diamond, spectral/noncommutative and modern nonlocal comparators",
     "Only after P4 survival create a pre-ansatz machine record and score P5/P6",
     "Keep heavy compute idle until a concrete structural object justifies it",
     "Do not promote KG before a robust global comparator-subtracted residual exists"
