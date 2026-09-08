@@ -29,7 +29,7 @@ Current score:
 
 **R1 = 92/100 = 92%.**
 
-Iter060 does not raise R1 because the remaining repository-readiness gaps are end-to-end candidate execution/packaging rather than documentation availability.
+Scientific-model progress and external RQIR synchronization do not independently increase R1 once the firewall/sync component is already full.
 
 ## R2 — KMQGB methodology/material readiness for building a future KG
 
@@ -55,13 +55,13 @@ Current score:
 
 **R2 = 89/100 = 89%.**
 
-Change from Iter059: `+1 percentage point`, solely from consolidated playbook/synthesis `6/10 -> 7/10`. No scientific Candidate Gravity result is implied by this methodology increase.
+The last R2 change is Iter060: `+1 percentage point`, solely from consolidated playbook/synthesis `6/10 -> 7/10`. Iter061 external synchronization adds guardrail evidence but does not close another frozen rubric point.
 
 ## R3 — Scientific readiness of Candidate Gravity itself
 
 Controlled **only by external RQIR Candidate Gravity authority** and its stable rubric. KMQGB cannot promote this value.
 
-Latest directly observed authority at KMQGB Iter060 is **RQIR Iteration 616**:
+Latest directly observed authority at KMQGB Iter061 is **RQIR Iteration 620**:
 
 - comparator foundation `24/25`;
 - robust unique residual `0/20`;
@@ -70,7 +70,14 @@ Latest directly observed authority at KMQGB Iter060 is **RQIR Iteration 616**:
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-Iter616 closes exact source/Iter582 q2-bucket identity and exact external scalar endpoint amputation, narrowing the remaining native binding ambiguity to one common nonzero scalar `N_native`. The full native binding is still `BLOCKED`, not FAIL and not residual; no robust comparator-subtracted residual has therefore been authorized.
+Progress beyond Iter616 is normalization-invariant but non-promoting:
+
+- Iter617 proves existing frozen authority genuinely does not determine the common absolute source-to-`Gamma3` scalar `N_native`;
+- Iter618 freezes five independent six-root projective source-shape ratios invariant under common nonzero `N_native`;
+- Iter619 independently reproduces those ratios to floating-point precision;
+- Iter620 adds a threshold-free projective conditioning diagnostic.
+
+These results strengthen identity/reproducibility/corruption checks but do not authorize absolute native projection, Source/Born subtraction or comparator quotient. The full native binding remains `BLOCKED`, not FAIL and not residual.
 
 **R3 = 24%.**
 
@@ -93,7 +100,7 @@ Current score:
 
 **R4 = 45%.**
 
-Wave38 and Iter059/060 methodology work reduce false-positive search space and process ambiguity but do not raise R4. The fail-closed pre-P4 rule remains: a parent whose structural-null hard freedom `FF_D(P)` grows without bound with hard/EFT cutoff is `FUNCTIONAL_FREEDOM_BLOCKED`. Only an actual explicit finite-freedom constructive survivor may raise R4.
+Wave38 and Iter059–061 methodology/synchronization work reduce false-positive search space, process ambiguity and normalization corruption risk but do not raise R4. Only an actual explicit finite-freedom constructive P4 survivor may raise R4.
 
 ## Reporting format
 
