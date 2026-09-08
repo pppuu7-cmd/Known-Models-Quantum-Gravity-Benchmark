@@ -1,0 +1,68 @@
+{
+  "candidate_id": "KMQGB-T16-05-EXTRA-QUANTUM-MEDIATOR",
+  "screening_classification": "OPERATIONALLY_DEGENERATE",
+  "authority": {
+    "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+    "commit_or_blob": "sixteenth_wave frozen record",
+    "parent_object_ref": "sixteenth_wave/README.md#t16-05--extra-quantum-scalar-mediator-tuned-to-a-newtonian-sector"
+  },
+  "parent_dynamics": {
+    "representation": "action",
+    "object_ref": "S_GR + S_phi + sum_i g_i phi O_i with a massless quantized scalar mediator",
+    "declared_domain": "weak-source long-range sector where a 1/r interaction can be matched"
+  },
+  "parameters": [
+    {"id": "g_i", "role": "mediator", "sharing_scope": "configuration_set"}
+  ],
+  "observable_blocks": [],
+  "comparators": [
+    {
+      "id": "C4_EXTRA_QUANTUM_MEDIATOR",
+      "validity_domain": "same weak-source long-range sector",
+      "parameter_ids": ["g_i"],
+      "prediction_ref": "ordinary quantized scalar/extra-mediator family",
+      "jacobian_ref": "mediator-coupling directions span the frozen seed sector",
+      "state_sector": "arbitrary matched scalar state"
+    }
+  ],
+  "covariance": {
+    "matrix_ref": null,
+    "provenance": "no numeric KG residual authorized after mediator containment",
+    "cross_block_correlations_included": true
+  },
+  "attribution_stack": {
+    "quantum": "PASS_SCOPED",
+    "mediator": "FAIL_GRAVITY_ATTRIBUTION",
+    "gravity_spin2": "FAIL_SCALAR_MEDIATOR",
+    "locality": "PASS_SCOPED_LOCAL_QFT",
+    "relational_qrf": "BLOCKED",
+    "detector": "BLOCKED",
+    "state": "BLOCKED",
+    "rigidity": "FAIL_C4_CONTAINMENT"
+  },
+  "rigidity": {
+    "cross_order": {"status": "BLOCKED"},
+    "intervention": {"status": "BLOCKED"},
+    "holdout": {"status": "BLOCKED", "shared_parameter_retuning_on_holdout": false},
+    "minimal_suite": {"status": "BLOCKED"}
+  },
+  "promotion_gates": {
+    "G0": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-05"], "scope": "extra-mediator parent seed defined"},
+    "G1": {"status": "BLOCKED", "evidence_refs": [], "scope": "no beyond-comparator response block"},
+    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "not promoted to gravity physical basis"},
+    "G3": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-05"], "scope": "C4 comparator identified"},
+    "G4": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-05"], "scope": "quantum mediator is not gravity-attributed helicity-2"},
+    "G5": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-05"], "scope": "frozen seed is contained in C4/extra-mediator directions"},
+    "G6": {"status": "BLOCKED", "evidence_refs": [], "scope": "COR forbidden after containment"},
+    "G7": {"status": "BLOCKED", "evidence_refs": [], "scope": "global separation absent"},
+    "G8": {"status": "BLOCKED", "evidence_refs": [], "scope": "identifiability absent"},
+    "G9": {"status": "BLOCKED", "evidence_refs": [], "scope": "rigidity not relevant after gravity-attribution failure"},
+    "G10": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-05"], "scope": "screening rejection; promotion forbidden"}
+  },
+  "promotion": {
+    "ansatz_promoted": false,
+    "robust_global_residual": false,
+    "fisher_promoted": false,
+    "resources_promoted": false
+  }
+}
