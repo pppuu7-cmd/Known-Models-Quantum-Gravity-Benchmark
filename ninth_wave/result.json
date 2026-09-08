@@ -1,0 +1,36 @@
+{
+  "wave": 9,
+  "status": "TERMINAL",
+  "terminal_coverage": "5/5",
+  "terminal_coverage_percent": 100.0,
+  "targets": [
+    {
+      "id": "KMQGB-T9-M01-LEFT-NULL-CONTRASTS",
+      "status": "PASS_RQIR_GATE",
+      "objective": "EXACT_COMPARATOR_LEFT_NULLSPACE_CONTRASTS_ESTABLISHED"
+    },
+    {
+      "id": "KMQGB-T9-M02-COVARIANCE-OPTIMAL-CONTRAST",
+      "status": "PASS_RQIR_GATE",
+      "objective": "COVARIANCE_OPTIMAL_POST_COMPARATOR_SNR_CONTRAST_ESTABLISHED"
+    },
+    {
+      "id": "KMQGB-T9-M03-AUGMENTATION-RANK-GAIN",
+      "status": "PASS_RQIR_GATE",
+      "objective": "DELTA_DPERP_EQUALS_K_MINUS_DELTA_COMPARATOR_RANK"
+    },
+    {
+      "id": "KMQGB-T9-M04-CORRELATED-COMMONMODE",
+      "status": "PASS_RQIR_GATE",
+      "objective": "CORRELATED_COVARIANCE_AND_NUISANCE_MODE_SEPARATION_ESTABLISHED"
+    },
+    {
+      "id": "KMQGB-T9-M05-PROJECTED-DESIGN",
+      "status": "PASS_RQIR_GATE",
+      "objective": "PROJECTED_SINGULAR_VALUE_AND_SNR_EXPERIMENTAL_DESIGN_ESTABLISHED"
+    }
+  ],
+  "protocol": "protocol/OPTIMAL_COMPARATOR_CONTRASTS.md",
+  "reference_code": "code/optimal_comparator_contrasts_reference.py",
+  "kg_lesson": "Future KG observables are selected by comparator-orthogonal dimension/conditioning/SNR, not by raw novelty or sensitivity."
+}
