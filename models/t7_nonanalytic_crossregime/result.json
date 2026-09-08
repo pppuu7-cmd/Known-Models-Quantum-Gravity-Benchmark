@@ -1,0 +1,8 @@
+{
+  "benchmark_id": "KMQGB-T7-M05-NONANALYTIC-CROSSREGIME",
+  "status": "OPERATIONALLY_DEGENERATE",
+  "claim": "NONANALYTICITY_AS_STANDALONE_KG_RESIDUAL",
+  "result": "Low-energy quantum GR/C5 already predicts universal nonlocal/nonanalytic terms from massless propagation; ordinary extra fields and multiparticle states also generate thresholds/branch cuts.",
+  "stronger_target": "I_an={location,type,residue/discontinuity,spin/helicity content,source coupling,IR coefficient,UV/threshold origin,Ward/contact relation}",
+  "kg_lesson": "Only an origin-linked same-domain analytic structure that survives full C5 and broader UV/extra-field comparators can seed DeltaGamma_KG."
+}
