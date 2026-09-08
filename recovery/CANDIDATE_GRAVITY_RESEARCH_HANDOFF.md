@@ -10,30 +10,29 @@ This file is the continuation entrypoint for using KMQGB benchmark results as de
 4. Read `recovery/state.json`.
 5. Read `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md` completely.
 6. Read the highest-numbered immutable `recovery/RECOVERY_DELTA_NNN.md`.
-7. Read `third_wave/README.md`, `fourth_wave/README.md`, `fifth_wave/README.md` for historical terminal matrices.
-8. Read the specific audit/result files referenced by the current front for any lesson being reused.
-9. Refresh external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before any heavy-compute or readiness statement.
+7. Read historical wave summaries `third_wave/README.md`, `fourth_wave/README.md`, `fifth_wave/README.md`, `sixth_wave/README.md`.
+8. Read specific audit/result files referenced by the current front only when needed.
+9. Refresh external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only and the latest Actions state before any heavy-compute or readiness statement.
 10. Resume from `next_actions` in `recovery/state.json`, not chat memory.
 
 ## B. Historical benchmark coverage
 
 - Wave 1: `9/9 = 100%`, immutable.
 - Wave 2: `5/5 = 100%`, immutable.
-- Wave 3: `5/5 = 100%`, immutable — 2 methodology PASS, 3 missing-object BLOCKED.
-- Wave 4: `5/5 = 100%`, immutable — 2 methodology PASS, 3 operational degeneracies.
-- Wave 5: `5/5 = 100%`, immutable — 4 methodology PASS, 1 operational degeneracy.
+- Wave 3: `5/5 = 100%`, immutable.
+- Wave 4: `5/5 = 100%`, immutable.
+- Wave 5: `5/5 = 100%`, immutable.
+- Wave 6: `5/5 = 100%`, immutable — 3 methodology PASS, 1 exact C5 comparator identity, 1 operational degeneracy.
 
 Coverage is not Candidate Gravity readiness.
 
 No globally authorized robust unique-QG residual has yet been derived from the benchmark.
 
-## C. Current compact Candidate Gravity design target
+## C. Compact Candidate Gravity design target
 
 ### Relational causal ordered kernel
 
-`K_rel={N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}`
-
-with relational detector observables along physical worldlines.
+`K_rel={N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}`.
 
 ### Gravity-attribution/channel structure
 
@@ -43,82 +42,93 @@ The desired future KG parent dynamics should force a low-freedom relation
 
 `F(K_rel,G_attr,supporting higher statistics)=0`
 
-after comparator/nuisance profiling.
+after full comparator/nuisance profiling.
 
 ## D. Attribution stack that must be preserved
 
-1. **Quantum attribution** — non-EB + calibrated ordered/commutator-sensitive structure.
-2. **Mediator attribution** — exclude C4/C6 and ordinary quantum channels.
-3. **Gravity attribution** — spin-2/tensor, universal stress-energy, soft/Ward/contact and static-radiative linkage.
-4. **Locality attribution** — retarded support/microcausality or an explicitly justified controlled-nonlocal alternative.
-5. **Relational attribution** — QRF/diffeomorphism invariant source-detector observables.
-6. **Geometry attribution** — causal/process claims must beat ordinary quantum switch/control.
-7. **Regulator attribution** — discrete/numerical claims need continuum/effective-theory mapping.
-8. **Rigidity** — count surviving functions/parameters after all constraints.
+1. quantum attribution;
+2. mediator attribution;
+3. gravity / massless-spin-2 attribution;
+4. locality / microcausality attribution;
+5. relational / QRF attribution;
+6. geometry attribution for causal/process claims;
+7. regulator / continuum attribution where applicable;
+8. detector/backaction attribution;
+9. rigidity / identifiability;
+10. **full applicable C5 nonlinear/loop/EFT matching at the same perturbative/kinematic order**.
 
-## E. Critical negative results to remember
+## E. Critical full-C5 correction from wave 6
 
-Do not rebuild a KG idea around any one of:
+T6-02 established the Gaussian linearized-graviton influence functional as an exact C5 two-point null reference:
 
-- GR deviation;
-- Yukawa/scalar force;
-- noise/decoherence;
-- non-Gaussianity/higher symmetrized cumulants;
-- entanglement;
-- non-EB channel;
-- `A_comm` without detector/mediator attribution;
-- causal indefiniteness;
-- spatial cross-correlation;
-- bare metric/event superposition;
-- a pole tower;
-- scale-free UV behavior;
-- finite EFT coefficients;
-- a Newtonian-looking quantum force.
+`S_IF ~ J^- D_R J^+ + (i/2)J^- N J^-`.
 
-Each has an explicit benchmark counterexample or degeneracy.
+But T6-05 adds the mandatory correction:
 
-## F. Strong positive methodology results retained
+> Gaussian C5 is only a null subsector, not the whole C5 comparator.
 
-- rigidity by overconstraint;
-- T3-03 local-classical-spacetime discriminator architecture;
-- calibrated unsymmetrized transition-rate spectroscopy rather than raw sidebands;
-- massless spin-2 soft universality;
-- tensor/tidal polarization as cross-regime gravity attribution;
-- relational causal ordered kernels;
-- QRF redundancy quotient;
-- explicit locality/microcausality as part of the witness;
-- contact-complete / constraint-complete observables.
+Perturbative quantum GR already has nonlinear graviton self-interactions, loops, higher-point correlators and higher-curvature/EFT/contact structures.
 
-These are architecture constraints, not evidence that a specific KG model is correct.
+Therefore
 
-## G. External RQIR / heavy-compute policy
+`higher-point/non-Gaussian != automatically beyond C5`.
 
-At KMQGB iteration 028 the last checked external RQIR state is:
+The only valid pre-ansatz decomposition is
 
-- authoritative Iteration `570`;
+`Gamma_parent=Gamma_C5,full_matched+DeltaGamma_KG`.
+
+`DeltaGamma_KG` means only what remains after matching the full applicable C5 parent in the same domain/order.
+
+## F. Strong wave-6 methodology results
+
+- Under the frozen locality/Lorentz/unitarity/single-massless-spin-2/IR assumptions, the leading long-range spin-2 sector collapses to GR/C5. Use this as gravity attribution, not KG novelty.
+- KMS/FDR noise-response linkage is generic to stationary quantum baths and is not gravity-specific.
+- Ghost-free/UV-good nonlocality is not automatically globally causal; audit microcausality, no-signalling, chronology and initial-value structure separately.
+- A minimal pre-ansatz CTP container now exists, but no Candidate Gravity ansatz is authorized.
+
+## G. Pre-ansatz CTP constraints
+
+For relational/dressed source variables `T_r,T_a`, any future parent object must satisfy
+
+- `Gamma[T_r,T_a=0]=0` normalization/unitarity;
+- doubled-history reality/hermiticity;
+- admissible imaginary/noise sector;
+- retarded/largest-time support or an explicitly justified controlled-nonlocal replacement;
+- spin-2 Ward/contact identities;
+- universal IR gravity coupling / helicity-2 attribution;
+- relational/QRF invariance;
+- GR/C5 infrared recovery;
+- full common-domain comparator matching;
+- rigidity / low remaining functional freedom.
+
+## H. External RQIR / heavy-compute policy
+
+Last direct scientific front observed during KMQGB iteration 029:
+
+- RQIR authoritative Iteration `583`;
 - Candidate Gravity `MODEL_READINESS = 24%`;
-- QUARTER raw authority `11/12` new coordinates;
-- rank12 `(+2.5e-6,+1.25e-6)` active;
-- run `34175330006`, job `101903475600`;
-- direct run status `in_progress`.
+- Iter424 physical gate `5/5 PASS`, unresolved set `[]`;
+- Iter581 exact15 `Tr U1^2` raw-valid PASS;
+- Iter582 q2-resolved `D_s Gamma_e2` PASS, non-residual;
+- Iter583 quadratic MSSC-001 source/contact `K2` prerequisite raw-valid PASS.
 
-Do not dispatch competing KMQGB heavy work while rank12 or its authorized successor chain is active.
+Direct Actions refresh found Iter584 mixed-bilinear-K2 run `34202930558` already `completed/success`, but the observed scientific recovery front had not yet promoted it. Workflow success is not scientific authority.
 
-Workflow success is never scientific authority until raw consumption updates the RQIR front.
+Do not dispatch competing KMQGB heavy work until the external successor raw-authority/heavy-chain state is explicit.
 
-## H. Next research logic
+## I. Next research logic — residual taxonomy before ansatz
 
-Because waves 1–5 are terminal, the next wave may be frozen. It should attack the **combined attribution stack**, not broaden the catalog arbitrarily.
+The next wave should not broaden the model catalog. It should attack candidate classes for `DeltaGamma_KG` after full C5 matching:
 
-Highest-value directions:
+1. higher-point/non-Gaussian structure;
+2. squeezed/exotic graviton-state signatures;
+3. memory/non-Markovian kernels;
+4. parity/chiral ordered structures;
+5. genuinely nonanalytic/cross-regime relations.
 
-1. stronger ordinary quantum mediators that attempt to reproduce tensor/Ward/universal-coupling structure across multiple source sectors;
-2. controlled nonlocal kernels tested against no-signalling/microcausality rather than labeled simply “nonlocal”;
-3. an explicit influence-functional/CTP parent-object template capable of producing `K_rel` and `G_attr` together;
-4. cross-species/cross-regime rigidity: one coupling must fit static, soft, tidal, channel and commutator sectors;
-5. only after those adversaries, consider proposing a minimal Candidate Gravity parent ansatz.
+Only a direction surviving this taxonomy may justify an actual Candidate Gravity ansatz proposal.
 
-## I. Mandatory red-team order for a future KG ansatz
+## J. Mandatory red-team order for a future KG ansatz
 
 1. C0 GR/calibration.
 2. C1 semiclassical gravity.
@@ -134,14 +144,16 @@ Highest-value directions:
 12. QRF/diffeomorphism redundancy.
 13. optical quantum-switch controls.
 14. field-redefinition/on-shell equivalence.
-15. C5 EFT in-domain.
-16. broader UV amplitudes in-domain.
-17. spin/polarization/universal-coupling attribution.
-18. locality/microcausality.
-19. full Ward/contact/constraint completion.
-20. rigidity/identifiability count.
+15. Gaussian C5 null reference.
+16. **full C5 nonlinear/loop/EFT parent at the same order**.
+17. broader same-domain UV amplitudes.
+18. spin/polarization/universal-coupling attribution.
+19. locality/microcausality/global causality.
+20. full Ward/contact/constraint completion.
+21. state-sector degeneracy.
+22. rigidity/identifiability count.
 
-## J. Files to update after every scientific iteration
+## K. Files to update after every scientific iteration
 
 - active audit/result;
 - `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md` when a reusable lesson changes;
@@ -149,9 +161,10 @@ Highest-value directions:
 - `recovery/CURRENT_BENCHMARK_FRONT.md`;
 - `recovery/state.json`;
 - this handoff;
+- `recovery/RESTORE_FROM_NEW_CHAT.md` when recovery logic changes;
 - `logs/research_log.md`;
 - a new immutable `recovery/RECOVERY_DELTA_NNN.md`.
 
-## K. Minimal continuation instruction
+## L. Minimal continuation instruction
 
-`Продолжай KMQGB и наработки для будущей Candidate Gravity. Восстанови состояние по recovery/RESTORE_FROM_NEW_CHAT.md, recovery/CURRENT_BENCHMARK_FRONT.md, recovery/state.json, recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md и protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md. Считай волны 1–5 исторически закрытыми; проверь внешний RQIR read-only перед heavy compute; следующую волну строй только как red-team attribution stack, а не как общий каталог моделей.`
+`Продолжай KMQGB и наработки для будущей Candidate Gravity. Восстанови состояние по recovery/RESTORE_FROM_NEW_CHAT.md, recovery/CURRENT_BENCHMARK_FRONT.md, recovery/state.json, recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md и protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md. Считай волны 1–6 исторически закрытыми; перед heavy compute обнови внешний RQIR read-only; следующую волну строй как residual taxonomy после full-C5 matching, а не как общий каталог.`
