@@ -1,0 +1,26 @@
+{
+  "benchmark_id": "KMQGB-S2-M01-NONLOCAL",
+  "concrete_realization_id": "NL-EOM-ENTIRE-MINK-001",
+  "wave": 2,
+  "terminal": true,
+  "status": "OPERATIONALLY_DEGENERATE",
+  "frozen_observable": "all on-shell tree-level n-point amplitudes around Minkowski for the EOM-squared weakly-nonlocal class",
+  "comparator": "underlying local Einstein(-matter) theory / C0-C5 tree-level overlap as applicable",
+  "exact_relation": "A_n_nonlocal_tree_on_shell = A_n_local_tree_on_shell for all n in the declared class",
+  "profiled_residual": 0,
+  "consistency": {
+    "extra_massive_spin2_pole": false,
+    "entire_zero_free_form_factor": true,
+    "spectral_density": "positive in cited 2024 entire-form-factor analysis",
+    "unitarity_prescription": "Euclidean amplitudes analytically continued to physical external energies",
+    "strict_microcausality": "not promoted; off-shell microscopic acausal tails remain a caveat"
+  },
+  "scope_guardrail": "tree-level on-shell degeneracy does not imply loop-level, off-shell, or universal observable equivalence to GR",
+  "first_failing_or_blocking_gate": "F4_TREE_LEVEL_COMPARATOR_DISTINCTION",
+  "source_authorities": [
+    "Biswas-Gerwick-Koivisto-Mazumdar PRL 108 031101 (2012)",
+    "Modesto-Calcagni JHEP 10 169 (2021)",
+    "Briscese-Calcagni-Modesto-Nardelli JHEP 08 204 (2024)",
+    "Briscese-Modesto PRD 99 104043 (2019)"
+  ]
+}
