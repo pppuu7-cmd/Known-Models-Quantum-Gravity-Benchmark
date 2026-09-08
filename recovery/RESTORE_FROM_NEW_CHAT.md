@@ -1,6 +1,6 @@
 # KMQGB — Restore from a New Chat
 
-This is the shortest recovery entrypoint and assumes no usable chat memory.
+This file assumes no usable chat memory.
 
 ## Required order
 
@@ -12,86 +12,69 @@ This is the shortest recovery entrypoint and assumes no usable chat memory.
 6. Read completely:
    - `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`;
    - `protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md`;
+   - `protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`;
    - `protocol/RESIDUAL_SPACE_GEOMETRY.md`;
    - `protocol/OPTIMAL_COMPARATOR_CONTRASTS.md`;
-   - `protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`.
-7. Read the highest-numbered immutable `recovery/RECOVERY_DELTA_NNN.md`.
-8. Read `protocol/FROZEN_RQIR_PROTOCOL_REFERENCE.md`.
-9. Treat waves 1–10 as historical terminal authority; read a wave README/result only when needed by the current front.
-10. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` separately and read-only before readiness/heavy-compute claims.
-11. Resume only from `next_actions` in `recovery/state.json`.
+   - `protocol/CROSS_ORDER_RIGIDITY.md`;
+   - `protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md`;
+   - `protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md`.
+7. Read the highest-numbered immutable `RECOVERY_DELTA_NNN.md`.
+8. Treat waves 1–13 as historical terminal authority.
+9. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before readiness/heavy-compute claims.
+10. Resume from `next_actions` in `recovery/state.json`.
 
-## Immutable benchmark history
+## Immutable coverage
 
 - Wave 1: `9/9 = 100%`.
-- Waves 2–10: each `5/5 = 100%`.
+- Waves 2–13: each `5/5 = 100%`.
 
-Wave coverage is not Candidate Gravity readiness and not theory probability.
+Coverage is not Candidate Gravity readiness.
 
-## Current non-negotiable Candidate Gravity rules
+## Current Candidate Gravity rule
 
-1. No qualitative feature is a KG residual by itself.
-2. Use one explicit parent dynamics.
-3. Generate the **complete same-parent response** at every used order.
-4. Impose Ward/Bianchi/contact/constraint physical reduction before comparator profiling.
-5. Match the largest applicable same-order `Gamma_C5,full_matched` plus C0-C6/C3b/stronger comparators in the same validity domain.
-6. Preserve the full attribution stack: quantum, mediator, spin-2 gravity, locality, relational/QRF, geometry, detector, state, regulator and rigidity.
-7. Compute local COR only after the above:
-   `COR=(I-AA^+)Sigma^(-1/2)r`, `A=Sigma^(-1/2)J_union`.
-8. Require global/nonlinear comparator separation after local COR.
-9. Select observables by comparator-orthogonal dimension/conditioning/SNR, not raw sensitivity.
-10. Do not promote a KG ansatz or Fisher/resources until the full `protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md` is satisfied.
+Do not build/promote KG around one qualitative effect.
 
-## Full-C5 rule
+Seek one explicit parent dynamics with few shared parameters predicting many complete response orders/configurations/held-out channels.
 
-The valid bookkeeping decomposition is
+Only use
 
-`Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG`.
+`Gamma_parent=Gamma_C5,full_matched+DeltaGamma_KG`
 
-The Gaussian graviton influence functional is only a two-point control subsector. Higher-point, non-Gaussian, squeezed-state, memory, parity/chiral and nonanalytic effects are not automatically beyond C5.
+after full same-order C5 matching.
 
-## Response-completeness rule
+## Mandatory promotion order
 
-For `G=K^-1`, the complete mixed response is the ordered-set-partition sum in `protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`.
+`parent dynamics -> complete responses -> exact physical constraints -> common-domain comparators/attribution -> full C5 quotient -> COR -> global separation -> optimal observable design -> cross-order/intervention rigidity -> predictive holdout -> rigidity -> promotion`.
 
-At order 3 this includes `K3`, all six ordered `K1/K2` placements and all six ordered `K1^3` chains. Never omit a family without an exact zero/origin proof in the frozen observable.
+Final Fisher/resources remain forbidden until a robust comparator-subtracted residual exists.
 
-## Observable-design rule
+## Mathematical guardrails
 
-For union comparator Jacobian `J_union`, exact comparator-null contrasts satisfy
+- COR: `COR=(I-AA^+)Sigma^(-1/2)r`, `A=Sigma^(-1/2)J_union`.
+- Comparator-null contrast: `J_union^T w=0`.
+- Observable/configuration gain: `Delta d_perp=k-Delta rank(J_union)`.
+- Cross-order shared gain: `R_shared=sum rank(J_ell)-rank(J_stack)>=0`.
+- Full inverse-kernel response: ordered-set-partition identity in `PARENT_KERNEL_RESPONSE_COMPLETENESS.md`.
+- Predictive holdout: fit shared parameters on training blocks only and predict holdout without shared retuning; include full cross-covariance.
 
-`J_union^T w=0`.
+## External RQIR state at Iteration036
 
-Adding `k` physical observables changes local complement dimension by
+Latest directly observed authority: RQIR **Iteration 590**, readiness **24%**.
 
-`Delta d_perp = k - Delta rank(J_union)`.
+Iter590 proves complete cubic source response includes local K3, six K1/K2 and six K1^3 terms. Next external gate is K3 hard-channel origin plus K1^3 linked-cut classification before complete Ward/source closure and comparator subtraction.
 
-A future source/detector configuration is useful when it increases comparator-orthogonal rank, projected singular values or projected SNR.
-
-## External RQIR status at KMQGB Iteration 033
-
-Latest directly observed scientific front: RQIR **Iteration 590**, Candidate Gravity readiness **24%**.
-
-Iter590 proves the cubic same-parent source response is incomplete if only K1/K2 terms are retained; local K3 and ordered K1^3 families are nonzero on the frozen fixture.
-
-External next gate: classify K3 hard-channel discontinuity origin and K1^3 linked-cut origin, then close the complete nonlinear source Ward object before mapping to Iter582/comparator subtraction.
-
-KMQGB writes nothing to external RQIR.
+KMQGB external K3 analyticity pre-check is non-authoritative for RQIR.
 
 ## Next research front
 
-Cross-order rigidity:
+Minimal discriminating test-suite design:
 
-- stack multiple response orders from the same parent dynamics;
-- keep shared parent parameters shared across orders;
-- include cross-order covariance;
-- build cross-order comparator-null contrasts;
-- quantify projected rank/singular-value gain.
+- candidate library of order/configuration blocks;
+- incremental post-comparator rank/singular-value gain;
+- relative cost/complexity metadata;
+- leave-one-block robustness;
+- no final resource promotion before a real residual.
 
-## Migration provenance
+## Minimal continuation instruction
 
-Standalone KMQGB was initialized from source branch `rqir7-known-models-benchmark` at source HEAD `782df9af3af1ca55ca4f9bf143e2723a7a8f18bc`, original branch base `02ad31e89f1df0d5515779e6b7526e8eb5505667`.
-
-## Minimal new-chat instruction
-
-`Продолжай KMQGB и полезные наработки для будущей Candidate Gravity. Восстанови CURRENT_BENCHMARK_FRONT/state/handoff, прочитай KG promotion gate, residual geometry, optimal contrasts и parent-response completeness. Считай волны 1–10 терминальными. Внешний RQIR read-only. Продолжай cross-order rigidity; не продвигай KG ansatz до robust comparator-subtracted residual.`
+`Продолжай KMQGB и полезные наработки для будущей Candidate Gravity. Восстанови current front/state/handoff и прочитай все permanent KG protocols. Считай волны 1–13 терминальными. Внешний RQIR read-only. Следующий фронт — minimal discriminating test suite; KG ansatz не продвигать до полного promotion gate.`
