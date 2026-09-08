@@ -1,0 +1,19 @@
+{
+  "wave": 15,
+  "status": "TERMINAL",
+  "coverage": "5/5",
+  "percent": 100.0,
+  "rollup": {
+    "PASS_RQIR_GATE": 5
+  },
+  "ansatz_promoted": false,
+  "globally_authorized_robust_unique_qg_residuals": 0,
+  "canonical_objects": [
+    "protocol/MACHINE_READABLE_KG_PIPELINE.md",
+    "schema/KG_CANDIDATE_RECORD_v1.json",
+    "schema/KG_CANDIDATE_RECORD_PREANSATZ_EXAMPLE.json",
+    "code/kg_candidate_record_validator.py"
+  ],
+  "critical_rule": "A scientifically BLOCKED record is structurally valid; contradictory PASS/promotion states are invalid.",
+  "next_front": "prospective minimal DeltaGamma_KG screening through the fail-closed machine-readable pipeline without ansatz promotion"
+}
