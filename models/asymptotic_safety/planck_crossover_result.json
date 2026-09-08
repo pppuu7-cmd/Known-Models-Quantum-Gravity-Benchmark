@@ -1,0 +1,12 @@
+{
+  "benchmark_id": "KMQGB-T3-M02-AS-CROSSOVER",
+  "realization": "AS-SCALAR2TO2-PLANCK-CROSSOVER-2026-001",
+  "terminal": true,
+  "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "first_blocking_gate": "AS_CONTACT_COMPLETE_CROSSOVER_VECTOR",
+  "available_object": "graviton-mediated Lorentzian scalar 2->2 crossover amplitude/cross section",
+  "missing_required_object": "same-realization direct four-scalar/contact A4 incorporated into a crossing/forward-complete amplitude",
+  "nonterminal_subresult": "p_UV=0 remains operationally degenerate from second-wave audit",
+  "scientific_interpretation": "protocol/object incompleteness, not asymptotic-safety inconsistency",
+  "reopen_condition": "public reproducible contact-complete crossing-complete scalar-scattering result in the same approximation"
+}
