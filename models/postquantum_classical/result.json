@@ -1,0 +1,18 @@
+{
+  "benchmark_id": "KMQGB-S2-M04-POSTQUANTUM-CLASSICAL",
+  "concrete_realization_id": "PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001",
+  "wave": 2,
+  "terminal": true,
+  "status": "EXACT_COMPARATOR_IDENTITY",
+  "comparator": "C3b modern postquantum classical gravity",
+  "frozen_scope": "linearized Minkowski pure-gravity stochastic-mode sector with local conserved transverse diffusion-kernel/SDE representation",
+  "biana_chi_resolution": "naive non-conserved DeWitt covariance is not frozen as final SDE kernel; the same 2026 source constructs a conserved transverse local kernel yielding the same OM action and two-point function",
+  "consistency": {
+    "biana_chi_transversality": "PASS_SCOPED_LINEAR",
+    "dynamical_action_psd": true,
+    "om_jd_sde_consistency": "demonstrated in source linearized sector",
+    "full_nonlinear_matter_constraint_closure": "not claimed"
+  },
+  "comparator_residual": 0,
+  "scope_guardrail": "terminal identity is a comparator-class result for the frozen linearized realization, not experimental confirmation or a universal nonlinear-consistency theorem"
+}
