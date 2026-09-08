@@ -80,6 +80,9 @@ jobs:
       - name: Run MISP2 BCC spin2 representation-lift control
         run: python code/misp2_spin2_representation_lift_control.py
 
+      - name: Run MISP2 same-lattice fractional-root no-go witness
+        run: python code/misp2_shared_clock_root_no_go_reference.py
+
       - name: Check recovery and construction entrypoints exist
         run: |
           test -s recovery/CURRENT_BENCHMARK_FRONT.md
@@ -93,3 +96,9 @@ jobs:
           test -s protocol/LOCAL_TT_PROJECTOR_NO_GO.md
           test -s protocol/MISP2_Q1_BCC_PROSPECTIVE_FREEZE.md
           test -s protocol/MISP2_Q2_SPIN2_REPRESENTATION_LIFT_CONTROL.md
+          test -s protocol/MISP2_Q2_SHARED_CLOCK_ROOT_NO_GO.md
+          test -s protocol/MISP2_Q2_COMPOSITE_MOMENTUM_SHARING_AUDIT.md
+          test -s protocol/S_LOCAL_QCA_IR_C5_CONTAINMENT.md
+          test -s protocol/MINIMAL_TRIPLE_PRODUCT_P4_AUDIT.md
+          test -s protocol/FINITE_FORM_FACTOR_UV_SOFTNESS_AUDIT.md
+          test -s protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md
