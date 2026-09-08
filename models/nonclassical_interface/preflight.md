@@ -1,148 +1,192 @@
-# T3-03 Preflight — Nonclassical interface / mediator-attribution discriminator
+# T3-03 Audit — nonclassical interface / mediator-attribution discriminator
 
-Benchmark target: KMQGB-T3-M03-NONCLASSICAL-INTERFACE
-Concrete setup ID: `NC-TWOMASS-BRANCH-MEDIATOR-001`
-Supplementary readout ID: `NC-OPTOMECH-GRAVITY-CHANNEL-001`
-State: ACTIVE PREFLIGHT / NONTERMINAL
-Purpose: design a Candidate-Gravity-facing discriminator that survives C2/C3/C3b and ordinary quantum-matter/interface nuisances.
+Benchmark target: `KMQGB-T3-M03-NONCLASSICAL-INTERFACE`  
+Primary setup ID: `NC-TWOMASS-BRANCH-MEDIATOR-001`  
+Supplementary channel readout: `NC-OPTOMECH-GRAVITY-CHANNEL-001`  
+Commutator-spectroscopy readout: `NC-GRAV-UNSYM-NOISE-QUBIT-001`  
+State: **ACTIVE / NONTERMINAL**
 
-## Why entanglement alone is not sufficient
+## Scientific target
 
-The modern gravity-mediated-entanglement literature contains an active model/interpretation dispute. The benchmark therefore does not use final probe entanglement by itself as a universal certificate of a quantum gravitational mediator.
+The benchmark no longer asks merely whether two probes become entangled. It asks whether one can identify a **gravity-attributed quantum communication/response structure** that cannot be reproduced by C2/C3/C3b classical-spacetime comparators or by C4/C6 hidden ordinary quantum channels.
 
-The stronger requirement is **mediator attribution**: any nonclassical transfer must be attributable to the gravitational interface after profiling ordinary quantized-matter/non-gravitational explanations and classical/stochastic gravity comparators.
+## Frozen two-probe branch geometry
 
-## Frozen two-probe source/detector geometry
+Two neutral mesoscopic probes `A,B` are each prepared in localized branches `L,R`.
 
-Use two neutral mesoscopic probes `A` and `B`, with masses `m_A,m_B`, each coherently prepared in two localized branches `L,R`.
+`d_ab = |x_A^a-x_B^b|`, `a,b in {L,R}`.
 
-Let the four branch separations be
-
-`d_ab = |x_A^a-x_B^b|`,  `a,b in {L,R}`,
-
-and let the isolated interaction interval be `tau`.
-
-In the ideal weak-field Newtonian branch-phase benchmark,
+For the weak-field branch-phase calibration,
 
 `phi_ab = G m_A m_B tau/(hbar d_ab)`.
 
-The local single-probe phases are nuisance directions. The entangling branch invariant is the double difference
+Quotient local single-probe phases and retain
 
 `Theta = phi_LL + phi_RR - phi_LR - phi_RL`.
 
-For the ideal initial product state `|+>_A |+>_B` with only branch-dependent phases applied, the two-qubit concurrence is
+For the ideal pure two-qubit branch-phase benchmark,
 
 `C_AB = |sin(Theta/2)|`.
 
-This relation is not declared a universal prediction of all quantum-gravity theories; it is the frozen calibration geometry used to define the source branches and the simplest interaction-phase observable.
+This relation is a calibration geometry, not a universal QG prediction.
 
-## Mediator-attribution vector
-
-The target is not `C_AB>0` alone. Freeze the linked vector
+## Frozen linked vector
 
 `I_NC = {Theta, E_AB, Q_channel, chi_R^grav, rho_comm^grav, N_grav, K3_plus, Ward/contact, mediator-null controls}`
 
-with
+where
 
-- `Theta`: branch double-difference interaction phase;
+- `Theta`: nonlocal branch phase double-difference;
 - `E_AB`: entanglement/non-LOCC witness;
-- `Q_channel`: nonclassical channel-capacity/entanglement-breaking diagnostic for a gravity-induced communication channel;
-- `chi_R^grav`: calibrated retarded gravitational response obtained from a controlled source modulation;
-- `rho_comm^grav`: commutator/ordered spectral component, or an operational detector statistic proven equivalent to it in the chosen model;
-- `N_grav`: symmetrized metric/force noise covariance;
-- `K3_plus`: at least one connected third-or-higher gravitational phase/force cumulant;
-- `Ward/contact`: gauge/Ward/Bianchi/contact identities linking source, response and detector terms;
-- `mediator-null controls`: explicit null channels and comparator fits excluding ordinary quantized matter, electromagnetic/Casimir transfer, source-state leakage and classical-feedback explanations.
+- `Q_channel`: entanglement-breaking / non-entanglement-breaking gravitational-channel diagnostic;
+- `chi_R^grav`: calibrated retarded response;
+- `rho_comm^grav`: commutator/antisymmetrized gravitational spectral component;
+- `N_grav`: symmetrized gravitational noise;
+- `K3_plus`: connected higher cumulants;
+- `Ward/contact`: exact source/response/contact consistency identities;
+- `mediator-null controls`: exclusion of ordinary quantum and classical-feedback transfer channels.
 
-The exact operator definition of `rho_comm^grav` remains to be chosen with the detector model; it is deliberately not replaced by `chi_R` alone because a classical dynamical field can possess a retarded response without possessing a noncommuting operator algebra.
+## New frozen operational estimator for `rho_comm^grav`
 
-## Supplementary operational channel readout
+Use a weakly coupled two-level or equivalent narrow-band quantum probe with transition frequency `Omega` and a Hermitian gravity-sensitive generalized force/operator `F`.
 
-Mari, Zippilli & Vitali, Phys. Rev. D 113, L021905 (2026), provide a directly relevant complementary architecture:
+Define the **unsymmetrized** spectrum
 
-- two optomechanical systems are assumed isolated except for a weak gravitational coupling;
-- under a resonance condition, gravity induces a narrow-band optical transmission channel (“gravitationally induced transparency”);
-- the scientific test is whether the induced optical channel is **entanglement-breaking**;
-- a channel that is demonstrably not entanglement-breaking can preserve/transmit quantum information and therefore supplies a stronger channel-level nonclassicality witness than one final-state entanglement datum;
-- in their quadratic-Hamiltonian model the effective link is a Gaussian thermal attenuator with a sharp noise-dependent transition between entanglement-breaking and nonclassical regimes.
+`S_FF(omega) = integral dt exp(i omega t) <F(t) F(0)>`.
 
-KMQGB uses this as a **supplementary readout**, not as a replacement for the two-mass branch geometry. The two architectures test complementary aspects:
+Then
 
-1. `NC-TWOMASS-BRANCH-MEDIATOR-001` freezes the gravitational source/branch phase and comparator quotient;
-2. `NC-OPTOMECH-GRAVITY-CHANNEL-001` supplies an operational language for channel nonclassicality and quantum-information transmission.
+`rho_comm(omega) = S_FF(omega) - S_FF(-omega)`
 
-A future KG model is stronger if the same parent dynamics predicts both branch-phase/response observables and channel-capacity/noise properties.
+is the Fourier transform of the commutator expectation, up to the declared sign/normalization convention.
 
-## Comparator requirements
+In weak-coupling quantum-noise spectroscopy, upward and downward detector transition rates sample opposite frequency components:
 
-The same frozen source geometry/readout assumptions must be evaluated under:
+`Gamma_up(Omega) proportional to S_FF(-Omega)`
 
-- **C2 stochastic gravity:** can reproduce classical stochastic mean/noise and retarded response;
-- **C3 measurement-feedback gravity:** interaction plus compulsory decoherence/noise; standard local classical channel is non-entangling in its declared Gaussian realization;
-- **C3b postquantum classical gravity:** stochastic spacetime modes and decoherence; no automatic assumption of Gaussianity;
-- **C4 ordinary quantum matter/non-gravitational mediator:** must be included because quantized matter can in principle transport quantum information even if gravity is classical;
-- **C6 quantum source statistics + classical detector/interface:** branch quantum statistics can leak into detector correlations without a quantum gravitational mediator.
+`Gamma_down(Omega) proportional to S_FF(+Omega)`
 
-For the channel readout, each comparator must also be classified as entanglement-breaking/non-entanglement-breaking under the same environmental-noise and calibration assumptions. A non-EB result is only gravity-attributable if C4/C6 and hidden shared quantum channels are excluded by the mediator ledger.
+for the convention used here.
 
-A KG-specific direction is admitted only if **one admissible comparator parent dynamics cannot reproduce the full vector simultaneously** after the same nuisance/source calibration.
+Therefore freeze the dimensionless asymmetry
 
-## Operational null-control protocol — frozen structure
+`A_comm(Omega) = [Gamma_down-Gamma_up]/[Gamma_down+Gamma_up]`
 
-1. **Branch-coherence null:** replace coherent spatial superpositions by corresponding incoherent mixtures while preserving branch populations/classical mass distributions as closely as the model permits.
-2. **Local-phase quotient:** remove all phases expressible as independent A-only/B-only branch functions; only double-difference/nonlocal combinations such as `Theta` survive.
-3. **Non-gravitational mediator ledger:** electromagnetic, Casimir/patch-potential, phononic, optical-control and shared-environment quantum channels enter C4 rather than being assumed absent by wording.
-4. **Mass/distance scaling control:** require the candidate gravitational channel to follow the frozen source-response scaling within its validity regime.
-5. **Ordered/noise cross-check:** fit symmetrized noise and retarded response first; then ask whether the ordered/commutator-sensitive statistic contains an independent component not reconstructible by the same positive classical stochastic kernel.
-6. **Higher-statistics cross-check:** compare at least one connected `K3_plus` observable.
-7. **Channel EB threshold:** for the optomechanical readout, freeze the environmental/noise threshold at which the induced channel changes from entanglement-breaking to non-EB and require the same parent dynamics to predict that threshold together with the mechanical/gravitational response.
+with detector-only dark/background rates subtracted and with the same coupling calibration used for the symmetrized spectrum.
 
-These are benchmark requirements, not a claim that all controls are experimentally easy with present hardware.
+Equivalently,
 
-## Literature-driven strengthening
+`A_comm = [S(+Omega)-S(-Omega)]/[S(+Omega)+S(-Omega)]`
 
-- Christopher & Shankaranarayanan (2025) show that different mediator regimes can produce qualitatively different entanglement dynamics, supporting time-dependent mediator fingerprints rather than one final entanglement number.
-- Mari, Zippilli & Vitali (2026) sharpen the language further by treating gravity as an induced communication channel and testing its entanglement-breaking property.
-- The 2025–2026 locality/mediator dispute shows that apparent entanglement must not be assigned to gravity if quantized matter or another quantum interaction actually carries the transfer.
+in the ideal weak-coupling limit.
 
-## Current status
+### Why this is stronger than retarded response alone
+
+A classical dynamical field can have a nonzero retarded response `chi_R`; causality/response is not itself a quantum certificate.
+
+For a **stationary real classical stochastic generalized force**, multiplication commutes and the autocorrelation is even, so the auto-spectrum satisfies
+
+`S_cl(+Omega)=S_cl(-Omega)`
+
+and hence the intrinsic classical-force contribution has
+
+`rho_comm=0`, `A_comm=0`.
+
+A quantum Hermitian bath/operator generally has an asymmetric unsymmetrized spectrum; its antisymmetric component is tied to the operator commutator/response spectral function.
+
+This makes `A_comm` a candidate bridge between the formal `rho_comm^grav` target and an operational transition-rate measurement.
+
+## Critical caveat — sideband asymmetry alone is not accepted
+
+Classical measurement/backaction correlations can mimic an apparent optical/mechanical sideband asymmetry. Published stochastic-electrodynamics and optomechanical analyses explicitly show that detector model, shot-noise/backaction correlations and interference terms can create such asymmetries.
+
+Therefore KMQGB does **not** identify a raw optical sideband ratio with `rho_comm^grav`.
+
+The accepted protocol requires direct rate/noise calibration and the following nulls.
+
+## Commutator-spectroscopy null controls
+
+1. **Detector dark-rate subtraction:** measure `Gamma_up/down` with gravitational source modulation/interaction disabled while leaving detector bias/readout unchanged.
+2. **Coupling-sign / geometry reversal:** reverse the gravity-sensitive coupling geometry when possible; a true source-mediated contribution must transform according to the frozen coupling, while detector-internal asymmetry need not.
+3. **Source-distance scaling:** extract only the component with the pre-registered gravitational mass/distance dependence.
+4. **Readout-power extrapolation:** test weak-readout limit to expose asymmetry generated by measurement backaction/interference.
+5. **Classical injection calibration:** inject a known stationary classical force/noise with the same symmetrized spectrum and verify that the analysis returns zero intrinsic `A_comm` after detector correction.
+6. **Quantum C4 calibration:** characterize ordinary optical/electromagnetic/phononic quantum baths capable of producing nonzero unsymmetrized asymmetry and include them explicitly in the C4 ledger.
+7. **Frequency reversal / probe-state swap:** compare ground-state excitation and excited-state relaxation at the same `|Omega|`; the inferred antisymmetric spectrum must be detector-state independent after calibration.
+
+## Supplementary non-EB channel readout
+
+Mari–Zippilli–Vitali (PRD 2026) provide a complementary optomechanical architecture in which gravity induces an optical transmission channel. The target is whether that channel is entanglement-breaking.
+
+KMQGB uses this as a second readout:
+
+- branch geometry fixes gravitational source/phase scaling;
+- unsymmetrized spectroscopy probes commutator-sensitive response;
+- the optomechanical EB/non-EB threshold probes quantum-information transmission.
+
+A future KG model is strongest if **one parent dynamics predicts all three consistently**.
+
+## Comparator ledger — current reduced result
+
+A dedicated file `models/nonclassical_interface/comparator_ledger.md` freezes the C2/C3/C3b/C4/C6 comparison.
+
+Current result:
+
+- `{Theta,chi_R,N}` is not unique: C2/C3/C3b can reproduce substantial parts.
+- `K3_plus != 0` is not unique: nonlinear/non-Gaussian classical stochastic comparators may generate higher classical cumulants.
+- `E_AB>0` or `Q_channel non-EB` is stronger against pure C2/C3/C3b but is not gravity-attributed until C4/C6 are excluded.
+- `rho_comm`/unsymmetrized spectral asymmetry is stronger against a real classical stochastic mediator, but detector/backaction and ordinary quantum C4 channels must be profiled explicitly.
+
+The highest-value surviving provisional direction is
+
+`I_survive = {Q_channel non-EB, A_comm/rho_comm, chi_R-N relation, Theta geometry, mediator attribution, Ward/contact consistency}`.
+
+`K3_plus` is retained as a rigidity/supporting channel rather than the primary discriminator.
+
+## F0-F7 style status
 
 | Gate | State | Reason |
 |---|---|---|
-| two-mass setup freeze | PASS | explicit branch geometry and phase invariant frozen |
-| channel readout freeze | PASS_SCOPED | explicit optomechanical gravity-induced channel and EB criterion available |
-| comparator span | PASS_PARTIAL | C2/C3/C3b/C4/C6 required explicitly |
-| mediator attribution | ACTIVE | null/control structure frozen; hidden quantum-channel exclusion remains central |
-| ordered/noncommuting discriminator | ACTIVE | theoretical target defined; operational estimator still to freeze |
-| higher statistics | ACTIVE | `K3_plus` mandatory but concrete estimator/model predictions not yet derived |
-| identifiability | BLOCKED | cannot precede comparator predictions for full `I_NC` |
-| resources | BLOCKED | no apparatus claim before identifiability |
+| source geometry | PASS | explicit two-mass branch geometry and `Theta` frozen |
+| quantum-channel readout | PASS_SCOPED | EB/non-EB criterion frozen |
+| commutator-sensitive estimator | **PASS_SCOPED** | unsymmetrized spectrum / transition-rate asymmetry frozen with null controls |
+| comparator span | PASS_PARTIAL | C2/C3/C3b/C4/C6 ledger explicit |
+| mediator attribution | ACTIVE | C4/C6 quantitative bounds remain to instantiate |
+| higher statistics | ACTIVE_SUPPORTING | required as robustness/rigidity channel, not primary certificate |
+| Ward/contact linkage | ACTIVE | exact model-specific relation cannot precede a parent KG dynamics |
+| identifiability | ACTIVE/BLOCKED_ON_QUANTITATIVE_QUOTIENT | needs algebraic/numerical comparator bounds |
+| resources | BLOCKED | no apparatus requirement before identifiability |
 
 ## Candidate Gravity design consequence
 
-A future KG model should make `Theta`, `E_AB`, `Q_channel`, response, noise, ordered structure and higher statistics **not independently tunable**. The model must derive their relations from one parent dynamics.
+The preferred future KG architecture has now sharpened from a list of observables to a **relation-building problem**.
 
-The strongest present KG direction is therefore a **gravity-attributed quantum channel with a rigid multi-observable fingerprint**, not merely an entangled output state.
+A candidate parent dynamics should force something schematically like
 
-## Exact next tasks
+`F(Theta,Q_channel,A_comm,chi_R,N,K3_plus,Ward/contact)=0`
 
-1. Choose an explicit detector coupling/observable for the commutator-sensitive `rho_comm^grav` component.
-2. Derive `I_NC` for C2 and C3 first, then C3b/C4/C6.
-3. Translate the Mari–Zippilli–Vitali Gaussian-channel EB condition into the same response/noise notation used for C2/C3 so the quotient is literal rather than verbal.
-4. Freeze one higher-cumulant observable compatible with at least one of the two readout architectures.
-5. Only after comparator profiling, promote a surviving direction into the Candidate Gravity design priors as more than a hypothesis.
+with few remaining freely tunable functions after C2/C3/C3b/C4/C6 profiling.
 
-## Operational preflight completion
+The important novelty is not simply nonzero `A_comm` or non-EB transfer. It is a **gravity-attributed, overconstrained relation** among quantum-channel capacity, commutator-sensitive response and ordinary response/noise.
 
-**60%**.
+## Exact remaining tasks before terminal classification
 
-## References
+1. Convert C2 and C3 entries into the `A_comm` notation algebraically and state their ideal values/bounds.
+2. Do the same for the scoped C3b covariant classical-field realization.
+3. Define quantitative C4/C6 nuisance envelopes for an idealized benchmark geometry rather than merely listing possible hidden channels.
+4. Determine whether `{Q_channel,A_comm}` plus source scaling is already sufficient to separate pure classical-spacetime comparators, and what additional Ward/contact or higher-statistics component is needed against C4/C6.
+5. Terminally classify T3-03 as a validated discriminator architecture, an operational degeneracy, or a blocker — without inventing a KG model.
 
-1. Marletto & Vedral, Phys. Rev. Lett. 119, 240402 (2017).
-2. Marletto & Vedral, Rev. Mod. Phys. 97, 015006 (2025).
-3. Martín-Martínez & Perche, Phys. Rev. D 108, L101702 (2023).
-4. Christopher & Shankaranarayanan, Phys. Rev. D 112, L081502 (2025).
-5. Mari, Zippilli & Vitali, Phys. Rev. D 113, L021905 (2026), gravitationally induced transparency and entanglement-breaking channel test.
-6. Marletto, Oppenheim, Vedral & Wilson, arXiv:2511.07348 (2025).
-7. Feng, Vedral & Marletto, Phys. Rev. D 113, 104055 (2026).
-8. Schneider, Huggett & Linnemann, Classical and Quantum Gravity (2026).
+## Operational completion
+
+**80%**.
+
+## Sources
+
+1. Clerk et al., Rev. Mod. Phys. 82, 1155 (2010), unsymmetrized quantum noise and linear-response measurement.
+2. Wang et al. / quantum-noise spectroscopy literature: excitation/relaxation rates sample opposite-frequency unsymmetrized spectra.
+3. Børkje, Phys. Rev. A 94, 043816 (2016), detector dependence and classical/quantum interpretations of sideband asymmetry.
+4. Novotny et al., Phys. Rev. A 106, 043511 (2022), classical stochastic/backaction explanation of sideband asymmetry.
+5. Mari, Zippilli & Vitali, Phys. Rev. D 113, L021905 (2026), gravity-induced channel and entanglement-breaking criterion.
+6. Oppenheim & Weller-Davies, Phys. Rev. X 16, 031007 (2026), covariant CP CQ gravity and no entanglement generation through the classical field.
+7. Hu & Verdaguer, stochastic-gravity / Einstein–Langevin framework.
