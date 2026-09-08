@@ -1,10 +1,10 @@
 {
-  "schema_version": "5.2",
+  "schema_version": "5.3",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 60,
-  "phase": "CONSTRUCTION_PLAYBOOK_FROZEN__P4_FINITE_DYNAMICAL_SELECTOR_REQUIRED",
+  "kmqgb_iteration": 61,
+  "phase": "RQIR620_PROJECTIVE_BRIDGE_SYNC__P4_FINITE_DYNAMICAL_SELECTOR_REQUIRED",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
@@ -13,13 +13,13 @@
     "current_task_R4_percent": 45,
     "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md"
   },
-  "readiness_change_iteration060": {
+  "last_score_change": {
+    "iteration": 60,
     "metric": "R2",
     "delta_percentage_points": 1,
     "component": "consolidated construction playbook/article-ready synthesis",
     "component_score_before": "6/10",
-    "component_score_after": "7/10",
-    "reason": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md freezes one operational route from raw idea through pre-P4 kill tests, G0-G10, holdout, compute triage and machine-record requirements; article-grade synthesis remains incomplete"
+    "component_score_after": "7/10"
   },
   "current_task": {
     "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
@@ -31,14 +31,15 @@
       "P3_spectral_origin_dispersion",
       "wave38_composition_gluing_duality_prefilter",
       "functional_freedom_no_go_prefilter",
-      "construction_playbook_process_freeze"
+      "construction_playbook_process_freeze",
+      "RQIR620_projective_native_bridge_sync"
     ],
     "open": [
       "P4_explicit_novel_parent_principle",
       "P5_structural_comparator_survival",
       "P6_preansatz_machine_record_for_survivor"
     ],
-    "anti_gaming_rule": "methodology/process improvements do not increase R4; only an explicit constructive P4 survivor can do so"
+    "anti_gaming_rule": "methodology/process/external-sync improvements do not increase R4; only an explicit constructive P4 survivor can do so"
   },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
@@ -50,12 +51,9 @@
     "ansatz_promoted": false,
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
     "preferred_preansatz_architecture": "full_matched_C5_through_3point + candidate_specific_4point_or_higher parent with shared cross_order/cross_representation/cross_background parameters",
-    "major_program_audit": "protocol/MAJOR_QG_PROGRAMS_HARD_OBSERVABLE_AUDIT.md",
-    "matrix_parent_precedent": "protocol/MATRIX_MODEL_MICROSCOPIC_PARENT_PRECEDENT.md",
-    "self_sourced_spectral_audit": "protocol/SELF_SOURCED_SPECTRAL_CLOSURE_AUDIT.md",
-    "composition_gluing_duality_prefilter": "protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md",
     "functional_freedom_no_go": "protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md",
     "functional_freedom_reference": "code/p4_functional_freedom_reference.py",
+    "external_rqir620_projective_bridge_audit": "external_rqir_checks/iter620_projective_native_bridge_audit.md",
     "constructive_requirement": "a finite low-freedom microscopic dynamical selector that directly derives a uniquely normalized hard/cross-representation gravitational relation and same-parent CTP/retarded block, then survives registered comparator spaces",
     "pre_P4_sequence": [
       "A1_explicit_parent_capsule",
@@ -64,7 +62,8 @@
       "A4_explicit_P4_hard_relation_checkpoint"
     ],
     "pre_P4_kill_test": "if structural-null hard freedom FF_D grows without bound as hard/EFT basis cutoff D increases, classify FUNCTIONAL_FREEDOM_BLOCKED",
-    "new_exclusion": "do not promote projector gluing, associator/nonassociativity, UVIR/Born reciprocity, causal-diamond overlap consistency, arbitrary spectral measures, arbitrary form factors or arbitrary hard functions alone as novel P4 parents"
+    "normalization_guardrail": "an unknown common nonzero normalization permits projective ratio/conditioning diagnostics but forbids absolute residual/comparator subtraction until an independent authority bridge exists",
+    "anti_circularity": "never fit a missing common normalization from Candidate values and reuse the normalized values to claim a residual"
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_BY_SCIENTIFIC_DESIGN",
@@ -88,17 +87,25 @@
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "authoritative_research_iteration_observed": 616,
+    "authoritative_research_iteration_observed": 620,
     "model_readiness_percent": 24,
-    "scientific_status": "q2 bucket identity and external scalar endpoint amputation closed; full native binding remains BLOCKED on one common nonzero normalization scalar N_native",
+    "scientific_status": "absolute native normalization remains BLOCKED; projective source shape, independent reproducibility and conditioning are PASS/non-promoting",
     "previous_kinematic_rank_blocker_resolved": true,
     "prospective_trajectory_iteration": 613,
     "root_jacobian_iteration": 614,
     "source_internal_pole_coefficient_iteration": 615,
     "endpoint_amputation_and_q2_binding_iteration": 616,
+    "historical_normalization_authority_audit_iteration": 617,
+    "projective_source_shape_iteration": 618,
+    "independent_projective_reproduction_iteration": 619,
+    "projective_conditioning_iteration": 620,
     "remaining_native_binding_dimension": 1,
     "remaining_native_binding_parameter": "N_native",
-    "next_scientific_gate": "fix N_native prospectively from an independent lower-order/common-field normalization identity using the same physical metric perturbation and retarded/effective-action convention, without fitting Iter615 Candidate values"
+    "remaining_native_binding_status": "BLOCKED__NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY",
+    "projective_anchor": "smallest-s D_b^- root",
+    "projective_ratios": [-2.966563737084728, -0.7800526753639322, -5.158207913624242, 2.997420912767025, 8.57973421373656],
+    "projective_sign_pattern": ["-", "+", "+", "+", "-", "-"],
+    "next_scientific_gate": "independently justify the missing source-to-Gamma3 absolute phase/coupling bridge without fitting Candidate values; normalization-invariant diagnostics may continue but absolute native projection remains forbidden"
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
@@ -107,9 +114,9 @@
     "readiness_metrics": "protocol/READINESS_METRICS.md",
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
     "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_060.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_061.md"
   },
-  "next_wave_status": "PROCESS_AMBIGUITY_REDUCED__SCIENTIFIC_P4_OBJECT_REQUIRED",
+  "next_wave_status": "PROCESS_FROZEN__P4_OBJECT_REQUIRED__RQIR_ABSOLUTE_NORMALIZATION_BLOCKED",
   "next_actions": [
     "Refresh external RQIR before every R3/heavy-compute statement",
     "Use protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md as the sole high-level construction route",
@@ -118,7 +125,7 @@
     "Apply A3 architecture-level containment before expensive derivation",
     "For an A1-A3 survivor derive one uniquely normalized hard 4-point/higher or cross-representation gravitational relation before fitting",
     "Require the same parent to determine a CTP/retarded response block with shared parameters",
-    "Classify hard origin as S-local or D-nonlocal and close Ward/causality/radiative/kinematic-lift scope",
+    "Use projective invariants only as diagnostics when one common normalization is missing; never promote absolute residuals from them",
     "Immediately profile a P4 survivor against full registered comparator spaces",
     "Only after P4/P5 survival create a pre-ansatz machine record and score P6",
     "Keep heavy compute idle until a frozen finite-freedom structural object justifies it",
