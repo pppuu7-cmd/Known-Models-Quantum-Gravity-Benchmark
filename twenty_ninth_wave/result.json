@@ -1,0 +1,16 @@
+{
+  "wave": 29,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "PASS_SCOPED": 1,
+    "PASS_SCOPED_ON_SHELL": 1,
+    "BLOCKED_ARBITRARY_FUNCTIONAL_FREEDOM": 1,
+    "BLOCKED_MISSING_REQUIRED_OBJECTS": 1,
+    "STRUCTURAL_COMPARATOR_NOT_KG_SEED": 1
+  },
+  "main_lesson": "Covariant curvature-history dynamics can make a state-dependent nonlocal scale Bianchi-compatible, but this does not uniquely select the kernel or establish ghost-free quantum spin-2 completion. Covariant state dependence is not kernel rigidity or KG novelty.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
