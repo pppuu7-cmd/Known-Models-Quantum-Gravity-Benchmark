@@ -1,10 +1,10 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-08  
-**KMQGB iteration:** 030  
+**KMQGB iteration:** 031  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Phase:** WAVES 1–7 TERMINALLY CLASSIFIED / FEATURE-LEVEL DELTAGAMMA TAXONOMY EXHAUSTED
+**Phase:** WAVES 1–8 TERMINALLY CLASSIFIED / RESIDUAL-SPACE GEOMETRY FROZEN
 
 ## Coverage
 
@@ -15,75 +15,107 @@
 - Wave 5: **5/5 = 100%** — immutable.
 - Wave 6: **5/5 = 100%** — immutable.
 - Wave 7: **5/5 = 100%** — immutable.
+- Wave 8: **5/5 = 100%** — immutable.
 - Globally authorized robust unique-QG residuals: **0**.
-- External Candidate Gravity readiness: **24%** at the last scientific refresh.
+- External Candidate Gravity readiness: **24%**.
 
-Coverage is finite queue coverage, not theory probability and not Candidate Gravity readiness.
+## Wave 8 terminal result — residual-space geometry
 
-## Seventh-wave terminal matrix
+All five methodology targets are `PASS_RQIR_GATE`.
 
-1. T7-01 higher-point/non-Gaussian graviton structure — `OPERATIONALLY_DEGENERATE`.
-   - Full perturbative C5 already contains nonlinear graviton self-interactions, loops, higher-point correlators and EFT corrections.
-2. T7-02 squeezed/exotic graviton state — `OPERATIONALLY_DEGENERATE`.
-   - Strong signatures can be produced by admissible non-vacuum states of ordinary quantized gravity; profile over `rho_h` before calling dynamics novel.
-3. T7-03 memory/non-Markovian kernel — `OPERATIONALLY_DEGENERATE`.
-   - Perturbative graviton influence dynamics already produces colored noise and non-Markovian reduced dynamics.
-4. T7-04 parity/chiral ordered structure — `OPERATIONALLY_DEGENERATE`.
-   - Chern-Simons/pseudoscalar/higher-derivative EFT and state/source comparators can generate parity-odd/chiral signals.
-5. T7-05 nonanalytic/cross-regime structure — `OPERATIONALLY_DEGENERATE`.
-   - C5 massless loops already generate universal nonlocal/nonanalytic terms; ordinary extra fields and UV states generate thresholds/branch cuts.
+The benchmark now defines novelty through the **Comparator-Orthogonal Residual (COR)** rather than a qualitative feature label.
 
-Seventh-wave rollup: **5 operational degeneracies**.
+For physical residual `r`, covariance `Sigma`, and union comparator Jacobian `J_C`, whiten
 
-## Main scientific conclusion of wave 7
+`z=Sigma^(-1/2)r`, `A=Sigma^(-1/2)J_C`.
 
-No broad qualitative feature class is a valid definition of `DeltaGamma_KG`.
+Then
 
-Rejected as standalone novelty locations:
+`Pi_perp=I-AA^+`,
 
-- higher-point/non-Gaussian;
-- squeezed/exotic state;
-- memory/non-Markovianity;
-- parity/chirality;
-- nonanalyticity/branch structure.
+`COR=Pi_perp z`.
 
-Each remains useful only through a **specific matched relation** after full same-order C5, state, detector, EFT, Ward/contact and broader-comparator profiling.
+For candidate signal direction `s`,
 
-## Full-C5 parent gate retained
+`eta(s)=||Pi_perp Sigma^(-1/2)s|| / ||Sigma^(-1/2)s||`.
 
-`Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG`.
+`eta=0` means exact local tangent degeneracy. Nonzero `eta` is only a local prefilter and must survive finite/global profiling.
 
-`DeltaGamma_KG` is only what survives the largest applicable C5 parent in the same perturbative/kinematic order and validity domain.
+Authoritative protocol: `protocol/RESIDUAL_SPACE_GEOMETRY.md`.
 
-## Stronger analytic-structure bookkeeping
+Reference implementation: `code/residual_space_geometry_reference.py`.
 
-For any future pole/cut/log/threshold claim freeze
+A deterministic numerical self-test found machine-precision behavior for projector idempotence, tangent annihilation and nuisance reparameterization invariance.
 
-`I_an={location,type,residue/discontinuity,spin/helicity,source coupling,IR coefficient,origin,Ward/contact}`.
+## Constraints-first rule
 
-Origin must be classified before novelty:
+Exact Ward/contact/gauge/physical constraints are quotiented **before** comparator rank counting.
 
-1. massless C5 graviton/matter loop;
-2. ordinary C4/C6 extra-field or multiparticle threshold;
-3. known EFT/resummation/IR effect;
-4. genuinely new same-domain analytic structure.
+Frozen order:
 
-Only case 4 can seed a possible residual, and it still requires broader UV/comparator profiling.
+`physical constraints -> physical observable basis -> comparator/nuisance quotient`.
 
-## Next methodological front — residual-space geometry
+## Nuisance attribution geometry
 
-Because feature-level taxonomy is exhausted, the next useful task is to formalize **which observable combinations are orthogonal to the full comparator/nuisance tangent space**.
+Use a joint tangent matrix
 
-Priority objects:
+`J=[J_dyn J_state J_detector J_cal J_mediator ...]`.
 
-- comparator Jacobian / tangent-space rank;
-- covariance-weighted projector onto comparator-orthogonal directions;
-- Ward/constraint reduction before profiling;
-- separate state/detector/dynamics nuisance blocks;
-- singular-value / profile-likelihood robustness certificate for a finite joint residual.
+The final novelty verdict uses the joint span. Block ranks/principal angles only diagnose which attribution layer absorbs the signal.
 
-This should produce a mathematical promotion gate before any Candidate Gravity ansatz is proposed.
+## Nonlinear/global gate
 
-## External RQIR status retained read-only
+A local COR must survive
 
-Last scientific front directly observed during Iteration 029 was RQIR Iteration **583**, `MODEL_READINESS=24%`; Iter584 workflow success was seen but not yet raw-authoritatively consumed in that observed front. Refresh again before any heavy-compute or current-readiness statement.
+`d_C^2(y)=inf_theta [y-c(theta)]^T Sigma(theta)^(-1)[y-c(theta)]`
+
+inside the prospective common domain.
+
+For theory-family separation,
+
+`d_min^2=inf_(lambda,theta)||Sigma^(-1/2)[k(lambda)-c(theta)]||^2`.
+
+## Future KG parameter identifiability
+
+For a future KG Jacobian `J_KG`, freeze
+
+`B_KG=Pi_perp Sigma^(-1/2)J_KG`.
+
+Only singular directions of `B_KG` with nonzero robust singular values are candidates for Fisher/resources after global profiling.
+
+## RQIR COR pre-registration
+
+Created `protocol/RQIR_COR_APPLICATION_PRECHECK.md`.
+
+Latest external RQIR scientific authority directly observed: **Iteration 587**, `MODEL_READINESS=24%`.
+
+- Iter424 physical gate `5/5 PASS`;
+- Iter581 exact15 raw-valid PASS;
+- Iter582 supplies three q2-resolved operator buckets but **no Source/Born subtraction yet**;
+- Iter584 mixed K2 is raw-valid according to Iter587 authority;
+- Iter586 proves off-shell source completion is required for the timelike buckets;
+- Iter587 raw-validates the symmetric off-shell K1 routing and exact Ward longitudinal term.
+
+Exact external next gate: construct complete K1-exchange + K2-contact MSSC source Ward object before mapping to Iter582 and comparator subtraction.
+
+KMQGB therefore does **not** treat Iter582 operator values as residual data.
+
+If the future matched residual is an imaginary-only three-bucket vector, then `m_phys<=3` and
+
+`dim local comparator complement = 3-rank(A_union)`.
+
+If the union comparator tangent reaches rank 3, no local residual direction exists in those three coordinates regardless of numerical precision. Cross-order/cross-attribution augmentation is then mandatory.
+
+## Shared runner status
+
+Direct GitHub Actions checks at this iteration found no `in_progress` and no `queued` RQIR runs. The runner appears free, but KMQGB has no justified heavy numerical target yet, so no heavy job was launched merely to consume compute.
+
+## Exact next KMQGB front
+
+Construct **optimal comparator-annihilating contrasts** and observable-design criteria:
+
+1. left-nullspace contrasts `w^T J_C=0`;
+2. covariance-optimal contrast for a proposed signal;
+3. exact dimension/rank gain from adding cross-order observables;
+4. correlated-noise/common-mode rejection;
+5. projected singular-value design criterion for selecting the most informative future KG observable set.
