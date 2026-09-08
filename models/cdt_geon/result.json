@@ -1,0 +1,22 @@
+{
+  "benchmark_id": "KMQGB-T3-M05-CDT",
+  "realization": "CDT-4D-CURVATURE-CORRELATOR-GEON-2026-001",
+  "terminal": true,
+  "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "first_blocking_gate": "CDT_GEON_CONTINUUM_AND_LOR_REALTIME_MAP",
+  "positive_subresults": {
+    "massive_like_window": true,
+    "operator_independence_within_errors": true,
+    "tested_volume_dependence": "no statistically significant dependence in averaged early-time masses across 80k/160k/320k ensembles",
+    "reported_mass_values_Q": ["0.18(1)", "0.16(1)", "0.17(3)"],
+    "reported_mass_values_Q2": ["0.14(1)", "0.17(1)", "0.15(3)"],
+    "reported_physical_scale": "approximately 0.09 M_Pl",
+    "phase_time_dependence": "mass rises during rapid expansion phase"
+  },
+  "missing_required_objects": [
+    "continuum scaling / line-of-constant-physics extrapolation of the same correlator mass",
+    "justified mapping of Wick-rotated correlator falloff to a physical Lorentzian spectral/asymptotic-state pole"
+  ],
+  "scientific_interpretation": "positive finite-regulator geon-like hint, not a continuum quantum-gravity particle certificate",
+  "reopen_condition": "public continuum and/or Lorentzian physical-state reconstruction for the same observable"
+}
