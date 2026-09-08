@@ -1,0 +1,15 @@
+{
+  "wave": 20,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "PASS_RQIR_GATE": 1,
+    "PASS_RQIR_GATE_SCOPED_D_LOCAL": 2,
+    "PASS_RQIR_GATE_MANDATORY": 1,
+    "OPERATIONALLY_DEGENERATE": 1
+  },
+  "main_lesson": "Quartic-first rigidity should use linked helicity and higher-order moment data, while positivity/moment constraints must be matched to the amplitude dispersion/growth class. A single quartic ratio or low-rank moment pattern is not KG-specific.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
