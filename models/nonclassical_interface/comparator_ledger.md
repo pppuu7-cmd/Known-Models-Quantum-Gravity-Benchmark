@@ -2,123 +2,148 @@
 
 Benchmark target: `KMQGB-T3-M03-NONCLASSICAL-INTERFACE`  
 Primary setup: `NC-TWOMASS-BRANCH-MEDIATOR-001`  
-Supplementary channel readout: `NC-OPTOMECH-GRAVITY-CHANNEL-001`
+Channel readout: `NC-OPTOMECH-GRAVITY-CHANNEL-001`  
+Commutator readout: `NC-GRAV-UNSYM-NOISE-QUBIT-001`
 
-## Purpose
+## Frozen vector
 
-Put the strongest comparator families into the same observable language before any Candidate Gravity ansatz is proposed.
+`I_NC={Theta,E_AB,Q_channel,chi_R^grav,A_comm/rho_comm,N_grav,K3_plus,Ward/contact,mediator-null controls}`.
 
-Frozen vector:
+The entries are scoped to explicit comparator realizations. They are not claims about every imaginable hybrid model.
 
-`I_NC = {Theta, E_AB, Q_channel, chi_R^grav, rho_comm^grav, N_grav, K3_plus, Ward/contact, mediator-null controls}`.
+## Operational commutator coordinate
 
-The entries below are **scoped predictions** for explicit comparator realizations, not statements about every conceivable classical/quantum hybrid theory.
+For a Hermitian gravity-sensitive generalized force `F`, define
 
-## C2 — linear Gaussian stochastic gravity / Einstein–Langevin control
+`S_FF(omega)=integral dt exp(i omega t)<F(t)F(0)>`.
 
-Frozen scope: linearized metric response driven by a Gaussian classical stochastic source with covariance fixed by the stress-tensor noise kernel.
+Freeze
 
-- `Theta`: can reproduce a classical/mean gravitational branch-dependent phase if the source geometry is supplied consistently.
-- `chi_R^grav`: nonzero; retarded/dissipative response is present.
-- `N_grav`: nonzero; this is one of the defining objects of stochastic gravity.
-- `rho_comm^grav`: **no fundamental metric-operator commutator** because the metric perturbation is a classical stochastic field. A detector may still have quantum operator statistics, so the operational estimator must subtract detector-side commutators rather than assume zero total commutator signal.
-- `K3_plus`: for the frozen **linear Gaussian** realization, connected metric/force cumulants above second order vanish. This zero is not transferable to nonlinear/non-Gaussian stochastic-gravity extensions.
-- `E_AB`: if probes couple only locally to a shared externally classical stochastic metric, the conditioned map has the form `U_A[xi] tensor U_B[xi]`; averaging over classical `xi` gives a separable random-local-unitary channel and cannot create entanglement from a separable input. Any quantum common bath/source contribution belongs in C4/C6 rather than pure C2.
-- `Q_channel`: gravity-only transfer is classical in this frozen scope; a genuinely non-entanglement-breaking A->B quantum communication channel is not supplied by the classical stochastic metric alone.
+`rho_comm(omega)=S_FF(+omega)-S_FF(-omega)`
 
-C2 therefore remains a strong mimic of `{Theta,chi_R,N}` but not of a gravity-attributed non-EB channel plus an independent metric commutator structure.
+and, for a weak narrow-band two-level probe,
 
-## C3 — KTM / measurement-feedback classical-channel gravity
+`A_comm(Omega)=[Gamma_down-Gamma_up]/[Gamma_down+Gamma_up]`.
 
-Frozen scope: continuous local measurement of the two systems followed by reciprocal classical feedback, tuned to reproduce the Newtonian bilinear interaction in the standard Gaussian realization.
+After detector/background calibration this equals
 
-- `Theta`: mean interaction can be calibrated to reproduce the Newtonian branch-phase structure.
-- `chi_R^grav`: nonzero effective response via measurement/feedback.
-- `N_grav`: compulsory measurement/backaction/feedback decoherence-noise is tied to the interaction strength; it is not an optional nuisance that may simply be set to zero.
-- `rho_comm^grav`: absent as a fundamental gravitational mediator operator algebra; the channel is implemented by measurement records and classical feedback.
-- `K3_plus`: zero for the standard Gaussian monitoring/feedback realization after connected subtraction; nonlinear/non-Gaussian measurement schemes are a separate comparator extension.
-- `E_AB`: the standard local classical-channel construction is non-entangling in its declared sector.
-- `Q_channel`: a measure-and-feed-forward mediator is an entanglement-breaking/classical communication channel in the mediator leg. If a laboratory realization shows non-EB transfer, hidden optical/mechanical quantum links must be assigned to C4 rather than to C3.
+`[S(+Omega)-S(-Omega)]/[S(+Omega)+S(-Omega)]`
 
-The key C3 discriminator is therefore not interaction or decoherence separately but the **interaction/noise bound together with EB channel structure**.
+in the ideal weak-coupling convention.
+
+A stationary real classical stochastic force has an even autocorrelation and hence symmetric autospectrum, so its intrinsic mediator contribution has
+
+`rho_comm=0`, `A_comm=0`.
+
+A raw optical sideband ratio is **not** accepted as this observable because measurement/backaction interference can mimic asymmetry classically.
+
+## C2 — linear Gaussian stochastic gravity
+
+Frozen scope: Einstein–Langevin / linear classical stochastic metric.
+
+- `Theta`: can mimic mean gravitational phase.
+- `chi_R`: nonzero.
+- `N`: nonzero.
+- intrinsic mediator `A_comm=0` for the stationary real classical metric-force autospectrum.
+- `K3_plus=0` in the strictly linear Gaussian realization only.
+- gravity-only local shared-classical-noise map is a mixture of conditioned local maps and cannot create probe entanglement from separable input in the frozen setup.
+- no gravity-only non-EB quantum communication channel.
+
+Thus C2 can mimic `{Theta,chi_R,N}` but not the combined gravity-only `{non-EB,A_comm!=0}` target in this scoped realization.
+
+## C3 — KTM measurement-feedback gravity
+
+Frozen scope: local continuous measurement plus classical feedback.
+
+- mean Newtonian interaction / `Theta` can be reproduced;
+- `chi_R` nonzero;
+- compulsory decoherence/noise tied to interaction;
+- no fundamental gravitational mediator operator commutator;
+- ideal mediator-leg `A_comm=0` after detector/backaction subtraction;
+- standard Gaussian realization has no connected higher cumulants beyond second order;
+- mediator is measure-and-feed-forward / entanglement-breaking and non-entangling in the declared sector.
+
+Therefore C3 predicts a classical-channel relation: interaction is accompanied by a minimum noise/decoherence burden and the mediator does not supply a non-EB quantum channel.
 
 ## C3b — covariant postquantum classical gravity
 
-Frozen scope: Oppenheim–Weller-Davies covariant classical-quantum path-integral class, with the classical spacetime field retained as classical and the 2026 CP/covariance result.
+Frozen scope: Oppenheim–Weller-Davies 2026 covariant classical-field CQ path-integral construction.
 
-- `Theta`: classical gravitational interaction/backreaction can generate branch-dependent phases/correlations depending on the concrete matter coupling.
-- `chi_R^grav`: classical dynamical gravitational response is allowed.
-- `N_grav`: stochasticity/decoherence is required in the broader postquantum classical program.
-- `rho_comm^grav`: no fundamental noncommuting metric operator is present because spacetime is classical.
-- `K3_plus`: **not fixed to zero in the parent C3b class**; nonlinear/non-Gaussian stochastic path weights may generate higher classical cumulants.
-- `E_AB`: the 2026 covariant path-integral construction explicitly proves that entanglement cannot be generated via the classical field.
-- `Q_channel`: consequently a gravity-only channel that is demonstrably non-entanglement-breaking would falsify this scoped classical-field mediation mechanism, provided C4/C6 hidden quantum transfer channels are excluded.
+- classical metric may have stochastic response/noise;
+- no fundamental noncommuting metric operator;
+- classical higher cumulants are not generically zero;
+- intrinsic stationary classical mediator `A_comm=0` in the autospectral test;
+- the 2026 path-integral theorem proves the classical field cannot create entanglement in the local CQ setting described by the source.
 
-This makes C3b substantially stronger than a Gaussian-noise strawman: `K3_plus != 0` would not by itself defeat C3b.
+Consequently a **gravity-attributed** non-EB channel plus nonzero calibrated `A_comm` excludes this scoped C3b mediator, provided hidden C4/C6 quantum transfer is absent.
 
-## C4 — ordinary quantum matter / non-gravitational quantum mediator nuisance
+## C4 — ordinary quantum mediator / quantum matter nuisance
 
-C4 is the principal **mediator-attribution adversary**.
+C4 can produce all of the apparently strongest individual quantum-looking components:
 
-A quantum electromagnetic, optical, phononic, material, shared-bath, or quantized-matter interaction can in principle provide:
+- entanglement;
+- non-EB quantum communication;
+- nonzero unsymmetrized spectral asymmetry / commutator;
+- higher cumulants.
 
-- `E_AB > 0`;
-- a non-EB quantum channel;
-- nonzero operator commutators/ordered response;
-- non-Gaussian higher cumulants.
+Therefore `{Q_channel non-EB,A_comm!=0}` is **not gravity-specific without mediator attribution**.
 
-Therefore none of these quantities is gravity-specific until the C4 ledger is experimentally/theoretically bounded in the same geometry.
-
-Required nulls include shielding/scaling checks, independent electromagnetic/Casimir/patch-potential characterization, optical/control cross-talk tests, common-bath exclusion, and a source-mass/distance dependence inconsistent with the bounded C4 channels.
+The required C4 ledger includes electromagnetic, optical, phononic/material, Casimir/patch, common-bath, control/readout and quantized-matter transfer channels.
 
 ## C6 — quantum source statistics + classical gravitational interface
 
-C6 is dangerous because quantum source preparation can imprint nonclassical statistics on a detector even when the gravitational interface itself is classical.
+Quantum source preparation can imprint nonclassical detector statistics while the gravitational interface remains classical. Source-coherence nulls and causal/inter-probe attribution are therefore mandatory.
 
-- branch coherence may affect conditional classical source records;
-- detector statistics may inherit quantum-source correlations;
-- apparent higher-order or ordered-looking detector correlations can therefore arise without a quantum metric mediator.
+## Terminal comparator result
 
-C6 must be attacked with source-state randomization/coherence nulls and with observables whose nonclassical component is causally attributed to the inter-probe gravitational channel rather than to local source preparation/readout.
+The following lower-dimensional targets are rejected as sufficient KG fingerprints:
 
-## First frozen comparator quotient
+`{Theta}` alone — classical GR/C0 calibration can mimic.
 
-The first useful reduced statement is now:
+`{Theta,chi_R,N}` — C2/C3/C3b can mimic substantial parts.
 
-`{Theta,chi_R,N}` alone is **not** KG-specific because C2/C3/C3b can reproduce substantial parts of it.
+`K3_plus!=0` — nonlinear/non-Gaussian classical stochastic models can mimic.
 
-`K3_plus != 0` alone is also **not** KG-specific because a nonlinear/non-Gaussian C3b or stochastic extension can reproduce classical higher cumulants.
+`E_AB>0` or `Q_channel non-EB` — strong against pure local classical-spacetime mediation but can be produced by C4/C6.
 
-`E_AB > 0` or `Q_channel non-EB` is stronger against pure C2/C3/C3b, but is **not gravity-attributed** until C4/C6 are excluded.
+`A_comm!=0` — strong against a stationary real classical mediator but can be produced by ordinary quantum C4 channels and can be spuriously inferred from detector backaction if the estimator is not calibrated.
 
-The highest-value surviving joint direction is therefore provisionally
+The strongest architecture that survives the **pure classical-spacetime comparator quotient** is
 
-`I_survive = {Q_channel non-EB, rho_comm-sensitive gravitational response, response/noise relation, mediator attribution, Ward/contact consistency}`
+`I_survive={Q_channel non-EB, A_comm/rho_comm, chi_R-N relation, Theta geometry, Ward/contact}`
 
-with `Theta` fixing gravitational geometry/calibration and `K3_plus` retained as a supporting rigidity channel rather than the primary discriminator.
+plus explicit
 
-## Candidate Gravity design consequence
+`mediator attribution against C4/C6`.
 
-A future KG parent dynamics should ideally force a relation of the schematic form
+## What has and has not been established
 
-`F(Q_channel, rho_comm, chi_R, N, Theta, K3_plus, Ward/contact)=0`
+Established:
 
-with few or no freely tunable functions after consistency conditions.
+- there is a concrete multi-readout architecture whose non-EB + commutator-sensitive components cannot be supplied by the frozen C2/C3/C3b classical gravitational mediators;
+- the architecture can be stated operationally without assuming a quantum metric at the definition stage;
+- C4/C6 are identified explicitly as attribution adversaries rather than silently ignored.
 
-The design target is **not** merely to predict all of these objects, but to predict a comparator-resistant relation among them.
+Not established:
 
-## Open technical task
+- no actual Candidate Gravity parent dynamics has yet predicted a nonzero value;
+- no globally unique QG residual has been measured or derived;
+- no finite experimental nuisance envelope for every C4/C6 channel has yet been demonstrated.
 
-The next critical object is an operational estimator for `rho_comm^grav` that can be expressed using controlled source modulation / time ordering and detector observables without assuming a quantum mediator in its derivation.
+## Candidate Gravity design target
 
-After that estimator is frozen, the C2/C3/C3b entries above can be made algebraic rather than qualitative.
+A future KG model should derive a rigid relation
+
+`F(Theta,Q_channel,A_comm,chi_R,N,K3_plus,Ward/contact)=0`
+
+from one parent dynamics, and that relation should remain inconsistent with all admissible C2/C3/C3b fits while C4/C6 are eliminated by mediator-attribution controls.
 
 ## Sources
 
 1. Hu & Verdaguer, stochastic gravity / Einstein–Langevin framework.
-2. Kafri, Taylor & Milburn classical-channel gravity and measurement-feedback literature.
-3. Di Bartolomeo, Carlesso & Bassi, Phys. Rev. D 104, 104027 (2021), dissipative classical-channel generalization.
-4. Oppenheim & Weller-Davies, Phys. Rev. X 16, 031007 (2026), covariant CP classical-quantum path integrals and proof that the classical field cannot generate entanglement.
-5. Mari, Zippilli & Vitali, Phys. Rev. D 113, L021905 (2026), gravity-induced quantum-channel / entanglement-breaking criterion.
-6. Toccacelo, Andersen & Brask, Phys. Rev. A 112, 022218 (2025), quantum communication benchmarks via gravity.
-7. Yang et al., Phys. Rev. D 111, 104084 (2025), causal conditional classical-gravity feedback models and the need for stronger LOCC/null protocols.
+2. Kafri, Taylor & Milburn, classical communication/noise bound for Newtonian gravity.
+3. Oppenheim & Weller-Davies, Phys. Rev. X 16, 031007 (2026), covariant CQ path integral and no-entanglement theorem through the classical field.
+4. Clerk et al., Rev. Mod. Phys. 82, 1155 (2010), unsymmetrized quantum noise spectroscopy.
+5. Mari, Zippilli & Vitali, Phys. Rev. D 113, L021905 (2026), gravity-induced channel / entanglement-breaking criterion.
+6. Børkje, Phys. Rev. A 94, 043816 (2016), detector dependence of sideband asymmetry.
+7. Novotny et al., Phys. Rev. A 106, 043511 (2022), classical backaction/interference sideband mimic.
