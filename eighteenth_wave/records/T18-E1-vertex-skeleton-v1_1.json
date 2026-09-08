@@ -3,29 +3,32 @@
   "candidate_id": "KMQGB-T18-E1-VERTEX-SKELETON",
   "authority": {
     "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
-    "commit_or_blob": "prospective wave18 skeleton",
+    "commit_or_blob": "prospective wave18 skeleton with CEMZ red-team",
     "parent_object_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md"
   },
   "parent_dynamics": {
     "representation": "action_skeleton",
-    "object_ref": "S_EH + (lambda/M^2) int sqrt(-g) V3[C,nabla;Phi_M]",
-    "declared_domain": "Minkowski-connected massless-spin-2 sector; prospective cross-regime E/M~O(1); exact Phi_M and CTP parent not yet derived"
+    "object_ref": "cubic-first: S_EH + (lambda/M^2) int sqrt(-g) V3[C,nabla;Phi_M]; conservative fallback: S_EH + (lambda4/M^4) int sqrt(-g) V4[C,nabla;Psi_M]",
+    "declared_domain": "Minkowski-connected massless-spin-2 sector; prospective cross-regime E/M~O(1); exact kernel/CTP parent not yet derived"
   },
   "escape_doors": ["E1"],
-  "escape_claim": "Potential beyond-C5 information is restricted to a parent-fixed all-orders nonlocal Weyl/Riemann vertex shape at E~M; the low-energy Taylor expansion is explicitly treated as C5 EFT and is not novelty.",
+  "escape_claim": "Potential beyond-C5 information is restricted to a parent-fixed all-orders nonlocal Weyl/Riemann higher-point shape at E~M; all low-energy Taylor coefficients are C5 EFT. Cubic-first additionally requires an explicit high-energy causality/UV-completion mechanism; quartic-first preserves the GR three-point coupling but still requires four-graviton dispersion/UV closure.",
   "escape_evidence_refs": [
     "protocol/BEYOND_C5_ESCAPE_TAXONOMY.md",
-    "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md"
+    "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md",
+    "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS_ESCAPE_APPENDIX.md"
   ],
   "door_specific_blockers": [
     "PARENT_FIXED_KERNEL_DERIVATION",
     "LORENTZIAN_CTP_COMPLETION",
     "CAUSALITY_AND_GLOBAL_BACKGROUND_AUDIT",
+    "THREE_POINT_HIGH_ENERGY_CAUSALITY_AND_HIGHER_SPIN_COMPLETION_IF_CUBIC_FIRST",
+    "FOUR_GRAVITON_DISPERSION_CAUSALITY_UV_COMPLETION",
     "COMPLETE_4GRAVITON_WARD_RESPONSE",
     "SAME_DOMAIN_NONLOCAL_UV_COMPARATOR"
   ],
   "parameters": [
-    {"id": "lambda", "role": "dynamics", "sharing_scope": "global"},
+    {"id": "lambda_or_lambda4", "role": "dynamics", "sharing_scope": "global"},
     {"id": "M", "role": "dynamics", "sharing_scope": "global"}
   ],
   "observable_blocks": [
@@ -40,11 +43,29 @@
         "parent_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#2",
         "expected_families": ["Einstein-Hilbert quadratic term"],
         "included_families": ["Einstein-Hilbert quadratic term"],
-        "omitted_family_zero_proofs": ["regular cubic-curvature deformation starts at O(h^3)"]
+        "omitted_family_zero_proofs": ["regular cubic/quartic curvature deformation begins beyond O(h^2)"]
       },
       "origin_classification": "GR_MASSLESS_SPIN2_POLE_UNCHANGED",
       "constraint_status": "PASS_SCOPED_FREE_GAUGE_STRUCTURE",
       "attribution_tags": ["gravity_spin2_anchor", "not_novelty"],
+      "prospective_role": "mandatory_anchor"
+    },
+    {
+      "id": "B3_GRAVITON_VERTEX",
+      "response_order": 3,
+      "configuration_id": "MINKOWSKI_3POINT_ANALYTIC",
+      "physical_dimension": null,
+      "routing_ref": "analytic on-shell three-graviton vertex",
+      "completeness": {
+        "status": "BLOCKED",
+        "parent_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#5",
+        "expected_families": ["full parent cubic vertex and high-energy causal completion if cubic-first"],
+        "included_families": [],
+        "omitted_family_zero_proofs": ["quartic-first fallback would preserve the GR cubic vertex by O(h^4) onset"]
+      },
+      "origin_classification": "CUBIC_FIRST_CAUSALITY_BLOCKED__QUARTIC_FIRST_GR_VERTEX_UNCHANGED",
+      "constraint_status": "BLOCKED_CEMZ_OR_FALLBACK_SELECTION",
+      "attribution_tags": ["spin2", "causality_anchor", "not_direct_real_3point_residual"],
       "prospective_role": "mandatory_anchor"
     },
     {
@@ -55,19 +76,18 @@
       "routing_ref": "prospective real 4-graviton scattering kinematics",
       "completeness": {
         "status": "BLOCKED",
-        "parent_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#5",
+        "parent_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#8",
         "expected_families": [
-          "V3-derived quartic contact",
-          "EH-cubic x V3-cubic exchange in required channels/orientations",
-          "Ward/contact completion",
-          "higher-lambda parent-required families when included"
+          "cubic-first: V3-derived quartic contact plus EH-cubic x V3-cubic exchanges and Ward completion",
+          "quartic-first: complete V4 contact hierarchy and any exact-parent-induced exchange/auxiliary families",
+          "crossing and Ward/contact completion"
         ],
         "included_families": [],
         "omitted_family_zero_proofs": []
       },
-      "origin_classification": "BLOCKED_PARENT_KERNEL_AND_COMPLETE_AMPLITUDE",
+      "origin_classification": "BLOCKED_PARENT_KERNEL_COMPLETE_AMPLITUDE_AND_DISPERSION",
       "constraint_status": "BLOCKED",
-      "attribution_tags": ["on_shell", "spin2", "cross_regime", "holdout_candidate"],
+      "attribution_tags": ["on_shell", "spin2", "cross_regime", "holdout_candidate", "dispersion_causality"],
       "prospective_role": "holdout"
     }
   ],
@@ -98,24 +118,24 @@
     "quantum": "BLOCKED_CTP_PARENT",
     "mediator": "PASS_METRIC_ONLY_SKELETON",
     "gravity_spin2": "PASS_FREE_SECTOR_ANCHOR",
-    "locality": "BLOCKED_E1_CAUSALITY",
+    "locality": "BLOCKED_E1_CAUSALITY_AND_DISPERSION",
     "relational_qrf": "BLOCKED_OBSERVABLE_COMPLETION",
     "detector": "N_A_SCATTERING_STAGE",
     "state": "PASS_NOT_STATE_ONLY_BY_CONSTRUCTION",
     "rigidity": "BLOCKED_KERNEL_DERIVATION"
   },
   "rigidity": {
-    "cross_order": {"status": "BLOCKED", "stack_ref": null, "shared_parameter_incidence": ["lambda", "M"], "R_shared": null},
+    "cross_order": {"status": "BLOCKED", "stack_ref": null, "shared_parameter_incidence": ["lambda_or_lambda4", "M"], "R_shared": null},
     "intervention": {"status": "BLOCKED", "design_variables": ["E/M", "scattering_angle", "helicity"]},
-    "holdout": {"status": "BLOCKED", "split_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#6", "no_shared_retune": true, "shared_parameter_retuning_on_holdout": false, "predictive_covariance_ref": null},
+    "holdout": {"status": "BLOCKED", "split_ref": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#9", "no_shared_retune": true, "shared_parameter_retuning_on_holdout": false, "predictive_covariance_ref": null},
     "minimal_suite": {"status": "BLOCKED", "library_ref": null, "selected_suite_ref": null, "leave_one_block_robustness": null}
   },
   "promotion_gates": {
-    "G0": {"status": "BLOCKED", "evidence_refs": ["protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md"], "scope": "structural action skeleton exists but Phi_M/CTP parent is not derived"},
-    "G1": {"status": "BLOCKED", "evidence_refs": ["protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#5"], "scope": "four-point complete response missing"},
-    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "full Ward physical basis missing"},
+    "G0": {"status": "BLOCKED", "evidence_refs": ["protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md"], "scope": "structural skeleton exists but kernel/CTP parent not derived"},
+    "G1": {"status": "BLOCKED", "evidence_refs": ["protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md"], "scope": "complete higher-point response missing"},
+    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "full Ward/dispersion physical basis missing"},
     "G3": {"status": "BLOCKED", "evidence_refs": [], "scope": "same-domain E~M comparator incomplete"},
-    "G4": {"status": "BLOCKED", "evidence_refs": [], "scope": "CTP causality/relational attribution incomplete"},
+    "G4": {"status": "BLOCKED", "evidence_refs": ["protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS_ESCAPE_APPENDIX.md"], "scope": "CTP causality plus cubic-CEMZ or quartic-dispersion attribution incomplete"},
     "G5": {"status": "BLOCKED", "evidence_refs": ["protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md#3"], "scope": "IR C5 containment known; cross-regime full quotient missing"},
     "G6": {"status": "BLOCKED", "evidence_refs": [], "scope": "no residual/covariance/Jacobian"},
     "G7": {"status": "BLOCKED", "evidence_refs": [], "scope": "no global profile"},
