@@ -1,0 +1,69 @@
+{
+  "candidate_id": "KMQGB-T16-04-GENERIC-QUADRATIC-CTP",
+  "screening_classification": "OPERATIONALLY_DEGENERATE",
+  "authority": {
+    "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+    "commit_or_blob": "sixteenth_wave frozen record",
+    "parent_object_ref": "sixteenth_wave/README.md#t16-04--generic-quadratic-ctp-noisedissipation-deformation"
+  },
+  "parent_dynamics": {
+    "representation": "influence_functional",
+    "object_ref": "DeltaGamma_2 = int T_a deltaD_R T_r + (i/2) int T_a deltaN T_a",
+    "declared_domain": "Gaussian reduced dynamics with unspecified microscopic environment"
+  },
+  "parameters": [
+    {"id": "deltaD_R", "role": "dynamics", "sharing_scope": "global"},
+    {"id": "deltaN", "role": "dynamics", "sharing_scope": "global"}
+  ],
+  "observable_blocks": [],
+  "comparators": [
+    {
+      "id": "GENERIC_GAUSSIAN_CTP_C2_C5",
+      "validity_domain": "same Gaussian influence-functional domain",
+      "parameter_ids": ["deltaD_R", "deltaN"],
+      "prediction_ref": "stochastic gravity, ordinary quantum baths and Gaussian graviton environments generate the same retarded/noise structure",
+      "jacobian_ref": "generic kernel directions span the frozen seed",
+      "state_sector": "matched or profiled"
+    }
+  ],
+  "covariance": {
+    "matrix_ref": null,
+    "provenance": "no numeric residual authorized after generic-kernel containment",
+    "cross_block_correlations_included": true
+  },
+  "attribution_stack": {
+    "quantum": "BLOCKED_GENERIC_BATH",
+    "mediator": "BLOCKED_UNSPECIFIED_MICROSCOPIC_PARENT",
+    "gravity_spin2": "FAIL_NOT_ESTABLISHED",
+    "locality": "BLOCKED_KERNEL_DEPENDENT",
+    "relational_qrf": "BLOCKED",
+    "detector": "BLOCKED",
+    "state": "BLOCKED",
+    "rigidity": "FAIL_GENERIC_FUNCTIONAL_FREEDOM"
+  },
+  "rigidity": {
+    "cross_order": {"status": "BLOCKED"},
+    "intervention": {"status": "BLOCKED"},
+    "holdout": {"status": "BLOCKED", "shared_parameter_retuning_on_holdout": false},
+    "minimal_suite": {"status": "BLOCKED"}
+  },
+  "promotion_gates": {
+    "G0": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-04"], "scope": "generic influence seed defined"},
+    "G1": {"status": "BLOCKED", "evidence_refs": [], "scope": "no complete beyond-C5 response block"},
+    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "physical spin-2 basis not established"},
+    "G3": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-04"], "scope": "generic Gaussian comparator family identified"},
+    "G4": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-04"], "scope": "gravity/mediator attribution absent"},
+    "G5": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-04"], "scope": "seed is contained in generic Gaussian CTP directions"},
+    "G6": {"status": "BLOCKED", "evidence_refs": [], "scope": "COR not authorized"},
+    "G7": {"status": "BLOCKED", "evidence_refs": [], "scope": "global separation absent"},
+    "G8": {"status": "BLOCKED", "evidence_refs": [], "scope": "identifiability absent"},
+    "G9": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-04"], "scope": "arbitrary kernel freedom destroys rigidity"},
+    "G10": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-04"], "scope": "screening rejection; promotion forbidden"}
+  },
+  "promotion": {
+    "ansatz_promoted": false,
+    "robust_global_residual": false,
+    "fisher_promoted": false,
+    "resources_promoted": false
+  }
+}
