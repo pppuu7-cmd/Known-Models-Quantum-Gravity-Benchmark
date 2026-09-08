@@ -1,0 +1,16 @@
+{
+  "wave": 25,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "INSUFFICIENT_SELECTION__SPANS_FULL_PARITY_EVEN_4GRAVITON_EFT": 1,
+    "INSUFFICIENT_FULL_PARENT__SCOPED_INTEGRABLE_SECTOR": 1,
+    "STRING_STRUCTURAL_COMPARATOR": 1,
+    "KNOWN_DUAL_RESONANCE_DEFORMATION_SPACE": 1,
+    "PASS_NEXT_SEARCH__CROSS_REPRESENTATION_RIGIDITY": 1
+  },
+  "main_lesson": "Amplitude-only kernel-selection principles are currently either too broad, too scoped, or already comparator-contained. The next search axis is cross-representation rigidity using one shared parent across scattering, CTP response and relational/quantum-channel observables.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
