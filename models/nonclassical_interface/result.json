@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "KMQGB-T3-M03-NONCLASSICAL-INTERFACE",
+  "terminal": true,
+  "status": "PASS_RQIR_GATE",
+  "objective": "CLASSICAL_SPACETIME_DISCRIMINATOR_ARCHITECTURE_ESTABLISHED",
+  "primary_setup": "NC-TWOMASS-BRANCH-MEDIATOR-001",
+  "channel_readout": "NC-OPTOMECH-GRAVITY-CHANNEL-001",
+  "commutator_readout": "NC-GRAV-UNSYM-NOISE-QUBIT-001",
+  "frozen_vector": "I_NC={Theta,E_AB,Q_channel,chi_R,A_comm/rho_comm,N,K3_plus,Ward/contact,mediator-null controls}",
+  "classical_spacetime_quotient": {
+    "C2": "cannot supply gravity-only non-EB channel or fundamental metric commutator in frozen classical stochastic realization",
+    "C3": "measurement-feedback classical mediator is non-entangling/EB in frozen realization and carries mandatory noise burden",
+    "C3b": "2026 covariant local classical field cannot generate entanglement and has no fundamental noncommuting metric operator"
+  },
+  "surviving_architecture": "gravity-attributed non-EB channel + calibrated commutator-sensitive unsymmetrized response + response/noise + Ward/contact linkage",
+  "global_qg_uniqueness": false,
+  "remaining_attribution_adversaries": ["C4 ordinary quantum mediator/matter", "C6 quantum source + classical interface", "detector/backaction mimic"],
+  "candidate_gravity_readiness_change": 0,
+  "interpretation": "methodological design PASS, not evidence that gravity is quantum and not a derived KG model"
+}
