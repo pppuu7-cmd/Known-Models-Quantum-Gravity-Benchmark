@@ -13,60 +13,18 @@ Second-wave denominator was frozen at five targets and terminally classified at 
 Retained second-wave results:
 
 - `NL-EOM-ENTIRE-MINK-001`: no extra Stelle-like pole, but frozen on-shell tree amplitudes are field-redefinition-degenerate with GR/local theory -> `OPERATIONALLY_DEGENERATE`.
-- `AS-SCALAR2TO2-LOR-2026-001`: fixed-angle UV exponent `p_UV=0` is shared by an independent Lorentzian quantum-effective-action comparator -> `OPERATIONALLY_DEGENERATE` in that observable.
-- `KTM-OSCILLATOR-MEASUREMENT-FEEDBACK-001`: exact C3 comparator identity; classical channel can generate interaction plus compulsory decoherence/noise without an entangling quantum mediator.
-- `PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001`: exact C3b comparator identity in the scoped linearized conserved-kernel formulation; no blanket Bianchi consistency failure.
+- `AS-SCALAR2TO2-LOR-2026-001`: fixed-angle UV exponent `p_UV=0` is shared by an independent Lorentzian quantum-effective-action construction -> `OPERATIONALLY_DEGENERATE` in that observable.
+- `KTM-OSCILLATOR-MEASUREMENT-FEEDBACK-001`: exact C3 comparator identity.
+- `PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001`: exact C3b comparator identity in the scoped linearized conserved-kernel formulation.
 - `HR-TRIPLE-SINGLE-MASS-GRAV4-001`: same-domain UV comparator infrastructure installed for the string branch.
 
-Cross-wave result: type-II Virasoro-Shapiro is distinct from the simple Huang-Remmen single-mass comparator in pole support, but global string uniqueness remains unproven.
+## 2026-09-08 — KMQGB-017 to KMQGB-027 — design-prior maturation
 
-## 2026-09-08 — KMQGB-017 to KMQGB-027 — third-wave activation and design-prior maturation
+Iterations 017–027 created the persistent Candidate Gravity design/recovery layer and developed rigidity, mediator attribution, quantum-channel, ordered-response, continuum and geometry-attribution guardrails. Detailed steps remain preserved in earlier immutable recovery deltas.
 
-Iterations 017–027 created the persistent Candidate Gravity design-prior/recovery layer, froze the third-wave denominator at five targets, developed mediator attribution, quantum-channel and ordered-response targets, and opened fourth-wave preflight. Historical detailed steps remain in immutable deltas and model audits.
+## 2026-09-08 — KMQGB-028 — waves 3–5 terminal
 
-Key pre-terminal lessons included rigidity by overconstraint, mediator attribution beyond final entanglement, full crossover vectors rather than endpoint scalars, covariance versus nonlinear constraint closure, regulator/continuum mapping, and geometry attribution for causal-order claims.
-
-## 2026-09-08 — KMQGB-028 — terminal closure of waves 3–5 and gravity-attribution stack
-
-### Wave 3 terminal closure — `5/5 = 100%`
-
-- T3-01 generalized bespoke / closed-channel dual resonance -> `PASS_RQIR_GATE`.
-  Same-channel non-string deformations survive weaker assumptions, while in the frozen bootstrap class `superpolynomial Regge softness + level truncation` isolates Virasoro-Shapiro. Reusable lesson: uniqueness can arise from independently motivated overconstraint rather than one fingerprint.
-- T3-02 Planck-crossover asymptotic safety -> `BLOCKED_MISSING_REQUIRED_OBJECT` because the same-realization public contact/crossing-complete `A4` object required for the frozen full vector is absent.
-- T3-03 nonclassical interface -> `PASS_RQIR_GATE`. The frozen architecture combines branch phase `Theta`, non-entanglement-breaking channel diagnostics, calibrated unsymmetrized/commutator-sensitive response, response/noise structure, Ward/contact consistency and mediator nulls.
-- T3-04 nonlinear postquantum classical gravity -> `BLOCKED_MISSING_REQUIRED_OBJECT`: CP/covariance are strengthened, but a same-realization nonlinear constraint-algebra/physical-DOF closure object is absent.
-- T3-05 4D CDT geon-like curvature correlator -> `BLOCKED_MISSING_REQUIRED_OBJECT`: the finite-regulator massive-like signal is positive and cross-operator compatible, but continuum scaling and a Lorentzian physical-state/pole map are missing.
-
-### Wave 4 terminal closure — `5/5 = 100%`
-
-- T4-01 non-Gaussian stochastic gravity -> `PASS_RQIR_GATE`: higher symmetrized cumulants can be classically stochastic; non-Gaussianity is not quantumness.
-- T4-02 causal/process geometry attribution -> `OPERATIONALLY_DEGENERATE`: an optical quantum switch can reproduce the causal-order witness; indefinite causal order is not geometry attribution.
-- T4-03 cross-detector spacetime correlations -> `OPERATIONALLY_DEGENERATE`: baseline/orientation/cross-spectrum geometry is model-discriminating but not intrinsically quantum.
-- T4-04 quantum reference frames -> `PASS_RQIR_GATE`: bare localization/superposition claims can be QRF-dependent; KG novelty must be relational before it is quantum.
-- T4-05 C4/C6 attribution adversary -> `OPERATIONALLY_DEGENERATE`: a quantized massless scalar with `g_i=sqrt(4 pi G)m_i` reproduces exactly `V=-Gm_A m_B/r` while also supplying an operator commutator and quantum channel. Quantumness attribution is not gravity attribution.
-
-### Wave 5 terminal closure — `5/5 = 100%`
-
-- T5-01 massless spin-2 soft universality -> `PASS_RQIR_GATE`: leading soft spin-2 gauge/Lorentz consistency forces universal coupling across species; universality should be consistency-derived, not fitted.
-- T5-02 tensor/tidal polarization -> `PASS_RQIR_GATE`: a scalar/vector mediator tuned to the static `1/r` sector does not automatically reproduce helicity-2 tensor tidal/radiative structure. Use static + soft + tidal/radiative linkage.
-- T5-03 detector/backaction quotient -> `PASS_RQIR_GATE`: raw sideband asymmetry is not a valid commutator certificate; use calibrated opposite-frequency transition-rate/noise spectroscopy or an equivalently complete detector model.
-- T5-04 nonlocal classical-CQ loophole -> `OPERATIONALLY_DEGENERATE`: nonlocal hybrid models can generate entanglement; locality/microcausality is part of the witness.
-- T5-05 relational ordered cross-spectrum -> `PASS_RQIR_GATE`: freeze the causal ordered kernel `{N_ij,C_ij,chi_R,causal support}` along physical worldlines/proper times; spacelike commutators must obey microcausality rather than being sought as a generic positive signal.
-
-### Candidate Gravity attribution stack frozen
-
-A future KG residual must survive eight layers:
-
-1. quantum attribution;
-2. mediator attribution;
-3. gravity / massless-spin-2 attribution;
-4. locality / microcausality attribution;
-5. relational / QRF attribution;
-6. geometry attribution for causal/process claims;
-7. regulator / continuum attribution where applicable;
-8. rigidity / identifiability after the full comparator quotient.
-
-The compact preferred design objects are now
+Wave 3 closed `5/5`, Wave 4 closed `5/5`, Wave 5 closed `5/5`. The resulting compact objects were frozen as
 
 `K_rel={N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}`
 
@@ -74,16 +32,82 @@ and
 
 `G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}`.
 
-The desired future structure is a forced relation
+The key attribution stack became quantum -> mediator -> gravity/spin-2 -> locality -> relational/QRF -> geometry -> regulator -> rigidity.
 
-`F(K_rel,G_attr,higher-supporting-statistics)=0`
+## 2026-09-08 — KMQGB-029 — sixth wave / full-C5 pre-ansatz gate
 
-from one parent dynamics. Higher symmetrized cumulants, ordinary cross-correlations and indefinite causal order without geometry attribution are supporting/diagnostic channels, not primary quantum-gravity certificates.
+Sixth-wave denominator froze at five and terminally closed `5/5 = 100%`.
 
-### External RQIR status retained read-only
+### T6-01 — massless spin-2 attribution completeness
 
-Last observed authoritative RQIR front: Iteration 570, Candidate Gravity readiness `24%`, QUARTER new-coordinate raw authority `11/12`, rank12 run `34175330006` still `in_progress`. No competing KMQGB heavy job was launched.
+`PASS_RQIR_GATE` / `SPIN2_ATTRIBUTION_COMPLETENESS_SCOPED`.
 
-### Recovery synchronization
+Under the frozen single-long-range-massless-spin-2, locality/factorization, unitarity, Lorentz/gauge-consistency, universal-stress-energy-coupling and leading-IR assumptions, the long-range interaction sector collapses to GR/C5 structure. Higher-derivative EFT directions and theories outside the assumptions remain possible.
 
-Updated current front, state schema 3.0, design priors, handoff, historical wave summaries and restore entrypoint. Immutable `RECOVERY_DELTA_028.md` records this terminal consolidation.
+Design lesson: massless-spin-2 universality is a **gravity-attribution anchor**, not Candidate Gravity novelty.
+
+### T6-02 — quantized-GR CTP null parent
+
+`EXACT_COMPARATOR_IDENTITY` with the Gaussian linearized C5 subsector.
+
+For conserved `J_mn=(kappa/2)T_mn`, the graviton influence action has the schematic structure
+
+`S_IF = int J^- D_R J^+ + (i/2) int J^- N J^-`.
+
+Thus ordinary quantized GR already supplies quantum noise, commutator/spectral structure, retarded response and causal detector correlations. These objects by themselves cannot be Candidate Gravity novelty.
+
+### T6-03 — KMS/FDR adversary
+
+`OPERATIONALLY_DEGENERATE` for the claim that a linked noise-response relation is KG-specific.
+
+For stationary KMS environments, schematically `N(omega) ~ coth(beta omega/2) Im D_R(omega)`. This is generic quantum-bath structure and must be treated as state/consistency information, not gravity attribution. The equilibrium formula is not exported to arbitrary nonstationary/squeezed states.
+
+### T6-04 — nonlocal causality
+
+`PASS_RQIR_GATE` / `NONLOCAL_CAUSALITY_SEPARATE_GATE_ESTABLISHED`.
+
+Ghost freedom, UV health and healthy perturbative propagation do not close the entire causal problem. Freeze separate checks of retarded support, front velocity, spacelike tails, no-signalling, global chronology/CTCs, initial-value well-posedness and background dependence.
+
+### T6-05 — minimal pre-ansatz parent template
+
+`PASS_RQIR_GATE` / `MINIMAL_PREANSATZ_PARENT_TEMPLATE_ESTABLISHED`; **no ansatz promoted**.
+
+A critical correction was frozen during this audit. The Gaussian C5 graviton influence functional is only a two-point/null subsector. Perturbative quantum GR also has nonlinear graviton self-interactions, loops, higher-point/non-Gaussian structures and higher-curvature/EFT/contact terms.
+
+Therefore
+
+`higher-point/non-Gaussian != automatically beyond C5`.
+
+The only valid future decomposition is
+
+`Gamma_parent[T_r,T_a] = Gamma_C5,full_matched[T_r,T_a] + DeltaGamma_KG[T_r,T_a]`.
+
+`DeltaGamma_KG` means only what remains after matching the largest applicable C5 parent in the same perturbative/kinematic order and validity domain, followed by the rest of the comparator quotient.
+
+### Sixth-wave rollup
+
+- `PASS_RQIR_GATE`: 3;
+- `EXACT_COMPARATOR_IDENTITY`: 1;
+- `OPERATIONALLY_DEGENERATE`: 1;
+- globally authorized robust unique-QG residuals: `0`;
+- Candidate Gravity ansatz promoted: `false`.
+
+### External RQIR refresh
+
+Read-only RQIR advanced substantially. Latest scientific front directly observed was Iteration `583`, with `MODEL_READINESS=24%`. Frozen Iter424 is `5/5 PASS`, Iter581 exact15 `Tr U1^2` raw-valid PASS, Iter582 q2-resolved `D_s Gamma_e2` PASS/non-residual, and Iter583 quadratic MSSC-001 source/contact `K2` prerequisite raw-valid PASS.
+
+A later Iter584 mixed-bilinear-K2 workflow run `34202930558` was directly observed `completed/success`, but workflow success was not promoted to scientific authority because the observed RQIR recovery front had not yet raw-consumed it.
+
+No competing KMQGB heavy job was launched.
+
+### Exact next KMQGB front
+
+Freeze a residual-taxonomy wave attacking candidate `DeltaGamma_KG` classes only after full-C5 matching:
+
+1. higher-point/non-Gaussian;
+2. squeezed/exotic graviton state;
+3. non-Markovian/memory;
+4. parity/chiral ordered structure;
+5. nonanalytic/cross-regime structure.
+
+Only a class surviving this taxonomy may motivate an actual Candidate Gravity ansatz proposal.
