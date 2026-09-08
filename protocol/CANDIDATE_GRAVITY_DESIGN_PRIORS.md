@@ -28,7 +28,10 @@ The following may appear inside a viable theory, but none is accepted as a stand
 18. one full-looking scattering sector that omits required contact/crossed/Ward pieces;
 19. a quantum mediator with a Newtonian `1/r` phase — an ordinary quantized scalar can reproduce this in a selected sector;
 20. a raw optical/mechanical sideband asymmetry — detector/backaction correlations can mimic it;
-21. entanglement/non-EB transfer without an explicit locality assumption — nonlocal hybrid classical-gravity models can evade the local witness.
+21. entanglement/non-EB transfer without an explicit locality assumption — nonlocal hybrid classical-gravity models can evade the local witness;
+22. a KMS/fluctuation-dissipation relation by itself — ordinary quantum environments possess the same noise/response structure;
+23. a higher CTP vertex or graviton non-Gaussianity by itself — perturbative quantum GR/C5 already has nonlinear graviton self-interactions, loops and higher-point structures;
+24. ghost freedom / UV finiteness by itself as a causality certificate — global chronology and microcausality are separate gates.
 
 ## 2. Core structural principle — rigidity by overconstraint
 
@@ -68,25 +71,17 @@ Observation of entanglement, channel capacity or `A_comm != 0` is not gravity-sp
 
 ### A3 — Gravity attribution
 
-T4-05 supplies an exact scoped adversary:
+A massless quantized scalar with `g_i=sqrt(4 pi G)m_i` can give exactly `V=-Gm_A m_B/r` while still possessing a quantum commutator and quantum channel.
 
-`g_i=sqrt(4 pi G)m_i`
-
-for a massless quantized scalar gives
-
-`V=-Gm_A m_B/r`
-
-while the scalar still has a quantum commutator and can carry quantum information.
-
-Therefore gravity attribution must add **spin-2/tensor and universal-coupling structure**.
-
-T5-01/T5-02 establish the preferred ingredients:
+Therefore gravity attribution must add
 
 - massless helicity-2 response;
 - universal coupling to energy-momentum enforced by soft/gauge consistency;
 - tensor/tidal polarization response;
 - static–soft–radiative linkage;
 - gravitational Ward/contact completion.
+
+T6 adds an important scope statement: under the frozen locality/Lorentz/unitarity/single-massless-spin-2/IR assumptions, the leading long-range spin-2 sector collapses to GR/C5 structure. This is a **gravity anchor**, not KG novelty.
 
 ### A4 — Locality attribution
 
@@ -96,7 +91,8 @@ Future KG must derive
 
 - retarded support;
 - microcausality/no-signalling or a clearly scoped controlled-nonlocal replacement;
-- causal factorization/cluster behavior appropriate to the theory.
+- causal factorization/cluster behavior appropriate to the theory;
+- for nonlocal models, a separate audit of front velocity, spacelike tails, global chronology/CTCs, initial-value problem and background dependence.
 
 Do not hide nonlocal quantum transfer inside a “classical gravity” or “quantum gravity” label.
 
@@ -120,19 +116,30 @@ Discrete/numerical/truncated signals require regulator, volume, coupling/truncat
 
 A commutator-sensitive observable must be defined through a complete measurement model.
 
-Raw sideband asymmetry is rejected. Prefer calibrated excitation/relaxation-rate spectroscopy or an equivalent estimator after
+Raw sideband asymmetry is rejected. Prefer calibrated excitation/relaxation-rate spectroscopy or an equivalent estimator after dark-rate, readout-power, injected-noise, probe-state, frequency, geometry and ordinary-bath controls.
 
-- dark-rate subtraction;
-- readout-power extrapolation;
-- classical-noise injection;
-- probe-state swap;
-- frequency sweep;
-- coupling geometry reversal;
-- ordinary quantum bath ledger.
+### A9 — Full-C5 attribution / order matching
+
+This is mandatory after T6.
+
+The Gaussian linearized-graviton influence functional is only a useful two-point C5 null subsector. Ordinary perturbative quantum GR also contains
+
+- nonzero three- and higher-graviton interactions/correlation functions;
+- loop-generated non-Gaussianity and memory;
+- higher-curvature/EFT operators;
+- correlated exchange/contact/Ward structures.
+
+Therefore the correct parent decomposition is
+
+`Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG`.
+
+`DeltaGamma_KG` means only the part left after matching the **full applicable C5 parent in the same kinematic/perturbative order and validity domain**.
+
+Higher-point, squeezed, memory, parity/chiral or nonlocal labels are not automatically beyond C5.
 
 ## 4. Compact preferred KG design object
 
-The benchmark now recommends deriving two linked structures from **one parent dynamics**.
+The benchmark recommends deriving two linked structures from **one parent dynamics**.
 
 ### 4.1 Relational causal ordered kernel
 
@@ -142,46 +149,60 @@ where
 
 `N_ij = 1/2 <{delta F_i,delta F_j}>`
 
-is the symmetrized kernel and
+and
 
-`C_ij = i<[F_i,F_j]>`
-
-is the ordered/commutator kernel for relational detector observables `F_i` along physical worldlines.
+`C_ij = i<[F_i,F_j]>`.
 
 Microcausality is part of the object: nonzero spacelike commutators are not automatically a quantum-gravity signal.
 
 ### 4.2 Gravity-attribution / channel structure
 
-`G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}`
-
-with
-
-- `Theta_rel`: local-phase-quotiented branch geometry;
-- `Q_channel`: EB/non-EB or equivalent quantum-information diagnostic;
-- helicity-2/tidal response: operational spin distinction;
-- `kappa_soft`: leading spin-2 soft coupling;
-- `T_mn universality`: stress-energy/equivalence structure;
-- Ward/contact: gauge-complete source/detector relation;
-- mediator nulls: C4/C6 exclusion.
+`G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}`.
 
 A serious KG parent theory should force a relation
 
 `F(K_rel,G_attr,supporting higher statistics)=0`
 
-with little residual tuning freedom.
+with little residual tuning freedom **after full C5 matching**.
 
-## 5. Supporting channels — useful but not primary certificates
+## 5. CTP parent-object reference
 
-Retain the following because they improve rigidity/identifiability even though they are not individually quantum-specific:
+The Gaussian C5 control with conserved source current `J_mn=(kappa/2)T_mn` has the schematic influence structure
+
+`S_IF = int J^- D_R J^+ + (i/2) int J^- N J^-`.
+
+This already produces the two-point ordered/retarded/noise core of `K_rel` in ordinary quantized GR.
+
+For a future KG model use relational/dressed source histories `T_r,T_a` and write only
+
+`Gamma_parent[T_r,T_a]=Gamma_C5,full_matched[T_r,T_a]+DeltaGamma_KG[T_r,T_a]`.
+
+Before any `DeltaGamma_KG` is promoted it must satisfy
+
+- CTP normalization/unitarity (`Gamma[T_r,T_a=0]=0`);
+- doubled-history reality/hermiticity;
+- positivity/noise consistency in the scoped reduced evolution;
+- retarded/largest-time causal support or an explicitly justified controlled-nonlocal alternative;
+- spin-2 Ward/contact identities;
+- universal IR gravity coupling and helicity-2 attribution;
+- relational/QRF invariance;
+- the GR/C5 infrared limit;
+- full common-domain comparator matching;
+- rigidity / low remaining functional freedom.
+
+## 6. Supporting channels — useful but not primary certificates
+
+Retain
 
 - `K3,K4,...` symmetrized higher cumulants;
 - spatial cross-PSD / baseline/orientation dependence;
 - full crossover/time/frequency response shapes;
 - low-energy EFT coefficient correlations;
 - causal/process observables after geometry attribution;
-- finite-regulator nonperturbative observables after continuum mapping.
+- finite-regulator nonperturbative observables after continuum mapping;
+- KMS/FDR relations inside explicitly stationary state sectors.
 
-## 6. Minimum viable novelty vector (MVNV) before any KG promotion
+## 7. Minimum viable novelty vector (MVNV) before any KG promotion
 
 A future KG ansatz must satisfy at least:
 
@@ -199,12 +220,13 @@ A future KG ansatz must satisfy at least:
 12. locality/microcausality audit;
 13. field-redefinition/on-shell-equivalence audit;
 14. full required contact/crossed terms;
-15. nonzero **joint** residual after profiling;
-16. rigidity count of remaining functions/parameters;
-17. regulator/continuum audit where applicable;
-18. only then Fisher/identifiability and finite resources.
+15. **full applicable C5 nonlinear/EFT matching at the same order**;
+16. nonzero joint residual after profiling;
+17. rigidity count of remaining functions/parameters;
+18. regulator/continuum audit where applicable;
+19. only then Fisher/identifiability and finite resources.
 
-## 7. Red-team order for every new KG idea
+## 8. Red-team order for every new KG idea
 
 Try to kill the idea in this order:
 
@@ -222,18 +244,20 @@ Try to kill the idea in this order:
 12. QRF/diffeomorphism redundancy.
 13. optical/ordinary quantum-switch controls for causal-order claims.
 14. analytic field redefinition/on-shell equivalence.
-15. C5 low-energy gravitational EFT in its valid domain.
-16. broader same-domain UV amplitudes.
-17. spin/polarization/universal-coupling attribution.
-18. locality/microcausality.
-19. contact/Ward/constraint completion.
-20. rigidity: how many tunable directions survive?
+15. Gaussian C5 null reference.
+16. **full applicable C5 nonlinear/loop/EFT parent at the same order**.
+17. broader same-domain UV amplitudes.
+18. spin/polarization/universal-coupling attribution.
+19. locality/microcausality/global-causality audit.
+20. contact/Ward/constraint completion.
+21. state-sector degeneracy (thermal/squeezed/excited C5 states).
+22. rigidity: how many tunable directions survive?
 
 If absorbed at any step, preserve the result as negative/design evidence and do not promote it as KG novelty.
 
-## 8. Specific positive design priors that survived benchmark attack
+## 9. Specific positive design priors that survived benchmark attack
 
-The following are not discoveries of new physics, but they are **useful architecture principles**:
+These are architecture principles, not discoveries of new physics:
 
 - rigidity by overconstraint;
 - calibrated non-EB + ordered-response architecture against local classical spacetime;
@@ -243,9 +267,10 @@ The following are not discoveries of new physics, but they are **useful architec
 - relational causal ordered kernels;
 - explicit locality/microcausality;
 - QRF/diffeomorphism relational observables;
-- full crossover/contact-complete observables rather than endpoint statistics.
+- full crossover/contact-complete observables rather than endpoint statistics;
+- full-C5 order matching before any beyond-baseline claim.
 
-## 9. Claims explicitly forbidden from current evidence
+## 10. Claims explicitly forbidden from current evidence
 
 Do not claim:
 
@@ -260,9 +285,11 @@ Do not claim:
 - a covariant CQ action proves nonlinear constraint closure;
 - a finite-regulator pole/correlation length is a continuum state;
 - a missing contact term may be ignored to complete a fingerprint;
+- a KMS/FDR relation is gravity-specific;
+- a higher graviton correlator is automatically beyond perturbative quantum GR;
 - benchmark progress changes Candidate Gravity readiness without an independent KG derivation.
 
-## 10. How this file evolves
+## 11. How this file evolves
 
 After every reusable benchmark result:
 
