@@ -16,16 +16,19 @@ This is the continuation entrypoint for using KMQGB as a design/red-team layer f
    - `protocol/OPTIMAL_COMPARATOR_CONTRASTS.md`;
    - `protocol/CROSS_ORDER_RIGIDITY.md`;
    - `protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md`;
-   - `protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md`.
-6. Read the highest-numbered immutable recovery delta.
-7. Treat waves 1–13 as historical terminal authority; read their README/result files only when needed.
-8. Refresh external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before readiness/heavy-compute statements.
-9. Resume from `next_actions` in `recovery/state.json`, not chat memory.
+   - `protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md`;
+   - `protocol/MINIMAL_DISCRIMINATING_TEST_SUITE.md`;
+   - `protocol/MACHINE_READABLE_KG_PIPELINE.md`.
+6. Read `schema/KG_CANDIDATE_RECORD_v1.json` and `code/kg_candidate_record_validator.py`.
+7. Read the highest-numbered immutable recovery delta.
+8. Treat waves 1–15 as historical terminal authority; read detailed wave/model files only when needed.
+9. Refresh external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before readiness/heavy-compute statements.
+10. Resume from `next_actions` in `recovery/state.json`, not chat memory.
 
 ## B. Historical coverage
 
 - Wave 1: `9/9 = 100%`, immutable.
-- Waves 2–13: each `5/5 = 100%`, immutable.
+- Waves 2–15: each `5/5 = 100%`, immutable.
 - Robust unique-QG residuals authorized by KMQGB: `0`.
 - KMQGB-promoted KG ansatz: none.
 
@@ -35,23 +38,23 @@ Coverage is not Candidate Gravity readiness.
 
 A future KG model should have **few shared parent parameters/functions predicting many linked complete response orders, controlled configurations and held-out channels**.
 
-The design goal is not one exotic feature but a low-freedom relation that survives the full comparator manifold.
-
 Use
 
 `Gamma_parent = Gamma_C5,full_matched + DeltaGamma_KG`
 
-only after full same-order C5 matching.
+only after full same-order C5 matching.  A qualitative feature, state choice or isolated higher-point structure is not `DeltaGamma_KG` by itself.
 
 ## D. Mandatory pipeline
 
 `one parent dynamics`
 
-`-> complete ordered-partition response at every used order`
+`-> complete ordered-partition response`
+
+`-> origin/cut accounting`
 
 `-> exact Ward/Bianchi/contact/constraint physical reduction`
 
-`-> common-domain comparator and attribution stack`
+`-> common-domain comparator + attribution stack`
 
 `-> full C5/C0-C6/C3b quotient`
 
@@ -64,6 +67,10 @@ only after full same-order C5 matching.
 `-> cross-order + intervention rigidity`
 
 `-> predictive/holdout rigidity`
+
+`-> minimal discriminating test suite`
+
+`-> machine-readable G0–G10 validation`
 
 `-> only then ansatz promotion and later Fisher/resources`.
 
@@ -93,11 +100,7 @@ only after full same-order C5 matching.
 
 ### Predictive holdout
 
-Fit shared parameters on `T`, predict `H` without retuning:
-
-`r_H^pred=y_H-c_H(theta_hat_T)`.
-
-For correlated linear-Gaussian blocks, use the exact predictive covariance in `protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md`.
+Fit shared parameters on `T`, predict `H` without retuning and propagate the full training/holdout cross-covariance.
 
 ## F. Same-parent response completeness
 
@@ -105,13 +108,25 @@ For `G=K^-1`:
 
 `D_S G = sum_k (-1)^k sum_(B1,...,Bk in OP(S,k)) G K_B1 G ... K_Bk G`.
 
-Term totals at orders `1..5`: `1,3,13,75,541`.
+Term totals at response orders `1..5`: `1,3,13,75,541`.
 
 Never compare incomplete KG and complete comparator responses, or vice versa.
 
-## G. Current external RQIR authority
+## G. Machine-readable fail-closed rule
 
-Latest directly observed scientific front: **Iteration 590**, Candidate Gravity readiness **24%**.
+Canonical files:
+
+- `schema/KG_CANDIDATE_RECORD_v1.json`;
+- `schema/KG_CANDIDATE_RECORD_PREANSATZ_EXAMPLE.json`;
+- `code/kg_candidate_record_validator.py`.
+
+A scientifically `BLOCKED` object is a **valid record state**. Missing mandatory physics is never zero-filled.  The validator rejects only malformed/contradictory methodology states, such as a PASS gate without its prerequisite or promotion while a mandatory gate is non-PASS.
+
+Fisher/resources are forbidden without a recorded robust global comparator-subtracted residual.
+
+## H. Current external RQIR authority
+
+Latest directly observed scientific front before KMQGB iteration038: **Iteration 590**, Candidate Gravity readiness **24%**.
 
 Iter590 proves the cubic MSSC source response requires local `K3`, six ordered `K1/K2`, and six ordered `K1^3` terms; omitted K3/K1^3 have nonzero support.
 
@@ -119,29 +134,25 @@ External next gate:
 
 1. classify local K3 hard-channel discontinuity origin;
 2. classify K1^3 linked-cut/origin;
-3. then close the complete nonlinear Ward/source object before Iter582/comparator subtraction.
+3. close the complete nonlinear Ward/source object;
+4. only then map to Iter582 and apply the comparator quotient.
 
 KMQGB has a read-only algebraic pre-check that the isolated local K3 coefficient should have zero standalone hard-channel branch discontinuity, but this is not RQIR authority.
 
-## H. Reference code
+## I. Exact next KMQGB front — minimal DeltaGamma screening
 
-- `code/inverse_kernel_ordered_partitions.py`;
-- `code/residual_space_geometry_reference.py`;
-- `code/optimal_comparator_contrasts_reference.py`;
-- `code/cross_order_rigidity_reference.py`;
-- `code/intervention_design_reference.py`;
-- `code/predictive_holdout_reference.py`.
+Freeze a small prospective screening queue of **minimal structural parent deformations**.  This is exploratory red-team work, not ansatz promotion.
 
-## I. Next research front
+For each template:
 
-Design the **minimal discriminating test suite**:
-
-1. define a candidate library of response-order/configuration blocks;
-2. assign relative cost/complexity metadata without making final resource claims;
-3. select blocks by incremental `Delta d_perp`, projected rank and weakest singular-value gain;
-4. require leave-one-block robustness so a residual is not carried by one fragile observable;
-5. keep final Fisher/resource promotion forbidden until an actual robust comparator-subtracted residual exists.
+1. create a machine-readable candidate record;
+2. define a parent/CTP object and declared domain;
+3. identify the lowest complete response order/configuration where it differs from full matched C5;
+4. try to kill it first by field redefinition, EFT/state freedom, ordinary quantum mediators, nonlocal/classical-CQ loopholes and Ward/locality failures;
+5. preserve missing objects as `BLOCKED`;
+6. terminate comparator-contained templates as scoped degeneracies;
+7. do not optimize parameters or claim novelty until a comparator-resistant joint residual exists.
 
 ## J. Minimal continuation instruction
 
-`Продолжай KMQGB и наработки для будущей Candidate Gravity. Восстанови current front/state/handoff и прочитай KG promotion gate, response completeness, COR, optimal contrasts, cross-order, intervention and predictive-holdout protocols. Считай волны 1–13 терминальными. Внешний RQIR read-only. Следующий фронт — minimal discriminating test suite; не продвигай KG ansatz до robust global comparator-subtracted residual.`
+`Продолжай KMQGB и наработки для будущей Candidate Gravity. Восстанови current front/state/handoff, прочитай permanent KG protocols, candidate schema и validator. Считай волны 1–15 терминальными. Обнови внешний RQIR read-only. Следующий фронт — prospective minimal DeltaGamma_KG screening через fail-closed machine records; KG ansatz не продвигать до полного promotion gate.`
