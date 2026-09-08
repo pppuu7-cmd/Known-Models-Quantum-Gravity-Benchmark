@@ -12,6 +12,13 @@
     "candidate_gravity_scientific_readiness_R3_percent": 24,
     "reporting_rule": "always report R1, R2, R3 and current-task R4 separately; explain every score change"
   },
+  "current_task": {
+    "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
+    "completion_R4_percent": 10,
+    "completed_previous_cycle_percent": 100,
+    "status": "PRELIMINARY_SEARCH_ACTIVE",
+    "success_condition": "identify at least one explicit low-freedom parent principle that derives rather than fits its kernel/tensor hierarchy and survives immediate structural profiling against full C5, string-like, asymptotic-safety, C4/C6 and modern nonlocal comparators"
+  },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
     "waves2_to_29": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
@@ -46,7 +53,8 @@
     "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_050.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_050.md",
+    "research_log_supplement": "logs/research_log_036_050.md"
   },
   "next_wave_status": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH__CROSS_REPRESENTATION_REQUIRED__NO_ANSATZ_PROMOTION",
   "next_actions": [
