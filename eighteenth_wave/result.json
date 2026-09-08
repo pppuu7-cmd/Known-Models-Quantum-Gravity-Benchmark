@@ -1,0 +1,19 @@
+{
+  "wave": 18,
+  "status": "TERMINAL",
+  "coverage": "5/5",
+  "percent": 100.0,
+  "rollup": {
+    "PASS_RQIR_GATE": 3,
+    "BLOCKED_MISSING_REQUIRED_OBJECT": 2
+  },
+  "ansatz_promoted": false,
+  "globally_authorized_robust_unique_qg_residuals": 0,
+  "canonical_protocol": "protocol/MINIMAL_E1_VERTEX_SEED_SPECIFICATION.md",
+  "machine_record": "eighteenth_wave/records/T18-E1-vertex-skeleton-v1_1.json",
+  "current_blockers": [
+    "PARENT_FIXED_KERNEL_DERIVATION_AND_CTP_CAUSAL_COMPLETION",
+    "COMPLETE_4GRAVITON_CROSSREGIME_RESPONSE_AND_SAME_DOMAIN_COMPARATOR"
+  ],
+  "conclusion": "The first surviving search architecture preserves the GR propagator and places any possible beyond-C5 information in a parent-fixed higher-point Weyl/Riemann cross-regime relation; it remains pre-ansatz and blocked."
+}
