@@ -1,0 +1,15 @@
+{
+  "wave": 30,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "PASS_GRAVITY_ATTRIBUTION_ANCHOR": 1,
+    "PASS_CROSS_REPRESENTATION_ANCHOR": 2,
+    "OPERATIONALLY_DEGENERATE_WITH_GR_C5_IR_STRUCTURE": 1,
+    "PASS_RQIR_GATE_MANDATORY": 1
+  },
+  "main_lesson": "BMS/soft/memory/in-in consistency is a strong cross-representation gravity anchor but is already universal GR/C5 infrared structure and does not select a novel quartic/higher kernel.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
