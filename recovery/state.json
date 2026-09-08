@@ -1,19 +1,18 @@
 {
-  "schema_version": "2.2",
+  "schema_version": "2.3",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 17,
+  "kmqgb_iteration": 18,
   "phase": "THIRD_WAVE_ACTIVE",
   "firewall": {
     "writes": "KMQGB repository only",
     "external_rqir_access": "read_only",
-    "shared_runner_policy": "do_not_compete_while_RQIR_heavy_chain_active"
+    "shared_runner_policy": "do_not_compete_until_RQIR_raw_authority_advances_or_chain_is_explicitly_free"
   },
   "design_recovery": {
     "design_priors": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
-    "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
-    "purpose": "retain benchmark-derived lessons for future Candidate Gravity without modifying RQIR Candidate Gravity authority"
+    "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md"
   },
   "first_wave": {
     "denominator_frozen": true,
@@ -34,56 +33,44 @@
     "total": 5,
     "terminal_completed": 0,
     "terminal_coverage_percent": 0.0,
-    "queue_file": "third_wave/README.md",
-    "targets": [
-      "T3-01 generalized bespoke / dual-resonance UV amplitudes",
-      "T3-02 full Planck-crossover asymptotic-safety amplitude vector",
-      "T3-03 nonclassical interface discriminator against C2/C3/C3b",
-      "T3-04 nonlinear postquantum-classical consistency",
-      "T3-05 concrete loop/canonical/discrete QG Lorentzian observable"
-    ],
-    "active_model": {
+    "primary_active": {
       "benchmark_id": "KMQGB-T3-M01-BESPOKE-UV",
-      "research_target": "BESPOKE-DUAL-RESONANCE-UV-001",
       "status": "ACTIVE",
       "current_task_percent_estimate": 60,
       "first_blocker": "BESPOKE_CONCRETE_UNITARY_POINT_AND_JOINT_VECTOR_FREEZE",
-      "new_results": [
-        "pole support alone is insufficient for global UV identification because broader bespoke dual-resonance constructions admit customizable mass spectra",
-        "published unitarity work rules out the analyzed asymptotically nonlinear Regge trajectories and restricts viable asymptotically linear bespoke subclasses",
-        "under generalized-Virasoro assumptions, overdetermined nonlinear spectral constraints select the string spectrum, establishing a rigidity-by-overconstraint prototype"
-      ],
       "joint_target": "I_UV={pole support,residues/spins,crossing/duality,Regge trajectory,high-energy bounds/sum rules,low-energy coefficient correlations}"
+    },
+    "parallel_preflight": {
+      "benchmark_id": "KMQGB-T3-M03-NONCLASSICAL-INTERFACE",
+      "status": "PREFLIGHT",
+      "current_task_percent_estimate": 20,
+      "file": "models/nonclassical_interface/preflight.md",
+      "new_result": "end-state probe entanglement alone is not accepted as theory-independent KG evidence; mediator attribution against C4/C6 and classical-gravity/quantum-matter alternatives is required",
+      "provisional_vector": "I_NC={E_AB,chi_R^grav,O_ordered^grav,N_grav,C3_plus,Ward/contact,mediator-null controls}"
     }
   },
   "candidate_gravity_design_lessons": {
-    "core_rule": "Do not build KG novelty around new noise, Yukawa behavior, decoherence, UV softness, scale-free UV scaling, pole support, higher derivatives, or a mere nonzero GR residual alone.",
+    "core_rule": "Do not build KG novelty around a single qualitative feature.",
     "preferred_direction": "linked multi-channel nonclassical interface signature from one parent dynamics",
-    "rigidity_principle": "prefer overconstrained or isolated solution manifolds after consistency plus comparator constraints; count remaining tunable functions/parameters explicitly",
-    "priority_components": [
-      "J mean source",
-      "N symmetrized noise",
-      "retarded response",
-      "ordered/noncommuting response",
-      "higher cumulants",
-      "entanglement/non-LOCC witness",
-      "Ward/Bianchi/contact identities"
-    ],
+    "rigidity_principle": "prefer overconstrained or isolated solution manifolds after consistency plus comparator constraints",
+    "mediator_attribution_principle": "if entanglement/nonclassical transfer is used, identify the gravitational transfer channel and profile quantized-matter/non-gravitational C4/C6 explanations",
     "globally_authorized_robust_unique_qg_residuals": 0
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "authoritative_research_iteration_observed": 566,
+    "authoritative_research_iteration_observed": 568,
     "model_readiness_percent": 24,
-    "active_heavy_work": "rank11 run 34168897005 last directly verified in_progress",
-    "coordinate": "(+2.5e-6,-1.25e-6)"
+    "rank11_workflow_run": 34168897005,
+    "rank11_workflow_state": "completed_success",
+    "raw_authority_state": "CURRENT_QG_FRONT still lists rank11 active and requires raw-valid consumption before rank12 authorization",
+    "scientific_guardrail": "workflow success alone is not RQIR authority"
   },
   "next_actions": [
     "T3-01: freeze one concrete non-string bespoke amplitude point/subclass surviving published unitarity restrictions",
-    "T3-01: compare the concrete point and type-II string using I_UV and state which assumptions produce generalized-Virasoro rigidity",
-    "Continue maintaining Candidate Gravity design priors and rigidity audit requirements",
-    "After T3-01 closure prioritize T3-03 nonclassical interface discriminator because it is most directly useful for future KG construction",
-    "Do not alter historical first-wave 9/9 or second-wave 5/5 denominators",
-    "Do not launch KMQGB heavy shared-runner jobs while external RQIR heavy chain remains active"
+    "T3-01: compare type-II string and the concrete point using full I_UV",
+    "T3-03 preflight: freeze explicit two-probe setup and mediator-attribution/null-control protocol",
+    "T3-03: derive comparator predictions for C2/C3/C3b/C4/C6 before any KG ansatz proposal",
+    "Maintain KG design-prior and recovery artifacts on every reusable lesson",
+    "Do not launch a competing KMQGB heavy shared-runner job until RQIR raw authority consumes rank11 and the next heavy-chain state is explicit"
   ]
 }
