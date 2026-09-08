@@ -1,0 +1,12 @@
+{
+  "benchmark_id": "KMQGB-T5-M01-SPIN2-SOFT-UNIVERSALITY",
+  "realization": "WEINBERG-SOFT-SPIN2-UNIVERSAL-001",
+  "terminal": true,
+  "status": "PASS_RQIR_GATE",
+  "objective": "SPIN2_UNIVERSAL_COUPLING_ATTRIBUTION_ESTABLISHED",
+  "main_result": "leading soft massless spin-2 gauge/Lorentz consistency forces universal coupling across hard matter legs",
+  "adversary_defeated_in_scope": "arbitrarily tuned scalar mass charges reproducing Newtonian 1/r only in a selected nonrelativistic sector",
+  "surviving_requirement": "combine universal spin-2/T_mn Ward structure with non-EB channel, commutator-sensitive response, contact closure and relational observables",
+  "global_qg_uniqueness": false,
+  "candidate_gravity_lesson": "gravity attribution should be consistency-derived, not potential-fit"
+}
