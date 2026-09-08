@@ -1,0 +1,18 @@
+{
+  "benchmark_id": "KMQGB-T3-M01-BESPOKE-UV",
+  "terminal": true,
+  "status": "PASS_RQIR_GATE",
+  "objective": "CLOSED_CHANNEL_RIGIDITY_BOUNDARY_ESTABLISHED",
+  "concrete_adversary": {
+    "id": "VS-DEFORM-LAMBDA2-D4-001",
+    "lambda": 2,
+    "dimension": 4,
+    "string_point_lambda": 1,
+    "scoped_consistency": "reported D=4 partial-wave positivity for lambda>=0 in analyzed family"
+  },
+  "weak_assumption_result": "same-channel non-string lambda deformations survive crossing/level-truncation/soft-graviton/positivity-type constraints",
+  "rigidity_result": "superpolynomial Regge softness plus level truncation selects Virasoro-Shapiro uniquely within the frozen fully permutation-symmetric bootstrap class",
+  "generic_deformation_uv_status": "Regge scaling no better than pure GR; not a bona fide UV completion under the strong string-softness criterion",
+  "global_string_uniqueness": false,
+  "candidate_gravity_lesson": "seek isolated or low-dimensional solutions produced by independent overconstraints rather than novelty in one tunable observable"
+}
