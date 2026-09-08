@@ -1,0 +1,56 @@
+{
+  "candidate_id": "PREANSATZ-NONE",
+  "authority": {
+    "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+    "commit_or_blob": "methodology-example-only",
+    "parent_object_ref": null
+  },
+  "parent_dynamics": {
+    "representation": null,
+    "object_ref": null,
+    "declared_domain": null
+  },
+  "parameters": [],
+  "observable_blocks": [],
+  "comparators": [],
+  "covariance": {
+    "matrix_ref": null,
+    "provenance": "no candidate observable yet",
+    "cross_block_correlations_included": true
+  },
+  "attribution_stack": {
+    "quantum": "BLOCKED",
+    "mediator": "BLOCKED",
+    "gravity_spin2": "BLOCKED",
+    "locality": "BLOCKED",
+    "relational_qrf": "BLOCKED",
+    "detector": "BLOCKED",
+    "state": "BLOCKED",
+    "rigidity": "BLOCKED"
+  },
+  "rigidity": {
+    "cross_order": {"status": "BLOCKED"},
+    "intervention": {"status": "BLOCKED"},
+    "holdout": {"status": "BLOCKED", "shared_parameter_retuning_on_holdout": false},
+    "minimal_suite": {"status": "BLOCKED"}
+  },
+  "promotion_gates": {
+    "G0": {"status": "BLOCKED", "evidence_refs": [], "scope": "no parent dynamics"},
+    "G1": {"status": "BLOCKED", "evidence_refs": [], "scope": "no response"},
+    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "no physical basis"},
+    "G3": {"status": "BLOCKED", "evidence_refs": [], "scope": "no common-domain comparator object"},
+    "G4": {"status": "BLOCKED", "evidence_refs": [], "scope": "attribution not instantiated"},
+    "G5": {"status": "BLOCKED", "evidence_refs": [], "scope": "full comparator matching absent"},
+    "G6": {"status": "BLOCKED", "evidence_refs": [], "scope": "no COR"},
+    "G7": {"status": "BLOCKED", "evidence_refs": [], "scope": "no global profile"},
+    "G8": {"status": "BLOCKED", "evidence_refs": [], "scope": "no projected identifiability"},
+    "G9": {"status": "BLOCKED", "evidence_refs": [], "scope": "no rigidity object"},
+    "G10": {"status": "BLOCKED", "evidence_refs": [], "scope": "promotion forbidden"}
+  },
+  "promotion": {
+    "ansatz_promoted": false,
+    "robust_global_residual": false,
+    "fisher_promoted": false,
+    "resources_promoted": false
+  }
+}
