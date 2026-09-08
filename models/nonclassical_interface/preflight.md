@@ -1,95 +1,124 @@
 # T3-03 Preflight — Nonclassical interface / mediator-attribution discriminator
 
 Benchmark target: KMQGB-T3-M03-NONCLASSICAL-INTERFACE
-State: PREFLIGHT / NOT YET TERMINAL
+Concrete setup ID: `NC-TWOMASS-BRANCH-MEDIATOR-001`
+State: ACTIVE PREFLIGHT / NONTERMINAL
 Purpose: design a Candidate-Gravity-facing discriminator that survives C2/C3/C3b and ordinary quantum-matter/interface nuisances.
 
-## Why entanglement alone is no longer treated as sufficient
+## Why entanglement alone is not sufficient
 
-The modern gravity-mediated-entanglement literature contains an active interpretational/model-level dispute.
+The modern gravity-mediated-entanglement literature contains an active model/interpretation dispute. The benchmark therefore does not use final probe entanglement by itself as a universal certificate of a quantum gravitational mediator.
 
-Relevant current positions include:
+The stronger requirement is **mediator attribution**: any nonclassical transfer must be attributable to the gravitational interface after profiling ordinary quantized-matter/non-gravitational explanations and classical/stochastic gravity comparators.
 
-1. Quantum-information witness literature argues that if two probes become entangled through a local mediator under the stated information-theoretic assumptions, the mediator must possess nonclassical features.
-2. Aziz–Howl (Nature 2025) argue that once matter is treated in QFT, a locally classical gravitational framework can transmit quantum information and generate entanglement in their construction.
-3. Marletto–Oppenheim–Vedral–Wilson (2025) dispute that conclusion, arguing that the analyzed construction does not produce the claimed entanglement and that any entangling contribution would be mediated by quantized matter rather than classical gravity.
-4. Additional 2026 literature continues the dispute, including analyses defending the locality-based witness in specified collapse/classical models and an accepted PRD article arguing that gravity-induced entanglement is not fully theory-independent across all classical-gravity/quantum-matter frameworks.
+## Frozen two-probe source/detector geometry
 
-KMQGB must not resolve a live foundational dispute by slogan. Instead it converts the dispute into a stronger discriminator requirement.
+Use two neutral mesoscopic probes `A` and `B`, with masses `m_A,m_B`, each coherently prepared in two localized branches `L,R`.
 
-## New requirement — mediator attribution
+Let the four branch separations be
 
-Observation of probe entanglement `E_AB > 0` is not by itself the target.
+`d_ab = |x_A^a-x_B^b|`,  `a,b in {L,R}`,
 
-The target must demonstrate that the entangling/noncommuting information transfer is attributable to the **gravitational interface** after profiling ordinary quantum-matter and non-gravitational mediator channels.
+and let the isolated interaction interval be `tau`.
 
-Provisional linked vector:
+In the ideal weak-field Newtonian branch-phase benchmark,
 
-`I_NC = {E_AB, chi_R^grav, O_ordered^grav, N_grav, C3_plus, Ward/contact, mediator-null controls}`
+`phi_ab = G m_A m_B tau/(hbar d_ab)`.
 
-where
+The local single-probe phases are nuisance directions. The entangling branch invariant is the double difference
 
-- `E_AB`: probe entanglement/non-LOCC witness;
-- `chi_R^grav`: calibrated retarded gravitational response;
-- `O_ordered^grav`: ordered/noncommuting response component not fixed by the symmetrized noise alone;
-- `N_grav`: symmetrized gravitational noise/covariance;
-- `C3_plus`: at least one higher cumulant/higher-point statistic;
-- `Ward/contact`: gauge/Ward/Bianchi/contact identities linking source and response;
-- `mediator-null controls`: experimental/theoretical controls excluding C4/C6 ordinary quantum-matter or non-gravitational transfer explanations.
+`Theta = phi_LL + phi_RR - phi_LR - phi_RL`.
 
-## Comparator logic
+For the ideal initial product state `|+>_A |+>_B` with only branch-dependent phases applied, the two-qubit concurrence is
 
-A useful future KG signal should fail to be reproduced by all of the following under the same source preparation and calibration:
+`C_AB = |sin(Theta/2)|`.
 
-- C2 stochastic gravity: can reproduce classical stochastic metric fluctuations/noise;
-- C3 measurement-feedback gravity: can reproduce interaction plus compulsory decoherence/noise in a classical channel;
-- C3b postquantum classical gravity: can reproduce stochastic spacetime modes and decoherence;
-- C4 ordinary quantum matter / non-gravitational quantum mediator nuisance;
-- C6 quantum source statistics + classical interface alternatives.
+This relation is not declared a universal prediction of all quantum-gravity theories; it is the frozen calibration geometry used to define the source branches and the simplest interaction-phase observable.
 
-The key question becomes:
+## Mediator-attribution vector
 
-`Can one comparator reproduce the entire linked vector I_NC from one admissible parent dynamics?`
+The target is not `C_AB>0` alone. Freeze the linked vector
 
-not merely
+`I_NC = {Theta, E_AB, chi_R^grav, rho_comm^grav, N_grav, K3_plus, Ward/contact, mediator-null controls}`
 
-`Can it produce entanglement?`
+with
+
+- `Theta`: branch double-difference interaction phase;
+- `E_AB`: entanglement/non-LOCC witness (concurrence/negativity as appropriate to the concrete detector model);
+- `chi_R^grav`: calibrated retarded gravitational response obtained from a controlled source modulation;
+- `rho_comm^grav`: commutator/ordered spectral component, schematically `i<h(x),h(y)>_comm`, or an operational detector statistic proven equivalent to it in the chosen model;
+- `N_grav`: symmetrized metric/force noise covariance;
+- `K3_plus`: at least one connected third-or-higher gravitational phase/force cumulant;
+- `Ward/contact`: gauge/Ward/Bianchi/contact identities linking source, response and detector terms;
+- `mediator-null controls`: explicit null channels and comparator fits excluding ordinary quantized matter, electromagnetic/Casimir transfer, source-state leakage and classical-feedback explanations.
+
+The exact operator definition of `rho_comm^grav` remains to be chosen with the detector model; it is deliberately not replaced by `chi_R` alone because a classical dynamical field can possess a retarded response without possessing a noncommuting operator algebra.
+
+## Comparator requirements
+
+The same frozen source geometry must be evaluated under:
+
+- **C2 stochastic gravity:** can reproduce classical stochastic mean/noise and retarded response; field operator commutator is absent as a fundamental metric algebra, but effective detector quantum statistics must still be profiled honestly.
+- **C3 measurement-feedback gravity:** interaction plus compulsory decoherence/noise; standard local classical channel is non-entangling in its declared Gaussian realization.
+- **C3b postquantum classical gravity:** stochastic spacetime modes and decoherence; no automatic assumption of zero higher statistics.
+- **C4 ordinary quantum matter/non-gravitational mediator:** must be included because quantized matter can in principle transport quantum information even if gravity is classical.
+- **C6 quantum source statistics + classical detector/interface:** branch quantum statistics can leak into detector correlations without a quantum gravitational mediator.
+
+A KG-specific direction is admitted only if **one admissible comparator parent dynamics cannot reproduce the full vector simultaneously** after the same nuisance/source calibration.
+
+## Operational null-control protocol — frozen structure
+
+The theoretical benchmark requires the following controls before any mediator attribution claim:
+
+1. **Branch-coherence null:** replace each coherent spatial superposition by the corresponding incoherent mixture while preserving branch populations and classical mass distribution as closely as the model permits. This tests whether the candidate statistic depends on source coherence rather than only classical branch occupancy.
+2. **Local-phase quotient:** remove all phases expressible as independent functions of A-only or B-only branch labels; only double-difference/nonlocal combinations such as `Theta` survive.
+3. **Non-gravitational mediator ledger:** every electromagnetic, Casimir/patch-potential, phononic, optical-control or shared-environment quantum channel must enter C4 rather than being assumed absent by wording.
+4. **Mass/distance scaling control:** require the gravitational candidate channel to follow the frozen source-response scaling within its validity regime while nuisance channels are independently profiled.
+5. **Ordered/noise cross-check:** fit symmetrized noise and retarded response first; then ask whether the ordered/commutator-sensitive statistic contains an independent component not reconstructible by the same positive classical stochastic kernel.
+6. **Higher-statistics cross-check:** compare at least one connected `K3_plus` observable so agreement at the two-point level cannot close the audit.
+
+These are benchmark requirements, not a claim that all six controls are experimentally easy with present hardware.
+
+## Literature-driven strengthening
+
+The 2025 paper *Beyond entanglement: Diagnosing quantum mediator dynamics in gravitationally mediated experiments* explicitly studies a three-oscillator mediator model and shows that different mediator regimes produce qualitatively different terminal entanglement dynamics. This supports using **time-dependent mediator fingerprints**, not a single final entanglement number.
+
+The 2026 literature also sharpens the attribution issue: locality-based witness analyses defend the nonclassicality inference under their assumptions, while other analyses emphasize that apparent entanglement must not be assigned to gravity if a quantized matter interaction actually carries the transfer. The benchmark therefore keeps locality and mediator attribution as explicit assumptions/tests rather than slogans.
+
+## Current F0-F7 style status
+
+| Gate | State | Reason |
+|---|---|---|
+| setup freeze | PASS | explicit two-probe branch geometry and phase invariant frozen |
+| comparator span | PASS_PARTIAL | C2/C3/C3b/C4/C6 required explicitly |
+| mediator attribution | ACTIVE | null-control structure frozen; exact detector/operator implementation of `rho_comm^grav` remains open |
+| ordered/noncommuting discriminator | ACTIVE | theoretical target defined; operational estimator still to freeze |
+| higher statistics | ACTIVE | `K3_plus` mandatory but concrete estimator/model predictions not yet derived |
+| identifiability | BLOCKED | cannot precede comparator predictions for full `I_NC` |
+| resources | BLOCKED | no apparatus claim before identifiability |
 
 ## Candidate Gravity design consequence
 
-The preferred future KG architecture should make the following quantities **not independently tunable**:
+A future KG model should make the components of `I_NC` **not independently tunable**. The model must derive their relations from one parent dynamics. This is the nonclassical-interface form of the `rigidity by overconstraint` principle found in T3-01.
 
-1. entangling channel strength;
-2. retarded response;
-3. symmetrized noise;
-4. ordered/noncommuting component;
-5. higher cumulants;
-6. Ward/contact terms.
+## Exact next tasks
 
-A robust model would predict exact relations among them. This is the interface analogue of the third-wave UV rigidity principle.
-
-## Current strongest hypothesis
-
-A promising discriminator is a **joint entanglement + ordered-response/noncommutativity + higher-statistics witness with mediator attribution**.
-
-This is only a design hypothesis. No globally robust KG residual has yet been derived.
-
-## Next technical tasks
-
-1. Freeze one explicit two-probe source-detector setup.
-2. Define an operational mediator-attribution/null-control protocol.
-3. Derive `I_NC` for C2, C3, C3b, C4/C6 representatives before proposing a KG ansatz.
-4. Identify which ordered/noncommuting observable cannot be reconstructed from a positive classical stochastic kernel with the same `J,N,chi_R`.
-5. Only then use the surviving direction as a design target for Candidate Gravity.
+1. Choose an explicit detector coupling/observable for the commutator-sensitive `rho_comm^grav` component.
+2. Derive the full `I_NC` predictions for C2 and C3 first, then C3b/C4/C6.
+3. Determine whether time-order reversal/source-modulation protocols provide an operational estimator of the ordered component without importing a quantum-mediator assumption.
+4. Freeze one higher-cumulant observable compatible with the same branch geometry.
+5. Only after comparator profiling, promote any surviving direction into `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md` as more than a hypothesis.
 
 ## Operational preflight completion
 
-20%.
+**45%**.
 
 ## References
 
-- Marletto & Vedral, Rev. Mod. Phys. 97, 015006 (2025), review of quantum-information tests of gravity.
-- Aziz & Howl, Nature 646, 813–817 (2025), classical-gravity/QFT-matter entanglement claim.
-- Marletto, Oppenheim, Vedral & Wilson, arXiv:2511.07348 (2025), critique / mediator-attribution response.
-- Di Biagio, Phys. Rev. D accepted 1 Sep 2026, gravity-induced entanglement not theory-independent witness under all frameworks.
-- Feng, Vedral & Marletto, Phys. Rev. D 113, 104055 (2026), collapse-based-model analysis supporting the locality-based nonclassicality witness in the stated setting.
+1. Marletto & Vedral, Phys. Rev. Lett. 119, 240402 (2017), two-mass entanglement witness.
+2. Marletto & Vedral, Rev. Mod. Phys. 97, 015006 (2025), quantum-information methods for laboratory gravity tests.
+3. Martín-Martínez & Perche, Phys. Rev. D 108, L101702 (2023), locality and what GME can establish.
+4. Christopher & Shankaranarayanan, Phys. Rev. D 112, L081502 (2025), mediator dynamics beyond a single entanglement witness.
+5. Marletto, Oppenheim, Vedral & Wilson, arXiv:2511.07348 (2025), mediator-attribution critique.
+6. Feng, Vedral & Marletto, Phys. Rev. D 113, 104055 (2026), locality-based witness analysis for collapse/classical models.
+7. Schneider, Huggett & Linnemann, Classical and Quantum Gravity (accepted/published 2026), Newton-Cartan mediator analysis.
