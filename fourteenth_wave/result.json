@@ -1,0 +1,16 @@
+{
+  "wave": 14,
+  "status": "TERMINAL",
+  "terminal_coverage": "5/5",
+  "terminal_coverage_percent": 100.0,
+  "targets": [
+    {"id":"KMQGB-T14-M01-BLOCK-LIBRARY","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T14-M02-RELATIVE-DESIGN-COST","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T14-M03-MINIMAL-SUBSET","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T14-M04-LOBO-ROBUSTNESS","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T14-M05-ATTRIBUTION-COVERAGE","status":"PASS_RQIR_GATE"}
+  ],
+  "protocol":"protocol/MINIMAL_DISCRIMINATING_TEST_SUITE.md",
+  "reference_code":"code/minimal_test_suite_reference.py",
+  "kg_lesson":"A future KG proposal should use a compact, redundant, attribution-complete and predictive pre-registered test suite selected by post-comparator geometry, not a post-hoc menu of observables."
+}
