@@ -1,0 +1,14 @@
+{
+  "benchmark_id": "KMQGB-S2-M03-CLASSICAL-CHANNEL",
+  "concrete_realization_id": "KTM-OSCILLATOR-MEASUREMENT-FEEDBACK-001",
+  "wave": 2,
+  "terminal": true,
+  "status": "EXACT_COMPARATOR_IDENTITY",
+  "comparator": "C3 classical-channel / measurement-feedback gravity",
+  "frozen_master_equation": "d rho/dt = -(i/hbar)[H0,rho] -(i/hbar)K[x1 x2,rho] -(K/(2hbar)) sum_k [x_k,[x_k,rho]]",
+  "interaction_strength": "K=2 G m1 m2 / d^3",
+  "defining_link": "minimum symmetric decoherence strength is fixed by the same K that generates the Newtonian bilinear interaction",
+  "entanglement_result": "standard symmetric KTM classical channel does not generate entanglement for the declared Gaussian systems",
+  "comparator_residual": 0,
+  "scope_guardrail": "dissipative classical-channel variants may change heating/thermalization; non-entangling measurement-feedback mediation, not secular heating, is the retained C3 fingerprint"
+}
