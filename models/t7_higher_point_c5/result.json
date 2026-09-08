@@ -1,0 +1,7 @@
+{
+  "benchmark_id": "KMQGB-T7-M01-HIGHERPOINT-C5",
+  "status": "OPERATIONALLY_DEGENERATE",
+  "claim": "HIGHER_POINT_OR_NONGAUSSIANITY_AS_STANDALONE_KG_RESIDUAL",
+  "result": "Perturbative quantum GR/C5 already contains nonlinear graviton interactions, loops, higher-point/non-Gaussian correlations and higher-curvature EFT modifications.",
+  "kg_lesson": "Higher-point observables are supporting rigidity channels only; novelty requires a nonzero same-order residual after the full C5 exchange/contact/loop/EFT/state/Ward quotient."
+}
