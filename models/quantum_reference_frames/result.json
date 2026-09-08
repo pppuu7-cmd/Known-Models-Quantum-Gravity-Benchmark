@@ -1,0 +1,11 @@
+{
+  "benchmark_id": "KMQGB-T4-M04-QRF-RELATIONAL",
+  "realization": "QRF-SEMICLASSICAL-SPACETIME-HOLE-2025-001",
+  "terminal": true,
+  "status": "PASS_RQIR_GATE",
+  "objective": "QRF_REDUNDANCY_QUOTIENT_ESTABLISHED",
+  "main_result": "branchwise localization, event-point identity, and some superposition/entanglement descriptions can change under quantum reference-frame transformations while relational physics is unchanged",
+  "forbidden_novelty_direction": "bare coordinate/branch metric or event localization without a relational invariant",
+  "surviving_requirement": "Candidate Gravity observables must be formulated as QRF/diffeomorphism-invariant relational source-detector quantities before comparator profiling",
+  "candidate_gravity_lesson": "KG novelty must be relational before it is quantum"
+}
