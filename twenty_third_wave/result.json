@@ -1,0 +1,14 @@
+{
+  "wave": 23,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "PASS_COMPARATOR_AUTHORITY": 1,
+    "FAIL_RIGIDITY_UNPROTECTED_ZERO": 1,
+    "PASS_RQIR_GATE_MANDATORY": 3
+  },
+  "main_lesson": "Quartic-first must mean no candidate-specific independent cubic deformation beyond the full matched C5 three-point sector, not an all-orders literal C3=0 unless a parent mechanism protects it radiatively.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
