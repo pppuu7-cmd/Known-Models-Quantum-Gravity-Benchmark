@@ -1,33 +1,36 @@
 {
-  "schema_version": "4.4",
+  "schema_version": "4.5",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 47,
-  "phase": "WAVES_1_TO_24_TERMINAL__PARENT_PRINCIPLE_SEARCH_FRONT",
+  "kmqgb_iteration": 50,
+  "phase": "WAVES_1_TO_29_TERMINAL__CROSS_REPRESENTATION_AND_CROSS_BACKGROUND_RIGIDITY__NOVEL_PARENT_PRINCIPLE_SEARCH",
+  "readiness_metrics": {
+    "rubric": "protocol/READINESS_METRICS.md",
+    "repository_readiness_R1_percent": 90,
+    "kmqgb_methodology_material_readiness_R2_percent": 86,
+    "candidate_gravity_scientific_readiness_R3_percent": 24,
+    "reporting_rule": "always report R1, R2, R3 and current-task R4 separately; explain every score change"
+  },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
-    "waves2_to_24": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
+    "waves2_to_29": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
-    "preferred_preansatz_architecture": "full_matched_C5_through_3point + parent_fixed_candidate_specific_quartic_or_higher_cross_regime_structure",
-    "string_adversary": "protocol/QUARTIC_FIRST_STRING_STRUCTURAL_ADVERSARY.md",
-    "radiative_protection": "protocol/RADIATIVE_PROTECTION_AND_FULL_C5_THREE_POINT_GATE.md",
-    "parent_principle_audit": "protocol/PARENT_PRINCIPLE_AUDIT.md",
-    "parent_principle_requirements": {
-      "rigidity": "derive a finite/low-dimensional tensor and momentum hierarchy before data",
-      "novelty": "leave a common-domain relation outside full C5, string-like/dual-resonance, asymptotic-safety and other comparator manifolds"
-    },
-    "mandatory_rules": [
-      "quartic_first_means_no_candidate_specific_cubic_beyond_full_C5_not_literal_total_C3_zero",
-      "radiative_operator_mixing_and_RG_closure_are_mandatory",
-      "string_like_quartic_first_rigidity_is_a_mandatory_structural_comparator",
-      "parent_principle_must_select_not_merely_constrain_kernel",
-      "dispersion_growth_class_must_be_declared_before_positivity_or_moment_tests",
-      "native_projection_requires_invariant_rank_completion"
-    ]
+    "preferred_preansatz_architecture": "full_matched_C5_through_3point + candidate_specific_quartic_or_higher parent with cross_order + cross_representation + cross_background rigidity",
+    "amplitude_saturation": "protocol/AMPLITUDE_PARENT_PRINCIPLE_SATURATION.md",
+    "cross_representation_rigidity": "protocol/CROSS_REPRESENTATION_RIGIDITY.md",
+    "cross_representation_coverage": "protocol/CROSS_REPRESENTATION_COMPARATOR_COVERAGE.md",
+    "cross_background_rigidity": "protocol/CROSS_BACKGROUND_RIGIDITY.md",
+    "fresh_modern_comparator": "models/state_dependent_nonlocal/audit.md",
+    "current_parent_principle_requirement": {
+      "rigidity": "derive low-dimensional tensor/momentum/state hierarchy before data",
+      "cross_representation": "same parent parameters predict scattering + CTP/real-time + relational/channel blocks",
+      "cross_background": "same parent parameters predict allowed flat and curved background observables",
+      "novelty": "survive full C5, C4/C6, string-like/dual-resonance, asymptotic-safety and state-dependent nonlocal comparators"
+    }
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
@@ -42,20 +45,18 @@
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
-    "design_priors": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
-    "design_priors_postwave15": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS_POSTWAVE15.md",
-    "parent_principle_audit": "protocol/PARENT_PRINCIPLE_AUDIT.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_047.md"
+    "readiness_metrics": "protocol/READINESS_METRICS.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_050.md"
   },
-  "next_wave_status": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH__NO_ANSATZ_PROMOTION",
+  "next_wave_status": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH__CROSS_REPRESENTATION_REQUIRED__NO_ANSATZ_PROMOTION",
   "next_actions": [
-    "Refresh external RQIR authority before every readiness/heavy-compute claim",
-    "Search for a minimal parent principle not already equivalent to known string/bootstrap or asymptotic-safety architectures",
-    "Require the principle to derive quartic/higher tensor and momentum relations with few parameters",
-    "Require radiative protection/closure relative to full C5",
-    "Profile derived hierarchy immediately against string-like, asymptotic-safety and full-C5 comparator spaces",
-    "Require correct dispersion class and exact kinematic lift",
-    "Reject principles that only constrain but do not select kernel",
-    "Do not promote KG or launch heavy compute until a concrete structural object survives all upstream gates"
+    "Refresh external RQIR authority before every R3/heavy-compute statement",
+    "Search for a parent principle that fixes rather than merely parameterizes state-dependent/nonlocal kernel structure",
+    "Require shared parameters across scattering, real-time CTP and relational/channel representations",
+    "Use curved-background observables only as shared-parameter rigidity blocks, not standalone novelty",
+    "Profile any proposed principle immediately against full C5, C4/C6, string-like/dual-resonance, asymptotic-safety and state-dependent nonlocal comparators",
+    "Require radiative/RG closure, correct dispersion class and exact kinematic projection lift",
+    "Keep heavy compute idle until a concrete structural object survives upstream gates",
+    "Do not promote KG before a robust global comparator-subtracted residual exists"
   ]
 }
