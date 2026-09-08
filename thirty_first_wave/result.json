@@ -1,0 +1,16 @@
+{
+  "wave": 31,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "PASS_SCOPED_DISPERSIVE_GATE": 1,
+    "PASS_RQIR_GATE_MANDATORY": 1,
+    "PASS_FAIL_CLOSED_SCOPE_RULE": 1,
+    "PASS_D_NONLOCAL_SEPARATE_GATE": 1,
+    "PASS_SCOPED_NO_NEW_DISPERSIVE_SHIFT": 1
+  },
+  "main_lesson": "A dispersively controlled candidate-specific quartic/higher shift beyond full C5 requires different UV spectral/Regge support in the local branch, or an explicit nonlocal dispersion-class escape. Uncontrolled subtraction constants remain BLOCKED rather than being assigned an origin.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
