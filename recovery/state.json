@@ -1,126 +1,103 @@
 {
-  "schema_version": "2.7",
+  "schema_version": "3.0",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 27,
-  "phase": "THIRD_WAVE_ACTIVE__FOURTH_WAVE_PREFLIGHT_ONLY",
+  "kmqgb_iteration": 28,
+  "phase": "WAVES_1_TO_5_TERMINAL__NEXT_WAVE_NOT_YET_FROZEN",
   "firewall": {
     "writes": "KMQGB repository only",
     "external_rqir_access": "read_only",
     "shared_runner_policy": "do_not_compete_while_RQIR_rank12_or_successor_heavy_chain_is_active"
   },
-  "design_recovery": {
-    "design_priors": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
-    "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
-    "third_wave": "third_wave/README.md",
-    "fourth_wave_preflight": "fourth_wave/PREFLIGHT.md"
+  "wave_coverage": {
+    "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
+    "wave2": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
+    "wave3": {
+      "total": 5,
+      "terminal_completed": 5,
+      "percent": 100.0,
+      "immutable": true,
+      "rollup": {"PASS_RQIR_GATE": 2, "BLOCKED_MISSING_REQUIRED_OBJECT": 3}
+    },
+    "wave4": {
+      "total": 5,
+      "terminal_completed": 5,
+      "percent": 100.0,
+      "immutable": true,
+      "rollup": {"PASS_RQIR_GATE": 2, "OPERATIONALLY_DEGENERATE": 3}
+    },
+    "wave5": {
+      "total": 5,
+      "terminal_completed": 5,
+      "percent": 100.0,
+      "immutable": true,
+      "rollup": {"PASS_RQIR_GATE": 4, "OPERATIONALLY_DEGENERATE": 1}
+    }
   },
-  "first_wave": {
-    "denominator_frozen": true,
-    "total": 9,
-    "terminal_completed": 9,
-    "terminal_coverage_percent": 100.0,
-    "historical_status_immutable": true
-  },
-  "second_wave": {
-    "denominator_frozen": true,
-    "total": 5,
-    "terminal_completed": 5,
-    "terminal_coverage_percent": 100.0,
-    "historical_status_immutable": true
-  },
-  "third_wave": {
-    "denominator_frozen": true,
-    "total": 5,
-    "terminal_completed": 0,
-    "terminal_coverage_percent": 0.0,
-    "targets": [
-      {
-        "benchmark_id": "KMQGB-T3-M01-BESPOKE-UV",
-        "status": "ACTIVE",
-        "task_percent_estimate": 70,
-        "first_blocker": "BESPOKE_CLOSED_CHANNEL_RIGIDITY_BOUNDARY",
-        "new_result": "concrete non-string Coon q=1/2 point frozen in published unitary generalized-Veneziano region; not misused as same-channel closed-string comparator"
-      },
-      {
-        "benchmark_id": "KMQGB-T3-M02-AS-CROSSOVER",
-        "status": "ACTIVE",
-        "task_percent_estimate": 50,
-        "first_blocker": "AS_CONTACT_COMPLETE_CROSSOVER_VECTOR",
-        "joint_target": "I_AS={IR_GR,E_x,H_peak,W_peak,theta_dependence,A_UV,p_UV,contact_fraction,crossing_completion}"
-      },
-      {
-        "benchmark_id": "KMQGB-T3-M03-NONCLASSICAL-INTERFACE",
-        "status": "ACTIVE_PREFLIGHT",
-        "task_percent_estimate": 60,
-        "first_blocker": "ORDERED_COMPONENT_AND_COMPARATOR_VECTOR_FREEZE",
-        "joint_target": "I_NC={Theta,E_AB,Q_channel,chi_R^grav,rho_comm^grav,N_grav,K3_plus,Ward/contact,mediator-null controls}",
-        "new_result": "two-mass branch double-difference Theta plus supplementary optomechanical entanglement-breaking/non-EB channel readout frozen"
-      },
-      {
-        "benchmark_id": "KMQGB-T3-M04-PQCG-NONLINEAR",
-        "status": "ACTIVE",
-        "task_percent_estimate": 45,
-        "first_blocker": "PQCG_SAME_REALIZATION_NONLINEAR_CONSTRAINT_CLOSURE",
-        "joint_target": "I_PQNL={CP,DiffCov,H_i,H_0,Closure,Bianchi,MatterBackreaction,DOF}"
-      },
-      {
-        "benchmark_id": "KMQGB-T3-M05-CDT",
-        "status": "ACTIVE",
-        "task_percent_estimate": 50,
-        "first_blocker": "CDT_GEON_CONTINUUM_AND_LOR_REALTIME_MAP",
-        "realization": "CDT-4D-CURVATURE-CORRELATOR-GEON-2026-001"
-      }
+  "third_wave_terminal": [
+    {"id": "KMQGB-T3-M01-BESPOKE-UV", "status": "PASS_RQIR_GATE", "objective": "CLOSED_CHANNEL_RIGIDITY_BOUNDARY_ESTABLISHED"},
+    {"id": "KMQGB-T3-M02-AS-CROSSOVER", "status": "BLOCKED_MISSING_REQUIRED_OBJECT", "gate": "AS_CONTACT_COMPLETE_CROSSOVER_VECTOR"},
+    {"id": "KMQGB-T3-M03-NONCLASSICAL-INTERFACE", "status": "PASS_RQIR_GATE", "objective": "CLASSICAL_SPACETIME_DISCRIMINATOR_ARCHITECTURE_ESTABLISHED"},
+    {"id": "KMQGB-T3-M04-PQCG-NONLINEAR", "status": "BLOCKED_MISSING_REQUIRED_OBJECT", "gate": "PQCG_SAME_REALIZATION_NONLINEAR_CONSTRAINT_CLOSURE"},
+    {"id": "KMQGB-T3-M05-CDT", "status": "BLOCKED_MISSING_REQUIRED_OBJECT", "gate": "CDT_GEON_CONTINUUM_AND_LOR_REALTIME_MAP"}
+  ],
+  "fourth_wave_terminal": [
+    {"id": "KMQGB-T4-M01-NONGAUSSIAN-STOCHASTIC", "status": "PASS_RQIR_GATE", "objective": "HIGHER_SYMMETRIZED_CUMULANTS_NOT_UNIQUE"},
+    {"id": "KMQGB-T4-M02-CAUSAL-GEOMETRY", "status": "OPERATIONALLY_DEGENERATE", "claim": "INDEFINITE_CAUSAL_ORDER_AS_QUANTUM_GEOMETRY_CERTIFICATE"},
+    {"id": "KMQGB-T4-M03-SPACETIME-CROSSCORR", "status": "OPERATIONALLY_DEGENERATE", "claim": "SYMMETRIZED_SPATIAL_CORRELATION_GEOMETRY_AS_QG_CERTIFICATE"},
+    {"id": "KMQGB-T4-M04-QRF-RELATIONAL", "status": "PASS_RQIR_GATE", "objective": "QRF_REDUNDANCY_QUOTIENT_ESTABLISHED"},
+    {"id": "KMQGB-T4-M05-C4C6-ATTRIBUTION", "status": "OPERATIONALLY_DEGENERATE", "claim": "NEWTONIAN_PHASE_PLUS_NON_EB_PLUS_COMMUTATOR_AS_GRAVITY_ATTRIBUTION"}
+  ],
+  "fifth_wave_terminal": [
+    {"id": "KMQGB-T5-M01-SPIN2-SOFT-UNIVERSALITY", "status": "PASS_RQIR_GATE", "objective": "SPIN2_UNIVERSAL_COUPLING_ATTRIBUTION_ESTABLISHED"},
+    {"id": "KMQGB-T5-M02-TENSOR-POLARIZATION", "status": "PASS_RQIR_GATE", "objective": "TENSOR_POLARIZATION_ATTRIBUTION_ESTABLISHED"},
+    {"id": "KMQGB-T5-M03-COMMUTATOR-DETECTOR", "status": "PASS_RQIR_GATE", "objective": "DETECTOR_BACKACTION_QUOTIENT_ESTABLISHED"},
+    {"id": "KMQGB-T5-M04-NONLOCAL-CQ", "status": "OPERATIONALLY_DEGENERATE", "claim": "ENTANGLEMENT_OR_NON_EB_WITHOUT_LOCALITY_AS_QUANTUM_GRAVITY_CERTIFICATE"},
+    {"id": "KMQGB-T5-M05-RELATIONAL-CROSS-SPECTRUM", "status": "PASS_RQIR_GATE", "objective": "RELATIONAL_CAUSAL_ORDERED_KERNEL_ESTABLISHED"}
+  ],
+  "candidate_gravity_design": {
+    "globally_authorized_robust_unique_qg_residuals": 0,
+    "core_principle": "rigidity by independently motivated overconstraint from one parent dynamics",
+    "relational_kernel": "K_rel={N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}",
+    "gravity_attribution": "G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}",
+    "supporting_not_primary": ["higher symmetrized cumulants", "symmetrized spatial cross-correlations", "indefinite causal order without geometry attribution"],
+    "attribution_stack": [
+      "quantum attribution",
+      "mediator attribution",
+      "gravity/spin-2 attribution",
+      "locality/microcausality attribution",
+      "relational/QRF attribution",
+      "geometry attribution for causal/process claims",
+      "regulator/continuum attribution",
+      "rigidity/identifiability"
     ]
-  },
-  "fourth_wave": {
-    "status": "PREFLIGHT_ONLY",
-    "denominator_frozen": false,
-    "terminal_coverage_percent": null,
-    "file": "fourth_wave/PREFLIGHT.md",
-    "priority_pool": [
-      "non-Gaussian stochastic gravity comparator for K3_plus",
-      "causal/process structure with geometry attribution",
-      "cross-detector spacetime-fluctuation geometry",
-      "quantum-reference-frame/relational invariance",
-      "separate gravity quantum-channel target only if independent after T3-03",
-      "strong-field KG consistency deferred until a concrete KG ansatz exists"
-    ]
-  },
-  "candidate_gravity_design_lessons": {
-    "core_rule": "Do not build KG novelty around a single qualitative feature or endpoint statistic.",
-    "preferred_direction": "rigid multi-channel nonclassical gravitational interface from one parent dynamics",
-    "rigidity_principle": "independent consistency and observable relations should collapse comparator freedom to a low-dimensional or isolated solution manifold",
-    "mediator_attribution": "entanglement or non-EB quantum communication must be attributed to gravity after C4/C6 and hidden quantum-channel profiling",
-    "geometry_attribution": "indefinite causal order/process structure requires evidence tying the effect to quantum geometry rather than ordinary quantum control",
-    "full_crossover": "prefer time/frequency/Planck-crossover vectors to asymptotic or endpoint scalars",
-    "constraint_rule": "manifest covariance/complete positivity does not substitute for nonlinear constraint-algebra closure in the same realization",
-    "continuum_rule": "discrete/numerical signatures require regulator/volume/continuum mapping before model-level novelty claims",
-    "globally_authorized_robust_unique_qg_residuals": 0
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "authoritative_research_iteration_observed": 569,
+    "authoritative_research_iteration_observed": 570,
     "model_readiness_percent": 24,
     "quarter_new_coordinates_raw_closed": "11/12",
-    "quarter_total_coordinate_coverage": "15/16",
-    "rank11": "raw-consumed PASS Iteration 569",
     "active_heavy_work": {
       "rank": 12,
       "coordinate": "(+2.5e-6,+1.25e-6)",
       "run": 34175330006,
-      "job": 101903475600
+      "job": 101903475600,
+      "direct_run_status": "in_progress"
     }
   },
+  "design_recovery": {
+    "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
+    "design_priors": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
+    "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
+    "waves": ["third_wave/README.md", "fourth_wave/README.md", "fifth_wave/README.md"]
+  },
+  "next_wave_status": "NOT_YET_FROZEN",
   "next_actions": [
-    "T3-01: identify the minimal closed-channel assumption set that forces string rigidity or admits a same-channel non-string alternative",
-    "T3-02: extract and normalize the published Planck-crossover vector and wait for reproducible contact-complete A4 before terminal S-matrix classification",
-    "T3-03: derive I_NC for C2 and C3 first, translate the gravity-induced channel EB condition into the same response/noise notation, then profile C3b/C4/C6",
-    "T3-04: locate or derive same-realization nonlinear constraint content for the 2026 covariant classical-quantum gravity formulation",
-    "T3-05: extract CDT correlator fit values and audit volume/coupling/continuum and Lorentzian interpretation",
-    "Fourth-wave preflight: prioritize a non-Gaussian stochastic comparator against K3_plus but do not freeze a denominator before third wave is terminal 5/5",
-    "Maintain protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md and recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md after every reusable lesson",
-    "Do not dispatch competing KMQGB heavy work while RQIR rank12 or its authorized successor chain is active"
+    "Synchronize design priors and handoff to the completed waves 3-5 state",
+    "Freeze the next wave only around attacks on the combined attribution stack, not broad model cataloguing",
+    "Prioritize broader quantum-mediator spin-2/Ward adversaries, controlled-nonlocal causality, and an explicit parent influence/CTP template for K_rel + G_attr",
+    "Do not promote any Candidate Gravity ansatz until one parent dynamics yields a comparator-surviving joint residual",
+    "Do not dispatch competing KMQGB heavy work while RQIR rank12 or an authorized successor chain remains active"
   ]
 }
