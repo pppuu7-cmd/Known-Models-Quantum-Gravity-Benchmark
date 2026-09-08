@@ -1,0 +1,68 @@
+{
+  "candidate_id": "KMQGB-T16-03-GRAVITON-STATE-ONLY",
+  "screening_classification": "OPERATIONALLY_DEGENERATE",
+  "authority": {
+    "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+    "commit_or_blob": "sixteenth_wave frozen record",
+    "parent_object_ref": "sixteenth_wave/README.md#t16-03--graviton-state-only-deformation"
+  },
+  "parent_dynamics": {
+    "representation": "state_plus_existing_C5_dynamics",
+    "object_ref": "ordinary quantized GR/C5 with squeezed or nonthermal graviton state rho_h",
+    "declared_domain": "same perturbative quantum-GR dynamics; state sector varied"
+  },
+  "parameters": [
+    {"id": "rho_h", "role": "state", "sharing_scope": "global"}
+  ],
+  "observable_blocks": [],
+  "comparators": [
+    {
+      "id": "C5_STATE_SECTOR",
+      "validity_domain": "same perturbative quantum-GR domain",
+      "parameter_ids": ["rho_h"],
+      "prediction_ref": "C5 allows non-vacuum graviton state freedom",
+      "jacobian_ref": "state-profile direction; no dynamics residual",
+      "state_sector": "squeezed/nonthermal allowed"
+    }
+  ],
+  "covariance": {
+    "matrix_ref": null,
+    "provenance": "no residual authorized after state-sector containment",
+    "cross_block_correlations_included": true
+  },
+  "attribution_stack": {
+    "quantum": "PASS_SCOPED",
+    "mediator": "PASS_GRAVITON_SCOPED",
+    "gravity_spin2": "PASS_SCOPED",
+    "locality": "PASS_SCOPED",
+    "relational_qrf": "BLOCKED",
+    "detector": "BLOCKED",
+    "state": "FAIL_AS_NEW_DYNAMICS",
+    "rigidity": "FAIL_STATE_PROFILE_CONTAINMENT"
+  },
+  "rigidity": {
+    "cross_order": {"status": "BLOCKED"},
+    "intervention": {"status": "BLOCKED"},
+    "holdout": {"status": "BLOCKED", "shared_parameter_retuning_on_holdout": false},
+    "minimal_suite": {"status": "BLOCKED"}
+  },
+  "promotion_gates": {
+    "G0": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-03"], "scope": "C5 dynamics plus state defined"},
+    "G1": {"status": "BLOCKED", "evidence_refs": [], "scope": "no beyond-C5 response block"},
+    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "not needed after state containment"},
+    "G3": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-03"], "scope": "C5 state comparator identified"},
+    "G4": {"status": "BLOCKED", "evidence_refs": [], "scope": "not promoted"},
+    "G5": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-03"], "scope": "state-only change is inside C5 state freedom"},
+    "G6": {"status": "BLOCKED", "evidence_refs": [], "scope": "COR forbidden after containment"},
+    "G7": {"status": "BLOCKED", "evidence_refs": [], "scope": "global separation absent"},
+    "G8": {"status": "BLOCKED", "evidence_refs": [], "scope": "identifiability absent"},
+    "G9": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-03"], "scope": "state freedom supplies retuning direction"},
+    "G10": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-03"], "scope": "screening rejection; promotion forbidden"}
+  },
+  "promotion": {
+    "ansatz_promoted": false,
+    "robust_global_residual": false,
+    "fisher_promoted": false,
+    "resources_promoted": false
+  }
+}
