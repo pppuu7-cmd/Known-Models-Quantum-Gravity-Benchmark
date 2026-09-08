@@ -1,106 +1,111 @@
 # T3-05 Audit — concrete discrete/Lorentzian QG observable
 
-Benchmark ID: KMQGB-T3-M05-CDT
-Concrete realization ID: `CDT-4D-CURVATURE-CORRELATOR-GEON-2026-001`
-Role: concrete nonperturbative/discrete quantum-gravity observable control
-State: ACTIVE / NONTERMINAL
+Benchmark ID: KMQGB-T3-M05-CDT  
+Concrete realization ID: `CDT-4D-CURVATURE-CORRELATOR-GEON-2026-001`  
+Role: concrete nonperturbative/discrete quantum-gravity observable control  
+State: **TERMINAL — `BLOCKED_MISSING_REQUIRED_OBJECT`**
 
-## Why CDT is chosen for this target
+## Terminal decision
 
-T3-05 forbids benchmarking a program label such as “loop/discrete quantum gravity” without a concrete observable.
+The 2026 four-dimensional CDT curvature-correlator calculation is concrete and reproducible enough to establish a meaningful **finite-regulator subresult**:
 
-Causal Dynamical Triangulations (CDT) supplies a particularly clean realization because
+- different curvature operators show a common exponential massive-like falloff over an intermediate distance window;
+- the extracted masses agree between the operator choices within quoted errors;
+- the authors report no statistically significant volume dependence across the tested ensembles for the averaged early-time masses;
+- the mass changes during the rapid cosmological expansion phase, suggesting a real background/phase dependence rather than a universal constant mass in the explored ensembles.
 
-- the microscopic histories are assembled from **Lorentzian causal building blocks**;
-- the theory defines a nonperturbative gravitational path integral over causal triangulated geometries;
-- a well-defined Wick rotation is used to make Monte Carlo evaluation possible;
-- four-dimensional simulations possess a de-Sitter-like extended phase and quantitative geometric observables;
-- in 2026 a concrete four-dimensional curvature-correlator analysis reported a signal compatible with a massive geon-like state over a finite distance window.
+However, the benchmark's hard discriminator requires a regulator/continuum and physical Lorentzian observable map. The published work does not provide a continuum extrapolation along a line of constant physics for this geon mass, nor a derivation identifying the Wick-rotated Euclideanized correlator falloff with a real-time Lorentzian asymptotic/spectral pole.
 
-The benchmark therefore freezes the observable, not the entire CDT research program.
+Therefore T3-05 is terminally classified
 
-## Frozen 2026 realization
+`BLOCKED_MISSING_REQUIRED_OBJECT`
 
-Use the four-dimensional CDT simulation and curvature-curvature correlation analysis of Maas, Plätzer & Pressler, *Hints for a geon from causal dynamic triangulations*, Physics Letters B 879 (2026) 140600.
+at
 
-The authors measure correlators of different gravitational curvature operators in a four-dimensional CDT ensemble and find behavior consistent with a massive state over a certain distance window. The extracted behavior is reported to be independent of the particular curvature operators considered within the analysis, while the authors explicitly characterize the result only as a **hint**, not a discovery.
+`CDT_GEON_CONTINUUM_AND_LOR_REALTIME_MAP`.
 
-## Frozen observable
+This is not a failure of CDT and does not erase the finite-lattice geon-like evidence.
 
-Let `O_i` denote one of the gravitational curvature operators used in the simulation and let
+## Frozen realization and observable
 
-`C_ij(r) = <O_i(x) O_j(y)>_c`,  `r = d(x,y)`
+Use Maas, Plätzer & Pressler, *Hints for a geon from causal dynamic triangulations*, Phys. Lett. B 879 (2026) 140600.
 
-be the connected correlator in the declared lattice/geodesic-distance convention.
+For curvature operators `O_i`, define the connected correlators in the published CDT distance convention,
 
-The benchmark observable is the **common effective massive falloff** inferred from the correlator family over the published fit window,
+`C_ij(r)=<O_i(x)O_j(y)>_c`.
 
-`C(r) ~ A(r) exp(-m_eff r)`
+The fitted intermediate-distance behavior is massive-like,
 
-where `A(r)` contains the geometry/dimensional prefactor appropriate to the fit convention.
+`C(r) ~ A(r) exp(-m_eff r)`.
 
-The robust sub-observable is not the numerical mass alone but
+The benchmark vector is
 
-`I_CDT = {existence of a common massive-correlator window, operator-independence test, m_eff in lattice units, phase/volume dependence, continuum-scaling status}`.
+`I_CDT={massive_window,operator_independence,m_eff,volume_dependence,time/phase_dependence,continuum_scaling,Lorentzian_map}`.
 
-This prevents a one-fit mass estimate from being overinterpreted as a new particle.
+## Published numerical subresult
 
-## F0-F7 map
+The paper reports, averaging over the early cosmological-time window `0 <= tau < 12`, masses approximately
+
+- for the `Q`-type correlator: `0.18(1), 0.16(1), 0.17(3)` for `N_simp = 80k,160k,320k`;
+- for the `Q^2`-type correlator: `0.14(1), 0.17(1), 0.15(3)` for the same volumes.
+
+The two operator families therefore overlap within quoted uncertainties, and the tested volumes show no statistically significant monotonic volume dependence in these averaged values.
+
+The authors estimate the corresponding physical scale at roughly `~0.09 M_Pl` using their lattice-scale conversion, while explicitly describing the geon interpretation only as a **hint**.
+
+They also find a pronounced change of the fitted mass during the rapid expansion phase of the simulated de-Sitter-like universe.
+
+These are positive finite-regulator facts; they are not yet a continuum particle-state certificate.
+
+## Reproducibility update
+
+A 2026 Zenodo release supplies stochastic samples for the geon-propagator analysis across multiple volume data sets. This improves reproducibility of the finite-ensemble result.
+
+It does **not** supply the missing continuum trajectory or Lorentzian spectral reconstruction, so it does not change the terminal blocking gate.
+
+## F0-F7 terminal map
 
 | Gate | State | Reason |
 |---|---|---|
-| F0 dynamics/path integral | PASS_SCOPED | explicit CDT causal-triangulation path integral and Monte Carlo measure |
-| F1 classical limit | PASS_PARTIAL | extended phase exhibits de-Sitter-like macroscopic behavior; full continuum phenomenological matching is not closed |
-| F2 consistency | PASS/PARTIAL | causal construction and transfer/Wick-rotation framework are explicit; continuum reflection/unitarity and regulator-removal questions remain broader than this observable |
-| F3 observable | PASS_SCOPED | explicit 4D curvature-curvature correlators measured |
-| F4 comparator distinction | ACTIVE | a massive correlation length is not automatically unique to CDT/QG; lattice artifacts, finite-volume effects and generic composite-state interpretations must be profiled |
-| F5 hard discriminator | BLOCKED_CONTINUUM_EXTRAPOLATION | no unique QG residual before regulator/phase/volume scaling is shown |
-| F6 identifiability | BLOCKED | cannot precede F5 |
-| F7 resources | N/A | numerical/theory benchmark; no direct apparatus claim |
+| F0 dynamics/path integral | PASS_SCOPED | explicit causal CDT path integral / Monte Carlo construction |
+| F1 classical limit | PASS_PARTIAL | extended de-Sitter-like macroscopic phase exists |
+| F2 consistency | PASS_PARTIAL | causal construction/Wick rotation explicit; full continuum physical-state questions broader |
+| F3 observable | PASS_SCOPED | explicit 4D curvature-correlator family measured |
+| F4 distinction | PASS_PARTIAL_FINITE_REGULATOR | common massive window and operator agreement survive basic operator/volume checks in tested ensembles |
+| F5 hard discriminator | **BLOCKED_MISSING_REQUIRED_OBJECT** | no continuum scaling + physical Lorentzian pole/map |
+| F6 identifiability | BLOCKED | finite-regulator composite/lattice alternatives remain |
+| F7 resources | N/A | numerical/theory benchmark |
 
-## Lorentzian-status guardrail
+## Why finite volume checks are not enough
 
-CDT is a Lorentzian quantum-gravity construction at the level of its causal triangulated histories, but practical Monte Carlo measurements use the theory's Wick-rotated representation.
+The absence of significant differences between 80k/160k/320k simplices in one family of ensembles is encouraging but does not substitute for a continuum limit. A true continuum statement needs controlled lattice-spacing variation/renormalization and a line of constant physics, not merely larger four-volume at a fixed bare setup.
 
-Therefore this audit does **not** claim that `C(r)` is already a directly measured real-time Lorentzian spectral function. The next step must state precisely how the fitted massive correlation scale maps back to Lorentzian physical propagation/asymptotic-state language, if such a map is justified.
-
-This distinction is exactly why T3-05 is not terminal yet.
-
-## Comparator risks
-
-The geon-like signal must survive at least:
-
-1. finite lattice spacing / discretization effects;
-2. finite four-volume effects;
-3. dependence on the CDT bare-coupling/phase location;
-4. operator-choice dependence;
-5. generic bound/composite-state correlation lengths that are not unique to quantum gravity;
-6. continuum extrapolation along a line of constant physics.
-
-A stable massive correlation length after these quotients would be scientifically stronger than a single-ensemble exponential fit.
+Similarly, CDT's microscopic histories are Lorentzian, but the Monte Carlo observable is evaluated after the theory's Wick rotation. A decaying Euclideanized correlator can define a correlation scale without automatically proving a real-time stable particle pole.
 
 ## Candidate Gravity design lesson
 
-A nonperturbative model prediction is not comparator-resistant merely because it is numerically difficult or background independent. Future KG observables must include their **regulator/continuum map** as part of the observable definition.
+A numerical signal becomes a KG design prior only after its **regulator map is part of the observable definition**.
 
-For KG this means: if a proposed signal arises from discretization, truncation, smearing, detector bandwidth or other regulator choices, the design prior must specify which combination survives the regulator-removal or controlled-effective-theory limit.
+For future KG:
 
-## Current blocker
+> operator independence and finite-volume stability are useful robustness checks, but they do not replace continuum scaling, physical-state reconstruction, or detector/real-time mapping.
 
-`CDT_GEON_CONTINUUM_AND_LOR_REALTIME_MAP`:
+This guards against promoting a regulator-stable artifact into a fundamental degree of freedom.
 
-1. extract the published fit definition and numerical `m_eff` values/uncertainties for each curvature operator;
-2. check volume/coupling/phase dependence and whether a continuum scaling trajectory is available;
-3. determine the status of the Wick-rotation-to-Lorentzian interpretation for the correlator pole/mass;
-4. compare the signal to generic finite-volume/composite-state alternatives;
-5. terminally classify only after the continuum/observable mapping is explicit.
+## Reopen condition
 
-## Operational completion estimate
+Reopen T3-05 when there is a public analysis that supplies at least one of the following in a form strong enough to close the benchmark vector:
 
-**50%**.
+1. continuum scaling of the same geon correlator/mass along a controlled CDT trajectory;
+2. a justified reconstruction from the measured Wick-rotated correlator to a Lorentzian spectral/asymptotic-state statement;
+3. an equivalent regulator-independent physical observable tied to the same state.
+
+## Terminal completion
+
+**100% — terminally classified as BLOCKED, with a positive finite-regulator subresult.**
 
 ## Sources
 
-1. A. Maas, S. Plätzer, F. Pressler, *Hints for a geon from causal dynamic triangulations*, Phys. Lett. B 879 (2026) 140600.
-2. J. Ambjørn, R. Loll, *Causal Dynamical Triangulations: New Lattice Theory of Quantum Gravity*, arXiv:2604.05641 (2026), current CDT framework review.
-3. J. Ambjørn, R. Loll, *Causal Dynamical Triangulations: Gateway to Nonperturbative Quantum Gravity* (2024), Lorentzian path-integral and observable overview.
+1. A. Maas, S. Plätzer, F. Pressler, Phys. Lett. B 879 (2026) 140600.
+2. J. Ambjørn, R. Loll, arXiv:2604.05641 (2026), CDT framework review.
+3. Maas–Plätzer–Pressler stochastic sample data release, Zenodo 2026.
