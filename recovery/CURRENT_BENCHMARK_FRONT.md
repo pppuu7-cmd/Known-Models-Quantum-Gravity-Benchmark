@@ -1,24 +1,22 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-08  
-**KMQGB iteration:** 046  
+**KMQGB iteration:** 047  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Phase:** WAVES 1–23 TERMINALLY CLASSIFIED / QUARTIC-FIRST SEARCH WITH STRING + RADIATIVE GATES
+**Phase:** WAVES 1–24 TERMINALLY CLASSIFIED / PARENT-PRINCIPLE SEARCH FRONT
 
 ## Coverage
 
 - Wave 1: **9/9 = 100%** — immutable.
-- Waves 2–23: **each 5/5 = 100%** — immutable.
+- Waves 2–24: **each 5/5 = 100%** — immutable.
 - Globally authorized robust unique-QG residuals: **0**.
 - KMQGB-promoted Candidate Gravity ansatz: **none**.
 - External Candidate Gravity readiness: **24%** at directly observed RQIR Iteration 611.
 
 Coverage is benchmark/methodology completion, not theory probability or Candidate Gravity readiness.
 
-## Permanent Candidate Gravity design layer
-
-In addition to the pre-wave15 protocols, read:
+## Current permanent post-wave15 protocols
 
 - `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS_POSTWAVE15.md`;
 - `protocol/BEYOND_C5_ESCAPE_TAXONOMY.md`;
@@ -27,98 +25,67 @@ In addition to the pre-wave15 protocols, read:
 - `protocol/QUARTIC_HELICITY_MOMENT_RIGIDITY.md`;
 - `protocol/KINEMATIC_PROJECTION_RANK_COMPLETENESS.md`;
 - `protocol/QUARTIC_FIRST_STRING_STRUCTURAL_ADVERSARY.md`;
-- `protocol/RADIATIVE_PROTECTION_AND_FULL_C5_THREE_POINT_GATE.md`.
+- `protocol/RADIATIVE_PROTECTION_AND_FULL_C5_THREE_POINT_GATE.md`;
+- `protocol/PARENT_PRINCIPLE_AUDIT.md`.
 
-## Waves 16–18 — structural screening
+## Waves 19–23 retained result
 
-Wave 16 eliminates the cheapest standalone `DeltaGamma_KG` seeds: local analytic metric EFT, scoped EOM/Ricci entire nonlocal class, state-only deformation, arbitrary quadratic CTP kernel and extra scalar mediator.
+The preferred same-spin-2 search is no longer naive `C3=0` quartic-first. It is
 
-Wave 17 freezes Beyond-C5 escape doors `E1..E5` and priority logic.
+`full matched C5 through 3-point + first candidate-specific independent deformation at 4-point/higher`.
 
-Wave 18 freezes an E1 same-spin-2 structural skeleton but keeps G0 blocked because no parent-fixed Lorentzian kernel has been derived.
+Reasons:
 
-## Wave 19 — causality correction
+- new cubic graviton structures carry a high-energy causality tax in the relevant weakly coupled regime;
+- ordinary quantum GR itself generates a two-loop cubic-curvature counterterm, so literal all-orders `C3=0` is not radiatively stable without protection;
+- quartic helicity/moment ratios are useful IR/cross-order anchors but not novelty;
+- type-II string already realizes a protected quartic-first `R4`-type architecture with parent-fixed higher-order rigidity;
+- a native observable with fewer invariants than its parent response requires enough auxiliary same-parent constraints to define a unique kinematic lift.
 
-Terminal `5/5`.
-
-A new higher-derivative graviton three-point coupling carries the CEMZ high-energy causality tax in the relevant weakly coupled regime unless the UV completion explains the escape. Minimal no-extra-tower search therefore prefers the first candidate-specific deformation at four-point/higher order.
-
-## Wave 20 — quartic helicity/moment rigidity
-
-Terminal `5/5`.
-
-For quartic-first `C3=0` at tree EFT bookkeeping level in 4D GREFT:
-
-`f2=C4,1-C4,2`, `g2=C4,1+C4,2`, `rho4=f2/g2`.
-
-Within the scoped local/polynomial positivity class, `rho4 in (-1,1)`. This is an IR anchor, not KG novelty.
-
-Higher-order graviton dispersive moments/Hankel constraints provide cross-order consistency. Low-rank moments are not KG-specific. Before using these constraints the amplitude must declare its local/polynomial vs nonlocal/exponential dispersion class.
-
-## Wave 21 — kinematic projection-rank completeness
+## Wave 24 — parent-principle audit
 
 Terminal `5/5`.
 
-If parent invariant dimension is `n` and target/native dimension `m<n`, require `n-m` independent same-parent auxiliary constraints or an equivalent prospectively frozen lift `x=gamma(s)` with full stacked rank. Otherwise derivatives/cuts/root Jacobians/residuals in target coordinates are blocked.
+Tested principle classes:
 
-## Wave 22 — type-II string structural adversary
+1. S-matrix bootstrap / crossing-unitarity-Regge-softness: can strongly fix amplitudes, but string/string-like solutions become a direct comparator.
+2. Supersymmetry/duality/protected hierarchy: strong protection precedent but introduces substantial extra structure and known comparator overlap.
+3. Nonperturbative RG/fixed-point dynamics: can generate momentum-dependent multi-graviton vertices rather than choose form factors by hand, but asymptotic safety is already a comparator class.
+4. Causal/discrete microstructure: structural precedent for parent-fixed nonlocality, but no complete stable quantum spin-2 CTP/four-graviton parent is yet available for this use case.
+5. Positivity/spectral density/ghost freedom alone: consistency constraints, not a kernel-selection principle.
 
-Terminal `5/5`.
+Authoritative protocol: `protocol/PARENT_PRINCIPLE_AUDIT.md`.
 
-Type-II string already realizes the broad pattern
+## Current Candidate Gravity architecture target
 
-`GR/supergravity lower sector + first alpha'^3 R4 correction + parent-fixed higher-order amplitude hierarchy`.
+A future KG parent principle must satisfy **both**:
 
-Therefore quartic-first + cross-order rigidity is not itself KG novelty. Any future quartic-first seed must survive a string-like/dual-resonance structural quotient in addition to C5 EFT matching.
+`RIGIDITY`: derive a finite/low-dimensional tensor + momentum hierarchy before data;
 
-## Wave 23 — radiative protection
+`NOVELTY`: produce a common-domain relation outside full C5, string-like/dual-resonance, asymptotic-safety and other registered comparator manifolds.
 
-Terminal `5/5`.
+The current search target remains
 
-Pure Einstein gravity generates a nonzero two-loop cubic-curvature Goroff-Sagnotti counterterm. Therefore literal all-orders `C3=0` is not a generic radiatively stable quartic-first condition.
+`full matched C5 through 3-point + parent-fixed quartic/higher cross-regime structure`,
 
-Correct rule:
+with radiative protection/closure, full Ward/contact response, declared dispersion class, string-like comparator quotient, exact kinematic lift, holdout rigidity, COR and global separation.
 
-> **full matched C5 through the three-point sector + first candidate-specific independent deformation at four-point/higher order.**
-
-Any stronger cubic zero/fixed relation requires a protecting parent symmetry, UV completion, nonperturbative identity or RG-stable relation. Operator mixing/renormalization closure is part of response completeness.
-
-## Current preferred pre-ansatz architecture
-
-Search for
-
-`full matched C5 through 3-point + parent-fixed candidate-specific quartic/higher cross-regime structure`,
-
-with
-
-- few shared parameters;
-- no arbitrary kernel/tensor-ratio fitting;
-- radiative protection/renormalization closure;
-- full contact/exchange/Ward response;
-- declared dispersion/growth class;
-- linked helicity/moment/cross-order predictions;
-- exact source-to-native kinematic lift;
-- same-domain C5 + string-like/nonlocal/UV comparator quotient;
-- intervention/holdout rigidity;
-- nonzero COR and global separation.
-
-No exact parent kernel/tensor hierarchy currently passes G0. No KG ansatz is promoted.
+No existing parent principle tested so far yields a new comparator-surviving KG residual. No ansatz is promoted.
 
 ## External RQIR authority — Iteration 611
 
 Latest directly observed authority: **Iteration 611**, `MODEL_READINESS=24%`.
 
-RQIR has closed K3/K1^3 origin accounting, assembled the complete 13-family source object, passed full source nonlinear Ward consistency at Iter605 and froze the mapping contract at Iter606.
+RQIR has passed full source-level nonlinear Ward consistency and narrowed the current blocker to a kinematic-rank problem: the full source object depends on three independent invariants `(u,a_s,a_a)` while native `D_s` supplies one hard variable `s`. Two additional same-parent constraints or an equivalent one-parameter trajectory are required before native pole support/Jacobians and the comparator quotient are defined.
 
-Current blocker is kinematic rank: three independent source invariants `(u,a_s,a_a)` map to one native hard variable `s`, requiring two additional same-parent invariant constraints or an equivalent one-parameter trajectory before root/Jacobian/native `D_s` authority exists.
-
-Until then: no Source/Born subtraction, comparator quotient, ANSATZ-003, Fisher or resources.
+Until then: no Source/Born subtraction, ANSATZ-003, Fisher or resources.
 
 ## Exact next KMQGB front
 
-1. search for a parent principle that fixes the quartic/higher tensor/kernel hierarchy with few parameters;
-2. demand radiative stability relative to full C5, not a bare tree-level zero;
-3. compare all quartic-first rigidity directly against type-II/string-like and broader dual-resonance amplitudes;
-4. require the correct dispersion class before positivity/moment tests;
-5. require explicit kinematic-lift authority in every target observable;
-6. do not launch heavy compute until a concrete numerical object passes the upstream structural gates.
+1. search for a minimal parent principle that is not merely a known string/bootstrap or asymptotic-safety construction;
+2. require it to fix quartic/higher tensor and momentum relations with few parameters;
+3. require radiative closure relative to full C5;
+4. require local/nonlocal dispersion-class authority and Lorentzian/CTP completion;
+5. immediately profile the derived hierarchy against string-like, asymptotic-safety and full-C5 comparator spaces;
+6. reject any principle that only constrains but does not select the kernel;
+7. do not launch heavy compute or promote KG until a concrete structural object survives these gates.
