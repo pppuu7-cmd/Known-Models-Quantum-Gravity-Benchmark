@@ -1,0 +1,16 @@
+{
+  "wave": 24,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "STRONG_RIGIDITY_PRECEDENT__STRING_STRUCTURAL_COMPARATOR": 1,
+    "STRONG_PROTECTION_PRECEDENT__EXTRA_STRUCTURE_COMPARATOR": 1,
+    "KERNEL_GENERATION_PRECEDENT__ASYMPTOTIC_SAFETY_COMPARATOR": 1,
+    "BLOCKED_COMPLETE_QUANTUM_SPIN2_PARENT": 1,
+    "INSUFFICIENT_KERNEL_SELECTION_PRINCIPLE": 1
+  },
+  "main_lesson": "A viable KG parent principle must both fix a low-dimensional tensor/momentum hierarchy and leave a common-domain relation outside known string-like, asymptotic-safety, full-C5 and other comparator manifolds.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
