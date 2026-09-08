@@ -1,0 +1,7 @@
+{
+  "benchmark_id": "KMQGB-T7-M04-PARITY-CHIRAL",
+  "status": "OPERATIONALLY_DEGENERATE",
+  "claim": "PARITY_OR_CHIRALITY_AS_STANDALONE_KG_RESIDUAL",
+  "result": "Parity-odd/chiral gravity signals can arise from Chern-Simons/pseudoscalar sectors, parity-violating gravitational EFT interactions, state/source asymmetry and related comparator directions.",
+  "kg_lesson": "Use chirality only as part of a gravity-attributed Ward-complete linked fingerprint after extra-field/EFT/state profiling."
+}
