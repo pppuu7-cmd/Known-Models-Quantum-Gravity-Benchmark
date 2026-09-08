@@ -1,0 +1,9 @@
+{
+  "benchmark_id": "KMQGB-T6-M04-NONLOCAL-CAUSALITY",
+  "status": "PASS_RQIR_GATE",
+  "objective": "NONLOCAL_CAUSALITY_SEPARATE_GATE_ESTABLISHED",
+  "result": "Ghost freedom, UV finiteness/renormalizability and healthy perturbative propagation do not by themselves establish global causal consistency for nonlocal gravity; explicit 2026 subclasses admit vacuum CTC solutions.",
+  "no_blanket_fail": true,
+  "causal_vector": ["retarded support", "front velocity", "microcausal tails", "no-signalling", "global chronology/CTCs", "initial-value well-posedness", "background dependence"],
+  "kg_lesson": "Any nonlocal KG parent must pass a separate multi-component causality audit."
+}
