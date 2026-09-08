@@ -1,130 +1,122 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-08  
-**KMQGB iteration:** 050  
+**KMQGB iteration:** 052  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Phase:** WAVES 1–29 TERMINALLY CLASSIFIED / CROSS-REPRESENTATION + CROSS-BACKGROUND RIGIDITY / NOVEL PARENT-PRINCIPLE SEARCH
+**Phase:** WAVES 1–32 TERMINALLY CLASSIFIED / MINIMAL NOVEL PARENT PRINCIPLE SEARCH ACTIVE
 
 ## Stable readiness metrics
 
-Authoritative reporting rubric: `protocol/READINESS_METRICS.md`.
+Authority: `protocol/READINESS_METRICS.md`.
 
-- **Repository readiness for future KG construction (R1): 90%.**
-- **KMQGB methodology/material readiness (R2): 86%.**
-- **External Candidate Gravity scientific readiness (R3): 24%.**
+- **R1 — Repository readiness for future KG construction: 92%.**
+- **R2 — KMQGB methodology/material readiness: 87%.**
+- **R3 — Candidate Gravity scientific readiness: 24%.**
+- **R4 — current task `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`: 45%.**
 
-R1/R2 are KMQGB infrastructure/methodology metrics. R3 is controlled only by external RQIR authority. Do not merge them.
+R1 increased from 90 to 92 after the first GitHub-hosted methodology CI run `34266786359` completed `success` and automatically validated JSON, reference code self-tests and recovery entrypoints.
+
+R2 increased from 86 to 87 after cross-representation IR saturation and spectral-origin completeness closed an additional parent-principle/escape methodology gap.
+
+R3 remains external RQIR authority only; latest refresh is Iteration 611 at 24%.
+
+R4 is controlled by `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md`. Diagnostic stages P1–P3 are closed; the constructive P4 survivor has not yet been found.
 
 ## Coverage
 
 - Wave 1: **9/9 = 100%** — immutable.
-- Waves 2–29: **each 5/5 = 100%** — immutable.
+- Waves 2–32: **each 5/5 = 100%** — immutable.
 - Globally authorized robust unique-QG residuals: **0**.
 - KMQGB-promoted Candidate Gravity ansatz: **none**.
 
-## Retained architecture through Wave 24
+## Retained Candidate Gravity architecture
 
-Preferred same-spin-2 search language remains
+Current preferred language:
 
-`full matched C5 through 3-point + first candidate-specific independent deformation at 4-point/higher`,
+`full matched C5 through 3-point + first candidate-specific independent 4-point/higher structure`,
 
-with radiative closure, full Ward/contact response, declared dispersion class, string-like/AS/full-C5 comparator profiling, exact kinematic lift, and cross-order/intervention/holdout rigidity.
+but the parent must share a small physical parameter set across
 
-No exact parent principle yet passes both rigidity and comparator-orthogonal novelty.
+- response order;
+- controlled configuration;
+- scattering / CTP-real-time / relational-channel representations;
+- valid flat and curved backgrounds;
+- prospective train/holdout blocks.
 
-## Wave 25 — amplitude parent-principle saturation
+The parent must derive rather than fit its tensor/kernel hierarchy, provide radiative/RG closure, Lorentzian/CTP authority, declared dispersion class, complete Ward response and exact parent-to-native kinematic lift.
 
-Terminal `5/5`.
-
-- generalized universal double copy is too broad: it spans essentially the full parity-even four-graviton EFT;
-- self-dual/celestial integrability is a powerful but scoped/truncated parent, not the required full unitary gravity candidate;
-- minimal Regge-zero bootstrap selects string/Virasoro-Shapiro;
-- nonminimal/trajectory deformations enter known Coon/bespoke/generalized dual-resonance families.
-
-Conclusion: amplitude-only search is currently either too broad, too scoped, or comparator-contained.
-
-## Wave 26 — cross-representation rigidity
+## Wave 30 — IR soft/memory/in-in saturation
 
 Terminal `5/5`.
 
-One parent parameter set must be shared across physically different representations such as
+BMS/asymptotic symmetry, the soft graviton theorem, local gravitational memory and equal-time in-in soft Ward identities form a real cross-representation IR structure. This validates the methodology but is already ordinary GR/C5 infrared physics.
 
-- in-out scattering;
-- in-in/CTP retarded/noise/ordered kernels;
-- relational/quantum-channel/tidal observables.
+Therefore the IR triangle is a mandatory gravity-attribution anchor, not a novel kernel-selection principle.
 
-Define
+Protocol: `protocol/IR_SOFT_MEMORY_CROSS_REPRESENTATION_AUDIT.md`.
 
-`R_XR = rank(J_sep) - rank(J_shared) >= 0`.
-
-`R_XR>0` measures extra consistency directions created by prohibiting independent retuning of the same parent parameters across representations.
-
-Protocol: `protocol/CROSS_REPRESENTATION_RIGIDITY.md`.
-Reference code: `code/cross_representation_rigidity_reference.py`.
-
-## Wave 27 — cross-representation comparator coverage
+## Wave 31 — spectral-origin completeness
 
 Terminal `5/5`.
 
-- full C5 is the strongest fully dangerous cross-representation null;
-- C4/C6 ordinary quantum mediators can populate scattering, real-time and quantum-channel blocks and remain mandatory for mediator attribution;
-- C2/C3/C3b strongly cover stochastic/CQ real-time/relational sectors but do not supply a fundamental quantum-graviton S-matrix;
-- asymptotic safety has concrete 2026 scattering and Lorentzian spectral results, but exact KMQGB same-realization cross-representation linking remains blocked;
-- string has strong scattering authority but the current KMQGB operational real-time/relational block is missing.
+For coefficient combinations controlled by an admissible local gravitational dispersion/sum rule, a candidate-specific quartic/higher shift beyond full matched C5 requires different high-energy spectral/Regge data: new states, continuum/composite support, altered spectral weights/residues or equivalent UV discontinuity information.
 
-Missing comparator blocks remain `BLOCKED`, never zero.
+Gravity-loop and massless-forward effects require proper crossing-symmetric/smeared/subtracted treatment; naive forward positivity is not authority.
 
-## Wave 28 — cross-background rigidity
+If a coefficient is an uncontrolled subtraction constant, its origin remains `BLOCKED`.
 
-Terminal `5/5`.
+A nonlocal/exponentially bounded candidate belongs to a separate `D-nonlocal` branch with modified dispersion relations and its own causality/nonlocality tax.
 
-The same parent/Wilson parameters should, where validity permits, predict flat-space scattering and curved-background observables such as black-hole entropy/extremality/tidal/QNM data.
+Protocol: `protocol/SPECTRAL_ORIGIN_COMPLETENESS.md`.
 
-Thermodynamic/entropy positivity is not KG novelty by itself; known EFT examples can strongly overlap amplitude positivity/causality.
+## Wave 32 — kernel-selection mechanism audit
 
-Protocol: `protocol/CROSS_BACKGROUND_RIGIDITY.md`.
+Terminal `5/5`, no P4 survivor.
 
-## Wave 29 — state-dependent curvature-history nonlocal gravity comparator
+Audited:
 
-Terminal `5/5`.
+- cutoff spectral action: correlated coefficients but cutoff-function moments remain inputs and the architecture is known;
+- zeta spectral action: removes cutoff-function freedom but remains a known local spectral-geometry architecture without the required novel cross-regime quantum-gravity parent;
+- diffusion/semigroup exponential: selects exponential of a generator but not the generator/tensor/Lorentzian prescription; known nonlocal causality issues remain;
+- retarded Stieltjes kernel: causal/spectral class but the spectral density remains a function to be selected;
+- minimal spectral support: reduces moment rank but maps to extra state/continuum UV comparator space.
 
-Fresh 2026 comparator: a covariant state-dependent infinite-derivative gravity construction introduces fields `{g_mn,Phi,Delta_mn,C,chi}` with a curvature-history scalar `C` sourced by the Kretschmann invariant and a conjugate field enforcing the history equation.
+Retained distinction:
 
-Real scoped success:
+`parameterization reduction != parent derivation != comparator-orthogonal novelty`.
 
-- retarded curvature-history interpretation;
-- noncommuting form-factor variation treated consistently;
-- combined memory/history stress tensor conserved on shell and Bianchi-compatible.
+Protocol: `protocol/KERNEL_SELECTION_MECHANISM_AUDIT.md`.
 
-But
+## Repository CI
 
-- `M_eff(C)` remains a positive function not uniquely selected by the history principle;
-- extra fields move the construction outside the minimal metric-only branch;
-- ghost freedom/full spectrum/quantum spin-2 CTP/four-graviton completion are not established.
+New workflow:
 
-Terminal role: structural E1/E2/E5 comparator, not KG seed.
+`.github/workflows/methodology-ci.yml`.
 
-Audit: `models/state_dependent_nonlocal/audit.md`.
+First run `34266786359`, head `6de4c52e9221c9ebf14065640b422bcbe8bdad50`, completed `success`.
+
+The workflow uses GitHub-hosted `ubuntu-latest` and does not occupy the external/self-hosted RQIR runner.
 
 ## External RQIR authority
 
-Latest directly observed authority: **Iteration 611**, `MODEL_READINESS=24%`.
+Latest directly observed authority remains **Iteration 611**, `MODEL_READINESS=24%`.
 
-The full source nonlinear Ward object is already PASS. Current blocker is kinematic projection rank: three independent source invariants `(u,a_s,a_a)` must map to one native hard variable `s`, requiring two same-parent auxiliary constraints or an equivalent prospectively frozen one-parameter trajectory before native roots/Jacobians and comparator quotient are defined.
+Current blocker is kinematic projection rank: the full source response depends on three independent invariants `(u,a_s,a_a)` while native `D_s` supplies one scalar `s`; two additional same-parent constraints or an equivalent prospectively frozen one-parameter trajectory are required before roots/Jacobians/native residual authority exists.
 
-Until that bridge closes: no Source/Born subtraction, `ANSATZ-003`, Fisher or resources.
+No Source/Born subtraction, comparator quotient, ANSATZ-003, Fisher or resources until that bridge closes.
 
-## Exact next KMQGB front
+## Exact next KMQGB front — constructive P4
 
-Search for a **minimal novel parent principle** that does more than select an amplitude family or a covariant state variable. It must
+Diagnostic parent-principle saturation is now mature. Further negative audits do **not** increase R4 by themselves.
 
-1. derive a low-dimensional quartic/higher tensor + momentum hierarchy;
-2. share its physical parameters across scattering, real-time/CTP and curved/relational representations;
-3. provide radiative/RG closure and a Lorentzian prescription;
-4. fix rather than merely parameterize any state-dependent kernel/function;
-5. survive full C5, C4/C6, string-like/dual-resonance, asymptotic-safety and modern state-dependent nonlocal comparators;
-6. provide exact parent-to-native kinematic lifts;
-7. yield a concrete nonzero COR and global comparator separation before ansatz promotion.
+The next required deliverable is an **explicit low-freedom physical parent principle** that
 
-Do not launch heavy compute until a numerical object passes these structural gates.
+1. derives, rather than chooses, a tensor/momentum/state hierarchy;
+2. declares its Beyond-C5 escape and local/nonlocal spectral origin;
+3. predicts at least one nontrivial hard quartic/higher or cross-representation relation;
+4. shares few parameters across scattering, CTP/real-time and relational/curved-background blocks where defined;
+5. is radiatively/RG and Ward/causality compatible in the declared scope;
+6. survives immediate containment checks against full C5, C4/C6, string/dual-resonance/bootstrap, asymptotic safety, spectral-geometry and modern state-dependent nonlocal comparators.
+
+Until such a principle exists, P4=0/25 and R4 remains 45%.
