@@ -1,0 +1,21 @@
+{
+  "wave": 16,
+  "status": "TERMINAL",
+  "coverage": "5/5",
+  "percent": 100.0,
+  "rollup": {
+    "EXACT_COMPARATOR_IDENTITY": 1,
+    "OPERATIONALLY_DEGENERATE": 4
+  },
+  "ansatz_promoted": false,
+  "globally_authorized_robust_unique_qg_residuals": 0,
+  "screened_templates": [
+    "KMQGB-T16-01-LOCAL-ANALYTIC-EFT",
+    "KMQGB-T16-02-ENTIRE-NONLOCAL",
+    "KMQGB-T16-03-GRAVITON-STATE-ONLY",
+    "KMQGB-T16-04-GENERIC-QUADRATIC-CTP",
+    "KMQGB-T16-05-EXTRA-QUANTUM-MEDIATOR"
+  ],
+  "conclusion": "The cheapest natural DeltaGamma directions are comparator-contained or insufficient for KG-specific attribution before parameter fitting.",
+  "next_front": "derive a minimal surviving DeltaGamma specification requiring non-EFT/state/bath/extra-mediator containment resistance plus fixed finite-parameter spin-2 Ward-linked cross-order rigidity"
+}
