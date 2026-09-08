@@ -1,163 +1,141 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-08  
-**KMQGB iteration:** 033  
+**KMQGB iteration:** 034  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Phase:** WAVES 1–10 TERMINALLY CLASSIFIED / KG PROMOTION GATE FROZEN / CROSS-ORDER RIGIDITY NEXT
+**Phase:** WAVES 1–11 TERMINALLY CLASSIFIED / CROSS-ORDER RIGIDITY FROZEN / MULTI-CONFIGURATION INTERVENTION NEXT
 
 ## Coverage
 
 - Wave 1: **9/9 = 100%** — immutable.
-- Waves 2–10: **each 5/5 = 100%** — immutable after terminal closure.
+- Waves 2–11: **each 5/5 = 100%** — immutable.
 - Globally authorized robust unique-QG residuals: **0**.
-- Candidate Gravity ansatz promoted by KMQGB: **no**.
-- External Candidate Gravity readiness: **24%**.
+- KMQGB-promoted Candidate Gravity ansatz: **none**.
+- External Candidate Gravity readiness last observed: **24%**.
 
-Benchmark coverage is finite methodology/model-audit coverage, not theory probability and not Candidate Gravity readiness.
+## Permanent Candidate Gravity construction protocols
 
-## Wave 9 — optimal comparator-annihilating observables
+Read these before proposing any future KG ansatz:
 
-Wave 9 is terminal `5/5`, all methodology `PASS_RQIR_GATE`.
-
-Authoritative protocol:
-
-`protocol/OPTIMAL_COMPARATOR_CONTRASTS.md`
+1. `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`;
+2. `protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md`;
+3. `protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`;
+4. `protocol/RESIDUAL_SPACE_GEOMETRY.md`;
+5. `protocol/OPTIMAL_COMPARATOR_CONTRASTS.md`;
+6. `protocol/CROSS_ORDER_RIGIDITY.md`.
 
 Reference code:
 
-`code/optimal_comparator_contrasts_reference.py`
+- `code/inverse_kernel_ordered_partitions.py`;
+- `code/residual_space_geometry_reference.py`;
+- `code/optimal_comparator_contrasts_reference.py`;
+- `code/cross_order_rigidity_reference.py`.
 
-Core results:
+## Wave 9 — optimal comparator-null observables
 
-1. exact comparator-null contrasts satisfy `J_union^T w=0` in the physical basis;
-2. for candidate signal `s`, covariance-optimal contrast has direction
-   `w_opt proportional to Sigma^(-1/2) Pi_perp Sigma^(-1/2) s`;
-3. maximum local post-comparator SNR is
-   `||Pi_perp Sigma^(-1/2)s||`;
-4. adding `k` physical observables changes local complement dimension by
-   `Delta d_perp = k - Delta rank(J_union)`;
-5. future source/detector designs should maximize comparator-orthogonal rank, projected singular values, or projected SNR — not raw sensitivity alone.
+Terminal `5/5`, methodology PASS.
 
-## Wave 10 — parent-response completeness
+Key formulas:
 
-Wave 10 is terminal `5/5`, all methodology `PASS_RQIR_GATE`.
+`J_union^T w=0` for exact local comparator-null contrasts;
 
-Authoritative protocol:
+`w_opt proportional to Sigma^(-1/2)Pi_perp Sigma^(-1/2)s` for a pre-registered signal;
 
-`protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`
+`Delta d_perp = k - Delta rank(J_union)` for adding `k` physical observables.
 
-Reference generator:
+Future KG observables are selected by post-comparator dimension, projected conditioning and projected SNR, not raw sensitivity.
 
-`code/inverse_kernel_ordered_partitions.py`
+## Wave 10 — same-parent response completeness
 
-For `G=K^-1` and mixed derivative label set `S`, freeze
+Terminal `5/5`, methodology PASS.
+
+For `G=K^-1`:
 
 `D_S G = sum_k (-1)^k sum_(B1,...,Bk in OP(S,k)) G K_B1 G ... K_Bk G`.
 
-Every ordered set partition appears once.
-
-Term counts grow as ordered Bell/Fubini numbers:
-
-- order 1: `1`;
-- order 2: `3`;
-- order 3: `13`;
-- order 4: `75`;
-- order 5: `541`.
-
-Thus higher-order KG source/contact response must be generated algorithmically rather than by hand-selecting diagram families.
+Ordered-partition term counts at orders 1–5: `1,3,13,75,541`.
 
 Frozen order:
 
-`complete same-parent response -> origin/cut classification -> Ward/contact physical reduction -> matched observable -> comparator/COR quotient`.
+`complete response -> origin/cut classification -> Ward/contact physical reduction -> matched observable -> comparator/COR quotient`.
 
-## Candidate Gravity promotion gate
+## Wave 11 — cross-order rigidity
 
-Created
+Terminal `5/5`, methodology PASS.
 
-`protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md`.
+Stack complete physical response blocks from the same parent dynamics with shared parent parameters kept shared.
 
-No KG ansatz may be promoted before all of the following are closed:
+For block Jacobians `J_ell`:
 
-1. one explicit parent dynamics;
-2. complete same-parent response at every used order;
-3. exact Ward/Bianchi/contact/constraint physical reduction;
-4. common-domain comparator definition;
-5. full attribution stack;
-6. full matched C5 and other comparator quotient;
-7. nonzero local COR;
-8. nonzero global/nonlinear comparator separation;
-9. projected identifiability / optimal observable design;
-10. rigidity / low remaining functional freedom.
+`d_perp,stack = m_total - rank(J_stack)`
 
-Only after a robust nonzero algebraic residual may Fisher/resources be promoted.
+and shared-parameter rigidity gain
 
-## Residual-space geometry retained
+`R_shared = sum_ell rank(J_ell) - rank(J_stack) >= 0`.
 
-For physical residual `r`, covariance `Sigma`, and union comparator Jacobian `J_C`:
+`R_shared>0` means cross-order consistency creates comparator-orthogonal directions not visible when each order is fitted separately.
 
-`A=Sigma^(-1/2)J_C`,
+When exact monomial scaling exists,
 
-`Pi_perp=I-AA^+`,
+`c_i=A_i product_j theta_j^(P_ij)`,
 
-`COR=Pi_perp Sigma^(-1/2)r`.
+vectors `u` with `u^T P=0` define exact nuisance-free invariants
 
-Local signal survival fraction:
+`I_u=product_i(c_i/A_i)^(u_i)`.
 
-`eta(s)=||Pi_perp Sigma^(-1/2)s||/||Sigma^(-1/2)s||`.
+The strongest current design prior is therefore **few shared parent parameters predicting many linked orders/channels**.
 
-A nonzero local COR/eta is only a prefilter; finite/global comparator profiling remains mandatory.
+## Candidate Gravity promotion rule
 
-## External RQIR authority — read-only refresh
+No ansatz is promoted before:
 
-Latest directly observed scientific authority: **Iteration 590**.
+`one parent dynamics`
 
-Candidate Gravity `MODEL_READINESS = 24%`.
+`-> complete responses`
 
-Key upstream progress:
+`-> exact physical constraints`
 
-- Iter424 physical gate `5/5 PASS`, unresolved set `[]`;
-- Iter581 exact15 `Tr U1^2` raw-valid PASS;
-- Iter582 q2-resolved `D_s Gamma_e2` PASS, still non-residual;
-- Iter583–584 same-parent MSSC quadratic K2 and mixed `K2(h1,h2)` raw-valid;
-- Iter586 proves off-shell source completion is required for the timelike buckets;
-- Iter587 off-shell K1 routing/Ward term raw-valid;
-- Iter588 exact fixture routing bound;
-- Iter589 same-action K1/K2 normalization raw-valid;
-- **Iter590 proves cubic source-response completeness requires three origin families: local K3, six K1/K2 placements, and six ordered K1^3 chains. K3 and K1^3 are nonzero on the frozen fixture.**
+`-> common-domain comparator definition`
 
-Therefore the six K1/K2 terms are not yet authorized as the complete discontinuity-bearing source block.
+`-> attribution stack`
 
-Exact external next gate:
+`-> full C5/C0-C6/C3b quotient`
 
-1. prove/freeze hard-channel origin of local K3 and whether `D_s K3=0` in the frozen discontinuity convention;
-2. separately classify K1^3 under the frozen linked cut/origin protocol;
-3. only then close the complete nonlinear source Ward object and map to Iter582/comparator quotient.
+`-> nonzero COR`
 
-KMQGB does not treat the three Iter582 buckets as residual data yet.
+`-> global comparator separation`
 
-## RQIR-COR pre-registration retained
+`-> projected identifiability / optimal observable design`
 
-If the future matched residual is only a real/imaginary three-bucket physical vector, then
+`-> rigidity`.
 
-`d_perp = 3 - rank(A_union)`.
+Only then may model-level ansatz/readiness and later Fisher/resources advance.
 
-If `rank(A_union)=3`, increased numerical precision alone cannot produce a local novelty direction. Add a linked observable/order only when
+## External RQIR read-only authority
 
-`Delta d_perp = Delta m_phys - Delta rank(J_union) > 0`
+Latest directly observed scientific front remains **Iteration 590**, `MODEL_READINESS=24%`.
 
-or projected conditioning materially improves.
+Iter590 establishes that the complete cubic MSSC source response contains
 
-## Exact next KMQGB front — cross-order rigidity
+- local `K3`;
+- six ordered `K1/K2` terms;
+- six ordered `K1^3` chains;
 
-The next methodology wave should stack multiple response orders from the **same parent dynamics** and test whether shared parameters produce more physical dimensions than comparator tangent dimensions.
+and that `K3` and `K1^3` have nonzero support on the frozen fixture.
 
-Priority tasks:
+External next gate remains hard-channel origin classification of `K3` and linked-cut/origin classification of `K1^3` before complete nonlinear Ward/source closure and comparator subtraction.
 
-1. define stacked multi-order observable/covariance/Jacobian notation;
-2. forbid independent per-order retuning of a parameter that is shared by the parent dynamics;
-3. derive cross-order comparator-null contrasts;
-4. include cross-order covariance and common theoretical/systematic uncertainties;
-5. freeze a cross-order rigidity certificate based on projected rank/singular values.
+KMQGB therefore still does not treat Iter582 q2 buckets as residual data.
 
-This is currently the most promising methodology direction for finding a residual relation without inventing a qualitative feature label.
+## Exact next KMQGB front
+
+Freeze **multi-configuration / intervention rigidity**:
+
+1. stack source/detector configurations with shared dynamics parameters;
+2. distinguish known controls, shared nuisances and configuration-local nuisances;
+3. derive configuration-difference/null contrasts;
+4. include full cross-configuration covariance;
+5. choose interventions by projected rank/singular-value gain after comparator profiling.
+
+Goal: turn controllable changes of mass, separation, orientation, frequency, state and proper time into deliberate degeneracy-breaking directions for future KG rather than passive nuisance variations.
