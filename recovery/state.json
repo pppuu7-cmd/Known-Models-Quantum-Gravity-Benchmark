@@ -1,10 +1,10 @@
 {
-  "schema_version": "3.8",
+  "schema_version": "4.0",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 36,
-  "phase": "WAVES_1_TO_13_TERMINAL__PREDICTIVE_RIGIDITY_FROZEN__MINIMAL_TEST_SUITE_NEXT",
+  "kmqgb_iteration": 37,
+  "phase": "WAVES_1_TO_14_TERMINAL__MINIMAL_TEST_SUITE_FROZEN__MACHINE_READABLE_PIPELINE_NEXT",
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
     "wave2": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
@@ -18,7 +18,8 @@
     "wave10": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
     "wave11": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
     "wave12": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
-    "wave13": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true, "rollup": {"PASS_RQIR_GATE": 5}}
+    "wave13": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
+    "wave14": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true, "rollup": {"PASS_RQIR_GATE": 5}}
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
@@ -30,15 +31,15 @@
     "cross_order_rigidity": "protocol/CROSS_ORDER_RIGIDITY.md",
     "intervention_rigidity": "protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md",
     "predictive_rigidity": "protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md",
-    "parent_template": "Gamma_parent=Gamma_C5,full_matched+DeltaGamma_KG",
-    "target_architecture": "few shared parent parameters predicting many complete response orders/configurations and held-out channels",
-    "next_method": "minimal discriminating test-suite design with robustness/cost metadata"
+    "minimal_test_suite": "protocol/MINIMAL_DISCRIMINATING_TEST_SUITE.md",
+    "target_architecture": "few shared parent parameters predicting many complete orders/configurations and held-out channels with a compact redundant attribution-complete suite",
+    "next_method": "machine-readable executable KG benchmark/promotion schema"
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
     "authoritative_research_iteration_observed": 590,
     "model_readiness_percent": 24,
-    "next_scientific_gate": "classify local K3 hard-channel origin and K1^3 linked-cut origin before complete nonlinear Ward/source closure and comparator quotient"
+    "next_scientific_gate": "K3 hard-channel origin plus K1^3 linked-cut origin before complete nonlinear Ward/source closure and comparator quotient"
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
@@ -50,16 +51,17 @@
     "cross_order_rigidity": "protocol/CROSS_ORDER_RIGIDITY.md",
     "intervention_rigidity": "protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md",
     "predictive_rigidity": "protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md",
+    "minimal_test_suite": "protocol/MINIMAL_DISCRIMINATING_TEST_SUITE.md",
     "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_036.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_037.md"
   },
   "next_actions": [
-    "Freeze minimal discriminating test-suite selection protocol",
-    "Assign candidate block cost/complexity metadata without promoting final resource claims",
-    "Use incremental Delta d_perp and projected singular-value gain for block selection",
-    "Require leave-one-block robustness of any selected suite",
-    "Keep final Fisher/resource promotion forbidden until a real comparator-subtracted residual exists",
+    "Define machine-readable observable-block registry schema",
+    "Define response-completeness/origin ledger schema",
+    "Define covariance/comparator/nuisance Jacobian registry schema",
+    "Define prospective train/holdout/minimal-suite declaration schema",
+    "Define fail-closed promotion-gate validator state machine",
     "Refresh external RQIR authority before readiness/heavy-compute decisions"
   ]
 }
