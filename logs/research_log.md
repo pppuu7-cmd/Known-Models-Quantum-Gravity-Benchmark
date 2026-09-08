@@ -20,147 +20,196 @@ Retained second-wave results:
 
 Cross-wave result: type-II Virasoro-Shapiro is distinct from the simple Huang-Remmen single-mass comparator in pole support, but global string uniqueness remains unproven.
 
-External RQIR remained read-only, last observed Candidate Gravity readiness 24%, with rank11 heavy work active. No KMQGB heavy shared-runner job was launched.
-
 ## 2026-09-08 — KMQGB-017 — Candidate Gravity design-prior layer and third-wave activation
 
-### Persistent KG-design artifacts
-
-Created:
+Created persistent KG-design artifacts:
 
 - `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`;
 - `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`.
 
-Updated `recovery/RESTORE_FROM_NEW_CHAT.md` so a new chat must read both files before continuing.
+Froze the third-wave denominator at five targets without changing historical `9/9` and `5/5` denominators.
 
-These artifacts preserve benchmark-derived design evidence for future Candidate Gravity while remaining strictly outside the separate RQIR Candidate Gravity authority/readiness.
+Core design lesson: a future KG model cannot be justified merely by a nonzero deviation from GR, Yukawa/scalar force, new noise/decoherence, positive two-point spectrum, UV softness, absence of extra poles, a special pole spectrum, higher derivatives or finite EFT Wilson coefficients.
 
-### Core design lesson frozen
+The preferred direction became a linked nonclassical interface hierarchy from one parent dynamics, with a rigidity audit.
 
-A future KG model must not be justified merely by any one of:
+## 2026-09-08 — KMQGB-018 — mediator attribution preflight
 
-- a nonzero deviation from GR;
-- a new Yukawa/scalar force;
-- new noise/decoherence;
-- a positive two-point spectral density;
-- UV softness or scale-free UV behavior;
-- absence of extra poles;
-- a special pole spectrum;
-- higher derivatives;
-- finite low-energy Wilson coefficients.
+Started T3-03 and froze the rule that end-state probe entanglement alone is not a theory-independent gravity witness.
 
-The strongest current design direction is a linked nonclassical interface hierarchy from one parent dynamics:
+New requirement: **mediator attribution** against C4/C6 ordinary quantized-matter/non-gravitational channels and C2/C3/C3b classical/stochastic gravity alternatives.
 
-`O_KG={J,N,chi_R,ordered/noncommuting response,higher cumulants,entanglement/non-LOCC witness,Ward/Bianchi/contact structure}`.
-
-This is a design target, not yet a Candidate Gravity model.
-
-### Third-wave denominator frozen
-
-Created `third_wave/README.md` with five targets:
-
-1. generalized bespoke / dual-resonance UV amplitudes;
-2. full Planck-crossover asymptotic-safety amplitude vector;
-3. nonclassical interface discriminator surviving C2/C3/C3b;
-4. nonlinear postquantum-classical consistency;
-5. concrete loop/canonical/discrete QG Lorentzian observable.
-
-Third-wave terminal coverage starts at `0/5 = 0%`.
-
-### T3-01 — bespoke dual resonance
-
-Created `models/bespoke_dual_resonance/audit.md`.
-
-Initial result: the Cheung-Remmen construction permits customizable mass spectra with dual resonance, simple-pole locality structure and acceptable UV behavior, with open unitary non-string regions in the original analysis. Therefore pole support alone is insufficient for a global UV/string uniqueness claim.
-
-The later Bhardwaj-Spradlin-Volovich-Weng unitarity audit sharply restricts the family, ruling out the analyzed asymptotically nonlinear Regge trajectories and constraining asymptotically linear subclasses; many unitary bespoke amplitudes also fail stronger Regge sum rules.
-
-A complementary Geiser-Lindwasser generalized Veneziano/Virasoro analysis provides the key new **rigidity** result: under the generalized-Virasoro physical assumptions, an overdetermined nonlinear recursion system admits only the string spectrum, while the generalized-Veneziano branch admits nontrivial families including Coon-like deformations.
-
-Benchmark interpretation:
-
-- broad parent families can make a single fingerprint tunable;
-- a sufficiently rich simultaneous constraint set can collapse the allowed solution space and create rigidity;
-- future KG design should seek the same structural property: independent consistency and observable relations must overconstrain one parent dynamics.
-
-Frozen stronger UV vector:
-
-`I_UV={pole support,residues/spins,crossing/duality,Regge trajectory,high-energy boundedness/sum rules,low-energy coefficient correlations}`.
-
-T3-01 operational completion estimate advanced to **60%**.
-
-Current blocker: `BESPOKE_CONCRETE_UNITARY_POINT_AND_JOINT_VECTOR_FREEZE`.
-
-### KG rigidity prior added
-
-`protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md` now requires a rigidity audit:
-
-- count remaining tunable functions/parameters after consistency and comparator constraints;
-- prefer low-dimensional or isolated solution manifolds;
-- reject novelty claims whose fingerprint remains freely tunable by a broader physically admissible parent class.
-
-### Progress
-
-- first wave: `9/9 = 100%` historical immutable;
-- second wave: `5/5 = 100%` historical immutable;
-- third wave: `0/5 = 0%` terminal coverage;
-- active T3-01 task: `60%`;
-- globally authorized robust unique-QG residuals: `0`;
-- Candidate Gravity readiness: external/read-only metric, last observed `24%`.
-
-## 2026-09-08 — KMQGB-018 — mediator attribution and nonclassical-interface preflight
-
-### Current entanglement-witness landscape
-
-Started `models/nonclassical_interface/preflight.md` for T3-03.
-
-Current 2025–2026 literature is actively contested:
-
-- standard information-theoretic witness arguments treat gravity-mediated entanglement under locality/channel assumptions as evidence of nonclassical mediator features;
-- Aziz–Howl (Nature 2025) claim a local classical-gravity/QFT-matter construction can generate entanglement;
-- Marletto–Oppenheim–Vedral–Wilson dispute that conclusion and argue any entangling transfer in the discussed construction is not mediated by classical gravity;
-- 2026 papers continue to defend or challenge theory-independence under different classical/collapse/QFT assumptions.
-
-KMQGB therefore refuses to use final probe entanglement alone as a universal Candidate Gravity discriminator.
-
-### New frozen KG requirement — mediator attribution
-
-The target is not merely
-
-`E_AB > 0`.
-
-A future KG test must identify the channel carrying nonclassical information and exclude ordinary quantized-matter/non-gravitational transfer and classical-interface alternatives.
-
-Provisional vector:
+Initial vector:
 
 `I_NC={E_AB,chi_R^grav,O_ordered^grav,N_grav,C3_plus,Ward/contact,mediator-null controls}`.
 
-Comparator preflight must include C2, C3, C3b, C4 and C6 before proposing a KG ansatz.
+## 2026-09-08 — KMQGB-019 — explicit two-mass nonclassical-interface geometry
 
-This adds a permanent design principle to `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`:
+Froze `NC-TWOMASS-BRANCH-MEDIATOR-001`.
 
-> **entanglement + mediator attribution**, not entanglement alone.
+For two masses A,B each prepared in branches `L,R`, with branch separations `d_ab`, froze
 
-T3-03 preflight completion estimate: **20%**. It is not terminal and does not change third-wave terminal coverage.
+`phi_ab = G m_A m_B tau/(hbar d_ab)`
+
+and the local-phase-resistant entangling combination
+
+`Theta = phi_LL + phi_RR - phi_LR - phi_RL`.
+
+For the ideal phase-only two-qubit calibration,
+
+`C_AB = |sin(Theta/2)|`.
+
+This relation is a benchmark calibration geometry, not a universal QG prediction.
+
+Expanded the target to include an ordered/commutator-sensitive component, symmetrized noise, higher cumulants, Ward/contact constraints and explicit mediator-null controls.
+
+T3-03 advanced to 45%.
+
+## 2026-09-08 — KMQGB-020 — nonlinear postquantum-classical consistency target
+
+Created `models/postquantum_nonlinear/audit.md` with realization family `PQCG-COVARIANT-NONLINEAR-CONSTRAINT-001`.
+
+The 2026 continuous hybrid and covariant path-integral formulations strengthen complete positivity and covariance. The 2022 constraint analysis for a broad discrete class nevertheless found non-closure without additional constraints.
+
+These results are not treated as contradictory because they test different consistency objects.
+
+Frozen nonlinear vector:
+
+`I_PQNL={CP,DiffCov,H_i,H_0,Closure,Bianchi,MatterBackreaction,DOF}`.
+
+Key KG lesson: manifest/path-integral covariance is not a substitute for same-realization nonlinear constraint closure and physical-state reduction.
+
+T3-04 completion estimate: 45%.
+
+## 2026-09-08 — KMQGB-021 — concrete 4D CDT observable
+
+Created `models/cdt_geon/audit.md` with realization `CDT-4D-CURVATURE-CORRELATOR-GEON-2026-001`.
+
+The 2026 four-dimensional CDT curvature-correlator analysis reports behavior compatible with a common massive geon-like state over a finite distance window, while explicitly describing the result only as a hint.
+
+Frozen vector:
+
+`I_CDT={common massive-correlator window,operator-independence,m_eff,phase/volume dependence,continuum-scaling status}`.
+
+Guardrail: CDT is Lorentzian at the causal-history level but Monte Carlo observables use the framework's Wick rotation, so the fitted correlation scale is not silently promoted to a real-time Lorentzian spectral pole.
+
+Key KG lesson: regulator/continuum mapping is part of the observable definition.
+
+T3-05 completion estimate: 50%.
+
+## 2026-09-08 — KMQGB-022 — Planck-crossover asymptotic-safety vector
+
+Created `models/asymptotic_safety/planck_crossover_audit.md` with realization `AS-SCALAR2TO2-PLANCK-CROSSOVER-2026-001`.
+
+The non-unique second-wave UV exponent `p_UV=0` was replaced by the full vector
+
+`I_AS={IR_GR,E_x,H_peak,W_peak,theta_dependence,A_UV,p_UV,contact_fraction,crossing_completion}`.
+
+The 2026 Lorentzian-reconstructed scalar-scattering calculation supplies GR behavior in the IR, bounded constant UV scattering, nontrivial crossover angular dependence and a resonance-like peak/turnover. The public calculation is not yet fully direct-contact/crossing complete.
+
+Key KG lesson: use full crossover/time/frequency shapes rather than endpoint or asymptotic scalars.
+
+T3-02 completion estimate: 50%.
+
+## 2026-09-08 — KMQGB-023 — concrete Coon point and closed-channel rigidity boundary
+
+Updated T3-01.
+
+Froze a concrete generalized-Veneziano Coon point `q=1/2`, lying inside the published `0<q<=2/3` unitary region of the analyzed subfamily.
+
+The point proves that healthy non-string deformations exist when assumptions leave enough freedom, but it is not misused as a same-channel closed-string four-graviton comparator.
+
+The terminal T3-01 question is now the **minimal closed-channel rigidity set**: determine which simultaneous assumptions collapse admissible non-string freedom to the string solution.
+
+Frozen vector remains
+
+`I_UV={P,R,S,C,Regge,B,EFT}`.
+
+T3-01 completion estimate: 70%.
+
+## 2026-09-08 — KMQGB-024 — gravity-induced quantum-channel readout
+
+Strengthened T3-03 using the 2026 gravity-induced-transparency optomechanical proposal.
+
+Added a supplementary readout `NC-OPTOMECH-GRAVITY-CHANNEL-001`, treating gravity as an induced communication channel and testing whether it is entanglement-breaking or non-entanglement-breaking under a frozen noise model.
+
+Expanded vector:
+
+`I_NC={Theta,E_AB,Q_channel,chi_R^grav,rho_comm^grav,N_grav,K3_plus,Ward/contact,mediator-null controls}`.
+
+A non-entanglement-breaking channel is not automatically gravity-attributable; C4/C6 and hidden shared quantum channels remain mandatory nuisance/comparator directions.
+
+Key KG lesson: target a **gravity-attributed quantum channel with a rigid multi-observable fingerprint**, not merely an entangled output state.
+
+T3-03 completion estimate: 60%.
+
+## 2026-09-08 — KMQGB-025 — expanded Candidate Gravity design priors
+
+Updated `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md` with four additional guardrails:
+
+1. quantum-channel EB/non-EB/capacity diagnostics require mediator attribution;
+2. full crossover/time-frequency vectors are preferred to single endpoint scalars;
+3. covariance/complete positivity do not substitute for nonlinear constraint closure;
+4. indefinite causal order/process structure requires **geometry attribution**, because an operational causal-order witness can also be produced by ordinary optical quantum-switch implementations;
+5. discrete/numerical signals require a regulator/continuum audit.
+
+The preferred KG vector now includes response/noise/ordered/higher-statistics, entanglement/quantum-channel structure, causal/process observables, Ward/constraint identities, mediator attribution and geometry attribution.
+
+## 2026-09-08 — KMQGB-026 — all five third-wave targets active
+
+Updated `third_wave/README.md`.
+
+Operational progress:
+
+- T3-01: 70%;
+- T3-02: 50%;
+- T3-03: 60%;
+- T3-04: 45%;
+- T3-05: 50%.
+
+Third-wave terminal coverage remains exactly `0/5 = 0%` because none of the five targets is terminally classified.
+
+## 2026-09-08 — KMQGB-027 — fourth-wave preflight and synchronized recovery
+
+Created `fourth_wave/PREFLIGHT.md` **without freezing a denominator**.
+
+Current candidate pool, prioritized by direct relevance to current KG design assumptions:
+
+1. non-Gaussian stochastic gravity as an adversary for T3-03 `K3_plus`;
+2. causal/process structure with geometry attribution;
+3. cross-detector spacetime-fluctuation geometry;
+4. quantum-reference-frame / relational-invariance controls;
+5. separate gravity quantum-channel target only if independent after T3-03 closure;
+6. strong-field Candidate-Gravity consistency deferred until a concrete KG ansatz exists.
+
+Immediate fourth-wave preflight lesson: higher symmetrized cumulants may still be classically stochastic, and indefinite causal order may still be ordinary quantum control. Future KG discriminators must therefore emphasize ordered/noncommuting structure, attribution and linked constraints rather than labels.
+
+Synchronized:
+
+- `recovery/state.json` -> schema 2.7 / iteration 27;
+- `recovery/CURRENT_BENCHMARK_FRONT.md` -> iteration 027;
+- `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`;
+- `recovery/RESTORE_FROM_NEW_CHAT.md`;
+- design-prior, third-wave and fourth-wave entrypoints.
 
 ### External RQIR refresh
 
-Direct GitHub workflow check found rank11 run `34168897005` is now `completed/success`.
+External read-only RQIR advanced to Iteration **569**:
 
-However, authoritative RQIR `CURRENT_QG_FRONT.md` is now Iteration 568 and still lists rank11 as active, explicitly requiring raw-valid artifact consumption before rank12 authorization.
+- Candidate Gravity readiness remains **24%**;
+- QUARTER new coordinates raw-closed `11/12 = 91.666667%`;
+- including overlap corners `15/16 = 93.75%`;
+- rank11 raw-consumed PASS;
+- rank12 active at `(+2.5e-6,+1.25e-6)`, run `34175330006`, job `101903475600`.
 
-Therefore KMQGB preserves the fail-closed rule:
-
-- workflow success is not scientific authority;
-- no heavy shared-runner KMQGB job is launched until RQIR raw authority advances and the next chain state is explicit.
-
-Candidate Gravity readiness remains externally reported at **24%**.
+No KMQGB heavy shared-runner job was launched.
 
 ### Current progress
 
-- first wave: `9/9 = 100%` immutable;
-- second wave: `5/5 = 100%` immutable;
-- third wave: `0/5 = 0%` terminal coverage;
-- T3-01 primary audit: `60%`;
-- T3-03 preflight: `20%`;
-- globally authorized robust unique-QG residuals: `0`.
+- first wave `9/9 = 100%` historical immutable;
+- second wave `5/5 = 100%` historical immutable;
+- third wave `0/5 = 0%` terminal coverage;
+- leading active task T3-01 `70%`;
+- T3-03 `60%`;
+- external Candidate Gravity readiness `24%`;
+- globally authorized robust unique-QG residuals `0`.
