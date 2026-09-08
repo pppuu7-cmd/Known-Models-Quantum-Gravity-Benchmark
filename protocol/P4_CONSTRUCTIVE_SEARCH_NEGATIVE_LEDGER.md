@@ -66,13 +66,54 @@ Recent analyses indicate that observing retardation together with gravity-mediat
 
 This is highly relevant to the experimental attribution stack, but it does not select a fundamental quartic/higher parent dynamics and therefore is not P4.
 
+## N6 — null-slab / causal-diamond projector gluing
+
+**Result:** `GENERAL_QG_SCAFFOLD__PROJECTOR_NOT_SELECTED`.
+
+A causal-diamond/null-slab gluing rule is a useful architecture for local amplitudes and Ward/charge consistency, but recent theory-independent formulations explicitly allow several realizations, including spinfoam/GFT-style projectors. Gluing a supplied physical projector does not uniquely select the projector or a new hard graviton kernel.
+
+Authority: `protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md`.
+
+## N7 — associator / curved composition primitive
+
+**Result:** `RELATIVE_LOCALITY_CONTAINMENT_RISK__NO_UNIQUE_HARD_GRAVITON_KERNEL`.
+
+Nonlinear/nonassociative composition laws and their relation to curvature/causal structure already occur in relative-locality and curved-momentum-space frameworks. A generic associator therefore cannot serve as a novel KG parent selector unless an additional microscopic rule derives a complete hard Lorentzian spin-2 hierarchy.
+
+Authority: `protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md`.
+
+## N8 — nonassociative star/R-flux gravity
+
+**Result:** `STRING_R_FLUX_NONASSOCIATIVE_COMPARATOR_CONTAINED`.
+
+Nonassociative star-product gravity with R-flux deformations is already an explicit string-related modified-gravity/QG comparator class. Nonassociativity by itself therefore fails novelty containment.
+
+Authority: `protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md`.
+
+## N9 — UV/IR reciprocal spectral self-duality
+
+**Result:** `BORN_RECIPROCITY_STRING_DUALITY_CONTAINMENT`.
+
+Born reciprocity, generalized T-duality and metastring/Born-geometry constructions already provide strong UV/IR or position/momentum reciprocal principles. A self-duality constraint may reduce freedom but does not alone uniquely select the hard graviton spectral/CTP hierarchy.
+
+Authority: `protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md`.
+
+## N10 — causal-diamond overlap-spectrum consistency
+
+**Result:** `HST_OVERLAP_CONSISTENCY_COMPARATOR`.
+
+Requiring overlapping causal diamonds to assign a common subsystem the same entanglement spectrum has a close Holographic Space-Time/Hilbert-bundle precedent. It is a strong consistency condition but not a novel standalone selector of a complete 4D Lorentzian hard spin-2 interaction hierarchy.
+
+Authority: `protocol/COMPOSITION_GLUING_DUALITY_P4_PREFILTER.md`.
+
 ## Current constructive frontier
 
 After these rejections, the strongest unresolved possibilities remain:
 
 - `E3`: genuinely nonperturbative graviton dynamics that changes hard spectral weight without introducing an arbitrary Wilson/function tower;
-- `E5`: a microscopic algebraic/causal principle that derives both geometry and hard interaction data;
-- `D-nonlocal`: only if an additional physical principle uniquely or near-uniquely fixes the amplitude class;
-- `S-local + new spectral origin`: only if the new spectral measure/tower/continuum is itself derived by a low-freedom parent rule.
+- `E5+`: a microscopic dynamical object that derives both geometry **and** hard interaction data, rather than only a gluing/composition consistency scaffold;
+- `D-nonlocal`: only if an additional physical principle uniquely or near-uniquely fixes the amplitude class and is not merely UV/IR reciprocity;
+- `S-local + new spectral origin`: only if the new spectral measure/tower/continuum is itself derived by a low-freedom parent rule;
+- `finite-object dynamical selector`: a finite microscopic rule that directly fixes a normalized 4-point/higher kernel and the same-parent CTP/retarded block with no independent per-order Wilson/function freedom.
 
 R4 remains frozen until one branch produces an explicit survivor.
