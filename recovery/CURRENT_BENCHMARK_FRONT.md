@@ -1,7 +1,7 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-08  
-**KMQGB iteration:** 056  
+**KMQGB iteration:** 057  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
 **Phase:** WAVES 1–37 TERMINALLY CLASSIFIED / CONSTRUCTIVE P4 PARENT PRINCIPLE REQUIRED
@@ -12,7 +12,7 @@ Authority: `protocol/READINESS_METRICS.md`.
 
 - **R1 — Repository readiness for future KG construction: 92%.**
 - **R2 — KMQGB methodology/material readiness: 88%.**
-- **R3 — Candidate Gravity scientific readiness: 24%** at last directly observed external RQIR Iteration 611.
+- **R3 — Candidate Gravity scientific readiness: 24%** at directly observed external RQIR Iteration 615.
 - **R4 — current task `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`: 45%.**
 
 R4 is controlled by `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md`. P1–P3 are complete. Further negative audits do not raise R4; an explicit constructive P4 survivor is required.
@@ -24,77 +24,64 @@ R4 is controlled by `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md`. 
 - Globally authorized robust unique-QG residuals: **0**.
 - KMQGB-promoted Candidate Gravity ansatz: **none**.
 
-## Wave 34 — constructive P4 negative search
+## Waves 34–37 — retained new conclusions
 
-Terminal `5/5`; no R4 credit.
+### Wave 34 — constructive P4 negative search
 
-Causal-diamond/entropy dynamics, operator-algebra emergence, quantum equivalence principles, black-hole/self-completion spectral ideas and resurgence/transseries were all examined as possible constructive parent selectors. They provide important constraints or completion mechanisms but no explicit low-freedom hard 4-point/CTP parent that survives existing comparators.
+Causal-diamond/entropy dynamics, operator-algebra emergence, quantum equivalence principles, black-hole/self-completion spectral ideas and resurgence/transseries provide useful constraints/completion mechanisms but no explicit novel hard 4-point/CTP parent. No R4 credit.
 
-Ledger: `protocol/P4_CONSTRUCTIVE_SEARCH_NEGATIVE_LEDGER.md`.
+### Wave 35 — major QG program coverage
 
-## Wave 35 — major QG programs hard-observable audit
+Scoped hard-observable audits now include modern covariant LQG/spinfoams, GFT/TGFT, random tensor models, causal fermion systems and the QFT-vector/triangulated induced-gravity program. All have meaningful recent progress, but the audited realizations remain blocked at the complete 4D Lorentzian quantum-spin-2 hard-observable gate rather than falsified.
 
-Terminal `5/5`; benchmark-corpus coverage only.
+This closed the benchmark/comparator evidence rubric from `14/15` to `15/15`, raising R2 from 87% to 88%.
 
-Scoped modern audits now include:
+### Wave 36 — matrix-model microscopic parent precedent
 
-- covariant LQG/spinfoams: strong 2026 UV fixed-point / triangulation-ambiguity reduction, but no audited same-realization hard graviton/CTP object;
-- GFT/TGFT: relational observables and causally complete Lorentzian condensate/phase-transition progress, but no audited hard spin-2 scattering/CTP object;
-- random tensor models: quantitative Euclidean pregeometric RG/universality progress, but no Lorentzian physical spin-2 observable;
-- causal fermion systems: relational many-body spacetime and QFT-emergence progress, but no audited hard quantum-gravity graviton kernel;
-- QFT-vector/triangulated induced gravity: explicit 2D Lorentzian induced-gravity precedent, but no 4D quantum-spin-2 hard object.
+BFSS provides a strong modern standard for parent derivation: a microscopic matrix Hamiltonian now yields concrete graviton-amplitude results, including exact localized 3-point momentum dependence and a controlled class of n-point single-minus amplitudes. IKKT similarly derives emergent 3+1D gravity from microscopic matrix dynamics but with extra fuzzy/higher-spin structure.
 
-All statuses are scoped `BLOCKED_MISSING_REQUIRED_OBJECT`, not school-wide FAILs.
+These are known M/string/matrix comparator architectures, not a new KG P4 survivor.
 
-This closes the benchmark/comparator-evidence component of R2 from `14/15` to `15/15`, raising R2 `87% -> 88%`.
+### Wave 37 — self-sourced spectral closure
 
-Detailed audit: `protocol/MAJOR_QG_PROGRAMS_HARD_OBSERVABLE_AUDIT.md`.
+A strong self-consistent graviton spectral closure is already substantially realized by Lorentzian spectral-RG/asymptotic-safety calculations, including a multigraviton continuum. Unitarized-GR/graviball calculations provide a collective-spectral precedent but do not uniquely close the full crossing/inelastic/CTP parent. No novel P4 survivor.
 
-## Wave 36 — matrix-model microscopic parent precedent
+## Constructive P4 target
 
-Terminal `5/5`; no R4 credit.
+A future parent must meet a BFSS-level derivational standard while being outside known comparator manifolds:
 
-BFSS now provides a particularly strong parent-derivation precedent: modern 2026 work computes graviton amplitudes directly from the microscopic matrix model, including an exact localized three-point result and a class of n-point single-minus amplitudes in controlled kinematics.
+`microscopic/equally constructive principle -> explicit hard gravitational observable -> shared higher-point/CTP hierarchy -> GR infrared limit`,
 
-IKKT/type-IIB matrix-model work derives 3+1D induced/emergent gravity and additional higher-spin/modified-gravity sectors from a microscopic matrix action.
+with few parameters and exact spectral/causal/radiative/kinematic authority.
 
-These are strong examples of `microscopic dynamics -> gravity observable`, but they live in known M/string/matrix comparator space and include substantial extra structure. They raise the standard for P4 but do not supply a novel KG parent.
-
-Protocol: `protocol/MATRIX_MODEL_MICROSCOPIC_PARENT_PRECEDENT.md`.
-
-## Wave 37 — self-sourced spectral closure
-
-Terminal `5/5`; no R4 credit.
-
-The exploratory SSC idea asks whether hard spectral weight can be generated entirely by the same graviton/multigraviton dynamics without a hand-chosen form factor or new elementary species.
-
-Strong modern spectral-RG/asymptotic-safety calculations already implement a close version of this idea self-consistently, including the multigraviton continuum. Therefore the strong SSC branch is an asymptotic-safety comparator.
-
-Graviball/unitarized-GR constructions show that collective graviton dynamics can generate resonance structure, but the known methods do not uniquely close the full crossing/inelastic/CTP parent.
-
-Protocol: `protocol/SELF_SOURCED_SPECTRAL_CLOSURE_AUDIT.md`.
-
-## Current Candidate Gravity architecture
-
-Preferred search language remains
+The preferred search language remains
 
 `full matched C5 through 3-point + first candidate-specific independent 4-point/higher structure`,
 
-with few shared physical parameters across order, configuration, representation, background and holdout blocks.
+but the new structure must be derived, not chosen.
 
-A future parent must meet the **BFSS-level derivational standard** — explicit microscopic or equally constructive dynamics leading to a gravitational observable — while also surviving full C5, string/M-theory/matrix, asymptotic-safety, LQG/discrete, nonlocal and other registered comparator manifolds.
+## External RQIR authority — Iteration 615
 
-## External RQIR authority
+Latest directly observed scientific authority: **Iteration 615**, `MODEL_READINESS=24%`.
 
-Last directly observed authority before this synchronization: **Iteration 611**, `MODEL_READINESS=24%`.
+Important progress beyond Iter611:
 
-Current blocker remains kinematic projection rank: full source response depends on three independent invariants `(u,a_s,a_a)`, while native `D_s` supplies one scalar `s`; two same-parent auxiliary constraints or an equivalent prospective one-parameter trajectory are required before roots/Jacobians/native residual authority exists.
+- Iter612 proves the two missing auxiliary hard-channel constraints were absent from historical authority, so a prospective completion was required;
+- Iter613 prospectively freezes `MSSC001-NATIVE-S-KIN-V1` with `p0(s)=(sqrt(s),0,0,0)` and the same-parent trajectory before roots were evaluated;
+- Iter614 closes all positive-s simple-root support and Jacobians under that frozen trajectory;
+- Iter615 independently cross-checks six aggregate normalized source-side internal scalar-pole coefficients; all are finite and nonzero.
 
-No Source/Born subtraction, comparator quotient, ANSATZ-003, Fisher or resources until that bridge closes.
+Thus the previous kinematic-rank blocker has been **successfully resolved prospectively** rather than by post-hoc identification.
 
-## Exact next front — constructive P4
+Readiness remains 24% because the result is still non-residual. The exact next RQIR gate is the prospective native `Y/T_cut` binding that must specify relative normalization/sign, source-q to Iter582-q2 correspondence, endpoint/amputation treatment and local K3/contact origin before source weights may be projected into the matched observable.
 
-Negative-taxonomy expansion is now secondary. The scored deliverable remains an explicit low-freedom parent principle that
+Until that binding closes: no Source/Born subtraction, fixed comparator quotient, ANSATZ-003, Fisher or resources.
+
+No heavy numerical run is scientifically required for this current RQIR gate.
+
+## Exact next KMQGB front — constructive P4
+
+Negative-taxonomy expansion is secondary. The scored deliverable remains an explicit low-freedom parent principle that
 
 1. derives a concrete hard 4-point/higher or cross-representation relation;
 2. has a microscopic/constructive chain comparable in explicitness to BFSS, not a chosen function;
