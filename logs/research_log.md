@@ -1,92 +1,135 @@
 # KMQGB Research Log
 
-## 2026-09-08 — KMQGB-001 — standalone migration and authority isolation
+## 2026-09-08 — KMQGB-001 to KMQGB-010 — first-wave authority
 
-- Created standalone benchmark authority in `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`.
-- Identified exact source RQIR branch `rqir7-known-models-benchmark`; migrated seven benchmark artifacts while preserving source RQIR unchanged.
-- Established write firewall: KMQGB writes only to standalone repo; RQIR is read-only external authority.
-- External Candidate Gravity readiness observed at 24%.
+Historical first wave was migrated, protocol-frozen and terminally classified at `9/9 = 100%`. Retained rollup: five exact comparator identities, two operational degeneracies, one real consistency failure (standard fundamental Stelle under conventional ghost interpretation), one protocol/domain block (type-II string UV branch under the then-available comparator registry), and zero globally authorized robust unique-QG residuals.
 
-## 2026-09-08 — KMQGB-002 — protocol recovery, two terminal controls, semiclassical start
+The detailed first-wave artifacts remain authoritative in their model directories and recovery files. The first-wave denominator is immutable.
 
-- Recovered Q1–Q7, comparator registry C0–C6, and F0–F7 funnel authority from RQIR.
-- M01 GR weak-field null control closed `EXACT_COMPARATOR_IDENTITY` with C0; residual 0.
-- M02 perturbative quantum GR EFT closed `EXACT_COMPARATOR_IDENTITY` with C5; residual 0.
-- Activated M03 semiclassical gravity.
-- Terminal coverage reached 2/9 = 22.22%.
+## 2026-09-08 — KMQGB-011 — second-wave queue freeze and nonlocal form-factor closure
 
-## 2026-09-08 — KMQGB-003 — semiclassical/stochastic closure and f(R) activation
+### Second-wave denominator
 
-- M03 semiclassical control closed `EXACT_COMPARATOR_IDENTITY` with C1.
-- M04 Einstein-Langevin stochastic control closed `EXACT_COMPARATOR_IDENTITY` with C2.
-- Activated M05 metric `R+R^2/(6M^2)` gravity.
-- Terminal coverage reached 4/9 = 44.44%.
+Froze a separate five-target second-wave queue in `protocol/SECOND_WAVE_QUEUE.md`:
 
-## 2026-09-08 — KMQGB-004 — f(R) calibration-resistant discriminator
+1. weakly nonlocal / entire-form-factor gravity;
+2. concrete Lorentzian asymptotic safety;
+3. classical-channel measurement-feedback gravity;
+4. modern postquantum classical gravity;
+5. same-domain UV comparator for the first-wave M09 string-threshold branch.
 
-- Froze `gamma(r)=Psi/Phi=(3-exp(-Mr))/(3+exp(-Mr))` and exact C0 residual `Delta_gamma=-2 exp(-Mr)/(3+exp(-Mr))`.
-- Common source normalization cancels; M05 remained open for broader scalar/Yukawa quotient.
+The historical first-wave `9/9` denominator remains unchanged.
 
-## 2026-09-08 — KMQGB-005 — M05 terminal broader-comparator closure
+### S2-M01 — weakly nonlocal gravity
 
-- Generic one-scalar Yukawa family exactly reproduces M05 at `alpha=1/3`, `m=M`.
-- Terminal M05: `OPERATIONALLY_DEGENERATE`; broader-profiled residual 0.
-- Terminal coverage 5/9 = 55.56%.
+Froze `NL-EOM-ENTIRE-MINK-001`, the special EOM-squared weakly-nonlocal class with zero-free entire form factor, explicit `H(z)=z/M_*^2`, and Euclidean-amplitude/analytic-continuation prescription.
 
-## 2026-09-08 — KMQGB-006 — current-bound refresh and linked Brans-Dicke fingerprint
+The entire form factor avoids the extra Stelle-like massive spin-2 propagator pole. Modern spectral work supports positive spectral density for the corresponding entire-form-factor class under the stated construction.
 
-- Provisional `omega_BD=50000` retired after 2024 pulsar review lower bound near `150000`; active point moved to `omega_BD=200000`.
-- Static `Delta_gamma=-1/200002` linked to scalar dipole-radiation sector through the same coupling.
-- M06 reached 80% pending broader scalar-tensor quotient.
+However, the Modesto–Calcagni field-redefinition theorem gives
 
-## 2026-09-08 — KMQGB-007 — M06 nested-model closure and M07 Stelle control
+`A_n^nonlocal(tree,on-shell)=A_n^local(tree,on-shell)`
 
-- General massless scalar-tensor gravity contains the exact Brans-Dicke point; M06 parent-profiled model-identification residual 0.
-- M06 terminal: `OPERATIONALLY_DEGENERATE`, not inconsistency.
-- Froze standard fundamental Stelle quadratic gravity under conventional Feynman/Hilbert-space physical-state interpretation.
-- Opposite-residue massive spin-2 pole fails RQIR F2 positivity/unitarity.
-- M07 terminal: `FAIL_RQIR_CONSISTENCY` at `F2_STANDARD_MASSIVE_SPIN2_GHOST`.
+for all frozen tree-level on-shell `n`-point amplitudes of the EOM-squared class.
 
-## 2026-09-08 — KMQGB-008 — higher-curvature EFT boundary control
+Terminal status: `OPERATIONALLY_DEGENERATE`; tree-level comparator residual 0.
 
-- Froze `GR-EFT-RIEMANN3-MINK-001` for `Q << Lambda`, higher-curvature operator treated perturbatively.
-- Spurious high-scale roots of a truncated EFT equation are not promoted into the low-energy state space.
-- M08 is a C5 Wilson-coefficient slice.
-- Terminal M08: `EXACT_COMPARATOR_IDENTITY` with C5.
+Guardrail: no claim of loop/off-shell/microcausal equivalence to GR.
 
-## 2026-09-08 — KMQGB-009 — type-II string scattering activation
+## 2026-09-08 — KMQGB-012 / KMQGB-015 — concrete Lorentzian asymptotic-safety audit and closure
 
-- Froze the type-II tree-level Virasoro-Shapiro ancestor amplitude and its low-energy `alpha'^3 zeta(3) R^4` onset.
-- Identified the common-domain rule: finite-order sub-threshold analytic string corrections are C5-EFT Wilson data; threshold pole structure cannot be compared to a low-energy C5 truncation outside its validity domain.
-- Initial M09 blocker was explicit 4D compactification/interface.
+Initially instantiated the 2026 self-consistent Lorentzian graviton spectral-function computation as a strong two-point realization with positive spectral density, massless graviton peak, multigraviton continuum and unit spectral weight in its physical on-shell scheme.
 
-## 2026-09-08 — KMQGB-010 — type-II 4D zero-mode closure and first-queue completion
+A more direct RQIR-facing observable became available from Chiesa–Pawlowski–Reichert (2026): graviton-mediated `2->2` scalar scattering with a momentum-dependent fRG scalar–graviton vertex reconstructed to the Lorentzian branch.
 
-### 4D string realization frozen
+Froze `AS-SCALAR2TO2-LOR-2026-001` and the fixed-angle ultraviolet scaling exponent
 
-- Used six-dimensional toroidal compactification with external four-dimensional zero-mode gravitons and tree-level genus-zero scope.
-- Sannan's direct result supplies the anchor that the compactified zero-slope four-graviton string amplitude agrees with 4D GR graviton helicity amplitudes.
-- Frozen normalized observable:
-  `F_VS=Π_{x=s,t,u} Gamma(1-alpha' x/4)/Gamma(1+alpha' x/4)`.
-- `F_VS -> 1` in the GR/zero-slope limit.
-- Low-energy expansion starts with `ln F_VS=[zeta(3) alpha'^3/32] s t u + ...` in the declared Mandelstam convention, corresponding to the characteristic `alpha'^3 zeta(3) R^4` correction.
+`p_UV=lim_{s->infinity} d ln|A_s|/d ln s`.
 
-### M09 comparator result
+The asymptotic-safety amplitude approaches a constant, hence `p_UV^AS=0`.
 
-- In the common sub-string-threshold domain, any fixed finite analytic order is absorbable into C5 gravitational-EFT Wilson coefficients: scoped low-energy result `OPERATIONALLY_DEGENERATE_WITH_C5_EFT`, residual 0 after matching.
-- At energies resolving the massive string pole tower, low-energy C5 is no longer an admissible comparator.
-- The current frozen comparator registry has no explicit UV-completion class valid in that same domain.
-- Terminal M09 under the current protocol: `BLOCKED_PROTOCOL_MISMATCH`, not theory inconsistency.
+The independent Draper–Knorr–Ripken–Saueressig Lorentzian quantum-effective-action scalar-scattering construction is also asymptotically scale-free, with constant UV partial waves, hence `p_UV^DKRS=0`.
 
-### First queue complete
+Therefore the frozen UV-exponent quotient gives `Delta_p=0`.
 
-- Terminal coverage: **9/9 = 100%**.
-- Rollup: 5 exact comparator identities, 2 operational degeneracies, 1 genuine consistency failure, 1 protocol/domain block, 0 authorized robust unique QG residuals.
-- `100%` is queue-classification coverage only, not quantum-gravity completion.
-- Next research front is a separately frozen second-wave queue; the historical 9/9 denominator will not be retroactively changed.
+Terminal status: `OPERATIONALLY_DEGENERATE` in this scoped observable.
 
-### External RQIR firewall
+Guardrail: full Planck crossover, normalization, angular dependence, resonance-like structure and contact-completed crossed amplitudes are not claimed degenerate. The 2026 asymptotic-safety paper itself notes that forward scattering requires the missing four-scalar/contact completion.
 
-- External Candidate Gravity last observed Iteration 566, readiness 24%.
-- Rank11 run `34168897005` verified `in_progress` during this cycle.
-- No competing KMQGB heavy job was launched.
+## 2026-09-08 — KMQGB-013 — KTM classical-channel closure
+
+Froze `KTM-OSCILLATOR-MEASUREMENT-FEEDBACK-001`.
+
+The continuous weak-measurement + reciprocal classical-feedback construction reproduces the Newtonian bilinear coupling `K x_1 x_2` and ties it to a minimum decoherence/noise rate. The standard symmetric Gaussian KTM channel does not generate entanglement.
+
+Because RQIR C3 explicitly contains classical-channel / measurement-feedback gravity, this realization is literally a C3 member.
+
+Terminal status: `EXACT_COMPARATOR_IDENTITY`; residual 0.
+
+Lesson: gravitational decoherence, heating, noise or even quantum discord are not by themselves certificates of a quantum gravitational mediator.
+
+## 2026-09-08 — KMQGB-014 — postquantum classical Bianchi reconciliation and closure
+
+Activated the 2026 Oppenheim–Sajjad stochastic-mode realization and initially retained a Bianchi/PSD blocker because Hirotani–Matsumura criticize a naive delta-correlated white-noise tensor kernel.
+
+Direct source inspection resolved the issue at the exact frozen linearized level:
+
+- Oppenheim–Sajjad explicitly acknowledge that the naive generalized-DeWitt diffusion covariance is not conserved as an SDE kernel;
+- in the OM action, saturation with the conserved Einstein tensor eliminates longitudinal contributions;
+- the same paper constructs a local transverse/conserved diffusion kernel using spin projectors;
+- the conserved kernel yields the same OM action and two-point function in the declared linearized pure-gravity sector;
+- the analyzed action is positive semi-definite on all dynamical modes.
+
+Froze the conserved formulation as `PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001`.
+
+Because modern postquantum classical gravity is an explicit C3b comparator class, terminal status is `EXACT_COMPARATOR_IDENTITY`; residual 0.
+
+Guardrail: this does not prove full nonlinear matter-coupled constraint closure for every postquantum model.
+
+## 2026-09-08 — KMQGB-016 — same-domain UV comparator for string and second-wave completion
+
+### S2-M05 comparator construction
+
+Froze the simplest Huang–Remmen gravitational triple-product amplitude
+
+`A_HR(s)=1/s+1/(m^2-s)`,
+
+`M_HR=kappa^2 R^4 A_HR(s)A_HR(t)A_HR(u)`.
+
+It shares the exact four-graviton external channel with first-wave M09, reduces to Einstein gravity in the IR, is defined through its UV/massive-pole region, has positive partial-wave residues in the cited construction, and softens fixed-angle UV scattering to `E^-4` when the coupling sum rule is satisfied.
+
+This closes the second-wave objective `SAME_DOMAIN_UV_COMPARATOR_ESTABLISHED` with status `PASS_RQIR_GATE` as **comparator infrastructure**.
+
+The authors do not identify a complete microscopic Hamiltonian/Lagrangian behind the amplitude, so it is not promoted as a fully validated microscopic QG model.
+
+### Cross-wave M09 result
+
+Historical first-wave M09 remains immutable as `BLOCKED_PROTOCOL_MISMATCH` under its original comparator registry.
+
+Prospectively, the missing-comparator problem is repaired for one explicit UV comparison. Define the positive-mass s-channel pole-support set after removing the universal massless graviton pole:
+
+- HR single-mass comparator: `P_s^HR={m^2}` with an infinite spin accumulation at that one mass;
+- type-II Virasoro–Shapiro: an infinite sequence of distinct massive string levels.
+
+No finite `m^2` makes the two pole-support sets equal. Thus type-II string is `DISTINCT_FROM_HR_SINGLE_MASS_UV_COMPARATOR` in the full UV pole-support observable.
+
+This is not global string uniqueness because generalized Virasoro/Coon/bespoke dual-resonance and other UV amplitudes remain unprofiled.
+
+### Second-wave final progress
+
+Second-wave terminal coverage: **5/5 = 100%**.
+
+Second-wave rollup:
+- `OPERATIONALLY_DEGENERATE`: 2;
+- `EXACT_COMPARATOR_IDENTITY`: 2;
+- `PASS_RQIR_GATE` comparator infrastructure: 1;
+- `FAIL_RQIR_CONSISTENCY`: 0;
+- globally authorized `ROBUST_NONZERO_RESIDUAL`: 0.
+
+### External RQIR state
+
+Rechecked external RQIR authority: Iteration 566, Candidate Gravity `MODEL_READINESS=24%`.
+
+Rank11 run `34168897005`, job `101885271903`, coordinate `(+2.5e-6,-1.25e-6)` remains directly verified `in_progress`.
+
+No KMQGB heavy shared-runner work was launched.
