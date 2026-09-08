@@ -1,108 +1,107 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-08  
-**KMQGB iteration:** 036  
+**KMQGB iteration:** 037  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Phase:** WAVES 1–13 TERMINALLY CLASSIFIED / PREDICTIVE RIGIDITY FROZEN / MINIMAL DISCRIMINATING TEST-SUITE NEXT
+**Phase:** WAVES 1–14 TERMINALLY CLASSIFIED / PREDICTIVE + MINIMAL-SUITE RIGIDITY FROZEN / MACHINE-READABLE KG PIPELINE NEXT
 
 ## Coverage
 
 - Wave 1: **9/9 = 100%** — immutable.
-- Waves 2–13: **each 5/5 = 100%** — immutable.
+- Waves 2–14: **each 5/5 = 100%** — immutable.
 - Globally authorized robust unique-QG residuals: **0**.
 - KMQGB-promoted Candidate Gravity ansatz: **none**.
 - External Candidate Gravity readiness: **24%**.
 
-## Permanent Candidate Gravity construction protocols
+## Permanent Candidate Gravity protocols
 
-1. `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`;
-2. `protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md`;
-3. `protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`;
-4. `protocol/RESIDUAL_SPACE_GEOMETRY.md`;
-5. `protocol/OPTIMAL_COMPARATOR_CONTRASTS.md`;
-6. `protocol/CROSS_ORDER_RIGIDITY.md`;
-7. `protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md`;
-8. `protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md`.
+- `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`;
+- `protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md`;
+- `protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md`;
+- `protocol/RESIDUAL_SPACE_GEOMETRY.md`;
+- `protocol/OPTIMAL_COMPARATOR_CONTRASTS.md`;
+- `protocol/CROSS_ORDER_RIGIDITY.md`;
+- `protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md`;
+- `protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md`;
+- `protocol/MINIMAL_DISCRIMINATING_TEST_SUITE.md`.
 
-Reference code:
-
-- `code/inverse_kernel_ordered_partitions.py`;
-- `code/residual_space_geometry_reference.py`;
-- `code/optimal_comparator_contrasts_reference.py`;
-- `code/cross_order_rigidity_reference.py`;
-- `code/intervention_design_reference.py`;
-- `code/predictive_holdout_reference.py`.
-
-## Wave 12 — intervention rigidity
-
-Terminal `5/5`, methodology PASS.
-
-Known configuration controls are design variables, not free nuisance. Shared dynamics parameters remain shared across configurations. New configurations are chosen to increase post-comparator rank/conditioning/SNR rather than raw signal amplitude.
+Reference code is maintained under `code/` for each algebraic layer.
 
 ## Wave 13 — predictive/holdout rigidity
 
 Terminal `5/5`, methodology PASS.
 
-Prospectively split complete physical blocks into training `T` and holdout `H`.
+Shared parent parameters are fit only on pre-registered training blocks and must predict holdout blocks without retuning.
 
-Fit shared parent parameters only on `T`, then predict `H` without shared-parameter retuning:
+Exact correlated linear-Gaussian predictive covariance:
 
-`r_H^pred = y_H - c_H(theta_hat_T)`.
-
-For the exact correlated linear-Gaussian reference,
-
-`M=(J_T^T Sigma_TT^(-1)J_T)^+ J_T^T Sigma_TT^(-1)`
-
-and
+`M=(J_T^T Sigma_TT^(-1)J_T)^+ J_T^T Sigma_TT^(-1)`,
 
 `Sigma_pred,H = Sigma_HH + J_H M Sigma_TT M^T J_H^T - J_H M Sigma_TH - Sigma_HT M^T J_H^T`.
 
-This correctly retains training/holdout correlated noise/systematics.
+Leave-one-configuration/order-out validation is frozen as a rigidity diagnostic. Training identifiability must be established before interpreting a holdout residual.
 
-Leave-one-configuration/order-out validation is frozen as a rigidity diagnostic. A holdout test is only sharp if training data actually constrain the shared parameters.
+## Wave 14 — minimal discriminating test suite
 
-## Candidate Gravity design target
+Terminal `5/5`, methodology PASS.
 
-The strongest current architecture is:
+For a pre-registered candidate block library `B`, assign only **relative pre-residual design costs** and solve a threshold-first subset problem:
 
-- few shared parent parameters/functions;
-- complete same-parent responses across several orders;
-- multiple controlled configurations/interventions;
-- exact Ward/contact/relational completion;
-- nonzero comparator-orthogonal residual;
-- global comparator separation;
-- robust projected singular directions;
-- successful prediction of held-out orders/configurations without retuning.
+`min_S sum_(b in S)c_b`
 
-This is the current meaning of **rigidity by overconstraint** for future KG.
+subject to frozen constraints on
 
-## External RQIR read-only authority
+- `d_perp(S)`;
+- projected KG rank;
+- weakest projected singular value;
+- predictive/holdout robustness;
+- attribution-stack coverage.
+
+For small libraries, exhaustive search is preferred. Greedy selection is a heuristic unless global minimality is checked.
+
+Leave-one-block robustness is mandatory for non-mandatory blocks.
+
+Relative design cost is not final Fisher/resource closure.
+
+## Current Candidate Gravity architecture target
+
+The strongest current pre-ansatz target is one parent dynamics with
+
+- few shared parameters/functions;
+- complete ordered-partition response at every used order;
+- exact Ward/contact/constraint completion;
+- several linked response orders;
+- several controlled interventions/configurations;
+- comparator-null/optimal contrasts;
+- nonzero COR and global comparator separation;
+- held-out predictive success without shared-parameter retuning;
+- a compact redundant attribution-complete test suite.
+
+This is the operational meaning of **rigidity by overconstraint**.
+
+## External RQIR authority
 
 Latest directly observed scientific authority remains **Iteration 590**, `MODEL_READINESS=24%`.
 
-Iter590 proves cubic MSSC source response requires local K3, six K1/K2 placements and six ordered K1^3 chains; K3/K1^3 have nonzero support.
+Iter590 demonstrates cubic MSSC response completeness requires K3 + six K1/K2 + six K1^3 families. External next gate remains K3 hard-channel origin and K1^3 linked-cut origin before complete nonlinear source Ward closure and comparator subtraction.
 
-Exact external next gate remains K3 hard-channel origin classification plus K1^3 linked-cut/origin classification before complete nonlinear source Ward closure and comparator subtraction.
+KMQGB read-only K3 analyticity pre-check remains non-authoritative for RQIR.
 
-KMQGB external pre-check `external_rqir_checks/iter590_k3_local_analyticity_precheck.md` argues the isolated local K3 coefficient should have zero standalone branch discontinuity, but this is not RQIR authority and does not classify the larger composite response.
+## Promotion gate
 
-## Candidate Gravity promotion gate
+No KG ansatz is promoted before the full chain in `protocol/CANDIDATE_GRAVITY_PROMOTION_GATE.md` is satisfied. Final Fisher/resources remain forbidden until a real robust comparator-subtracted residual exists.
 
-No ansatz is promoted before
+## Exact next KMQGB front — machine-readable executable pipeline
 
-`one parent dynamics -> complete response -> exact physical constraints -> common-domain comparator definition -> attribution stack -> full C5 quotient -> nonzero COR -> global separation -> projected identifiability -> cross-order/intervention/holdout rigidity`.
+Convert the frozen methodology into a common schema so a future KG candidate can be checked reproducibly.
 
-Only then may model-level readiness and later Fisher/resources advance.
+Priority objects:
 
-## Exact next KMQGB front — minimal discriminating test suite
+1. observable block registry with order/configuration/attribution metadata;
+2. response-completeness ledger and origin classification;
+3. covariance + comparator/nuisance Jacobian block registry;
+4. train/holdout/test-suite declarations;
+5. machine-readable promotion-gate status and fail-closed validation rules.
 
-The next useful methodology problem is to choose the **smallest pre-registered set of orders/configurations/contrasts** that retains a target comparator-orthogonal rank and predictive rigidity.
-
-Goals:
-
-1. define a library of candidate observable/configuration blocks with cost/complexity metadata;
-2. quantify incremental `Delta d_perp` and projected singular-value gain for each block;
-3. construct minimal or near-minimal test suites under cost/resource ceilings;
-4. require leave-one-block robustness so the claimed residual is not carried by one fragile observable;
-5. separate this relative design-cost optimization from final Fisher/resource promotion, which remains forbidden until a real residual exists.
+Goal: future KG candidates should be auditable by data structures/code, not only prose interpretation.
