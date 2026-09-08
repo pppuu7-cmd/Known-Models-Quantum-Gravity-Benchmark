@@ -1,0 +1,14 @@
+{
+  "wave": 22,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "PASS_COMPARATOR_PRECEDENT": 3,
+    "EXACT_C5_EFT_CONTAINMENT": 1,
+    "PASS_RQIR_GATE_MANDATORY": 1
+  },
+  "main_lesson": "Type-II string already realizes the structural pattern GR 2pt/3pt plus parent-fixed R4/higher rigidity. Quartic-first Candidate Gravity must therefore survive a string-like structural quotient, not merely C5 EFT matching.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
