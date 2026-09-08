@@ -1,0 +1,13 @@
+{
+  "wave": 19,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {
+    "PASS_RQIR_GATE": 4,
+    "BLOCKED_CEMZ_HIGH_ENERGY_CAUSALITY_UNLESS_UV_COMPLETION_EXPLAINS_ESCAPE": 1
+  },
+  "main_lesson": "For a minimal no-extra-tower search, preserve the GR propagator and GR three-graviton coupling; move the first exploratory deformation to four-point/higher order, while retaining independent four-point dispersion/causality/UV gates.",
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
