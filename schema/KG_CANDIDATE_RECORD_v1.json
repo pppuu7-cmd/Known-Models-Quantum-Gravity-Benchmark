@@ -1,0 +1,95 @@
+{
+  "schema_name": "KMQGB_KG_CANDIDATE_RECORD",
+  "schema_version": "1.0",
+  "purpose": "Fail-closed machine-readable record for future Candidate Gravity construction and promotion audits.",
+  "required_top_level": [
+    "candidate_id",
+    "authority",
+    "parent_dynamics",
+    "parameters",
+    "observable_blocks",
+    "comparators",
+    "covariance",
+    "attribution_stack",
+    "rigidity",
+    "promotion_gates"
+  ],
+  "field_contract": {
+    "candidate_id": "stable string identifier; exploratory records may exist without promotion",
+    "authority": {
+      "required": ["repository", "commit_or_blob", "parent_object_ref"],
+      "rule": "exact provenance; no chat-memory-only authority"
+    },
+    "parent_dynamics": {
+      "required": ["representation", "object_ref", "declared_domain"],
+      "allowed_representation_examples": ["action", "Hamiltonian", "CTP", "influence_functional", "master_equation", "channel", "kernel"],
+      "rule": "all claimed linked responses must derive from the same declared parent or be tagged external detector/source objects"
+    },
+    "parameters": {
+      "item_required": ["id", "role", "sharing_scope"],
+      "roles": ["dynamics", "shared_nuisance", "configuration_local_nuisance", "state", "detector", "calibration", "mediator"],
+      "sharing_scope_examples": ["global", "response_order_set", "configuration_set", "local_block"]
+    },
+    "observable_blocks": {
+      "item_required": [
+        "id",
+        "response_order",
+        "configuration_id",
+        "physical_dimension",
+        "routing_ref",
+        "completeness",
+        "origin_classification",
+        "constraint_status",
+        "attribution_tags",
+        "prospective_role"
+      ],
+      "completeness_required": ["status", "parent_ref", "expected_families", "included_families", "omitted_family_zero_proofs"],
+      "prospective_roles": ["training", "holdout", "mandatory_anchor", "candidate_suite", "null_control"]
+    },
+    "comparators": {
+      "item_required": ["id", "validity_domain", "parameter_ids", "prediction_ref", "jacobian_ref", "state_sector"],
+      "rule": "same observable/order/routing/domain as candidate block"
+    },
+    "covariance": {
+      "required": ["matrix_ref", "provenance", "cross_block_correlations_included"],
+      "rule": "deterministic nuisance belongs in parameter/Jacobian registry, stochastic covariance in covariance object; no silent double counting"
+    },
+    "attribution_stack": {
+      "required_layers": [
+        "quantum",
+        "mediator",
+        "gravity_spin2",
+        "locality",
+        "relational_qrf",
+        "detector",
+        "state",
+        "rigidity"
+      ],
+      "optional_layers_when_applicable": ["geometry_process", "regulator_continuum"]
+    },
+    "rigidity": {
+      "required": ["cross_order", "intervention", "holdout", "minimal_suite"],
+      "cross_order_fields": ["stack_ref", "shared_parameter_incidence", "R_shared"],
+      "holdout_fields": ["split_ref", "no_shared_retune", "predictive_covariance_ref"],
+      "minimal_suite_fields": ["library_ref", "selected_suite_ref", "leave_one_block_robustness"]
+    },
+    "promotion_gates": {
+      "gate_ids": ["G0", "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10"],
+      "allowed_status": ["PASS", "BLOCKED", "FAIL", "N_A"],
+      "item_required": ["status", "evidence_refs", "scope"],
+      "rule": "missing mandatory evidence is BLOCKED"
+    }
+  },
+  "derived_objects": {
+    "residual_geometry": ["physical_basis_ref", "union_jacobian_ref", "COR_ref", "global_profile_ref"],
+    "identifiability": ["B_KG_ref", "projected_singular_values", "principal_angles_ref"],
+    "test_suite": ["relative_costs_ref", "thresholds_ref", "selected_blocks", "LOBO_ref"]
+  },
+  "hard_forbidden_states": [
+    "promoted_ansatz_with_any_mandatory_gate_BLOCKED_or_FAIL",
+    "Fisher_or_resources_promoted_without_robust_global_comparator_subtracted_residual",
+    "comparator_residual_computed_from_incomplete_same_parent_response",
+    "holdout_shared_parameter_retuning_not_declared_by_parent_model",
+    "missing_required_object_interpreted_as_zero"
+  ]
+}
