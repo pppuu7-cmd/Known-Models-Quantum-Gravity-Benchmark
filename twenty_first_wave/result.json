@@ -1,0 +1,11 @@
+{
+  "wave": 21,
+  "terminal_completed": 5,
+  "total": 5,
+  "percent": 100.0,
+  "rollup": {"PASS_RQIR_GATE": 5},
+  "main_lesson": "A lower-dimensional native observable requires enough prospectively frozen same-parent constraints to uniquely lift target coordinates into parent invariant space before derivatives, cuts, pole roots, residuals or comparator profiling are defined.",
+  "external_rqir_example": {"iteration": 611, "parent_dimension": 3, "target_dimension": 1, "required_auxiliary_constraints": 2, "model_readiness_percent": 24},
+  "ansatz_promoted": false,
+  "robust_global_residual": false
+}
