@@ -1,10 +1,10 @@
 {
-  "schema_version": "5.3",
+  "schema_version": "5.4",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 61,
-  "phase": "RQIR620_PROJECTIVE_BRIDGE_SYNC__P4_FINITE_DYNAMICAL_SELECTOR_REQUIRED",
+  "kmqgb_iteration": 62,
+  "phase": "MISP2_QCA_Q1_Q2_FRONT__RQIR621_SYNC__P4_OPEN",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
@@ -24,7 +24,7 @@
   "current_task": {
     "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
     "completion_R4_percent": 45,
-    "status": "CONSTRUCTIVE_P4_FINITE_DYNAMICAL_SELECTOR_REQUIRED",
+    "status": "MISP2_QCA_CONSTRUCTIVE_CLASSIFICATION__P4_NOT_YET_SURVIVED",
     "closed": [
       "P1_known_principle_saturation",
       "P2_multi_representation_background_rigidity",
@@ -32,14 +32,21 @@
       "wave38_composition_gluing_duality_prefilter",
       "functional_freedom_no_go_prefilter",
       "construction_playbook_process_freeze",
-      "RQIR620_projective_native_bridge_sync"
+      "RQIR620_projective_native_bridge_sync",
+      "RQIR621_normalization_graph_rank_sync",
+      "finite_rule_QCA_control_triage"
     ],
     "open": [
+      "MISP2_Q1_local_register_graph_selection",
+      "MISP2_Q2_free_two_helicity_classification",
+      "MISP2_Q3_interacting_constraint_preserving_update",
+      "MISP2_Q4_cubic_to_quartic_rigidity",
+      "MISP2_Q5_hard_4pt_CTP_derivation",
       "P4_explicit_novel_parent_principle",
       "P5_structural_comparator_survival",
       "P6_preansatz_machine_record_for_survivor"
     ],
-    "anti_gaming_rule": "methodology/process/external-sync improvements do not increase R4; only an explicit constructive P4 survivor can do so"
+    "anti_gaming_rule": "constructive targets/near-survivors do not increase R4 until an explicit finite-freedom parent derives the required hard relation"
   },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
@@ -50,62 +57,51 @@
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
-    "preferred_preansatz_architecture": "full_matched_C5_through_3point + candidate_specific_4point_or_higher parent with shared cross_order/cross_representation/cross_background parameters",
+    "finite_rule_qca_triage": "protocol/P4_FINITE_RULE_QCA_TRIAGE.md",
     "functional_freedom_no_go": "protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md",
     "functional_freedom_reference": "code/p4_functional_freedom_reference.py",
-    "external_rqir620_projective_bridge_audit": "external_rqir_checks/iter620_projective_native_bridge_audit.md",
-    "constructive_requirement": "a finite low-freedom microscopic dynamical selector that directly derives a uniquely normalized hard/cross-representation gravitational relation and same-parent CTP/retarded block, then survives registered comparator spaces",
+    "current_constructive_target_id": "MISP2-QCA",
+    "current_constructive_target_expansion": "Minimal Isotropic Self-interacting Physical-spin-2 Quantum Cellular Automaton",
+    "current_constructive_target_status": "RESEARCH_TARGET_NOT_PROMOTED_PARENT",
+    "preferred_preansatz_architecture": "finite local constrained unitary with exactly two gapless helicity-2 modes -> GR cubic self-coupling -> derived quartic/higher hierarchy -> hard 2to2 plus same-parent CTP",
     "pre_P4_sequence": [
       "A1_explicit_parent_capsule",
       "A2_functional_freedom_gate",
       "A3_architecture_containment_prefilter",
       "A4_explicit_P4_hard_relation_checkpoint"
     ],
-    "pre_P4_kill_test": "if structural-null hard freedom FF_D grows without bound as hard/EFT basis cutoff D increases, classify FUNCTIONAL_FREEDOM_BLOCKED",
-    "normalization_guardrail": "an unknown common nonzero normalization permits projective ratio/conditioning diagnostics but forbids absolute residual/comparator subtraction until an independent authority bridge exists",
-    "anti_circularity": "never fit a missing common normalization from Candidate values and reuse the normalized values to claim a residual"
+    "MISP2_program": [
+      "Q1_minimal_graph_and_local_gauge_redundant_spin2_register",
+      "Q2_free_constrained_two_helicity_classification",
+      "Q3_interacting_constraint_preserving_local_update_and_GR_cubic",
+      "Q4_quartic_higher_rigidity_from_same_update",
+      "Q5_physical_4graviton_Floquet_and_same_parent_CTP"
+    ],
+    "locality_guardrail": "exact TT-only local register is not accepted on S-local branch; physical helicities must emerge after local gauge/constraint reduction or nonlocal kinematics must be explicitly declared",
+    "microscopic_freedom_rule": "fixed local dimension/radius/depth and finite theta; increasing hard order must add predictions rather than independent gate parameters",
+    "finite_rule_controls": {
+      "Chrono_Grid": "A3_FAIL_DISCRETE_LQG_SPINFOAM_BF_CONTAINED__A4_BLOCKED",
+      "QICT_gauge_coded_QCA": "A1_A2_PROVISIONAL_NEAR_SURVIVOR__A3_UNRESOLVED__A4_BLOCKED",
+      "Strings_from_Almost_Nothing": "A2_A4_POSITIVE_CONTROL__A3_STRING_CONTAINED"
+    }
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_BY_SCIENTIFIC_DESIGN",
-    "forbidden_for": [
-      "missing_parent_object",
-      "functional_freedom_growth",
-      "normalization_or_sign_authority_blocker",
-      "response_completeness_blocker",
-      "missing_exact_kinematic_map",
-      "unfrozen_comparator_domain",
-      "missing_attribution_proof"
-    ],
-    "allowed_when": "a frozen structural object exists and numerical work can discriminate a pre-registered physical/comparator/holdout question"
-  },
-  "repository_automation": {
-    "workflow": ".github/workflows/methodology-ci.yml",
-    "runner": "github-hosted ubuntu-latest",
-    "functional_freedom_self_test_added_iteration": 59,
-    "construction_playbook_entrypoint_required_iteration": 60,
-    "self_hosted_RQIR_runner_used": false
+    "current_reason": "MISP2 Q1-Q4 are structural symbolic classification gates; no frozen interacting spin2 update exists",
+    "allowed_when": "Q1-Q4 freeze a finite-freedom update and numerical work can discriminate its hard scattering, convergence or holdout prediction"
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "authoritative_research_iteration_observed": 620,
+    "authoritative_research_iteration_observed": 621,
     "model_readiness_percent": 24,
-    "scientific_status": "absolute native normalization remains BLOCKED; projective source shape, independent reproducibility and conditioning are PASS/non-promoting",
-    "previous_kinematic_rank_blocker_resolved": true,
-    "prospective_trajectory_iteration": 613,
-    "root_jacobian_iteration": 614,
-    "source_internal_pole_coefficient_iteration": 615,
-    "endpoint_amputation_and_q2_binding_iteration": 616,
-    "historical_normalization_authority_audit_iteration": 617,
-    "projective_source_shape_iteration": 618,
-    "independent_projective_reproduction_iteration": 619,
-    "projective_conditioning_iteration": 620,
-    "remaining_native_binding_dimension": 1,
+    "scientific_status": "normalization authority graph has exactly two connected sectors and zero cross-sector bridges, leaving exactly one relative complex normalization N_native; projective diagnostics remain non-promoting",
+    "remaining_native_binding_dimension_complex": 1,
     "remaining_native_binding_parameter": "N_native",
-    "remaining_native_binding_status": "BLOCKED__NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY",
-    "projective_anchor": "smallest-s D_b^- root",
-    "projective_ratios": [-2.966563737084728, -0.7800526753639322, -5.158207913624242, 2.997420912767025, 8.57973421373656],
-    "projective_sign_pattern": ["-", "+", "+", "+", "-", "-"],
-    "next_scientific_gate": "independently justify the missing source-to-Gamma3 absolute phase/coupling bridge without fitting Candidate values; normalization-invariant diagnostics may continue but absolute native projection remains forbidden"
+    "remaining_native_binding_status": "BLOCKED__ONE_COMMON_COMPLEX_CROSS_SECTOR_SCALE_NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY",
+    "normalization_components": 2,
+    "frozen_cross_sector_bridge_rank": 0,
+    "root_or_q2_specific_normalization_allowed": false,
+    "next_scientific_gate": "derive one common source-to-Gamma3 absolute phase/coupling bridge prospectively from generating-functional/Legendre/in-in conventions without Candidate/comparator fitting"
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
@@ -113,22 +109,22 @@
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
+    "finite_rule_qca_triage": "protocol/P4_FINITE_RULE_QCA_TRIAGE.md",
+    "latest_external_rqir_check": "external_rqir_checks/iter621_normalization_graph_rank_audit.md",
     "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_061.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_062.md"
   },
-  "next_wave_status": "PROCESS_FROZEN__P4_OBJECT_REQUIRED__RQIR_ABSOLUTE_NORMALIZATION_BLOCKED",
+  "next_wave_status": "MISP2_Q1_Q2_SYMBOLIC_CLASSIFICATION_REQUIRED",
   "next_actions": [
     "Refresh external RQIR before every R3/heavy-compute statement",
-    "Use protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md as the sole high-level construction route",
-    "For each new parent proposal freeze A1 parent capsule and apply A2 P4_FUNCTIONAL_FREEDOM_NO_GO before detailed development",
-    "Reject FUNCTIONAL_FREEDOM_BLOCKED proposals whose FF_D grows without bound with hard/EFT cutoff",
-    "Apply A3 architecture-level containment before expensive derivation",
-    "For an A1-A3 survivor derive one uniquely normalized hard 4-point/higher or cross-representation gravitational relation before fitting",
-    "Require the same parent to determine a CTP/retarded response block with shared parameters",
-    "Use projective invariants only as diagnostics when one common normalization is missing; never promote absolute residuals from them",
-    "Immediately profile a P4 survivor against full registered comparator spaces",
-    "Only after P4/P5 survival create a pre-ansatz machine record and score P6",
-    "Keep heavy compute idle until a frozen finite-freedom structural object justifies it",
-    "Do not promote KG before a robust global comparator-subtracted residual exists"
+    "Formalize the exact finite-range local-TT projection obstruction as a permanent MISP2 design lemma",
+    "Choose the smallest prospective homogeneous/isotropic 3D graph and local gauge-redundant spin2 register",
+    "Classify the free finite-range unitary symbol after exact constraints and require exactly two gapless helicity-2 physical modes with no extra gapless gravitational scalar/vector",
+    "Apply microscopic d_gate and hard FF_D freedom counting before interacting development",
+    "Only after Q2 survival classify a local interacting update preserving the physical constraint/code subspace",
+    "Match the cubic IR self-coupling to GR with shared parameters and derive rather than add quartic gates",
+    "Only after Q1-Q4 freeze compute hard 2to2/Floquet and same-parent CTP",
+    "Keep heavy compute idle until a frozen finite-freedom interacting update exists",
+    "Do not promote KG before P4/P5/P6 and a robust global comparator-subtracted residual exist"
   ]
 }
