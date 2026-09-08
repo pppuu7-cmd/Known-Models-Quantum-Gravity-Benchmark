@@ -1,0 +1,80 @@
+name: methodology-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  methodology-self-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+
+      - name: Compile reference code
+        run: python -m compileall -q code
+
+      - name: Validate all JSON artifacts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          paths = sorted(Path('.').rglob('*.json'))
+          if not paths:
+              raise SystemExit('No JSON files found')
+          for path in paths:
+              with path.open('r', encoding='utf-8') as fh:
+                  json.load(fh)
+          print(f'validated_json_files={len(paths)}')
+          PY
+
+      - name: Run fail-closed candidate-record validator self-test
+        run: python code/kg_candidate_record_validator.py
+
+      - name: Run inverse-kernel completeness self-test
+        run: python code/inverse_kernel_ordered_partitions.py
+
+      - name: Run residual-space geometry self-test
+        run: python code/residual_space_geometry_reference.py
+
+      - name: Run optimal comparator-contrast self-test
+        run: python code/optimal_comparator_contrasts_reference.py
+
+      - name: Run cross-order rigidity self-test
+        run: python code/cross_order_rigidity_reference.py
+
+      - name: Run intervention-design self-test
+        run: python code/intervention_design_reference.py
+
+      - name: Run predictive-holdout self-test
+        run: python code/predictive_holdout_reference.py
+
+      - name: Run minimal-test-suite self-test
+        run: python code/minimal_test_suite_reference.py
+
+      - name: Run cross-representation rigidity self-test
+        run: python code/cross_representation_rigidity_reference.py
+
+      - name: Check recovery entrypoints exist
+        run: |
+          test -s recovery/CURRENT_BENCHMARK_FRONT.md
+          test -s recovery/state.json
+          test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
+          test -s recovery/RESTORE_FROM_NEW_CHAT.md
+          test -s protocol/READINESS_METRICS.md
