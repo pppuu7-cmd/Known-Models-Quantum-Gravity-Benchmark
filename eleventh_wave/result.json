@@ -1,0 +1,16 @@
+{
+  "wave": 11,
+  "status": "TERMINAL",
+  "terminal_coverage": "5/5",
+  "terminal_coverage_percent": 100.0,
+  "targets": [
+    {"id":"KMQGB-T11-M01-STACKED-ORDERS","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T11-M02-SHARED-PARAMETER-INCIDENCE","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T11-M03-CROSS-ORDER-INVARIANTS","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T11-M04-CROSS-ORDER-COVARIANCE","status":"PASS_RQIR_GATE"},
+    {"id":"KMQGB-T11-M05-RIGIDITY-CERTIFICATE","status":"PASS_RQIR_GATE"}
+  ],
+  "protocol":"protocol/CROSS_ORDER_RIGIDITY.md",
+  "reference_code":"code/cross_order_rigidity_reference.py",
+  "kg_lesson":"Seek few shared parent parameters predicting many linked response orders; cross-order consistency can increase comparator-orthogonal dimension without adding equal nuisance freedom."
+}
