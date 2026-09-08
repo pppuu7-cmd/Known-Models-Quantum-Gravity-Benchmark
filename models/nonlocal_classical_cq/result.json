@@ -1,0 +1,10 @@
+{
+  "benchmark_id": "KMQGB-T5-M04-NONLOCAL-CQ",
+  "realization": "CQ-NONLOCAL-ENTANGLING-2025-001",
+  "terminal": true,
+  "status": "OPERATIONALLY_DEGENERATE",
+  "frozen_claim": "ENTANGLEMENT_OR_NON_EB_WITHOUT_LOCALITY_AS_QUANTUM_GRAVITY_CERTIFICATE",
+  "main_result": "nonlocal hybrid classical-gravity/quantum-matter models can generate entanglement; locality is an explicit assumption of the local classical-mediator witness",
+  "surviving_requirement": "derive locality/microcausality/retarded support from the same Candidate Gravity parent dynamics",
+  "candidate_gravity_lesson": "locality is part of the witness"
+}
