@@ -1,0 +1,17 @@
+{
+  "benchmark_family": "KMQGB-T8-RESIDUAL-GEOMETRY",
+  "status": "PASS_RQIR_GATE",
+  "terminal_targets": {
+    "T8-01": "PASS_RQIR_GATE",
+    "T8-02": "PASS_RQIR_GATE",
+    "T8-03": "PASS_RQIR_GATE",
+    "T8-04": "PASS_RQIR_GATE",
+    "T8-05": "PASS_RQIR_GATE"
+  },
+  "core_object": "COR=(I-AA^+)Sigma^(-1/2)r with A=Sigma^(-1/2)J_C after exact physical-constraint reduction",
+  "local_signal_separation": "eta(s)=||Pi_perp Sigma^(-1/2)s||/||Sigma^(-1/2)s||",
+  "global_gate": "d_min^2=inf_(KG,comparator) common-domain covariance-weighted distance",
+  "candidate_parameter_gate": "singular values of Pi_perp Sigma^(-1/2)J_KG after full comparator profiling",
+  "physical_residual_authorized": false,
+  "kg_lesson": "Novelty is a robust distance from the full physical comparator manifold, not a qualitative feature label."
+}
