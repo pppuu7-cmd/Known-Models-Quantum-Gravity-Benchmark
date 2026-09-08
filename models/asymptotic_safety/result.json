@@ -1,0 +1,15 @@
+{
+  "benchmark_id": "KMQGB-S2-M02-AS",
+  "concrete_realization_id": "AS-SCALAR2TO2-LOR-2026-001",
+  "wave": 2,
+  "terminal": true,
+  "status": "OPERATIONALLY_DEGENERATE",
+  "frozen_observable": "p_UV = lim d ln|A_s| / d ln s at fixed angle",
+  "asymptotic_safety_value": 0,
+  "same_domain_comparator": "Draper-Knorr-Ripken-Saueressig Lorentzian finite quantum-gravity scalar scattering",
+  "comparator_value": 0,
+  "profiled_residual": 0,
+  "ir_result": "returns to GR behavior at low energy in declared approximation",
+  "scope_guardrail": "full Planck-scale crossover, normalization, angular dependence, resonance-like structure and complete crossed/contact S-matrix are not asserted degenerate",
+  "forward_scattering": "not terminally closed; contact/four-scalar contribution required for full forward behavior"
+}
