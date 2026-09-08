@@ -1,76 +1,94 @@
 # Model Audit — modern postquantum classical gravity
 
 Benchmark ID: KMQGB-S2-M04-POSTQUANTUM-CLASSICAL
-Concrete realization ID: PQCG-MINK-STOCHASTIC-MODES-2026-001
+Concrete realization ID: PQCG-MINK-CONSERVED-STOCHASTIC-MODES-2026-001
 Role: modern C3b postquantum classical-spacetime comparator
-State: ACTIVE / NONTERMINAL
+State: TERMINAL
+Final status: `EXACT_COMPARATOR_IDENTITY`
 
-## Frozen starting realization
+## Frozen realization
 
-Use the 2026 Oppenheim–Sajjad linearized Minkowski stochastic-mode realization of postquantum classical gravity, derived from the classical–quantum path integral.
+Use the 2026 Oppenheim–Sajjad linearized Minkowski stochastic-mode realization of postquantum classical gravity, but freeze the **local conserved transverse diffusion-kernel/SDE formulation** explicitly constructed in the same paper rather than treating the original non-conserved ultra-local DeWitt kernel as the final stochastic covariance.
 
-Declared features from the source realization:
+Declared scope:
 
-- spacetime metric remains fundamentally classical;
-- quantum matter is coupled to it through a classical–quantum framework;
-- mathematical consistency requires stochastic metric evolution;
-- linearization around Minkowski plus scalar-vector-tensor decomposition;
-- dynamical stochastic spin-2 and spin-0 modes diffusing around their respective wave equations;
-- additional non-dynamical vector/scalar sectors;
-- positive-semidefinite action on all dynamical modes in the analyzed sector;
-- calculable two-point function / power spectral density for Newtonian-potential fluctuations;
-- current phenomenological handles from LISA Pathfinder, stochastic-GW bounds and decoherence experiments.
+- fundamentally classical stochastic spacetime coupled within the classical–quantum framework;
+- linearized pure-gravity stochastic sector around Minkowski for the frozen terminal comparator closure;
+- scalar-vector-tensor decomposition;
+- stochastic dynamical spin-2 and spin-0 sectors;
+- Onsager–Machlup (OM), Martin–Siggia–Rose/Janssen–DeDominicis and stochastic-differential-equation formulations compared explicitly;
+- physical probability/action restricted to the dynamical gauge-invariant sector in the declared linearized analysis;
+- phenomenological Newtonian-potential / stochastic gravitational-wave observables retained as external tests, not as prerequisites for comparator identity.
 
 This is an explicit 2026 realization, not the generic phrase "postquantum gravity".
 
-## Why the audit is not yet terminal
+## Bianchi issue resolved at the frozen linearized level
 
-The source literature now contains an important tension that must be resolved at the exact-realization level before a consistency verdict:
+The initial audit retained a possible F2 blocker because Hirotani–Matsumura emphasized that a simple delta-correlated white-noise tensor kernel need not satisfy the Bianchi transversality condition.
 
-1. Oppenheim–Sajjad (2026) present the stochastic-mode action as positive semidefinite on all dynamical modes and discuss consistency between several pure-gravity stochastic formulations.
-2. Hirotani–Matsumura (2026), analyzing the original white-noise Oppenheim-type kernel in geodesic deviation, find that the simple kernel may not strictly satisfy the Bianchi identities and construct a modified transverse kernel that is manifestly Bianchi-consistent.
-3. Earlier constraint-algebra work for a broad discrete postquantum class found non-closure without additional constraints; this cannot be transferred blindly to every later realization, but it is a retained warning.
+Direct inspection of Oppenheim–Sajjad resolves the ambiguity more carefully:
 
-Therefore the benchmark must identify whether these papers are testing exactly the same kernel/action/convention before declaring either a consistency PASS or FAIL.
+1. They explicitly acknowledge that the original generalized-DeWitt diffusion matrix is not itself conserved in the naive SDE interpretation.
+2. They show that in the OM action the inverse diffusion matrix is saturated by the conserved Einstein tensor, so longitudinal pieces cancel.
+3. Inspired by the Bianchi critique, they then construct an alternative **local conserved diffusion matrix** built from transverse spin projectors.
+4. They show that this conserved choice yields the **same OM action and the same two-point function** as the original representation in the declared linearized pure-gravity sector.
+5. Their abstract/result further states that the action is positive semi-definite on all dynamical modes in the analyzed sector.
 
-## Current F0-F7 map
+Therefore the Bianchi issue is not a terminal inconsistency of the frozen linearized stochastic-mode realization. It is a representation/kernel-definition issue that must be handled by using the conserved transverse formulation.
 
-| Gate | State | Reason |
+This scoped resolution does **not** prove full nonlinear matter-coupled constraint closure for every postquantum classical-gravity model.
+
+## Frozen stochastic equation / kernel
+
+In the conserved SDE representation,
+
+`G_mn^(1) = xi_mn`,
+
+with a local covariance built from transverse spin projectors schematically of the form
+
+`<xi xi> = D2 [ c0 P^(0-s) + P^(2) ] delta^4(x-x')`,
+
+where the exact scalar coefficient is the one given in Oppenheim–Sajjad Eq. (120) and the transverse projectors guarantee conservation. Gauge-fixing pieces introduced to invert the degenerate matrix drop out when saturated with conserved tensors. The resulting OM action is
+
+`S_G = ∫ d^4x [ alpha R_mn R^mn - beta R^2 ]`
+
+in the declared linearized construction, and the conserved-kernel SDE yields the same two-point function as the OM formulation.
+
+## F0-F7 terminal map
+
+| Gate | Result | Reason |
 |---|---|---|
-| F0 dynamics | PASS_SCOPED | explicit classical-quantum path-integral / stochastic-mode realization exists |
-| F1 required limits | PASS/PARTIAL | GR classical limit is part of the program; exact parameter/domain matching retained |
-| F2 consistency | BLOCKED_REALIZATION_RECONCILIATION | PSD dynamical modes are positive evidence, but Bianchi/noise-kernel compatibility must be reconciled for the exact frozen realization |
-| F3 RQIR hierarchy | STRONG_PARTIAL | stochastic metric modes, two-point PSD and matter decoherence channels are concrete |
-| F4 comparator distinction | EXACT_MEMBER_OF_C3B_IF_CONSISTENT | postquantum classical gravity is a retained C3 comparator class, but consistency gate precedes comparator closure |
-| F5 | BLOCKED | cannot promote before F2 and exact observable quotient |
-| F6 | BLOCKED | cannot precede F5 |
-| F7 | PARTIAL_RESOURCE_EVIDENCE | LISA/LIGO/decoherence constraints exist, but no final resource certificate before upstream closure |
+| F0 dynamics | PASS_SCOPED | explicit classical–quantum/stochastic path-integral realization and conserved local SDE kernel frozen |
+| F1 required limits | PASS/PARTIAL | classical GR equation is the center of the stochastic diffusion; full nonlinear phenomenology is outside this terminal control scope |
+| F2 consistency | PASS_SCOPED_LINEAR | conserved transverse kernel available; OM/JD/SDE consistency demonstrated in the frozen linearized sector; action PSD on dynamical modes |
+| F3 RQIR hierarchy | STRONG_PASS_AS_COMPARATOR | stochastic metric two-point/noise structure and response arise from one explicit classical-stochastic construction |
+| F4 comparator distinction | EXACT_IDENTITY_C3B | the realization is literally a modern postquantum classical-gravity member of the frozen C3 comparator family |
+| F5 hard discriminator | ZERO_VS_C3B | no independent theory direction relative to its own comparator class |
+| F6 identifiability | NOT_APPLICABLE_AFTER_IDENTITY | comparator residual is zero |
+| F7 resources | RETAINED_AS_CONSTRAINTS | LISA/GW/decoherence tests constrain parameters but do not alter comparator identity |
 
-## Current phenomenological evidence
+## Comparator result
 
-Oppenheim–Sajjad compute Newtonian-potential fluctuation spectra and compare them with LISA Pathfinder excess noise, while stochastic gravitational-wave constraints bound another coupling combination.
+RQIR C3 explicitly includes postquantum classical / stochastic classical-spacetime–quantum-matter constructions. The frozen realization is therefore a direct concrete C3b member.
 
-Hirotani–Matsumura derive geodesic-deviation strain spectra and argue that simple white-noise realizations are testable with current gravitational-wave sensitivity. They also find parameter regions where the original noise kernel is not positive semidefinite and identify a far-future divergence for the scale-free white-noise model in their approximation.
+At theory-class level,
 
-These are meaningful model constraints; they are not yet a universal rejection of all postquantum classical gravity.
+`Delta_C3b = 0`.
 
-## Current first blocker
+Terminal status: `EXACT_COMPARATOR_IDENTITY`.
 
-`PQCG_KERNEL_BIANCHI_PSD_RECONCILIATION`:
+This is a successful modern-comparator control, not evidence that postquantum classical gravity is experimentally established and not a global proof of nonlinear consistency.
 
-1. identify the exact noise/decoherence kernel used in `2605.05375` and compare it term-by-term with the "original" white-noise kernel critiqued in `2603.29230`;
-2. determine whether the Bianchi critique applies to the same stochastic realization or only to a simplified phenomenological kernel;
-3. if the same realization fails transversality/Bianchi compatibility, assign a scoped F2 failure;
-4. if not, freeze the Bianchi-consistent kernel and continue to the C3b comparator quotient;
-5. retain observational exclusions only for the parameter/kernel slices actually tested.
+## Scientific lesson
 
-## Current completion estimate
+The Bianchi criticism is real for a naive non-conserved white-noise covariance, but the 2026 literature already contains a conserved transverse local formulation producing the same declared linearized OM action/two-point function. Hence RQIR must not turn the existence of a bad kernel representation into a blanket rejection of the whole postquantum classical program.
 
-Operational completion: **35%**.
+Conversely, any future Candidate Gravity signal based only on classical stochastic tensor/scalar metric power cannot be promoted until it survives this strengthened C3b comparator, not merely semiclassical C1 or stochastic-gravity C2.
 
 ## Sources
 
-1. J. Oppenheim, M. Sajjad, *Stochastic modes in postquantum classical gravity*, arXiv:2605.05375 (2026).
+1. J. Oppenheim, M. Sajjad, *Stochastic modes in postquantum classical gravity*, arXiv:2605.05375 (2026), especially Appendix A and Eqs. (120)–(125).
 2. T. Hirotani, A. Matsumura, *Testing classical-quantum gravity with geodesic deviation*, Phys. Rev. D 114, 026014 (2026), arXiv:2603.29230.
-3. J. Oppenheim, Z. Weller-Davies, *The constraints of post-quantum classical gravity*, JHEP 02 (2022) 080, arXiv:2011.15112.
+3. J. Oppenheim, Z. Weller-Davies, *The constraints of post-quantum classical gravity*, JHEP 02 (2022) 080, arXiv:2011.15112 — retained as version-dependent nonlinear/constraint warning, not silently transferred to the frozen 2026 linearized realization.
 4. J. Oppenheim, *A Postquantum Theory of Classical Gravity?*, Phys. Rev. X 13, 041040 (2023).
+5. External RQIR C3 comparator authority retained read-only.
