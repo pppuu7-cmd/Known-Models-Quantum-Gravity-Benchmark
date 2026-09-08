@@ -71,6 +71,9 @@ jobs:
       - name: Run cross-representation rigidity self-test
         run: python code/cross_representation_rigidity_reference.py
 
+      - name: Run P4 functional-freedom self-test
+        run: python code/p4_functional_freedom_reference.py
+
       - name: Check recovery entrypoints exist
         run: |
           test -s recovery/CURRENT_BENCHMARK_FRONT.md
@@ -78,3 +81,4 @@ jobs:
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
           test -s protocol/READINESS_METRICS.md
+          test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
