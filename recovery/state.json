@@ -1,103 +1,94 @@
 {
-  "schema_version": "3.0",
+  "schema_version": "3.1",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 28,
-  "phase": "WAVES_1_TO_5_TERMINAL__NEXT_WAVE_NOT_YET_FROZEN",
+  "kmqgb_iteration": 29,
+  "phase": "WAVES_1_TO_6_TERMINAL__FULL_C5_PREANSATZ_GATE_FROZEN",
   "firewall": {
     "writes": "KMQGB repository only",
     "external_rqir_access": "read_only",
-    "shared_runner_policy": "do_not_compete_while_RQIR_rank12_or_successor_heavy_chain_is_active"
+    "shared_runner_policy": "do_not_compete_until_RQIR_successor_raw_authority_and_heavy_chain_state_are_explicit"
   },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
     "wave2": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
-    "wave3": {
+    "wave3": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
+    "wave4": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
+    "wave5": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
+    "wave6": {
       "total": 5,
       "terminal_completed": 5,
       "percent": 100.0,
       "immutable": true,
-      "rollup": {"PASS_RQIR_GATE": 2, "BLOCKED_MISSING_REQUIRED_OBJECT": 3}
-    },
-    "wave4": {
-      "total": 5,
-      "terminal_completed": 5,
-      "percent": 100.0,
-      "immutable": true,
-      "rollup": {"PASS_RQIR_GATE": 2, "OPERATIONALLY_DEGENERATE": 3}
-    },
-    "wave5": {
-      "total": 5,
-      "terminal_completed": 5,
-      "percent": 100.0,
-      "immutable": true,
-      "rollup": {"PASS_RQIR_GATE": 4, "OPERATIONALLY_DEGENERATE": 1}
+      "rollup": {
+        "PASS_RQIR_GATE": 3,
+        "EXACT_COMPARATOR_IDENTITY": 1,
+        "OPERATIONALLY_DEGENERATE": 1
+      }
     }
   },
-  "third_wave_terminal": [
-    {"id": "KMQGB-T3-M01-BESPOKE-UV", "status": "PASS_RQIR_GATE", "objective": "CLOSED_CHANNEL_RIGIDITY_BOUNDARY_ESTABLISHED"},
-    {"id": "KMQGB-T3-M02-AS-CROSSOVER", "status": "BLOCKED_MISSING_REQUIRED_OBJECT", "gate": "AS_CONTACT_COMPLETE_CROSSOVER_VECTOR"},
-    {"id": "KMQGB-T3-M03-NONCLASSICAL-INTERFACE", "status": "PASS_RQIR_GATE", "objective": "CLASSICAL_SPACETIME_DISCRIMINATOR_ARCHITECTURE_ESTABLISHED"},
-    {"id": "KMQGB-T3-M04-PQCG-NONLINEAR", "status": "BLOCKED_MISSING_REQUIRED_OBJECT", "gate": "PQCG_SAME_REALIZATION_NONLINEAR_CONSTRAINT_CLOSURE"},
-    {"id": "KMQGB-T3-M05-CDT", "status": "BLOCKED_MISSING_REQUIRED_OBJECT", "gate": "CDT_GEON_CONTINUUM_AND_LOR_REALTIME_MAP"}
-  ],
-  "fourth_wave_terminal": [
-    {"id": "KMQGB-T4-M01-NONGAUSSIAN-STOCHASTIC", "status": "PASS_RQIR_GATE", "objective": "HIGHER_SYMMETRIZED_CUMULANTS_NOT_UNIQUE"},
-    {"id": "KMQGB-T4-M02-CAUSAL-GEOMETRY", "status": "OPERATIONALLY_DEGENERATE", "claim": "INDEFINITE_CAUSAL_ORDER_AS_QUANTUM_GEOMETRY_CERTIFICATE"},
-    {"id": "KMQGB-T4-M03-SPACETIME-CROSSCORR", "status": "OPERATIONALLY_DEGENERATE", "claim": "SYMMETRIZED_SPATIAL_CORRELATION_GEOMETRY_AS_QG_CERTIFICATE"},
-    {"id": "KMQGB-T4-M04-QRF-RELATIONAL", "status": "PASS_RQIR_GATE", "objective": "QRF_REDUNDANCY_QUOTIENT_ESTABLISHED"},
-    {"id": "KMQGB-T4-M05-C4C6-ATTRIBUTION", "status": "OPERATIONALLY_DEGENERATE", "claim": "NEWTONIAN_PHASE_PLUS_NON_EB_PLUS_COMMUTATOR_AS_GRAVITY_ATTRIBUTION"}
-  ],
-  "fifth_wave_terminal": [
-    {"id": "KMQGB-T5-M01-SPIN2-SOFT-UNIVERSALITY", "status": "PASS_RQIR_GATE", "objective": "SPIN2_UNIVERSAL_COUPLING_ATTRIBUTION_ESTABLISHED"},
-    {"id": "KMQGB-T5-M02-TENSOR-POLARIZATION", "status": "PASS_RQIR_GATE", "objective": "TENSOR_POLARIZATION_ATTRIBUTION_ESTABLISHED"},
-    {"id": "KMQGB-T5-M03-COMMUTATOR-DETECTOR", "status": "PASS_RQIR_GATE", "objective": "DETECTOR_BACKACTION_QUOTIENT_ESTABLISHED"},
-    {"id": "KMQGB-T5-M04-NONLOCAL-CQ", "status": "OPERATIONALLY_DEGENERATE", "claim": "ENTANGLEMENT_OR_NON_EB_WITHOUT_LOCALITY_AS_QUANTUM_GRAVITY_CERTIFICATE"},
-    {"id": "KMQGB-T5-M05-RELATIONAL-CROSS-SPECTRUM", "status": "PASS_RQIR_GATE", "objective": "RELATIONAL_CAUSAL_ORDERED_KERNEL_ESTABLISHED"}
+  "sixth_wave_terminal": [
+    {"id": "KMQGB-T6-M01-SPIN2-COMPLETENESS", "status": "PASS_RQIR_GATE", "objective": "SPIN2_ATTRIBUTION_COMPLETENESS_SCOPED"},
+    {"id": "KMQGB-T6-M02-GRAVITON-CTP-NULL", "status": "EXACT_COMPARATOR_IDENTITY", "comparator": "C5 perturbative quantum GR Gaussian linearized subsector"},
+    {"id": "KMQGB-T6-M03-KMS-FDR", "status": "OPERATIONALLY_DEGENERATE", "claim": "FDR_OR_KMS_LINK_AS_KG_SPECIFIC_FINGERPRINT"},
+    {"id": "KMQGB-T6-M04-NONLOCAL-CAUSALITY", "status": "PASS_RQIR_GATE", "objective": "NONLOCAL_CAUSALITY_SEPARATE_GATE_ESTABLISHED"},
+    {"id": "KMQGB-T6-M05-PREANSATZ-CTP", "status": "PASS_RQIR_GATE", "objective": "MINIMAL_PREANSATZ_PARENT_TEMPLATE_ESTABLISHED", "ansatz_promoted": false}
   ],
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
+    "ansatz_promoted": false,
     "core_principle": "rigidity by independently motivated overconstraint from one parent dynamics",
     "relational_kernel": "K_rel={N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}",
     "gravity_attribution": "G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}",
-    "supporting_not_primary": ["higher symmetrized cumulants", "symmetrized spatial cross-correlations", "indefinite causal order without geometry attribution"],
+    "parent_template": "Gamma_parent=Gamma_C5,full_matched+DeltaGamma_KG",
+    "gaussian_control": "Gamma_C5,Gaussian is only an exact two-point/null subsector",
+    "full_c5_guardrail": "higher-point/non-Gaussian structure is not automatically beyond C5 because perturbative quantum GR already contains nonlinear graviton interactions, loops and higher-curvature/EFT structures",
     "attribution_stack": [
       "quantum attribution",
       "mediator attribution",
-      "gravity/spin-2 attribution",
+      "gravity/massless-spin-2 attribution",
       "locality/microcausality attribution",
       "relational/QRF attribution",
       "geometry attribution for causal/process claims",
       "regulator/continuum attribution",
-      "rigidity/identifiability"
+      "rigidity/identifiability",
+      "full applicable C5 nonlinear/EFT matching at the same order"
     ]
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "authoritative_research_iteration_observed": 570,
+    "authoritative_research_iteration_observed": 583,
     "model_readiness_percent": 24,
-    "quarter_new_coordinates_raw_closed": "11/12",
-    "active_heavy_work": {
-      "rank": 12,
-      "coordinate": "(+2.5e-6,+1.25e-6)",
-      "run": 34175330006,
-      "job": 101903475600,
-      "direct_run_status": "in_progress"
+    "iter424_physical_gate": "5/5 PASS",
+    "unresolved_physical_set": [],
+    "iteration581": "exact15 Tr U1^2 raw-valid PASS",
+    "iteration582": "q2-resolved D_s Gamma_e2 PASS non-residual",
+    "iteration583": "quadratic MSSC-001 source/contact K2 prerequisite raw-valid PASS",
+    "next_scientific_gate": "mixed bilinear K2(h1,h2) validation then matched conserved-source tree/Ward object before comparator subtraction",
+    "workflow_observation": {
+      "iteration584_run": 34202930558,
+      "status": "completed_success",
+      "scientific_authority": "not yet promoted by observed recovery front"
     }
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "design_priors": "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
     "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
-    "waves": ["third_wave/README.md", "fourth_wave/README.md", "fifth_wave/README.md"]
+    "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_029.md",
+    "waves": ["third_wave/README.md", "fourth_wave/README.md", "fifth_wave/README.md", "sixth_wave/README.md"]
   },
-  "next_wave_status": "NOT_YET_FROZEN",
+  "next_wave_status": "READY_TO_FREEZE_RESIDUAL_TAXONOMY",
   "next_actions": [
-    "Synchronize design priors and handoff to the completed waves 3-5 state",
-    "Freeze the next wave only around attacks on the combined attribution stack, not broad model cataloguing",
-    "Prioritize broader quantum-mediator spin-2/Ward adversaries, controlled-nonlocal causality, and an explicit parent influence/CTP template for K_rel + G_attr",
-    "Do not promote any Candidate Gravity ansatz until one parent dynamics yields a comparator-surviving joint residual",
-    "Do not dispatch competing KMQGB heavy work while RQIR rank12 or an authorized successor chain remains active"
+    "Freeze the next wave only around candidate DeltaGamma residual classes after full C5 matching",
+    "Test higher-point/non-Gaussian structure against full perturbative-QG C5",
+    "Test squeezed/exotic graviton-state signatures against C5 state freedom",
+    "Test memory/non-Markovian kernels against ordinary quantum-field/open-system C5 effects",
+    "Test parity/chiral ordered structures against higher-curvature/EFT and extra-field comparators",
+    "Test nonanalytic/cross-regime relations for a possible comparator-resistant direction",
+    "Do not promote a Candidate Gravity ansatz until one direction yields a nonzero joint residual after the full comparator quotient",
+    "Do not dispatch competing KMQGB heavy work until external RQIR raw authority and successor heavy-chain state are explicit"
   ]
 }
