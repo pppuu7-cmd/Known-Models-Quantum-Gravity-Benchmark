@@ -1,0 +1,8 @@
+{
+  "benchmark_id": "KMQGB-T6-M03-KMS-FDR",
+  "status": "OPERATIONALLY_DEGENERATE",
+  "claim": "FDR_OR_KMS_LINK_AS_KG_SPECIFIC_FINGERPRINT",
+  "result": "Stationary KMS quantum environments generically relate symmetric noise and dissipative/retarded response; the relation is not gravity-specific.",
+  "scope_guardrail": "Do not impose equilibrium KMS/FDR on arbitrary nonstationary, squeezed, driven or nonequilibrium states.",
+  "kg_lesson": "Use FDR/KMS as a state-sector consistency/rigidity relation only; gravity attribution still requires spin-2/tensor/universal-stress-energy structure."
+}
