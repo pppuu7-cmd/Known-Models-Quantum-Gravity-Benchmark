@@ -1,0 +1,7 @@
+{
+  "benchmark_id": "KMQGB-T7-M03-NONMARKOVIAN-MEMORY",
+  "status": "OPERATIONALLY_DEGENERATE",
+  "claim": "NONMARKOVIANITY_OR_MEMORY_AS_STANDALONE_KG_RESIDUAL",
+  "result": "Perturbative quantum-gravity/open-system C5 dynamics already generates colored noise and non-Markovian memory kernels.",
+  "kg_lesson": "Use memory only through a linked spectral/causal relation that remains nonzero after C5 state, spectral-density, switching, detector and loop/EFT profiling."
+}
