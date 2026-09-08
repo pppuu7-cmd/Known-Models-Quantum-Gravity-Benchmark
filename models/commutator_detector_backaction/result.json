@@ -1,0 +1,11 @@
+{
+  "benchmark_id": "KMQGB-T5-M03-COMMUTATOR-DETECTOR",
+  "realization": "UNSYM-RATE-VS-SIDEBAND-CAL-001",
+  "terminal": true,
+  "status": "PASS_RQIR_GATE",
+  "objective": "DETECTOR_BACKACTION_QUOTIENT_ESTABLISHED",
+  "rejected_observable": "raw red/blue or sideband asymmetry without a complete measurement model",
+  "retained_estimator": "calibrated excitation/relaxation-rate asymmetry sampling opposite-frequency unsymmetrized spectra",
+  "mandatory_nulls": ["dark rates", "readout-power extrapolation", "classical injection", "probe-state swap", "frequency sweep", "coupling reversal", "ordinary quantum bath ledger"],
+  "candidate_gravity_lesson": "operator-ordering must be defined at detector level after backaction quotient"
+}
