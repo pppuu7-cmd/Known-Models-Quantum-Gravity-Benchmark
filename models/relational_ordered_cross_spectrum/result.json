@@ -1,0 +1,11 @@
+{
+  "benchmark_id": "KMQGB-T5-M05-RELATIONAL-CROSS-SPECTRUM",
+  "realization": "REL-WORLDLINE-ORDERED-SPECTRUM-001",
+  "terminal": true,
+  "status": "PASS_RQIR_GATE",
+  "objective": "RELATIONAL_CAUSAL_ORDERED_KERNEL_ESTABLISHED",
+  "frozen_object": "{N_ij,Splus_ij,C_ij,Sminus_ij,retarded support,proper-time geometry,baseline/orientation,tensor polarization,source scaling,QRF invariance,Ward/contact}",
+  "classical_comparator": "commuting stochastic variables can have rich symmetrized cross-covariance but no fundamental operator commutator kernel",
+  "microcausality_guardrail": "spacelike nonzero commutator is not a generic quantum-gravity signature; causal support must be consistent with the parent dynamics",
+  "candidate_gravity_lesson": "ordered quantum structure must be causal and relational"
+}
