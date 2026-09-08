@@ -1,46 +1,35 @@
-# KMQGB Fourth Wave — Frozen Queue
+# KMQGB Fourth Wave — Historical Terminal Queue
 
-**Frozen denominator:** 5 targets.  
-**Historical first wave:** `9/9 = 100%`, immutable.  
-**Historical second wave:** `5/5 = 100%`, immutable.  
-**Historical third wave:** `5/5 = 100%`, immutable after terminal closure.
+**Frozen denominator:** 5.  
+**Terminal coverage:** **5/5 = 100%**.  
+**Historical status:** immutable after KMQGB iteration 028.
 
-The fourth wave is adversarial: each target attacks one of the strongest surviving Candidate Gravity design ideas rather than merely adding model catalog coverage.
-
-| # | Target | Adversarial question | Initial state |
+| # | Target | Terminal status | Main lesson |
 |---|---|---|---|
-| T4-01 | non-Gaussian stochastic gravity / correlation hierarchy | do `K3,K4,...` actually distinguish KG, or can a classical stochastic hierarchy reproduce them? | ACTIVE |
-| T4-02 | causal/process structure with geometry attribution | can indefinite/quantum causal order be attributed specifically to geometry rather than ordinary quantum control? | QUEUED |
-| T4-03 | cross-detector spacetime-fluctuation geometry | can baseline/orientation/cross-spectrum structure survive strong stochastic-gravity comparators? | QUEUED |
-| T4-04 | quantum reference frames / relational localization | which quantum-geometric-looking effects are coordinate/reference-frame artifacts rather than invariant observables? | QUEUED |
-| T4-05 | C4/C6 quantum-matter mediator attribution adversary | can ordinary quantized matter/source degrees reproduce the T3 non-EB + commutator architecture while gravity remains classical? | QUEUED |
+| T4-01 | non-Gaussian stochastic gravity | `PASS_RQIR_GATE` | higher symmetrized cumulants can remain classical stochastic; non-Gaussianity is not quantumness |
+| T4-02 | causal/process geometry attribution | `OPERATIONALLY_DEGENERATE` | indefinite causal order can be reproduced by ordinary quantum switch/control; geometry attribution required |
+| T4-03 | cross-detector spacetime correlations | `OPERATIONALLY_DEGENERATE` | spatial two-point covariance geometry is powerful for identifiability but not quantumness |
+| T4-04 | quantum reference frames | `PASS_RQIR_GATE` | QRF/diffeomorphism redundancy must be quotiented before counting KG novelty |
+| T4-05 | C4/C6 quantum-matter attribution | `OPERATIONALLY_DEGENERATE` | quantized massless scalar can exactly mimic Newtonian branch phase while carrying quantum information/commutator |
 
-**Fourth-wave terminal coverage at freeze: 0/5 = 0%.**
+Rollup: **2 methodology PASS, 3 operational degeneracies**.
 
-## Why T4-01 is first
+## Key transition produced by T4
 
-T3-03 retained higher cumulants only as a supporting rigidity channel, because standard Gaussian C2 has `K_{n>2}=0` but C3b/nonlinear stochastic models need not.
+The benchmark separated three questions that had previously been easy to conflate:
 
-Published non-Gaussian stochastic-gravity constructions explicitly incorporate higher stress-tensor moments into a classical stochastic source. Therefore T4-01 must decide which parts of the higher hierarchy remain genuinely quantum-sensitive.
+1. **Is the signal quantum?**
+2. **Which mediator carried the quantum information?**
+3. **Is that mediator specifically gravity?**
 
-The likely stronger object is not `K3_plus` itself but a mixed vector containing **ordered/nested-commutator structure together with symmetrized higher cumulants**.
+T4 showed that answering (1) is not enough for (3). This directly motivated the fifth-wave gravity-attribution tests.
 
-## Why T4-05 replaces a separate channel-capacity target
+## Permanent design rules from T4
 
-T3-03 already froze a gravity-induced non-EB channel and unsymmetrized commutator-sensitive readout. Re-benchmarking channel capacity alone would duplicate that work.
+- higher symmetrized moments support rigidity but are not primary quantumness witnesses;
+- causal order requires geometry attribution;
+- cross-correlation requires ordered/commutator linkage;
+- KG novelty must be relational/QRF-invariant;
+- a Newtonian-looking quantum force is not necessarily gravity.
 
-The unresolved scientific danger is instead attribution: quantum matter or another ordinary quantum channel may carry the information while the gravitational field remains classical. T4-05 directly attacks that loophole.
-
-## Fourth-wave completion rule
-
-Each target may terminate as PASS, comparator identity/degeneracy, consistency FAIL, or BLOCKED according to the existing KMQGB vocabulary. A missing required published object is a legitimate terminal `BLOCKED_MISSING_REQUIRED_OBJECT`; tasks are not left artificially half-complete forever.
-
-## Candidate Gravity linkage
-
-Every T4 result that survives audit must update `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`.
-
-The current strongest provisional KG bundle entering T4 is
-
-`{Theta,Q_channel,A_comm/rho_comm,chi_R,N,K3_plus,Ward/contact,mediator attribution,geometry attribution,relational invariance}`.
-
-T4 is designed to remove any component that turns out to be independently mimicable.
+See individual model audit/result files for exact scopes.
