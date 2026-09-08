@@ -1,0 +1,10 @@
+{
+  "benchmark_id": "KMQGB-T4-M01-NONGAUSSIAN-STOCHASTIC",
+  "realization": "NGSG-MINK-SCALAR-HIGHER-MOMENTS-001",
+  "terminal": true,
+  "status": "PASS_RQIR_GATE",
+  "objective": "HIGHER_SYMMETRIZED_CUMULANTS_NOT_UNIQUE",
+  "main_result": "non-Gaussian classical stochastic gravity can incorporate nonzero higher stress/metric moments; K3/K4 nonzero alone do not certify a quantum gravitational mediator",
+  "surviving_direction": "ordered/commutator/nested-commutator hierarchy combined with non-EB channel and symmetrized cumulants",
+  "candidate_gravity_lesson": "non-Gaussianity is not quantumness; use higher cumulants as rigidity channels, not primary quantum witness"
+}
