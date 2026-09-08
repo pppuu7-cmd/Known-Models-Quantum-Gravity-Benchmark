@@ -1,43 +1,61 @@
 {
-  "schema_version": "4.5",
+  "schema_version": "4.6",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 50,
-  "phase": "WAVES_1_TO_29_TERMINAL__CROSS_REPRESENTATION_AND_CROSS_BACKGROUND_RIGIDITY__NOVEL_PARENT_PRINCIPLE_SEARCH",
+  "kmqgb_iteration": 52,
+  "phase": "WAVES_1_TO_32_TERMINAL__MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_ACTIVE",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
-    "repository_readiness_R1_percent": 90,
-    "kmqgb_methodology_material_readiness_R2_percent": 86,
+    "repository_readiness_R1_percent": 92,
+    "kmqgb_methodology_material_readiness_R2_percent": 87,
     "candidate_gravity_scientific_readiness_R3_percent": 24,
-    "reporting_rule": "always report R1, R2, R3 and current-task R4 separately; explain every score change"
+    "current_task_R4_percent": 45,
+    "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md",
+    "changes_since_iteration050": {
+      "R1": "+2 from successful GitHub-hosted methodology CI",
+      "R2": "+1 from IR cross-representation saturation and spectral-origin completeness",
+      "R3": "unchanged after external RQIR Iter611 refresh",
+      "R4": "+35 from replacing preliminary estimate with frozen task rubric; diagnostic P1-P3 are complete while constructive P4-P6 remain open"
+    }
   },
   "current_task": {
     "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
-    "completion_R4_percent": 10,
-    "completed_previous_cycle_percent": 100,
-    "status": "PRELIMINARY_SEARCH_ACTIVE",
-    "success_condition": "identify at least one explicit low-freedom parent principle that derives rather than fits its kernel/tensor hierarchy and survives immediate structural profiling against full C5, string-like, asymptotic-safety, C4/C6 and modern nonlocal comparators"
+    "completion_R4_percent": 45,
+    "status": "CONSTRUCTIVE_P4_REQUIRED",
+    "completed_components": {
+      "P1_known_principle_saturation": 15,
+      "P2_cross_representation_background_rigidity": 15,
+      "P3_spectral_origin_dispersion": 15
+    },
+    "open_components": {
+      "P4_explicit_novel_parent_principle": 25,
+      "P5_structural_comparator_survival": 20,
+      "P6_preansatz_machine_record_for_survivor": 10
+    }
   },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
-    "waves2_to_29": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
+    "waves2_to_32": {"each_total": 5, "each_terminal_completed": 5, "each_percent": 100.0, "immutable": true}
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
-    "preferred_preansatz_architecture": "full_matched_C5_through_3point + candidate_specific_quartic_or_higher parent with cross_order + cross_representation + cross_background rigidity",
-    "amplitude_saturation": "protocol/AMPLITUDE_PARENT_PRINCIPLE_SATURATION.md",
-    "cross_representation_rigidity": "protocol/CROSS_REPRESENTATION_RIGIDITY.md",
-    "cross_representation_coverage": "protocol/CROSS_REPRESENTATION_COMPARATOR_COVERAGE.md",
-    "cross_background_rigidity": "protocol/CROSS_BACKGROUND_RIGIDITY.md",
-    "fresh_modern_comparator": "models/state_dependent_nonlocal/audit.md",
-    "current_parent_principle_requirement": {
-      "rigidity": "derive low-dimensional tensor/momentum/state hierarchy before data",
-      "cross_representation": "same parent parameters predict scattering + CTP/real-time + relational/channel blocks",
-      "cross_background": "same parent parameters predict allowed flat and curved background observables",
-      "novelty": "survive full C5, C4/C6, string-like/dual-resonance, asymptotic-safety and state-dependent nonlocal comparators"
-    }
+    "preferred_preansatz_architecture": "full_matched_C5_through_3point + candidate_specific_4point_or_higher_parent with cross_order + cross_representation + cross_background rigidity",
+    "new_protocols": {
+      "IR_soft_memory": "protocol/IR_SOFT_MEMORY_CROSS_REPRESENTATION_AUDIT.md",
+      "spectral_origin": "protocol/SPECTRAL_ORIGIN_COMPLETENESS.md",
+      "kernel_selection_audit": "protocol/KERNEL_SELECTION_MECHANISM_AUDIT.md",
+      "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md"
+    },
+    "constructive_requirement": "identify an explicit low-freedom parent principle that derives a hierarchy and survives immediate C5/C4-C6/string/AS/nonlocal/spectral-geometry comparator containment"
+  },
+  "repository_automation": {
+    "workflow": ".github/workflows/methodology-ci.yml",
+    "first_run_id": 34266786359,
+    "first_run_conclusion": "success",
+    "runner": "github-hosted ubuntu-latest",
+    "self_hosted_RQIR_runner_used": false
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
@@ -53,18 +71,17 @@
     "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_050.md",
-    "research_log_supplement": "logs/research_log_036_050.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_052.md"
   },
-  "next_wave_status": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH__CROSS_REPRESENTATION_REQUIRED__NO_ANSATZ_PROMOTION",
+  "next_wave_status": "CONSTRUCTIVE_P4_PARENT_PRINCIPLE_REQUIRED__NO_ANSATZ_PROMOTION",
   "next_actions": [
-    "Refresh external RQIR authority before every R3/heavy-compute statement",
-    "Search for a parent principle that fixes rather than merely parameterizes state-dependent/nonlocal kernel structure",
-    "Require shared parameters across scattering, real-time CTP and relational/channel representations",
-    "Use curved-background observables only as shared-parameter rigidity blocks, not standalone novelty",
-    "Profile any proposed principle immediately against full C5, C4/C6, string-like/dual-resonance, asymptotic-safety and state-dependent nonlocal comparators",
-    "Require radiative/RG closure, correct dispersion class and exact kinematic projection lift",
-    "Keep heavy compute idle until a concrete structural object survives upstream gates",
+    "Refresh external RQIR before every R3/heavy-compute statement",
+    "Stop rewarding purely negative parent-principle audits in R4 after P1-P3 saturation",
+    "Construct or identify one explicit low-freedom physical parent principle with derived hard/cross-representation relation",
+    "Declare local spectral support versus D-nonlocal escape and radiative/CTP/kinematic-lift authority",
+    "Immediately profile the principle against full C5, C4/C6, string/dual-resonance/bootstrap, asymptotic-safety, spectral-geometry and modern state-dependent nonlocal comparators",
+    "Create a fail-closed candidate record only if a concrete P4 object exists",
+    "Keep heavy compute idle until an upstream structural object justifies it",
     "Do not promote KG before a robust global comparator-subtracted residual exists"
   ]
 }
