@@ -1,0 +1,69 @@
+{
+  "candidate_id": "KMQGB-T16-01-LOCAL-ANALYTIC-EFT",
+  "screening_classification": "EXACT_COMPARATOR_IDENTITY",
+  "authority": {
+    "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+    "commit_or_blob": "sixteenth_wave frozen record",
+    "parent_object_ref": "sixteenth_wave/README.md#t16-01--local-analytic-metric-only-eft-deformation"
+  },
+  "parent_dynamics": {
+    "representation": "action",
+    "object_ref": "S_EH + (c3/Lambda^2) int sqrt(-g) Riemann^3 + ...",
+    "declared_domain": "local generally covariant metric EFT, Q << Lambda"
+  },
+  "parameters": [
+    {"id": "c3", "role": "dynamics", "sharing_scope": "global"},
+    {"id": "Lambda", "role": "dynamics", "sharing_scope": "global"}
+  ],
+  "observable_blocks": [],
+  "comparators": [
+    {
+      "id": "C5_FULL_GRAVITATIONAL_EFT",
+      "validity_domain": "same low-energy Q << Lambda domain",
+      "parameter_ids": ["c3", "Lambda"],
+      "prediction_ref": "C5 Wilson-operator basis contains the frozen local analytic deformation",
+      "jacobian_ref": "structural identity direction; numeric Jacobian not required for screening containment",
+      "state_sector": "arbitrary matched C5 state"
+    }
+  ],
+  "covariance": {
+    "matrix_ref": null,
+    "provenance": "no numeric residual permitted after structural comparator containment",
+    "cross_block_correlations_included": true
+  },
+  "attribution_stack": {
+    "quantum": "BLOCKED",
+    "mediator": "PASS_GRAVITY_SECTOR",
+    "gravity_spin2": "PASS_SCOPED",
+    "locality": "PASS_EFT_SCOPED",
+    "relational_qrf": "BLOCKED",
+    "detector": "BLOCKED",
+    "state": "BLOCKED",
+    "rigidity": "FAIL_COMPARATOR_CONTAINED"
+  },
+  "rigidity": {
+    "cross_order": {"status": "BLOCKED"},
+    "intervention": {"status": "BLOCKED"},
+    "holdout": {"status": "BLOCKED", "shared_parameter_retuning_on_holdout": false},
+    "minimal_suite": {"status": "BLOCKED"}
+  },
+  "promotion_gates": {
+    "G0": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-01"], "scope": "parent seed defined"},
+    "G1": {"status": "BLOCKED", "evidence_refs": [], "scope": "no numeric residual block needed after structural containment"},
+    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "not promoted to physical residual"},
+    "G3": {"status": "PASS", "evidence_refs": ["sixteenth_wave/README.md#T16-01"], "scope": "same-domain C5 identified"},
+    "G4": {"status": "BLOCKED", "evidence_refs": [], "scope": "not needed after comparator identity"},
+    "G5": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-01"], "scope": "deformation is a C5 EFT direction"},
+    "G6": {"status": "BLOCKED", "evidence_refs": [], "scope": "COR forbidden after containment"},
+    "G7": {"status": "BLOCKED", "evidence_refs": [], "scope": "global separation not applicable"},
+    "G8": {"status": "BLOCKED", "evidence_refs": [], "scope": "identifiability not authorized"},
+    "G9": {"status": "BLOCKED", "evidence_refs": [], "scope": "rigidity not authorized"},
+    "G10": {"status": "FAIL", "evidence_refs": ["sixteenth_wave/README.md#T16-01"], "scope": "screening rejection; ansatz promotion forbidden"}
+  },
+  "promotion": {
+    "ansatz_promoted": false,
+    "robust_global_residual": false,
+    "fisher_promoted": false,
+    "resources_promoted": false
+  }
+}
