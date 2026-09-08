@@ -1,10 +1,10 @@
 {
-  "schema_version": "4.0",
+  "schema_version": "4.1",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 37,
-  "phase": "WAVES_1_TO_14_TERMINAL__MINIMAL_TEST_SUITE_FROZEN__MACHINE_READABLE_PIPELINE_NEXT",
+  "kmqgb_iteration": 38,
+  "phase": "WAVES_1_TO_15_TERMINAL__FAIL_CLOSED_MACHINE_PIPELINE_FROZEN__MINIMAL_DELTAGAMMA_SCREENING_NEXT",
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
     "wave2": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
@@ -19,7 +19,8 @@
     "wave11": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
     "wave12": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
     "wave13": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
-    "wave14": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true, "rollup": {"PASS_RQIR_GATE": 5}}
+    "wave14": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true},
+    "wave15": {"total": 5, "terminal_completed": 5, "percent": 100.0, "immutable": true, "rollup": {"PASS_RQIR_GATE": 5}}
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
@@ -32,14 +33,18 @@
     "intervention_rigidity": "protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md",
     "predictive_rigidity": "protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md",
     "minimal_test_suite": "protocol/MINIMAL_DISCRIMINATING_TEST_SUITE.md",
-    "target_architecture": "few shared parent parameters predicting many complete orders/configurations and held-out channels with a compact redundant attribution-complete suite",
-    "next_method": "machine-readable executable KG benchmark/promotion schema"
+    "machine_pipeline": "protocol/MACHINE_READABLE_KG_PIPELINE.md",
+    "candidate_record_schema": "schema/KG_CANDIDATE_RECORD_v1.json",
+    "candidate_record_validator": "code/kg_candidate_record_validator.py",
+    "critical_machine_rule": "scientifically BLOCKED records are structurally valid; contradictory PASS/promotion states are invalid",
+    "target_architecture": "few shared parent parameters predicting many complete orders/configurations and held-out channels with a compact redundant attribution-complete suite"
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
     "authoritative_research_iteration_observed": 590,
     "model_readiness_percent": 24,
-    "next_scientific_gate": "K3 hard-channel origin plus K1^3 linked-cut origin before complete nonlinear Ward/source closure and comparator quotient"
+    "next_scientific_gate": "K3 hard-channel origin plus K1^3 linked-cut origin before complete nonlinear Ward/source closure and comparator quotient",
+    "refresh_required_before_new_readiness_or_heavy_compute_claim": true
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
@@ -52,16 +57,21 @@
     "intervention_rigidity": "protocol/INTERVENTION_CONFIGURATION_RIGIDITY.md",
     "predictive_rigidity": "protocol/PREDICTIVE_HOLDOUT_RIGIDITY.md",
     "minimal_test_suite": "protocol/MINIMAL_DISCRIMINATING_TEST_SUITE.md",
+    "machine_pipeline": "protocol/MACHINE_READABLE_KG_PIPELINE.md",
+    "candidate_schema": "schema/KG_CANDIDATE_RECORD_v1.json",
+    "validator": "code/kg_candidate_record_validator.py",
     "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_037.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_038.md"
   },
+  "next_wave_status": "READY_TO_FREEZE_MINIMAL_DELTAGAMMA_SCREENING",
   "next_actions": [
-    "Define machine-readable observable-block registry schema",
-    "Define response-completeness/origin ledger schema",
-    "Define covariance/comparator/nuisance Jacobian registry schema",
-    "Define prospective train/holdout/minimal-suite declaration schema",
-    "Define fail-closed promotion-gate validator state machine",
-    "Refresh external RQIR authority before readiness/heavy-compute decisions"
+    "Refresh external RQIR scientific authority and Actions state read-only",
+    "Freeze a small prospective screening queue of minimal DeltaGamma_KG structural templates without promotion",
+    "Create one fail-closed candidate record per exploratory template",
+    "Profile each template first against field redefinitions, full C5 EFT/state freedom, C4/C6 mediators and locality/Ward attribution",
+    "Terminate comparator-contained templates as degeneracies and preserve the lesson",
+    "Keep any template with a missing mandatory theorem/object as BLOCKED rather than tuning or zero-filling",
+    "Do not promote an ansatz until a concrete joint residual passes the full promotion gate"
   ]
 }
