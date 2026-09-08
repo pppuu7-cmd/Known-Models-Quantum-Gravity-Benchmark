@@ -1,0 +1,13 @@
+{
+  "benchmark_id": "KMQGB-T6-M05-PREANSATZ-CTP",
+  "status": "PASS_RQIR_GATE",
+  "objective": "MINIMAL_PREANSATZ_PARENT_TEMPLATE_ESTABLISHED",
+  "ansatz_promoted": false,
+  "parent_decomposition": "Gamma_parent = Gamma_C5,Gaussian + DeltaGamma",
+  "novelty_gate": "A concrete DeltaGamma_KG must satisfy CTP/gauge/causal/relational/gravity-attribution constraints and yield a nonzero joint residual after the full comparator quotient.",
+  "compact_objects": {
+    "K_rel": "{N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}",
+    "G_attr": "{Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}"
+  },
+  "kg_lesson": "Model building may now begin at the level of a constrained beyond-C5 DeltaGamma, but no Candidate Gravity ansatz is authorized yet."
+}
