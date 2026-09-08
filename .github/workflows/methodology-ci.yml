@@ -77,6 +77,9 @@ jobs:
       - name: Run exact local TT-projector no-go witness
         run: python code/local_tt_projector_no_go_reference.py
 
+      - name: Run MISP2 BCC spin2 representation-lift control
+        run: python code/misp2_spin2_representation_lift_control.py
+
       - name: Check recovery and construction entrypoints exist
         run: |
           test -s recovery/CURRENT_BENCHMARK_FRONT.md
@@ -88,3 +91,5 @@ jobs:
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
           test -s protocol/P4_FINITE_RULE_QCA_TRIAGE.md
           test -s protocol/LOCAL_TT_PROJECTOR_NO_GO.md
+          test -s protocol/MISP2_Q1_BCC_PROSPECTIVE_FREEZE.md
+          test -s protocol/MISP2_Q2_SPIN2_REPRESENTATION_LIFT_CONTROL.md
