@@ -1,161 +1,149 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-08  
-**KMQGB iteration:** 027  
+**KMQGB iteration:** 028  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Phase:** THIRD WAVE ACTIVE / FOURTH-WAVE PREFLIGHT OPEN / KG DESIGN-PRIOR LAYER ENABLED
+**Phase:** WAVES 1–5 TERMINALLY CLASSIFIED / KG ATTRIBUTION STACK FROZEN / NEXT WAVE NOT YET FROZEN
 
-## Progress
+## Coverage
 
 - Historical first wave: **9/9 = 100%** — immutable.
 - Historical second wave: **5/5 = 100%** — immutable.
-- Third-wave denominator: **5**.
-- Third-wave terminal coverage: **0/5 = 0%**.
-- T3-01 bespoke/dual-resonance: **70%**.
-- T3-02 Planck-crossover asymptotic safety: **50%**.
-- T3-03 nonclassical interface / mediator attribution: **60%**.
-- T3-04 nonlinear postquantum-classical consistency: **45%**.
-- T3-05 4D CDT curvature-correlator observable: **50%**.
-- Fourth wave: **preflight only; no denominator and no percentage frozen**.
+- Historical third wave: **5/5 = 100%** — immutable.
+- Historical fourth wave: **5/5 = 100%** — immutable.
+- Historical fifth wave: **5/5 = 100%** — immutable.
 - Globally authorized robust unique-QG residuals: **0**.
 - External Candidate Gravity readiness: **24%**.
 
-The third-wave 0/5 number is exact terminal coverage. Operational completion percentages describe active audits and do not count as terminal closure.
+These percentages are finite benchmark-queue coverage, not the probability that a theory is true and not Candidate Gravity readiness.
 
-## Persistent Candidate Gravity design/recovery files
+## Third-wave terminal matrix
 
-- `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`
-- `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`
-- `third_wave/README.md`
-- `fourth_wave/PREFLIGHT.md`
+1. T3-01 closed-channel dual-resonance rigidity — `PASS_RQIR_GATE`.
+   - Same-channel non-string Virasoro-Shapiro deformations survive several weaker assumptions.
+   - In the frozen bootstrap class, `superpolynomial Regge softness + level truncation` collapses the family to Virasoro-Shapiro.
+   - Lesson: **rigidity by independently motivated overconstraint**.
+2. T3-02 Planck-crossover asymptotic safety — `BLOCKED_MISSING_REQUIRED_OBJECT`.
+   - Published mediated amplitude is concrete, but same-realization contact/crossing-complete `A4` object is missing.
+3. T3-03 nonclassical interface — `PASS_RQIR_GATE`.
+   - Established a classical-spacetime discriminator architecture using `Theta`, non-EB channel, calibrated unsymmetrized/commutator-sensitive response, response/noise, Ward/contact and mediator nulls.
+4. T3-04 nonlinear postquantum classical gravity — `BLOCKED_MISSING_REQUIRED_OBJECT`.
+   - CP/covariance strengthened, but same-realization nonlinear constraint closure / physical DOF audit is missing.
+5. T3-05 4D CDT geon-like curvature correlator — `BLOCKED_MISSING_REQUIRED_OBJECT`.
+   - Positive finite-regulator massive-like subresult, but continuum scaling and Lorentzian physical-state map are missing.
 
-These files preserve reusable benchmark-derived design evidence without modifying external RQIR Candidate Gravity readiness.
+Third-wave rollup: `2 PASS_RQIR_GATE`, `3 BLOCKED_MISSING_REQUIRED_OBJECT`.
 
-## T3-01 — closed-channel rigidity boundary
+## Fourth-wave terminal matrix
 
-A concrete non-string Coon point `q=1/2` is frozen inside the published unitary generalized-Veneziano region. It proves that unitary non-string deformations exist when the assumption set leaves enough freedom.
+1. T4-01 non-Gaussian stochastic gravity — `PASS_RQIR_GATE`.
+   - Higher symmetrized cumulants `K3,K4,...` can be represented by a non-Gaussian classical stochastic source.
+   - **Non-Gaussianity is not quantumness.**
+2. T4-02 causal/process geometry attribution — `OPERATIONALLY_DEGENERATE`.
+   - Indefinite causal order observable is reproduced by an ordinary optical quantum switch.
+   - **ICO is not geometry attribution.**
+3. T4-03 cross-detector spacetime correlation geometry — `OPERATIONALLY_DEGENERATE`.
+   - Baseline/orientation/cross-PSD distinguish correlation classes but occur in quantum and semiclassical/stochastic models.
+   - **Cross-correlation is not quantumness.**
+4. T4-04 quantum reference frames — `PASS_RQIR_GATE`.
+   - Bare branch localization/superposition directions can be QRF-dependent and are removed as representational nuisance.
+   - **KG novelty must be relational before it is quantum.**
+5. T4-05 C4/C6 mediator attribution — `OPERATIONALLY_DEGENERATE`.
+   - A quantized massless scalar with `g_i=sqrt(4 pi G)m_i` gives exactly `V=-Gm_A m_B/r`, can supply a non-EB channel and a nonzero operator commutator.
+   - **Quantumness attribution is not gravity attribution.**
 
-It is **not** used as a terminal comparator for type-II four-graviton Virasoro-Shapiro because the external-state/crossing class differs.
+Fourth-wave rollup: `2 PASS_RQIR_GATE`, `3 OPERATIONALLY_DEGENERATE`.
 
-The stronger result remains the generalized-Virasoro rigidity observation: under its more restrictive assumptions, an overdetermined nonlinear recursion selects the string spectrum.
+## Fifth-wave terminal matrix — gravity attribution
 
-Frozen joint target:
+1. T5-01 massless spin-2 soft universality — `PASS_RQIR_GATE`.
+   - Leading soft spin-2 gauge/Lorentz consistency forces universal coupling across matter species.
+   - Gravity attribution should be consistency-derived, not fitted to a Newtonian potential.
+2. T5-02 tensor/tidal polarization — `PASS_RQIR_GATE`.
+   - A tuned scalar/vector quantum force can mimic static `1/r` but not automatically the helicity-2 tensor tidal/polarization sector.
+   - Use cross-regime linkage: static + soft + radiative/tidal.
+3. T5-03 detector/backaction quotient — `PASS_RQIR_GATE`.
+   - Raw sideband asymmetry can be classically mimicked; primary commutator estimator must use calibrated opposite-frequency transition rates or an equivalently complete measurement model.
+4. T5-04 nonlocal classical-CQ loophole — `OPERATIONALLY_DEGENERATE`.
+   - Nonlocal hybrid classical-gravity models can generate entanglement; locality/microcausality is part of the witness.
+5. T5-05 relational ordered cross-spectrum — `PASS_RQIR_GATE`.
+   - Established the design object `{N_ij,C_ij,chi_R,causal support}` along physical detector worldlines/proper times with a microcausality guardrail.
 
-`I_UV={P,R,S,C,Regge,B,EFT}`.
+Fifth-wave rollup: `4 PASS_RQIR_GATE`, `1 OPERATIONALLY_DEGENERATE`.
 
-Current blocker: `BESPOKE_CLOSED_CHANNEL_RIGIDITY_BOUNDARY` — identify the minimal assumption set at which admissible same-channel non-string freedom collapses.
+## Current Candidate Gravity attribution stack
 
-Reusable KG lesson: seek **rigidity by overconstraint**, not one tunable fingerprint.
+A future KG residual is not accepted until it survives all layers:
 
-## T3-02 — full Planck-crossover asymptotic-safety vector
+1. **Quantum attribution** — non-EB / ordered-commutator-sensitive structure, not merely symmetrized noise or non-Gaussianity.
+2. **Mediator attribution** — exclude C4/C6 ordinary quantized matter, EM/optical/phononic/common-bath and source-state transfer.
+3. **Gravity attribution** — establish massless spin-2/tensor response, universal stress-energy coupling, soft/Ward/contact consistency and cross-regime static/radiative linkage.
+4. **Locality attribution** — derive retarded support / microcausality or explicitly justify controlled nonlocality; do not hide nonlocal quantum transfer inside a classical-gravity label.
+5. **Relational attribution** — quotient QRF/diffeomorphism redundancy and use physical worldlines, clocks, separations and dressed observables.
+6. **Geometry attribution** — causal/process claims must distinguish quantum geometry from ordinary quantum switches/control.
+7. **Regulator attribution** — discrete/numerical signatures need continuum/effective-theory mapping.
+8. **Rigidity** — the same parent dynamics should force several independent relations, leaving a low-dimensional or isolated comparator-surviving solution.
 
-Second-wave `p_UV=0` was non-unique. T3-02 now uses
+## Preferred compact KG design object
 
-`I_AS={IR_GR,E_x,H_peak,W_peak,theta_dependence,A_UV,p_UV,contact_fraction,crossing_completion}`.
+The benchmark has compressed the earlier long observable list into two linked structures.
 
-The 2026 graviton-mediated scalar-scattering calculation supplies GR behavior in the IR, a bounded constant UV amplitude, nontrivial angular dependence in the Planck crossover and a resonance-like peak/turnover. The published amplitude is not yet fully direct-contact/crossing complete, so no terminal uniqueness claim is authorized.
+### Relational causal ordered kernel
 
-Current blocker: `AS_CONTACT_COMPLETE_CROSSOVER_VECTOR`.
+`K_rel={N_ij, C_ij, chi_R, causal support, proper-time geometry, QRF invariance}`
 
-Reusable KG lesson: prefer a **full response/crossover shape** over one endpoint/asymptotic scalar.
+with
 
-## T3-03 — mediator-attributed gravitational quantum channel
+- `N_ij`: symmetrized noise/cross-covariance;
+- `C_ij=i<[F_i,F_j]>`: ordered/commutator sector;
+- `chi_R`: retarded response;
+- causal support/microcausality;
+- physical detector worldlines and proper-time synchronization.
 
-Frozen primary two-mass branch benchmark:
+### Gravity-attribution / channel structure
 
-`phi_ab=G m_A m_B tau/(hbar d_ab)`,
+`G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}`.
 
-`Theta=phi_LL+phi_RR-phi_LR-phi_RL`.
+A promising future KG parent dynamics should predict a rigid relation
 
-For the ideal branch-phase two-qubit calibration,
+`F(K_rel,G_attr,higher-supporting-statistics)=0`
 
-`C_AB=|sin(Theta/2)|`.
+rather than independently fitting each observable.
 
-A supplementary 2026 optomechanical realization supplies an operational quantum-channel readout: classify the gravity-induced optical channel as entanglement-breaking or non-entanglement-breaking under the same frozen noise/response assumptions.
+Higher symmetrized cumulants and ordinary spatial cross-correlations are retained as **supporting rigidity/identifiability channels**, not primary quantumness witnesses.
 
-Current linked vector:
+## Claims still forbidden
 
-`I_NC={Theta,E_AB,Q_channel,chi_R^grav,rho_comm^grav,N_grav,K3_plus,Ward/contact,mediator-null controls}`.
+Do not claim from current benchmark evidence that
 
-Entanglement or a non-EB channel is not assigned to gravity until C4/C6 and hidden ordinary quantum channels are excluded.
-
-Current blocker: freeze an operational commutator/ordered-response estimator and derive the full vector first for C2/C3, then C3b/C4/C6.
-
-## T3-04 — nonlinear C3b consistency
-
-The 2026 continuous/covariant classical-quantum formulations substantially strengthen complete positivity and diffeomorphism-covariant construction.
-
-The earlier nonlinear constraint analysis for a broad discrete class nevertheless found non-closure without additional constraints.
-
-These results are not contradictory because they test different objects. T3-04 therefore freezes
-
-`I_PQNL={CP,DiffCov,H_i,H_0,Closure,Bianchi,MatterBackreaction,DOF}`
-
-and requires all components to refer to the **same nonlinear realization** before F2 is closed.
-
-Current blocker: `PQCG_SAME_REALIZATION_NONLINEAR_CONSTRAINT_CLOSURE`.
-
-Reusable KG lesson: manifest covariance is not a substitute for dynamical constraint closure/physical-state reduction.
-
-## T3-05 — 4D CDT curvature-correlator observable
-
-Frozen realization: `CDT-4D-CURVATURE-CORRELATOR-GEON-2026-001`.
-
-The 2026 four-dimensional CDT study reports curvature-correlator behavior compatible with a common massive geon-like state over a finite distance window and explicitly labels it only as a hint.
-
-The benchmark uses
-
-`I_CDT={common massive window,operator-independence,m_eff,phase/volume dependence,continuum-scaling status}`.
-
-CDT has Lorentzian causal histories, while the practical Monte Carlo correlator is evaluated after the theory's Wick rotation. Therefore the measured Euclideanized correlation falloff is not silently promoted to a real-time Lorentzian spectral pole.
-
-Current blocker: `CDT_GEON_CONTINUUM_AND_LOR_REALTIME_MAP`.
-
-Reusable KG lesson: regulator/continuum mapping is part of the observable, not bookkeeping after the fact.
-
-## Fourth-wave preflight — no denominator yet
-
-Created `fourth_wave/PREFLIGHT.md` without freezing a queue.
-
-Highest-priority current candidates:
-
-1. non-Gaussian stochastic-gravity comparator, to attack the T3-03 assumption that `K3_plus` may be distinctive;
-2. causal/process structure with **geometry attribution**;
-3. correlated cross-detector spacetime-fluctuation geometry;
-4. quantum-reference-frame / relational-invariance controls;
-5. gravity-induced quantum-channel capacity only if it remains independent after T3-03 closure;
-6. strong-field Candidate-Gravity consistency only after an actual KG ansatz exists.
-
-Immediate preflight lesson: indefinite causal order alone is not enough, because an operational causal-order witness can be reproduced by an ordinary optical quantum switch. A future KG causal claim requires geometry attribution.
-
-## Current preferred Candidate Gravity architecture
-
-The strongest accumulated design target is a rigid, multi-channel gravitational interface from one parent dynamics:
-
-`{J,N,retarded response,ordered/noncommuting response,higher cumulants,branch phase,entanglement/non-LOCC witness,quantum-channel EB/capacity,causal/process structure,Ward/Bianchi/contact/constraint identities,mediator/geometry attribution}`.
-
-The model should force relations among these quantities rather than expose them as independently adjustable parameters.
+- all known QG/gravity models are wrong;
+- noise, decoherence, non-Gaussianity, entanglement, non-EB channel, causal order, cross-correlation, a pole tower or a Newtonian-looking quantum force individually prove quantum gravity;
+- a quantum mediator is necessarily gravity;
+- a covariant path integral automatically proves nonlinear physical-state consistency;
+- one finite-regulator state proves a continuum QG excitation;
+- Candidate Gravity readiness has increased because the benchmark methodology improved.
 
 ## External RQIR status
 
-External RQIR has advanced to authoritative Iteration **569** while remaining read-only to KMQGB.
+External RQIR remains read-only.
 
-- Candidate Gravity `MODEL_READINESS`: **24%**.
-- QUARTER new coordinates raw-closed: **11/12 = 91.666667%**.
-- Including four exact HALF-overlap corners: **15/16 = 93.75%** coordinate coverage.
-- Rank11 raw-consumed: **PASS Iteration 569**.
-- Rank12 is active at `(+2.5e-6,+1.25e-6)`:
-  - run `34175330006`;
-  - job `101903475600`.
+Latest authoritative front observed: **Iteration 570**.
 
-No KMQGB heavy job is dispatched while rank12 or an authorized successor in the core RQIR chain is active.
+- Candidate Gravity `MODEL_READINESS = 24%`.
+- QUARTER new coordinates raw-closed: `11/12`.
+- Rank12 coordinate `(+2.5e-6,+1.25e-6)` remains active.
+- Workflow run `34175330006`, job `101903475600`.
+- Direct run check still reports `in_progress`.
 
-## Exact next steps
+No KMQGB heavy shared-runner job is dispatched while this RQIR chain is active.
 
-1. T3-01: map the minimal closed-channel rigidity assumption set.
-2. T3-02: extract numerical crossover/peak/angular invariants and await/recover reproducible contact-complete amplitude information.
-3. T3-03: put C2/C3 into the same `I_NC` response/noise/channel notation, then extend to C3b/C4/C6.
-4. T3-04: locate same-realization nonlinear constraint/DOF analysis for the 2026 covariant hybrid formulation.
-5. T3-05: extract published CDT fit parameters and audit volume/coupling/continuum dependence.
-6. Fourth-wave preflight: start with a non-Gaussian stochastic comparator for `K3_plus`, but keep the formal fourth-wave denominator unfrozen until third wave reaches terminal `5/5`.
+## Exact next front
+
+The next wave may now be frozen because fifth wave is terminal `5/5`. It should not widen the catalog arbitrarily. Highest-value remaining attacks are those that challenge the **combined attribution stack**, especially
+
+1. whether a broader ordinary quantum mediator can satisfy spin-2-like Ward/tensor relations over more than one source sector;
+2. whether controlled nonlocal quantum-gravity kernels can remain causal/no-signalling while evading local EFT assumptions;
+3. whether the relational causal ordered kernel can be derived from one concrete parent influence/CTP object;
+4. whether soft/tidal/channel/commutator sectors can be tied by one coupling without overfitting;
+5. whether an explicit minimal Candidate Gravity parent-object template can finally be proposed only after these adversaries are exhausted.
