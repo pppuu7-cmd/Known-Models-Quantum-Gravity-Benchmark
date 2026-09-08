@@ -1,0 +1,22 @@
+{
+  "benchmark_id": "KMQGB-T3-M04-PQCG-NONLINEAR",
+  "realization": "PQCG-COVARIANT-NONLINEAR-CONSTRAINT-001",
+  "terminal": true,
+  "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "first_blocking_gate": "PQCG_SAME_REALIZATION_NONLINEAR_CONSTRAINT_CLOSURE",
+  "passes": {
+    "complete_positivity": "PASS",
+    "diffeomorphism_covariance": "PASS_SCOPED",
+    "matter_backreaction_path_integral": "PASS_SCOPED",
+    "classical_field_no_entanglement_mediation": "PASS_THEOREM_IN_SCOPED_2026_FORMULATION"
+  },
+  "missing_required_objects": [
+    "same-realization nonlinear H_i constraints",
+    "same-realization nonlinear H_0 constraint",
+    "same-realization closure/first-class or equivalent reduced consistency proof",
+    "same-realization physical DOF count",
+    "complete Bianchi/constraint reduction ledger"
+  ],
+  "scientific_interpretation": "current literature strengthens CP/covariance but does not close the benchmark nonlinear physical-state consistency vector; this is not a theory-wide inconsistency verdict",
+  "reopen_condition": "public same-realization nonlinear constraint and physical-DOF audit for the covariant CQ gravity formulation or an explicitly equivalent dynamics"
+}
