@@ -1,205 +1,272 @@
 # Candidate Gravity Design Priors from KMQGB
 
-**Purpose:** retain benchmark-derived design constraints for a future Candidate Gravity (KG) model without modifying the separate RQIR Candidate Gravity authority.
+**Purpose:** preserve benchmark-derived design constraints for a future Candidate Gravity (KG) model without modifying the separate RQIR Candidate Gravity authority/readiness.
 
-**Authority rule:** this file is a design-evidence ledger, not a KG model definition and not a readiness promotion. Any future KG ansatz must be instantiated and tested independently in its own authority repository/protocol.
+**Authority rule:** this is a design-evidence ledger, not a KG ansatz and not a readiness promotion.
 
-## 1. What the benchmark has already ruled out as a sufficient novelty principle
+## 1. Features already proven insufficient by themselves
 
-The following ideas may still appear inside a viable theory, but none is sufficient by itself to identify a new quantum-gravity model:
+The following may appear inside a viable theory, but none is accepted as a standalone KG novelty principle:
 
-1. **Merely differing from GR.** Metric `R+R^2` gives a finite GR-subtracted residual but a broader one-scalar Yukawa family reproduces the frozen observable exactly.
-2. **A new Yukawa/scalar force.** Scalar-range/amplitude structure can be absorbed by broader scalar/scalar-tensor comparators.
-3. **A linked weak-field scalar signature.** Brans-Dicke links PPN and dipole-radiation coefficients, yet the exact BD point is nested in general massless scalar-tensor gravity.
-4. **Metric noise or decoherence.** Stochastic gravity (C2), classical measurement-feedback gravity (C3), and modern postquantum classical gravity (C3b) can generate noise/decoherence without a quantum gravitational mediator.
-5. **Positive two-point/spectral behavior alone.** A healthy spectral function is a consistency advantage, not a uniqueness certificate.
-6. **UV softness or scale-free high-energy behavior.** Distinct Lorentzian UV completions can share the same UV scaling exponent.
-7. **Absence of extra propagator poles alone.** Entire weakly-nonlocal form-factor gravity can avoid the Stelle massive spin-2 pole while being on-shell tree-S-matrix-degenerate with GR in an EOM-squared/field-redefinition class.
-8. **A special pole spectrum alone.** UV-complete/bespoke dual-resonance amplitude families can support tunable/customizable mass spectra with acceptable analyticity/UV behavior and unitary parameter regions.
-9. **Higher derivatives alone.** Standard fundamental Stelle gravity has a real massive spin-2 ghost in the conventional interpretation, but perturbative higher-curvature EFT below cutoff does not inherit that failure automatically.
-10. **Low-energy Wilson coefficients alone.** Any fixed finite analytic imprint of a UV completion is generally matchable inside the appropriate gravitational EFT comparator span.
-11. **Probe entanglement alone.** End-state entanglement is not accepted without mediator attribution against quantized-matter/non-gravitational channels.
-12. **Indefinite causal order alone.** A relativistically defined causal-order observable can be realized by an optical quantum switch and need not distinguish a gravitational quantum switch. Causal indefiniteness therefore requires **geometry attribution**, not merely a process-matrix/quantum-switch witness.
-13. **One regulator-dependent nonperturbative feature alone.** A lattice/truncation/discretization correlation length or state-like signal is not a KG fingerprint until its continuum/regulator map is controlled.
-14. **One asymptotic or endpoint number alone.** The UV exponent, final entanglement, or one spectral mass can be shared by broader theories; use the full crossover/time/frequency-dependent vector where possible.
+1. nonzero deviation from GR;
+2. Yukawa/scalar force;
+3. linked weak-field scalar signature;
+4. metric noise or decoherence;
+5. positive two-point spectral density;
+6. UV softness or one scale-free UV exponent;
+7. absence of extra propagator poles;
+8. one special pole spectrum/tower;
+9. higher derivatives;
+10. finite low-energy EFT Wilson coefficients;
+11. end-state probe entanglement;
+12. a non-entanglement-breaking channel without mediator attribution;
+13. non-Gaussianity / nonzero `K3,K4,...` symmetrized cumulants;
+14. indefinite causal order without geometry attribution;
+15. baseline/orientation-dependent spatial cross-correlations without ordered/commutator information;
+16. bare branchwise metric/event superposition or localization that is QRF/coordinate dependent;
+17. one finite-regulator nonperturbative state/correlation length;
+18. one full-looking scattering sector that omits required contact/crossed/Ward pieces;
+19. a quantum mediator with a Newtonian `1/r` phase — an ordinary quantized scalar can reproduce this in a selected sector;
+20. a raw optical/mechanical sideband asymmetry — detector/backaction correlations can mimic it;
+21. entanglement/non-EB transfer without an explicit locality assumption — nonlocal hybrid classical-gravity models can evade the local witness.
 
-## 2. Mandatory design principle for a future KG ansatz
+## 2. Core structural principle — rigidity by overconstraint
 
-A future KG model should not be designed around one scalar observable or one qualitative feature. It should target a **linked comparator-resistant observable vector** derived from one frozen parent dynamics.
+A future KG model should be built so that **independent physical requirements force the same relations** rather than leaving each observable independently tunable.
 
-Recommended schematic target:
+Prototype from the amplitude benchmark:
 
-`O_KG = {J, N, chi_R, O_ordered, C3_or_higher, E_ent, Q_channel, causal/process observable, Ward/contact structure, mediator/geometry attribution}`
+- broad dual-resonance families leave spectra tunable;
+- same-channel Virasoro-Shapiro deformations survive several lower constraints;
+- adding an independently motivated strong softness condition can collapse the family to an isolated string point in the frozen bootstrap class.
 
-where the exact definitions must be supplied by the model and source-detector setup.
+KG should seek the analogous structure in the gravity–quantum interface.
 
-The key requirement is not that each component is individually unusual. The requirement is that the **joint relation among components** cannot be reproduced by the allowed comparator family after nuisance/calibration profiling.
+After all consistency, comparator and nuisance constraints, count remaining functions/parameters. Prefer a low-dimensional or isolated solution manifold.
 
-## 3. Highest-value candidate discriminators
+## 3. Current attribution stack
 
-### D1 — Noncommuting / ordered response
+A Candidate Gravity-specific residual must survive every relevant layer.
 
-Construct an observable sensitive to ordered correlators or response structure that is not reducible to a positive classical stochastic process with the same symmetrized noise kernel.
+### A1 — Quantum attribution
 
-Reason: C2 can reproduce mean, symmetrized noise and dissipative response surprisingly far; a stronger discriminator must probe structure beyond an admissible classical stochastic kernel.
+Show operator/noncommuting or quantum-channel structure beyond a positive classical stochastic representation.
 
-### D2 — Gravitationally generated entanglement / non-LOCC transfer **with mediator attribution**
+Preferred ingredients:
 
-Use a channel-level witness that cannot be generated by the frozen C3 measurement-feedback/classical-channel comparator under the same source preparation and nuisance assumptions.
+- non-EB quantum channel;
+- calibrated unsymmetrized / commutator-sensitive response;
+- ordered or nested-commutator hierarchy.
 
-Do not stop at `E_AB>0`. Require
+Noise, decoherence and non-Gaussian symmetrized moments are not enough.
 
-`mediator_attribution = gravity-specific transfer survives C4/C6/null-control profiling`.
+### A2 — Mediator attribution
 
-### D3 — Gravitational quantum-channel nonclassicality
+Exclude ordinary quantized matter / electromagnetic / optical / phononic / material / common-bath channels and C6 quantum-source leakage.
 
-The 2026 gravitationally-induced-transparency proposal supplies a stronger operational language than final-state entanglement alone: classify the gravity-induced channel as entanglement-breaking or non-entanglement-breaking under a frozen noise model.
+Observation of entanglement, channel capacity or `A_comm != 0` is not gravity-specific until these are bounded.
 
-A useful KG target should link
+### A3 — Gravity attribution
 
-`{mechanical/branch response, channel transmissivity, channel added noise, EB threshold, entanglement/quantum capacity}`
+T4-05 supplies an exact scoped adversary:
 
-from the same parent dynamics.
+`g_i=sqrt(4 pi G)m_i`
 
-The EB/non-EB verdict is only gravity-attributable after hidden ordinary quantum channels are excluded.
+for a massless quantized scalar gives
 
-### D4 — Higher linked statistics
+`V=-Gm_A m_B/r`
 
-Derive third/higher cumulants or higher-point influence-functional data from the same parent dynamics and test them jointly with `J`, `N`, and retarded response.
+while the scalar still has a quantum commutator and can carry quantum information.
 
-Reason: two-point agreement is easy to mimic. The allowed comparator must reproduce the **same hierarchy**, not separately fitted moments.
+Therefore gravity attribution must add **spin-2/tensor and universal-coupling structure**.
 
-### D5 — Ward/Bianchi/contact and constraint consistency tied to the observable
+T5-01/T5-02 establish the preferred ingredients:
 
-The discriminator should survive exact gauge/Ward/Bianchi/contact identities and preferably use them to remove nuisance directions.
+- massless helicity-2 response;
+- universal coupling to energy-momentum enforced by soft/gauge consistency;
+- tensor/tidal polarization response;
+- static–soft–radiative linkage;
+- gravitational Ward/contact completion.
 
-New guardrail from T3-04: **manifest/path-integral covariance is not automatically the same as nonlinear canonical constraint closure**. A future KG must show that symmetry representation, backreaction/noise kernels and physical-state reduction are mutually consistent in the same realization.
+### A4 — Locality attribution
 
-### D6 — Cross-regime / full-crossover linkage
+Entanglement witnesses are conditional on locality/information-flow assumptions.
 
-If the model has both low-energy and UV predictions, freeze a relation connecting them rather than using a generic UV property such as softness or a scaling exponent.
+Future KG must derive
 
-The preferred object is a normalized crossover vector such as
+- retarded support;
+- microcausality/no-signalling or a clearly scoped controlled-nonlocal replacement;
+- causal factorization/cluster behavior appropriate to the theory.
 
-`{IR normalization, crossover scale, peak/turnover height and width, angular/frequency dependence, UV normalization/exponent, contact/crossed terms}`.
+Do not hide nonlocal quantum transfer inside a “classical gravity” or “quantum gravity” label.
 
-Likewise in the interface problem prefer a full time/frequency response/noise/channel profile over one static value.
+### A5 — Relational / QRF attribution
 
-### D7 — Rigidity by overconstraint
+KG novelty must be relational before it is quantum.
 
-Prefer a model in which several independent physical requirements force the same parameter/function relations instead of allowing each observable to be tuned separately.
+Use physical clocks, worldlines, proper times, source-detector separations, curvature/tidal/dressed observables and detector coincidences.
 
-Prototype:
+Bare manifold-point identity or branch coordinate localization is a nuisance direction until the QRF/diffeomorphism quotient is performed.
 
-- broad bespoke/Coon-like families show that some amplitude features remain tunable;
-- generalized-Virasoro consistency can collapse the allowed spectrum to the string solution under a stronger simultaneous assumption set.
+### A6 — Geometry attribution
 
-A strong KG model should therefore seek a small-dimensional solution manifold — ideally an isolated solution — after all comparator and consistency constraints are imposed.
+If causal/process indefiniteness is used, distinguish quantum geometry from an ordinary quantum switch/control implementation with an independent relational gravitational observable.
 
-### D8 — Causal/process structure **with geometry attribution**
+### A7 — Regulator attribution
 
-Indefinite causal order can be implemented in ordinary quantum-information platforms. A 2025 relativistic causal-order analysis finds that its operational observable does not distinguish optical and gravitational quantum switches.
+Discrete/numerical/truncated signals require regulator, volume, coupling/truncation and continuum/effective-theory maps.
 
-Therefore any KG use of causal/process structure must answer:
+### A8 — Detector attribution
 
-`What measured relation proves that the indefinite/dynamical causal structure is sourced by quantum geometry rather than by ordinary quantum control of operations?`
+A commutator-sensitive observable must be defined through a complete measurement model.
 
-This is the causal analogue of mediator attribution.
+Raw sideband asymmetry is rejected. Prefer calibrated excitation/relaxation-rate spectroscopy or an equivalent estimator after
 
-### D9 — Regulator/continuum invariance
+- dark-rate subtraction;
+- readout-power extrapolation;
+- classical-noise injection;
+- probe-state swap;
+- frequency sweep;
+- coupling geometry reversal;
+- ordinary quantum bath ledger.
 
-For lattice, spin-foam, numerical or truncated KG realizations, the candidate novelty vector must include its regulator map:
+## 4. Compact preferred KG design object
 
-`{observable at finite regulator, finite-volume/truncation dependence, line of constant physics, continuum/extrapolated invariant}`.
+The benchmark now recommends deriving two linked structures from **one parent dynamics**.
 
-A state-like pole/correlation length seen only at one discretization is not yet a model-level KG signature.
+### 4.1 Relational causal ordered kernel
 
-## 4. Minimum viable novelty vector (MVNV)
+`K_rel={N_ij,C_ij,chi_R,causal support,proper-time geometry,QRF invariance}`
 
-Before a KG ansatz is promoted, require all of the following:
+where
 
-1. **One parent dynamics:** action/master equation/CTP object/channel is explicit.
-2. **Required limits:** GR/Newtonian and ordinary QM/QFT limits are controlled.
-3. **Consistency:** ghost/tachyon/positivity/unitarity, causality, gauge/Ward/Bianchi and constraint structure are scoped and pass or are honestly blocked.
-4. **Shared hierarchy:** `J`, `N`, retarded/ordered response and higher relevant correlators come from the same parent object.
-5. **Comparator quotient:** C0–C6 plus stronger benchmark-discovered parent classes are profiled in the same validity domain.
-6. **Nonzero joint residual:** at least one finite observable direction remains nonzero after profiling.
-7. **Mediator attribution:** if entanglement/nonclassical transfer is used, exclude ordinary quantized-matter/non-gravitational and classical-interface explanations.
-8. **Geometry attribution:** if causal/process indefiniteness is used, exclude ordinary quantum-control implementations that reproduce the same operational witness.
-9. **No trivial field-redefinition novelty:** on-shell equivalence classes are checked before claiming a new S-matrix direction.
-10. **No domain cheating:** a UV completion is never compared against a low-energy EFT outside the EFT validity domain.
-11. **Identifiability:** nuisance/calibration/source freedoms cannot absorb the joint residual.
-12. **Rigidity test:** count remaining functional/parameter freedom after all consistency and comparator constraints.
-13. **Regulator/continuum test:** numerical/discrete/truncated signatures must have a controlled regulator-removal or effective-theory interpretation.
-14. **Resources:** only after the above, calculate finite experimental/resource requirements.
+`N_ij = 1/2 <{delta F_i,delta F_j}>`
 
-## 5. Red-team questions every new KG ansatz must answer
+is the symmetrized kernel and
 
-Before accepting a proposed novelty mechanism, attempt to kill it with the following sequence:
+`C_ij = i<[F_i,F_j]>`
 
-- Can C0/GR reproduce it after ordinary calibration freedom?
-- Can C1 semiclassical mean gravity reproduce it?
-- Can C2 stochastic gravity reproduce its mean/noise/response sector?
-- Can C3 measurement-feedback/classical-channel gravity reproduce interaction + decoherence without a quantum mediator?
-- Can C3b postquantum classical gravity reproduce stochastic spacetime signatures?
-- Can C4 ordinary quantum matter/non-gravitational mediator nuisance reproduce the transfer/correlation pattern?
-- Can C5 low-energy quantum GR EFT absorb the finite analytic correction?
-- Can C6 quantum source statistics + a classical interface reproduce it?
-- If entanglement/quantum communication is observed, can the transfer be attributed to gravity rather than quantized matter or another mediator?
-- If indefinite causal order is observed, can the same witness be reproduced by an ordinary optical/controlled-order quantum circuit?
-- Is the proposed novelty merely a scalar/Yukawa or scalar-tensor parent-class direction?
-- Is the S-matrix difference removed by analytic field redefinition?
-- Is the UV signature only softness, a scaling exponent, or a pole-support pattern shared by a broader amplitude family?
-- Are the compared theories valid in the same kinematic/energy domain?
-- Does the full crossover/time/frequency profile remain distinct, not merely an endpoint value?
-- Does the signal survive regulator/volume/truncation changes?
-- After all constraints, how many independent tunable functions/parameters remain?
+is the ordered/commutator kernel for relational detector observables `F_i` along physical worldlines.
 
-Only after surviving this red-team sequence should the feature be called a candidate KG-specific residual.
+Microcausality is part of the object: nonzero spacelike commutators are not automatically a quantum-gravity signal.
 
-## 6. Current preferred design strategy
+### 4.2 Gravity-attribution / channel structure
 
-The strongest current design direction is a **multi-channel nonclassical interface signature** rather than a modified static force law.
+`G_attr={Theta_rel,Q_channel,helicity2/tidal response,kappa_soft,T_mn universality,Ward/contact,mediator nulls}`
 
-Priority order:
+with
 
-1. derive a common CTP/influence/channel parent object;
-2. obtain mean source, symmetrized noise, retarded response and ordered response from it;
-3. add a non-LOCC/entanglement or operator-noncommutativity witness;
-4. add a quantum-channel EB/non-EB or capacity diagnostic where possible;
-5. add mediator-attribution/null controls against C4/C6 and ordinary quantum interactions;
-6. add at least one higher-statistics observable;
-7. impose Ward/Bianchi/contact/constraint identities before comparator fitting;
-8. use a time/frequency crossover vector rather than one endpoint statistic;
-9. profile C2/C3/C3b first;
-10. impose a rigidity audit;
-11. if causal/process structure is used, add geometry attribution;
-12. if discretization/truncation is used, add a continuum/regulator audit;
-13. only then compare to C5 and UV-completion families.
+- `Theta_rel`: local-phase-quotiented branch geometry;
+- `Q_channel`: EB/non-EB or equivalent quantum-information diagnostic;
+- helicity-2/tidal response: operational spin distinction;
+- `kappa_soft`: leading spin-2 soft coupling;
+- `T_mn universality`: stress-energy/equivalence structure;
+- Ward/contact: gauge-complete source/detector relation;
+- mediator nulls: C4/C6 exclusion.
 
-## 7. Claims explicitly forbidden from current evidence
+A serious KG parent theory should force a relation
+
+`F(K_rel,G_attr,supporting higher statistics)=0`
+
+with little residual tuning freedom.
+
+## 5. Supporting channels — useful but not primary certificates
+
+Retain the following because they improve rigidity/identifiability even though they are not individually quantum-specific:
+
+- `K3,K4,...` symmetrized higher cumulants;
+- spatial cross-PSD / baseline/orientation dependence;
+- full crossover/time/frequency response shapes;
+- low-energy EFT coefficient correlations;
+- causal/process observables after geometry attribution;
+- finite-regulator nonperturbative observables after continuum mapping.
+
+## 6. Minimum viable novelty vector (MVNV) before any KG promotion
+
+A future KG ansatz must satisfy at least:
+
+1. one explicit parent action/master equation/CTP/influence/channel object;
+2. GR/Newtonian + ordinary QM/QFT limits;
+3. ghost/tachyon/positivity/unitarity and causal consistency;
+4. Ward/Bianchi/contact and nonlinear constraint/physical-state consistency in the same realization;
+5. relational/QRF-invariant source-detector observables;
+6. `K_rel` derived from the same parent object;
+7. quantum-channel/nonclassical readout derived from that same object;
+8. C0–C6 + C3b comparator quotient in a common validity domain;
+9. detector/backaction quotient;
+10. mediator attribution;
+11. spin-2/gravity attribution;
+12. locality/microcausality audit;
+13. field-redefinition/on-shell-equivalence audit;
+14. full required contact/crossed terms;
+15. nonzero **joint** residual after profiling;
+16. rigidity count of remaining functions/parameters;
+17. regulator/continuum audit where applicable;
+18. only then Fisher/identifiability and finite resources.
+
+## 7. Red-team order for every new KG idea
+
+Try to kill the idea in this order:
+
+1. C0 GR/calibration.
+2. C1 semiclassical mean gravity.
+3. C2 Gaussian stochastic gravity.
+4. non-Gaussian stochastic gravity / higher classical correlation hierarchy.
+5. C3 measurement-feedback/classical channel.
+6. C3b covariant postquantum classical gravity.
+7. nonlocal classical-CQ loopholes.
+8. C4 ordinary quantum scalar/vector/matter/common-bath mediator.
+9. C6 quantum source + classical interface.
+10. scalar/Yukawa/scalar-tensor parent families.
+11. detector/backaction artifact models.
+12. QRF/diffeomorphism redundancy.
+13. optical/ordinary quantum-switch controls for causal-order claims.
+14. analytic field redefinition/on-shell equivalence.
+15. C5 low-energy gravitational EFT in its valid domain.
+16. broader same-domain UV amplitudes.
+17. spin/polarization/universal-coupling attribution.
+18. locality/microcausality.
+19. contact/Ward/constraint completion.
+20. rigidity: how many tunable directions survive?
+
+If absorbed at any step, preserve the result as negative/design evidence and do not promote it as KG novelty.
+
+## 8. Specific positive design priors that survived benchmark attack
+
+The following are not discoveries of new physics, but they are **useful architecture principles**:
+
+- rigidity by overconstraint;
+- calibrated non-EB + ordered-response architecture against local classical spacetime;
+- mediator attribution;
+- massless spin-2 universal soft coupling as gravity-attribution structure;
+- tensor/tidal polarization as an operational spin discriminator;
+- relational causal ordered kernels;
+- explicit locality/microcausality;
+- QRF/diffeomorphism relational observables;
+- full crossover/contact-complete observables rather than endpoint statistics.
+
+## 9. Claims explicitly forbidden from current evidence
 
 Do not claim:
 
-- all existing gravity/QG models are wrong;
-- noise proves quantized gravity;
-- decoherence proves a quantum mediator;
-- end-state entanglement alone universally proves quantized gravity without mediator attribution;
-- a non-entanglement-breaking channel proves gravity is quantum unless ordinary quantum channels are excluded;
-- indefinite causal order alone proves quantum spacetime;
-- a nonzero GR residual proves a new theory;
-- absence of extra poles proves unique UV completion;
-- a pole tower proves string theory;
-- scale-free UV scattering proves asymptotic safety;
-- one regulator-dependent state/correlation length proves a continuum QG excitation;
-- any finite low-energy higher-curvature coefficient uniquely identifies a UV completion.
+- all known gravity/QG models are wrong;
+- noise/decoherence/non-Gaussianity proves quantized gravity;
+- entanglement or a non-EB channel alone proves quantized gravity;
+- `A_comm != 0` alone proves gravity is quantum;
+- a quantum mediator with a Newtonian potential is necessarily gravity;
+- indefinite causal order proves quantum spacetime;
+- cross-detector correlation proves quantumness;
+- a bare metric/event superposition is QRF-invariant physics;
+- a covariant CQ action proves nonlinear constraint closure;
+- a finite-regulator pole/correlation length is a continuum state;
+- a missing contact term may be ignored to complete a fingerprint;
+- benchmark progress changes Candidate Gravity readiness without an independent KG derivation.
 
-## 8. How this file should evolve
+## 10. How this file evolves
 
-After every KMQGB research iteration that produces a reusable KG lesson:
+After every reusable benchmark result:
 
-1. add the lesson here only if it survives exact-realization audit or is explicitly labeled as a live contested hypothesis;
-2. label whether it is a hard no-go, scoped negative result, design prior, live controversy, or open hypothesis;
-3. preserve counterexamples and scope limitations;
-4. never convert benchmark evidence into KG readiness without an independent KG derivation;
-5. record the corresponding recovery delta and research-log entry.
+1. preserve exact scope and counterexample;
+2. mark whether the result is a hard guardrail, scoped degeneracy, methodology PASS, live controversy, or missing-object block;
+3. update recovery/handoff/log and immutable delta;
+4. never promote Candidate Gravity readiness from benchmark evidence alone.
