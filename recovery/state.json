@@ -1,17 +1,25 @@
 {
-  "schema_version": "5.1",
+  "schema_version": "5.2",
   "updated": "2026-09-08",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 59,
-  "phase": "P4_FUNCTIONAL_FREEDOM_GATE_ACTIVE__FINITE_DYNAMICAL_SELECTOR_REQUIRED",
+  "kmqgb_iteration": 60,
+  "phase": "CONSTRUCTION_PLAYBOOK_FROZEN__P4_FINITE_DYNAMICAL_SELECTOR_REQUIRED",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
-    "kmqgb_methodology_material_readiness_R2_percent": 88,
+    "kmqgb_methodology_material_readiness_R2_percent": 89,
     "candidate_gravity_scientific_readiness_R3_percent": 24,
     "current_task_R4_percent": 45,
     "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md"
+  },
+  "readiness_change_iteration060": {
+    "metric": "R2",
+    "delta_percentage_points": 1,
+    "component": "consolidated construction playbook/article-ready synthesis",
+    "component_score_before": "6/10",
+    "component_score_after": "7/10",
+    "reason": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md freezes one operational route from raw idea through pre-P4 kill tests, G0-G10, holdout, compute triage and machine-record requirements; article-grade synthesis remains incomplete"
   },
   "current_task": {
     "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
@@ -22,14 +30,15 @@
       "P2_multi_representation_background_rigidity",
       "P3_spectral_origin_dispersion",
       "wave38_composition_gluing_duality_prefilter",
-      "functional_freedom_no_go_prefilter"
+      "functional_freedom_no_go_prefilter",
+      "construction_playbook_process_freeze"
     ],
     "open": [
       "P4_explicit_novel_parent_principle",
       "P5_structural_comparator_survival",
       "P6_preansatz_machine_record_for_survivor"
     ],
-    "anti_gaming_rule": "additional negative audits or prefilters after P1-P3 do not increase R4"
+    "anti_gaming_rule": "methodology/process improvements do not increase R4; only an explicit constructive P4 survivor can do so"
   },
   "wave_coverage": {
     "wave1": {"total": 9, "terminal_completed": 9, "percent": 100.0, "immutable": true},
@@ -39,6 +48,7 @@
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
+    "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
     "preferred_preansatz_architecture": "full_matched_C5_through_3point + candidate_specific_4point_or_higher parent with shared cross_order/cross_representation/cross_background parameters",
     "major_program_audit": "protocol/MAJOR_QG_PROGRAMS_HARD_OBSERVABLE_AUDIT.md",
     "matrix_parent_precedent": "protocol/MATRIX_MODEL_MICROSCOPIC_PARENT_PRECEDENT.md",
@@ -47,15 +57,33 @@
     "functional_freedom_no_go": "protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md",
     "functional_freedom_reference": "code/p4_functional_freedom_reference.py",
     "constructive_requirement": "a finite low-freedom microscopic dynamical selector that directly derives a uniquely normalized hard/cross-representation gravitational relation and same-parent CTP/retarded block, then survives registered comparator spaces",
+    "pre_P4_sequence": [
+      "A1_explicit_parent_capsule",
+      "A2_functional_freedom_gate",
+      "A3_architecture_containment_prefilter",
+      "A4_explicit_P4_hard_relation_checkpoint"
+    ],
     "pre_P4_kill_test": "if structural-null hard freedom FF_D grows without bound as hard/EFT basis cutoff D increases, classify FUNCTIONAL_FREEDOM_BLOCKED",
-    "new_exclusion": "do not promote projector gluing, associator/nonassociativity, UVIR/Born reciprocity, causal-diamond overlap consistency, arbitrary spectral measures or arbitrary hard functions alone as novel P4 parents"
+    "new_exclusion": "do not promote projector gluing, associator/nonassociativity, UVIR/Born reciprocity, causal-diamond overlap consistency, arbitrary spectral measures, arbitrary form factors or arbitrary hard functions alone as novel P4 parents"
+  },
+  "compute_policy": {
+    "heavy_compute_status": "IDLE_BY_SCIENTIFIC_DESIGN",
+    "forbidden_for": [
+      "missing_parent_object",
+      "functional_freedom_growth",
+      "normalization_or_sign_authority_blocker",
+      "response_completeness_blocker",
+      "missing_exact_kinematic_map",
+      "unfrozen_comparator_domain",
+      "missing_attribution_proof"
+    ],
+    "allowed_when": "a frozen structural object exists and numerical work can discriminate a pre-registered physical/comparator/holdout question"
   },
   "repository_automation": {
     "workflow": ".github/workflows/methodology-ci.yml",
-    "first_run_id": 34266786359,
-    "first_run_conclusion": "success",
     "runner": "github-hosted ubuntu-latest",
     "functional_freedom_self_test_added_iteration": 59,
+    "construction_playbook_entrypoint_required_iteration": 60,
     "self_hosted_RQIR_runner_used": false
   },
   "external_candidate_gravity_authority": {
@@ -77,21 +105,23 @@
     "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
+    "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
     "R4_rubric": "protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_059.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_060.md"
   },
-  "next_wave_status": "NO_MORE_NEGATIVE_WAVE_CREDIT__APPLY_FF_D_BEFORE_P4_DEVELOPMENT",
+  "next_wave_status": "PROCESS_AMBIGUITY_REDUCED__SCIENTIFIC_P4_OBJECT_REQUIRED",
   "next_actions": [
     "Refresh external RQIR before every R3/heavy-compute statement",
-    "For each new parent proposal define its physical hard basis and apply P4_FUNCTIONAL_FREEDOM_NO_GO before detailed development",
+    "Use protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md as the sole high-level construction route",
+    "For each new parent proposal freeze A1 parent capsule and apply A2 P4_FUNCTIONAL_FREEDOM_NO_GO before detailed development",
     "Reject FUNCTIONAL_FREEDOM_BLOCKED proposals whose FF_D grows without bound with hard/EFT cutoff",
-    "Search for a finite microscopic dynamical selector rather than another abstract gluing/composition/duality/overlap consistency principle",
-    "Require one uniquely normalized hard 4-point/higher or cross-representation gravitational relation before fitting",
+    "Apply A3 architecture-level containment before expensive derivation",
+    "For an A1-A3 survivor derive one uniquely normalized hard 4-point/higher or cross-representation gravitational relation before fitting",
     "Require the same parent to determine a CTP/retarded response block with shared parameters",
     "Classify hard origin as S-local or D-nonlocal and close Ward/causality/radiative/kinematic-lift scope",
-    "Immediately profile any surviving P4 proposal against full C5, C4/C6, string/M-theory/matrix, amplitude/bootstrap, asymptotic safety, LQG/discrete, HST/causal-diamond, spectral/noncommutative and modern nonlocal comparators",
-    "Only after P4 survival create a pre-ansatz machine record and score P5/P6",
-    "Keep heavy compute idle until a concrete finite-freedom structural object justifies it",
+    "Immediately profile a P4 survivor against full registered comparator spaces",
+    "Only after P4/P5 survival create a pre-ansatz machine record and score P6",
+    "Keep heavy compute idle until a frozen finite-freedom structural object justifies it",
     "Do not promote KG before a robust global comparator-subtracted residual exists"
   ]
 }
