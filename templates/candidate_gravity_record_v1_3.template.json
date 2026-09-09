@@ -1,0 +1,116 @@
+{
+  "record_schema_version": "1.3",
+  "candidate_id": "PROSPECTIVE_SEED_UNPROMOTED",
+  "authority": {
+    "parent_object_ref": null
+  },
+  "parent_dynamics": {
+    "object_ref": null,
+    "declared_domain": null
+  },
+  "parameters": [],
+  "escape_doors": ["E1"],
+  "escape_claim": "placeholder prospective escape claim; replace with a precise parent-derived statement before any promotion gate can PASS",
+  "escape_evidence_refs": [],
+  "door_specific_blockers": [
+    "explicit parent object not yet supplied",
+    "same-realization map not yet supplied"
+  ],
+  "upstream_primitives": [
+    {
+      "id": "parent_primitive_placeholder",
+      "selection_status": "BLOCKED",
+      "load_bearing": true,
+      "evidence_refs": []
+    }
+  ],
+  "primitive_selection_law": "BLOCKED: replace placeholder with a derived or finite-fundamental primitive selection law",
+  "primitive_freedom_audit": {
+    "status": "BLOCKED",
+    "evidence_refs": []
+  },
+  "functional_freedom": {
+    "classification": "UNKNOWN",
+    "hard_basis_cutoffs": [],
+    "FF_D": [],
+    "remaining_parent_dimension": null,
+    "evidence_refs": []
+  },
+  "same_realization": {
+    "status": "BLOCKED",
+    "realization_vector": {
+      "parent": null,
+      "state": null,
+      "boundary_data": null,
+      "gauge": null,
+      "regulator": null,
+      "truncation": null,
+      "signature": null,
+      "normalization": null,
+      "scale_convention": null,
+      "source_detector_routing": null
+    },
+    "map_refs": [],
+    "uncertainty_refs": []
+  },
+  "observable_blocks": [
+    {
+      "id": "B1_PLACEHOLDER",
+      "completeness": {
+        "status": "BLOCKED"
+      }
+    }
+  ],
+  "comparators": [],
+  "covariance": {
+    "matrix_ref": null,
+    "cross_block_correlations_included": true
+  },
+  "attribution_stack": {},
+  "rigidity": {
+    "holdout": {
+      "shared_parameter_retuning_on_holdout": false
+    }
+  },
+  "promotion_gates": {
+    "G0": {"status": "BLOCKED", "evidence_refs": [], "scope": "parent dynamics"},
+    "G1": {"status": "BLOCKED", "evidence_refs": [], "scope": "response completeness"},
+    "G2": {"status": "BLOCKED", "evidence_refs": [], "scope": "physical reduction"},
+    "G3": {"status": "BLOCKED", "evidence_refs": [], "scope": "common-domain comparator freeze"},
+    "G4": {"status": "BLOCKED", "evidence_refs": [], "scope": "attribution"},
+    "G5": {"status": "BLOCKED", "evidence_refs": [], "scope": "full comparator matching"},
+    "G6": {"status": "BLOCKED", "evidence_refs": [], "scope": "comparator-orthogonal residual"},
+    "G7": {"status": "BLOCKED", "evidence_refs": [], "scope": "global nonlinear separation"},
+    "G8": {"status": "BLOCKED", "evidence_refs": [], "scope": "projected identifiability"},
+    "G9": {"status": "BLOCKED", "evidence_refs": [], "scope": "rigidity and holdout"},
+    "G10": {"status": "BLOCKED", "evidence_refs": [], "scope": "promotion"}
+  },
+  "compute_authorization": {
+    "blocker_type": "STRUCTURAL",
+    "heavy_compute_authorized": false,
+    "question_can_change_terminal_classification": false,
+    "frozen_input_refs": [],
+    "threshold_refs": [],
+    "output_artifact": null
+  },
+  "publication_trace": {
+    "claim_status": "OPEN_BLOCKED",
+    "permitted_claim": "Prospective scaffold only; no Candidate Gravity ansatz or unique residual is promoted.",
+    "evidence_refs": [
+      "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
+      "protocol/BEYOND_C5_PARENT_PRINCIPLE_DECISION_PROCEDURE.md"
+    ],
+    "forbidden_claims": [
+      "Candidate Gravity model established",
+      "new quantum-gravity physics discovered",
+      "known models excluded",
+      "heavy compute scientifically authorized"
+    ]
+  },
+  "promotion": {
+    "ansatz_promoted": false,
+    "robust_global_residual": false,
+    "fisher_promoted": false,
+    "resources_promoted": false
+  }
+}
