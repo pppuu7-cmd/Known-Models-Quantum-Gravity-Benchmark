@@ -1,17 +1,17 @@
 {
-  "schema_version": "7.0",
+  "schema_version": "7.1",
   "updated": "2026-09-09",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 147,
-  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_BENCHMARKING_ACTIVE",
+  "kmqgb_iteration": 152,
+  "phase": "RQIR_CORE_V1_FROZEN__PF1_REGRESSION_CLOSED__PAPER_IV_DECISION_LEDGER_ACTIVE",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 92,
     "kmqgb_methodology_material_readiness_R2_percent": 90,
     "candidate_gravity_scientific_readiness_R3_percent": 24,
     "legacy_parent_search_R4_percent": 45,
     "legacy_parent_search_status": "PAUSED_CONDITIONAL_ON_PAPER_IV",
-    "active_post_freeze_wave_completion_percent": 40
+    "post_freeze_wave_01_completion_percent": 100
   },
   "last_score_change": {
     "iteration": 145,
@@ -28,14 +28,27 @@
     "change_control_ref": "docs/RQIR_CORE_CHANGE_CONTROL.md"
   },
   "active_task": {
-    "id": "PAPER_IV_FROZEN_CORE_KNOWN_MODEL_BENCHMARKING",
-    "wave": "post_freeze_paper_iv_wave_01",
-    "terminal": 2,
+    "id": "PAPER_IV_FROZEN_CORE_DECISION_CLOSURE",
+    "global_decision": "NOT_YET_AUTHORIZED",
+    "decision_ledger": "paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md",
+    "machine_ledger": "paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.json",
+    "minimum_open_objects": [
+      "O-CFS beyond-continuum normalized physical observable plus same-domain comparator",
+      "O-LQG continuum-normalized Lorentzian physical observable plus regulator/comparator authority",
+      "O-AS scheme-truncation-gauge-stable Lorentzian physical crossover observable plus same-domain comparator"
+    ],
+    "new_required_authorized": false,
+    "new_required_reason": "forbidden while major-framework evidence remains missing-object blocked rather than excluded on complete observables"
+  },
+  "post_freeze_wave_01": {
+    "terminal": 5,
     "denominator": 5,
-    "completion_percent": 40,
-    "PF1_01": "CFS: BLOCKED_MISSING_REQUIRED_OBJECT; continuum theorem sub-result EXACT_COMPARATOR_IDENTITY to Einstein-Dirac",
-    "PF1_02": "GR+EFT: PASS_RQIR_GATE__BASELINE_CONTROL; EXISTING_SUFFICIENT only in declared low-energy EFT domain",
-    "next": "PF1-03 string / dual-resonance gravity amplitudes"
+    "completion_percent": 100,
+    "PF1_01_CFS": "BLOCKED_MISSING_REQUIRED_OBJECT; scoped continuum EXACT_COMPARATOR_IDENTITY to Einstein-Dirac",
+    "PF1_02_GR_EFT": "PASS_RQIR_GATE__BASELINE_CONTROL; existing sufficient only in declared low-energy EFT domain",
+    "PF1_03_STRING": "PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL",
+    "PF1_04_LQG": "BLOCKED_MISSING_REQUIRED_OBJECT with 2026 UV-fixed-point and causal-vertex positive controls",
+    "PF1_05_AS": "BLOCKED_MISSING_REQUIRED_OBJECT with direct Lorentzian spectral/form-factor positive controls"
   },
   "candidate_gravity": {
     "status": "CONDITIONAL_NOT_ACTIVE_FRONT",
@@ -46,14 +59,15 @@
   },
   "governance": {
     "kmqgb_firewall": "protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md",
-    "rule": "model adapters live in KMQGB; benchmark outcomes do not silently change frozen RQIR Core; BLOCKED is not evidence for NEW_REQUIRED"
+    "validator": "code/post_freeze_paper_iv_governance_validator.py",
+    "rule": "BLOCKED does not count as NEW_REQUIRED evidence; core changes require an explicit methodological defect and RQIR versioned regression"
   },
   "compute_policy": {
-    "heavy_compute_status": "IDLE_UNLESS_FROZEN_MODEL_DISCRIMINATOR_EXISTS",
-    "current_reason": "PF1-03 is an analytic/comparator regression until a numerical discriminator is preregistered"
+    "heavy_compute_status": "IDLE_UNLESS_ONE_OF_O_CFS_O_LQG_O_AS_IS_FROZEN",
+    "current_reason": "the decisive blockers are object/normalization/domain/comparator authority, not numerical throughput"
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_147.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_152.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "readiness": "protocol/READINESS_METRICS.md",
     "active_wave": "post_freeze_paper_iv_wave_01/README.md"
