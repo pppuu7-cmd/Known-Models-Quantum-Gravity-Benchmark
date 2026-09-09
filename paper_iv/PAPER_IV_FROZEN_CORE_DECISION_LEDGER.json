@@ -1,0 +1,43 @@
+{
+  "rqir_core_version": "1.0",
+  "rqir_core_status": "FROZEN",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "allowed_terminal_decisions": [
+    "EXISTING_SUFFICIENT",
+    "ADAPT_EXISTING",
+    "HYBRID_REQUIRED",
+    "NEW_REQUIRED"
+  ],
+  "post_freeze_wave_01": {
+    "terminal": 5,
+    "denominator": 5,
+    "completion_percent": 100
+  },
+  "gates": {
+    "D1_frozen_judge_integrity": "PASS",
+    "D2_major_framework_complete_object_coverage": "NOT_CLOSED",
+    "D3_common_domain_comparability": "PARTIAL",
+    "D4_comparator_subtracted_residual_matrix": "NOT_CLOSED",
+    "D5_missing_object_quarantine": "PASS",
+    "D6_global_terminal_proof_obligation": "NOT_CLOSED"
+  },
+  "terminal_authorization": {
+    "EXISTING_SUFFICIENT": false,
+    "ADAPT_EXISTING": false,
+    "HYBRID_REQUIRED": false,
+    "NEW_REQUIRED": false
+  },
+  "new_required_forbidden_reason": "major known-framework branches remain BLOCKED_MISSING_REQUIRED_OBJECT rather than excluded on complete same-domain observables",
+  "minimum_open_objects": [
+    "O-CFS normalized beyond-continuum observable plus same-domain comparator",
+    "O-LQG continuum-normalized Lorentzian observable plus regulator and comparator authority",
+    "O-AS scheme-truncation-gauge-stable Lorentzian physical crossover observable plus same-domain comparator"
+  ],
+  "model_result_refs": [
+    "post_freeze_paper_iv_wave_01/PF1_01_CFS/result.json",
+    "post_freeze_paper_iv_wave_01/PF1_02_GR_EFT/result.json",
+    "post_freeze_paper_iv_wave_01/PF1_03_STRING_DUAL_RESONANCE/result.json",
+    "post_freeze_paper_iv_wave_01/PF1_04_LQG_SPINFOAM/result.json",
+    "post_freeze_paper_iv_wave_01/PF1_05_ASYMPTOTIC_SAFETY/result.json"
+  ]
+}
