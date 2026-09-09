@@ -1,9 +1,9 @@
 {
-  "schema_version": "8.3",
+  "schema_version": "8.4",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 179,
+  "kmqgb_iteration": 180,
   "phase": "RQIR_CORE_V1_FROZEN__REPOSITORY_METHODOLOGY_100_VERIFIED__PAPER_IV_CLOSURE_WAVE_02",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 100,
@@ -72,9 +72,19 @@
     },
     "o_lqg": {
       "status": "OPEN",
-      "classification": "PROMISING_ADAPT_EXISTING__MULTISCALE_GAMMA_FINGERPRINT_HAS_OBSERVABLE_RG_CLOSURE_EQUATION__SAME_REALIZATION_MAP_AND_BETA_DELTA_AUTHORITY_MISSING",
+      "classification": "PROMISING_ADAPT_EXISTING__KINEMATIC_AREA_METRIC_BRIDGE_CLOSED__DYNAMICAL_EPRL_TO_EFFECTIVE_AREA_REGGE_SAME_REALIZATION_CERTIFICATE_MISSING",
       "minimum_decisive_object": "MULTISCALE_GAMMA_CERTIFICATE_{M_same-realization,T_RG,C_observable}",
-      "same_realization_map": "EPRL/spinfoam -> area-metric continuum/RG with gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu)",
+      "kinematic_area_metric_bridge": "CLOSED at representation level: twisted four-simplex geometry admits area-metric representation",
+      "next_gate": "EPRL_TO_EFFECTIVE_AREA_REGGE_SAME_REALIZATION_MATCHING_CERTIFICATE",
+      "next_gate_payload": [
+        "boundary_state",
+        "coarse_graining/refinement map",
+        "gamma normalization",
+        "approximation order",
+        "error/remainder",
+        "resulting Area-Regge/area-metric couplings"
+      ],
+      "same_realization_map": "EPRL/spinfoam -> effective Area-Regge dynamics -> area-metric continuum/RG with gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu)",
       "delta_definition": "Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)",
       "primordial_observable": "q = (pi/8)(r+8 n_T)/Pi = 1/gamma - gamma - Delta_gamma",
       "area_metric_observable": "gamma=-cot(4 psi) on the positive branch",
@@ -84,8 +94,8 @@
       "ideal_observable_tangency": "beta_q + 16 csc^2(8 psi) beta_psi = 0",
       "joint_identifiability": "det d(q,psi)/d(gamma,Delta_gamma)=1/[4(1+gamma^2)]>0 for finite positive gamma",
       "blockers": [
-        "same-realization EPRL/spinfoam -> area-metric continuum/RG map not derived",
-        "gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu) identity/running law not derived in one realization",
+        "exact/same-realization EPRL dynamics -> effective Area-Regge coarse-graining certificate missing",
+        "gamma_micro^EPRL -> gamma_eff -> gamma_AM(mu) normalization/running law not derived in one realization",
         "same-realization parity projection and beta_rho/beta_Delta authority missing",
         "frozen matching condition and multiscale transport between primordial q and low-energy psi missing",
         "detector/resource forecast remains downstream"
@@ -105,14 +115,15 @@
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_PENDING_FROZEN_CW2_OBJECT",
-    "current_reason": "repository/methodology is complete and verified; active Paper-IV blockers remain structural analytic/provenance/matching objects"
+    "current_reason": "repository/methodology is complete and verified; active Paper-IV blocker is same-realization EPRL-to-effective-Area-Regge analytic/provenance/matching authority"
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_179.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_180.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "active_wave": "post_freeze_paper_iv_closure_wave_02/README.md",
     "provenance_correction": "recovery/PROVENANCE_CORRECTION_ITER174_CONCURRENT_COLLISION.md",
     "active_audits": [
+      "paper_iv/O_LQG_SAME_REALIZATION_AREA_METRIC_BRIDGE_LADDER_2026.md",
       "paper_iv/O_LQG_AREA_METRIC_GAMMA_RUNNING_BRIDGE_AUDIT_2026-09-10.md",
       "paper_iv/O_LQG_GAMMA_DUALITY_RG_TANGENCY_GATE_2026.md",
       "paper_iv/O_LQG_AREA_METRIC_BIREFRINGENCE_GAMMA_IDENTIFIABILITY_GATE_2026.md",
