@@ -1,10 +1,10 @@
 """Cross-file validator for KMQGB repository/methodology completion.
 
-This validator deliberately separates infrastructure readiness (R1/R2) from
-scientific readiness (R3/R4/Paper IV/CW2).  It is a repository consistency
-check, not a quantum-gravity result.
+R1/R2 declarations are no longer accepted as sufficient evidence.  This
+validator imports the independent evidence scorer and requires its atomically
+computed values to equal the declarations. Scientific readiness remains
+separate from repository/methodology readiness.
 """
-
 from __future__ import annotations
 
 import argparse
@@ -12,19 +12,31 @@ import json
 from pathlib import Path
 
 from kg_candidate_record_v13_validator import validate_v13
+from readiness_score import compute as compute_readiness
 
 ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_COMPLETION_FILES = [
     "protocol/READINESS_100_COMPLETION_CONTRACT.md",
+    "protocol/READINESS_RUBRIC_V2.json",
     "protocol/BEYOND_C5_PARENT_PRINCIPLE_DECISION_PROCEDURE.md",
     "protocol/EXECUTABLE_TEST_REGISTRY.json",
     "schemas/candidate_gravity_record_v1_3.schema.json",
     "templates/candidate_gravity_record_v1_3.template.json",
     "code/kg_candidate_record_v13_validator.py",
+    "code/schema_validation.py",
+    "code/readiness_score.py",
     "code/methodology_orchestrator.py",
     "code/build_release_bundle.py",
     "release/BUNDLE_CONTENTS.json",
+    "release/RELEASE_VERSION",
+    "requirements-ci.txt",
+    "reproducibility/ENVIRONMENT_LOCK.json",
+    ".github/workflows/methodology-ci.yml",
+    ".github/workflows/release.yml",
+    ".github/CODEOWNERS",
+    "LICENSE",
+    "CITATION.cff",
     "publication/KMQGB_METHODS_EVIDENCE_MATRIX.md",
     "publication/claim_evidence_matrix.json",
 ]
@@ -56,11 +68,22 @@ def validate(require_100: bool = False) -> dict:
     r2 = metrics.get("kmqgb_methodology_material_readiness_R2_percent")
     r3 = metrics.get("candidate_gravity_scientific_readiness_R3_percent")
     r4 = metrics.get("legacy_parent_search_R4_percent")
-
-    if require_100 and (r1 != 100 or r2 != 100):
-        errors.append(f"completion mode requires R1=R2=100, got R1={r1}, R2={r2}")
     if not all(isinstance(x, int) and 0 <= x <= 100 for x in (r1, r2, r3, r4)):
         errors.append("readiness metrics must be integer percentages in [0,100]")
+
+    independent = compute_readiness()
+    computed_r1 = independent["metrics"]["R1"]["score"]
+    computed_r2 = independent["metrics"]["R2"]["score"]
+    if computed_r1 != r1 or computed_r2 != r2:
+        errors.append(
+            f"declared/computed readiness mismatch: declared R1/R2={r1}/{r2}, "
+            f"computed={computed_r1}/{computed_r2}"
+        )
+    if require_100 and (computed_r1 != 100 or computed_r2 != 100):
+        errors.append(
+            f"completion mode requires independently computed R1=R2=100, "
+            f"got {computed_r1}/{computed_r2}"
+        )
 
     rqir = state.get("rqir_core", {})
     if rqir.get("version") != "1.0" or rqir.get("status") != "FROZEN":
@@ -107,6 +130,8 @@ def validate(require_100: bool = False) -> dict:
     for required_id in {
         "paper_iv_governance",
         "candidate_record_v13",
+        "schema_validation",
+        "readiness_independent_score",
         "p4_functional_freedom",
         "lqg_gamma_rg_tangency",
         "lqg_multiscale_rg_transport",
@@ -126,20 +151,35 @@ def validate(require_100: bool = False) -> dict:
     for must_bundle in {
         "recovery/state.json",
         "protocol/READINESS_100_COMPLETION_CONTRACT.md",
+        "protocol/READINESS_RUBRIC_V2.json",
         "protocol/EXECUTABLE_TEST_REGISTRY.json",
         "publication/claim_evidence_matrix.json",
         "templates/candidate_gravity_record_v1_3.template.json",
+        "requirements-ci.txt",
+        "reproducibility/ENVIRONMENT_LOCK.json",
+        "LICENSE",
+        "CITATION.cff",
     }:
         if must_bundle not in bundle_paths:
             errors.append(f"release bundle omits critical authority: {must_bundle}")
 
+    env_lock = load_json("reproducibility/ENVIRONMENT_LOCK.json")
+    workflow = (ROOT / ".github/workflows/methodology-ci.yml").read_text(encoding="utf-8")
+    release_workflow = (ROOT / ".github/workflows/release.yml").read_text(encoding="utf-8")
+    if env_lock.get("runner") not in workflow or env_lock.get("python") not in workflow:
+        errors.append("methodology CI does not match frozen runner/Python environment lock")
+    for action, sha in env_lock.get("actions", {}).items():
+        token = f"{action}@{sha}"
+        if token not in workflow and token not in release_workflow:
+            errors.append(f"pinned action absent from workflows: {token}")
+    if "--require-hashes -r requirements-ci.txt" not in workflow:
+        errors.append("methodology CI does not enforce the hashed dependency lock")
+
     claims = load_json("publication/claim_evidence_matrix.json")
     claim_map = {c.get("id"): c for c in claims.get("claims", []) if isinstance(c, dict)}
-    forbid = claim_map.get("FORBID_SOLVED_QG", {})
-    if forbid.get("status") != "FORBIDDEN_OVERCLAIM":
+    if claim_map.get("FORBID_SOLVED_QG", {}).get("status") != "FORBIDDEN_OVERCLAIM":
         errors.append("publication matrix must preserve FORBID_SOLVED_QG overclaim guard")
-    repo_claim = claim_map.get("REPOSITORY_COMPLETE_NOT_SCIENCE_COMPLETE", {})
-    if repo_claim.get("status") != "DERIVED_KMQGB":
+    if claim_map.get("REPOSITORY_COMPLETE_NOT_SCIENCE_COMPLETE", {}).get("status") != "DERIVED_KMQGB":
         errors.append("repository/science separation claim is missing or misclassified")
 
     metrics_text = (ROOT / "protocol" / "READINESS_METRICS.md").read_text(encoding="utf-8")
@@ -152,8 +192,8 @@ def validate(require_100: bool = False) -> dict:
         if "R2 KMQGB methodology/material readiness: **100%**" not in readme_text:
             errors.append("README does not report R2=100%")
 
-    compute = state.get("compute_policy", {})
-    if "STRUCTURAL" in str(compute.get("current_reason", "")).upper() and "IDLE" not in str(compute.get("heavy_compute_status", "")).upper():
+    compute_policy = state.get("compute_policy", {})
+    if "STRUCTURAL" in str(compute_policy.get("current_reason", "")).upper() and "IDLE" not in str(compute_policy.get("heavy_compute_status", "")).upper():
         errors.append("structural compute blocker must keep heavy compute IDLE")
 
     return {
@@ -161,7 +201,9 @@ def validate(require_100: bool = False) -> dict:
         "require_100": require_100,
         "errors": errors,
         "warnings": warnings,
-        "readiness": {"R1": r1, "R2": r2, "R3": r3, "R4": r4},
+        "declared_readiness": {"R1": r1, "R2": r2, "R3": r3, "R4": r4},
+        "independent_readiness": {"R1": computed_r1, "R2": computed_r2},
+        "independent_rubric_valid": independent["valid"],
         "paper_iv": decision,
         "closure_wave_02": {"terminal": terminal, "denominator": denominator, "completion_percent": completion},
         "candidate_template_valid_blocked": template_result["valid"] and not template_result["promotion_allowed"],
