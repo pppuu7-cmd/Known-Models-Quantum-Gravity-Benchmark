@@ -1,6 +1,7 @@
 {
   "rqir_core_version": "1.0",
   "rqir_core_status": "FROZEN",
+  "kmqgb_iteration": 164,
   "global_decision": "NOT_YET_AUTHORIZED",
   "allowed_terminal_decisions": [
     "EXISTING_SUFFICIENT",
@@ -13,13 +14,20 @@
     "denominator": 5,
     "completion_percent": 100
   },
+  "closure_wave_02": {
+    "terminal": 0,
+    "denominator": 3,
+    "completion_percent": 0,
+    "ref": "post_freeze_paper_iv_closure_wave_02/README.md"
+  },
   "gates": {
     "D1_frozen_judge_integrity": "PASS",
     "D2_major_framework_complete_object_coverage": "NOT_CLOSED",
     "D3_common_domain_comparability": "PARTIAL",
     "D4_comparator_subtracted_residual_matrix": "NOT_CLOSED",
     "D5_missing_object_quarantine": "PASS",
-    "D6_global_terminal_proof_obligation": "NOT_CLOSED"
+    "D6_same_realization_composition_discipline": "PASS_RULE_TARGETS_OPEN",
+    "D7_global_terminal_proof_obligation": "NOT_CLOSED"
   },
   "terminal_authorization": {
     "EXISTING_SUFFICIENT": false,
@@ -27,16 +35,53 @@
     "HYBRID_REQUIRED": false,
     "NEW_REQUIRED": false
   },
-  "new_required_forbidden_reason": "major known-framework branches remain BLOCKED_MISSING_REQUIRED_OBJECT rather than excluded on complete same-domain observables",
+  "new_required_forbidden_reason": "major known-framework branches remain completion/composition blocked rather than excluded on complete same-domain observables",
+  "same_realization_gate": "protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md",
   "minimum_open_objects": [
-    "O-CFS normalized beyond-continuum observable plus same-domain comparator",
-    "O-LQG continuum-normalized Lorentzian observable plus regulator and comparator authority",
-    "O-AS contact-complete approximation-controlled same-realization Lorentzian scalar-scattering certificate plus full same-domain comparator"
+    "O-AS same-realization contact-complete diffeo/error-controlled Lorentzian scalar scattering certificate plus comparator",
+    "O-LQG same-realization subleading entropy rigidity vector or other continuum/regulator-stable comparator-orthogonal Lorentzian observable",
+    "O-CFS non-continuum native mass/quasilocal/curvature evaluation under a prospectively fixed physical regularization law plus comparator residual"
   ],
   "o_as_progress": {
-    "closed": "a non-perturbative Lorentzian graviton-mediated scalar 2-to-2 amplitude and cross section now exist with GR infrared recovery and UV unitarity-compatible behavior",
-    "remaining": "same-realization direct contact A4, complete s+t+u+A4 certificate, full approximation/error budget, and full same-domain comparator",
-    "conference_evidence": "ERG2026 reports Lorentzian-resummed contact contribution but is retained as promising noncanonical authority pending a stable reproducible package"
+    "closed": [
+      "non-perturbative Lorentzian graviton-mediated scalar 2-to-2 amplitude and cross section exist",
+      "analytic contact-sector controls exist",
+      "diffeomorphism-invariant error-controlled AS flow ingredients exist"
+    ],
+    "remaining": "the ingredients have not been proven to share one species/crossing/truncation/trajectory/normalisation realization; same-realization A_s+A_t+A_u+A4 plus propagated approximation/comparator certificate remains open",
+    "refs": [
+      "paper_iv/O_AS_CROSS_AUTHORITY_COMPOSITION_GATE_2026.md",
+      "paper_iv/O_AS_CONTACT_REALIZATION_MISMATCH_DIAGNOSTIC_2026.md"
+    ]
+  },
+  "o_lqg_progress": {
+    "closed": [
+      "candidate UV fixed point reduces generic triangulation ambiguity",
+      "causal Lorentzian spinfoam vertex exists",
+      "Lorentzian spinfoam-stack entropy gives area-law/Bekenstein-Hawking control",
+      "related LQG algebraic entropy admits logarithmic corrections"
+    ],
+    "remaining": "generic log A is comparator-degenerate and the subleading coefficient is not yet mapped into the same Lorentzian spinfoam-stack realization; require shared-parameter rigidity vector or other comparator-orthogonal observable",
+    "refs": [
+      "paper_iv/O_LQG_LORENTZIAN_ENTROPY_CLOSURE_AUDIT_2026.md",
+      "paper_iv/O_LQG_SUBLEADING_ENTROPY_COMPARATOR_GATE_2026.md",
+      "paper_iv/O_LQG_ENTROPY_CROSS_AUTHORITY_COMPOSITION_GATE_2026.md"
+    ]
+  },
+  "o_cfs_progress": {
+    "closed": [
+      "Einstein-Dirac continuum map exists",
+      "QFT/Fock limiting dynamics exists",
+      "relational non-continuum ontology exists",
+      "native surface-layer observable formalism exists",
+      "total mass, quasilocal mass and synthetic curvature are native gravity observables with ADM/Brown-York controls"
+    ],
+    "remaining": "evaluate a native gravity observable beyond the continuum under a prospectively fixed physical microscopic regularization law and perform the same-domain comparator quotient",
+    "physical_regularization_rule": "paper_iv/O_CFS_PHYSICAL_REGULARIZATION_ADAPTER_RULE_2026.md",
+    "refs": [
+      "paper_iv/O_CFS_SURFACE_LAYER_OBSERVABLE_CONTROL_2026.md",
+      "paper_iv/O_CFS_MASS_QUASILOCAL_GRAVITY_OBSERVABLE_AUDIT_2026.md"
+    ]
   },
   "model_result_refs": [
     "post_freeze_paper_iv_wave_01/PF1_01_CFS/result.json",
