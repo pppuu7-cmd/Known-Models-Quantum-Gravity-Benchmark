@@ -43,6 +43,9 @@ jobs:
           print(f'validated_json_files={len(paths)}')
           PY
 
+      - name: Run frozen-core Paper IV governance validator
+        run: python code/post_freeze_paper_iv_governance_validator.py
+
       - name: Run fail-closed candidate-record validator self-test
         run: python code/kg_candidate_record_validator.py
 
@@ -94,63 +97,28 @@ jobs:
       - name: Run O3 self-similar continuum control
         run: python code/o3_self_similar_continuum_reference.py
 
-      - name: Check recovery and current hard-origin authority
+      - name: Check recovery and frozen-core Paper IV authority
         run: |
           test -s recovery/CURRENT_BENCHMARK_FRONT.md
           test -s recovery/state.json
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
           test -s recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md
-          for i in $(seq -w 99 143); do test -s recovery/RECOVERY_DELTA_${i}.md; done
+          for i in $(seq -w 99 153); do test -s recovery/RECOVERY_DELTA_${i}.md; done
           test -s protocol/READINESS_METRICS.md
+          test -s protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md
+          test -s paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md
+          test -s paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.json
+          test -s paper_iv/O_AS_SCALAR_SCATTERING_CLOSURE_AUDIT_2026.md
+          test -s code/post_freeze_paper_iv_governance_validator.py
+          test -s post_freeze_paper_iv_wave_01/README.md
+          for d in PF1_01_CFS PF1_02_GR_EFT PF1_03_STRING_DUAL_RESONANCE PF1_04_LQG_SPINFOAM PF1_05_ASYMPTOTIC_SAFETY; do
+            test -s post_freeze_paper_iv_wave_01/$d/audit.md
+            test -s post_freeze_paper_iv_wave_01/$d/result.json
+          done
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
-          test -s protocol/P4_SAME_FACTORIZATION_CONTACT_DIFFERENCE_THEOREM.md
-          test -s protocol/P4_STANDARD_UNITARITY_NEW_CUT_ATTRIBUTION_GATE.md
-          test -s protocol/P4_ENTIRE_POLYNOMIAL_BOUNDED_COLLAPSE_GATE.md
-          test -s protocol/P4_HADAMARD_ENTIRE_HARD_DATA_GATE.md
-          test -s protocol/P4_CELESTIAL_ASSOCIATIVITY_MULTIPARTICLE_COMPLETION_GATE.md
-          test -s protocol/P4_ENTIRE_HERGLOTZ_INTERSECTION_NO_GO.md
-          test -s protocol/P4_ELASTIC_INNER_CDD_ORIGIN_DATA_GATE.md
-          test -s protocol/P4_MHV_GRAVITY_HIDDEN_ZERO_RIGIDITY_CONTROL.md
-          test -s protocol/P4_HIDDEN_ZERO_CROSS_ORDER_NONUNIQUENESS_GATE.md
-          test -s protocol/P4_HIDDEN_ZERO_DEGREE_GROWTH_ORIGIN_GATE.md
-          test -s protocol/P4_BCFW_INFINITY_BOUNDARY_ORIGIN_DATA_GATE.md
-          test -s protocol/P4_BOUNDARY_AT_INFINITY_ORIGIN_DATA_GATE.md
-          test -s protocol/P4_EIKONAL_CAUSALITY_SELECTOR_LIMIT_GATE.md
-          test -s protocol/P4_MULTI_SHIFT_CONTACT_NULLSPACE_GATE.md
-          test -s protocol/P4_LORENTZIAN_CONTOUR_THIMBLE_ORIGIN_GATE.md
-          test -s protocol/P4_RESURGENT_TRANSSERIES_PARAMETER_ORIGIN_GATE.md
-          test -s protocol/P4_ZERO_RETARDED_CROSSREP_CONTACT_NULLSPACE_GATE.md
-          test -s protocol/P4_GR_BONUS_SCALING_CONSTRUCTIBILITY_CONTROL.md
-          test -s protocol/P4_FINITE_SPECTRAL_MOMENT_NONUNIQUENESS_GATE.md
-          test -s protocol/P4_LINEAR_MOMENT_RECURRENCE_ATOMIC_COLLAPSE_GATE.md
-          test -s protocol/P4_NONLINEAR_MOMENT_RECURSION_RANDOM_MATRIX_CONTROL.md
-          test -s protocol/FRESH_AS_INTERACTING_VERTEX_GENERATOR_COMPARATOR_2026.md
-          test -s protocol/O4_PROCESS_MATRIX_GRAVITY_ATTRIBUTION_UNIQUENESS_GATE.md
-          test -s protocol/P4_PRINCIPAL_SYMBOL_EQUIVALENCE_OPERATOR_NONUNIQUENESS_GATE.md
           test -s protocol/P5_DETECTOR_VISIBLE_RESIDUAL_PHYSICAL_COVARIANCE_GATE.md
-          test -s protocol/FRESH_CAUSAL_FERMION_SYSTEMS_OPERATOR_VARIATIONAL_COMPARATOR_2026.md
-          test -s protocol/P4_SPECTRAL_ACTION_ISOSPECTRAL_GEOMETRY_NONUNIQUENESS_GATE.md
-          test -s protocol/P4_GR_INTERACTING_OPERATOR_SELECTION_RIGIDITY_CEILING.md
-          test -s protocol/FRESH_CONSTRUCTIVE_GRAVITY_MATTER_CLOSURE_COMPARATOR.md
-          test -s protocol/P4_UPSTREAM_PRIMITIVE_SELECTION_CLOSURE_GATE.md
-          test -s candidate_synthesis/SYNTHESIS_007_CAUSAL_DIAMOND_ENTANGLEMENT_EQUILIBRIUM.md
-          test -s candidate_synthesis/SYNTHESIS_008_ANOMALY_FREE_REFOLIATION_ALGEBRA.md
-          test -s candidate_synthesis/SYNTHESIS_009_INFINITY_BOUNDARY_RECURSIVE_PARENT.md
-          test -s candidate_synthesis/SYNTHESIS_010_BLACK_HOLE_ENTROPY_S_MATRIX_PARENT.md
-          test -s candidate_synthesis/SYNTHESIS_011_ALL_DEFORMATION_BOUNDARY_CONSISTENCY.md
-          test -s candidate_synthesis/SYNTHESIS_012_COMPLEX_GROWTH_MINIMALITY_SELECTOR.md
-          test -s candidate_synthesis/SYNTHESIS_013_BLACK_HOLE_ENTROPY_DENSITY_PARENT.md
-          test -s candidate_synthesis/SYNTHESIS_014_BLACK_HOLE_ETH_MATRIX_PARENT.md
-          test -s candidate_synthesis/SYNTHESIS_015_BLACK_HOLE_ETH_KMS_PARENT.md
-          test -s candidate_synthesis/SYNTHESIS_016_BLACK_HOLE_MONODROMY_SPECTRAL_PARENT.md
-          test -s candidate_synthesis/SYNTHESIS_017_QUANTUM_CORNER_STATE_LAW_PARENT.md
-          test -s candidate_synthesis/SYNTHESIS_018_SPECTRAL_DETERMINANT_ALL_VERTEX_PARENT.md
-          test -s candidate_synthesis/SYNTHESIS_019_SPECTRAL_TRIPLE_OPERATOR_SELECTION_PARENT.md
-          test -s candidate_synthesis/SYNTHESIS_020_MUTUAL_MATTER_GRAVITY_CLOSURE_FIXED_POINT.md
-          test -s candidate_synthesis/SYNTHESIS_021_MODULAR_FLOW_STATE_TO_DYNAMICS_PARENT.md
           test -s code/detector_facing_nonlinear_likelihood_reference.py
           test -s external_rqir_checks/iter675_prerequisite_exhaustion_audit.md
-          test -s external_rqir_checks/iter133_rqir_programme_paper3_physical_psd_sync.md
           test -s external_rqir_checks/iter143_rqir_paper3_detector_campaign80_sync.md
