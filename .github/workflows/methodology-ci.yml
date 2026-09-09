@@ -64,6 +64,9 @@ jobs:
       - name: Run fail-closed candidate-record validator self-test
         run: python code/kg_candidate_record_validator.py
 
+      - name: Run prospective Candidate Gravity v1.3 scaffold validator
+        run: python code/kg_candidate_record_v13_validator.py
+
       - name: Run inverse-kernel completeness self-test
         run: python code/inverse_kernel_ordered_partitions.py
 
@@ -112,6 +115,18 @@ jobs:
       - name: Run O3 self-similar continuum control
         run: python code/o3_self_similar_continuum_reference.py
 
+      - name: Validate executable methodology registry
+        run: python code/methodology_orchestrator.py --validate-only
+
+      - name: Run executable methodology orchestrator
+        run: python code/methodology_orchestrator.py
+
+      - name: Validate repository completion invariants (pre-score stage)
+        run: python code/repository_completion_validator.py
+
+      - name: Build deterministic reproducibility bundle
+        run: python code/build_release_bundle.py --verify-deterministic
+
       - name: Check recovery and frozen-core Paper IV authority
         run: |
           test -s recovery/CURRENT_BENCHMARK_FRONT.md
@@ -122,8 +137,16 @@ jobs:
           test -s recovery/PROVENANCE_CORRECTION_ITER174_CONCURRENT_COLLISION.md
           for i in $(seq -w 99 177); do test -s recovery/RECOVERY_DELTA_${i}.md; done
           test -s protocol/READINESS_METRICS.md
+          test -s protocol/READINESS_100_COMPLETION_CONTRACT.md
           test -s protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md
           test -s protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md
+          test -s protocol/BEYOND_C5_PARENT_PRINCIPLE_DECISION_PROCEDURE.md
+          test -s protocol/EXECUTABLE_TEST_REGISTRY.json
+          test -s schemas/candidate_gravity_record_v1_3.schema.json
+          test -s templates/candidate_gravity_record_v1_3.template.json
+          test -s publication/KMQGB_METHODS_EVIDENCE_MATRIX.md
+          test -s publication/claim_evidence_matrix.json
+          test -s release/BUNDLE_CONTENTS.json
           test -s paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md
           test -s paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.json
           test -s post_freeze_paper_iv_wave_01/README.md
@@ -155,6 +178,10 @@ jobs:
           test -s code/lqg_gamma_duality_rg_tangency_reference.py
           test -s code/lqg_area_metric_birefringence_gamma_identifiability_reference.py
           test -s code/lqg_multiscale_observable_rg_transport_reference.py
+          test -s code/kg_candidate_record_v13_validator.py
+          test -s code/methodology_orchestrator.py
+          test -s code/repository_completion_validator.py
+          test -s code/build_release_bundle.py
           test -s paper_iv/O_CFS_BEYOND_CONTINUUM_OBSERVABLE_CLOSURE_AUDIT_2026.md
           test -s paper_iv/O_CFS_SURFACE_LAYER_OBSERVABLE_CONTROL_2026.md
           test -s paper_iv/O_CFS_MASS_QUASILOCAL_GRAVITY_OBSERVABLE_AUDIT_2026.md
@@ -167,3 +194,13 @@ jobs:
           test -s code/detector_facing_nonlinear_likelihood_reference.py
           test -s external_rqir_checks/iter675_prerequisite_exhaustion_audit.md
           test -s external_rqir_checks/iter143_rqir_paper3_detector_campaign80_sync.md
+
+      - name: Upload KMQGB reproducibility bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: kmqgb-reproducibility-bundle
+          path: |
+            build/kmqgb-reproducibility-bundle.zip
+            build/methodology_orchestrator_summary.json
+          if-no-files-found: error
+          retention-days: 30
