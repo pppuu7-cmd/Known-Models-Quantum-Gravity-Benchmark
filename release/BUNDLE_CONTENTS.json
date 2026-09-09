@@ -1,9 +1,11 @@
 {
   "bundle_policy_version": "1.0",
   "name": "kmqgb-reproducibility-bundle",
-  "description": "Minimal authority package sufficient to restore governance, readiness accounting, active Paper-IV state, executable methodology, candidate scaffold and publication-facing evidence discipline.",
+  "description": "Minimal authority package sufficient to restore governance, readiness accounting, active Paper-IV state, executable methodology, candidate scaffold, CI policy, completion provenance and publication-facing evidence discipline.",
   "paths": [
+    ".github/workflows/methodology-ci.yml",
     "README.md",
+    "release/BUNDLE_CONTENTS.json",
     "protocol/READINESS_METRICS.md",
     "protocol/READINESS_100_COMPLETION_CONTRACT.md",
     "protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md",
@@ -16,6 +18,7 @@
     "recovery/state.json",
     "recovery/RESTORE_FROM_NEW_CHAT.md",
     "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
+    "recovery/RECOVERY_DELTA_178.md",
     "paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md",
     "paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.json",
     "post_freeze_paper_iv_closure_wave_02/README.md",
