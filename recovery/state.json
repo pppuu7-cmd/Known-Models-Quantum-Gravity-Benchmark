@@ -1,10 +1,10 @@
 {
-  "schema_version": "7.3",
+  "schema_version": "7.4",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 158,
-  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_CLOSURE_WAVE_02__O_AS_ACTIVE",
+  "kmqgb_iteration": 170,
+  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_CLOSURE_WAVE_02__THREE_EXACT_BRIDGES",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 92,
     "kmqgb_methodology_material_readiness_R2_percent": 90,
@@ -37,13 +37,51 @@
       "terminal": 0,
       "denominator": 3,
       "completion_percent": 0,
-      "active": "CW2-01 O-AS"
+      "priority_order": [
+        "CW2-01 O-AS",
+        "CW2-02 O-LQG gamma-duality",
+        "CW2-03 O-CFS correction hierarchy"
+      ]
     },
-    "priority_open_object": "O-AS",
-    "priority_blocker": "SAME_REALIZATION_CONTACT_COMPLETE_DIFFEO_ERROR_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE",
-    "o_as_latest": "published mediated Lorentzian scattering plus analytic contact control and diffeo/error-controlled AS flow exist, but their species/crossing/truncation/trajectory/normalisation matching into one realization is not proven",
-    "o_lqg_latest": "Lorentzian spinfoam entropy observable exists and reproduces Bekenstein-Hawking leading area law; remaining target is comparator-orthogonal continuum/regulator-stable content",
-    "o_cfs_latest": "QFT/Fock limiting dynamics, relational non-continuum ontology and Einstein-Dirac continuum gravity map exist; remaining target is gravity-specific beyond-continuum observable with same-domain comparator"
+    "o_as": {
+      "status": "OPEN",
+      "target": "SAME_REALIZATION_CONTACT_COMPLETE_DIFFEO_ERROR_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE",
+      "closed_layers": [
+        "physical Lorentzian mediated scalar scattering/cross section",
+        "analytic contact-sector controls",
+        "conference-level Lorentzian-resummed contact claim",
+        "separate diffeomorphism-invariant error-controlled RG flow"
+      ],
+      "blocker": "same-realization species/crossing/truncation/trajectory/normalisation/error map for A_s+A_t+A_u+A4 is not frozen"
+    },
+    "o_lqg": {
+      "status": "OPEN",
+      "preferred_route": "gamma-duality cross-representation rigidity",
+      "closed_layers": [
+        "gamma-dual EFT/cosmological observable relation",
+        "positive-gamma structural identifiability for Pi != 0",
+        "generic parity-violating EFT comparator direction identified",
+        "Lorentzian entropy and UV/causal spinfoam controls"
+      ],
+      "blockers": [
+        "complete EPRL/covariant-LQG -> renormalized gamma-dual EFT Wilson map not derived",
+        "gamma_micro/gamma_EFT/gamma_geom parameter identity or running map not derived",
+        "cosmological nuisance/detector likelihood remains downstream of attribution bridge"
+      ]
+    },
+    "o_cfs": {
+      "status": "OPEN",
+      "closed_layers": [
+        "Einstein-Dirac continuum map",
+        "QFT/Fock limiting dynamics",
+        "relational non-continuum ontology",
+        "native surface-layer observable formalism",
+        "native total/quasilocal mass and synthetic curvature",
+        "direct geometric Einstein derivation with systematic correction generator"
+      ],
+      "target": "FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR",
+      "blocker": "2026 geometric derivation classifies correction sources but states that they still need to be worked out in detail"
+    }
   },
   "candidate_gravity": {
     "status": "CONDITIONAL_NOT_ACTIVE_FRONT",
@@ -54,17 +92,23 @@
   },
   "governance": {
     "kmqgb_firewall": "protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md",
+    "same_realization_gate": "protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md",
     "validator": "code/post_freeze_paper_iv_governance_validator.py",
-    "rule": "BLOCKED does not count as NEW_REQUIRED evidence; neighbouring papers in one framework are not composable without same-realization matching"
+    "rule": "BLOCKED is not NEW_REQUIRED evidence; shared framework names/symbols do not establish same-realization or cross-representation parameter identity"
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_PENDING_FROZEN_CW2_OBJECT",
-    "current_reason": "CW2 blockers are authority/composition/comparator gaps; blind numerical work cannot close them"
+    "current_reason": "AS needs authority composition, LQG needs top-down/parameter bridge, CFS needs first explicit correction tensor; none is a blind numerical problem"
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_158.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_170.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "active_wave": "post_freeze_paper_iv_closure_wave_02/README.md",
-    "active_audit": "paper_iv/O_AS_CONTACT_REALIZATION_MISMATCH_DIAGNOSTIC_2026.md"
+    "active_audits": [
+      "paper_iv/O_AS_CONTACT_REALIZATION_MISMATCH_DIAGNOSTIC_2026.md",
+      "paper_iv/O_LQG_GAMMA_TOPDOWN_BRIDGE_LITERATURE_CEILING_2026.md",
+      "paper_iv/O_LQG_GAMMA_PARAMETER_IDENTITY_RENORMALIZATION_GATE_2026.md",
+      "paper_iv/O_CFS_GEOMETRIC_CORRECTION_GENERATOR_AUDIT_2026.md"
+    ]
   }
 }
