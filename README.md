@@ -1,92 +1,70 @@
 # Known Models / Quantum Gravity Benchmark (KMQGB)
 
-Purpose: audit concrete gravity and quantum-gravity realizations through the frozen RQIR funnel while keeping all benchmark writes physically separated from the main Candidate Gravity repository, and preserve reusable design lessons for a future Candidate Gravity model.
+**Status:** ACTIVE — main known-model proving ground for Paper IV under **RQIR Core v1.0 FROZEN**.  
+**Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
+**Recovery entrypoint:** `recovery/RESTORE_FROM_NEW_CHAT.md`.
 
-Repository: `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
-Default branch: `main`  
-Recovery entrypoint: `recovery/RESTORE_FROM_NEW_CHAT.md`.
+## Post-freeze architecture
 
-## Historical first wave — frozen and complete
+KMQGB is the active laboratory for known gravity and quantum-gravity frameworks. RQIR Core v1.0 is the frozen external judge; future Candidate Gravity is a separate conditional layer and must not be used to tune the judge.
 
-The first-wave denominator is permanently frozen at **9 models** and is never retroactively changed.
+Mandatory governance: `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md`.
 
-**First-wave terminal coverage: 9/9 = 100%.**
+The rule is simple:
 
-Rollup: 5 exact comparator identities, 2 operational degeneracies, 1 real consistency failure, 1 protocol/domain block, 0 globally authorized robust unique QG residuals.
+`framework-native objects -> KMQGB adapter -> frozen RQIR observable/comparator -> model-level terminal status`.
 
-## Historical second wave — frozen and complete
+If a model needs a special translation, build an adapter here. RQIR changes only through its own documented change-control after a demonstrated methodological defect, never because a model fails or is blocked.
 
-The second-wave denominator is separately frozen at **5 targets**.
+## Historical benchmark corpus
 
-**Second-wave terminal coverage: 5/5 = 100%.**
+Historical denominators are immutable.
 
-Second-wave rollup: 2 exact comparator identities, 2 operational degeneracies, 1 passed UV-comparator-infrastructure gate, 0 consistency failures, 0 globally authorized robust unique-QG residuals.
+- **Wave 1:** `9/9 terminal = 100%`.
+- **Wave 2:** `5/5 terminal = 100%`.
+- **Wave 3:** `5/5 terminal = 100%`; see `third_wave/README.md`.
+- Later historical waves/recovery records remain immutable evidence and are not renumbered by the post-freeze programme.
 
-Detailed wave histories remain in model directories, `logs/research_log.md`, and recovery deltas.
+No historical benchmark has authorized a globally robust unique-QG residual merely from a nonzero deviation, noise/decoherence, UV softness, special poles, higher derivatives or a missing object.
 
-## Candidate Gravity design layer
+## Active post-freeze Paper-IV regression wave
 
-Benchmark-derived lessons that are reusable for future KG construction are now preserved separately in:
+`post_freeze_paper_iv_wave_01/README.md` freezes a five-school representative regression set under RQIR Core v1.0:
 
-- `protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md`;
-- `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`.
+1. Causal Fermion Systems;
+2. GR + controlled low-energy gravitational EFT;
+3. string / dual-resonance gravity amplitudes;
+4. LQG / spinfoam / covariant discrete gravity;
+5. asymptotic safety / Lorentzian FRG.
 
-These files are design evidence only. They do not modify the separate RQIR Candidate Gravity authority or readiness.
+**Current post-freeze coverage: 1/5 = 20%.**
 
-Core lesson:
+PF1-01 CFS is terminal for its declared scope:
 
-> A future KG model should not be built around one qualitative novelty such as new noise, a new Yukawa force, decoherence, UV softness, scale-free scattering, a special pole spectrum, higher derivatives, or simply a nonzero difference from GR. The strongest current direction is a linked comparator-resistant nonclassical interface hierarchy derived from one parent dynamics.
+- controlled 2026 curved-spacetime continuum sector: `EXACT_COMPARATOR_IDENTITY` to coupled Einstein–Dirac dynamics within the theorem scope;
+- genuinely beyond-continuum CFS residual: `BLOCKED_MISSING_REQUIRED_OBJECT` until a normalized same-domain RQIR observable/comparator package is supplied;
+- no RQIR Core defect and no evidence for Paper-IV `NEW_REQUIRED`.
 
-Preferred schematic target:
+## Paper-IV discipline
 
-`O_KG={J,N,chi_R,ordered/noncommuting response,higher cumulants,entanglement/non-LOCC witness,Ward/Bianchi/contact structure}`.
+Model-level outcomes include
 
-## Third wave — frozen and active
+`EXACT_COMPARATOR_IDENTITY`, `OPERATIONALLY_DEGENERATE`, `FAIL_RQIR_CONSISTENCY`, `BLOCKED_MISSING_REQUIRED_OBJECT`, `BLOCKED_PROTOCOL_MISMATCH`, and only after full quotient/identifiability checks `ROBUST_NONZERO_RESIDUAL`.
 
-A separate third-wave denominator is frozen at **5 targets** in `third_wave/README.md`.
+The overall Paper-IV decision remains one of
 
-| T3 # | Target | State |
-|---|---|---|
-| 1 | generalized bespoke / dual-resonance UV amplitudes | **ACTIVE** |
-| 2 | full Planck-crossover asymptotic-safety amplitude vector | queued |
-| 3 | nonclassical interface discriminator against C2/C3/C3b | queued |
-| 4 | nonlinear postquantum-classical consistency | queued |
-| 5 | concrete loop/canonical/discrete QG Lorentzian observable | queued |
+`EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED`.
 
-**Third-wave terminal coverage: 0/5 = 0%.**  
-Active T3-01 audit completion estimate: **45%**.
+A `BLOCKED` model is never evidence for `NEW_REQUIRED` by itself.
 
-## Current T3-01 result
+## Candidate Gravity firewall
 
-Second-wave S2-M05 showed type-II string pole support differs from one simple Huang–Remmen single-mass UV comparator.
+Candidate-design files already present in this repository are retained as historical/conditional design evidence. They do not authorize a new-model paper and they do not modify RQIR Core. Full Candidate Gravity development remains downstream of Paper IV.
 
-The broader bespoke dual-resonance literature now demonstrates that a much larger amplitude family can take customizable mass spectra while retaining dual resonance, UV control and unitary regions. Later unitarity work restricts this family strongly, including ruling out the analyzed asymptotically nonlinear Regge trajectories.
+## Current methodology/readiness authority
 
-Therefore **pole support alone is not accepted as a globally robust UV fingerprint**.
+See `protocol/READINESS_METRICS.md` and `recovery/state.json`. The post-freeze programme keeps repository/methodology readiness separate from Paper-IV programme readiness and from conditional Candidate-Gravity readiness.
 
-The stronger target is the joint invariant vector
+## Heavy compute
 
-`I_UV={pole locations,residues/spin decomposition,crossing/duality,Regge trajectory,high-energy bounds/sum rules,low-energy coefficient correlations}`.
-
-This result is also a generic KG lesson: novelty must survive the widest physically admissible parent class known for the chosen observable, not merely a hand-picked comparator.
-
-## Main lessons after two completed waves and the active third-wave audit
-
-1. A nonzero deviation from GR is not automatically a unique theory signature.
-2. Stochastic metric noise, decoherence, or quantum discord do not by themselves certify a quantum gravitational mediator; C2/C3/C3b can reproduce such structures.
-3. Standard fundamental Stelle gravity has a real scoped consistency failure under the frozen conventional ghost interpretation, while perturbative higher-curvature EFT does not inherit that verdict.
-4. Entire nonlocal form factors can remove extra propagator poles, but a special EOM-squared class becomes tree-S-matrix-degenerate with GR.
-5. Scale-free trans-Planckian scattering is not unique to asymptotic safety.
-6. Pole support is also too weak as a global UV discriminator once spectrum-tunable dual-resonance families are admitted.
-7. Low-energy finite analytic corrections from UV completions generally live inside the EFT comparator span.
-8. No model tested so far has produced a **globally authorized** `ROBUST_NONZERO_RESIDUAL` surviving the applicable comparator/domain quotient.
-
-## Status vocabulary
-
-`PASS_RQIR_GATE`, `FAIL_RQIR_CONSISTENCY`, `EXACT_COMPARATOR_IDENTITY`, `OPERATIONALLY_DEGENERATE`, `ROBUST_NONZERO_RESIDUAL`, `BLOCKED_MISSING_REQUIRED_OBJECT`, `BLOCKED_PROTOCOL_MISMATCH`, `OPERATIONAL_FAILURE`.
-
-## Repository firewall
-
-KMQGB may read frozen RQIR protocol and Candidate Gravity authority as external inputs, but benchmark writes belong here only. It must not modify Candidate Gravity readiness, recovery state, workflows, runners, iteration numbering, or scientific authority in `pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction`.
-
-Heavy KMQGB work must not compete for the shared runner while the RQIR heavy chain is active.
+Run heavy jobs only for a frozen model adapter and a preregistered discriminating observable. Missing mappings, authority, normalization or comparator objects are algebraic/provenance blockers, not reasons to launch blind compute.
