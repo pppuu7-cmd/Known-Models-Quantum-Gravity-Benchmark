@@ -1,8 +1,8 @@
 # KMQGB Research Handoff — Post-Freeze Paper-IV Mode
 
-Candidate Gravity remains conditional and **not** the active front. Repository engineering is complete; the active task is physical known-framework Paper-IV closure under **RQIR Core v1.0 FROZEN**.
+Candidate Gravity remains conditional and **not** the active front. Repository engineering is **COMPLETE_100_VERIFIED**; the active task is physical known-framework Paper-IV closure under **RQIR Core v1.0 FROZEN**.
 
-## Stable metrics — Iter178
+## Stable metrics — Iter179
 
 - **R1 repository readiness = 100%**;
 - **R2 KMQGB methodology/material readiness = 100%**;
@@ -12,13 +12,25 @@ Candidate Gravity remains conditional and **not** the active front. Repository e
 - **Closure Wave 02 = 0/3 terminal**;
 - Paper IV = **`NOT_YET_AUTHORIZED`**.
 
-R1/R2 reached 100 under `protocol/READINESS_100_COMPLETION_CONTRACT.md` after pre-score methodology-ci run `34412786245` / job `102670803282` completed success with all 36 steps, including deterministic bundle generation/upload.
+R1/R2 reached 100 under `protocol/READINESS_100_COMPLETION_CONTRACT.md` and were then strictly revalidated after the score update.
 
-No scientific score or physical closure object was promoted by this change.
+Strict verification authority:
+
+- run `34413073509`;
+- job `102671705364`;
+- head `bc0c2a902a293cbecf7e3baefbd8de61276d5b9a`;
+- `python code/repository_completion_validator.py --require-100` = success;
+- full methodology orchestrator = success;
+- deterministic bundle = success;
+- recovery authority = success;
+- artifact id `10127989719`;
+- digest `sha256:6134a659df7a71a9a38763442b38a8ea464e2ddbad1c5f2c1726a69fa3df5792`.
+
+No scientific score or physical closure object was promoted by repository completion.
 
 ## Repository completion layer
 
-The repository now has:
+The repository now permanently contains:
 
 - end-to-end Beyond-C5 parent decision procedure;
 - executable test registry + orchestrator;
@@ -51,7 +63,8 @@ Canonical scientific chronology:
 - Iter175: exact RG tangency gate `beta_Delta`;
 - Iter176: independent birefringence gamma holdout `psi`;
 - Iter177: observable-space RG transport;
-- Iter178: repository/methodology completion only; no new physical bridge claimed.
+- Iter178: repository/methodology completion;
+- Iter179: strict 100% verification lock only; no new physical bridge claimed.
 
 Key equations:
 
@@ -91,8 +104,8 @@ Exact blocker:
 
 ## Heavy compute
 
-**IDLE.** Detector/resource forecasting is downstream of the structural same-realization and RG-attribution objects.
+**IDLE.** Detector/resource forecasting is downstream of structural same-realization and RG-attribution objects.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB с Iter178. R1=100, R2=100 — repository/methodology complete; R3=24, legacy R4=45 paused; PF1=5/5, CW2=0/3, Paper IV=NOT_YET_AUTHORIZED. Не трать итерации на repository engineering. Активный scientific target MULTISCALE_GAMMA_CERTIFICATE={M_same-realization,T_RG,C_observable}; C_observable закрыт. Следующий фронт: EPRL/spinfoam->area-metric same-realization map, затем same-parent beta_rho/beta_Delta и scale transport. Heavy compute idle. BLOCKED != NEW_REQUIRED.`
+`Продолжай KMQGB с Iter179. Repository/methodology COMPLETE_100_VERIFIED: R1=100, R2=100. Научные R3=24, legacy R4=45 paused; PF1=5/5, CW2=0/3, Paper IV=NOT_YET_AUTHORIZED. Не трать итерации на repository engineering. Активный scientific target MULTISCALE_GAMMA_CERTIFICATE={M_same-realization,T_RG,C_observable}; C_observable закрыт. Следующий фронт — EPRL/spinfoam->area-metric same-realization map, затем same-parent beta_rho/beta_Delta и scale transport. Heavy compute idle. BLOCKED != NEW_REQUIRED.`
