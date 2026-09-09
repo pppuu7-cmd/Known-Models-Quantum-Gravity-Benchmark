@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.0",
+  "registry_version": "1.1",
   "rqir_core": "v1.0 FROZEN",
   "policy": "Every registered critical control is fail-closed. Missing files, duplicate IDs, malformed commands, or nonzero exit status invalidate the executable layer.",
   "tests": [
@@ -11,6 +11,8 @@
     {"id":"lqg_multiscale_rg_transport","path":"code/lqg_multiscale_observable_rg_transport_reference.py","command":["python","code/lqg_multiscale_observable_rg_transport_reference.py"],"category":"rg","purpose":"Verify the observable-space multiscale gamma/Delta transport equation."},
     {"id":"candidate_record_v12","path":"code/kg_candidate_record_validator.py","command":["python","code/kg_candidate_record_validator.py"],"category":"candidate_scaffold","purpose":"Preserve historical/prospective v1.0-v1.2 fail-closed candidate invariants."},
     {"id":"candidate_record_v13","path":"code/kg_candidate_record_v13_validator.py","command":["python","code/kg_candidate_record_v13_validator.py"],"category":"candidate_scaffold","purpose":"Enforce functional-freedom, same-realization, compute and publication controls for v1.3."},
+    {"id":"schema_validation","path":"code/schema_validation.py","command":["python","code/schema_validation.py"],"category":"schema","purpose":"Validate the v1.3 schema and template independently with JSON Schema Draft 2020-12 plus negative fixtures."},
+    {"id":"readiness_independent_score","path":"code/readiness_score.py","command":["python","code/readiness_score.py"],"category":"governance","purpose":"Recompute R1/R2 from atomic evidence without taking declared percentages as scoring inputs."},
     {"id":"inverse_kernel_completeness","path":"code/inverse_kernel_ordered_partitions.py","command":["python","code/inverse_kernel_ordered_partitions.py"],"category":"response_completeness","purpose":"Enumerate inverse-kernel ordered-partition response families."},
     {"id":"residual_space_geometry","path":"code/residual_space_geometry_reference.py","command":["python","code/residual_space_geometry_reference.py"],"category":"residual","purpose":"Reference control for comparator-orthogonal residual geometry."},
     {"id":"physical_covariance","path":"code/detector_visible_residual_physical_covariance_reference.py","command":["python","code/detector_visible_residual_physical_covariance_reference.py"],"category":"detector","purpose":"Verify source-traceable detector-visible residual covariance."},
