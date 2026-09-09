@@ -34,7 +34,6 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-
           paths = sorted(Path('.').rglob('*.json'))
           if not paths:
               raise SystemExit('No JSON files found')
@@ -89,33 +88,34 @@ jobs:
       - name: Run O3 self-similar continuum control
         run: python code/o3_self_similar_continuum_reference.py
 
-      - name: Check recovery and construction entrypoints exist
+      - name: Check recovery and current hard-origin authority
         run: |
           test -s recovery/CURRENT_BENCHMARK_FRONT.md
           test -s recovery/state.json
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
-          test -s recovery/RECOVERY_DELTA_098.md
+          for i in $(seq -w 99 116); do test -s recovery/RECOVERY_DELTA_${i}.md; done
           test -s protocol/READINESS_METRICS.md
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
-          test -s protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md
           test -s protocol/P4_SAME_FACTORIZATION_CONTACT_DIFFERENCE_THEOREM.md
           test -s protocol/P4_STANDARD_UNITARITY_NEW_CUT_ATTRIBUTION_GATE.md
           test -s protocol/P4_ENTIRE_POLYNOMIAL_BOUNDED_COLLAPSE_GATE.md
           test -s protocol/P4_HADAMARD_ENTIRE_HARD_DATA_GATE.md
-          test -s protocol/P4_ALL_POINT_RIGIDITY_STRING_CEILING.md
-          test -s protocol/P4_RETARDED_HERGLOTZ_SPECTRAL_FREEDOM_GATE.md
-          test -s protocol/P4_TOPOLOGICAL_RECURSION_ALL_POINT_CONTROL.md
-          test -s protocol/P4_CELESTIAL_WARD_ALL_POINT_CONTROL.md
-          test -s protocol/FRESH_LQG_UV_FIXED_POINT_COMPARATOR_2026.md
-          test -s protocol/FRESH_BFSS_HARD_AMPLITUDE_COMPARATOR_2026.md
-          test -s protocol/E2_FRESH_GRAVITATIONAL_COMPLETENESS_PRESSURE_2026.md
-          test -s protocol/O4_GISIN_STINESPRING_SQUEEZE.md
-          test -s candidate_synthesis/SYNTHESIS_001_TERNARY_CROSSING_SELF_CLOSURE.md
-          test -s candidate_synthesis/SYNTHESIS_002_PHYSICAL_HELICITY_PARQUET_CLOSURE.md
-          test -s candidate_synthesis/SYNTHESIS_003_SUBTRACTION_FREE_DISPERSIVE_SELECTOR.md
-          test -s candidate_synthesis/SYNTHESIS_004_FINITE_HIGHER_POINT_CONSISTENCY_SELECTOR.md
-          test -s candidate_synthesis/SYNTHESIS_005_SCHWARZ_PICK_CAUSAL_EXTREMALITY.md
-          test -s candidate_synthesis/SYNTHESIS_006_ANOMALY_INDUCED_NONLOCAL_SELECTOR.md
-          test -s external_rqir_checks/iter649_matched_source_born_factor_audit.md
+          test -s protocol/P4_CELESTIAL_ASSOCIATIVITY_MULTIPARTICLE_COMPLETION_GATE.md
+          test -s protocol/P4_ENTIRE_HERGLOTZ_INTERSECTION_NO_GO.md
+          test -s protocol/P4_ELASTIC_INNER_CDD_ORIGIN_DATA_GATE.md
+          test -s protocol/P4_MHV_GRAVITY_HIDDEN_ZERO_RIGIDITY_CONTROL.md
+          test -s protocol/P4_HIDDEN_ZERO_CROSS_ORDER_NONUNIQUENESS_GATE.md
+          test -s protocol/P4_BCFW_INFINITY_BOUNDARY_ORIGIN_DATA_GATE.md
+          test -s protocol/P4_EIKONAL_CAUSALITY_SELECTOR_LIMIT_GATE.md
+          test -s protocol/P4_MULTI_SHIFT_CONTACT_NULLSPACE_GATE.md
+          test -s protocol/P4_LORENTZIAN_CONTOUR_THIMBLE_ORIGIN_GATE.md
+          test -s protocol/P4_RESURGENT_TRANSSERIES_PARAMETER_ORIGIN_GATE.md
+          test -s protocol/P4_ZERO_RETARDED_CROSSREP_CONTACT_NULLSPACE_GATE.md
+          test -s protocol/P4_GR_BONUS_SCALING_CONSTRUCTIBILITY_CONTROL.md
+          test -s candidate_synthesis/SYNTHESIS_007_CAUSAL_DIAMOND_ENTANGLEMENT_EQUILIBRIUM.md
+          test -s candidate_synthesis/SYNTHESIS_008_ANOMALY_FREE_REFOLIATION_ALGEBRA.md
+          test -s candidate_synthesis/SYNTHESIS_009_INFINITY_BOUNDARY_RECURSIVE_PARENT.md
+          test -s candidate_synthesis/SYNTHESIS_010_BLACK_HOLE_ENTROPY_S_MATRIX_PARENT.md
+          test -s external_rqir_checks/iter675_prerequisite_exhaustion_audit.md
