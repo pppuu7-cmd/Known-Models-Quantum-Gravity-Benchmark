@@ -9,21 +9,22 @@ This file assumes no usable chat memory.
 3. Read `protocol/READINESS_METRICS.md` before reporting progress.
 4. Read `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md`, `protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md` and `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md`.
 5. Read `protocol/P4_SAME_FACTORIZATION_CONTACT_DIFFERENCE_THEOREM.md`.
-6. Read the current hard-data gates: `P4_STANDARD_UNITARITY_NEW_CUT_ATTRIBUTION_GATE.md`, `P4_ENTIRE_POLYNOMIAL_BOUNDED_COLLAPSE_GATE.md`, `P4_HADAMARD_ENTIRE_HARD_DATA_GATE.md`.
+6. Read the hard-data gates: `P4_STANDARD_UNITARITY_NEW_CUT_ATTRIBUTION_GATE.md`, `P4_ENTIRE_POLYNOMIAL_BOUNDED_COLLAPSE_GATE.md`, `P4_HADAMARD_ENTIRE_HARD_DATA_GATE.md`.
 7. Read all-point controls: `P4_ALL_POINT_RIGIDITY_STRING_CEILING.md`, `P4_TOPOLOGICAL_RECURSION_ALL_POINT_CONTROL.md`, `P4_CELESTIAL_WARD_ALL_POINT_CONTROL.md`.
-8. Read synthesis controls through `candidate_synthesis/SYNTHESIS_006_ANOMALY_INDUCED_NONLOCAL_SELECTOR.md` and fresh LQG/BFSS comparator upgrades referenced by state.
-9. Read `external_rqir_checks/iter649_matched_source_born_factor_audit.md` and `recovery/RECOVERY_DELTA_097.md`.
-10. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` before R3/readiness/heavy-compute claims.
-11. Resume from `next_actions` in `recovery/state.json`; do not reconstruct authority from chat memory.
+8. Read synthesis controls through `candidate_synthesis/SYNTHESIS_006_ANOMALY_INDUCED_NONLOCAL_SELECTOR.md`.
+9. Read fresh comparator upgrades referenced by state, including BFSS, covariant LQG UV fixed point and `E2_FRESH_GRAVITATIONAL_COMPLETENESS_PRESSURE_2026.md`.
+10. Read `external_rqir_checks/iter649_matched_source_born_factor_audit.md` and `recovery/RECOVERY_DELTA_098.md`.
+11. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` before R3/readiness/heavy-compute claims.
+12. Resume from `next_actions` in `recovery/state.json`; do not reconstruct authority from chat memory.
 
-## Stable percentages at Iteration 097
+## Stable percentages at Iteration 098
 
 - `R1 Repository readiness = 92%`;
 - `R2 KMQGB methodology/material readiness = 89%`;
 - `R3 Candidate Gravity scientific readiness = 24%` at fresh RQIR Iter649;
 - `R4 current minimal-novel-parent-principle search = 45%`.
 
-Last score change remains Iter060: R2 +1. No Iter061–097 negative gate/control closes P4/P5/P6.
+Last score change remains Iter060: R2 +1. No Iter061–098 negative gate/control closes P4/P5/P6.
 
 ## Mandatory construction order
 
@@ -32,8 +33,6 @@ Last score change remains Iter060: R2 +1. No Iter061–097 negative gate/control
 If `FF_D` grows without bound, classify `FUNCTIONAL_FREEDOM_BLOCKED`.
 
 ## Current scientific front
-
-The old front `find a non-rational kernel` is superseded.
 
 The missing object is the **origin law of the first comparator-orthogonal irreducible hard datum**.
 
@@ -46,11 +45,11 @@ Do not start a new branch merely from
 - a Ward/anomaly equation with an unfixed homogeneous sector;
 - a hand-selected entire/nonlocal function.
 
-These failure modes are already frozen through Iter097.
+These failure modes are already frozen.
 
 ## Same-spectrum corridor
 
-If the candidate preserves the ordinary GR asymptotic spectrum and lower factorization data:
+If the candidate preserves ordinary GR asymptotic spectrum and lower factorization data:
 
 - local analytic differences are full C5;
 - new standard-unitarity physical cuts require changed states/lower transitions or a genuinely new nonperturbative sector;
@@ -58,15 +57,19 @@ If the candidate preserves the ordinary GR asymptotic spectrum and lower factori
 - zero-free finite-order entire corrections reduce to `exp(Q)` and face weakly-nonlocal comparator pressure;
 - infinite-zero entire corrections require a finite physical law for the zero set and face strong string/dual-resonant controls.
 
-The remaining high-value same-spectrum directions are therefore
+The remaining high-value same-spectrum directions are
 
 1. finitely derived nonlocal/exponentially-bounded irreducible hard data with explicit causal/growth class;
 2. intrinsic gravitational nonperturbative/transseries hard data with parent-fixed Lorentzian contour/weight/phase;
 3. controlled modified factorization/quantum dynamics.
 
+## E2/new-state corridor
+
+New states/poles/cuts remain possible, but apply E2/mediator/string/tower comparators immediately. For charged sectors, apply the Iter098 scoped gravitational-completeness pressure: if the candidate's own symmetry/UV assumptions force an infinite charge lattice, the complete tower and couplings must be derived from finite parent data rather than truncated by hand.
+
 ## All-point requirement
 
-All-point generator completeness is now mandatory evidence for a strong parent. Positive controls show it is achievable:
+All-point generator completeness is mandatory evidence for a strong parent. Positive controls show it is achievable:
 
 - topological recursion: finite seed -> all `(g,n)`, but matrix/string/discrete comparator;
 - celestial gravity Ward recursion: gravity-native low-point seed -> all-point sector, but GR comparator and non-unique symmetry family.
@@ -83,4 +86,4 @@ No heavy job is scientifically useful for the current origin-law blocker. Launch
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB с Iter097. Refresh RQIR first. R1=92, R2=89, R3=24, R4=45. Ищи не kernel как функцию, а finite gravity-native origin law первого irreducible hard datum. Требуй fixed normalization/growth/singularity class, all-point generator, same-parent CTP и immediate comparator survival. Не запускать heavy compute до frozen survivor.`
+`Продолжай KMQGB с Iter098. Refresh RQIR first. R1=92, R2=89, R3=24, R4=45. Ищи finite gravity-native origin law первого irreducible hard datum; требуй fixed normalization/growth/singularity class, all-point generator, same-parent CTP и immediate comparator survival. Для E2 применяй completeness/tower screen. Heavy compute держать idle до frozen survivor.`
