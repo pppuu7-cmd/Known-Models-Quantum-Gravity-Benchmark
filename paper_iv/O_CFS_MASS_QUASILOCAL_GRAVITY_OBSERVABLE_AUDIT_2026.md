@@ -61,15 +61,17 @@ Freeze one family of non-continuum / regularization-dependent CFS configurations
 
 or the corresponding quasilocal/synthetic-curvature vector, with:
 
-1. fixed universal measure / regularization prescription;
+1. fixed universal measure and **physically justified microscopic regularization law**;
 2. fixed asymptotic alignment and state;
-3. controlled continuum limit recovering ADM/Brown–York/ordinary curvature;
+3. controlled continuum regime recovering ADM/Brown–York/ordinary curvature;
 4. the first non-continuum correction derived prospectively;
-5. regulator scaling / removal test;
+5. stability across the admissible family of microscopic regularizations/configurations allowed by the same CFS parent, with the induced uncertainty propagated;
 6. same-domain EFT/QFT comparator for any ordinary matter/loop correction;
 7. parameter sharing across at least two masses/radii/configurations or another holdout block.
 
-A raw deviation at one regulator value is not sufficient.
+A literal `epsilon -> 0` regulator-removal test is **not** required when the CFS claim treats the microscopic regularization as physical spacetime structure. The correct adapter rule is `paper_iv/O_CFS_PHYSICAL_REGULARIZATION_ADAPTER_RULE_2026.md`.
+
+A raw deviation at one chosen regularization is not sufficient.
 
 ## Paper-IV consequence
 
