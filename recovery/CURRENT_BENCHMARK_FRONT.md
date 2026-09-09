@@ -1,7 +1,7 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **171**  
+**KMQGB iteration:** **172**  
 **Phase:** **RQIR Core v1.0 FROZEN / Paper-IV Closure Wave 02 / three exact bridges**.
 
 ## Stable metrics
@@ -29,45 +29,41 @@ None of `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRE
 
 Authority: `post_freeze_paper_iv_closure_wave_02/README.md`.
 
-### CW2-01 — O-AS — active priority
+### CW2-01 — O-AS
 
-Physical non-perturbative Lorentzian scalar scattering already exists.
-
-Iter171 materially narrows the remaining authority gap. The stable March 2026 preprint arXiv:2603.10168 still omits the direct `A_4` contact term and assigns it to separate Chiesa–Reichert work. But by ERG2026 the same programme publicly reports a gravitational contact contribution resummed directly in Lorentzian signature and a contact-complete cross-section programme compatible with GR in the IR and unitarity in the UV.
-
-Therefore programme-level Lorentzian contact **existence is no longer the blocker**.
+Physical non-perturbative Lorentzian scalar scattering exists. Iter171 established that the same Chiesa/Reichert programme publicly reports a gravitational contact contribution resummed directly in Lorentzian signature, so programme-level contact existence is no longer the blocker.
 
 Current classification:
 
 `PROMISING_SAME_PROGRAMME_CONTACT_COMPLETE_PRESENTATION__REPRODUCIBLE_SAME_REALIZATION_CERTIFICATE_MISSING`.
 
-Sharpened exact blocker:
+Exact blocker:
 
 **`STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE`**.
 
-Need a stable inspectable `A_s+A_t+A_u+A4` realization with matched species/crossing/truncation/trajectory/normalisation/Lorentzian prescription, propagated error budget and same-domain GR/EFT comparator. Conference-level existence alone is not terminal authority.
-
 Authority: `paper_iv/O_AS_CONTACT_PUBLICATION_AUTHORITY_REFRESH_2026-09-10.md`.
 
-### CW2-02 — O-LQG
+### CW2-02 — O-LQG — active analytic front after Iter172
 
-The strongest current route is the gamma-duality cross-representation relation
+The gamma-duality paper supplies an exact microscopic EPRL duality structure and an identifiable primordial observable relation but explicitly states that direct top-down derivation of the effective action from non-perturbative `W_gamma` is missing.
 
-`2 f_GB/f_CS = gamma - 1/gamma`
+A separate 2026 Lorentzian spinfoam-stack result shows a concrete route in which triangulation-dependent normalization factors out and a finite boundary-data-dependent renormalized amplitude remains in the stated limit. This does not derive the gamma-dual EFT, but it removes the need to treat continuum normalization as one indivisible unknown.
 
-and
+Iter172 decomposes the bridge into `G0..G5` and identifies the minimum decisive object as
 
-`1/gamma - gamma = (pi/8)(r+8 n_T)/Pi`.
+**`RENORMALIZED_GAMMA_DUALITY_MATCHING_TRIPLE_{gamma_EFT,Delta_gamma,sigma_match}`**
 
-For `gamma>0` and `Pi!=0`, gamma is structurally identifiable. The remaining blockers are:
+with
 
-1. complete/coarse-grained EPRL -> renormalized gamma-dual EFT Wilson map;
-2. `gamma_micro/gamma_EFT/gamma_geom` parameter-identity or running map;
-3. cosmological nuisance/detector likelihood after attribution is closed.
+`Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)`.
 
 Current classification:
 
-`PROMISING_ADAPT_EXISTING_CROSS_REPRESENTATION_RIGIDITY__TOP_DOWN_BRIDGE_MISSING`.
+`PROMISING_ADAPT_EXISTING__RENORMALIZED_BOUNDARY_AMPLITUDE_ROUTE_EXISTS__MINIMAL_GAMMA_DUAL_WILSON_MATCHING_OBJECT_MISSING`.
+
+The preferred next calculation is a symmetry/matching proof: determine whether microscopic gamma-duality descends non-anomalously to the renormalized parity-even/odd curvature response and derive the `gamma_micro -> gamma_EFT` matching law. A full derivation of every EFT Wilson coefficient is not required if the coefficient-ratio identity and its uncertainty can be derived directly.
+
+Authority: `paper_iv/O_LQG_GAMMA_TOPDOWN_MATCHING_DECOMPOSITION_2026.md`.
 
 ### CW2-03 — O-CFS
 
@@ -85,7 +81,7 @@ A generic local higher-curvature correction will be absorbed by full gravitation
 
 Authority: `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`.
 
-Neighbouring papers in one school are not one physical RQIR object until their realization vectors are identical or explicitly mapped. The same rule independently matters for AS contact completion and LQG entropy/gamma attribution.
+Neighbouring papers in one school are not one physical RQIR object until their realization vectors are identical or explicitly mapped. The same rule independently matters for AS contact completion and LQG gamma attribution.
 
 ## Heavy compute
 
@@ -95,10 +91,8 @@ Current blockers are analytic/authority/composition problems. Heavy numerical wo
 
 ## Exact next front
 
-Priority remains **O-AS**, but the search target is now narrower than at Iter170:
+1. O-AS remains the closest publication-triggered closure target; re-audit only on a new stable contact-amplitude authority or data package.
+2. Active research effort should now stay on O-LQG G4: renormalized duality covariance, `Delta_gamma`, and `gamma_micro -> gamma_EFT` matching.
+3. O-CFS remains third priority until a first explicit normalized correction tensor appears.
 
-1. look for a standalone Chiesa–Reichert contact-amplitude preprint;
-2. look for a new version of arXiv:2603.10168 that includes `A_4`;
-3. accept conference slides/data only if they expose enough equations/normalisation/trajectory/error information to bind one same realization reproducibly.
-
-If none appears, move the next substantive iteration to O-LQG gamma top-down/parameter identity rather than repeatedly recording the same O-AS absence.
+Do not open another broad framework wave and do not count `BLOCKED` as evidence for `NEW_REQUIRED`.
