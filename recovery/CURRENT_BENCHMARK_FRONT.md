@@ -1,7 +1,7 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **172**  
+**KMQGB iteration:** **173**  
 **Phase:** **RQIR Core v1.0 FROZEN / Paper-IV Closure Wave 02 / three exact bridges**.
 
 ## Stable metrics
@@ -43,27 +43,56 @@ Exact blocker:
 
 Authority: `paper_iv/O_AS_CONTACT_PUBLICATION_AUTHORITY_REFRESH_2026-09-10.md`.
 
-### CW2-02 — O-LQG — active analytic front after Iter172
+### CW2-02 — O-LQG — active analytic front
 
-The gamma-duality paper supplies an exact microscopic EPRL duality structure and an identifiable primordial observable relation but explicitly states that direct top-down derivation of the effective action from non-perturbative `W_gamma` is missing.
+The gamma-duality paper supplies exact microscopic EPRL duality structure and an identifiable primordial observable relation but explicitly states that direct top-down derivation of the effective action from non-perturbative `W_gamma` is missing.
 
-A separate 2026 Lorentzian spinfoam-stack result shows a concrete route in which triangulation-dependent normalization factors out and a finite boundary-data-dependent renormalized amplitude remains in the stated limit. This does not derive the gamma-dual EFT, but it removes the need to treat continuum normalization as one indivisible unknown.
+Iter172 decomposed the missing bridge into `G0..G5` and reduced the broad top-down task to the renormalized matching triple
 
-Iter172 decomposes the bridge into `G0..G5` and identifies the minimum decisive object as
-
-**`RENORMALIZED_GAMMA_DUALITY_MATCHING_TRIPLE_{gamma_EFT,Delta_gamma,sigma_match}`**
+`{gamma_EFT, Delta_gamma, sigma_match}`
 
 with
 
 `Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)`.
 
+Iter173 then proves a new structural result. The generalized primordial observable combination
+
+`q = (pi/8)(r+8 n_T)/Pi = 1/gamma_EFT - gamma_EFT - Delta_gamma`
+
+is rank-1 in the two unknowns `{gamma_EFT,Delta_gamma}`. Therefore no increase in primordial detector precision can identify both parameters without independent theoretical or geometric information.
+
+If a geometry observable has `a_* = K gamma` and a prior matching theorem establishes a **shared gamma** across geometry and EFT, the joint Jacobian
+
+`J = [[-1-1/gamma^2,-1],[K,0]]`
+
+has
+
+`det J = K`,
+
+so the geometry block restores full structural identifiability for `K != 0`.
+
+If instead `gamma_geom` is left independent from `gamma_EFT`, two observables constrain three parameters and underidentification remains. Thus the parameter-identity gate is mathematically necessary, not merely a bookkeeping requirement.
+
 Current classification:
 
-`PROMISING_ADAPT_EXISTING__RENORMALIZED_BOUNDARY_AMPLITUDE_ROUTE_EXISTS__MINIMAL_GAMMA_DUAL_WILSON_MATCHING_OBJECT_MISSING`.
+`PROMISING_ADAPT_EXISTING__GAMMA_DUALITY_BREAKING_DEGENERACY_EXPLICIT__IDENTIFIABLE_RENORMALIZED_MATCHING_NEEDED`.
 
-The preferred next calculation is a symmetry/matching proof: determine whether microscopic gamma-duality descends non-anomalously to the renormalized parity-even/odd curvature response and derive the `gamma_micro -> gamma_EFT` matching law. A full derivation of every EFT Wilson coefficient is not required if the coefficient-ratio identity and its uncertainty can be derived directly.
+Sharpened minimum object:
 
-Authority: `paper_iv/O_LQG_GAMMA_TOPDOWN_MATCHING_DECOMPOSITION_2026.md`.
+**`IDENTIFIABLE_RENORMALIZED_GAMMA_MATCH = {gamma_micro->gamma_EFT, Delta_gamma prior/prediction, optional gamma_geom map}`**.
+
+Strongest closure route:
+
+- prove non-anomalous renormalized gamma-duality / `Delta_gamma=0` with controlled uncertainty; and
+- derive `gamma_micro -> gamma_EFT -> gamma_geom` identity/running map.
+
+A nonzero predicted `Delta_gamma` is also acceptable if it is not freely refitted and the enlarged cross-representation fingerprint remains identifiable.
+
+Authorities:
+
+- `paper_iv/O_LQG_GAMMA_TOPDOWN_MATCHING_DECOMPOSITION_2026.md`;
+- `paper_iv/O_LQG_GAMMA_DUALITY_BREAKING_IDENTIFIABILITY_GATE_2026.md`;
+- `code/lqg_gamma_duality_breaking_identifiability_reference.py`.
 
 ### CW2-03 — O-CFS
 
@@ -92,7 +121,8 @@ Current blockers are analytic/authority/composition problems. Heavy numerical wo
 ## Exact next front
 
 1. O-AS remains the closest publication-triggered closure target; re-audit only on a new stable contact-amplitude authority or data package.
-2. Active research effort should now stay on O-LQG G4: renormalized duality covariance, `Delta_gamma`, and `gamma_micro -> gamma_EFT` matching.
-3. O-CFS remains third priority until a first explicit normalized correction tensor appears.
+2. Active research effort remains O-LQG: search for a renormalized duality Ward/nonrenormalization statement or derive the leading allowed `Delta_gamma`/gamma-running matching structure.
+3. Do not start detector forecasting until `Delta_gamma` and parameter identity are independently controlled.
+4. O-CFS remains third priority until a first explicit normalized correction tensor appears.
 
 Do not open another broad framework wave and do not count `BLOCKED` as evidence for `NEW_REQUIRED`.
