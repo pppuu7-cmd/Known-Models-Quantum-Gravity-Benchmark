@@ -1,0 +1,23 @@
+{
+  "benchmark_id": "PF1-02-GR-EFT",
+  "rqir_core_version": "1.0",
+  "rqir_status": "FROZEN",
+  "framework": "General Relativity plus controlled low-energy gravitational EFT",
+  "declared_domain": "energies and observables within the validity of the gravitational EFT expansion",
+  "terminal_status": "PASS_RQIR_GATE__BASELINE_CONTROL",
+  "scoped_interpretation": "EXISTING_SUFFICIENT_IN_DECLARED_LOW_ENERGY_EFT_DOMAIN",
+  "comparator_roles": [
+    "GR tree and controlled semiclassical baseline",
+    "universal low-energy quantum nonanalytic/nonlocal graviton and light-field effects",
+    "full allowed local analytic higher-curvature EFT coefficient space"
+  ],
+  "not_unique_residuals": [
+    "known universal low-energy quantum corrections",
+    "arbitrary local analytic higher-curvature coefficient choices inside the EFT basis"
+  ],
+  "domain_limit_is_new_required_evidence": false,
+  "rqir_core_defect": false,
+  "core_change_requested": false,
+  "paper_iv_decision_authorized": false,
+  "reopen_condition": "a framework supplies a same-domain comparator-orthogonal relation or observable outside the full GR/EFT comparator span and survives frozen identifiability/holdout checks"
+}
