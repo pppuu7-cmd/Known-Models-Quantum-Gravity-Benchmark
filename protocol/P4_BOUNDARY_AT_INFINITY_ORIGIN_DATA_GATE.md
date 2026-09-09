@@ -1,7 +1,7 @@
 # P4 Boundary-at-Infinity Origin-Data Gate
 
 **Status:** scoped tree-level hard-amplitude prefilter.  
-**KMQGB iteration:** 108.  
+**KMQGB iteration:** 118.  
 **Purpose:** identify where genuinely new rational tree-level hard data can hide once ordinary finite factorization poles are frozen.
 
 ## 1. Gravity constructibility control
@@ -59,7 +59,7 @@ A P4 claim needs a **physical law selecting the boundary datum itself** and must
 
 ## 6. Search consequence
 
-For SYNTHESIS-009, the only interesting boundary-at-infinity route is a **finitely generated non-rational or nonperturbative boundary law** with independent gravity-native origin, fixed normalization/growth and linked all-point/CTP completion.
+The only interesting boundary-at-infinity route is a **finitely generated non-rational or nonperturbative boundary law** with independent gravity-native origin, fixed normalization/growth and linked all-point/CTP completion.
 
 ## 7. Score consequence
 
