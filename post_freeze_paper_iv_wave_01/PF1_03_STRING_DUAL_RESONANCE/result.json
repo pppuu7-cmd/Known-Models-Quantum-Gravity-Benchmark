@@ -1,0 +1,24 @@
+{
+  "benchmark_id": "PF1-03-STRING-DUAL-RESONANCE",
+  "rqir_core_version": "1.0",
+  "framework": "string / dual-resonance gravity amplitudes",
+  "terminal_status": "PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL",
+  "nonunique_low_dimensional_fingerprints": [
+    "pole support alone",
+    "customizable resonance spectrum",
+    "dual resonance alone",
+    "generic meromorphic simple-pole structure",
+    "generic tame UV behavior"
+  ],
+  "stronger_scoped_result": "Virasoro-Shapiro becomes rigid in a stronger overconstrained bootstrap package including sufficiently strong Regge softness; weaker generic consistency permits deformations/allowed regions",
+  "comparators": [
+    "bespoke dual-resonance amplitudes",
+    "unitarity-constrained asymptotically linear bespoke subclasses",
+    "generic dispersive S-matrix bootstrap allowed regions"
+  ],
+  "rqir_core_defect": false,
+  "core_change_requested": false,
+  "paper_iv_decision_authorized": false,
+  "counts_as_new_required_evidence": false,
+  "reopen_condition": "measure or derive enough independent components of the joint UV invariant vector to distinguish the full scoped rigidity package from surviving generalized amplitudes"
+}
