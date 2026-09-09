@@ -55,6 +55,9 @@ jobs:
       - name: Run source-traceable detector-visible residual self-test
         run: python code/detector_visible_residual_physical_covariance_reference.py
 
+      - name: Run nonlinear detector-facing probability-likelihood self-test
+        run: python code/detector_facing_nonlinear_likelihood_reference.py
+
       - name: Run optimal comparator-contrast self-test
         run: python code/optimal_comparator_contrasts_reference.py
 
@@ -98,7 +101,7 @@ jobs:
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
           test -s recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md
-          for i in $(seq -w 99 134); do test -s recovery/RECOVERY_DELTA_${i}.md; done
+          for i in $(seq -w 99 143); do test -s recovery/RECOVERY_DELTA_${i}.md; done
           test -s protocol/READINESS_METRICS.md
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
@@ -127,6 +130,11 @@ jobs:
           test -s protocol/O4_PROCESS_MATRIX_GRAVITY_ATTRIBUTION_UNIQUENESS_GATE.md
           test -s protocol/P4_PRINCIPAL_SYMBOL_EQUIVALENCE_OPERATOR_NONUNIQUENESS_GATE.md
           test -s protocol/P5_DETECTOR_VISIBLE_RESIDUAL_PHYSICAL_COVARIANCE_GATE.md
+          test -s protocol/FRESH_CAUSAL_FERMION_SYSTEMS_OPERATOR_VARIATIONAL_COMPARATOR_2026.md
+          test -s protocol/P4_SPECTRAL_ACTION_ISOSPECTRAL_GEOMETRY_NONUNIQUENESS_GATE.md
+          test -s protocol/P4_GR_INTERACTING_OPERATOR_SELECTION_RIGIDITY_CEILING.md
+          test -s protocol/FRESH_CONSTRUCTIVE_GRAVITY_MATTER_CLOSURE_COMPARATOR.md
+          test -s protocol/P4_UPSTREAM_PRIMITIVE_SELECTION_CLOSURE_GATE.md
           test -s candidate_synthesis/SYNTHESIS_007_CAUSAL_DIAMOND_ENTANGLEMENT_EQUILIBRIUM.md
           test -s candidate_synthesis/SYNTHESIS_008_ANOMALY_FREE_REFOLIATION_ALGEBRA.md
           test -s candidate_synthesis/SYNTHESIS_009_INFINITY_BOUNDARY_RECURSIVE_PARENT.md
@@ -139,5 +147,10 @@ jobs:
           test -s candidate_synthesis/SYNTHESIS_016_BLACK_HOLE_MONODROMY_SPECTRAL_PARENT.md
           test -s candidate_synthesis/SYNTHESIS_017_QUANTUM_CORNER_STATE_LAW_PARENT.md
           test -s candidate_synthesis/SYNTHESIS_018_SPECTRAL_DETERMINANT_ALL_VERTEX_PARENT.md
+          test -s candidate_synthesis/SYNTHESIS_019_SPECTRAL_TRIPLE_OPERATOR_SELECTION_PARENT.md
+          test -s candidate_synthesis/SYNTHESIS_020_MUTUAL_MATTER_GRAVITY_CLOSURE_FIXED_POINT.md
+          test -s candidate_synthesis/SYNTHESIS_021_MODULAR_FLOW_STATE_TO_DYNAMICS_PARENT.md
+          test -s code/detector_facing_nonlinear_likelihood_reference.py
           test -s external_rqir_checks/iter675_prerequisite_exhaustion_audit.md
           test -s external_rqir_checks/iter133_rqir_programme_paper3_physical_psd_sync.md
+          test -s external_rqir_checks/iter143_rqir_paper3_detector_campaign80_sync.md
