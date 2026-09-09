@@ -10,7 +10,7 @@ KMQGB is the active laboratory for known gravity and quantum-gravity frameworks.
 
 Mandatory governance: `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md`.
 
-The rule is simple:
+The rule is:
 
 `framework-native objects -> KMQGB adapter -> frozen RQIR observable/comparator -> model-level terminal status`.
 
@@ -25,25 +25,50 @@ Historical denominators are immutable.
 - **Wave 3:** `5/5 terminal = 100%`; see `third_wave/README.md`.
 - Later historical waves/recovery records remain immutable evidence and are not renumbered by the post-freeze programme.
 
-No historical benchmark has authorized a globally robust unique-QG residual merely from a nonzero deviation, noise/decoherence, UV softness, special poles, higher derivatives or a missing object.
+## Post-freeze Paper-IV regression wave 01 — CLOSED
 
-## Active post-freeze Paper-IV regression wave
+Authority: `post_freeze_paper_iv_wave_01/README.md`.
 
-`post_freeze_paper_iv_wave_01/README.md` freezes a five-school representative regression set under RQIR Core v1.0:
+Frozen denominator: five representative schools under **the same RQIR Core v1.0**.
 
-1. Causal Fermion Systems;
-2. GR + controlled low-energy gravitational EFT;
-3. string / dual-resonance gravity amplitudes;
-4. LQG / spinfoam / covariant discrete gravity;
-5. asymptotic safety / Lorentzian FRG.
+**Terminal coverage: 5/5 = 100%.**
 
-**Current post-freeze coverage: 1/5 = 20%.**
+- **CFS:** `BLOCKED_MISSING_REQUIRED_OBJECT`; controlled continuum theorem gives a scoped Einstein–Dirac comparator identity.
+- **GR + low-energy EFT:** `PASS_RQIR_GATE__BASELINE_CONTROL`; existing sufficient in its declared low-energy domain.
+- **String / dual resonance:** `PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL`; simple pole/UV fingerprints are non-unique but a richer Virasoro–Shapiro rigidity package survives the stronger comparator set.
+- **LQG / spinfoam:** `BLOCKED_MISSING_REQUIRED_OBJECT`; fresh UV-fixed-point and causal-vertex progress removes stale blockers but a continuum-normalized Lorentzian observable/comparator package remains open.
+- **Asymptotic safety:** `BLOCKED_MISSING_REQUIRED_OBJECT`; direct Lorentzian spectral/form-factor progress is accepted, while a frozen full physical crossover package remains open.
 
-PF1-01 CFS is terminal for its declared scope:
+The key methodological result is that **no Core-v1.0 semantic change was required** across all five very different frameworks.
 
-- controlled 2026 curved-spacetime continuum sector: `EXACT_COMPARATOR_IDENTITY` to coupled Einstein–Dirac dynamics within the theorem scope;
-- genuinely beyond-continuum CFS residual: `BLOCKED_MISSING_REQUIRED_OBJECT` until a normalized same-domain RQIR observable/comparator package is supplied;
-- no RQIR Core defect and no evidence for Paper-IV `NEW_REQUIRED`.
+## Paper-IV global decision
+
+Authority:
+
+- `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md`;
+- `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.json`.
+
+Current global result:
+
+**`NOT_YET_AUTHORIZED`**.
+
+None of
+
+`EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED`
+
+has met its proof obligation.
+
+In particular, `NEW_REQUIRED` is currently forbidden because major known-framework branches remain missing-object blocked rather than excluded on complete same-domain observables.
+
+## Highest-value open objects
+
+The next front is deliberately narrow:
+
+- **O-CFS:** normalized beyond-continuum CFS physical observable + same-domain comparator;
+- **O-LQG:** continuum-normalized Lorentzian spinfoam/LQG physical observable + regulator/comparator authority;
+- **O-AS:** scheme/truncation/gauge-stable Lorentzian asymptotic-safety physical crossover observable + same-domain comparator.
+
+Do not open another broad taxonomy wave before attempting to close one of these objects.
 
 ## Paper-IV discipline
 
@@ -51,20 +76,24 @@ Model-level outcomes include
 
 `EXACT_COMPARATOR_IDENTITY`, `OPERATIONALLY_DEGENERATE`, `FAIL_RQIR_CONSISTENCY`, `BLOCKED_MISSING_REQUIRED_OBJECT`, `BLOCKED_PROTOCOL_MISMATCH`, and only after full quotient/identifiability checks `ROBUST_NONZERO_RESIDUAL`.
 
-The overall Paper-IV decision remains one of
-
-`EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED`.
-
 A `BLOCKED` model is never evidence for `NEW_REQUIRED` by itself.
+
+Machine enforcement: `code/post_freeze_paper_iv_governance_validator.py`.
 
 ## Candidate Gravity firewall
 
-Candidate-design files already present in this repository are retained as historical/conditional design evidence. They do not authorize a new-model paper and they do not modify RQIR Core. Full Candidate Gravity development remains downstream of Paper IV.
+Candidate-design files already present in this repository are retained as historical/conditional design evidence. The legacy parent search remains **45% and paused/conditional on Paper IV**. Full Candidate Gravity development remains downstream of Paper IV and may not modify RQIR Core.
 
-## Current methodology/readiness authority
+## Current metrics
 
-See `protocol/READINESS_METRICS.md` and `recovery/state.json`. The post-freeze programme keeps repository/methodology readiness separate from Paper-IV programme readiness and from conditional Candidate-Gravity readiness.
+See `protocol/READINESS_METRICS.md` and `recovery/state.json`.
+
+- R1 repository readiness: **92%**;
+- R2 KMQGB methodology/material readiness: **90%**;
+- R3 external Candidate Gravity readiness: **24%**;
+- legacy parent-search R4: **45% paused**;
+- post-freeze regression wave: **100% complete**.
 
 ## Heavy compute
 
-Run heavy jobs only for a frozen model adapter and a preregistered discriminating observable. Missing mappings, authority, normalization or comparator objects are algebraic/provenance blockers, not reasons to launch blind compute.
+Run heavy jobs only for a frozen O-CFS/O-LQG/O-AS adapter and a preregistered discriminating observable. Missing mappings, authority, normalization or comparator objects are algebraic/provenance blockers, not reasons to launch blind compute.
