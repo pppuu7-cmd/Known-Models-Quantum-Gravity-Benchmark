@@ -1,70 +1,66 @@
-# Candidate Gravity Design Research — Handoff / Recovery Method
+# KMQGB Research Handoff — Post-Freeze Paper-IV Mode
 
-This is the continuation entrypoint for KMQGB as a benchmark/design/red-team layer for a future Candidate Gravity. It never replaces external RQIR Candidate-Gravity authority.
+This is the continuation entrypoint for KMQGB after **RQIR Core v1.0 was frozen**. The filename is historical; Candidate-Gravity design is now conditional and is **not** the active front.
 
 ## Restore order
 
 1. Read `recovery/RESTORE_FROM_NEW_CHAT.md`.
 2. Read `recovery/CURRENT_BENCHMARK_FRONT.md` and `recovery/state.json`.
-3. Read `recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md`.
-4. Read `protocol/READINESS_METRICS.md` before reporting percentages.
-5. Read `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md` and `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md`.
-6. Read recovery deltas through `RECOVERY_DELTA_134.md`.
-7. For the current operator/process front, read Iter123–132 authority referenced by `state.json`, especially spectral-moment gates, the fresh Lorentzian-AS comparator, process-matrix gate, quantum-corner control, spectral-determinant control and principal-symbol operator gate.
-8. Read `external_rqir_checks/iter133_rqir_programme_paper3_physical_psd_sync.md`.
-9. Read `protocol/P5_DETECTOR_VISIBLE_RESIDUAL_PHYSICAL_COVARIANCE_GATE.md` and its executable fixture.
-10. Refresh external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` before every R3/heavy-compute claim.
-11. Resume from `next_actions` in `recovery/state.json`.
+3. Read `protocol/READINESS_METRICS.md`.
+4. Read `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md`.
+5. Read `post_freeze_paper_iv_wave_01/README.md` and all five PF1 `result.json` records.
+6. Read `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md` and `.json`.
+7. Read recovery deltas through `RECOVERY_DELTA_152.md`; keep `PROVENANCE_CORRECTION_POST116_ID_COLLISION.md` for older chronology.
+8. Read `code/post_freeze_paper_iv_governance_validator.py`.
+9. Treat old Candidate-Gravity construction/synthesis files as historical conditional design evidence only.
+10. Refresh external RQIR Candidate-Gravity authority before quoting R3 or authorizing Candidate-Gravity work.
 
-## Stable readiness at Iteration 134
+## Stable metrics at Iter152
 
-- **R1 repository readiness: 92%**;
-- **R2 KMQGB methodology/material readiness: 89%**;
-- **R3 Candidate Gravity scientific readiness: 24%**;
-- **R4 minimal novel parent-principle search: 45%**.
+- **R1 repository readiness = 92%**;
+- **R2 KMQGB methodology/material readiness = 90%**;
+- **R3 external Candidate Gravity readiness = 24%**;
+- **legacy parent-search R4 = 45%, paused/conditional on Paper IV**;
+- **post-freeze PF1 wave = 5/5 = 100% terminal**.
 
-External programme status is separate: latest observed RQIR programme readiness is approximately 71% and Paper III is 68%, while Candidate Gravity remains 24%.
+Last score change: Iter145, R2 `89 -> 90`, `residual/identifiability/rigidity 19/20 -> 20/20`, after green nonlinear detector-facing CI.
 
-Last score change remains Iter060.
+## Frozen architecture
 
-## Mandatory construction route
+- **RQIR Core v1.0:** fixed independent judge; Papers I–III scientific/material layer = 100% CLOSED.
+- **KMQGB:** active known-model proving ground supplying Paper-IV evidence.
+- **Future Candidate Gravity:** separate conditional layer; cannot tune RQIR Core.
 
-`A1 explicit parent -> A2 finite/functional freedom -> A3 comparator containment -> A4 normalized hard 4pt/higher relation -> P5 -> P6 -> G0-G10`.
+Model-specific mappings belong in KMQGB adapters. A true Core change requires independent defect evidence and canonical RQIR versioned regression.
 
-No detector-methodology advance or external-paper percentage substitutes for P4.
+## Completed PF1 regression
 
-## Current scientific front
+- CFS: `BLOCKED_MISSING_REQUIRED_OBJECT`, with scoped continuum Einstein–Dirac identity.
+- GR/EFT: `PASS_RQIR_GATE__BASELINE_CONTROL` in its low-energy domain.
+- string/dual resonance: `PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL`.
+- LQG/spinfoam: `BLOCKED_MISSING_REQUIRED_OBJECT`, with fresh UV-fixed-point and causal-vertex positive controls.
+- asymptotic safety: `BLOCKED_MISSING_REQUIRED_OBJECT`, with fresh Lorentzian spectral/form-factor positive controls.
 
-Finite generation itself is no longer the main mystery. We now have strong controls showing that finite data can generate
+The frozen judge required no semantic change across the five frameworks.
 
-- a continuous spectrum through nonlinear moment recursion;
-- a non-rational causal spectral function through a wave operator + boundary conditions;
-- an all-point one-loop metric functional and CTP route through one covariant operator + `Tr log`.
+## Current Paper-IV decision state
 
-The unresolved primitive is:
+**`NOT_YET_AUTHORIZED`.**
 
-> **what finite gravity-native law selects the complete interacting operator/process itself?**
+Do not select any of `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED` until its ledger proof obligation is met.
 
-Equivalence principle / causal principal symbol alone is insufficient. A viable parent must derive lower-order curvature data, gauge/ghost/constraint complex, state, measure, Lorentzian contour and local renormalization/null data, then produce normalized comparator-orthogonal hard `4g`/higher + all-point + CTP observables.
+`NEW_REQUIRED` is presently forbidden because three major frameworks remain missing-object blocked rather than excluded on complete observables.
 
-## Detector-visible residual rule
+## High-value open objects
 
-A future structural residual must also survive detector mapping and nuisance profiling under source-traceable covariance. Use Iter134:
-
-`eta_det = sqrt(I_profiled / I_unprofiled)`.
-
-A theory residual with `eta_det=0` is detector-invisible even if algebraically nonzero.
-
-R2 remains 89 because the physical fixture is still phase-Gaussian; the frozen residual/identifiability/rigidity score remains `19/20` until a nonlinear detector/readout certificate is incorporated.
-
-## External RQIR guardrail
-
-Candidate Gravity remains Iter675 / 24%. Missing authorities remain M1 physical observable bridge, M2 matched Source/Born/contact completion, M3 robust residual, M4 actual `Tr U1` if needed. No independent Candidate-Gravity compute gate is authorized.
+- **O-CFS:** normalized beyond-continuum physical observable + same-domain comparator.
+- **O-LQG:** continuum-normalized Lorentzian physical observable + regulator/comparator authority.
+- **O-AS:** scheme/truncation/gauge-stable Lorentzian physical crossover observable + same-domain comparator; contact/crossing-complete `4g`/higher object preferred for scattering claims.
 
 ## Heavy compute
 
-**IDLE_BY_SCIENTIFIC_DESIGN** until a frozen A1–A3 survivor creates a numerical discriminator or external Candidate-Gravity authority changes.
+Keep heavy compute idle until one of O-CFS/O-LQG/O-AS has a frozen object whose numerical value can change its terminal status.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB с Iter134. Сначала refresh external RQIR. R1=92, R2=89, R3=24, R4=45. Ищи не новый operator ansatz, а finite gravity-native law, который uniquely выбирает complete interacting operator/process: principal symbol + lower-order curvature terms + gauge/ghost/constraints + state/measure/contour + local renormalization/null sector. Требуй normalized hard 4g/higher, all-point, same-parent CTP и immediate comparator survival. Любой residual дополнительно прогоняй через Iter134 detector-visible physical-covariance gate. Heavy compute только после frozen A1-A3 survivor.`
+`Продолжай KMQGB с Iter152 в frozen-RQIR Paper-IV mode. R1=92, R2=90, R3=24, legacy R4=45 paused. PF1=5/5. Глобальный Paper-IV verdict NOT_YET_AUTHORIZED; BLOCKED не является NEW_REQUIRED evidence. Не открывай новую широкую волну. Сначала попробуй закрыть O-AS, O-LQG или O-CFS; приоритет тому объекту, где свежая authority ближе всего к complete same-domain observable. Heavy compute только после frozen object+comparator.`
