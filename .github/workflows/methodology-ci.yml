@@ -95,20 +95,26 @@ jobs:
           test -s recovery/state.json
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
-          test -s recovery/RECOVERY_DELTA_081.md
+          test -s recovery/RECOVERY_DELTA_097.md
           test -s protocol/READINESS_METRICS.md
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
           test -s protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md
-          test -s protocol/E3_NONPERTURBATIVE_HARD_ATTRIBUTION_GATE.md
-          test -s protocol/O1_LORENTZIAN_NP_HARD_SCAN_2026.md
-          test -s protocol/O2_CAUSAL_ALGEBRAIC_DYNAMICAL_SELECTION_AUDIT.md
-          test -s protocol/O3_RATIONAL_KERNEL_LOCALIZATION_NO_GO.md
-          test -s protocol/O3_SEMIGROUP_EXPONENTIAL_UNIQUENESS_CONTROL.md
-          test -s protocol/O3_QDIFFERENCE_QPOCHHAMMER_UNIQUENESS_CONTROL.md
-          test -s protocol/O3_SELF_SIMILAR_CONTINUUM_KERNEL_CONTROL.md
-          test -s protocol/O3_KALLEN_LEHMANN_CONTINUUM_LOCALIZATION_GATE.md
+          test -s protocol/P4_SAME_FACTORIZATION_CONTACT_DIFFERENCE_THEOREM.md
+          test -s protocol/P4_STANDARD_UNITARITY_NEW_CUT_ATTRIBUTION_GATE.md
+          test -s protocol/P4_ENTIRE_POLYNOMIAL_BOUNDED_COLLAPSE_GATE.md
+          test -s protocol/P4_HADAMARD_ENTIRE_HARD_DATA_GATE.md
+          test -s protocol/P4_ALL_POINT_RIGIDITY_STRING_CEILING.md
+          test -s protocol/P4_RETARDED_HERGLOTZ_SPECTRAL_FREEDOM_GATE.md
+          test -s protocol/P4_TOPOLOGICAL_RECURSION_ALL_POINT_CONTROL.md
+          test -s protocol/P4_CELESTIAL_WARD_ALL_POINT_CONTROL.md
+          test -s protocol/FRESH_LQG_UV_FIXED_POINT_COMPARATOR_2026.md
           test -s protocol/FRESH_BFSS_HARD_AMPLITUDE_COMPARATOR_2026.md
-          test -s protocol/O4_STINESPRING_DILATION_ATTRIBUTION_GATE.md
-          test -s protocol/O4_MODIFIED_QUANTUM_DYNAMICS_FRESH_AUDIT_2026.md
+          test -s protocol/O4_GISIN_STINESPRING_SQUEEZE.md
+          test -s candidate_synthesis/SYNTHESIS_001_TERNARY_CROSSING_SELF_CLOSURE.md
+          test -s candidate_synthesis/SYNTHESIS_002_PHYSICAL_HELICITY_PARQUET_CLOSURE.md
+          test -s candidate_synthesis/SYNTHESIS_003_SUBTRACTION_FREE_DISPERSIVE_SELECTOR.md
+          test -s candidate_synthesis/SYNTHESIS_004_FINITE_HIGHER_POINT_CONSISTENCY_SELECTOR.md
+          test -s candidate_synthesis/SYNTHESIS_005_SCHWARZ_PICK_CAUSAL_EXTREMALITY.md
+          test -s candidate_synthesis/SYNTHESIS_006_ANOMALY_INDUCED_NONLOCAL_SELECTOR.md
           test -s external_rqir_checks/iter649_matched_source_born_factor_audit.md
