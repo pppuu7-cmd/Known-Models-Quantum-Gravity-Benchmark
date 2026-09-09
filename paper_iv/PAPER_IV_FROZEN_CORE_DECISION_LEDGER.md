@@ -1,6 +1,6 @@
 # Paper IV — Frozen-Core Decision Ledger
 
-**KMQGB iteration:** 153  
+**KMQGB iteration:** 164  
 **RQIR standard:** **Core v1.0 FROZEN**  
 **Current global decision:** **`NOT_YET_AUTHORIZED`**  
 **Allowed future terminal decisions:** `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED`.
@@ -11,25 +11,27 @@ A framework can be terminal for its declared benchmark scope while Paper IV rema
 
 `BLOCKED_MISSING_REQUIRED_OBJECT` contributes **zero exclusion evidence** toward `NEW_REQUIRED` until the missing object is supplied and the framework is actually tested in the common physical domain.
 
+A second post-freeze rule is now explicit: results from neighbouring papers in one research school are not one RQIR observable until their realization vectors are identical or explicitly mapped. Authority: `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`.
+
 ## 2. Post-freeze evidence
 
-| Framework | Model-level result | Positive evidence | Exact open object | Global meaning |
+| Framework | Model-level result | Positive evidence now accepted | Exact open object | Global meaning |
 |---|---|---|---|---|
-| CFS | `BLOCKED_MISSING_REQUIRED_OBJECT` | controlled 2026 continuum theorem is comparator-contained with Einstein–Dirac | normalized beyond-continuum physical observable + same-domain comparator | cannot exclude CFS |
+| CFS | `BLOCKED_MISSING_REQUIRED_OBJECT` | Einstein–Dirac continuum identity; QFT/Fock limiting dynamics; relational non-continuum ontology; native surface-layer observables; total/quasilocal mass and synthetic curvature with ADM/Brown–York controls | **non-continuum evaluation of native mass/quasilocal/curvature observable under a prospectively fixed physical regularization law + same-domain comparator residual** | CFS is not excluded; blocker is now evaluation/comparator, not absence of formalism |
 | GR + low-energy EFT | `PASS_RQIR_GATE__BASELINE_CONTROL` | predictive/sufficient in controlled low-energy domain | UV/strong-gravity completion outside EFT authority | local evidence for existing sufficiency only |
 | String / dual resonance | `PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL` | rich Regge/bootstrap package gives scoped Virasoro–Shapiro rigidity | accessible/common-domain attribution of enough joint UV invariants | existing framework can be strongly overconstrained |
-| LQG / spinfoam | `BLOCKED_MISSING_REQUIRED_OBJECT` | candidate UV fixed point reduces triangulation ambiguity; causal Lorentzian vertex supplies phase selection | continuum-normalized Lorentzian physical observable + comparator | cannot exclude LQG |
-| Asymptotic safety | `BLOCKED_MISSING_REQUIRED_OBJECT` | Lorentzian graviton spectra **and** non-perturbative Lorentzian graviton-mediated scalar scattering now exist | same-realization contact-complete `s+t+u+A4` certificate + full approximation/error budget + comparator | cannot exclude AS; blocker materially narrowed |
+| LQG / spinfoam | `BLOCKED_MISSING_REQUIRED_OBJECT` | UV fixed point reduces triangulation ambiguity; causal vertex supplies Lorentzian phase selection; Lorentzian spinfoam-stack entropy gives the area law/Bekenstein–Hawking control; neighbouring algebraic LQG entropy admits logarithmic corrections | **same-realization continuum/regulator-stable comparator-orthogonal rigidity vector; generic `log A` is comparator-degenerate** | LQG is not excluded; leading entropy is a strong semiclassical success, not a unique fingerprint |
+| Asymptotic safety | `BLOCKED_MISSING_REQUIRED_OBJECT` | Lorentzian graviton spectra; non-perturbative Lorentzian scalar scattering; analytic contact controls; diffeo-invariant/error-controlled flow ingredients | **same-realization contact-complete `s+t+u+A4` Lorentzian scattering certificate with trajectory/normalization/approximation map and comparator** | AS is not excluded; blocker is now cross-authority composition/completion |
 
 ## 3. Global gates
 
 ### D1 — Frozen-judge integrity: `PASS`
 
-All five representative frameworks were regressed without changing Core-v1.0 semantics.
+All representative frameworks have been audited without changing Core-v1.0 semantics. Iter164 provides a particularly important adapter example: CFS physical UV regularization is mapped into frozen RQIR parameter/domain discipline without forcing an inappropriate regulator-removal rule and without changing the Core.
 
 ### D2 — Major-framework complete-object coverage: `NOT_CLOSED`
 
-CFS, LQG and AS remain missing-object terminal states for the decisive beyond-comparator package. AS is now substantially closer to closure than at PF1-05 creation.
+CFS, LQG and AS remain open at the decisive comparator-orthogonal end-to-end layer, but their blockers are materially narrower than at the start of PF1.
 
 ### D3 — Common-domain comparability: `PARTIAL`
 
@@ -43,7 +45,11 @@ No globally authorized robust unique-QG residual exists.
 
 No current `BLOCKED` result is treated as exclusion evidence.
 
-### D6 — Global terminal proof obligation: `NOT_CLOSED`
+### D6 — Same-realization composition discipline: `PASS AS A RULE / TARGETS OPEN`
+
+The gate is frozen. AS and LQG currently fail composition closure because adjacent authorities have not yet been mapped into one realization.
+
+### D7 — Global terminal proof obligation: `NOT_CLOSED`
 
 None of the four global outcomes has met its proof obligation.
 
@@ -55,7 +61,7 @@ Requires one existing framework/equivalence class to close the target RQIR hiera
 
 ### `ADAPT_EXISTING` — `NOT_AUTHORIZED`
 
-Requires showing that one existing framework already contains the needed dynamics and that remaining gaps are genuinely adapter/completion issues rather than missing physical content. Current CFS/LQG/AS blockers are not yet proven adapter-only.
+Requires showing that one existing framework already contains the needed dynamics and that remaining gaps are genuinely adapter/completion issues rather than missing physical content. The recent contraction of CFS/LQG/AS blockers makes this outcome more plausible than a stale audit suggested, but none has yet closed the decisive end-to-end object.
 
 ### `HYBRID_REQUIRED` — `NOT_AUTHORIZED`
 
@@ -65,35 +71,62 @@ Requires showing that no single complete existing framework closes the common ta
 
 Requires broad exclusion/inadequacy results on **complete** known-framework realizations plus a robust frozen-RQIR requirement no existing/adapted/hybrid construction satisfies.
 
-Because major frameworks remain missing-object blocked rather than excluded, `NEW_REQUIRED` is presently **forbidden** as a scientific conclusion.
+Because major frameworks are becoming more complete and remain missing-object/composition blocked rather than excluded, `NEW_REQUIRED` is presently **forbidden** as a scientific conclusion.
 
-## 5. Minimum closure set
+## 5. Focused Closure Wave 02
 
-### O-AS — highest current priority
+Authority: `post_freeze_paper_iv_closure_wave_02/README.md`.
 
-The generic “physical Lorentzian crossover observable” requirement is now closed by 2026 scalar-scattering work.
+Frozen denominator: 3. Current terminal closure: **0/3**.
 
-The remaining object is much narrower:
+### CW2-01 / O-AS
 
-`CONTACT_COMPLETE_APPROXIMATION_CONTROLLED_SAME_REALIZATION_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE`.
+Target:
 
-It must include the direct `A4` contact contribution in the same realization, complete `s+t+u+A4` treatment, a robustness/error budget covering flow/truncation/avatar approximations, and the full same-domain comparator.
+`SAME_REALIZATION_CONTACT_COMPLETE_DIFFEO_ERROR_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE`.
 
-ERG2026 reports a Lorentzian-resummed contact contribution, which is retained as promising noncanonical closure evidence until a stable reproducible package is available.
+Key progress:
 
-See `paper_iv/O_AS_SCALAR_SCATTERING_CLOSURE_AUDIT_2026.md`.
+- physical Lorentzian mediated scattering exists;
+- contact-sector controls exist;
+- a diffeomorphism-invariant error-controlled RG construction exists;
+- ERG2026 reports a Lorentzian-resummed contact contribution.
 
-### O-LQG
+Remaining problem: the ingredients have not been frozen as one same-realization `A_s+A_t+A_u+A4` observable. See `paper_iv/O_AS_CROSS_AUTHORITY_COMPOSITION_GATE_2026.md` and `paper_iv/O_AS_CONTACT_REALIZATION_MISMATCH_DIAGNOSTIC_2026.md`.
 
-Continuum-normalized Lorentzian LQG/spinfoam physical observable with regulator/triangulation authority and same-domain GR/EFT/QG comparators.
+### CW2-02 / O-LQG
 
-### O-CFS
+Target:
 
-Normalized beyond-continuum CFS relational/detector/asymptotic observable with fixed state/regularization and same-domain Einstein–Dirac/QFT comparator.
+`LORENTZIAN_SPINFOAM_STACK_DERIVED_SUBLEADING_RIGIDITY_VECTOR_OR_OTHER_COMPARATOR_ORTHOGONAL_LORENTZIAN_OBSERVABLE`.
+
+Key progress:
+
+- leading Lorentzian spinfoam entropy exists and reproduces Bekenstein–Hawking;
+- a related algebraic LQG entropy construction admits log corrections;
+- generic log corrections are known across many comparators.
+
+Therefore a raw `log A` term cannot close the target. The same stack realization must fix a shared-parameter subleading vector or another comparator-orthogonal observable. See `paper_iv/O_LQG_SUBLEADING_ENTROPY_COMPARATOR_GATE_2026.md` and `paper_iv/O_LQG_ENTROPY_CROSS_AUTHORITY_COMPOSITION_GATE_2026.md`.
+
+### CW2-03 / O-CFS
+
+Target:
+
+`BEYOND_CONTINUUM_CFS_MASS_QUASILOCAL_OR_CURVATURE_EVALUATION_PLUS_COMPARATOR_RESIDUAL`.
+
+Key progress:
+
+- CFS already has surface-layer observables and conservation laws;
+- total mass, quasilocal mass and synthetic curvature are gravity-specific native quantities;
+- controlled examples recover ADM/Brown–York/ordinary curvature.
+
+Thus the missing object is an actual non-continuum evaluation/correction under a prospectively fixed **physical** CFS regularization law, not construction of an observable from scratch. See `paper_iv/O_CFS_MASS_QUASILOCAL_GRAVITY_OBSERVABLE_AUDIT_2026.md` and `paper_iv/O_CFS_PHYSICAL_REGULARIZATION_ADAPTER_RULE_2026.md`.
 
 ## 6. Compute triage
 
-No heavy computation is presently authorized. O-AS is now closest to a numerical robustness stage, but the contact-complete same-realization authority must be frozen first.
+No heavy computation is presently authorized.
+
+A future CW2 numerical job becomes justified only after the realization, normalization, state/regulator/trajectory law and comparator are fixed and the numerical output can change a terminal classification.
 
 Searching numerically over gauges, regulators, truncations, states or observables until a residual appears remains forbidden.
 
@@ -103,6 +136,6 @@ Searching numerically over gauges, regulators, truncations, states or observable
 
 Reason:
 
-`frozen judge validated + meaningful existing-framework successes + three major missing-object blocks + no global robust residual`.
+`frozen judge validated + known frameworks materially strengthened + three exact end-to-end closure objects still open + no global robust comparator-orthogonal residual`.
 
-The next high-value action is to close O-AS, not to open another broad framework taxonomy.
+The scientific pressure has shifted away from generic conceptual objections and toward three concrete end-to-end completion tests. That strengthens Paper IV even though it does not yet authorize a terminal verdict.
