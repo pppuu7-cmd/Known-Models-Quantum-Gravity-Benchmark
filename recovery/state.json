@@ -1,9 +1,9 @@
 {
-  "schema_version": "7.7",
+  "schema_version": "7.8",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 173,
+  "kmqgb_iteration": 174,
   "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_CLOSURE_WAVE_02__THREE_EXACT_BRIDGES",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 92,
@@ -39,7 +39,7 @@
       "completion_percent": 0,
       "priority_order": [
         "CW2-01 O-AS publication-triggered closure",
-        "CW2-02 O-LQG gamma-duality active analytic front",
+        "CW2-02 O-LQG same-realization EPRL-to-area-metric gamma map",
         "CW2-03 O-CFS correction hierarchy"
       ]
     },
@@ -50,9 +50,9 @@
     },
     "o_lqg": {
       "status": "OPEN",
-      "classification": "PROMISING_ADAPT_EXISTING__GAMMA_DUALITY_BREAKING_DEGENERACY_EXPLICIT__IDENTIFIABLE_RENORMALIZED_MATCHING_NEEDED",
-      "preferred_route": "gamma-duality cross-representation rigidity",
-      "matching_chain": ["G0 microscopic duality","G1 renormalized boundary amplitude","G2 continuum effective functional","G3 GB/CS Wilson projection","G4 renormalized duality and gamma identity","G5 cosmological observable projection"],
+      "classification": "PROMISING_ADAPT_EXISTING__AREA_METRIC_RUNNING_AND_LORENTZIAN_OBSERVABLE_BRIDGE_EXISTS__SAME_REALIZATION_EPRL_TO_AM_GAMMA_MAP_MISSING",
+      "preferred_route": "same-realization EPRL gamma-duality to area-metric RG and Lorentzian observable bridge",
+      "matching_chain": ["G0 microscopic EPRL duality","G1 renormalized boundary amplitude","G2 area-metric continuum effective functional","G3 running gamma_AM(k) and parity-sector Wilson projection","G4 EPRL-to-area-metric parameter identity / Delta_gamma control","G5 Lorentzian cosmological or interferometric observable projection"],
       "delta_definition": "Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)",
       "generalized_observable": "q = (pi/8)(r+8 n_T)/Pi = 1/gamma_EFT - gamma_EFT - Delta_gamma",
       "identifiability_result": {
@@ -60,12 +60,19 @@
         "shared_geometry": "q plus a_*=K gamma has full rank with det J = K for K != 0",
         "unmatched_geometry": "if gamma_geom is independent, rank 2 for 3 parameters; underidentified"
       },
-      "minimum_decisive_object": "IDENTIFIABLE_RENORMALIZED_GAMMA_MATCH_{gamma_micro_to_gamma_EFT,Delta_gamma_prediction_or_prior,optional_gamma_geom_map}",
+      "new_area_metric_bridge": {
+        "rg_authority": "arXiv:2507.02034",
+        "lorentzian_observable_authority": "arXiv:2608.16046",
+        "result": "spin-foam-motivated area-metric programme supplies running Immirzi parameter plus Lorentzian parity-sensitive GW/detector channel",
+        "composition_status": "BLOCKED_CROSS_AUTHORITY_COMPOSITION_NOT_YET_SAME_REALIZATION"
+      },
+      "minimum_decisive_object": "SAME_REALIZATION_EPRL_TO_AREA_METRIC_RENORMALIZED_GAMMA_MAP",
       "blockers": [
-        "renormalized duality breaking Delta_gamma not independently derived or bounded",
-        "gamma_micro -> gamma_EFT matching/running law not derived",
-        "gamma_geom identity map not derived if geometry is used to restore identifiability",
-        "cosmological nuisance/detector likelihood remains downstream of attribution bridge"
+        "explicit EPRL/spinfoam realization -> area-metric continuum/RG trajectory map not derived",
+        "gamma_micro -> gamma_AM(k) -> gamma_EFT parameter identity/running law not established across the authorities",
+        "area-metric parity coefficients -> frozen GB/CS or equivalent RQIR observable basis not mapped with uncertainty",
+        "renormalized duality breaking Delta_gamma not independently derived or bounded in the composed realization",
+        "cosmological/interferometric nuisance and detector likelihood remain downstream of attribution bridge"
       ]
     },
     "o_cfs": {
@@ -89,16 +96,17 @@
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_PENDING_FROZEN_CW2_OBJECT",
-    "current_reason": "LQG q-only degeneracy is structural; next decisive object is analytic renormalized duality/parameter matching, not detector numerics"
+    "current_reason": "area-metric gamma-running and Lorentzian observable authorities exist, but EPRL-to-area-metric same-realization parameter identity is missing; detector numerics cannot close this analytic composition gate"
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_173.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_174.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "active_wave": "post_freeze_paper_iv_closure_wave_02/README.md",
     "active_audits": [
       "paper_iv/O_AS_CONTACT_PUBLICATION_AUTHORITY_REFRESH_2026-09-10.md",
       "paper_iv/O_LQG_GAMMA_TOPDOWN_MATCHING_DECOMPOSITION_2026.md",
       "paper_iv/O_LQG_GAMMA_DUALITY_BREAKING_IDENTIFIABILITY_GATE_2026.md",
+      "paper_iv/O_LQG_AREA_METRIC_GAMMA_RUNNING_BRIDGE_AUDIT_2026-09-10.md",
       "paper_iv/O_CFS_GEOMETRIC_CORRECTION_GENERATOR_AUDIT_2026.md"
     ],
     "active_code": [
