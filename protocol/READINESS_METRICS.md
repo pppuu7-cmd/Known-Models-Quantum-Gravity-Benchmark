@@ -1,59 +1,72 @@
 # Stable Readiness Metrics for KMQGB Post-Freeze Research
 
-**Updated:** 2026-09-09.  
-**Current authority:** post-Iter144 freeze transition / active Paper-IV PF1 wave.  
+**Updated:** 2026-09-10  
+**Current authority:** KMQGB Iter178 repository/methodology completion  
 **RQIR standard:** **Core v1.0 FROZEN**.
 
-These metrics measure different objects and must not be averaged.
+These metrics measure different objects and must never be averaged or substituted for one another.
 
 ## R1 — Repository readiness
 
-Frozen component scores remain:
+Frozen component scores are now:
 
 - recovery/provenance/versioning `20/20`;
 - benchmark/comparator corpus `15/15`;
 - permanent protocols `20/20`;
-- executable layer `12/15`;
-- candidate/pre-ansatz scaffold `7/10`;
-- automated reproducibility/tests/CI/artifact packaging `8/10`;
+- executable layer `15/15`;
+- candidate/pre-ansatz scaffold `10/10`;
+- automated reproducibility/tests/CI/artifact packaging `10/10`;
 - external firewall/synchronization `10/10`.
 
-**R1 = 92%.**
+**R1 = 100%.**
 
-The post-freeze governance and new Paper-IV wave improve use of the existing infrastructure but do not close a remaining whole R1 rubric point.
+### Iter178 closure of the final 8 R1 points
+
+The previously frozen deficits were `12/15`, `7/10`, and `8/10` in the three non-full components above. They close under `protocol/READINESS_100_COMPLETION_CONTRACT.md` because the repository now contains and executes:
+
+- machine registry `protocol/EXECUTABLE_TEST_REGISTRY.json`;
+- single fail-closed orchestrator `code/methodology_orchestrator.py`;
+- cross-file completion validator `code/repository_completion_validator.py`;
+- prospective Candidate Gravity v1.3 schema/template/validator;
+- deterministic SHA-256 release bundle builder;
+- GitHub Actions artifact upload of the reproducibility bundle.
+
+Pre-score validation authority: methodology-ci run `34412786245`, job `102670803282`, **success**, with all 36 steps successful. The uploaded artifact `kmqgb-reproducibility-bundle` has artifact id `10127884011` and workflow artifact digest `sha256:e82908f7bd5b84445389697e40c16290490a4e7f407ab84daa529f3d3d3e92b1`.
+
+R1=100 means the repository is complete for its declared benchmark/recovery/execution/packaging purpose. It does **not** mean all physical closure objects are solved.
 
 ## R2 — KMQGB methodology/material readiness
 
-Frozen component scores now are:
+Frozen component scores are now:
 
 - benchmark/comparator evidence `15/15`;
 - comparator/attribution taxonomy `15/15`;
 - completeness/constraints/projection `15/15`;
 - residual/identifiability/rigidity `20/20`;
-- Beyond-C5 escape/parent-principle methodology `10/15`;
-- executable methodology `8/10`;
-- consolidated playbook/article-ready synthesis `7/10`.
+- Beyond-C5 escape/parent-principle methodology `15/15`;
+- executable methodology `10/10`;
+- consolidated playbook/article-ready synthesis `10/10`.
 
-**R2 = 90%.**
+**R2 = 100%.**
 
-### Iter144 score change
+### Iter178 closure of the final 10 R2 points
 
-`R2: 89 -> 90` because the previously frozen remaining criterion in `residual/identifiability/rigidity` was explicitly satisfied:
+The previously frozen deficits were `10/15`, `8/10`, and `7/10`.
 
-- external RQIR closed the nonlinear detector observable `P=(1+C cos Phi)/2` with contrast, contrast drift, readout gain/drift/offset and calibrated-reference nuisance under the source-traceable physical covariance;
-- KMQGB independently incorporated a NumPy detector-facing regression fixture;
-- methodology-ci run `34397157673` / job `102619589784` completed `success`, including both source-traceable physical-covariance and nonlinear detector-facing likelihood self-tests;
-- required negative controls remain failures rather than being regularized into PASS states.
+They close because:
 
-Therefore `residual/identifiability/rigidity` closes `19/20 -> 20/20` exactly as preregistered before the external result was available.
+1. `protocol/BEYOND_C5_PARENT_PRINCIPLE_DECISION_PROCEDURE.md` now provides one end-to-end fail-closed route from realization/provenance and escape-door declaration through functional-freedom, physical reduction, comparator quotient, residual geometry, rigidity/holdout, RG transport, compute authorization and publication authorization.
+2. `protocol/EXECUTABLE_TEST_REGISTRY.json` plus `code/methodology_orchestrator.py` turns the critical methodology controls into a single executable layer rather than a text-only collection.
+3. `publication/KMQGB_METHODS_EVIDENCE_MATRIX.md` and `publication/claim_evidence_matrix.json` provide article-ready synthesis with explicit claim classes, evidence references, limitations and forbidden overclaim wording.
+4. The pre-score methodology-ci run `34412786245` reproduced these layers successfully and built/uploaded the deterministic bundle.
 
-No other R2 component changes.
+R2=100 means the benchmark methodology/material package is complete for its declared task. It does **not** promote any blocked physical framework or Candidate Gravity model.
 
 ## R3 — Candidate Gravity scientific readiness
 
-Controlled only by external Candidate-Gravity authority.
+Controlled only by external Candidate-Gravity scientific authority.
 
-Latest directly checked authority remains RQIR Candidate Gravity Iter675:
+Latest directly frozen authority remains RQIR Candidate Gravity Iter675:
 
 - comparator foundation `24/25`;
 - robust unique residual `0/20`;
@@ -64,15 +77,11 @@ Latest directly checked authority remains RQIR Candidate Gravity Iter675:
 
 **R3 = 24%.**
 
-Candidate Gravity remains conditional and is not the active KMQGB research front.
-
-## External programme status
-
-RQIR has now frozen **Core v1.0** and reports **Papers I–III scientific/material readiness = 100%**. Paper IV remains active/prerequisite-blocked at the programme level; the last strict audit retains **55%** for Paper IV. These programme/article percentages do not replace R3.
+No Iter178 repository-engineering result changes R3.
 
 ## Legacy R4 — minimal novel parent-principle search
 
-The historical/conditional parent-search score remains:
+Historical/conditional score remains:
 
 - P1 `15/15`;
 - P2 `15/15`;
@@ -83,39 +92,34 @@ The historical/conditional parent-search score remains:
 
 **Legacy R4 = 45%.**
 
-This branch is now **PAUSED / CONDITIONAL ON PAPER IV**. It is preserved as design evidence but is no longer the active KMQGB task. No score is removed or promoted merely by changing research priority.
+Status: **PAUSED / CONDITIONAL ON PAPER IV**. The new complete scaffold makes future work reproducible but does not manufacture a parent principle.
 
-## Active task — Paper-IV frozen-core benchmark campaign
+## Post-freeze Paper-IV status
 
-Active campaign: `post_freeze_paper_iv_wave_01`.
+- RQIR Core v1.0: **FROZEN**;
+- Papers I–III scientific/material layer: **100% CLOSED**;
+- post-freeze PF1 regression: **5/5 terminal = 100%**;
+- Closure Wave 02: **0/3 terminal = 0%**;
+- Paper IV global decision: **`NOT_YET_AUTHORIZED`**.
 
-Frozen denominator: 5 representative known-framework regressions.
-
-Current terminal coverage after PF1-01 CFS and PF1-02 GR/EFT:
-
-**2/5 = 40%.**
-
-This is a wave-completion metric, not a Candidate-Gravity readiness score.
+The three CW2 physical objects remain scientifically independent of R1/R2 completion.
 
 ## Governance
 
-Post-freeze authority:
+Permanent separation rule:
 
-- RQIR Core v1.0 is the fixed judge;
-- KMQGB owns model adapters and benchmark writes;
-- future Candidate Gravity is separate and may not tune the judge;
-- a real RQIR Core defect requires canonical RQIR change-control and regression over affected benchmark records.
+`R1/R2 infrastructure completeness != R3 Candidate Gravity science != CW2 physical closure != Paper-IV global verdict`.
 
-KMQGB enforcement: `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md`.
+A future score change must name the exact rubric component and evidence. After Iter178, R1/R2 have no remaining rubric deficit; future changes are versioned capability changes, not percentages above 100.
 
-## Reporting format
+## Reporting format after Iter178
 
-Future iterations should report:
+Report:
 
-- `R1 Repository readiness = 92%` unless a frozen R1 rubric component changes;
-- `R2 KMQGB methodology/material readiness = 90%` unless a frozen R2 component changes;
-- `R3 Candidate Gravity readiness = 24%` unless external Candidate-Gravity authority changes;
+- `R1 Repository readiness = 100%`;
+- `R2 KMQGB methodology/material readiness = 100%`;
+- `R3 Candidate Gravity scientific readiness = 24%` unless external scientific authority changes;
 - `Legacy parent-search R4 = 45% (paused/conditional)`;
-- `Active Paper-IV post-freeze wave completion = X/5 = Y%`.
-
-Any score change must name the exact rubric component and evidence.
+- `PF1 = 5/5 terminal`;
+- `Closure Wave 02 = X/3 terminal`;
+- Paper-IV global verdict independently.
