@@ -1,13 +1,14 @@
-# Stable Readiness Metrics for Candidate Gravity Research
+# Stable Readiness Metrics for KMQGB Post-Freeze Research
 
-**Status:** frozen reporting methodology.  
 **Updated:** 2026-09-09.  
-**Current KMQGB authority:** Iter134.  
-**Purpose:** keep repository readiness, KMQGB methodology readiness, external programme readiness and Candidate-Gravity scientific readiness separate.
+**Current authority:** post-Iter144 freeze transition / active Paper-IV PF1 wave.  
+**RQIR standard:** **Core v1.0 FROZEN**.
+
+These metrics measure different objects and must not be averaged.
 
 ## R1 — Repository readiness
 
-Frozen component scores:
+Frozen component scores remain:
 
 - recovery/provenance/versioning `20/20`;
 - benchmark/comparator corpus `15/15`;
@@ -19,55 +20,40 @@ Frozen component scores:
 
 **R1 = 92%.**
 
-Iter123–134 add recovery, executable detector methodology and comparator authority but do not close the remaining end-to-end candidate-pipeline/artifact gaps.
+The post-freeze governance and new Paper-IV wave improve use of the existing infrastructure but do not close a remaining whole R1 rubric point.
 
 ## R2 — KMQGB methodology/material readiness
 
-Frozen component scores:
+Frozen component scores now are:
 
 - benchmark/comparator evidence `15/15`;
 - comparator/attribution taxonomy `15/15`;
 - completeness/constraints/projection `15/15`;
-- residual/identifiability/rigidity `19/20`;
+- residual/identifiability/rigidity `20/20`;
 - Beyond-C5 escape/parent-principle methodology `10/15`;
 - executable methodology `8/10`;
 - consolidated playbook/article-ready synthesis `7/10`.
 
-**R2 = 89%.**
+**R2 = 90%.**
 
-Last score change remains Iter060: `+1` from consolidated playbook/synthesis `6/10 -> 7/10`.
+### Iter144 score change
 
-### Why Iter123–134 do not yet change R2
+`R2: 89 -> 90` because the previously frozen remaining criterion in `residual/identifiability/rigidity` was explicitly satisfied:
 
-The new work materially sharpens already-scored components:
+- external RQIR closed the nonlinear detector observable `P=(1+C cos Phi)/2` with contrast, contrast drift, readout gain/drift/offset and calibrated-reference nuisance under the source-traceable physical covariance;
+- KMQGB independently incorporated a NumPy detector-facing regression fixture;
+- methodology-ci run `34397157673` / job `102619589784` completed `success`, including both source-traceable physical-covariance and nonlinear detector-facing likelihood self-tests;
+- required negative controls remain failures rather than being regularized into PASS states.
 
-- KMS/detailed balance does not fix an absolute spectral envelope;
-- finitely many positive moments do not determine a unique measure;
-- a finite linear all-moment recurrence collapses a positive measure to finitely many atoms;
-- a finite nonlinear recurrence can determine a continuous spectrum, with random-matrix theory as a positive control/comparator;
-- a black-hole wave operator + causal boundary conditions provides a gravity-native non-rational `G2` positive control;
-- Lorentzian asymptotic safety is upgraded as a strong interacting functional-generator comparator;
-- process-matrix consistency leaves a convex feasible process set and indefinite causal order lacks unique gravity attribution;
-- quantum-corner state structure does not select a unique hard transition law;
-- a finite operator + `Tr log` can generate an all-point loop metric functional and CTP route, but local counterterm/comparator freedom remains;
-- equivalence principle / causal principal symbol does not select the full operator;
-- Iter134 adds a source-traceable detector-visible residual certificate and executable physical-covariance fixture.
+Therefore `residual/identifiability/rigidity` closes `19/20 -> 20/20` exactly as preregistered before the external result was available.
 
-The frozen `residual/identifiability/rigidity` score stays at **19/20** because the imported physical apparatus fixture remains a local phase-Gaussian model. The remaining closure is an end-to-end detector-facing nonlinear/readout certificate, equivalent in strength to the external RQIR next gate
-
-`P = (1 + C cos Phi)/2`
-
-with finite contrast, contrast drift, readout gain/detection noise and conservative reference-transfer uncertainty.
-
-Therefore the new detector gate is substantial methodology progress but not yet a full rubric-point closure.
+No other R2 component changes.
 
 ## R3 — Candidate Gravity scientific readiness
 
-Controlled **only by the external RQIR Candidate-Gravity authority**. KMQGB cannot promote this value.
+Controlled only by external Candidate-Gravity authority.
 
-Latest directly observed Candidate-Gravity authority remains **RQIR Iter675** on 2026-09-09.
-
-External Candidate-Gravity rubric remains
+Latest directly checked authority remains RQIR Candidate Gravity Iter675:
 
 - comparator foundation `24/25`;
 - robust unique residual `0/20`;
@@ -78,67 +64,58 @@ External Candidate-Gravity rubric remains
 
 **R3 = 24%.**
 
-Missing authorities remain
+Candidate Gravity remains conditional and is not the active KMQGB research front.
 
-- M1 same-parent physical observable bridge;
-- M2 matched same-parent Source/Born/contact completion in that physical observable;
-- M3 robust nonzero comparator-subtracted residual;
-- M4 actual `Tr U1` if required later.
+## External programme status
 
-No active promotable ansatz and no robust residual exist. No independent Candidate-Gravity compute gate is authorized.
+RQIR has now frozen **Core v1.0** and reports **Papers I–III scientific/material readiness = 100%**. Paper IV remains active/prerequisite-blocked at the programme level; the last strict audit retains **55%** for Paper IV. These programme/article percentages do not replace R3.
 
-### Separate external programme progress
+## Legacy R4 — minimal novel parent-principle search
 
-Do **not** replace R3 with programme/article percentages.
+The historical/conditional parent-search score remains:
 
-The latest observed RQIR programme audit reports approximately **71% working programme/model readiness** and **68% Paper-III strengthened apparatus-specific readiness**. This is real programme progress, but Candidate Gravity remains 24% because Paper IV / the common physical residual bridge is still the decisive prerequisite.
+- P1 `15/15`;
+- P2 `15/15`;
+- P3 `15/15`;
+- P4 `0/25`;
+- P5 `0/20`;
+- P6 `0/10`.
 
-Before every future R3/heavy-compute report, refresh external Candidate-Gravity authority again.
+**Legacy R4 = 45%.**
 
-## R4 — Current research-task completion
+This branch is now **PAUSED / CONDITIONAL ON PAPER IV**. It is preserved as design evidence but is no longer the active KMQGB task. No score is removed or promoted merely by changing research priority.
 
-Current task: `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`.
+## Active task — Paper-IV frozen-core benchmark campaign
 
-Frozen score:
+Active campaign: `post_freeze_paper_iv_wave_01`.
 
-- P1 known-principle saturation `15/15`;
-- P2 multi-representation/background rigidity `15/15`;
-- P3 spectral-origin/dispersion requirements `15/15`;
-- P4 explicit novel low-freedom parent principle `0/25`;
-- P5 immediate comparator survival `0/20`;
-- P6 pre-ansatz machine record for a genuine survivor `0/10`.
+Frozen denominator: 5 representative known-framework regressions.
 
-**R4 = 45%.**
+Current terminal coverage after PF1-01 CFS and PF1-02 GR/EFT:
 
-No negative gate, comparator upgrade, detector-methodology improvement, external-paper advance or recovery action may substitute for P4.
+**2/5 = 40%.**
 
-### Current scientific front
+This is a wave-completion metric, not a Candidate-Gravity readiness score.
 
-Finite generation is now demonstrated to be possible in several architectures. The unresolved primitive is no longer “how can finite data generate an infinite hierarchy?” It is:
+## Governance
 
-> **what finite gravity-native law selects the complete interacting operator/process itself?**
+Post-freeze authority:
 
-A serious next candidate must derive from one parent
+- RQIR Core v1.0 is the fixed judge;
+- KMQGB owns model adapters and benchmark writes;
+- future Candidate Gravity is separate and may not tune the judge;
+- a real RQIR Core defect requires canonical RQIR change-control and regression over affected benchmark records.
 
-1. principal symbol / causal structure;
-2. lower-order curvature/endomorphism terms;
-3. gauge/constraint/ghost complex;
-4. state, measure, boundary and Lorentzian contour;
-5. local renormalization/null sector;
-6. normalized comparator-orthogonal hard `4g`/higher datum;
-7. all-point generator;
-8. same-parent CTP/retarded continuation;
-9. detector-visible consequence after source-traceable covariance and nuisance profiling.
-
-Immediate comparators include ordinary covariant QFT/`Tr log`, Lorentzian asymptotic safety, string/q-string, BFSS/matrix, JT/random-matrix, LQG/spinfoam/corner, nonlocal/spectral and process-matrix architectures.
+KMQGB enforcement: `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md`.
 
 ## Reporting format
 
-Every future iteration must report
+Future iterations should report:
 
-- `Repository readiness (R1): XX%`;
-- `KMQGB methodology/material readiness (R2): XX%`;
-- `Candidate Gravity scientific readiness (R3): XX%`;
-- `Current task completion (R4): XX%`.
+- `R1 Repository readiness = 92%` unless a frozen R1 rubric component changes;
+- `R2 KMQGB methodology/material readiness = 90%` unless a frozen R2 component changes;
+- `R3 Candidate Gravity readiness = 24%` unless external Candidate-Gravity authority changes;
+- `Legacy parent-search R4 = 45% (paused/conditional)`;
+- `Active Paper-IV post-freeze wave completion = X/5 = Y%`.
 
-Any score change must name the exact frozen rubric component that changed and why.
+Any score change must name the exact rubric component and evidence.
