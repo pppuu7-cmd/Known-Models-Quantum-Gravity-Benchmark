@@ -1,0 +1,19 @@
+{
+  "benchmark_id": "PF1-04-LQG-SPINFOAM",
+  "rqir_core_version": "1.0",
+  "framework": "LQG / spinfoam / covariant discrete gravity",
+  "terminal_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "positive_controls": [
+    "2026 covariant-LQG candidate UV fixed point reduces infinite triangulation ambiguity to finite boundary coefficients",
+    "spinfoam-stack construction provides a candidate fundamental continuum organization",
+    "2026 causal spinfoam vertex selects causally compatible Lorentzian Regge geometries",
+    "large-spin causal vertex gives a single exp(+i S_Regge/hbar) phase"
+  ],
+  "obsolete_blocker_rejected": "generic infinite triangulation freedom",
+  "current_blocker": "no single compatible continuum-normalized Lorentzian relational/detector/asymptotic observable plus same-domain comparator residual package was identified",
+  "rqir_core_defect": false,
+  "core_change_requested": false,
+  "paper_iv_decision_authorized": false,
+  "counts_as_new_required_evidence": false,
+  "reopen_condition": "close continuum state/normalization/regulator mapping for one physical Lorentzian observable and compare it in the identical domain against GR/EFT and applicable QG comparators"
+}
