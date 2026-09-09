@@ -95,7 +95,7 @@ jobs:
           test -s recovery/state.json
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
-          test -s recovery/RECOVERY_DELTA_097.md
+          test -s recovery/RECOVERY_DELTA_098.md
           test -s protocol/READINESS_METRICS.md
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
@@ -110,6 +110,7 @@ jobs:
           test -s protocol/P4_CELESTIAL_WARD_ALL_POINT_CONTROL.md
           test -s protocol/FRESH_LQG_UV_FIXED_POINT_COMPARATOR_2026.md
           test -s protocol/FRESH_BFSS_HARD_AMPLITUDE_COMPARATOR_2026.md
+          test -s protocol/E2_FRESH_GRAVITATIONAL_COMPLETENESS_PRESSURE_2026.md
           test -s protocol/O4_GISIN_STINESPRING_SQUEEZE.md
           test -s candidate_synthesis/SYNTHESIS_001_TERNARY_CROSSING_SELF_CLOSURE.md
           test -s candidate_synthesis/SYNTHESIS_002_PHYSICAL_HELICITY_PARQUET_CLOSURE.md
