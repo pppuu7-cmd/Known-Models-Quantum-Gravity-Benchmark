@@ -46,6 +46,9 @@ jobs:
       - name: Run frozen-core Paper IV governance validator
         run: python code/post_freeze_paper_iv_governance_validator.py
 
+      - name: Run LQG gamma-duality identifiability self-test
+        run: python code/lqg_gamma_duality_identifiability_reference.py
+
       - name: Run fail-closed candidate-record validator self-test
         run: python code/kg_candidate_record_validator.py
 
@@ -104,18 +107,36 @@ jobs:
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
           test -s recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md
-          for i in $(seq -w 99 153); do test -s recovery/RECOVERY_DELTA_${i}.md; done
+          for i in $(seq -w 99 170); do test -s recovery/RECOVERY_DELTA_${i}.md; done
           test -s protocol/READINESS_METRICS.md
           test -s protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md
+          test -s protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md
           test -s paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md
           test -s paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.json
-          test -s paper_iv/O_AS_SCALAR_SCATTERING_CLOSURE_AUDIT_2026.md
-          test -s code/post_freeze_paper_iv_governance_validator.py
           test -s post_freeze_paper_iv_wave_01/README.md
+          test -s post_freeze_paper_iv_closure_wave_02/README.md
           for d in PF1_01_CFS PF1_02_GR_EFT PF1_03_STRING_DUAL_RESONANCE PF1_04_LQG_SPINFOAM PF1_05_ASYMPTOTIC_SAFETY; do
             test -s post_freeze_paper_iv_wave_01/$d/audit.md
             test -s post_freeze_paper_iv_wave_01/$d/result.json
           done
+          test -s paper_iv/O_AS_SCALAR_SCATTERING_CLOSURE_AUDIT_2026.md
+          test -s paper_iv/O_AS_CROSS_AUTHORITY_COMPOSITION_GATE_2026.md
+          test -s paper_iv/O_AS_CONTACT_REALIZATION_MISMATCH_DIAGNOSTIC_2026.md
+          test -s paper_iv/O_LQG_LORENTZIAN_ENTROPY_CLOSURE_AUDIT_2026.md
+          test -s paper_iv/O_LQG_SUBLEADING_ENTROPY_COMPARATOR_GATE_2026.md
+          test -s paper_iv/O_LQG_ENTROPY_CROSS_AUTHORITY_COMPOSITION_GATE_2026.md
+          test -s paper_iv/O_LQG_GAMMA_DUALITY_PRIMORDIAL_GW_AUDIT_2026.md
+          test -s paper_iv/O_LQG_GAMMA_CROSS_REPRESENTATION_RIGIDITY_VECTOR_2026.md
+          test -s paper_iv/O_LQG_GAMMA_DUALITY_IDENTIFIABILITY_GATE_2026.md
+          test -s paper_iv/O_LQG_GAMMA_TOPDOWN_BRIDGE_LITERATURE_CEILING_2026.md
+          test -s paper_iv/O_LQG_GAMMA_PARAMETER_IDENTITY_RENORMALIZATION_GATE_2026.md
+          test -s code/lqg_gamma_duality_identifiability_reference.py
+          test -s paper_iv/O_CFS_BEYOND_CONTINUUM_OBSERVABLE_CLOSURE_AUDIT_2026.md
+          test -s paper_iv/O_CFS_SURFACE_LAYER_OBSERVABLE_CONTROL_2026.md
+          test -s paper_iv/O_CFS_MASS_QUASILOCAL_GRAVITY_OBSERVABLE_AUDIT_2026.md
+          test -s paper_iv/O_CFS_PHYSICAL_REGULARIZATION_ADAPTER_RULE_2026.md
+          test -s paper_iv/O_CFS_GEOMETRIC_CORRECTION_GENERATOR_AUDIT_2026.md
+          test -s code/post_freeze_paper_iv_governance_validator.py
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
           test -s protocol/P5_DETECTOR_VISIBLE_RESIDUAL_PHYSICAL_COVARIANCE_GATE.md
