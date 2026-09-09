@@ -1,9 +1,9 @@
 {
-  "schema_version": "7.5",
+  "schema_version": "7.6",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 171,
+  "kmqgb_iteration": 172,
   "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_CLOSURE_WAVE_02__THREE_EXACT_BRIDGES",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 92,
@@ -38,8 +38,8 @@
       "denominator": 3,
       "completion_percent": 0,
       "priority_order": [
-        "CW2-01 O-AS",
-        "CW2-02 O-LQG gamma-duality",
+        "CW2-01 O-AS publication-triggered closure",
+        "CW2-02 O-LQG gamma-duality active analytic front",
         "CW2-03 O-CFS correction hierarchy"
       ]
     },
@@ -53,25 +53,26 @@
         "programme-level Lorentzian-resummed gravitational contact contribution publicly reported at ERG2026",
         "separate diffeomorphism-invariant error-controlled RG flow"
       ],
-      "blocker": "STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE",
-      "next_triggers": [
-        "standalone Chiesa-Reichert contact-amplitude preprint",
-        "new arXiv:2603.10168 version including A4",
-        "public equations/data sufficient to freeze realization normalization and propagated error budget"
-      ]
+      "blocker": "STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE"
     },
     "o_lqg": {
       "status": "OPEN",
+      "classification": "PROMISING_ADAPT_EXISTING__RENORMALIZED_BOUNDARY_AMPLITUDE_ROUTE_EXISTS__MINIMAL_GAMMA_DUAL_WILSON_MATCHING_OBJECT_MISSING",
       "preferred_route": "gamma-duality cross-representation rigidity",
+      "matching_chain": ["G0 microscopic duality","G1 renormalized boundary amplitude","G2 continuum effective functional","G3 GB/CS Wilson projection","G4 renormalized duality and gamma identity","G5 cosmological observable projection"],
       "closed_layers": [
+        "exact microscopic EPRL gamma-duality structural authority",
         "gamma-dual EFT/cosmological observable relation",
         "positive-gamma structural identifiability for Pi != 0",
         "generic parity-violating EFT comparator direction identified",
-        "Lorentzian entropy and UV/causal spinfoam controls"
+        "2026 Lorentzian spinfoam-stack authority demonstrates a finite boundary-data-dependent renormalized amplitude after factoring triangulation normalization in its stated limit"
       ],
+      "minimum_decisive_object": "RENORMALIZED_GAMMA_DUALITY_MATCHING_TRIPLE_{gamma_EFT,Delta_gamma,sigma_match}",
+      "delta_definition": "Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)",
       "blockers": [
-        "complete EPRL/covariant-LQG -> renormalized gamma-dual EFT Wilson map not derived",
-        "gamma_micro/gamma_EFT/gamma_geom parameter identity or running map not derived",
+        "same-realization W_gamma/coarse-graining -> renormalized continuum parity-sector response not derived",
+        "Delta_gamma not derived or bounded",
+        "gamma_micro -> gamma_EFT matching/running law not derived",
         "cosmological nuisance/detector likelihood remains downstream of attribution bridge"
       ]
     },
@@ -104,17 +105,17 @@
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_PENDING_FROZEN_CW2_OBJECT",
-    "current_reason": "AS needs stable same-realization contact/error authority, LQG needs top-down/parameter bridge, CFS needs first explicit correction tensor; none is a blind numerical problem"
+    "current_reason": "AS awaits stable contact/error authority; LQG requires analytic renormalized duality/matching object; CFS requires first explicit correction tensor"
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_171.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_172.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "active_wave": "post_freeze_paper_iv_closure_wave_02/README.md",
     "active_audits": [
-      "paper_iv/O_AS_CONTACT_REALIZATION_MISMATCH_DIAGNOSTIC_2026.md",
       "paper_iv/O_AS_CONTACT_PUBLICATION_AUTHORITY_REFRESH_2026-09-10.md",
       "paper_iv/O_LQG_GAMMA_TOPDOWN_BRIDGE_LITERATURE_CEILING_2026.md",
       "paper_iv/O_LQG_GAMMA_PARAMETER_IDENTITY_RENORMALIZATION_GATE_2026.md",
+      "paper_iv/O_LQG_GAMMA_TOPDOWN_MATCHING_DECOMPOSITION_2026.md",
       "paper_iv/O_CFS_GEOMETRIC_CORRECTION_GENERATOR_AUDIT_2026.md"
     ]
   }
