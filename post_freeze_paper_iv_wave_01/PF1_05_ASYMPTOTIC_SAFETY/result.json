@@ -1,0 +1,29 @@
+{
+  "benchmark_id": "PF1-05-ASYMPTOTIC-SAFETY",
+  "rqir_core_version": "1.0",
+  "framework": "asymptotic safety / Lorentzian functional RG",
+  "terminal_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "scoped_blocker": "FULL_PHYSICAL_CROSSOVER_OBSERVABLE_COMPARATOR_PACKAGE",
+  "positive_controls": [
+    "direct Lorentzian graviton spectral functions",
+    "GR-infrared to asymptotically-safe-UV spectral interpolation",
+    "Ward-improved Lorentzian functional flow",
+    "normalisable spectral functions in studied renormalisation prescriptions",
+    "effective action reconstructed through quadratic curvature with graviton-induced form factors"
+  ],
+  "obsolete_blocker_rejected": "absence of Lorentzian spectral information",
+  "remaining_requirements": [
+    "declared physical renormalisation/trajectory prescription",
+    "truncation or convergence control for the claimed observable",
+    "gauge/BRST/Ward-complete physical mapping",
+    "contact/crossing-complete 4g-or-higher or equivalent physical crossover observable when scattering attribution is claimed",
+    "absolute normalisation and Lorentzian state/analytic prescription",
+    "same-domain GR/EFT and alternative-QG comparator predictions",
+    "robust residual stable under allowed methodological variations"
+  ],
+  "rqir_core_defect": false,
+  "core_change_requested": false,
+  "paper_iv_decision_authorized": false,
+  "counts_as_new_required_evidence": false,
+  "reopen_condition": "provide one frozen Lorentzian asymptotic-safety realisation with scheme/truncation/gauge-controlled physical crossover observable and same-domain comparator data"
+}
