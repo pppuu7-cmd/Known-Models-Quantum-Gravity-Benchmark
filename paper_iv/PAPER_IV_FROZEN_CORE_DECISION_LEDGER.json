@@ -31,8 +31,13 @@
   "minimum_open_objects": [
     "O-CFS normalized beyond-continuum observable plus same-domain comparator",
     "O-LQG continuum-normalized Lorentzian observable plus regulator and comparator authority",
-    "O-AS scheme-truncation-gauge-stable Lorentzian physical crossover observable plus same-domain comparator"
+    "O-AS contact-complete approximation-controlled same-realization Lorentzian scalar-scattering certificate plus full same-domain comparator"
   ],
+  "o_as_progress": {
+    "closed": "a non-perturbative Lorentzian graviton-mediated scalar 2-to-2 amplitude and cross section now exist with GR infrared recovery and UV unitarity-compatible behavior",
+    "remaining": "same-realization direct contact A4, complete s+t+u+A4 certificate, full approximation/error budget, and full same-domain comparator",
+    "conference_evidence": "ERG2026 reports Lorentzian-resummed contact contribution but is retained as promising noncanonical authority pending a stable reproducible package"
+  },
   "model_result_refs": [
     "post_freeze_paper_iv_wave_01/PF1_01_CFS/result.json",
     "post_freeze_paper_iv_wave_01/PF1_02_GR_EFT/result.json",
