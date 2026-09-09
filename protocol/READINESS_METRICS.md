@@ -20,7 +20,7 @@ Frozen component scores:
 
 **R1 = 92/100 = 92%.**
 
-Iter076–097 add protocols, failed synthesis records, comparator upgrades and recovery authority, but they do not close the remaining end-to-end executable candidate pipeline, promoted candidate package or richer artifact/coverage gaps. Therefore R1 does not change.
+Iter076–098 add protocols, failed synthesis records, comparator upgrades and recovery authority, but they do not close the remaining end-to-end executable candidate pipeline, promoted candidate package or richer artifact/coverage gaps. Therefore R1 does not change.
 
 ## R2 — KMQGB methodology/material readiness for building a future KG
 
@@ -38,7 +38,7 @@ Frozen component scores:
 
 Last score change remains Iter060: `+1` from consolidated construction playbook/synthesis `6/10 -> 7/10`.
 
-Iter076–097 substantially sharpen the already-scored parent-selection methodology:
+Iter076–098 substantially sharpen the already-scored parent-selection methodology:
 
 - q-difference and self-similar finite-rule controls;
 - Källén-Lehmann and Stinespring attribution gates;
@@ -52,7 +52,8 @@ Iter076–097 substantially sharpen the already-scored parent-selection methodol
 - fresh BFSS and covariant-LQG comparator upgrades;
 - topological-recursion and celestial-Ward all-point positive controls;
 - standard-unitarity new-cut attribution gate;
-- entire/polynomial-bounded and Hadamard hard-data gates.
+- entire/polynomial-bounded and Hadamard hard-data gates;
+- scoped 2026 gravitational-completeness pressure on finite charged E2 sectors.
 
 These are genuine scientific/methodological advances but do not close a new frozen R2 point because the decisive rubric gap remains: **no novel parent-selection principle has survived comparator containment and produced the required explicit hard relation plus complete candidate package**.
 
@@ -60,7 +61,7 @@ These are genuine scientific/methodological advances but do not close a new froz
 
 Controlled **only by external RQIR Candidate Gravity authority**. KMQGB cannot promote this value.
 
-Latest directly observed authority at KMQGB Iter097 is **RQIR Iteration 649** on 2026-09-09.
+Latest directly observed authority at KMQGB Iter098 is **RQIR Iteration 649** on 2026-09-09.
 
 External stable rubric remains
 
@@ -106,7 +107,7 @@ Frozen score:
 
 **R4 = 45%.**
 
-No Iter076–097 negative/control result is allowed to substitute for P4.
+No Iter076–098 negative/control result is allowed to substitute for P4.
 
 ### Current scientific front
 
@@ -127,6 +128,8 @@ High-value remaining same-spectrum routes are
 1. finitely derived genuinely nonlocal/exponentially-bounded irreducible hard data with explicit growth/causality class;
 2. intrinsic gravitational nonperturbative/transseries hard data with parent-fixed Lorentzian contour/weight/phase;
 3. controlled modified factorization/quantum dynamics.
+
+E2/new-state routes remain open but are not an easy shortcut: in charged sectors, apply the Iter098 scoped gravitational-completeness screen before assuming the full spectrum remains finite.
 
 A serious future P4 candidate should also have an **all-point generator** or explicit route to one, because positive controls show finite seed-to-all-point completeness is achievable. The hard seed itself must nevertheless survive matrix/string/GR/LQG/AS/nonlocal/mediator/environment comparators.
 
