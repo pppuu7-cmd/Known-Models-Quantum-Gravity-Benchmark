@@ -7,13 +7,20 @@
     "2026 covariant-LQG candidate UV fixed point reduces infinite triangulation ambiguity to finite boundary coefficients",
     "spinfoam-stack construction provides a candidate fundamental continuum organization",
     "2026 causal spinfoam vertex selects causally compatible Lorentzian Regge geometries",
-    "large-spin causal vertex gives a single exp(+i S_Regge/hbar) phase"
+    "large-spin causal vertex gives a single exp(+i S_Regge/hbar) phase",
+    "2026 Lorentzian spinfoam path integral yields a dynamical entanglement-entropy area law whose leading coefficient is independent of the underlying two-complexes in the analysed construction",
+    "the same entropy construction reproduces the Bekenstein-Hawking area law in its stated Barbero-Immirzi range"
   ],
-  "obsolete_blocker_rejected": "generic infinite triangulation freedom",
-  "current_blocker": "no single compatible continuum-normalized Lorentzian relational/detector/asymptotic observable plus same-domain comparator residual package was identified",
+  "scoped_positive_result": "PASS_RQIR_GATE__LORENTZIAN_SEMICLASSICAL_ENTROPY_CONTROL",
+  "obsolete_blockers_rejected": [
+    "generic infinite triangulation freedom",
+    "absence of any Lorentzian physical observable"
+  ],
+  "current_blocker": "a comparator-orthogonal continuum/regulator-stable LQG observable has not yet been frozen; the leading Lorentzian entropy observable reproduces established Bekenstein-Hawking thermodynamics and is therefore a semiclassical success rather than a unique LQG residual",
   "rqir_core_defect": false,
   "core_change_requested": false,
   "paper_iv_decision_authorized": false,
   "counts_as_new_required_evidence": false,
-  "reopen_condition": "close continuum state/normalization/regulator mapping for one physical Lorentzian observable and compare it in the identical domain against GR/EFT and applicable QG comparators"
+  "reopen_condition": "provide a same-realization continuum/regulator-stable subleading entropy/correlation, relational/detector/asymptotic, or hard transition observable with normalization and identical-domain GR/EFT plus applicable-QG comparators",
+  "latest_audit": "paper_iv/O_LQG_LORENTZIAN_ENTROPY_CLOSURE_AUDIT_2026.md"
 }
