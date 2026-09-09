@@ -1,0 +1,85 @@
+{
+  "matrix_version": "1.0",
+  "updated": "2026-09-10",
+  "policy": "A claim may be promoted in prose only at or below its authorized status. OPEN_BLOCKED and HYPOTHESIS_ONLY statements must retain their qualifier. FORBIDDEN_OVERCLAIM must never appear as an affirmative conclusion.",
+  "claims": [
+    {
+      "id": "RQIR_CORE_FROZEN",
+      "status": "ESTABLISHED_EXTERNAL",
+      "permitted_claim": "RQIR Core v1.0 is the frozen independent benchmark judge used by KMQGB.",
+      "evidence_refs": ["protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md", "recovery/state.json"]
+    },
+    {
+      "id": "PF1_COMPLETE",
+      "status": "REPRODUCED_EXECUTABLE",
+      "permitted_claim": "The post-freeze five-framework regression wave is 5/5 terminal under the frozen core.",
+      "evidence_refs": ["post_freeze_paper_iv_wave_01/README.md", "code/post_freeze_paper_iv_governance_validator.py"]
+    },
+    {
+      "id": "PAPER_IV_GLOBAL",
+      "status": "OPEN_BLOCKED",
+      "permitted_claim": "Paper IV remains NOT_YET_AUTHORIZED because the decisive known-framework closure objects are not all terminal.",
+      "evidence_refs": ["paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md", "recovery/CURRENT_BENCHMARK_FRONT.md"]
+    },
+    {
+      "id": "O_AS_CONTACT",
+      "status": "OPEN_BLOCKED",
+      "permitted_claim": "The asymptotic-safety scalar-scattering programme has public programme-level contact evidence, but a stable reproducible same-realization A4 plus full error/comparator certificate remains missing.",
+      "evidence_refs": ["paper_iv/O_AS_CONTACT_PUBLICATION_AUTHORITY_REFRESH_2026-09-10.md"]
+    },
+    {
+      "id": "O_LQG_GAMMA_DEGENERACY",
+      "status": "DERIVED_KMQGB",
+      "permitted_claim": "The generalized primordial q observable alone is structurally rank-1 in {gamma_EFT, Delta_gamma}.",
+      "evidence_refs": ["paper_iv/O_LQG_GAMMA_DUALITY_BREAKING_IDENTIFIABILITY_GATE_2026.md", "code/lqg_gamma_duality_breaking_identifiability_reference.py"]
+    },
+    {
+      "id": "O_LQG_RG_TANGENCY",
+      "status": "DERIVED_KMQGB",
+      "permitted_claim": "Renormalized gamma-duality is RG-invariant only when beta_Delta = beta_rho - (1+1/gamma^2) beta_gamma vanishes on the matching surface.",
+      "evidence_refs": ["paper_iv/O_LQG_GAMMA_DUALITY_RG_TANGENCY_GATE_2026.md", "code/lqg_gamma_duality_rg_tangency_reference.py"]
+    },
+    {
+      "id": "O_LQG_OBSERVABLE_PAIR",
+      "status": "DERIVED_KMQGB",
+      "permitted_claim": "After common-scale transport, the combined primordial/birefringence coordinates satisfy Delta_gamma = 2 cot(8 psi) - q and are structurally identifiable for finite positive gamma.",
+      "evidence_refs": ["paper_iv/O_LQG_AREA_METRIC_BIREFRINGENCE_GAMMA_IDENTIFIABILITY_GATE_2026.md", "code/lqg_area_metric_birefringence_gamma_identifiability_reference.py"]
+    },
+    {
+      "id": "O_LQG_OBSERVABLE_RG",
+      "status": "DERIVED_KMQGB",
+      "permitted_claim": "The same-realization multiscale observable consistency equation is beta_Delta = -16 csc^2(8 psi) beta_psi - beta_q.",
+      "evidence_refs": ["paper_iv/O_LQG_MULTISCALE_OBSERVABLE_RG_TRANSPORT_GATE_2026.md", "code/lqg_multiscale_observable_rg_transport_reference.py"]
+    },
+    {
+      "id": "O_LQG_SAME_REALIZATION_MAP",
+      "status": "OPEN_BLOCKED",
+      "permitted_claim": "A same-realization EPRL/spinfoam to area-metric renormalized gamma map and same-parent beta_Delta authority remain missing.",
+      "evidence_refs": ["recovery/CURRENT_BENCHMARK_FRONT.md", "paper_iv/O_LQG_AREA_METRIC_GAMMA_RUNNING_BRIDGE_AUDIT_2026-09-10.md"]
+    },
+    {
+      "id": "O_CFS_CORRECTION",
+      "status": "OPEN_BLOCKED",
+      "permitted_claim": "CFS has a correction generator but the first explicit normalized gravity correction tensor plus comparator remains open.",
+      "evidence_refs": ["paper_iv/O_CFS_GEOMETRIC_CORRECTION_GENERATOR_AUDIT_2026.md"]
+    },
+    {
+      "id": "REPOSITORY_COMPLETE_NOT_SCIENCE_COMPLETE",
+      "status": "DERIVED_KMQGB",
+      "permitted_claim": "Repository/methodology readiness can reach 100% while Candidate Gravity readiness and Paper-IV physical closure remain below 100%.",
+      "evidence_refs": ["protocol/READINESS_100_COMPLETION_CONTRACT.md", "protocol/READINESS_METRICS.md"]
+    },
+    {
+      "id": "FORBID_SOLVED_QG",
+      "status": "FORBIDDEN_OVERCLAIM",
+      "permitted_claim": "",
+      "evidence_refs": ["protocol/READINESS_100_COMPLETION_CONTRACT.md"],
+      "forbidden_wording": [
+        "quantum gravity is solved",
+        "all known quantum-gravity models are excluded",
+        "new physics is discovered solely because a framework is BLOCKED",
+        "R1/R2 = 100% proves Candidate Gravity"
+      ]
+    }
+  ]
+}
