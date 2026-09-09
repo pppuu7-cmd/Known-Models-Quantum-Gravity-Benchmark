@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **178**  
-**Phase:** **RQIR Core v1.0 FROZEN / repository+methodology 100% / Paper-IV Closure Wave 02 active**.
+**KMQGB iteration:** **179**  
+**Phase:** **RQIR Core v1.0 FROZEN / repository+methodology 100% VERIFIED / Paper-IV Closure Wave 02 active**.
 
 ## Stable metrics
 
@@ -13,35 +13,51 @@
 - **Post-freeze PF1 regression: 5/5 = 100% terminal.**
 - **Closure Wave 02: 0/3 terminal.**
 
-Iter178 closes the remaining repository/methodology rubric deficits only. It does not alter R3, R4, CW2 or the Paper-IV scientific verdict.
+Repository/methodology readiness is now **`COMPLETE_100_VERIFIED`**. The scientific quantities R3/R4/CW2/Paper IV remain separate and unchanged.
 
-## Iter178 repository/methodology completion
+## Iter178–179 completion and verification lock
 
-Authority: `protocol/READINESS_100_COMPLETION_CONTRACT.md`.
+Authority:
 
-The final non-scientific deficits were closed by:
+- `protocol/READINESS_100_COMPLETION_CONTRACT.md`;
+- `recovery/RECOVERY_DELTA_178.md`;
+- `recovery/RECOVERY_DELTA_179.md`.
 
-- `protocol/BEYOND_C5_PARENT_PRINCIPLE_DECISION_PROCEDURE.md`;
-- `protocol/EXECUTABLE_TEST_REGISTRY.json`;
-- `code/methodology_orchestrator.py`;
-- `schemas/candidate_gravity_record_v1_3.schema.json`;
-- `templates/candidate_gravity_record_v1_3.template.json`;
-- `code/kg_candidate_record_v13_validator.py`;
-- `code/repository_completion_validator.py`;
-- `release/BUNDLE_CONTENTS.json`;
-- `code/build_release_bundle.py`;
-- `publication/KMQGB_METHODS_EVIDENCE_MATRIX.md`;
-- `publication/claim_evidence_matrix.json`.
+Iter178 closed the remaining repository/methodology rubric deficits with:
 
-Pre-score methodology-ci run `34412786245`, job `102670803282`, completed **success** with all 36 steps successful. It generated and uploaded a deterministic reproducibility artifact.
+- end-to-end Beyond-C5 parent decision procedure;
+- executable test registry and fail-closed orchestrator;
+- Candidate Gravity prospective record v1.3 schema/template/validator;
+- cross-file repository completion validator;
+- deterministic SHA-256 reproducibility bundle;
+- publication claim/evidence/overclaim matrix.
 
-The strict post-score CI must now require `R1=R2=100` and will be the final lock.
+Pre-score methodology-ci run `34412786245`, job `102670803282`, completed **success** with all 36 steps successful.
+
+Iter179 then performed the strict post-score verification using
+
+`python code/repository_completion_validator.py --require-100`.
+
+Strict authority:
+
+- run `34413073509`;
+- job `102671705364`;
+- head `bc0c2a902a293cbecf7e3baefbd8de61276d5b9a`;
+- conclusion **success**;
+- strict completion validator **success**;
+- full methodology orchestrator **success**;
+- deterministic bundle rebuild **success**;
+- artifact upload **success**;
+- verification artifact id `10127989719`;
+- artifact digest `sha256:6134a659df7a71a9a38763442b38a8ea464e2ddbad1c5f2c1726a69fa3df5792`.
+
+Therefore there is no remaining R1/R2 rubric deficit for the declared KMQGB capability.
 
 ## Frozen architecture
 
 RQIR Core **v1.0 remains FROZEN**. `BLOCKED` remains a scientifically valid state and is not evidence for `NEW_REQUIRED`.
 
-A 100% repository means KMQGB is complete for its declared benchmarking, recovery, execution, scaffolding and packaging purpose. It does **not** mean the open physical objects have been solved.
+A 100% repository means KMQGB is complete for its declared benchmarking, recovery, execution, scaffolding, packaging and publication-trace purpose. It does **not** mean the open physical objects have been solved.
 
 ## Paper-IV global decision
 
@@ -59,7 +75,7 @@ Programme-level Lorentzian contact existence is public. Re-audit only on new sta
 
 ## CW2-02 — O-LQG — active physical front
 
-KMQGB has already frozen and executable-tested the observable/methodology side:
+KMQGB has frozen and executable-tested the observable/methodology side:
 
 `q = 1/gamma - gamma - Delta_gamma`,
 
@@ -97,7 +113,7 @@ Exact blocker remains:
 
 Scientific readiness remains **24%** and no ansatz is promoted.
 
-The repository is nevertheless fully prepared to evaluate a future proposal using v1.3 candidate records. The template is intentionally BLOCKED and the validator forbids promotion, heavy compute or publication overclaim without the required evidence.
+The repository is fully prepared to evaluate a future proposal using the v1.3 candidate record. The canonical template is intentionally BLOCKED and the validator forbids promotion, heavy compute or publication overclaim without the required evidence.
 
 ## Heavy compute
 
@@ -107,7 +123,7 @@ The current Paper-IV blockers are structural/analytic/provenance/matching object
 
 ## Exact next scientific front
 
-Repository engineering is no longer the bottleneck. Continue only physical closure work:
+Repository engineering is terminal for the declared capability. Continue only physical closure work:
 
 1. O-LQG: derive or locate the same-realization EPRL/spinfoam -> area-metric coarse-graining / renormalized gamma map;
 2. derive the same-parent parity projection and `beta_rho/beta_Delta` transport;
