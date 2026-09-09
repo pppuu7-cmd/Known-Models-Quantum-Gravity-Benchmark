@@ -6,68 +6,55 @@ This file assumes no usable chat memory.
 
 1. Open `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`, branch `main`.
 2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, `recovery/state.json`, and `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`.
-3. Read `recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md` before interpreting post-116 chronology.
-4. Read `protocol/READINESS_METRICS.md` before reporting progress.
-5. Read `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md` and `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md`.
-6. Read recovery deltas through `RECOVERY_DELTA_134.md`.
-7. Read current operator/process authority referenced by `state.json`: moment gates, Lorentzian-AS comparator, process-matrix gate, quantum-corner control, spectral-determinant control and principal-symbol operator-selection gate.
-8. Read `external_rqir_checks/iter133_rqir_programme_paper3_physical_psd_sync.md`.
-9. Read `protocol/P5_DETECTOR_VISIBLE_RESIDUAL_PHYSICAL_COVARIANCE_GATE.md` and `code/detector_visible_residual_physical_covariance_reference.py`.
-10. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` before every R3/readiness/heavy-compute claim.
-11. Resume from `next_actions` in `recovery/state.json`; do not rebuild authority from chat memory.
+3. Read `protocol/READINESS_METRICS.md`.
+4. Read `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md`.
+5. Read `post_freeze_paper_iv_wave_01/README.md` and all PF1 result records.
+6. Read `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md` and `.json`.
+7. Read `code/post_freeze_paper_iv_governance_validator.py`.
+8. Read recovery deltas through `RECOVERY_DELTA_152.md`; retain the post-116 provenance-correction note for historical chronology.
+9. Treat earlier Candidate-Gravity parent-principle/synthesis material as conditional historical design evidence, not the active task.
+10. Refresh external RQIR Candidate-Gravity authority before quoting R3 or reactivating Candidate-Gravity research.
 
-## Stable percentages at Iteration 134
+## Current authority — Iter152
 
 - `R1 Repository readiness = 92%`;
-- `R2 KMQGB methodology/material readiness = 89%`;
-- `R3 Candidate Gravity scientific readiness = 24%`;
-- `R4 minimal novel parent-principle search = 45%`.
+- `R2 KMQGB methodology/material readiness = 90%`;
+- `R3 external Candidate Gravity readiness = 24%`;
+- `legacy parent-search R4 = 45%`, **paused/conditional on Paper IV**;
+- post-freeze PF1 wave `5/5 = 100% terminal`.
 
-External programme percentages are separate: latest observed overall RQIR programme readiness is approximately 71%, with Paper III at 68%, while Candidate Gravity remains 24%.
+RQIR Core is **v1.0 FROZEN** and Papers I–III scientific/material readiness is **100% CLOSED**.
 
-## Current missing object
+## Active Paper-IV state
 
-The next serious P4 candidate must derive a **complete interacting operator/process from one finite gravity-native law**, including
+Global decision:
 
-- principal symbol / causal structure;
-- all lower-order curvature/endomorphism terms;
-- gauge/constraint/ghost complex;
-- state and boundary data;
-- measure and Lorentzian contour;
-- local renormalization/null sector;
-- normalized comparator-orthogonal hard `4g` or higher datum;
-- all-point generation;
-- same-parent CTP/retarded continuation.
+`NOT_YET_AUTHORIZED`.
 
-A new operator written by hand is not enough.
+None of `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED` has met its proof obligation.
 
-## Key Iter123–132 lessons
+Model-level PF1 results:
 
-- KMS fixes detailed-balance relations, not the absolute spectral envelope.
-- Finite moments do not determine a positive measure.
-- Finite linear all-moment recurrence collapses to finite atomic/mediator spectrum.
-- Finite nonlinear recurrence can fix a continuous spectrum, but the control is random-matrix contained.
-- Black-hole wave-operator boundary-value problems show finite gravity-native data can fix non-rational probe `G2`.
-- Lorentzian asymptotic safety already occupies the finite functional-flow -> interacting graviton hierarchy architecture.
-- Process consistency leaves a convex process family and indefinite causal order lacks unique gravity attribution.
-- Quantum-corner state structure does not select hard transition dynamics.
-- `Tr log Delta` proves one finite operator can generate an all-point loop metric functional and CTP route, but comparator/local-counterterm freedom remains.
-- Equivalence principle/principal symbol does not select the full operator.
+- CFS: missing-object block; controlled continuum identity to Einstein–Dirac.
+- GR/EFT: baseline/control PASS in declared low-energy domain.
+- string/dual resonance: scoped rigidity PASS under rich UV constraints.
+- LQG/spinfoam: missing-object block after accepting fresh continuum/causal positive controls.
+- asymptotic safety: missing-object block after accepting fresh Lorentzian spectral/form-factor positive controls.
 
-## Detector-visible residual gate
+`BLOCKED` is never evidence for `NEW_REQUIRED` by itself.
 
-Iter134 requires any future structural residual to survive detector mapping, source-traceable covariance whitening and declared nuisance profiling. A locally nonzero residual with zero profiled information is not detector-identifiable evidence.
+## Next high-value objects
 
-The frozen R2 residual/identifiability/rigidity component remains `19/20` because the external physical fixture is still phase-Gaussian rather than a full nonlinear transition-probability/readout likelihood.
+1. **O-AS:** scheme/truncation/gauge-stable Lorentzian physical crossover observable + same-domain comparator; preferred first because the 2026 Lorentzian spectral/effective-action layer is already comparatively mature.
+2. **O-LQG:** continuum-normalized Lorentzian physical observable + regulator/triangulation/comparator authority.
+3. **O-CFS:** normalized beyond-continuum physical observable + state/regularization + same-domain comparator.
 
-## External RQIR guardrail
+Do not open a new broad framework taxonomy until one of these is materially advanced.
 
-Candidate Gravity remains Iter675 / 24% with no robust residual or promotable ansatz. Missing authorities remain M1–M4. No independent Candidate-Gravity compute gate is authorized.
+## Heavy compute
 
-## Heavy-compute policy
-
-Keep heavy compute idle until a frozen A1–A3 survivor produces a numerical discriminator or external Candidate-Gravity authority materially changes.
+Keep heavy compute idle unless one of O-AS/O-LQG/O-CFS is frozen enough that a numerical calculation can change its model-level RQIR terminal classification.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB с Iter134. Refresh RQIR first. R1=92, R2=89, R3=24, R4=45. Ищи finite gravity-native law selecting complete interacting operator/process, а не operator ansatz. Требуй lower-order operator data, gauge/ghost/constraints, state/measure/contour, local null/renormalization, hard 4g/higher, all-point, same-parent CTP. Любой residual прогоняй через detector-visible physical-covariance gate. Heavy compute не запускать без frozen survivor/new authority.`
+`Продолжай KMQGB с Iter152. RQIR Core v1.0 frozen. R1=92, R2=90, R3=24, legacy R4=45 paused. PF1=5/5. Paper IV = NOT_YET_AUTHORIZED. Начни с O-AS: ищи frozen Lorentzian full physical crossover observable и same-domain comparator; затем O-LQG/O-CFS. BLOCKED не трактовать как NEW_REQUIRED. Heavy compute только после frozen object.`
