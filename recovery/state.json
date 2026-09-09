@@ -1,10 +1,10 @@
 {
-  "schema_version": "5.6",
+  "schema_version": "5.7",
   "updated": "2026-09-09",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 81,
-  "phase": "O1_O4_AUDITED_BOUNDARY__NOVEL_NONLINEAR_PARENT_SYNTHESIS_REQUIRED",
+  "kmqgb_iteration": 97,
+  "phase": "FIRST_HARD_DATUM_CORRIDOR_NARROWED__GRAVITY_NATIVE_PARENT_ORIGIN_LAW_REQUIRED",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
@@ -22,7 +22,7 @@
   "current_task": {
     "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
     "completion_R4_percent": 45,
-    "status": "NOVEL_PARENT_SYNTHESIS__HIGHER_POINT_GRAVITY_SPECIFIC_RIGIDITY_REQUIRED",
+    "status": "FIRST_HARD_DATUM_ORIGIN_LAW_REQUIRED__NO_P4_SURVIVOR_YET",
     "closed": [
       "P1_known_principle_saturation",
       "P2_multi_representation_background_rigidity",
@@ -32,30 +32,37 @@
       "QCA_discrete_control_branch_without_Beyond_C5_escape",
       "one_pole_triple_product_chiral_string_containment",
       "finite_form_factor_QEA_selection_fail",
-      "P4_constructive_survivor_matrix_freeze",
-      "E3_nonperturbative_gravity_attribution_gate",
       "O1_audited_set_no_current_hard_near_survivor",
       "O2_audited_causal_algebraic_set_no_current_hard_near_survivor",
       "O3_rational_kernel_localization_no_go",
-      "O3_exponential_semigroup_A2_pass_A3_fail",
-      "O3_qdifference_qPochhammer_A2_pass_natural_qstring_A3_fail",
-      "O3_self_similar_continuum_A2_pass_E2_continuum_fail",
       "O3_positive_KL_two_point_continuum_localization_gate",
-      "BFSS_2026_hard_amplitude_comparator_upgrade",
-      "O4_Stinespring_reduced_channel_attribution_gate",
-      "O4_audited_set_no_current_hard_near_survivor",
+      "O4_Gisin_Stinespring_squeeze",
+      "SYNTHESIS001_melonic_tensor_model_containment",
+      "SYNTHESIS002_parquet_irreducible_kernel_not_selected",
+      "SYNTHESIS003_dispersion_discontinuity_functional_freedom",
+      "SYNTHESIS004_finite_higher_point_null_contact_freedom",
+      "all_point_rigidity_string_ceiling",
+      "retarded_Herglotz_spectral_measure_freedom",
+      "Schwarz_Pick_extremality_rational_mediator_collapse",
+      "anomaly_induced_homogeneous_functional_freedom",
+      "fresh_LQG_UV_fixed_point_comparator_upgrade",
+      "topological_recursion_all_point_matrix_string_control",
+      "celestial_Ward_gravity_native_all_point_GR_control",
+      "standard_unitarity_new_cut_attribution_gate",
+      "entire_polynomial_bounded_contact_collapse",
+      "Hadamard_entire_zero_set_data_gate",
       "RQIR649_matched_Source_Born_relative_normalization_sync"
     ],
     "open": [
-      "synthesize_explicit_finite_nonlinear_gravity_parent",
-      "derive_linked_G3_G4_or_hard_A4_from_same_parent",
+      "derive_first_comparator_orthogonal_irreducible_hard_datum_from_finite_gravity_native_parent",
+      "derive_all_point_generator_from_same_parent_without_independent_higher_point_functions",
       "derive_same_parent_CTP_retarded_block",
-      "prove_gravity_specific_attribution_beyond_mediator_KL_environment",
+      "prove_gravity_specific_attribution_and_comparator_escape",
       "P4_explicit_novel_parent_principle",
       "P5_structural_comparator_survival",
       "P6_preansatz_machine_record_for_survivor"
     ],
-    "anti_gaming_rule": "current literature cells O1-O4 are audited controls; R4 increases only if a synthesized or discovered explicit parent satisfies the actual P4 deliverable and survives A3"
+    "anti_gaming_rule": "negative gates, comparator upgrades and recursion controls do not increase R4; only an explicit finite parent satisfying the P4 deliverable and surviving A3 can score P4"
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
@@ -63,26 +70,49 @@
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
     "survivor_matrix": "protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md",
     "functional_freedom_no_go": "protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md",
-    "O3_KL_gate": "protocol/O3_KALLEN_LEHMANN_CONTINUUM_LOCALIZATION_GATE.md",
-    "O4_Stinespring_gate": "protocol/O4_STINESPRING_DILATION_ATTRIBUTION_GATE.md",
-    "fresh_BFSS_comparator": "protocol/FRESH_BFSS_HARD_AMPLITUDE_COMPARATOR_2026.md",
-    "linear_hidden_sector_boundary": [
-      "finite dimensional linear hidden systems -> rational resolvent -> finite mediator localization",
-      "finite-rule infinite linear hidden systems -> nonrational KL continuum -> continuum mediator localization at G2",
-      "therefore novelty cannot be certified by G2 spectral structure alone"
+    "same_factorization_gate": "protocol/P4_SAME_FACTORIZATION_CONTACT_DIFFERENCE_THEOREM.md",
+    "new_cut_attribution_gate": "protocol/P4_STANDARD_UNITARITY_NEW_CUT_ATTRIBUTION_GATE.md",
+    "entire_polynomial_bound_gate": "protocol/P4_ENTIRE_POLYNOMIAL_BOUNDED_COLLAPSE_GATE.md",
+    "Hadamard_entire_gate": "protocol/P4_HADAMARD_ENTIRE_HARD_DATA_GATE.md",
+    "all_point_rigidity_string_ceiling": "protocol/P4_ALL_POINT_RIGIDITY_STRING_CEILING.md",
+    "gravity_native_all_point_positive_control": "protocol/P4_CELESTIAL_WARD_ALL_POINT_CONTROL.md",
+    "finite_generator_positive_control": "protocol/P4_TOPOLOGICAL_RECURSION_ALL_POINT_CONTROL.md",
+    "fresh_LQG_comparator": "protocol/FRESH_LQG_UV_FIXED_POINT_COMPARATOR_2026.md",
+    "latest_synthesis_attempts": [
+      "candidate_synthesis/SYNTHESIS_003_SUBTRACTION_FREE_DISPERSIVE_SELECTOR.md",
+      "candidate_synthesis/SYNTHESIS_004_FINITE_HIGHER_POINT_CONSISTENCY_SELECTOR.md",
+      "candidate_synthesis/SYNTHESIS_005_SCHWARZ_PICK_CAUSAL_EXTREMALITY.md",
+      "candidate_synthesis/SYNTHESIS_006_ANOMALY_INDUCED_NONLOCAL_SELECTOR.md"
     ],
-    "nonlinear_synthesis_requirement": "finite parent rule must generate linked non-Gaussian G3/G4 or hard A4 plus same-parent CTP, with gravitational Ward/constraint structure and no independent arbitrary higher-point functions",
-    "comparator_pressure": "string/q-string/matrix/BFSS/asymptotic-safety/discrete/nonlocal/ordinary mediator and environment architectures all have explicit constructive precedents and must be profiled immediately"
+    "transport_vs_origin_lesson": "factorization, unitarity, Ward identities, dispersion, CTP closure and all-point recursion can transport or reconstruct hard data but do not constitute a parent unless the seed/discontinuity/homogeneous sector is itself selected by finite physical law",
+    "generator_completeness_positive_controls": [
+      "topological recursion: finite spectral curve -> all-point/genus hierarchy, but matrix/string comparator",
+      "celestial Lw1+infinity Ward recursion: gravity-native low-point seed -> all-point sector in restricted kinematics, but Einstein-gravity comparator and symmetry non-uniqueness"
+    ],
+    "same_spectrum_remaining_corridor": [
+      "derived genuinely nonlocal or exponentially-bounded irreducible hard structure with explicit causality/growth class",
+      "intrinsic gravitational nonperturbative/transseries hard structure with parent-fixed contour/weight",
+      "controlled modified factorization/quantum law passing probability/no-signalling/composition tests"
+    ],
+    "same_spectrum_closed_shortcuts": [
+      "same GR poles/residues + local analytic difference -> full C5 contact",
+      "new standard-unitarity physical cut with unchanged complete states/lower transitions -> not independent",
+      "entire + polynomial bounded -> polynomial/contact -> C5",
+      "zero-free finite-order entire -> exp(polynomial) nonlocal comparator pressure",
+      "finite-order entire with infinite zeros -> zero set must itself be derived; rigid known zero laws face string comparator pressure"
+    ],
+    "preferred_current_target": "finite gravity-native origin law that prospectively selects the first irreducible hard datum, fixes its absolute normalization and growth/singularity class, generates linked all-point and CTP observables, and survives string/matrix/LQG/AS/nonlocal/mediator/environment comparators"
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_BY_SCIENTIFIC_DESIGN",
-    "current_reason": "no explicit nonlinear parent has yet survived A1-A3; numerical scanning would optimize an undefined object",
-    "allowed_when": "a finite nonlinear parent is frozen and a preregistered hard/CTP/comparator prediction requires numerical evaluation"
+    "current_reason": "the active problem is origin-law selection and comparator attribution; no frozen novel hard object exists for numerical discrimination",
+    "allowed_when": "a finite gravity-native parent survives A1-A3 and produces a preregistered hard/CTP/comparator or holdout quantity requiring numerical evaluation"
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
     "authoritative_research_iteration_observed": 649,
     "model_readiness_percent": 24,
+    "scientific_status": "matched Source/Born one-common-factor class not established; projectivization cannot remove independent relative source/native normalization rho; open-response proxy rejected",
     "relative_source_native_factor": "rho=lambda_source/lambda_native",
     "projective_subtraction_status": "BLOCKED__P[a-rho*b]_DEPENDS_ON_UNKNOWN_RHO",
     "open_response_proxy_allowed": false,
@@ -93,18 +123,20 @@
     "handoff": "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
+    "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
     "latest_external_rqir_check": "external_rqir_checks/iter649_matched_source_born_factor_audit.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_081.md"
+    "latest_delta": "recovery/RECOVERY_DELTA_097.md"
   },
-  "next_wave_status": "NOVEL_FINITE_NONLINEAR_GRAVITY_PARENT_CAPSULE_REQUIRED",
+  "next_wave_status": "GRAVITY_NATIVE_FIRST_HARD_DATUM_ORIGIN_LAW_REQUIRED",
   "next_actions": [
     "Refresh external RQIR before every R3/heavy-compute statement",
-    "Construct one explicit finite nonlinear parent capsule rather than another broad literature branch",
-    "Require the parent to generate G2 and linked non-Gaussian G3/G4 or hard A4 with no independent higher-point function freedom",
-    "Use gravitational Ward/constraint structure to make the nonlinear relation gravity-specific rather than an ordinary hidden bath/mediator",
-    "Apply A2 functional-freedom test before any numerical fit",
-    "Apply immediate A3 containment against full C5, ordinary continuum mediators, string/q-string, BFSS/matrix, AS, discrete and nonlocal comparators",
-    "Require same-parent retarded/CTP prescription prospectively",
-    "Keep heavy compute idle until a frozen discriminating object exists"
+    "Do not start from another free propagator, spectral density, bootstrap checklist or recursion whose seed is unspecified",
+    "Search for a finite gravity-native law that selects the first irreducible hard 4g/higher datum itself",
+    "Require all-point generator completeness or an explicit route to it from the same finite parent",
+    "Require same-parent Lorentzian retarded/CTP continuation prospectively",
+    "For standard-unitarity branch cuts demand explicit new-state/lower-amplitude attribution rather than treating the cut as independent data",
+    "For entire/nonlocal hard structures declare growth class and apply polynomial-bound/Hadamard/string/nonlocal comparator gates",
+    "Apply immediate A3 against full C5, string/q-string, matrix/BFSS, fresh LQG/spinfoam fixed-point controls, AS, nonlocal, mediator/KL and environment architectures",
+    "Keep heavy compute idle until a frozen discriminating hard object exists"
   ]
 }
