@@ -1,6 +1,6 @@
 """Reference control for RG preservation of the LQG gamma-duality surface.
 
-KMQGB Iter174.
+KMQGB Iter175.
 
 Let
     rho = 2 f_GB / f_CS
@@ -19,7 +19,7 @@ beta_O = eta_O f_CS, then on Delta=0 this becomes
       = (1 + 1/gamma**2) beta_gamma.
 
 This fixture checks the exact identities and negative controls. It does not
-assume any particular EPRL coarse-graining beta functions.
+assume any particular EPRL or area-metric coarse-graining beta functions.
 """
 
 from __future__ import annotations
