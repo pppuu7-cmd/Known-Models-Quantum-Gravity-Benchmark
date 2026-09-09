@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kmqgb.local/schemas/candidate_gravity_record_v1_3.schema.json",
+  "title": "KMQGB Candidate Gravity prospective record v1.3",
+  "type": "object",
+  "required": [
+    "record_schema_version",
+    "candidate_id",
+    "authority",
+    "parent_dynamics",
+    "parameters",
+    "escape_doors",
+    "escape_claim",
+    "escape_evidence_refs",
+    "door_specific_blockers",
+    "upstream_primitives",
+    "primitive_selection_law",
+    "primitive_freedom_audit",
+    "functional_freedom",
+    "same_realization",
+    "observable_blocks",
+    "comparators",
+    "covariance",
+    "attribution_stack",
+    "rigidity",
+    "promotion_gates",
+    "compute_authorization",
+    "publication_trace",
+    "promotion"
+  ],
+  "properties": {
+    "record_schema_version": {"const": "1.3"},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "authority": {
+      "type": "object",
+      "required": ["parent_object_ref"],
+      "properties": {"parent_object_ref": {"type": ["string", "null"]}}
+    },
+    "parent_dynamics": {
+      "type": "object",
+      "required": ["object_ref", "declared_domain"],
+      "properties": {
+        "object_ref": {"type": ["string", "null"]},
+        "declared_domain": {"type": ["string", "null"]}
+      }
+    },
+    "parameters": {"type": "array"},
+    "escape_doors": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["E1", "E2", "E3", "E4", "E5"]}
+    },
+    "escape_claim": {"type": "string", "minLength": 1},
+    "escape_evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "door_specific_blockers": {"type": "array", "items": {"type": "string"}},
+    "upstream_primitives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "selection_status", "load_bearing", "evidence_refs"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "selection_status": {"enum": ["DERIVED", "FUNDAMENTAL_FINITE_CONSTANT", "EXTERNAL_INPUT", "BLOCKED"]},
+          "load_bearing": {"type": "boolean"},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "primitive_selection_law": {"type": "string", "minLength": 1},
+    "primitive_freedom_audit": {
+      "type": "object",
+      "required": ["status", "evidence_refs"],
+      "properties": {
+        "status": {"enum": ["PASS", "BLOCKED", "FAIL"]},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "functional_freedom": {
+      "type": "object",
+      "required": ["classification", "hard_basis_cutoffs", "FF_D", "remaining_parent_dimension", "evidence_refs"],
+      "properties": {
+        "classification": {"enum": ["FINITE", "SATURATED", "GROWING", "UNKNOWN"]},
+        "hard_basis_cutoffs": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "FF_D": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "remaining_parent_dimension": {"type": ["integer", "null"], "minimum": 0},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "same_realization": {
+      "type": "object",
+      "required": ["status", "realization_vector", "map_refs", "uncertainty_refs"],
+      "properties": {
+        "status": {"enum": ["PASS", "BLOCKED", "FAIL", "N_A"]},
+        "realization_vector": {"type": "object"},
+        "map_refs": {"type": "array", "items": {"type": "string"}},
+        "uncertainty_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "observable_blocks": {"type": "array"},
+    "comparators": {"type": "array"},
+    "covariance": {"type": "object"},
+    "attribution_stack": {"type": "object"},
+    "rigidity": {"type": "object"},
+    "promotion_gates": {
+      "type": "object",
+      "required": ["G0", "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10"],
+      "additionalProperties": true
+    },
+    "compute_authorization": {
+      "type": "object",
+      "required": ["blocker_type", "heavy_compute_authorized", "question_can_change_terminal_classification", "frozen_input_refs", "threshold_refs", "output_artifact"],
+      "properties": {
+        "blocker_type": {"enum": ["STRUCTURAL", "NUMERICAL", "STATISTICAL", "NONE"]},
+        "heavy_compute_authorized": {"type": "boolean"},
+        "question_can_change_terminal_classification": {"type": "boolean"},
+        "frozen_input_refs": {"type": "array", "items": {"type": "string"}},
+        "threshold_refs": {"type": "array", "items": {"type": "string"}},
+        "output_artifact": {"type": ["string", "null"]}
+      }
+    },
+    "publication_trace": {
+      "type": "object",
+      "required": ["claim_status", "permitted_claim", "evidence_refs", "forbidden_claims"],
+      "properties": {
+        "claim_status": {"enum": ["ESTABLISHED_EXTERNAL", "DERIVED_KMQGB", "REPRODUCED_EXECUTABLE", "OPEN_BLOCKED", "HYPOTHESIS_ONLY", "FORBIDDEN_OVERCLAIM"]},
+        "permitted_claim": {"type": "string"},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}},
+        "forbidden_claims": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "promotion": {
+      "type": "object",
+      "required": ["ansatz_promoted", "robust_global_residual", "fisher_promoted", "resources_promoted"],
+      "properties": {
+        "ansatz_promoted": {"type": "boolean"},
+        "robust_global_residual": {"type": "boolean"},
+        "fisher_promoted": {"type": "boolean"},
+        "resources_promoted": {"type": "boolean"}
+      }
+    }
+  }
+}
