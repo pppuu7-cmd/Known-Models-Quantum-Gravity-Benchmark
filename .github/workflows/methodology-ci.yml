@@ -58,6 +58,9 @@ jobs:
       - name: Run LQG area-metric birefringence gamma identifiability self-test
         run: python code/lqg_area_metric_birefringence_gamma_identifiability_reference.py
 
+      - name: Run LQG multiscale observable RG transport self-test
+        run: python code/lqg_multiscale_observable_rg_transport_reference.py
+
       - name: Run fail-closed candidate-record validator self-test
         run: python code/kg_candidate_record_validator.py
 
@@ -117,7 +120,7 @@ jobs:
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
           test -s recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md
           test -s recovery/PROVENANCE_CORRECTION_ITER174_CONCURRENT_COLLISION.md
-          for i in $(seq -w 99 176); do test -s recovery/RECOVERY_DELTA_${i}.md; done
+          for i in $(seq -w 99 177); do test -s recovery/RECOVERY_DELTA_${i}.md; done
           test -s protocol/READINESS_METRICS.md
           test -s protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md
           test -s protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md
@@ -146,10 +149,12 @@ jobs:
           test -s paper_iv/O_LQG_AREA_METRIC_GAMMA_RUNNING_BRIDGE_AUDIT_2026-09-10.md
           test -s paper_iv/O_LQG_GAMMA_DUALITY_RG_TANGENCY_GATE_2026.md
           test -s paper_iv/O_LQG_AREA_METRIC_BIREFRINGENCE_GAMMA_IDENTIFIABILITY_GATE_2026.md
+          test -s paper_iv/O_LQG_MULTISCALE_OBSERVABLE_RG_TRANSPORT_GATE_2026.md
           test -s code/lqg_gamma_duality_identifiability_reference.py
           test -s code/lqg_gamma_duality_breaking_identifiability_reference.py
           test -s code/lqg_gamma_duality_rg_tangency_reference.py
           test -s code/lqg_area_metric_birefringence_gamma_identifiability_reference.py
+          test -s code/lqg_multiscale_observable_rg_transport_reference.py
           test -s paper_iv/O_CFS_BEYOND_CONTINUUM_OBSERVABLE_CLOSURE_AUDIT_2026.md
           test -s paper_iv/O_CFS_SURFACE_LAYER_OBSERVABLE_CONTROL_2026.md
           test -s paper_iv/O_CFS_MASS_QUASILOCAL_GRAVITY_OBSERVABLE_AUDIT_2026.md
