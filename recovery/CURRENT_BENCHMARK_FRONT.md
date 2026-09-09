@@ -1,7 +1,7 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-09  
-**KMQGB iteration:** 097  
+**KMQGB iteration:** 098  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
 **Phase:** FIRST HARD DATUM CORRIDOR NARROWED / GRAVITY-NATIVE ORIGIN LAW REQUIRED
@@ -15,7 +15,7 @@ Authority: `protocol/READINESS_METRICS.md`.
 - **R3 — Candidate Gravity scientific readiness: 24%** at fresh external RQIR Iteration 649.
 - **R4 — `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`: 45%.**
 
-Last score change remains Iter060: R2 `88 -> 89`. Iter061–097 are score-neutral under the frozen rubrics because no explicit novel P4 survivor has passed A1–A4/A3 containment.
+Last score change remains Iter060: R2 `88 -> 89`. Iter061–098 are score-neutral under the frozen rubrics because no explicit novel P4 survivor has passed A1–A4/A3 containment.
 
 No robust unique-QG residual is authorized and no KMQGB Candidate Gravity ansatz is promoted.
 
@@ -26,7 +26,7 @@ Use
 - `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md`;
 - `protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md`;
 - `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md`;
-- the new first-hard-datum gates through Iter097.
+- the first-hard-datum gates through Iter098.
 
 Mandatory route:
 
@@ -34,7 +34,7 @@ Mandatory route:
 
 Heavy compute remains forbidden for structural/origin/authority blockers.
 
-## What Iter082–097 established
+## What Iter082–098 established
 
 ### Modified-quantum-dynamics squeeze
 
@@ -54,10 +54,10 @@ Thus ordinary factorization/recursion cannot manufacture KG novelty from the alr
 
 ### Failed synthesis controls
 
-- `SYNTHESIS-001`: `F=1+XF^3` is finite-freedom but exactly melonic/Fuss-Catalan random-tensor architecture -> A3 FAIL.
-- `SYNTHESIS-002`: physical-helicity parquet closure is gravity-sensitive but does not select its irreducible `K4`; Einstein-only input is ordinary GR QFT resummation and inherits C5 renormalization freedom.
+- `SYNTHESIS-001`: finite-freedom ternary self-closure is exactly melonic/Fuss-Catalan random-tensor architecture.
+- `SYNTHESIS-002`: physical-helicity parquet closure does not select its irreducible `K4`; Einstein-only input is ordinary GR QFT resummation and inherits C5 renormalization freedom.
 - `SYNTHESIS-003`: subtraction-free dispersion moves freedom into `Im a_l(s)`/discontinuity functions.
-- `SYNTHESIS-004`: finite 4↔5 soft/splitting loci leave null contact directions such as high-derivative five-graviton contacts.
+- `SYNTHESIS-004`: finite 4↔5 soft/splitting loci leave null high-derivative contact directions.
 - `SYNTHESIS-005`: Schwarz-Pick extremality collapses a causal Herglotz response to a rational Möbius map -> finite mediator class.
 - `SYNTHESIS-006`: trace-anomaly origin fixes a particular nonlocal action but leaves arbitrary Weyl-invariant homogeneous functional freedom.
 
@@ -75,6 +75,8 @@ Hence **generator completeness is required but not sufficient**; the hard seed i
 `protocol/FRESH_LQG_UV_FIXED_POINT_COMPARATOR_2026.md` upgrades covariant LQG/spinfoam: a 2026 candidate UV fixed point can reduce infinite triangulation ambiguity to finite boundary coefficients. Future candidates cannot beat LQG by merely claiming finite boundary data or triangulation independence.
 
 BFSS/matrix hard-amplitude authority remains a strong microscopic-parent comparator.
+
+`protocol/E2_FRESH_GRAVITATIONAL_COMPLETENESS_PRESSURE_2026.md` adds a scoped new-state warning: under the assumptions of a 2026 gravitational-scattering completeness result, a finite charged seed can force an infinite populated charge lattice. Therefore a finite E2 extension cannot assume a finite spectrum without checking whether its own symmetry/UV assumptions require a tower.
 
 ## Exact same-spectrum corridor after Iter095–097
 
@@ -120,7 +122,7 @@ For a same-spectrum branch, the surviving corridor is now primarily
 2. an intrinsic gravitational nonperturbative/transseries hard structure with parent-fixed contour, weight and phase;
 3. a controlled modified factorization/quantum law satisfying probability, composition and no-signalling.
 
-New states/poles/cuts remain possible but route immediately to E2/string/tower/mediator comparators.
+New states/poles/cuts remain possible but route immediately to E2/string/tower/mediator comparators, now including the Iter098 gravitational-completeness pressure where applicable.
 
 ## External RQIR authority — Iter649
 
@@ -148,4 +150,4 @@ Search for the **origin law of the first irreducible hard datum itself**. Requir
 - gravity-specific attribution;
 - all-point generator completeness or a direct route to it;
 - same-parent CTP/retarded structure;
-- immediate survival against full C5, string/q-string, BFSS/matrix, fresh LQG/spinfoam, AS, nonlocal, mediator/KL and environment comparators.
+- immediate survival against full C5, string/q-string, BFSS/matrix, fresh LQG/spinfoam, AS, nonlocal, mediator/KL, environment and applicable E2 completeness/tower comparators.
