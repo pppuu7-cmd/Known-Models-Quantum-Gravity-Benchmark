@@ -83,29 +83,32 @@ jobs:
       - name: Run MISP2 same-lattice fractional-root no-go witness
         run: python code/misp2_shared_clock_root_no_go_reference.py
 
+      - name: Run O3 q-difference uniqueness control
+        run: python code/o3_qdifference_uniqueness_reference.py
+
+      - name: Run O3 self-similar continuum control
+        run: python code/o3_self_similar_continuum_reference.py
+
       - name: Check recovery and construction entrypoints exist
         run: |
           test -s recovery/CURRENT_BENCHMARK_FRONT.md
           test -s recovery/state.json
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
-          test -s recovery/RECOVERY_DELTA_075.md
+          test -s recovery/RECOVERY_DELTA_081.md
           test -s protocol/READINESS_METRICS.md
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
-          test -s protocol/P4_FINITE_RULE_QCA_TRIAGE.md
-          test -s protocol/LOCAL_TT_PROJECTOR_NO_GO.md
-          test -s protocol/MISP2_Q1_BCC_PROSPECTIVE_FREEZE.md
-          test -s protocol/MISP2_Q2_SPIN2_REPRESENTATION_LIFT_CONTROL.md
-          test -s protocol/MISP2_Q2_SHARED_CLOCK_ROOT_NO_GO.md
-          test -s protocol/MISP2_Q2_COMPOSITE_MOMENTUM_SHARING_AUDIT.md
-          test -s protocol/S_LOCAL_QCA_IR_C5_CONTAINMENT.md
-          test -s protocol/MINIMAL_TRIPLE_PRODUCT_P4_AUDIT.md
-          test -s protocol/FINITE_FORM_FACTOR_UV_SOFTNESS_AUDIT.md
           test -s protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md
           test -s protocol/E3_NONPERTURBATIVE_HARD_ATTRIBUTION_GATE.md
           test -s protocol/O1_LORENTZIAN_NP_HARD_SCAN_2026.md
           test -s protocol/O2_CAUSAL_ALGEBRAIC_DYNAMICAL_SELECTION_AUDIT.md
           test -s protocol/O3_RATIONAL_KERNEL_LOCALIZATION_NO_GO.md
           test -s protocol/O3_SEMIGROUP_EXPONENTIAL_UNIQUENESS_CONTROL.md
+          test -s protocol/O3_QDIFFERENCE_QPOCHHAMMER_UNIQUENESS_CONTROL.md
+          test -s protocol/O3_SELF_SIMILAR_CONTINUUM_KERNEL_CONTROL.md
+          test -s protocol/O3_KALLEN_LEHMANN_CONTINUUM_LOCALIZATION_GATE.md
+          test -s protocol/FRESH_BFSS_HARD_AMPLITUDE_COMPARATOR_2026.md
+          test -s protocol/O4_STINESPRING_DILATION_ATTRIBUTION_GATE.md
+          test -s protocol/O4_MODIFIED_QUANTUM_DYNAMICS_FRESH_AUDIT_2026.md
           test -s external_rqir_checks/iter649_matched_source_born_factor_audit.md
