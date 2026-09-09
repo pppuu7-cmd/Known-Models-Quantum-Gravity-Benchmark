@@ -8,11 +8,11 @@ The filename is historical. Candidate-Gravity design is conditional and **not** 
 2. Read `protocol/READINESS_METRICS.md`, `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md`, and `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`.
 3. Read `post_freeze_paper_iv_wave_01/README.md` and `post_freeze_paper_iv_closure_wave_02/README.md`.
 4. Read `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md` and `.json`.
-5. Read recovery deltas through `RECOVERY_DELTA_170.md`; retain `PROVENANCE_CORRECTION_POST116_ID_COLLISION.md` for older chronology.
-6. Read `code/post_freeze_paper_iv_governance_validator.py` and `code/lqg_gamma_duality_identifiability_reference.py`.
+5. Read recovery deltas through `RECOVERY_DELTA_173.md`; retain `PROVENANCE_CORRECTION_POST116_ID_COLLISION.md` for older chronology.
+6. Read `code/post_freeze_paper_iv_governance_validator.py`, `code/lqg_gamma_duality_identifiability_reference.py`, and `code/lqg_gamma_duality_breaking_identifiability_reference.py`.
 7. Refresh external RQIR Candidate-Gravity authority before quoting R3 or reactivating Candidate Gravity.
 
-## Stable metrics — Iter170
+## Stable metrics — Iter173
 
 - **R1 repository readiness = 92%**;
 - **R2 KMQGB methodology/material readiness = 90%**;
@@ -39,40 +39,53 @@ No one of `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUI
 
 ## Closure Wave 02
 
-### CW2-01 / O-AS — priority 1
+### CW2-01 / O-AS — publication-triggered priority
 
-Physical Lorentzian scalar scattering already exists. Remaining target:
+The scalar-scattering programme now publicly reports a Lorentzian-resummed gravitational contact contribution, but stable same-realization equations/data/error propagation are not yet frozen.
 
-`SAME_REALIZATION_CONTACT_COMPLETE_DIFFEO_ERROR_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE`.
+Exact blocker:
 
-Need one frozen `A_s+A_t+A_u+A4` realization with matched species/crossing/truncation/trajectory/normalisation/error budget and same-domain comparator.
+`STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE`.
 
-### CW2-02 / O-LQG — priority 2
+Do not repeatedly record the same absence; re-audit when a stable contact-amplitude preprint/revision/data package appears.
 
-Preferred route is gamma-duality, not generic entropy corrections.
+### CW2-02 / O-LQG — active analytic priority
 
-Key conditional relations:
+Preferred route is gamma-duality.
 
-`2 f_GB/f_CS = gamma - 1/gamma`
+The top-down problem is reduced to an identifiable renormalized matching object. Define
 
-`1/gamma - gamma = (pi/8)(r+8 n_T)/Pi`.
+`Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)`
 
-The observable relation is structurally identifiable for positive gamma if `Pi!=0`. Missing authorities are the complete-spinfoam -> renormalized gamma-dual EFT map and the parameter identity/running map among microscopic, effective and geometry gamma.
+and generalized primordial combination
+
+`q = (pi/8)(r+8 n_T)/Pi = 1/gamma_EFT - gamma_EFT - Delta_gamma`.
+
+Iter173 establishes:
+
+- q alone has structural rank 1 for `{gamma_EFT,Delta_gamma}`;
+- detector precision cannot lift this degeneracy;
+- a geometry observable restores full rank only if a derived parameter-identity map makes gamma shared across EFT and geometry;
+- independently fitted `gamma_geom` leaves the system underidentified.
+
+Exact current target:
+
+`IDENTIFIABLE_RENORMALIZED_GAMMA_MATCH = {gamma_micro->gamma_EFT, Delta_gamma prediction/prior, optional gamma_geom map}`.
+
+Strongest route: prove a non-anomalous renormalized gamma-duality relation (`Delta_gamma=0` within controlled uncertainty) and the gamma identity/running map. A nonzero predicted Delta is acceptable if it is fixed by the parent and the enlarged fingerprint remains identifiable.
 
 ### CW2-03 / O-CFS — priority 3
 
-CFS has native surface-layer observables, mass/quasilocal curvature and a 2026 direct geometric Einstein derivation with a systematic correction generator.
+CFS has native observables and a direct geometric Einstein derivation with a correction generator.
 
 Exact missing object:
 
 `FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR`.
 
-Section 7 of the geometric derivation says the Planck-order, osculation/torsion, regularizing-vector and modified-measure corrections still need to be worked out in detail.
-
 ## Heavy compute
 
-**IDLE.** Current blockers are authority/analytic-bridge problems. Numerical work begins only after one CW2 object, its parameter/state/regularization law and comparator are prospectively frozen.
+**IDLE.** The active LQG blocker is analytic/structural. Numerical detector forecasting cannot solve the gamma/Delta degeneracy and is therefore downstream.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB с Iter170. RQIR Core v1.0 frozen. R1=92, R2=90, R3=24, legacy R4=45 paused. PF1=5/5, CW2=0/3, Paper IV=NOT_YET_AUTHORIZED. Приоритет O-AS same-realization contact-complete scattering; затем O-LQG gamma top-down/parameter bridge; затем O-CFS первый explicit correction tensor. Не меняй RQIR Core и не трактуй BLOCKED как NEW_REQUIRED. Heavy compute только после frozen closure object.`
+`Продолжай KMQGB с Iter173. RQIR Core v1.0 frozen. R1=92, R2=90, R3=24, legacy R4=45 paused. PF1=5/5, CW2=0/3, Paper IV=NOT_YET_AUTHORIZED. O-AS только при новой stable contact authority. Активный фронт O-LQG: renormalized gamma-duality Ward/nonrenormalization protection, Delta_gamma и gamma_micro->gamma_EFT->gamma_geom matching. Heavy compute держать idle до frozen analytic bridge. Не менять RQIR Core и не трактовать BLOCKED как NEW_REQUIRED.`
