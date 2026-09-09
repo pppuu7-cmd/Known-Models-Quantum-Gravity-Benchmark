@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use KMQGB, please cite this repository and the specific frozen commit or release used."
+title: "Known Models / Quantum Gravity Benchmark (KMQGB)"
+type: software
+authors:
+  - family-names: "pppuu7-cmd"
+repository-code: "https://github.com/pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark"
+url: "https://github.com/pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark"
+license: MIT
+version: "1.0.0-infrastructure"
+date-released: 2026-09-10
+keywords:
+  - quantum gravity
+  - benchmarking
+  - reproducibility
+  - RQIR
+  - model comparison
