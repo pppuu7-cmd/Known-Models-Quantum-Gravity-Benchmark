@@ -1,10 +1,10 @@
 {
-  "schema_version": "5.9",
+  "schema_version": "6.0",
   "updated": "2026-09-09",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 122,
-  "phase": "PRIMITIVE_HARD_DATUM_PLUS_COMPLEXITY_STATE_LAW_REQUIRED__POST116_GROWTH_AND_MICROSTATE_CONTROLS__RQIR675_PREREQUISITE_EXHAUSTION",
+  "kmqgb_iteration": 134,
+  "phase": "UNIQUE_INTERACTING_OPERATOR_OR_PROCESS_ORIGIN_LAW_REQUIRED__DETECTOR_VISIBLE_RESIDUAL_GATE_ADDED__RQIR_PROGRAMME71_CG24",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
@@ -22,93 +22,94 @@
   "current_task": {
     "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
     "completion_R4_percent": 45,
-    "status": "NO_P4_SURVIVOR__PRIMITIVE_HARD_DATUM_AND_ITS_COMPLEXITY_STATE_TRANSITION_LAW_MUST_BE_DERIVED",
+    "status": "NO_P4_SURVIVOR__FINITE_GENERATION_BLUEPRINTS_EXIST__UNIQUE_GRAVITY_NATIVE_INTERACTING_OPERATOR_PROCESS_SELECTION_LAW_MISSING",
     "closed_recent": [
-      "celestial_single_particle_associativity_without_multiparticle_completion",
-      "entire_Herglotz_same_response_nonlocal_shortcut",
-      "elastic_analyticity_unitarity_without_CDD_inner_origin_law",
-      "causal_diamond_entanglement_equilibrium_as_unique_quantum_hard_parent",
-      "anomaly_free_refoliation_closure_as_unique_quantum_hard_parent",
-      "hidden_zero_locus_without_degree_growth_order_law",
-      "boundary_at_infinity_recursion_without_boundary_origin_law",
-      "eikonal_no_time_advance_as_unique_selector",
-      "multi_shift_consistency_as_removal_of_contact_nullspace",
-      "action_only_nonperturbative_parent_without_state_contour_thimble_data",
-      "median_resurgence_as_unique_transseries_sector_selector",
-      "hidden_zero_plus_retarded_CTP_consistency_as_removal_of_C5_contact_nullspace",
-      "black_hole_entropy_unitarity_as_unique_exclusive_S_matrix_selector",
-      "complex_growth_minimality_without_physical_growth_objective",
-      "black_hole_entropy_density_without_microstate_transition_law",
       "black_hole_entropy_plus_ETH_without_smooth_envelope_higher_cumulant_law",
-      "post116_iteration_id_collision_repaired_with_provenance_note",
-      "RQIR675_external_prerequisite_exhaustion_sync"
+      "KMS_detailed_balance_without_absolute_spectral_envelope",
+      "finite_positive_spectral_moments_without_unique_measure",
+      "finite_linear_all_moment_recurrence_collapses_to_atomic_finite_mediator_spectrum",
+      "nonlinear_all_moment_recursion_positive_control_random_matrix_contained",
+      "black_hole_monodromy_wave_operator_positive_G2_control_without_intrinsic_K4",
+      "Lorentzian_asymptotic_safety_interacting_functional_generator_comparator_upgrade",
+      "process_matrix_consistency_convex_nonuniqueness_and_nongravity_attribution",
+      "quantum_corner_representation_gluing_area_law_without_unique_transition_dynamics",
+      "spectral_functional_determinant_all_vertex_generator_QFT_comparator",
+      "equivalence_principal_symbol_without_full_operator_selection",
+      "source_traceable_detector_visible_residual_phase_covariance_gate",
+      "RQIR_programme_PaperIII_physical_PSD_sync_CandidateGravity_still_24"
     ],
     "positive_controls_recent": [
       "MHV_Einstein_hidden_zero_plus_fixed_degree_rigidity",
       "GR_BCFW_bonus_scaling_constructibility",
-      "finite_all_point_topological_recursion_but_matrix_string_contained",
-      "gravity_native_celestial_Ward_all_point_sector_but_GR_contained",
-      "black_hole_entropy_as_gravity_native_coarse_state_density_but_not_S_matrix"
+      "finite_nonlinear_moment_generator_can_fix_continuous_spectrum_but_random_matrix_contained",
+      "black_hole_wave_operator_plus_causal_boundary_conditions_can_fix_nonrational_probe_spectrum",
+      "single_covariant_operator_plus_TrLog_can_generate_all_point_one_loop_metric_vertices_and_CTP_route",
+      "RQIR_source_traceable_physical_covariance_preserves_or_kills_science_direction_as_expected_under_real_nuisance_geometry"
     ],
     "open": [
-      "derive_first_comparator_orthogonal_irreducible_hard_datum_from_finite_gravity_native_parent",
-      "derive_physical_complexity_law_degree_growth_zero_boundary_contour_or_state_transition_law_that_fixes_the_primitive_datum",
-      "derive_all_point_generator_from_same_parent_without_independent_higher_point_functions_or_cumulants",
-      "derive_same_parent_Lorentzian_CTP_retarded_block",
+      "derive_finite_gravity_native_law_selecting_complete_interacting_operator_or_process_not_merely_principal_symbol",
+      "derive_first_comparator_orthogonal_irreducible_hard_4g_or_higher_datum_from_that_parent",
+      "fix_local_renormalization_null_sector_state_measure_and_Lorentzian_contour_from_same_parent",
+      "derive_all_point_generator_without_independent_higher_point_functions_or_cumulants",
+      "derive_same_parent_CTP_retarded_block",
       "prove_gravity_specific_attribution_and_comparator_escape",
       "P4_explicit_novel_parent_principle",
       "P5_structural_comparator_survival",
       "P6_preansatz_machine_record_for_survivor"
     ],
-    "anti_gaming_rule": "negative gates, comparator upgrades, recovery work, provenance correction and positive/corroborative controls do not increase R4; only an explicit finite parent satisfying the P4 deliverable and surviving A3 can score P4"
+    "anti_gaming_rule": "negative gates, comparator upgrades, detector-methodology improvements, external Paper-III progress and positive controls do not increase R4; only an explicit finite parent satisfying P4 and surviving A3 can score P4"
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
     "functional_freedom_no_go": "protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md",
-    "zero_cross_order_gate": "protocol/P4_HIDDEN_ZERO_CROSS_ORDER_NONUNIQUENESS_GATE.md",
-    "zero_degree_growth_corroboration": "protocol/P4_HIDDEN_ZERO_DEGREE_GROWTH_ORIGIN_GATE.md",
-    "infinity_boundary_gate": "protocol/P4_BCFW_INFINITY_BOUNDARY_ORIGIN_DATA_GATE.md",
-    "infinity_boundary_corroboration": "protocol/P4_BOUNDARY_AT_INFINITY_ORIGIN_DATA_GATE.md",
-    "multi_shift_gate": "protocol/P4_MULTI_SHIFT_CONTACT_NULLSPACE_GATE.md",
-    "Lorentzian_contour_gate": "protocol/P4_LORENTZIAN_CONTOUR_THIMBLE_ORIGIN_GATE.md",
-    "resurgence_parameter_gate": "protocol/P4_RESURGENT_TRANSSERIES_PARAMETER_ORIGIN_GATE.md",
-    "zero_retarded_crossrep_gate": "protocol/P4_ZERO_RETARDED_CROSSREP_CONTACT_NULLSPACE_GATE.md",
-    "GR_growth_positive_control": "protocol/P4_GR_BONUS_SCALING_CONSTRUCTIBILITY_CONTROL.md",
-    "black_hole_entropy_original_synthesis": "candidate_synthesis/SYNTHESIS_010_BLACK_HOLE_ENTROPY_S_MATRIX_PARENT.md",
-    "post116_synthesis_attempts": [
-      "candidate_synthesis/SYNTHESIS_011_ALL_DEFORMATION_BOUNDARY_CONSISTENCY.md",
-      "candidate_synthesis/SYNTHESIS_012_COMPLEX_GROWTH_MINIMALITY_SELECTOR.md",
-      "candidate_synthesis/SYNTHESIS_013_BLACK_HOLE_ENTROPY_DENSITY_PARENT.md",
-      "candidate_synthesis/SYNTHESIS_014_BLACK_HOLE_ETH_MATRIX_PARENT.md"
+    "spectral_moment_nonuniqueness_gate": "protocol/P4_FINITE_SPECTRAL_MOMENT_NONUNIQUENESS_GATE.md",
+    "linear_moment_atomic_collapse_gate": "protocol/P4_LINEAR_MOMENT_RECURRENCE_ATOMIC_COLLAPSE_GATE.md",
+    "nonlinear_moment_positive_control": "protocol/P4_NONLINEAR_MOMENT_RECURSION_RANDOM_MATRIX_CONTROL.md",
+    "fresh_AS_interacting_comparator": "protocol/FRESH_AS_INTERACTING_VERTEX_GENERATOR_COMPARATOR_2026.md",
+    "process_matrix_gate": "protocol/O4_PROCESS_MATRIX_GRAVITY_ATTRIBUTION_UNIQUENESS_GATE.md",
+    "principal_symbol_operator_gate": "protocol/P4_PRINCIPAL_SYMBOL_EQUIVALENCE_OPERATOR_NONUNIQUENESS_GATE.md",
+    "detector_visible_residual_gate": "protocol/P5_DETECTOR_VISIBLE_RESIDUAL_PHYSICAL_COVARIANCE_GATE.md",
+    "detector_visible_reference_code": "code/detector_visible_residual_physical_covariance_reference.py",
+    "recent_synthesis_attempts": [
+      "candidate_synthesis/SYNTHESIS_015_BLACK_HOLE_ETH_KMS_PARENT.md",
+      "candidate_synthesis/SYNTHESIS_016_BLACK_HOLE_MONODROMY_SPECTRAL_PARENT.md",
+      "candidate_synthesis/SYNTHESIS_017_QUANTUM_CORNER_STATE_LAW_PARENT.md",
+      "candidate_synthesis/SYNTHESIS_018_SPECTRAL_DETERMINANT_ALL_VERTEX_PARENT.md"
     ],
-    "primitive_data_lesson": "factorization, dispersion, Ward/OPE relations, multi-shift recursion, entropy equilibrium, constraint closure, causal inequalities, resurgence, thermodynamic state counting and ETH statistical templates can constrain or transport hard information but do not define a novel parent unless the primitive boundary/zero/degree/contour/state/microstate-transition data are physically selected",
-    "growth_ceiling_lesson": "minimal local rational complex growth selects the GR constructible control, while ultrasoft Regge plus minimal mandated zeros is string/dual-resonant controlled; any intermediate growth class must itself be derived by a gravity-native law",
-    "black_hole_transition_lesson": "S_BH fixes coarse state-density scaling and ETH can fix a statistical template, but the graviton hard hierarchy still requires parent-specific smooth envelopes, higher cumulants/correlations and phases",
-    "rigidity_positive_lesson": "GR hidden-zero plus fixed degree and GR bonus large-z scaling show that finite hard-amplitude rigidity is achievable; novelty requires a new physically derived rigidity law rather than a new reconstruction algorithm",
-    "provenance_correction": "recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md",
-    "preferred_current_target": "finite gravity-native law selecting both the first comparator-orthogonal hard datum and the complexity/state/transition rule that makes it unique, with absolute normalization, all-point generation, same-parent Lorentzian CTP and immediate comparator survival"
+    "finite_generation_lesson": "finite data can generate infinite physical structure: nonlinear moment recursions can fix continuous spectra, boundary-value operators can fix nonrational response functions, and TrLog of one operator can generate an all-point loop vertex hierarchy; the unresolved primitive is physical selection of the interacting operator/process itself",
+    "operator_selection_lesson": "equivalence principle, covariance and causal principal symbol do not fix lower-order curvature terms, gauge/ghost complex, state/contour or local renormalization data",
+    "detector_visibility_lesson": "theory-level comparator orthogonality must be followed by detector mapping, source-traceable covariance whitening and apparatus nuisance profiling; a locally nonzero theoretical residual may be detector-invisible",
+    "preferred_current_target": "finite gravity-native origin law selecting the complete interacting operator/process plus state/measure/contour/local-null data, yielding normalized hard 4g/higher, all-point generation and same-parent CTP observables with detector-visible comparator-orthogonal consequences"
+  },
+  "methodology_open_item": {
+    "component": "residual/identifiability/rigidity",
+    "current_score": "19/20",
+    "remaining_closure": "detector-facing nonlinear/readout certificate equivalent to external RQIR next gate P=(1+C cos Phi)/2 with contrast/readout/calibration nuisance; phase-Gaussian physical covariance alone does not earn the final point"
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_BY_SCIENTIFIC_DESIGN",
-    "current_reason": "KMQGB has no frozen A1-A3 survivor for numerical discrimination; external RQIR675 also certifies no currently authorized independent compute gate",
-    "allowed_when": "a finite gravity-native parent survives A1-A3 and yields a preregistered hard/CTP/comparator/holdout quantity, or new RQIR authority closes one of its prerequisite gaps"
+    "current_reason": "KMQGB has no frozen A1-A3 novel parent survivor; external Candidate-Gravity authority remains Iter675/24 with no independent compute gate",
+    "allowed_when": "a finite gravity-native parent survives A1-A3 and yields a preregistered hard/CTP/comparator/holdout quantity, or new external Candidate-Gravity authority closes one of M1-M4"
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "authoritative_research_iteration_observed": 675,
-    "model_readiness_percent": 24,
-    "scientific_status": "present prerequisite exhaustion under committed authority; no robust comparator-subtracted residual and no active promotable ansatz",
-    "missing_authorities": {
+    "candidate_gravity_authoritative_iteration_observed": 675,
+    "candidate_gravity_model_readiness_percent": 24,
+    "programme_working_readiness_percent": 71,
+    "paper_III_strengthened_readiness_percent": 68,
+    "paper_IV_readiness_percent": 55,
+    "scientific_status": "Paper III physical PSD/covariance branch advanced, but Candidate Gravity still has no robust comparator-subtracted residual or promotable ansatz",
+    "missing_candidate_gravity_authorities": {
       "M1": "same-parent physical MSSC001 conserved detector/asymptotic observable bridge with normalization and boundary/IR convention",
       "M2": "matched same-parent Source/Born/contact completion in that physical observable with pole/cut origin classified",
       "M3": "robust nonzero comparator-subtracted residual after M1/M2",
       "M4": "actual Tr U1 if a future C5 route requires it"
     },
-    "active_computation": "none",
-    "heavy_compute_authorized": false,
-    "next_scientific_gate": "new external authority must close M1-M4 as applicable or open a genuinely independent admissible branch before another compute launch"
+    "paper_III_next_gate": "detector-facing transition-probability likelihood with finite contrast, contrast drift, readout gain/detection noise and conservative reference-transfer uncertainty",
+    "active_candidate_gravity_computation": "none",
+    "heavy_compute_authorized": false
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
@@ -116,21 +117,19 @@
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
-    "latest_external_rqir_check": "external_rqir_checks/iter675_prerequisite_exhaustion_audit.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_122.md",
+    "latest_external_rqir_check": "external_rqir_checks/iter133_rqir_programme_paper3_physical_psd_sync.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_134.md",
     "provenance_correction": "recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md"
   },
-  "next_wave_status": "PHYSICALLY_DERIVED_PRIMITIVE_HARD_DATUM_AND_COMPLEXITY_TRANSITION_LAW_REQUIRED",
+  "next_wave_status": "UNIQUE_GRAVITY_NATIVE_INTERACTING_OPERATOR_OR_PROCESS_SELECTION_LAW_REQUIRED",
   "next_actions": [
     "Refresh external RQIR before every R3 or heavy-compute statement",
-    "Do not begin from another chosen propagator, spectral density, zero list, bootstrap objective, entropy functional, boundary recursion, transseries parameter or ETH envelope",
-    "For zero-based routes derive zero locus plus multiplicity plus degree/growth/order plus normalization before A3",
-    "For rational recursion routes derive the non-GR boundary-at-infinity law itself rather than reconstructing it from extra shifts",
-    "For intermediate growth routes derive the growth exponent/order/indicator or Regge law physically rather than minimizing a chosen objective",
-    "For E3 routes specify action, measure, state, Lorentzian contour/thimbles, Stokes data and transseries parameters from finite parent information",
-    "For black-hole routes derive microscopic resonance/transition phases; entropy plus ETH requires parent-fixed smooth graviton envelopes and higher cumulants",
-    "Require all-point generator completeness or an explicit route to it and same-parent CTP/retarded continuation",
-    "Apply immediate A3 against full C5, Einstein/hidden-zero controls, string/q-string, BFSS/matrix, JT/random-matrix, LQG/spinfoam, AS, nonlocal, mediator/KL, black-hole and environment comparators",
+    "Do not start from another chosen operator, propagator, spectral density, process matrix or entropy functional; derive the operator/process selection law itself",
+    "For operator routes derive principal symbol, all lower-order curvature terms, gauge/ghost complex, state/boundary/contour and local renormalization/null sector from one finite principle",
+    "Require a normalized hard 4g/higher observable, all-point generation and same-parent CTP/retarded continuation",
+    "Apply immediate A3 against full C5, ordinary covariant QFT/TrLog, Lorentzian AS, string/q-string, BFSS/matrix, JT/random-matrix, LQG/spinfoam/corner, causal/nonlocal and process-matrix comparators",
+    "For any future structural residual require detector-visible certification after source-traceable covariance and nuisance profiling",
+    "Keep R2 residual/identifiability/rigidity at 19/20 until a nonlinear detector/readout certificate is incorporated",
     "Keep heavy compute idle until a frozen discriminating object exists"
   ]
 }
