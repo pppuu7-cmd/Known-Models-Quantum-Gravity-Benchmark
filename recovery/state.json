@@ -1,10 +1,10 @@
 {
   "schema_version": "5.5",
-  "updated": "2026-09-08",
+  "updated": "2026-09-09",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 63,
-  "phase": "MISP2_Q1_LOCAL_TT_NO_GO_CLOSED__Q1_GRAPH_REGISTER_FREEZE_NEXT",
+  "kmqgb_iteration": 75,
+  "phase": "O3_FINITE_RULE_NONRATIONAL_KERNEL_SEARCH__RQIR649_SYNCED",
   "readiness_metrics": {
     "rubric": "protocol/READINESS_METRICS.md",
     "repository_readiness_R1_percent": 92,
@@ -22,7 +22,7 @@
   "current_task": {
     "id": "MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH",
     "completion_R4_percent": 45,
-    "status": "MISP2_Q1_Q2_CONSTRUCTIVE_CLASSIFICATION__P4_NOT_YET_SURVIVED",
+    "status": "O3_NONRATIONAL_FINITE_RULE_SEARCH__NO_P4_SURVIVOR_YET",
     "closed": [
       "P1_known_principle_saturation",
       "P2_multi_representation_background_rigidity",
@@ -30,57 +30,63 @@
       "wave38_composition_gluing_duality_prefilter",
       "functional_freedom_no_go_prefilter",
       "construction_playbook_process_freeze",
-      "RQIR621_normalization_graph_rank_sync",
-      "finite_rule_QCA_control_triage",
-      "exact_finite_range_local_TT_projector_no_go"
+      "MISP2_free_QCA_control_branch_without_Beyond_C5_escape",
+      "local_TT_projector_no_go",
+      "naive_spin2_representation_lift_shared_clock_fail",
+      "same_lattice_fractional_root_repair_fail",
+      "composite_QCA_internal_wavefunction_A2_blocker",
+      "local_analytic_QCA_IR_full_C5_containment",
+      "one_pole_triple_product_chiral_string_containment",
+      "finite_form_factor_QEA_selection_fail",
+      "P4_constructive_survivor_matrix_freeze",
+      "E3_nonperturbative_gravity_attribution_gate",
+      "O1_audited_set_no_current_hard_near_survivor",
+      "O2_audited_causal_algebraic_set_no_current_hard_near_survivor",
+      "O3_rational_kernel_localization_no_go",
+      "O3_exponential_semigroup_A2_positive_control_A3_comparator_fail",
+      "RQIR649_matched_Source_Born_relative_normalization_sync"
     ],
     "open": [
-      "MISP2_Q1_prospective_BCC_graph_register_freeze",
-      "MISP2_Q2_free_two_helicity_control_classification",
-      "MISP2_Q3_interacting_constraint_preserving_update",
-      "MISP2_Q4_cubic_to_quartic_rigidity",
-      "MISP2_Q5_hard_4pt_CTP_derivation",
+      "O1_reopen_only_for_intrinsic_gravitational_parent_fixed_hard_CTP_sector",
+      "O2_reopen_only_for_finite_dynamical_uniqueness_mechanism",
+      "O3_finitely_generated_nonrational_kernel_with_hard_comparator_escape",
+      "O4_fundamental_modified_quantum_dynamics",
       "P4_explicit_novel_parent_principle",
       "P5_structural_comparator_survival",
       "P6_preansatz_machine_record_for_survivor"
     ],
-    "anti_gaming_rule": "free spin2/QCA existence is a comparator/control gate; R4 can increase only from an interacting finite-freedom parent deriving the required hard relation"
+    "anti_gaming_rule": "negative audits and search routing do not increase R4; only an explicit constructive P4 survivor closes scored P4 credit"
   },
   "candidate_gravity_design": {
     "globally_authorized_robust_unique_qg_residuals": 0,
     "ansatz_promoted": false,
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
-    "finite_rule_qca_triage": "protocol/P4_FINITE_RULE_QCA_TRIAGE.md",
-    "local_tt_projector_no_go": "protocol/LOCAL_TT_PROJECTOR_NO_GO.md",
-    "local_tt_projector_reference": "code/local_tt_projector_no_go_reference.py",
+    "survivor_matrix": "protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md",
     "functional_freedom_no_go": "protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md",
-    "current_constructive_target_id": "MISP2-QCA",
-    "current_constructive_target_status": "RESEARCH_TARGET_NOT_PROMOTED_PARENT",
-    "Q1_locality_result": "exact translation-invariant finite-range TT projector impossible; S-local microarchitecture must use local redundant/constrained variables",
-    "Q1_fail_code": "BLOCKED__MICROSCOPIC_TT_PROJECTION_IS_NONLOCAL",
-    "free_spin2_novelty_guardrail": "higher-spin local unitary cellular automata have historical precedents; free Q2 solutions are comparator/control evidence, not KG novelty",
-    "MISP2_program": [
-      "Q1_freeze_minimal_graph_and_local_redundant_spin2_register",
-      "Q2_free_constrained_two_helicity_classification",
-      "Q3_interacting_constraint_preserving_local_update_and_GR_cubic",
-      "Q4_quartic_higher_rigidity_from_same_update",
-      "Q5_physical_4graviton_Floquet_and_same_parent_CTP"
-    ]
+    "E3_attribution_gate": "protocol/E3_NONPERTURBATIVE_HARD_ATTRIBUTION_GATE.md",
+    "O1_scan": "protocol/O1_LORENTZIAN_NP_HARD_SCAN_2026.md",
+    "O2_audit": "protocol/O2_CAUSAL_ALGEBRAIC_DYNAMICAL_SELECTION_AUDIT.md",
+    "O3_rational_localization_no_go": "protocol/O3_RATIONAL_KERNEL_LOCALIZATION_NO_GO.md",
+    "O3_semigroup_uniqueness_control": "protocol/O3_SEMIGROUP_EXPONENTIAL_UNIQUENESS_CONTROL.md",
+    "preferred_current_target": "finite functional/dynamical law whose unique solution is non-rational, not exponential GR dressing, parent-fixed in retarded/CTP prescription, and yields a hard comparator-orthogonal spin2 relation",
+    "rational_kernel_rule": "finite rational kernels and finite-dimensional hidden resolvents localize to finite auxiliary/mediator or higher-derivative systems and do not constitute genuine O3 escape",
+    "positive_A2_control": "analytic semigroup law F(z+w)=F(z)F(w), F(0)=1 uniquely gives F(z)=exp(cz), proving finite functional laws can remove arbitrary function freedom",
+    "positive_A2_control_verdict": "A2_PASS_BUT_A3_KNOWN_ENTIRE_NONLOCAL_COMPARATOR_AND_NO_GENERIC_NEW_TREE_GRAVITON_RESIDUAL"
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_BY_SCIENTIFIC_DESIGN",
-    "current_reason": "Q1/Q2 are exact symbolic/representation classification gates; no frozen interacting spin2 update exists",
-    "allowed_when": "Q1-Q4 freeze a finite-freedom update and numerical work can discriminate its hard scattering, convergence or holdout prediction"
+    "current_reason": "the active blockers are structural uniqueness/comparator questions; no frozen novel hard object exists whose numerical evaluation can decide promotion",
+    "allowed_when": "a finite-rule nonrational parent is frozen and numerical work tests a preregistered hard/CTP/comparator/holdout prediction"
   },
   "external_candidate_gravity_authority": {
     "repository": "pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction",
-    "authoritative_research_iteration_observed": 621,
+    "authoritative_research_iteration_observed": 649,
     "model_readiness_percent": 24,
-    "remaining_native_binding_dimension_complex": 1,
-    "remaining_native_binding_parameter": "N_native",
-    "remaining_native_binding_status": "BLOCKED__ONE_COMMON_COMPLEX_CROSS_SECTOR_SCALE_NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY",
-    "root_or_q2_specific_normalization_allowed": false,
-    "next_scientific_gate": "derive one common source-to-Gamma3 absolute phase/coupling bridge prospectively without Candidate/comparator fitting"
+    "scientific_status": "matched Source/Born one-common-factor class not established; projectivization cannot remove independent relative source/native normalization rho; open-response proxy rejected",
+    "relative_source_native_factor": "rho=lambda_source/lambda_native",
+    "projective_subtraction_status": "BLOCKED__P[a-rho*b]_DEPENDS_ON_UNKNOWN_RHO",
+    "open_response_proxy_allowed": false,
+    "next_scientific_gate": "derive or locate same-parent Source/Born contribution inside the closed retarded gravitational Gamma3 observable with frozen CTP/Legendre normalization and pole/cut origin"
   },
   "design_recovery": {
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
@@ -88,21 +94,19 @@
     "restore": "recovery/RESTORE_FROM_NEW_CHAT.md",
     "readiness_metrics": "protocol/READINESS_METRICS.md",
     "construction_playbook": "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
-    "finite_rule_qca_triage": "protocol/P4_FINITE_RULE_QCA_TRIAGE.md",
-    "local_tt_no_go": "protocol/LOCAL_TT_PROJECTOR_NO_GO.md",
-    "latest_external_rqir_check": "external_rqir_checks/iter621_normalization_graph_rank_audit.md",
-    "latest_delta": "recovery/RECOVERY_DELTA_063.md"
+    "survivor_matrix": "protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md",
+    "latest_external_rqir_check": "external_rqir_checks/iter649_matched_source_born_factor_audit.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_075.md"
   },
-  "next_wave_status": "MISP2_Q1_BCC_REGISTER_PROSPECTIVE_FREEZE_REQUIRED",
+  "next_wave_status": "O3_FINITE_RULE_NONRATIONAL_HARD_SELECTOR_REQUIRED",
   "next_actions": [
     "Refresh external RQIR before every R3/heavy-compute statement",
-    "Prospectively freeze BCC as the first MISP2 Q1 graph control before solving the spin2 unitary",
-    "Choose a local constrained spin2 ambient representation rather than an exact TT-only cell",
-    "Audit historical higher-spin QCA constructions as Q2 comparators before claiming novelty",
-    "Classify exact finite-range unitary symbols preserving the local constraint kernel and require exactly two gapless physical helicity-2 modes",
-    "Require shared microscopic clock/light-cone matching before coupling to matter",
-    "Only after Q2 survival classify an interacting local update preserving the constraint/code subspace",
-    "Match GR cubic self-coupling and derive rather than add quartic/higher gates",
-    "Keep heavy compute idle until a frozen interacting finite-freedom update exists"
+    "Search finite q-difference/differential/recursion laws that uniquely generate non-rational kernels from finite data",
+    "Reject q-string/Coon/Virasoro-Shapiro or other known string/amplitude comparator realizations at A3 immediately",
+    "Reject finite rational resolvents at the O3 localization gate",
+    "Reject any non-rational function whose functional law is chosen post hoc rather than physically derived",
+    "Require a parent-fixed retarded/CTP prescription and one explicit hard spin2 relation before P4 credit",
+    "If O3 finite-rule classes collapse to registered comparators, move to O4 rather than adding more form-factor ansatzes",
+    "Keep heavy compute idle until a frozen discriminating hard object exists"
   ]
 }
