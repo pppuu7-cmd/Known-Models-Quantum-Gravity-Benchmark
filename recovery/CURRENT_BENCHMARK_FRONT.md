@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
-**Updated:** 2026-09-09  
-**KMQGB iteration:** **153**  
-**Phase:** **RQIR Core v1.0 FROZEN / Paper-IV decision closure / O-AS contact-complete priority**.
+**Updated:** 2026-09-10  
+**KMQGB iteration:** **170**  
+**Phase:** **RQIR Core v1.0 FROZEN / Paper-IV Closure Wave 02 / three exact bridges**.
 
 ## Stable metrics
 
@@ -11,68 +11,80 @@
 - **R3 external Candidate Gravity readiness: 24%.**
 - **Legacy parent-search R4: 45% — PAUSED / CONDITIONAL ON PAPER IV.**
 - **Post-freeze PF1 regression: 5/5 = 100% terminal.**
+- **Closure Wave 02: 0/3 terminal.**
 
-No readiness score changes at Iter153.
+No readiness-score changes since Iter145.
 
 ## Frozen architecture
 
-RQIR Core **v1.0 is FROZEN** and Papers I–III are **100% scientific/material CLOSED**. KMQGB is the active Paper-IV known-model proving ground. Future Candidate Gravity remains separate and may not tune the frozen judge.
-
-Governance is enforced by `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md` and `code/post_freeze_paper_iv_governance_validator.py`.
+RQIR Core **v1.0 remains FROZEN** and Papers I–III remain **100% scientific/material CLOSED**. KMQGB is the active Paper-IV proving ground. Candidate Gravity remains separate; its latest directly refreshed authority is Iter675 / 24% with no promotable ansatz or robust residual.
 
 ## Paper-IV global decision
 
-Authority: `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md`.
-
-Current result:
-
 **`NOT_YET_AUTHORIZED`**.
 
-None of `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED` has met its proof obligation. `NEW_REQUIRED` remains forbidden while major frameworks are missing-object blocked rather than excluded on complete same-domain observables.
+None of `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED` has met its proof obligation. `NEW_REQUIRED` remains forbidden because major known frameworks are still completion/attribution blocked rather than excluded on complete same-domain observables.
 
-## Post-freeze regression wave
+## Closure Wave 02
 
-PF1 is **5/5 terminal**:
+Authority: `post_freeze_paper_iv_closure_wave_02/README.md`.
 
-- CFS — missing-object block with scoped Einstein–Dirac continuum identity;
-- GR/EFT — low-energy baseline/control PASS;
-- string/dual resonance — scoped rigidity PASS;
-- LQG/spinfoam — missing-object block after accepting fresh UV/causal progress;
-- asymptotic safety — missing-object block after accepting fresh Lorentzian spectral/scattering progress.
+### CW2-01 — O-AS
 
-No Core-v1.0 semantic change was needed.
+Physical non-perturbative Lorentzian scalar scattering already exists. ERG2026 reports a Lorentzian-resummed gravitational contact contribution, and separate AS work supplies diffeomorphism-invariant/error-controlled RG machinery.
 
-## Iter153 — O-AS blocker contraction
+The remaining blocker is not generic scattering availability but
 
-Fresh 2026 authority now supplies a real non-perturbative Lorentzian graviton-mediated scalar `2->2` amplitude and cross section. It recovers GR behavior in the infrared and exhibits the asymptotically safe UV behavior in the physical observable.
+**`SAME_REALIZATION_CONTACT_COMPLETE_DIFFEO_ERROR_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE`**.
 
-Therefore the generic O-AS requirement “obtain a Lorentzian physical crossover observable” is closed.
+A contact result from another simplified realization cannot be added to the mediated amplitude without an explicit species/crossing/truncation/trajectory/normalization/error map.
 
-The main scattering paper nevertheless defines
+### CW2-02 — O-LQG
 
-`A = A_s + A_t + A_u + A4`
+The strongest current route is no longer a generic entropy correction. It is the gamma-duality cross-representation relation
 
-and explicitly neglects direct contact `A4` in its primary computation. It also contains flow/vertex/reconstruction approximations whose full error is not captured by the reconstruction uncertainty alone.
+`2 f_GB/f_CS = gamma - 1/gamma`
 
-The new exact O-AS blocker is therefore
+and
 
-**`CONTACT_COMPLETE_APPROXIMATION_CONTROLLED_SAME_REALIZATION_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE`**.
+`1/gamma - gamma = (pi/8)(r+8 n_T)/Pi`.
 
-A separate contact-sector calculation cannot simply be spliced into the mediated result without same-realization matching. ERG2026 reports a Lorentzian-resummed contact contribution and is recorded as promising noncanonical closure evidence pending a stable reproducible package.
+For `gamma>0` and `Pi!=0`, gamma is structurally identifiable. The remaining blockers are:
 
-Authority: `paper_iv/O_AS_SCALAR_SCATTERING_CLOSURE_AUDIT_2026.md`.
+1. complete/coarse-grained EPRL -> renormalized gamma-dual EFT Wilson map;
+2. `gamma_micro/gamma_EFT/gamma_geom` parameter-identity or running map;
+3. cosmological nuisance/detector likelihood after attribution is closed.
 
-## Secondary open objects
+Current classification:
 
-- **O-LQG:** continuum-normalized Lorentzian physical observable + regulator/triangulation/comparator authority.
-- **O-CFS:** normalized beyond-continuum physical observable + state/regularization + same-domain comparator.
+`PROMISING_ADAPT_EXISTING_CROSS_REPRESENTATION_RIGIDITY__TOP_DOWN_BRIDGE_MISSING`.
+
+### CW2-03 — O-CFS
+
+CFS now has native surface-layer observables, total/quasilocal mass, synthetic curvature, QFT/Fock limiting dynamics and a direct 2026 geometric derivation of Lorentzian Einstein equations from the causal action.
+
+The latest paper also supplies a **systematic correction generator** and classifies Planck-order, osculation/torsion, regularizing-vector and modified-measure corrections. But it states that these corrections still need to be worked out in detail.
+
+Exact blocker:
+
+**`FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR`**.
+
+A generic local higher-curvature correction will be absorbed by full gravitational EFT/C5 unless CFS fixes a cross-coefficient/shared-background relation or a genuinely non-C5 structure.
+
+## Cross-school composition rule
+
+Authority: `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`.
+
+Neighbouring papers in one school are not one physical RQIR object until their realization vectors are identical or explicitly mapped. The same rule now independently matters for AS contact completion and LQG entropy/gamma attribution.
 
 ## Heavy compute
 
 **IDLE.**
 
-The O-AS missing object is presently an authority/completion problem. Heavy computation becomes useful only after the contact-complete same-realization amplitude is frozen and a numerical robustness/comparator question is preregistered.
+Current blockers are analytic/authority/composition problems. Heavy numerical work is not authorized until one CW2 physical object is prospectively frozen and a computation can change its terminal classification.
 
-## Next research move
+## Exact next front
 
-Continue O-AS first: search for a stable/reproducible publication, preprint revision, data or presentation material containing the direct Lorentzian contact contribution in the same realization and its approximation/error budget. If that authority cannot be obtained, move to O-LQG rather than launching blind compute.
+Priority remains **O-AS**, because its missing bridge is currently narrowest: search for a stable same-realization contact-complete update/data package corresponding to the ERG2026 result.
+
+In parallel, keep O-LQG gamma and O-CFS correction hierarchy as the next two closure routes; do not open a new broad framework wave.
