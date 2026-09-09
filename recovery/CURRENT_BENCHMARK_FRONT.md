@@ -1,10 +1,10 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-09  
-**KMQGB iteration:** 122  
+**KMQGB iteration:** 134  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Phase:** PRIMITIVE HARD DATUM + COMPLEXITY/STATE/TRANSITION LAW REQUIRED / RQIR675 PREREQUISITE EXHAUSTION
+**Phase:** UNIQUE GRAVITY-NATIVE INTERACTING OPERATOR/PROCESS ORIGIN LAW REQUIRED / DETECTOR-VISIBLE RESIDUAL GATE ADDED
 
 ## Stable readiness metrics
 
@@ -12,142 +12,105 @@ Authority: `protocol/READINESS_METRICS.md`.
 
 - **R1 — Repository readiness: 92%.**
 - **R2 — KMQGB methodology/material readiness: 89%.**
-- **R3 — Candidate Gravity scientific readiness: 24%** at external RQIR Iter675.
+- **R3 — Candidate Gravity scientific readiness: 24%.**
 - **R4 — `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`: 45%.**
 
-Last score change remains Iter060: R2 `88 -> 89`. No Iter061–122 result closes a scored P4/P5/P6 deliverable.
+No novel P4 survivor exists. Last score change remains Iter060. Negative gates, comparator upgrades, external Paper-III progress and detector-methodology improvements do not substitute for P4.
 
-No robust unique-QG residual is authorized and no KMQGB Candidate Gravity ansatz is promoted.
+## Provenance
 
-## Provenance correction
+Read `recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md` before interpreting historical commit numbers after Iter116. Recovery deltas are now restored through Iter134.
 
-Read `recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md`.
+## What Iter123–132 established
 
-A post-Iter116 race caused six later commits to reuse historical IDs 107–112. Their scientific contents are authoritatively reattributed to **Iter117–122**; four synthesis files were renumbered to **SYNTHESIS-011–014**. Historical commits are retained, but pre-existing Iter107–116 authority wins all ID collisions.
+### Spectral/strong-gravity route
 
-## Construction route
+- **Iter123:** `S_BH + ETH + KMS` still does not determine the absolute spectral envelope; KMS fixes detailed-balance relations once the spectrum is supplied.
+- **Iter124:** finitely many positive spectral moments do not determine a unique measure; an executable counterexample is frozen in `code/p4_spectral_moment_nonuniqueness_reference.py`.
+- **Iter125:** a finite constant-coefficient linear recurrence for the entire moment sequence forces a positive measure onto finitely many atoms, giving a rational finite-mediator/resonance resolvent.
+- **Iter126:** a finite nonlinear recurrence can determine a continuous spectrum; the Catalan/Marchenko-Pastur control proves A2 finite generation is possible, but is random-matrix/free-probability contained.
+- **Iter127:** a black-hole wave operator + physical boundary normalization + ingoing causal condition can determine a complete non-rational probe spectral function. This is a strong gravity-native A2-positive `G2` blueprint, but not an intrinsic interacting `K4` parent.
 
-`A1 explicit parent -> A2 finite/functional freedom -> A3 comparator containment -> A4 normalized hard 4pt/higher or cross-representation relation -> P5 -> P6 -> G0-G10`.
+### Interacting-generator / operator route
 
-Negative gates, comparator upgrades, recovery/provenance work and corroborative controls do not earn P4 credit.
+- **Iter128:** Lorentzian asymptotic safety is upgraded as a strong comparator: functional/spectral RG already generates nonperturbative graviton spectra, effective actions/form factors and multi-graviton vertex information.
+- **Iter129:** process-matrix consistency defines a convex feasible process set rather than unique dynamics; indefinite causal order also lacks unique gravity attribution.
+- **Iter130:** quantum-corner representations, gluing and area-law state structure constrain Hilbert/state kinematics but do not select a unique hard transition operator.
+- **Iter131:** one finite covariant operator can generate an all-point one-loop metric hierarchy through `Tr log Delta` and admits a CTP route, but local counterterm freedom remains and the architecture is ordinary QFT/induced-gravity/quantum-GR contained.
+- **Iter132:** equivalence principle / diffeomorphism covariance / the causal principal symbol do not select the complete operator. `Delta_xi=-Box+m^2+xi R` is an exact witness: identical characteristics, different quantum curvature response.
 
-## Search contraction through Iter116
+The resulting primitive question is now very sharp:
 
-The parent must select **both**
+> **what finite gravity-native physical law selects the complete interacting operator/process itself?**
 
-1. the first comparator-orthogonal primitive hard datum; and
-2. the complexity/state law that makes that datum unique.
+It must fix principal symbol, lower-order curvature/endomorphism terms, gauge/ghost/constraint complex, state, measure, Lorentzian contour, local renormalization/null data and then generate hard `4g`/higher + all-point + CTP observables.
 
-Frozen authority through Iter116 already established:
+## External RQIR advance — Iter133 sync
 
-- zero loci alone are cross-order non-unique; hidden-zero + fixed degree is a GR positive control;
-- vanishing BCFW boundary + GR lower data reconstructs GR;
-- nonzero infinity-boundary data can contain hard information, but their law must be derived;
-- multiple shifts do not eliminate a common local C5 contact nullspace;
-- eikonal no-time-advance is a consistency/tower filter rather than a generic 4D unique selector;
-- E3 parents require measure, state, Lorentzian contour/thimbles, Stokes and transseries data in addition to an action;
-- zero + retarded/CTP consistency still leaves local C5 directions;
-- black-hole entropy constrains state count/inclusive behavior but not a unique microscopic unitary transition matrix;
-- entanglement equilibrium and anomaly-free refoliation are strong gravity-native consistency principles, not unique quantum hard-origin laws.
+The external repository has advanced materially on **Paper III / programme readiness**, even though its separate Candidate-Gravity front remains Iter675 / 24%.
 
-## Post-Iter116 controls — Iter117–122
+Latest observed programme audit:
 
-### Iter117 — zero + degree/growth package
+- Paper I scientific material: 100%;
+- Paper II scientific material: 100%;
+- Paper III strengthened apparatus-specific readiness: **68%**;
+- Paper IV: **55%**, still prerequisite-blocked at the decisive physical-residual bridge;
+- Paper V Candidate-Gravity groundwork: **24% conditional**;
+- overall working RQIR programme/model readiness: approximately **71%**.
 
-`protocol/P4_HIDDEN_ZERO_DEGREE_GROWTH_ORIGIN_GATE.md` independently reinforces the pre-existing cross-order gate using the 2026 higher-derivative `R^2/R^3` hidden-zero comparator. A zero-based parent must derive
+`external_rqir_checks/iter133_rqir_programme_paper3_physical_psd_sync.md` records the firewall: **programme 71% is not Candidate-Gravity R3**.
 
-`zero locus + multiplicity/order + degree/growth/order + normalization + all-sector completion`.
+The Paper-III branch now uses a source-traceable SYRTE colored vibration PSD and physical Toeplitz covariance. It reproduces independent published apparatus scales without amplitude fitting and gives the correct nuisance identifiability pattern.
 
-This is corroborative, not a new score contribution.
+## Iter134 — detector-visible residual certificate
 
-### Iter118–119 — boundary / all-deformation corroboration
+Added:
 
-`protocol/P4_BOUNDARY_AT_INFINITY_ORIGIN_DATA_GATE.md` and `SYNTHESIS-011_ALL_DEFORMATION_BOUNDARY_CONSISTENCY.md` independently reproduce the pre-existing infinity/multi-shift lesson:
+- `protocol/P5_DETECTOR_VISIBLE_RESIDUAL_PHYSICAL_COVARIANCE_GATE.md`;
+- `code/detector_visible_residual_physical_covariance_reference.py`.
 
-`same finite poles/residues + rational pole-free difference -> boundary/contact datum`.
+For detector science direction `r`, covariance `C`, nuisance tangent matrix `N` and external nuisance prior precision `P`, define
 
-A single local contact polynomial automatically gives mutually consistent boundary data under all complex shifts. Therefore all-shift consistency cannot remove the C5 contact nullspace.
+`I0 = r^T C^-1 r`
 
-### Iter120 — GR↔string growth ceiling
+`Iprof = I0 - r^T C^-1 N (N^T C^-1 N + P)^+ N^T C^-1 r`
 
-`SYNTHESIS-012_COMPLEX_GROWTH_MINIMALITY_SELECTOR.md` adds a useful new ceiling:
+`eta_det = sqrt(max(Iprof,0)/I0)`.
 
-- strict minimal local/rational complex-shift growth with GR lower data selects the GR constructible control;
-- ultrasoft Regge behavior plus minimal mandatory residue zeros is already controlled by Veneziano/Virasoro-Shapiro string rigidity.
+A comparator-orthogonal theory residual must also satisfy `eta_det>0` after the physical detector map, source-traceable whitening and declared nuisance profiling.
 
-Thus an intermediate growth class is not a new parent unless its exponent/order/indicator/Regge/zero-density law is itself physically derived.
+The source-traceable fixture reproduces the external RQIR physical PSD scales and correctly rejects static/free-offset, no-reference and unconstrained-reference cases while preserving the calibrated/prior-constrained modulated science direction under strong crosstalk stress.
 
-### Iter121 — black-hole density corroboration
+This does **not** yet promote R2. The frozen `residual/identifiability/rigidity` component remains `19/20` until the detector-facing nonlinear transition-probability/readout layer is closed.
 
-`SYNTHESIS-013_BLACK_HOLE_ENTROPY_DENSITY_PARENT.md` recasts the original Iter116 black-hole blocker in density-of-states language:
+## External Candidate-Gravity authority
 
-`rho(E,J) ~ exp(S_BH)` fixes coarse state count, not exact resonance positions, widths, graviton couplings or phases.
+Candidate Gravity remains **24%** at Iter675. Missing authorities remain
 
-This is corroborative.
+- M1 physical observable bridge;
+- M2 matched same-parent Source/Born/contact completion;
+- M3 robust comparator-subtracted residual;
+- M4 actual `Tr U1` if later required.
 
-### Iter122 — entropy + ETH still incomplete
-
-`SYNTHESIS-014_BLACK_HOLE_ETH_MATRIX_PARENT.md` extends the strong-gravity route:
-
-`S_BH -> density scaling`
-
-`ETH/random-matrix template -> statistical scaling`
-
-but the actual hard hierarchy still needs parent-derived
-
-- smooth graviton transition envelopes `f(E,omega,...)`;
-- channel/angular-momentum dependence;
-- non-Gaussian higher cumulants/correlations;
-- microscopic phases and exact unitarity correlations.
-
-Therefore entropy + ETH does not yet select normalized `4g`, all-point or CTP hard data.
-
-## Current primitive-data bottleneck
-
-The required object is now:
-
-`finite gravity-native origin law`
-
-`-> first comparator-orthogonal primitive hard datum`
-
-`+ physical complexity/state/transition law making it unique`
-
-`-> all-point generator`
-
-`-> same-parent Lorentzian CTP/retarded block`
-
-`-> immediate comparator survival`.
-
-High-value routes remain:
-
-1. **zero/growth:** derive zero locus, multiplicity, growth/degree/order and normalization together;
-2. **boundary-at-infinity:** derive a non-GR boundary law itself, not another reconstruction algorithm;
-3. **E3:** derive action + measure + state + Lorentzian contour/thimbles + Stokes/transseries data;
-4. **modified quantum/factorization:** complete probability/composition/no-signalling structure plus hard/CTP prediction;
-5. **E2:** derive the full required spectrum/tower and couplings from finite data;
-6. **strong-gravity/black-hole:** derive microscopic graviton transition envelopes, higher cumulants and phases rather than only entropy or ETH scaling.
-
-## External RQIR authority — Iter675
-
-External Candidate Gravity authority remains **24%** and has no active promotable ansatz or robust comparator-subtracted residual.
-
-Iter675 certifies a present prerequisite-exhaustion stop under committed authority. Missing authorities:
-
-- **M1:** same-parent MSSC001 conserved detector/asymptotic observable bridge with normalization and boundary/IR convention;
-- **M2:** matched same-parent Source/Born/contact completion in that physical observable with pole/cut origin classified;
-- **M3:** robust nonzero comparator-subtracted residual after M1/M2;
-- **M4:** actual `Tr U1` if a future C5 path requires it.
-
-Authority snapshot: `external_rqir_checks/iter675_prerequisite_exhaustion_audit.md`.
+No independent Candidate-Gravity compute gate is authorized.
 
 ## Heavy compute
 
 **IDLE_BY_SCIENTIFIC_DESIGN.**
 
-KMQGB has no frozen A1–A3 survivor whose numerical evaluation can decide promotion. RQIR675 independently reports no authorized independent compute gate.
+The present bottleneck is an origin-law/authority problem, not a numerical one.
 
 ## Exact next KMQGB front
 
-Do not begin from another chosen propagator, spectral density, zero list, growth objective, entropy functional, ETH envelope, boundary recursion or transseries parameter.
+Search for a finite gravity-native **operator/process selection law**, not another chosen operator or functional equation.
 
-Search for a finite gravity-native law that derives the **primitive hard datum and the rule that fixes its remaining freedom**. Every candidate must prospectively specify absolute normalization, all-point generation or a direct route to it, same-parent CTP/retarded structure, and survive full C5, Einstein/hidden-zero/constructibility, string/q-string, BFSS/matrix, JT/random-matrix, LQG/spinfoam, asymptotic-safety, nonlocal, mediator/KL, black-hole and environment comparators.
+Immediate tests:
+
+1. does the principle uniquely determine the complete microscopic operator/process rather than only its causal cone or symmetry class?
+2. are state/measure/contour/local-renormalization data fixed by the same law?
+3. does the same parent generate a normalized comparator-orthogonal hard `4g`/higher datum and all-point hierarchy?
+4. is a same-parent Lorentzian CTP/retarded object explicit?
+5. does it survive ordinary covariant QFT/`Tr log`, Lorentzian AS, string/q-string, BFSS/matrix, JT/random-matrix, LQG/spinfoam/corner, causal/nonlocal and process-matrix comparators?
+6. if a structural residual is found, does it survive the Iter134 detector-visible physical-covariance certificate?
+
+Do not launch heavy computation until a frozen A1–A3 survivor produces a genuinely numerical discriminator.
