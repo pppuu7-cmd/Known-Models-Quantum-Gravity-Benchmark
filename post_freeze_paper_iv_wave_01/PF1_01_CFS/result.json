@@ -1,0 +1,25 @@
+{
+  "benchmark_id": "PF1-01-CFS",
+  "rqir_core_version": "1.0",
+  "rqir_status": "FROZEN",
+  "framework": "Causal Fermion Systems",
+  "declared_domain": "controlled globally hyperbolic curved-spacetime continuum sector plus audit of beyond-continuum reopen requirements",
+  "adapter_ref": "post_freeze_paper_iv_wave_01/PF1_01_CFS/audit.md",
+  "primary_authority": "Fischer and Finster, arXiv:2605.30199",
+  "scoped_subresults": [
+    {
+      "domain": "2026 curved-spacetime continuum construction",
+      "status": "EXACT_COMPARATOR_IDENTITY",
+      "comparator": "coupled Einstein-Dirac equations",
+      "statement": "causal-action Euler-Lagrange equations are satisfied iff the coupled Einstein-Dirac equations hold in the analyzed setup"
+    }
+  ],
+  "terminal_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "blocker": "no completed normalized same-realization beyond-continuum RQIR observable plus same-domain comparator residual package was identified in the audited authorities",
+  "rqir_core_defect": false,
+  "core_change_requested": false,
+  "paper_iv_decision_authorized": false,
+  "counts_as_new_required_evidence": false,
+  "reopen_condition": "supply a concrete beyond-continuum CFS relational/detector/asymptotic observable with absolute normalization, state/regularization authority, same-domain comparator map, and a robust comparator-orthogonal residual",
+  "epistemic_note": "BLOCKED is a terminal result for the declared benchmark scope and is not evidence that a new Candidate Gravity is required"
+}
