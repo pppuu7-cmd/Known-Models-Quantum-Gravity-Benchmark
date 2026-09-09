@@ -3,7 +3,7 @@
   "rqir_core_version": "1.0",
   "rqir_status": "FROZEN",
   "framework": "Causal Fermion Systems",
-  "declared_domain": "controlled globally hyperbolic curved-spacetime continuum sector plus audit of beyond-continuum reopen requirements",
+  "declared_domain": "controlled curved-spacetime continuum sector plus quantum/Fock limiting controls and audit of beyond-continuum gravity observables",
   "adapter_ref": "post_freeze_paper_iv_wave_01/PF1_01_CFS/audit.md",
   "primary_authority": "Fischer and Finster, arXiv:2605.30199",
   "scoped_subresults": [
@@ -12,14 +12,30 @@
       "status": "EXACT_COMPARATOR_IDENTITY",
       "comparator": "coupled Einstein-Dirac equations",
       "statement": "causal-action Euler-Lagrange equations are satisfied iff the coupled Einstein-Dirac equations hold in the analyzed setup"
+    },
+    {
+      "domain": "Minkowski limiting quantum-field sector",
+      "status": "PASS_RQIR_GATE__QFT_FOCK_LIMIT_CONTROL",
+      "statement": "causal-action dynamics admits controlled fermionic and bosonic Fock-space evolution reproducing linear QED-type dynamics; 2026 work extends the limiting construction to non-Abelian gauge and Dirac fields"
+    },
+    {
+      "domain": "relational many-body interpretation",
+      "status": "PASS_RQIR_GATE__RELATIONAL_ONTOLOGY_CONTROL",
+      "statement": "spacetime can be formulated as a web of many-body correlations without making the ontology depend on the continuum limit"
     }
   ],
+  "obsolete_blockers_rejected": [
+    "absence of quantum/Fock dynamics",
+    "absence of relational non-continuum description",
+    "absence of curved-spacetime continuum gravity map"
+  ],
   "terminal_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
-  "blocker": "no completed normalized same-realization beyond-continuum RQIR observable plus same-domain comparator residual package was identified in the audited authorities",
+  "blocker": "no gravity-specific beyond-continuum CFS observable has yet been frozen with normalization, state/regularization authority and an identical-domain Einstein-Dirac/QFT plus applicable-QG comparator package",
   "rqir_core_defect": false,
   "core_change_requested": false,
   "paper_iv_decision_authorized": false,
   "counts_as_new_required_evidence": false,
-  "reopen_condition": "supply a concrete beyond-continuum CFS relational/detector/asymptotic observable with absolute normalization, state/regularization authority, same-domain comparator map, and a robust comparator-orthogonal residual",
-  "epistemic_note": "BLOCKED is a terminal result for the declared benchmark scope and is not evidence that a new Candidate Gravity is required"
+  "reopen_condition": "supply a causal-action-derived beyond-continuum gravity observable with fixed state/regularization and a robust same-domain comparator-orthogonal residual",
+  "latest_audit": "paper_iv/O_CFS_BEYOND_CONTINUUM_OBSERVABLE_CLOSURE_AUDIT_2026.md",
+  "epistemic_note": "BLOCKED remains non-exclusion evidence; current CFS progress makes the blocker narrower, not stronger evidence for NEW_REQUIRED"
 }
