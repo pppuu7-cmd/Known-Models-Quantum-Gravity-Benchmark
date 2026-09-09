@@ -2,15 +2,15 @@
 
 **RQIR standard:** Core v1.0 FROZEN.  
 **Frozen denominator:** 3 high-value closure objects.  
-**Current authority:** Iter170.  
+**Current authority:** Iter172.  
 **Closure coverage:** **0/3 = 0%**.
 
 This wave is not a framework taxonomy. It contains the three exact end-to-end obligations currently preventing a global Paper-IV terminal decision.
 
 | CW2 # | Object | Current state | Exact closure object |
 |---|---|---|---|
-| CW2-01 | O-AS | **ACTIVE / closest to completion** | same-realization contact-complete `A_s+A_t+A_u+A4` Lorentzian scalar scattering with trajectory/normalisation/diffeo-error/comparator certificate |
-| CW2-02 | O-LQG | **OPEN / preferred gamma-duality route** | complete spinfoam -> renormalized gamma-dual EFT bridge + gamma parameter-identity map + shared-parameter cosmology/geometry comparator test |
+| CW2-01 | O-AS | **OPEN / closest publication-triggered closure** | stable reproducible same-realization `A_s+A_t+A_u+A4` Lorentzian scalar scattering with common trajectory/normalisation/diffeo-error/comparator certificate |
+| CW2-02 | O-LQG | **OPEN / active analytic front** | renormalized gamma-duality matching triple `{gamma_EFT,Delta_gamma,sigma_match}` plus downstream shared-parameter cosmology/geometry comparator |
 | CW2-03 | O-CFS | **OPEN / correction generator found** | first explicit normalized CFS gravity correction tensor/coefficient vector from the causal-action expansion + full C5/GR/QFT comparator |
 
 ## CW2-01 / O-AS
@@ -19,14 +19,14 @@ Closed layers:
 
 - physical non-perturbative Lorentzian scalar `2->2` mediated amplitude/cross section exists;
 - analytic contact-sector controls exist;
-- ERG2026 reports a Lorentzian-resummed gravitational contact contribution;
+- ERG2026 publicly reports a Lorentzian-resummed gravitational contact contribution in the same scalar-scattering programme;
 - a separate 2026 diffeomorphism-invariant AS flow has systematic regularisation/approximation-error control.
 
-Open layer:
+Iter171 establishes that programme-level Lorentzian contact **existence is no longer the unknown**. The remaining open layer is narrower:
 
-`SAME_REALIZATION_CONTACT_COMPLETE_DIFFEO_ERROR_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE`.
+`STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE`.
 
-The Knorr contact control cannot be spliced into the Chiesa–Pawlowski–Reichert mediated amplitude without an explicit species/crossing/truncation/trajectory/normalisation map. Conference-level contact evidence remains noncanonical until reproducible same-realization authority is frozen.
+The stable March 2026 scalar-scattering preprint remains contact-incomplete, and neighbouring contact/error-control authorities cannot be spliced without an explicit species/crossing/truncation/trajectory/normalisation map. Conference-level contact evidence remains nonterminal until reproducible same-realization authority is frozen.
 
 ## CW2-02 / O-LQG
 
@@ -44,19 +44,28 @@ For positive gamma and `Pi != 0`, the observable relation is structurally identi
 
 `gamma = (sqrt(q^2+4)-q)/2`, `q=(pi/8)(r+8n_T)/Pi`.
 
+The source 2026 gamma-duality work explicitly states that top-down derivation of the effective action from non-perturbative `W_gamma` remains missing. A separate 2026 Lorentzian spinfoam-stack construction demonstrates that triangulation-dependent normalization can be factored from a finite renormalized boundary-data amplitude in its stated limit, which makes the remaining bridge more modular but does not derive the parity-sector Wilson map.
+
+Iter172 therefore replaces the broad target `derive the whole EFT` by the minimum decisive object
+
+`RENORMALIZED_GAMMA_DUALITY_MATCHING_TRIPLE_{gamma_EFT,Delta_gamma,sigma_match}`
+
+with
+
+`Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)`.
+
 Open layers:
 
-- no audited top-down derivation from complete/coarse-grained EPRL dynamics to the renormalized gamma-dual Wilson relation;
-- `gamma_micro`, `gamma_EFT` and `gamma_geom` cannot be identified without a running/matching/nonrenormalization map;
-- cosmological nuisance/detector likelihood is downstream of these attribution bridges.
+- same-realization microscopic/coarse-grained amplitude -> renormalized parity-sector response;
+- derivation or bound of `Delta_gamma`;
+- `gamma_micro -> gamma_EFT` parameter identity/running map;
+- cosmological nuisance/detector likelihood downstream of attribution closure.
 
-Preferred target:
-
-`COMPLETE_LQG_TO_GAMMA_DUAL_EFT_PARAMETER_IDENTITY_BRIDGE`.
+Preferred target is a symmetry/matching calculation proving whether microscopic gamma-duality descends non-anomalously to the renormalized GB/CS coefficient ratio. A complete derivation of every EFT Wilson coefficient is unnecessary if this ratio and its uncertainty can be derived directly.
 
 ## CW2-03 / O-CFS
 
-CFS now has much more than an abstract ontology:
+CFS has much more than an abstract ontology:
 
 - Einstein–Dirac continuum authority;
 - QFT/Fock limiting dynamics;
