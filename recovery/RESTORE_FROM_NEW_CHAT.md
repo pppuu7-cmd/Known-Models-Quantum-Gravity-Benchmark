@@ -7,85 +7,65 @@ This file assumes no usable chat memory.
 1. Open `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`, branch `main`.
 2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, `recovery/state.json`, and `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`.
 3. Read `protocol/READINESS_METRICS.md` before reporting progress.
-4. Read `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md` as the single high-level construction route.
-5. Read `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md`, `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md` and permanent protocols referenced by the playbook/current state.
-6. Read `external_rqir_checks/iter620_projective_native_bridge_audit.md`, candidate schema/validator and highest-numbered immutable recovery delta.
-7. Treat waves 1–38 as terminal historical authority.
-8. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before R3/readiness/heavy-compute claims.
-9. Resume from `next_actions` in `recovery/state.json`; do not reconstruct state from chat memory.
+4. Read `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md`.
+5. Read `protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md`, `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md` and `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md`.
+6. Read the current O1–O3 authority referenced by `state.json`: E3 attribution, O1 scan, O2 causal/algebraic audit, O3 rational-localization no-go and O3 semigroup uniqueness control.
+7. Read `external_rqir_checks/iter649_matched_source_born_factor_audit.md` and the highest recovery delta (`RECOVERY_DELTA_075.md`).
+8. Treat Waves 1–38 and all prior immutable recovery deltas as historical authority.
+9. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` read-only before R3/readiness/heavy-compute claims.
+10. Resume from `next_actions` in `recovery/state.json`; do not reconstruct state from chat memory.
 
-## Stable percentages at Iteration 061
+## Stable percentages at Iteration 075
 
 - `R1 Repository readiness = 92%`;
 - `R2 KMQGB methodology/material readiness = 89%`;
-- `R3 Candidate Gravity scientific readiness = 24%` from external RQIR Iter620;
+- `R3 Candidate Gravity scientific readiness = 24%` from fresh external RQIR Iter649;
 - `R4 current minimal-novel-parent-principle search = 45%`.
 
-Last score change: Iter060 raised R2 by one point via consolidated playbook/synthesis. Iter061 is an external-authority refresh and does not change a score.
+Last score change remains Iter060 (R2 +1 from consolidated playbook/synthesis). Iter061–075 do not change a frozen score.
 
-## Immutable coverage
-
-- Wave 1: `9/9 = 100%`.
-- Waves 2–37: each `5/5 = 100%`.
-- Wave 38: `5/5 = 100%`, constructive prefilter / no R4 credit.
-
-Coverage is not Candidate Gravity readiness.
-
-## Current construction route
-
-Use `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md`.
-
-Mandatory pre-G0 order:
+## Mandatory construction order
 
 `A1 explicit parent capsule`
 
-`-> A2 functional-freedom gate FF_D`
+`-> A2 FF_D / functional-freedom test`
 
 `-> A3 architecture comparator containment`
 
 `-> A4 explicit normalized hard 4pt/higher or cross-representation relation`
 
-`-> G0-G10 promotion sequence`.
+`-> P5 structural survival -> P6 pre-ansatz record -> G0-G10`.
 
 If `FF_D(P)=dim N_P(D)` grows without bound with hard/EFT cutoff, classify `FUNCTIONAL_FREEDOM_BLOCKED` and stop.
 
-## External RQIR state — Iter620
+## Current search front
 
-RQIR remains `MODEL_READINESS=24%`.
+O1 and O2 are retained with strict reopen conditions but are no longer primary literature-accumulation branches.
 
-Iter617 proves existing authority does not contain the missing absolute source-response -> gravitational retarded/1PI `Gamma3` normalization. Therefore `N_native` remains `BLOCKED__NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY` and may not be guessed or fit from Candidate values.
+Active O3 result set:
 
-Iter618–620 legitimately preserve normalization-invariant information:
+1. finite rational kernel / finite-dimensional resolvent -> localizable finite mediator/auxiliary/higher-derivative system -> not genuine O3 escape;
+2. exact semigroup law `F(z+w)=F(z)F(w)`, `F(0)=1` -> unique `F(z)=exp(cz)` -> A2 PASS;
+3. exponential/entire nonlocal gravity is a registered comparator, and known subclasses are tree-amplitude equivalent to Einstein gravity -> A3/A4 novelty FAIL.
 
-- five independent projective root ratios relative to smallest-s `D_b^-`:
-  `[-2.966563737084728, -0.7800526753639322, -5.158207913624242, +2.997420912767025, +8.57973421373656]`;
-- raw sign pattern `[-,+,+,+,-,-]`;
-- independent ratio reproduction at floating-point precision;
-- threshold-free projective conditioning diagnostic.
+Exact next target:
 
-General guardrail:
+`finite physical q-difference/differential/recursion law -> unique non-rational object -> parent-fixed CTP/retarded prescription -> nontrivial hard spin2 relation -> comparator escape`.
 
-`one unknown common nonzero normalization -> projective ratio/conditioning diagnostics are allowed, absolute residual/comparator subtraction remains blocked`.
+Immediately reject known Coon/q-string/Virasoro-Shapiro, fractional/nonlocal, AS, discrete or mediator realizations if containment is established.
 
-Do not fit the missing normalization from the same Candidate values used to test the residual.
+## External RQIR Iter649 guardrail
+
+Matched Source/Born subtraction contains a relative normalization `rho=lambda_source/lambda_native` that survives projectivization:
+
+`P[A_matched]=P[a-rho*b]`.
+
+The old open scalar response is not a valid one-factor proxy for the missing closed gravitational Born term. Do not fit `rho`, zero-fill the term, or claim a residual until the same-parent closed `Gamma3` Source/Born contribution is independently defined with CTP/Legendre normalization.
 
 ## Heavy-compute policy
 
-Do not launch heavy runs for missing parent, growing functional freedom, unresolved normalization/sign, incomplete response, missing exact kinematic mapping, unfrozen comparator domain or missing attribution proof.
-
-RQIR's current blocker is algebraic/authority-level, so heavy compute cannot close it. KMQGB likewise waits for a frozen finite-freedom P4 object.
-
-## Next research front
-
-The main bottleneck is the scientific parent principle:
-
-1. formulate a finite microscopic/equally constructive dynamical selector;
-2. freeze A1;
-3. apply A2 `FF_D`;
-4. apply A3 architecture containment;
-5. for a survivor derive A4 normalized hard/cross-representation relation and same-parent CTP/retarded block;
-6. then perform P5 comparator survival and P6 pre-ansatz record.
+No heavy job is scientifically useful for the current structural/authority blocker. Launch heavy computation only after a frozen finite-rule hard object creates a preregistered numerical discrimination question.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB с Iter061. Восстанови current front/state/handoff/latest delta, READINESS_METRICS, construction playbook, P4_FUNCTIONAL_FREEDOM_NO_GO и external RQIR620 audit. Всегда сообщай R1=92, R2=89, R3=24 после свежего RQIR refresh, R4=45 пока rubric не изменился. Для нового parent: A1 -> A2 FF_D -> A3 containment -> A4 normalized hard relation. Projective invariants не заменяют missing absolute normalization. Heavy compute только для frozen discriminating object.`
+`Продолжай KMQGB с Iter075. Refresh RQIR first. R1=92, R2=89, R3=24, R4=45. Активный поиск O3: finitely-generated non-rational kernel/hierarchy, not finite rational resolvent and not exponential comparator. Требовать hard spin2 + same-parent CTP и A3 survival до любого P4 credit. Heavy compute держать idle до frozen discriminating object.`
