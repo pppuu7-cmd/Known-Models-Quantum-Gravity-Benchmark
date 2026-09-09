@@ -2,7 +2,7 @@
 
 **RQIR standard:** Core v1.0 FROZEN.  
 **Frozen denominator:** 3 high-value closure objects.  
-**Current authority:** Iter172.  
+**Current authority:** Iter174.  
 **Closure coverage:** **0/3 = 0%**.
 
 This wave is not a framework taxonomy. It contains the three exact end-to-end obligations currently preventing a global Paper-IV terminal decision.
@@ -10,7 +10,7 @@ This wave is not a framework taxonomy. It contains the three exact end-to-end ob
 | CW2 # | Object | Current state | Exact closure object |
 |---|---|---|---|
 | CW2-01 | O-AS | **OPEN / closest publication-triggered closure** | stable reproducible same-realization `A_s+A_t+A_u+A4` Lorentzian scalar scattering with common trajectory/normalisation/diffeo-error/comparator certificate |
-| CW2-02 | O-LQG | **OPEN / active analytic front** | renormalized gamma-duality matching triple `{gamma_EFT,Delta_gamma,sigma_match}` plus downstream shared-parameter cosmology/geometry comparator |
+| CW2-02 | O-LQG | **OPEN / active analytic front** | `SAME_REALIZATION_EPRL_TO_AREA_METRIC_RENORMALIZED_GAMMA_MAP` plus controlled `Delta_gamma`/parity-sector projection and downstream same-domain comparator |
 | CW2-03 | O-CFS | **OPEN / correction generator found** | first explicit normalized CFS gravity correction tensor/coefficient vector from the causal-action expansion + full C5/GR/QFT comparator |
 
 ## CW2-01 / O-AS
@@ -32,7 +32,7 @@ The stable March 2026 scalar-scattering preprint remains contact-incomplete, and
 
 The entropy-only route is no longer preferred: a generic `log A` correction is comparator-degenerate.
 
-The strongest current route is gamma-duality:
+The gamma-duality route supplies
 
 `2 f_GB/f_CS = gamma - 1/gamma`
 
@@ -40,28 +40,26 @@ and
 
 `1/gamma - gamma = (pi/8)(r+8 n_T)/Pi`.
 
-For positive gamma and `Pi != 0`, the observable relation is structurally identifiable with unique inverse
+Iter173 generalized this to
 
-`gamma = (sqrt(q^2+4)-q)/2`, `q=(pi/8)(r+8n_T)/Pi`.
+`q = 1/gamma_EFT - gamma_EFT - Delta_gamma`
 
-The source 2026 gamma-duality work explicitly states that top-down derivation of the effective action from non-perturbative `W_gamma` remains missing. A separate 2026 Lorentzian spinfoam-stack construction demonstrates that triangulation-dependent normalization can be factored from a finite renormalized boundary-data amplitude in its stated limit, which makes the remaining bridge more modular but does not derive the parity-sector Wilson map.
+and proved that `q` alone is structurally rank-1 in `{gamma_EFT,Delta_gamma}`. Detector precision therefore cannot replace an independent attribution/matching bridge.
 
-Iter172 therefore replaces the broad target `derive the whole EFT` by the minimum decisive object
+Iter174 identifies a materially stronger adjacent effective programme:
 
-`RENORMALIZED_GAMMA_DUALITY_MATCHING_TRIPLE_{gamma_EFT,Delta_gamma,sigma_match}`
+- `arXiv:2507.02034` derives an RG flow of the Immirzi parameter in spin-foam-motivated area-metric gravity and finds that parity symmetry does not generically emerge;
+- `arXiv:2608.16046` derives Lorentzian gravitational-wave-like solutions and detector coupling in a shift-symmetric area-metric theory arising in particular from spin foams / modified Plebanski theory, with parity/birefringence sensitivity to the Barbero-Immirzi parameter.
 
-with
+Thus existence of a gamma-running plus Lorentzian observable effective route is no longer the blocker.
 
-`Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)`.
+The frozen same-realization gate now isolates the decisive missing object:
 
-Open layers:
+`SAME_REALIZATION_EPRL_TO_AREA_METRIC_RENORMALIZED_GAMMA_MAP`.
 
-- same-realization microscopic/coarse-grained amplitude -> renormalized parity-sector response;
-- derivation or bound of `Delta_gamma`;
-- `gamma_micro -> gamma_EFT` parameter identity/running map;
-- cosmological nuisance/detector likelihood downstream of attribution closure.
+It must map the microscopic EPRL/spinfoam realization into the area-metric RG trajectory, prove the identity/running law `gamma_micro -> gamma_AM(k) -> gamma_EFT`, map parity-sector coefficients into the frozen RQIR observable basis, and propagate regulator/state/truncation uncertainty. Shared framework name or a shared `gamma` symbol is insufficient.
 
-Preferred target is a symmetry/matching calculation proving whether microscopic gamma-duality descends non-anomalously to the renormalized GB/CS coefficient ratio. A complete derivation of every EFT Wilson coefficient is unnecessary if this ratio and its uncertainty can be derived directly.
+Until this is supplied, the area-metric works are strong `ADAPT_EXISTING` ingredients but cannot be composed with the EPRL gamma-duality observable into a terminal RQIR object.
 
 ## CW2-03 / O-CFS
 
