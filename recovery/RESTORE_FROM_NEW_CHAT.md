@@ -7,83 +7,70 @@ This file assumes no usable chat memory.
 1. Open `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`, branch `main`.
 2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, `recovery/state.json`, and `recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md`.
 3. Read `protocol/READINESS_METRICS.md` before reporting progress.
-4. Read `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md`, `protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md` and `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md`.
-5. Read `protocol/P4_SAME_FACTORIZATION_CONTACT_DIFFERENCE_THEOREM.md`.
-6. Read the hard-data gates: `P4_STANDARD_UNITARITY_NEW_CUT_ATTRIBUTION_GATE.md`, `P4_ENTIRE_POLYNOMIAL_BOUNDED_COLLAPSE_GATE.md`, `P4_HADAMARD_ENTIRE_HARD_DATA_GATE.md`.
-7. Read all-point controls: `P4_ALL_POINT_RIGIDITY_STRING_CEILING.md`, `P4_TOPOLOGICAL_RECURSION_ALL_POINT_CONTROL.md`, `P4_CELESTIAL_WARD_ALL_POINT_CONTROL.md`.
-8. Read synthesis controls through `candidate_synthesis/SYNTHESIS_006_ANOMALY_INDUCED_NONLOCAL_SELECTOR.md`.
-9. Read fresh comparator upgrades referenced by state, including BFSS, covariant LQG UV fixed point and `E2_FRESH_GRAVITATIONAL_COMPLETENESS_PRESSURE_2026.md`.
-10. Read `external_rqir_checks/iter649_matched_source_born_factor_audit.md` and `recovery/RECOVERY_DELTA_098.md`.
-11. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` before R3/readiness/heavy-compute claims.
-12. Resume from `next_actions` in `recovery/state.json`; do not reconstruct authority from chat memory.
+4. Read `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md` and `protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md`.
+5. Read the recent first-hard-datum authority: same-factorization contact theorem, hidden-zero cross-order gate, BCFW infinity boundary gate, multi-shift contact-nullspace gate, Lorentzian contour/thimble gate, resurgence-parameter gate, zero-retarded cross-representation gate and eikonal-causality selector-limit gate.
+6. Read positive controls `P4_MHV_GRAVITY_HIDDEN_ZERO_RIGIDITY_CONTROL.md` and `P4_GR_BONUS_SCALING_CONSTRUCTIBILITY_CONTROL.md`.
+7. Read synthesis controls through `candidate_synthesis/SYNTHESIS_010_BLACK_HOLE_ENTROPY_S_MATRIX_PARENT.md`.
+8. Read fresh comparator upgrades referenced by `state.json`.
+9. Read `external_rqir_checks/iter675_prerequisite_exhaustion_audit.md` and `recovery/RECOVERY_DELTA_116.md`.
+10. Treat all earlier recovery deltas, including the backfilled 099–115 sequence, as immutable chronology.
+11. Fetch external RQIR `candidate_gravity/recovery/CURRENT_QG_FRONT.md` before every R3/readiness/heavy-compute claim.
+12. Resume from `next_actions` in `recovery/state.json`; do not reconstruct current authority from chat memory.
 
-## Stable percentages at Iteration 098
+## Stable percentages at Iteration 116
 
 - `R1 Repository readiness = 92%`;
 - `R2 KMQGB methodology/material readiness = 89%`;
-- `R3 Candidate Gravity scientific readiness = 24%` at fresh RQIR Iter649;
+- `R3 Candidate Gravity scientific readiness = 24%` at fresh RQIR Iter675;
 - `R4 current minimal-novel-parent-principle search = 45%`.
 
-Last score change remains Iter060: R2 +1. No Iter061–098 negative gate/control closes P4/P5/P6.
+Last score change remains Iter060. Iter061–116 are score-neutral under frozen rubrics.
 
 ## Mandatory construction order
 
 `A1 explicit parent -> A2 FF_D/finite freedom -> A3 comparator containment -> A4 normalized hard relation -> P5 -> P6 -> G0-G10`.
 
-If `FF_D` grows without bound, classify `FUNCTIONAL_FREEDOM_BLOCKED`.
+## Current missing object
 
-## Current scientific front
+The next P4 candidate must not merely reconstruct an amplitude. It must derive
 
-The missing object is the **origin law of the first comparator-orthogonal irreducible hard datum**.
+1. the primitive comparator-orthogonal hard datum; and
+2. the physical complexity/state law that removes the remaining freedom.
 
-Do not start a new branch merely from
+Examples of primitive-data requirements now frozen:
 
-- a free propagator or spectral density;
-- a bootstrap/dispersion checklist;
-- factorization/unitarity/CTP sewing with an unspecified irreducible seed;
-- a finite list of higher-point soft/splitting loci;
-- a Ward/anomaly equation with an unfixed homogeneous sector;
-- a hand-selected entire/nonlocal function.
+- **zero route:** zero locus + multiplicity + degree/growth/order + normalization;
+- **rational recursion:** non-GR boundary-at-infinity law itself, not only extra shifts that reconstruct it;
+- **nonperturbative E3:** action + measure + state + Lorentzian contour/thimbles + Stokes data + transseries parameters;
+- **black-hole route:** microscopic phase/interference law, not only entropy or inclusive detailed balance;
+- **modified quantum law:** complete probability/composition/no-signalling structure.
 
-These failure modes are already frozen.
+All routes must supply all-point generation or a direct route to it plus same-parent CTP/retarded continuation.
 
-## Same-spectrum corridor
+## Key positive controls
 
-If the candidate preserves ordinary GR asymptotic spectrum and lower factorization data:
+- Hidden zeros plus fixed degree can make ordinary MHV gravity highly rigid.
+- GR bonus BCFW scaling plus GR lower data and no infinity boundary reconstructs the GR tree hierarchy.
 
-- local analytic differences are full C5;
-- new standard-unitarity physical cuts require changed states/lower transitions or a genuinely new nonperturbative sector;
-- entire polynomially bounded corrections are polynomials/contact;
-- zero-free finite-order entire corrections reduce to `exp(Q)` and face weakly-nonlocal comparator pressure;
-- infinite-zero entire corrections require a finite physical law for the zero set and face strong string/dual-resonant controls.
+Therefore hard rigidity is mathematically achievable. The unresolved issue is a **new physical origin** for the rigidity law.
 
-The remaining high-value same-spectrum directions are
+## External RQIR guardrail — Iter675
 
-1. finitely derived nonlocal/exponentially-bounded irreducible hard data with explicit causal/growth class;
-2. intrinsic gravitational nonperturbative/transseries hard data with parent-fixed Lorentzian contour/weight/phase;
-3. controlled modified factorization/quantum dynamics.
+RQIR remains 24% and has no active promotable ansatz or robust comparator-subtracted residual.
 
-## E2/new-state corridor
+Current missing authorities:
 
-New states/poles/cuts remain possible, but apply E2/mediator/string/tower comparators immediately. For charged sectors, apply the Iter098 scoped gravitational-completeness pressure: if the candidate's own symmetry/UV assumptions force an infinite charge lattice, the complete tower and couplings must be derived from finite parent data rather than truncated by hand.
+- M1 physical observable bridge;
+- M2 matched same-parent Source/Born/contact completion;
+- M3 robust nonzero comparator-subtracted residual;
+- M4 actual `Tr U1` if needed later.
 
-## All-point requirement
-
-All-point generator completeness is mandatory evidence for a strong parent. Positive controls show it is achievable:
-
-- topological recursion: finite seed -> all `(g,n)`, but matrix/string/discrete comparator;
-- celestial gravity Ward recursion: gravity-native low-point seed -> all-point sector, but GR comparator and non-unique symmetry family.
-
-The future KG parent must combine generator completeness with a **new, independently derived hard seed**.
-
-## External RQIR guardrail
-
-RQIR Iter649 remains 24%. `A_matched=lambda_native*(a-rho*b)` depends on unknown `rho=lambda_source/lambda_native`; projectivization does not remove it. The old open response is not an allowed proxy. Do not fit/zero-fill `rho` or claim Source/Born residual.
+No independent compute gate is currently authorized.
 
 ## Heavy-compute policy
 
-No heavy job is scientifically useful for the current origin-law blocker. Launch heavy computation only after a frozen A1–A3 survivor produces a preregistered numerical discrimination problem.
+Keep heavy compute idle until KMQGB has a frozen A1–A3 survivor with a preregistered numerical discriminator or external RQIR gains genuinely new authority.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB с Iter098. Refresh RQIR first. R1=92, R2=89, R3=24, R4=45. Ищи finite gravity-native origin law первого irreducible hard datum; требуй fixed normalization/growth/singularity class, all-point generator, same-parent CTP и immediate comparator survival. Для E2 применяй completeness/tower screen. Heavy compute держать idle до frozen survivor.`
+`Продолжай KMQGB с Iter116. Refresh RQIR first. R1=92, R2=89, R3=24, R4=45. Ищи finite gravity-native origin law primitive hard datum + complexity/state law. Zero route: locus+multiplicity+degree/growth+normalization. Rational route: derive boundary-at-infinity law. E3: action+measure+state+contour/thimbles+Stokes/transseries. Black-hole route: microscopic phase law. Требуй all-point, same-parent CTP и immediate comparator survival. Heavy compute не запускать без frozen survivor/new authority.`
