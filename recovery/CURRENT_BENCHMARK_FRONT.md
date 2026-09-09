@@ -1,7 +1,7 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **173**  
+**KMQGB iteration:** **174**  
 **Phase:** **RQIR Core v1.0 FROZEN / Paper-IV Closure Wave 02 / three exact bridges**.
 
 ## Stable metrics
@@ -45,53 +45,45 @@ Authority: `paper_iv/O_AS_CONTACT_PUBLICATION_AUTHORITY_REFRESH_2026-09-10.md`.
 
 ### CW2-02 — O-LQG — active analytic front
 
-The gamma-duality paper supplies exact microscopic EPRL duality structure and an identifiable primordial observable relation but explicitly states that direct top-down derivation of the effective action from non-perturbative `W_gamma` is missing.
+The gamma-duality paper supplies exact microscopic EPRL duality structure and an identifiable primordial observable relation but explicitly leaves direct top-down derivation of the effective action from non-perturbative `W_gamma` open.
 
-Iter172 decomposed the missing bridge into `G0..G5` and reduced the broad top-down task to the renormalized matching triple
-
-`{gamma_EFT, Delta_gamma, sigma_match}`
-
-with
-
-`Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)`.
-
-Iter173 then proves a new structural result. The generalized primordial observable combination
+Iter172 decomposed the missing bridge into `G0..G5` and Iter173 proved that
 
 `q = (pi/8)(r+8 n_T)/Pi = 1/gamma_EFT - gamma_EFT - Delta_gamma`
 
-is rank-1 in the two unknowns `{gamma_EFT,Delta_gamma}`. Therefore no increase in primordial detector precision can identify both parameters without independent theoretical or geometric information.
+is rank-1 in `{gamma_EFT,Delta_gamma}`. Therefore detector precision alone cannot identify both parameters. A shared-geometry observable can restore rank only after a parameter-identity theorem establishes that the same renormalized gamma appears in both representations.
 
-If a geometry observable has `a_* = K gamma` and a prior matching theorem establishes a **shared gamma** across geometry and EFT, the joint Jacobian
+Iter174 adds a new external bridge audit. The recent area-metric programme now supplies both:
 
-`J = [[-1-1/gamma^2,-1],[K,0]]`
+- a spin-foam-motivated RG flow for the Immirzi parameter (`arXiv:2507.02034`); and
+- a Lorentzian parity-sensitive gravitational-wave / detector-facing area-metric observable (`arXiv:2608.16046`).
 
-has
+This removes the stale broad blocker that no renormalized gamma-running / Lorentzian observable EFT route exists.
 
-`det J = K`,
-
-so the geometry block restores full structural identifiability for `K != 0`.
-
-If instead `gamma_geom` is left independent from `gamma_EFT`, two observables constrain three parameters and underidentification remains. Thus the parameter-identity gate is mathematically necessary, not merely a bookkeeping requirement.
+However the same-realization firewall remains decisive. No authority was found that derives an explicit map from the microscopic EPRL gamma-duality realization to the area-metric RG trajectory and proves that `gamma_AM(k)` is the same renormalized quantity as the `gamma_EFT` entering the frozen GB/CS relation, with regulator/state/truncation uncertainty propagated.
 
 Current classification:
 
-`PROMISING_ADAPT_EXISTING__GAMMA_DUALITY_BREAKING_DEGENERACY_EXPLICIT__IDENTIFIABLE_RENORMALIZED_MATCHING_NEEDED`.
+`PROMISING_ADAPT_EXISTING__AREA_METRIC_RUNNING_AND_LORENTZIAN_OBSERVABLE_BRIDGE_EXISTS__SAME_REALIZATION_EPRL_TO_AM_GAMMA_MAP_MISSING`.
 
 Sharpened minimum object:
 
-**`IDENTIFIABLE_RENORMALIZED_GAMMA_MATCH = {gamma_micro->gamma_EFT, Delta_gamma prior/prediction, optional gamma_geom map}`**.
+**`SAME_REALIZATION_EPRL_TO_AREA_METRIC_RENORMALIZED_GAMMA_MAP`**.
 
-Strongest closure route:
+Required payload:
 
-- prove non-anomalous renormalized gamma-duality / `Delta_gamma=0` with controlled uncertainty; and
-- derive `gamma_micro -> gamma_EFT -> gamma_geom` identity/running map.
-
-A nonzero predicted `Delta_gamma` is also acceptable if it is not freely refitted and the enlarged cross-representation fingerprint remains identifiable.
+- EPRL/spinfoam realization vector;
+- explicit coarse-graining/continuum map into the area-metric effective action;
+- `gamma_micro -> gamma_AM(k) -> gamma_EFT` parameter identity/running law;
+- parity-sector coefficient map into the frozen RQIR observable basis;
+- propagated truncation/regulator/state uncertainty;
+- same-domain comparator after composition.
 
 Authorities:
 
 - `paper_iv/O_LQG_GAMMA_TOPDOWN_MATCHING_DECOMPOSITION_2026.md`;
 - `paper_iv/O_LQG_GAMMA_DUALITY_BREAKING_IDENTIFIABILITY_GATE_2026.md`;
+- `paper_iv/O_LQG_AREA_METRIC_GAMMA_RUNNING_BRIDGE_AUDIT_2026-09-10.md`;
 - `code/lqg_gamma_duality_breaking_identifiability_reference.py`.
 
 ### CW2-03 — O-CFS
@@ -121,8 +113,9 @@ Current blockers are analytic/authority/composition problems. Heavy numerical wo
 ## Exact next front
 
 1. O-AS remains the closest publication-triggered closure target; re-audit only on a new stable contact-amplitude authority or data package.
-2. Active research effort remains O-LQG: search for a renormalized duality Ward/nonrenormalization statement or derive the leading allowed `Delta_gamma`/gamma-running matching structure.
-3. Do not start detector forecasting until `Delta_gamma` and parameter identity are independently controlled.
-4. O-CFS remains third priority until a first explicit normalized correction tensor appears.
+2. Active research effort remains O-LQG: search specifically for an EPRL/spinfoam-to-area-metric coarse-graining or parameter-renormalization theorem that establishes `gamma_micro -> gamma_AM(k)` in the same realization.
+3. If no such theorem exists, derive the minimal matching conditions and identify which quantities are independently calculable rather than fitted.
+4. Do not start detector forecasting until the same-realization gamma map and `Delta_gamma` attribution are independently controlled.
+5. O-CFS remains third priority until a first explicit normalized correction tensor appears.
 
 Do not open another broad framework wave and do not count `BLOCKED` as evidence for `NEW_REQUIRED`.
