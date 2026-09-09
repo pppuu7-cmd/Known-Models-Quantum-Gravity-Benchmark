@@ -89,6 +89,7 @@ jobs:
           test -s recovery/state.json
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
+          test -s recovery/RECOVERY_DELTA_075.md
           test -s protocol/READINESS_METRICS.md
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
@@ -102,3 +103,9 @@ jobs:
           test -s protocol/MINIMAL_TRIPLE_PRODUCT_P4_AUDIT.md
           test -s protocol/FINITE_FORM_FACTOR_UV_SOFTNESS_AUDIT.md
           test -s protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md
+          test -s protocol/E3_NONPERTURBATIVE_HARD_ATTRIBUTION_GATE.md
+          test -s protocol/O1_LORENTZIAN_NP_HARD_SCAN_2026.md
+          test -s protocol/O2_CAUSAL_ALGEBRAIC_DYNAMICAL_SELECTION_AUDIT.md
+          test -s protocol/O3_RATIONAL_KERNEL_LOCALIZATION_NO_GO.md
+          test -s protocol/O3_SEMIGROUP_EXPONENTIAL_UNIQUENESS_CONTROL.md
+          test -s external_rqir_checks/iter649_matched_source_born_factor_audit.md
