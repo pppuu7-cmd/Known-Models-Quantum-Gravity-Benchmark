@@ -2,95 +2,132 @@
 
 **RQIR standard:** Core v1.0 FROZEN.  
 **Frozen denominator:** 3 high-value closure objects.  
-**Current authority:** Iter174.  
+**Current authority:** Iter176.  
 **Closure coverage:** **0/3 = 0%**.
 
-This wave is not a framework taxonomy. It contains the three exact end-to-end obligations currently preventing a global Paper-IV terminal decision.
+This wave contains the three exact end-to-end obligations preventing a global Paper-IV terminal decision.
 
 | CW2 # | Object | Current state | Exact closure object |
 |---|---|---|---|
 | CW2-01 | O-AS | **OPEN / closest publication-triggered closure** | stable reproducible same-realization `A_s+A_t+A_u+A4` Lorentzian scalar scattering with common trajectory/normalisation/diffeo-error/comparator certificate |
-| CW2-02 | O-LQG | **OPEN / active analytic front** | `SAME_REALIZATION_EPRL_TO_AREA_METRIC_RENORMALIZED_GAMMA_MAP` plus controlled `Delta_gamma`/parity-sector projection and downstream same-domain comparator |
+| CW2-02 | O-LQG | **OPEN / active analytic front** | `SAME_REALIZATION_MULTISCALE_GAMMA_CLOSURE` tying EPRL gamma-duality, area-metric RG, `beta_Delta`, primordial `q` and birefringence `psi` in one realization |
 | CW2-03 | O-CFS | **OPEN / correction generator found** | first explicit normalized CFS gravity correction tensor/coefficient vector from the causal-action expansion + full C5/GR/QFT comparator |
 
 ## CW2-01 / O-AS
 
-Closed layers:
-
-- physical non-perturbative Lorentzian scalar `2->2` mediated amplitude/cross section exists;
-- analytic contact-sector controls exist;
-- ERG2026 publicly reports a Lorentzian-resummed gravitational contact contribution in the same scalar-scattering programme;
-- a separate 2026 diffeomorphism-invariant AS flow has systematic regularisation/approximation-error control.
-
-Iter171 establishes that programme-level Lorentzian contact **existence is no longer the unknown**. The remaining open layer is narrower:
+Programme-level Lorentzian contact existence is no longer the unknown. The remaining exact blocker is
 
 `STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE`.
 
-The stable March 2026 scalar-scattering preprint remains contact-incomplete, and neighbouring contact/error-control authorities cannot be spliced without an explicit species/crossing/truncation/trajectory/normalisation map. Conference-level contact evidence remains nonterminal until reproducible same-realization authority is frozen.
+Until a stable contact-complete equation/data/error package appears, O-AS remains open and publication-triggered.
 
 ## CW2-02 / O-LQG
 
-The entropy-only route is no longer preferred: a generic `log A` correction is comparator-degenerate.
+The preferred route is now a same-realization multiscale gamma closure.
 
-The gamma-duality route supplies
+### Primordial gamma-duality block
 
-`2 f_GB/f_CS = gamma - 1/gamma`
+Define
+
+`Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)`
 
 and
 
-`1/gamma - gamma = (pi/8)(r+8 n_T)/Pi`.
+`q = (pi/8)(r+8 n_T)/Pi = 1/gamma_EFT - gamma_EFT - Delta_gamma`.
 
-Iter173 generalized this to
+`q` alone is structurally rank-1 in `{gamma_EFT,Delta_gamma}`.
 
-`q = 1/gamma_EFT - gamma_EFT - Delta_gamma`
+### Area-metric RG block
 
-and proved that `q` alone is structurally rank-1 in `{gamma_EFT,Delta_gamma}`. Detector precision therefore cannot replace an independent attribution/matching bridge.
+A spin-foam-motivated area-metric programme now supplies a running Immirzi parameter and a Lorentzian parity-sensitive observable sector. This removes the old broad blocker that no running-gamma observable EFT route exists.
 
-Iter174 identifies a materially stronger adjacent effective programme:
+But the same-realization map from microscopic EPRL gamma-duality into this area-metric RG trajectory is still missing.
 
-- `arXiv:2507.02034` derives an RG flow of the Immirzi parameter in spin-foam-motivated area-metric gravity and finds that parity symmetry does not generically emerge;
-- `arXiv:2608.16046` derives Lorentzian gravitational-wave-like solutions and detector coupling in a shift-symmetric area-metric theory arising in particular from spin foams / modified Plebanski theory, with parity/birefringence sensitivity to the Barbero-Immirzi parameter.
+### RG preservation block
 
-Thus existence of a gamma-running plus Lorentzian observable effective route is no longer the blocker.
+Let
 
-The frozen same-realization gate now isolates the decisive missing object:
+`rho = 2 f_GB^ren/f_CS^ren`.
 
-`SAME_REALIZATION_EPRL_TO_AREA_METRIC_RENORMALIZED_GAMMA_MAP`.
+The gamma-dual surface is preserved by coarse-graining iff
 
-It must map the microscopic EPRL/spinfoam realization into the area-metric RG trajectory, prove the identity/running law `gamma_micro -> gamma_AM(k) -> gamma_EFT`, map parity-sector coefficients into the frozen RQIR observable basis, and propagate regulator/state/truncation uncertainty. Shared framework name or a shared `gamma` symbol is insufficient.
+`beta_Delta = beta_rho - (1+1/gamma^2) beta_gamma = 0`
 
-Until this is supplied, the area-metric works are strong `ADAPT_EXISTING` ingredients but cannot be composed with the EPRL gamma-duality observable into a terminal RQIR object.
+on `Delta_gamma=0`.
+
+Thus `beta_gamma` alone is insufficient. The same realization must determine the parity-sector flow and therefore `beta_rho`/`beta_Delta`.
+
+A calculable nonzero `beta_Delta` is allowed if a frozen boundary condition predicts `Delta_gamma(mu)` and the enlarged fingerprint remains identifiable; it may not be independently refitted.
+
+### Area-metric birefringence holdout
+
+For the positive-gamma Lorentzian branch,
+
+`sinh(2 xi)=1/gamma`,
+
+`psi=-(1/2) atan(tanh xi)`
+
+give
+
+`gamma = -cot(4 psi)`
+
+and
+
+`dpsi/dgamma = 1/[4(1+gamma^2)] > 0`.
+
+Therefore, after same-realization identity and RG transport to a common scale, `(q,psi)` is structurally full rank for `{gamma,Delta_gamma}` with
+
+`det d(q,psi)/d(gamma,Delta_gamma) = 1/[4(1+gamma^2)] > 0`.
+
+The corresponding direct consistency diagnostic is
+
+`Delta_gamma = 2 cot(8 psi) - q`.
+
+This converts gamma-duality breaking into a falsifiable cross-representation observable rather than a free nuisance.
+
+### Exact remaining O-LQG object
+
+`SAME_REALIZATION_MULTISCALE_GAMMA_CLOSURE` must supply:
+
+1. microscopic EPRL/spinfoam -> area-metric continuum/RG realization map;
+2. `gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu)` identity/running law;
+3. parity-sector projection into `f_GB^ren/f_CS^ren` or an equivalent frozen RQIR basis;
+4. `beta_gamma`, `beta_rho`, `beta_Delta` and uncertainty;
+5. frozen `Delta_gamma` matching condition and scale transport;
+6. primordial `q` and area-metric `psi` nuisance/observable models with no independent gamma refit.
+
+Current classification:
+
+`PROMISING_ADAPT_EXISTING__AREA_METRIC_BIREFRINGENCE_SUPPLIES_INDEPENDENT_GAMMA_HOLDOUT__SAME_REALIZATION_MULTISCALE_MAP_MISSING`.
 
 ## CW2-03 / O-CFS
 
-CFS has much more than an abstract ontology:
-
-- Einstein–Dirac continuum authority;
-- QFT/Fock limiting dynamics;
-- native surface-layer observables;
-- total/quasilocal mass and synthetic curvature;
-- a 2026 direct geometric Einstein derivation with a systematic microscopic-length correction generator.
-
-The geometric derivation classifies Planck-order, osculation/torsion, regularizing-vector and modified-measure corrections, but explicitly states that these corrections still need to be worked out in detail.
-
-Thus the exact target is
+The exact blocker remains
 
 `FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR`.
 
-CFS microscopic regularization may be physical rather than a technical cutoff; the adapter therefore requires `PHYSICAL_REGULARIZATION_LAW_FIXED_AND_PREDICTIVE`, not automatic `epsilon -> 0`.
+The known correction generator is not yet an explicit normalized correction tensor/coefficient vector.
 
 ## Cross-school guardrail
 
-Authority: `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`.
-
-Several strong papers in one research programme are not one RQIR observable unless their realization vectors are identical or explicitly mapped. Shared school name, authorship or parameter symbol is insufficient.
+Neighbouring papers or shared symbols are not one RQIR observable until their realization vectors are identical or explicitly mapped. This remains decisive for O-AS and O-LQG.
 
 ## Decision discipline
 
-A CW2 target closes only if the missing object is supplied and terminally classified, or an explicit same-domain inconsistency is established without relying on missing calculations.
+A CW2 target closes only if its missing object is supplied and terminally classified, or an explicit same-domain inconsistency is established without relying on missing calculations.
 
 `BLOCKED` is not closure and never counts as `NEW_REQUIRED` evidence.
 
+## Provenance
+
+Canonical chronology after the concurrent Iter174 collision:
+
+- Iter174: area-metric gamma-running bridge;
+- Iter175: gamma-duality RG tangency;
+- Iter176: area-metric birefringence gamma identifiability.
+
+See `recovery/PROVENANCE_CORRECTION_ITER174_CONCURRENT_COLLISION.md`.
+
 ## Compute policy
 
-Heavy computation remains idle. The three present blockers are authority/analytic-derivation/composition problems. Numerical work starts only after one object, its normalization/trajectory/state/regularization law and comparator are prospectively frozen.
+Heavy computation remains idle. The active blocker is a same-realization analytic/RG/scale-composition problem. Detector forecasting becomes useful only after that bridge is frozen.
