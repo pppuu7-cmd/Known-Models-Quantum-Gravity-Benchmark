@@ -1,113 +1,97 @@
 # KMQGB Current Benchmark Front
 
-**Updated:** 2026-09-08  
-**KMQGB iteration:** 061  
+**Updated:** 2026-09-09  
+**KMQGB iteration:** 075  
 **Repository:** `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`  
 **Branch:** `main`  
-**Phase:** CONSTRUCTION PLAYBOOK FROZEN / RQIR620 SYNCED / P4 FINITE DYNAMICAL SELECTOR REQUIRED
+**Phase:** O3 FINITE-RULE NONRATIONAL KERNEL SEARCH / RQIR649 SYNCED
 
 ## Stable readiness metrics
 
 Authority: `protocol/READINESS_METRICS.md`.
 
-- **R1 — Repository readiness for future KG construction: 92%.**
+- **R1 — Repository readiness: 92%.**
 - **R2 — KMQGB methodology/material readiness: 89%.**
-- **R3 — Candidate Gravity scientific readiness: 24%** at directly observed external RQIR Iteration 620.
-- **R4 — current task `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`: 45%.**
+- **R3 — Candidate Gravity scientific readiness: 24%** at directly observed external RQIR Iteration 649.
+- **R4 — `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`: 45%.**
 
-The last score change was Iter060: R2 `88 -> 89` from consolidated construction playbook/synthesis `6/10 -> 7/10`. Iter061 changes no score.
+Last score change remains Iter060: R2 `88 -> 89`. Iter061–075 are score-neutral under the frozen rubrics.
 
-## Coverage
+No robust unique-QG residual is authorized and no KMQGB Candidate Gravity ansatz is promoted.
 
-- Wave 1: **9/9 = 100%** — immutable.
-- Waves 2–37: **each 5/5 = 100%** — immutable.
-- Wave 38: **5/5 = 100%** — immutable constructive prefilter, no R4 credit.
-- Globally authorized robust unique-QG residuals: **0**.
-- KMQGB-promoted Candidate Gravity ansatz: **none**.
+## Construction authority
 
-## Current construction authority
+Use `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md` and `protocol/P4_CONSTRUCTIVE_SURVIVOR_MATRIX.md`.
 
-Use `protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md` as the sole high-level route.
+Mandatory order:
 
-Pre-G0 sequence:
+`A1 explicit parent -> A2 finite/functional freedom -> A3 comparator containment -> A4 normalized hard/cross-representation relation -> P5 -> P6 -> G0-G10`.
 
-`A1 explicit parent capsule -> A2 FF_D functional-freedom gate -> A3 architecture containment -> A4 explicit normalized hard 4pt/higher or cross-representation relation -> G0-G10`.
+Heavy compute is forbidden for structural/authority blockers.
 
-If `FF_D(P)=dim N_P(D)` grows without bound, classify `FUNCTIONAL_FREEDOM_BLOCKED` and stop.
+## Search contraction through Iter075
 
-Heavy compute is not used to solve structural/authority blockers.
+### Discrete/QCA controls
 
-## External RQIR authority — Iteration 620
+The free-QCA branch supplied exact controls but not a Beyond-C5 parent:
 
-Authority snapshot: `external_rqir_checks/iter620_projective_native_bridge_audit.md`.
+- exact finite-range local TT projector is impossible; local microarchitecture needs redundant/constrained variables;
+- naive BCC Weyl-to-spin2 representation lift has a factor-4 shared-clock/light-cone mismatch;
+- same-lattice fourth-root repair is not finite range;
+- composite momentum sharing hides an arbitrary internal wavefunction unless a binding law fixes it;
+- ordinary local analytic IR lattice corrections are contained by full C5.
 
-Latest RQIR state remains `MODEL_READINESS=24%`.
+### Hard-amplitude controls
 
-### Iter617 — absolute normalization authority is genuinely absent
+A one-pole triple-product amplitude is finite-freedom and explicitly hard, but its minimal realization is chiral-string/worldsheet contained. Finite chosen form-factor examples remain ansatz/function-class choices unless a microscopic uniqueness law is derived.
 
-Existing authority fixes the local phase/sign/source conventions, relative source factors, q2 identity and endpoint amputation, but there is no frozen absolute source-response -> retarded/1PI `Gamma3` phase/coupling bridge.
+### O1 — intrinsic Lorentzian nonperturbative hard sector
 
-Therefore
+`protocol/E3_NONPERTURBATIVE_HARD_ATTRIBUTION_GATE.md` separates intrinsic gravitational nonperturbativity from ordinary nonperturbative matter/QFT coupled to gravity.
 
-`N_native = BLOCKED__NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY`.
+Fresh 2025–2026 controls in `protocol/O1_LORENTZIAN_NP_HARD_SCAN_2026.md` give no current H1+H2+H3+H4 near-survivor in the audited set. Lorentzian spectral RG is an asymptotic-safety comparator; matrix/minimal-string resurgence is string/matrix contained; current Lorentzian path-integral S-matrix work supplies a representation/soft bridge rather than a new E3 hard object.
 
-It may not be set to `1`, `+i`, `-i`, tuned per root/q2 bucket, or fit from Candidate values.
+O1 remains open only under its explicit reopen condition.
 
-### Iter618 — projective source-shape certificate
+### O2 — finite causal/algebraic dynamical selector
 
-With smallest-s `D_b^-` as a pre-coefficient anchor, the five independent normalization-invariant root ratios are
+`protocol/O2_CAUSAL_ALGEBRAIC_DYNAMICAL_SELECTION_AUDIT.md` finds that causal-set QFT can support in-in/in-out/scattering machinery and causal-diamond/HST/discrete programs supply finite structures/actions, but the audited controls do not uniquely derive an interacting physical spin-2 hard hierarchy plus same-parent CTP response outside registered comparators.
 
-`[-2.966563737084728, -0.7800526753639322, -5.158207913624242, +2.997420912767025, +8.57973421373656]`.
+### O3 — finitely generated genuine nonlocality
 
-Raw sign pattern remains `[-,+,+,+,-,-]`.
+`protocol/O3_RATIONAL_KERNEL_LOCALIZATION_NO_GO.md` proves that any finite rational kernel and any finite-dimensional hidden resolvent localize to finite auxiliary/mediator/higher-derivative systems. They are not genuine O3 escape by themselves.
 
-### Iter619 — independent reproducibility
+`protocol/O3_SEMIGROUP_EXPONENTIAL_UNIQUENESS_CONTROL.md` gives an exact A2 positive control:
 
-An independent coefficient representation reproduces those ratios with maximum absolute difference `5.329070518200751e-15` and maximum relative difference `6.211230307890725e-16`.
+`F(0)=1`, `F(z+w)=F(z)F(w)` and analyticity imply uniquely
 
-### Iter620 — projective conditioning
+`F(z)=exp(cz)`.
 
-For
+Thus finite functional laws can remove arbitrary function freedom. But exponential/entire nonlocal gravity is a known comparator architecture and known subclasses have the same tree graviton amplitudes as Einstein gravity, so the control fails A3/A4 novelty.
 
-`M=|A_aggregate|/(|A_pair|+sum|A_K1cubed|)`, `kappa=1/M`,
+## External RQIR authority — Iter649
 
-rootwise `kappa` values are
+Authority snapshot: `external_rqir_checks/iter649_matched_source_born_factor_audit.md`.
 
-`[1.227051600482995, 1.093790319820292, 1.0, 1.272764987610942, 2.45679285736057, 1.279568269456018]`.
+RQIR remains **24%**.
 
-Minimum cancellation margin is `0.40703472293319004`; absolute projective coefficient dynamic range is `10.998916463857647`.
+The matched Source/Born object contains an independent relative normalization
 
-These Iter618–620 results are **PASS/non-promoting**. They protect relative shape and implementation consistency but do not determine the missing absolute normalization.
+`rho=lambda_source/lambda_native`:
 
-## General KMQGB lesson from RQIR620
+`A_matched=lambda_native*(a-rho*b)`.
 
-For a vector known only up to one common nonzero scalar,
+Projectivization removes the common `lambda_native` but not `rho`; therefore it cannot authorize Source/Born subtraction. The old open scalar response is independently rejected as a one-factor closed-gravity Born proxy.
 
-`a_native=N a`, `N!=0`,
-
-projective ratios `a_i/a_j` are legitimate normalization-invariant diagnostics. They can validate routing, relative signs, identity preservation, reproducibility and cancellation sensitivity.
-
-They **cannot** authorize an absolute residual or comparator subtraction that depends on `N`.
-
-Fitting `N` from the same Candidate values later used to claim an anomaly is circular and forbidden.
-
-## Exact next RQIR gate
-
-Only an independent, non-biasing derivation/audit of the missing source-to-`Gamma3` absolute phase/coupling bridge may close native binding.
-
-Until then, full native projection, Source/Born subtraction, fixed comparator quotient, ANSATZ/Fisher/resources remain forbidden.
-
-No scientifically useful heavy numerical job is authorized for this algebraic/convention-level blocker.
+Exact external next gate: derive or locate the same-parent Source/Born contribution inside the closed retarded gravitational `Gamma3` observable with frozen CTP/Legendre normalization and pole/cut origin.
 
 ## Exact next KMQGB front
 
-The main scientific bottleneck remains P4:
+Search for a finite physical recursion/difference/dynamical law whose unique solution is
 
-1. formulate a finite microscopic/equally constructive dynamical selector;
-2. freeze A1 parent capsule;
-3. apply A2 `FF_D`; reject unbounded freedom;
-4. apply A3 immediate architecture containment;
-5. only for an A1-A3 survivor derive A4 normalized hard/cross-representation data plus same-parent CTP/retarded block;
-6. then perform P5 comparator survival and P6 pre-ansatz machine record.
+1. non-rational, avoiding finite mediator localization;
+2. not a known exponential/EOM dressing, q-string/Virasoro-Shapiro, AS, discrete or other registered comparator;
+3. parent-fixed in causal/retarded/CTP prescription;
+4. predictive for at least one hard physical spin-2 relation.
 
-Process ambiguity is substantially reduced; the missing object is now the actual finite-freedom parent principle.
+If q-difference/scale-covariant finite-law families collapse to q-string/fractional/nonlocal comparators, advance to O4 rather than creating more hand-selected form factors.
