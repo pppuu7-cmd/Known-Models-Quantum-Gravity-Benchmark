@@ -107,7 +107,7 @@ jobs:
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
           test -s recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md
-          for i in $(seq -w 99 171); do test -s recovery/RECOVERY_DELTA_${i}.md; done
+          for i in $(seq -w 99 172); do test -s recovery/RECOVERY_DELTA_${i}.md; done
           test -s protocol/READINESS_METRICS.md
           test -s protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md
           test -s protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md
@@ -131,6 +131,7 @@ jobs:
           test -s paper_iv/O_LQG_GAMMA_DUALITY_IDENTIFIABILITY_GATE_2026.md
           test -s paper_iv/O_LQG_GAMMA_TOPDOWN_BRIDGE_LITERATURE_CEILING_2026.md
           test -s paper_iv/O_LQG_GAMMA_PARAMETER_IDENTITY_RENORMALIZATION_GATE_2026.md
+          test -s paper_iv/O_LQG_GAMMA_TOPDOWN_MATCHING_DECOMPOSITION_2026.md
           test -s code/lqg_gamma_duality_identifiability_reference.py
           test -s paper_iv/O_CFS_BEYOND_CONTINUUM_OBSERVABLE_CLOSURE_AUDIT_2026.md
           test -s paper_iv/O_CFS_SURFACE_LAYER_OBSERVABLE_CONTROL_2026.md
