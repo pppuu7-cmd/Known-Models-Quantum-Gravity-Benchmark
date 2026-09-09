@@ -1,17 +1,18 @@
 {
-  "schema_version": "7.2",
-  "updated": "2026-09-09",
+  "schema_version": "7.3",
+  "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 153,
-  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_DECISION_CLOSURE__O_AS_CONTACT_COMPLETE_PRIORITY",
+  "kmqgb_iteration": 158,
+  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_CLOSURE_WAVE_02__O_AS_ACTIVE",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 92,
     "kmqgb_methodology_material_readiness_R2_percent": 90,
     "candidate_gravity_scientific_readiness_R3_percent": 24,
     "legacy_parent_search_R4_percent": 45,
     "legacy_parent_search_status": "PAUSED_CONDITIONAL_ON_PAPER_IV",
-    "post_freeze_wave_01_completion_percent": 100
+    "post_freeze_wave_01_completion_percent": 100,
+    "closure_wave_02_completion_percent": 0
   },
   "last_score_change": {
     "iteration": 145,
@@ -31,13 +32,18 @@
     "new_required_authorized": false,
     "decision_ledger": "paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md",
     "post_freeze_wave_01": "5/5 terminal",
+    "closure_wave_02": {
+      "ref": "post_freeze_paper_iv_closure_wave_02/README.md",
+      "terminal": 0,
+      "denominator": 3,
+      "completion_percent": 0,
+      "active": "CW2-01 O-AS"
+    },
     "priority_open_object": "O-AS",
-    "priority_blocker": "CONTACT_COMPLETE_APPROXIMATION_CONTROLLED_SAME_REALIZATION_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE",
-    "o_as_advance": "2026 non-perturbative Lorentzian graviton-mediated scalar 2-to-2 amplitude and cross section close the generic physical-scattering gap; direct A4 and full approximation/comparator certificate remain",
-    "secondary_open_objects": [
-      "O-LQG continuum-normalized Lorentzian physical observable plus regulator/comparator authority",
-      "O-CFS normalized beyond-continuum physical observable plus same-domain comparator"
-    ]
+    "priority_blocker": "SAME_REALIZATION_CONTACT_COMPLETE_DIFFEO_ERROR_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE",
+    "o_as_latest": "published mediated Lorentzian scattering plus analytic contact control and diffeo/error-controlled AS flow exist, but their species/crossing/truncation/trajectory/normalisation matching into one realization is not proven",
+    "o_lqg_latest": "Lorentzian spinfoam entropy observable exists and reproduces Bekenstein-Hawking leading area law; remaining target is comparator-orthogonal continuum/regulator-stable content",
+    "o_cfs_latest": "QFT/Fock limiting dynamics, relational non-continuum ontology and Einstein-Dirac continuum gravity map exist; remaining target is gravity-specific beyond-continuum observable with same-domain comparator"
   },
   "candidate_gravity": {
     "status": "CONDITIONAL_NOT_ACTIVE_FRONT",
@@ -49,15 +55,16 @@
   "governance": {
     "kmqgb_firewall": "protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md",
     "validator": "code/post_freeze_paper_iv_governance_validator.py",
-    "rule": "BLOCKED does not count as NEW_REQUIRED evidence; benchmark outcomes do not move frozen RQIR Core"
+    "rule": "BLOCKED does not count as NEW_REQUIRED evidence; neighbouring papers in one framework are not composable without same-realization matching"
   },
   "compute_policy": {
-    "heavy_compute_status": "IDLE_PENDING_CONTACT_COMPLETE_O_AS_AUTHORITY",
-    "current_reason": "the remaining O-AS gap is same-realization contact/completion and approximation authority; blind numerical work cannot supply it"
+    "heavy_compute_status": "IDLE_PENDING_FROZEN_CW2_OBJECT",
+    "current_reason": "CW2 blockers are authority/composition/comparator gaps; blind numerical work cannot close them"
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_153.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_158.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
-    "active_audit": "paper_iv/O_AS_SCALAR_SCATTERING_CLOSURE_AUDIT_2026.md"
+    "active_wave": "post_freeze_paper_iv_closure_wave_02/README.md",
+    "active_audit": "paper_iv/O_AS_CONTACT_REALIZATION_MISMATCH_DIAGNOSTIC_2026.md"
   }
 }
