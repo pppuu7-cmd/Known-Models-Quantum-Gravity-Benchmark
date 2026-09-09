@@ -1,10 +1,10 @@
 {
-  "schema_version": "8.0",
+  "schema_version": "8.1",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 176,
-  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_CLOSURE_WAVE_02__THREE_EXACT_BRIDGES",
+  "kmqgb_iteration": 177,
+  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_CLOSURE_WAVE_02__MULTISCALE_GAMMA_FRONT",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 92,
     "kmqgb_methodology_material_readiness_R2_percent": 90,
@@ -24,119 +24,72 @@
   "rqir_core": {
     "version": "1.0",
     "status": "FROZEN",
-    "papers_i_iii_scientific_readiness": "100%",
-    "change_control_ref": "docs/RQIR_CORE_CHANGE_CONTROL.md"
+    "papers_i_iii_scientific_readiness": "100%"
   },
   "paper_iv": {
     "global_decision": "NOT_YET_AUTHORIZED",
     "new_required_authorized": false,
-    "decision_ledger": "paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md",
     "post_freeze_wave_01": "5/5 terminal",
     "closure_wave_02": {
-      "ref": "post_freeze_paper_iv_closure_wave_02/README.md",
       "terminal": 0,
       "denominator": 3,
-      "completion_percent": 0,
-      "priority_order": [
-        "CW2-01 O-AS publication-triggered closure",
-        "CW2-02 O-LQG same-realization multiscale gamma closure",
-        "CW2-03 O-CFS correction hierarchy"
-      ]
+      "completion_percent": 0
     },
     "o_as": {
       "status": "OPEN",
-      "classification": "PROMISING_SAME_PROGRAMME_CONTACT_COMPLETE_PRESENTATION__REPRODUCIBLE_SAME_REALIZATION_CERTIFICATE_MISSING",
       "blocker": "STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE"
     },
     "o_lqg": {
       "status": "OPEN",
-      "classification": "PROMISING_ADAPT_EXISTING__AREA_METRIC_BIREFRINGENCE_SUPPLIES_INDEPENDENT_GAMMA_HOLDOUT__SAME_REALIZATION_MULTISCALE_MAP_MISSING",
-      "preferred_route": "same-realization EPRL gamma-duality -> area-metric RG -> multiscale Lorentzian gamma holdout",
-      "matching_chain": [
-        "G0 microscopic EPRL gamma-duality",
-        "G1 EPRL/spinfoam -> area-metric continuum realization map",
-        "G2 gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu) parameter identity/running",
-        "G3 same-realization parity-sector projection and beta_rho",
-        "G4 beta_Delta plus frozen Delta matching condition",
-        "G5 multiscale primordial q and area-metric birefringence psi closure"
-      ],
+      "classification": "PROMISING_ADAPT_EXISTING__MULTISCALE_GAMMA_FINGERPRINT_HAS_OBSERVABLE_RG_CLOSURE_EQUATION__SAME_REALIZATION_MAP_AND_BETA_DELTA_AUTHORITY_MISSING",
+      "minimum_decisive_object": "MULTISCALE_GAMMA_CERTIFICATE_{M_same-realization,T_RG,C_observable}",
+      "same_realization_map": "EPRL/spinfoam -> area-metric continuum/RG with gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu)",
       "delta_definition": "Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)",
-      "primordial_observable": "q = (pi/8)(r+8 n_T)/Pi = 1/gamma_EFT - gamma_EFT - Delta_gamma",
-      "area_metric_observable": {
-        "relations": [
-          "sinh(2 xi)=1/gamma",
-          "psi=-(1/2) atan(tanh xi)",
-          "gamma=-cot(4 psi) on -pi/8<psi<0"
-        ],
-        "sensitivity": "dpsi/dgamma = 1/[4(1+gamma^2)] > 0 for finite positive gamma"
-      },
-      "identifiability_result": {
-        "q_only": "rank 1 for 2 parameters gamma and Delta_gamma",
-        "q_plus_psi": "full rank for gamma and Delta_gamma if same-realization gamma identity and RG scale transport are established",
-        "joint_determinant": "1/[4(1+gamma^2)] > 0",
-        "direct_residual": "Delta_gamma = 2 cot(8 psi) - q after transport to a common scale"
-      },
-      "rg_tangency": {
-        "rho": "2 f_GB^ren/f_CS^ren",
-        "condition": "beta_Delta = beta_rho - (1+1/gamma^2) beta_gamma",
-        "strong_closure": "beta_Delta=0 on the physical matching trajectory",
-        "allowed_breaking": "nonzero calculable beta_Delta with frozen boundary condition and propagated Delta_gamma(mu)"
-      },
-      "area_metric_bridge": {
-        "rg_authority": "arXiv:2507.02034",
-        "lorentzian_observable_authority": "arXiv:2608.16046",
-        "composition_status": "BLOCKED_CROSS_AUTHORITY_COMPOSITION_NOT_YET_SAME_REALIZATION"
-      },
-      "minimum_decisive_object": "SAME_REALIZATION_MULTISCALE_GAMMA_CLOSURE",
+      "primordial_observable": "q = (pi/8)(r+8 n_T)/Pi = 1/gamma - gamma - Delta_gamma",
+      "area_metric_observable": "gamma=-cot(4 psi) on the positive branch",
+      "direct_observable_residual": "Delta_gamma = 2 cot(8 psi) - q after common-scale transport",
+      "rg_tangency": "beta_Delta = beta_rho - (1+1/gamma^2) beta_gamma",
+      "observable_rg_transport": "beta_Delta = -16 csc^2(8 psi) beta_psi - beta_q",
+      "ideal_observable_tangency": "beta_q + 16 csc^2(8 psi) beta_psi = 0",
+      "joint_identifiability": "det d(q,psi)/d(gamma,Delta_gamma)=1/[4(1+gamma^2)]>0 for finite positive gamma",
       "blockers": [
-        "explicit EPRL/spinfoam realization -> area-metric continuum/RG trajectory map not derived",
-        "gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu) identity/running law not established in one realization",
-        "same-realization area-metric parity coefficients -> GB/CS or equivalent frozen RQIR basis not mapped",
-        "beta_rho and therefore beta_Delta not derived in the composed realization",
-        "primordial and low-energy observables require RG transport to a common scale",
-        "practical area-metric detector sensitivity remains downstream and may be extremely weak"
+        "same-realization EPRL/spinfoam -> area-metric continuum/RG map not derived",
+        "gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu) identity/running law not derived in one realization",
+        "same-realization parity projection and beta_rho/beta_Delta authority missing",
+        "frozen matching condition and multiscale transport between primordial q and low-energy psi missing",
+        "detector/resource forecast remains downstream"
       ]
     },
     "o_cfs": {
       "status": "OPEN",
-      "target": "FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR",
-      "blocker": "2026 geometric derivation classifies correction sources but states that they still need to be worked out in detail"
+      "target": "FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR"
     }
   },
   "candidate_gravity": {
     "status": "CONDITIONAL_NOT_ACTIVE_FRONT",
     "external_iteration": 675,
-    "readiness_percent": 24,
-    "promotable_ansatz": false,
-    "robust_unique_residual": false
-  },
-  "governance": {
-    "kmqgb_firewall": "protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md",
-    "same_realization_gate": "protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md",
-    "validator": "code/post_freeze_paper_iv_governance_validator.py",
-    "provenance_correction": "recovery/PROVENANCE_CORRECTION_ITER174_CONCURRENT_COLLISION.md",
-    "rule": "BLOCKED is not NEW_REQUIRED evidence; shared framework names/symbols do not establish same-realization or cross-representation parameter identity"
+    "readiness_percent": 24
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_PENDING_FROZEN_CW2_OBJECT",
-    "current_reason": "the decisive O-LQG gap is a same-realization multiscale RG/parameter map; detector numerics cannot authorize the composition"
+    "current_reason": "observable closure equation is fixed, but same-realization map and beta_Delta authority remain analytic blockers"
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_176.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_177.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "active_wave": "post_freeze_paper_iv_closure_wave_02/README.md",
+    "provenance_correction": "recovery/PROVENANCE_CORRECTION_ITER174_CONCURRENT_COLLISION.md",
     "active_audits": [
-      "paper_iv/O_AS_CONTACT_PUBLICATION_AUTHORITY_REFRESH_2026-09-10.md",
       "paper_iv/O_LQG_AREA_METRIC_GAMMA_RUNNING_BRIDGE_AUDIT_2026-09-10.md",
       "paper_iv/O_LQG_GAMMA_DUALITY_RG_TANGENCY_GATE_2026.md",
       "paper_iv/O_LQG_AREA_METRIC_BIREFRINGENCE_GAMMA_IDENTIFIABILITY_GATE_2026.md",
-      "paper_iv/O_CFS_GEOMETRIC_CORRECTION_GENERATOR_AUDIT_2026.md"
+      "paper_iv/O_LQG_MULTISCALE_OBSERVABLE_RG_TRANSPORT_GATE_2026.md"
     ],
     "active_code": [
-      "code/lqg_gamma_duality_identifiability_reference.py",
       "code/lqg_gamma_duality_breaking_identifiability_reference.py",
       "code/lqg_gamma_duality_rg_tangency_reference.py",
-      "code/lqg_area_metric_birefringence_gamma_identifiability_reference.py"
+      "code/lqg_area_metric_birefringence_gamma_identifiability_reference.py",
+      "code/lqg_multiscale_observable_rg_transport_reference.py"
     ]
   }
 }
