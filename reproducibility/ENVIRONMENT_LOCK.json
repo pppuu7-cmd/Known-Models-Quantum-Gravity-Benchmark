@@ -1,0 +1,24 @@
+{
+  "environment_lock_version": "1.0",
+  "updated": "2026-09-10",
+  "runner": "ubuntu-24.04",
+  "python": "3.12.11",
+  "dependency_file": "requirements-ci.txt",
+  "pip_install": "python -m pip install --require-hashes -r requirements-ci.txt",
+  "actions": {
+    "actions/checkout": "11d5960a326750d5838078e36cf38b85af677262",
+    "actions/setup-python": "a26af69be951a213d495a4c3e4e4022e16d87065",
+    "actions/upload-artifact": "ea165f8d65b6e75b540449e92b4886f43607fa02"
+  },
+  "packages": {
+    "numpy": "2.2.6",
+    "jsonschema": "4.26.0",
+    "attrs": "26.1.0",
+    "jsonschema-specifications": "2025.9.1",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.6.3",
+    "typing-extensions": "4.16.0"
+  },
+  "scope": "CI and repository validation environment; physics inputs remain governed by frozen benchmark artifacts.",
+  "policy": "Any dependency, runner, Python or action change requires an explicit lock-file update and a full methodology regression run."
+}

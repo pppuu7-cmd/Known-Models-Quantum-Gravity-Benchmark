@@ -1,11 +1,10 @@
 """Deterministic fail-closed orchestrator for the KMQGB executable methodology.
 
-The registry is data; this runner is the single machine entrypoint.  It does not
+The registry is data; this runner is the single machine entrypoint. It does not
 reinterpret scientific outcomes: a registered script is authoritative for its
-own PASS/BLOCKED/negative-control semantics.  The orchestrator only requires
+own PASS/BLOCKED/negative-control semantics. The orchestrator only requires
 that every critical control exists and exits successfully as a regression test.
 """
-
 from __future__ import annotations
 
 import argparse
@@ -18,12 +17,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "protocol" / "EXECUTABLE_TEST_REGISTRY.json"
 DEFAULT_SUMMARY = ROOT / "build" / "methodology_orchestrator_summary.json"
+SUPPORTED_REGISTRY_VERSIONS = {"1.0", "1.1"}
 
 
 def load_registry() -> dict:
     with REGISTRY.open("r", encoding="utf-8") as fh:
         data = json.load(fh)
-    if data.get("registry_version") != "1.0":
+    if data.get("registry_version") not in SUPPORTED_REGISTRY_VERSIONS:
         raise ValueError("unsupported executable registry version")
     tests = data.get("tests")
     if not isinstance(tests, list) or not tests:
@@ -98,7 +98,7 @@ def run_registry(timeout_s: int) -> dict:
                 "id": item["id"],
                 "path": item["path"],
                 "category": item["category"],
-                "returncode": null_return_code(),
+                "returncode": None,
                 "stdout_tail": (exc.stdout or "")[-2000:] if isinstance(exc.stdout, str) else "",
                 "stderr_tail": (exc.stderr or "")[-2000:] if isinstance(exc.stderr, str) else "",
                 "status": "TIMEOUT",
@@ -116,10 +116,6 @@ def run_registry(timeout_s: int) -> dict:
         "status": "PASS" if not failed else "FAIL",
         "results": results,
     }
-
-
-def null_return_code():
-    return None
 
 
 def main() -> int:

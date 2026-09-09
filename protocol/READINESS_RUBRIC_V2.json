@@ -1,0 +1,185 @@
+{
+  "rubric_version": "2.0",
+  "purpose": "Compute R1/R2 from atomic repository evidence rather than accepting declared percentages as input.",
+  "metrics": {
+    "R1": {
+      "total": 100,
+      "components": [
+        {
+          "id": "recovery_provenance_versioning",
+          "weight": 20,
+          "files": [
+            "recovery/state.json",
+            "recovery/CURRENT_BENCHMARK_FRONT.md",
+            "recovery/RESTORE_FROM_NEW_CHAT.md",
+            "recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md",
+            "recovery/RECOVERY_DELTA_180.md",
+            "recovery/PROVENANCE_CORRECTION_ITER174_CONCURRENT_COLLISION.md"
+          ]
+        },
+        {
+          "id": "benchmark_comparator_corpus",
+          "weight": 15,
+          "files": [
+            "post_freeze_paper_iv_wave_01/README.md",
+            "post_freeze_paper_iv_wave_01/PF1_01_CFS/result.json",
+            "post_freeze_paper_iv_wave_01/PF1_02_GR_EFT/result.json",
+            "post_freeze_paper_iv_wave_01/PF1_03_STRING_DUAL_RESONANCE/result.json",
+            "post_freeze_paper_iv_wave_01/PF1_04_LQG_SPINFOAM/result.json",
+            "post_freeze_paper_iv_wave_01/PF1_05_ASYMPTOTIC_SAFETY/result.json",
+            "paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.json"
+          ]
+        },
+        {
+          "id": "permanent_protocols",
+          "weight": 20,
+          "files": [
+            "protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md",
+            "protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md",
+            "protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md",
+            "protocol/BEYOND_C5_ESCAPE_TAXONOMY.md",
+            "protocol/BEYOND_C5_PARENT_PRINCIPLE_DECISION_PROCEDURE.md",
+            "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md"
+          ]
+        },
+        {
+          "id": "executable_layer",
+          "weight": 15,
+          "files": [
+            "protocol/EXECUTABLE_TEST_REGISTRY.json",
+            "code/methodology_orchestrator.py",
+            "code/repository_completion_validator.py",
+            "code/readiness_score.py",
+            "code/schema_validation.py"
+          ],
+          "registry_ids": [
+            "paper_iv_governance",
+            "candidate_record_v13",
+            "schema_validation",
+            "readiness_independent_score",
+            "residual_space_geometry",
+            "p4_functional_freedom"
+          ]
+        },
+        {
+          "id": "candidate_pre_ansatz_scaffold",
+          "weight": 10,
+          "files": [
+            "schemas/candidate_gravity_record_v1_3.schema.json",
+            "templates/candidate_gravity_record_v1_3.template.json",
+            "code/kg_candidate_record_v13_validator.py"
+          ]
+        },
+        {
+          "id": "reproducibility_ci_packaging",
+          "weight": 10,
+          "files": [
+            "requirements-ci.txt",
+            "reproducibility/ENVIRONMENT_LOCK.json",
+            "release/BUNDLE_CONTENTS.json",
+            "release/RELEASE_VERSION",
+            "code/build_release_bundle.py",
+            ".github/workflows/methodology-ci.yml",
+            ".github/workflows/release.yml"
+          ]
+        },
+        {
+          "id": "external_firewall_synchronization",
+          "weight": 10,
+          "files": [
+            "protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md",
+            "external_rqir_checks/iter675_prerequisite_exhaustion_audit.md",
+            "external_rqir_checks/iter143_rqir_paper3_detector_campaign80_sync.md"
+          ],
+          "json_equals": [
+            {"file": "recovery/state.json", "path": "rqir_core.version", "value": "1.0"},
+            {"file": "recovery/state.json", "path": "rqir_core.status", "value": "FROZEN"}
+          ]
+        }
+      ]
+    },
+    "R2": {
+      "total": 100,
+      "components": [
+        {
+          "id": "benchmark_comparator_evidence",
+          "weight": 15,
+          "files": [
+            "post_freeze_paper_iv_wave_01/README.md",
+            "paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md",
+            "paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.json"
+          ]
+        },
+        {
+          "id": "comparator_attribution_taxonomy",
+          "weight": 15,
+          "files": [
+            "protocol/BEYOND_C5_ESCAPE_TAXONOMY.md",
+            "protocol/CANDIDATE_GRAVITY_DESIGN_PRIORS.md",
+            "protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md"
+          ]
+        },
+        {
+          "id": "completeness_constraints_projection",
+          "weight": 15,
+          "files": [
+            "protocol/PARENT_KERNEL_RESPONSE_COMPLETENESS.md",
+            "protocol/RESIDUAL_SPACE_GEOMETRY.md",
+            "protocol/OPTIMAL_COMPARATOR_CONTRASTS.md",
+            "code/inverse_kernel_ordered_partitions.py",
+            "code/residual_space_geometry_reference.py"
+          ]
+        },
+        {
+          "id": "residual_identifiability_rigidity",
+          "weight": 20,
+          "files": [
+            "protocol/CROSS_ORDER_RIGIDITY.md",
+            "protocol/CROSS_REPRESENTATION_RIGIDITY.md",
+            "protocol/CROSS_BACKGROUND_RIGIDITY.md",
+            "code/cross_order_rigidity_reference.py",
+            "code/cross_representation_rigidity_reference.py",
+            "code/detector_visible_residual_physical_covariance_reference.py",
+            "code/detector_facing_nonlinear_likelihood_reference.py"
+          ]
+        },
+        {
+          "id": "beyond_c5_parent_methodology",
+          "weight": 15,
+          "files": [
+            "protocol/BEYOND_C5_PARENT_PRINCIPLE_DECISION_PROCEDURE.md",
+            "protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md",
+            "protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md",
+            "code/p4_functional_freedom_reference.py"
+          ]
+        },
+        {
+          "id": "executable_methodology",
+          "weight": 10,
+          "files": [
+            "protocol/EXECUTABLE_TEST_REGISTRY.json",
+            "code/methodology_orchestrator.py",
+            "code/schema_validation.py",
+            "code/readiness_score.py"
+          ],
+          "registry_ids": [
+            "schema_validation",
+            "readiness_independent_score",
+            "predictive_holdout",
+            "nonlinear_detector_likelihood"
+          ]
+        },
+        {
+          "id": "article_ready_synthesis",
+          "weight": 10,
+          "files": [
+            "publication/KMQGB_METHODS_EVIDENCE_MATRIX.md",
+            "publication/claim_evidence_matrix.json",
+            "CITATION.cff",
+            "LICENSE"
+          ]
+        }
+      ]
+    }
+  }
+}
