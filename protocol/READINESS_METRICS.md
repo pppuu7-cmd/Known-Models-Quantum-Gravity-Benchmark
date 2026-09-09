@@ -2,11 +2,12 @@
 
 **Status:** frozen reporting methodology.  
 **Updated:** 2026-09-09.  
+**Current KMQGB authority:** Iter116.  
 **Purpose:** keep repository readiness, KMQGB methodology readiness and scientific Candidate Gravity readiness separate and stable across chats/iterations.
 
 These percentages measure different objects and must never be merged.
 
-## R1 — Repository readiness for future Candidate Gravity construction
+## R1 — Repository readiness
 
 Frozen component scores:
 
@@ -18,11 +19,11 @@ Frozen component scores:
 - automated reproducibility/tests/CI/artifact packaging `8/10`;
 - external firewall/synchronization `10/10`.
 
-**R1 = 92/100 = 92%.**
+**R1 = 92%.**
 
-Iter076–098 add protocols, failed synthesis records, comparator upgrades and recovery authority, but they do not close the remaining end-to-end executable candidate pipeline, promoted candidate package or richer artifact/coverage gaps. Therefore R1 does not change.
+The Iter099–116 work deepens recovery and hard-origin protocols but does not close the remaining end-to-end executable candidate-pipeline/artifact gaps. R1 is unchanged.
 
-## R2 — KMQGB methodology/material readiness for building a future KG
+## R2 — KMQGB methodology/material readiness
 
 Frozen component scores:
 
@@ -34,34 +35,32 @@ Frozen component scores:
 - executable methodology `8/10`;
 - consolidated playbook/article-ready synthesis `7/10`.
 
-**R2 = 89/100 = 89%.**
+**R2 = 89%.**
 
-Last score change remains Iter060: `+1` from consolidated construction playbook/synthesis `6/10 -> 7/10`.
+Last score change remains Iter060: `+1` from consolidated playbook/synthesis `6/10 -> 7/10`.
 
-Iter076–098 substantially sharpen the already-scored parent-selection methodology:
+Iter099–116 sharpen already-scored methodology without closing a new whole rubric point. New authority includes
 
-- q-difference and self-similar finite-rule controls;
-- Källén-Lehmann and Stinespring attribution gates;
-- Gisin–Stinespring squeeze;
-- same-factorization contact-difference theorem;
-- six explicit failed nonlinear/hard parent synthesis attempts through SYNTHESIS-006;
-- subtraction-free dispersive and finite higher-point null-space failures;
-- all-point rigidity/string ceiling;
-- real-time Herglotz spectral-freedom and Schwarz-Pick rational-collapse controls;
-- anomaly-induced homogeneous-functional-freedom audit;
-- fresh BFSS and covariant-LQG comparator upgrades;
-- topological-recursion and celestial-Ward all-point positive controls;
-- standard-unitarity new-cut attribution gate;
-- entire/polynomial-bounded and Hadamard hard-data gates;
-- scoped 2026 gravitational-completeness pressure on finite charged E2 sectors.
+- celestial associativity multi-particle completion;
+- entire-Herglotz affine collapse;
+- elastic inner/CDD origin-data gate;
+- causal-diamond entanglement-equilibrium and refoliation-algebra synthesis failures;
+- MHV hidden-zero rigidity positive control;
+- hidden-zero cross-order nonuniqueness;
+- BCFW infinity-boundary and multi-shift contact-nullspace gates;
+- eikonal causality selector-limit gate;
+- Lorentzian contour/thimble and resurgence-parameter completeness gates;
+- zero-retarded cross-representation contact-nullspace gate;
+- GR bonus-scaling constructibility positive control;
+- black-hole entropy/S-matrix synthesis failure.
 
-These are genuine scientific/methodological advances but do not close a new frozen R2 point because the decisive rubric gap remains: **no novel parent-selection principle has survived comparator containment and produced the required explicit hard relation plus complete candidate package**.
+These results make the parent search more fail-closed but do not produce a novel parent survivor.
 
-## R3 — Scientific readiness of Candidate Gravity itself
+## R3 — Candidate Gravity scientific readiness
 
-Controlled **only by external RQIR Candidate Gravity authority**. KMQGB cannot promote this value.
+Controlled **only by external RQIR authority**. KMQGB cannot promote this value.
 
-Latest directly observed authority at KMQGB Iter098 is **RQIR Iteration 649** on 2026-09-09.
+Latest directly observed authority is **RQIR Iter675** on 2026-09-09.
 
 External stable rubric remains
 
@@ -74,27 +73,22 @@ External stable rubric remains
 
 **R3 = 24%.**
 
-Current external blocker:
+Iter675 certifies a present prerequisite-exhaustion state under committed authority. The current missing authorities are
 
-`A_cand=lambda_native*a`,
+- M1 same-parent physical observable bridge;
+- M2 matched same-parent Source/Born/contact completion in that physical observable;
+- M3 robust nonzero comparator-subtracted residual;
+- M4 actual `Tr U1` if required by a future C5 path.
 
-`A_Born=lambda_source*b`,
+No active promotable ansatz and no robust residual exist. No independent compute gate is currently authorized.
 
-`rho=lambda_source/lambda_native`,
-
-so
-
-`A_matched=lambda_native*(a-rho*b)`.
-
-Projectivization removes `lambda_native` but not `rho`: `P[A_matched]=P[a-rho*b]`. The historical open scalar response is independently rejected as a one-factor closed-gravity Born proxy. Therefore Source/Born subtraction and comparator residual remain `BLOCKED`, not FAIL and not a residual.
+The older Iter649 relative source/native normalization issue is historical context, not the complete current operational blocker.
 
 Before every future R3/heavy-compute report, refresh external RQIR authority again.
 
 ## R4 — Current research-task completion
 
 Current task: `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`.
-
-Authority: `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md`.
 
 Frozen score:
 
@@ -107,39 +101,34 @@ Frozen score:
 
 **R4 = 45%.**
 
-No Iter076–098 negative/control result is allowed to substitute for P4.
+No Iter099–116 negative gate, failed synthesis, positive comparator control or recovery action may substitute for P4.
 
 ### Current scientific front
 
-The old goal “find a finite non-rational kernel” is superseded by a sharper one:
+The required object is now
 
-> derive the **first comparator-orthogonal irreducible hard datum itself** from a finite gravity-native parent law.
+> a finite gravity-native origin law that fixes **both** the primitive comparator-orthogonal hard datum and the complexity/state data that make it unique.
 
-The same-spectrum shortcut space is now strongly contracted:
+Main remaining high-value routes:
 
-- same GR poles/residues + local analytic difference -> full C5;
-- a new standard-unitarity physical cut requires changed intermediate states/lower transition data or a genuinely new nonperturbative/quantum-law sector;
-- entire + polynomial bounded -> polynomial/contact;
-- zero-free finite-order entire -> `exp(Q)` weakly-nonlocal comparator pressure;
-- infinite-zero finite-order entire -> zero set must itself be derived and faces strong string/dual-resonant comparator pressure.
+1. **zero/growth route:** derive zero locus + multiplicity + degree/growth/order + normalization from one physical law;
+2. **boundary-at-infinity route:** derive a non-GR boundary law rather than merely reconstructing it with extra shifts;
+3. **E3 nonperturbative route:** derive action + measure + state + Lorentzian contour/thimbles + Stokes/transseries data and then a normalized intrinsic gravitational hard amplitude;
+4. **modified quantum/factorization route:** complete probability/composition/no-signalling law plus hard/CTP prediction;
+5. **E2 new-state route:** derive the entire required tower/spectrum and couplings from finite parent data;
+6. **black-hole route:** derive microscopic phase/interference dynamics rather than only entropy/inclusive rates.
 
-High-value remaining same-spectrum routes are
+Positive controls show hard rigidity is possible: MHV gravity hidden-zero plus fixed degree and GR bonus large-z constructibility. The remaining problem is a new physical origin for the rigidity law.
 
-1. finitely derived genuinely nonlocal/exponentially-bounded irreducible hard data with explicit growth/causality class;
-2. intrinsic gravitational nonperturbative/transseries hard data with parent-fixed Lorentzian contour/weight/phase;
-3. controlled modified factorization/quantum dynamics.
-
-E2/new-state routes remain open but are not an easy shortcut: in charged sectors, apply the Iter098 scoped gravitational-completeness screen before assuming the full spectrum remains finite.
-
-A serious future P4 candidate should also have an **all-point generator** or explicit route to one, because positive controls show finite seed-to-all-point completeness is achievable. The hard seed itself must nevertheless survive matrix/string/GR/LQG/AS/nonlocal/mediator/environment comparators.
+Every serious candidate must also provide all-point generation or a direct route to it, same-parent Lorentzian CTP/retarded continuation, absolute normalization and immediate comparator survival.
 
 ## Reporting format
 
-Every future KMQGB/Candidate Gravity iteration must report
+Every future iteration must report
 
 - `Repository readiness (R1): XX%`;
 - `KMQGB methodology/material readiness (R2): XX%`;
 - `Candidate Gravity scientific readiness (R3): XX%`;
 - `Current task completion (R4): XX%`.
 
-Any score change must state which frozen rubric component changed and why.
+Any score change must name the exact frozen rubric component that changed and why.
