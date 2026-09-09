@@ -8,17 +8,7 @@ These percentages measure different objects and must never be merged.
 
 ## R1 — Repository readiness for future Candidate Gravity construction
 
-Weights:
-
-1. recovery/provenance/versioning: 20 points;
-2. benchmark corpus/comparator registry preservation: 15 points;
-3. permanent KG protocol organization: 20 points;
-4. executable schema/validator/reference-code layer: 15 points;
-5. candidate/pre-ansatz machine-record scaffold: 10 points;
-6. automated reproducibility/tests/CI/artifact packaging: 10 points;
-7. external RQIR firewall/authority synchronization: 10 points.
-
-Current component scores remain
+Frozen component scores:
 
 - recovery/provenance/versioning `20/20`;
 - benchmark/comparator corpus `15/15`;
@@ -30,53 +20,47 @@ Current component scores remain
 
 **R1 = 92/100 = 92%.**
 
-The Iter064–075 scientific/search work adds protocols and recovery authority but does not close the remaining end-to-end executable/candidate-package/artifact gaps, so R1 does not change.
+Iter076–097 add protocols, failed synthesis records, comparator upgrades and recovery authority, but they do not close the remaining end-to-end executable candidate pipeline, promoted candidate package or richer artifact/coverage gaps. Therefore R1 does not change.
 
 ## R2 — KMQGB methodology/material readiness for building a future KG
 
-Weights:
-
-1. known-model benchmark/comparator evidence: 15 points;
-2. comparator/attribution taxonomy: 15 points;
-3. response-completeness/Ward/constraint/projection methodology: 15 points;
-4. residual geometry/identifiability/rigidity/holdout/test-suite methodology: 20 points;
-5. Beyond-C5 escape and parent-principle selection methodology: 15 points;
-6. executable/machine-readable methodology: 10 points;
-7. consolidated construction playbook/article-ready synthesis: 10 points.
-
-Current scores remain
+Frozen component scores:
 
 - benchmark/comparator evidence `15/15`;
 - comparator/attribution taxonomy `15/15`;
 - completeness/constraints/projection `15/15`;
 - residual/identifiability/rigidity `19/20`;
-- escape/parent-principle methodology `10/15`;
+- Beyond-C5 escape/parent-principle methodology `10/15`;
 - executable methodology `8/10`;
-- consolidated playbook/synthesis `7/10`.
+- consolidated playbook/article-ready synthesis `7/10`.
 
 **R2 = 89/100 = 89%.**
 
-The last score change remains Iter060: `+1` from consolidated construction playbook/article-ready synthesis `6/10 -> 7/10`.
+Last score change remains Iter060: `+1` from consolidated construction playbook/synthesis `6/10 -> 7/10`.
 
-Iter062–075 significantly sharpen the search boundary without closing a new rubric point:
+Iter076–097 substantially sharpen the already-scored parent-selection methodology:
 
-- exact finite-range local-TT projector no-go;
-- QCA shared-clock and fractional-root controls;
-- local-analytic QCA IR containment in full C5;
-- one-pole hard amplitude positive control followed by chiral-string containment;
-- constructive survivor matrix O1–O4;
-- E3 gravity-attribution gate;
-- O1 and O2 fresh hard-scope audits;
-- O3 rational-kernel localization no-go;
-- O3 exact semigroup-to-exponential A2 positive control.
+- q-difference and self-similar finite-rule controls;
+- Källén-Lehmann and Stinespring attribution gates;
+- Gisin–Stinespring squeeze;
+- same-factorization contact-difference theorem;
+- six explicit failed nonlinear/hard parent synthesis attempts through SYNTHESIS-006;
+- subtraction-free dispersive and finite higher-point null-space failures;
+- all-point rigidity/string ceiling;
+- real-time Herglotz spectral-freedom and Schwarz-Pick rational-collapse controls;
+- anomaly-induced homogeneous-functional-freedom audit;
+- fresh BFSS and covariant-LQG comparator upgrades;
+- topological-recursion and celestial-Ward all-point positive controls;
+- standard-unitarity new-cut attribution gate;
+- entire/polynomial-bounded and Hadamard hard-data gates.
 
-These improve rigor within already-scored parent-selection methodology but no genuinely novel parent has survived.
+These are genuine scientific/methodological advances but do not close a new frozen R2 point because the decisive rubric gap remains: **no novel parent-selection principle has survived comparator containment and produced the required explicit hard relation plus complete candidate package**.
 
 ## R3 — Scientific readiness of Candidate Gravity itself
 
 Controlled **only by external RQIR Candidate Gravity authority**. KMQGB cannot promote this value.
 
-Latest directly observed authority at KMQGB Iter075 is **RQIR Iteration 649** (2026-09-09).
+Latest directly observed authority at KMQGB Iter097 is **RQIR Iteration 649** on 2026-09-09.
 
 External stable rubric remains
 
@@ -89,25 +73,19 @@ External stable rubric remains
 
 **R3 = 24%.**
 
-The current external obstruction is more specific than the earlier Iter621 normalization graph. RQIR now has closed-Gamma3 projective information, but matched Source/Born subtraction combines two independently normalized sectors.
-
-Write
+Current external blocker:
 
 `A_cand=lambda_native*a`,
 
 `A_Born=lambda_source*b`,
 
-`rho=lambda_source/lambda_native`.
+`rho=lambda_source/lambda_native`,
 
-Then
+so
 
 `A_matched=lambda_native*(a-rho*b)`.
 
-Projectivization removes `lambda_native` but not the independent `rho`:
-
-`P[A_matched]=P[a-rho*b]`.
-
-The historical open scalar response is independently rejected as a one-common-factor proxy by the mismatch of family-total coefficient vectors. Thus Source/Born subtraction and comparator residual construction remain `BLOCKED`, not FAIL and not a residual.
+Projectivization removes `lambda_native` but not `rho`: `P[A_matched]=P[a-rho*b]`. The historical open scalar response is independently rejected as a one-factor closed-gravity Born proxy. Therefore Source/Born subtraction and comparator residual remain `BLOCKED`, not FAIL and not a residual.
 
 Before every future R3/heavy-compute report, refresh external RQIR authority again.
 
@@ -117,7 +95,7 @@ Current task: `MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH`.
 
 Authority: `protocol/MINIMAL_NOVEL_PARENT_PRINCIPLE_SEARCH_RUBRIC.md`.
 
-Current score remains
+Frozen score:
 
 - P1 known-principle saturation `15/15`;
 - P2 multi-representation/background rigidity `15/15`;
@@ -128,9 +106,29 @@ Current score remains
 
 **R4 = 45%.**
 
-The current active front is O3: find a finite physical law that uniquely generates a **non-rational** gravitational kernel/interaction hierarchy, fixes its retarded/CTP prescription, produces a hard spin-2 relation, and survives known nonlocal/string/AS/discrete comparators.
+No Iter076–097 negative/control result is allowed to substitute for P4.
 
-The exact O3 rational-localization result removes finite hidden-resolvent shortcuts. The semigroup theorem is a positive A2 control showing finite functional laws can remove arbitrary function freedom, but its exponential solution is comparator-contained and does not earn P4 credit.
+### Current scientific front
+
+The old goal “find a finite non-rational kernel” is superseded by a sharper one:
+
+> derive the **first comparator-orthogonal irreducible hard datum itself** from a finite gravity-native parent law.
+
+The same-spectrum shortcut space is now strongly contracted:
+
+- same GR poles/residues + local analytic difference -> full C5;
+- a new standard-unitarity physical cut requires changed intermediate states/lower transition data or a genuinely new nonperturbative/quantum-law sector;
+- entire + polynomial bounded -> polynomial/contact;
+- zero-free finite-order entire -> `exp(Q)` weakly-nonlocal comparator pressure;
+- infinite-zero finite-order entire -> zero set must itself be derived and faces strong string/dual-resonant comparator pressure.
+
+High-value remaining same-spectrum routes are
+
+1. finitely derived genuinely nonlocal/exponentially-bounded irreducible hard data with explicit growth/causality class;
+2. intrinsic gravitational nonperturbative/transseries hard data with parent-fixed Lorentzian contour/weight/phase;
+3. controlled modified factorization/quantum dynamics.
+
+A serious future P4 candidate should also have an **all-point generator** or explicit route to one, because positive controls show finite seed-to-all-point completeness is achievable. The hard seed itself must nevertheless survive matrix/string/GR/LQG/AS/nonlocal/mediator/environment comparators.
 
 ## Reporting format
 
