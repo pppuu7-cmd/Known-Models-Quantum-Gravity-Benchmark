@@ -94,7 +94,8 @@ jobs:
           test -s recovery/state.json
           test -s recovery/CANDIDATE_GRAVITY_RESEARCH_HANDOFF.md
           test -s recovery/RESTORE_FROM_NEW_CHAT.md
-          for i in $(seq -w 99 116); do test -s recovery/RECOVERY_DELTA_${i}.md; done
+          test -s recovery/PROVENANCE_CORRECTION_POST116_ID_COLLISION.md
+          for i in $(seq -w 99 122); do test -s recovery/RECOVERY_DELTA_${i}.md; done
           test -s protocol/READINESS_METRICS.md
           test -s protocol/P4_FUNCTIONAL_FREEDOM_NO_GO.md
           test -s protocol/CANDIDATE_GRAVITY_CONSTRUCTION_PLAYBOOK.md
@@ -107,7 +108,9 @@ jobs:
           test -s protocol/P4_ELASTIC_INNER_CDD_ORIGIN_DATA_GATE.md
           test -s protocol/P4_MHV_GRAVITY_HIDDEN_ZERO_RIGIDITY_CONTROL.md
           test -s protocol/P4_HIDDEN_ZERO_CROSS_ORDER_NONUNIQUENESS_GATE.md
+          test -s protocol/P4_HIDDEN_ZERO_DEGREE_GROWTH_ORIGIN_GATE.md
           test -s protocol/P4_BCFW_INFINITY_BOUNDARY_ORIGIN_DATA_GATE.md
+          test -s protocol/P4_BOUNDARY_AT_INFINITY_ORIGIN_DATA_GATE.md
           test -s protocol/P4_EIKONAL_CAUSALITY_SELECTOR_LIMIT_GATE.md
           test -s protocol/P4_MULTI_SHIFT_CONTACT_NULLSPACE_GATE.md
           test -s protocol/P4_LORENTZIAN_CONTOUR_THIMBLE_ORIGIN_GATE.md
@@ -118,4 +121,8 @@ jobs:
           test -s candidate_synthesis/SYNTHESIS_008_ANOMALY_FREE_REFOLIATION_ALGEBRA.md
           test -s candidate_synthesis/SYNTHESIS_009_INFINITY_BOUNDARY_RECURSIVE_PARENT.md
           test -s candidate_synthesis/SYNTHESIS_010_BLACK_HOLE_ENTROPY_S_MATRIX_PARENT.md
+          test -s candidate_synthesis/SYNTHESIS_011_ALL_DEFORMATION_BOUNDARY_CONSISTENCY.md
+          test -s candidate_synthesis/SYNTHESIS_012_COMPLEX_GROWTH_MINIMALITY_SELECTOR.md
+          test -s candidate_synthesis/SYNTHESIS_013_BLACK_HOLE_ENTROPY_DENSITY_PARENT.md
+          test -s candidate_synthesis/SYNTHESIS_014_BLACK_HOLE_ETH_MATRIX_PARENT.md
           test -s external_rqir_checks/iter675_prerequisite_exhaustion_audit.md
