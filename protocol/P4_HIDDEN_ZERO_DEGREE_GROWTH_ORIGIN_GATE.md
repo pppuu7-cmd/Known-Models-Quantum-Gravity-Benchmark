@@ -1,7 +1,7 @@
 # P4 Hidden-Zero Degree/Growth Origin Gate
 
 **Status:** permanent hard-seed prefilter.  
-**KMQGB iteration:** 107.  
+**KMQGB iteration:** 117.  
 **Purpose:** prevent a kinematic zero locus by itself from being mistaken for a unique gravity hard-origin law.
 
 ## 1. Fresh comparator fact
