@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-09  
-**KMQGB iteration:** **152**  
-**Phase:** **RQIR Core v1.0 FROZEN / PF1 regression closed / Paper-IV decision closure ACTIVE**.
+**KMQGB iteration:** **153**  
+**Phase:** **RQIR Core v1.0 FROZEN / Paper-IV decision closure / O-AS contact-complete priority**.
 
 ## Stable metrics
 
@@ -10,71 +10,69 @@
 - **R2 KMQGB methodology/material readiness: 90%.**
 - **R3 external Candidate Gravity readiness: 24%.**
 - **Legacy parent-search R4: 45% — PAUSED / CONDITIONAL ON PAPER IV.**
-- **Post-freeze Paper-IV Wave 01: 5/5 = 100% terminal.**
+- **Post-freeze PF1 regression: 5/5 = 100% terminal.**
 
-Last readiness change: Iter145, `R2 89 -> 90`, when `residual/identifiability/rigidity` closed `19/20 -> 20/20` after methodology-ci run `34397157673` passed the independent nonlinear detector-facing regression.
+No readiness score changes at Iter153.
 
-## Frozen RQIR authority
+## Frozen architecture
 
-RQIR Core **v1.0 is FROZEN** and Papers I–III are **100% scientific/material CLOSED**. KMQGB owns model-specific adapters and Paper-IV benchmark writes. Future Candidate Gravity remains separate and cannot tune the frozen judge.
+RQIR Core **v1.0 is FROZEN** and Papers I–III are **100% scientific/material CLOSED**. KMQGB is the active Paper-IV known-model proving ground. Future Candidate Gravity remains separate and may not tune the frozen judge.
 
-Governance:
-
-- external `RQIR_VERSION.json`;
-- external `docs/RQIR_CORE_CHANGE_CONTROL.md`;
-- `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md`.
-
-## Completed post-freeze regression
-
-Authority: `post_freeze_paper_iv_wave_01/README.md`.
-
-- **PF1-01 CFS:** `BLOCKED_MISSING_REQUIRED_OBJECT`; controlled continuum theorem gives scoped Einstein–Dirac comparator identity.
-- **PF1-02 GR/EFT:** `PASS_RQIR_GATE__BASELINE_CONTROL`; existing sufficient in the declared low-energy EFT domain only.
-- **PF1-03 string/dual resonance:** `PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL`; low-dimensional fingerprints are non-unique, stronger overconstrained Virasoro–Shapiro package is rigid in its stated scope.
-- **PF1-04 LQG/spinfoam:** `BLOCKED_MISSING_REQUIRED_OBJECT`; 2026 UV-fixed-point and causal-vertex results retire stale triangulation/causal-phase blockers, leaving a continuum-normalized Lorentzian observable package open.
-- **PF1-05 asymptotic safety:** `BLOCKED_MISSING_REQUIRED_OBJECT`; direct Lorentzian spectral/form-factor progress is accepted, leaving a scheme/truncation/gauge-controlled full physical crossover package open.
-
-The frozen judge required **no semantic change** across all five regressions.
+Governance is enforced by `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md` and `code/post_freeze_paper_iv_governance_validator.py`.
 
 ## Paper-IV global decision
 
-Authority:
+Authority: `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md`.
 
-- `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md`;
-- `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.json`.
-
-Current global result:
+Current result:
 
 **`NOT_YET_AUTHORIZED`**.
 
-None of `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED` has met its proof obligation.
+None of `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED` has met its proof obligation. `NEW_REQUIRED` remains forbidden while major frameworks are missing-object blocked rather than excluded on complete same-domain observables.
 
-In particular, `NEW_REQUIRED` is currently forbidden because CFS, LQG and asymptotic safety remain missing-object blocked rather than excluded on complete same-domain observables.
+## Post-freeze regression wave
 
-## Exact high-value open objects
+PF1 is **5/5 terminal**:
 
-### O-CFS
+- CFS — missing-object block with scoped Einstein–Dirac continuum identity;
+- GR/EFT — low-energy baseline/control PASS;
+- string/dual resonance — scoped rigidity PASS;
+- LQG/spinfoam — missing-object block after accepting fresh UV/causal progress;
+- asymptotic safety — missing-object block after accepting fresh Lorentzian spectral/scattering progress.
 
-Normalized beyond-continuum CFS relational/detector/asymptotic observable with fixed state/regularization and an identical-domain Einstein–Dirac/QFT comparator.
+No Core-v1.0 semantic change was needed.
 
-### O-LQG
+## Iter153 — O-AS blocker contraction
 
-Continuum-normalized Lorentzian LQG/spinfoam physical observable with regulator/triangulation authority and same-domain GR/EFT/QG comparators.
+Fresh 2026 authority now supplies a real non-perturbative Lorentzian graviton-mediated scalar `2->2` amplitude and cross section. It recovers GR behavior in the infrared and exhibits the asymptotically safe UV behavior in the physical observable.
 
-### O-AS
+Therefore the generic O-AS requirement “obtain a Lorentzian physical crossover observable” is closed.
 
-Lorentzian asymptotic-safety physical crossover observable with frozen renormalization/trajectory prescription, controlled truncation/gauge dependence and same-domain comparator completion; contact/crossing-complete `4g`/higher authority is preferred for scattering claims.
+The main scattering paper nevertheless defines
 
-## Governance enforcement
+`A = A_s + A_t + A_u + A4`
 
-`code/post_freeze_paper_iv_governance_validator.py` makes the anti-retrofitting rule executable. In particular, a `BLOCKED` result cannot be marked as `NEW_REQUIRED` evidence, and a core change cannot be requested without an explicit core defect.
+and explicitly neglects direct contact `A4` in its primary computation. It also contains flow/vertex/reconstruction approximations whose full error is not captured by the reconstruction uncertainty alone.
+
+The new exact O-AS blocker is therefore
+
+**`CONTACT_COMPLETE_APPROXIMATION_CONTROLLED_SAME_REALIZATION_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE`**.
+
+A separate contact-sector calculation cannot simply be spliced into the mediated result without same-realization matching. ERG2026 reports a Lorentzian-resummed contact contribution and is recorded as promising noncanonical closure evidence pending a stable reproducible package.
+
+Authority: `paper_iv/O_AS_SCALAR_SCATTERING_CLOSURE_AUDIT_2026.md`.
+
+## Secondary open objects
+
+- **O-LQG:** continuum-normalized Lorentzian physical observable + regulator/triangulation/comparator authority.
+- **O-CFS:** normalized beyond-continuum physical observable + state/regularization + same-domain comparator.
 
 ## Heavy compute
 
 **IDLE.**
 
-Compute becomes justified only after one of O-CFS/O-LQG/O-AS is frozen sufficiently that a numerical result can change its model-level terminal classification.
+The O-AS missing object is presently an authority/completion problem. Heavy computation becomes useful only after the contact-complete same-realization amplitude is frozen and a numerical robustness/comparator question is preregistered.
 
 ## Next research move
 
-Audit O-CFS, O-LQG and O-AS against current literature/repository authority and select the one closest to a complete same-domain observable. Do not expand to another broad taxonomy wave until one of these three blockers is materially advanced.
+Continue O-AS first: search for a stable/reproducible publication, preprint revision, data or presentation material containing the direct Lorentzian contact contribution in the same realization and its approximation/error budget. If that authority cannot be obtained, move to O-LQG rather than launching blind compute.
