@@ -3,27 +3,31 @@
   "rqir_core_version": "1.0",
   "framework": "asymptotic safety / Lorentzian functional RG",
   "terminal_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
-  "scoped_blocker": "FULL_PHYSICAL_CROSSOVER_OBSERVABLE_COMPARATOR_PACKAGE",
+  "scoped_blocker": "CONTACT_COMPLETE_APPROXIMATION_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE",
   "positive_controls": [
     "direct Lorentzian graviton spectral functions",
     "GR-infrared to asymptotically-safe-UV spectral interpolation",
     "Ward-improved Lorentzian functional flow",
-    "normalisable spectral functions in studied renormalisation prescriptions",
-    "effective action reconstructed through quadratic curvature with graviton-induced form factors"
+    "effective action reconstructed through quadratic curvature with graviton-induced form factors",
+    "2026 non-perturbative Lorentzian graviton-mediated scalar 2-to-2 amplitude and cross section",
+    "IR recovery of General Relativity in the scalar-scattering observable",
+    "UV cross section compatible with the stated unitarity bounds",
+    "multiple Lorentzian reconstruction methods used as a robustness control"
   ],
-  "obsolete_blocker_rejected": "absence of Lorentzian spectral information",
+  "obsolete_blockers_rejected": [
+    "absence of Lorentzian spectral information",
+    "absence of any Lorentzian physical scattering observable"
+  ],
   "remaining_requirements": [
-    "declared physical renormalisation/trajectory prescription",
-    "truncation or convergence control for the claimed observable",
-    "gauge/BRST/Ward-complete physical mapping",
-    "contact/crossing-complete 4g-or-higher or equivalent physical crossover observable when scattering attribution is claimed",
-    "absolute normalisation and Lorentzian state/analytic prescription",
-    "same-domain GR/EFT and alternative-QG comparator predictions",
-    "robust residual stable under allowed methodological variations"
+    "same-realization direct contact A4 contribution",
+    "complete s+t+u+A4 physical amplitude certificate with crossing/forward-limit treatment",
+    "uncertainty and robustness budget including relevant flow/truncation/avatar approximations rather than reconstruction error only",
+    "same-domain full GR/EFT and alternative-QG comparator predictions"
   ],
+  "conference_evidence": "ERG2026 reports a Lorentzian-resummed gravitational contact contribution, but it remains promising noncanonical authority until a stable reproducible same-realization package is available",
   "rqir_core_defect": false,
   "core_change_requested": false,
   "paper_iv_decision_authorized": false,
   "counts_as_new_required_evidence": false,
-  "reopen_condition": "provide one frozen Lorentzian asymptotic-safety realisation with scheme/truncation/gauge-controlled physical crossover observable and same-domain comparator data"
+  "reopen_condition": "freeze a contact-complete approximation-controlled Lorentzian scalar-scattering certificate in the same asymptotic-safety realization and run the same-domain comparator robustness audit"
 }
