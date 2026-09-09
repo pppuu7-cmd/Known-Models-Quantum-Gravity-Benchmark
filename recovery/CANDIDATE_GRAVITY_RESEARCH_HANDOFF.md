@@ -1,18 +1,8 @@
 # KMQGB Research Handoff — Post-Freeze Paper-IV Mode
 
-The filename is historical. Candidate-Gravity design is conditional and **not** the active front. The active task is known-framework Paper-IV closure under **RQIR Core v1.0 FROZEN**.
+The filename is historical. Candidate-Gravity design remains conditional and **not** the active front. The active task is known-framework Paper-IV closure under **RQIR Core v1.0 FROZEN**.
 
-## Restore order
-
-1. Read `recovery/RESTORE_FROM_NEW_CHAT.md`, `recovery/CURRENT_BENCHMARK_FRONT.md`, and `recovery/state.json`.
-2. Read `protocol/READINESS_METRICS.md`, `protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md`, and `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`.
-3. Read `post_freeze_paper_iv_wave_01/README.md` and `post_freeze_paper_iv_closure_wave_02/README.md`.
-4. Read `paper_iv/PAPER_IV_FROZEN_CORE_DECISION_LEDGER.md` and `.json`.
-5. Read recovery deltas through `RECOVERY_DELTA_173.md`; retain `PROVENANCE_CORRECTION_POST116_ID_COLLISION.md` for older chronology.
-6. Read `code/post_freeze_paper_iv_governance_validator.py`, `code/lqg_gamma_duality_identifiability_reference.py`, and `code/lqg_gamma_duality_breaking_identifiability_reference.py`.
-7. Refresh external RQIR Candidate-Gravity authority before quoting R3 or reactivating Candidate Gravity.
-
-## Stable metrics — Iter173
+## Stable metrics — Iter176
 
 - **R1 repository readiness = 92%**;
 - **R2 KMQGB methodology/material readiness = 90%**;
@@ -21,7 +11,7 @@ The filename is historical. Candidate-Gravity design is conditional and **not** 
 - **PF1 post-freeze regression = 5/5 terminal**;
 - **Closure Wave 02 = 0/3 terminal**.
 
-Last score change remains Iter145: R2 `89 -> 90` after nonlinear detector-facing closure.
+Last score change remains Iter145. The Iter174-176 advances narrow the scientific blocker but do not terminally close a CW2 object.
 
 ## Frozen architecture
 
@@ -35,57 +25,95 @@ Last score change remains Iter145: R2 `89 -> 90` after nonlinear detector-facing
 
 **`NOT_YET_AUTHORIZED`.**
 
-No one of `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED` satisfies its proof obligation. Present evidence increasingly supports the plausibility of `ADAPT_EXISTING`, but this is not yet a terminal result.
+Evidence increasingly strengthens an `ADAPT_EXISTING` route, especially through the LQG/area-metric branch, but no global terminal category is yet authorized.
 
 ## Closure Wave 02
 
-### CW2-01 / O-AS — publication-triggered priority
-
-The scalar-scattering programme now publicly reports a Lorentzian-resummed gravitational contact contribution, but stable same-realization equations/data/error propagation are not yet frozen.
+### CW2-01 / O-AS — publication-triggered
 
 Exact blocker:
 
 `STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE`.
 
-Do not repeatedly record the same absence; re-audit when a stable contact-amplitude preprint/revision/data package appears.
+Do not repeatedly re-audit absence. Trigger on new stable contact-amplitude authority.
 
 ### CW2-02 / O-LQG — active analytic priority
 
-Preferred route is gamma-duality.
+The route has advanced beyond a generic missing-top-down-EFT problem.
 
-The top-down problem is reduced to an identifiable renormalized matching object. Define
+#### Iter174
 
-`Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)`
+A spin-foam-motivated area-metric programme supplies a running Immirzi parameter and a Lorentzian parity/birefringence observable channel.
 
-and generalized primordial combination
+#### Iter175
 
-`q = (pi/8)(r+8 n_T)/Pi = 1/gamma_EFT - gamma_EFT - Delta_gamma`.
+For
 
-Iter173 establishes:
+`rho=2 f_GB^ren/f_CS^ren`,
 
-- q alone has structural rank 1 for `{gamma_EFT,Delta_gamma}`;
-- detector precision cannot lift this degeneracy;
-- a geometry observable restores full rank only if a derived parameter-identity map makes gamma shared across EFT and geometry;
-- independently fitted `gamma_geom` leaves the system underidentified.
+`Delta_gamma=rho-(gamma-1/gamma)`,
 
-Exact current target:
+renormalized gamma-duality is preserved iff
 
-`IDENTIFIABLE_RENORMALIZED_GAMMA_MATCH = {gamma_micro->gamma_EFT, Delta_gamma prediction/prior, optional gamma_geom map}`.
+`beta_Delta = beta_rho - (1+1/gamma^2) beta_gamma = 0`
 
-Strongest route: prove a non-anomalous renormalized gamma-duality relation (`Delta_gamma=0` within controlled uncertainty) and the gamma identity/running map. A nonzero predicted Delta is acceptable if it is fixed by the parent and the enlarged fingerprint remains identifiable.
+on the gamma-dual surface. Thus `beta_gamma` alone cannot authorize the bridge.
 
-### CW2-03 / O-CFS — priority 3
+#### Iter176
 
-CFS has native observables and a direct geometric Einstein derivation with a correction generator.
+The positive-gamma area-metric birefringence relation is exactly invertible:
+
+`gamma=-cot(4 psi)`.
+
+Combined with
+
+`q=1/gamma-gamma-Delta_gamma`,
+
+it gives a full-rank two-observable fingerprint and direct consistency statistic
+
+`Delta_gamma = 2 cot(8 psi) - q`
+
+after all quantities are RG transported to a common scale.
+
+This creates a strong falsifiability architecture, but only if one derived parameter map proves that the same gamma is being used throughout.
+
+### Exact O-LQG target
+
+`SAME_REALIZATION_MULTISCALE_GAMMA_CLOSURE`.
+
+Required:
+
+1. microscopic EPRL/spinfoam -> area-metric continuum/RG realization map;
+2. `gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu)` identity/running law;
+3. same-realization parity projection and `beta_rho`;
+4. `beta_Delta` and a frozen matching/boundary condition;
+5. RG scale transport between primordial `q` and area-metric `psi`;
+6. nuisance/observable models with no independent gamma refit.
+
+Current classification:
+
+`PROMISING_ADAPT_EXISTING__AREA_METRIC_BIREFRINGENCE_SUPPLIES_INDEPENDENT_GAMMA_HOLDOUT__SAME_REALIZATION_MULTISCALE_MAP_MISSING`.
+
+### CW2-03 / O-CFS
 
 Exact missing object:
 
 `FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR`.
 
+## Provenance
+
+Canonical chronology after the concurrent collision:
+
+- Iter174 = area-metric gamma-running bridge;
+- Iter175 = gamma-duality RG tangency;
+- Iter176 = area-metric birefringence gamma identifiability.
+
+Authority: `recovery/PROVENANCE_CORRECTION_ITER174_CONCURRENT_COLLISION.md`.
+
 ## Heavy compute
 
-**IDLE.** The active LQG blocker is analytic/structural. Numerical detector forecasting cannot solve the gamma/Delta degeneracy and is therefore downstream.
+**IDLE.** The active blocker is analytic/RG/provenance. A detector forecast before parameter identity and scale transport are frozen cannot change the terminal classification.
 
 ## Minimal continuation instruction
 
-`Продолжай KMQGB с Iter173. RQIR Core v1.0 frozen. R1=92, R2=90, R3=24, legacy R4=45 paused. PF1=5/5, CW2=0/3, Paper IV=NOT_YET_AUTHORIZED. O-AS только при новой stable contact authority. Активный фронт O-LQG: renormalized gamma-duality Ward/nonrenormalization protection, Delta_gamma и gamma_micro->gamma_EFT->gamma_geom matching. Heavy compute держать idle до frozen analytic bridge. Не менять RQIR Core и не трактовать BLOCKED как NEW_REQUIRED.`
+`Продолжай KMQGB с Iter176. RQIR Core v1.0 frozen. R1=92, R2=90, R3=24, legacy R4=45 paused. PF1=5/5, CW2=0/3, Paper IV=NOT_YET_AUTHORIZED. Активный O-LQG target = SAME_REALIZATION_MULTISCALE_GAMMA_CLOSURE. Ищи/выводи EPRL->area-metric realization map, gamma_micro->gamma_AM(mu)->gamma_EFT(mu), beta_rho/beta_Delta и multiscale q<->psi transport. Heavy compute не запускать до frozen analytic bridge. BLOCKED не трактовать как NEW_REQUIRED.`
