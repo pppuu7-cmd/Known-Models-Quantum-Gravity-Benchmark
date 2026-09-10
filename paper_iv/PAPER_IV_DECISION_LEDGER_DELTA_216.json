@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "iteration": 216,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "CANONICAL_WDW_GEOMETRODYNAMICS",
+    "status": "BLOCKED_WDW_NO_LOCATED_FIXED_FULL_3PLUS1_METRIC_REALIZATION_WITH_REGULATED_ANOMALY_CLOSED_CONSTRAINTS_POSITIVE_PHYSICAL_HILBERT_RELATIONAL_OBSERVABLE_AND_GR_COMPARATOR_ERROR_CHAIN",
+    "formal_constraint_structure": true,
+    "semiclassical_gr_recovery_structure": true,
+    "scoped_group_averaging_brst_inner_product": true,
+    "scoped_relational_clock_dynamics": true,
+    "full_3plus1_regulated_constraint_closure": false,
+    "full_3plus1_positive_physical_hilbert_observable_chain": false,
+    "family_residual_defined": false,
+    "scientific_fail": false,
+    "counts_as_new_required_exclusion": false,
+    "authority": "paper_iv/O_WDW_CANONICAL_GEOMETRODYNAMICS_FIRST_PASS_CLOSURE_AUDIT_2026-09-10.md"
+  },
+  "governance_note": "Canonical WDW geometrodynamics has stronger scoped Hilbert-space and relational-time structure than a blanket negative summary suggests, but no audited fixed full 3+1 metric realization closes regulator/factor-ordering, constraint anomaly closure, positive physical inner product, relational observable, semiclassical GR comparator and error propagation simultaneously.",
+  "next_gate": "WDW_FULL_3PLUS1_REGULATED_CONSTRAINT_ALGEBRA_PHYSICAL_INNER_PRODUCT_AUTHORITY_SEARCH"
+}
