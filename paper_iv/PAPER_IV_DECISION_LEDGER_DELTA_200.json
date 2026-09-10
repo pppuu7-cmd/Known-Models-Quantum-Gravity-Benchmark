@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "iteration": 200,
+  "baseline_frozen_ledger": "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json",
+  "prior_delta": "paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_199.json",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "decision_semantics_changed": false,
+  "coverage_counts": {"tier1_required":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0},
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity": {"R3_percent":24,"active":false,"activation_condition":"D7 == NEW_REQUIRED"},
+  "ledger_delta": {
+    "family": "CDT_EDT",
+    "prior_missing_certificate": "CDT_4D_CONTINUUM_TRAJECTORY_PLUS_INVARIANT_OBSERVABLE_COMPARATOR_CERTIFICATE",
+    "new_scoped_child": "CDT_4D_GEON_CURVATURE_CORRELATOR",
+    "new_scoped_status": "PASS_RQIR_GATE__CDT_4D_NORMALIZED_CURVATURE_CORRELATOR_PHYSICAL_OBSERVABLE_WITH_OPERATOR_VOLUME_SMEARING_SYSTEMATICS_AND_OPEN_DATA",
+    "observable_side_status": "SCOPED_CLOSED_AT_ONE_FIXED_4D_CDT_BARE_POINT",
+    "continuum_side_status": "OPEN__NO_DEMONSTRATED_UV_FIXED_POINT_LINE_OF_CONSTANT_PHYSICS_OR_A_TO_ZERO_OBSERVABLE_EXTRAPOLATION",
+    "updated_missing_certificate": "CDT_4D_LINE_OF_CONSTANT_PHYSICS_TO_UV_CONTINUUM_TRAJECTORY_PLUS_LATTICE_SPACING_SCALING_AND_GEON_CORRELATOR_COMPARATOR_ERROR_CERTIFICATE__EDT_DISPOSITION",
+    "parent_disposition": "PARTIAL_SUBFAMILY_ONLY",
+    "family_residual_defined": false,
+    "scoped_child_residual_defined": true,
+    "scoped_child_residual_status": "DEFINED_GRAVITY_OBSERVABLE__COMPARATOR_ORTHOGONAL_QG_RESIDUAL_NOT_YET_ESTABLISHED",
+    "terminal_promotion": false,
+    "new_required_evidence": false,
+    "reason": "A published 4D CDT fixed-realization normalized curvature-correlator observable now has operator, volume and smearing systematics plus open stochastic data. This closes the earlier absence-of-physical-observable objection only in that scoped realization. The independent CDT-FRG scaling programme still reports insufficient precision to decide the UV fixed point, and no a->0 transport of the correlator or same-domain comparator quotient is frozen. EDT is not dispositioned by the CDT child."
+  },
+  "d7_effect": "NONE__PRECONDITIONS_D2_D4_REMAIN_OPEN",
+  "heavy_compute": "IDLE"
+}
