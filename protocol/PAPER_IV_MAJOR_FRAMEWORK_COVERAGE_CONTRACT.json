@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "iteration": 184,
+  "iteration": 185,
   "rqir_core": {"version": "1.0", "status": "FROZEN"},
   "purpose": "Prevent a Paper-IV terminal decision, especially NEW_REQUIRED, from being inferred from a benchmark set that omits materially distinct major quantum-gravity schools or silently lets one scoped submodel stand for an entire school.",
   "coverage_basis": {
@@ -20,7 +20,9 @@
     "blocked_or_not_yet_benchmarked_counts_as_exclusion": false,
     "school_merging_requires_explicit_reduction_map": true,
     "rqir_core_may_not_be_changed_to_fit_a_school": true,
-    "model_specific_adapters_are_allowed_without_core_change": true
+    "model_specific_adapters_are_allowed_without_core_change": true,
+    "scoped_child_fail_cannot_be_promoted_to_parent_fail_without_family_scope_proof": true,
+    "scoped_child_pass_cannot_be_promoted_to_parent_sufficiency_without_family_scope_proof": true
   },
   "tier1_required_rows": [
     {"id":"GR_EFT","name":"General Relativity plus controlled low-energy gravitational EFT","role":"baseline_comparator","coverage_status":"BENCHMARKED_COMPLETE_REALIZATION","current_authority":"post_freeze_paper_iv_wave_01/PF1_02_GR_EFT/result.json"},
@@ -32,10 +34,14 @@
       "name":"Nonlocal / infinite-derivative quantum gravity",
       "role":"candidate_family",
       "coverage_status":"PARTIAL_SUBFAMILY_ONLY",
-      "current_authority":"post_freeze_paper_iv_wave_02/PF2_01_NONLOCAL_QG/result.json",
-      "closed_subbenchmarks":["Ricci/EOM-squared weakly-nonlocal tree S-matrix class: exact GR comparator identity"],
-      "next_subfamily_gate":"PF2_01B_NONLOCAL_RIEMANN_WEYL_SCATTERING_CAUSALITY_CERTIFICATE",
-      "minimum_resolution":"The Ricci/EOM-squared weakly nonlocal tree-S-matrix subclass is closed as an exact GR comparator identity. Resolve the materially distinct Riemann/Weyl nonlocal branch and any retained loop/non-scattering branch, then provide family-level exhaustion/equivalence authority before terminal coverage."
+      "current_authority":"post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/audit.md",
+      "closed_subbenchmarks":[
+        "Ricci/EOM-squared weakly-nonlocal tree S-matrix class: exact GR comparator identity",
+        "Weyl-basis H_K eikonal realization: scoped causality FAIL due to Shapiro time advance",
+        "Weyl-basis H_T eikonal realization: scoped causality PASS control"
+      ],
+      "next_subfamily_gate":"PF2_01B3_RIEMANN_WEYL_AMPLITUDE_RESIDUAL",
+      "minimum_resolution":"Resolve a fixed Riemann/Weyl nonlocal amplitude against the full local higher-curvature EFT comparator, scope-match the 2026 Gödel/CTC branch, disposition materially independent loop/non-scattering branches, then provide family-level exhaustion/equivalence authority. Existing H_K FAIL and H_T PASS demonstrate form-factor dependence and cannot be promoted to a family-wide verdict."
     },
     {"id":"STRING_MTHEORY_HOLOGRAPHY","name":"String / M-theory / holographic quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"post_freeze_paper_iv_wave_01/PF1_03_STRING_DUAL_RESONANCE/result.json","note":"The existing dual-resonance/Virasoro-Shapiro rigidity benchmark is scoped evidence, not a proof about the entire string/M-theory/holography family."},
     {"id":"CAUSAL_SETS","name":"Causal Set quantum gravity","role":"candidate_family","coverage_status":"NOT_YET_BENCHMARKED","minimum_resolution":"Freeze a declared dynamics/measure plus continuum-emergence regime and at least one normalized causal-set gravity observable with identical-domain GR/EFT and alternative-QG comparators."},
