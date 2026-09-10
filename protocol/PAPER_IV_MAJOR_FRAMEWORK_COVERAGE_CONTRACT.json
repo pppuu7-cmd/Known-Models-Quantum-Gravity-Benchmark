@@ -1,15 +1,12 @@
 {
-  "schema_version": "1.0",
-  "iteration": 185,
+  "schema_version": "1.2",
+  "iteration": 186,
   "rqir_core": {"version": "1.0", "status": "FROZEN"},
   "purpose": "Prevent a Paper-IV terminal decision, especially NEW_REQUIRED, from being inferred from a benchmark set that omits materially distinct major quantum-gravity schools or silently lets one scoped submodel stand for an entire school.",
   "coverage_basis": {
     "primary_reference": "Bambi, Modesto, Shapiro (eds.), Handbook of Quantum Gravity, Springer 2024, DOI 10.1007/978-981-99-7681-2",
     "primary_reference_sections": ["Effective Quantum Gravity","Perturbative Quantum Gravity","Asymptotically Safe Quantum Gravity","Nonlocal Quantum Gravity","String Theories","Causal Sets","Causal Dynamical Triangulations","Loop Quantum Gravity and Spinfoams"],
-    "additional_independent_programs": [
-      "Group Field Theory / tensor models: kept distinct because related formulations can have different Hilbert spaces and dynamics despite spin-foam links",
-      "Causal Fermion Systems: already an active independent KMQGB branch"
-    ]
+    "additional_independent_programs": ["Group Field Theory / tensor models","Causal Fermion Systems","Noncommutative spectral geometry","Canonical Wheeler-DeWitt geometrodynamics","Quantum Graphity"]
   },
   "terminal_coverage_states": ["BENCHMARKED_COMPLETE_REALIZATION","EQUIVALENCE_CLASS_CLOSED_BY_THEOREM","MERGED_INTO_OTHER_ROW_WITH_EXPLICIT_REDUCTION_MAP","OUTSIDE_PAPER_IV_TARGET_WITH_SCOPE_PROOF"],
   "nonterminal_coverage_states": ["PARTIAL_SUBFAMILY_ONLY","BLOCKED_MISSING_REQUIRED_OBJECT","NOT_YET_BENCHMARKED","UNRESOLVED_CLASSIFICATION"],
@@ -22,47 +19,32 @@
     "rqir_core_may_not_be_changed_to_fit_a_school": true,
     "model_specific_adapters_are_allowed_without_core_change": true,
     "scoped_child_fail_cannot_be_promoted_to_parent_fail_without_family_scope_proof": true,
-    "scoped_child_pass_cannot_be_promoted_to_parent_sufficiency_without_family_scope_proof": true
+    "scoped_child_pass_cannot_be_promoted_to_parent_sufficiency_without_family_scope_proof": true,
+    "generic_program_labels_do_not_count_as_tested_physical_parents": true,
+    "new_concrete_independent_parent_triggers_tier1_promotion": true
   },
   "tier1_required_rows": [
     {"id":"GR_EFT","name":"General Relativity plus controlled low-energy gravitational EFT","role":"baseline_comparator","coverage_status":"BENCHMARKED_COMPLETE_REALIZATION","current_authority":"post_freeze_paper_iv_wave_01/PF1_02_GR_EFT/result.json"},
-    {"id":"PERTURBATIVE_HIGHER_DERIVATIVE","name":"Perturbative renormalizable / higher-derivative quantum gravity","role":"candidate_family","coverage_status":"NOT_YET_BENCHMARKED","minimum_resolution":"Freeze at least one physically complete renormalizable higher-derivative realization with propagator/pole prescription, unitarity interpretation, normalized observable and GR/EFT comparator; family-level exclusion requires a theorem or materially distinct subfamily audit."},
-    {"id":"HORAVA_LIFSHITZ","name":"Hořava-Lifshitz quantum gravity","role":"candidate_family","coverage_status":"NOT_YET_BENCHMARKED","minimum_resolution":"Freeze a healthy declared variant with symmetry/projectability choice, RG/UV authority, IR GR map, extra-mode consistency and a normalized observable/comparator package."},
+    {"id":"PERTURBATIVE_HIGHER_DERIVATIVE","name":"Perturbative renormalizable / higher-derivative quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","minimum_resolution":"Resolve materially distinct pole/ghost prescriptions and freeze one same-realization causality+observable+full comparator package before any family-level disposition."},
+    {"id":"HORAVA_LIFSHITZ","name":"Hořava-Lifshitz quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","minimum_resolution":"Freeze a projectable UV trajectory through the IR GR/extra-mode regime with a normalized observable and comparator, and separately disposition the materially distinct non-projectable theory."},
     {"id":"ASYMPTOTIC_SAFETY","name":"Asymptotic Safety","role":"candidate_family","coverage_status":"BLOCKED_MISSING_REQUIRED_OBJECT","current_authority":"post_freeze_paper_iv_wave_01/PF1_05_ASYMPTOTIC_SAFETY/result.json"},
-    {
-      "id":"NONLOCAL_QG",
-      "name":"Nonlocal / infinite-derivative quantum gravity",
-      "role":"candidate_family",
-      "coverage_status":"PARTIAL_SUBFAMILY_ONLY",
-      "current_authority":"post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/audit.md",
-      "closed_subbenchmarks":[
-        "Ricci/EOM-squared weakly-nonlocal tree S-matrix class: exact GR comparator identity",
-        "Weyl-basis H_K eikonal realization: scoped causality FAIL due to Shapiro time advance",
-        "Weyl-basis H_T eikonal realization: scoped causality PASS control"
-      ],
-      "next_subfamily_gate":"PF2_01B3_RIEMANN_WEYL_AMPLITUDE_RESIDUAL",
-      "minimum_resolution":"Resolve a fixed Riemann/Weyl nonlocal amplitude against the full local higher-curvature EFT comparator, scope-match the 2026 Gödel/CTC branch, disposition materially independent loop/non-scattering branches, then provide family-level exhaustion/equivalence authority. Existing H_K FAIL and H_T PASS demonstrate form-factor dependence and cannot be promoted to a family-wide verdict."
-    },
-    {"id":"STRING_MTHEORY_HOLOGRAPHY","name":"String / M-theory / holographic quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"post_freeze_paper_iv_wave_01/PF1_03_STRING_DUAL_RESONANCE/result.json","note":"The existing dual-resonance/Virasoro-Shapiro rigidity benchmark is scoped evidence, not a proof about the entire string/M-theory/holography family."},
-    {"id":"CAUSAL_SETS","name":"Causal Set quantum gravity","role":"candidate_family","coverage_status":"NOT_YET_BENCHMARKED","minimum_resolution":"Freeze a declared dynamics/measure plus continuum-emergence regime and at least one normalized causal-set gravity observable with identical-domain GR/EFT and alternative-QG comparators."},
-    {"id":"CDT_EDT","name":"Causal/Euclidean Dynamical Triangulations","role":"candidate_family","coverage_status":"NOT_YET_BENCHMARKED","minimum_resolution":"Freeze a 4D phase/continuum-limit realization and an invariant observable with lattice-spacing/finite-size/systematic error control and identical-domain comparators."},
+    {"id":"NONLOCAL_QG","name":"Nonlocal / infinite-derivative quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/audit.md","next_subfamily_gate":"NONLOCAL_CROSS_ORDER_FUNCTIONAL_RIGIDITY_OR_FULL_MOMENTUM_SHAPE_CERTIFICATE","minimum_resolution":"Resolve cross-order/full-momentum functional rigidity and materially independent loop/non-scattering/form-factor branches, then provide family-level exhaustion/equivalence authority."},
+    {"id":"STRING_MTHEORY_HOLOGRAPHY","name":"String / M-theory / holographic quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"post_freeze_paper_iv_wave_01/PF1_03_STRING_DUAL_RESONANCE/result.json","minimum_resolution":"Supply a material subfamily map and family-level equivalence/exhaustion certificate; dual-resonance rigidity is only a scoped child result."},
+    {"id":"CAUSAL_SETS","name":"Causal Set quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","minimum_resolution":"Freeze a fundamental dynamics/measure to emergent manifold regime plus a normalized genuinely causal-set gravitational observable and same-domain comparator."},
+    {"id":"CDT_EDT","name":"Causal/Euclidean Dynamical Triangulations","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","minimum_resolution":"Freeze a 4D continuum/RG trajectory, lattice-spacing map and invariant physical observable with finite-size/discretization/systematic errors and identical-domain comparators."},
     {"id":"LQG_SPINFOAM","name":"Loop Quantum Gravity / EPRL-spinfoam","role":"candidate_family","coverage_status":"BLOCKED_MISSING_REQUIRED_OBJECT","current_authority":"paper_iv/O_LQG_EPRL_TO_REGGE_SAME_REALIZATION_ASYMPTOTIC_CERTIFICATE_2026-09-10.md"},
-    {"id":"GFT_TENSOR_MODELS","name":"Group Field Theory / tensor models","role":"candidate_family","coverage_status":"NOT_YET_BENCHMARKED","minimum_resolution":"Determine first whether the chosen GFT/tensor realization reduces to the already tested spinfoam row or carries independent dynamics; if independent, freeze its continuum/condensate map and a normalized comparator-ready observable."},
-    {"id":"CFS","name":"Causal Fermion Systems","role":"candidate_family","coverage_status":"BLOCKED_MISSING_REQUIRED_OBJECT","current_authority":"post_freeze_paper_iv_wave_01/PF1_01_CFS/result.json"}
+    {"id":"GFT_TENSOR_MODELS","name":"Group Field Theory / tensor models","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","minimum_resolution":"Derive or refute an explicit reduction/equivalence map to spinfoams; if independent, freeze a full gravity observable/comparator outside condensate-state cosmology."},
+    {"id":"CFS","name":"Causal Fermion Systems","role":"candidate_family","coverage_status":"BLOCKED_MISSING_REQUIRED_OBJECT","current_authority":"post_freeze_paper_iv_wave_01/PF1_01_CFS/result.json"},
+    {"id":"NONCOMMUTATIVE_SPECTRAL_GEOMETRY","name":"Noncommutative spectral geometry / spectral-action gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md","minimum_resolution":"Freeze a genuine quantum dynamics/measure for the spectral data plus a normalized quantum-gravity observable, error ledger and same-domain comparator beyond the classical/asymptotic spectral action."},
+    {"id":"CANONICAL_WDW_GEOMETRODYNAMICS","name":"Canonical Wheeler-DeWitt geometrodynamics","role":"candidate_family","coverage_status":"BLOCKED_MISSING_REQUIRED_OBJECT","current_authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md","minimum_resolution":"Freeze Hamiltonian/constraint realization, physical inner product, relational clock, anomaly/constraint closure, normalized Dirac observable, semiclassical GR map and comparator."},
+    {"id":"QUANTUM_GRAPHITY","name":"Quantum Graphity / explicit dynamical-graph geometrogenesis","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md","minimum_resolution":"Freeze a connected low-energy phase with continuum Lorentzian spin-2/GR emergence and a normalized physical observable plus same-domain comparators."}
   ],
   "tier2_resolution_watchlist": [
-    {"id":"SUPERGRAVITY_DOUBLE_COPY","status":"UNRESOLVED_CLASSIFICATION","required_action":"Map into perturbative/string coverage or promote to Tier1 if it supplies materially independent UV dynamics/observables."},
-    {"id":"NONCOMMUTATIVE_SPECTRAL_GEOMETRY","status":"UNRESOLVED_CLASSIFICATION","required_action":"Determine whether a current quantum-gravity realization supplies independent dynamics and comparator-ready observables; otherwise document scope exclusion."},
-    {"id":"TWISTOR_AMPLITUDE_PROGRAMS","status":"UNRESOLVED_CLASSIFICATION","required_action":"Determine whether the program is a calculational representation/subframework or an independent quantum-gravity dynamics class."},
-    {"id":"CANONICAL_GEOMETRODYNAMICS_WDW","status":"UNRESOLVED_CLASSIFICATION","required_action":"Determine whether it defines an independent complete candidate realization for the Paper-IV target or is a quantization framework lacking a distinct closed observable package."},
-    {"id":"EMERGENT_INDUCED_GRAPH_BASED_GRAVITY","status":"UNRESOLVED_CLASSIFICATION","required_action":"Split only materially complete, independently predictive programs into Tier1; do not use a generic catch-all as exclusion evidence."}
+    {"id":"SUPERGRAVITY_DOUBLE_COPY","status":"REDUCED_TO_TIER1_WITH_EXPLICIT_MAP","reduction_map":["Einstein/supergravity output -> GR_EFT or STRING_MTHEORY_HOLOGRAPHY according to UV ancestry","higher-derivative output -> PERTURBATIVE_HIGHER_DERIVATIVE or STRING_MTHEORY_HOLOGRAPHY according to ancestry"],"authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md"},
+    {"id":"NONCOMMUTATIVE_SPECTRAL_GEOMETRY","status":"PROMOTED_TO_TIER1","tier1_id":"NONCOMMUTATIVE_SPECTRAL_GEOMETRY","authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md"},
+    {"id":"TWISTOR_AMPLITUDE_PROGRAMS","status":"REDUCED_TO_TIER1_WITH_EXPLICIT_MAP","reduction_map":["Einstein twistor/action outputs -> GR_EFT","conformal or higher-derivative outputs -> PERTURBATIVE_HIGHER_DERIVATIVE","twistor-string/supergravity outputs -> STRING_MTHEORY_HOLOGRAPHY"],"authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md"},
+    {"id":"CANONICAL_GEOMETRODYNAMICS_WDW","status":"PROMOTED_TO_TIER1","tier1_id":"CANONICAL_WDW_GEOMETRODYNAMICS","authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md"},
+    {"id":"EMERGENT_INDUCED_GRAPH_BASED_GRAVITY","status":"SPLIT_CONCRETE_PARENT_PROMOTION_RULE","promoted_tier1_ids":["QUANTUM_GRAPHITY"],"promotion_rule":"Every concrete proposal with an explicit independent quantum parent, gravity/emergence claim and materially distinct observables is promoted to Tier1; generic adjectives do not count as tested theories.","authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md"}
   ],
-  "current_coverage_summary": {
-    "tier1_rows": 11,
-    "tier1_terminal_coverage_rows": 1,
-    "tier1_nonterminal_rows": 10,
-    "tier2_unresolved_rows": 5,
-    "D2_coverage_layer": "NOT_CLOSED",
-    "D7_terminal_decision": "FORBIDDEN_PENDING_COVERAGE"
-  }
+  "current_coverage_summary": {"tier1_rows":14,"tier1_terminal_coverage_rows":1,"tier1_nonterminal_rows":13,"tier1_not_yet_benchmarked_rows":0,"tier2_unresolved_rows":0,"D2_coverage_layer":"NOT_CLOSED","D7_terminal_decision":"FORBIDDEN_PENDING_TIER1_CLOSURE"}
 }

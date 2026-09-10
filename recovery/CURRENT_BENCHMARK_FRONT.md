@@ -1,122 +1,100 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **185**  
-**Phase:** **RQIR Core v1.0 FROZEN / Paper-IV major-school coverage / PF2 nonlocal-QG**.
+**KMQGB iteration:** **186**  
+**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / Tier2 classification resolved / family-level D7 blockers active**.
 
 ## Stable metrics
 
-- R1 Repository readiness: **100%**.
-- R2 KMQGB methodology/material readiness: **100%**.
-- R3 Candidate Gravity scientific readiness: **24%**.
-- Candidate Gravity: **inactive**; activation requires D7=`NEW_REQUIRED`.
-- Historical PF1: 5/5 terminal in scoped records.
+- R1 repository readiness: **100%**.
+- R2 methodology/material readiness: **100%**.
+- Candidate Gravity R3: **24%**, inactive.
+- Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
 
-No R1/R2/R3 promotion in Iter185. RQIR Core v1.0 remains FROZEN.
+No readiness promotion in Iter186.
 
-## Paper-IV global state
+## Paper-IV global gates
 
-- D1 — PASS.
-- D2A framework-set coverage — NOT_CLOSED.
-- D2B complete objects — NOT_CLOSED.
-- D2 — `NOT_CLOSED_COVERAGE_AND_OBJECTS`.
-- D3 — PARTIAL.
-- D4 — `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`.
-- D5 — PASS.
-- D6 — `PASS_RULE_TARGETS_OPEN`.
-- D7 — NOT_CLOSED.
-- Global decision — **`NOT_YET_AUTHORIZED`**.
-- `NEW_REQUIRED` — forbidden.
+- D1: PASS.
+- D2A framework-set/family coverage: NOT_CLOSED.
+- D2B complete same-realization objects: NOT_CLOSED.
+- D2: `NOT_CLOSED_COVERAGE_AND_OBJECTS`.
+- D3: PARTIAL.
+- D4: `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`.
+- D5: PASS.
+- D6: `PASS_RULE_TARGETS_OPEN`.
+- D7: NOT_CLOSED.
+- Global decision: **`NOT_YET_AUTHORIZED`**.
 
-## PF2 nonlocal-QG progress
+## Coverage status
 
-Parent family: **`NONLOCAL_QG = PARTIAL_SUBFAMILY_ONLY`**.
+The census now contains **14 Tier-1 rows**. Every row has been audited; none remains merely `NOT_YET_BENCHMARKED`.
 
-### PF2-01A — Ricci/EOM-squared tree S-matrix
+- terminal family-level rows: **1/14** (GR/EFT baseline);
+- nonterminal family rows: **13/14**;
+- untouched Tier-1 rows: **0/14**;
+- Tier-2 unresolved classifications: **0**.
 
-`PASS_RQIR_GATE__EXACT_COMPARATOR_IDENTITY__TREE_S_MATRIX`.
+Three independent parents were promoted from the former Tier-2 watchlist:
 
-`A_n^NLQG(tree)=A_n^GR(tree)` in the declared field-redefinition-equivalent class. Exact zero residual after GR subtraction; not zero-fill and not FAIL.
+- noncommutative spectral geometry;
+- canonical Wheeler-DeWitt geometrodynamics;
+- Quantum Graphity.
 
-### PF2-01B1 — Weyl `H_K` eikonal causality
-
-**`FAIL_RQIR_GATE__SCOPED_EIKONAL_CAUSALITY_TIME_ADVANCE`**.
-
-### PF2-01B2 — Weyl `H_T` matched control
-
-**`PASS_RQIR_GATE__SCOPED_EIKONAL_CAUSALITY_CONTROL`**.
-
-The B1/B2 pair demonstrates form-factor dependence. No child PASS or FAIL is promoted to the parent family.
-
-### PF2-01B4 — Gödel/CTC scope control
-
-**`FAIL_RQIR_GATE__SCOPED_GLOBAL_CAUSALITY_CTC_ADMISSION`** for the declared 2026 form-factor class admitting exact vacuum Gödel-type solutions with closed timelike curves. This is independent scoped evidence and is not promoted to all nonlocal QG.
+Double-copy and twistor are explicitly reduced to the physical gravity parents they construct/represent unless a future independent parent is declared. The generic emergent/graph-based label is replaced by a concrete-parent promotion rule.
 
 Authorities:
 
-- `post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/audit.md`
-- `.../result_hk.json`
-- `.../result_ht.json`
-- `.../result_godel_scope.json`
+- `paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md`
+- `paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md`
+- `protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json`
 
-## Executable scope firewall
+## D4 evidence
 
-`code/paper_iv_framework_coverage_validator.py` enforces for every scoped child row:
+Required family rows with complete defined residual: **1/14**.
 
-- a valid Tier-1 parent;
-- complete declared child-domain object;
-- defined child result;
-- `counts_as_new_required_exclusion=false`;
-- `global_sufficiency=false`.
+Defined scoped child results: **6**, including:
 
-Thus a local scientific FAIL cannot silently become family-level exclusion.
+- string dual-resonance scoped rigidity;
+- nonlocal Ricci/EOM-squared exact GR identity;
+- nonlocal Weyl `H_K` causality FAIL;
+- nonlocal Weyl `H_T` causality PASS;
+- nonlocal Gödel/CTC scoped FAIL;
+- nonlocal Riemann/Weyl fixed-order local-EFT absorption.
 
-## D4 evidence status
+No child result is promoted to family exclusion/sufficiency.
 
-Required Tier-1 rows with defined complete residual: **1/11** (GR/EFT baseline).
+## Nonlocal fixed-order quotient
 
-Defined scoped child results: **5**:
+For analytic `F(Box)=sum f_n Box^n`, every fixed finite derivative truncation lies in the complete same-order local higher-curvature EFT span. Hence
 
-1. string/dual-resonance rigidity;
-2. nonlocal Ricci/EOM-squared exact GR identity;
-3. nonlocal Weyl `H_K` causality FAIL;
-4. nonlocal Weyl `H_T` causality PASS control;
-5. nonlocal Gödel/CTC scoped causality FAIL.
+`r_N in Col(J_EFT,N)` and `Pi_perp,N r_N = 0`.
 
-Scoped child scientific FAILs: **2**.
+Status: **`PASS_RQIR_GATE__FIXED_ORDER_LOCAL_EFT_COMPARATOR_ABSORPTION`**.
 
-## Exact active gate
+Next discriminator: **`NONLOCAL_CROSS_ORDER_FUNCTIONAL_RIGIDITY_OR_FULL_MOMENTUM_SHAPE_CERTIFICATE`**.
 
-**`PF2_01B3_RIEMANN_WEYL_AMPLITUDE_RESIDUAL`**
+## Thirteen family-level blockers
 
-Published authority already shows that adding an independent nonlocal Riemann-sector form factor can alter tree-level graviton amplitudes. The unresolved RQIR question is stronger: does a fixed normalized nonlocal Riemann/Weyl amplitude retain a comparator-orthogonal residual after quotienting the full allowed local higher-curvature EFT basis at the same order/domain?
-
-Required payload:
-
-`{fixed Riemann/Weyl form factor, external states/helicities, normalized amplitude vector, identical-order GR+local higher-curvature EFT comparator basis, form-factor parameter incidence, pole/unitarity prescription, causality status, approximation/error ledger, comparator-orthogonal residual}`.
-
-## Other major-school queue
-
-After the nonlocal parent reaches a justified stopping/terminal point:
-
-1. CDT/EDT;
-2. Hořava-Lifshitz;
-3. causal sets;
-4. perturbative/higher-derivative QG;
-5. GFT/tensor independence/reduction audit.
-
-AS/LQG/CFS blockers remain open unchanged.
+1. higher derivative — pole-prescription family map + same-realization causality/observable comparator;
+2. Hořava — projectable UV->IR/extra-mode observable + non-projectable disposition;
+3. AS — same-realization `A_s+A_t+A_u+A4` + error/comparator;
+4. nonlocal — cross-order/full-shape rigidity + branch exhaustion;
+5. string/M/holography — material-subfamily/family equivalence coverage;
+6. causal sets — fundamental dynamics -> manifold continuum + normalized observable;
+7. CDT/EDT — continuum trajectory + invariant observable/error/comparator;
+8. LQG — EPRL->Area-Regge/area-metric coupling and Immirzi ancestry;
+9. GFT/tensor — spinfoam reduction/independence + full gravity observable;
+10. CFS — first normalized non-Einstein correction tensor;
+11. noncommutative spectral geometry — quantum spectral dynamics + normalized QG observable;
+12. canonical WDW — physical Hilbert space/clock/Dirac observable + semiclassical comparator;
+13. Quantum Graphity — continuum Lorentzian spin-2/GR emergence + normalized observable.
 
 ## Heavy compute
 
-**IDLE.** The current front is analytic comparator-basis/attribution work.
+**IDLE.** Current blockers are structural/analytic/continuum/normalization objects.
 
-## Exact continuation order
+## Next operation
 
-1. Build PF2-01B3 local-EFT comparator quotient for a fixed Riemann/Weyl nonlocal realization.
-2. Keep NONLOCAL_QG partial until materially independent branches are exhausted/reduced.
-3. Proceed through the omitted-family queue.
-4. Resolve Tier-2 watchlist classifications.
-5. Only after D2A+D2B and global D4 close may D7 choose EXISTING/ADAPT/HYBRID/NEW.
-6. Build Candidate Gravity only if D7 returns exactly `NEW_REQUIRED`, then run it through unchanged RQIR.
+After CI verifies this 14-family census, execute a formal D7 attempt. D7 must not be forced to PASS: if any of the thirteen required family objects remains unavailable, its correct evaluated output is `NOT_YET_AUTHORIZED` with the exact blocker set. Candidate Gravity remains inactive unless D7 eventually returns exactly `NEW_REQUIRED`.
