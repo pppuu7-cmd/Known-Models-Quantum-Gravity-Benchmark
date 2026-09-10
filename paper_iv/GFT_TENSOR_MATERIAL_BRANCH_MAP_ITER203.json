@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "iteration": 203,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "parent_family": "GFT_TENSOR_MODELS",
+  "purpose": "Separate materially distinct microscopic and collective sectors before any family-level reduction, exclusion or sufficiency claim.",
+  "global_family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "family_residual_defined": false,
+  "branches": [
+    {
+      "id": "GFT_SPINFOAM_GENERATING_GRAVITY_MODELS",
+      "kind": "MICROSCOPIC_GEOMETRIC_GFT",
+      "representatives": ["Boulatov/Ooguri topological controls", "Barrett-Crane GFT", "EPRL/FK-type GFT", "KKL-compatible generalized GFT"],
+      "material_feature": "Lie-group field data plus gauge/geometric/simplicity structure chosen so perturbative Feynman amplitudes reproduce named spin-foam/lattice-gauge gravity amplitudes.",
+      "relation_to_spin_foam": "REDUCES_TO_OR_GENERATES_NAMED_SPINFOAM_AMPLITUDES_IN_FIXED_REALIZATION",
+      "status": "PASS_STRUCTURAL_RELATION_SCOPE_ONLY",
+      "terminal_family_disposition": false
+    },
+    {
+      "id": "GFT_GENERALIZED_GRAPH_COMPLETION",
+      "kind": "MICROSCOPIC_SECOND_QUANTIZED_GRAPH_DYNAMICS",
+      "representatives": ["multi-field GFT", "dually weighted GFT", "all-LQG/KKL graph-completion constructions"],
+      "material_feature": "Second-quantized graph-changing/Feynman-complex sum extends beyond one fixed simplicial complex while retaining explicit spin-foam amplitude ancestry.",
+      "relation_to_spin_foam": "SPINFOAM_RELATED_BUT_NOT_REDUCIBLE_TO_ONE_FIXED_COMPLEX_OBJECT",
+      "status": "PASS_STRUCTURAL_SCOPE_ONLY",
+      "terminal_family_disposition": false
+    },
+    {
+      "id": "TGFT_RG_PHASE_STRUCTURE",
+      "kind": "TENSORIAL_GROUP_FIELD_THEORY",
+      "representatives": ["closure-constrained TGFT", "Abelian TGFT RG models", "SU(2) TGFT RG models", "Lorentzian quantum-geometric TGFT"],
+      "material_feature": "Tensor-invariant interactions and renormalization/thermodynamic flow add collective field-theoretic structure. Some models encode quantum geometry/spin-foam data; others are structural RG testbeds and must not be called physical gravity automatically.",
+      "relation_to_spin_foam": "BRANCH_DEPENDENT__REQUIRES_EXPLICIT_GEOMETRIC_AND_SIMPLICITY_DATA",
+      "status": "PARTIAL__RG_AND_PHASE_CONTROLS_EXIST",
+      "terminal_family_disposition": false
+    },
+    {
+      "id": "GFT_CONDENSATE_HYDRODYNAMIC_COSMOLOGY",
+      "kind": "DERIVED_COLLECTIVE_STATE_SECTOR",
+      "representatives": ["GFT condensate cosmology", "relational Barrett-Crane GFT cosmological perturbations", "GFT hydrodynamic emergent matter dynamics"],
+      "material_feature": "Macroscopic collective/condensate state of a declared microscopic GFT parent, with relational observables and effective GR/cosmology limits.",
+      "relation_to_spin_foam": "DERIVED_FROM_DECLARED_GFT_PARENT__NOT_AN_INDEPENDENT_MICROSCOPIC_FAMILY",
+      "status": "PASS_STRUCTURAL_EFFECTIVE_OBSERVABLE_SCOPE_ONLY",
+      "terminal_family_disposition": false
+    },
+    {
+      "id": "PURE_RANDOM_TENSOR_MODELS",
+      "kind": "COMBINATORIAL_RANDOM_GEOMETRY",
+      "representatives": ["colored random tensor models", "melonic tensor models", "enhanced/nonmelonic tensor models"],
+      "material_feature": "Tensor/combinatorial degrees of freedom without the Lie-group geometric data that make a GFT amplitude a spin-foam amplitude.",
+      "relation_to_spin_foam": "NOT_AUTOMATICALLY_REDUCIBLE_TO_SPINFOAM__ADDITIONAL_GROUP_GEOMETRY_DATA_REQUIRED",
+      "status": "PARTIAL__CONTINUUM_UNIVERSALITY_MODEL_DEPENDENT",
+      "known_scope_warning": "Generic leading melonic/tree-like limits can fall in branched-polymer universality; this is not promoted to a family-wide FAIL because enhanced/nonmelonic interactions and geometric TGFT data can change the universality class.",
+      "terminal_family_disposition": false
+    }
+  ],
+  "cross_cutting_labels_not_separate_physical_families": [
+    {
+      "label": "COLORED",
+      "reason": "Coloring is primarily a combinatorial/topological control and does not by itself define a distinct physical gravity dynamics."
+    },
+    {
+      "label": "MELONIC",
+      "reason": "Melonic refers to an interaction/large-N dominance class; it can characterize a universality sector but is not by itself a complete gravity realization."
+    },
+    {
+      "label": "CONDENSATE",
+      "reason": "Condensate identifies a state/phase/effective sector and inherits microscopic authority from a specified parent GFT."
+    }
+  ],
+  "governance_result": "PASS_GOVERNANCE_GATE__GFT_TENSOR_MATERIAL_BRANCH_CENSUS_SEPARATES_SPINFOAM_GENERATING_GFT__SECOND_QUANTIZED_GRAPH_COMPLETION__TGFT_RG_PHASE_STRUCTURE__DERIVED_CONDENSATE_SECTORS__AND_PURE_RANDOM_TENSOR_UNIVERSALITY",
+  "family_terminal_promotion": false,
+  "counts_as_new_required_exclusion": false,
+  "next_missing_certificate": "GFT_TENSOR_MATERIAL_BRANCH_TERMINAL_DISPOSITION_PLUS_CONTROLLED_GRAVITY_CONTINUUM_TRAJECTORY_NORMALIZED_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE"
+}

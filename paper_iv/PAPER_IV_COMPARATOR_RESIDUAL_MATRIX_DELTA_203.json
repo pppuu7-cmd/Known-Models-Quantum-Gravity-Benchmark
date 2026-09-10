@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "iteration": 203,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "framework_delta": {
+    "id": "GFT_TENSOR_MODELS",
+    "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+    "material_branch_census_status": "PASS_GOVERNANCE_GATE__GFT_TENSOR_MATERIAL_BRANCH_CENSUS_SEPARATES_SPINFOAM_GENERATING_GFT__SECOND_QUANTIZED_GRAPH_COMPLETION__TGFT_RG_PHASE_STRUCTURE__DERIVED_CONDENSATE_SECTORS__AND_PURE_RANDOM_TENSOR_UNIVERSALITY",
+    "material_branch_map": "paper_iv/GFT_TENSOR_MATERIAL_BRANCH_MAP_ITER203.json",
+    "material_branch_count_minimum": 5,
+    "gravity_residual_row_added": false,
+    "family_residual_defined": false,
+    "family_residual_status": "UNDEFINED_PENDING_BRANCH_TERMINAL_DISPOSITION_CONTINUUM_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_AND_COMPARATOR_ERROR_QUOTIENT",
+    "counts_as_family_PASS": false,
+    "counts_as_family_FAIL": false,
+    "counts_as_new_required_exclusion": false,
+    "missing_certificate": "GFT_TENSOR_MATERIAL_BRANCH_TERMINAL_DISPOSITION_PLUS_CONTROLLED_GRAVITY_CONTINUUM_TRAJECTORY_NORMALIZED_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE",
+    "authority": "paper_iv/O_GFT_TENSOR_MATERIAL_BRANCH_CENSUS_AUDIT_2026-09-10.md"
+  },
+  "scoped_child_rows_with_defined_residual": 10,
+  "coverage_counts_unchanged": {"tier1_total":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0}
+}

@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **202**  
-**Phase:** **RQIR Core v1.0 FROZEN / GFT microscopic spin-foam relation scoped-pass / relational GR-limit and correction channels scoped-pass / controlled continuum + comparator closure blocked**.
+**KMQGB iteration:** **203**  
+**Phase:** **RQIR Core v1.0 FROZEN / GFT-tensor material branch census closed / branch terminal dispositions + controlled gravity continuum/comparator remain open**.
 
 ## Stable metrics
 
@@ -14,69 +14,106 @@
 - Tier-1: **1/14 terminal**, **13/14 nonterminal**.
 - Tier-2 unresolved: **0**.
 - comparator-ready scoped gravity residual/control rows remain **10**.
-- No scientific-readiness promotion in Iter202.
+- No scientific-readiness promotion in Iter203.
 
 ## Validation baseline / auto-research reconciliation
 
-Canonical Iter201 main head is `ef0ca4b3bc50addc0577a4528c8f2dafe3e4f21a`. The hourly KMQGB auto-research repaired the Iter201 recovery-JSON infrastructure defect, merged PR #14, and the post-merge reproducibility-release run `34470705526` completed successfully. No Iter202 branch or PR existed when this iteration began, so the present GFT work is nonduplicating.
+Canonical Iter202 main head is `f23432b2cfc52d474799e8b0cfa488d8f623f012`. Its post-merge methodology CI run `34473197943` completed successfully and reproducibility-release run `34473254410` also completed successfully. The hourly KMQGB auto-research was rechecked before Iter203 and had not created a newer competing front.
 
 ## Paper-IV global gates
 
 D1 PASS; D2A NOT_CLOSED; D2B NOT_CLOSED; D2 `NOT_CLOSED_COVERAGE_AND_OBJECTS`; D3 PARTIAL; D4 `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`; D5 PASS; D6 `PASS_RULE_TARGETS_OPEN`; D7 NOT_CLOSED; global decision **`NOT_YET_AUTHORIZED`**.
 
-## Iter202A — selected GFT ↔ spin-foam microscopic relation
+## Iter202 retained results
 
-Oriti, Ryan and Thürigen provide an explicit GFT formulation of the KKL spin-foam model and formulate GFT as a second-quantized reformulation/completion of the LQG/spin-foam framework. For a selected KKL-compatible realization, the microscopic relation can therefore be frozen as
+Two GFT components remain valid:
 
-`fixed GFT propagator/interaction data -> perturbative GFT Feynman expansion -> KKL spin-foam amplitudes on generated complexes`.
+- selected KKL-compatible GFT has an explicit microscopic spin-foam amplitude relation;
+- Lorentzian Barrett-Crane GFT/TGFT condensate/relational constructions provide GR-limit effective dynamics and quantum-correction channels.
 
-Scoped result:
+Neither is promoted to family sufficiency or a comparator-ready gravity residual.
 
-`PASS_STRUCTURAL_GATE__SELECTED_KKL_COMPATIBLE_GFT_HAS_EXPLICIT_SPINFOAM_REDUCTION_MAP_AT_THE_MICROSCOPIC_AMPLITUDE_LEVEL`.
+## Iter203 — material branch census
 
-This is **not** family-wide equivalence. GFT/TGFT contains graph-changing sums over complexes, tensorial interactions, RG/phase structure and collective condensate dynamics not exhausted by one fixed spin-foam amplitude.
+The umbrella `GFT_TENSOR_MODELS` row has now been partitioned into five material classes using microscopic ancestry, geometric/group data and level of dynamics rather than labels alone.
 
-## Iter202B — relational GFT continuum/effective observables
+### B1 — spin-foam-generating gravity GFT
 
-Causally complete Lorentzian Barrett-Crane GFT/TGFT constructions supply relational cosmological observables using scalar reference fields. Published perturbation dynamics recover the GR regime for sub-Planckian modes and develop quantum-gravity modifications outside that regime. Mean-field Landau-Ginzburg analysis supports a nontrivial condensate phase for several Lorentzian Barrett-Crane interaction classes.
+`GFT_SPINFOAM_GENERATING_GRAVITY_MODELS`
 
-The 2026 GFT hydrodynamic derivation of emergent scalar dynamics on FLRW geometry further recovers the late-time massless-scalar GR limit and produces early-universe dispersive/dissipative modified-dispersion corrections from the microscopic GFT dynamics.
+Lie-group field data plus gauge/geometric/simplicity structure are chosen so perturbative GFT amplitudes reproduce named spin-foam/lattice-gauge models. Examples include topological Boulatov/Ooguri controls and gravity-oriented Barrett-Crane, EPRL/FK and KKL-compatible constructions.
 
-Scoped result:
+Relation: `REDUCES_TO_OR_GENERATES_NAMED_SPINFOAM_AMPLITUDES_IN_FIXED_REALIZATION`.
 
-`PASS_STRUCTURAL_GATE__GFT_RELATIONAL_CONDENSATE_DYNAMICS_SUPPLIES_EXPLICIT_GR_LIMIT_AND_QUANTUM_CORRECTION_CHANNELS`.
+### B2 — generalized second-quantized graph completion
 
-These are material theory-to-effective-observable controls, but no new comparator-ready gravity residual row is added because the same declared realization does not yet jointly carry a nonperturbatively controlled continuum trajectory, normalized observation operator, common-domain comparator suite and full error/remainder ledger.
+`GFT_GENERALIZED_GRAPH_COMPLETION`
 
-Authorities:
+Multi-field/dually-weighted/all-LQG constructions keep explicit spin-foam ancestry but add graph-changing sums over generated complexes and therefore are not reducible to one fixed-complex amplitude object.
 
-- `paper_iv/O_GFT_SPINFOAM_REDUCTION_AND_RELATIONAL_OBSERVABLE_SCOPE_AUDIT_2026-09-10.md`
-- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_202.json`
-- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_202.json`
-- `recovery/RECOVERY_DELTA_202.md`
+Relation: `SPINFOAM_RELATED_BUT_NOT_REDUCIBLE_TO_ONE_FIXED_COMPLEX_OBJECT`.
 
-## Refined GFT family blocker
+### B3 — TGFT RG/phase structure
 
-The previous blocker
+`TGFT_RG_PHASE_STRUCTURE`
 
-`GFT_SPINFOAM_INDEPENDENCE_OR_REDUCTION_PLUS_FULL_GRAVITY_OBSERVABLE_COMPARATOR_CERTIFICATE`
+Tensor-invariant GFT carries independent field-theoretic RG/thermodynamic structure. Some realizations include explicit quantum-geometric/spin-foam data; simpler Abelian/SU(2) RG models can instead be structural testbeds. Gravity status must be earned from geometric/simplicity ancestry.
 
-is replaced by
+Relation: `BRANCH_DEPENDENT__REQUIRES_EXPLICIT_GEOMETRIC_AND_SIMPLICITY_DATA`.
 
-**`GFT_MATERIAL_BRANCH_REDUCTION_OR_INDEPENDENCE_MAP_PLUS_CONTROLLED_CONTINUUM_TRAJECTORY_AND_NORMALIZED_RELATIONAL_GRAVITY_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE`**.
+### B4 — condensate/hydrodynamic cosmology
 
-Required payload:
+`GFT_CONDENSATE_HYDRODYNAMIC_COSMOLOGY`
 
-1. material GFT/TGFT branch census;
-2. explicit `REDUCES_TO_SPINFOAM(parent)` or `INDEPENDENT_COLLECTIVE_DYNAMICS` classification for each material branch;
-3. one fixed Lorentzian gravity realization with controlled continuum/thermodynamic/critical trajectory;
-4. relational gravitational observable transported through that trajectory;
-5. common physical observation normalization/operator;
-6. same-domain GR/EFT and alternative-QG comparator predictions;
-7. continuum + condensate/mean-field + interaction/truncation + numerical error ledger;
-8. family-level disposition without promoting a single Barrett-Crane cosmology child to the whole family.
+This is a derived collective state/phase sector of a declared microscopic GFT parent, not an independent microscopic school.
 
-## Parked family fronts retained
+Relation: `DERIVED_FROM_DECLARED_GFT_PARENT__NOT_AN_INDEPENDENT_MICROSCOPIC_FAMILY`.
+
+### B5 — pure random tensor models
+
+`PURE_RANDOM_TENSOR_MODELS`
+
+These retain tensor/combinatorial random-geometry structure but lack the Lie-group geometric data that makes a GFT Feynman amplitude a spin-foam amplitude.
+
+Relation: `NOT_AUTOMATICALLY_REDUCIBLE_TO_SPINFOAM__ADDITIONAL_GROUP_GEOMETRY_DATA_REQUIRED`.
+
+Generic melonic/tree-dominated continuum behavior can lie in branched-polymer universality, but KMQGB explicitly does **not** promote this to a family-wide tensor-model FAIL because enhanced/nonmelonic interactions and geometric TGFT data can change the universality class.
+
+## Governance result
+
+`PASS_GOVERNANCE_GATE__GFT_TENSOR_MATERIAL_BRANCH_CENSUS_SEPARATES_SPINFOAM_GENERATING_GFT__SECOND_QUANTIZED_GRAPH_COMPLETION__TGFT_RG_PHASE_STRUCTURE__DERIVED_CONDENSATE_SECTORS__AND_PURE_RANDOM_TENSOR_UNIVERSALITY`
+
+Machine-readable authority:
+
+- `paper_iv/GFT_TENSOR_MATERIAL_BRANCH_MAP_ITER203.json`
+- `paper_iv/O_GFT_TENSOR_MATERIAL_BRANCH_CENSUS_AUDIT_2026-09-10.md`
+- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_203.json`
+- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_203.json`
+- `recovery/RECOVERY_DELTA_203.md`
+
+The census/classification component is closed. No new comparator-ready residual row is added.
+
+## Refined GFT/tensor family blocker
+
+**`GFT_TENSOR_MATERIAL_BRANCH_TERMINAL_DISPOSITION_PLUS_CONTROLLED_GRAVITY_CONTINUUM_TRAJECTORY_NORMALIZED_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE`**.
+
+Remaining obligations:
+
+1. terminal disposition of the five material branches without cross-branch splicing;
+2. for any surviving gravity branch, a fixed-realization controlled continuum/thermodynamic/critical trajectory;
+3. relational gravitational observable transported through that trajectory;
+4. normalized common physical observation operator/domain;
+5. same-domain GR/EFT and alternative-QG comparators;
+6. full continuum/RG/condensate/mean-field/truncation/numerical error ledger;
+7. family-level residual only after those objects exist.
+
+## Immediate next scientific gate
+
+**`PURE_RANDOM_TENSOR_CONTINUUM_UNIVERSALITY_SCOPED_TERMINAL_DISPOSITION`**.
+
+This is chosen first because pure random tensor models are the most sharply separated material branch. The gate must distinguish generic melonic/branched-polymer universality from enhanced/nonmelonic continuum classes and must not extrapolate any scoped no-go to geometric GFT/TGFT.
+
+## Other parked fronts retained
 
 - LQG: EPRL/KKL UV→IR crossover with topology escape and gamma ancestry.
 - CDT/EDT: 4D line of constant physics, `a -> 0` observable transport, comparator/error certificate and EDT disposition.
@@ -85,12 +122,12 @@ Required payload:
 
 ## Heavy compute
 
-**IDLE.** The immediate GFT deficit is classification/provenance plus continuum-control structure. A brute-force numerical run without a prospectively frozen branch, critical trajectory and observation operator cannot change the family terminal classification.
+**IDLE.** The next GFT/tensor question is a branch-specific continuum-universality disposition. A numerical scan over an undefined umbrella tensor-model parameter space would mix inequivalent universality classes and cannot validly change D7.
 
 ## Exact next order
 
-1. exact-head CI-validate Iter202;
-2. recheck the hourly KMQGB auto-research before integration;
-3. if no newer conflicting canonical front exists, merge Iter202;
-4. then test whether a material GFT/TGFT branch census can be made sufficiently explicit from existing primary literature to close the first remaining component of the refined blocker;
-5. if not, park GFT at this literature ceiling and rotate to another Tier-1 family with an analytically closable object.
+1. exact-head CI-validate Iter203;
+2. recheck the KMQGB hourly auto-research before integration;
+3. if no newer conflicting canonical front exists, merge Iter203;
+4. audit pure/random tensor-model continuum universality and determine whether any subbranch can receive a scoped terminal PASS/FAIL/BLOCKED disposition;
+5. retain `NOT_YET_AUTHORIZED` until D2 and D4 actually close.
