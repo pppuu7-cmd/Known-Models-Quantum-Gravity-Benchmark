@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.2",
+  "iteration": 206,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "parent_family": "GFT_TENSOR_MODELS",
+  "global_family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "family_residual_defined": false,
+  "inherits_from": "paper_iv/GFT_TENSOR_MATERIAL_BRANCH_MAP_ITER204.json",
+  "reduction_update": {
+    "branch": "GFT_SPINFOAM_GENERATING_GRAVITY_MODELS",
+    "status": "PASS_REDUCTION_GATE__GFT_SPINFOAM_GENERATING_FIXED_REALIZATIONS_REDUCE_TO_EXISTING_LQG_SPINFOAM_TIER1_WITH_EXPLICIT_SECOND_QUANTIZED_AMPLITUDE_MAP",
+    "target_tier1": "LQG_SPINFOAM",
+    "scope": "fixed GFT realizations explicitly constructed from or to reproduce named LQG/spin-foam dynamics, including EPRL/FK-type and KKL/all-LQG constructions",
+    "independent_tier1_count": false,
+    "scientific_result_inherited": false,
+    "family_promotion": false,
+    "authority": "paper_iv/O_GFT_SPINFOAM_GENERATING_BRANCH_REDUCTION_AUDIT_2026-09-10.md"
+  },
+  "generalized_graph_completion_update": {
+    "status": "REDUCED_WITHIN_EXPLICIT_LQG_KKL_CONSTRUCTIONS__SCOPE_EXHAUSTION_STILL_REQUIRED_FOR_OTHER_GENERALIZED_GFTS",
+    "independent_tier1_count": false,
+    "family_promotion": false
+  },
+  "surviving_nonreduced_sectors": [
+    {
+      "id": "TGFT_RG_PHASE_STRUCTURE",
+      "status": "BLOCKED_MISSING_REQUIRED_OBJECT__TGFT_GRAVITY_ANCESTRY_FULL_RG_TRAJECTORY_TO_RELATIONAL_GRAVITY_OBSERVABLE_SAME_REALIZATION_MAP"
+    },
+    {
+      "id": "GFT_CONDENSATE_HYDRODYNAMIC_COSMOLOGY",
+      "status": "PARTIAL_DERIVED_SECTOR__MICROSCOPIC_ANCESTRY_AND_CONTROLLED_ERROR_TRANSPORT_REQUIRED"
+    },
+    {
+      "id": "PURE_RANDOM_TENSOR_MODELS",
+      "status": "PARTIAL_SUBBRANCH_TERMINAL__MELONIC_FAIL__ENHANCED_NONMELONIC_BLOCKED"
+    }
+  ],
+  "family_terminal_promotion": false,
+  "counts_as_new_required_exclusion": false,
+  "next_missing_certificate": "GFT_TENSOR_SURVIVING_NONREDUCED_BRANCHES_TERMINAL_DISPOSITION_PLUS_CONTINUUM_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE"
+}
