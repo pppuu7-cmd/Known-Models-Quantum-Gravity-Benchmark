@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **186**  
-**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / Tier2 classification resolved / family-level D7 blockers active**.
+**KMQGB iteration:** **187**  
+**Phase:** **RQIR Core v1.0 FROZEN / D7 blocker-reduction wave / higher-derivative pole-prescription map active**.
 
 ## Stable metrics
 
@@ -12,7 +12,7 @@
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
 
-No readiness promotion in Iter186.
+No readiness promotion in Iter187.
 
 ## Paper-IV global gates
 
@@ -29,55 +29,47 @@ No readiness promotion in Iter186.
 
 ## Coverage status
 
-The census now contains **14 Tier-1 rows**. Every row has been audited; none remains merely `NOT_YET_BENCHMARKED`.
+The census contains **14 Tier-1 rows**. Every row has been audited; none remains merely `NOT_YET_BENCHMARKED`.
 
 - terminal family-level rows: **1/14** (GR/EFT baseline);
 - nonterminal family rows: **13/14**;
 - untouched Tier-1 rows: **0/14**;
 - Tier-2 unresolved classifications: **0**.
 
-Three independent parents were promoted from the former Tier-2 watchlist:
+No scoped child result is promoted to family exclusion/sufficiency.
 
-- noncommutative spectral geometry;
-- canonical Wheeler-DeWitt geometrodynamics;
-- Quantum Graphity.
+## Iter187 — higher-derivative pole-prescription map
 
-Double-copy and twistor are explicitly reduced to the physical gravity parents they construct/represent unless a future independent parent is declared. The generic emergent/graph-based label is replaced by a concrete-parent promotion rule.
+Authority:
 
-Authorities:
+- `paper_iv/O_HIGHER_DERIVATIVE_POLE_PRESCRIPTION_MAP_2026-09-10.md`
+- `post_freeze_paper_iv_wave_02/PF2_05_HIGHER_DERIVATIVE/result_stelle_standard.json`
+- `post_freeze_paper_iv_wave_02/PF2_05_HIGHER_DERIVATIVE/result_fakeon_control.json`
 
-- `paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md`
-- `paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md`
-- `protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json`
+The former higher-derivative blocker contained an unresolved `pole_prescription_map`. Iter187 resolves its first material split:
+
+1. **ordinary Feynman/Stelle spin-2 pole** — scoped scientific FAIL at positive-metric perturbative unitarity;
+2. **fakeon/purely-virtual prescription** — scoped renormalizability + perturbative-unitarity control, but ordinary microcausality is not a PASS and the published construction predicts microscopic causality violation above the fakeon scale;
+3. **other Lee-Wick/contour prescriptions** — remain materially distinct and require their own realization map;
+4. **scalar-only/degenerate higher-curvature sectors** — do not inherit the generic four-derivative spin-2 UV claim automatically and must be reduced to EFT/scalar-tensor scope or separately benchmarked.
+
+Parent family remains `PARTIAL_SUBFAMILY_ONLY`.
+
+Narrowed blocker:
+
+`HIGHER_DERIVATIVE_REMAINING_PRESCRIPTIONS_PLUS_FAKEON_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE`.
+
+This adds one genuine scoped scientific FAIL without changing the family-level terminal count.
 
 ## D4 evidence
 
-Required family rows with complete defined residual: **1/14**.
+Required family rows with complete defined residual remain **1/14**.
 
-Defined scoped child results: **6**, including:
-
-- string dual-resonance scoped rigidity;
-- nonlocal Ricci/EOM-squared exact GR identity;
-- nonlocal Weyl `H_K` causality FAIL;
-- nonlocal Weyl `H_T` causality PASS;
-- nonlocal Gödel/CTC scoped FAIL;
-- nonlocal Riemann/Weyl fixed-order local-EFT absorption.
-
-No child result is promoted to family exclusion/sufficiency.
-
-## Nonlocal fixed-order quotient
-
-For analytic `F(Box)=sum f_n Box^n`, every fixed finite derivative truncation lies in the complete same-order local higher-curvature EFT span. Hence
-
-`r_N in Col(J_EFT,N)` and `Pi_perp,N r_N = 0`.
-
-Status: **`PASS_RQIR_GATE__FIXED_ORDER_LOCAL_EFT_COMPARATOR_ABSORPTION`**.
-
-Next discriminator: **`NONLOCAL_CROSS_ORDER_FUNCTIONAL_RIGIDITY_OR_FULL_MOMENTUM_SHAPE_CERTIFICATE`**.
+Previously frozen scoped child results remain valid. Iter187 adds a defined scoped pathology result for the standard Stelle/Feynman spin-2 branch and a nonterminal fakeon control. Neither counts as family-level exclusion or `NEW_REQUIRED` evidence.
 
 ## Thirteen family-level blockers
 
-1. higher derivative — pole-prescription family map + same-realization causality/observable comparator;
+1. higher derivative — remaining pole prescriptions + fakeon same-realization causality/observable comparator;
 2. Hořava — projectable UV->IR/extra-mode observable + non-projectable disposition;
 3. AS — same-realization `A_s+A_t+A_u+A4` + error/comparator;
 4. nonlocal — cross-order/full-shape rigidity + branch exhaustion;
@@ -93,8 +85,8 @@ Next discriminator: **`NONLOCAL_CROSS_ORDER_FUNCTIONAL_RIGIDITY_OR_FULL_MOMENTUM
 
 ## Heavy compute
 
-**IDLE.** Current blockers are structural/analytic/continuum/normalization objects.
+**IDLE.** Current active higher-derivative blocker is analytic/provenance/same-realization causality and prescription classification; heavy computation cannot yet change the terminal family classification.
 
 ## Next operation
 
-After CI verifies this 14-family census, execute a formal D7 attempt. D7 must not be forced to PASS: if any of the thirteen required family objects remains unavailable, its correct evaluated output is `NOT_YET_AUTHORIZED` with the exact blocker set. Candidate Gravity remains inactive unless D7 eventually returns exactly `NEW_REQUIRED`.
+Complete the higher-derivative material-prescription disposition by freezing a same-realization fakeon causality/observable/comparator certificate and explicitly resolving whether remaining Lee-Wick/alternative pole prescriptions are independent viable parents or reducible/failed branches. Then rerun D7. If this family remains nonterminal, move to the next highest-leverage blocker rather than weakening RQIR.
