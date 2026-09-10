@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "iteration": 213,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "NONCOMMUTATIVE_SPECTRAL_GEOMETRY",
+    "status_before": "PARTIAL_SUBFAMILY_ONLY",
+    "status_after": "PARTIAL_SUBFAMILY_ONLY",
+    "classical_spectral_action_gravity": true,
+    "second_quantized_spectral_triple_structure": true,
+    "one_loop_quantum_spectral_gauge_sector": true,
+    "random_dirac_geometry_quantum_measure": true,
+    "same_realization_4d_lorentzian_gravity_observable_chain": false,
+    "family_residual_defined": false,
+    "scientific_fail": false,
+    "counts_as_new_required_exclusion": false,
+    "authority": "paper_iv/O_NCG_SPECTRAL_GEOMETRY_QUANTUM_DYNAMICS_FIRST_PASS_AUDIT_2026-09-10.md"
+  },
+  "governance_note": "NCG cannot be dismissed as purely classical: second quantization, one-loop spectral quantization and random Dirac ensembles are genuine quantum routes. None of the audited routes yet closes one same-realization chain from quantum spectral-data dynamics to a normalized 4D Lorentzian gravity observable with GR/EFT comparator and propagated error. No Paper-III reopening is required.",
+  "next_gate": "NCG_RANDOM_DIRAC_ENSEMBLE_4D_LORENTZIAN_CONTINUUM_GR_EMERGENCE_OBSERVABLE_AUTHORITY_SEARCH"
+}
