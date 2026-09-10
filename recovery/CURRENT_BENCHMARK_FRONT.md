@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **181**  
-**Phase:** **RQIR Core v1.0 FROZEN / repository+methodology 100% VERIFIED / Paper-IV Closure Wave 02 active**.
+**KMQGB iteration:** **182**  
+**Phase:** **RQIR Core v1.0 FROZEN / repository+methodology 100% VERIFIED / Paper-IV Closure Wave 02 active / D4 partial residual matrix frozen**.
 
 ## Stable metrics
 
@@ -13,11 +13,7 @@
 - **Post-freeze PF1 regression: 5/5 = 100% terminal.**
 - **Closure Wave 02: 0/3 terminal.**
 
-Repository/methodology readiness remains **`COMPLETE_100_VERIFIED`**. No scientific readiness score was promoted in Iter181.
-
-## Repository verification authority
-
-The strict Iter179 scientific-methodology verification remains valid. In addition, commit `4537b6234dfcfd9f3b2be27032ff69392e1e4ddc` hardened external reproducibility without changing R3/CW2/Paper-IV science, and its reproducibility-release workflow run `34418368504` completed successfully.
+No scientific readiness score was promoted in Iter182.
 
 RQIR Core **v1.0 remains FROZEN**. `BLOCKED` is not evidence for `NEW_REQUIRED`.
 
@@ -25,17 +21,39 @@ RQIR Core **v1.0 remains FROZEN**. `BLOCKED` is not evidence for `NEW_REQUIRED`.
 
 **`NOT_YET_AUTHORIZED`**. `NEW_REQUIRED` remains unauthorized.
 
+## Global gates
+
+- D1 Frozen-judge integrity — **PASS**.
+- D2 Major-framework complete-object coverage — **NOT_CLOSED**.
+- D3 Common-domain comparability — **PARTIAL**.
+- D4 Comparator-subtracted residual matrix — **PARTIAL_MATRIX_FROZEN__NOT_CLOSED**.
+- D5 Missing-object quarantine — **PASS**.
+- D6 Same-realization composition discipline — **PASS_RULE_TARGETS_OPEN**.
+- D7 Global terminal proof obligation — **NOT_CLOSED**.
+
+New Iter182 authorities:
+
+- `paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md`
+- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json`
+- `code/paper_iv_global_gate_validator.py`
+
+D4 is now explicit and machine-auditable. Three mandatory rows remain undefined and are intentionally not zero-filled.
+
 ## CW2-01 — O-AS
 
-Exact blocker remains:
+Exact blocker:
 
 **`STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE`**.
 
-No new stable contact-complete authority was promoted in Iter181.
+Iter182 literature audit confirms that an explicit contact-amplitude sector exists in arXiv:2602.21285 and a Lorentzian mediated scattering object exists in arXiv:2603.10168. This does **not** close O-AS because the two cannot be composed across different trajectory/truncation/normalization realizations without a derived same-realization map. The contact calculation itself states that a more complete momentum-dependent propagator/all-relevant-vertices treatment is required for a final amplitude verdict.
 
-## CW2-02 — O-LQG — active physical front
+Current residual status:
 
-Observable/methodology side remains fixed:
+`UNDEFINED_PENDING_SAME_REALIZATION_COMPLETE_AMPLITUDE`.
+
+## CW2-02 — O-LQG
+
+Stable observable relations remain:
 
 `q = 1/gamma - gamma - Delta_gamma`,
 
@@ -47,45 +65,67 @@ Observable/methodology side remains fixed:
 
 `beta_Delta = -16 csc^2(8 psi) beta_psi - beta_q`.
 
-The exact closure object remains
+The same-realization ladder is:
 
-**`MULTISCALE_GAMMA_CERTIFICATE = {M_same-realization, T_RG, C_observable}`**.
+- M0 kinematic area-metric representation — **CLOSED**.
+- M1a Lorentzian EPRL -> Regge asymptotic dynamics — **PARTIAL / SCOPED PASS**.
+- M1b EPRL/Regge -> effective Area-Regge multiscale coarse-graining/refinement — **OPEN**.
+- M2 Area-Regge -> area-metric continuum action — **PARTIAL / STRONG AUTHORITY**.
+- M3 `gamma_EPRL -> gamma_AM(mu)` identity/normalization — **OPEN**.
+- M4 same-parent parity/RG transport — **OPEN**.
+- M5 detector-visible area-metric observable — **CLOSED conditionally on ancestry**.
 
-### Iter181 bridge decomposition
+Iter182 checks strengthen the downstream side: area-metric RG has parity-sensitive left/right couplings and an explicit Immirzi beta function. However arXiv:2507.02034 explicitly treats the non-metric masses as independent because they are not currently computable from spin foams and assumes an intermediate EFT regime. Therefore the downstream `gamma` cannot be identified with microscopic EPRL `gamma` by notation alone.
 
-The O-LQG same-realization ladder is now:
+Exact blocker:
 
-- **M0 kinematic representation compatibility — CLOSED.** Twisted four-simplex geometries admit an area-metric representation.
-- **M1a Lorentzian EPRL -> Regge same-realization asymptotic dynamics — PARTIAL / SCOPED PASS.** Published large-spin and complex-critical-point analyses start from Lorentzian EPRL amplitudes and recover Lorentzian/curved Regge effective dynamics in stated regimes, including explicit effective-action calculations on concrete complexes.
-- **M1b EPRL -> effective Area-Regge multiscale coarse-graining/refinement — OPEN.** A saddle/effective-action reduction is not yet a controlled coarse-graining semigroup/refinement certificate.
-- **M2 Area-Regge -> area-metric continuum action — PARTIAL / STRONG CONTINUUM AUTHORITY.**
-- **M3 `gamma_micro^EPRL -> gamma_eff -> gamma_AM(mu)` parameter identity/normalization — PARTIAL at EPRL->Regge asymptotic step, OPEN for area-metric RG identity.** The same EPRL gamma appears in the asymptotic calculation, but equality with the downstream running area-metric parameter is not certified.
-- **M4 same-parent parity/RG transport — OPEN.** `beta_rho` and same-parent `beta_Delta` remain missing.
-- **M5 observable closure — CLOSED conditionally on M1b-M4 attribution.**
+**`EPRL_REGGE_TO_AREA_REGGE_PARITY_COUPLING_MATCHING_CERTIFICATE`**.
 
-Current O-LQG classification:
+Current residual status:
 
-`PROMISING_ADAPT_EXISTING__SCOPED_SAME_REALIZATION_EPRL_TO_REGGE_ASYMPTOTICS_PASS__REGGE_TO_AREA_REGGE_PARITY_RG_MATCHING_MISSING`.
-
-### Exact next gate
-
-**`EPRL_REGGE_TO_AREA_REGGE_PARITY_COUPLING_MATCHING_CERTIFICATE`**
-
-Required payload:
-
-`{declared Lorentzian EPRL realization, asymptotic Regge sector, Regge -> Area-Regge/area-metric map, gamma_EPRL -> gamma_AM(mu) normalization, parity-sector coupling map, approximation/remainder ledger, refinement/coarse-graining compatibility}`.
-
-Generic similarity between independently defined models does not pass. The ancestry must remain attributable to the same declared EPRL realization.
-
-Primary audit:
-
-`paper_iv/O_LQG_EPRL_TO_REGGE_SAME_REALIZATION_ASYMPTOTIC_CERTIFICATE_2026-09-10.md`.
+`UNDEFINED_PENDING_MICRO_TO_AREA_METRIC_PARAMETER_ANCESTRY`.
 
 ## CW2-03 — O-CFS
 
-Exact blocker remains:
+Exact blocker:
 
 **`FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR`**.
+
+Iter182 confirms three strong pieces of authority:
+
+- arXiv:2605.30199: curved-spacetime continuum iff Einstein–Dirac result in the stated setup;
+- arXiv:2607.13871: geometric Einstein derivation plus systematic regularization-length correction generator;
+- arXiv:2507.09633: tensor-current hierarchy generalizable to gravitation.
+
+But the first normalized non-Einstein rank-2 correction tensor/coefficient vector is still not explicit. The currents paper describes the rank-2 Einstein sector as expected, and the correction generator has not yet been reduced to a fixed comparator-ready tensor.
+
+Current residual status:
+
+`UNDEFINED_PENDING_NORMALIZED_CORRECTION_TENSOR`.
+
+## D4 residual matrix status
+
+Defined rows:
+
+- GR/EFT — baseline/comparator identity in its declared domain;
+- string/dual resonance — scoped rigidity pass.
+
+Undefined required rows:
+
+- AS — missing complete same-realization amplitude;
+- LQG — missing microscopic-to-area-metric parameter/coupling ancestry;
+- CFS — missing normalized correction tensor.
+
+Therefore D4 has materially advanced, but cannot pass.
+
+## D7 logic
+
+`code/paper_iv_global_gate_validator.py` enforces:
+
+- D7 cannot pass unless D2 and D4 pass;
+- no terminal decision can be authorized while D2/D4 are open;
+- `NEW_REQUIRED` is forbidden while any required framework row is BLOCKED/undefined;
+- undefined residuals cannot be interpreted as zero.
 
 ## Candidate Gravity
 
@@ -93,14 +133,12 @@ Scientific readiness remains **24%**. No ansatz is promoted and Candidate Gravit
 
 ## Heavy compute
 
-**IDLE.** The active O-LQG gate remains analytic/provenance/coarse-graining/parameter-matching. Detector/resource forecasting is downstream.
+**IDLE.** Current blockers are analytic/provenance/normalization/composition objects, not numerical sensitivity problems.
 
 ## Exact continuation order
 
-1. Search/derive the same-realization Regge -> Area-Regge/area-metric parity-coupling map from the authenticated Lorentzian EPRL asymptotic sector, including gamma normalization and remainder/error control.
-2. Distinguish an asymptotic effective-action map from an actual multiscale coarse-graining/refinement flow; do not silently equate them.
-3. Only after parameter/coupling ancestry is certified, attach area-metric RG and derive same-parent `beta_rho` and `beta_Delta`.
-4. Preserve O-AS and O-CFS as independent open closure objects and react only to genuinely new authority.
-5. Perform the frozen Paper-IV global decision only after all three CW2 objects become terminal.
-
-Do not spend further iterations on R1/R2 engineering, do not alter RQIR Core v1.0, and do not treat unresolved or BLOCKED frameworks as evidence for `NEW_REQUIRED`.
+1. Close one of the three missing physical certificates: O-AS, O-LQG or O-CFS.
+2. Replace that row's undefined residual with a same-domain comparator-subtracted residual.
+3. Re-run D2/D4 machine logic.
+4. Only after all mandatory rows are complete may D7 evaluate `EXISTING_SUFFICIENT / ADAPT_EXISTING / HYBRID_REQUIRED / NEW_REQUIRED`.
+5. Do not alter RQIR Core v1.0 unless a genuine benchmark semantic defect is discovered.
