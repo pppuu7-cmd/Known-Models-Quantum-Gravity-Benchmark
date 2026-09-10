@@ -1,122 +1,100 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **185**  
-**Phase:** **RQIR Core v1.0 FROZEN / Paper-IV major-school coverage / PF2 nonlocal-QG**.
+**KMQGB iteration:** **186**  
+**Phase:** **RQIR Core v1.0 FROZEN / Paper-IV PF2 all-Tier1 first pass complete / family closure + Tier2 resolution active**.
 
 ## Stable metrics
 
-- R1 Repository readiness: **100%**.
-- R2 KMQGB methodology/material readiness: **100%**.
-- R3 Candidate Gravity scientific readiness: **24%**.
-- Candidate Gravity: **inactive**; activation requires D7=`NEW_REQUIRED`.
-- Historical PF1: 5/5 terminal in scoped records.
+- R1 repository readiness: **100%**.
+- R2 methodology/material readiness: **100%**.
+- Candidate Gravity R3: **24%**, inactive.
+- Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
 
-No R1/R2/R3 promotion in Iter185. RQIR Core v1.0 remains FROZEN.
+No readiness promotion in Iter186.
 
-## Paper-IV global state
+## Paper-IV global gates
 
-- D1 — PASS.
-- D2A framework-set coverage — NOT_CLOSED.
-- D2B complete objects — NOT_CLOSED.
-- D2 — `NOT_CLOSED_COVERAGE_AND_OBJECTS`.
-- D3 — PARTIAL.
-- D4 — `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`.
-- D5 — PASS.
-- D6 — `PASS_RULE_TARGETS_OPEN`.
-- D7 — NOT_CLOSED.
-- Global decision — **`NOT_YET_AUTHORIZED`**.
-- `NEW_REQUIRED` — forbidden.
+- D1: PASS.
+- D2A framework-set coverage: NOT_CLOSED.
+- D2B complete same-realization objects: NOT_CLOSED.
+- D2: `NOT_CLOSED_COVERAGE_AND_OBJECTS`.
+- D3: PARTIAL.
+- D4: `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`.
+- D5: PASS.
+- D6: `PASS_RULE_TARGETS_OPEN`.
+- D7: NOT_CLOSED.
+- Global decision: **`NOT_YET_AUTHORIZED`**.
 
-## PF2 nonlocal-QG progress
+## Major coverage result
 
-Parent family: **`NONLOCAL_QG = PARTIAL_SUBFAMILY_ONLY`**.
+Tier-1 required families: **11**.
 
-### PF2-01A — Ricci/EOM-squared tree S-matrix
+- Terminal family-level coverage: **1/11** (GR/EFT baseline).
+- Nonterminal family rows: **10/11**.
+- `NOT_YET_BENCHMARKED`: **0/11** (was 5/11 before Iter186).
+- Tier-2 unresolved classifications: **5**.
 
-`PASS_RQIR_GATE__EXACT_COMPARATOR_IDENTITY__TREE_S_MATRIX`.
+Every Tier-1 family now has a concrete audit. This is not the same as terminal family closure.
 
-`A_n^NLQG(tree)=A_n^GR(tree)` in the declared field-redefinition-equivalent class. Exact zero residual after GR subtraction; not zero-fill and not FAIL.
+New first-pass authority:
 
-### PF2-01B1 — Weyl `H_K` eikonal causality
+`paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md`
 
-**`FAIL_RQIR_GATE__SCOPED_EIKONAL_CAUSALITY_TIME_ADVANCE`**.
+### Newly audited Tier-1 families
 
-### PF2-01B2 — Weyl `H_T` matched control
+- higher-derivative/fakeon QG — `PARTIAL_SUBFAMILY_ONLY`;
+- Hořava-Lifshitz — `PARTIAL_SUBFAMILY_ONLY`;
+- causal sets — `PARTIAL_SUBFAMILY_ONLY`;
+- CDT/EDT — `PARTIAL_SUBFAMILY_ONLY`;
+- GFT/tensor models — `PARTIAL_SUBFAMILY_ONLY`.
 
-**`PASS_RQIR_GATE__SCOPED_EIKONAL_CAUSALITY_CONTROL`**.
+## Nonlocal PF2-01B3 closure
 
-The B1/B2 pair demonstrates form-factor dependence. No child PASS or FAIL is promoted to the parent family.
+For analytic `F(Box)=sum f_n Box^n`, every fixed finite derivative truncation is a local higher-derivative operator expansion. With the complete same-order local EFT comparator, its fixed-order amplitude deformation is comparator-contained:
 
-### PF2-01B4 — Gödel/CTC scope control
+`r_N in Col(J_EFT,N)`
 
-**`FAIL_RQIR_GATE__SCOPED_GLOBAL_CAUSALITY_CTC_ADMISSION`** for the declared 2026 form-factor class admitting exact vacuum Gödel-type solutions with closed timelike curves. This is independent scoped evidence and is not promoted to all nonlocal QG.
+and
 
-Authorities:
+`Pi_perp,N r_N = 0`.
 
-- `post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/audit.md`
-- `.../result_hk.json`
-- `.../result_ht.json`
-- `.../result_godel_scope.json`
+Status:
 
-## Executable scope firewall
+**`PASS_RQIR_GATE__FIXED_ORDER_LOCAL_EFT_COMPARATOR_ABSORPTION`**.
 
-`code/paper_iv_framework_coverage_validator.py` enforces for every scoped child row:
+This is a negative uniqueness control, not a theory FAIL. Nonlocal uniqueness must instead be sought in a finite-parameter cross-order coefficient law or full non-polynomial momentum shape.
 
-- a valid Tier-1 parent;
-- complete declared child-domain object;
-- defined child result;
-- `counts_as_new_required_exclusion=false`;
-- `global_sufficiency=false`.
+Authority:
 
-Thus a local scientific FAIL cannot silently become family-level exclusion.
+`paper_iv/O_NONLOCAL_RIEMANN_WEYL_EFT_QUOTIENT_2026-09-10.md`.
 
-## D4 evidence status
+Next nonlocal gate:
 
-Required Tier-1 rows with defined complete residual: **1/11** (GR/EFT baseline).
+**`NONLOCAL_CROSS_ORDER_FUNCTIONAL_RIGIDITY_OR_FULL_MOMENTUM_SHAPE_CERTIFICATE`**.
 
-Defined scoped child results: **5**:
+## Exact family-level blockers
 
-1. string/dual-resonance rigidity;
-2. nonlocal Ricci/EOM-squared exact GR identity;
-3. nonlocal Weyl `H_K` causality FAIL;
-4. nonlocal Weyl `H_T` causality PASS control;
-5. nonlocal Gödel/CTC scoped causality FAIL.
-
-Scoped child scientific FAILs: **2**.
-
-## Exact active gate
-
-**`PF2_01B3_RIEMANN_WEYL_AMPLITUDE_RESIDUAL`**
-
-Published authority already shows that adding an independent nonlocal Riemann-sector form factor can alter tree-level graviton amplitudes. The unresolved RQIR question is stronger: does a fixed normalized nonlocal Riemann/Weyl amplitude retain a comparator-orthogonal residual after quotienting the full allowed local higher-curvature EFT basis at the same order/domain?
-
-Required payload:
-
-`{fixed Riemann/Weyl form factor, external states/helicities, normalized amplitude vector, identical-order GR+local higher-curvature EFT comparator basis, form-factor parameter incidence, pole/unitarity prescription, causality status, approximation/error ledger, comparator-orthogonal residual}`.
-
-## Other major-school queue
-
-After the nonlocal parent reaches a justified stopping/terminal point:
-
-1. CDT/EDT;
-2. Hořava-Lifshitz;
-3. causal sets;
-4. perturbative/higher-derivative QG;
-5. GFT/tensor independence/reduction audit.
-
-AS/LQG/CFS blockers remain open unchanged.
+- AS: same-realization `A_s+A_t+A_u+A4` + error/comparator certificate.
+- LQG: EPRL/Regge -> Area-Regge/area-metric coupling and Immirzi ancestry.
+- CFS: first normalized non-Einstein correction tensor + comparator.
+- Nonlocal QG: cross-order/full-shape rigidity + material-branch exhaustion.
+- String/M/holography: family/subfamily coverage/equivalence certificate.
+- Higher derivative: pole-prescription family map + causality/observable comparator.
+- Hořava: projectable UV->IR/extra-mode observable + non-projectable disposition.
+- Causal sets: fundamental dynamics -> emergent continuum + normalized observable.
+- CDT/EDT: continuum trajectory + invariant observable/error/comparator.
+- GFT/tensor: spinfoam independence/reduction + full gravity observable comparator.
 
 ## Heavy compute
 
-**IDLE.** The current front is analytic comparator-basis/attribution work.
+**IDLE.** The remaining obstacles are primarily missing physical certificates, continuum/ancestry maps and family-level comparator quotients.
 
-## Exact continuation order
+## Next order
 
-1. Build PF2-01B3 local-EFT comparator quotient for a fixed Riemann/Weyl nonlocal realization.
-2. Keep NONLOCAL_QG partial until materially independent branches are exhausted/reduced.
-3. Proceed through the omitted-family queue.
-4. Resolve Tier-2 watchlist classifications.
-5. Only after D2A+D2B and global D4 close may D7 choose EXISTING/ADAPT/HYBRID/NEW.
-6. Build Candidate Gravity only if D7 returns exactly `NEW_REQUIRED`, then run it through unchanged RQIR.
+1. Resolve Tier-2 watchlist classifications by explicit promotion, reduction/merge or scope proof.
+2. Convert as many Tier-1 partial rows as current literature permits into terminal coverage dispositions; do not manufacture missing physics.
+3. Re-run D2/D4/D7 after each closure.
+4. If all scientifically necessary objects close, let D7 choose among EXISTING/ADAPT/HYBRID/NEW.
+5. If irreducible published-object gaps remain, D7 must return `NOT_YET_AUTHORIZED` and identify them exactly.
