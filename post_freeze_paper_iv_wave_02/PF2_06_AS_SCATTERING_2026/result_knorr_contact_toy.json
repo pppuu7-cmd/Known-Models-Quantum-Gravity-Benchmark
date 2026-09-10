@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "iteration": 189,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "id": "AS_KNORR_2026_CONTACT_ANALYTIC_TOY",
+  "parent_family": "ASYMPTOTIC_SAFETY",
+  "role": "scoped_subbenchmark",
+  "object_complete_in_declared_domain": true,
+  "realization": {
+    "matter": "two shift-symmetric scalar species in the principal massless example",
+    "background": "flat",
+    "signature_flow": "Euclidean FRG with analytic continuation to Lorentzian scattering",
+    "newton_flow": "single analytic g_k flow with positive fixed point g_*",
+    "cosmological_constant": 0,
+    "contact_sector": "gravity-induced four-scalar form factor F1=-F2=F, F3=F4=F5=0",
+    "approximations": ["scalar quantum fluctuations neglected", "contact-form-factor self-feedback neglected", "nontrivial fully dressed gravitational propagators/vertices not simultaneously resolved"]
+  },
+  "object_status": "FAIL_RQIR_GATE__SCOPED_AS_ANALYTIC_CONTACT_MODEL_PARTIAL_WAVE_BOUNDEDNESS",
+  "residual_defined": true,
+  "residual_status": "SCOPED_HIGH_ENERGY_PARTIAL_WAVE_UNBOUNDEDNESS_IN_DECLARED_ANALYTIC_APPROXIMATION",
+  "scientific_fail": true,
+  "global_sufficiency": false,
+  "counts_as_new_required_exclusion": false,
+  "key_result": "For g_*>0 no fixed-point value simultaneously bounds the a0 and a2 partial waves in the declared simplified realization; existence of the RG fixed point alone is insufficient for bounded scattering.",
+  "family_fail_inferred": false,
+  "family_fail_forbidden_reason": "The primary paper explicitly states that momentum dependence of propagators and all relevant vertices must be included before a final verdict about AS scattering can be made.",
+  "authority": "arXiv:2602.21285v2",
+  "audit": "paper_iv/O_AS_2026_SCATTERING_REALIZATION_SPLIT_AUDIT_2026-09-10.md"
+}
