@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "iteration": 253,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "NONLOCAL_QG",
+  "result": "SCOPED_SAME_ACTION_CAUSALITY_SPLIT_FOUND_PARENT_NONTERMINAL",
+  "scoped_result": "FAIL_SCOPED_SAME_ACTION_CAUSALITY_SPLIT__PERTURBATIVE_MACROCAUSALITY_PASS_DOES_NOT_IMPLY_GLOBAL_CHRONOLOGY_PASS",
+  "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+  "family_residual": "UNDEFINED",
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "paper_III_new_failure_mode": false,
+  "paper_III_status": "FROZEN_CLOSED",
+  "candidate_gravity_activation": false,
+  "candidate_gravity_R3_percent": 24,
+  "iter252_local_R3_25_superseded": true,
+  "heavy_compute": "IDLE",
+  "next_gate": "NONLOCAL_QG_SATURATION_AUDIT__MINIMAL_MATTER_FIXED_ACTION_VACUUM_LIMIT_AND_FORM_FACTOR_OVERLAP"
+}
