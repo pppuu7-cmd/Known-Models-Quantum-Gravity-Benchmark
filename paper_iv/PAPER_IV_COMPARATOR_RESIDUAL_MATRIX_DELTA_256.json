@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "iteration": 256,
+  "family": "CFS",
+  "matrix_delta": {
+    "physical_object": "Einstein-equation correction expansion derived from the causal action principle",
+    "same_realization": true,
+    "common_domain_comparator": "GR/EFT comparator exists only for the Einstein leading term; beyond-GR residual not normalized",
+    "provenance": "regularization-length power expansion; microscopic regularization/state coefficients not fully frozen for first non-Einstein term",
+    "error_remainder": "missing propagated regularization/truncation capsule",
+    "residual": "UNDEFINED"
+  },
+  "disposition": "BLOCKED_MISSING_REQUIRED_OBJECT__CFS_EXPLICIT_NORMALIZED_FIRST_NON_EINSTEIN_CORRECTION_TENSOR_WITH_FIXED_MICROSCOPIC_REGULARIZATION_STATE_COMPARATOR_AND_PROPAGATED_ERROR",
+  "authority": "paper_iv/P_CFS_GEOMETRIC_EINSTEIN_CORRECTION_TENSOR_AUDIT_ITER256_2026-09-11.md"
+}

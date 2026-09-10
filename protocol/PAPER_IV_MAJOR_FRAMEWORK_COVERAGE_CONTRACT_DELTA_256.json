@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "iteration": 256,
+  "contract_delta_type": "SCOPED_AUTHORITY_REFRESH_NO_CORE_CHANGE",
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "tier1_id": "CFS",
+  "previous_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "new_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "new_scoped_authority": "paper_iv/P_CFS_GEOMETRIC_EINSTEIN_CORRECTION_TENSOR_AUDIT_ITER256_2026-09-11.md",
+  "minimum_resolution_now": "Freeze an explicit first non-Einstein CFS gravity correction tensor with coefficients fixed by a declared microscopic regularization/state, derive a normalized physical observable, provide an identical-domain GR/EFT comparator, and propagate regularization/truncation error.",
+  "promotion_forbidden": true,
+  "counts_as_family_fail": false,
+  "counts_as_new_required_evidence": false
+}
