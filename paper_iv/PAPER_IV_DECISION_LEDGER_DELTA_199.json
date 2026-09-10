@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "iteration": 199,
+  "baseline_frozen_ledger": "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json",
+  "prior_delta": "paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_198.json",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "decision_semantics_changed": false,
+  "coverage_counts": {
+    "tier1_required": 14,
+    "tier1_terminal": 1,
+    "tier1_nonterminal": 13,
+    "tier2_unresolved": 0
+  },
+  "gates": {
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+    "D7": "NOT_CLOSED"
+  },
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity": {"R3_percent": 24, "active": false, "activation_condition": "D7 == NEW_REQUIRED"},
+  "ledger_delta": {
+    "family": "LQG_SPINFOAM",
+    "prior_missing_certificate": "EPRL_KKL_UV_FIXED_POINT_TO_SEMICLASSICAL_AREA_REGGE_CROSSOVER_PLUS_GAMMA_ANCESTRY_AND_ERROR_CERTIFICATE",
+    "new_scoped_evidence": "PASS_STRUCTURAL_GATE__LQG_UV_TO_IR_BRIDGE_REQUIRES_EXPLICIT_TOPOLOGICAL_CONTINUUM_ESCAPE_MECHANISM",
+    "new_authority": "paper_iv/O_LQG_CONTINUUM_TOPOLOGY_ESCAPE_GATE_2026-09-10.md",
+    "updated_missing_certificate": "EPRL_KKL_UV_FIXED_POINT_TO_SEMICLASSICAL_AREA_REGGE_CROSSOVER_WITH_TOPOLOGY_ESCAPE_GAMMA_ANCESTRY_AND_ERROR_CERTIFICATE",
+    "required_topology_escape_alternatives": [
+      "DISTRIBUTIONAL_RIGGING_MAP_CONTINUUM_WITH_FIXED_EPRL_KKL_REALIZATION",
+      "EXPLICIT_STRONG_CONVERGENCE_ASSUMPTION_ESCAPE_WITH_REPLACEMENT_CONTROL"
+    ],
+    "parent_disposition": "BLOCKED_MISSING_REQUIRED_OBJECT",
+    "family_residual_defined": false,
+    "terminal_promotion": false,
+    "new_required_evidence": false,
+    "reason": "Han's concrete EPRL/KKL candidate UV fixed point is topological at leading order, while Bruno-Colafranceschi-Mele-Rovelli prove that sufficiently strong spin-foam continuum convergence is topological under their model-independent hypotheses. Therefore a physical non-topological UV-to-IR bridge must prospectively identify a relevant deformation and either a distributional/rigging-map continuum construction or an explicit escape from the theorem's strong-convergence assumptions. Applicability to the concrete EPRL/KKL stack is conditional until those assumptions are mapped one by one."
+  },
+  "d7_effect": "NONE__PRECONDITIONS_D2_D4_REMAIN_OPEN",
+  "heavy_compute": "IDLE"
+}
