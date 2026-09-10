@@ -1,5 +1,5 @@
 {
-  "_integrity": "canonical_single_document_iter201_v3_recreated",
+  "_integrity": "canonical_single_document_iter201_v4_bracefix",
   "schema_version": "9.13",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
@@ -43,4 +43,3 @@
   "compute_policy":{"heavy_compute_status":"IDLE_PENDING_FROZEN_PHYSICAL_OBJECT","current_reason":"Iter201 closes only a 1+1 scalar/QFT continuum-response control. The causal-set family blocker is the fundamental gravitational measure-to-manifoldlike-3+1 continuum and same-realization gravity observable/comparator map; repeated sprinkling propagation cannot close it."},
   "recovery":{"latest_delta":"recovery/RECOVERY_DELTA_201.md","current_front":"recovery/CURRENT_BENCHMARK_FRONT.md","active_wave":"PF2 known-school family closure / causal-set continuum response","active_audits":["paper_iv/O_CAUSAL_SET_LINK_PROPAGATOR_CONTINUUM_RESPONSE_SCOPE_AUDIT_2026-09-10.md","paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_201.json"],"active_code":["code/paper_iv_framework_coverage_validator.py","code/paper_iv_global_gate_validator.py","code/paper_iv_d7_evaluator.py","code/methodology_orchestrator.py"]}
   }
-}
