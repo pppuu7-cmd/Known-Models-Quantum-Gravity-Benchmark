@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **195**  
-**Phase:** **RQIR Core v1.0 FROZEN / Hořava U(1) IR comparator localized / mixed-derivative class disposition next**.
+**KMQGB iteration:** **196**  
+**Phase:** **RQIR Core v1.0 FROZEN / Hořava mixed-derivative H4 scope localized / branch-complete parent ledger next**.
 
 ## Stable metrics
 
@@ -11,7 +11,7 @@
 - Candidate Gravity R3: **24%**, inactive.
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
-- No readiness promotion in Iter195.
+- No readiness promotion in Iter196.
 
 ## Paper-IV global gates
 
@@ -19,50 +19,52 @@ D1 PASS; D2A NOT_CLOSED; D2B NOT_CLOSED; D2 `NOT_CLOSED_COVERAGE_AND_OBJECTS`; D
 
 ## Coverage status
 
-Tier-1 required rows **14**; terminal family rows **1/14**; nonterminal **13/14**; Tier-2 unresolved **0**; scoped child residuals **9**; scoped scientific FAIL rows **2**.
+Tier-1 required rows **14**; terminal family rows **1/14**; nonterminal **13/14**; Tier-2 unresolved **0**; scoped child residuals remain scoped and are not promoted to family level without domain proof.
 
-## Validated prior authority
+## Iter196 — mixed-derivative H4 scope audit
 
-Iter193 exact-head methodology CI run `34443342721` completed successfully. Iter194 exact-head methodology CI run `34448260471` was still in progress when Iter195 began and is not duplicated.
+Primary-authority review confirms the 2016 result is a strong scientific FAIL for the explicitly constructed minimal mixed-derivative gravity realization: the complete two-spatial/two-temporal-derivative operator set at that scaling contains an additional scalar graviton unstable at low energy, independently corroborated by Hamiltonian analysis.
 
-## Iter194 branch census
+However, the 2015 result often invoked as a possible healthy completion proves power-counting-renormalizable and unitary higher-order mixed-derivative models only in a **Lifshitz-scalar toy theory**. It does not provide a complete healthy gravitational action/constraint algebra/spectrum/UV→IR gravity observable certificate.
 
-Hořava minimum material census is frozen at five classes: H0 standard projectable, H1 healthy non-projectable/BPS, H2 projectable U(1), H3 non-projectable U(1), H4 mixed derivative. U(1) and mixed-derivative classes are not silently reducible to H0/H1 because they alter gauge/constraint or propagating-degree-of-freedom structure.
+Therefore the minimal-gravity child FAIL cannot be promoted to the entire H4 class, while the toy-model result cannot be promoted to a healthy-gravity PASS.
 
-Authority: `paper_iv/O_HORAVA_FAMILY_MATERIAL_BRANCH_EXHAUSTION_AUDIT_2026-09-10.md` and `paper_iv/HORAVA_MATERIAL_BRANCH_MAP_2026-09-10.json`.
+Scoped child result:
 
-## Iter195 — U(1) UV→IR localization
+`FAIL_RQIR_GATE__HORAVA_MIXED_DERIVATIVE_MINIMAL_GRAVITY_LOW_ENERGY_EXTRA_SCALAR_INSTABILITY`.
 
-A normalized IR comparator object is now explicitly authenticated for both projectable and non-projectable U(1)-extended Hořava: arXiv:1310.6666 derives the full PPN parameter set under a universal matter coupling and identifies GR-compatible parameter regions.
+H4 branch disposition:
 
-Scoped result:
+`BLOCKED_SCOPE_NOT_PROVEN__MINIMAL_GRAVITY_INSTABILITY_NOT_PROMOTABLE_TO_FULL_MIXED_DERIVATIVE_CLASS__NO_AUTHENTICATED_HEALTHY_GRAVITY_COMPLETION_FOUND`.
 
-**`PASS_RQIR_GATE__HORAVA_U1_PROJECTABLE_AND_NONPROJECTABLE_NORMALIZED_IR_PPN_COMPARATOR_OBJECT_EXISTS`**.
+Authority: `paper_iv/O_HORAVA_MIXED_DERIVATIVE_SCOPE_AUDIT_2026-09-10.md`.
 
-The remaining projectable-U(1) blocker is now:
+Family-level comparator residual remains undefined.
 
-`BLOCKED_MISSING_REQUIRED_OBJECT__HORAVA_PROJECTABLE_U1_3P1_QUANTUM_UV_TRAJECTORY_TO_PPN_COUPLINGS_SAME_REALIZATION_MAP`.
+## Hořava material census after H4 localization
 
-The remaining non-projectable-U(1) blocker is:
+H0 standard projectable — scoped UV authority exists; UV→IR relevant-coupling/extra-scalar same-realization bridge BLOCKED.
 
-`BLOCKED_MISSING_REQUIRED_OBJECT__HORAVA_NONPROJECTABLE_U1_3P1_QUANTUM_UV_TRAJECTORY_TO_PPN_COUPLINGS_SAME_REALIZATION_MAP`.
+H1 healthy non-projectable/BPS — 3+1 UV RG→IR khronometric same-realization bridge BLOCKED.
 
-The tuned scalar-free non-projectable U(1) locus cannot represent the generic quantum branch without a protection theorem, because its required zero couplings multiply marginal operators expected to be quantum generated.
+H2 projectable U(1) — normalized IR PPN comparator exists; U(1)-specific 3+1 quantum UV→IR bridge BLOCKED.
 
-Authority: `paper_iv/O_HORAVA_U1_UV_IR_COMPARATOR_GAP_AUDIT_2026-09-10.md`.
+H3 non-projectable U(1) — normalized IR PPN comparator exists; 3+1 quantum UV→IR bridge BLOCKED; tuned scalar-free locus additionally lacks quantum protection theorem.
+
+H4 mixed derivative — minimal gravity child FAIL is authenticated, but full-class scope is BLOCKED and no authenticated healthy gravity completion was found.
 
 Hořava parent remains `PARTIAL_SUBFAMILY_ONLY`; no family residual is defined.
 
-## D7 after Iter195
+## D7 after Iter196
 
 No family-level terminal change: D2 NOT_CLOSED, D4 NOT_CLOSED, D7 NOT_CLOSED, `NEW_REQUIRED=false`, Candidate Gravity inactive at R3=24%.
 
 ## Heavy compute
 
-**IDLE.** Current blockers are structural/provenance/scope questions.
+**IDLE.** Current blocker is branch-level scope/provenance/terminal-disposition logic; heavy scans cannot prove an all-completions theorem or create missing same-realization authority.
 
 ## Exact next gate
 
-**`HORAVA_MIXED_DERIVATIVE_FULL_CLASS_INSTABILITY_SCOPE_OR_HEALTHY_COMPLETION_CERTIFICATE`**.
+**`HORAVA_FAMILY_BLOCKER_LEDGER_COMPLETION_AND_DISPOSITION_CERTIFICATE`**.
 
-Determine whether the additional low-energy unstable scalar proven for the minimal mixed-derivative gravity realization extends to the full materially allowed mixed-derivative class, or whether an explicit healthy gravity completion escapes it. Do not promote a minimal-realization FAIL to the whole H4 branch without scope proof.
+Consolidate H0–H4 into one branch-complete Hořava ledger, verify that the frozen census contains no silently unresolved material branch, preserve each scoped result and missing-object quarantine, and determine whether the Hořava parent may be terminally classified as BLOCKED-with-undefined-residual under the frozen Paper-IV contract or must remain `PARTIAL_SUBFAMILY_ONLY` pending at least one further object-level certificate.
