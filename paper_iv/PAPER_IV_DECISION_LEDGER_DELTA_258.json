@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "iteration": 258,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "LQG_SPINFOAM",
+  "result": "BLOCKED_MISSING_SAME_REALIZATION_REDUCTION_OBJECT__EPRL_TO_AREA_REGGE_EFFECTIVE_SPINFOAM_PARITY_RG_COUPLING_MAP_WITH_GAMMA_IDENTITY_REFINEMENT_AND_PROPAGATED_REMAINDER",
+  "operational_status": "PARKED_PENDING_EPRL_AREA_REGGE_REDUCTION_OR_EQUIVALENCE_AUTHORITY",
+  "strict_coverage_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "candidate_gravity_R3_percent": 24,
+  "candidate_gravity_activation": false,
+  "heavy_compute": "IDLE",
+  "polygon_operational_saturation_percent": 94,
+  "next_gate": "PERTURBATIVE_HIGHER_DERIVATIVE_OR_GFT_FINITE_BRANCH_CLOSURE"
+}
