@@ -1,105 +1,124 @@
 # Paper IV — Frozen-Core Decision Ledger
 
-**KMQGB iteration:** 182  
+**KMQGB iteration:** 183  
 **RQIR standard:** **Core v1.0 FROZEN**  
 **Current global decision:** **`NOT_YET_AUTHORIZED`**  
 **Allowed future terminal decisions:** `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED`.
 
 ## Core discipline
 
-A framework may be terminal for a scoped benchmark while Paper IV remains non-terminal. `BLOCKED_MISSING_REQUIRED_OBJECT` contributes zero exclusion evidence to `NEW_REQUIRED` until the missing physical object is supplied and tested in the common domain.
+A scoped benchmark result is not automatically a verdict on its entire research school. `BLOCKED`, `NOT_YET_BENCHMARKED`, `PARTIAL_SUBFAMILY_ONLY` and unresolved classification all contribute **zero** exclusion evidence toward `NEW_REQUIRED`.
 
-Cross-authority composition remains governed by `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`: papers from one school are not one RQIR observable unless their realization vectors match or an explicit map is derived.
+Cross-authority composition remains governed by `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`. Major-school completeness is governed by `protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json`.
 
-## Current framework evidence
+No semantic defect in RQIR Core v1.0 has been found.
 
-| Framework | Current state | Strongest accepted progress | Exact open object |
-|---|---|---|---|
-| GR + low-energy EFT | `PASS_RQIR_GATE__BASELINE_CONTROL` | controlled low-energy sufficiency and universal QG-EFT predictions | UV/strong-gravity completion outside EFT authority |
-| String / dual resonance | `PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL` | rich Regge/bootstrap package gives scoped Virasoro–Shapiro rigidity | common-domain attribution of the full useful UV invariant vector |
-| Asymptotic safety | `BLOCKED_MISSING_REQUIRED_OBJECT` | mediated Lorentzian scattering exists; explicit contact sector exists in a separate simplified realization | **same-realization `A_s+A_t+A_u+A4` certificate with crossing, trajectory, normalisation, full error and comparator map** |
-| LQG / spinfoam | `BLOCKED_MISSING_REQUIRED_OBJECT` | Lorentzian EPRL->Regge asymptotic dynamics plus area-metric continuum/parity/RG structures | **controlled EPRL/Regge -> Area-Regge/area-metric coupling ancestry and `gamma_EPRL -> gamma_AM(mu)` map** |
-| Causal Fermion Systems | `BLOCKED_MISSING_REQUIRED_OBJECT` | Einstein–Dirac continuum identity and systematic microscopic correction generator | **first explicit normalized non-Einstein gravity correction tensor/coefficient vector + full C5/GR/QFT comparator** |
+## D2 now has two obligations
 
-## Global gates after Iter182
+`D2 = D2A_framework_set_coverage AND D2B_complete_objects`.
+
+- **D2A** asks whether the materially distinct major known schools have been admitted, explicitly reduced/merged by a derived map, or excluded from Paper-IV scope by proof.
+- **D2B** asks whether every admitted school has a complete same-realization physical object suitable for comparator subtraction.
+
+At Iter183 both are `NOT_CLOSED`.
+
+## Tier-1 major-school census
+
+| Family / role | Coverage state | Current strongest authority |
+|---|---|---|
+| GR + controlled low-energy EFT | `BENCHMARKED_COMPLETE_REALIZATION` | baseline/comparator pass |
+| Perturbative renormalizable / higher-derivative QG | `NOT_YET_BENCHMARKED` | PF2 pending |
+| Hořava-Lifshitz QG | `NOT_YET_BENCHMARKED` | PF2 pending |
+| Asymptotic Safety | `BLOCKED_MISSING_REQUIRED_OBJECT` | mediated scattering + separate contact sector |
+| Nonlocal / infinite-derivative QG | `NOT_YET_BENCHMARKED` | **next active PF2 target** |
+| String / M-theory / holographic QG | `PARTIAL_SUBFAMILY_ONLY` | dual-resonance/Virasoro-Shapiro scoped child pass |
+| Causal sets | `NOT_YET_BENCHMARKED` | PF2 pending |
+| CDT/EDT | `NOT_YET_BENCHMARKED` | PF2 pending |
+| LQG / EPRL-spinfoam | `BLOCKED_MISSING_REQUIRED_OBJECT` | scoped EPRL->Regge + area-metric downstream controls |
+| GFT / tensor models | `NOT_YET_BENCHMARKED` | independence/reduction audit pending |
+| Causal Fermion Systems | `BLOCKED_MISSING_REQUIRED_OBJECT` | Einstein-Dirac continuum + correction generator |
+
+A five-entry Tier-2 watchlist remains unresolved and must be dispositioned before D7: supergravity/double-copy, noncommutative/spectral geometry, twistor/amplitude programs, canonical Wheeler-DeWitt geometrodynamics, and emergent/induced/graph-based gravity.
+
+## Global gates after Iter183
 
 - **D1 Frozen-judge integrity:** `PASS`.
-- **D2 Major-framework complete-object coverage:** `NOT_CLOSED`.
+- **D2A Framework-set coverage:** `NOT_CLOSED`.
+- **D2B Complete same-realization objects:** `NOT_CLOSED`.
+- **D2 combined:** `NOT_CLOSED_COVERAGE_AND_OBJECTS`.
 - **D3 Common-domain comparability:** `PARTIAL`.
-- **D4 Comparator-subtracted residual matrix:** `PARTIAL_MATRIX_FROZEN__NOT_CLOSED`.
+- **D4 Comparator-subtracted residual matrix:** `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`.
 - **D5 Missing-object quarantine:** `PASS`.
 - **D6 Same-realization composition discipline:** `PASS_RULE_TARGETS_OPEN`.
 - **D7 Global terminal proof obligation:** `NOT_CLOSED`.
 
-Iter182 adds a frozen machine-readable residual matrix:
+Machine authorities:
 
-`paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json`
+- `code/paper_iv_framework_coverage_validator.py`
+- `code/paper_iv_global_gate_validator.py`
+- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json`
 
-and fail-closed global logic validator:
+## Scope correction to Iter182
 
-`code/paper_iv_global_gate_validator.py`.
+The Iter182 five-row residual matrix was correct for its declared active set, but it was not a complete census of major known quantum-gravity schools. Iter183 preserves every scoped result while expanding the coverage obligation.
 
-The validator makes the D2 -> D4 -> D7 dependency executable. Undefined/BLOCKED residual rows cannot be zero-filled and cannot count as exclusion evidence.
+In particular, `STRING_DUAL_RESONANCE` remains a valid `PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL`, but it is now a child benchmark under the broader `STRING_MTHEORY_HOLOGRAPHY` family. It cannot alone establish whole-family sufficiency or exclusion.
+
+## Existing CW2 blockers remain open
+
+### O-AS
+
+`STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE`
+
+The `A_s+A_t+A_u` Lorentzian mediated object and a separate contact `A4` sector cannot be added across unmatched realization vectors.
+
+### O-LQG
+
+`EPRL_REGGE_TO_AREA_REGGE_PARITY_COUPLING_MATCHING_CERTIFICATE`
+
+The open issue is controlled ancestry from microscopic EPRL dynamics through Area-Regge/area-metric couplings and `gamma_EPRL -> gamma_AM(mu)`, not absence of all downstream observables.
+
+### O-CFS
+
+`FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR`
+
+The correction generator exists, but the first normalized comparator-ready non-Einstein tensor is still missing.
 
 ## Terminal proof obligations
 
-### `EXISTING_SUFFICIENT` — NOT AUTHORIZED
+### `EXISTING_SUFFICIENT`
 
-Requires one complete framework/equivalence class to close the target RQIR hierarchy across the declared Paper-IV domains. GR/EFT closes only its controlled low-energy domain and string theory currently gives scoped hard-amplitude rigidity, not global coverage.
+Requires at least one complete family/equivalence class to close the target RQIR hierarchy across Paper-IV scope. Not authorized.
 
-### `ADAPT_EXISTING` — NOT AUTHORIZED
+### `ADAPT_EXISTING`
 
-Requires an existing framework whose complete residual object exists and whose remaining mismatch is demonstrated to be adapter/interface-only. AS, LQG and CFS remain physically promising but still lack one required same-realization object each.
+Requires a complete known family whose remaining gap is demonstrably adapter/interface-only rather than missing physics. Not authorized.
 
-### `HYBRID_REQUIRED` — NOT AUTHORIZED
+### `HYBRID_REQUIRED`
 
-Requires complete constituent rows plus an explicit interface law and no-double-counting certificate. No such globally complete pair/set exists yet.
+Requires complete constituent rows, a derived interface law and no-double-counting certificate. Not authorized.
 
-### `NEW_REQUIRED` — NOT AUTHORIZED
+### `NEW_REQUIRED`
 
-Requires broad inadequacy/exclusion evidence on **complete** known-framework realizations. Three mandatory rows are still `BLOCKED_MISSING_REQUIRED_OBJECT`, so `NEW_REQUIRED` remains logically and scientifically forbidden.
+Requires resolved major-school coverage plus family-level exclusion/inadequacy evidence for every relevant existing/adapted/hybrid route. One failed representative realization is insufficient. Not authorized.
 
-## Closure Wave 02 — 0/3 terminal
+## New active PF2 gate
 
-### CW2-01 / O-AS
+**`PF2_01_NONLOCAL_QG_SCATTERING_REALIZATION_CERTIFICATE`**
 
-Published authority now establishes both a Lorentzian mediated scattering object and, separately, an explicit momentum-dependent contact sector. This is meaningful progress but **not** a same-realization sum. The contact calculation itself states that a more complete momentum-dependent propagator/all-vertex treatment is required before a final amplitude-level verdict.
+Required payload:
 
-Target remains:
+`{declared nonlocal action/form factors, pole/ghost/unitarity prescription, normalized physical scattering or propagation observable, IR GR map, causality/domain assumptions, approximation/error ledger, full local GR/EFT comparator quotient, alternative-QG comparators}`.
 
-`STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE`.
+After nonlocal QG the planned omitted-family sequence is CDT/EDT, Hořava-Lifshitz, causal sets, perturbative higher-derivative QG, then GFT/tensor after its independence/reduction audit.
 
-### CW2-02 / O-LQG
+## Candidate Gravity firewall
 
-Iter181 closed a scoped Lorentzian EPRL -> Regge asymptotic step. Iter182 verifies that Area-Regge/area-metric continuum, parity-sensitive couplings and an Immirzi beta function exist. However the area-metric RG construction explicitly treats non-metric masses as independent because they are not currently computable from spin foams and assumes an intermediate EFT regime. Therefore the microscopic EPRL Immirzi parameter cannot be equated to the running area-metric parameter by notation alone.
-
-Target remains:
-
-`EPRL_REGGE_TO_AREA_REGGE_PARITY_COUPLING_MATCHING_CERTIFICATE`.
-
-### CW2-03 / O-CFS
-
-The 2026 geometric derivation supplies Einstein gravity plus a systematic regularization-length correction architecture. The currents construction supplies a tensor hierarchy, but states that the rank-two equations are **expected** to encode Einstein equations. No first explicit normalized non-Einstein gravity correction tensor/coefficient vector is presently frozen.
-
-Target remains:
-
-`FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR`.
-
-## D4 residual semantics
-
-The frozen matrix currently contains:
-
-- GR/EFT: defined baseline/comparator row;
-- string/dual resonance: defined scoped-rigidity row;
-- AS: undefined residual pending complete same-realization amplitude;
-- LQG: undefined residual pending micro-to-area-metric parameter ancestry;
-- CFS: undefined residual pending normalized correction tensor.
-
-Thus D4 has materially progressed from an unspecified missing matrix to a **frozen partial matrix**, but it cannot pass until all required rows are defined in a common comparator domain.
+Candidate Gravity remains inactive at R3 = 24%. It is activated only if the completed D7 decision is exactly `NEW_REQUIRED`. If activated, it must pass the unchanged frozen RQIR funnel used for known schools.
 
 ## Compute triage
 
-Heavy computation remains unauthorized for these blockers. The current missing objects are analytic/ancestry/normalization/composition objects, not sensitivity scans.
+Heavy computation remains IDLE. PF2-01 begins with literature, realization selection, normalized observable construction and comparator mapping; numerical work is allowed only after a prospective physical gate justifies it.
 
 ## Current verdict
 
@@ -107,6 +126,6 @@ Heavy computation remains unauthorized for these blockers. The current missing o
 
 Reason:
 
-`frozen judge valid + D4 matrix now explicit + three required residual rows remain undefined because complete same-realization physical objects are missing + no terminal D7 proof`.
+`frozen judge valid + major-school census expanded + D2A/D2B open + D4 only partial active-set authority + multiple major families not yet benchmarked + no terminal D7 proof`.
 
-Primary Iter182 audit: `paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md`.
+Primary Iter183 audit: `paper_iv/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_AUDIT_2026-09-10.md`.
