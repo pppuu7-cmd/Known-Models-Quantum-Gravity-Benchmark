@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "iteration": 187,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "id": "HIGHER_DERIVATIVE_FAKEON_SCOPED_CONTROL",
+  "parent_family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "role": "scoped_subbenchmark",
+  "realization": {
+    "action_class": "four-dimensional local R + R^2 + C^2 quadratic gravity",
+    "quantization": "fakeon / purely virtual massive spin-2 with average continuation",
+    "observable_sector": "inflationary scalar and tensor fluctuations around de Sitter / slow-roll expansion",
+    "mass_parameters": ["m_phi", "m_chi"],
+    "published_consistency_condition": "m_chi > m_phi/4 in the cited inflationary analysis"
+  },
+  "object_complete_in_declared_domain": true,
+  "object_status": "PASS_RQIR_GATE__SCOPED_FAKEON_RENORMALIZABILITY_UNITARITY_INFLATION_OBSERVABLE_CONTROL",
+  "residual_defined": true,
+  "residual_status": "DEFINED_SCOPED_CONSTRUCTION_CONTROL__UNIQUE_COMPARATOR_ORTHOGONAL_RESIDUAL_NOT_YET_ESTABLISHED",
+  "scientific_fail": false,
+  "global_sufficiency": false,
+  "counts_as_new_required_exclusion": false,
+  "accepted_controls": {
+    "renormalizability": "PASS_IN_DECLARED_FAKEON_CONSTRUCTION",
+    "perturbative_unitarity": "PASS_IN_DECLARED_FAKEON_PRESCRIPTION",
+    "massive_spin2_asymptotic_state": "EXCLUDED_BY_FAKEON_PRESCRIPTION",
+    "inflationary_observables": "EXPLICIT_CALCULABLE_SCALAR_TENSOR_SECTOR_EXISTS",
+    "ordinary_microcausality": "NOT_CLAIMED__MICROSCOPIC_CAUSALITY_MODIFICATION_DECLARED",
+    "cemz_shockwave_control": "POSITIVE_POLARIZATION_INDEPENDENT_SHAPIRO_DELAY_IN_SEPARATE_QUADRATIC_GRAVITY_DIAGNOSTIC"
+  },
+  "comparator_status": "OPEN_FULL_MANIFOLD_QUOTIENT",
+  "next_gate": "HIGHER_DERIVATIVE_FAKEON_INFLATION_FULL_COMPARATOR_QUOTIENT_PLUS_CAUSAL_REPLACEMENT_CERTIFICATE",
+  "minimum_next_payload": [
+    "exact_fakeon_inflation_realization",
+    "observable_vector_and_domain",
+    "Starobinsky_and_complete_local_EFT_comparators",
+    "nuisance_state_background_incidence",
+    "controlled_causal_replacement_domain",
+    "comparator_projection_and_global_profile",
+    "held_out_prediction",
+    "error_remainder_ledger"
+  ],
+  "authorities": [
+    "arXiv:1801.00915",
+    "arXiv:1806.03605",
+    "arXiv:1809.05037",
+    "arXiv:2005.10293",
+    "arXiv:2305.12549",
+    "arXiv:2107.07424"
+  ],
+  "audit": "post_freeze_paper_iv_wave_02/PF2_05_HIGHER_DERIVATIVE_FAKEON/audit.md"
+}
