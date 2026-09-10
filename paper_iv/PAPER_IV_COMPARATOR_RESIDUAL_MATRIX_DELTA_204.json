@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "iteration": 204,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "framework_delta": {
+    "id": "GFT_TENSOR_MODELS",
+    "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+    "pure_random_tensor_status": "PARTIAL_SUBBRANCH_TERMINAL",
+    "scoped_fail": "FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_STANDARD_MELONIC_LARGE_N_CONTINUUM_IS_BRANCHED_POLYMER_NOT_EXTENDED_4D_GR_GEOMETRY",
+    "scoped_fail_residual_type": "UNIVERSALITY_CLASS_GEOMETRY_MISMATCH__NOT_A_SMALL_NUMERICAL_RESIDUAL",
+    "enhanced_nonmelonic_status": "BLOCKED_MISSING_REQUIRED_OBJECT__PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_CONTINUUM_TO_NORMALIZED_4D_GRAVITY_OBSERVABLE_COMPARATOR",
+    "gravity_residual_row_added": false,
+    "family_residual_defined": false,
+    "counts_as_family_PASS": false,
+    "counts_as_family_FAIL": false,
+    "counts_as_new_required_exclusion": false,
+    "authority": "paper_iv/O_PURE_RANDOM_TENSOR_CONTINUUM_UNIVERSALITY_SCOPE_AUDIT_2026-09-10.md"
+  },
+  "scoped_child_rows_with_defined_residual": 11,
+  "scoped_child_scientific_fail_rows": 3,
+  "coverage_counts_unchanged": {"tier1_total":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0}
+}
