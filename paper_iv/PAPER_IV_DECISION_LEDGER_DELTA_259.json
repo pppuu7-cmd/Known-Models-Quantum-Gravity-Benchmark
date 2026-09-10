@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "iteration": 259,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "new_material_branch": "B6_DQFT_DUAL_IHO_SPACELIKE_PURELY_VIRTUAL_BRANCH",
+  "branch_status": "SCOPED_CANDIDATE_UNITARITY_RENORMALIZABILITY_CONTROL__INDEPENDENT_TERMINAL_CAUSALITY_OBSERVABLE_AND_ERROR_CERTIFICATE_OPEN",
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "iter187_taxonomy_complete_through_2026_09_11": false,
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "candidate_gravity_R3_percent": 24,
+  "candidate_gravity_activation": false,
+  "heavy_compute": "IDLE",
+  "polygon_operational_saturation_percent": 94,
+  "next_gate": "DQFT_DUAL_IHO_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_AND_ERROR_CERTIFICATE"
+}
