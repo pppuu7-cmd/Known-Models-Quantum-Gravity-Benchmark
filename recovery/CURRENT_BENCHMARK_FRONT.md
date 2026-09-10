@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **189**  
-**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / fakeon classical causal-response attribution identity closed / family-level D7 blockers active**.
+**KMQGB iteration:** **190**  
+**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / Hořava material branch fork frozen / family-level D7 blockers active**.
 
 ## Stable metrics
 
@@ -12,7 +12,7 @@
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
 
-No readiness promotion in Iter189.
+No readiness promotion in Iter190.
 
 ## Paper-IV global gates
 
@@ -34,53 +34,57 @@ No readiness promotion in Iter189.
 - nonterminal family rows: **13/14**.
 - untouched Tier-1 rows: **0/14**.
 - Tier-2 unresolved classifications: **0**.
-- defined scoped child results: **9**.
+- defined scoped child residuals remain **9**; Iter190 adds a family-structure PASS but no new comparator residual.
 - scoped scientific FAIL rows: **2**.
 
 No scoped child result is promoted to family exclusion or sufficiency.
 
-## Iter189 — fakeon classical causal-response attribution quotient
+## Iter190 — Hořava projectability fork and extra-mode object
 
-The classical/tree fakeon projection is represented by the principal-value response, equivalently the half sum of retarded and advanced Green functions. The advanced component carries microcausal/nonlocal response.
-
-However, the primary fakeon classicization source explicitly states that different quantization prescriptions can share this classical limit. Therefore this response object cannot, by itself, identify the fakeon quantization prescription against a same-action comparator that shares the same classical limit.
+Primary-source audit establishes that projectability changes the constraint/scalar sector materially. The projectable theory has a dynamical extra scalar in cosmological perturbations and documented ghost/tachyon/strong-coupling issues in relevant regimes; the BPS non-projectable extension changes the scalar quadratic action and has a distinct Lorentz-violating scalar-tensor IR limit.
 
 Classification:
 
-**`PASS_RQIR_GATE__SCOPED_FAKEON_CLASSICAL_CAUSAL_RESPONSE_QUANTIZATION_NONIDENTIFIABILITY`**.
+**`PASS_RQIR_GATE__HORAVA_MATERIAL_PROJECTABILITY_FORK_AND_EXTRA_MODE_OBJECT_IDENTIFIED`**.
 
-Residual:
+This is a scoped family-structure PASS, not a terminal Hořava-family result.
 
-**`EXACT_ZERO_FAKEON_ATTRIBUTION_RESIDUAL_IN_CLASSICAL_PRINCIPAL_VALUE_RESPONSE_BLOCK`**.
+Authority:
 
-This is a negative uniqueness result, not a scientific FAIL of fakeon gravity and not a claim that the response is causal.
+- `paper_iv/O_HORAVA_PROJECTABLE_NONPROJECTABLE_FAMILY_FORK_AUDIT_2026-09-10.md`
+- Cerioni & Brandenberger, arXiv:1007.1006
+- Koyama & Arroja, arXiv:0910.1998
+- Blas, Pujolas & Sibiryakov, arXiv:0909.3525
+- Papazoglou & Sotiriou, arXiv:0911.1299; BPS comment arXiv:0912.0550
 
-Authorities:
-
-- `paper_iv/O_HIGHER_DERIVATIVE_FAKEON_CLASSICAL_CAUSAL_RESPONSE_QUOTIENT_2026-09-10.md`
-- `post_freeze_paper_iv_wave_02/PF2_05C_HIGHER_DERIVATIVE_FAKEON_CLASSICAL_CAUSAL_RESPONSE/result.json`
-- Anselmi, arXiv:1809.05037
-- Anselmi & Piva, arXiv:1806.03605
-
-## Higher-derivative family status
+## Hořava family status
 
 Parent status remains:
 
-`PERTURBATIVE_HIGHER_DERIVATIVE = PARTIAL_SUBFAMILY_ONLY`.
+`HORAVA_LIFSHITZ = PARTIAL_SUBFAMILY_ONLY`.
 
-The leading `(r,n_t)` block and the tree/classical principal-value causal-response block are now both eliminated as unique fakeon-attribution discriminators. The family obligation remains
+The family is now explicitly forked into two material branches that cannot inherit one another's terminal status without an equivalence/reduction theorem:
 
-`HIGHER_DERIVATIVE_MATERIAL_QUANTIZATION_BRANCH_TERMINAL_DISPOSITION_PLUS_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE`.
+1. `PROJECTABLE_HORAVA` — concrete target is the normalized extra-scalar observable/dispersion carried along one same-realization UV->IR trajectory with stability/strong-coupling domain and controlled remainder.
+2. `NONPROJECTABLE_HORAVA/BPS` — concrete target is its distinct low-energy scalar-tensor observable carried from a frozen UV realization with controlled matching/remainder.
 
-Next narrow gate:
+No family-level comparator residual is yet defined because neither complete same-realization UV->IR certificate is in hand.
 
-**`HIGHER_DERIVATIVE_FAKEON_DRESSED_POLE_WIDTH_THRESHOLD_COMPARATOR_CERTIFICATE`**.
+Next exact gates:
 
-The next discriminator must be genuinely prescription-sensitive at the quantum/dressed level: renormalized fakeon pole/width, sign/threshold/average-continuation structure, or another normalized observable, all with a same-action alternative-quantization comparator and explicit remainder/error domain.
+**`HORAVA_PROJECTABLE_UV_TO_IR_TRAJECTORY_PLUS_EXTRA_SCALAR_NORMALIZED_OBSERVABLE_CERTIFICATE`**
 
-## D7 after Iter189
+and
 
-No family-level row changed terminal status, therefore the fail-closed D7 state remains:
+**`HORAVA_NONPROJECTABLE_BPS_UV_TO_IR_TRAJECTORY_PLUS_SCALAR_TENSOR_COMPARATOR_CERTIFICATE`**.
+
+## Iter189 validation
+
+Iter189 methodology CI run `34431893468`, job `102728958236`, is now validated SUCCESS. All methodology self-test steps completed successfully, including frozen-core governance, executable registry, independent R1/R2 recomputation, methodology orchestrator and repository-completion validation.
+
+## D7 after Iter190
+
+No family-level row changed terminal status:
 
 - D2 = false / NOT_CLOSED;
 - D4 = false / NOT_CLOSED;
@@ -92,18 +96,15 @@ No family-level row changed terminal status, therefore the fail-closed D7 state 
 - global decision = **`NOT_YET_AUTHORIZED`**;
 - Candidate Gravity activation = false.
 
-## Remaining family-level blockers
-
-There remain **13** nonterminal candidate-family rows. Higher-derivative fakeon attribution is more sharply constrained; Hořava, AS, nonlocal, string/M/holography, causal sets, CDT/EDT, LQG, GFT/tensor, CFS, noncommutative spectral geometry, canonical WDW and Quantum Graphity retain their explicit family-level proof obligations.
-
 ## Heavy compute
 
-**IDLE.** This iteration is an exact attribution/provenance result. No numerical scan can make the classical principal-value kernel uniquely identify fakeon quantization once a same-classical-limit comparator direction is admitted by the primary source.
+**IDLE.** Current Hořava blockers are structural/provenance/RG ancestry. IR parameter scans cannot manufacture a missing same-realization UV->IR map.
 
 ## Next order
 
-1. Validate Iter189 methodology CI and artifact/release chain.
-2. Build the same-realization **dressed pole/width/threshold comparator certificate** for fakeon gravity.
-3. Require a normalized physical observable and common-domain alternative-quantization comparator; do not use the classical PV kernel as unique fakeon evidence.
-4. If that object remains unavailable, mark the exact subgate BLOCKED and switch to a higher-probability family blocker rather than relaxing the gate.
-5. Rerun D7 after any family-level terminal change.
+1. Validate Iter190 methodology CI/reproducibility chain.
+2. Attack the projectable Hořava UV->IR trajectory certificate first, because the extra scalar already supplies a concrete observable target.
+3. Require exact action/operator basis, running/trajectory authority, IR scalar normalization and stability/strong-coupling domain, error/remainder and same-domain GR/EFT comparator.
+4. Then disposition the non-projectable/BPS branch independently.
+5. If primary literature does not supply a same-realization UV->IR object, mark the exact branch gate BLOCKED and switch to the next high-probability family blocker; do not weaken RQIR.
+6. Rerun executable D7 only after a family-level terminal change or a material decision-ledger update.
