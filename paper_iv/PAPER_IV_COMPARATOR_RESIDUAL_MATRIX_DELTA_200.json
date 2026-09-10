@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "iteration": 200,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "gates": {
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+    "D7": "NOT_CLOSED"
+  },
+  "framework_delta": {
+    "id": "CDT_EDT",
+    "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+    "new_scoped_child_id": "CDT_4D_GEON_CURVATURE_CORRELATOR",
+    "new_scoped_status": "PASS_RQIR_GATE__CDT_4D_NORMALIZED_CURVATURE_CORRELATOR_PHYSICAL_OBSERVABLE_WITH_OPERATOR_VOLUME_SMEARING_SYSTEMATICS_AND_OPEN_DATA",
+    "same_realization_object": "4D CDT at Delta=0.6, kappa_0=2.2 with normalized curvature-correlator screening observable across 80k/160k/320k ensembles",
+    "scoped_residual_defined": true,
+    "scoped_residual_status": "DEFINED_GRAVITY_OBSERVABLE__COMPARATOR_ORTHOGONAL_QG_RESIDUAL_NOT_YET_ESTABLISHED",
+    "family_residual_defined": false,
+    "family_residual_status": "UNDEFINED_PENDING_CONTINUUM_TRAJECTORY_SCALE_SETTING_AND_COMPARATOR_QUOTIENT",
+    "counts_as_family_PASS": false,
+    "counts_as_family_FAIL": false,
+    "counts_as_new_required_exclusion": false,
+    "missing_certificate": "CDT_4D_LINE_OF_CONSTANT_PHYSICS_TO_UV_CONTINUUM_TRAJECTORY_PLUS_LATTICE_SPACING_SCALING_AND_GEON_CORRELATOR_COMPARATOR_ERROR_CERTIFICATE__EDT_DISPOSITION",
+    "authority": "paper_iv/O_CDT_4D_GEON_GRAVITY_OBSERVABLE_SCOPE_AUDIT_2026-09-10.md"
+  },
+  "scoped_child_rows_with_defined_residual": 10,
+  "coverage_counts_unchanged": {
+    "tier1_total": 14,
+    "tier1_terminal": 1,
+    "tier1_nonterminal": 13,
+    "tier2_unresolved": 0
+  },
+  "semantics": "The 4D CDT observable side is now concrete and reproducible within one bare realization, but a fixed-point/line-of-constant-physics continuum trajectory and same-domain comparator quotient are still missing. The CDT child does not disposition EDT and cannot terminally close the combined family row."
+}
