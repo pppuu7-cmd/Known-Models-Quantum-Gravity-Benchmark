@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **190**  
-**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / Hořava material branch fork frozen / family-level D7 blockers active**.
+**KMQGB iteration:** **191**  
+**Phase:** **RQIR Core v1.0 FROZEN / Hořava projectable 3+1 AF marginal RG trajectory admitted / family-level D7 blockers active**.
 
 ## Stable metrics
 
@@ -12,7 +12,7 @@
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
 
-No readiness promotion in Iter190.
+No readiness promotion in Iter191.
 
 ## Paper-IV global gates
 
@@ -30,81 +30,77 @@ No readiness promotion in Iter190.
 ## Coverage status
 
 - Tier-1 required rows: **14**.
-- terminal family-level rows: **1/14** (GR/EFT baseline).
+- terminal family-level rows: **1/14**.
 - nonterminal family rows: **13/14**.
 - untouched Tier-1 rows: **0/14**.
 - Tier-2 unresolved classifications: **0**.
-- defined scoped child residuals remain **9**; Iter190 adds a family-structure PASS but no new comparator residual.
+- scoped child residual count remains **9**; Iter190–191 add scoped structural/RG PASS results but no family-level residual.
 - scoped scientific FAIL rows: **2**.
 
-No scoped child result is promoted to family exclusion or sufficiency.
+## Iter190 — material Hořava branch fork
 
-## Iter190 — Hořava projectability fork and extra-mode object
+Projectable and non-projectable/BPS Hořava are frozen as materially distinct branches because projectability changes the physical constraint/scalar sector. A scoped result in one branch cannot be promoted to the family without branch-by-branch terminal disposition or a reduction/equivalence theorem.
 
-Primary-source audit establishes that projectability changes the constraint/scalar sector materially. The projectable theory has a dynamical extra scalar in cosmological perturbations and documented ghost/tachyon/strong-coupling issues in relevant regimes; the BPS non-projectable extension changes the scalar quadratic action and has a distinct Lorentz-violating scalar-tensor IR limit.
+Authority: `paper_iv/O_HORAVA_PROJECTABLE_NONPROJECTABLE_FAMILY_FORK_AUDIT_2026-09-10.md`.
+
+Classification:
+`PASS_RQIR_GATE__HORAVA_MATERIAL_PROJECTABILITY_FORK_AND_EXTRA_MODE_OBJECT_IDENTIFIED`.
+
+## Iter191 — projectable 3+1 AF RG authority
+
+Primary literature now closes the narrower claim that no 3+1 projectable UV trajectory is known:
+
+- arXiv:2110.14688 derives the complete one-loop beta functions for marginal essential couplings and identifies candidate asymptotically free fixed points.
+- arXiv:2411.13574 follows the 3+1 projectable RG flow numerically and finds asymptotically free trajectories spanning the unitarity-compatible lambda range, including `0 < lambda - 1 << 1`.
 
 Classification:
 
-**`PASS_RQIR_GATE__HORAVA_MATERIAL_PROJECTABILITY_FORK_AND_EXTRA_MODE_OBJECT_IDENTIFIED`**.
-
-This is a scoped family-structure PASS, not a terminal Hořava-family result.
+**`PASS_RQIR_GATE__HORAVA_PROJECTABLE_3P1_ASYMPTOTICALLY_FREE_MARGINAL_RG_TRAJECTORY_AUTHORITY`**.
 
 Authority:
+`paper_iv/O_HORAVA_PROJECTABLE_3P1_RG_TRAJECTORY_SCOPE_AUDIT_2026-09-10.md`.
 
-- `paper_iv/O_HORAVA_PROJECTABLE_NONPROJECTABLE_FAMILY_FORK_AUDIT_2026-09-10.md`
-- Cerioni & Brandenberger, arXiv:1007.1006
-- Koyama & Arroja, arXiv:0910.1998
-- Blas, Pujolas & Sibiryakov, arXiv:0909.3525
-- Papazoglou & Sotiriou, arXiv:0911.1299; BPS comment arXiv:0912.0550
+This is **not** a complete same-realization UV->IR certificate. The remaining missing object is the crossover/matching from the marginal z=3 trajectory through relevant lower-derivative couplings into a normalized IR extra-scalar observable with propagated loop/truncation/matching remainder and a same-domain GR/EFT comparator.
 
-## Hořava family status
-
-Parent status remains:
+## Hořava parent status
 
 `HORAVA_LIFSHITZ = PARTIAL_SUBFAMILY_ONLY`.
 
-The family is now explicitly forked into two material branches that cannot inherit one another's terminal status without an equivalence/reduction theorem:
+Projectable next gate:
 
-1. `PROJECTABLE_HORAVA` — concrete target is the normalized extra-scalar observable/dispersion carried along one same-realization UV->IR trajectory with stability/strong-coupling domain and controlled remainder.
-2. `NONPROJECTABLE_HORAVA/BPS` — concrete target is its distinct low-energy scalar-tensor observable carried from a frozen UV realization with controlled matching/remainder.
+**`HORAVA_PROJECTABLE_AF_RG_TO_IR_RELEVANT_COUPLING_CROSSOVER_PLUS_EXTRA_SCALAR_OBSERVABLE_MATCHING_CERTIFICATE`**.
 
-No family-level comparator residual is yet defined because neither complete same-realization UV->IR certificate is in hand.
-
-Next exact gates:
-
-**`HORAVA_PROJECTABLE_UV_TO_IR_TRAJECTORY_PLUS_EXTRA_SCALAR_NORMALIZED_OBSERVABLE_CERTIFICATE`**
-
-and
+Non-projectable next gate:
 
 **`HORAVA_NONPROJECTABLE_BPS_UV_TO_IR_TRAJECTORY_PLUS_SCALAR_TENSOR_COMPARATOR_CERTIFICATE`**.
 
-## Iter189 validation
+A phenomenological IR lambda scan is explicitly not a substitute for transporting one UV realization into the observable regime.
 
-Iter189 methodology CI run `34431893468`, job `102728958236`, is now validated SUCCESS. All methodology self-test steps completed successfully, including frozen-core governance, executable registry, independent R1/R2 recomputation, methodology orchestrator and repository-completion validation.
+## Validation authority carried forward
 
-## D7 after Iter190
+Iter189 methodology CI run `34431893468`, job `102728958236`: validated SUCCESS, including frozen-core governance, executable registry, independent readiness recomputation, methodology orchestrator and repository-completion checks.
 
-No family-level row changed terminal status:
+Iter190/191 changes require their own latest-head methodology validation before they are called repository-validated.
 
-- D2 = false / NOT_CLOSED;
-- D4 = false / NOT_CLOSED;
-- D7 = false / NOT_CLOSED;
-- `EXISTING_SUFFICIENT = false`;
-- `ADAPT_EXISTING = false`;
-- `HYBRID_REQUIRED = false`;
-- `NEW_REQUIRED = false`;
+## D7 after Iter191
+
+No family-level row became terminal:
+
+- D2 = NOT_CLOSED;
+- D4 = NOT_CLOSED;
+- D7 = NOT_CLOSED;
 - global decision = **`NOT_YET_AUTHORIZED`**;
-- Candidate Gravity activation = false.
+- `NEW_REQUIRED=false`;
+- Candidate Gravity activation=false, R3=24%.
 
 ## Heavy compute
 
-**IDLE.** Current Hořava blockers are structural/provenance/RG ancestry. IR parameter scans cannot manufacture a missing same-realization UV->IR map.
+**IDLE.** The live blocker is RG-to-IR matching/provenance and controlled remainder, not a free numerical scan.
 
-## Next order
+## Exact next order
 
-1. Validate Iter190 methodology CI/reproducibility chain.
-2. Attack the projectable Hořava UV->IR trajectory certificate first, because the extra scalar already supplies a concrete observable target.
-3. Require exact action/operator basis, running/trajectory authority, IR scalar normalization and stability/strong-coupling domain, error/remainder and same-domain GR/EFT comparator.
-4. Then disposition the non-projectable/BPS branch independently.
-5. If primary literature does not supply a same-realization UV->IR object, mark the exact branch gate BLOCKED and switch to the next high-probability family blocker; do not weaken RQIR.
-6. Rerun executable D7 only after a family-level terminal change or a material decision-ledger update.
+1. Validate the latest Iter191 head with methodology CI/reproducibility chain.
+2. Search primary literature for a same-realization projectable crossover from the AF marginal trajectory to the relevant IR couplings and scalar mode normalization.
+3. If no such object exists, freeze the projectable H1 subgate as `BLOCKED_MISSING_REQUIRED_OBJECT` with exact missing fields; do not infer scientific FAIL.
+4. Then attack the non-projectable/BPS UV->IR trajectory independently.
+5. Rerun D7 only after a family-level terminal change or other material decision-ledger change.
