@@ -1,0 +1,19 @@
+{
+  "schema_version":"1.0",
+  "iteration":250,
+  "family":"NONLOCAL_QG",
+  "branch":"RIEMANN_WEYL_CAUSALITY_AND_EXACT_VACUUM_SCOPE",
+  "parent_status":"PARTIAL_SUBFAMILY_ONLY",
+  "family_residual":"UNDEFINED",
+  "scoped_causality_status":"FAIL_SCOPED_CAUSALITY_GATE__WEAKLY_NONLOCAL_RIEMANN_RICCI_WEYL_FORM_FACTOR_SUBCLASS_ADMITS_EXACT_GODEL_TYPE_VACUA_WITH_CLOSED_TIMELIKE_CURVES",
+  "scope":"special_but_large_form_factor_subclass_analyzed_in_Zhao_Modesto_Bambi_2026_vacuum_exact_solutions",
+  "unitarity_implies_causality":false,
+  "surviving_branch_status":"BLOCKED_MISSING_REQUIRED_OBJECT__NONLOCAL_RIEMANN_WEYL_CAUSALITY_SAFE_SAME_REALIZATION_WITH_MATTER_OR_DEGENERACY_EVASION_FULL_MOMENTUM_OBSERVABLE_UNITARITY_COMPARATOR_AND_PROPAGATED_ERROR",
+  "cross_realization_transfer_allowed":false,
+  "scientific_fail":true,
+  "scientific_fail_scope":"scoped_child_only",
+  "family_scientific_fail":false,
+  "family_terminal_promotion":false,
+  "defined_residual":false,
+  "authority":"paper_iv/O_NONLOCAL_RIEMANN_WEYL_CAUSALITY_AUDIT_ITER250_2026-09-10.md"
+}

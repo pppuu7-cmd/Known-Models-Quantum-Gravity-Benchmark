@@ -1,38 +1,35 @@
-# KMQGB Current Benchmark Front
+# Current Benchmark Front
+Updated: 2026-09-10
+Iteration: Iter250
+Authoritative commit: this Iter250 commit once exact-head validation is green
 
-**Updated:** 2026-09-10  
-**KMQGB iteration:** **249**  
-**Phase:** **RQIR Core v1.0 FROZEN / nonlocal-QG cross-order identifiability scoped / Riemann-Weyl full-momentum branch active**.
+## Global lock
+- RQIR Core v1.0 remains FROZEN.
+- Tier-1 census remains 14 families: terminal 1/14, nonterminal 13/14.
+- Tier-2 unresolved = 0.
+- D2 = NOT_CLOSED.
+- D4 = PARTIAL / globally NOT_CLOSED.
+- D7 = NOT_CLOSED; decision = NOT_YET_AUTHORIZED.
+- Candidate Gravity remains inactive at R3 = 24%.
 
-## Stable metrics
-- R1 repository readiness: **100%**.
-- R2 methodology/material readiness: **100%**.
-- Candidate Gravity R3: **24%**, inactive; activation only if D7=`NEW_REQUIRED`.
-- Tier-1: **1/14 terminal**, **13/14 nonterminal**.
-- Tier-2 unresolved: **0**.
+## Exact-head validation
+- Iter249 methodology CI is SUCCESS: workflow run 34517986952.
+- Iter249 reproducibility release is SUCCESS: workflow run 34518055179; artifact `kmqgb-reproducibility-bundle` / 10167744246; SHA-256 `4c9c6b8a49f1539e9beca60b597841fab66685df991627065d198947e82dea20`.
+- Iter250 requires its own exact-head methodology and reproducibility validation after this commit.
 
-## Paper-IV global gates
-D2 `NOT_CLOSED_COVERAGE_AND_OBJECTS`; D4 `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`; D7 `NOT_CLOSED`; global decision `NOT_YET_AUTHORIZED`.
+## Iter250 scientific result
+- Re-audited the materially distinct Riemann/Weyl weakly-nonlocal causality branch.
+- Zhao, Modesto & Bambi (EPJC 86, 713, 2026; arXiv:2605.01413) prove that a special but large class of nonlocal form factors admits an exact vacuum subclass of Gödel-type solutions with closed timelike curves.
+- Scoped disposition: `FAIL_SCOPED_CAUSALITY_GATE__WEAKLY_NONLOCAL_RIEMANN_RICCI_WEYL_FORM_FACTOR_SUBCLASS_ADMITS_EXACT_GODEL_TYPE_VACUA_WITH_CLOSED_TIMELIKE_CURVES`.
+- This is not promoted to family-level FAIL: the paper itself limits the result to a special though large class of form factors.
+- Renormalizability/unitarity-motivated UV structure cannot be used as a surrogate for global causality in that subclass.
+- A surviving branch must now demonstrate a fixed-action causality-safe restriction or matter/deformation mechanism that lifts the vacuum degeneracy, plus full-momentum physical observable, comparator and propagated error in the same realization.
 
-## Iter249 — NONLOCAL_QG cross-order/full-momentum scope
-Primary scattering-amplitude authorities show that, for the Ricci/scalar weakly-nonlocal class satisfying the field-redefinition theorem, on-shell tree n-graviton amplitudes reduce to those of the underlying local/GR theory. The GF_N weak-field source/static radial shape retained in Iter248 therefore cannot be treated as a universal on-shell full-momentum fingerprint.
+## Family consequence
+`NONLOCAL_QG` remains `PARTIAL_SUBFAMILY_ONLY` with family residual `UNDEFINED`. No family terminal promotion and no `NEW_REQUIRED` authorization.
 
-A materially distinct Riemann/Weyl-form-factor branch is not covered by that reduction and may carry explicit form-factor dependence in tree amplitudes. IR inverse-d'Alembertian cosmology and other inequivalent nonlocal realizations remain separate. No cross-realization transfer is authorized.
+## Running / compute
+Heavy compute remains IDLE; blocker is structural/provenance/realization matching.
 
-Loop-level functional rigidity remains `BLOCKED_MISSING_REQUIRED_OBJECT__NONLOCAL_SAME_REALIZATION_LOOP_LEVEL_FULL_MOMENTUM_OBSERVABLE_PARAMETER_TRANSPORT_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE`.
-
-`NONLOCAL_QG` remains `PARTIAL_SUBFAMILY_ONLY`; family residual `UNDEFINED`; no family scientific FAIL; no `NEW_REQUIRED` authorization.
-
-Authorities:
-- `paper_iv/O_NONLOCAL_CROSS_ORDER_FULL_MOMENTUM_MATERIAL_BRANCH_AUDIT_ITER249_2026-09-10.md`
-- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_249.json`
-- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_249.json`
-- `recovery/RECOVERY_DELTA_249.md`
-
-## Heavy compute
-**IDLE.** The active blocker is same-realization physical-object/provenance matching, not numerical precision.
-
-## Immediate next gate
-`NONLOCAL_QG_RIEMANN_WEYL_FORM_FACTOR_BRANCH_FULL_MOMENTUM_OBSERVABLE_CAUSALITY_UNITARITY_AND_ERROR_CERTIFICATE`.
-
-Audit whether a fixed Riemann/Weyl weakly-nonlocal action supplies a nontrivial full-momentum physical observable together with unitarity/causality prescription, common-domain comparator and propagated error. D7 remains unauthorized until D2 and D4 genuinely close.
+## Exact next gate
+`NONLOCAL_QG_RIEMANN_WEYL_RICCI_FLAT_OR_GODEL_DEGENERACY_EVASION_AND_MATTER_COUPLED_CAUSAL_COMPLETION_CERTIFICATE`
