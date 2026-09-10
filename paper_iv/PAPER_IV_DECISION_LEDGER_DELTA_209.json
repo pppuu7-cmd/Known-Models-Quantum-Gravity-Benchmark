@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "iteration": 209,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "substantive_result": {
+    "family": "GFT_TENSOR_MODELS",
+    "branch": "PURE_RANDOM_TENSOR_MODELS__ENHANCED_NONMELONIC",
+    "structural_status": "PASS_STRUCTURAL_GATE__ORDER4_ON4_T8_PREGEOMETRIC_RG_FIXED_POINT_CANDIDATE_WITH_EXPLICIT_REGULATOR_SENSITIVITY_AND_REPRODUCIBLE_BETA_FUNCTION_NOTEBOOK_EXISTS",
+    "status": "BLOCKED_MISSING_REQUIRED_OBJECT__PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_PREGEOMETRIC_RG_CONTINUUM_TO_NORMALIZED_LORENTZIAN_4D_GRAVITY_OBSERVABLE_COMPARATOR_WITH_PROPAGATED_ERROR",
+    "scientific_fail": false,
+    "family_terminal_promotion": false,
+    "family_residual_defined": false,
+    "authority": "paper_iv/O_PURE_TENSOR_ENHANCED_NONMELONIC_RG_TO_GRAVITY_OBSERVABLE_GAP_AUDIT_2026-09-10.md"
+  },
+  "governance_note": "The audited order-4 O(N)^4 T^8 tensor realization supplies a reproducible pregeometric fixed-point candidate and regulator-sensitivity analysis, but no same-realization emergent Lorentzian 4D gravity observable/comparator. Its likely non-Reuter universality is scoped evidence only and is not promoted to a family FAIL.",
+  "next_gate": "PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_EMERGENT_GEOMETRY_TO_NORMALIZED_GRAVITY_OBSERVABLE_AUTHORITY_SEARCH"
+}
