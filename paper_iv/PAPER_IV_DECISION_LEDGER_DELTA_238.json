@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "iteration": 238,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "STRING_MTHEORY_HOLOGRAPHY",
+    "branch": "QUANTUM_CLOSED_STRING_FIELD_THEORY",
+    "status_after": "PARTIAL_SUBFAMILY_ONLY__SFT_GAUGE_BV_UNITARITY_PASS__PERTURBATIVE_ONSHELL_OUTPUTS_REDUCED_TO_WORLD_SHEET_BRANCH__LOCAL_BACKGROUND_EQUIVALENCE_PASS__GLOBAL_NONPERTURBATIVE_QUANTUM_GRAVITY_OBSERVABLE_CLOSURE_OPEN",
+    "gauge_bv_unitarity_structure": true,
+    "perturbative_smatrix_reduction_rule": true,
+    "local_quantum_background_equivalence": true,
+    "global_background_space_completeness": false,
+    "independent_nonperturbative_gravity_observable_closed": false,
+    "scientific_fail": false,
+    "family_terminal_promotion": false,
+    "family_residual_defined": false,
+    "authority": "paper_iv/O_STRING_FIELD_THEORY_BACKGROUND_EQUIVALENCE_OBSERVABLE_AUDIT_ITER238_2026-09-10.md"
+  },
+  "governance_note": "SFT is a strong gauge-invariant quantum formulation, but on-shell perturbative outputs equivalent to the worldsheet S-matrix are reduced rather than double-counted. Local/controlled background equivalence is retained as a real positive result; arbitrary global background/vacuum coverage and an independent nonperturbative gravity observable/comparator/error object remain open.",
+  "next_gate": "BFSS_BMN_MATRIX_MTHEORY_LARGE_N_TO_GRAVITY_OBSERVABLE_ERROR_CLOSURE_AUDIT"
+}
