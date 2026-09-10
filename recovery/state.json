@@ -3,8 +3,8 @@
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 195,
-  "phase": "RQIR_CORE_V1_FROZEN__HORAVA_U1_IR_COMPARATOR_LOCALIZED__MIXED_DERIVATIVE_SCOPE_NEXT",
+  "kmqgb_iteration": 196,
+  "phase": "RQIR_CORE_V1_FROZEN__HORAVA_H4_SCOPE_LOCALIZED__AS_A4_NEXT",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 100,
     "kmqgb_methodology_material_readiness_R2_percent": 100,
@@ -129,9 +129,13 @@
         "u1_projectable_status": "BLOCKED_MISSING_REQUIRED_OBJECT__HORAVA_PROJECTABLE_U1_3P1_QUANTUM_UV_TRAJECTORY_TO_PPN_COUPLINGS_SAME_REALIZATION_MAP",
         "u1_nonprojectable_status": "BLOCKED_MISSING_REQUIRED_OBJECT__HORAVA_NONPROJECTABLE_U1_3P1_QUANTUM_UV_TRAJECTORY_TO_PPN_COUPLINGS_SAME_REALIZATION_MAP",
         "u1_nonprojectable_scalar_free_locus": "BLOCKED_MISSING_PROTECTION_THEOREM__QUANTUM_GENERATED_MARGINAL_OPERATORS_PREVENT_GENERIC_SCALAR_FREE_PROMOTION",
-        "mixed_derivative_status": "PARTIAL_SUBFAMILY_ONLY__MINIMAL_REALIZATION_SCOPED_LOW_ENERGY_SCALAR_INSTABILITY",
+        "mixed_derivative_status": "BLOCKED_SCOPE_NOT_PROVEN__MINIMAL_GRAVITY_INSTABILITY_NOT_PROMOTABLE_TO_FULL_MIXED_DERIVATIVE_CLASS__NO_AUTHENTICATED_HEALTHY_GRAVITY_COMPLETION_FOUND",
+        "mixed_derivative_scoped_fail": "FAIL_RQIR_GATE__HORAVA_MIXED_DERIVATIVE_MINIMAL_GRAVITY_LOW_ENERGY_EXTRA_SCALAR_INSTABILITY",
+        "mixed_derivative_authority": "paper_iv/O_HORAVA_MIXED_DERIVATIVE_SCOPE_AUDIT_2026-09-10.md",
+        "family_blocker_ledger": "paper_iv/HORAVA_FAMILY_BLOCKER_LEDGER_ITER196.json",
+        "family_terminal_blocked_allowed": false,
         "blocker": "HORAVA_MATERIAL_BRANCH_TERMINAL_OR_BLOCKED_DISPOSITION_WITH_SAME_REALIZATION_UV_TO_IR_ERROR_CONTROL",
-        "next_gate": "HORAVA_MIXED_DERIVATIVE_FULL_CLASS_INSTABILITY_SCOPE_OR_HEALTHY_COMPLETION_CERTIFICATE"
+        "next_gate": "PARKED_BRANCH_COMPLETE_BLOCKER_LEDGER__RETURN_ON_NEW_OBJECT_AUTHORITY"
       },
       "causal_sets": {
         "status": "PARTIAL_SUBFAMILY_ONLY",
@@ -189,15 +193,15 @@
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_PENDING_FROZEN_PHYSICAL_OBJECT",
-    "current_reason": "Iter195 authenticates an IR PPN comparator object for projectable and nonprojectable U1 Hořava but localizes the remaining blocker to missing U1-specific 3+1 quantum UV trajectory and same-realization matching. Heavy scans cannot create that authority; mixed-derivative scope audit is next."
+    "current_reason": "Iter196 localizes the mixed-derivative H4 branch: minimal gravity scoped FAIL is not promotable to the full class, while healthy higher-order evidence is toy-scalar only. Hořava is parked at a branch-complete blocker ledger; structural missing objects cannot be created by heavy scans."
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_195.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_196.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
-    "active_wave": "PF2 known-school family closure / Horava mixed-derivative completion scope",
+    "active_wave": "PF2 known-school family closure / next analytically closable Tier-1 blocker",
     "active_audits": [
-      "paper_iv/O_HORAVA_U1_UV_IR_COMPARATOR_GAP_AUDIT_2026-09-10.md",
-      "paper_iv/HORAVA_MATERIAL_BRANCH_MAP_2026-09-10.json",
+      "paper_iv/O_HORAVA_MIXED_DERIVATIVE_SCOPE_AUDIT_2026-09-10.md",
+      "paper_iv/HORAVA_FAMILY_BLOCKER_LEDGER_ITER196.json",
       "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json"
     ],
     "active_code": [
