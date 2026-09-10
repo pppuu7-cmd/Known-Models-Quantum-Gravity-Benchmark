@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **197**  
-**Phase:** **RQIR Core v1.0 FROZEN / Hořava parked on structural missing objects / fresh spin-foam continuum-limit authority integrated / O-LQG ancestry gate narrowed**.
+**KMQGB iteration:** **198**  
+**Phase:** **RQIR Core v1.0 FROZEN / Hořava parked / concrete EPRL-KKL UV fixed-point object integrated / O-LQG UV→IR ancestry gate narrowed**.
 
 ## Stable metrics
 
@@ -11,11 +11,11 @@
 - Candidate Gravity R3: **24%**, inactive.
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
-- No scientific-readiness promotion in Iter197.
+- No scientific-readiness promotion in Iter198.
 
 ## Validation carried forward
 
-Iter196 authoritative head `d0a21a029f1c3a55bb142a2f477a7bf881bfd32e` is validated: methodology-ci run `34453110786` completed `success`; reproducibility-release run `34453161107` also completed `success`.
+Iter197 authoritative head `7e608ff955a386e536bc92034dded1fe19c4986e` is validated. The first Iter198 scientific audit commit `8e3218b98e879faf031a5ea23d47ca915ab711c4` is also validated: methodology-ci run `34463728735` and reproducibility-release run `34463798628` both completed `success`. Later synchronization commits require exact-head validation before Iter198 is declared fully canonical.
 
 ## Paper-IV global gates
 
@@ -25,30 +25,35 @@ D1 PASS; D2A NOT_CLOSED; D2B NOT_CLOSED; D2 `NOT_CLOSED_COVERAGE_AND_OBJECTS`; D
 
 Tier-1 required rows **14**; terminal family rows **1/14**; nonterminal **13/14**; Tier-2 unresolved **0**. Scoped child PASS/FAIL remains scoped.
 
-## Iter197 — fresh O-LQG / spin-foam continuum authority
+## Iter198 — concrete EPRL/KKL UV fixed-point authority
 
-Bruno, Colafranceschi, Mele & Rovelli, *Structure of the continuum limit of spin foams*, Phys. Rev. D 114, 066005 (published 8 September 2026), provides a model-independent ordered-triangulation framework that makes the spin-foam continuum limit mathematically explicit.
+Han, *Ultraviolet Fixed Point in Covariant Loop Quantum Gravity*, arXiv:2602.18665v1 (21 February 2026), supplies a concrete Lorentzian EPRL/KKL stack-amplitude construction with a candidate UV fixed point for the complete covariant-LQG amplitude after the sum/refinement over 2-complexes. The leading UV result compresses microscopic ambiguity into finite boundary-block coefficients and carries an explicit `O(A^-1)` asymptotic remainder.
 
 Scoped structural result:
 
-`PASS_STRUCTURAL_GATE__SPINFOAM_CONTINUUM_LIMIT_CAN_BE_DEFINED_BY_ORDERED_TRIANGULATION_REFINEMENT_FRAMEWORK`.
+`PASS_STRUCTURAL_GATE__LQG_EPRL_KKL_COMPLETE_AMPLITUDE_HAS_CANDIDATE_UV_FIXED_POINT_WITH_FINITE_BOUNDARY_DATA_AND_EXPLICIT_LEADING_REMAINDER`.
 
-This is a real contraction of the old continuum-limit ambiguity, but it is not a same-realization EPRL coarse-graining result. It does not provide the EPRL refinement trajectory, EPRL→Area-Regge/area-metric parameter ancestry, Immirzi/parity-coupling normalization, or propagated refinement/truncation remainder needed by RQIR.
+This materially narrows O-LQG: a concrete EPRL-family UV/continuum object with approximation control exists. It does **not** close the RQIR family object. The authority leaves the relevant-deformation/IR flow and physical observable connection open; the UV small-spin regime is not yet bound to the large-spin semiclassical Regge regime. Although microscopic Barbero–Immirzi `gamma` is present, no same-realization `gamma` transport into Regge/Area-Regge/area-metric parity-sensitive couplings is derived.
 
-Therefore O-LQG remains `BLOCKED_MISSING_REQUIRED_OBJECT`; no family residual is defined.
+Therefore O-LQG remains `BLOCKED_MISSING_REQUIRED_OBJECT`; family residual remains undefined and is not zero-filled.
 
-Authority: `paper_iv/O_LQG_SPINFOAM_CONTINUUM_STRUCTURE_REFRESH_2026-09-10.md`.
+Required chain:
 
-## O-AS authority recheck
+`EPRL/KKL microscopic gamma -> UV fixed-point boundary data -> relevant deformation / IR crossover -> semiclassical Regge/Area-Regge couplings -> area-metric observable comparator`.
 
-Fresh recheck on 2026-09-10 finds arXiv:2603.10168 still as the stable contact-incomplete mediated-amplitude authority; ERG2026 publicly reports a Lorentzian-resummed contact contribution but remains presentation-level rather than a reproducible same-realization `A4` package. O-AS stays `BLOCKED_MISSING_REQUIRED_OBJECT`; no splice across realizations is authorized.
+Authority: `paper_iv/O_LQG_EPRL_KKL_UV_FIXED_POINT_SCOPE_AUDIT_2026-09-10.md`.
+Comparator delta: `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_198.json`.
+
+## O-AS status
+
+No same-realization `A_s+A_t+A_u+A4` plus full crossing/error package has become repository-authoritative during this iteration. O-AS remains `BLOCKED_MISSING_REQUIRED_OBJECT`; no cross-realization splice is permitted.
 
 ## Heavy compute
 
-**IDLE.** Current blockers are provenance/matching/same-realization objects; no hosted scan can manufacture the missing ancestry or contact object without adding model assumptions.
+**IDLE.** The active blocker is a UV→IR matching/provenance object. A scan without a prospectively fixed EPRL/KKL flow equation would manufacture assumptions rather than close the frozen gate.
 
 ## Exact next gate
 
-**`EPRL_CONTINUUM_TRAJECTORY_IN_ORDERED_REFINEMENT_FRAMEWORK_PLUS_REGGE_TO_AREA_REGGE_PARAMETER_ANCESTRY_AND_ERROR_CERTIFICATE`**.
+**`EPRL_KKL_UV_FIXED_POINT_TO_SEMICLASSICAL_AREA_REGGE_CROSSOVER_PLUS_GAMMA_ANCESTRY_AND_ERROR_CERTIFICATE`**.
 
-Search for a concrete EPRL realization implementing a compatible refinement/coarse-graining trajectory and binding its microscopic Immirzi/parity data to the Area-Regge/area-metric effective couplings with explicit approximation/remainder control. If absent, preserve BLOCKED and move to the next analytically closable Tier-1 family.
+Require one explicit EPRL/KKL realization connecting the UV fixed point to an IR/semiclassical regime; a relevant-deformation/RG map from the UV boundary data; explicit Barbero–Immirzi normalization/transport; Regge→Area-Regge/area-metric coupling ancestry; a normalized common-domain comparator; and propagated `O(A^-1)` plus crossover/refinement/truncation remainder. If absent, preserve BLOCKED and move to the next analytically closable Tier-1 family.
