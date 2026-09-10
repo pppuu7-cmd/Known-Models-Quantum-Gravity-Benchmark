@@ -1,10 +1,10 @@
 {
-  "schema_version": "9.0",
+  "schema_version": "9.1",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
   "kmqgb_iteration": 186,
-  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_PF2_ALL_TIER1_FIRST_PASS_COMPLETE",
+  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_PF2_ALL_TIER1_FIRST_PASS__TIER2_CLASSIFICATION_RESOLVED",
   "readiness_metrics": {"repository_readiness_R1_percent":100,"kmqgb_methodology_material_readiness_R2_percent":100,"candidate_gravity_scientific_readiness_R3_percent":24,"legacy_parent_search_R4_percent":45,"legacy_parent_search_status":"PAUSED_CONDITIONAL_ON_PAPER_IV","post_freeze_wave_01_completion_percent":100,"closure_wave_02_completion_percent":0},
   "last_score_change": {"iteration":178,"metrics":["R1","R2"],"changes":["R1 92 -> 100","R2 90 -> 100"],"scope":"repository and methodology completeness only; no scientific promotion","contract":"protocol/READINESS_100_COMPLETION_CONTRACT.md"},
   "rqir_core": {"version":"1.0","status":"FROZEN","papers_i_iii_scientific_readiness":"100%"},
@@ -13,15 +13,19 @@
     "global_decision":"NOT_YET_AUTHORIZED",
     "new_required_authorized":false,
     "global_gates":{"D1_frozen_judge_integrity":"PASS","D2A_framework_set_coverage":"NOT_CLOSED","D2B_complete_same_realization_objects":"NOT_CLOSED","D2_major_framework_complete_object_coverage":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D3_common_domain_comparability":"PARTIAL","D4_comparator_subtracted_residual_matrix":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D5_missing_object_quarantine":"PASS","D6_same_realization_composition_discipline":"PASS_RULE_TARGETS_OPEN","D7_global_terminal_proof_obligation":"NOT_CLOSED"},
-    "framework_coverage":{"contract":"protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json","tier1_required_rows":11,"tier1_terminal_coverage_rows":1,"tier1_nonterminal_rows":10,"tier1_not_yet_benchmarked_rows":0,"tier2_unresolved_rows":5,"required_rows_with_defined_residual":1,"required_rows_partial_or_blocked":10,"scoped_child_rows_with_defined_residual":5,"scoped_child_scientific_fail_rows":2,"first_pass_all_tier1":true,"first_pass_audit":"paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md"},
+    "framework_coverage":{"contract":"protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json","tier1_required_rows":14,"tier1_terminal_coverage_rows":1,"tier1_nonterminal_rows":13,"tier1_not_yet_benchmarked_rows":0,"tier2_unresolved_rows":0,"required_rows_with_defined_residual":1,"required_rows_partial_or_blocked":13,"scoped_child_rows_with_defined_residual":6,"scoped_child_scientific_fail_rows":2,"first_pass_all_tier1":true,"first_pass_audit":"paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","tier2_audit":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md","promoted_from_tier2":["NONCOMMUTATIVE_SPECTRAL_GEOMETRY","CANONICAL_WDW_GEOMETRODYNAMICS","QUANTUM_GRAPHITY"]},
     "pf2": {
       "nonlocal_qg":{"parent_status":"PARTIAL_SUBFAMILY_ONLY","fixed_order_riemann_weyl_gate":"PASS_RQIR_GATE__FIXED_ORDER_LOCAL_EFT_COMPARATOR_ABSORPTION","fixed_order_residual":"EXACT_ZERO_COMPARATOR_ORTHOGONAL_RESIDUAL_AT_EACH_COMPLETE_FIXED_LOCAL_EFT_ORDER","next_gate":"NONLOCAL_CROSS_ORDER_FUNCTIONAL_RIGIDITY_OR_FULL_MOMENTUM_SHAPE_CERTIFICATE","authority":"paper_iv/O_NONLOCAL_RIEMANN_WEYL_EFT_QUOTIENT_2026-09-10.md"},
       "cdt_edt":{"status":"PARTIAL_SUBFAMILY_ONLY","blocker":"CDT_4D_CONTINUUM_TRAJECTORY_PLUS_INVARIANT_OBSERVABLE_COMPARATOR_CERTIFICATE"},
       "horava_lifshitz":{"status":"PARTIAL_SUBFAMILY_ONLY","blocker":"HORAVA_PROJECTABLE_UV_TO_IR_EXTRA_MODE_OBSERVABLE_CERTIFICATE_PLUS_NONPROJECTABLE_DISPOSITION"},
       "causal_sets":{"status":"PARTIAL_SUBFAMILY_ONLY","blocker":"CAUSAL_SET_FUNDAMENTAL_DYNAMICS_TO_MANIFOLD_CONTINUUM_PLUS_NORMALIZED_OBSERVABLE_CERTIFICATE"},
       "perturbative_higher_derivative":{"status":"PARTIAL_SUBFAMILY_ONLY","blocker":"HIGHER_DERIVATIVE_POLE_PRESCRIPTION_FAMILY_MAP_PLUS_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE"},
-      "gft_tensor_models":{"status":"PARTIAL_SUBFAMILY_ONLY","blocker":"GFT_SPINFOAM_INDEPENDENCE_OR_REDUCTION_PLUS_FULL_GRAVITY_OBSERVABLE_COMPARATOR_CERTIFICATE"}
+      "gft_tensor_models":{"status":"PARTIAL_SUBFAMILY_ONLY","blocker":"GFT_SPINFOAM_INDEPENDENCE_OR_REDUCTION_PLUS_FULL_GRAVITY_OBSERVABLE_COMPARATOR_CERTIFICATE"},
+      "noncommutative_spectral_geometry":{"status":"PARTIAL_SUBFAMILY_ONLY","blocker":"NCG_SPECTRAL_ACTION_QUANTUM_DYNAMICS_PLUS_NORMALIZED_QG_OBSERVABLE_COMPARATOR_CERTIFICATE"},
+      "canonical_wdw":{"status":"BLOCKED_MISSING_REQUIRED_OBJECT","blocker":"WDW_PHYSICAL_HILBERT_SPACE_CLOCK_OBSERVABLE_SEMICLASSICAL_GR_COMPARATOR_CERTIFICATE"},
+      "quantum_graphity":{"status":"PARTIAL_SUBFAMILY_ONLY","blocker":"QUANTUM_GRAPHITY_CONTINUUM_LORENTZIAN_GRAVITY_PLUS_NORMALIZED_OBSERVABLE_COMPARATOR_CERTIFICATE"}
     },
+    "tier2_disposition":{"unresolved":0,"double_copy":"REDUCED_TO_TIER1_WITH_EXPLICIT_MAP","twistor":"REDUCED_TO_TIER1_WITH_EXPLICIT_MAP","noncommutative_spectral_geometry":"PROMOTED_TO_TIER1","canonical_wdw":"PROMOTED_TO_TIER1","emergent_graph_based":"SPLIT_CONCRETE_PARENT_PROMOTION_RULE__QUANTUM_GRAPHITY_PROMOTED"},
     "comparator_residual_matrix":"paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json",
     "coverage_validator":"code/paper_iv_framework_coverage_validator.py",
     "global_gate_validator":"code/paper_iv_global_gate_validator.py",
@@ -30,6 +34,6 @@
     "o_cfs":{"status":"BLOCKED_MISSING_REQUIRED_OBJECT","target":"FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR"}
   },
   "candidate_gravity": {"status":"CONDITIONAL_NOT_ACTIVE_FRONT","external_iteration":675,"readiness_percent":24,"promotable_ansatz":false,"robust_unique_residual":false,"activation_condition":"Paper-IV D7 terminal decision NEW_REQUIRED"},
-  "compute_policy": {"heavy_compute_status":"IDLE_PENDING_FROZEN_PHYSICAL_OBJECT","current_reason":"remaining D7 blockers are coverage classification, same-realization bridges, continuum maps, normalized observables and family-level comparator quotients rather than blind numerical sensitivity"},
-  "recovery": {"latest_delta":"recovery/RECOVERY_DELTA_186.md","current_front":"recovery/CURRENT_BENCHMARK_FRONT.md","active_wave":"PF2 known-school campaign","active_audits":["paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","paper_iv/O_NONLOCAL_RIEMANN_WEYL_EFT_QUOTIENT_2026-09-10.md","paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json"],"active_code":["code/paper_iv_framework_coverage_validator.py","code/paper_iv_global_gate_validator.py","code/methodology_orchestrator.py"]}
+  "compute_policy": {"heavy_compute_status":"IDLE_PENDING_FROZEN_PHYSICAL_OBJECT","current_reason":"Tier2 classification is resolved; remaining D7 blockers are 13 nonterminal Tier1 family-level physical certificates/residuals rather than blind numerical sensitivity"},
+  "recovery": {"latest_delta":"recovery/RECOVERY_DELTA_186.md","current_front":"recovery/CURRENT_BENCHMARK_FRONT.md","active_wave":"PF2 known-school campaign","active_audits":["paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md","paper_iv/O_NONLOCAL_RIEMANN_WEYL_EFT_QUOTIENT_2026-09-10.md","paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json"],"active_code":["code/paper_iv_framework_coverage_validator.py","code/paper_iv_global_gate_validator.py","code/methodology_orchestrator.py"]}
 }
