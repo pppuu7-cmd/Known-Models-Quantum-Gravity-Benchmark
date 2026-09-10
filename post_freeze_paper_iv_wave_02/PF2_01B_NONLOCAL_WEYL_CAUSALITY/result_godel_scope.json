@@ -1,0 +1,17 @@
+{
+  "record_id": "PF2-01B4-NONLOCAL-GODEL-CAUSALITY-SCOPE",
+  "iteration": 185,
+  "rqir_core": "v1.0 FROZEN",
+  "parent_family": "NONLOCAL_QG",
+  "required_for_D2": false,
+  "role": "scoped_boundary_control",
+  "realization_scope": "the particular large class of nonlocal form factors studied by Zhao, Modesto and Bambi, arXiv:2605.01413 / EPJC 86 (2026) 713",
+  "observable": "existence of exact vacuum Godel-type solutions with closed timelike curves",
+  "status": "FAIL_RQIR_GATE__SCOPED_GLOBAL_CAUSALITY_CTC_ADMISSION",
+  "scientific_fail": true,
+  "residual_defined": true,
+  "counts_as_new_required_exclusion": false,
+  "global_sufficiency": false,
+  "interpretation": "This realization class admits exact vacuum geometries with closed timelike curves. Renormalizability alone is therefore not a family-wide causality certificate. The result is not promoted to the full NONLOCAL_QG family because form-factor/background dependence remains material.",
+  "authority": "Zhao, Modesto, Bambi, Eur. Phys. J. C 86, 713 (2026), arXiv:2605.01413"
+}
