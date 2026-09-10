@@ -1,5 +1,5 @@
 {
-  "schema_version": "8.8",
+  "schema_version": "8.9",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
@@ -41,8 +41,8 @@
       "tier2_unresolved_rows":5,
       "required_rows_not_yet_benchmarked":5,
       "required_rows_partial_or_blocked":5,
-      "scoped_child_rows_with_defined_residual":4,
-      "scoped_child_scientific_fail_rows":1,
+      "scoped_child_rows_with_defined_residual":5,
+      "scoped_child_scientific_fail_rows":2,
       "next_family_gate":"PF2_01B3_RIEMANN_WEYL_AMPLITUDE_RESIDUAL"
     },
     "pf2": {
@@ -52,10 +52,11 @@
         "closed_children":[
           {"id":"PF2-01-NONLOCAL-QG-RICCI-EOM-SQUARED","status":"PASS_RQIR_GATE__EXACT_COMPARATOR_IDENTITY__TREE_S_MATRIX"},
           {"id":"PF2-01B1-NONLOCAL-WEYL-HK-EIKONAL-CAUSALITY","status":"FAIL_RQIR_GATE__SCOPED_EIKONAL_CAUSALITY_TIME_ADVANCE","scientific_fail":true},
-          {"id":"PF2-01B2-NONLOCAL-WEYL-HT-EIKONAL-CAUSALITY","status":"PASS_RQIR_GATE__SCOPED_EIKONAL_CAUSALITY_CONTROL"}
+          {"id":"PF2-01B2-NONLOCAL-WEYL-HT-EIKONAL-CAUSALITY","status":"PASS_RQIR_GATE__SCOPED_EIKONAL_CAUSALITY_CONTROL"},
+          {"id":"PF2-01B4-NONLOCAL-GODEL-CAUSALITY-SCOPE","status":"FAIL_RQIR_GATE__SCOPED_GLOBAL_CAUSALITY_CTC_ADMISSION","scientific_fail":true}
         ],
         "next_gate":"PF2_01B3_RIEMANN_WEYL_AMPLITUDE_RESIDUAL",
-        "parallel_scope_gate":"PF2_01B4_GODEL_VACUUM_CAUSALITY",
+        "parallel_scope_gate":"PF2_01B4_GODEL_VACUUM_CAUSALITY_CLOSED_SCOPED",
         "front":"paper_iv/O_NONLOCAL_RIEMANN_WEYL_CAUSALITY_FRONT_2026-09-10.md"
       }
     },
