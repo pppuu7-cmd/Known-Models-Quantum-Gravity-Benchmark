@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-10",
+  "iteration": 194,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "family": "HORAVA_LIFSHITZ",
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "branch_exhaustion_status": "EXPANDED_MINIMUM_MATERIAL_CENSUS__FAMILY_NOT_TERMINAL",
+  "branches": [
+    {
+      "id": "H0_STANDARD_PROJECTABLE",
+      "material": true,
+      "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+      "blocker": "AF_MARGINAL_TRAJECTORY_TO_RELEVANT_IR_COUPLINGS_AND_NORMALIZED_EXTRA_SCALAR_SAME_REALIZATION_MAP"
+    },
+    {
+      "id": "H1_HEALTHY_NONPROJECTABLE_BPS",
+      "material": true,
+      "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+      "blocker": "3P1_UV_RG_TRAJECTORY_TO_IR_KHRONOMETRIC_OBSERVABLE_SAME_REALIZATION_MAP"
+    },
+    {
+      "id": "H2_PROJECTABLE_U1_EXTENDED",
+      "material": true,
+      "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+      "nonreduction_reason": "enlarged local U1 gauge symmetry changes constraint and physical scalar sector relative to H0",
+      "blocker": "U1_3P1_QUANTUM_UV_TO_IR_NORMALIZED_OBSERVABLE_COMPARATOR_CERTIFICATE"
+    },
+    {
+      "id": "H3_NONPROJECTABLE_U1_EXTENDED",
+      "material": true,
+      "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+      "generic_scalar": "PRESENT",
+      "tuned_scalar_free_locus": "NOT_QUANTUM_STABLE_WITHOUT_PROTECTION_THEOREM",
+      "nonreduction_reason": "U1 field/gauge/constraint content is not identical to H1",
+      "blocker": "GENERIC_U1_3P1_QUANTUM_UV_TO_IR_COMPARATOR_CERTIFICATE"
+    },
+    {
+      "id": "H4_MIXED_DERIVATIVE",
+      "material": true,
+      "status": "PARTIAL_SUBFAMILY_ONLY",
+      "minimal_realization": "SCOPED_SCIENTIFIC_FAIL_LOW_ENERGY_ADDITIONAL_SCALAR_INSTABILITY",
+      "nonreduction_reason": "mixed derivative operator class changes propagating spectrum relative to standard nonprojectable Hořava",
+      "blocker": "FULL_MATERIAL_MIXED_DERIVATIVE_COMPLETION_SCOPE_OR_TERMINAL_DISPOSITION_CERTIFICATE"
+    }
+  ],
+  "governance_result": "PASS_GOVERNANCE_GATE__HORAVA_MATERIAL_BRANCH_CENSUS_EXPANDED_AND_NONREDUCTION_CERTIFIED_FOR_U1_AND_MIXED_DERIVATIVE_CLASSES",
+  "family_residual_defined": false,
+  "D2": "NOT_CLOSED",
+  "D4": "NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity_R3_percent": 24,
+  "candidate_gravity_active": false,
+  "authority": "paper_iv/O_HORAVA_FAMILY_MATERIAL_BRANCH_EXHAUSTION_AUDIT_2026-09-10.md",
+  "next_gate": "HORAVA_U1_PROJECTABLE_AND_NONPROJECTABLE_QUANTUM_IR_COMPARATOR_DISPOSITION_PLUS_MIXED_DERIVATIVE_COMPLETION_SCOPE_CERTIFICATE"
+}
