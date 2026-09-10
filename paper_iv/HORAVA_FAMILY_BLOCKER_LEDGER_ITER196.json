@@ -1,0 +1,54 @@
+{
+  "iteration": 196,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "family": "HORAVA_LIFSHITZ",
+  "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+  "family_residual": "UNDEFINED_MISSING_COMMON_DOMAIN_COMPLETE_FAMILY_OBJECT",
+  "material_branch_census": {
+    "minimum_classes": 5,
+    "branches": [
+      {
+        "id": "H0_STANDARD_PROJECTABLE",
+        "scoped_pass": "3+1 asymptotically-free marginal RG trajectory authority exists",
+        "blocker": "AF marginal trajectory -> relevant IR couplings -> normalized extra scalar -> comparator same-realization map"
+      },
+      {
+        "id": "H1_HEALTHY_NONPROJECTABLE_BPS",
+        "blocker": "3+1 quantum UV RG trajectory -> IR khronometric observable same-realization map"
+      },
+      {
+        "id": "H2_PROJECTABLE_U1",
+        "scoped_pass": "normalized IR PPN comparator object exists",
+        "blocker": "U1-specific 3+1 quantum UV trajectory -> PPN couplings same-realization map"
+      },
+      {
+        "id": "H3_NONPROJECTABLE_U1",
+        "scoped_pass": "normalized IR PPN comparator object exists",
+        "blocker": "U1-specific 3+1 quantum UV trajectory -> PPN couplings same-realization map; scalar-free tuned locus lacks quantum protection theorem"
+      },
+      {
+        "id": "H4_MIXED_DERIVATIVE",
+        "scoped_fail": "minimal gravity realization has an additional low-energy unstable scalar",
+        "scope": "PRD 94, 084014 / arXiv:1604.04215 action and derivative-order domain",
+        "blocker": "full-class instability theorem or authenticated healthy higher-order mixed-derivative gravity completion",
+        "negative_control": "healthy higher-order construction exists only for Lifshitz-scalar toy theory and cannot be promoted to gravity PASS"
+      }
+    ]
+  },
+  "coverage_contract_check": {
+    "terminal_states": [
+      "BENCHMARKED_COMPLETE_REALIZATION",
+      "EQUIVALENCE_CLASS_CLOSED_BY_THEOREM",
+      "MERGED_INTO_OTHER_ROW_WITH_EXPLICIT_REDUCTION_MAP",
+      "OUTSIDE_PAPER_IV_TARGET_WITH_SCOPE_PROOF"
+    ],
+    "blocked_is_terminal": false,
+    "consequence": "Hořava cannot be promoted to a terminal family state merely because every known branch blocker has been explicitly localized. Missing-object quarantine remains nonterminal under the frozen coverage contract."
+  },
+  "D2": "NOT_CLOSED",
+  "D4": "NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity_activation": false,
+  "next_policy": "Do not spend heavy compute on Hořava structural blockers. Move to another Tier-1 family whose blocker may be analytically closed, while preserving this ledger as the exact Hořava return point."
+}
