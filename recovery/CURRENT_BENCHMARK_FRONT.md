@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **196**  
-**Phase:** **RQIR Core v1.0 FROZEN / Hořava mixed-derivative H4 scope localized / branch-complete parent ledger next**.
+**KMQGB iteration:** **197**  
+**Phase:** **RQIR Core v1.0 FROZEN / Hořava parked on structural missing objects / fresh spin-foam continuum-limit authority integrated / O-LQG ancestry gate narrowed**.
 
 ## Stable metrics
 
@@ -11,7 +11,11 @@
 - Candidate Gravity R3: **24%**, inactive.
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
-- No readiness promotion in Iter196.
+- No scientific-readiness promotion in Iter197.
+
+## Validation carried forward
+
+Iter196 authoritative head `d0a21a029f1c3a55bb142a2f477a7bf881bfd32e` is validated: methodology-ci run `34453110786` completed `success`; reproducibility-release run `34453161107` also completed `success`.
 
 ## Paper-IV global gates
 
@@ -19,52 +23,32 @@ D1 PASS; D2A NOT_CLOSED; D2B NOT_CLOSED; D2 `NOT_CLOSED_COVERAGE_AND_OBJECTS`; D
 
 ## Coverage status
 
-Tier-1 required rows **14**; terminal family rows **1/14**; nonterminal **13/14**; Tier-2 unresolved **0**; scoped child residuals remain scoped and are not promoted to family level without domain proof.
+Tier-1 required rows **14**; terminal family rows **1/14**; nonterminal **13/14**; Tier-2 unresolved **0**. Scoped child PASS/FAIL remains scoped.
 
-## Iter196 — mixed-derivative H4 scope audit
+## Iter197 — fresh O-LQG / spin-foam continuum authority
 
-Primary-authority review confirms the 2016 result is a strong scientific FAIL for the explicitly constructed minimal mixed-derivative gravity realization: the complete two-spatial/two-temporal-derivative operator set at that scaling contains an additional scalar graviton unstable at low energy, independently corroborated by Hamiltonian analysis.
+Bruno, Colafranceschi, Mele & Rovelli, *Structure of the continuum limit of spin foams*, Phys. Rev. D 114, 066005 (published 8 September 2026), provides a model-independent ordered-triangulation framework that makes the spin-foam continuum limit mathematically explicit.
 
-However, the 2015 result often invoked as a possible healthy completion proves power-counting-renormalizable and unitary higher-order mixed-derivative models only in a **Lifshitz-scalar toy theory**. It does not provide a complete healthy gravitational action/constraint algebra/spectrum/UV→IR gravity observable certificate.
+Scoped structural result:
 
-Therefore the minimal-gravity child FAIL cannot be promoted to the entire H4 class, while the toy-model result cannot be promoted to a healthy-gravity PASS.
+`PASS_STRUCTURAL_GATE__SPINFOAM_CONTINUUM_LIMIT_CAN_BE_DEFINED_BY_ORDERED_TRIANGULATION_REFINEMENT_FRAMEWORK`.
 
-Scoped child result:
+This is a real contraction of the old continuum-limit ambiguity, but it is not a same-realization EPRL coarse-graining result. It does not provide the EPRL refinement trajectory, EPRL→Area-Regge/area-metric parameter ancestry, Immirzi/parity-coupling normalization, or propagated refinement/truncation remainder needed by RQIR.
 
-`FAIL_RQIR_GATE__HORAVA_MIXED_DERIVATIVE_MINIMAL_GRAVITY_LOW_ENERGY_EXTRA_SCALAR_INSTABILITY`.
+Therefore O-LQG remains `BLOCKED_MISSING_REQUIRED_OBJECT`; no family residual is defined.
 
-H4 branch disposition:
+Authority: `paper_iv/O_LQG_SPINFOAM_CONTINUUM_STRUCTURE_REFRESH_2026-09-10.md`.
 
-`BLOCKED_SCOPE_NOT_PROVEN__MINIMAL_GRAVITY_INSTABILITY_NOT_PROMOTABLE_TO_FULL_MIXED_DERIVATIVE_CLASS__NO_AUTHENTICATED_HEALTHY_GRAVITY_COMPLETION_FOUND`.
+## O-AS authority recheck
 
-Authority: `paper_iv/O_HORAVA_MIXED_DERIVATIVE_SCOPE_AUDIT_2026-09-10.md`.
-
-Family-level comparator residual remains undefined.
-
-## Hořava material census after H4 localization
-
-H0 standard projectable — scoped UV authority exists; UV→IR relevant-coupling/extra-scalar same-realization bridge BLOCKED.
-
-H1 healthy non-projectable/BPS — 3+1 UV RG→IR khronometric same-realization bridge BLOCKED.
-
-H2 projectable U(1) — normalized IR PPN comparator exists; U(1)-specific 3+1 quantum UV→IR bridge BLOCKED.
-
-H3 non-projectable U(1) — normalized IR PPN comparator exists; 3+1 quantum UV→IR bridge BLOCKED; tuned scalar-free locus additionally lacks quantum protection theorem.
-
-H4 mixed derivative — minimal gravity child FAIL is authenticated, but full-class scope is BLOCKED and no authenticated healthy gravity completion was found.
-
-Hořava parent remains `PARTIAL_SUBFAMILY_ONLY`; no family residual is defined.
-
-## D7 after Iter196
-
-No family-level terminal change: D2 NOT_CLOSED, D4 NOT_CLOSED, D7 NOT_CLOSED, `NEW_REQUIRED=false`, Candidate Gravity inactive at R3=24%.
+Fresh recheck on 2026-09-10 finds arXiv:2603.10168 still as the stable contact-incomplete mediated-amplitude authority; ERG2026 publicly reports a Lorentzian-resummed contact contribution but remains presentation-level rather than a reproducible same-realization `A4` package. O-AS stays `BLOCKED_MISSING_REQUIRED_OBJECT`; no splice across realizations is authorized.
 
 ## Heavy compute
 
-**IDLE.** Current blocker is branch-level scope/provenance/terminal-disposition logic; heavy scans cannot prove an all-completions theorem or create missing same-realization authority.
+**IDLE.** Current blockers are provenance/matching/same-realization objects; no hosted scan can manufacture the missing ancestry or contact object without adding model assumptions.
 
 ## Exact next gate
 
-**`HORAVA_FAMILY_BLOCKER_LEDGER_COMPLETION_AND_DISPOSITION_CERTIFICATE`**.
+**`EPRL_CONTINUUM_TRAJECTORY_IN_ORDERED_REFINEMENT_FRAMEWORK_PLUS_REGGE_TO_AREA_REGGE_PARAMETER_ANCESTRY_AND_ERROR_CERTIFICATE`**.
 
-Consolidate H0–H4 into one branch-complete Hořava ledger, verify that the frozen census contains no silently unresolved material branch, preserve each scoped result and missing-object quarantine, and determine whether the Hořava parent may be terminally classified as BLOCKED-with-undefined-residual under the frozen Paper-IV contract or must remain `PARTIAL_SUBFAMILY_ONLY` pending at least one further object-level certificate.
+Search for a concrete EPRL realization implementing a compatible refinement/coarse-graining trajectory and binding its microscopic Immirzi/parity data to the Area-Regge/area-metric effective couplings with explicit approximation/remainder control. If absent, preserve BLOCKED and move to the next analytically closable Tier-1 family.
