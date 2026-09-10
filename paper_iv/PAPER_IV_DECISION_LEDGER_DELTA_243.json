@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "iteration": 243,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "ASYMPTOTIC_SAFETY",
+    "status_after": "BLOCKED_MISSING_REQUIRED_OBJECT__MEDIATED_SCATTERING_AND_LORENTZIAN_SPECTRAL_SECTORS_STRONG__PROGRAMME_LEVEL_CONTACT_COMPLETE_RESULT_PUBLIC__STABLE_SAME_REALIZATION_A4_ERROR_COMPARATOR_PACKAGE_MISSING",
+    "stable_mediated_amplitude": true,
+    "stable_same_realization_A4": false,
+    "programme_level_A4_publicly_reported": true,
+    "lorentzian_spectral_control": true,
+    "full_error_comparator_package": false,
+    "scientific_fail": false,
+    "family_terminal_promotion": false,
+    "family_residual_defined": false,
+    "heavy_compute": "IDLE_PENDING_STABLE_A4_OBJECT",
+    "authority": "paper_iv/O_AS_CONTACT_COMPLETE_AND_LORENTZIAN_SPECTRAL_REFRESH_ITER243_2026-09-10.md"
+  },
+  "governance_note": "Stable arXiv 2603.10168 remains contact-incomplete. ERG2026 publicly reports a Lorentzian-resummed contact contribution and full cross section, while arXiv:2606.19321 strengthens the direct-Lorentzian spectral/propagator sector. These are complementary positive controls but do not replace a stable same-realization A4 formula/data/error object.",
+  "next_gate": "PAPER_IV_ACTIVE_SET_COMPUTE_ACTIONABILITY_AND_INFORMATION_GAIN_RESELECTION_ITER244"
+}
