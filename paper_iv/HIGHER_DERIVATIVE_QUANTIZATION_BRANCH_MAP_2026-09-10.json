@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "iteration": 187,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "action_level_result": {
+    "status": "PASS_STRUCTURAL_POLE_FORK_MAP",
+    "statement": "Local four-derivative curvature-squared gravity has an extra massive spin-2 pole with opposite bare residue relative to the massless graviton in the quadratic spin-2 propagator, but the physical unitarity/causality interpretation is prescription-dependent.",
+    "family_fail_inferred": false
+  },
+  "material_branches": [
+    {
+      "id": "BARE_OR_INDEFINITE_METRIC_GHOST",
+      "status": "SCOPED_STRUCTURAL_GHOST_POLE_CONTROL__NOT_FAMILY_TERMINAL",
+      "terminal": false,
+      "blocker": "dressing/asymptotic-state interpretation is not fixed by the bare pole alone",
+      "authority": ["Stelle-1977-PhysRevD16-953", "Salvio-arXiv:1804.09944", "Antoniadis-Tomboulis-1986-PhysRevD33-2756"]
+    },
+    {
+      "id": "FAKEON_AVERAGE_CONTINUATION",
+      "status": "SCOPED_RENORMALIZABILITY_UNITARITY_CONTROL__MICROCAUSALITY_REPLACEMENT_OPEN",
+      "terminal": false,
+      "blocker": "same-realization controlled-nonlocal causality replacement plus normalized observable/comparator package not yet frozen",
+      "authority": ["Anselmi-arXiv:1801.00915", "Anselmi-Piva-arXiv:1806.03605", "Anselmi-arXiv:1809.05037", "Anselmi-Bianchi-Piva-arXiv:2005.10293", "Piva-arXiv:2305.12549"]
+    },
+    {
+      "id": "LEE_WICK_UNSTABLE_RESONANCE",
+      "status": "BLOCKED_CONTESTED_UNITARITY_AUTHORITY__SAME_REALIZATION_CUT_CERTIFICATE_REQUIRED",
+      "terminal": false,
+      "blocker": "published all-orders unitarity and published operator-formalism unitarity-violation conclusions conflict for complex/unstable ghost treatments",
+      "authority": ["Donoghue-Menezes-arXiv:1908.02416", "Kubo-Kugo-arXiv:2308.09006", "Anselmi-arXiv:1704.07728"]
+    },
+    {
+      "id": "PT_SYMMETRIC_OR_MODIFIED_INNER_PRODUCT",
+      "status": "BLOCKED_DISTINCT_HILBERT_SPACE_REALIZATIONS__NO_COMMON_TERMINAL_OBJECT",
+      "terminal": false,
+      "blocker": "positive-inner-product claims and explicit conformal-gravity unitarity-violation analysis are not the same fixed realization",
+      "authority": ["Mannheim-arXiv:2109.12743", "Kubo-Kuntz-arXiv:2202.08298"]
+    },
+    {
+      "id": "EUCLIDEAN_OS_LATTICE",
+      "status": "SCOPED_EUCLIDEAN_OS_POSITIVITY_CONTROL__LORENTZIAN_CONTINUUM_MATCH_OPEN",
+      "terminal": false,
+      "blocker": "same-realization Lorentzian continuum observable map to the perturbative/cosmology benchmark domain is not frozen",
+      "authority": ["Tomboulis-1984-PhysRevLett52-1173"]
+    }
+  ],
+  "causality_controls": {
+    "cemz_shockwave": "positive polarization-independent Shapiro delay reported for the studied quadratic-gravity shock-wave backgrounds",
+    "fakeon_microcausality": "ordinary microscopic causality is modified/violated above the fakeon scale under the fakeon prescription",
+    "rqir_interpretation": "different causal diagnostics are not interchangeable; the realization vector must declare the causal observable/domain or controlled-nonlocal replacement"
+  },
+  "old_missing_certificate": "HIGHER_DERIVATIVE_POLE_PRESCRIPTION_FAMILY_MAP_PLUS_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE",
+  "refined_missing_certificate": "HIGHER_DERIVATIVE_MATERIAL_QUANTIZATION_BRANCH_TERMINAL_DISPOSITION_PLUS_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE",
+  "minimum_payload": [
+    "branch_identifier_and_fixed_action",
+    "dressed_pole_locations_and_residues",
+    "physical_Hilbert_space_and_asymptotic_state_rule",
+    "same_prescription_unitarity_certificate",
+    "declared_causality_or_controlled_nonlocal_replacement",
+    "normalized_physical_observable",
+    "IR_GR_map",
+    "same_domain_comparators",
+    "error_remainder_scheme_ledger",
+    "remaining_material_branch_disposition_map"
+  ],
+  "d7_effect": {
+    "counts_as_family_exclusion": false,
+    "global_decision_change": false,
+    "candidate_gravity_activation": false
+  },
+  "authority": "paper_iv/O_HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_AUDIT_2026-09-10.md"
+}
