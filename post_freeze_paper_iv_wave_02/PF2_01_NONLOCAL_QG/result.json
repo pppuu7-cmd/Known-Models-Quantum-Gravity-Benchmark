@@ -1,0 +1,68 @@
+{
+  "benchmark_id": "PF2-01-NONLOCAL-QG-RICCI-EOM-SQUARED",
+  "iteration": 184,
+  "rqir_core_version": "1.0",
+  "rqir_status": "FROZEN",
+  "parent_family": "NONLOCAL_QG",
+  "framework": "weakly nonlocal Ricci/EOM-squared finite or super-renormalizable gravity subclass",
+  "declared_domain": "on-shell tree-level n-point scattering for actions in the field-redefinition-equivalent class without an independent Riemann/Weyl-sector form factor",
+  "realization": {
+    "schematic_action": "EH + R gamma_0(Box) R + Ricci gamma_2(Box) Ricci + V(R,Ricci)",
+    "form_factors": "analytic weakly nonlocal choices compatible with the cited unitarity/super-renormalizability/finite constructions",
+    "excluded_from_closed_scope": [
+      "independent Riemann gamma_4(Box) Riemann term not reducible to the EOM-squared field-redefinition class",
+      "generic Weyl-basis nonlocal deformations",
+      "loop-level S-matrix identity",
+      "off-shell equality",
+      "family-wide equivalence of all nonlocal gravity models"
+    ]
+  },
+  "observable": {
+    "type": "on-shell tree-level S-matrix",
+    "vector": "A_n for identical asymptotic graviton/matter states and local-theory normalization",
+    "multiplicity": "arbitrary n within the theorem scope"
+  },
+  "comparator": {
+    "name": "Einstein gravity with identical matter content and asymptotic normalization",
+    "relation": "A_n^NLQG(tree) = A_n^GR(tree)"
+  },
+  "terminal_status": "PASS_RQIR_GATE__EXACT_COMPARATOR_IDENTITY__TREE_S_MATRIX",
+  "residual_status": "EXACT_ZERO_AFTER_GR_COMPARATOR_SUBTRACTION",
+  "residual_defined": true,
+  "residual_is_missing_data_zero_fill": false,
+  "scoped_interpretation": "NO_UNIQUE_TREE_LEVEL_SCATTERING_RESIDUAL_IN_RICCI_EOM_SQUARED_NONLOCAL_SUBCLASS",
+  "positive_controls": [
+    "tree-level n-point identity proven by field-redefinition theorem in the cited class",
+    "explicit four-graviton calculations agree with Einstein gravity in the corresponding Ricci-sector class",
+    "perturbative-unitarity and super-renormalizable/finite constructions exist for the admitted weakly nonlocal form-factor class",
+    "macro-causality control exists for the admitted weakly nonlocal scattering class"
+  ],
+  "negative_control": {
+    "status": "PASS_SCOPE_BOUNDARY",
+    "statement": "adding an independent Riemann/Weyl-sector form factor can alter amplitudes and causality, so the scoped identity cannot be promoted to the whole NONLOCAL_QG family"
+  },
+  "parent_family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "counts_as_family_level_new_required_exclusion": false,
+  "counts_as_new_required_evidence": false,
+  "rqir_core_defect": false,
+  "core_change_requested": false,
+  "paper_iv_decision_authorized": false,
+  "next_gate": "PF2_01B_NONLOCAL_RIEMANN_WEYL_SCATTERING_CAUSALITY_CERTIFICATE",
+  "next_gate_payload": [
+    "declared Riemann/Weyl nonlocal action",
+    "form-factor prescription",
+    "physical pole/unitarity prescription",
+    "normalized on-shell amplitude or eikonal observable",
+    "GR/local-EFT comparator",
+    "causality/time-delay observable",
+    "approximation/error authority",
+    "material-independence proof from Ricci field-redefinition class"
+  ],
+  "primary_authorities": [
+    "Modesto & Calcagni, JHEP 10 (2021) 169, arXiv:2107.04558v2",
+    "Dona et al., JHEP 08 (2015) 038, arXiv:1506.04589",
+    "Modesto, arXiv:2103.04936",
+    "Giaccari, Handbook of Quantum Gravity (2024), DOI 10.1007/978-981-99-7681-2_33"
+  ],
+  "audit": "post_freeze_paper_iv_wave_02/PF2_01_NONLOCAL_QG/audit.md"
+}
