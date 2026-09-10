@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "iteration": 257,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "CFS",
+  "result": "BLOCKED_EXTERNAL_OPEN_THEORY_OBJECT__CFS_FIRST_NON_EINSTEIN_GRAVITY_CORRECTION_NOT_YET_WORKED_OUT_IN_DETAIL_BY_PRIMARY_AUTHORITY",
+  "operational_status": "PARKED_PENDING_EXPLICIT_FIRST_NON_EINSTEIN_CORRECTION_OBJECT",
+  "strict_coverage_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "candidate_gravity_R3_percent": 24,
+  "candidate_gravity_activation": false,
+  "heavy_compute": "IDLE",
+  "polygon_operational_saturation_percent": 93,
+  "next_gate": "RANK_REMAINING_TIER1_FINITE_BLOCKERS_AND_ATTACK_HIGHEST_INFORMATION_BRANCH"
+}
