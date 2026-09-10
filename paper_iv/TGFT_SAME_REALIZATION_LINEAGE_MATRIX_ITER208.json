@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "iteration": 208,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "target_family": "GFT_TENSOR_MODELS",
+  "target_branch": "TGFT_GRAVITY_ANCESTRY_RG_PHASE_STRUCTURE",
+  "audit_scope": "identified primary-literature corpus; no universal nonexistence claim",
+  "required_chain": ["microscopic_gravity_action_constraints","nonperturbative_rg_or_controlled_continuum_trajectory","condensate_collective_state","relational_gravitational_observable","normalized_common_domain_comparator","approximation_error_ledger"],
+  "rows": [
+    {"id":"LORENTZIAN_BC_RELATIONAL_COSMOLOGY_PERTURBATIONS","gravity_ancestry":true,"lorentzian_bc_structure":true,"relational_observable":true,"full_same_realization_frg":false,"normalized_comparator_error_closure":false,"disposition":"INCOMPLETE_SAME_REALIZATION_CHAIN"},
+    {"id":"LORENTZIAN_BC_LANDAU_GINZBURG_PHASE","gravity_ancestry":true,"lorentzian_bc_structure":true,"mean_field_condensate_phase":true,"full_same_realization_frg":false,"relational_observable_transport_through_frg":false,"disposition":"INCOMPLETE_SAME_REALIZATION_CHAIN"},
+    {"id":"SIMPLE_ABELIAN_COMPACT_TGFT_FRG_CONTROLS","gravity_ancestry_same_as_bc_target":false,"full_frg_or_nonperturbative_rg_controls":true,"relational_bc_observable":false,"disposition":"DIFFERENT_REALIZATION__FORBIDDEN_FOR_CHAIN_SPLICING"}
+  ],
+  "chain_complete_in_any_audited_row": false,
+  "cross_realization_splicing_permitted": false,
+  "result": "BLOCKED_MISSING_REQUIRED_OBJECT__NO_AUDITED_PUBLISHED_SAME_REALIZATION_FULL_FRG_TO_RELATIONAL_GRAVITY_OBSERVABLE_CHAIN_FOR_GRAVITY_ANCESTRY_TGFT",
+  "scientific_fail": false,
+  "positive_scoped_evidence_retained": ["LORENTZIAN_BC_RELATIONAL_GR_LIMIT_AND_QG_CORRECTIONS","LORENTZIAN_BC_MEAN_FIELD_CONDENSATE_PHASE","TGFT_FRG_METHOD_CONTROLS_IN_SIMPLIFIED_REALIZATIONS"],
+  "next_gate": "PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_CONTINUUM_TO_NORMALIZED_4D_GRAVITY_OBSERVABLE_COMPARATOR",
+  "authority": "paper_iv/O_TGFT_SAME_REALIZATION_FRG_TO_RELATIONAL_OBSERVABLE_GAP_AUDIT_2026-09-10.md"
+}
