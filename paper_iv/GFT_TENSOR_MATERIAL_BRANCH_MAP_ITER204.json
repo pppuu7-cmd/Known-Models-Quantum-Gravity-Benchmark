@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.1",
+  "iteration": 204,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "parent_family": "GFT_TENSOR_MODELS",
+  "global_family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "family_residual_defined": false,
+  "inherits_from": "paper_iv/GFT_TENSOR_MATERIAL_BRANCH_MAP_ITER203.json",
+  "pure_random_tensor_refinement": {
+    "parent_branch": "PURE_RANDOM_TENSOR_MODELS",
+    "status": "PARTIAL_SUBBRANCH_TERMINAL",
+    "children": [
+      {
+        "id": "PURE_RANDOM_TENSOR_STANDARD_MELONIC_LARGE_N",
+        "status": "FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_STANDARD_MELONIC_LARGE_N_CONTINUUM_IS_BRANCHED_POLYMER_NOT_EXTENDED_4D_GR_GEOMETRY",
+        "terminal_within_scope": true,
+        "scope": "standard melonic/tree-dominated large-N critical universality and directly controlled critical/double-scaling extensions",
+        "family_promotion": false
+      },
+      {
+        "id": "PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC",
+        "status": "BLOCKED_MISSING_REQUIRED_OBJECT__PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_CONTINUUM_TO_NORMALIZED_4D_GRAVITY_OBSERVABLE_COMPARATOR",
+        "terminal_within_scope": false,
+        "scope": "enhanced/nonmelonic combinatorial tensor models including planar/mixed phases and pregeometric FRG fixed-point candidates",
+        "family_promotion": false
+      }
+    ],
+    "authority": "paper_iv/O_PURE_RANDOM_TENSOR_CONTINUUM_UNIVERSALITY_SCOPE_AUDIT_2026-09-10.md"
+  },
+  "family_terminal_promotion": false,
+  "counts_as_new_required_exclusion": false,
+  "next_missing_certificate": "GFT_TENSOR_SURVIVING_GRAVITY_BRANCH_CONTROLLED_CONTINUUM_TRAJECTORY_NORMALIZED_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE"
+}
