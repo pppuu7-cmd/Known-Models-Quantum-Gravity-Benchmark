@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = ROOT / "protocol" / "PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json"
 MATRIX = ROOT / "paper_iv" / "PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json"
+ALLOWED_CHILD_ROLES = {"scoped_subbenchmark", "scoped_boundary_control"}
 
 
 def fail(msg: str) -> None:
@@ -67,16 +68,14 @@ def main() -> int:
         if state == "PARTIAL_SUBFAMILY_ONLY" and mrow.get("object_complete_in_declared_domain") is True:
             fail(f"{rid}: partial family coverage cannot be marked complete at family level")
 
-    # Scoped child results are legitimate scientific evidence but never a silent
-    # family-level exclusion or sufficiency certificate.
     scoped_children = [r for r in matrix_rows if r.get("required_for_D2") is False]
     for child in scoped_children:
         cid = child["id"]
         parent = child.get("parent_family")
         if not parent or parent not in tier1_set:
             fail(f"{cid}: scoped child must name a Tier-1 parent_family")
-        if child.get("role") != "scoped_subbenchmark":
-            fail(f"{cid}: non-required scientific row must be scoped_subbenchmark")
+        if child.get("role") not in ALLOWED_CHILD_ROLES:
+            fail(f"{cid}: non-required scientific row has invalid scoped role")
         if child.get("counts_as_new_required_exclusion") is not False:
             fail(f"{cid}: scoped child cannot count as family-level NEW_REQUIRED exclusion")
         if child.get("global_sufficiency") is not False:
