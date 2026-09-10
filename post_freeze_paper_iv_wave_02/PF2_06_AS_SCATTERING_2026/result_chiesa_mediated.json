@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "iteration": 189,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "id": "AS_CHIESA_2026_FULL_MOMENTUM_MEDIATED",
+  "parent_family": "ASYMPTOTIC_SAFETY",
+  "role": "scoped_subbenchmark",
+  "object_complete_in_declared_domain": true,
+  "realization": {
+    "matter": "one massless minimally coupled scalar",
+    "background": "flat Euclidean FRG, reconstructed to Lorentzian signature",
+    "gauge": "harmonic-Landau",
+    "computed_vertex": "full momentum dependence of projected scalar-scalar-graviton 3-point vertex",
+    "propagator": "momentum-dependent full graviton propagator input",
+    "amplitude_sector": "A_s+A_t+A_u graviton-mediated channels",
+    "contact_A4": "explicitly omitted in arXiv:2603.10168v1"
+  },
+  "object_status": "PASS_RQIR_GATE__SCOPED_AS_FULL_MOMENTUM_MEDIATED_SCATTERING_CONTROL__A4_EXCLUDED",
+  "residual_defined": true,
+  "residual_status": "DEFINED_SCOPED_MEDIATED_AS_SCATTERING_CONTROL__CONTACT_COMPLETE_RESIDUAL_NOT_DEFINED",
+  "scientific_fail": false,
+  "global_sufficiency": false,
+  "counts_as_new_required_exclusion": false,
+  "positive_controls": ["IR cross section reduces to General Relativity", "UV amplitude approaches bounded behavior", "UV cross section is compatible with the stated unitarity bound", "s,t,u channels are related by crossing"],
+  "limitations": ["A4 omitted", "classical-tensor projection for the scalar-graviton vertex", "uniform graviton wave-function approximation", "quenched matter contribution in graviton two-point flow", "simple three-graviton Newton-avatar trajectory", "no full family-level gauge/regulator/truncation/comparator error ledger"],
+  "authority": "arXiv:2603.10168v1",
+  "audit": "paper_iv/O_AS_2026_SCATTERING_REALIZATION_SPLIT_AUDIT_2026-09-10.md"
+}
