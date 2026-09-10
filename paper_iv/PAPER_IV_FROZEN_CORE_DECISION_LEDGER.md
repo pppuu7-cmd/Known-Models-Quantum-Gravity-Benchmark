@@ -8,14 +8,12 @@ Allowed eventual terminal decisions: `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `H
 
 ## Non-negotiable semantics
 
-A scoped PASS/FAIL/identity is not a verdict on an entire research school. `PARTIAL_SUBFAMILY_ONLY` and `BLOCKED_MISSING_REQUIRED_OBJECT` contribute zero family-level exclusion evidence toward `NEW_REQUIRED`. Undefined residuals are never zero-filled.
+A scoped PASS/FAIL/identity is not a verdict on an entire research school. `PARTIAL_SUBFAMILY_ONLY` and `BLOCKED_MISSING_REQUIRED_OBJECT` contribute zero family-level exclusion evidence toward `NEW_REQUIRED`. Undefined residuals are never zero-filled. No RQIR Core semantic defect has been found.
 
-No RQIR Core semantic defect has been found.
-
-## D-gates
+## Current D-gates
 
 - D1 frozen judge — **PASS**.
-- D2A framework-set coverage — **NOT_CLOSED**.
+- D2A framework/family coverage — **NOT_CLOSED**.
 - D2B complete same-realization objects — **NOT_CLOSED**.
 - D2 combined — **`NOT_CLOSED_COVERAGE_AND_OBJECTS`**.
 - D3 common-domain comparability — **PARTIAL**.
@@ -24,63 +22,52 @@ No RQIR Core semantic defect has been found.
 - D6 same-realization discipline — **PASS_RULE_TARGETS_OPEN**.
 - D7 global terminal proof — **NOT_CLOSED**.
 
-## Tier-1 first-pass completion
+## Known-school census after Iter186
 
-All **11/11 Tier-1 families now have a concrete audit**. There are **0** untouched `NOT_YET_BENCHMARKED` Tier-1 rows.
+The required Tier-1 census is now **14 families/roles**. Every Tier-1 row has a concrete audit; **0/14 are merely `NOT_YET_BENCHMARKED`**. Only GR/EFT is terminal at family level; **13/14 remain PARTIAL/BLOCKED**.
 
-This is not terminal family coverage: only GR/EFT is terminal at family level; the ten candidate-family rows remain PARTIAL/BLOCKED.
+The former Tier-2 watchlist is **0 unresolved**. Its resolution increased rather than decreased the D7 burden:
 
-| Tier-1 family | Current status | Strongest accepted control / blocker |
-|---|---|---|
-| GR/EFT | `BENCHMARKED_COMPLETE_REALIZATION` | baseline/comparator authority |
-| Perturbative/higher-derivative | `PARTIAL_SUBFAMILY_ONLY` | fakeon renormalizable/unitary realization + inflation observables; family pole/causality map open |
-| Hořava-Lifshitz | `PARTIAL_SUBFAMILY_ONLY` | projectable renormalizability/RG control; UV->IR/extra-mode observable + non-projectable disposition open |
-| Asymptotic Safety | `BLOCKED_MISSING_REQUIRED_OBJECT` | same-realization `A_s+A_t+A_u+A4` certificate open |
-| Nonlocal QG | `PARTIAL_SUBFAMILY_ONLY` | Ricci identity, Weyl causality PASS/FAIL controls, fixed-order EFT absorption; cross-order/full-shape family closure open |
-| String/M/holography | `PARTIAL_SUBFAMILY_ONLY` | dual-resonance scoped rigidity only |
-| Causal sets | `PARTIAL_SUBFAMILY_ONLY` | BDG -> Einstein-Hilbert continuum control; fundamental dynamics/emergence observable open |
-| CDT/EDT | `PARTIAL_SUBFAMILY_ONLY` | 4D de Sitter/minisuperspace + spectral controls; continuum/invariant observable open |
-| LQG/spinfoam | `BLOCKED_MISSING_REQUIRED_OBJECT` | EPRL->Area-Regge/area-metric parameter ancestry open |
-| GFT/tensor | `PARTIAL_SUBFAMILY_ONLY` | relational condensate GR limit + QG corrections; spinfoam reduction/independence + full observable open |
-| CFS | `BLOCKED_MISSING_REQUIRED_OBJECT` | normalized first non-Einstein correction tensor open |
+- noncommutative spectral geometry -> promoted to Tier-1;
+- canonical Wheeler-DeWitt geometrodynamics -> promoted to Tier-1;
+- Quantum Graphity -> promoted as a concrete dynamical-graph parent;
+- double-copy -> mapped to the actual gravity parent it constructs;
+- twistor programmes -> mapped to the actual gravity parent unless independent dynamics is declared;
+- future concrete emergent/graph parents trigger Tier-1 promotion by rule.
 
-Primary first-pass authority:
+Authority: `paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md`.
 
-`paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md`.
+## Tier-1 state
 
-## Nonlocal Riemann/Weyl fixed-order result
+| Family | Status |
+|---|---|
+| GR/EFT | `BENCHMARKED_COMPLETE_REALIZATION` |
+| Perturbative/higher-derivative | `PARTIAL_SUBFAMILY_ONLY` |
+| Hořava-Lifshitz | `PARTIAL_SUBFAMILY_ONLY` |
+| Asymptotic Safety | `BLOCKED_MISSING_REQUIRED_OBJECT` |
+| Nonlocal QG | `PARTIAL_SUBFAMILY_ONLY` |
+| String/M-theory/holography | `PARTIAL_SUBFAMILY_ONLY` |
+| Causal sets | `PARTIAL_SUBFAMILY_ONLY` |
+| CDT/EDT | `PARTIAL_SUBFAMILY_ONLY` |
+| LQG/spinfoam | `BLOCKED_MISSING_REQUIRED_OBJECT` |
+| GFT/tensor models | `PARTIAL_SUBFAMILY_ONLY` |
+| Causal Fermion Systems | `BLOCKED_MISSING_REQUIRED_OBJECT` |
+| Noncommutative spectral geometry | `PARTIAL_SUBFAMILY_ONLY` |
+| Canonical WDW geometrodynamics | `BLOCKED_MISSING_REQUIRED_OBJECT` |
+| Quantum Graphity | `PARTIAL_SUBFAMILY_ONLY` |
 
-Published amplitude work establishes that an independent Riemann form factor can change amplitudes relative to Einstein gravity. RQIR requires the stronger comparator quotient.
+## Nonlocal fixed-order quotient
 
-For analytic `F(Box)=sum f_n Box^n`, every finite truncation is a finite local higher-derivative expansion. Against a complete same-order local EFT basis,
+For analytic `F(Box)=sum f_n Box^n`, any finite derivative truncation lies in the complete same-order local higher-curvature EFT span. Hence `r_N in Col(J_EFT,N)` and `Pi_perp,N r_N=0`.
 
-`r_N in Col(J_EFT,N)` and therefore `Pi_perp,N r_N = 0`.
+Classification: **`PASS_RQIR_GATE__FIXED_ORDER_LOCAL_EFT_COMPARATOR_ABSORPTION`**.
 
-Classification:
+This is a negative uniqueness control. Nonlocal uniqueness must come from cross-order shared functional structure or full non-polynomial momentum shape.
 
-**`PASS_RQIR_GATE__FIXED_ORDER_LOCAL_EFT_COMPARATOR_ABSORPTION`**.
+## D7 entry condition
 
-This is a negative uniqueness control. The remaining nonlocal discriminator must use cross-order shared functional structure or the full non-polynomial momentum shape.
-
-Authority:
-
-`paper_iv/O_NONLOCAL_RIEMANN_WEYL_EFT_QUOTIENT_2026-09-10.md`.
-
-## What remains before D7 can be terminal
-
-1. Resolve five Tier-2 classifications by explicit promotion, reduction/merge, or scope proof.
-2. Close or terminally disposition the ten non-baseline Tier-1 family rows.
-3. Define every required family-level D4 residual/comparator disposition.
-4. Only then evaluate terminal D7.
-
-Until these obligations close, none of the four terminal decisions may be authorized.
+A formal D7 attempt is now appropriate because the school-discovery/classification pass is complete. A terminal D7 PASS, however, still requires closing the thirteen family-level objects and D4 residuals. If those objects do not exist in current theory/literature, D7 must return `NOT_YET_AUTHORIZED`; it must never be forced to `NEW_REQUIRED`.
 
 ## Candidate Gravity firewall
 
-Candidate Gravity remains inactive at R3=24%. It may start only if D7 returns exactly `NEW_REQUIRED`; it then faces the unchanged RQIR funnel.
-
-## Current verdict
-
-**`NOT_YET_AUTHORIZED`**.
-
-Reason: `all Tier-1 families have first-pass audits, but ten family rows remain partial/blocked + Tier-2 unresolved + family-level D4 incomplete`.
+Candidate Gravity remains inactive at R3=24%. It starts only if D7 eventually returns exactly `NEW_REQUIRED`, and then faces the unchanged frozen RQIR funnel.
