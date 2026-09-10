@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-10  
 **KMQGB iteration:** **186**  
-**Phase:** **RQIR Core v1.0 FROZEN / Paper-IV PF2 all-Tier1 first pass complete / family closure + Tier2 resolution active**.
+**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / Tier2 classification resolved / family-level D7 blockers active**.
 
 ## Stable metrics
 
@@ -17,7 +17,7 @@ No readiness promotion in Iter186.
 ## Paper-IV global gates
 
 - D1: PASS.
-- D2A framework-set coverage: NOT_CLOSED.
+- D2A framework-set/family coverage: NOT_CLOSED.
 - D2B complete same-realization objects: NOT_CLOSED.
 - D2: `NOT_CLOSED_COVERAGE_AND_OBJECTS`.
 - D3: PARTIAL.
@@ -27,74 +27,74 @@ No readiness promotion in Iter186.
 - D7: NOT_CLOSED.
 - Global decision: **`NOT_YET_AUTHORIZED`**.
 
-## Major coverage result
+## Coverage status
 
-Tier-1 required families: **11**.
+The census now contains **14 Tier-1 rows**. Every row has been audited; none remains merely `NOT_YET_BENCHMARKED`.
 
-- Terminal family-level coverage: **1/11** (GR/EFT baseline).
-- Nonterminal family rows: **10/11**.
-- `NOT_YET_BENCHMARKED`: **0/11** (was 5/11 before Iter186).
-- Tier-2 unresolved classifications: **5**.
+- terminal family-level rows: **1/14** (GR/EFT baseline);
+- nonterminal family rows: **13/14**;
+- untouched Tier-1 rows: **0/14**;
+- Tier-2 unresolved classifications: **0**.
 
-Every Tier-1 family now has a concrete audit. This is not the same as terminal family closure.
+Three independent parents were promoted from the former Tier-2 watchlist:
 
-New first-pass authority:
+- noncommutative spectral geometry;
+- canonical Wheeler-DeWitt geometrodynamics;
+- Quantum Graphity.
 
-`paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md`
+Double-copy and twistor are explicitly reduced to the physical gravity parents they construct/represent unless a future independent parent is declared. The generic emergent/graph-based label is replaced by a concrete-parent promotion rule.
 
-### Newly audited Tier-1 families
+Authorities:
 
-- higher-derivative/fakeon QG — `PARTIAL_SUBFAMILY_ONLY`;
-- Hořava-Lifshitz — `PARTIAL_SUBFAMILY_ONLY`;
-- causal sets — `PARTIAL_SUBFAMILY_ONLY`;
-- CDT/EDT — `PARTIAL_SUBFAMILY_ONLY`;
-- GFT/tensor models — `PARTIAL_SUBFAMILY_ONLY`.
+- `paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md`
+- `paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md`
+- `protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json`
 
-## Nonlocal PF2-01B3 closure
+## D4 evidence
 
-For analytic `F(Box)=sum f_n Box^n`, every fixed finite derivative truncation is a local higher-derivative operator expansion. With the complete same-order local EFT comparator, its fixed-order amplitude deformation is comparator-contained:
+Required family rows with complete defined residual: **1/14**.
 
-`r_N in Col(J_EFT,N)`
+Defined scoped child results: **6**, including:
 
-and
+- string dual-resonance scoped rigidity;
+- nonlocal Ricci/EOM-squared exact GR identity;
+- nonlocal Weyl `H_K` causality FAIL;
+- nonlocal Weyl `H_T` causality PASS;
+- nonlocal Gödel/CTC scoped FAIL;
+- nonlocal Riemann/Weyl fixed-order local-EFT absorption.
 
-`Pi_perp,N r_N = 0`.
+No child result is promoted to family exclusion/sufficiency.
 
-Status:
+## Nonlocal fixed-order quotient
 
-**`PASS_RQIR_GATE__FIXED_ORDER_LOCAL_EFT_COMPARATOR_ABSORPTION`**.
+For analytic `F(Box)=sum f_n Box^n`, every fixed finite derivative truncation lies in the complete same-order local higher-curvature EFT span. Hence
 
-This is a negative uniqueness control, not a theory FAIL. Nonlocal uniqueness must instead be sought in a finite-parameter cross-order coefficient law or full non-polynomial momentum shape.
+`r_N in Col(J_EFT,N)` and `Pi_perp,N r_N = 0`.
 
-Authority:
+Status: **`PASS_RQIR_GATE__FIXED_ORDER_LOCAL_EFT_COMPARATOR_ABSORPTION`**.
 
-`paper_iv/O_NONLOCAL_RIEMANN_WEYL_EFT_QUOTIENT_2026-09-10.md`.
+Next discriminator: **`NONLOCAL_CROSS_ORDER_FUNCTIONAL_RIGIDITY_OR_FULL_MOMENTUM_SHAPE_CERTIFICATE`**.
 
-Next nonlocal gate:
+## Thirteen family-level blockers
 
-**`NONLOCAL_CROSS_ORDER_FUNCTIONAL_RIGIDITY_OR_FULL_MOMENTUM_SHAPE_CERTIFICATE`**.
-
-## Exact family-level blockers
-
-- AS: same-realization `A_s+A_t+A_u+A4` + error/comparator certificate.
-- LQG: EPRL/Regge -> Area-Regge/area-metric coupling and Immirzi ancestry.
-- CFS: first normalized non-Einstein correction tensor + comparator.
-- Nonlocal QG: cross-order/full-shape rigidity + material-branch exhaustion.
-- String/M/holography: family/subfamily coverage/equivalence certificate.
-- Higher derivative: pole-prescription family map + causality/observable comparator.
-- Hořava: projectable UV->IR/extra-mode observable + non-projectable disposition.
-- Causal sets: fundamental dynamics -> emergent continuum + normalized observable.
-- CDT/EDT: continuum trajectory + invariant observable/error/comparator.
-- GFT/tensor: spinfoam independence/reduction + full gravity observable comparator.
+1. higher derivative — pole-prescription family map + same-realization causality/observable comparator;
+2. Hořava — projectable UV->IR/extra-mode observable + non-projectable disposition;
+3. AS — same-realization `A_s+A_t+A_u+A4` + error/comparator;
+4. nonlocal — cross-order/full-shape rigidity + branch exhaustion;
+5. string/M/holography — material-subfamily/family equivalence coverage;
+6. causal sets — fundamental dynamics -> manifold continuum + normalized observable;
+7. CDT/EDT — continuum trajectory + invariant observable/error/comparator;
+8. LQG — EPRL->Area-Regge/area-metric coupling and Immirzi ancestry;
+9. GFT/tensor — spinfoam reduction/independence + full gravity observable;
+10. CFS — first normalized non-Einstein correction tensor;
+11. noncommutative spectral geometry — quantum spectral dynamics + normalized QG observable;
+12. canonical WDW — physical Hilbert space/clock/Dirac observable + semiclassical comparator;
+13. Quantum Graphity — continuum Lorentzian spin-2/GR emergence + normalized observable.
 
 ## Heavy compute
 
-**IDLE.** The remaining obstacles are primarily missing physical certificates, continuum/ancestry maps and family-level comparator quotients.
+**IDLE.** Current blockers are structural/analytic/continuum/normalization objects.
 
-## Next order
+## Next operation
 
-1. Resolve Tier-2 watchlist classifications by explicit promotion, reduction/merge or scope proof.
-2. Convert as many Tier-1 partial rows as current literature permits into terminal coverage dispositions; do not manufacture missing physics.
-3. Re-run D2/D4/D7 after each closure.
-4. If all scientifically necessary objects close, let D7 choose among EXISTING/ADAPT/HYBRID/NEW.
-5. If irreducible published-object gaps remain, D7 must return `NOT_YET_AUTHORIZED` and identify them exactly.
+After CI verifies this 14-family census, execute a formal D7 attempt. D7 must not be forced to PASS: if any of the thirteen required family objects remains unavailable, its correct evaluated output is `NOT_YET_AUTHORIZED` with the exact blocker set. Candidate Gravity remains inactive unless D7 eventually returns exactly `NEW_REQUIRED`.
