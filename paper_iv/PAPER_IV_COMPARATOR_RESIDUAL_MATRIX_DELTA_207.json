@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "iteration": 207,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "framework_delta": {
+    "id": "GFT_TENSOR_MODELS",
+    "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+    "generalized_graph_completion_scope": "PASS_REDUCTION_SCOPE_GATE__PUBLISHED_EXPLICIT_LQG_SPINFOAM_GRAPH_COMPLETION_GFT_CONSTRUCTIONS_REDUCE_TO_LQG_SPINFOAM_PARENT",
+    "generic_unmapped_gft_status": "BLOCKED_GRAVITY_ANCESTRY__GENERIC_GFT_NOT_INDEPENDENTLY_ADMITTED_TO_TIER1",
+    "tgft_admission_boundary": "PASS_GOVERNANCE_GATE__TGFT_GRAVITY_ADMISSION_REQUIRES_EXPLICIT_MICROSCOPIC_GEOMETRIC_GAUGE_SIMPLICITY_OR_EQUIVALENT_GRAVITY_ANCESTRY",
+    "gravity_residual_row_added": false,
+    "family_residual_defined": false,
+    "counts_as_family_PASS": false,
+    "counts_as_family_FAIL": false,
+    "counts_as_new_required_exclusion": false,
+    "remaining_blocker": "GFT_TENSOR_SURVIVING_TGFT_AND_PURE_TENSOR_BRANCHES_TERMINAL_CONTINUUM_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE",
+    "authority": "paper_iv/O_GFT_GENERALIZED_GRAPH_COMPLETION_SCOPE_EXHAUSTION_AND_TGFT_ANCESTRY_AUDIT_2026-09-10.md"
+  },
+  "scoped_child_rows_with_defined_residual": 11,
+  "scoped_child_scientific_fail_rows": 3,
+  "coverage_counts_unchanged": {"tier1_total":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0}
+}
