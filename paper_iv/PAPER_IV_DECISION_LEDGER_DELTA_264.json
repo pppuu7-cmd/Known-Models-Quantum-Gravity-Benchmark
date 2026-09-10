@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "iteration": 264,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "CAUSAL_SETS",
+  "positive_controls": [
+    "BDG_CONTINUUM_EH_CONTROL",
+    "LAYERED_NONMANIFOLD_SUPPRESSION_CONTROL",
+    "2026_BDG_QUANTUM_COUNTING_ALGORITHM",
+    "2026_CAUSAL_SET_OPERATOR_AND_CURVED_BACKGROUND_PROPAGATOR_CONTROLS"
+  ],
+  "fundamental_blocker": "BLOCKED_EXTERNAL_OPEN_THEORY_OBJECT__FUNDAMENTAL_CAUSAL_SET_QUANTUM_DYNAMICS_SELECTING_MANIFOLDLIKE_4D_CONTINUUM_WITH_EMERGENT_LOCALITY",
+  "comparator_blocker": "BLOCKED_PENDING_DYNAMICS_SELECTED_CONTINUUM_PLUS_NORMALIZED_GRAVITY_OBSERVABLE_COMPARATOR_ERROR_CAPSULE",
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "operational_status": "PARKED_PENDING_FUNDAMENTAL_DYNAMICS_TO_MANIFOLD_CONTINUUM_AUTHORITY",
+  "scientific_fail": false,
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "candidate_gravity_R3_percent": 24,
+  "candidate_gravity_activation": false,
+  "heavy_compute": "IDLE",
+  "polygon_operational_saturation_percent": 98,
+  "next_gate": "CDT_EDT_CONTINUUM_TRAJECTORY_INVARIANT_OBSERVABLE_SATURATION_AUDIT"
+}
