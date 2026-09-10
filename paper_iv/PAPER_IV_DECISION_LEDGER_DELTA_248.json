@@ -1,0 +1,19 @@
+{
+  "schema_version":"1.0",
+  "iteration":248,
+  "rqir_core":{"version":"1.0","status":"FROZEN"},
+  "global_decision_before":"NOT_YET_AUTHORIZED",
+  "global_decision_after":"NOT_YET_AUTHORIZED",
+  "D2_before":"NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after":"NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before":"NOT_CLOSED",
+  "D7_after":"NOT_CLOSED",
+  "candidate_gravity_activation":false,
+  "new_required_authorized":false,
+  "paper_iii_reopen":false,
+  "substantive_result":{"family":"NONLOCAL_QG","branch":"GFN_EXPONENTIAL_WEAK_FIELD","status_after":"PARTIAL_STRONG_NONLOCAL_FULL_SHAPE_BRANCH__PHYSICAL_WEAK_FIELD_DOMAIN_IDENTIFIED__SAME_REALIZATION_REAL_DATA_RESPONSE_COVARIANCE_EFT_NUISANCE_AND_PROPAGATED_ERROR_CAPSULE_NOT_LOCATED","scientific_fail":false,"family_terminal_promotion":false,"family_residual_defined":false,"authority":"paper_iv/O_NONLOCAL_WEAK_FIELD_REAL_DATA_EFT_NUISANCE_PROJECTION_AUDIT_ITER248_2026-09-10.md"},
+  "governance_note":"Real short-distance Newtonian domains exist, but parameter bounds or fits from different nonlocal realizations cannot be substituted for a same-realization GF_N full-shape likelihood and local-EFT nuisance quotient. BLOCKED remains nonterminal and is not NEW_REQUIRED.",
+  "next_gate":"NONLOCAL_QG_FULL_MOMENTUM_CROSS_ORDER_FUNCTIONAL_RIGIDITY_AND_MATERIAL_BRANCH_EXHAUSTION_CERTIFICATE"
+}

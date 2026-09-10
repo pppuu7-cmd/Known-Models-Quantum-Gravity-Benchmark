@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "iteration":248,
+  "family":"NONLOCAL_QG",
+  "branch":"GFN_EXPONENTIAL_WEAK_FIELD",
+  "parent_status":"PARTIAL_SUBFAMILY_ONLY",
+  "family_residual":"UNDEFINED",
+  "scoped_observable_status":"PASS_SCOPED_ANALYTIC_FULL_SHAPE_WEAK_FIELD_OBJECT",
+  "physical_domain_status":"PASS_SCOPED_PHYSICAL_DOMAIN_EXISTS__SHORT_DISTANCE_NEWTONIAN_TABLETOP",
+  "real_data_projection_status":"BLOCKED_MISSING_REQUIRED_OBJECT__SAME_REALIZATION_REAL_DATA_RESPONSE_COVARIANCE_LOCAL_EFT_NUISANCE_QUOTIENT_AND_PROPAGATED_ERROR_CAPSULE_NOT_LOCATED",
+  "cross_realization_transfer_allowed":false,
+  "scientific_fail":false,
+  "family_terminal_promotion":false,
+  "defined_residual":false,
+  "authority":"paper_iv/O_NONLOCAL_WEAK_FIELD_REAL_DATA_EFT_NUISANCE_PROJECTION_AUDIT_ITER248_2026-09-10.md"
+}
