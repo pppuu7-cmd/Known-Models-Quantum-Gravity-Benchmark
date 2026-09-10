@@ -1,0 +1,34 @@
+{
+  "benchmark_id": "PF2-01B2-NONLOCAL-WEYL-HT-EIKONAL-CAUSALITY",
+  "iteration": 185,
+  "rqir_core_version": "1.0",
+  "rqir_status": "FROZEN",
+  "parent_family": "NONLOCAL_QG",
+  "subfamily": "nonlocal Weyl-basis gravity",
+  "realization": {
+    "basis": "Weyl plus scalar-curvature nonlocal basis",
+    "form_factor_choice": "H_2 = H_0 = H_T",
+    "domain": "high-energy weak-coupling eikonal regime stated in the source analysis",
+    "observable": "Shapiro time delay / eikonal phase"
+  },
+  "comparator": {
+    "name": "Einstein gravity in identical eikonal kinematics",
+    "causality_requirement": "no Shapiro time advance"
+  },
+  "terminal_status": "PASS_RQIR_GATE__SCOPED_EIKONAL_CAUSALITY_CONTROL",
+  "scientific_fail": false,
+  "pass_scope": "absence of the dangerous Shapiro time advance for the declared H_T realization in the stated eikonal regime",
+  "residual_defined": true,
+  "residual_status": "CAUSALITY_CONTROL_PASS__NO_TIME_ADVANCE_IN_DECLARED_REGIME",
+  "global_sufficiency": false,
+  "counts_as_family_level_new_required_exclusion": false,
+  "counts_as_new_required_evidence": false,
+  "parent_family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "matched_negative_result": "PF2-01B1-NONLOCAL-WEYL-HK-EIKONAL-CAUSALITY",
+  "rqir_core_defect": false,
+  "core_change_requested": false,
+  "paper_iv_decision_authorized": false,
+  "primary_authority": "Giaccari & Modesto, Causality in Nonlocal Gravity, arXiv:1803.08748",
+  "audit": "post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/audit.md",
+  "next_gate": "PF2_01B3_RIEMANN_WEYL_AMPLITUDE_RESIDUAL"
+}
