@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "iteration": 203,
+  "baseline_frozen_ledger": "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json",
+  "prior_delta": "paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_202.json",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "decision_semantics_changed": false,
+  "coverage_counts": {"tier1_required":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0},
+  "scoped_gravity_residual_rows": 10,
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity": {"R3_percent":24,"active":false,"activation_condition":"D7 == NEW_REQUIRED"},
+  "ledger_delta": {
+    "family": "GFT_TENSOR_MODELS",
+    "prior_missing_certificate": "GFT_MATERIAL_BRANCH_REDUCTION_OR_INDEPENDENCE_MAP_PLUS_CONTROLLED_CONTINUUM_TRAJECTORY_AND_NORMALIZED_RELATIONAL_GRAVITY_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE",
+    "new_scoped_evidence": "PASS_GOVERNANCE_GATE__GFT_TENSOR_MATERIAL_BRANCH_CENSUS_SEPARATES_SPINFOAM_GENERATING_GFT__SECOND_QUANTIZED_GRAPH_COMPLETION__TGFT_RG_PHASE_STRUCTURE__DERIVED_CONDENSATE_SECTORS__AND_PURE_RANDOM_TENSOR_UNIVERSALITY",
+    "material_branch_map": "paper_iv/GFT_TENSOR_MATERIAL_BRANCH_MAP_ITER203.json",
+    "updated_missing_certificate": "GFT_TENSOR_MATERIAL_BRANCH_TERMINAL_DISPOSITION_PLUS_CONTROLLED_GRAVITY_CONTINUUM_TRAJECTORY_NORMALIZED_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE",
+    "parent_disposition": "PARTIAL_SUBFAMILY_ONLY",
+    "family_residual_defined": false,
+    "terminal_promotion": false,
+    "new_required_evidence": false,
+    "reason": "The umbrella GFT/tensor row is now partitioned into materially distinct microscopic, RG/phase, derived condensate and pure random-tensor sectors. Explicit spin-foam ancestry is required for gravity-oriented GFT branches and cannot be inherited by generic tensor models. Conversely, collective TGFT/condensate dynamics cannot be collapsed to a single fixed spin-foam amplitude. The census closes classification only; branch terminal dispositions, controlled continuum trajectory, normalized gravity observable and comparator/error quotient remain open."
+  },
+  "d7_effect": "NONE__PRECONDITIONS_D2_D4_REMAIN_OPEN",
+  "heavy_compute": "IDLE"
+}
