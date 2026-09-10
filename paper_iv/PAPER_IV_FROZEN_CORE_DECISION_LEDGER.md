@@ -1,6 +1,6 @@
 # Paper IV — Frozen-Core Decision Ledger
 
-**KMQGB iteration:** 187  
+**KMQGB iteration:** 192  
 **RQIR standard:** **Core v1.0 FROZEN**  
 **Global decision:** **`NOT_YET_AUTHORIZED`**
 
@@ -28,60 +28,55 @@ All **14/14 Tier-1 families have been audited** and Tier-2 classification has **
 
 - terminal family rows: **1/14** — GR/EFT baseline;
 - nonterminal family rows: **13/14**;
-- defined scoped child rows: **7**;
+- defined scoped child residuals: **9**;
 - scoped scientific FAIL rows: **2**.
 
-## Iter187 — perturbative/higher-derivative gravity
+## Higher-derivative status carried forward
 
-The action-level higher-derivative pole fork is now explicitly mapped. A massive opposite-bare-residue spin-2 pole is common to the local four-derivative structure, but its physical interpretation is prescription-dependent. KMQGB therefore separates bare/indefinite-metric, fakeon, Lee-Wick/unstable-resonance, PT/modified-inner-product and Euclidean OS branches instead of promoting the bare pole to a whole-family FAIL.
+The action-level higher-derivative pole fork remains explicitly prescription-dependent. Fakeon leading-inflation and classical principal-value response quotients are scoped non-identifiability results, not family verdicts. The family remains `PARTIAL_SUBFAMILY_ONLY` pending material quantization-branch terminal dispositions and a prescription-sensitive dressed comparator.
 
-Authority:
+## Hořava status through Iter192
 
-- `paper_iv/O_HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_AUDIT_2026-09-10.md`
-- `paper_iv/HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_MAP_2026-09-10.json`
+Projectable and non-projectable/BPS Hořava are materially distinct branches and cannot inherit one another's terminal classification.
 
-The family remains:
+For the projectable branch, KMQGB has admitted the 3+1 asymptotically-free **marginal** RG trajectory as a scoped PASS. Iter192 then audited whether that object can be composed with known low-energy running and scalar phenomenology under frozen same-realization rules.
 
-`PERTURBATIVE_HIGHER_DERIVATIVE = PARTIAL_SUBFAMILY_ONLY`.
+Result:
 
-Refined family blocker:
+**`BLOCKED_MISSING_REQUIRED_OBJECT__HORAVA_PROJECTABLE_AF_MARGINAL_TRAJECTORY_TO_RELEVANT_IR_COUPLINGS_AND_NORMALIZED_EXTRA_SCALAR_SAME_REALIZATION_MAP`**.
 
-`HIGHER_DERIVATIVE_MATERIAL_QUANTIZATION_BRANCH_TERMINAL_DISPOSITION_PLUS_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE`.
+Reason: the available UV authority evolves the marginal Lifshitz couplings, while the low-energy FRG/phenomenological authorities are separate truncations. The required bridge through relevant lower-derivative operators, scalar normalization, controlled matching/remainder and common-domain GR/EFT comparator has not been authenticated as one physical realization.
 
-## Fakeon scoped result
-
-A fixed `R + R^2 + C^2` fakeon realization is frozen as:
-
-**`PASS_RQIR_GATE__SCOPED_FAKEON_RENORMALIZABILITY_UNITARITY_INFLATION_OBSERVABLE_CONTROL`**.
-
-This scoped object records renormalizability, perturbative-unitarity control under the fakeon prescription, explicit inflationary scalar/tensor observables, and the explicit replacement/modification of ordinary microcausality. It does not yet show a nonzero comparator-orthogonal residual and is not a family-level PASS.
+This BLOCKED result is not a scientific FAIL, does not define a family-level residual, and contributes no evidence for `NEW_REQUIRED`.
 
 Authority:
 
-`post_freeze_paper_iv_wave_02/PF2_05_HIGHER_DERIVATIVE_FAKEON/result.json`.
+- `paper_iv/O_HORAVA_PROJECTABLE_3P1_RG_TRAJECTORY_SCOPE_AUDIT_2026-09-10.md`
+- `paper_iv/O_HORAVA_PROJECTABLE_UV_IR_SAME_REALIZATION_GAP_AUDIT_2026-09-10.md`
 
-Next gate:
+The exact next Hořava gate is independent disposition of the non-projectable/BPS branch:
 
-`HIGHER_DERIVATIVE_FAKEON_INFLATION_FULL_COMPARATOR_QUOTIENT_PLUS_CAUSAL_REPLACEMENT_CERTIFICATE`.
+`HORAVA_NONPROJECTABLE_BPS_UV_TO_IR_TRAJECTORY_PLUS_SCALAR_TENSOR_COMPARATOR_CERTIFICATE`.
 
-## D7 re-evaluation
+## D7 state after Iter192
 
-The executable D7 evaluator was updated only through its input authorities; its logic is unchanged. With the new scoped child included:
+No family-level row became terminal:
 
 - Tier-1 total = 14;
+- family-level terminal = 1;
 - family-level nonterminal = 13;
 - Tier-2 unresolved = 0;
 - D2 = false;
 - D4 = false;
 - D7 = false;
-- all four terminal authorizations = false;
+- all four terminal authorizations remain false;
 - global decision = **`NOT_YET_AUTHORIZED`**;
-- Candidate Gravity activation = false.
+- Candidate Gravity activation = false; R3 = 24%.
 
-This is the required fail-closed outcome. More scoped evidence does not reduce a family blocker unless the family-level proof obligation is actually satisfied.
+No D7 promotion is permitted from this scoped BLOCKED result.
 
 ## Current verdict
 
 **`NOT_YET_AUTHORIZED`**.
 
-Candidate Gravity stays inactive at R3=24%. The research route remains: close known-school family objects first, rerun D7 after each substantive closure, and activate a new model only if D7 eventually returns exactly `NEW_REQUIRED`.
+Candidate Gravity stays inactive at R3=24%. The route remains known-family closure under the unchanged RQIR v1.0 judge; a new model may activate only if a later executable D7 evaluation returns exactly `NEW_REQUIRED` after D2 and D4 close.
