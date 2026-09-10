@@ -1,59 +1,41 @@
 {
   "rqir_core_version": "1.0",
   "rqir_core_status": "FROZEN",
-  "kmqgb_iteration": 170,
+  "kmqgb_iteration": 182,
   "global_decision": "NOT_YET_AUTHORIZED",
-  "allowed_terminal_decisions": [
-    "EXISTING_SUFFICIENT",
-    "ADAPT_EXISTING",
-    "HYBRID_REQUIRED",
-    "NEW_REQUIRED"
-  ],
-  "post_freeze_wave_01": {
-    "terminal": 5,
-    "denominator": 5,
-    "completion_percent": 100
-  },
-  "closure_wave_02": {
-    "terminal": 0,
-    "denominator": 3,
-    "completion_percent": 0,
-    "ref": "post_freeze_paper_iv_closure_wave_02/README.md"
-  },
+  "allowed_terminal_decisions": ["EXISTING_SUFFICIENT", "ADAPT_EXISTING", "HYBRID_REQUIRED", "NEW_REQUIRED"],
+  "post_freeze_wave_01": {"terminal": 5, "denominator": 5, "completion_percent": 100},
+  "closure_wave_02": {"terminal": 0, "denominator": 3, "completion_percent": 0, "ref": "post_freeze_paper_iv_closure_wave_02/README.md"},
   "gates": {
     "D1_frozen_judge_integrity": "PASS",
     "D2_major_framework_complete_object_coverage": "NOT_CLOSED",
     "D3_common_domain_comparability": "PARTIAL",
-    "D4_comparator_subtracted_residual_matrix": "NOT_CLOSED",
+    "D4_comparator_subtracted_residual_matrix": "PARTIAL_MATRIX_FROZEN__NOT_CLOSED",
     "D5_missing_object_quarantine": "PASS",
     "D6_same_realization_composition_discipline": "PASS_RULE_TARGETS_OPEN",
     "D7_global_terminal_proof_obligation": "NOT_CLOSED"
   },
-  "terminal_authorization": {
-    "EXISTING_SUFFICIENT": false,
-    "ADAPT_EXISTING": false,
-    "HYBRID_REQUIRED": false,
-    "NEW_REQUIRED": false
-  },
+  "terminal_authorization": {"EXISTING_SUFFICIENT": false, "ADAPT_EXISTING": false, "HYBRID_REQUIRED": false, "NEW_REQUIRED": false},
   "new_required_forbidden_reason": "major known-framework branches remain attribution/completion blocked rather than excluded on complete same-domain observables",
   "same_realization_gate": "protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md",
+  "d2_d4_d7_audit": "paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md",
+  "comparator_residual_matrix": "paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json",
+  "global_gate_validator": "code/paper_iv_global_gate_validator.py",
   "minimum_open_objects": [
     "O-AS same-realization contact-complete diffeo/error-controlled Lorentzian scalar scattering certificate plus comparator",
-    "O-LQG complete/coarse-grained EPRL to renormalized gamma-dual EFT bridge plus gamma parameter-identity map",
-    "O-CFS first explicit normalized gravity correction tensor/coefficient vector from the causal-action correction generator plus full C5/GR/QFT comparator"
+    "O-LQG EPRL-Regge to Area-Regge/area-metric parity-coupling and gamma-ancestry certificate",
+    "O-CFS first explicit normalized gravity correction tensor/coefficient vector from one fixed causal-action realization plus full comparator"
   ],
   "o_as_progress": {
     "closed": [
       "non-perturbative Lorentzian graviton-mediated scalar 2-to-2 amplitude and cross section exist",
+      "an explicit momentum-dependent scalar contact-amplitude sector exists in a separate simplified AS realization",
       "analytic contact-sector controls exist",
-      "ERG2026 reports Lorentzian-resummed gravitational contact contribution",
       "diffeomorphism-invariant error-controlled AS flow ingredients exist"
     ],
-    "remaining": "same-realization species/crossing/truncation/trajectory/normalisation/error map for A_s+A_t+A_u+A4 is not frozen",
-    "refs": [
-      "paper_iv/O_AS_CROSS_AUTHORITY_COMPOSITION_GATE_2026.md",
-      "paper_iv/O_AS_CONTACT_REALIZATION_MISMATCH_DIAGNOSTIC_2026.md"
-    ]
+    "remaining": "same-realization A_s+A_t+A_u+A4 species/crossing/truncation/trajectory/normalisation/error/comparator map is not frozen",
+    "iter182_note": "arXiv:2602.21285 supplies an explicit contact sector but explicitly requires a more complete momentum-dependent propagator/all-vertex treatment for a final amplitude verdict; it cannot be added to arXiv:2603.10168 across realization boundaries without a derived map",
+    "refs": ["paper_iv/O_AS_CROSS_AUTHORITY_COMPOSITION_GATE_2026.md", "paper_iv/O_AS_CONTACT_REALIZATION_MISMATCH_DIAGNOSTIC_2026.md", "paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md"]
   },
   "o_lqg_progress": {
     "preferred_route": "gamma-duality cross-representation rigidity",
@@ -62,37 +44,30 @@
       "primordial Pi-r-n_T consistency relation explicit",
       "positive-gamma structural identifiability closed for Pi!=0",
       "generic parity-violating EFT comparator direction identified",
-      "Lorentzian entropy, causal-vertex and UV-fixed-point controls exist"
+      "Lorentzian EPRL to Regge asymptotic dynamics has a scoped same-realization pass",
+      "Area-Regge continuum and area-metric parity/RG structures exist"
     ],
     "remaining": [
-      "complete/coarse-grained EPRL to renormalized gamma-dual Wilson map not derived",
-      "gamma_micro/gamma_EFT/gamma_geom parameter identity or running map not derived",
+      "controlled multiscale EPRL/Regge -> Area-Regge coarse-graining/refinement map not derived in the declared realization",
+      "gamma_EPRL -> gamma_AM(mu) parameter identity/running map not derived",
+      "same-parent parity coupling ancestry and beta_rho/beta_Delta transport not derived",
       "cosmological nuisance/detector likelihood remains downstream"
     ],
-    "refs": [
-      "paper_iv/O_LQG_GAMMA_DUALITY_PRIMORDIAL_GW_AUDIT_2026.md",
-      "paper_iv/O_LQG_GAMMA_CROSS_REPRESENTATION_RIGIDITY_VECTOR_2026.md",
-      "paper_iv/O_LQG_GAMMA_DUALITY_IDENTIFIABILITY_GATE_2026.md",
-      "paper_iv/O_LQG_GAMMA_TOPDOWN_BRIDGE_LITERATURE_CEILING_2026.md",
-      "paper_iv/O_LQG_GAMMA_PARAMETER_IDENTITY_RENORMALIZATION_GATE_2026.md"
-    ]
+    "iter182_note": "area-metric RG literature explicitly treats non-metric masses as independent because they are not currently computable from spin foams and assumes an intermediate EFT regime; notation-level equality of Immirzi parameters therefore fails the same-realization gate",
+    "refs": ["paper_iv/O_LQG_EPRL_TO_REGGE_SAME_REALIZATION_ASYMPTOTIC_CERTIFICATE_2026-09-10.md", "paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md"]
   },
   "o_cfs_progress": {
     "closed": [
-      "Einstein-Dirac continuum map exists",
+      "Einstein-Dirac continuum iff map exists in the stated curved-spacetime setup",
       "QFT/Fock limiting dynamics exists",
       "relational non-continuum ontology exists",
-      "native surface-layer observable formalism exists",
-      "native total/quasilocal mass and synthetic curvature exist",
-      "2026 direct geometric Einstein derivation supplies a systematic microscopic-length correction generator"
+      "native surface-layer and mass/quasilocal observables exist",
+      "2026 geometric Einstein derivation supplies a systematic microscopic-length correction generator"
     ],
-    "remaining": "first explicit normalized correction tensor/coefficient vector has not been worked out to comparator-ready form; local analytic structures must be quotiented by full gravitational EFT/C5",
+    "remaining": "first explicit normalized non-Einstein correction tensor/coefficient vector has not been worked out in a fixed state/regularization realization; full gravitational EFT/C5 quotient is therefore unavailable",
+    "iter182_note": "the 2025 currents construction says rank-two equations are expected to encode Einstein gravity and provides a systematic hierarchy, but does not supply the requested normalized first beyond-Einstein tensor",
     "physical_regularization_rule": "paper_iv/O_CFS_PHYSICAL_REGULARIZATION_ADAPTER_RULE_2026.md",
-    "refs": [
-      "paper_iv/O_CFS_SURFACE_LAYER_OBSERVABLE_CONTROL_2026.md",
-      "paper_iv/O_CFS_MASS_QUASILOCAL_GRAVITY_OBSERVABLE_AUDIT_2026.md",
-      "paper_iv/O_CFS_GEOMETRIC_CORRECTION_GENERATOR_AUDIT_2026.md"
-    ]
+    "refs": ["paper_iv/O_CFS_SURFACE_LAYER_OBSERVABLE_CONTROL_2026.md", "paper_iv/O_CFS_MASS_QUASILOCAL_GRAVITY_OBSERVABLE_AUDIT_2026.md", "paper_iv/O_CFS_GEOMETRIC_CORRECTION_GENERATOR_AUDIT_2026.md", "paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md"]
   },
   "model_result_refs": [
     "post_freeze_paper_iv_wave_01/PF1_01_CFS/result.json",
