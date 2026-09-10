@@ -1,0 +1,13 @@
+{
+  "iteration": 265,
+  "date": "2026-09-11",
+  "family": "CDT_EDT",
+  "branch": "4D_CDT",
+  "scoped_pass": "PASS_STRUCTURAL_GATE__4D_CDT_HAS_SEMICLASSICAL_DE_SITTER_GEOMETRY_PLUS_NORMALIZED_CURVATURE_CORRELATOR_AND_EXPLICIT_PROSPECTIVE_UV_TRAJECTORY_PROGRAM",
+  "family_disposition": "PARTIAL_SUBFAMILY_ONLY",
+  "residual": "UNDEFINED",
+  "blocker": "BLOCKED_EXTERNAL_COMPUTE_DATA_OBJECT__CDT_SAME_REALIZATION_MULTI_COUPLING_CONTINUUM_TRAJECTORY_SCALE_SETTING_NORMALIZED_INVARIANT_OBSERVABLE_GR_EFT_COMPARATOR_AND_PROPAGATED_DISCRETIZATION_ERROR",
+  "reason": "Observable-side and prospective UV-trajectory controls exist, but no same-realization multi-coupling continuum-transport capsule with scale setting, comparator and propagated continuum/systematic error is established.",
+  "promotion_forbidden": true,
+  "family_fail": false
+}

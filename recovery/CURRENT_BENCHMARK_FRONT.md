@@ -1,43 +1,42 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter256
-Authoritative commit: Iter256 head once exact-head validation is green
+Iteration: Iter265
+Authoritative commit: Iter265 head once exact-head validation is green
 
 ## Global lock
 - RQIR Core v1.0 remains FROZEN.
-- Tier-1 census remains 14 families: terminal 1/14, nonterminal 13/14 under the strict coverage contract.
+- Tier-1 census remains 14 families: terminal 1/14, nonterminal 13/14.
 - Tier-2 unresolved = 0.
 - D2 = NOT_CLOSED.
 - D4 = PARTIAL / globally NOT_CLOSED.
 - D7 = NOT_CLOSED; decision = NOT_YET_AUTHORIZED.
 - Candidate Gravity remains inactive at canonical R3 = 24%.
-- Papers I–III remain FROZEN/CLOSED.
+- Heavy compute remains IDLE.
 
-## Exact-head validation
-- Iter255 methodology/reproducibility validation completed green on head `47f1677b72199ebe6312c70619ff91415ee763f5`; reproducibility-release run `34534245994` completed SUCCESS.
-- Iter256 requires exact-head methodology/reproducibility validation after commit.
+## Prior validated head
+Iter264 exact-head methodology and reproducibility-release are green on `d785219e676d403be35cc9a9c70bb0b326db0d73`; reproducibility-release run `34538083616` completed SUCCESS.
 
-## Iter256 scientific result — CFS
-Fresh 2026 authority materially strengthens the same-realization gravity ancestry for Causal Fermion Systems. The causal action principle yields Einstein equations with an energy-momentum tensor organized as a power expansion in the regularization length; the gravitational coupling is the square of that length; and the construction provides a systematic procedure for higher-order corrections.
+## Iter265 scientific result — CDT/EDT
+The 4D CDT branch now has an explicit separation between a strong observable programme and the still-missing continuum-transport object. Current authority supports semiclassical de-Sitter geometry, coordinate-independent quantum-curvature probes, a normalized fixed-coupling curvature-correlator with a massive-state-like window, and a prospectively specified CDT↔FRG UV-trajectory programme.
 
 Scoped PASS:
-`PASS_STRUCTURAL_GATE__CFS_CAUSAL_ACTION_TO_EINSTEIN_EQUATION_POWER_EXPANSION_WITH_REGULARIZATION_LENGTH_ANCESTRY_EXISTS`.
+`PASS_STRUCTURAL_GATE__4D_CDT_HAS_SEMICLASSICAL_DE_SITTER_GEOMETRY_PLUS_NORMALIZED_CURVATURE_CORRELATOR_AND_EXPLICIT_PROSPECTIVE_UV_TRAJECTORY_PROGRAM`.
 
-This does not yet provide the frozen beyond-GR object required by RQIR: one explicit first non-Einstein correction tensor with coefficients fixed by a declared microscopic regularization/state, plus normalized observable, identical-domain GR/EFT comparator and propagated uncertainty.
+Current Monte Carlo precision allows but does not prove the putative UV fixed point, and the available fixed-coupling observable capsule does not provide continuum transport along a same-realization multi-coupling trajectory.
 
 Remaining blocker:
-`BLOCKED_MISSING_REQUIRED_OBJECT__CFS_EXPLICIT_NORMALIZED_FIRST_NON_EINSTEIN_CORRECTION_TENSOR_WITH_FIXED_MICROSCOPIC_REGULARIZATION_STATE_COMPARATOR_AND_PROPAGATED_ERROR`.
+`BLOCKED_EXTERNAL_COMPUTE_DATA_OBJECT__CDT_SAME_REALIZATION_MULTI_COUPLING_CONTINUUM_TRAJECTORY_SCALE_SETTING_NORMALIZED_INVARIANT_OBSERVABLE_GR_EFT_COMPARATOR_AND_PROPAGATED_DISCRETIZATION_ERROR`.
 
-CFS remains `BLOCKED_MISSING_REQUIRED_OBJECT`; family residual remains `UNDEFINED`. No family FAIL and no NEW_REQUIRED authorization.
+Operational status:
+`PARKED_PENDING_SAME_REALIZATION_4D_MULTI_COUPLING_CONTINUUM_TRANSPORT_DATA_OR_QUALIFIED_ENGINE`.
 
-## Operational progress
-- NONLOCAL_QG remains parked pending new object authority from Iter255.
-- CFS blocker has been narrowed from generic beyond-continuum gravity observable absence to a specific correction-tensor/normalization/provenance/error capsule.
-- Heavy compute remains IDLE because the active blocker is analytic/provenance limited.
+`CDT_EDT` remains `PARTIAL_SUBFAMILY_ONLY`; family residual remains `UNDEFINED`. This is not a family FAIL and cannot authorize `NEW_REQUIRED`.
 
 ## Exact provenance
-- Finster & Krpoun, `A Geometric Derivation of the Einstein Equations from the Causal Action Principle`, arXiv:2607.13871, submitted 2026-07-15.
-- `post_freeze_paper_iv_wave_01/PF1_01_CFS/result.json`.
+- `paper_iv/CDT_4D_LINE_OF_CONSTANT_PHYSICS_PROSPECTIVE_COMPUTE_DESIGN_ITER247_2026-09-10.md`
+- Ambjørn & Loll, arXiv:2604.05641 (2026).
+- Ambjørn, Gizbert-Studnicki, Görlich & Németh, arXiv:2408.07808 (2024).
+- Maas, Plätzer & Pressler, Phys. Lett. B 879, 140600 (2026), arXiv:2504.11047.
 
 ## Exact next gate
-`CFS_FIRST_NON_EINSTEIN_GRAVITY_CORRECTION_TENSOR_COEFFICIENT_EXTRACTION_AND_NORMALIZED_OBSERVABLE_CERTIFICATE`
+`NONCOMMUTATIVE_SPECTRAL_GEOMETRY_COMPARATOR_READY_GRAVITY_REALIZATION_SATURATION_AUDIT`

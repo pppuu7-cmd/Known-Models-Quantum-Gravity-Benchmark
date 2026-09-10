@@ -1,0 +1,16 @@
+{
+  "iteration": 265,
+  "date": "2026-09-11",
+  "contract": "RQIR_CORE_V1_0_FROZEN",
+  "tier1_terminal": 1,
+  "tier1_nonterminal": 13,
+  "tier2_unresolved": 0,
+  "family": "CDT_EDT",
+  "same_realization_required": true,
+  "common_domain_comparator_required": true,
+  "provenance_required": true,
+  "propagated_error_required": true,
+  "scoped_child_not_family_promoted": true,
+  "blocked_not_fail": true,
+  "heavy_compute": "IDLE_PENDING_QUALIFIED_SAME_REALIZATION_ENGINE_OR_DATA_CAPSULE"
+}
