@@ -1,10 +1,10 @@
 {
-  "schema_version": "9.7",
+  "schema_version": "9.8",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 193,
-  "phase": "RQIR_CORE_V1_FROZEN__HORAVA_PROJECTABLE_AND_NONPROJECTABLE_UV_IR_BLOCKERS_LOCALIZED__FAMILY_BRANCH_EXHAUSTION_NEXT",
+  "kmqgb_iteration": 194,
+  "phase": "RQIR_CORE_V1_FROZEN__HORAVA_MATERIAL_BRANCH_CENSUS_EXPANDED__U1_AND_MIXED_DERIVATIVE_DISPOSITION_NEXT",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 100,
     "kmqgb_methodology_material_readiness_R2_percent": 100,
@@ -120,8 +120,15 @@
         "nonprojectable_uv_ir_authority": "paper_iv/O_HORAVA_NONPROJECTABLE_3P1_UV_IR_GAP_AUDIT_2026-09-10.md",
         "projectable_next_gate": "BLOCKED_PENDING_SAME_REALIZATION_RELEVANT_OPERATOR_CROSSOVER_CERTIFICATE",
         "nonprojectable_next_gate": "BLOCKED_PENDING_3P1_UV_RG_TO_IR_KHRONOMETRIC_MATCHING_CERTIFICATE",
-        "blocker": "HORAVA_PROJECTABLE_AND_NONPROJECTABLE_BRANCH_TERMINAL_DISPOSITION_WITH_SAME_REALIZATION_UV_TO_IR_ERROR_CONTROL",
-        "next_gate": "HORAVA_FAMILY_MATERIAL_BRANCH_EXHAUSTION_AND_TERMINAL_DISPOSITION_CERTIFICATE"
+        "material_branch_census_status": "PASS_GOVERNANCE_GATE__HORAVA_MATERIAL_BRANCH_CENSUS_EXPANDED_AND_NONREDUCTION_CERTIFIED_FOR_U1_AND_MIXED_DERIVATIVE_CLASSES",
+        "material_branch_map": "paper_iv/HORAVA_MATERIAL_BRANCH_MAP_2026-09-10.json",
+        "material_branch_audit": "paper_iv/O_HORAVA_FAMILY_MATERIAL_BRANCH_EXHAUSTION_AUDIT_2026-09-10.md",
+        "material_branch_count_minimum": 5,
+        "u1_projectable_status": "BLOCKED_MISSING_REQUIRED_OBJECT__U1_3P1_QUANTUM_UV_TO_IR_NORMALIZED_OBSERVABLE_COMPARATOR_CERTIFICATE",
+        "u1_nonprojectable_status": "BLOCKED_MISSING_REQUIRED_OBJECT__GENERIC_U1_3P1_QUANTUM_UV_TO_IR_COMPARATOR_CERTIFICATE",
+        "mixed_derivative_status": "PARTIAL_SUBFAMILY_ONLY__MINIMAL_REALIZATION_SCOPED_LOW_ENERGY_SCALAR_INSTABILITY",
+        "blocker": "HORAVA_MATERIAL_BRANCH_TERMINAL_OR_BLOCKED_DISPOSITION_WITH_SAME_REALIZATION_UV_TO_IR_ERROR_CONTROL",
+        "next_gate": "HORAVA_U1_PROJECTABLE_AND_NONPROJECTABLE_QUANTUM_IR_COMPARATOR_DISPOSITION_PLUS_MIXED_DERIVATIVE_COMPLETION_SCOPE_CERTIFICATE"
       },
       "causal_sets": {
         "status": "PARTIAL_SUBFAMILY_ONLY",
@@ -179,15 +186,15 @@
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_PENDING_FROZEN_PHYSICAL_OBJECT",
-    "current_reason": "Iter193 localizes both material Hořava UV-to-IR blockers as missing same-realization ancestry/matching objects; heavy scans cannot close them. Next action is family material-branch exhaustion."
+    "current_reason": "Iter194 expands the minimum material Hořava branch census to standard projectable, healthy nonprojectable/BPS, projectable U1, nonprojectable U1, and mixed-derivative classes. Remaining blockers are structural/provenance/matching, so heavy scans cannot close them."
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_193.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_194.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
-    "active_wave": "PF2 known-school family closure / Horava family material-branch exhaustion",
+    "active_wave": "PF2 known-school family closure / Horava U1 plus mixed-derivative disposition",
     "active_audits": [
-      "paper_iv/O_HORAVA_NONPROJECTABLE_3P1_UV_IR_GAP_AUDIT_2026-09-10.md",
-      "paper_iv/O_HORAVA_PROJECTABLE_UV_IR_SAME_REALIZATION_GAP_AUDIT_2026-09-10.md",
+      "paper_iv/O_HORAVA_FAMILY_MATERIAL_BRANCH_EXHAUSTION_AUDIT_2026-09-10.md",
+      "paper_iv/HORAVA_MATERIAL_BRANCH_MAP_2026-09-10.json",
       "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json"
     ],
     "active_code": [
