@@ -1,0 +1,33 @@
+{
+  "benchmark_id": "PF2-05B-HIGHER-DERIVATIVE-FAKEON-CONTROL",
+  "iteration": 187,
+  "rqir_core_version": "1.0",
+  "rqir_status": "FROZEN",
+  "parent_family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "framework": "local four-derivative gravity with fakeon/purely-virtual quantization of the additional spin-2 mode",
+  "declared_domain": "perturbative fakeon quantum gravity under the average-continuation/purely-virtual prescription, with the causality statement restricted to energies where the fakeon threshold is physically relevant",
+  "controls": {
+    "renormalizability": "PASS_SCOPED",
+    "perturbative_unitarity": "PASS_SCOPED",
+    "ordinary_microcausality": "NOT_PASS_AS_AN_ASSUMPTION__PUBLISHED_MICROCAUSALITY_VIOLATION_ABOVE_FAKEON_SCALE"
+  },
+  "object_status": "PARTIAL_RQIR_CONTROL__RENORMALIZABILITY_UNITARITY_PASS__MICROCAUSALITY_NOT_CLOSED",
+  "residual_status": "UNDEFINED_PENDING_SAME_REALIZATION_CAUSALITY_OBSERVABLE_AND_FULL_COMPARATOR",
+  "residual_defined": false,
+  "scientific_fail": false,
+  "parent_family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "counts_as_family_level_new_required_exclusion": false,
+  "counts_as_new_required_evidence": false,
+  "rqir_core_defect": false,
+  "core_change_requested": false,
+  "paper_iv_decision_authorized": false,
+  "scope_guard": "Do not convert perturbative unitarity into a causality PASS. The published fakeon construction explicitly predicts microscopic causality violation; a terminal RQIR disposition requires a normalized same-realization causal/time-response observable, its declared energy domain, and identical-domain comparators.",
+  "primary_authorities": [
+    "D. Anselmi & M. Piva, JHEP 02 (2018) 141, arXiv:1801.00915",
+    "D. Anselmi & M. Piva, JHEP 05 (2018) 027, arXiv:1803.07777",
+    "D. Anselmi & M. Piva, JHEP 11 (2018) 021, arXiv:1806.03605",
+    "M. Piva, EPJ Plus 138 (2023), arXiv:2305.12549"
+  ],
+  "audit": "paper_iv/O_HIGHER_DERIVATIVE_POLE_PRESCRIPTION_MAP_2026-09-10.md",
+  "next_gate": "FAKEON_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE"
+}
