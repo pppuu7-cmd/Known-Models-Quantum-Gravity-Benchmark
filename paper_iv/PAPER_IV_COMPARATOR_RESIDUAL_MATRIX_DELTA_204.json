@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "iteration": 204,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "framework_delta": {
+    "id": "GFT_TENSOR_MODELS",
+    "material_branch": "PURE_RANDOM_TENSOR_MODELS",
+    "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+    "material_branch_status": "PARTIAL_BRANCH_DISPOSITION__PURE_RANDOM_TENSOR_STANDARD_MELONIC_AND_SOLVED_BP_PLANAR_ENHANCED_CONTINUA_FAIL_3P1_GRAVITY__UNRESOLVED_NONMELONIC_RG_SPACE_BLOCKED",
+    "terminal_scoped_subbranches": [
+      "FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_STANDARD_MELONIC_CONTINUUM_IS_BRANCHED_POLYMER_NOT_3P1_LORENTZIAN_GRAVITY",
+      "FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_SOLVED_ENHANCED_BP_OR_PLANAR_CONTINUA_ARE_NOT_3P1_LORENTZIAN_GRAVITY"
+    ],
+    "umbrella_branch_terminal": false,
+    "gravity_residual_row_added": false,
+    "family_residual_defined": false,
+    "reason_no_residual_row": "The terminal statements are continuum-universality incompatibility classifications for solved subbranches, not normalized common-domain comparator residuals. The unresolved nonmelonic/RG candidate remainder prevents exhaustion of the pure-tensor branch.",
+    "counts_as_family_pass": false,
+    "counts_as_family_fail": false,
+    "counts_as_new_required_exclusion": false,
+    "next_missing_certificate": "PURE_RANDOM_TENSOR_NONMELONIC_RG_FIXED_POINT_TO_3P1_SEMICLASSICAL_GEOMETRY_AND_NORMALIZED_GRAVITY_OBSERVABLE_CERTIFICATE",
+    "authority": "paper_iv/O_PURE_RANDOM_TENSOR_CONTINUUM_UNIVERSALITY_AUDIT_2026-09-10.md"
+  },
+  "scoped_child_rows_with_defined_residual": 10,
+  "coverage_counts_unchanged": {"tier1_total":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0}
+}
