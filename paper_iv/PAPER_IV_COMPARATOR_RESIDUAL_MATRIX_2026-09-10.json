@@ -1,24 +1,29 @@
 {
-  "schema_version": "1.0",
-  "iteration": 182,
+  "schema_version": "1.1",
+  "iteration": 183,
   "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "coverage_contract": "protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json",
   "global_decision": "NOT_YET_AUTHORIZED",
   "gates": {
-    "D2_major_framework_complete_object_coverage": "NOT_CLOSED",
-    "D4_comparator_subtracted_residual_matrix": "PARTIAL_MATRIX_FROZEN__NOT_CLOSED",
+    "D2_major_framework_complete_object_coverage": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4_comparator_subtracted_residual_matrix": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
     "D7_global_terminal_proof_obligation": "NOT_CLOSED"
   },
   "semantics": {
     "blocked_is_zero": false,
     "blocked_counts_as_exclusion": false,
+    "not_yet_benchmarked_counts_as_exclusion": false,
+    "partial_subfamily_counts_as_family_exclusion": false,
     "undefined_residual_must_not_be_zero_filled": true,
-    "terminal_decision_requires_D2_and_D4": true
+    "terminal_decision_requires_D2_and_D4": true,
+    "terminal_decision_requires_coverage_contract": true
   },
   "frameworks": [
     {
       "id": "GR_EFT",
       "framework": "General Relativity plus controlled low-energy gravitational EFT",
       "required_for_D2": true,
+      "role": "baseline_comparator",
       "object_complete_in_declared_domain": true,
       "object_status": "PASS_RQIR_GATE__BASELINE_CONTROL",
       "residual_status": "BASELINE_OR_COMPARATOR_IDENTITY",
@@ -28,21 +33,38 @@
       "authority": "post_freeze_paper_iv_wave_01/PF1_02_GR_EFT/result.json"
     },
     {
-      "id": "STRING_DUAL_RESONANCE",
-      "framework": "String / dual-resonance gravity amplitudes",
+      "id": "PERTURBATIVE_HIGHER_DERIVATIVE",
+      "framework": "Perturbative renormalizable / higher-derivative quantum gravity",
       "required_for_D2": true,
-      "object_complete_in_declared_domain": true,
-      "object_status": "PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL",
-      "residual_status": "SCOPED_RIGIDITY_PASS",
-      "residual_defined": true,
+      "role": "candidate_family",
+      "object_complete_in_declared_domain": false,
+      "object_status": "NOT_YET_BENCHMARKED",
+      "residual_status": "UNDEFINED_PENDING_FIRST_RQIR_BENCHMARK",
+      "residual_defined": false,
       "global_sufficiency": false,
       "counts_as_new_required_exclusion": false,
-      "authority": "post_freeze_paper_iv_wave_01/PF1_03_STRING_DUAL_RESONANCE/result.json"
+      "missing_certificate": "FIRST_COMPLETE_HIGHER_DERIVATIVE_QG_REALIZATION_PLUS_UNITARITY_AND_COMPARATOR_CERTIFICATE",
+      "minimum_payload": ["declared_action_and_pole_prescription","renormalization_authority","unitarity_or_physical_state_interpretation","normalized_observable","IR_GR_map","error_budget","same_domain_comparators"]
+    },
+    {
+      "id": "HORAVA_LIFSHITZ",
+      "framework": "Hořava-Lifshitz quantum gravity",
+      "required_for_D2": true,
+      "role": "candidate_family",
+      "object_complete_in_declared_domain": false,
+      "object_status": "NOT_YET_BENCHMARKED",
+      "residual_status": "UNDEFINED_PENDING_FIRST_RQIR_BENCHMARK",
+      "residual_defined": false,
+      "global_sufficiency": false,
+      "counts_as_new_required_exclusion": false,
+      "missing_certificate": "FIRST_HEALTHY_HORAVA_REALIZATION_PLUS_UV_IR_EXTRA_MODE_OBSERVABLE_CERTIFICATE",
+      "minimum_payload": ["projectability_and_symmetry_choice","UV_RG_authority","IR_GR_map","extra_mode_consistency","normalized_observable","error_budget","same_domain_comparators"]
     },
     {
       "id": "ASYMPTOTIC_SAFETY",
       "framework": "Asymptotic Safety",
       "required_for_D2": true,
+      "role": "candidate_family",
       "object_complete_in_declared_domain": false,
       "object_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
       "residual_status": "UNDEFINED_PENDING_SAME_REALIZATION_COMPLETE_AMPLITUDE",
@@ -54,9 +76,81 @@
       "authority": "post_freeze_paper_iv_wave_01/PF1_05_ASYMPTOTIC_SAFETY/result.json"
     },
     {
+      "id": "NONLOCAL_QG",
+      "framework": "Nonlocal / infinite-derivative quantum gravity",
+      "required_for_D2": true,
+      "role": "candidate_family",
+      "object_complete_in_declared_domain": false,
+      "object_status": "NOT_YET_BENCHMARKED",
+      "residual_status": "UNDEFINED_PENDING_FIRST_RQIR_BENCHMARK",
+      "residual_defined": false,
+      "global_sufficiency": false,
+      "counts_as_new_required_exclusion": false,
+      "missing_certificate": "FIRST_COMPLETE_NONLOCAL_QG_SCATTERING_OR_PROPAGATION_COMPARATOR_CERTIFICATE",
+      "minimum_payload": ["declared_nonlocal_action_or_form_factors","pole_and_unitarity_prescription","normalized_observable","IR_GR_limit","causality_domain","error_budget","local_EFT_and_QG_comparators"]
+    },
+    {
+      "id": "STRING_MTHEORY_HOLOGRAPHY",
+      "framework": "String / M-theory / holographic quantum gravity",
+      "required_for_D2": true,
+      "role": "candidate_family",
+      "object_complete_in_declared_domain": false,
+      "object_status": "PARTIAL_SUBFAMILY_ONLY",
+      "residual_status": "UNDEFINED_AT_FAMILY_LEVEL__SCOPED_CHILD_RESULT_EXISTS",
+      "residual_defined": false,
+      "global_sufficiency": false,
+      "counts_as_new_required_exclusion": false,
+      "missing_certificate": "STRING_MTHEORY_HOLOGRAPHY_FAMILY_LEVEL_EQUIVALENCE_OR_MATERIAL_SUBFAMILY_COVERAGE_CERTIFICATE",
+      "minimum_payload": ["material_subfamily_map","representative_realizations","shared_or_distinct_observable_directions","vacuum_background_assumptions","family_level_equivalence_or_no_go_scope","same_domain_comparators"],
+      "authority": "post_freeze_paper_iv_wave_01/PF1_03_STRING_DUAL_RESONANCE/result.json"
+    },
+    {
+      "id": "STRING_DUAL_RESONANCE",
+      "parent_family": "STRING_MTHEORY_HOLOGRAPHY",
+      "framework": "String / dual-resonance gravity amplitudes",
+      "required_for_D2": false,
+      "role": "scoped_subbenchmark",
+      "object_complete_in_declared_domain": true,
+      "object_status": "PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL",
+      "residual_status": "SCOPED_RIGIDITY_PASS",
+      "residual_defined": true,
+      "global_sufficiency": false,
+      "counts_as_new_required_exclusion": false,
+      "authority": "post_freeze_paper_iv_wave_01/PF1_03_STRING_DUAL_RESONANCE/result.json"
+    },
+    {
+      "id": "CAUSAL_SETS",
+      "framework": "Causal Set quantum gravity",
+      "required_for_D2": true,
+      "role": "candidate_family",
+      "object_complete_in_declared_domain": false,
+      "object_status": "NOT_YET_BENCHMARKED",
+      "residual_status": "UNDEFINED_PENDING_FIRST_RQIR_BENCHMARK",
+      "residual_defined": false,
+      "global_sufficiency": false,
+      "counts_as_new_required_exclusion": false,
+      "missing_certificate": "FIRST_CAUSAL_SET_DYNAMICS_CONTINUUM_OBSERVABLE_COMPARATOR_CERTIFICATE",
+      "minimum_payload": ["declared_dynamics_or_measure","continuum_emergence_regime","normalized_gravity_observable","discreteness_scale_normalization","systematic_error_budget","same_domain_comparators"]
+    },
+    {
+      "id": "CDT_EDT",
+      "framework": "Causal / Euclidean Dynamical Triangulations",
+      "required_for_D2": true,
+      "role": "candidate_family",
+      "object_complete_in_declared_domain": false,
+      "object_status": "NOT_YET_BENCHMARKED",
+      "residual_status": "UNDEFINED_PENDING_FIRST_RQIR_BENCHMARK",
+      "residual_defined": false,
+      "global_sufficiency": false,
+      "counts_as_new_required_exclusion": false,
+      "missing_certificate": "FIRST_4D_CDT_CONTINUUM_INVARIANT_OBSERVABLE_COMPARATOR_CERTIFICATE",
+      "minimum_payload": ["declared_phase_and_bare_couplings","continuum_or_scaling_limit_authority","lattice_spacing_map","invariant_observable","finite_size_and_discretization_errors","same_domain_comparators"]
+    },
+    {
       "id": "LQG_SPINFOAM",
       "framework": "LQG / EPRL / spinfoam",
       "required_for_D2": true,
+      "role": "candidate_family",
       "object_complete_in_declared_domain": false,
       "object_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
       "residual_status": "UNDEFINED_PENDING_MICRO_TO_AREA_METRIC_PARAMETER_ANCESTRY",
@@ -68,9 +162,24 @@
       "authority": "paper_iv/O_LQG_EPRL_TO_REGGE_SAME_REALIZATION_ASYMPTOTIC_CERTIFICATE_2026-09-10.md"
     },
     {
+      "id": "GFT_TENSOR_MODELS",
+      "framework": "Group Field Theory / tensor models",
+      "required_for_D2": true,
+      "role": "candidate_family",
+      "object_complete_in_declared_domain": false,
+      "object_status": "NOT_YET_BENCHMARKED",
+      "residual_status": "UNDEFINED_PENDING_INDEPENDENCE_AND_FIRST_RQIR_BENCHMARK",
+      "residual_defined": false,
+      "global_sufficiency": false,
+      "counts_as_new_required_exclusion": false,
+      "missing_certificate": "GFT_TENSOR_INDEPENDENCE_OR_REDUCTION_MAP_PLUS_CONTINUUM_OBSERVABLE_CERTIFICATE",
+      "minimum_payload": ["declared_covariant_or_canonical_realization","map_or_non_equivalence_to_spinfoam","continuum_or_condensate_limit","normalized_observable","approximation_and_state_control","same_domain_comparators"]
+    },
+    {
       "id": "CFS",
       "framework": "Causal Fermion Systems",
       "required_for_D2": true,
+      "role": "candidate_family",
       "object_complete_in_declared_domain": false,
       "object_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
       "residual_status": "UNDEFINED_PENDING_NORMALIZED_CORRECTION_TENSOR",
@@ -88,5 +197,13 @@
     "HYBRID_REQUIRED": false,
     "NEW_REQUIRED": false
   },
-  "reason": "Three required major-framework residual rows are undefined because their complete same-realization physical objects do not yet exist in comparator-ready form."
+  "coverage_summary": {
+    "required_tier1_rows": 11,
+    "required_rows_with_defined_residual": 1,
+    "scoped_child_rows_with_defined_residual": 1,
+    "required_rows_not_yet_benchmarked": 6,
+    "required_rows_partial_or_blocked": 4,
+    "tier2_unresolved_classifications": 5
+  },
+  "reason": "The Iter182 five-row matrix was scientifically valid for its active set but not a complete census of major known quantum-gravity schools. Iter183 expands the required coverage set; only GR/EFT currently has a defined required-row residual, while the string dual-resonance result remains a scoped child result."
 }
