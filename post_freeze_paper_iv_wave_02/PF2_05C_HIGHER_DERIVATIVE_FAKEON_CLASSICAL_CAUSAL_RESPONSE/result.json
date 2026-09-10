@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "iteration": 189,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "parent_family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "scope": "same-action fakeon classical/principal-value causal-response attribution block",
+  "same_realization_object": "classicized fakeon principal-value / half-retarded-plus-half-advanced response kernel",
+  "common_domain_comparator": "same local higher-derivative action with an alternative quantization prescription sharing the same classical limit",
+  "classification": "PASS_RQIR_GATE__SCOPED_FAKEON_CLASSICAL_CAUSAL_RESPONSE_QUANTIZATION_NONIDENTIFIABILITY",
+  "residual_status": "EXACT_ZERO_FAKEON_ATTRIBUTION_RESIDUAL_IN_CLASSICAL_PRINCIPAL_VALUE_RESPONSE_BLOCK",
+  "scientific_fail": false,
+  "family_terminal": false,
+  "counts_as_new_required_exclusion": false,
+  "authority": [
+    "arXiv:1809.05037",
+    "arXiv:1806.03605",
+    "paper_iv/O_HIGHER_DERIVATIVE_FAKEON_CLASSICAL_CAUSAL_RESPONSE_QUOTIENT_2026-09-10.md"
+  ],
+  "negative_control": "advanced response/microcausality is physically present but is not unique attribution to the fakeon prescription at the classical PV-kernel level",
+  "remainder_scope": "tree/classical projected response only; no dressed pole-width or threshold uniqueness claim",
+  "next_gate": "HIGHER_DERIVATIVE_FAKEON_DRESSED_POLE_WIDTH_THRESHOLD_COMPARATOR_CERTIFICATE",
+  "d7": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "candidate_gravity_R3_percent": 24
+}
