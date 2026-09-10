@@ -1,0 +1,54 @@
+{
+  "benchmark_id": "PF2-02B-CDT-4D-GEON-OBSERVABLE",
+  "iteration": 200,
+  "rqir_core_version": "1.0",
+  "rqir_core_status": "FROZEN",
+  "parent_family": "CDT_EDT",
+  "framework": "four-dimensional causal dynamical triangulations",
+  "realization": {
+    "bare_parameters": {"Delta": 0.6, "kappa_0": 2.2},
+    "phase": "de_Sitter_like",
+    "ensembles": ["60x80k", "80x160k", "80x320k"],
+    "primary_smearing_delta": 6,
+    "systematic_smearing_scan": "delta=1..10 on 60x80k control",
+    "observable": "normalized curvature-curvature correlator D_OO(tau,s)=C_OO/C_11",
+    "operators": ["Delta_Q", "Delta_Q_squared", "reconstructed_R"]
+  },
+  "terminal_status": "PASS_RQIR_GATE__CDT_4D_NORMALIZED_CURVATURE_CORRELATOR_PHYSICAL_OBSERVABLE_WITH_OPERATOR_VOLUME_SMEARING_SYSTEMATICS_AND_OPEN_DATA",
+  "object_complete_in_declared_domain": true,
+  "declared_domain": "one fixed 4D CDT bare simulation point and its reported volume/smearing/operator systematic variations; no continuum extrapolation",
+  "positive_controls": [
+    "normalized gauge-invariant-curvature correlation observable",
+    "common exponential screening-mass behavior across multiple curvature operators within reported precision",
+    "three lattice volumes with no statistically significant dependence of the primary qualitative result",
+    "explicit smearing-radius systematic study",
+    "reported one-sigma fit uncertainty bands",
+    "public stochastic-sample dataset on Zenodo record 20589545"
+  ],
+  "representative_dimensionless_mass_averages": {
+    "Delta_Q": [{"N_simp":80000,"m":0.18,"sigma":0.01},{"N_simp":160000,"m":0.16,"sigma":0.01},{"N_simp":320000,"m":0.17,"sigma":0.03}],
+    "Delta_Q_squared": [{"N_simp":80000,"m":0.14,"sigma":0.01},{"N_simp":160000,"m":0.17,"sigma":0.01},{"N_simp":320000,"m":0.15,"sigma":0.03}]
+  },
+  "continuum_physical_mass_frozen": false,
+  "illustrative_mass_scale_only": "~0.09 M_P using an external a~2.1 l_P estimate; explicitly not accepted as continuum prediction",
+  "geon_particle_interpretation_frozen": false,
+  "scoped_residual_status": "DEFINED_GRAVITY_OBSERVABLE__COMPARATOR_ORTHOGONAL_QG_RESIDUAL_NOT_YET_ESTABLISHED",
+  "residual_defined": true,
+  "scientific_fail": false,
+  "global_sufficiency": false,
+  "counts_as_new_required_exclusion": false,
+  "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+  "parent_missing_certificate": "CDT_4D_LINE_OF_CONSTANT_PHYSICS_TO_UV_CONTINUUM_TRAJECTORY_PLUS_LATTICE_SPACING_SCALING_AND_GEON_CORRELATOR_COMPARATOR_ERROR_CERTIFICATE__EDT_DISPOSITION",
+  "blocked_components": [
+    "multi-coupling continuum/UV trajectory",
+    "line of constant physics or equivalent scale setting",
+    "a_to_zero continuum extrapolation of the physical observable",
+    "same-domain GR/EFT/alternative-QG comparator quotient",
+    "combined critical-scaling/discretization/finite-volume/fit-window error ledger",
+    "EDT family disposition"
+  ],
+  "data_authority": "Zenodo 20589545",
+  "paper_authority": "Maas, Plaetzer, Pressler, Phys. Lett. B 879 (2026) 140600; arXiv:2504.11047v4",
+  "audit_authority": "paper_iv/O_CDT_4D_GEON_GRAVITY_OBSERVABLE_SCOPE_AUDIT_2026-09-10.md",
+  "heavy_compute": "IDLE__REPLICATION_OF_ONE_BARE_POINT_CANNOT_CLOSE_CONTINUUM_TRAJECTORY"
+}
