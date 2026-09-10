@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "iteration": 255,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "NONLOCAL_QG",
+  "result": "CROSS_ORDER_FRESHNESS_AUDIT_CONFIRMS_MISSING_OBJECT__FAMILY_FRONT_PARKED_OPERATIONALLY_SATURATED",
+  "cross_order_status": "BLOCKED_FRESHNESS_CONFIRMED__NO_NEW_SAME_REALIZATION_RIEMANN_WEYL_LOOP_FULL_MOMENTUM_OBSERVABLE_PARAMETER_TRANSPORT_COMPARATOR_ERROR_CERTIFICATE_IDENTIFIED_THROUGH_2026_09_11",
+  "causality_branch_status": "PARKED_SATURATED_PENDING_NEW_GLOBAL_SOLUTION_SPACE_AUTHORITY",
+  "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+  "operational_family_status": "PARKED_PENDING_NEW_OBJECT_AUTHORITY",
+  "family_residual": "UNDEFINED",
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "paper_III_status": "FROZEN_CLOSED",
+  "candidate_gravity_activation": false,
+  "candidate_gravity_R3_percent": 24,
+  "operational_polygon_saturation_percent": 92,
+  "heavy_compute": "IDLE",
+  "next_gate": "RANK_REMAINING_NONTERMINAL_TIER1_FAMILIES_BY_INFORMATION_GAIN_AND_CLOSABILITY"
+}
