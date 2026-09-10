@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "iteration": 205,
+  "baseline_frozen_ledger": "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json",
+  "prior_delta": "paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_204.json",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "decision_semantics_changed": false,
+  "coverage_counts": {"tier1_required":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0},
+  "scoped_gravity_residual_rows": 11,
+  "scoped_scientific_fail_rows": 3,
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity": {"R3_percent":24,"active":false,"activation_condition":"D7 == NEW_REQUIRED"},
+  "ledger_delta": {
+    "family": "GFT_TENSOR_MODELS",
+    "new_scoped_evidence": [
+      "PASS_STRUCTURAL_GATE__LORENTZIAN_BC_GFT_RELATIONAL_CONDENSATE_COSMOLOGY_OBJECT_EXISTS",
+      "PASS_STRUCTURAL_GATE__REALISTIC_LORENTZIAN_TGFT_MEAN_FIELD_CONDENSATE_PHASE_IS_SELF_CONSISTENT_IN_DECLARED_LANDAU_GINZBURG_DOMAIN"
+    ],
+    "blocked_object": "BLOCKED_MISSING_REQUIRED_OBJECT__TGFT_GRAVITY_ANCESTRY_FULL_RG_TRAJECTORY_TO_RELATIONAL_GRAVITY_OBSERVABLE_SAME_REALIZATION_MAP",
+    "parent_disposition": "PARTIAL_SUBFAMILY_ONLY",
+    "family_residual_defined": false,
+    "terminal_promotion": false,
+    "new_required_evidence": false,
+    "reason": "Gravity-ancestry Lorentzian Barrett-Crane TGFT has a scoped relational condensate cosmology and realistic Lorentzian TGFT admits a controlled mean-field phase-transition regime, but the literature still lacks a full RG trajectory in that same microscopic realization. Simplified TGFT FRG flows cannot be spliced into the Barrett-Crane cosmological object under the frozen same-realization rule."
+  },
+  "d7_effect": "NONE__PRECONDITIONS_D2_D4_REMAIN_OPEN",
+  "heavy_compute": "IDLE"
+}
