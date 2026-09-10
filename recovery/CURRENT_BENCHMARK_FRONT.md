@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **204**  
-**Phase:** **RQIR Core v1.0 FROZEN / pure-random-tensor melonic sector scoped terminal FAIL / enhanced-nonmelonic sector BLOCKED / GFT-tensor parent nonterminal**.
+**KMQGB iteration:** **205**  
+**Phase:** **RQIR Core v1.0 FROZEN / gravity-ancestry TGFT relational observable + mean-field continuum evidence scoped PASS / same-realization full RG transport BLOCKED / GFT-tensor parent nonterminal**.
 
 ## Stable metrics
 
@@ -15,59 +15,64 @@
 - Tier-2 unresolved: **0**.
 - scoped child comparator/residual-control rows: **11**.
 - scoped child scientific FAIL rows: **3**.
-- No family-level scientific-readiness promotion in Iter204.
+- No family-level scientific-readiness promotion in Iter205.
 
-## Validated baseline
+## Validation baseline
 
-Iter203 main head `d8cbaaacd8c5142ea4fe9b1afb949129334d02d8` completed methodology and reproducibility workflows successfully before Iter204. No duplicate queued/in-progress scientific computation was launched.
+Iter204 scientific head `6314fecb5c1f97212deb15094505d8022301dbbe` failed methodology CI only at JSON validation because `recovery/state.json` contained trailing extra data. The state file was canonicalized in commit `707958a2d863bfe0249475ac3e4749a3e8491996` without changing science. Iter205 then proceeded only after identifying that infrastructure defect; no duplicate heavy or queued scientific computation was launched.
 
 ## Paper-IV global gates
 
 D1 PASS; D2A NOT_CLOSED; D2B NOT_CLOSED; D2 `NOT_CLOSED_COVERAGE_AND_OBJECTS`; D3 PARTIAL; D4 `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`; D5 PASS; D6 `PASS_RULE_TARGETS_OPEN`; D7 NOT_CLOSED; global decision **`NOT_YET_AUTHORIZED`**.
 
-## Iter204 — pure random tensor continuum-universality disposition
+## Iter205 — gravity-ancestry TGFT RG-to-relational audit
 
-The `PURE_RANDOM_TENSOR_MODELS` branch is now split for terminal classification rather than treated as one universality class.
+### Positive scoped evidence
 
-### B5a — standard melonic/tree-dominated large-N sector
+Lorentzian Barrett-Crane GFT coupled to a scalar reference field has an explicit relational condensate cosmology with generalized Friedmann dynamics. Realistic Lorentzian quantum-geometric TGFT models also admit a self-consistent mean-field condensate phase under published Landau-Ginzburg/Ginzburg-criterion analyses, including the causally complete Lorentzian Barrett-Crane extension.
 
-Primary large-N colored tensor results identify tree-like/melonic dominant triangulations and branched-polymer continuum universality. Controlled quartic/double-scaling extensions resum subleading sectors but do not establish an extended 4D GR continuum geometry.
+Scoped structural dispositions:
 
-Scoped disposition:
+`PASS_STRUCTURAL_GATE__LORENTZIAN_BC_GFT_RELATIONAL_CONDENSATE_COSMOLOGY_OBJECT_EXISTS`
 
-`FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_STANDARD_MELONIC_LARGE_N_CONTINUUM_IS_BRANCHED_POLYMER_NOT_EXTENDED_4D_GR_GEOMETRY`
+`PASS_STRUCTURAL_GATE__REALISTIC_LORENTZIAN_TGFT_MEAN_FIELD_CONDENSATE_PHASE_IS_SELF_CONSISTENT_IN_DECLARED_LANDAU_GINZBURG_DOMAIN`
 
-This FAIL is terminal only inside the declared melonic/tree-dominated asymptotic domain. It is not promoted to enhanced/nonmelonic tensors, TGFT, geometric GFT, spin foams, or the Tier-1 parent.
+Neither is a family-level PASS.
 
-### B5b — enhanced/nonmelonic random tensor sector
+### Missing same-realization RG transport
 
-Enhanced tensor interactions are materially different: known models can develop planar/2D-gravity or mixed branched-polymer/planar critical phases. The 2026 order-4 pregeometric FRG analysis finds fixed-point candidates, but the robust candidate remains truncation/regulator dependent and does not provide a same-realization normalized Lorentzian gravity observable/comparator.
+The realistic Lorentzian TGFT literature still treats a full RG-flow analysis as an open/future task. Existing FRG flows for simpler Abelian/tensorial models cannot be spliced into the Barrett-Crane cosmological realization under the frozen same-realization rule.
 
 Disposition:
 
-`BLOCKED_MISSING_REQUIRED_OBJECT__PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_CONTINUUM_TO_NORMALIZED_4D_GRAVITY_OBSERVABLE_COMPARATOR`
+`BLOCKED_MISSING_REQUIRED_OBJECT__TGFT_GRAVITY_ANCESTRY_FULL_RG_TRAJECTORY_TO_RELATIONAL_GRAVITY_OBSERVABLE_SAME_REALIZATION_MAP`
 
-Therefore `PURE_RANDOM_TENSOR_MODELS` is `PARTIAL_SUBBRANCH_TERMINAL`, while `GFT_TENSOR_MODELS` remains `PARTIAL_SUBFAMILY_ONLY` with undefined family residual.
+Missing chain:
+
+`microscopic gravity TGFT -> controlled RG/critical trajectory -> condensate couplings -> normalized relational gravity observable -> common-domain GR/EFT comparator`,
+
+with one parameter ancestry and propagated RG/mean-field/truncation remainder.
+
+`GFT_TENSOR_MODELS` remains `PARTIAL_SUBFAMILY_ONLY`; family residual remains undefined.
 
 ## Authorities
 
-- `paper_iv/O_PURE_RANDOM_TENSOR_CONTINUUM_UNIVERSALITY_SCOPE_AUDIT_2026-09-10.md`
-- `paper_iv/GFT_TENSOR_MATERIAL_BRANCH_MAP_ITER204.json`
-- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_204.json`
-- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_204.json`
-- `recovery/RECOVERY_DELTA_204.md`
+- `paper_iv/O_TGFT_GRAVITY_ANCESTRY_RG_TO_RELATIONAL_OBSERVABLE_AUDIT_2026-09-10.md`
+- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_205.json`
+- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_205.json`
+- `recovery/RECOVERY_DELTA_205.md`
 
-## Refined GFT/tensor family blocker
+Primary literature tracked in the audit includes DOI `10.1088/1475-7516/2022/01/050`, DOI `10.1103/PhysRevLett.130.141501`, DOI `10.1007/JHEP02(2023)074`, and DOI `10.1103/PhysRevD.111.026014`.
 
-**`GFT_TENSOR_SURVIVING_GRAVITY_BRANCH_CONTROLLED_CONTINUUM_TRAJECTORY_NORMALIZED_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE`**.
+## Retained Iter204 result
 
-The pure melonic child no longer needs repeated testing. Remaining scientific weight is on enhanced/nonmelonic random tensors and, more importantly, gravity-ancestry GFT/TGFT branches that could in principle carry a genuine continuum gravitational observable.
+The standard melonic/tree-dominated pure-random-tensor large-N sector retains its scoped terminal FAIL to the extended 4D GR-like continuum target. Enhanced/nonmelonic tensors remain BLOCKED and that child FAIL is not promoted to the parent.
 
 ## Immediate next scientific gate
 
-**`TGFT_GRAVITY_ANCESTRY_RG_CONTINUUM_TO_RELATIONAL_OBSERVABLE_SAME_REALIZATION_CERTIFICATE`**.
+**`GFT_SPINFOAM_GENERATING_BRANCH_INDEPENDENCE_OR_REDUCTION_PLUS_CONTINUUM_OBSERVABLE_CERTIFICATE`**.
 
-Required object: one declared gravity-ancestry TGFT/GFT realization for which the RG/critical/continuum trajectory and the relational/condensate gravity observable belong to the same microscopic theory, with explicit parameter transport, common physical observation domain, GR/EFT comparator and propagated truncation/mean-field/RG error ledger.
+Required determination: whether a gravity/spinfoam-generating GFT is a genuinely independent physical Tier-1 alternative in the benchmark domain or a second-quantized completion/reorganization of a named spin-foam realization, with explicit fixed-realization reduction/equivalence map where applicable. Any residual or terminal disposition still requires a continuum observable and common-domain comparator; formal amplitude ancestry alone is insufficient.
 
 ## Other parked fronts retained
 
@@ -79,12 +84,12 @@ Required object: one declared gravity-ancestry TGFT/GFT realization for which th
 
 ## Heavy compute
 
-**IDLE.** The remaining GFT/tensor blocker is structural and provenance/matching-limited. A broad tensor numerical scan cannot establish same-realization gravity ancestry or transport an observable across inequivalent models.
+**IDLE.** The current blocker is structural/provenance/matching-limited. A simplified-TGFT FRG scan would not establish the missing same-realization gravity map.
 
 ## Exact next order
 
-1. exact-head methodology CI validate Iter204;
-2. if validation is clean, preserve Iter204 as canonical main;
-3. audit gravity-ancestry TGFT realizations for a same-realization RG/continuum → relational-observable chain;
-4. if no such authenticated chain exists, classify that subbranch BLOCKED rather than infer FAIL;
-5. retain `NOT_YET_AUTHORIZED` until D2 and D4 actually close.
+1. validate the repaired Iter204/Iter205 exact head through methodology CI;
+2. preserve all frozen counts and D7=`NOT_CLOSED` unless D2/D4 actually close;
+3. audit fixed-realization GFT→spin-foam amplitude maps and whether they establish reduction/equivalence or only ancestry;
+4. keep any unresolved scope as BLOCKED rather than FAIL;
+5. run executable D7 evaluator after the next substantive classification update.
