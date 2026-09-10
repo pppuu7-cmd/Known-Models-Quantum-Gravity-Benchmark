@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "iteration": 198,
+  "baseline_frozen_ledger": "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json",
+  "rqir_core": {
+    "version": "1.0",
+    "status": "FROZEN"
+  },
+  "decision_semantics_changed": false,
+  "coverage_counts": {
+    "tier1_required": 14,
+    "tier1_terminal": 1,
+    "tier1_nonterminal": 13,
+    "tier2_unresolved": 0
+  },
+  "gates": {
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+    "D7": "NOT_CLOSED"
+  },
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity": {
+    "R3_percent": 24,
+    "active": false,
+    "activation_condition": "D7 == NEW_REQUIRED"
+  },
+  "ledger_delta": {
+    "family": "LQG_SPINFOAM",
+    "prior_missing_certificate": "EPRL_REGGE_TO_AREA_REGGE_PARITY_COUPLING_MATCHING_CERTIFICATE",
+    "new_scoped_evidence": "PASS_STRUCTURAL_GATE__LQG_EPRL_KKL_COMPLETE_AMPLITUDE_HAS_CANDIDATE_UV_FIXED_POINT_WITH_FINITE_BOUNDARY_DATA_AND_EXPLICIT_LEADING_REMAINDER",
+    "new_authority": "paper_iv/O_LQG_EPRL_KKL_UV_FIXED_POINT_SCOPE_AUDIT_2026-09-10.md",
+    "updated_missing_certificate": "EPRL_KKL_UV_FIXED_POINT_TO_SEMICLASSICAL_AREA_REGGE_CROSSOVER_PLUS_GAMMA_ANCESTRY_AND_ERROR_CERTIFICATE",
+    "parent_disposition": "BLOCKED_MISSING_REQUIRED_OBJECT",
+    "family_residual_defined": false,
+    "terminal_promotion": false,
+    "new_required_evidence": false,
+    "reason": "A concrete Lorentzian EPRL/KKL UV fixed-point construction with finite boundary data and O(A^-1) asymptotic control narrows the missing object, but no same-realization relevant-deformation/IR crossover, Barbero-Immirzi transport, Area-Regge/area-metric ancestry, normalized comparator, or propagated crossover error certificate is available."
+  },
+  "d7_effect": "NONE__PRECONDITIONS_D2_D4_REMAIN_OPEN",
+  "heavy_compute": "IDLE"
+}
