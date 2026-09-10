@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "iteration": 230,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+    "branch": "ODA_BRST_GHOST_CONFINEMENT",
+    "status_after": "PROVISIONAL_STRONG_BRST_CONFINEMENT_MECHANISM__ZERO_NORM_QUARTET_AND_DIPOLE_MULTIPOLE_CONSEQUENCES_DERIVED__DYNAMICAL_GHOST_FP_BOUND_STATE_POLE_AND_SELECTIVE_GRAVITON_COHOMOLOGY_NOT_DERIVED",
+    "bound_state_pole_dynamically_derived": false,
+    "quartet_consequence_if_bound_state": true,
+    "selective_massive_ghost_vs_massless_graviton_cohomology_closed": false,
+    "scientific_fail": false,
+    "terminal_pass": false,
+    "family_terminal_promotion": false,
+    "family_residual_defined": false,
+    "higher_derivative_family_after": "PARTIAL_SUBFAMILY_ONLY__MULTIPLE_STRONG_BRANCHES__NO_ESTABLISHED_SAME_REALIZATION_UNITARITY_CAUSALITY_CONFINEMENT_UV_TO_IR_GR_OBSERVABLE_CHAIN",
+    "heavy_compute": "CONDITIONALLY_AUTHORIZED_ONLY_FOR_BOUND_STATE_POLE_SEARCH",
+    "authority": "paper_iv/O_QQG_ODA_GHOST_CONFINEMENT_BOUND_STATE_BRST_AUTHORITY_AUDIT_2026-09-10.md"
+  },
+  "governance_note": "Oda's 2026 covariant BRST programme derives the zero-norm quartet/dipole consequences conditional on a ghost-FP composite bound state, but the May paper explicitly identifies the bound-state asymptotic field as the key assumption. The August follow-up strengthens the asymptotic/multipole formalism without supplying a demonstrated nonperturbative composite pole. Higher-derivative gravity is therefore parked nonterminal after separate audit of its major live escape routes.",
+  "next_gate": "PAPER_IV_ACTIVE_SET_INFORMATION_GAIN_RESELECTION_AFTER_ITER230"
+}
