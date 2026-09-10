@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "date": "2026-09-10",
-  "iteration": 194,
+  "iteration": 195,
   "rqir_core": {"version": "1.0", "status": "FROZEN"},
   "family": "HORAVA_LIFSHITZ",
   "family_status": "PARTIAL_SUBFAMILY_ONLY",
-  "branch_exhaustion_status": "EXPANDED_MINIMUM_MATERIAL_CENSUS__FAMILY_NOT_TERMINAL",
+  "branch_exhaustion_status": "EXPANDED_MINIMUM_MATERIAL_CENSUS__U1_IR_OBJECTS_LOCALIZED__FAMILY_NOT_TERMINAL",
   "branches": [
     {
       "id": "H0_STANDARD_PROJECTABLE",
@@ -23,17 +23,21 @@
       "id": "H2_PROJECTABLE_U1_EXTENDED",
       "material": true,
       "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+      "ir_ppn_comparator": "PASS_RQIR_GATE__NORMALIZED_IR_PPN_OBJECT_EXISTS",
+      "ir_ppn_authority": "arXiv:1310.6666",
       "nonreduction_reason": "enlarged local U1 gauge symmetry changes constraint and physical scalar sector relative to H0",
-      "blocker": "U1_3P1_QUANTUM_UV_TO_IR_NORMALIZED_OBSERVABLE_COMPARATOR_CERTIFICATE"
+      "blocker": "PROJECTABLE_U1_3P1_QUANTUM_UV_TRAJECTORY_TO_PPN_COUPLINGS_SAME_REALIZATION_MAP"
     },
     {
       "id": "H3_NONPROJECTABLE_U1_EXTENDED",
       "material": true,
       "status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+      "ir_ppn_comparator": "PASS_RQIR_GATE__NORMALIZED_IR_PPN_OBJECT_EXISTS",
+      "ir_ppn_authority": "arXiv:1310.6666",
       "generic_scalar": "PRESENT",
-      "tuned_scalar_free_locus": "NOT_QUANTUM_STABLE_WITHOUT_PROTECTION_THEOREM",
+      "tuned_scalar_free_locus": "BLOCKED_MISSING_PROTECTION_THEOREM__MARGINAL_OPERATORS_EXPECTED_TO_BE_QUANTUM_GENERATED",
       "nonreduction_reason": "U1 field/gauge/constraint content is not identical to H1",
-      "blocker": "GENERIC_U1_3P1_QUANTUM_UV_TO_IR_COMPARATOR_CERTIFICATE"
+      "blocker": "NONPROJECTABLE_U1_3P1_QUANTUM_UV_TRAJECTORY_TO_PPN_COUPLINGS_SAME_REALIZATION_MAP"
     },
     {
       "id": "H4_MIXED_DERIVATIVE",
@@ -45,6 +49,8 @@
     }
   ],
   "governance_result": "PASS_GOVERNANCE_GATE__HORAVA_MATERIAL_BRANCH_CENSUS_EXPANDED_AND_NONREDUCTION_CERTIFIED_FOR_U1_AND_MIXED_DERIVATIVE_CLASSES",
+  "u1_scoped_result": "PASS_RQIR_GATE__HORAVA_U1_PROJECTABLE_AND_NONPROJECTABLE_NORMALIZED_IR_PPN_COMPARATOR_OBJECT_EXISTS",
+  "u1_authority": "paper_iv/O_HORAVA_U1_UV_IR_COMPARATOR_GAP_AUDIT_2026-09-10.md",
   "family_residual_defined": false,
   "D2": "NOT_CLOSED",
   "D4": "NOT_CLOSED",
@@ -53,5 +59,5 @@
   "candidate_gravity_R3_percent": 24,
   "candidate_gravity_active": false,
   "authority": "paper_iv/O_HORAVA_FAMILY_MATERIAL_BRANCH_EXHAUSTION_AUDIT_2026-09-10.md",
-  "next_gate": "HORAVA_U1_PROJECTABLE_AND_NONPROJECTABLE_QUANTUM_IR_COMPARATOR_DISPOSITION_PLUS_MIXED_DERIVATIVE_COMPLETION_SCOPE_CERTIFICATE"
+  "next_gate": "HORAVA_MIXED_DERIVATIVE_FULL_CLASS_INSTABILITY_SCOPE_OR_HEALTHY_COMPLETION_CERTIFICATE"
 }
