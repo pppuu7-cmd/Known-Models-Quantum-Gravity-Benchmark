@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "iteration": 262,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "HORAVA_LIFSHITZ",
+  "projectable_uv_rg": "PASS_SCOPED_PROJECTABLE_UV_RENORMALIZATION_AND_NEAR_GR_RG_TRAJECTORY",
+  "projectable_remaining": "BLOCKED_EXTERNAL_PHYSICAL_VIABILITY_OBJECT__PROJECTABLE_TIME_DEPENDENT_TAMING_OF_SCALAR_IR_INSTABILITY_ALONG_SAME_UV_RG_TRAJECTORY",
+  "nonprojectable_quantization": "PASS_SCOPED_NONPROJECTABLE_LAGRANGIAN_QUANTIZATION_AND_2PLUS1_ONE_LOOP_LOCALITY_CONTROL",
+  "nonprojectable_remaining": "BLOCKED_EXTERNAL_OPEN_THEORY_OBJECT__NONPROJECTABLE_FULL_PERTURBATIVE_RENORMALIZABILITY_AND_3PLUS1_SAME_REALIZATION_OBSERVABLE_COMPARATOR_CERTIFICATE",
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "operational_status": "PARKED_PENDING_PROJECTABLE_DYNAMIC_IR_VIABILITY_OR_NONPROJECTABLE_FULL_RENORMALIZATION_OBJECTS",
+  "scientific_fail": false,
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "candidate_gravity_R3_percent": 24,
+  "candidate_gravity_activation": false,
+  "heavy_compute": "IDLE",
+  "polygon_operational_saturation_percent": 97,
+  "next_gate": "ASYMPTOTIC_SAFETY_SAME_REALIZATION_AMPLITUDE_COMPARATOR_CLOSURE"
+}
