@@ -53,8 +53,11 @@ jobs:
           if not paths:
               raise SystemExit('No JSON files found')
           for path in paths:
-              with path.open('r', encoding='utf-8') as fh:
-                  json.load(fh)
+              try:
+                  with path.open('r', encoding='utf-8') as fh:
+                      json.load(fh)
+              except Exception as exc:
+                  raise SystemExit(f'INVALID_JSON path={path}: {exc}') from exc
           print(f'validated_json_files={len(paths)}')
           PY
 
