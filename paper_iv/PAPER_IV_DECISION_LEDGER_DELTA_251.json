@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "iteration": 251,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "NONLOCAL_QG",
+  "result": "SCOPED_MINIMAL_MATTER_CAUSAL_PASS_AND_NONMINIMAL_CLASSICAL_CAUSAL_FAIL_WITH_PARENT_NONTERMINAL",
+  "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+  "family_residual": "UNDEFINED",
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "candidate_gravity_activation": false,
+  "candidate_gravity_R3_percent": 24,
+  "heavy_compute": "IDLE",
+  "next_gate": "NONLOCAL_QG_FIXED_ACTION_GLOBAL_CAUSAL_SOLUTION_SPACE_OR_CHRONOLOGY_PROTECTION_PLUS_FULL_MOMENTUM_OBSERVABLE_CERTIFICATE"
+}
