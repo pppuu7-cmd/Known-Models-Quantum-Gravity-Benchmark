@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "iteration": 204,
+  "baseline_frozen_ledger": "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json",
+  "prior_delta": "paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_203.json",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "decision_semantics_changed": false,
+  "coverage_counts": {"tier1_required":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0},
+  "scoped_gravity_residual_rows": 10,
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity": {"R3_percent":24,"active":false,"activation_condition":"D7 == NEW_REQUIRED"},
+  "ledger_delta": {
+    "family": "GFT_TENSOR_MODELS",
+    "material_branch": "PURE_RANDOM_TENSOR_MODELS",
+    "new_scoped_terminal_results": [
+      "FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_STANDARD_MELONIC_CONTINUUM_IS_BRANCHED_POLYMER_NOT_3P1_LORENTZIAN_GRAVITY",
+      "FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_SOLVED_ENHANCED_BP_OR_PLANAR_CONTINUA_ARE_NOT_3P1_LORENTZIAN_GRAVITY"
+    ],
+    "material_branch_status": "PARTIAL_BRANCH_DISPOSITION__PURE_RANDOM_TENSOR_STANDARD_MELONIC_AND_SOLVED_BP_PLANAR_ENHANCED_CONTINUA_FAIL_3P1_GRAVITY__UNRESOLVED_NONMELONIC_RG_SPACE_BLOCKED",
+    "umbrella_branch_terminal": false,
+    "parent_disposition": "PARTIAL_SUBFAMILY_ONLY",
+    "family_residual_defined": false,
+    "terminal_family_promotion": false,
+    "new_required_evidence": false,
+    "next_missing_certificate": "PURE_RANDOM_TENSOR_NONMELONIC_RG_FIXED_POINT_TO_3P1_SEMICLASSICAL_GEOMETRY_AND_NORMALIZED_GRAVITY_OBSERVABLE_CERTIFICATE",
+    "reason": "Solved standard melonic continua are rigorously branched-polymer universality and solved enhanced sectors exhibit branched-polymer or planar/2D-gravity phases, which are incompatible with the frozen 3+1 Lorentzian semiclassical gravity target. These are scoped terminal scientific FAILs. They cannot be promoted to the entire pure-tensor branch because nonmelonic/higher-order and candidate RG fixed-point sectors are not exhausted and include potential continuum candidates whose physical 3+1 geometry is still unresolved."
+  },
+  "d7_effect": "NONE__PRECONDITIONS_D2_D4_REMAIN_OPEN",
+  "heavy_compute": "IDLE"
+}
