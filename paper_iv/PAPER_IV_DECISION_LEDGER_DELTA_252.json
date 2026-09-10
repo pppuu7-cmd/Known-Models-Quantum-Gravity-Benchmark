@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "iteration": 252,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "NONLOCAL_QG",
+  "result": "NO_SAME_REALIZATION_GLOBAL_CHRONOLOGY_PLUS_FULL_MOMENTUM_OBSERVABLE_CLOSURE_FOUND",
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_resource_failure_mode": false,
+  "paper_III_new_failure_mode": false,
+  "paper_III_status": "FROZEN",
+  "candidate_gravity_activation": false,
+  "candidate_gravity_R3_percent": 25,
+  "heavy_compute": "IDLE",
+  "next_gate": "FIXED_ACTION_EXACT_SOLUTION_TO_PERTURBATIVE_SECTOR_BRIDGE_OR_SATURATION_PROMOTION_TO_MODEL_CHECKLIST"
+}
