@@ -1,10 +1,10 @@
 {
-  "schema_version": "8.6",
+  "schema_version": "8.7",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 183,
-  "phase": "RQIR_CORE_V1_FROZEN__REPOSITORY_METHODOLOGY_100_VERIFIED__PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_WAVE",
+  "kmqgb_iteration": 184,
+  "phase": "RQIR_CORE_V1_FROZEN__PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_WAVE__PF2_01_NONLOCAL_QG",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 100,
     "kmqgb_methodology_material_readiness_R2_percent": 100,
@@ -54,27 +54,30 @@
       "tier1_terminal_coverage_rows": 1,
       "tier1_nonterminal_rows": 10,
       "tier2_unresolved_rows": 5,
-      "next_family_gate": "PF2_01_NONLOCAL_QG_SCATTERING_REALIZATION_CERTIFICATE"
+      "required_rows_not_yet_benchmarked": 5,
+      "required_rows_partial_or_blocked": 5,
+      "scoped_child_rows_with_defined_residual": 2,
+      "next_family_gate": "PF2_01B_NONLOCAL_RIEMANN_WEYL_SCATTERING_CAUSALITY_CERTIFICATE"
+    },
+    "pf2": {
+      "wave": "post_freeze_paper_iv_wave_02/README.md",
+      "nonlocal_qg": {
+        "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+        "closed_child": "PF2-01-NONLOCAL-QG-RICCI-EOM-SQUARED",
+        "closed_child_status": "PASS_RQIR_GATE__EXACT_COMPARATOR_IDENTITY__TREE_S_MATRIX",
+        "closed_child_residual": "EXACT_ZERO_AFTER_GR_COMPARATOR_SUBTRACTION",
+        "authority": "post_freeze_paper_iv_wave_02/PF2_01_NONLOCAL_QG/result.json",
+        "next_gate": "PF2_01B_NONLOCAL_RIEMANN_WEYL_SCATTERING_CAUSALITY_CERTIFICATE",
+        "next_front": "paper_iv/O_NONLOCAL_RIEMANN_WEYL_CAUSALITY_FRONT_2026-09-10.md",
+        "prospective_split": ["PF2_01B1_WEYL_HK_EIKONAL_CAUSALITY","PF2_01B2_WEYL_HT_EIKONAL_CAUSALITY","PF2_01B3_RIEMANN_WEYL_AMPLITUDE_RESIDUAL","PF2_01B4_GODEL_VACUUM_CAUSALITY"]
+      }
     },
     "comparator_residual_matrix": "paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json",
     "coverage_validator": "code/paper_iv_framework_coverage_validator.py",
     "global_gate_validator": "code/paper_iv_global_gate_validator.py",
-    "o_as": {
-      "status": "OPEN",
-      "blocker": "STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE",
-      "residual_status": "UNDEFINED_PENDING_SAME_REALIZATION_COMPLETE_AMPLITUDE"
-    },
-    "o_lqg": {
-      "status": "OPEN",
-      "classification": "PROMISING_ADAPT_EXISTING__SCOPED_SAME_REALIZATION_EPRL_TO_REGGE_ASYMPTOTICS_PASS__REGGE_TO_AREA_REGGE_PARITY_RG_MATCHING_MISSING",
-      "next_gate": "EPRL_REGGE_TO_AREA_REGGE_PARITY_COUPLING_MATCHING_CERTIFICATE",
-      "residual_status": "UNDEFINED_PENDING_MICRO_TO_AREA_METRIC_PARAMETER_ANCESTRY"
-    },
-    "o_cfs": {
-      "status": "OPEN",
-      "target": "FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR",
-      "residual_status": "UNDEFINED_PENDING_NORMALIZED_CORRECTION_TENSOR"
-    }
+    "o_as": {"status":"OPEN","blocker":"STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE","residual_status":"UNDEFINED_PENDING_SAME_REALIZATION_COMPLETE_AMPLITUDE"},
+    "o_lqg": {"status":"OPEN","next_gate":"EPRL_REGGE_TO_AREA_REGGE_PARITY_COUPLING_MATCHING_CERTIFICATE","residual_status":"UNDEFINED_PENDING_MICRO_TO_AREA_METRIC_PARAMETER_ANCESTRY"},
+    "o_cfs": {"status":"OPEN","target":"FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR","residual_status":"UNDEFINED_PENDING_NORMALIZED_CORRECTION_TENSOR"}
   },
   "candidate_gravity": {
     "status": "CONDITIONAL_NOT_ACTIVE_FRONT",
@@ -86,23 +89,18 @@
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_PENDING_FROZEN_PHYSICAL_OBJECT",
-    "current_reason": "active work is major-school coverage plus first nonlocal-QG realization/observable/comparator mapping; blind heavy computation is not yet justified"
+    "current_reason": "PF2-01B requires exact nonlocal Riemann/Weyl realization, causality-domain and comparator mapping before any numerical eikonal reproduction is scientifically useful"
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_183.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_184.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
-    "active_wave": "Paper-IV major-framework coverage / PF2",
+    "active_wave": "post_freeze_paper_iv_wave_02/README.md",
     "active_audits": [
+      "post_freeze_paper_iv_wave_02/PF2_01_NONLOCAL_QG/audit.md",
+      "paper_iv/O_NONLOCAL_RIEMANN_WEYL_CAUSALITY_FRONT_2026-09-10.md",
       "paper_iv/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_AUDIT_2026-09-10.md",
-      "paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md",
       "paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json"
     ],
-    "active_code": [
-      "code/paper_iv_framework_coverage_validator.py",
-      "code/paper_iv_global_gate_validator.py",
-      "code/post_freeze_paper_iv_governance_validator.py",
-      "code/methodology_orchestrator.py",
-      "code/repository_completion_validator.py"
-    ]
+    "active_code": ["code/paper_iv_framework_coverage_validator.py","code/paper_iv_global_gate_validator.py","code/post_freeze_paper_iv_governance_validator.py","code/methodology_orchestrator.py","code/repository_completion_validator.py"]
   }
 }
