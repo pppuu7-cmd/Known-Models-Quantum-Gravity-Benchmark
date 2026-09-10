@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "iteration": 186,
+  "iteration": 187,
   "rqir_core": {"version": "1.0", "status": "FROZEN"},
   "purpose": "Prevent a Paper-IV terminal decision, especially NEW_REQUIRED, from being inferred from a benchmark set that omits materially distinct major quantum-gravity schools or silently lets one scoped submodel stand for an entire school.",
   "coverage_basis": {
@@ -25,7 +25,7 @@
   },
   "tier1_required_rows": [
     {"id":"GR_EFT","name":"General Relativity plus controlled low-energy gravitational EFT","role":"baseline_comparator","coverage_status":"BENCHMARKED_COMPLETE_REALIZATION","current_authority":"post_freeze_paper_iv_wave_01/PF1_02_GR_EFT/result.json"},
-    {"id":"PERTURBATIVE_HIGHER_DERIVATIVE","name":"Perturbative renormalizable / higher-derivative quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","minimum_resolution":"Resolve materially distinct pole/ghost prescriptions and freeze one same-realization causality+observable+full comparator package before any family-level disposition."},
+    {"id":"PERTURBATIVE_HIGHER_DERIVATIVE","name":"Perturbative renormalizable / higher-derivative quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/O_HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_AUDIT_2026-09-10.md","branch_map":"paper_iv/HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_MAP_2026-09-10.json","minimum_resolution":"Iter187 closes the major action-level pole/prescription fork map, but family closure still requires terminal disposition of the materially distinct quantization branches plus one fixed-branch same-realization unitarity/causality-or-controlled-nonlocality/normalized-observable/full-comparator package."},
     {"id":"HORAVA_LIFSHITZ","name":"Hořava-Lifshitz quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md","minimum_resolution":"Freeze a projectable UV trajectory through the IR GR/extra-mode regime with a normalized observable and comparator, and separately disposition the materially distinct non-projectable theory."},
     {"id":"ASYMPTOTIC_SAFETY","name":"Asymptotic Safety","role":"candidate_family","coverage_status":"BLOCKED_MISSING_REQUIRED_OBJECT","current_authority":"post_freeze_paper_iv_wave_01/PF1_05_ASYMPTOTIC_SAFETY/result.json"},
     {"id":"NONLOCAL_QG","name":"Nonlocal / infinite-derivative quantum gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/audit.md","next_subfamily_gate":"NONLOCAL_CROSS_ORDER_FUNCTIONAL_RIGIDITY_OR_FULL_MOMENTUM_SHAPE_CERTIFICATE","minimum_resolution":"Resolve cross-order/full-momentum functional rigidity and materially independent loop/non-scattering/form-factor branches, then provide family-level exhaustion/equivalence authority."},
