@@ -1,6 +1,6 @@
 # Paper IV — Frozen-Core Decision Ledger
 
-**KMQGB iteration:** 170  
+**KMQGB iteration:** 182  
 **RQIR standard:** **Core v1.0 FROZEN**  
 **Current global decision:** **`NOT_YET_AUTHORIZED`**  
 **Allowed future terminal decisions:** `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, `NEW_REQUIRED`.
@@ -9,7 +9,7 @@
 
 A framework may be terminal for a scoped benchmark while Paper IV remains non-terminal. `BLOCKED_MISSING_REQUIRED_OBJECT` contributes zero exclusion evidence to `NEW_REQUIRED` until the missing physical object is supplied and tested in the common domain.
 
-Cross-authority composition is governed by `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`: papers from one school are not one RQIR observable unless their realization vectors match or an explicit map is derived.
+Cross-authority composition remains governed by `protocol/PAPER_IV_SAME_REALIZATION_COMPOSITION_GATE.md`: papers from one school are not one RQIR observable unless their realization vectors match or an explicit map is derived.
 
 ## Current framework evidence
 
@@ -17,85 +17,89 @@ Cross-authority composition is governed by `protocol/PAPER_IV_SAME_REALIZATION_C
 |---|---|---|---|
 | GR + low-energy EFT | `PASS_RQIR_GATE__BASELINE_CONTROL` | controlled low-energy sufficiency and universal QG-EFT predictions | UV/strong-gravity completion outside EFT authority |
 | String / dual resonance | `PASS_RQIR_GATE__SCOPED_RIGIDITY_CONTROL` | rich Regge/bootstrap package gives scoped Virasoro–Shapiro rigidity | common-domain attribution of the full useful UV invariant vector |
-| Asymptotic safety | `BLOCKED_MISSING_REQUIRED_OBJECT` | physical non-perturbative Lorentzian scalar scattering exists; contact and diffeo/error-control ingredients exist | **same-realization contact-complete `A_s+A_t+A_u+A4` Lorentzian scattering certificate with trajectory/normalisation/error/comparator map** |
-| LQG / spinfoam | `BLOCKED_MISSING_REQUIRED_OBJECT` | Lorentzian entropy/causal/UV controls plus a gamma-duality multi-observable relation with structural identifiability | **complete/coarse-grained EPRL -> renormalized gamma-dual EFT bridge and `gamma_micro/gamma_EFT/gamma_geom` parameter-identity map** |
-| Causal Fermion Systems | `BLOCKED_MISSING_REQUIRED_OBJECT` | Einstein–Dirac continuum identity, QFT/Fock limit, native mass/quasilocal observables, direct geometric Einstein derivation and systematic correction generator | **first explicit normalized CFS gravity correction tensor/coefficient vector + full C5/GR/QFT comparator** |
+| Asymptotic safety | `BLOCKED_MISSING_REQUIRED_OBJECT` | mediated Lorentzian scattering exists; explicit contact sector exists in a separate simplified realization | **same-realization `A_s+A_t+A_u+A4` certificate with crossing, trajectory, normalisation, full error and comparator map** |
+| LQG / spinfoam | `BLOCKED_MISSING_REQUIRED_OBJECT` | Lorentzian EPRL->Regge asymptotic dynamics plus area-metric continuum/parity/RG structures | **controlled EPRL/Regge -> Area-Regge/area-metric coupling ancestry and `gamma_EPRL -> gamma_AM(mu)` map** |
+| Causal Fermion Systems | `BLOCKED_MISSING_REQUIRED_OBJECT` | Einstein–Dirac continuum identity and systematic microscopic correction generator | **first explicit normalized non-Einstein gravity correction tensor/coefficient vector + full C5/GR/QFT comparator** |
 
-## Global gates
+## Global gates after Iter182
 
 - **D1 Frozen-judge integrity:** `PASS`.
 - **D2 Major-framework complete-object coverage:** `NOT_CLOSED`.
 - **D3 Common-domain comparability:** `PARTIAL`.
-- **D4 Comparator-subtracted residual matrix:** `NOT_CLOSED`.
+- **D4 Comparator-subtracted residual matrix:** `PARTIAL_MATRIX_FROZEN__NOT_CLOSED`.
 - **D5 Missing-object quarantine:** `PASS`.
 - **D6 Same-realization composition discipline:** `PASS_RULE_TARGETS_OPEN`.
 - **D7 Global terminal proof obligation:** `NOT_CLOSED`.
 
-No Core-v1.0 semantic change has been needed. Iter164 is an explicit adapter success: CFS microscopic regularization can be treated as physical microstructure without forcing a fake regulator-removal criterion and without changing RQIR.
+Iter182 adds a frozen machine-readable residual matrix:
+
+`paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json`
+
+and fail-closed global logic validator:
+
+`code/paper_iv_global_gate_validator.py`.
+
+The validator makes the D2 -> D4 -> D7 dependency executable. Undefined/BLOCKED residual rows cannot be zero-filled and cannot count as exclusion evidence.
 
 ## Terminal proof obligations
 
 ### `EXISTING_SUFFICIENT` — NOT AUTHORIZED
 
-Needs one existing framework/equivalence class to close the target RQIR hierarchy across the declared Paper-IV domains. GR/EFT closes only its controlled low-energy domain; string gives scoped hard-amplitude rigidity.
+Requires one complete framework/equivalence class to close the target RQIR hierarchy across the declared Paper-IV domains. GR/EFT closes only its controlled low-energy domain and string theory currently gives scoped hard-amplitude rigidity, not global coverage.
 
 ### `ADAPT_EXISTING` — NOT AUTHORIZED
 
-Needs an existing framework to contain the required dynamics with remaining gaps proven to be adapters/completion rather than missing physics. Evidence pressure toward this outcome has increased: AS has a physical scattering observable, LQG has an identifiable gamma-linked multi-observable relation, and CFS has a parent-derived gravity correction architecture. None yet closes its attribution/comparator chain.
+Requires an existing framework whose complete residual object exists and whose remaining mismatch is demonstrated to be adapter/interface-only. AS, LQG and CFS remain physically promising but still lack one required same-realization object each.
 
 ### `HYBRID_REQUIRED` — NOT AUTHORIZED
 
-Needs proof that no single complete framework closes the target but a specific compatible combination does with a derived interface law and no double counting.
+Requires complete constituent rows plus an explicit interface law and no-double-counting certificate. No such globally complete pair/set exists yet.
 
 ### `NEW_REQUIRED` — NOT AUTHORIZED
 
-Needs broad inadequacy/exclusion results on complete known-framework realizations plus a frozen-RQIR requirement no existing/adapted/hybrid construction can satisfy.
-
-Current evidence points the opposite way from such a proof: major frameworks continue to acquire stronger physical objects while their remaining gaps become narrower. Therefore `NEW_REQUIRED` remains scientifically forbidden at the present authority.
+Requires broad inadequacy/exclusion evidence on **complete** known-framework realizations. Three mandatory rows are still `BLOCKED_MISSING_REQUIRED_OBJECT`, so `NEW_REQUIRED` remains logically and scientifically forbidden.
 
 ## Closure Wave 02 — 0/3 terminal
 
-Authority: `post_freeze_paper_iv_closure_wave_02/README.md`.
+### CW2-01 / O-AS
 
-### CW2-01 / O-AS — highest priority
+Published authority now establishes both a Lorentzian mediated scattering object and, separately, an explicit momentum-dependent contact sector. This is meaningful progress but **not** a same-realization sum. The contact calculation itself states that a more complete momentum-dependent propagator/all-vertex treatment is required before a final amplitude-level verdict.
 
-Target:
+Target remains:
 
-`SAME_REALIZATION_CONTACT_COMPLETE_DIFFEO_ERROR_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE`.
+`STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE`.
 
-The published Chiesa–Pawlowski–Reichert result closes physical mediated Lorentzian scattering. ERG2026 reports Lorentzian-resummed contact contribution. Separate contact and diffeomorphism/error-control results exist, but same-realization matching is not yet reproducibly frozen.
+### CW2-02 / O-LQG
 
-### CW2-02 / O-LQG — gamma route preferred
+Iter181 closed a scoped Lorentzian EPRL -> Regge asymptotic step. Iter182 verifies that Area-Regge/area-metric continuum, parity-sensitive couplings and an Immirzi beta function exist. However the area-metric RG construction explicitly treats non-metric masses as independent because they are not currently computable from spin foams and assumes an intermediate EFT regime. Therefore the microscopic EPRL Immirzi parameter cannot be equated to the running area-metric parameter by notation alone.
 
-Exact conditional relations:
+Target remains:
 
-`2 f_GB/f_CS = gamma - 1/gamma`
+`EPRL_REGGE_TO_AREA_REGGE_PARITY_COUPLING_MATCHING_CERTIFICATE`.
 
-`1/gamma - gamma = (pi/8)(r+8 n_T)/Pi`.
+### CW2-03 / O-CFS
 
-For positive gamma and `Pi!=0` the observable relation is structurally identifiable. Generic parity-violating EFT leaves the relevant coefficient directions freer, making the shared-gamma relation a strong rigidity candidate.
+The 2026 geometric derivation supplies Einstein gravity plus a systematic regularization-length correction architecture. The currents construction supplies a tensor hierarchy, but states that the rank-two equations are **expected** to encode Einstein equations. No first explicit normalized non-Einstein gravity correction tensor/coefficient vector is presently frozen.
 
-Open attribution:
-
-1. no audited complete-spinfoam -> renormalized gamma-dual Wilson map;
-2. parameter identity among microscopic, effective and geometry gamma is not derived;
-3. detector/cosmology nuisance likelihood remains downstream.
-
-Authority includes `paper_iv/O_LQG_GAMMA_CROSS_REPRESENTATION_RIGIDITY_VECTOR_2026.md`, `paper_iv/O_LQG_GAMMA_TOPDOWN_BRIDGE_LITERATURE_CEILING_2026.md` and `paper_iv/O_LQG_GAMMA_PARAMETER_IDENTITY_RENORMALIZATION_GATE_2026.md`.
-
-### CW2-03 / O-CFS — correction generator now exists
-
-The 2026 Finster–Krpoun geometric construction derives Lorentzian Einstein equations from the causal action and supplies a systematic microscopic-length expansion for corrections. It classifies higher-order, osculation/torsion, regularizing-vector and modified-measure correction sources.
-
-The same paper explicitly states that these corrections still need to be worked out in detail. Thus the current target is no longer “find a CFS gravity observable” but
+Target remains:
 
 `FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR`.
 
-A local analytic curvature correction is not automatically unique; full C5/EFT must be quotiented unless CFS fixes a cross-coefficient/shared-background relation or a non-C5 structure.
+## D4 residual semantics
+
+The frozen matrix currently contains:
+
+- GR/EFT: defined baseline/comparator row;
+- string/dual resonance: defined scoped-rigidity row;
+- AS: undefined residual pending complete same-realization amplitude;
+- LQG: undefined residual pending micro-to-area-metric parameter ancestry;
+- CFS: undefined residual pending normalized correction tensor.
+
+Thus D4 has materially progressed from an unspecified missing matrix to a **frozen partial matrix**, but it cannot pass until all required rows are defined in a common comparator domain.
 
 ## Compute triage
 
-Heavy computation remains unauthorized. O-AS is an authority-composition problem; O-LQG is a top-down/parameter-matching problem; O-CFS first requires an explicit analytic correction tensor. Numerical work starts only after one such physical object is prospectively frozen.
+Heavy computation remains unauthorized for these blockers. The current missing objects are analytic/ancestry/normalization/composition objects, not sensitivity scans.
 
 ## Current verdict
 
@@ -103,4 +107,6 @@ Heavy computation remains unauthorized. O-AS is an authority-composition problem
 
 Reason:
 
-`frozen judge validated + major known frameworks materially strengthened + three exact attribution/completion bridges still open + no global robust comparator-orthogonal residual`.
+`frozen judge valid + D4 matrix now explicit + three required residual rows remain undefined because complete same-realization physical objects are missing + no terminal D7 proof`.
+
+Primary Iter182 audit: `paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md`.
