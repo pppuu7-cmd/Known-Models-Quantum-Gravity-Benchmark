@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **203**  
-**Phase:** **RQIR Core v1.0 FROZEN / GFT-tensor material branch census closed / branch terminal dispositions + controlled gravity continuum/comparator remain open**.
+**KMQGB iteration:** **204**  
+**Phase:** **RQIR Core v1.0 FROZEN / pure-random-tensor solved continuum sectors scoped-failed / unresolved nonmelonic-RG space blocked**.
 
 ## Stable metrics
 
@@ -14,120 +14,110 @@
 - Tier-1: **1/14 terminal**, **13/14 nonterminal**.
 - Tier-2 unresolved: **0**.
 - comparator-ready scoped gravity residual/control rows remain **10**.
-- No scientific-readiness promotion in Iter203.
+- No scientific-readiness promotion in Iter204.
 
 ## Validation baseline / auto-research reconciliation
 
-Canonical Iter202 main head is `f23432b2cfc52d474799e8b0cfa488d8f623f012`. Its post-merge methodology CI run `34473197943` completed successfully and reproducibility-release run `34473254410` also completed successfully. The hourly KMQGB auto-research was rechecked before Iter203 and had not created a newer competing front.
+Canonical Iter203 main head is `d8cbaaacd8c5142ea4fe9b1afb949129334d02d8`. Its post-merge methodology-ci run `34473933838` and reproducibility-release run `34473982268` both completed `success`.
+
+The KMQGB hourly auto-research was checked immediately before Iter204. Its last run remained `2026-09-10T11:21:11Z`; no competing post-Iter203 front existed. Iter204 therefore starts from the validated Iter203 main authority.
 
 ## Paper-IV global gates
 
 D1 PASS; D2A NOT_CLOSED; D2B NOT_CLOSED; D2 `NOT_CLOSED_COVERAGE_AND_OBJECTS`; D3 PARTIAL; D4 `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`; D5 PASS; D6 `PASS_RULE_TARGETS_OPEN`; D7 NOT_CLOSED; global decision **`NOT_YET_AUTHORIZED`**.
 
-## Iter202 retained results
+## Iter203 retained GFT/tensor census
 
-Two GFT components remain valid:
+The umbrella `GFT_TENSOR_MODELS` row remains partitioned into five material classes:
 
-- selected KKL-compatible GFT has an explicit microscopic spin-foam amplitude relation;
-- Lorentzian Barrett-Crane GFT/TGFT condensate/relational constructions provide GR-limit effective dynamics and quantum-correction channels.
+1. spin-foam-generating geometric GFT;
+2. generalized second-quantized graph completion;
+3. TGFT RG/phase structure;
+4. derived condensate/hydrodynamic cosmology;
+5. pure random tensor models.
 
-Neither is promoted to family sufficiency or a comparator-ready gravity residual.
+No class may inherit another class's PASS/FAIL without an explicit reduction map.
 
-## Iter203 — material branch census
+## Iter204 — pure random tensor continuum universality
 
-The umbrella `GFT_TENSOR_MODELS` row has now been partitioned into five material classes using microscopic ancestry, geometric/group data and level of dynamics rather than labels alone.
+### A. Standard melonic continuum
 
-### B1 — spin-foam-generating gravity GFT
+Gurau and Ryan prove that leading melonic tensor graphs have a continuum limit that is precisely branched-polymer universality, with
 
-`GFT_SPINFOAM_GENERATING_GRAVITY_MODELS`
+- `d_H = 2`,
+- `d_S = 4/3`.
 
-Lie-group field data plus gauge/geometric/simplicity structure are chosen so perturbative GFT amplitudes reproduce named spin-foam/lattice-gauge models. Examples include topological Boulatov/Ooguri controls and gravity-oriented Barrett-Crane, EPRL/FK and KKL-compatible constructions.
+Under the frozen requirement of a four-dimensional semiclassical Lorentzian gravitational continuum, this gives the scoped terminal result
 
-Relation: `REDUCES_TO_OR_GENERATES_NAMED_SPINFOAM_AMPLITUDES_IN_FIXED_REALIZATION`.
+**`FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_STANDARD_MELONIC_CONTINUUM_IS_BRANCHED_POLYMER_NOT_3P1_LORENTZIAN_GRAVITY`**.
 
-### B2 — generalized second-quantized graph completion
+The July 2026 twofold-universality result further shows strong large-N universality within the melonic interaction class, but does not extend the branched-polymer theorem to nonmelonic sectors.
 
-`GFT_GENERALIZED_GRAPH_COMPLETION`
+### B. Solved enhanced nonmelonic BP/planar sectors
 
-Multi-field/dually-weighted/all-LQG constructions keep explicit spin-foam ancestry but add graph-changing sums over generated complexes and therefore are not reducible to one fixed-complex amplitude object.
+Bonzom–Delepouve–Rivasseau show that enhanced nonmelonic tensor interactions can produce a branched-polymer phase, a planar/two-dimensional quantum-gravity phase and a transition between them. The systematic rank-3/rank-4 order-six survey finds this BP/planar two-phase structure broadly in the studied small-order invariant models.
 
-Relation: `SPINFOAM_RELATED_BUT_NOT_REDUCIBLE_TO_ONE_FIXED_COMPLEX_OBJECT`.
+Those explicitly solved phases likewise do not furnish a `3+1` Lorentzian GR continuum.
 
-### B3 — TGFT RG/phase structure
+Scoped terminal result:
 
-`TGFT_RG_PHASE_STRUCTURE`
+**`FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_SOLVED_ENHANCED_BP_OR_PLANAR_CONTINUA_ARE_NOT_3P1_LORENTZIAN_GRAVITY`**.
 
-Tensor-invariant GFT carries independent field-theoretic RG/thermodynamic structure. Some realizations include explicit quantum-geometric/spin-foam data; simpler Abelian/SU(2) RG models can instead be structural testbeds. Gravity status must be earned from geometric/simplicity ancestry.
+### C. Why the umbrella pure-tensor branch is not failed
 
-Relation: `BRANCH_DEPENDENT__REQUIRES_EXPLICIT_GEOMETRIC_AND_SIMPLICITY_DATA`.
+The solved BP/planar sectors do not exhaust higher-order/nonmelonic or RG-candidate tensor theory space. In particular, the rank-4 background-independent RG study of Eichhorn–Lumma–Pereira–Sikandar reports a candidate interacting fixed point with two relevant directions and discusses a potential continuum limit. It is not a demonstrated `3+1` Lorentzian GR continuum and lacks the required same-realization gravity observable/comparator/error chain, but it prevents a blanket no-go extrapolation.
 
-### B4 — condensate/hydrodynamic cosmology
+Therefore the umbrella material-branch status is
 
-`GFT_CONDENSATE_HYDRODYNAMIC_COSMOLOGY`
-
-This is a derived collective state/phase sector of a declared microscopic GFT parent, not an independent microscopic school.
-
-Relation: `DERIVED_FROM_DECLARED_GFT_PARENT__NOT_AN_INDEPENDENT_MICROSCOPIC_FAMILY`.
-
-### B5 — pure random tensor models
-
-`PURE_RANDOM_TENSOR_MODELS`
-
-These retain tensor/combinatorial random-geometry structure but lack the Lie-group geometric data that makes a GFT Feynman amplitude a spin-foam amplitude.
-
-Relation: `NOT_AUTOMATICALLY_REDUCIBLE_TO_SPINFOAM__ADDITIONAL_GROUP_GEOMETRY_DATA_REQUIRED`.
-
-Generic melonic/tree-dominated continuum behavior can lie in branched-polymer universality, but KMQGB explicitly does **not** promote this to a family-wide tensor-model FAIL because enhanced/nonmelonic interactions and geometric TGFT data can change the universality class.
-
-## Governance result
-
-`PASS_GOVERNANCE_GATE__GFT_TENSOR_MATERIAL_BRANCH_CENSUS_SEPARATES_SPINFOAM_GENERATING_GFT__SECOND_QUANTIZED_GRAPH_COMPLETION__TGFT_RG_PHASE_STRUCTURE__DERIVED_CONDENSATE_SECTORS__AND_PURE_RANDOM_TENSOR_UNIVERSALITY`
+**`PARTIAL_BRANCH_DISPOSITION__PURE_RANDOM_TENSOR_STANDARD_MELONIC_AND_SOLVED_BP_PLANAR_ENHANCED_CONTINUA_FAIL_3P1_GRAVITY__UNRESOLVED_NONMELONIC_RG_SPACE_BLOCKED`**.
 
 Machine-readable authority:
 
-- `paper_iv/GFT_TENSOR_MATERIAL_BRANCH_MAP_ITER203.json`
-- `paper_iv/O_GFT_TENSOR_MATERIAL_BRANCH_CENSUS_AUDIT_2026-09-10.md`
-- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_203.json`
-- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_203.json`
-- `recovery/RECOVERY_DELTA_203.md`
+- `paper_iv/O_PURE_RANDOM_TENSOR_CONTINUUM_UNIVERSALITY_AUDIT_2026-09-10.md`
+- `paper_iv/PURE_RANDOM_TENSOR_BRANCH_LEDGER_ITER204.json`
+- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_204.json`
+- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_204.json`
+- `recovery/RECOVERY_DELTA_204.md`
 
-The census/classification component is closed. No new comparator-ready residual row is added.
+The two new FAILs are structural continuum-universality dispositions, not normalized comparator residual rows. The comparator-ready residual/control count therefore remains unchanged.
 
-## Refined GFT/tensor family blocker
+## Exact next pure-tensor gate
+
+**`PURE_RANDOM_TENSOR_NONMELONIC_RG_FIXED_POINT_TO_3P1_SEMICLASSICAL_GEOMETRY_AND_NORMALIZED_GRAVITY_OBSERVABLE_CERTIFICATE`**.
+
+Required payload:
+
+1. one fixed nonmelonic/rank-4 tensor realization and prospectively frozen truncation-extension sequence;
+2. stable interacting fixed point under systematic theory-space enlargement;
+3. controlled continuum scaling map;
+4. evidence for an emergent `3+1` semiclassical geometry rather than only a pre-geometric RG fixed point;
+5. normalized gravitational observable generated by that same realization;
+6. GR/EFT and alternative-QG comparators in the same domain;
+7. truncation/RG/continuum/numerical error ledger.
+
+If no such object exists in the literature, the unsolved pure-tensor remainder must remain BLOCKED and the research should rotate to the next GFT/TGFT material branch rather than invent a numerical proxy.
+
+## Overall GFT/tensor family blocker
 
 **`GFT_TENSOR_MATERIAL_BRANCH_TERMINAL_DISPOSITION_PLUS_CONTROLLED_GRAVITY_CONTINUUM_TRAJECTORY_NORMALIZED_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE`**.
 
-Remaining obligations:
-
-1. terminal disposition of the five material branches without cross-branch splicing;
-2. for any surviving gravity branch, a fixed-realization controlled continuum/thermodynamic/critical trajectory;
-3. relational gravitational observable transported through that trajectory;
-4. normalized common physical observation operator/domain;
-5. same-domain GR/EFT and alternative-QG comparators;
-6. full continuum/RG/condensate/mean-field/truncation/numerical error ledger;
-7. family-level residual only after those objects exist.
-
-## Immediate next scientific gate
-
-**`PURE_RANDOM_TENSOR_CONTINUUM_UNIVERSALITY_SCOPED_TERMINAL_DISPOSITION`**.
-
-This is chosen first because pure random tensor models are the most sharply separated material branch. The gate must distinguish generic melonic/branched-polymer universality from enhanced/nonmelonic continuum classes and must not extrapolate any scoped no-go to geometric GFT/TGFT.
+`GFT_TENSOR_MODELS` remains `PARTIAL_SUBFAMILY_ONLY`; family residual remains undefined; no `NEW_REQUIRED` evidence follows.
 
 ## Other parked fronts retained
 
 - LQG: EPRL/KKL UV→IR crossover with topology escape and gamma ancestry.
 - CDT/EDT: 4D line of constant physics, `a -> 0` observable transport, comparator/error certificate and EDT disposition.
-- Causal sets: fundamental quantum gravitational measure → manifoldlike `3+1` continuum → normalized gravity observable/comparator.
+- causal sets: fundamental quantum gravitational measure → manifoldlike `3+1` continuum → normalized gravity observable/comparator.
 - Hořava: material branches parked pending new same-realization UV→IR authority.
 
 ## Heavy compute
 
-**IDLE.** The next GFT/tensor question is a branch-specific continuum-universality disposition. A numerical scan over an undefined umbrella tensor-model parameter space would mix inequivalent universality classes and cannot validly change D7.
+**IDLE.** The next pure-tensor question requires a prospectively fixed RG realization, truncation-extension protocol and physical continuum observable. A generic coupling scan cannot resolve the missing `RG fixed point -> 3+1 geometry -> gravity observable` ancestry.
 
 ## Exact next order
 
-1. exact-head CI-validate Iter203;
-2. recheck the KMQGB hourly auto-research before integration;
-3. if no newer conflicting canonical front exists, merge Iter203;
-4. audit pure/random tensor-model continuum universality and determine whether any subbranch can receive a scoped terminal PASS/FAIL/BLOCKED disposition;
-5. retain `NOT_YET_AUTHORIZED` until D2 and D4 actually close.
+1. exact-head CI-validate Iter204;
+2. recheck hourly KMQGB auto-research before integration;
+3. if no newer conflicting canonical front exists, merge Iter204;
+4. search specifically for a systematic truncation-stability / continuum-geometry authority for the rank-4 tensor fixed-point candidate;
+5. if no complete object exists, park pure random tensors as partially terminal / remainder BLOCKED and rotate to the next material GFT/TGFT branch.
