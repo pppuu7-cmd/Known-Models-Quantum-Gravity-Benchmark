@@ -50,6 +50,7 @@
     "post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/audit.md",
     "post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/result_hk.json",
     "post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/result_ht.json",
+    "post_freeze_paper_iv_wave_02/PF2_01B_NONLOCAL_WEYL_CAUSALITY/result_godel_scope.json",
     "schemas/candidate_gravity_record_v1_3.schema.json",
     "templates/candidate_gravity_record_v1_3.template.json",
     "code/kg_candidate_record_validator.py",
