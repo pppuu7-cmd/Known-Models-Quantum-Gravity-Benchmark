@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "iteration": 263,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "ASYMPTOTIC_SAFETY",
+  "freshness_result": "PROMISING_NONCANONICAL_CONTACT_PROGRESS__ERG2026_DIRECT_LORENTZIAN_CONTACT_REPORTED__STABLE_REPRODUCIBLE_CONTACT_COMPLETE_PACKAGE_PENDING",
+  "remaining_blocker": "BLOCKED_PENDING_STABLE_CONTACT_COMPLETE_LORENTZIAN_SCALAR_SCATTERING_PACKAGE_WITH_FULL_APPROXIMATION_ERROR_AND_COMPARATOR_CERTIFICATE",
+  "operational_status": "PARKED_PENDING_POST_ERG2026_CONTACT_COMPLETE_PUBLIC_AUTHORITY",
+  "strict_coverage_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "scientific_fail": false,
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "candidate_gravity_R3_percent": 24,
+  "candidate_gravity_activation": false,
+  "heavy_compute": "IDLE",
+  "polygon_operational_saturation_percent": 98,
+  "next_gate": "CDT_OR_CAUSAL_SET_FINITE_EXTERNAL_ENDPOINT_AUDIT"
+}
