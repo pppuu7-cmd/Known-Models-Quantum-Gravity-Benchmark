@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "iteration": 208,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "framework_delta": {
+    "id": "GFT_TENSOR_MODELS",
+    "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+    "tgft_same_realization_status": "BLOCKED_MISSING_REQUIRED_OBJECT__NO_AUDITED_PUBLISHED_SAME_REALIZATION_FULL_FRG_TO_RELATIONAL_GRAVITY_OBSERVABLE_CHAIN_FOR_GRAVITY_ANCESTRY_TGFT",
+    "cross_realization_splicing": "FORBIDDEN",
+    "positive_scoped_evidence_retained": true,
+    "gravity_residual_row_added": false,
+    "family_residual_defined": false,
+    "counts_as_family_PASS": false,
+    "counts_as_family_FAIL": false,
+    "counts_as_new_required_exclusion": false,
+    "remaining_blocker": "GFT_TENSOR_PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_CONTINUUM_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE__TGFT_PARKED_ON_SAME_REALIZATION_FULL_FRG_OBJECT",
+    "authority": "paper_iv/O_TGFT_SAME_REALIZATION_FRG_TO_RELATIONAL_OBSERVABLE_GAP_AUDIT_2026-09-10.md"
+  },
+  "scoped_child_rows_with_defined_residual": 11,
+  "scoped_child_scientific_fail_rows": 3,
+  "coverage_counts_unchanged": {"tier1_total":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0}
+}
