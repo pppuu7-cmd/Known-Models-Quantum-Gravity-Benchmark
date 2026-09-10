@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **248**  
-**Phase:** **RQIR Core v1.0 FROZEN / nonlocal-QG weak-field real-data projection audited / cross-order full-momentum rigidity active**.
+**KMQGB iteration:** **249**  
+**Phase:** **RQIR Core v1.0 FROZEN / nonlocal-QG cross-order identifiability scoped / Riemann-Weyl full-momentum branch active**.
 
 ## Stable metrics
 - R1 repository readiness: **100%**.
@@ -14,25 +14,25 @@
 ## Paper-IV global gates
 D2 `NOT_CLOSED_COVERAGE_AND_OBJECTS`; D4 `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`; D7 `NOT_CLOSED`; global decision `NOT_YET_AUTHORIZED`.
 
-## Iter248 — NONLOCAL_QG
-The fixed Sangy–Burzillà–Giacchini–de Paula Netto exponential GF_N weak-field branch retains a scoped analytic finite-parameter/full-shape observable. Short-distance Newtonian/table-top experiments provide a genuine physical domain, but the audited authority set does not provide the required same-realization GF_N real-data capsule containing experiment response/calibration, covariance, prospectively frozen fit window, local analytic/EFT nuisance quotient, and propagated weak-field/theory remainder.
+## Iter249 — NONLOCAL_QG cross-order/full-momentum scope
+Primary scattering-amplitude authorities show that, for the Ricci/scalar weakly-nonlocal class satisfying the field-redefinition theorem, on-shell tree n-graviton amplitudes reduce to those of the underlying local/GR theory. The GF_N weak-field source/static radial shape retained in Iter248 therefore cannot be treated as a universal on-shell full-momentum fingerprint.
 
-One-number bounds on the nonlocal scale are retained only as scoped constraints. They are not equivalent to a full-shape residual. IR inverse-d'Alembertian nonlocal cosmology fits and other entire-form-factor realizations cannot be transferred to GF_N without an explicit equivalence map.
+A materially distinct Riemann/Weyl-form-factor branch is not covered by that reduction and may carry explicit form-factor dependence in tree amplitudes. IR inverse-d'Alembertian cosmology and other inequivalent nonlocal realizations remain separate. No cross-realization transfer is authorized.
 
-Disposition: `PARTIAL_STRONG_NONLOCAL_FULL_SHAPE_BRANCH__PHYSICAL_WEAK_FIELD_DOMAIN_IDENTIFIED__SAME_REALIZATION_REAL_DATA_RESPONSE_COVARIANCE_EFT_NUISANCE_AND_PROPAGATED_ERROR_CAPSULE_NOT_LOCATED`.
+Loop-level functional rigidity remains `BLOCKED_MISSING_REQUIRED_OBJECT__NONLOCAL_SAME_REALIZATION_LOOP_LEVEL_FULL_MOMENTUM_OBSERVABLE_PARAMETER_TRANSPORT_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE`.
 
 `NONLOCAL_QG` remains `PARTIAL_SUBFAMILY_ONLY`; family residual `UNDEFINED`; no family scientific FAIL; no `NEW_REQUIRED` authorization.
 
 Authorities:
-- `paper_iv/O_NONLOCAL_WEAK_FIELD_REAL_DATA_EFT_NUISANCE_PROJECTION_AUDIT_ITER248_2026-09-10.md`
-- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_248.json`
-- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_248.json`
-- `recovery/RECOVERY_DELTA_248.md`
+- `paper_iv/O_NONLOCAL_CROSS_ORDER_FULL_MOMENTUM_MATERIAL_BRANCH_AUDIT_ITER249_2026-09-10.md`
+- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_249.json`
+- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_249.json`
+- `recovery/RECOVERY_DELTA_249.md`
 
 ## Heavy compute
-**IDLE.** The active blocker is real-data/provenance/matching, not numerical precision.
+**IDLE.** The active blocker is same-realization physical-object/provenance matching, not numerical precision.
 
 ## Immediate next gate
-`NONLOCAL_QG_FULL_MOMENTUM_CROSS_ORDER_FUNCTIONAL_RIGIDITY_AND_MATERIAL_BRANCH_EXHAUSTION_CERTIFICATE`.
+`NONLOCAL_QG_RIEMANN_WEYL_FORM_FACTOR_BRANCH_FULL_MOMENTUM_OBSERVABLE_CAUSALITY_UNITARITY_AND_ERROR_CERTIFICATE`.
 
-Test whether the finite-dimensional weak-field shape remains rigid after cross-order/full-momentum completion in one action and census materially distinct weakly-nonlocal branches without cross-realization splicing. D7 remains unauthorized until D2 and D4 genuinely close.
+Audit whether a fixed Riemann/Weyl weakly-nonlocal action supplies a nontrivial full-momentum physical observable together with unitarity/causality prescription, common-domain comparator and propagated error. D7 remains unauthorized until D2 and D4 genuinely close.

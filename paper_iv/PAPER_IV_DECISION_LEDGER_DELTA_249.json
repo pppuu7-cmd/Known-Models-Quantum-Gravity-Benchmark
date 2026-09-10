@@ -1,0 +1,19 @@
+{
+  "schema_version":"1.0",
+  "iteration":249,
+  "rqir_core":{"version":"1.0","status":"FROZEN"},
+  "global_decision_before":"NOT_YET_AUTHORIZED",
+  "global_decision_after":"NOT_YET_AUTHORIZED",
+  "D2_before":"NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after":"NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before":"NOT_CLOSED",
+  "D7_after":"NOT_CLOSED",
+  "candidate_gravity_activation":false,
+  "new_required_authorized":false,
+  "paper_iii_reopen":false,
+  "substantive_result":{"family":"NONLOCAL_QG","branch":"CROSS_ORDER_FULL_MOMENTUM_AND_MATERIAL_BRANCH_SCOPE","status_after":"PARTIAL_SUBFAMILY_ONLY__TREE_ONSHELL_EQUIVALENCE_SCOPE_AND_MATERIAL_BRANCH_SEPARATION_ESTABLISHED__LOOP_LEVEL_SAME_REALIZATION_FULL_MOMENTUM_CERTIFICATE_BLOCKED","scientific_fail":false,"family_terminal_promotion":false,"family_residual_defined":false,"authority":"paper_iv/O_NONLOCAL_CROSS_ORDER_FULL_MOMENTUM_MATERIAL_BRANCH_AUDIT_ITER249_2026-09-10.md"},
+  "governance_note":"The GF_N/source weak-field shape cannot be promoted to a universal full-momentum fingerprint: Ricci/scalar weakly-nonlocal actions in the field-redefinition class have GR-equivalent on-shell tree amplitudes, while Riemann/Weyl branches are materially distinct. Loop-level rigidity remains BLOCKED, not FAIL, and does not authorize NEW_REQUIRED.",
+  "next_gate":"NONLOCAL_QG_RIEMANN_WEYL_FORM_FACTOR_BRANCH_FULL_MOMENTUM_OBSERVABLE_CAUSALITY_UNITARITY_AND_ERROR_CERTIFICATE"
+}
