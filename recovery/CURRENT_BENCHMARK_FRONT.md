@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **209**  
-**Phase:** **RQIR Core v1.0 FROZEN / TGFT parked BLOCKED / enhanced-nonmelonic pure-tensor pregeometric RG evidence retained / emergent-gravity observable authority search active**.
+**KMQGB iteration:** **210**  
+**Phase:** **RQIR Core v1.0 FROZEN / enhanced-nonmelonic pure-tensor branch parked BLOCKED / CFS beyond-continuum gravity correction audit active**.
 
 ## Stable metrics
 
@@ -12,60 +12,67 @@
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - Tier-1: **1/14 terminal**, **13/14 nonterminal**.
 - Tier-2 unresolved: **0**.
-- No family-level scientific-readiness promotion in Iter209.
+- No family-level scientific-readiness promotion in Iter210.
+
+## Paper-III KMQGB stress gate
+
+The formal D2/D4/D7 failure-mode saturation audit remains `PASS_CURRENT_SCOPE` / `NO_REOPEN`. The pure-tensor authority search produced no transferable failure mode outside frozen RQIR v1.0 resource/provenance/comparator/error semantics. Paper III remains **FROZEN, 100% scientific readiness**.
 
 ## Paper-IV global gates
 
 D1 PASS; D2A NOT_CLOSED; D2B NOT_CLOSED; D2 `NOT_CLOSED_COVERAGE_AND_OBJECTS`; D3 PARTIAL; D4 `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`; D5 PASS; D6 `PASS_RULE_TARGETS_OPEN`; D7 NOT_CLOSED; global decision **`NOT_YET_AUTHORIZED`**.
 
-## Iter208 retained result
+## Iter210 — pure-tensor material branch parked
 
-Gravity-ancestry TGFT is parked on the absence of a published same-realization full FRG -> condensate/relational gravity observable chain. Cross-realization splicing remains forbidden by D6.
+The primary-literature authority search did not locate a published same-realization chain
 
-## Iter209 — enhanced/nonmelonic pure-tensor audit
+`enhanced/nonmelonic rank-4 critical regime -> extended Lorentzian 3+1 geometry -> normalized gravity observable -> common-domain GR/EFT comparator -> propagated truncation/regulator/continuum uncertainty`.
 
-Primary authority: Castro, Eichhorn & Gurau, JHEP 05 (2026) 117, arXiv:2602.09257.
+The negative statement is explicitly bounded to the audited authority set through 2026-09-10. It is not a proof of nonexistence and is not a scientific FAIL.
 
-The audited order-4 `O(N)^{\otimes4}` tensor realization contains invariants through `T^8` and uses tensor size `N` as a pregeometric RG scale. It supplies a reproducible fixed-point search with a two-parameter regulator-sensitivity analysis and ancillary Mathematica beta-function notebook.
+Disposition:
 
-Scoped structural evidence:
+**`BLOCKED_MATERIAL_BRANCH_EXHAUSTED_UNDER_CURRENT_AUTHORITY_SCOPE__NO_LOCATED_SAME_REALIZATION_PURE_TENSOR_CRITICAL_TO_NORMALIZED_LORENTZIAN_4D_GRAVITY_OBSERVABLE_COMPARATOR_ERROR_CHAIN`**.
 
-**`PASS_STRUCTURAL_GATE__ORDER4_ON4_T8_PREGEOMETRIC_RG_FIXED_POINT_CANDIDATE_WITH_EXPLICIT_REGULATOR_SENSITIVITY_AND_REPRODUCIBLE_BETA_FUNCTION_NOTEBOOK_EXISTS`**.
+The enhanced/nonmelonic pure-tensor material branch is parked. `GFT_TENSOR_MODELS` remains `PARTIAL_SUBFAMILY_ONLY`; family residual remains undefined.
 
-The only candidate that stays real throughout the reported regulator scan has two relevant directions. The authors assess the simple combinatorial tensor realization and the Reuter fixed point as most likely lying in different universality classes. This is retained as realization-scoped negative universality evidence only; it is not promoted to a family-level FAIL.
+## New active front — Causal Fermion Systems
 
-## Missing physical object
+Earlier CFS benchmarking already rejected obsolete blockers: curved-spacetime classical gravity and QFT/Fock limiting controls exist. The active question is narrower.
 
-The same realization does not supply the complete chain
+Two 2026 authorities materially strengthen the gravity side:
 
-`pregeometric critical trajectory -> emergent extended Lorentzian 3+1 geometry -> normalized gravity observable -> common-domain GR/EFT comparator -> propagated truncation/regulator/continuum error quotient`.
+- Fischer & Finster, arXiv:2605.30199: in the analyzed globally hyperbolic curved-spacetime setup, the causal-action EL equations hold iff the coupled Einstein-Dirac equations hold.
+- Finster & Krpoun, arXiv:2607.13871: constructs a Lorentzian metric in four spacetime dimensions from the causal action setting, derives Einstein equations and gives a systematic power-expansion framework for corrections in the regularization length.
 
-Therefore the enhanced/nonmelonic pure-tensor branch remains:
+However, the latter paper states that the identified Planck-scale, osculation, regularizing-vector-field and modified-measure corrections still need to be worked out in detail; effects of the regularizing vector field on the Einstein equations remain to be analyzed, and the quantum/non-smooth gravity extension remains open.
 
-**`BLOCKED_MISSING_REQUIRED_OBJECT__PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_PREGEOMETRIC_RG_CONTINUUM_TO_NORMALIZED_LORENTZIAN_4D_GRAVITY_OBSERVABLE_COMPARATOR_WITH_PROPAGATED_ERROR`**.
+Therefore the active decision object is:
 
-BLOCKED is not FAIL. Family residual remains undefined. `GFT_TENSOR_MODELS` remains `PARTIAL_SUBFAMILY_ONLY`.
+`explicit CFS beyond-GR/beyond-continuum correction -> frozen state/regularization realization -> normalized gravitational observable -> identical-domain GR/Einstein-Dirac comparator -> propagated uncertainty/robustness certificate`.
 
 ## Authorities
 
-- `paper_iv/O_PURE_TENSOR_ENHANCED_NONMELONIC_RG_TO_GRAVITY_OBSERVABLE_GAP_AUDIT_2026-09-10.md`
-- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_209.json`
-- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_209.json`
-- `recovery/RECOVERY_DELTA_209.md`
+- `paper_iv/O_PURE_TENSOR_ENHANCED_NONMELONIC_EMERGENT_GEOMETRY_AUTHORITY_SEARCH_2026-09-10.md`
+- `paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_DELTA_210.json`
+- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_210.json`
+- `recovery/RECOVERY_DELTA_210.md`
+- `post_freeze_paper_iv_wave_01/PF1_01_CFS/result.json`
 
 ## Heavy compute
 
-**IDLE.** Re-running the published beta-function system cannot create the absent emergent Lorentzian gravity observable. Numerical work is authorized only after a prospectively frozen physical map exists and a calculation can change terminal classification.
+**IDLE.** No decision-relevant numerical computation is authorized until an explicit CFS correction observable and prospectively frozen comparator package are located.
 
 ## Immediate next gate
 
-**`PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_EMERGENT_GEOMETRY_TO_NORMALIZED_GRAVITY_OBSERVABLE_AUTHORITY_SEARCH`**.
+**`CFS_BEYOND_CONTINUUM_GRAVITY_CORRECTION_TO_NORMALIZED_OBSERVABLE_AUTHORITY_SEARCH`**.
 
-Search the primary literature for an explicit same-realization map from a surviving enhanced/nonmelonic rank-4 critical regime to an extended 4D gravity observable with comparator and error control. If material-branch exhaustion finds none, park the pure-tensor branch as BLOCKED and advance to the next Tier-1 family.
+Audit Finster–Krpoun 2026 and adjacent primary CFS literature for an actually evaluated beyond-GR correction, not merely a formal procedure. If the correction remains prospective/unquantified, retain CFS as BLOCKED with a narrower authority statement and advance only after the material branch is adequately exhausted.
 
 ## Other parked fronts retained
 
 - TGFT: same-realization full FRG -> relational gravity observable.
+- pure tensor enhanced/nonmelonic: material authority search parked BLOCKED after Iter210.
 - LQG: EPRL/KKL UV->IR crossover with topology escape and gamma ancestry.
 - CDT/EDT: 4D line of constant physics and comparator/error certificate.
 - causal sets: fundamental measure -> manifoldlike 3+1 continuum -> normalized gravity observable.
