@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "iteration": 225,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "CDT_EDT",
+    "branch": "EDT_4D",
+    "status_after": "PARTIAL_SUBFAMILY_ONLY__SEMICLASSICAL_4D_NEWTONIAN_BINDING_CROSS_SECTOR_GN_MULTI_SPACING_PHENOMENOLOGY_AND_UNIVERSAL_EFT_COMPARATOR_STRONG_PASSES__PROVEN_UV_CRITICAL_SURFACE_AND_SAME_OBSERVABLE_CONTINUUM_MATCH_BLOCKED",
+    "newtonian_binding_control": true,
+    "cross_sector_newton_constant_control": true,
+    "multi_lattice_spacing_vacuum_observable": true,
+    "universal_gr_eft_correlator_comparator_2026": true,
+    "proven_uv_critical_surface": false,
+    "same_observable_lattice_eft_continuum_match": false,
+    "scientific_fail": false,
+    "family_terminal_promotion": false,
+    "family_residual_defined": false,
+    "authority": "paper_iv/O_EDT_4D_CONTINUUM_OBSERVABLE_COMPARATOR_AUDIT_2026-09-10.md"
+  },
+  "governance_note": "Modern EDT has much stronger observable and scale-setting content than a phase-diagram-only summary suggests, and a 2026 gauge-invariant universal GR/EFT curvature/volume correlator comparator is now available. However the audited corpus does not close one fixed EDT realization through a proven UV critical trajectory to a continuum-safe lattice operator matched to that comparator with complete uncertainty propagation. This is not a scientific failure and does not authorize NEW_REQUIRED.",
+  "next_gate": "EDT_2026_EFT_CORRELATOR_TO_LATTICE_OPERATOR_MATCHABILITY_AUDIT"
+}
