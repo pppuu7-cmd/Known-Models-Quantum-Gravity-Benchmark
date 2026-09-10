@@ -1,10 +1,10 @@
 {
-  "schema_version": "8.4",
+  "schema_version": "8.5",
   "updated": "2026-09-10",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "kmqgb_iteration": 180,
-  "phase": "RQIR_CORE_V1_FROZEN__REPOSITORY_METHODOLOGY_100_VERIFIED__PAPER_IV_CLOSURE_WAVE_02",
+  "kmqgb_iteration": 182,
+  "phase": "RQIR_CORE_V1_FROZEN__REPOSITORY_METHODOLOGY_100_VERIFIED__PAPER_IV_D4_PARTIAL_MATRIX_FROZEN",
   "readiness_metrics": {
     "repository_readiness_R1_percent": 100,
     "kmqgb_methodology_material_readiness_R2_percent": 100,
@@ -19,15 +19,7 @@
     "metrics": ["R1", "R2"],
     "changes": ["R1 92 -> 100", "R2 90 -> 100"],
     "scope": "repository and methodology completeness only; no scientific promotion",
-    "contract": "protocol/READINESS_100_COMPLETION_CONTRACT.md",
-    "pre_score_ci": {
-      "run_id": 34412786245,
-      "job_id": 102670803282,
-      "conclusion": "success",
-      "successful_steps": 36,
-      "artifact_id": 10127884011,
-      "artifact_digest": "sha256:e82908f7bd5b84445389697e40c16290490a4e7f407ab84daa529f3d3d3e92b1"
-    }
+    "contract": "protocol/READINESS_100_COMPLETION_CONTRACT.md"
   },
   "verification_lock": {
     "iteration": 179,
@@ -50,6 +42,7 @@
     "executable_registry": "protocol/EXECUTABLE_TEST_REGISTRY.json",
     "orchestrator": "code/methodology_orchestrator.py",
     "completion_validator": "code/repository_completion_validator.py",
+    "independent_score": "code/readiness_score.py",
     "candidate_schema": "schemas/candidate_gravity_record_v1_3.schema.json",
     "candidate_template": "templates/candidate_gravity_record_v1_3.template.json",
     "candidate_validator": "code/kg_candidate_record_v13_validator.py",
@@ -61,30 +54,32 @@
     "global_decision": "NOT_YET_AUTHORIZED",
     "new_required_authorized": false,
     "post_freeze_wave_01": "5/5 terminal",
-    "closure_wave_02": {
-      "terminal": 0,
-      "denominator": 3,
-      "completion_percent": 0
+    "closure_wave_02": {"terminal": 0, "denominator": 3, "completion_percent": 0},
+    "global_gates": {
+      "D1_frozen_judge_integrity": "PASS",
+      "D2_major_framework_complete_object_coverage": "NOT_CLOSED",
+      "D3_common_domain_comparability": "PARTIAL",
+      "D4_comparator_subtracted_residual_matrix": "PARTIAL_MATRIX_FROZEN__NOT_CLOSED",
+      "D5_missing_object_quarantine": "PASS",
+      "D6_same_realization_composition_discipline": "PASS_RULE_TARGETS_OPEN",
+      "D7_global_terminal_proof_obligation": "NOT_CLOSED"
     },
+    "d2_d4_d7_audit": "paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md",
+    "comparator_residual_matrix": "paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json",
+    "global_gate_validator": "code/paper_iv_global_gate_validator.py",
     "o_as": {
       "status": "OPEN",
-      "blocker": "STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE"
+      "blocker": "STABLE_REPRODUCIBLE_SAME_REALIZATION_A4_PLUS_FULL_ERROR_COMPARATOR_CERTIFICATE",
+      "residual_status": "UNDEFINED_PENDING_SAME_REALIZATION_COMPLETE_AMPLITUDE",
+      "iter182_finding": "contact and mediated amplitude sectors both exist in current literature, but not yet as one matched same-realization trajectory/normalization/truncation/error/comparator object"
     },
     "o_lqg": {
       "status": "OPEN",
-      "classification": "PROMISING_ADAPT_EXISTING__KINEMATIC_AREA_METRIC_BRIDGE_CLOSED__DYNAMICAL_EPRL_TO_EFFECTIVE_AREA_REGGE_SAME_REALIZATION_CERTIFICATE_MISSING",
+      "classification": "PROMISING_ADAPT_EXISTING__SCOPED_SAME_REALIZATION_EPRL_TO_REGGE_ASYMPTOTICS_PASS__REGGE_TO_AREA_REGGE_PARITY_RG_MATCHING_MISSING",
       "minimum_decisive_object": "MULTISCALE_GAMMA_CERTIFICATE_{M_same-realization,T_RG,C_observable}",
-      "kinematic_area_metric_bridge": "CLOSED at representation level: twisted four-simplex geometry admits area-metric representation",
-      "next_gate": "EPRL_TO_EFFECTIVE_AREA_REGGE_SAME_REALIZATION_MATCHING_CERTIFICATE",
-      "next_gate_payload": [
-        "boundary_state",
-        "coarse_graining/refinement map",
-        "gamma normalization",
-        "approximation order",
-        "error/remainder",
-        "resulting Area-Regge/area-metric couplings"
-      ],
-      "same_realization_map": "EPRL/spinfoam -> effective Area-Regge dynamics -> area-metric continuum/RG with gamma_micro -> gamma_AM(mu) -> gamma_EFT(mu)",
+      "next_gate": "EPRL_REGGE_TO_AREA_REGGE_PARITY_COUPLING_MATCHING_CERTIFICATE",
+      "residual_status": "UNDEFINED_PENDING_MICRO_TO_AREA_METRIC_PARAMETER_ANCESTRY",
+      "same_realization_map": "EPRL/spinfoam -> Regge asymptotic sector -> effective Area-Regge dynamics -> area-metric continuum/RG with gamma_EPRL -> gamma_AM(mu) -> observable",
       "delta_definition": "Delta_gamma = 2 f_GB^ren/f_CS^ren - (gamma_EFT - 1/gamma_EFT)",
       "primordial_observable": "q = (pi/8)(r+8 n_T)/Pi = 1/gamma - gamma - Delta_gamma",
       "area_metric_observable": "gamma=-cot(4 psi) on the positive branch",
@@ -94,16 +89,18 @@
       "ideal_observable_tangency": "beta_q + 16 csc^2(8 psi) beta_psi = 0",
       "joint_identifiability": "det d(q,psi)/d(gamma,Delta_gamma)=1/[4(1+gamma^2)]>0 for finite positive gamma",
       "blockers": [
-        "exact/same-realization EPRL dynamics -> effective Area-Regge coarse-graining certificate missing",
-        "gamma_micro^EPRL -> gamma_eff -> gamma_AM(mu) normalization/running law not derived in one realization",
-        "same-realization parity projection and beta_rho/beta_Delta authority missing",
-        "frozen matching condition and multiscale transport between primordial q and low-energy psi missing",
+        "controlled same-realization EPRL/Regge -> effective Area-Regge coarse-graining/refinement certificate missing",
+        "gamma_EPRL -> gamma_AM(mu) normalization/running law not derived",
+        "same-parent parity coupling ancestry and beta_rho/beta_Delta authority missing",
         "detector/resource forecast remains downstream"
-      ]
+      ],
+      "iter182_finding": "area-metric RG explicitly treats non-metric masses as independent because they are not currently computable from spin foams and assumes an intermediate EFT regime"
     },
     "o_cfs": {
       "status": "OPEN",
-      "target": "FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR"
+      "target": "FIRST_EXPLICIT_NORMALIZED_CFS_GRAVITY_CORRECTION_TENSOR_PLUS_COMPARATOR",
+      "residual_status": "UNDEFINED_PENDING_NORMALIZED_CORRECTION_TENSOR",
+      "iter182_finding": "Einstein-Dirac continuum and a systematic correction generator exist, but no fixed-realization normalized first non-Einstein gravity correction tensor/coefficient vector is comparator-ready"
     }
   },
   "candidate_gravity": {
@@ -115,29 +112,23 @@
   },
   "compute_policy": {
     "heavy_compute_status": "IDLE_PENDING_FROZEN_CW2_OBJECT",
-    "current_reason": "repository/methodology is complete and verified; active Paper-IV blocker is same-realization EPRL-to-effective-Area-Regge analytic/provenance/matching authority"
+    "current_reason": "D2/D4/D7 audit shows current blockers are analytic same-realization/provenance/normalization/composition objects; no heavy numerical scan can close them"
   },
   "recovery": {
-    "latest_delta": "recovery/RECOVERY_DELTA_180.md",
+    "latest_delta": "recovery/RECOVERY_DELTA_182.md",
     "current_front": "recovery/CURRENT_BENCHMARK_FRONT.md",
     "active_wave": "post_freeze_paper_iv_closure_wave_02/README.md",
     "provenance_correction": "recovery/PROVENANCE_CORRECTION_ITER174_CONCURRENT_COLLISION.md",
     "active_audits": [
-      "paper_iv/O_LQG_SAME_REALIZATION_AREA_METRIC_BRIDGE_LADDER_2026.md",
-      "paper_iv/O_LQG_AREA_METRIC_GAMMA_RUNNING_BRIDGE_AUDIT_2026-09-10.md",
-      "paper_iv/O_LQG_GAMMA_DUALITY_RG_TANGENCY_GATE_2026.md",
-      "paper_iv/O_LQG_AREA_METRIC_BIREFRINGENCE_GAMMA_IDENTIFIABILITY_GATE_2026.md",
-      "paper_iv/O_LQG_MULTISCALE_OBSERVABLE_RG_TRANSPORT_GATE_2026.md"
+      "paper_iv/PAPER_IV_D2_D4_D7_CLOSURE_AUDIT_2026-09-10.md",
+      "paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json",
+      "paper_iv/O_LQG_EPRL_TO_REGGE_SAME_REALIZATION_ASYMPTOTIC_CERTIFICATE_2026-09-10.md"
     ],
     "active_code": [
-      "code/lqg_gamma_duality_breaking_identifiability_reference.py",
-      "code/lqg_gamma_duality_rg_tangency_reference.py",
-      "code/lqg_area_metric_birefringence_gamma_identifiability_reference.py",
-      "code/lqg_multiscale_observable_rg_transport_reference.py",
-      "code/kg_candidate_record_v13_validator.py",
+      "code/paper_iv_global_gate_validator.py",
+      "code/post_freeze_paper_iv_governance_validator.py",
       "code/methodology_orchestrator.py",
-      "code/repository_completion_validator.py",
-      "code/build_release_bundle.py"
+      "code/repository_completion_validator.py"
     ]
   }
 }
