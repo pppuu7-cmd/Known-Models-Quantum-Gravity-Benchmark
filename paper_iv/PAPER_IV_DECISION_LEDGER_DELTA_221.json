@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "iteration": 221,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "HORAVA_LIFSHITZ",
+    "branch": "NONPROJECTABLE",
+    "status": "PARTIAL_SUBFAMILY_ONLY__RENORMALIZATION_PASS_AND_LOW_ENERGY_PHENOMENOLOGY_PASS__GLOBAL_RG_TO_OBSERVABLE_ANCESTRY_BLOCKED",
+    "renormalization_proof": true,
+    "low_energy_viable_parameter_region": true,
+    "global_uv_to_ir_rg_trajectory": false,
+    "selected_ir_parameter_ancestry": false,
+    "normalized_same_realization_observable_comparator_error_chain": false,
+    "family_status_after_both_branches": "PARTIAL_SUBFAMILY_ONLY__BOTH_MAJOR_BRANCHES_HAVE_STRONG_SCOPED_PASSES__NO_BRANCH_HAS_FULL_UV_TO_IR_OBSERVABLE_CLOSURE",
+    "scientific_fail": false,
+    "family_residual_defined": false,
+    "counts_as_new_required_exclusion": false,
+    "authority": "paper_iv/O_HORAVA_NONPROJECTABLE_RENORMALIZATION_TO_IR_OBSERVABLE_AUDIT_2026-09-10.md"
+  },
+  "governance_note": "The non-projectable branch is stronger than the old census: 2024 renormalization is a real pass and low-energy viable phenomenology exists. What remains missing is a same-realization global RG/matching map selecting the viable IR parameters and carrying them into a normalized observable/comparator/error chain. Projectable and non-projectable results may not be spliced.",
+  "next_gate": "CAUSAL_SET_FUNDAMENTAL_DYNAMICS_TO_MANIFOLD_CONTINUUM_NORMALIZED_OBSERVABLE_CLOSURE"
+}
