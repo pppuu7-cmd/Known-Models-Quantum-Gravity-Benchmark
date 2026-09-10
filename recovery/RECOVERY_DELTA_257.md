@@ -29,3 +29,5 @@ Authorities:
 - `paper_iv/P_CFS_FIRST_NON_EINSTEIN_CORRECTION_SATURATION_AUDIT_ITER257_2026-09-11.md`
 - `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_257.json`
 - Finster & Krpoun, arXiv:2607.13871v1, Section 7.
+
+Note: this file is the authoritative repaired Iter257 recovery delta; a transient intermediate placeholder commit was immediately superseded and carries no scientific authority.
