@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "iteration": 245,
+  "date": "2026-09-10",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "campaign": "BFSS_LOCALIZED_PHASE_PROSPECTIVE_MATRIX_SIDE_HOLDOUT",
+  "target_theory": "FULL_SUPERSYMMETRIC_BFSS",
+  "gravity_side_frozen_targets": {
+    "tau_c_scaled": 0.61196576,
+    "free_energy_c_scaled": -1.04043637,
+    "tau_GL_scaled": 0.59280163,
+    "epsilon_GL_scaled": 1.71316176,
+    "scaling": {
+      "tau_c_N": "0.61196576 / N^(5/9)",
+      "tau_GL_N": "0.59280163 / N^(5/9)"
+    },
+    "note": "Freeze numerical transition coordinates before matrix-side high-statistics analysis; use final-discussion phase ordering because local HTML prose around Eq. 92 is internally inconsistent."
+  },
+  "derived_temperature_grid": [
+    {"N": 8, "tau_c": 0.192757, "tau_GL": 0.186721},
+    {"N": 12, "tau_c": 0.153880, "tau_GL": 0.149061},
+    {"N": 16, "tau_c": 0.131151, "tau_GL": 0.127044},
+    {"N": 24, "tau_c": 0.104699, "tau_GL": 0.101420},
+    {"N": 32, "tau_c": 0.089234, "tau_GL": 0.086440},
+    {"N": 48, "tau_c": 0.071237, "tau_GL": 0.069006},
+    {"N": 64, "tau_c": 0.060715, "tau_GL": 0.058813}
+  ],
+  "candidate_engine": {
+    "repository": "gbergner/SYM1DMMMT",
+    "status": "CANDIDATE_DEVELOPMENT_ENGINE_NOT_YET_RQIR_QUALIFIED",
+    "observables_seen": ["E_over_N2", "temporal_Polyakov_magnitude", "TrX2", "matrix_eigenvalue_diagnostics"],
+    "implementations": ["serial", "GPU_OpenACC_CUDA", "MPI"],
+    "qualification_required": ["pin_revision", "build_manifest", "known_result_regression", "seed_provenance", "autocorrelation_audit", "solver_RHMC_controls"]
+  },
+  "phase_identifier": {
+    "status": "BLOCKED_PHASE_IDENTIFIER__BFSS_NATIVE_M_THEORY_CIRCLE_LOCALIZATION_OBSERVABLE_NOT_YET_FROZEN",
+    "forbidden_shortcut": "Do not treat the D1 spatial-Wilson-loop classifier or the BFSS temporal Polyakov loop as a direct M-theory-circle localization classifier without an explicit operator dictionary."
+  },
+  "phase_1": {
+    "name": "CANONICAL_THERMODYNAMIC_HOLDOUT",
+    "primary_goal": "independent equilibrium transition test near tau_c(N)",
+    "minimum_observables": ["energy", "temporal_holonomy", "TrX2_extent", "scalar_eigenvalue_tails", "action_components", "RHMC_solver_diagnostics"],
+    "requirements": ["hot_and_cold_starts", "metastability_diagnostics", "thermodynamic_integration_if_free_energy_used", "finite_L_extrapolation", "finite_N_ladder", "mu_to_zero_if_BMN_stabilizer_used", "frozen_crossing_rule"]
+  },
+  "phase_2": {
+    "name": "MICROCANONICAL_NONUNIFORM_WINDOW",
+    "status": "DESIGN_TARGET_ONLY",
+    "requires": ["density_of_states_or_ensemble_reconstruction", "BFSS_native_phase_identifier", "epsilon_GL_holdout"]
+  },
+  "uncertainty_ledger": ["thermalization", "autocorrelation", "RHMC_approximation", "Pfaffian_phase_or_sign", "flat_direction_runaway_policy", "finite_L", "finite_N", "BMN_mu_to_zero", "temperature_interpolation", "metastability_tunnelling", "thermodynamic_integration_normalization", "analysis_version_and_seeds"],
+  "compute_authorization": {
+    "production_heavy_compute": false,
+    "pilot_allowed": true,
+    "pilot_scope": "engine reproducibility only; no Dias-Santos holdout claim",
+    "reason": "development engine, unfrozen BFSS-native localization classifier, and frontier low-temperature targets below recent efficient precision regime"
+  },
+  "classification": "COMPUTE_DESIGN_PASS__BFSS_THERMODYNAMIC_HOLDOUT_AND_LIMIT_ERROR_LADDER_SPECIFIED__DIRECT_LOCALIZED_NONUNIFORM_PHASE_IDENTIFIER_AND_FRONTIER_LOW_T_LARGE_N_RESOURCE_CLOSURE_OPEN",
+  "paper_iii_reopen": false,
+  "next_gate": "BFSS_NATIVE_PHASE_IDENTIFIER_AUTHORITY_AND_OPERATOR_DICTIONARY_AUDIT"
+}
