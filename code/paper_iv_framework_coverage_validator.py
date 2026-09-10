@@ -1,9 +1,9 @@
 """Fail-closed validator for the Paper-IV major-framework coverage census.
 
-A PASS from this program means only that the declared coverage contract and
-residual matrix are mutually consistent. It never means that framework coverage
-is scientifically complete. Incomplete, partial and unresolved rows are expected
-to validate as an honestly nonterminal state.
+A PASS means only that the declared coverage contract and residual matrix are
+mutually consistent. It never means that framework coverage is scientifically
+complete. Scoped child PASS/FAIL results are preserved but may not silently
+be promoted into a parent-family verdict.
 """
 from __future__ import annotations
 
@@ -23,10 +23,9 @@ def main() -> int:
     contract = json.loads(CONTRACT.read_text(encoding="utf-8"))
     matrix = json.loads(MATRIX.read_text(encoding="utf-8"))
 
-    if contract.get("rqir_core") != {"version": "1.0", "status": "FROZEN"}:
-        fail("coverage contract must use frozen RQIR Core v1.0")
-    if matrix.get("rqir_core") != {"version": "1.0", "status": "FROZEN"}:
-        fail("residual matrix must use frozen RQIR Core v1.0")
+    frozen = {"version": "1.0", "status": "FROZEN"}
+    if contract.get("rqir_core") != frozen or matrix.get("rqir_core") != frozen:
+        fail("coverage and matrix must use frozen RQIR Core v1.0")
 
     terminal_states = set(contract.get("terminal_coverage_states", []))
     nonterminal_states = set(contract.get("nonterminal_coverage_states", []))
@@ -40,11 +39,16 @@ def main() -> int:
     tier1_ids = [r.get("id") for r in tier1]
     if len(tier1_ids) != len(set(tier1_ids)) or any(not x for x in tier1_ids):
         fail("Tier-1 framework IDs must be unique and non-empty")
+    tier1_set = set(tier1_ids)
 
     matrix_rows = matrix.get("frameworks", [])
+    all_ids = [r.get("id") for r in matrix_rows]
+    if len(all_ids) != len(set(all_ids)) or any(not x for x in all_ids):
+        fail("matrix IDs must be unique and non-empty")
+
     required_matrix = {r.get("id"): r for r in matrix_rows if r.get("required_for_D2") is True}
-    if set(required_matrix) != set(tier1_ids):
-        fail(f"matrix required rows do not match coverage contract: {set(required_matrix)} != {set(tier1_ids)}")
+    if set(required_matrix) != tier1_set:
+        fail(f"matrix required rows do not match coverage contract: {set(required_matrix)} != {tier1_set}")
 
     allowed_states = terminal_states | nonterminal_states
     unresolved_tier1: list[str] = []
@@ -63,6 +67,25 @@ def main() -> int:
         if state == "PARTIAL_SUBFAMILY_ONLY" and mrow.get("object_complete_in_declared_domain") is True:
             fail(f"{rid}: partial family coverage cannot be marked complete at family level")
 
+    # Scoped child results are legitimate scientific evidence but never a silent
+    # family-level exclusion or sufficiency certificate.
+    scoped_children = [r for r in matrix_rows if r.get("required_for_D2") is False]
+    for child in scoped_children:
+        cid = child["id"]
+        parent = child.get("parent_family")
+        if not parent or parent not in tier1_set:
+            fail(f"{cid}: scoped child must name a Tier-1 parent_family")
+        if child.get("role") != "scoped_subbenchmark":
+            fail(f"{cid}: non-required scientific row must be scoped_subbenchmark")
+        if child.get("counts_as_new_required_exclusion") is not False:
+            fail(f"{cid}: scoped child cannot count as family-level NEW_REQUIRED exclusion")
+        if child.get("global_sufficiency") is not False:
+            fail(f"{cid}: scoped child cannot establish global sufficiency")
+        if child.get("object_complete_in_declared_domain") is not True:
+            fail(f"{cid}: stored scoped result must be complete in its own declared domain")
+        if child.get("residual_defined") is not True:
+            fail(f"{cid}: stored scoped result must have a defined result/residual status")
+
     unresolved_tier2 = [r.get("id") for r in tier2 if r.get("status") == "UNRESOLVED_CLASSIFICATION"]
     if any(not r.get("id") for r in tier2):
         fail("Tier-2 entries need non-empty IDs")
@@ -75,6 +98,8 @@ def main() -> int:
         "school_merging_requires_explicit_reduction_map",
         "rqir_core_may_not_be_changed_to_fit_a_school",
         "model_specific_adapters_are_allowed_without_core_change",
+        "scoped_child_fail_cannot_be_promoted_to_parent_fail_without_family_scope_proof",
+        "scoped_child_pass_cannot_be_promoted_to_parent_sufficiency_without_family_scope_proof",
     ]
     for key in required_true:
         if rules.get(key) is not True:
@@ -101,6 +126,7 @@ def main() -> int:
         "tier1_total": len(tier1),
         "tier1_unresolved": unresolved_tier1,
         "tier2_unresolved": unresolved_tier2,
+        "scoped_child_rows": [r["id"] for r in scoped_children],
         "scientific_terminal": False,
     }, indent=2, sort_keys=True))
     return 0
