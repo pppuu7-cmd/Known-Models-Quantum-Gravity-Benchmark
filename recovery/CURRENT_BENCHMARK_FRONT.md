@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **191**  
-**Phase:** **RQIR Core v1.0 FROZEN / Hořava projectable 3+1 AF marginal RG trajectory admitted / family-level D7 blockers active**.
+**KMQGB iteration:** **192**  
+**Phase:** **RQIR Core v1.0 FROZEN / projectable Hořava UV→IR same-realization gap frozen / non-projectable BPS branch next**.
 
 ## Stable metrics
 
@@ -11,14 +11,13 @@
 - Candidate Gravity R3: **24%**, inactive.
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
-
-No readiness promotion in Iter191.
+- No readiness promotion in Iter192.
 
 ## Paper-IV global gates
 
 - D1: PASS.
-- D2A framework-set/family coverage: NOT_CLOSED.
-- D2B complete same-realization objects: NOT_CLOSED.
+- D2A: NOT_CLOSED.
+- D2B: NOT_CLOSED.
 - D2: `NOT_CLOSED_COVERAGE_AND_OBJECTS`.
 - D3: PARTIAL.
 - D4: `PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED`.
@@ -34,55 +33,43 @@ No readiness promotion in Iter191.
 - nonterminal family rows: **13/14**.
 - untouched Tier-1 rows: **0/14**.
 - Tier-2 unresolved classifications: **0**.
-- scoped child residual count remains **9**; Iter190–191 add scoped structural/RG PASS results but no family-level residual.
+- scoped child residual count: **9**.
 - scoped scientific FAIL rows: **2**.
 
-## Iter190 — material Hořava branch fork
+## Iter192 — projectable Hořava UV→IR same-realization gap
 
-Projectable and non-projectable/BPS Hořava are frozen as materially distinct branches because projectability changes the physical constraint/scalar sector. A scoped result in one branch cannot be promoted to the family without branch-by-branch terminal disposition or a reduction/equivalence theorem.
+The admitted 3+1 projectable AF result remains scoped PASS: the primary RG analyses establish asymptotically-free trajectories for the **marginal Lifshitz couplings** and reach a region with `0 < lambda-1 << 1` / GR-like kinetic structure.
 
-Authority: `paper_iv/O_HORAVA_PROJECTABLE_NONPROJECTABLE_FAMILY_FORK_AUDIT_2026-09-10.md`.
+However, the available low-energy FRG crossover literature is a separate truncation and does not provide an authenticated composition from the same AF realization through the relevant lower-derivative operators into a normalized extra-scalar observable with propagated matching/truncation error.
 
-Classification:
-`PASS_RQIR_GATE__HORAVA_MATERIAL_PROJECTABILITY_FORK_AND_EXTRA_MODE_OBJECT_IDENTIFIED`.
+Therefore the projectable H1 subgate is frozen as:
 
-## Iter191 — projectable 3+1 AF RG authority
+**`BLOCKED_MISSING_REQUIRED_OBJECT__HORAVA_PROJECTABLE_AF_MARGINAL_TRAJECTORY_TO_RELEVANT_IR_COUPLINGS_AND_NORMALIZED_EXTRA_SCALAR_SAME_REALIZATION_MAP`**.
 
-Primary literature now closes the narrower claim that no 3+1 projectable UV trajectory is known:
+This is not a scientific FAIL and does not define a family-level residual.
 
-- arXiv:2110.14688 derives the complete one-loop beta functions for marginal essential couplings and identifies candidate asymptotically free fixed points.
-- arXiv:2411.13574 follows the 3+1 projectable RG flow numerically and finds asymptotically free trajectories spanning the unitarity-compatible lambda range, including `0 < lambda - 1 << 1`.
+Authority: `paper_iv/O_HORAVA_PROJECTABLE_UV_IR_SAME_REALIZATION_GAP_AUDIT_2026-09-10.md`.
 
-Classification:
-
-**`PASS_RQIR_GATE__HORAVA_PROJECTABLE_3P1_ASYMPTOTICALLY_FREE_MARGINAL_RG_TRAJECTORY_AUTHORITY`**.
-
-Authority:
-`paper_iv/O_HORAVA_PROJECTABLE_3P1_RG_TRAJECTORY_SCOPE_AUDIT_2026-09-10.md`.
-
-This is **not** a complete same-realization UV->IR certificate. The remaining missing object is the crossover/matching from the marginal z=3 trajectory through relevant lower-derivative couplings into a normalized IR extra-scalar observable with propagated loop/truncation/matching remainder and a same-domain GR/EFT comparator.
+Required future certificate fields:
+`{microscopic_action, UV_fixed_point, marginal_trajectory, relevant_operator_basis, crossover_matching_scale, UV_to_IR_basis_map, scalar_mode_normalization, stability_and_strong_coupling_domain, loop_order, truncation_error, matching_remainder, normalized_observable, GR_EFT_comparator}`.
 
 ## Hořava parent status
 
 `HORAVA_LIFSHITZ = PARTIAL_SUBFAMILY_ONLY`.
 
-Projectable next gate:
+Projectable branch: scoped AF trajectory PASS + UV→IR matching BLOCKED missing required object.
 
-**`HORAVA_PROJECTABLE_AF_RG_TO_IR_RELEVANT_COUPLING_CROSSOVER_PLUS_EXTRA_SCALAR_OBSERVABLE_MATCHING_CERTIFICATE`**.
-
-Non-projectable next gate:
+Non-projectable/BPS branch exact next gate:
 
 **`HORAVA_NONPROJECTABLE_BPS_UV_TO_IR_TRAJECTORY_PLUS_SCALAR_TENSOR_COMPARATOR_CERTIFICATE`**.
 
-A phenomenological IR lambda scan is explicitly not a substitute for transporting one UV realization into the observable regime.
+The 2025 non-projectable path-integral/one-loop work establishes concrete quantum progress but only in 2+1 dimensions and explicitly leaves further questions toward perturbative renormalizability; it is not yet a 3+1 UV→IR terminal certificate.
 
-## Validation authority carried forward
+## Validation / CI
 
-Iter189 methodology CI run `34431893468`, job `102728958236`: validated SUCCESS, including frozen-core governance, executable registry, independent readiness recomputation, methodology orchestrator and repository-completion checks.
+Iter191 methodology run `34435560170` failed at the generic JSON parse step before science validators. A diagnostic-only CI patch now reports the malformed JSON path explicitly on failure; no RQIR criterion or science gate was changed. Latest-head CI must be consumed before Iter192 is called repository-validated.
 
-Iter190/191 changes require their own latest-head methodology validation before they are called repository-validated.
-
-## D7 after Iter191
+## D7 after Iter192
 
 No family-level row became terminal:
 
@@ -95,12 +82,12 @@ No family-level row became terminal:
 
 ## Heavy compute
 
-**IDLE.** The live blocker is RG-to-IR matching/provenance and controlled remainder, not a free numerical scan.
+**IDLE.** Projectable blocker is a missing same-realization crossover/matching object. Free numerical scans cannot manufacture it.
 
 ## Exact next order
 
-1. Validate the latest Iter191 head with methodology CI/reproducibility chain.
-2. Search primary literature for a same-realization projectable crossover from the AF marginal trajectory to the relevant IR couplings and scalar mode normalization.
-3. If no such object exists, freeze the projectable H1 subgate as `BLOCKED_MISSING_REQUIRED_OBJECT` with exact missing fields; do not infer scientific FAIL.
-4. Then attack the non-projectable/BPS UV->IR trajectory independently.
-5. Rerun D7 only after a family-level terminal change or other material decision-ledger change.
+1. Consume the latest diagnostic methodology CI and repair only the exact malformed JSON/synchronization defect if present.
+2. Audit non-projectable/BPS 3+1 quantum/RG status and require one same-realization UV→IR trajectory plus normalized scalar-tensor observable and GR/EFT comparator.
+3. If no such object exists, freeze that branch as `BLOCKED_MISSING_REQUIRED_OBJECT`; do not infer FAIL.
+4. Only after both material Hořava branches have terminal dispositions may a family-level disposition be considered.
+5. Rerun D7 only after a family-level terminal change or material decision-ledger change.
