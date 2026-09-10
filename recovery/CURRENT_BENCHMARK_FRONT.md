@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **193**  
-**Phase:** **RQIR Core v1.0 FROZEN / projectable + non-projectable Hořava UV→IR blockers localized / family branch-exhaustion next**.
+**KMQGB iteration:** **194**  
+**Phase:** **RQIR Core v1.0 FROZEN / Hořava material branch census expanded / U(1)+mixed-derivative disposition next**.
 
 ## Stable metrics
 
@@ -11,7 +11,7 @@
 - Candidate Gravity R3: **24%**, inactive.
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
-- No readiness promotion in Iter193.
+- No readiness promotion in Iter194.
 
 ## Paper-IV global gates
 
@@ -36,41 +36,43 @@
 - scoped child residual count: **9**.
 - scoped scientific FAIL rows: **2**.
 
-## Iter193 — non-projectable/BPS Hořava 3+1 UV→IR audit
+## Validation consumed
 
-Primary literature establishes a healthy non-projectable IR theory with a physical khronon/extra-scalar sector and comparator-facing PPN/phenomenology. Separate quantum work establishes cancellation of dangerous nonlocal subdivergences, and the 2025/2026 Lagrangian-path-integral program gives explicit one-loop beta functions only in 2+1 dimensions.
+Iter193 methodology CI run `34443342721` on exact head `c2cece01006a4d1bc915e46d45b9ab90fd5869c1` completed successfully. Iter193 is therefore validated repository authority.
 
-What is still absent is one authenticated **3+1 same-realization** object connecting the microscopic non-projectable action to a UV fixed-point/asymptotically-free domain, a complete essential beta-function system and integrated RG trajectory, then through relevant lower-derivative operators into normalized IR khronometric couplings and a GR/EFT comparator with loop/truncation/matching remainder.
+## Iter194 — Hořava material-branch exhaustion audit
 
-Therefore the non-projectable branch is frozen as:
+The previous two-branch representation (standard projectable + healthy non-projectable/BPS) is not exhaustive under the frozen Paper-IV rule that materially distinct constraint/DOF structures cannot be silently merged.
 
-**`BLOCKED_MISSING_REQUIRED_OBJECT__HORAVA_NONPROJECTABLE_3P1_UV_RG_TRAJECTORY_TO_IR_KHRONOMETRIC_OBSERVABLE_SAME_REALIZATION_MAP`**.
+Minimum material branch census is now frozen as:
 
-This is BLOCKED, not FAIL, defines no family-level residual, and does not authorize NEW_REQUIRED.
+1. `H0_STANDARD_PROJECTABLE` — tracked, BLOCKED on AF marginal trajectory → relevant IR couplings → normalized extra-scalar same-realization map.
+2. `H1_HEALTHY_NONPROJECTABLE_BPS` — tracked, BLOCKED on complete 3+1 UV RG trajectory → IR khronometric observable map.
+3. `H2_PROJECTABLE_U1_EXTENDED` — material independent subbranch: enlarged local U(1) gauge symmetry changes the constraint/scalar sector; BLOCKED on its own 3+1 quantum UV→IR comparator certificate.
+4. `H3_NONPROJECTABLE_U1_EXTENDED` — material independent subbranch: generic theory contains a scalar; scalar-free locus requires exact zeros of marginal couplings expected to be regenerated quantum mechanically; BLOCKED on generic same-realization UV→IR comparator certificate.
+5. `H4_MIXED_DERIVATIVE` — material independent operator/kinetic class. Published minimal realization has an additional scalar degree of freedom unstable at low energy: scoped scientific negative result only, not yet a full mixed-derivative family FAIL.
 
-Authority: `paper_iv/O_HORAVA_NONPROJECTABLE_3P1_UV_IR_GAP_AUDIT_2026-09-10.md`.
+Authority:
+- `paper_iv/O_HORAVA_FAMILY_MATERIAL_BRANCH_EXHAUSTION_AUDIT_2026-09-10.md`
+- `paper_iv/HORAVA_MATERIAL_BRANCH_MAP_2026-09-10.json`
+
+Governance classification:
+
+**`PASS_GOVERNANCE_GATE__HORAVA_MATERIAL_BRANCH_CENSUS_EXPANDED_AND_NONREDUCTION_CERTIFIED_FOR_U1_AND_MIXED_DERIVATIVE_CLASSES`**.
+
+This is not a family scientific PASS/FAIL and defines no Hořava family residual.
 
 ## Hořava parent status
 
 `HORAVA_LIFSHITZ = PARTIAL_SUBFAMILY_ONLY`.
 
-Projectable branch:
-`BLOCKED_MISSING_REQUIRED_OBJECT__HORAVA_PROJECTABLE_AF_MARGINAL_TRAJECTORY_TO_RELEVANT_IR_COUPLINGS_AND_NORMALIZED_EXTRA_SCALAR_SAME_REALIZATION_MAP`.
-
-Non-projectable/BPS branch:
-`BLOCKED_MISSING_REQUIRED_OBJECT__HORAVA_NONPROJECTABLE_3P1_UV_RG_TRAJECTORY_TO_IR_KHRONOMETRIC_OBSERVABLE_SAME_REALIZATION_MAP`.
+The branch-exhaustion audit shrinks ambiguity about what must be dispositioned, but adds no license to promote scoped children to the parent.
 
 Exact next family gate:
 
-**`HORAVA_FAMILY_MATERIAL_BRANCH_EXHAUSTION_AND_TERMINAL_DISPOSITION_CERTIFICATE`**.
+**`HORAVA_U1_PROJECTABLE_AND_NONPROJECTABLE_QUANTUM_IR_COMPARATOR_DISPOSITION_PLUS_MIXED_DERIVATIVE_COMPLETION_SCOPE_CERTIFICATE`**.
 
-Audit whether other material Hořava realizations, especially U(1)-extended variants, are independent Paper-IV families/subfamilies or reduce to the tracked branches by an explicit physical map. Only after material-branch exhaustion may a family terminal disposition be considered.
-
-## Validation / CI
-
-Iter192 methodology run `34439484092` failed at generic JSON parsing with `recovery/state.json: Extra data`. The exact same scientific head was re-run after source inspection to determine whether this was a transient/check-out synchronization problem; no science criterion was modified. Iter193 itself triggers fresh methodology CI via the new commits and must be consumed before repository-validation is claimed.
-
-## D7 after Iter193
+## D7 after Iter194
 
 No family-level row became terminal:
 
@@ -83,12 +85,12 @@ No family-level row became terminal:
 
 ## Heavy compute
 
-**IDLE.** Both Hořava blockers are structural/provenance/matching blockers; free numerical scans cannot construct the missing same-realization UV→IR ancestry.
+**IDLE.** The next Hořava tasks are structural/provenance/matching questions. A numerical scan cannot manufacture the missing same-realization quantum ancestry or a theorem extending the mixed-derivative instability to the whole material class.
 
 ## Exact next order
 
-1. Consume Iter192 re-run and Iter193 methodology CI; repair only exact infrastructure/synchronization defects.
-2. Execute `HORAVA_FAMILY_MATERIAL_BRANCH_EXHAUSTION_AND_TERMINAL_DISPOSITION_CERTIFICATE`.
-3. If no additional independent material branch changes coverage, freeze Hořava family as nonterminal BLOCKED with explicit branch-exhaustion authority rather than promoting child results.
-4. Move to the next analytically closable Tier-1 blocker.
-5. Rerun D7 only after a family-level terminal change or material decision-ledger change.
+1. Run/consume methodology CI for Iter194.
+2. Audit H2/H3 for authenticated 3+1 quantum UV authority plus normalized IR observable/comparator map; if absent, freeze BLOCKED, not FAIL.
+3. Audit whether H4 minimal low-energy instability extends to the full materially allowed mixed-derivative class or only the minimal realization.
+4. If all Hořava material branches then have explicit terminal-or-BLOCKED dispositions, freeze a family-level nonterminal branch-exhaustion certificate and move to the next analytically closable Tier-1 blocker.
+5. Rerun D7 only after a family-level terminal change or decision-ledger material change.
