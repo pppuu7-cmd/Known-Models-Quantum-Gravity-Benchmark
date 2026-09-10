@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **188**  
-**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / fakeon leading inflation attribution identity closed / family-level D7 blockers active**.
+**KMQGB iteration:** **189**  
+**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / fakeon classical causal-response attribution identity closed / family-level D7 blockers active**.
 
 ## Stable metrics
 
@@ -12,7 +12,7 @@
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
 
-No readiness promotion in Iter188.
+No readiness promotion in Iter189.
 
 ## Paper-IV global gates
 
@@ -34,40 +34,33 @@ No readiness promotion in Iter188.
 - nonterminal family rows: **13/14**.
 - untouched Tier-1 rows: **0/14**.
 - Tier-2 unresolved classifications: **0**.
-- defined scoped child results: **8**.
+- defined scoped child results: **9**.
 - scoped scientific FAIL rows: **2**.
 
 No scoped child result is promoted to family exclusion or sufficiency.
 
-## Iter188 — fakeon leading inflation comparator quotient
+## Iter189 — fakeon classical causal-response attribution quotient
 
-For the fixed quadratic `R+R^2+C^2` inflationary action, define `q=m_2^2/m_0^2`. Published leading slow-roll results give
+The classical/tree fakeon projection is represented by the principal-value response, equivalently the half sum of retarded and advanced Green functions. The advanced component carries microcausal/nonlocal response.
 
-`r = 24/N_e^2 * q/(1+2q)`
-
-and
-
-`n_t = -r/8`.
-
-The key attribution result is that the leading `r` formula is independent of the type of quantization used for the massive spin-2 mode. Therefore the leading observable vector `(r,n_t)` does **not** identify the fakeon prescription against a same-action alternative quantization comparator.
+However, the primary fakeon classicization source explicitly states that different quantization prescriptions can share this classical limit. Therefore this response object cannot, by itself, identify the fakeon quantization prescription against a same-action comparator that shares the same classical limit.
 
 Classification:
 
-**`PASS_RQIR_GATE__SCOPED_FAKEON_LEADING_INFLATION_QUANTIZATION_NONIDENTIFIABILITY`**.
+**`PASS_RQIR_GATE__SCOPED_FAKEON_CLASSICAL_CAUSAL_RESPONSE_QUANTIZATION_NONIDENTIFIABILITY`**.
 
 Residual:
 
-**`EXACT_ZERO_FAKEON_ATTRIBUTION_RESIDUAL_AGAINST_SAME_ACTION_QUANTIZATION_COMPARATOR_IN_LEADING_R_NT_BLOCK`**.
+**`EXACT_ZERO_FAKEON_ATTRIBUTION_RESIDUAL_IN_CLASSICAL_PRINCIPAL_VALUE_RESPONSE_BLOCK`**.
 
-This is a negative uniqueness result, not a scientific FAIL of fakeon gravity.
+This is a negative uniqueness result, not a scientific FAIL of fakeon gravity and not a claim that the response is causal.
 
 Authorities:
 
-- `paper_iv/O_HIGHER_DERIVATIVE_FAKEON_INFLATION_COMPARATOR_QUOTIENT_2026-09-10.md`
-- `post_freeze_paper_iv_wave_02/PF2_05B_HIGHER_DERIVATIVE_FAKEON_LEADING_QUOTIENT/result.json`
-- `code/higher_derivative_fakeon_inflation_comparator_reference.py`
-
-The executable control verifies the fakeon lower boundary `q=1/16`, `r=4/(3N_e^2)`, the relation `n_t=-r/8`, monotonicity in `q`, and the Starobinsky limit `r -> 12/N_e^2`.
+- `paper_iv/O_HIGHER_DERIVATIVE_FAKEON_CLASSICAL_CAUSAL_RESPONSE_QUOTIENT_2026-09-10.md`
+- `post_freeze_paper_iv_wave_02/PF2_05C_HIGHER_DERIVATIVE_FAKEON_CLASSICAL_CAUSAL_RESPONSE/result.json`
+- Anselmi, arXiv:1809.05037
+- Anselmi & Piva, arXiv:1806.03605
 
 ## Higher-derivative family status
 
@@ -75,19 +68,19 @@ Parent status remains:
 
 `PERTURBATIVE_HIGHER_DERIVATIVE = PARTIAL_SUBFAMILY_ONLY`.
 
-The leading `(r,n_t)` block is now eliminated as a fakeon-specific discriminator. The remaining family obligation is still
+The leading `(r,n_t)` block and the tree/classical principal-value causal-response block are now both eliminated as unique fakeon-attribution discriminators. The family obligation remains
 
 `HIGHER_DERIVATIVE_MATERIAL_QUANTIZATION_BRANCH_TERMINAL_DISPOSITION_PLUS_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE`.
 
 Next narrow gate:
 
-**`HIGHER_DERIVATIVE_FAKEON_BEYOND_LEADING_INFLATION_OR_CAUSAL_RESPONSE_COMPARATOR_CERTIFICATE`**.
+**`HIGHER_DERIVATIVE_FAKEON_DRESSED_POLE_WIDTH_THRESHOLD_COMPARATOR_CERTIFICATE`**.
 
-A future fakeon-specific residual must come from prescription-sensitive information: beyond-leading spectra/runnings, detailed spectral shape, controlled causal/nonlocal response, resonance/width information, or another independent channel.
+The next discriminator must be genuinely prescription-sensitive at the quantum/dressed level: renormalized fakeon pole/width, sign/threshold/average-continuation structure, or another normalized observable, all with a same-action alternative-quantization comparator and explicit remainder/error domain.
 
-## D7 after Iter188
+## D7 after Iter189
 
-The D7 attempt is recomputed with the eighth scoped child result:
+No family-level row changed terminal status, therefore the fail-closed D7 state remains:
 
 - D2 = false / NOT_CLOSED;
 - D4 = false / NOT_CLOSED;
@@ -101,16 +94,16 @@ The D7 attempt is recomputed with the eighth scoped child result:
 
 ## Remaining family-level blockers
 
-There remain **13** nonterminal candidate-family rows. The higher-derivative blocker is more sharply constrained, while Hořava, AS, nonlocal, string/M/holography, causal sets, CDT/EDT, LQG, GFT/tensor, CFS, noncommutative spectral geometry, canonical WDW and Quantum Graphity retain their explicit family-level proof obligations.
+There remain **13** nonterminal candidate-family rows. Higher-derivative fakeon attribution is more sharply constrained; Hořava, AS, nonlocal, string/M/holography, causal sets, CDT/EDT, LQG, GFT/tensor, CFS, noncommutative spectral geometry, canonical WDW and Quantum Graphity retain their explicit family-level proof obligations.
 
 ## Heavy compute
 
-**IDLE.** The Iter188 leading-block result is analytic. No numerical scan can turn the leading `(r,n_t)` block into fakeon-specific information because the attribution residual is exactly zero under the published quantization-independent map.
+**IDLE.** This iteration is an exact attribution/provenance result. No numerical scan can make the classical principal-value kernel uniquely identify fakeon quantization once a same-classical-limit comparator direction is admitted by the primary source.
 
 ## Next order
 
-1. Validate and merge Iter188.
-2. Search the same fakeon realization for a genuinely prescription-sensitive beyond-leading or causal-response observable.
-3. If current literature cannot supply a comparator-ready object, mark that exact fakeon subgate BLOCKED and move to the next family rather than fitting an unidentifiable leading block.
-4. Prefer next family with highest closure probability (AS or Hořava depending on same-realization authority).
-5. Rerun D7 after every substantive family-level change.
+1. Validate Iter189 methodology CI and artifact/release chain.
+2. Build the same-realization **dressed pole/width/threshold comparator certificate** for fakeon gravity.
+3. Require a normalized physical observable and common-domain alternative-quantization comparator; do not use the classical PV kernel as unique fakeon evidence.
+4. If that object remains unavailable, mark the exact subgate BLOCKED and switch to a higher-probability family blocker rather than relaxing the gate.
+5. Rerun D7 after any family-level terminal change.
