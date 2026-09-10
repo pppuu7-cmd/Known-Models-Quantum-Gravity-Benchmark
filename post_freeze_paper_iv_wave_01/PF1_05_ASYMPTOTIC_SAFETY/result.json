@@ -1,33 +1,59 @@
 {
   "benchmark_id": "PF1-05-ASYMPTOTIC-SAFETY",
   "rqir_core_version": "1.0",
-  "framework": "asymptotic safety / Lorentzian functional RG",
+  "framework": "asymptotic safety / Lorentzian and reconstructed-Lorentzian functional RG",
   "terminal_status": "BLOCKED_MISSING_REQUIRED_OBJECT",
-  "scoped_blocker": "CONTACT_COMPLETE_APPROXIMATION_CONTROLLED_LORENTZIAN_SCALAR_SCATTERING_CERTIFICATE",
+  "scoped_blocker": "PUBLIC_REPRODUCIBLE_CONTACT_COMPLETE_AS_SCALAR_SCATTERING_SAME_REALIZATION_ERROR_ROBUSTNESS_COMPARATOR_CERTIFICATE",
   "positive_controls": [
     "direct Lorentzian graviton spectral functions",
     "GR-infrared to asymptotically-safe-UV spectral interpolation",
     "Ward-improved Lorentzian functional flow",
     "effective action reconstructed through quadratic curvature with graviton-induced form factors",
-    "2026 non-perturbative Lorentzian graviton-mediated scalar 2-to-2 amplitude and cross section",
-    "IR recovery of General Relativity in the scalar-scattering observable",
-    "UV cross section compatible with the stated unitarity bounds",
-    "multiple Lorentzian reconstruction methods used as a robustness control"
+    "2026 full-momentum reconstructed-Lorentzian graviton-mediated scalar 2-to-2 amplitude and cross section",
+    "IR recovery of General Relativity in the mediated scalar-scattering observable",
+    "UV mediated cross section compatible with the stated unitarity bounds",
+    "multiple Lorentzian reconstruction methods used as robustness controls",
+    "ERG2026 public conference description reports a directly Lorentzian-resummed gravitational contact contribution combined with the mediated programme"
+  ],
+  "scoped_2026_results": [
+    {
+      "id": "AS_KNORR_2026_CONTACT_ANALYTIC_TOY",
+      "status": "FAIL_RQIR_GATE__SCOPED_AS_ANALYTIC_CONTACT_MODEL_PARTIAL_WAVE_BOUNDEDNESS",
+      "scope": "simplified analytic contact-inclusive AS scalar model; family FAIL explicitly forbidden",
+      "authority": "arXiv:2602.21285v2"
+    },
+    {
+      "id": "AS_CHIESA_2026_FULL_MOMENTUM_MEDIATED",
+      "status": "PASS_RQIR_GATE__SCOPED_AS_FULL_MOMENTUM_MEDIATED_SCATTERING_CONTROL__A4_EXCLUDED",
+      "scope": "full-momentum dressed mediated s+t+u scalar scattering; A4 explicitly omitted in canonical March preprint",
+      "authority": "arXiv:2603.10168v1"
+    }
   ],
   "obsolete_blockers_rejected": [
     "absence of Lorentzian spectral information",
-    "absence of any Lorentzian physical scattering observable"
+    "absence of any Lorentzian physical scattering observable",
+    "absence of any evidence that the AS contact-amplitude programme exists"
   ],
   "remaining_requirements": [
-    "same-realization direct contact A4 contribution",
-    "complete s+t+u+A4 physical amplitude certificate with crossing/forward-limit treatment",
-    "uncertainty and robustness budget including relevant flow/truncation/avatar approximations rather than reconstruction error only",
-    "same-domain full GR/EFT and alternative-QG comparator predictions"
+    "stable public same-realization contact-complete A_s+A_t+A_u+A4 object from the current 2026 programme",
+    "explicit identity of contact and mediated trajectory/renormalisation conditions",
+    "complete crossing and forward-limit treatment",
+    "uncertainty and robustness budget including flow/truncation/avatar/gauge/regulator/reconstruction approximations",
+    "public equations/data sufficient for independent reproduction",
+    "same-domain full GR/EFT and alternative-QG comparator predictions and comparator-subtracted residual"
   ],
-  "conference_evidence": "ERG2026 reports a Lorentzian-resummed gravitational contact contribution, but it remains promising noncanonical authority until a stable reproducible same-realization package is available",
+  "conference_evidence": {
+    "event": "ERG2026, University of Sussex",
+    "date": "2026-09-03",
+    "speaker": "Angelo Portas Chiesa",
+    "status": "PROMISING_NONCANONICAL_CONTACT_COMPLETE_UPDATE",
+    "claim": "official conference description reports non-perturbative mediated amplitude plus a gravitational contact contribution resummed directly in Lorentzian signature, with cross section compatible with GR in the IR and unitarity in the UV",
+    "terminal_use": false,
+    "reason": "conference-level statement is not yet a stable public same-realization error/comparator/reproducibility package"
+  },
   "rqir_core_defect": false,
   "core_change_requested": false,
   "paper_iv_decision_authorized": false,
   "counts_as_new_required_evidence": false,
-  "reopen_condition": "freeze a contact-complete approximation-controlled Lorentzian scalar-scattering certificate in the same asymptotic-safety realization and run the same-domain comparator robustness audit"
+  "reopen_condition": "freeze the current contact-complete AS scalar-scattering result as a public reproducible same-realization package with A_s+A_t+A_u+A4, full robustness/error ledger and same-domain comparator quotient"
 }
