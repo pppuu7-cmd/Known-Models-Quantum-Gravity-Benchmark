@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "iteration": 208,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "substantive_result": {
+    "family": "GFT_TENSOR_MODELS",
+    "branch": "TGFT_GRAVITY_ANCESTRY_RG_PHASE_STRUCTURE",
+    "status": "BLOCKED_MISSING_REQUIRED_OBJECT__NO_AUDITED_PUBLISHED_SAME_REALIZATION_FULL_FRG_TO_RELATIONAL_GRAVITY_OBSERVABLE_CHAIN_FOR_GRAVITY_ANCESTRY_TGFT",
+    "scientific_fail": false,
+    "cross_realization_splicing": false,
+    "family_terminal_promotion": false,
+    "family_residual_defined": false,
+    "authority": "paper_iv/O_TGFT_SAME_REALIZATION_FRG_TO_RELATIONAL_OBSERVABLE_GAP_AUDIT_2026-09-10.md"
+  },
+  "governance_note": "Within the audited primary corpus, Lorentzian Barrett-Crane gravity TGFT supplies mean-field/condensate and relational-observable objects, while explicit FRG trajectories are supplied by different simplified TGFT realizations. D6 forbids composing those different realizations into one same-realization certificate. TGFT is therefore parked on a precise missing object, not failed.",
+  "next_gate": "PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_CONTINUUM_TO_NORMALIZED_4D_GRAVITY_OBSERVABLE_COMPARATOR"
+}
