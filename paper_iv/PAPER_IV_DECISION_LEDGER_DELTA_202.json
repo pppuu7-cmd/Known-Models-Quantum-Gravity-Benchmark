@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "iteration": 202,
+  "baseline_frozen_ledger": "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json",
+  "prior_delta": "paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_201.json",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "decision_semantics_changed": false,
+  "coverage_counts": {
+    "tier1_required": 14,
+    "tier1_terminal": 1,
+    "tier1_nonterminal": 13,
+    "tier2_unresolved": 0
+  },
+  "scoped_gravity_residual_rows": 10,
+  "gates": {
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+    "D7": "NOT_CLOSED"
+  },
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity": {
+    "R3_percent": 24,
+    "active": false,
+    "activation_condition": "D7 == NEW_REQUIRED"
+  },
+  "ledger_delta": {
+    "family": "GFT_TENSOR_MODELS",
+    "prior_missing_certificate": "GFT_SPINFOAM_INDEPENDENCE_OR_REDUCTION_PLUS_FULL_GRAVITY_OBSERVABLE_COMPARATOR_CERTIFICATE",
+    "new_scoped_evidence": [
+      "PASS_STRUCTURAL_GATE__SELECTED_KKL_COMPATIBLE_GFT_HAS_EXPLICIT_SPINFOAM_REDUCTION_MAP_AT_THE_MICROSCOPIC_AMPLITUDE_LEVEL",
+      "PASS_STRUCTURAL_GATE__GFT_RELATIONAL_CONDENSATE_DYNAMICS_SUPPLIES_EXPLICIT_GR_LIMIT_AND_QUANTUM_CORRECTION_CHANNELS"
+    ],
+    "new_authority": "paper_iv/O_GFT_SPINFOAM_REDUCTION_AND_RELATIONAL_OBSERVABLE_SCOPE_AUDIT_2026-09-10.md",
+    "updated_missing_certificate": "GFT_MATERIAL_BRANCH_REDUCTION_OR_INDEPENDENCE_MAP_PLUS_CONTROLLED_CONTINUUM_TRAJECTORY_AND_NORMALIZED_RELATIONAL_GRAVITY_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE",
+    "parent_disposition": "PARTIAL_SUBFAMILY_ONLY",
+    "family_residual_defined": false,
+    "terminal_promotion": false,
+    "new_required_evidence": false,
+    "reason": "A selected KKL-compatible GFT has an explicit microscopic spin-foam formulation, while Lorentzian Barrett-Crane GFT/TGFT supplies relational cosmological perturbation dynamics with a GR regime and concrete quantum-correction channels. This removes the blanket ambiguity about whether any GFT-spinfoam map or effective observable exists. It does not establish family-wide reduction/equivalence, a controlled nonperturbative continuum trajectory, a common observational normalization, or a full comparator/error quotient."
+  },
+  "d7_effect": "NONE__PRECONDITIONS_D2_D4_REMAIN_OPEN",
+  "heavy_compute": "IDLE"
+}
