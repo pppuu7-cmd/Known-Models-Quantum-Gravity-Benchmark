@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "iteration": 261,
+  "rqir_core": "v1.0_FROZEN",
+  "family": "GFT_TENSOR_MODELS",
+  "scoped_reduction": "MERGED_INTO_LQG_SPINFOAM_WITH_EXPLICIT_PERTURBATIVE_GFT_TO_EPRL_FK_SPINFOAM_AMPLITUDE_MAP",
+  "reduced_child": "EPRL_FK_COVARIANT_GFT_PERTURBATIVE_AMPLITUDES",
+  "independent_remainder": "NON_EPRL_TGFT_CONTINUUM_CANONICAL_AND_BARRETT_CRANE_SECTORS",
+  "remaining_blocker": "BLOCKED_MISSING_REQUIRED_OBJECT__NON_EPRL_TGFT_UNIVERSALITY_REDUCTION_THEOREM_OR_COMPARATOR_READY_INDEPENDENT_GRAVITY_OBSERVABLE_WITH_ERROR_TRANSPORT",
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "scientific_fail": false,
+  "D2": "NOT_CLOSED",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED",
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "new_required_authorized": false,
+  "candidate_gravity_R3_percent": 24,
+  "candidate_gravity_activation": false,
+  "heavy_compute": "IDLE",
+  "polygon_operational_saturation_percent": 96,
+  "next_gate": "HORAVA_LIFSHITZ_PROJECTABLE_NONPROJECTABLE_FINITE_SPLIT_OR_ASYMPTOTIC_SAFETY_SAME_REALIZATION_OBJECT"
+}
