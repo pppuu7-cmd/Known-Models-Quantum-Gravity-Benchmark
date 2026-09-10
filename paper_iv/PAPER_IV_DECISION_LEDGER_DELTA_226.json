@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "iteration": 226,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "CDT_EDT",
+    "branch": "EDT_4D_CORRELATOR_MATCH",
+    "analytic_gr_eft_comparator_ready": true,
+    "historical_lattice_correlator_control_exists": true,
+    "continuum_safe_same_operator_match_executed": false,
+    "independent_newton_constant_input_available": true,
+    "status_after": "PARTIAL_SUBFAMILY_ONLY__STRONG_SEMICLASSICAL_SCALE_AND_PHENOMENOLOGY_CONTROLS__DIRECT_UNIVERSAL_EFT_COMPARATOR_AVAILABLE__CONTINUUM_SAFE_SAME_OBSERVABLE_LATTICE_TEST_PENDING",
+    "scientific_fail": false,
+    "family_terminal_promotion": false,
+    "family_residual_defined": false,
+    "heavy_compute": "PROSPECTIVE_HIGH_VALUE__WAIT_FOR_CONTINUUM_SAFE_OPERATOR_OR_RAW_MODERN_MEASUREMENT",
+    "authority": "paper_iv/O_EDT_2026_EFT_CORRELATOR_LATTICE_MATCHABILITY_AUDIT_2026-09-10.md"
+  },
+  "governance_note": "The 2026 gauge-invariant low-energy gravity curvature/volume correlators close the analytic comparator side and explicitly target EDT-style lattice tests. Historical 4D EDT curvature correlators are scientifically useful positive controls but cannot be retroactively promoted to the final comparator because their operator definition predates the relational EFT construction and the traditional deficit-angle curvature has a continuum/infinite-volume pathology. A new or redefined continuum-safe multi-spacing lattice measurement is required.",
+  "next_gate": "PERTURBATIVE_HIGHER_DERIVATIVE_POLE_PRESCRIPTION_CAUSALITY_OBSERVABLE_FAMILY_CLOSURE_REAUDIT"
+}
