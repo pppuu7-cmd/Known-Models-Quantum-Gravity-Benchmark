@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "iteration": 237,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "STRING_MTHEORY_HOLOGRAPHY",
+    "branch": "ADSCFT_FIXED_BOUNDARY_HOLOGRAPHY",
+    "status_after": "PARTIAL_SUBFAMILY_ONLY__FIXED_ADSCFT_MICROSCOPIC_BOUNDARY_DEFINITION_PASS__SEMICLASSICAL_BULK_DICTIONARY_PASS__FINITE_N_COMMON_DOMAIN_QUANTUM_GRAVITY_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE_OPEN",
+    "fixed_boundary_quantum_definition": true,
+    "semiclassical_bulk_reconstruction": true,
+    "exact_global_finite_n_local_bulk_reconstruction": false,
+    "finite_n_common_domain_gravity_residual_closed": false,
+    "scientific_fail": false,
+    "family_terminal_promotion": false,
+    "family_residual_defined": false,
+    "authority": "paper_iv/O_ADSCFT_FINITE_N_BULK_OBSERVABLE_CLOSURE_AUDIT_ITER237_2026-09-10.md"
+  },
+  "governance_note": "A fixed AdS/CFT dual pair can supply a strong microscopic quantum definition and exact boundary observables, but semiclassical bulk reconstruction is not promoted to an exact global finite-N local-bulk map. A terminal RQIR object still needs one fixed-CFT finite-N observable tied to a same-boundary-condition GR/EFT comparator with explicit 1/N, alpha-prime and reconstruction errors. One AdS sector also cannot close all string/M-theory backgrounds.",
+  "next_gate": "STRING_FIELD_THEORY_QUANTUM_CLOSED_BACKGROUND_EQUIVALENCE_TO_NORMALIZED_GRAVITY_OBSERVABLE_AUDIT"
+}
