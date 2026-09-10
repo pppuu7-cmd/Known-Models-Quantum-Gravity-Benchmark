@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "iteration": 188,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "id": "HIGHER_DERIVATIVE_FAKEON_LEADING_INFLATION_QUOTIENT",
+  "parent_family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "role": "scoped_subbenchmark",
+  "object_complete_in_declared_domain": true,
+  "object_status": "PASS_RQIR_GATE__SCOPED_FAKEON_LEADING_INFLATION_QUANTIZATION_NONIDENTIFIABILITY",
+  "observable_block": ["r", "n_t"],
+  "domain": {
+    "approximation": "leading slow-roll / leading 1/N_e block for Starobinsky plus Weyl-squared quadratic gravity",
+    "q_definition": "q=m_2^2/m_0^2",
+    "fakeon_q_min": 0.0625,
+    "fakeon_origin": "m_2 >= m_0/4",
+    "r_formula": "r=24/N_e^2*q/(1+2q)",
+    "n_t_formula": "n_t=-r/8"
+  },
+  "comparator": {
+    "type": "same-action alternative spin-2 quantization comparator",
+    "published_leading_relation": "r expression is independent of the type of quantization used for the spin-2 ghost",
+    "attribution_question": "does the leading (r,n_t) block identify the fakeon prescription rather than the common R+R^2+C^2 action coefficient?"
+  },
+  "residual_defined": true,
+  "residual_status": "EXACT_ZERO_FAKEON_ATTRIBUTION_RESIDUAL_AGAINST_SAME_ACTION_QUANTIZATION_COMPARATOR_IN_LEADING_R_NT_BLOCK",
+  "comparator_orthogonal_residual": "ZERO_IN_DECLARED_BLOCK",
+  "scientific_fail": false,
+  "global_sufficiency": false,
+  "counts_as_new_required_exclusion": false,
+  "interpretation": "The leading tensor-to-scalar ratio and tensor tilt distinguish finite Weyl-squared coupling from the pure Starobinsky limit, but they do not uniquely attribute that deformation to the fakeon quantization prescription. This is quantization non-identifiability, not a failure of the fakeon theory.",
+  "authorities": ["arXiv:2504.05900", "arXiv:2005.10293", "arXiv:2306.04687"],
+  "executable_control": "code/higher_derivative_fakeon_inflation_comparator_reference.py",
+  "audit": "paper_iv/O_HIGHER_DERIVATIVE_FAKEON_INFLATION_COMPARATOR_QUOTIENT_2026-09-10.md",
+  "next_gate": "HIGHER_DERIVATIVE_FAKEON_BEYOND_LEADING_INFLATION_OR_CAUSAL_RESPONSE_COMPARATOR_CERTIFICATE"
+}

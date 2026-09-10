@@ -1,8 +1,8 @@
 # KMQGB Current Benchmark Front
 
 **Updated:** 2026-09-10  
-**KMQGB iteration:** **187**  
-**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / higher-derivative quantization branches mapped / fakeon scoped control frozen / family-level D7 blockers active**.
+**KMQGB iteration:** **188**  
+**Phase:** **RQIR Core v1.0 FROZEN / all known-school first-pass audits complete / fakeon leading inflation attribution identity closed / family-level D7 blockers active**.
 
 ## Stable metrics
 
@@ -12,7 +12,7 @@
 - Candidate activation condition: D7=`NEW_REQUIRED` only.
 - AS/LQG/CFS Closure Wave 02: **0/3 terminal**.
 
-No readiness promotion in Iter187.
+No readiness promotion in Iter188.
 
 ## Paper-IV global gates
 
@@ -34,65 +34,60 @@ No readiness promotion in Iter187.
 - nonterminal family rows: **13/14**.
 - untouched Tier-1 rows: **0/14**.
 - Tier-2 unresolved classifications: **0**.
-- defined scoped child results: **7**.
+- defined scoped child results: **8**.
 - scoped scientific FAIL rows: **2**.
 
 No scoped child result is promoted to family exclusion or sufficiency.
 
-## Iter187 — higher-derivative branch result
+## Iter188 — fakeon leading inflation comparator quotient
 
-The local four-derivative spin-2 pole fork has been resolved at the taxonomy level. The opposite-bare-residue massive spin-2 pole is a structural fact, but it is not by itself a family-level unitarity verdict because the physical prescription branches materially differ.
+For the fixed quadratic `R+R^2+C^2` inflationary action, define `q=m_2^2/m_0^2`. Published leading slow-roll results give
 
-Frozen branches include:
+`r = 24/N_e^2 * q/(1+2q)`
 
-- bare/indefinite-metric ghost interpretation;
-- fakeon / purely-virtual average continuation;
-- Lee-Wick / unstable-resonance treatment;
-- PT-symmetric / modified-inner-product approaches;
-- Euclidean reflection-positive lattice construction.
+and
 
-Authority:
+`n_t = -r/8`.
 
-- `paper_iv/O_HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_AUDIT_2026-09-10.md`
-- `paper_iv/HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_MAP_2026-09-10.json`
+The key attribution result is that the leading `r` formula is independent of the type of quantization used for the massive spin-2 mode. Therefore the leading observable vector `(r,n_t)` does **not** identify the fakeon prescription against a same-action alternative quantization comparator.
+
+Classification:
+
+**`PASS_RQIR_GATE__SCOPED_FAKEON_LEADING_INFLATION_QUANTIZATION_NONIDENTIFIABILITY`**.
+
+Residual:
+
+**`EXACT_ZERO_FAKEON_ATTRIBUTION_RESIDUAL_AGAINST_SAME_ACTION_QUANTIZATION_COMPARATOR_IN_LEADING_R_NT_BLOCK`**.
+
+This is a negative uniqueness result, not a scientific FAIL of fakeon gravity.
+
+Authorities:
+
+- `paper_iv/O_HIGHER_DERIVATIVE_FAKEON_INFLATION_COMPARATOR_QUOTIENT_2026-09-10.md`
+- `post_freeze_paper_iv_wave_02/PF2_05B_HIGHER_DERIVATIVE_FAKEON_LEADING_QUOTIENT/result.json`
+- `code/higher_derivative_fakeon_inflation_comparator_reference.py`
+
+The executable control verifies the fakeon lower boundary `q=1/16`, `r=4/(3N_e^2)`, the relation `n_t=-r/8`, monotonicity in `q`, and the Starobinsky limit `r -> 12/N_e^2`.
+
+## Higher-derivative family status
 
 Parent status remains:
 
 `PERTURBATIVE_HIGHER_DERIVATIVE = PARTIAL_SUBFAMILY_ONLY`.
 
-Refined blocker:
+The leading `(r,n_t)` block is now eliminated as a fakeon-specific discriminator. The remaining family obligation is still
 
 `HIGHER_DERIVATIVE_MATERIAL_QUANTIZATION_BRANCH_TERMINAL_DISPOSITION_PLUS_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE`.
 
-## Fakeon scoped control
-
-A fixed `R + R^2 + C^2` fakeon realization now supplies a complete scoped construction control:
-
-`PASS_RQIR_GATE__SCOPED_FAKEON_RENORMALIZABILITY_UNITARITY_INFLATION_OBSERVABLE_CONTROL`.
-
-It establishes within its declared scope:
-
-- renormalizable higher-derivative parent;
-- fakeon/purely-virtual spin-2 prescription;
-- perturbative-unitarity control under that prescription;
-- explicit scalar/tensor inflationary observables;
-- explicit declaration that ordinary microcausality is modified rather than silently assumed.
-
-It does **not** yet establish a comparator-orthogonal QG residual.
-
-Authority:
-
-`post_freeze_paper_iv_wave_02/PF2_05_HIGHER_DERIVATIVE_FAKEON/result.json`.
-
 Next narrow gate:
 
-**`HIGHER_DERIVATIVE_FAKEON_INFLATION_FULL_COMPARATOR_QUOTIENT_PLUS_CAUSAL_REPLACEMENT_CERTIFICATE`**.
+**`HIGHER_DERIVATIVE_FAKEON_BEYOND_LEADING_INFLATION_OR_CAUSAL_RESPONSE_COMPARATOR_CERTIFICATE`**.
 
-The comparator union must include at minimum Starobinsky `R+R^2`, complete same-order local higher-curvature EFT directions and state/background/nuisance directions on an identical observable domain.
+A future fakeon-specific residual must come from prescription-sensitive information: beyond-leading spectra/runnings, detailed spectral shape, controlled causal/nonlocal response, resonance/width information, or another independent channel.
 
-## D7 after Iter187
+## D7 after Iter188
 
-The executable D7 attempt is recomputed after adding the seventh scoped child. Result remains:
+The D7 attempt is recomputed with the eighth scoped child result:
 
 - D2 = false / NOT_CLOSED;
 - D4 = false / NOT_CLOSED;
@@ -104,20 +99,18 @@ The executable D7 attempt is recomputed after adding the seventh scoped child. R
 - global decision = **`NOT_YET_AUTHORIZED`**;
 - Candidate Gravity activation = false.
 
-This confirms that additional scoped positive evidence cannot accidentally improve the global verdict while the family row remains incomplete.
-
 ## Remaining family-level blockers
 
-There remain **13** nonterminal candidate-family rows. Higher-derivative is now more sharply localized, while the other twelve retain their Iter186 blockers: Hořava, AS, nonlocal, string/M/holography, causal sets, CDT/EDT, LQG, GFT/tensor, CFS, noncommutative spectral geometry, canonical WDW and Quantum Graphity.
+There remain **13** nonterminal candidate-family rows. The higher-derivative blocker is more sharply constrained, while Hořava, AS, nonlocal, string/M/holography, causal sets, CDT/EDT, LQG, GFT/tensor, CFS, noncommutative spectral geometry, canonical WDW and Quantum Graphity retain their explicit family-level proof obligations.
 
 ## Heavy compute
 
-**IDLE.** The fakeon comparator quotient first requires a prospectively frozen common-domain observable/comparator/covariance capsule. Blind fitting before that is forbidden.
+**IDLE.** The Iter188 leading-block result is analytic. No numerical scan can turn the leading `(r,n_t)` block into fakeon-specific information because the attribution residual is exactly zero under the published quantization-independent map.
 
 ## Next order
 
-1. Validate and merge Iter187.
-2. Freeze the fakeon inflation comparator capsule.
-3. Test whether any fakeon prediction survives Starobinsky + local-EFT/state/nuisance quotient without retuning the RQIR criterion.
-4. Preserve either a nonzero residual or comparator absorption as a scientific result.
-5. Rerun D7, then continue through the remaining family blockers.
+1. Validate and merge Iter188.
+2. Search the same fakeon realization for a genuinely prescription-sensitive beyond-leading or causal-response observable.
+3. If current literature cannot supply a comparator-ready object, mark that exact fakeon subgate BLOCKED and move to the next family rather than fitting an unidentifiable leading block.
+4. Prefer next family with highest closure probability (AS or Hořava depending on same-realization authority).
+5. Rerun D7 after every substantive family-level change.
