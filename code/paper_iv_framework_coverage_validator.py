@@ -1,9 +1,9 @@
 """Fail-closed validator for the Paper-IV major-framework coverage census.
 
-A PASS means only that the declared coverage contract and residual matrix are
-mutually consistent. It never means that framework coverage is scientifically
-complete. Scoped child PASS/FAIL results are preserved but may not silently
-be promoted into a parent-family verdict.
+PASS means only that the declared coverage contract and residual matrix are
+mutually consistent. It never means framework coverage is scientifically
+complete. Scoped child results and Tier-2 dispositions may not silently be
+promoted into family-level sufficiency or exclusion.
 """
 from __future__ import annotations
 
@@ -14,6 +14,12 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = ROOT / "protocol" / "PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json"
 MATRIX = ROOT / "paper_iv" / "PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json"
 ALLOWED_CHILD_ROLES = {"scoped_subbenchmark", "scoped_boundary_control"}
+ALLOWED_TIER2 = {
+    "UNRESOLVED_CLASSIFICATION",
+    "REDUCED_TO_TIER1_WITH_EXPLICIT_MAP",
+    "PROMOTED_TO_TIER1",
+    "SPLIT_CONCRETE_PARENT_PROMOTION_RULE",
+}
 
 
 def fail(msg: str) -> None:
@@ -23,7 +29,6 @@ def fail(msg: str) -> None:
 def main() -> int:
     contract = json.loads(CONTRACT.read_text(encoding="utf-8"))
     matrix = json.loads(MATRIX.read_text(encoding="utf-8"))
-
     frozen = {"version": "1.0", "status": "FROZEN"}
     if contract.get("rqir_core") != frozen or matrix.get("rqir_core") != frozen:
         fail("coverage and matrix must use frozen RQIR Core v1.0")
@@ -46,7 +51,6 @@ def main() -> int:
     all_ids = [r.get("id") for r in matrix_rows]
     if len(all_ids) != len(set(all_ids)) or any(not x for x in all_ids):
         fail("matrix IDs must be unique and non-empty")
-
     required_matrix = {r.get("id"): r for r in matrix_rows if r.get("required_for_D2") is True}
     if set(required_matrix) != tier1_set:
         fail(f"matrix required rows do not match coverage contract: {set(required_matrix)} != {tier1_set}")
@@ -65,6 +69,8 @@ def main() -> int:
                 fail(f"{rid}: nonterminal coverage cannot count as exclusion")
             if mrow.get("residual_defined") is True and state != "PARTIAL_SUBFAMILY_ONLY":
                 fail(f"{rid}: nonterminal family row cannot silently claim a complete residual")
+            if not mrow.get("missing_certificate") or not mrow.get("minimum_payload"):
+                fail(f"{rid}: nonterminal family needs explicit closure certificate/payload")
         if state == "PARTIAL_SUBFAMILY_ONLY" and mrow.get("object_complete_in_declared_domain") is True:
             fail(f"{rid}: partial family coverage cannot be marked complete at family level")
 
@@ -80,14 +86,32 @@ def main() -> int:
             fail(f"{cid}: scoped child cannot count as family-level NEW_REQUIRED exclusion")
         if child.get("global_sufficiency") is not False:
             fail(f"{cid}: scoped child cannot establish global sufficiency")
-        if child.get("object_complete_in_declared_domain") is not True:
-            fail(f"{cid}: stored scoped result must be complete in its own declared domain")
-        if child.get("residual_defined") is not True:
-            fail(f"{cid}: stored scoped result must have a defined result/residual status")
+        if child.get("object_complete_in_declared_domain") is not True or child.get("residual_defined") is not True:
+            fail(f"{cid}: stored scoped result must be complete/defined in its own domain")
 
-    unresolved_tier2 = [r.get("id") for r in tier2 if r.get("status") == "UNRESOLVED_CLASSIFICATION"]
-    if any(not r.get("id") for r in tier2):
-        fail("Tier-2 entries need non-empty IDs")
+    unresolved_tier2: list[str] = []
+    for row in tier2:
+        tid = row.get("id")
+        status = row.get("status")
+        if not tid:
+            fail("Tier-2 entries need non-empty IDs")
+        if status not in ALLOWED_TIER2:
+            fail(f"{tid}: unknown Tier-2 disposition {status!r}")
+        if status == "UNRESOLVED_CLASSIFICATION":
+            unresolved_tier2.append(tid)
+        elif status == "PROMOTED_TO_TIER1":
+            if row.get("tier1_id") not in tier1_set:
+                fail(f"{tid}: promoted Tier-2 entry must name an existing Tier-1 row")
+        elif status == "REDUCED_TO_TIER1_WITH_EXPLICIT_MAP":
+            mapping = row.get("reduction_map")
+            if not isinstance(mapping, list) or not mapping or not all(isinstance(x, str) and x.strip() for x in mapping):
+                fail(f"{tid}: reduction requires a non-empty explicit reduction_map")
+        elif status == "SPLIT_CONCRETE_PARENT_PROMOTION_RULE":
+            promoted = row.get("promoted_tier1_ids")
+            if not isinstance(promoted, list) or not promoted or not set(promoted) <= tier1_set:
+                fail(f"{tid}: split disposition must promote concrete existing Tier-1 rows")
+            if not str(row.get("promotion_rule", "")).strip():
+                fail(f"{tid}: split disposition requires a future-parent promotion rule")
 
     rules = contract.get("rules", {})
     required_true = [
@@ -99,6 +123,8 @@ def main() -> int:
         "model_specific_adapters_are_allowed_without_core_change",
         "scoped_child_fail_cannot_be_promoted_to_parent_fail_without_family_scope_proof",
         "scoped_child_pass_cannot_be_promoted_to_parent_sufficiency_without_family_scope_proof",
+        "generic_program_labels_do_not_count_as_tested_physical_parents",
+        "new_concrete_independent_parent_triggers_tier1_promotion",
     ]
     for key in required_true:
         if rules.get(key) is not True:
@@ -114,10 +140,8 @@ def main() -> int:
         fail("stored Tier-1 nonterminal count mismatch")
     if summary.get("tier2_unresolved_rows") != len(unresolved_tier2):
         fail("stored Tier-2 unresolved count mismatch")
-    if d2a and summary.get("D2_coverage_layer") != "PASS":
-        fail("coverage is complete but stored D2 coverage layer is not PASS")
-    if not d2a and summary.get("D2_coverage_layer") == "PASS":
-        fail("coverage layer cannot PASS with unresolved schools")
+    if d2a != (summary.get("D2_coverage_layer") == "PASS"):
+        fail("stored D2 coverage layer inconsistent with computed coverage")
 
     print(json.dumps({
         "status": "PASS_LOGIC_ONLY",
@@ -125,6 +149,7 @@ def main() -> int:
         "tier1_total": len(tier1),
         "tier1_unresolved": unresolved_tier1,
         "tier2_unresolved": unresolved_tier2,
+        "tier2_dispositions": {r["id"]: r["status"] for r in tier2},
         "scoped_child_rows": [r["id"] for r in scoped_children],
         "scientific_terminal": False,
     }, indent=2, sort_keys=True))
