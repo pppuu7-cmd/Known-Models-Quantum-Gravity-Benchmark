@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "iteration": 214,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "paper_iii_reopen": false,
+  "substantive_result": {
+    "family": "NONCOMMUTATIVE_SPECTRAL_GEOMETRY",
+    "branch": "RANDOM_DIRAC_ENSEMBLES",
+    "status": "BLOCKED_RANDOM_DIRAC_ENSEMBLE_NO_LOCATED_SAME_REALIZATION_4D_LORENTZIAN_CONTINUUM_EINSTEIN_OBSERVABLE_COMPARATOR_ERROR_CHAIN",
+    "dirac_operator_quantum_measure": true,
+    "explicit_4d_lorentzian_fuzzy_action_formulas": true,
+    "large_n_phase_bootstrap_schwinger_dyson_machinery": true,
+    "controlled_4d_lorentzian_continuum_einstein_emergence": false,
+    "normalized_gravity_observable_comparator_error_chain": false,
+    "scientific_fail": false,
+    "family_terminal_promotion": false,
+    "family_residual_defined": false,
+    "counts_as_new_required_exclusion": false,
+    "authority": "paper_iv/O_NCG_RANDOM_DIRAC_ENSEMBLE_4D_LORENTZIAN_GRAVITY_AUTHORITY_SWEEP_2026-09-10.md"
+  },
+  "governance_note": "Random Dirac ensembles genuinely quantize finite spectral geometry and 4D Lorentzian fuzzy actions are available, but the bounded corpus does not close a same-realization large-N/continuum-to-Einstein-to-normalized-observable chain. Low-dimensional solved ensembles may not be spliced into a 4D Lorentzian action without an explicit reduction/universality map.",
+  "next_gate": "NCG_SECOND_QUANTIZED_AND_PERTURBATIVE_SPECTRAL_ACTION_GRAVITY_COMPLETION_AUTHORITY_SEARCH"
+}
