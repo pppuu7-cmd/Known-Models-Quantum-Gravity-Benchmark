@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "iteration": 204,
+  "baseline_frozen_ledger": "paper_iv/PAPER_IV_D7_ATTEMPT_2026-09-10.json",
+  "prior_delta": "paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_203.json",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "decision_semantics_changed": false,
+  "coverage_counts": {"tier1_required":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0},
+  "scoped_gravity_residual_rows": 11,
+  "scoped_scientific_fail_rows": 3,
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "candidate_gravity": {"R3_percent":24,"active":false,"activation_condition":"D7 == NEW_REQUIRED"},
+  "ledger_delta": {
+    "family": "GFT_TENSOR_MODELS",
+    "new_scoped_evidence": "FAIL_RQIR_GATE__PURE_RANDOM_TENSOR_STANDARD_MELONIC_LARGE_N_CONTINUUM_IS_BRANCHED_POLYMER_NOT_EXTENDED_4D_GR_GEOMETRY",
+    "blocked_sibling": "BLOCKED_MISSING_REQUIRED_OBJECT__PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_CONTINUUM_TO_NORMALIZED_4D_GRAVITY_OBSERVABLE_COMPARATOR",
+    "parent_disposition": "PARTIAL_SUBFAMILY_ONLY",
+    "pure_random_tensor_branch_disposition": "PARTIAL_SUBBRANCH_TERMINAL",
+    "family_residual_defined": false,
+    "terminal_promotion": false,
+    "new_required_evidence": false,
+    "reason": "Standard melonic/tree-dominated random tensor criticality is controlled and lands in branched-polymer universality, which fails the extended 4D GR-like continuum target within that scoped realization. Enhanced/nonmelonic tensor models materially alter universality and remain blocked because no same-realization continuum-to-normalized-gravity-observable comparator exists. The child FAIL is not promoted to the pure-random-tensor parent, GFT/TGFT, or the Tier-1 family."
+  },
+  "d7_effect": "NONE__PRECONDITIONS_D2_D4_REMAIN_OPEN",
+  "heavy_compute": "IDLE"
+}
