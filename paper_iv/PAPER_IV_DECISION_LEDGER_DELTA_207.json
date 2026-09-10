@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "iteration": 207,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "global_decision_before": "NOT_YET_AUTHORIZED",
+  "global_decision_after": "NOT_YET_AUTHORIZED",
+  "D2_before": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D2_after": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4_before": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D4_after": "PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+  "D7_before": "NOT_CLOSED",
+  "D7_after": "NOT_CLOSED",
+  "candidate_gravity_activation": false,
+  "new_required_authorized": false,
+  "substantive_result": {
+    "family": "GFT_TENSOR_MODELS",
+    "graph_completion_result": "PASS_REDUCTION_SCOPE_GATE__PUBLISHED_EXPLICIT_LQG_SPINFOAM_GRAPH_COMPLETION_GFT_CONSTRUCTIONS_REDUCE_TO_LQG_SPINFOAM_PARENT",
+    "unmapped_generic_gft_result": "BLOCKED_GRAVITY_ANCESTRY__GENERIC_GFT_NOT_INDEPENDENTLY_ADMITTED_TO_TIER1",
+    "tgft_gravity_boundary": "PASS_GOVERNANCE_GATE__TGFT_GRAVITY_ADMISSION_REQUIRES_EXPLICIT_MICROSCOPIC_GEOMETRIC_GAUGE_SIMPLICITY_OR_EQUIVALENT_GRAVITY_ANCESTRY",
+    "family_terminal_promotion": false,
+    "scientific_pass_fail_transfer": false,
+    "family_residual_defined": false,
+    "authority": "paper_iv/O_GFT_GENERALIZED_GRAPH_COMPLETION_SCOPE_EXHAUSTION_AND_TGFT_ANCESTRY_AUDIT_2026-09-10.md"
+  },
+  "governance_note": "Published generalized graph-completion GFTs that explicitly propagate LQG states or extend named spin-foam dynamics do not create an additional independent Tier-1 family. Generic unmapped GFTs remain BLOCKED on gravity ancestry, while explicitly quantum-geometric TGFT sectors remain eligible but nonterminal pending a same-realization RG/continuum-to-relational-observable certificate.",
+  "next_gate": "TGFT_GRAVITY_ANCESTRY_FULL_RG_TRAJECTORY_TO_RELATIONAL_GRAVITY_OBSERVABLE_SAME_REALIZATION_MAP"
+}

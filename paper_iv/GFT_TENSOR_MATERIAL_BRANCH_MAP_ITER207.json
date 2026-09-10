@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.3",
+  "iteration": 207,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "parent_family": "GFT_TENSOR_MODELS",
+  "global_family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "family_residual_defined": false,
+  "inherits_from": "paper_iv/GFT_TENSOR_MATERIAL_BRANCH_MAP_ITER206.json",
+  "generalized_graph_completion_scope": {
+    "status": "PASS_REDUCTION_SCOPE_GATE__PUBLISHED_EXPLICIT_LQG_SPINFOAM_GRAPH_COMPLETION_GFT_CONSTRUCTIONS_REDUCE_TO_LQG_SPINFOAM_PARENT",
+    "scope": "audited published multi-field, dually weighted, KKL/all-LQG and related generalized graph-completion GFT constructions only where an explicit LQG/spinfoam dynamics or constraint map is supplied",
+    "reduction_target": "LQG_SPINFOAM",
+    "independent_tier1_count": false,
+    "scientific_result_inherited": false,
+    "unmapped_generic_gft_status": "BLOCKED_GRAVITY_ANCESTRY__GENERIC_GFT_NOT_INDEPENDENTLY_ADMITTED_TO_TIER1",
+    "authority": "paper_iv/O_GFT_GENERALIZED_GRAPH_COMPLETION_SCOPE_EXHAUSTION_AND_TGFT_ANCESTRY_AUDIT_2026-09-10.md"
+  },
+  "tgft_gravity_admission_boundary": {
+    "status": "PASS_GOVERNANCE_GATE__TGFT_GRAVITY_ADMISSION_REQUIRES_EXPLICIT_MICROSCOPIC_GEOMETRIC_GAUGE_SIMPLICITY_OR_EQUIVALENT_GRAVITY_ANCESTRY",
+    "generic_tensorial_rg_structure_alone_is_gravity_certificate": false,
+    "gravity_ancestry_example": "CAUSALLY_COMPLETE_LORENTZIAN_BARRETT_CRANE_TGFT",
+    "authority": "paper_iv/O_GFT_GENERALIZED_GRAPH_COMPLETION_SCOPE_EXHAUSTION_AND_TGFT_ANCESTRY_AUDIT_2026-09-10.md"
+  },
+  "surviving_nonreduced_sectors": [
+    {
+      "id": "TGFT_GRAVITY_ANCESTRY_RG_PHASE_STRUCTURE",
+      "status": "BLOCKED_MISSING_REQUIRED_OBJECT__TGFT_GRAVITY_ANCESTRY_FULL_RG_TRAJECTORY_TO_RELATIONAL_GRAVITY_OBSERVABLE_SAME_REALIZATION_MAP"
+    },
+    {
+      "id": "GFT_CONDENSATE_HYDRODYNAMIC_COSMOLOGY",
+      "status": "PARTIAL_DERIVED_SECTOR__NOT_INDEPENDENT_TIER1__MICROSCOPIC_ANCESTRY_AND_CONTROLLED_RG_APPROXIMATION_ERROR_TRANSPORT_REQUIRED"
+    },
+    {
+      "id": "PURE_RANDOM_TENSOR_MODELS",
+      "status": "PARTIAL_SUBBRANCH_TERMINAL__MELONIC_FAIL__ENHANCED_NONMELONIC_BLOCKED"
+    }
+  ],
+  "family_terminal_promotion": false,
+  "counts_as_new_required_exclusion": false,
+  "refined_family_blocker": "GFT_TENSOR_SURVIVING_TGFT_AND_PURE_TENSOR_BRANCHES_TERMINAL_CONTINUUM_OBSERVABLE_COMPARATOR_ERROR_CERTIFICATE",
+  "next_gate": "TGFT_GRAVITY_ANCESTRY_FULL_RG_TRAJECTORY_TO_RELATIONAL_GRAVITY_OBSERVABLE_SAME_REALIZATION_MAP"
+}
