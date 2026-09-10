@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "iteration": 189,
+  "base_matrix": "paper_iv/PAPER_IV_COMPARATOR_RESIDUAL_MATRIX_2026-09-10.json",
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "append_scoped_rows": [
+    {
+      "id":"HIGHER_DERIVATIVE_FAKEON_CLASSICAL_PV_RESPONSE",
+      "parent_family":"PERTURBATIVE_HIGHER_DERIVATIVE",
+      "framework":"Quadratic higher-derivative gravity with fakeon spin-2 prescription, classical projected response",
+      "required_for_D2":false,
+      "role":"scoped_subbenchmark",
+      "object_complete_in_declared_domain":true,
+      "object_status":"PASS_RQIR_GATE__SCOPED_FAKEON_CLASSICAL_CAUSAL_RESPONSE_QUANTIZATION_NONIDENTIFIABILITY",
+      "residual_status":"EXACT_ZERO_FAKEON_ATTRIBUTION_RESIDUAL_IN_CLASSICAL_PRINCIPAL_VALUE_RESPONSE_BLOCK",
+      "residual_defined":true,
+      "scientific_fail":false,
+      "global_sufficiency":false,
+      "counts_as_new_required_exclusion":false,
+      "authority":"post_freeze_paper_iv_wave_02/PF2_05C_HIGHER_DERIVATIVE_FAKEON_CLASSICAL_CAUSAL_RESPONSE/result.json"
+    }
+  ],
+  "family_level_changes": [],
+  "coverage_after_delta": {
+    "tier1_required_rows":14,
+    "tier1_terminal_coverage_rows":1,
+    "tier1_nonterminal_rows":13,
+    "tier2_unresolved_rows":0,
+    "scoped_child_rows_with_defined_residual":9,
+    "scoped_child_scientific_fail_rows":2
+  },
+  "global_gates_after_delta": {
+    "D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED",
+    "D7":"NOT_CLOSED",
+    "global_decision":"NOT_YET_AUTHORIZED",
+    "NEW_REQUIRED":false
+  }
+}
