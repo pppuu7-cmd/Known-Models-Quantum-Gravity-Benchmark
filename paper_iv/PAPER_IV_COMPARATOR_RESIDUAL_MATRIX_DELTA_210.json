@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "iteration": 210,
+  "rqir_core": {"version":"1.0","status":"FROZEN"},
+  "global_decision": "NOT_YET_AUTHORIZED",
+  "gates": {"D2":"NOT_CLOSED_COVERAGE_AND_OBJECTS","D4":"PARTIAL_ACTIVE_SET_MATRIX__GLOBAL_COVERAGE_NOT_CLOSED","D7":"NOT_CLOSED"},
+  "framework_delta": {
+    "id": "GFT_TENSOR_MODELS",
+    "parent_status": "PARTIAL_SUBFAMILY_ONLY",
+    "branch": "PURE_RANDOM_TENSOR_MODELS__ENHANCED_NONMELONIC",
+    "status_before": "BLOCKED_MISSING_REQUIRED_OBJECT__PURE_RANDOM_TENSOR_ENHANCED_NONMELONIC_PREGEOMETRIC_RG_CONTINUUM_TO_NORMALIZED_LORENTZIAN_4D_GRAVITY_OBSERVABLE_COMPARATOR_WITH_PROPAGATED_ERROR",
+    "status_after": "BLOCKED_MATERIAL_BRANCH_EXHAUSTED_UNDER_CURRENT_AUTHORITY_SCOPE__NO_LOCATED_SAME_REALIZATION_PURE_TENSOR_CRITICAL_TO_NORMALIZED_LORENTZIAN_4D_GRAVITY_OBSERVABLE_COMPARATOR_ERROR_CHAIN",
+    "material_branch_parked": true,
+    "authority_search_cutoff": "2026-09-10",
+    "gravity_residual_row_added": false,
+    "family_residual_defined": false,
+    "counts_as_family_PASS": false,
+    "counts_as_family_FAIL": false,
+    "counts_as_new_required_exclusion": false,
+    "paper_iii_reopen": false,
+    "authority": "paper_iv/O_PURE_TENSOR_ENHANCED_NONMELONIC_EMERGENT_GEOMETRY_AUTHORITY_SEARCH_2026-09-10.md"
+  },
+  "scoped_child_rows_with_defined_residual": 11,
+  "scoped_child_scientific_fail_rows": 3,
+  "coverage_counts_unchanged": {"tier1_total":14,"tier1_terminal":1,"tier1_nonterminal":13,"tier2_unresolved":0}
+}
