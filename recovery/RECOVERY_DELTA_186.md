@@ -3,9 +3,9 @@
 **Date:** 2026-09-10  
 **RQIR Core:** v1.0 FROZEN
 
-## Main result
+## Result A — every Tier-1 family receives a first-pass audit
 
-Every Tier-1 family now has a concrete literature-backed audit. The five rows that were `NOT_YET_BENCHMARKED` at Iter185 are reclassified as `PARTIAL_SUBFAMILY_ONLY` with explicit scoped controls and explicit family-level blockers:
+The five rows that were `NOT_YET_BENCHMARKED` at Iter185 are reclassified as `PARTIAL_SUBFAMILY_ONLY` with literature-backed controls and explicit blockers:
 
 - perturbative/higher-derivative QG;
 - Hořava-Lifshitz;
@@ -13,25 +13,50 @@ Every Tier-1 family now has a concrete literature-backed audit. The five rows th
 - CDT/EDT;
 - GFT/tensor models.
 
-Thus Tier-1 `NOT_YET_BENCHMARKED` count changes **5 -> 0**. This is coverage progress only; no family-level exclusion or sufficiency is inferred.
+Thus untouched Tier-1 rows fall **5 -> 0**.
 
 Authority: `paper_iv/PF2_OMITTED_TIER1_FIRST_PASS_AUDIT_2026-09-10.md`.
 
-## Nonlocal B3 result
+## Result B — Tier-2 classification resolved
 
-The fixed-order Riemann/Weyl amplitude gate is refined analytically. For an analytic form factor `F(Box)=sum f_n Box^n`, any finite-order truncation is a local higher-derivative operator expansion. With a complete same-order local EFT comparator basis, the fixed-order nonlocal-minus-GR amplitude is comparator-contained and its comparator-orthogonal residual vanishes.
+The former five-entry Tier-2 watchlist is explicitly dispositioned:
+
+- supergravity/double-copy -> reduced to the actual GR/EFT, higher-derivative or string parent according to ancestry;
+- twistor/amplitude programs -> reduced to the actual gravity parent unless an independent dynamics is declared;
+- noncommutative spectral geometry -> promoted to Tier-1;
+- canonical Wheeler-DeWitt geometrodynamics -> promoted to Tier-1;
+- generic emergent/graph-based label -> split by concrete-parent rule, with Quantum Graphity promoted to Tier-1.
+
+Therefore Tier-2 unresolved classifications fall **5 -> 0**, while the Tier-1 burden increases **11 -> 14**. This is intentionally conservative: classification closure makes D7 harder rather than hiding alternatives.
+
+Authority: `paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md`.
+
+Current Tier-1 state:
+
+- required rows: **14**;
+- terminal family-level rows: **1** (GR/EFT baseline);
+- nonterminal family rows: **13**;
+- untouched rows: **0**.
+
+## Result C — nonlocal fixed-order Riemann/Weyl quotient
+
+For analytic `F(Box)=sum f_n Box^n`, any finite-order truncation is a local higher-derivative operator expansion. With the complete same-order local EFT comparator basis,
+
+`r_N in Col(J_EFT,N)`
+
+so
+
+`Pi_perp,N r_N = 0`.
 
 Status:
 
 `PASS_RQIR_GATE__FIXED_ORDER_LOCAL_EFT_COMPARATOR_ABSORPTION`.
 
-This is a negative uniqueness control, not a theory FAIL. The correct next discriminator is cross-order functional rigidity or full non-polynomial momentum-shape prediction from a finite-parameter parent.
+This is a negative uniqueness control, not a theory FAIL. The next nonlocal discriminator is cross-order functional rigidity or full non-polynomial momentum shape.
 
 Authority: `paper_iv/O_NONLOCAL_RIEMANN_WEYL_EFT_QUOTIENT_2026-09-10.md`.
 
 ## Global gates
-
-Unchanged:
 
 - D2A NOT_CLOSED;
 - D2B NOT_CLOSED;
@@ -39,12 +64,12 @@ Unchanged:
 - D7 NOT_CLOSED;
 - global decision `NOT_YET_AUTHORIZED`.
 
-Reason: all ten non-baseline Tier-1 family rows are still PARTIAL/BLOCKED and Tier-2 still has unresolved classifications.
+The reason has changed: there are no untouched Tier-1 schools and no unresolved Tier-2 labels. The remaining blockers are the **13 explicit nonterminal Tier-1 family-level physical certificates/residuals**.
 
 ## Candidate Gravity
 
 Remains inactive at R3=24%. Activation condition remains D7=`NEW_REQUIRED`.
 
-## Next front
+## Next operation
 
-Resolve Tier-2 classifications with explicit reduction/scope/promotion decisions, then attack family-level closure certificates rather than untouched-family discovery.
+Run a formal D7 attempt against the 14-row census. If any required family-level object remains unavailable, D7 must return `NOT_YET_AUTHORIZED` and enumerate the exact blockers rather than manufacture a terminal decision.
