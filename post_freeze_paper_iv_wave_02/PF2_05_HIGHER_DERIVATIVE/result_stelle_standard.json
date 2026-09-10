@@ -1,0 +1,32 @@
+{
+  "benchmark_id": "PF2-05A-HIGHER-DERIVATIVE-STELLE-STANDARD-POLE",
+  "iteration": 187,
+  "rqir_core_version": "1.0",
+  "rqir_status": "FROZEN",
+  "parent_family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "framework": "local four-derivative Stelle gravity with ordinary Feynman quantization of the massive spin-2 pole",
+  "declared_domain": "perturbative local four-derivative gravity in the regime where the additional massive spin-2 propagator pole is part of the ordinary asymptotic/Feynman state-space interpretation",
+  "observable": {
+    "type": "spectral/pole unitarity diagnostic",
+    "quantity": "sign of the massive spin-2 pole residue / positive-metric physical-state condition"
+  },
+  "positive_control": "four-derivative gravity is perturbatively renormalizable in the classic Stelle construction",
+  "negative_control": "the extra massive spin-2 pole has the wrong-sign residue under ordinary Feynman/positive-metric interpretation",
+  "terminal_status": "FAIL_RQIR_GATE__SCOPED_STANDARD_POLE_POSITIVE_METRIC_UNITARITY",
+  "residual_status": "NONZERO_UNITARITY_PATHOLOGY_DIRECTION_RELATIVE_TO_HEALTHY_POSITIVE_METRIC_CONTROL",
+  "residual_defined": true,
+  "scientific_fail": true,
+  "parent_family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "counts_as_family_level_new_required_exclusion": false,
+  "counts_as_new_required_evidence": false,
+  "rqir_core_defect": false,
+  "core_change_requested": false,
+  "paper_iv_decision_authorized": false,
+  "scope_guard": "This FAIL applies only to the ordinary Feynman/Stelle pole prescription. Fakeon/purely-virtual and other contour prescriptions are materially distinct and must be tested separately.",
+  "primary_authorities": [
+    "K. S. Stelle, Phys. Rev. D 16 (1977) 953",
+    "D. Anselmi & M. Piva, JHEP 05 (2018) 027, arXiv:1803.07777"
+  ],
+  "audit": "paper_iv/O_HIGHER_DERIVATIVE_POLE_PRESCRIPTION_MAP_2026-09-10.md",
+  "next_parent_gate": "HIGHER_DERIVATIVE_REMAINING_PRESCRIPTIONS_PLUS_FAKEON_SAME_REALIZATION_CAUSALITY_OBSERVABLE_COMPARATOR_CERTIFICATE"
+}
