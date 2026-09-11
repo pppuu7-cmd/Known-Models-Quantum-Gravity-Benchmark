@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-11",
+  "status": "FROZEN_ADDITIVE_DECISION_WRAPPER",
+  "scope": "Paper IV global D7 decision readiness and terminal classification",
+  "inherits_without_redefinition": [
+    "protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json",
+    "protocol/READINESS_METRICS.md",
+    "paper_iv/PAPER_IV_CLOSURE_CAMPAIGN_2026-09-11.md"
+  ],
+  "non_redefinition_clause": "This wrapper does not alter RQIR Core v1.0, D1-D7, Tier-1 coverage semantics, terminal criteria, family-scope rules, comparator rules, or any previously frozen benchmark threshold. It only makes the prerequisites and legal D7 outputs explicit and executable/auditable.",
+  "metric_separation": {
+    "operational_polygon_readiness": "Measures exhaustion of internally executable high-information benchmark work. It may be 100% while D7 remains scientifically unauthorized.",
+    "d7_protocol_infrastructure_readiness": "Measures whether the D7 decision contract, state schema, provenance requirements, and classifier logic are fully specified. It is an engineering/methodology metric only.",
+    "d7_scientific_authorization": "Measures whether the frozen scientific prerequisites permit a terminal D7 classification. It must never be inferred from operational or infrastructure readiness percentages.",
+    "candidate_gravity_r3": "Independent scientific readiness metric governed by external Candidate-Gravity scientific authority."
+  },
+  "stage_order": [
+    "D7-S0",
+    "D7-S1",
+    "D7-S2",
+    "D7-S3",
+    "D7-S4",
+    "D7-S5",
+    "D7-S6"
+  ],
+  "stages": {
+    "D7-S0": {
+      "name": "FROZEN_JUDGE_INTEGRITY",
+      "purpose": "Verify that the judge, thresholds, family-scope rules, provenance rules, and fail-closed semantics are frozen before any global conclusion is attempted.",
+      "pass_conditions": [
+        "RQIR Core v1.0 remains frozen",
+        "Paper-IV major-framework coverage contract remains authoritative",
+        "BLOCKED/PARTIAL/undefined are not converted to FAIL",
+        "scoped child outcomes are not promoted to family outcomes without an explicit family-scope proof",
+        "no post-hoc threshold relaxation or comparator substitution is introduced"
+      ]
+    },
+    "D7-S1": {
+      "name": "INTERNAL_SATURATION",
+      "purpose": "Verify that no scientifically justified internally executable Tier-1 closure task remains hidden behind workflow debt.",
+      "pass_conditions": [
+        "Tier-2 unresolved count is zero",
+        "every nonterminal Tier-1 family has an explicit external/theory/data/authority reopen condition",
+        "internal_actionable_fronts equals zero",
+        "operational proving-ground saturation is certified without claiming scientific closure"
+      ]
+    },
+    "D7-S2": {
+      "name": "STRICT_TIER1_TERMINAL_COVERAGE",
+      "purpose": "Close D2A: resolve every major Tier-1 family at family scope or by exhaustive material-subfamily resolution under the frozen coverage contract.",
+      "pass_conditions": [
+        "no Tier-1 row remains BLOCKED, PARTIAL_SUBFAMILY_ONLY, NOT_YET_BENCHMARKED, or otherwise unresolved",
+        "all merges are supported by explicit reduction/equivalence maps",
+        "family-level conclusions have family-level evidence"
+      ]
+    },
+    "D7-S3": {
+      "name": "SAME_REALIZATION_OBJECT_COMPLETENESS",
+      "purpose": "Close D2B: ensure every terminally classified realization has the required same-realization physical objects, parameter transport, normalized observable, comparator, and propagated uncertainty/error certificate.",
+      "pass_conditions": [
+        "required observables belong to the same physical realization used for the claimed dynamics",
+        "microscopic/effective parameters are transported without identity swaps",
+        "normalized comparator-ready observables are present where the frozen judge requires them",
+        "theory, nuisance, covariance, and numerical errors required by the benchmark are propagated"
+      ]
+    },
+    "D7-S4": {
+      "name": "COMMON_DOMAIN_GLOBAL_COMPARABILITY",
+      "purpose": "Close D3/D4 at the global decision level so terminal family results are comparable on the frozen common domain.",
+      "pass_conditions": [
+        "common-domain normalization is explicit",
+        "double counting and cross-family overlap are resolved by documented reduction maps",
+        "terminal evidence is compared under the same frozen decision semantics",
+        "D4 is globally closed rather than merely partial"
+      ]
+    },
+    "D7-S5": {
+      "name": "GLOBAL_OUTCOME_CLASSIFIER",
+      "purpose": "Emit exactly one terminal D7 outcome only after D7-S0 through D7-S4 are PASS/CLOSED.",
+      "authorized_outputs": [
+        "EXISTING_SUFFICIENT",
+        "ADAPT_EXISTING",
+        "HYBRID_REQUIRED",
+        "NEW_REQUIRED"
+      ],
+      "otherwise_output": "NOT_AUTHORIZED"
+    },
+    "D7-S6": {
+      "name": "CANDIDATE_GRAVITY_ACTIVATION_EXPORT",
+      "purpose": "Translate an authorized D7 result into downstream action without retroactively changing the benchmark.",
+      "activation_rule": "Candidate Gravity new-model construction is activated as mandatory only if D7-S5 returns NEW_REQUIRED. Other outputs route to the corresponding existing/adapted/hybrid development path. NOT_AUTHORIZED keeps Candidate Gravity activation false."
+    }
+  },
+  "classifier_truth_conditions": {
+    "EXISTING_SUFFICIENT": {
+      "required": [
+        "D7-S0 through D7-S4 PASS/CLOSED",
+        "at least one known-family realization is terminally sufficient under the complete frozen decision bundle",
+        "the sufficient realization does not require a material modification that would move it outside the accepted family/realization definition",
+        "global coverage/comparability has ruled out an artifact of selective benchmarking"
+      ]
+    },
+    "ADAPT_EXISTING": {
+      "required": [
+        "D7-S0 through D7-S4 PASS/CLOSED",
+        "no unadapted known realization is sufficient under the complete frozen decision bundle",
+        "an explicit adaptation within a known family is fully specified and closes the frozen decision bundle",
+        "family identity, parameter transport, provenance, and new assumptions are explicit"
+      ]
+    },
+    "HYBRID_REQUIRED": {
+      "required": [
+        "D7-S0 through D7-S4 PASS/CLOSED",
+        "no single known or admissibly adapted family is sufficient",
+        "an explicit hybrid composition closes the complete frozen decision bundle",
+        "same-realization compatibility, reduction maps, parameter transport, and double-counting controls are demonstrated"
+      ]
+    },
+    "NEW_REQUIRED": {
+      "required": [
+        "D7-S0 through D7-S4 PASS/CLOSED",
+        "every major Tier-1 known family is terminally resolved under the frozen coverage contract",
+        "all materially distinct known subfamilies are either terminally tested or validly reduced/merged",
+        "no unresolved BLOCKED/PARTIAL major family remains",
+        "no existing realization is sufficient",
+        "no admissible adaptation of an existing family is sufficient",
+        "no admissible hybrid of known families is sufficient",
+        "D2 and D4 are CLOSED"
+      ],
+      "forbidden_shortcuts": [
+        "counting BLOCKED as FAIL",
+        "counting absence of a published object as evidence that the object cannot exist",
+        "promoting a scoped FAIL to a family FAIL",
+        "inferring NEW_REQUIRED from operational saturation alone",
+        "inferring NEW_REQUIRED from R1/R2 repository or methodology readiness",
+        "activating a novel model before the terminal classifier is authorized"
+      ]
+    }
+  },
+  "fail_closed_rules": [
+    "Any unresolved mandatory prerequisite forces D7-S5 to NOT_AUTHORIZED.",
+    "Any provenance conflict or same-realization identity conflict reopens the affected prerequisite rather than being averaged away.",
+    "A new external authority may reopen a parked family but does not demote prior operational saturation unless it creates a genuinely internally actionable material branch.",
+    "No percentage may substitute for a terminal scientific state."
+  ],
+  "protocol_infrastructure_completion_rule": "D7 protocol infrastructure may be reported as 100% once this contract, a machine-readable current-state file, a provenance-backed stage audit, and recovery/ledger entries exist and pass repository methodology validation. This is explicitly not D7 scientific closure."
+}
