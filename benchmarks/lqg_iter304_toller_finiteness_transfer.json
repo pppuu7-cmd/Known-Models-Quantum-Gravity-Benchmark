@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "iteration": 304,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_FINITE_VERTEX_THEOREM_TRANSFER_APPLICABILITY_AUDIT",
+  "predecessor": {
+    "iteration": 303,
+    "scientific_run": 34614776339,
+    "scientific_head": "d2238ee1e3e43b16ec550a49317c2aab459fdc01"
+  },
+  "source_contract": {
+    "standard_eprl_finiteness": "Kaminski arXiv:1010.5384 proves integrability/finite regularized evaluation for every 3-edge-connected SL(2,C) spin-network with invariants of a specified class, covering EPRL intertwiners and some generalizations.",
+    "toller_2026": "Bianchi-Chen-Gamonal PRD 114, 046014 / arXiv:2604.24945 establishes Toller T^(±) as polynomially bounded functions on the Lorentz group satisfying T^(+)+T^(-)=D; an individual branch is not itself the unitary SL(2,C) representation D.",
+    "causal_vertex_2026": "Bianchi-Chen-Gamonal PRD 113, 126020 / arXiv:2601.23162 defines the causal Lorentzian EPRL vertex by replacing wedge D blocks with sign-selected Toller blocks.",
+    "scope": "Audit only whether the already-published standard EPRL 3-edge-connected integrability theorem can be automatically transferred to the fixed-causal Toller vertex from the presently frozen source properties. It does not calculate or claim divergence of the causal vertex."
+  },
+  "prospectively_frozen_claims": {
+    "standard_eprl_three_edge_connected_integrability_theorem_exists": true,
+    "standard_theorem_is_stated_for_sl2c_spin_network_invariants_of_specified_class": true,
+    "toller_branches_are_polynomially_bounded": true,
+    "fixed_toller_branch_is_not_sl2c_representation": true,
+    "published_source_explicitly_extends_kaminski_integrability_theorem_to_toller_causal_vertex": false,
+    "polynomial_boundedness_alone_implies_noncompact_haar_integrability": false,
+    "automatic_standard_theorem_transfer_ready": false,
+    "causal_vertex_divergence_proven": false,
+    "causal_vertex_finiteness_proven": false,
+    "lambda_f_weighted_causal_stack_finiteness_normalization_cutoff_control_proven": false,
+    "same_realization_uv_to_causal_regge_gr_transport_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_STANDARD_EPRL_3_EDGE_CONNECTED_FINITENESS_THEOREM_NOT_AUTOMATICALLY_TRANSFERABLE_TO_FIXED_CAUSAL_TOLLER_VERTEX_FROM_POLYNOMIAL_BOUNDEDNESS_ALONE__EXPLICIT_TOLLER_INTEGRABILITY_BOUND_OR_EXTENSION_THEOREM_REQUIRED__NO_DIVERGENCE_NO_GO_OR_FAMILY_PROMOTION",
+  "scope_rule": "A PASS only establishes an applicability gap: currently frozen source properties do not by themselves certify that the standard representation-based EPRL finiteness theorem applies to sign-selected Toller kernels. It must not be promoted to divergence, scientific FAIL, no-go, family terminality, stack cutoff closure, same-realization transport, or D7 authorization."
+}
