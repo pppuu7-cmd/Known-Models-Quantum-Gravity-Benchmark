@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "iteration": 277,
+  "date": "2026-09-11",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "family": "RELATIONAL_QUANTUM_CAUSAL_PROCESSES",
+  "trigger": "Independent robustness probes showed that the published fixed-band RQCP observable is reproducible at cutoff 8 but materially changes along an orthogonal local-Hilbert/domain cutoff axis before stabilizing at high cutoff.",
+  "parallel_compute": {
+    "first_wave_run": 34551324978,
+    "first_wave_jobs": 19,
+    "first_wave_aggregate": "success",
+    "high_cutoff_extension_run": 34551533448,
+    "high_cutoff_jobs": 4,
+    "high_cutoff_status": "4/4_success",
+    "methodology_ci_run_on_extension_head": 34551533303,
+    "methodology_ci_status": "success"
+  },
+  "base_reproduction": {
+    "cutoff": 8,
+    "Newton_response_G": 23.200280752211146,
+    "mass_gap": 0.48633956724666694,
+    "G_gap2": 5.487473657582998,
+    "relative_deltas_vs_published": "order_1e-15"
+  },
+  "high_cutoff_probe": {
+    "cutoff_28": {
+      "Newton_response_G": 21.50096842760798,
+      "mass_gap": 0.5017460974407341,
+      "G_gap2": 5.412850446209202
+    },
+    "cutoff8_to28_relative_shift": {
+      "Newton_response_G": 0.0732453345178252,
+      "mass_gap": 0.03070582964700973,
+      "G_gap2": 0.013598828173084108
+    },
+    "cutoff24_to28_relative_change": {
+      "Newton_response_G": 1.8007740347530377e-08,
+      "mass_gap": 1.352999660925122e-09,
+      "G_gap2": 1.530174113246571e-08
+    },
+    "classification": "MATERIAL_LOW_CUTOFF_DOMAIN_SENSITIVITY_WITH_RAPID_HIGH_CUTOFF_STABILIZATION"
+  },
+  "other_axes": {
+    "quartic_grid_0_to_2_lambda_star": "positive_G_and_modest_local_variation",
+    "mixed_response_sigma_step_relative_span": 5.673877436997342e-08
+  },
+  "scoped_result": "PASS_SCOPED_BASE_REPRODUCTION_AND_HIGH_CUTOFF_STABILIZATION__PUBLISHED_CUTOFF8_EINSTEIN_RESPONSE_IS_MATERIALLY_SHIFTED_RELATIVE_TO_THE_HIGH_CUTOFF_PLATEAU",
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "methodological_delta": "MULTI_AXIS_RESOURCE_CLOSURE: closure of one regulator/refinement axis cannot silently close an independent truncation/domain/resource axis that materially moves the normalized observable. Each material axis requires controlled removal/convergence or autonomous physical selection with propagated uncertainty.",
+  "global_effect": {
+    "tier1_total": 15,
+    "strict_terminal": 1,
+    "strict_nonterminal": 14,
+    "candidate_family_terminal": 0,
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D3": "PARTIAL",
+    "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+    "candidate_gravity_active": false,
+    "candidate_gravity_r3_percent": 24
+  }
+}
