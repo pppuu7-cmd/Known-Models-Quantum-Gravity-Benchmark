@@ -1,0 +1,67 @@
+name: cfs-current-correction-pathway-audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/cfs_currents_correction_common.py'
+      - 'code/cfs_currents_rank1_guard.py'
+      - 'code/cfs_currents_gravity_scope_guard.py'
+      - 'code/cfs_currents_maturity_guard.py'
+      - 'code/cfs_currents_blocker_guard.py'
+      - 'code/cfs_currents_correction_aggregate.py'
+      - '.github/workflows/cfs-current-correction-pathway-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {label: rank1, script: cfs_currents_rank1_guard.py}
+          - {label: gravity, script: cfs_currents_gravity_scope_guard.py}
+          - {label: maturity, script: cfs_currents_maturity_guard.py}
+          - {label: blocker, script: cfs_currents_blocker_guard.py}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Run independent CFS current/correction pathway guard
+        run: python code/${{ matrix.script }} --output build/cfs-currents/${{ matrix.label }}.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cfs-currents-${{ matrix.label }}
+          path: build/cfs-currents/${{ matrix.label }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: guards
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: cfs-currents-*
+          path: build/cfs-currents-results
+          merge-multiple: true
+      - name: Aggregate after dependency barrier
+        run: python code/cfs_currents_correction_aggregate.py --input-dir build/cfs-currents-results --output build/cfs-currents-iter289-summary.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cfs-currents-iter289-summary
+          path: build/cfs-currents-iter289-summary.json
+          if-no-files-found: error
+          retention-days: 90
