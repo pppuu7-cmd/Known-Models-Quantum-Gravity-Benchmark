@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "iteration": 302,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_EXACT_TOLLER_COMPOSITION_SCOPE_AUDIT",
+  "predecessor": {
+    "iteration": 301,
+    "scientific_run": 34608395886,
+    "scientific_head": "e2f6ea37e1bfcfcc90347e2366b0233fd56d18c1",
+    "summary_artifact": 10267280795,
+    "summary_artifact_digest": "sha256:61f8c98a77a45b2cdd7806f44903ab187aa58f632612db052e9a6098853ffa3a",
+    "raw_summary_digest": "sha256:701a568536a1f1581878c78e1b0d7df2f45e4dec5c6dea0d1d729a65bd81ca74"
+  },
+  "source_contract": {
+    "bcbc_toller_2026": "Bianchi-Chen-Gamonal, Toller matrices and the Feynman i-epsilon in spinfoams, arXiv:2604.24945: T^(+)+T^(-)=D, while individual Toller T-matrices are functions on SL(2,C), not representations; generically T^(s)(g1 g2) != sum T^(s)(g1) T^(s)(g2).",
+    "bcbc_causal_2026": "The causal EPRL vertex uses a constrained sum over causal combinatorial data and Toller branches.",
+    "han_stack_2026": "Han's stack analysis uses the standard Lorentzian spinfoam amplitude and half-link/Haar-gluing structure; this audit asks only whether standard representation composition can be inherited branchwise after causal Toller replacement.",
+    "scope": "This audit tests formal composition identities before any claim about full Haar-integrated amplitudes, cancellations, alternative convolution kernels, or complete-stack cutoff limits."
+  },
+  "prospectively_frozen_claims": {
+    "toller_additive_completion_recovers_wigner_D": true,
+    "individual_fixed_toller_branch_is_not_a_group_representation": true,
+    "standard_same_branch_representation_composition_identity_is_not_available": true,
+    "naive_fixed_branch_half_link_factorization_cannot_be_assumed_from_standard_D_representation_theory": true,
+    "full_D_composition_can_be_recovered_after_additive_completion_before_composition": true,
+    "cross_branch_or_post_integration_relations_may_restore_a_useful_gluing_identity": true,
+    "this_is_not_a_no_go_for_causal_spinfoams": true,
+    "han_half_link_haar_glue_equivalence_proven": false,
+    "lambda_f_weighted_causal_stack_finiteness_normalization_cutoff_control_proven": false,
+    "same_realization_uv_to_causal_regge_gr_transport_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_SOURCE_GROUNDED_TOLLER_BRANCH_NONREPRESENTATION_SHARPENS_HALF_LINK_GLUE_BLOCKER__NAIVE_FIXED_BRANCH_STANDARD_REPRESENTATION_FACTORIZATION_NOT_AVAILABLE__ADDITIVE_COMPLETION_OR_SOURCE_SPECIFIC_CROSS_BRANCH_POST_INTEGRATION_GLUE_REMAINS_OPEN__NO_NO_GO",
+  "scope_rule": "Failure of the ordinary representation composition law for an individual Toller branch is not scientific FAIL of causal spinfoams and is not a family-level result. It only forbids silently inheriting the standard Wigner-D branchwise half-link factorization. A physically admissible additive completion, cross-branch convolution, Haar-integrated identity, cancellation, or new causal factorization theorem may still close the blocker."
+}
