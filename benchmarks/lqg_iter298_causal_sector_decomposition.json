@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "iteration": 298,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_EXACT_ALGEBRAIC_DECOMPOSITION",
+  "sources": {
+    "han_stack": {
+      "title": "Summation and triangulation independence of Lorentzian spinfoam amplitudes for all LQG",
+      "author": "Muxin Han",
+      "journal": "Physical Review D 113, 084034 (2026)",
+      "doi": "10.1103/n76f-31gf",
+      "arxiv": "2510.26926",
+      "authority_level": "PEER_REVIEWED"
+    },
+    "causal_vertex": {
+      "title": "Causal spinfoam vertex for 4D Lorentzian quantum gravity",
+      "authors": "Eugenio Bianchi; Chaosong Chen; Mauricio Gamonal",
+      "journal": "Physical Review D 113, 126020 (2026)",
+      "doi": "10.1103/fwql-t4yr",
+      "arxiv": "2601.23162",
+      "authority_level": "PEER_REVIEWED"
+    },
+    "generalized_causal": {
+      "title": "Causal Structure for Generalized Spinfoams",
+      "author": "Carlos E. Beltran",
+      "arxiv": "2603.22661v2",
+      "authority_level": "PUBLIC_PREPRINT"
+    }
+  },
+  "prospectively_frozen_claims": {
+    "toller_identity_D_equals_Tplus_plus_Tminus": true,
+    "standard_eprl_vertex_uses_D_matrix_content": true,
+    "fixed_causal_vertex_selects_one_toller_sign_per_wedge_from_causal_data": true,
+    "product_of_standard_D_factors_expands_over_all_local_toller_sign_assignments": true,
+    "one_fixed_causal_sign_assignment_is_only_one_component_of_that_formal_expansion": true,
+    "generic_polynomial_identity_between_one_fixed_sector_and_full_D_product_is_false_without_additional_vanishing_or_sector_sum": true,
+    "sources_prove_all_omitted_sector_terms_vanish_in_han_stack": false,
+    "sources_prove_causal_sector_sum_reconstructs_han_half_link_kernel_with_same_normalization": false,
+    "sources_prove_han_face_factorization_after_fixed_causal_replacement": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_ALGEBRAIC_NONIDENTITY_OF_ONE_FIXED_CAUSAL_TOLLER_SECTOR_WITH_FULL_STANDARD_EPRL_D_PRODUCT__HAN_HALF_LINK_EQUIVALENCE_REQUIRES_EXPLICIT_SECTOR_SUM_OR_NEW_CAUSAL_FACTORIZATION_PROOF",
+  "scope_rule": "This gate is an exact formal decomposition result, not a dynamical no-go theorem. It proves only that a single fixed causal Toller sector is not algebraically identical to the full standard D-matrix product as a generic formal expression. It does not exclude cancellations, special boundary data, an admissible causal-sector sum, or a new causal factorization theorem that could recover Han's stack machinery. LQG/spinfoam therefore remains PARTIAL/BLOCKED, not FAIL and not terminal."
+}
