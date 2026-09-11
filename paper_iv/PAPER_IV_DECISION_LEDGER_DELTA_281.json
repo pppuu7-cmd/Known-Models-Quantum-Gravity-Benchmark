@@ -1,0 +1,50 @@
+{
+  "iteration": 281,
+  "date": "2026-09-11",
+  "family": "LQG_SPINFOAM",
+  "object": "HAN_SPINFOAM_STACK_TRIANGULATION_INDEPENDENCE",
+  "scientific_workflow": {
+    "name": "lqg-spinfoam-stack-hessian-audit",
+    "run_id": 34554825500,
+    "head": "cb0d459291ab208a65cc744f9443d7bae473756f",
+    "independent_jobs_success": "4/4",
+    "aggregate": "SUCCESS",
+    "aggregate_digest": "sha256:4ebddf182b7b5c469947acab11eabab7a2422b92d43ea1cf2c85d4b687cb82e1"
+  },
+  "methodology_validation": {
+    "run_id": 34554825514,
+    "conclusion": "SUCCESS"
+  },
+  "reproducibility_release": {
+    "run_id": 34554911718,
+    "conclusion": "SUCCESS"
+  },
+  "exact_results": {
+    "determinant_6x6": 125,
+    "strict_negative_definite_by_sylvester": true,
+    "nondegenerate_6x6": true,
+    "M_equals_minus_BtB_exact": true,
+    "rank_B": 6,
+    "projected_kernel_dimension": 0,
+    "rank_18x18": 18,
+    "determinant_identity_18x18_exact": true,
+    "nondegenerate_18x18": true,
+    "all_tested_beta_final_C012_positive": true,
+    "max_relative_256_to_512": 0.0
+  },
+  "scoped_result": "PASS_SCOPED_EXPLICIT_TRIVIAL_TOPOLOGY_SPINFOAM_STACK_HESSIAN_NONDEGENERACY_INCIDENCE_FACTORIZATION_AND_COEFFICIENT_CONVERGENCE__TOPOLOGICAL_LARGE_CUTOFF_NOT_PHYSICAL_UV_IR_GR_CLOSURE",
+  "family_result": "PARTIAL_BLOCKED_NONTERMINAL",
+  "refined_interpretation": "Strong explicit triangulation/refinement-control evidence in the published stack example does not identify the topological infinite-cutoff regime with the finite-cutoff/small-gamma semiclassical GR regime and therefore does not close the same-realization physical UV-to-IR/GR bridge.",
+  "blocker": "BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT",
+  "tier1_total_before": 15,
+  "tier1_total_after": 15,
+  "strict_terminal_before": 1,
+  "strict_terminal_after": 1,
+  "candidate_terminal_count": 0,
+  "d7_change": false,
+  "candidate_gravity_activation_change": false,
+  "paper_impact": {
+    "paper_III": "NOT_NEEDED_AS_NEW_RULE__CORROBORATES_ITER277_ONLY",
+    "paper_IV": "READY__ADD_SPINFOAM_STACK_EXPLICIT_AUDIT_AND_TOPOLOGICAL_VS_PHYSICAL_CONTINUUM_BOUNDARY"
+  }
+}

@@ -1,82 +1,72 @@
 # Publication Impact Ledger
 
-Purpose: preserve, for final manuscript preparation, every benchmark result that requires a change, check, or explicit non-change in an RQIR paper. This ledger is additive and does not modify frozen RQIR Core criteria.
+Purpose: manuscript handoff authority. Every scientifically relevant benchmark iteration records affected paper(s), exact change/check, impact type, and status. This ledger is additive in meaning and does not modify frozen RQIR Core criteria.
 
-Status vocabulary:
-- `TODO` — manuscript change/check still required.
-- `READY` — wording/evidence is sufficiently defined to be applied at final preparation.
-- `APPLIED` — change has been incorporated into the manuscript and re-audited.
-- `NOT_NEEDED` — checked and no manuscript change is warranted.
+Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 
 ## Iter277 — RQCP multi-axis resource closure
+### Paper III — `READY`
+- **Type:** methodological.
+- Add explicit `MULTI_AXIS_RESOURCE_CLOSURE`: convergence/calibration on one independent regulator/truncation/domain/finite-volume/resolution/approximation axis cannot certify another. Every materially active independent axis must be removed with propagated uncertainty or fixed by an independently justified physical-selection rule with induced uncertainty propagated.
+- Motivation: RQCP cutoff 8 -> 28 shifts `G_eff` ~7.32%, gap ~3.07%, `G_eff*gap^2` ~1.36%, while cutoff 24 -> 28 is extremely stable.
+- Keep wording theory-agnostic; do not turn Paper III into an RQCP case study.
 
-### Paper III
-- **Status:** `READY`
-- **Impact:** methodological correction/strengthening is warranted.
-- **What to add:** an explicit general rule that resource closure is axis-complete rather than single-axis. If a result depends on multiple independent regulator/truncation/domain/finite-volume/approximation axes, convergence or calibration along one axis cannot certify closure of the others. Every materially active independent axis must either (a) be taken to a controlled limit with uncertainty propagated into the normalized observable, or (b) be fixed by an independently justified physical principle with the induced uncertainty propagated.
-- **Why:** Iter277 provides a concrete counterexample to single-axis closure. RQCP spatial refinement can be well controlled while an independent Hilbert-space cutoff materially shifts normalized quantities. In the independent audit, cutoff 8 -> 28 changes G_eff by about 7.32%, the gap by about 3.07%, and G_eff*gap^2 by about 1.36%, while the high-cutoff sequence 24 -> 28 is already extremely stable.
-- **Where to apply:** methodology/resource-closure definition and the discussion/checklist for claiming apparatus/model closure. Keep the wording theory-agnostic; do not turn Paper III into an RQCP case study.
-- **Do not change:** frozen RQIR Core criteria or previously certified detector-side nuisance/noise/calibration logic unless manuscript audit finds a direct contradiction.
+### Paper IV — `READY`
+- **Type:** evidentiary + numerical + reproducibility.
+- Add RQCP as distinct nonterminal Tier-1 parent; four-environment semantic reproduction; zero-frequency diagnostic artifact; 19-job robustness wave; cutoff extension through 28; refined Hilbert/domain-axis blocker.
+- Boundary: scoped positive / `PARTIAL_SUBFAMILY_ONLY`, neither family PASS nor FAIL.
 
-### Paper IV
-- **Status:** `READY`
-- **Impact:** detailed benchmark evidence should be included.
-- **What to add:** RQCP as a distinct nonterminal Tier-1 parent; four-environment semantic reproducibility result; the zero-frequency diagnostic defect as an implementation artifact; the 19-job robustness scan; extended Hilbert-cutoff scan through 28; and the refined blocker requiring independent closure/control of the Hilbert/domain truncation axis before any broader family-level sufficiency claim.
-- **Interpretation constraint:** this is neither a family-level PASS nor a family-level FAIL. It is a scoped positive fixed-band result plus a newly quantified independent resource axis.
+## Iter278 — Asymptotic Safety diffeomorphism-invariant PIRG
+### Paper III — `NOT_NEEDED`
+- No new general rule beyond Iter277; optional corroboration of systematic/multi-axis separation only.
 
-## Iter278 — Asymptotic Safety diffeomorphism-invariant PIRG reopen
+### Paper IV — `READY`
+- **Type:** evidentiary + numerical.
+- Add arXiv:2609.07829v1 and four-probe Table-III audit. All six variants retain two positive relevant directions; theta2 is more stable than theta1 and fixed-point coordinates remain scheme/procedure sensitive.
+- Boundary: family remains `BLOCKED_MISSING_REQUIRED_OBJECT`; do not bypass the contact-complete `s+t+u+A4` blocker.
+- Provenance: scientific run `34552838082`; methodology CI `34552838007`.
 
-### Paper III
-- **Status:** `NOT_NEEDED`
-- **Impact:** no additional general methodological rule is required beyond Iter277.
-- **Reason:** the new PIRG result provides an independent example in which a robust structural conclusion (two relevant directions across all six published Table-III variants) coexists with materially larger scheme/procedure sensitivity in fixed-point coordinates and in the first critical exponent. This reinforces `MULTI_AXIS_RESOURCE_CLOSURE` and systematic-uncertainty separation, but does not establish a distinct failure mode.
-- **Optional use:** cite or mention only as corroborating motivation if space and narrative benefit justify it; do not expand Paper III into an Asymptotic-Safety case study.
+## Iter279 — Null Surface Formulation reduction / claim boundary
+### Paper III — `NOT_NEEDED`
+- No new rule; optional example of reduction-map discipline and claim-domain separation.
 
-### Paper IV
-- **Status:** `READY`
-- **Impact type:** evidentiary + numerical.
-- **What to add:** arXiv:2609.07829v1 as a material positive Asymptotic-Safety reopen; explain its diffeomorphism-invariant/background-independent PIRG construction and relevance-preserving aim; report the independent four-probe Table-III audit; state that all six variants retain two positive relevant directions, while theta2 is substantially more stable than theta1 and the fixed-point coordinates remain procedure/scheme sensitive.
-- **Required boundary:** family status remains `BLOCKED_MISSING_REQUIRED_OBJECT`; the Iter274 public contact-complete `s+t+u+A4` Lorentzian scattering certificate is still missing. The PIRG object must not be used to bypass that same-realization observable blocker.
-- **Provenance:** scientific workflow run `34552838082`; methodology CI run `34552838007`; audit `paper_iv/P_ASYMPTOTIC_SAFETY_PIRG_DIFFEO_INVARIANT_REOPEN_AUDIT_ITER278_2026-09-11.md`.
+### Paper IV — `READY`
+- **Type:** taxonomy + evidentiary + numerical.
+- Add NSF as reduction-map case: present evidence supports `REDUCED_TO_EXISTING_GR_PARENT__NEW_REALIZATION_NOT_NEW_TIER1_PARENT`, so no 16th Tier-1 row.
+- Report normalization/t-u symmetry exact on test set, fixed-angle amplitude ~`s^1`, forward/collinear finite-grid exponent ~`-0.9794`.
+- Boundary: taxonomy decision is not rejection of NSF UV-finiteness or proof/disproof of all-loop finiteness.
+- Provenance: scientific run `34553257781`; methodology CI `34553257768`; archival methodology run `34553466935`.
 
-## Iter279 — Null Surface Formulation reduction and claim-boundary audit
+## Iter280 — Asymptotic Safety Lorentzian graviton spectral function
+### Paper III — `NOT_NEEDED`
+- No new general rule; optional corroboration that spectral positivity, physical-state/Hilbert-space status, diffeomorphism invariance, scattering unitarity, and contact-complete observables are distinct closure axes.
 
-### Paper III
-- **Status:** `NOT_NEEDED`
-- **Impact:** no new methodological rule beyond Iter277.
-- **Reason:** Iter279 independently illustrates two already-required separations: an explicit reduction map prevents unnecessary Tier-1 proliferation, and closure of one claim domain (UV finiteness of a perturbative/integration construction) cannot be substituted for another claim domain (bounded fixed-angle amplitude, forward regularity, or all-order equivalence).
-- **Optional use:** one sentence or footnote may be used as corroboration of `MULTI_AXIS_RESOURCE_CLOSURE` / claim-domain discipline if useful, but no NSF case study is required in Paper III.
+### Paper IV — `READY`
+- **Type:** peer-reviewed evidentiary + numerical + reproducibility boundary.
+- Add Pawlowski–Reichert–Wessely, Physics Letters B 880 (2026) 140844; positive normalisable Lorentzian TT graviton spectral function with unit total spectral weight after stated rescaling.
+- KMQGB checks: `g*=0.9554263372261876`; Eq.23–25 trajectory consistency; integrable UV tail; `z_spec≈1.486` implies ~67.29% pole / ~32.71% continuum; exact `2*pi*A_h=61/30` IR relation.
+- Boundaries: fluctuation-graviton states are not diffeomorphism invariant / not physical Hilbert-space states; no public article-specific numerical dataset/reference implementation was found, so full curve not independently reproduced; `s+t+u+A4` blocker remains independent.
+- Provenance: scientific run `34553743544`; methodology CI `34553743421`; archival methodology CI `34554032216`.
 
-### Paper IV
-- **Status:** `READY`
-- **Impact type:** taxonomy + evidentiary + numerical.
-- **What to add:** NSF as a worked reduction-map case. The source lineage explicitly treats NSF as a formulation/quantization of GR and the 2026 trilogy reproduces the standard tree amplitude, so the present evidence supports `REDUCED_TO_EXISTING_GR_PARENT__NEW_REALIZATION_NOT_NEW_TIER1_PARENT` rather than creation of a 16th Tier-1 row.
-- **Numerical claim-boundary check:** normalization and t/u symmetry agree exactly on the test set; fixed-angle amplitude scales as s^1; forward/collinear behavior is pole-like with fitted finite-grid exponent about -0.9794.
-- **Required boundary:** do not convert this reduction decision into rejection of the NSF UV-finiteness claim. The audit does not independently prove or disprove all-loop finiteness; it only fixes taxonomy and separates the claim domains.
-- **Provenance:** scientific workflow run `34553257781`; methodology CI run `34553257768`; audit `paper_iv/P_NSF_REDUCTION_AND_CLAIM_BOUNDARY_AUDIT_ITER279_2026-09-11.md`.
+## Iter281 — LQG spinfoam-stack explicit Hessian/refinement audit
+### Paper III — `NOT_NEEDED`
+- **Type:** methodological corroboration only.
+- No new rule beyond Iter277. The result reinforces claim-domain separation: explicit triangulation/refinement control in a topological large-cutoff regime is not automatically physical UV->IR/GR closure.
 
-## Iter280 — Asymptotic Safety self-consistent Lorentzian graviton spectral function
+### Paper IV — `READY`
+- **Type:** peer-reviewed evidentiary + exact/numerical + continuum-boundary.
+- Add Muxin Han, Phys. Rev. D 113, 084034 (2026), DOI `10.1103/n76f-31gf`, and the four-way independent audit.
+- Report: `det(M_6x6)=125`; strict negative definiteness/nondegeneracy; exact `M=-B^T B`; `rank(B)=6`, projected kernel=0; 18x18 block rank=18 and exact determinant identity; tested final `C0,C1,C2` positive; max relative 256->512 change on beta grid = `0.0` in binary64.
+- Scoped result: `PASS_SCOPED_EXPLICIT_TRIVIAL_TOPOLOGY_SPINFOAM_STACK_HESSIAN_NONDEGENERACY_INCIDENCE_FACTORIZATION_AND_COEFFICIENT_CONVERGENCE__TOPOLOGICAL_LARGE_CUTOFF_NOT_PHYSICAL_UV_IR_GR_CLOSURE`.
+- Required boundary: do not identify the topological/scale-invariant infinite-cutoff regime with the distinct finite-large-cutoff/small-gamma semiclassical Regge/GR regime. The same-realization physical UV->IR/GR trajectory, normalized gravity observable, transport, comparator, and propagated-error certificate remain missing.
+- Provenance: scientific run `34554825500`; methodology CI `34554825514`; reproducibility release `34554911718`; aggregate digest `sha256:4ebddf182b7b5c469947acab11eabab7a2422b92d43ea1cf2c85d4b687cb82e1`.
 
-### Paper III
-- **Status:** `NOT_NEEDED`
-- **Impact:** no new methodological rule is required beyond Iter277.
-- **Reason:** the result independently confirms the importance of separating closure axes: spectral positivity and normalisability, physical-state/Hilbert-space status, diffeomorphism invariance, scattering unitarity and contact-complete observables are not interchangeable certificates.
-- **Optional use:** one concise corroborating sentence may be added near the Iter277 multi-axis/resource-closure strengthening if helpful; no Asymptotic-Safety technical discussion is required in Paper III.
-
-### Paper IV
-- **Status:** `READY`
-- **Impact type:** peer-reviewed evidentiary + numerical + reproducibility-boundary.
-- **What to add:** Pawlowski–Reichert–Wessely, Physics Letters B 880 (2026) 140844, as a major positive Lorentzian Asymptotic-Safety result. State that the stated on-shell TT fluctuation-graviton calculation yields a positive normalisable spectral function and, after physical rescaling, unit total spectral weight.
-- **KMQGB cross-checks to report:** `g*=0.9554263372261876`; Eq.23–25 trajectory consistency; analytic UV-tail sum-rule integrability; the decomposition implied by `z_spec≈1.486` (~67.29% pole and ~32.71% continuum after the stated rescaling); and the exact `2*pi*A_h=61/30` IR relation.
-- **Required boundaries:** the authors explicitly state that the fluctuation-graviton states are not diffeomorphism invariant and are not part of the physical Hilbert space; the publisher exposes numerical data only on request and no article-specific public dataset/reference implementation was found, so the complete spectral curve was not independently reproduced in Iter280; the Iter274 contact-complete `s+t+u+A4` scattering blocker remains independent and active.
-- **Provenance:** scientific workflow run `34553743544`; methodology CI run `34553743421`; audit `paper_iv/P_ASYMPTOTIC_SAFETY_LORENTZIAN_SPECTRAL_AUDIT_ITER280_2026-09-11.md`.
-
-## Standing rule for subsequent iterations
-For every scientifically relevant benchmark iteration, record here:
+## Standing rule
+For every subsequent scientifically relevant iteration, record here:
 1. affected paper(s),
-2. exact manuscript correction/addition/check required,
-3. whether the change is methodological, numerical, evidentiary, taxonomy-related, reproducibility-related, or editorial,
-4. status (`TODO/READY/APPLIED/NOT_NEEDED`),
-5. an explicit note when no paper change is warranted.
+2. exact manuscript correction/addition/check,
+3. impact type,
+4. status,
+5. explicit `NOT_NEEDED` when no paper change is warranted.
 
-This ledger is the manuscript handoff authority for final article preparation; chat-only reminders are not sufficient.
+Chat-only reminders are not sufficient.
