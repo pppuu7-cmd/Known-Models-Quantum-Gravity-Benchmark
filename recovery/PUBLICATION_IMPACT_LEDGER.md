@@ -179,6 +179,16 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `PASS_SCOPED_ORIENTATION_LEVEL_CAUSAL_LIFT_ACROSS_HAN_FACE_MULTIPLICITY_STACKS_BY_ROW_DUPLICATION__NO_CAUSAL_AMPLITUDE_SUM_FINITE_LAMBDA_TRANSPORT_OR_UV_IR_OBSERVABLE_CERTIFICATE`.
 - Provenance: scientific `34593061657`; scientific head `079f94c11c0c222b5c8759b316538cfd12664c33`; methodology `34593061667`; summary artifact `10196412595`; artifact digest `sha256:7d1d4387def6de4921532e78d31f098c49f72e37a178619eeb4e2dc2ba9fab0b`; raw summary digest `sha256:c80bb2d1d5fc7fe58f8bbe059c6e1e3bba0cac1ab1819b5c54ab8286d829cd67`.
 
+## Iter297 — formal causal-vertex composition on Han stack members
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific formal composition/reproducibility result; no new general sensing/resource-closure rule beyond Iter277.
+### Paper IV — `READY`
+- Add the source-grounded formal composition result: on Iter296-admissible Han stack members, Beltrán's generalized causal EPRL-KKL alternative can be substituted per vertex on the same member 2-complex index set, while Han's external face-multiplicity weights retain the same `lambda_f^p_f` bookkeeping.
+- Report 512 member-label preservation checks and 1,792 exact-rational coupling-bookkeeping identities.
+- **Required boundary:** this does not prove exact identity with Han's half-link/Haar gluing representation, finiteness or normalization of the generalized causal vertex, preservation of Han's analytic face factorization after causal replacement, causal cutoff removal/triangulation independence, or UV→Regge/GR observable/error transport. Beltrán explicitly leaves generalized causal-vertex finiteness open.
+- Result: `PASS_SCOPED_FORMAL_MEMBERWISE_CAUSAL_VERTEX_SUBSTITUTION_ON_ITER296_ADMISSIBLE_HAN_STACK_COMPLEXES_WITH_RETAINED_EXTERNAL_LAMBDA_MULTIPLICITY_BOOKKEEPING__NO_HALF_LINK_GLUE_EQUIVALENCE_FINITE_NORMALIZED_CAUSAL_STACK_SUM_CUTOFF_REMOVAL_OR_UV_IR_OBSERVABLE_CERTIFICATE`.
+- Provenance: scientific `34593574762`; scientific head `880b01f89488492c50deda7b315d02f425e0a3f4`; methodology `34593574674`; summary artifact `10260556884`; artifact digest `sha256:56e8aa47970c6bb29d11bd013466262b08495325d7b612aca5ba9d1374bb14c9`; raw summary digest `sha256:d2886d62a8b590a6be83b4e9eb318f10f9454950a74abc3fa0afb505301af95a`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),

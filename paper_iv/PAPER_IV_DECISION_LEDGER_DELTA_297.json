@@ -1,0 +1,32 @@
+{
+  "artifact_digest": "sha256:56e8aa47970c6bb29d11bd013466262b08495325d7b612aca5ba9d1374bb14c9",
+  "authorities": [
+    "Han, Phys. Rev. D 113, 084034 (2026), DOI 10.1103/n76f-31gf, arXiv:2510.26926",
+    "Beltran, arXiv:2603.22661v2 (2026)"
+  ],
+  "candidate_terminal_count": "0/14",
+  "causal_stack_cutoff_removal_proven": false,
+  "causal_stack_large_cutoff_factorization_or_triangulation_independence_proven": false,
+  "classification": "PASS_SCOPED_FORMAL_MEMBERWISE_CAUSAL_VERTEX_SUBSTITUTION_ON_ITER296_ADMISSIBLE_HAN_STACK_COMPLEXES_WITH_RETAINED_EXTERNAL_LAMBDA_MULTIPLICITY_BOOKKEEPING__NO_HALF_LINK_GLUE_EQUIVALENCE_FINITE_NORMALIZED_CAUSAL_STACK_SUM_CUTOFF_REMOVAL_OR_UV_IR_OBSERVABLE_CERTIFICATE",
+  "d7_authorized": false,
+  "derivation_type": "SOURCE_GROUNDED_FORMAL_COMPOSITION_INFERENCE",
+  "exact_han_half_link_glue_equivalence_proven": false,
+  "exact_rational_lambda_bookkeeping_cases": 1792,
+  "external_lambda_multiplicity_bookkeeping_retained_formally": true,
+  "family": "LQG_SPINFOAM",
+  "family_terminal": false,
+  "formal_memberwise_causal_vertex_substitution_exists": true,
+  "generalized_causal_vertex_finiteness_proven": false,
+  "generalized_causal_vertex_normalization_proven": false,
+  "iteration": 297,
+  "member_label_cases_checked": 512,
+  "methodology_run": 34593574674,
+  "raw_summary_digest": "sha256:d2886d62a8b590a6be83b4e9eb318f10f9454950a74abc3fa0afb505301af95a",
+  "refined_blocker": "BLOCKED_MISSING_EXACT_HAN_HALF_LINK_GLUE_EQUIVALENCE_AND_FINITE_NORMALIZED_GENERALIZED_CAUSAL_VERTEX_STACK_AMPLITUDE_WITH_LAMBDA_F_WEIGHTED_AREA_CUTOFF_CONTROL_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR",
+  "same_member_multiplicity_and_spin_index_set_retained": true,
+  "same_realization_uv_to_regge_gr_parameter_observable_error_transport_proven": false,
+  "scientific_head": "880b01f89488492c50deda7b315d02f425e0a3f4",
+  "scientific_run": 34593574762,
+  "summary_artifact": 10260556884,
+  "terminal_count": "1/15"
+}
