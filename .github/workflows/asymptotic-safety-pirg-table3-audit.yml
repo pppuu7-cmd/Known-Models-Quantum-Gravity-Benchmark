@@ -1,0 +1,81 @@
+name: asymptotic-safety-pirg-table3-audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/as_pirg_table3_common.py'
+      - 'code/as_pirg_table3_dispersion.py'
+      - 'code/as_pirg_table3_nearcanonical.py'
+      - 'code/as_pirg_table3_matched.py'
+      - 'code/as_pirg_table3_scheme.py'
+      - 'code/as_pirg_table3_aggregate.py'
+      - '.github/workflows/asymptotic-safety-pirg-table3-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {label: dispersion, script: as_pirg_table3_dispersion.py}
+          - {label: nearcanonical, script: as_pirg_table3_nearcanonical.py}
+          - {label: matched, script: as_pirg_table3_matched.py}
+          - {label: scheme, script: as_pirg_table3_scheme.py}
+    steps:
+      - name: Checkout exact KMQGB revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+
+      - name: Run independent PIRG Table III probe
+        run: python code/${{ matrix.script }} --output build/as-pirg/${{ matrix.label }}.json
+
+      - name: Upload probe result
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: as-pirg-${{ matrix.label }}
+          path: build/as-pirg/${{ matrix.label }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: probes
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact KMQGB revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+
+      - name: Download independent results
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: as-pirg-*
+          path: build/as-pirg-results
+          merge-multiple: true
+
+      - name: Aggregate after dependency barrier
+        run: python code/as_pirg_table3_aggregate.py --input-dir build/as-pirg-results --output build/as-pirg-iter278-summary.json
+
+      - name: Upload aggregate result
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: as-pirg-iter278-summary
+          path: build/as-pirg-iter278-summary.json
+          if-no-files-found: error
+          retention-days: 90
