@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "iteration": 311,
+  "date": "2026-09-11",
+  "derivation_type": "EXACT_MINIMAL_SPIN_K5_PARTIAL_DIAGONAL_SCALING_DEGREE_SUBDIVERGENCE_CENSUS",
+  "predecessor": {
+    "iteration": 310,
+    "scientific_run": 34626165676,
+    "scientific_head": "b7ec5be827608d5e3064b055c31b698d35563c8a",
+    "summary_artifact": 10273994495
+  },
+  "source_contract": {
+    "minimal_spin_edge_power": "Iter306-307: for j_ab=1/2 a fixed causal Toller edge has leading local singular order q=2.",
+    "subset_collapse": "For a subset S of s K5 vertices collapsing together while external separations stay finite, only C(s,2) internal edges contribute the leading collapse power; there are 3(s-1) relative H3 boost directions.",
+    "scope": "This is a local scaling-degree census of induced complete subgraphs K_s at all-j=1/2. It identifies divergent/marginal partial diagonals and their overlap structure. It does not prove that every contracted boundary tensor has nonzero coefficient on every partial diagonal."
+  },
+  "prospectively_frozen_claims": {
+    "subset_degree_formula": "omega(s)=(s-1)(s-3)",
+    "s2_degree": -1,
+    "s3_degree": 0,
+    "s4_degree": 3,
+    "s5_degree": 8,
+    "s2_subset_count": 10,
+    "s3_subset_count": 10,
+    "s4_subset_count": 5,
+    "s5_subset_count": 1,
+    "proper_marginal_or_divergent_partial_diagonals": 15,
+    "including_total_diagonal_non_safe_subsets": 16,
+    "nested_pairs_among_non_safe_subsets": 35,
+    "overlapping_incomparable_pairs_among_non_safe_subsets": 85,
+    "compatible_nested_forests_including_empty": 72,
+    "global_distribution_extension_requires_partial_diagonal_control": true,
+    "all_partial_diagonal_leading_coefficients_nonzero_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_MINIMAL_SPIN_K5_HAS_TEN_LOGARITHMIC_TRIANGLE_PARTIAL_DIAGONALS_FIVE_POWER_DIVERGENT_K4_PARTIAL_DIAGONALS_AND_ONE_DEGREE8_TOTAL_DIAGONAL__OVERLAPPING_SUBDIVERGENCES_REQUIRE_FOREST_COMPATIBLE_EXTENSION_CONTROL_BEYOND_A_SINGLE_TOTAL_IDENTITY_COUNTERTERM__COEFFICIENT_NONVANISHING_REMAINS_COMPONENT_DEPENDENT",
+  "scope_rule": "PASS establishes the exact local subdivergence geometry and overlap census. It does not by itself establish nonzero residues on every stratum, a unique forest renormalization, family failure, or D7 authorization."
+}
