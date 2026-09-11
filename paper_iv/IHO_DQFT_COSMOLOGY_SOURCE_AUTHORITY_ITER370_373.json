@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "iteration_bundle": "370-373",
+  "family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "branch": "IHO_DQFT_SPACELIKE_PV",
+  "purpose": "Prospective scoped audit of a source-defined cosmological observable for the same Kumar-Marto IHO/DQFT quadratic-gravity construction; this does not by itself terminalize the family.",
+  "source": {
+    "title": "Quantum (quadratic) gravity: replacing the massive tensor ghost with an inverted harmonic oscillator-like instability",
+    "authors": ["K. Sravan Kumar", "Joao Marto"],
+    "arxiv": "2603.07150v3",
+    "submitted": "2026-03-07",
+    "last_revised": "2026-06-18",
+    "url": "https://arxiv.org/abs/2603.07150"
+  },
+  "source_defined_observable": {
+    "name": "tensor_to_scalar_ratio",
+    "symbol": "r",
+    "relation": "r = (12/N^2) * (12*alpha)/(12*alpha-beta)",
+    "same_domain_baseline": "Starobinsky beta=0: r_star = 12/N^2",
+    "normalized_ratio_derived_exactly_from_source_relation": "R_r = r/r_star = 1/(1-x), x=beta/(12*alpha)",
+    "branch_sign": "beta>0 for the IHO/DQFT construction",
+    "finite_positive_scan_domain_used_by_machine_audit": "0<=x<1; x values are audit grid points, not source-fit measurements"
+  },
+  "error_object": {
+    "status": "DERIVED_PROPAGATION_FROM_SOURCE_FORMULA_NOT_SOURCE_COVARIANCE_DATASET",
+    "independent_variables": ["N", "x"],
+    "formula": "sigma_r/r = sqrt((2*sigma_N/N)^2 + (sigma_x/(1-x))^2)",
+    "guard": "Machine propagation is an analytic consistency object only; no observational covariance matrix or likelihood is claimed to be supplied by the source."
+  },
+  "protocol_guard": {
+    "same_realization_link": "The source explicitly presents this inflationary prediction as a prediction of the unitary quadratic-gravity/IHO construction.",
+    "same_domain_comparator": "beta=0 Starobinsky limit in the same inflationary formula.",
+    "no_external_observational_bound_imported": true,
+    "no_parameter_fit_claimed": true,
+    "no_family_terminalization_from_this_bundle": true,
+    "d7_promotion_authorized": false,
+    "required_after_success": "Establish whether KMQGB accepts this cosmological r object as the required family-level normalized gravitational observable, and separately obtain/validate a source-grounded uncertainty or likelihood object and domain-scope transport sufficient for D7-S2/S3/S4."
+  }
+}
