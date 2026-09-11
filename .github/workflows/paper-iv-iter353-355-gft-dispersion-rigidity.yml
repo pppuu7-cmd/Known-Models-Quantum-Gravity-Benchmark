@@ -1,0 +1,100 @@
+name: paper-iv-iter353-355-gft-dispersion-rigidity
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/GFT_SOURCE_AUTHORITY_ITER353_355.json'
+      - 'code/gft_iter353_*.py'
+      - 'code/gft_iter354_*.py'
+      - 'code/gft_iter355_*.py'
+      - 'code/iter353_355_aggregate.py'
+      - '.github/workflows/paper-iv-iter353-355-gft-dispersion-rigidity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  coupled-rigidity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        alpha: ['0.01','0.1','0.3','1.0']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter353
+          python code/gft_iter353_coupled_rigidity.py --alpha '${{ matrix.alpha }}' --output 'build/iter353/coupled-${{ matrix.alpha }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter353-coupled-${{ matrix.alpha }}
+          path: build/iter353/coupled-${{ matrix.alpha }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  decoupled-control:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        case: ['c0','c1','c2','c3']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter354
+          python code/gft_iter354_decoupled_control.py --case '${{ matrix.case }}' --output 'build/iter354/control-${{ matrix.case }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter354-control-${{ matrix.case }}
+          path: build/iter354/control-${{ matrix.case }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  source-scope-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python code/gft_iter355_scope_guard.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter355-gft-scope-guard
+          path: iter355-gft-scope-guard.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: [coupled-rigidity, decoupled-control, source-scope-guard]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter35*'
+          path: iter353-355-results
+      - run: python code/iter353_355_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter353-355-summary
+          path: iter353-355-summary.json
+          if-no-files-found: error
+          retention-days: 90

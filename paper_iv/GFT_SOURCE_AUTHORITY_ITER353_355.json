@@ -1,0 +1,48 @@
+{
+  "iteration_bundle": "353-355",
+  "family": "GFT_TENSOR_MODELS",
+  "source": "Dekhil, Greco, Liberati, Oriti, arXiv:2608.12003v1 (2026-08-12)",
+  "source_defined_scope": {
+    "fundamental_parent": "Group Field Theory condensate quantum gravity with relational rods/clocks",
+    "approximation": [
+      "mean-field coherent condensate",
+      "negligible GFT interactions",
+      "single dynamically dominant spin mode",
+      "early-time Q approximately q times the identity for the coupled perturbation reduction",
+      "WKB/adiabatic dispersion analysis"
+    ],
+    "derived_objects": [
+      "late-time spatially-flat FLRW GR background limit",
+      "effective scalar-field perturbation equation",
+      "coupled-regime mixed time-space derivative and fourth-spatial-derivative terms",
+      "modified dispersion relation with k-dependent effective dissipative and dispersive contributions"
+    ]
+  },
+  "equations": {
+    "condensate": "Eq. (2)",
+    "phase_perturbation": "Eq. (24)",
+    "scalar_perturbation": "Eq. (28)",
+    "coefficients": "Eq. (29)",
+    "decoupled_early_late": "Eqs. (30),(31)",
+    "dispersion": "Eq. (32)"
+  },
+  "source_open_boundaries": [
+    "The physically admissible scalar sector requires an intensive definition; the extensive volume-growing branch must be removed and the systematic intensive-sector selection is left for future work.",
+    "The role of source terms in the perturbation dynamics remains to be clarified.",
+    "The connection between the modified dispersion relation and observable cosmological perturbation spectra remains future work.",
+    "The analysed model uses negligible GFT interactions and a dominant condensate mode rather than an exhaustive interacting GFT family map."
+  ],
+  "coverage_contract_boundary": [
+    "No explicit family-level reduction/equivalence map to the LQG/spinfoam Tier-1 row is supplied by this source.",
+    "A condensate-cosmology matter-propagation child result is not the full gravity observable/comparator outside condensate-state cosmology required for GFT family terminalization."
+  ],
+  "frozen_interpretation": {
+    "new_concrete_child_authority": true,
+    "full_gravity_observable_comparator": false,
+    "intensive_sector_closed": false,
+    "observable_spectrum_bridge_closed": false,
+    "explicit_spinfoam_reduction_map": false,
+    "family_terminalization_authorized": false,
+    "d7_promotion_authorized": false
+  }
+}
