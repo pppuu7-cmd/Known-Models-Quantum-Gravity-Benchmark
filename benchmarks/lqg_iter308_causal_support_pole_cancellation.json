@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "iteration": 308,
+  "date": "2026-09-11",
+  "derivation_type": "EXACT_CAUSAL_SUPPORT_VS_UNRESTRICTED_SUPPORT_LEADING_POLE_CANCELLATION_AUDIT",
+  "predecessor": {
+    "iteration": 307,
+    "scientific_run": 34625187795,
+    "scientific_head": "74601d3d9446f2d81a33948b9343aa13977ff2af",
+    "summary_artifact": 10274087312
+  },
+  "source_contract": {
+    "causal_support": "For a fixed causal structure kappa_ab=sigma_a sigma_b on K5. Global sigma reversal is redundant, leaving 2^(5-1)=16 inequivalent causal wedge-sign sectors split into 0<->5, 1<->4 and 2<->3 classes with multiplicities 1,5,10.",
+    "unrestricted_eprl_support": "T+ + T- = D independently on each of ten wedges, so the formal unrestricted expansion contains 2^10=1024 wedge-sign sectors and reconstructs the standard EPRL D-product.",
+    "iter307_kernel": "At j_ab=1/2 for the explicit (A,A,B,A,A) witness, each wedge contributes leading branch scalar -kappa_ab multiplying the same geometric Pauli kernel, and the contracted geometric coefficient is nonzero.",
+    "scope": "Audit cancellation of the Iter307 leading delta^-20 singularity under sector summation. It does not address a separate distributional or regularized definition of each singular sector."
+  },
+  "prospectively_frozen_claims": {
+    "k5_inequivalent_causal_sector_count": 16,
+    "causal_class_counts": {"0_5":1,"1_4":5,"2_3":10},
+    "leading_branch_factor_each_causal_sector": 1,
+    "unit_weight_causal_sum_leading_factor": 16,
+    "positive_weight_causal_sum_can_cancel_common_nonzero_leading_term": false,
+    "unrestricted_sector_count": 1024,
+    "unrestricted_leading_factor_positive_count": 512,
+    "unrestricted_leading_factor_negative_count": 512,
+    "unrestricted_unit_weight_leading_factor_sum": 0,
+    "unit_weight_causal_sum_witness_coefficient": "-2/[81*(1+gamma^2)^10]",
+    "causal_support_restores_eprl_local_pole_cancellation": false,
+    "distributional_or_regularized_causal_sum_nonexistence_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_EXACT_CAUSAL_SIGMA_SUPPORT_PRESERVES_AND_ADDS_THE_ITER307_MINSPIN_LEADING_LOCAL_POLE_WHILE_THE_UNRESTRICTED_1024_SECTOR_EPRL_EXPANSION_CANCELS_ITS_BRANCH_SIGN_FACTOR__UNIT_OR_NONNEGATIVE_CAUSAL_STRUCTURE_WEIGHTS_DO_NOT_RESTORE_THIS_LOCAL_CANCELLATION__NO_CLAIM_ON_SEPARATE_DISTRIBUTIONAL_OR_REGULARIZED_PRESCRIPTIONS",
+  "scope_rule": "A PASS shows that ordinary unit-weight, and more generally nonnegative nontrivial, summation over source sigma-induced causal structures cannot cure the explicit Iter307 leading absolute-integrability obstruction. It is not a no-go against prescriptions with signed/complex counterweights or independent distributional regularization, and it does not authorize family or D7 promotion."
+}
