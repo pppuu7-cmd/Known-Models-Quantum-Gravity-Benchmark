@@ -1,0 +1,57 @@
+name: lqg-explicit-k5-jet-basis
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/lqg_iter330_*.py'
+      - '.github/workflows/lqg-explicit-k5-jet-basis.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        mode: [basis, k4, k3]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter330
+          python code/lqg_iter330_explicit_k5_jet_basis.py --mode '${{ matrix.mode }}' --output 'build/iter330/${{ matrix.mode }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter330-${{ matrix.mode }}
+          path: build/iter330/${{ matrix.mode }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter330-*
+          path: iter330-results
+      - run: python code/lqg_iter330_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter330-summary
+          path: iter330-summary.json
+          if-no-files-found: error
+          retention-days: 90
