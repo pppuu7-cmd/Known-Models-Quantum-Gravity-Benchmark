@@ -1,0 +1,60 @@
+name: cw2-iter334-337-parallel-authority
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/cw2_iter334_337_*.py'
+      - '.github/workflows/cw2-iter334-337-parallel-authority.yml'
+      - 'paper_iv/PAPER_IV_D7_READINESS_STATE.json'
+      - 'post_freeze_paper_iv_closure_wave_02/README.md'
+      - 'recovery/CURRENT_BENCHMARK_FRONT_ITER330_DELTA.md'
+
+permissions:
+  contents: read
+
+jobs:
+  lane:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        mode: [lqg, as, cfs, global]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter334-337
+          python code/cw2_iter334_337_parallel_authority.py --mode '${{ matrix.mode }}' --output 'build/iter334-337/${{ matrix.mode }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cw2-iter334-337-${{ matrix.mode }}
+          path: build/iter334-337/${{ matrix.mode }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: lane
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: cw2-iter334-337-*
+          path: iter334-337-results
+      - run: python code/cw2_iter334_337_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cw2-iter334-337-summary
+          path: iter334-337-summary.json
+          if-no-files-found: error
+          retention-days: 90
