@@ -1,0 +1,49 @@
+{
+  "iteration_bundle": "349-352",
+  "family": "HORAVA_LIFSHITZ_GRAVITY",
+  "projectable_rg_authority": {
+    "source": "Barvinsky, Kurov, Sibiryakov, arXiv:2411.13574v1 / Phys. Rev. D 111, 024030 (2025)",
+    "facts": [
+      "The 3+1 projectable marginal-coupling flow has asymptotically free UV fixed points.",
+      "A unique family of RG trajectories reaches the near-GR kinetic domain 0<lambda-1<<1.",
+      "The RG calculation intentionally retains the marginal sector; eta and mu_a are relevant deformations and are not jointly transported by that marginal flow.",
+      "The source explicitly states that reaching the proper IR domain is necessary but not sufficient because the full projectable IR theory has a long-wavelength scalar instability."
+    ],
+    "equations": ["11b", "12", "16a-16c", "17-19"]
+  },
+  "projectable_scattering_authority": {
+    "source": "Radkovski, Sibiryakov, arXiv:2306.00102 / Phys. Rev. D 108, 046017 (2023)",
+    "facts": [
+      "Tree-level projectable Hořava 2->2 graviton amplitudes are finite at lambda->infinity at fixed other marginal couplings.",
+      "The auxiliary-field action makes the lambda=infinity limit manifestly regular.",
+      "Appendix D gives explicit head-on amplitudes including Eq. D.9 used in Iter350.",
+      "The source explicitly separates this high-energy result from the problematic projectable low-energy Minkowski vacuum."
+    ],
+    "equations": ["1.2", "5.8", "5.9", "D.9"]
+  },
+  "projectable_ir_2026_authority": {
+    "source": "Mukohyama, Radkovski, Sibiryakov, arXiv:2604.09400 / Phys. Rev. D 114, 024039 (2026)",
+    "facts": [
+      "Minkowski spacetime has an infrared instability in 3+1 projectable Hořava gravity.",
+      "A phenomenologically viable resolution must hide it through time-dependent processes such as Hubble/Jeans dynamics or find a low-average-curvature static endpoint.",
+      "The paper finds no static inhomogeneous quasiperiodic planar-symmetry endpoint supplied by higher-derivative terms and argues that the classified static solutions do not provide an endpoint for the Minkowski instability.",
+      "This motivates the still-open time-dependent resolution route."
+    ]
+  },
+  "nonprojectable_2026_authority": {
+    "source": "Blas, Del Porro, Herrero-Valea, Radkovski, Sibiryakov, arXiv:2512.14864 / Phys. Rev. D 113, 106022 (2026)",
+    "facts": [
+      "A Lagrangian path-integral formulation for non-projectable Hořava gravity is constructed.",
+      "The explicit one-loop case study is in 2+1 dimensions and verifies cancellation of dangerous linear-in-frequency divergences in the studied two-point function.",
+      "The paper formulates additional questions that must be resolved to prove perturbative renormalizability of non-projectable Hořava gravity; it is not a 3+1 all-sector renormalizability/observable closure certificate."
+    ]
+  },
+  "frozen_interpretation": {
+    "projectable_same_family_identity": true,
+    "full_source_defined_uv_to_ir_same_realization_transport": false,
+    "reason": "The UV/marginal RG and scattering authorities do not jointly transport the relevant IR coefficients eta, mu_1, mu_2 and the time-dependent IR resolution into a normalized physical observable/comparator package.",
+    "nonprojectable_can_close_projectable_gap": false,
+    "family_terminalization_authorized": false,
+    "d7_promotion_authorized": false
+  }
+}
