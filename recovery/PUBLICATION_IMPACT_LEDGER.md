@@ -72,22 +72,42 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 
 ## Iter286 — EPRL Euclidean↔Lorentzian Wick/signature bridge
 ### Paper III — `NOT_NEEDED`
-- **Type:** theory-specific signature/realization evidence; no new general sensing rule.
+- **Type:** theory-specific signature/realization evidence.
 ### Paper IV — `READY`
 - Add Donà–Gozzini–Nicotra, PRD 104, 126008 (2021), as an explicit EPRL vertex-level Euclidean↔Lorentzian analytic-continuation bridge.
-- Required boundary: the continuation changes the Immirzi domain rather than proving identity in the same real-`gamma` quantum realization; it does not transport the Iter284 rigging map over the full physical state space and does not establish complete-stack transport into the Han 2017/2026 chain.
+- Boundary: continuation changes the Immirzi domain rather than proving identity in the same real-`gamma` realization; it does not transport the Iter284 rigging map over the full state space or establish complete-stack transport.
 - Result: `HIGH_VALUE_EPRL_SIGNATURE_ANALYTIC_CONTINUATION_BRIDGE__REAL_GAMMA_PHYSICAL_STATE_AND_COMPLETE_STACK_TRANSPORT_STILL_OPEN`.
 - Provenance: scientific `34557396727`; methodology `34557396730`; reproducibility `34557551569`; digest `sha256:8ff5a0004e5de88b72f1a3b1ef50bb469ec2b09a961d6e59171b901e616969d6`.
 
 ## Iter287 — LQG same-stack UV / entropy alignment
 ### Paper III — `NOT_NEEDED`
-- **Type:** theory-specific realization/transport refinement.
 ### Paper IV — `READY`
-- Explicitly state that Han's UV fixed-point object and Lorentzian entropy observable are aligned inside the same Lorentzian spinfoam-stack architecture, rather than merely belonging to the broad LQG family.
+- State that Han's UV fixed-point object and Lorentzian entropy observable are aligned inside the same Lorentzian spinfoam-stack architecture.
 - Report `shared_lorentzian_stack_architecture=true`, `observable_anchor_inside_shared_stack=true`, `coupling_gamma_directional_anchor=true`, `uv_ir_regime_orientation_identified=true`, while `continuous_same_realization_transport_ready=false`.
-- This reduces the realization-identity gap and narrows the decisive missing object to a controlled continuous UV→large-spin/Einstein flow with one parameter identity, normalized observable, comparator and propagated errors.
+- This narrows the missing object to a controlled continuous UV→large-spin/Einstein flow with one parameter identity, normalized observable, comparator and propagated errors.
 - Result: `HIGH_VALUE_SAME_STACK_UV_ENTROPY_ALIGNMENT__REALIZATION_IDENTITY_GAP_REDUCED_BUT_CONTROLLED_UV_TO_GR_TRANSPORT_STILL_OPEN`.
 - Provenance: scientific `34557575513`; methodology `34557575510`; digest `sha256:c13d8089852e79beb737945bfad074fc021aaece721a297d43eeb273e0c8bd77`.
+
+## Iter288 — LQG semiclassical hierarchy / BH-domain overlap
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific numerical sensitivity; no new general sensing/resource-closure rule.
+### Paper IV — `READY`
+- Add a sensitivity-only quantification of overlap between Han's published semiclassical hierarchy `1 << gamma^-1 << lambda << gamma^-2` and the BH-compatible entropy range.
+- For an operational separation factor `R`, use `lambda >= R/gamma` and `lambda <= 1/(R gamma^2)`; nonempty window iff `gamma < 1/R^2`.
+- Report sensitivity values only: R=2 -> 0.25; R=3 -> 1/9; R=5 -> 0.04; R=10 -> 0.01.
+- **Required boundary:** these are not physical bounds or measured/predicted gamma thresholds. They demonstrate a nonempty small-gamma overlap and the sensitivity of the asymptotic hierarchy to how `<<` is operationalized.
+- Result: `QUANTIFIED_SEMICLASSICAL_HIERARCHY_OVERLAP__BH_RANGE_CONTAINS_SMALL_GAMMA_SUBDOMAIN_WITH_REGGE_WINDOW_BUT_NO_UNIQUE_NUMERICAL_DOUBLE_LESS_THAN_THRESHOLD`.
+- Provenance: scientific `34557797109`; methodology `34557797084`; reproducibility `34557875010`; digest `sha256:57986e696cfb7e139bcb75a9cdf9c3f48b65e0f4120b567b624aa4a6b5945f6a`.
+
+## Iter289 — CFS systematic current / correction-tensor pathway
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific CFS methodology/evidence; no new general sensing rule.
+### Paper IV — `READY`
+- Add Finster–Fischer, *Construction of Currents in Causal Fermion Systems*, arXiv:2507.09633 (2025), as a high-value pathway object toward the frozen CFS beyond-continuum gravity blocker.
+- Report explicit rank-one current/Maxwell control and the systematic tensor hierarchy stated to extend to gravitation and higher-order quantum/discreteness corrections.
+- **Required boundary:** rank-two Einstein structure is prospective in this paper, and higher-rank new-physics/correction tensors are not explicitly evaluated/frozen. Do not count this as the required normalized gravity correction tensor or comparator residual.
+- Result: `HIGH_VALUE_CFS_SYSTEMATIC_CURRENT_AND_HIGHER_RANK_PATHWAY__GRAVITY_CORRECTION_TENSOR_REMAINS_PROSPECTIVE_AND_BLOCKER_STAYS_OPEN`.
+- Provenance: scientific `34558237027`; methodology `34558237116`; aggregate digest `sha256:b27830783f0fa7a90e75689e38584eb21263296c78bdd97d5226e5ac8e4dc9e3`.
 
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:

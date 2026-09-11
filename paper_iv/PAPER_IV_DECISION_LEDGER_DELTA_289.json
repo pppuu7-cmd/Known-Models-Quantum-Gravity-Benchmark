@@ -1,0 +1,19 @@
+{
+  "iteration": "Iter289",
+  "date": "2026-09-11",
+  "family": "CFS",
+  "object": "Finster_Fischer_2025_Construction_of_Currents",
+  "scientific_run": 34558237027,
+  "methodology_run": 34558237116,
+  "aggregate_digest": "sha256:b27830783f0fa7a90e75689e38584eb21263296c78bdd97d5226e5ac8e4dc9e3",
+  "scoped_result": "HIGH_VALUE_CFS_SYSTEMATIC_CURRENT_AND_HIGHER_RANK_PATHWAY__GRAVITY_CORRECTION_TENSOR_REMAINS_PROSPECTIVE_AND_BLOCKER_STAYS_OPEN",
+  "explicit_rank_one_control": true,
+  "gravity_extension_pathway": true,
+  "rank_two_gravity_tensor_explicit": false,
+  "higher_rank_correction_tensor_explicit": false,
+  "frozen_cfs_blocker_closed": false,
+  "family_terminal": false,
+  "d7_changed": false,
+  "paper_iii_impact": "NOT_NEEDED",
+  "paper_iv_impact": "READY"
+}

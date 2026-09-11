@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter287 same-stack UV/entropy alignment recorded; Iter288 hierarchy sensitivity running
+Iteration: Iter288 LQG hierarchy-overlap + Iter289 CFS correction-pathway results ready for archival
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -28,74 +28,80 @@ Authoritative 15-row census synchronization milestone: Iter276
 - 15-row decision-stack synchronization remains validated.
 These are infrastructure metrics, not scientific D7 closure.
 
-## LQG/spinfoam evidence front
-### Iter281 — complete-stack/topological construction
-Han PRD 113, 084034 (2026): stack Hessian/nondegeneracy/refinement-control evidence strongly positive in declared scope, but the infinite-cutoff regime is topological and not automatically the physical GR continuum.
+## LQG/spinfoam front
+Iter281–287 established a progressively stronger four-component near-bridge:
+1. complete-stack/topological/refinement machinery;
+2. physical-continuum certificate adapter and scoped canonical/covariant physical-state component;
+3. small-spin Lorentzian complete-stack UV endpoint plus large-spin/refinement Einstein endpoint;
+4. Lorentzian entropy observable anchor inside the same stack architecture, with exact BH normalization after stated coupling selection.
 
-### Iter282 — physical continuum certificate
-Bruno–Colafranceschi–Mele–Rovelli PRD 114, 066005 (2026): strong inductive-Hilbert convergence can force TQFT; distributional/rigging-map continuum evidence is admissible. Added `PHYSICAL_CONTINUUM_CERTIFICATE_ADAPTER` without weakening model-specific physical obligations.
+Important scoped refinements:
+- explicit Euclidean↔Lorentzian EPRL vertex analytic continuation exists, but not same-real-`gamma` full state/stack transport;
+- UV fixed point and entropy observable are aligned inside the same Lorentzian spinfoam-stack architecture;
+- the remaining decisive object is controlled compatible same-realization transport to the large-spin/Einstein regime with parameter identity, normalized observable, comparator and propagated uncertainty.
 
-### Iter283 — UV and GR endpoints
-Han 2017 large-spin/refinement Einstein endpoint + Han 2026 small-spin complete-stack UV endpoint. Aggregate: `shared_parent_family=true`, `material_positive_endpoints=true`, `same_realization_terminal_bridge_ready=false`. Interpretation: **missing bridge/transport, not missing endpoints**.
+### Iter288 — semiclassical hierarchy / entropy-domain overlap
+Scientific run `34557797109`: 4/4 sensitivity jobs + aggregate SUCCESS.
+Methodology `34557797084`: SUCCESS. Reproducibility `34557875010`: SUCCESS.
+Digest: `sha256:57986e696cfb7e139bcb75a9cdf9c3f48b65e0f4120b567b624aa4a6b5945f6a`.
 
-### Iter284 — physical-state component
-Yang–Zhang–Ma 2021 supplies a genuine scoped canonical/covariant rigging-map component for generalized Euclidean EPRL at `beta=1` on certain states. Not generic-beta/full-state/Lorentzian same-realization transport.
+Prospective sensitivity convention for published `1 << gamma^-1 << lambda << gamma^-2`:
+`lambda >= R/gamma`, `lambda <= 1/(R gamma^2)`, yielding a nonempty window iff `gamma < 1/R^2`.
+Results:
+- R=2 -> gamma<0.25
+- R=3 -> gamma<1/9
+- R=5 -> gamma<0.04
+- R=10 -> gamma<0.01
 
-### Iter285 — Lorentzian normalized-observable anchor
-Han PRD 113, 084044 (2026): Lorentzian dynamic entropy observable in the stack sector; exact BH normalization identity `beta=pi*gamma`; leading 2-complex independence. Coupling↔gamma selection and UV→GR observable transport remain open.
-Scientific run `34557034125`, methodology `34557034108`, archival methodology `34557305576`: SUCCESS.
-
-### Iter286 — explicit signature bridge
-Donà–Gozzini–Nicotra PRD 104, 126008 (2021): explicit Euclidean↔Lorentzian EPRL vertex analytic continuation.
-Scientific run `34557396727`: 4/4 guards + aggregate SUCCESS.
-Methodology `34557396730`: SUCCESS. Reproducibility `34557551569`: SUCCESS.
-Digest `sha256:8ff5a0004e5de88b72f1a3b1ef50bb469ec2b09a961d6e59171b901e616969d6`.
-Aggregate classification:
-`HIGH_VALUE_EPRL_SIGNATURE_ANALYTIC_CONTINUATION_BRIDGE__REAL_GAMMA_PHYSICAL_STATE_AND_COMPLETE_STACK_TRANSPORT_STILL_OPEN`.
-The signature gap is structurally reduced, but the map does not establish same-real-`gamma` identity, full rigging-map transport or complete-stack transport.
-
-### Iter287 — same-stack UV/entropy alignment
-Scientific run `34557575513`: 4/4 guards + aggregate SUCCESS.
-Methodology `34557575510`: SUCCESS.
-Digest `sha256:c13d8089852e79beb737945bfad074fc021aaece721a297d43eeb273e0c8bd77`.
-Aggregate:
-- shared Lorentzian stack architecture = true;
-- observable anchor inside shared stack = true;
-- coupling/`gamma` directional anchor = true;
-- UV/IR regime orientation identified = true;
-- continuous same-realization transport ready = false.
 Classification:
-`HIGH_VALUE_SAME_STACK_UV_ENTROPY_ALIGNMENT__REALIZATION_IDENTITY_GAP_REDUCED_BUT_CONTROLLED_UV_TO_GR_TRANSPORT_STILL_OPEN`.
-This is a material narrowing of the LQG blocker: the UV and observable sectors are now aligned inside one stack architecture. The missing object is a controlled continuous same-realization flow into the large-spin/Einstein regime with parameter/observable/comparator/error transport.
+`QUANTIFIED_SEMICLASSICAL_HIERARCHY_OVERLAP__BH_RANGE_CONTAINS_SMALL_GAMMA_SUBDOMAIN_WITH_REGGE_WINDOW_BUT_NO_UNIQUE_NUMERICAL_DOUBLE_LESS_THAN_THRESHOLD`
 
-## Current LQG status
+Boundary: these are sensitivity thresholds under chosen operational meanings of `<<`, not physical gamma bounds. They establish domain overlap, not a running law or UV→IR trajectory.
+
 LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS.
-Canonical blocker string remains:
+Canonical blocker remains:
 `BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT`
-Interpretive refinement: strong physical-state, signature-bridge, UV, Lorentzian-observable, and GR components now exist; the decisive missing object is controlled compatible same-realization transport among them.
 
-## Iter288 — active computation
-A four-way sensitivity audit is running for the published semiclassical hierarchy `1 << gamma^-1 << lambda << gamma^-2` against the BH-compatible entropy range `0 < gamma ≲ 1/2`. Independent separation factors `R=2,3,5,10` quantify how progressively stronger interpretations of `<<` restrict the small-`gamma` overlap. This is explicitly a sensitivity diagnostic, not a claim of a unique physical numerical threshold.
+## CFS front
+The existing PF1 authority already includes Fischer–Finster arXiv:2605.30199 as exact curved-spacetime Einstein–Dirac comparator evidence and rejects obsolete blockers about absence of curved-spacetime GR/Fock/relational controls. The frozen blocker is a gravity-specific beyond-continuum observable / normalized non-Einstein correction tensor plus same-domain comparator residual.
 
-## Other high-priority fronts
-- Asymptotic Safety: stable public contact-complete Lorentzian `s+t+u+A4` package remains the decisive external object.
+### Iter289 — systematic current / correction-tensor pathway
+Primary object: Finster–Fischer, *Construction of Currents in Causal Fermion Systems*, arXiv:2507.09633 (2025).
+Scientific run `34558237027`: 4/4 guards + aggregate SUCCESS.
+Methodology `34558237116`: preflight + 4/4 shards + aggregate/bundle SUCCESS.
+Digest: `sha256:b27830783f0fa7a90e75689e38584eb21263296c78bdd97d5226e5ac8e4dc9e3`.
+
+Aggregate:
+- explicit rank-one CFS current/Maxwell control = true;
+- systematic pathway extends in scope to gravity and higher-order quantum/discreteness corrections = true;
+- explicit rank-two gravity tensor = false;
+- explicit higher-rank gravity correction tensor = false;
+- frozen CFS blocker closed = false.
+
+Classification:
+`HIGH_VALUE_CFS_SYSTEMATIC_CURRENT_AND_HIGHER_RANK_PATHWAY__GRAVITY_CORRECTION_TENSOR_REMAINS_PROSPECTIVE_AND_BLOCKER_STAYS_OPEN`
+
+CFS therefore remains `BLOCKED_MISSING_REQUIRED_OBJECT`, not FAIL. Iter289 makes the route to the missing object more concrete but does not supply it.
+
+## Other priority fronts
+- Asymptotic Safety: stable public contact-complete Lorentzian `s+t+u+A4` package remains decisive external object.
 - RQCP: all-band/background-independent autonomy plus Hilbert-cutoff/resource closure remains open.
-- Other Tier-1 rows reopen only on genuinely new material authority/computation/reduction object.
+- Other Tier-1 families reopen only on genuinely new status-changing authority/computation/reduction objects.
 
 ## Publication handoff
 `recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative.
-- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–287 = `NOT_NEEDED` as additional rules.
-- Paper IV: Iter277–287 = `READY` with stated claim boundaries.
+- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–289 = `NOT_NEEDED` as additional rules.
+- Paper IV: Iter277–289 = `READY` with stated claim boundaries.
 
 ## Anti-idle compute policy
-Whenever scientifically meaningful, nonduplicating tasks are independent, launch them immediately in parallel (`fail-fast:false`, highest safe practical parallelism). Dependent classification/aggregate stages wait behind explicit barriers. If runner capacity is saturated, queue useful independent jobs. Never repeat saturated/duplicate calculations merely to manufacture activity. Auto-research is configured with the same rule.
+Whenever scientifically meaningful, nonduplicating tasks are independent, launch them immediately in parallel (`fail-fast:false`, highest safe practical runner parallelism). Dependent classification/aggregate stages wait behind explicit barriers. When runners are saturated, queue additional useful independent jobs rather than suppress them. Never repeat saturated or duplicate calculations merely to manufacture activity. The active KMQGB auto-research automation is configured with the same mandatory rule.
 
 ## Exact next gate
 `D7_S2_EXTERNAL_AUTHORITY_DRIVEN_TERMINALIZATION_WITH_MULTI_AXIS_RESOURCE_CLOSURE_EXPLICIT_REDUCTION_MAPS_PHYSICAL_CONTINUUM_CERTIFICATES_AND_SAME_REALIZATION_TRANSPORT`
 
 Priority:
-1. finish Iter288 semiclassical hierarchy-overlap sensitivity and determine whether the BH-compatible entropy sector overlaps a parametrically credible Regge/Einstein window;
-2. search for/directly compute any explicit stack-coupling/`gamma`/spin-scale flow connecting the Iter287 same-stack UV/entropy sector to the large-spin Einstein endpoint;
+1. seek/compute an explicit LQG stack-coupling/`gamma`/spin-scale flow connecting the Iter287 same-stack UV/entropy sector to the large-spin Einstein endpoint;
+2. seek an explicit CFS rank-two/higher-rank gravity tensor evaluation that produces a normalized beyond-Einstein residual/comparator object rather than a prospective pathway;
 3. stable public AS contact-complete `s+t+u+A4`;
 4. RQCP all-band/background-independent autonomy bridge;
-5. new Tier-1 authority only when materially status-changing.
+5. other Tier-1 authority only when materially status-changing.

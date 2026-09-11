@@ -1,0 +1,24 @@
+{
+  "iteration": "Iter288",
+  "date": "2026-09-11",
+  "family": "LQG_SPINFOAM",
+  "object": "Han_2013_semiclassical_hierarchy_vs_Han_2026_entropy_gamma_domain",
+  "scientific_run": 34557797109,
+  "methodology_run": 34557797084,
+  "reproducibility_run": 34557875010,
+  "aggregate_digest": "sha256:57986e696cfb7e139bcb75a9cdf9c3f48b65e0f4120b567b624aa4a6b5945f6a",
+  "scoped_result": "QUANTIFIED_SEMICLASSICAL_HIERARCHY_OVERLAP__BH_RANGE_CONTAINS_SMALL_GAMMA_SUBDOMAIN_WITH_REGGE_WINDOW_BUT_NO_UNIQUE_NUMERICAL_DOUBLE_LESS_THAN_THRESHOLD",
+  "separation_sensitivity": [
+    {"R": 2.0, "gamma_critical": 0.25},
+    {"R": 3.0, "gamma_critical": 0.1111111111111111},
+    {"R": 5.0, "gamma_critical": 0.04},
+    {"R": 10.0, "gamma_critical": 0.01}
+  ],
+  "physical_threshold_claimed": false,
+  "domain_overlap_exists": true,
+  "continuous_same_realization_transport_ready": false,
+  "family_terminal": false,
+  "d7_changed": false,
+  "paper_iii_impact": "NOT_NEEDED",
+  "paper_iv_impact": "READY"
+}
