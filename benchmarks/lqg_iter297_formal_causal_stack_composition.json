@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "iteration": 297,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_FORMAL_COMPOSITION_INFERENCE",
+  "sources": {
+    "han_stack": {
+      "title": "Summation and triangulation independence of Lorentzian spinfoam amplitudes for all LQG",
+      "author": "Muxin Han",
+      "journal": "Physical Review D 113, 084034 (2026)",
+      "doi": "10.1103/n76f-31gf",
+      "arxiv": "2510.26926",
+      "authority_level": "PEER_REVIEWED"
+    },
+    "beltran_causal": {
+      "title": "Causal Structure for Generalized Spinfoams",
+      "author": "Carlos E. Beltran",
+      "arxiv": "2603.22661v2",
+      "authority_level": "PUBLIC_PREPRINT"
+    }
+  },
+  "prospectively_frozen_claims": {
+    "han_stack_members_are_generalized_eprl_kkl_on_2_complexes": true,
+    "han_stack_member_indexing_is_face_multiplicity_and_spin_based": true,
+    "han_lambda_weights_multiply_member_amplitudes_externally": true,
+    "han_multivertex_amplitude_is_gluing_of_vertex_amplitudes": true,
+    "beltran_causal_vertex_is_defined_as_eprl_kkl_vertex_alternative_on_arbitrary_2_complex": true,
+    "beltran_explicitly_proposes_replacing_eprl_kkl_amplitude_by_causal_alternative_at_each_vertex_in_multivertex_discretizations": true,
+    "formal_memberwise_causal_vertex_substitution_exists_on_iter296_admissible_causal_stack_members": true,
+    "formal_lambda_f_power_bookkeeping_can_be_retained_on_same_member_index_set": true,
+    "exact_identity_with_han_half_link_gluing_kernel_proven": false,
+    "generalized_causal_vertex_finiteness_proven": false,
+    "generalized_causal_vertex_normalization_proven": false,
+    "causal_stack_cutoff_removal_proven": false,
+    "causal_stack_large_cutoff_factorization_or_triangulation_independence_proven": false,
+    "same_realization_uv_to_regge_gr_parameter_observable_error_transport_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_FORMAL_MEMBERWISE_CAUSAL_VERTEX_SUBSTITUTION_ON_ITER296_ADMISSIBLE_HAN_STACK_COMPLEXES_WITH_RETAINED_EXTERNAL_LAMBDA_MULTIPLICITY_BOOKKEEPING__NO_HALF_LINK_GLUE_EQUIVALENCE_FINITE_NORMALIZED_CAUSAL_STACK_SUM_CUTOFF_REMOVAL_OR_UV_IR_OBSERVABLE_CERTIFICATE",
+  "scope_rule": "The result is a formal composition statement. Beltran's causal alternative is defined on generalized EPRL-KKL vertex data for arbitrary 2-complexes and is explicitly proposed as a per-vertex replacement in multi-vertex discretizations; Han stack members are generalized EPRL-KKL amplitudes on the same member 2-complex index set and carry external lambda_f^{p_f} weights. This permits a formal causal member amplitude to be defined by vertex substitution while retaining the same member/multiplicity weight labels. It does not prove equality to Han's special half-link gluing kernel, finiteness or normalization of the generalized causal vertex, validity of Han's analytic face-factorization after replacement, cutoff removal, large-cutoff localization/triangulation independence, or physical UV-to-Regge/GR transport."
+}
