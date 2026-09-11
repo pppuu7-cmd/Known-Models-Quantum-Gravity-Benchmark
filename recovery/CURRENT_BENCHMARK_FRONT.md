@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter290 LQG causal Lorentzian Regge endpoint integrated; Iter289 CFS correction-pathway retained
+Iteration: Iter291 LQG gamma-duality semiclassical observable/parameter bridge integrated; Iter290 causal Lorentzian Regge endpoint retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -39,7 +39,8 @@ Important scoped refinements:
 - explicit Euclidean↔Lorentzian EPRL vertex analytic continuation exists, but not same-real-`gamma` full state/stack transport;
 - UV fixed point and entropy observable are aligned inside the same Lorentzian spinfoam-stack architecture;
 - Iter290 adds an explicit causal Lorentzian EPRL-vertex large-spin Regge endpoint with a single causal Regge phase, strengthening the IR/semiclassical endpoint but not supplying complete-stack transport;
-- the remaining decisive object is controlled compatible same-realization transport from the complete-stack UV sector to the causal large-spin Regge/Einstein regime with parameter identity, normalized observable, comparator and propagated uncertainty.
+- Iter291 adds an independent EPRL semiclassical `gamma`-to-observable bridge: in the Bianchi–Rincon-Ramirez gamma-dual EFT construction, `gamma` fixes parity-even/parity-odd higher-curvature coupling relations and is in principle inferable from primordial tensor polarization plus tensor tilt and tensor-to-scalar ratio;
+- the remaining decisive object is controlled compatible same-realization transport from the complete-stack UV sector to the causal large-spin Regge/Einstein regime with stack-coupling/`gamma`/spin-scale identity, normalized observable, comparator and propagated uncertainty.
 
 ### Iter288 — semiclassical hierarchy / entropy-domain overlap
 Scientific run `34557797109`: 4/4 sensitivity jobs + aggregate SUCCESS.
@@ -74,9 +75,27 @@ Aggregate:
 Classification:
 `HIGH_VALUE_CAUSAL_LARGE_SPIN_LORENTZIAN_REGGE_ENDPOINT__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT`
 
-LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS.
-Canonical blocker remains, with the endpoint sharpened:
-`BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_COMPLETE_STACK_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE`
+### Iter291 — gamma-duality semiclassical observable / parameter bridge
+Primary object: Bianchi–Rincon-Ramirez, *Spinfoams, gamma-duality, and parity violation in primordial gravitational waves*, Physical Review D 113, 124013 (2026), DOI `10.1103/qz89-26hk`.
+Scientific run `34568777275`: four independent guards in parallel + aggregate SUCCESS on head `4b2212fe21830964b43fa8c0f9fabef842c6e6aa`.
+Summary artifact `10186981524`; artifact digest `sha256:3ef255ea6377cc487447b5ac62df01c43e870ca1f9913e2f7bedbba165b714ad`; raw aggregate digest `sha256:3b7f1797aa37d1722a3fce276520a7e7467c27f834823c6240764f1c32f727b0`.
+
+Aggregate:
+- peer-reviewed authority identity = PASS;
+- EPRL `gamma`-duality/parity coupling scope = PASS;
+- semiclassical EFT parameter-to-observable route = PASS;
+- fail-closed complete-stack transport scope guard = PASS;
+- complete-stack same-realization UV→IR transport = false;
+- normalized observable with full propagated QG error = false;
+- family terminal = false;
+- D7 authorized = false.
+
+Classification:
+`HIGH_VALUE_LQG_GAMMA_DUALITY_SEMICLASSICAL_OBSERVABLE_PARAMETER_BRIDGE__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT`
+
+LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS. The new authority removes an obsolete sub-blocker (“no semiclassical gamma observable”) but does not supply the terminal bridge.
+Canonical blocker remains, sharpened to:
+`BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_COMPLETE_STACK_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRAJECTORY_WITH_STACK_COUPLING_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE`
 
 ## CFS front
 The existing PF1 authority already includes Fischer–Finster arXiv:2605.30199 as exact curved-spacetime Einstein–Dirac comparator evidence and rejects obsolete blockers about absence of curved-spacetime GR/Fock/relational controls. The frozen blocker is a gravity-specific beyond-continuum observable / normalized non-Einstein correction tensor plus same-domain comparator residual.
@@ -106,8 +125,8 @@ CFS therefore remains `BLOCKED_MISSING_REQUIRED_OBJECT`, not FAIL. Iter289 makes
 
 ## Publication handoff
 `recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative.
-- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–290 = `NOT_NEEDED` as additional rules except where already stated.
-- Paper IV: Iter277–290 = `READY` with stated claim boundaries.
+- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–291 = `NOT_NEEDED` as additional rules except where already stated.
+- Paper IV: Iter277–291 = `READY` with stated claim boundaries.
 
 ## Anti-idle compute policy
 Whenever scientifically meaningful, nonduplicating tasks are independent, launch them immediately in parallel (`fail-fast:false`, highest safe practical runner parallelism). Dependent classification/aggregate stages wait behind explicit barriers. When runners are saturated, queue additional useful independent jobs rather than suppressing them. Never repeat saturated or duplicate calculations merely to manufacture activity. The active KMQGB auto-research automation is configured with the same mandatory rule.
@@ -116,7 +135,7 @@ Whenever scientifically meaningful, nonduplicating tasks are independent, launch
 `D7_S2_LQG_COMPLETE_STACK_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT_OR_EQUIVALENCE_CERTIFICATE`
 
 Priority:
-1. seek/compute an explicit complete-stack LQG stack-coupling/`gamma`/spin-scale flow or valid reduction/equivalence map connecting the Iter287 UV/entropy sector to the Iter290 causal large-spin Regge/Einstein endpoint, with normalized observable/comparator/error transport;
+1. seek/compute an explicit complete-stack LQG stack-coupling/`gamma`/spin-scale flow or valid reduction/equivalence map connecting the Iter287 UV/entropy sector through the Iter291 semiclassical `gamma` observable bridge to the Iter290 causal large-spin Regge/Einstein endpoint, with normalized observable/comparator/error transport;
 2. seek an explicit CFS rank-two/higher-rank gravity tensor evaluation that produces a normalized beyond-Einstein residual/comparator object rather than a prospective pathway;
 3. stable public AS contact-complete `s+t+u+A4`;
 4. RQCP all-band/background-independent autonomy bridge;
