@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "iteration": 309,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_MULTI_WEDGE_DISTRIBUTION_TRANSVERSALITY_AUDIT",
+  "predecessor": {
+    "iteration": 308,
+    "scientific_run": 34625480134,
+    "scientific_head": "5275fc2877c7bf44ee8dcabcbc9994e29128ffd3",
+    "summary_artifact": 10274632297
+  },
+  "source_contract": {
+    "causal_vertex": "Bianchi-Chen-Gamonal arXiv:2601.23162 Eq. (4) defines the fixed-causal vertex as the product of ten Toller matrices followed by four SL(2,C) integrations after g_1=1 gauge fixing.",
+    "wedge_iepsilon": "Eq. (3) defines each Toller matrix by an individual spectral Feynman i-epsilon boundary-value limit epsilon->0+.",
+    "coherent_distribution": "Eq. (17) and Appendix D, Eqs. (D1)-(D3), rewrite each Toller block with Theta=theta(sigma B)+sigma*delta^(rho,j)(B), where delta^(rho,j) is a finite sum of derivatives of Dirac delta supported at B=0.",
+    "B_map": "Eq. (C7): B(z,g)=log(<g^dagger z|g^dagger z>/<z|z>). At g=1, B(z,1)=0 for every nonzero spinor z. For an infinitesimal Hermitian boost v.sigma/2, dB=n_z.dv with n_z the spinor Bloch unit vector, up to an irrelevant common normalization/sign convention.",
+    "distribution_product_scope": "A standard sufficient transversality condition for the product/pullback of delta constraints is full row rank of the joint constraint differential on common support. Failure of that sufficient condition is a mathematical-definition gap, not by itself a proof that no extension/renormalized product exists.",
+    "vertex_limit_scope": "The displayed fixed-causal vertex Eq. (4) multiplies already-defined Toller blocks; no joint ten-wedge epsilon limiting prescription is part of Eq. (4) itself."
+  },
+  "prospectively_frozen_claims": {
+    "k5_wedge_count": 10,
+    "gauge_fixed_noncompact_boost_dimension": 12,
+    "all_identity_B_constraints_vanish_for_all_spinors": true,
+    "generic_exact_direction_rank": 10,
+    "collinear_direction_rank": 4,
+    "collinear_left_nullity": 6,
+    "full_row_rank_transversality_holds_everywhere_on_common_identity_support": false,
+    "standard_sufficient_delta_product_transversality_criterion_closes_vertex_distribution_product": false,
+    "joint_multiwedge_epsilon_limit_explicitly_defined_by_eq4": false,
+    "distributional_extension_or_renormalized_product_nonexistence_proven": false,
+    "unregularized_absolute_integrability_restored": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_SOURCE_GROUNDED_COHERENT_TOLLER_BLOCKS_HAVE_DERIVATIVE_DELTA_BOUNDARY_TERMS__TEN_WEDGE_COMMON_IDENTITY_SUPPORT_CONTAINS_ADMISSIBLE_COLLINEAR_SPINOR_CONFIGURATIONS_WHERE_JOINT_B_DIFFERENTIAL_RANK_DROPS_FROM_GENERIC_10_TO_4_AND_STANDARD_TRANSVERSAL_DELTA_PRODUCT_CRITERION_FAILS__EQ4_DOES_NOT_BY_ITSELF_SUPPLY_A_JOINT_MULTI_WEDGE_EPSILON_EXTENSION__DISTRIBUTIONAL_RENORMALIZED_PRODUCT_EXISTENCE_REMAINS_OPEN",
+  "scope_rule": "PASS establishes a concrete distribution-product closure gap at the identity stratum. It does not prove that no extension, microlocal renormalization, common-epsilon prescription, or alternative causal vertex definition can exist. No family no-go, NEW_REQUIRED, or D7 authorization follows."
+}
