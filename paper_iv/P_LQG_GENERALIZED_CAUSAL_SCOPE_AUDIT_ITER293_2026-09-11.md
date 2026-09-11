@@ -10,6 +10,7 @@ Carlos E. Beltrán, *Causal Structure for Generalized Spinfoams*, arXiv:2603.226
 - Summary artifact: `10193076711`.
 - Artifact digest: `sha256:d14df68d7b1c98464bacd38644d75271ab5c75745e75bf69c6a6d048bc04cd42`.
 - Raw summary digest: `sha256:a0521f16d90f393376d7899556a3c452123025baa172f1248f7bcbad6eb1b277`.
+- Recovery integration commit: `8cb0bec30ca7a4ad9cfce7473353c97b6aa0ad8b`; this provenance-only follow-up does not alter the scientific classification and exists to obtain exact-head repository methodology validation after the bot-authored recovery handoff.
 
 ## Scoped result
 The source defines causal structure for generalized EPRL-KKL spinfoams on arbitrary 2-complexes, supplies a consistency criterion relating 2-skeleton and 1-skeleton orientations, and introduces a causal vertex amplitude that explicitly generalizes earlier Bianchi–Chen–Gamonal-type proposals. This materially broadens the scope of the Iter290 causal endpoint beyond a single simplicial EPRL vertex.
