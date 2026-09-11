@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter292 LQG external refinement-flow authority scoped; Iter291 gamma-duality bridge and Iter290 causal Lorentzian Regge endpoint retained
+Iteration: Iter293 generalized EPRL-KKL causal scope integrated; Iter292 refinement-flow authority, Iter291 gamma-duality bridge and Iter290 causal Regge endpoint retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -115,6 +115,26 @@ Classification:
 `HIGH_VALUE_EXTERNAL_REFINEMENT_FLOW_AUTHORITY__NO_EXPLICIT_EQUIVALENCE_TO_THE_ACTIVE_COMPLETE_STACK_OR_CAUSAL_REGGE_CHAIN`
 
 This removes only the weak sub-blocker that no explicit LQG refinement-flow proposal exists. The decisive family-scope blocker remains the same-realization/equivalence transport into the active complete-stack + causal-Regge chain.
+
+### Iter293 — generalized EPRL-KKL causal scope
+Primary object: Beltrán, *Causal Structure for Generalized Spinfoams*, arXiv:2603.22661v2 (2026), public preprint.
+Scientific run `34584685590`: four independent guards in parallel + aggregate SUCCESS on head `3edcaf9feb3a308750fd6a84a25056f9f105c61d`.
+Summary artifact `10193076711`; artifact digest `sha256:d14df68d7b1c98464bacd38644d75271ab5c75745e75bf69c6a6d048bc04cd42`; raw summary digest `sha256:a0521f16d90f393376d7899556a3c452123025baa172f1248f7bcbad6eb1b277`.
+
+Aggregate:
+- public-preprint authority identity = PASS;
+- generalized EPRL-KKL arbitrary-2-complex causal structure / orientation consistency = PASS;
+- causal vertex generalizing Bianchi–Chen–Gamonal plus semiclassical asymptotic analysis = PASS;
+- explicit Han-stack equivalence = false;
+- complete-stack same-realization UV→IR transport = false;
+- normalized observable/comparator/error certificate = false;
+- family terminal = false;
+- D7 authorized = false.
+
+Classification:
+`HIGH_VALUE_GENERALIZED_EPRL_KKL_CAUSAL_SCOPE_EXTENSION__NO_COMPLETE_STACK_EQUIVALENCE_OR_UV_TO_IR_TRANSPORT`
+
+Interpretation: the Iter290 causal endpoint is no longer confined to a single simplicial EPRL-vertex construction; a generalized EPRL-KKL causal framework on arbitrary 2-complexes exists. This is a meaningful scope extension, but it does not establish identity with the active Han stack or close the decisive UV→IR transport blocker.
 
 ## CFS front
 The existing PF1 authority already includes Fischer–Finster arXiv:2605.30199 as exact curved-spacetime Einstein–Dirac comparator evidence and rejects obsolete blockers about absence of curved-spacetime GR/Fock/relational controls. The frozen blocker is a gravity-specific beyond-continuum observable / normalized non-Einstein correction tensor plus same-domain comparator residual.

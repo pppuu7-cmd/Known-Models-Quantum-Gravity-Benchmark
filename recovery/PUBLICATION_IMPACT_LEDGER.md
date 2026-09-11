@@ -139,6 +139,16 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `HIGH_VALUE_EXTERNAL_REFINEMENT_FLOW_AUTHORITY__NO_EXPLICIT_EQUIVALENCE_TO_THE_ACTIVE_COMPLETE_STACK_OR_CAUSAL_REGGE_CHAIN`.
 - Provenance: scientific `34575046143`; scientific head `eb6ba509773ac50697b4c6c683b2f3638ea7ad71`; summary artifact `10189283134`; artifact digest `sha256:3dfa5deb1bab46bfcb7c32f199969dcc8a1588a69937d408483ff202a48002f5`.
 
+## Iter293 — LQG generalized EPRL-KKL causal scope
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific causal-scope extension; no new general methodology rule.
+### Paper IV — `READY`
+- Add Beltrán, *Causal Structure for Generalized Spinfoams*, arXiv:2603.22661v2 (2026), as a scoped public-preprint extension of causal-spinfoam structure to generalized EPRL-KKL arbitrary 2-complexes.
+- Record the orientation-consistency criterion and the causal vertex construction that generalizes the earlier Bianchi–Chen–Gamonal causal proposal.
+- **Required boundary:** this broadens the causal endpoint's model scope but is not an explicit reduction/equivalence to the active Han complete-stack realization and does not supply same-realization UV→IR parameter transport, normalized comparator-ready observable, or propagated uncertainty. Keep LQG `PARTIAL/BLOCKED` and D7 unauthorized.
+- Result: `HIGH_VALUE_GENERALIZED_EPRL_KKL_CAUSAL_SCOPE_EXTENSION__NO_COMPLETE_STACK_EQUIVALENCE_OR_UV_TO_IR_TRANSPORT`.
+- Provenance: scientific `34584685590`; scientific head `3edcaf9feb3a308750fd6a84a25056f9f105c61d`; summary artifact `10193076711`; artifact digest `sha256:d14df68d7b1c98464bacd38644d75271ab5c75745e75bf69c6a6d048bc04cd42`; raw summary digest `sha256:a0521f16d90f393376d7899556a3c452123025baa172f1248f7bcbad6eb1b277`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),
