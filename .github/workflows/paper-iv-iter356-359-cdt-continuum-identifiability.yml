@@ -1,0 +1,124 @@
+name: paper-iv-iter356-359-cdt-continuum-identifiability
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/CDT_SOURCE_AUTHORITY_ITER356_359.json'
+      - 'code/cdt_iter356_*.py'
+      - 'code/cdt_iter357_*.py'
+      - 'code/cdt_iter358_*.py'
+      - 'code/cdt_iter359_*.py'
+      - 'code/iter356_359_aggregate.py'
+      - '.github/workflows/paper-iv-iter356-359-cdt-continuum-identifiability.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  uv-product-drift:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        delta: ['0.50','0.52','0.54','0.56','0.58']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter356
+          python code/cdt_iter356_uv_product_drift.py --delta '${{ matrix.delta }}' --output 'build/iter356/drift-${{ matrix.delta }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter356-cdt-drift-${{ matrix.delta }}
+          path: build/iter356/drift-${{ matrix.delta }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  exponent-decomposition:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        delta: ['0.50','0.54','0.58']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter357
+          python code/cdt_iter357_exponent_decomposition.py --delta '${{ matrix.delta }}' --output 'build/iter357/decomposition-${{ matrix.delta }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter357-cdt-decomposition-${{ matrix.delta }}
+          path: build/iter357/decomposition-${{ matrix.delta }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  spectral-dimension-control:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        case: ['short','meso','long','asymptotic']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter358
+          python code/cdt_iter358_spectral_dimension.py --case '${{ matrix.case }}' --output 'build/iter358/spectral-${{ matrix.case }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter358-cdt-spectral-${{ matrix.case }}
+          path: build/iter358/spectral-${{ matrix.case }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  source-scope-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python code/cdt_iter359_scope_guard.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter359-cdt-scope-guard
+          path: iter359-cdt-scope-guard.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: [uv-product-drift, exponent-decomposition, spectral-dimension-control, source-scope-guard]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter35*'
+          path: iter356-359-results
+      - run: python code/iter356_359_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter356-359-summary
+          path: iter356-359-summary.json
+          if-no-files-found: error
+          retention-days: 90

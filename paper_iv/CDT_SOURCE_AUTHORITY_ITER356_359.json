@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "iteration_bundle": "356-359",
+  "family": "CDT_EDT",
+  "source": {
+    "title": "Causal Dynamical Triangulations: New Lattice Theory of Quantum Gravity",
+    "authors": ["J. Ambjørn", "R. Loll"],
+    "arxiv": "2604.05641",
+    "submitted": "2026-04-07",
+    "url": "https://arxiv.org/abs/2604.05641"
+  },
+  "frozen_source_relations": {
+    "finite_size_volume_profile": {"height_exponent": 0.75, "time_exponent": 0.25},
+    "eq23": "(omega0/omega)^2 * sqrt(N4)/Gamma = sqrt(V4)/(24*pi*G) = sqrt(6)/(24*Lambda*G)",
+    "eq25": "omega^2 * Gamma proportional sqrt(N4) for constant Lambda G along a UV trajectory",
+    "eq26": {"relation": "omega^2 * Gamma proportional N4^delta", "delta": 0.54, "sigma": 0.04},
+    "time_extension": "omega * N4^(1/4) must diverge at a UV fixed point while source reports omega -> 0 near A-C_dS",
+    "spectral_dimension_fit": "D_S(sigma)=4.02-119/(54+sigma)",
+    "reported_short_distance_spectral_dimension": "1.80 +/- 0.25"
+  },
+  "source_scope": {
+    "additional_monte_carlo_needed_for_uv_interpretation": true,
+    "continuum_observable_program_in_progress": true,
+    "finite_size_discretization_numerical_limitations_explicit": true
+  },
+  "protocol_guard": {
+    "one_sigma_compatibility_is_not_exact_terminal_closure": true,
+    "product_scaling_does_not_identify_separate_omega_Gamma_exponents": true,
+    "spectral_dimension_is_scoped_child_observable": true,
+    "blocked_is_not_fail": true,
+    "d7_promotion_authorized": false
+  }
+}
