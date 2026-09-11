@@ -1,0 +1,100 @@
+name: paper-iv-iter345-347-fakeon-response-rqcp-guard
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/fakeon_iter345_*.py'
+      - 'code/fakeon_iter346_*.py'
+      - 'code/rqcp_iter347_*.py'
+      - 'code/iter345_347_aggregate.py'
+      - '.github/workflows/paper-iv-iter345-347-fakeon-response-rqcp-guard.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  fakeon-desitter:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        mratio: ['0.6','1.0','2.0','4.0']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python -m pip install --disable-pip-version-check mpmath==1.3.0
+      - run: |
+          mkdir -p build/iter345
+          python code/fakeon_iter345_desitter_response.py --mratio '${{ matrix.mratio }}' --output 'build/iter345/desitter-${{ matrix.mratio }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter345-desitter-${{ matrix.mratio }}
+          path: build/iter345/desitter-${{ matrix.mratio }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  fakeon-flat-control:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        omega: ['0.5','1.0','2.0','5.0','10.0']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter346
+          python code/fakeon_iter346_flat_average_control.py --omega '${{ matrix.omega }}' --output 'build/iter346/flat-${{ matrix.omega }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter346-flat-${{ matrix.omega }}
+          path: build/iter346/flat-${{ matrix.omega }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  rqcp-saturation-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python code/rqcp_iter347_saturation_guard.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter347-rqcp-saturation-guard
+          path: iter347-rqcp-saturation-guard.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: [fakeon-desitter, fakeon-flat-control, rqcp-saturation-guard]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: iter34*
+          path: iter345-347-results
+      - run: python code/iter345_347_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter345-347-summary
+          path: iter345-347-summary.json
+          if-no-files-found: error
+          retention-days: 90
