@@ -1,0 +1,67 @@
+name: lqg-physical-state-link-compatibility-audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/lqg_physical_state_link_common.py'
+      - 'code/lqg_physical_state_content_guard.py'
+      - 'code/lqg_physical_state_signature_guard.py'
+      - 'code/lqg_physical_state_beta_scope_guard.py'
+      - 'code/lqg_physical_state_chain_guard.py'
+      - 'code/lqg_physical_state_aggregate.py'
+      - '.github/workflows/lqg-physical-state-link-compatibility-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {label: content, script: lqg_physical_state_content_guard.py}
+          - {label: signature, script: lqg_physical_state_signature_guard.py}
+          - {label: scope, script: lqg_physical_state_beta_scope_guard.py}
+          - {label: chain, script: lqg_physical_state_chain_guard.py}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Run independent physical-state link guard
+        run: python code/${{ matrix.script }} --output build/lqg-physical-state/${{ matrix.label }}.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-physical-state-${{ matrix.label }}
+          path: build/lqg-physical-state/${{ matrix.label }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: guards
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-physical-state-*
+          path: build/lqg-physical-state-results
+          merge-multiple: true
+      - name: Aggregate after dependency barrier
+        run: python code/lqg_physical_state_aggregate.py --input-dir build/lqg-physical-state-results --output build/lqg-physical-state-iter284-summary.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-physical-state-iter284-summary
+          path: build/lqg-physical-state-iter284-summary.json
+          if-no-files-found: error
+          retention-days: 90
