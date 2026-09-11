@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "iteration": 313,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_CAUSAL_CPLUS_UNIT_SUM_AND_GLOBAL_FLIP_QUOTIENT_AUDIT",
+  "predecessor": {
+    "iteration": 312,
+    "scientific_run": 34627049924,
+    "scientific_head": "c7e5e4ba5bebeb5123bde34a5aca8733a08596a4"
+  },
+  "source_contract": {
+    "eq4": "arXiv:2601.23162 Eq. (4) defines A_v^(sigma_a sigma_b) with a fixed causal structure sigma_a.",
+    "global_flip": "The paper states that sigma_a -> -sigma_a for all five edges leaves every wedge sign sigma_a sigma_b unchanged.",
+    "discussion_cplus": "Discussion item v defines A_v^{C+} = sum_{sigma_a} A_v^(sigma_a sigma_b), with no class-dependent coefficients displayed.",
+    "eprl_decomposition_count": "The same discussion states EPRL = C+ + C- + noncausal and identifies 992 of 1024 wedge-sign configurations as noncausal; hence C+ and C- together occupy 32 distinct wedge-sign configurations, 16 each.",
+    "scope": "Audit the distinct causal wedge-sign support and its unit-weight leading-sign sums. A possible overall factor from summing both globally flipped sigma representatives is a normalization issue only and does not alter cancellation or integrability classification."
+  },
+  "prospectively_frozen_claims": {
+    "raw_sigma_assignment_count": 32,
+    "global_flip_multiplicity_per_cplus_wedge_pattern": 2,
+    "distinct_cplus_wedge_patterns": 16,
+    "distinct_cminus_wedge_patterns": 16,
+    "cplus_cminus_support_overlap": 0,
+    "noncausal_wedge_patterns": 992,
+    "source_cplus_uses_unit_coefficients_on_causal_structures": true,
+    "source_cplus_contains_signed_class_weights_minus5_minus1_plus1": false,
+    "cplus_distinct_support_triangle_leading_sum": -16,
+    "cplus_distinct_support_k4_leading_sum": 0,
+    "cplus_distinct_support_k5_leading_sum": 16,
+    "global_flip_overall_normalization_changes_cancellation_pattern": false,
+    "source_defined_cplus_cancels_minspin_triangle_or_k5_leading_sign": false,
+    "full_contracted_triangle_residue_nonzero_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_SOURCE_DEFINED_CPLUS_IS_THE_UNIT_SUM_OVER_16_DISTINCT_SIGMA_INDUCED_CAUSAL_WEDGE_PATTERNS_UP_TO_GLOBAL_FLIP_NORMALIZATION__SIGNED_CLASS_WEIGHT_NULL_DIRECTION_IS_NOT_PART_OF_THE_PUBLISHED_DEFINITION__CPLUS_UNIT_SUM_PRESERVES_K3_AND_K5_MINIMAL_SPIN_LEADING_SIGNS_WHILE_K4_SIGN_SUM_CANCELS",
+  "scope_rule": "PASS removes the signed class-weight loophole for the published C+ definition at the scalar leading-sign level. It does not yet prove a nonzero contracted residue on every triangle stratum or rule out a modified model with non-unit orientation weights."
+}
