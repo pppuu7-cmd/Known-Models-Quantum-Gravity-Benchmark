@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "iteration": 305,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_TOLLER_RADIAL_TAIL_VS_LOCAL_IDENTITY_INTEGRABILITY_SPLIT_AUDIT",
+  "predecessor": {
+    "iteration": 304,
+    "scientific_run": 34622448515,
+    "scientific_head": "b6365b863fea2e6c61c7bcd0848deac0c81f4dc9"
+  },
+  "source_contract": {
+    "toller_2026": "Bianchi-Chen-Gamonal, Toller matrices and the Feynman i-epsilon in spinfoams, arXiv:2604.24945 / Phys. Rev. D 114, 046014 (2026): for fixed labels |t^(+/-)| ~ exp[-(1+|k +/- m|) beta] as beta->infinity; gamma-simple spinfoam representations have k=j=l and rho=gamma*j; explicit branch formulas contain inverse powers of sinh(beta) near beta=0.",
+    "causal_vertex_2026": "Bianchi-Chen-Gamonal, Causal spinfoam vertex for 4d Lorentzian quantum gravity, arXiv:2601.23162 / Phys. Rev. D 113, 126020 (2026): the fixed-causal vertex is a product of sign-selected Toller blocks on the Lorentzian 4-simplex graph after gauge fixing.",
+    "kaminski_2010": "Kaminski, arXiv:1010.5384: the 3-edge-connected hyperbolic comparison integral uses exponent 1-tau with tau=1/(2|E1|); for the K5 4-simplex graph |E1|=10 so the comparison exponent is 19/20.",
+    "scope": "Audit only the radial-infinity decay margin and the logically separate local identity-neighborhood obstruction. A good radial tail does not establish full causal-vertex integrability when individual Toller branches are singular as beta->0."
+  },
+  "prospectively_frozen_claims": {
+    "gamma_simple_k_equals_j_equals_l": true,
+    "gamma_simple_rho_equals_gamma_times_j": true,
+    "gamma_simple_minimum_radial_decay_exponent": 1.0,
+    "k5_edge_count": 10,
+    "kaminski_tau": 0.05,
+    "kaminski_comparison_exponent": 0.95,
+    "radial_tail_decay_exponent_strictly_exceeds_kaminski_comparison_exponent": true,
+    "positive_real_gamma_simple_rho_hits_toller_pole": false,
+    "explicit_fixed_branch_identity_neighborhood_singularity_exists": true,
+    "radial_tail_control_alone_proves_full_causal_vertex_integrability": false,
+    "local_identity_neighborhood_integrability_closed": false,
+    "causal_vertex_finiteness_proven": false,
+    "causal_vertex_divergence_proven": false,
+    "lambda_f_weighted_causal_stack_finiteness_normalization_cutoff_control_proven": false,
+    "same_realization_uv_to_causal_regge_gr_transport_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_TOLLER_RADIAL_TAIL_DECAY_MEETS_KAMINSKI_K5_HYPERBOLIC_COMPARISON_MARGIN_AT_INFINITY__EXPLICIT_FIXED_BRANCH_IDENTITY_NEIGHBORHOOD_SINGULARITY_PREVENTS_TAIL_CONTROL_ALONE_FROM_PROVING_FULL_CAUSAL_VERTEX_INTEGRABILITY__LOCAL_MULTI_GROUP_SINGULARITY_POWER_COUNT_CANCELLATION_OR_EXTENSION_THEOREM_REQUIRED__NO_DIVERGENCE_NO_GO_OR_FAMILY_PROMOTION",
+  "scope_rule": "A PASS closes only the radial-infinity subproblem and sharpens the remaining blocker to local identity-neighborhood integrability plus subsequent complete-stack cutoff/normalization and same-realization transport. It must not be promoted to a causal-vertex finiteness theorem, divergence theorem, family FAIL/PASS, NEW_REQUIRED, or D7 authorization."
+}
