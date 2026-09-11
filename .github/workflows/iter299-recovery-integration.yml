@@ -1,105 +1,17 @@
-name: iter299-recovery-integration
+name: iter299-recovery-integration-retired
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/iter299-recovery-integration.yml'
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  integrate:
+  retired:
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 2
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          fetch-depth: 0
-      - name: Integrate validated Iter298 and Iter299 recovery state fail-closed
-        shell: bash
+      - name: Archived one-shot recovery integration
         run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          ledger=Path('recovery/PUBLICATION_IMPACT_LEDGER.md')
-          s=ledger.read_text()
-          marker='## Standing rule'
-          if marker not in s:
-              raise SystemExit('standing rule marker missing')
-          addition='''## Iter298 — fixed causal Toller sector vs standard EPRL D-product decomposition
-### Paper III — `NOT_NEEDED`
-- **Type:** theory-specific exact algebraic scope result; no new general sensing/resource-closure rule beyond Iter277.
-### Paper IV — `READY`
-- Add the exact formal decomposition `D=T^(+)+T^(-)` and the validated result that one fixed causal Toller-sign sector is generically only one monomial component of the full standard EPRL `D`-product.
-- Report 8,190 formal sector terms checked across wedge counts 1..12 and the generic omitted-monomial witnesses.
-- **Required boundary:** this is not a no-go theorem. It does not exclude an exact admissible sector sum, special cancellations, or a new causal factorization theorem; it does not prove Han half-link/Haar gluing equivalence, finite normalized causal stack amplitudes, cutoff control, or UV→Regge/GR transport.
-- Result: `PASS_SCOPED_ALGEBRAIC_NONIDENTITY_OF_ONE_FIXED_CAUSAL_TOLLER_SECTOR_WITH_FULL_STANDARD_EPRL_D_PRODUCT__HAN_HALF_LINK_EQUIVALENCE_REQUIRES_EXPLICIT_SECTOR_SUM_OR_NEW_CAUSAL_FACTORIZATION_PROOF`.
-- Provenance: scientific `34598197609`; scientific head `a3aec29db32e0563f2abea92010f4cc945366585`; methodology `34598197541`; summary artifact `10263221608`; artifact digest `sha256:393effdb28a73118e587c9ba49e5caf07cde78e108de6478c4bdc8c384805c56`; raw summary digest `sha256:c1d445802eb484457526355e99a252a67448a935c0e012e724001f1fec3713ee`.
-
-## Iter299 — unrestricted causal-sector sum recovery of the standard D-product
-### Paper III — `NOT_NEEDED`
-- **Type:** theory-specific exact algebraic recovery result; no new general sensing/resource-closure rule beyond Iter277.
-### Paper IV — `READY`
-- Add the exact distributive identity showing that the unrestricted unit-weight sum over all local Toller sign assignments reconstructs the full standard EPRL `D`-product.
-- Report 8,190 exact formal sector terms checked for wedge counts 1..12 and ten generic proper-subset witnesses.
-- **Required boundary:** this formal unrestricted sum is not a causal-admissibility theorem. No source-grounded result yet identifies the physically admissible causal sector set/measure and weights/normalization with the unrestricted unit measure, reconstructs Han half-link/Haar gluing and face factorization, proves finite normalized `lambda_f`-weighted stack cutoff removal, or transports one realization to the causal Regge/GR observable/comparator/error endpoint.
-- Result: `PASS_SCOPED_EXACT_UNRESTRICTED_TOLLER_SECTOR_SUM_RECONSTRUCTS_STANDARD_D_PRODUCT__CAUSALLY_ADMISSIBLE_WEIGHTED_SECTOR_MEASURE_HAN_GLUE_FACTORIZATION_AND_UV_IR_TRANSPORT_REMAIN_UNPROVEN`.
-- Provenance: scientific `34601894692`; scientific head `e0ec53785f312871b91307f8df854b4a8edd66c5`; methodology `34601894746`; summary artifact `10264955714`; artifact digest `sha256:7db47f3b76568e8de11832c6447c4cb27779bceec41318934a435e12ea178f34`; raw summary digest `sha256:5101d4ffce7b2307e035a1a5b64402527712ec90746d6ed47eb6ed1236f96f95`.
-
-'''
-          if '## Iter298 — fixed causal Toller sector' not in s:
-              s=s.replace(marker,addition+marker)
-          elif '## Iter299 — unrestricted causal-sector sum recovery' not in s:
-              s=s.replace(marker,addition.split('## Iter299 —',1)[1].join(['## Iter299 —','']) if False else marker)
-              raise SystemExit('unexpected partial integration; fail closed')
-          ledger.write_text(s)
-
-          front=Path('recovery/CURRENT_BENCHMARK_FRONT.md')
-          f=front.read_text()
-          lines=f.splitlines()
-          if not lines or lines[0] != '# Current Benchmark Front':
-              raise SystemExit('front header missing')
-          # Update only authority header wording; preserve all frozen/global state lines below.
-          for i,line in enumerate(lines[:8]):
-              if line.startswith('Iteration:'):
-                  lines[i]='Iteration: Iter299 unrestricted causal-sector sum recovery scoped PASS; Iter298 fixed-sector decomposition and Iter297/296 stack-composition/orientation refinements retained'
-                  break
-          else:
-              raise SystemExit('iteration header missing')
-          block='''
-## Iter299 — unrestricted causal-sector sum recovery
-- Scientific run `34601894692`: four independent guards (`source_contract`, `unrestricted_sector_sum_identity`, `proper_subset_witness`, `scope_boundary`) with `fail-fast:false`, `max-parallel:4`, followed by aggregate barrier; all PASS.
-- Summary artifact `10264955714`; artifact digest `sha256:7db47f3b76568e8de11832c6447c4cb27779bceec41318934a435e12ea178f34`; raw summary digest `sha256:5101d4ffce7b2307e035a1a5b64402527712ec90746d6ed47eb6ed1236f96f95`.
-- Exact scoped result: unrestricted unit-weight summation over every local Toller sign assignment reconstructs the full standard EPRL `D`-product by distributivity; 8,190 formal sector terms checked for wedge counts 1..12.
-- This removes the purely algebraic question of whether *some* full sector sum can reconstruct the standard `D`-product.
-- It does **not** establish that the causally admissible physical sector set/measure is the unrestricted unit measure, nor Han half-link/Haar glue equivalence, face factorization, finite normalized `lambda_f`-weighted stack cutoff control, or same-realization UV→causal-Regge/GR transport.
-- Classification: `PASS_SCOPED_EXACT_UNRESTRICTED_TOLLER_SECTOR_SUM_RECONSTRUCTS_STANDARD_D_PRODUCT__CAUSALLY_ADMISSIBLE_WEIGHTED_SECTOR_MEASURE_HAN_GLUE_FACTORIZATION_AND_UV_IR_TRANSPORT_REMAIN_UNPROVEN`.
-- Family remains `PARTIAL/BLOCKED`; strict terminal count remains `1/15`; D7 remains `NOT_YET_AUTHORIZED`.
-- Next gate: `D7_S2_LQG_CAUSALLY_ADMISSIBLE_SECTOR_MEASURE_AND_WEIGHT_NORMALIZATION_COMPATIBLE_WITH_HAN_HALF_LINK_HAAR_GLUE_AND_FACE_FACTORIZATION__THEN_LAMBDA_F_STACK_CUTOFF_CONTROL_AND_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT`.
-
-## Iter298 — fixed causal-sector decomposition
-- Scientific run `34598197609`; summary artifact `10263221608`; exact formal decomposition PASS with one fixed causal Toller sector generically nonidentical to the full standard `D`-product.
-- Required boundary retained: an explicit sector sum or new causal factorization proof was required; Iter299 now supplies only the unrestricted formal sector-sum identity, not its physical causal admissibility/gluing realization.
-'''
-          text='\n'.join(lines)+'\n'
-          if '## Iter299 — unrestricted causal-sector sum recovery' not in text:
-              anchor='## Global lock\n'
-              if anchor not in text:
-                  raise SystemExit('global-lock anchor missing')
-              text=text.replace(anchor,block+'\n'+anchor,1)
-          front.write_text(text)
-          PY
-      - name: Commit deterministic recovery integration
-        shell: bash
-        run: |
-          if git diff --quiet -- recovery/PUBLICATION_IMPACT_LEDGER.md recovery/CURRENT_BENCHMARK_FRONT.md; then
-            echo 'No integration changes required.'
-            exit 0
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add recovery/PUBLICATION_IMPACT_LEDGER.md recovery/CURRENT_BENCHMARK_FRONT.md
-          git commit -m 'Iter299: integrate publication and recovery front'
-          git push origin HEAD:main
+          echo 'Iter299 recovery integration is already incorporated into the authoritative benchmark front.'
+          echo 'This legacy workflow is retained only as an archival manual marker and no longer writes to main.'
