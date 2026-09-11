@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "as_of": "2026-09-11",
-  "iteration": 273,
+  "iteration": 274,
   "authority": {
     "validated_pre_iter272_head": "963e3a1440fb067fc3f447852d749edec01ee111",
     "d7_contract_commit": "ed0412aace9e1c76af1f18022e4aa9a1f0ad7989",
@@ -12,8 +12,9 @@
     "d7_contract": "protocol/PAPER_IV_D7_GLOBAL_DECISION_CONTRACT.json",
     "iter270_global_saturation_audit": "paper_iv/PAPER_IV_GLOBAL_INTERNAL_SATURATION_AUDIT_ITER270_2026-09-11.md",
     "iter270_recovery": "recovery/RECOVERY_DELTA_270.md",
-    "latest_scientific_reopen_audit": "paper_iv/P_LQG_COMPLETE_SPINFOAM_UV_FIXED_POINT_REOPEN_AUDIT_ITER273_2026-09-11.md",
-    "latest_scientific_reopen_audit_commit": "bdd17c68644226a46aa2c8ac3c41a75edba078d5"
+    "latest_scientific_reopen_audit": "paper_iv/P_ASYMPTOTIC_SAFETY_CONTACT_COMPLETE_REOPEN_AUDIT_ITER274_2026-09-11.md",
+    "latest_scientific_reopen_audit_commit": "fb3d8dcfbc43d26357686b1ffde094ab31f2f856",
+    "latest_family_result_commit": "005959124dcd7f4c9294be19ae484ef6bad44e53"
   },
   "metric_separation": {
     "operational_polygon_readiness_percent": 100,
@@ -30,7 +31,7 @@
     "candidate_rows_internally_saturated": 13,
     "tier2_unresolved": 0,
     "internal_actionable_fronts": 0,
-    "latest_reopened_family": "LQG_SPINFOAM",
+    "latest_reopened_family": "ASYMPTOTIC_SAFETY",
     "latest_reopen_effect_on_terminal_count": 0
   },
   "stages": {
@@ -51,7 +52,7 @@
         "Iter270 operational_polygon_readiness_percent=100",
         "internal_actionable_fronts=0",
         "tier2_unresolved=0",
-        "all 13 nonterminal candidate Tier-1 families have explicit external reopen conditions"
+        "all 13 nonterminal candidate Tier-1 families retain explicit external reopen conditions"
       ]
     },
     "D7-S2": {
@@ -59,19 +60,20 @@
       "status": "NOT_CLOSED",
       "blocking_fact": "Only 1/14 Tier-1 rows is strict terminal; 13/14 remain PARTIAL/BLOCKED/nonterminal under the frozen family-scope contract.",
       "latest_reopen": {
-        "family": "LQG_SPINFOAM",
-        "authority": "Muxin Han, Physical Review D 114, 044040 (2026), DOI 10.1103/d8s7-jqfl; arXiv:2602.18665",
-        "scoped_result": "PASS_SCOPED_CONTINUUM_CONSTRUCTION__LORENTZIAN_EPRL_KKL_SUM_OVER_2_COMPLEXES_HAS_A_CANDIDATE_UV_FIXED_POINT_AND_FUNDAMENTAL_CONTINUUM_LIMIT",
+        "family": "ASYMPTOTIC_SAFETY",
+        "archival_authority": "Chiesa, Pawlowski, Reichert, arXiv:2603.10168v1 (2026-03-10)",
+        "new_external_signal": "ERG2026 contribution, 2026-09-03, reports a gravitational contact contribution resummed directly in Lorentzian signature",
+        "scoped_result": "HIGH_VALUE_NEAR_MISS__LORENTZIAN_CONTACT_TERM_REPORTED_AT_ERG2026_BUT_NOT_YET_FROZEN_IN_A_PUBLIC_REPRODUCIBLE_CONTACT_COMPLETE_SAME_REALIZATION_PACKAGE",
         "family_result": "NONTERMINAL_BLOCKED_MISSING_REQUIRED_OBJECT",
-        "refined_blocker": "BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT",
+        "refined_blocker": "BLOCKED_PENDING_PUBLIC_CONTACT_COMPLETE_S_PLUS_T_PLUS_U_PLUS_A4_LORENTZIAN_SCATTERING_CERTIFICATE_WITH_FORWARD_LIMIT_TREATMENT_APPROXIMATION_UNCERTAINTY_BUDGET_AND_SAME_DOMAIN_COMPARATORS",
         "terminal_count_change": 0
       },
-      "next_rule": "Resolve families only by new family-scope terminal evidence, exhaustive material-subfamily resolution, or explicit valid reduction/equivalence maps."
+      "next_rule": "Resolve families only by new family-scope terminal evidence, exhaustive material-subfamily resolution, or explicit valid reduction/equivalence maps. Conference-only progress is a reopen/watch trigger, not a terminal substitute."
     },
     "D7-S3": {
       "name": "SAME_REALIZATION_OBJECT_COMPLETENESS",
       "status": "NOT_CLOSED",
-      "blocking_fact": "Multiple Tier-1 families still lack required same-realization theory/observable/parameter-transport/comparator/error objects; Iter273 LQG progress supplies a continuum/fixed-point object but not the complete physical UV-to-IR GR/comparator/error chain.",
+      "blocking_fact": "Multiple Tier-1 families still lack required same-realization theory/observable/parameter-transport/comparator/error objects. Iter274 materially narrows the Asymptotic Safety gap but the stable archival calculation still omits A4 and no public reproducible contact-complete s+t+u+A4 certificate was located.",
       "next_rule": "Missing external objects remain blockers; absence is not FAIL."
     },
     "D7-S4": {
@@ -112,6 +114,6 @@
   "next_stage": {
     "id": "D7-S2",
     "mode": "EXTERNAL_AUTHORITY_DRIVEN_FAMILY_TERMINALIZATION",
-    "policy": "Proceed one family/reduction object at a time. Reopen a parked family only when a materially new external authority or a genuinely new internally actionable object exists; do not repeat exhausted scans."
+    "policy": "Keep ASYMPTOTIC_SAFETY on immediate contact-complete archival/reproducibility watch and otherwise proceed one parked family/reduction object at a time only on materially new authority; do not repeat exhausted scans."
   }
 }
