@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "iteration": 314,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_CAUSAL_PLUS_COCAUSAL_VS_NONCAUSAL_LEADING_SIGN_CANCELLATION_AUDIT",
+  "predecessor": {
+    "iteration": 312,
+    "scientific_run": 34627049924,
+    "scientific_head": "c7e5e4ba5bebeb5123bde34a5aca8733a08596a4"
+  },
+  "source_contract": {
+    "cplus": "arXiv:2601.23162 Discussion v defines C+ as the sum over causal structures A_v^(sigma_a sigma_b).",
+    "cminus": "The same discussion defines the co-causal vertex C- as the sum over A_v^(-sigma_a sigma_b).",
+    "decomposition": "The paper states EPRL = C+ + C- + noncausal, with 992 of 1024 independent wedge-sign configurations noncausal.",
+    "minimal_spin_edge_factor": "At j=1/2 the leading scalar branch factor on an internal edge is -kappa_ab; replacing kappa by -kappa multiplies each internal-edge leading factor by -1.",
+    "scope": "Audit only leading scalar sign cancellation on K3/K4/K5 collapse strata. Full angular/intertwiner residues and distribution extensions remain separate."
+  },
+  "prospectively_frozen_claims": {
+    "cplus_unique_patterns": 16,
+    "cminus_unique_patterns": 16,
+    "noncausal_patterns": 992,
+    "cminus_relative_subset_factor": "(-1)^C(s,2)",
+    "cminus_k3_sum": 16,
+    "cminus_k4_sum": 0,
+    "cminus_k5_sum": 16,
+    "cplus_plus_cminus_k3_sum": 0,
+    "cplus_plus_cminus_k4_sum": 0,
+    "cplus_plus_cminus_k5_sum": 32,
+    "unrestricted_eprl_k3_sum": 0,
+    "unrestricted_eprl_k4_sum": 0,
+    "unrestricted_eprl_k5_sum": 0,
+    "noncausal_k3_sum": 0,
+    "noncausal_k4_sum": 0,
+    "noncausal_k5_sum": -32,
+    "cplus_plus_cminus_restores_full_k5_leading_cancellation": false,
+    "noncausal_sector_is_required_for_full_k5_scalar_sign_cancellation": true,
+    "full_tensor_residue_cancellation_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_SOURCE_CAUSAL_PLUS_COCAUSAL_SUM_CANCELS_MINIMAL_SPIN_TRIANGLE_LEADING_SIGN_BUT_PRESERVES_THE_FULL_K5_LEADING_SIGN_WITH_FACTOR32__THE_992_NONCAUSAL_EPRL_SECTORS_SUPPLY_EXACTLY_MINUS32_AT_K5_AND_ARE_REQUIRED_FOR_THE_UNRESTRICTED_EPRL_SCALAR_LEADING_SIGN_CANCELLATION__CAUSAL_PLUS_COCAUSAL_RESTRICTION_DOES_NOT_INHERIT_THIS_K5_CANCELLATION",
+  "scope_rule": "PASS demonstrates that adding the source co-causal vertex removes the triangle scalar sign obstruction but not the total K5 obstruction; the full EPRL cancellation at K5 uses noncausal wedge-sign sectors. It does not prove full tensor divergence or rule out a separately renormalized causal+co-causal model."
+}
