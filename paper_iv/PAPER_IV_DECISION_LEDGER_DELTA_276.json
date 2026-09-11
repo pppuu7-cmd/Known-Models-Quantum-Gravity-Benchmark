@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "iteration": 276,
+  "date": "2026-09-11",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "trigger": "Iter275 promoted RELATIONAL_QUANTUM_CAUSAL_PROCESSES into Tier-1 under the pre-existing independent-parent promotion rule, while comparator/D7 synchronization artifacts still encoded the previous 14-row census.",
+  "fail_closed_detection": {
+    "methodology_ci_run": 34550249563,
+    "conclusion": "failure",
+    "independent_shard_failures": [
+      "paper_iv_framework_coverage_validator",
+      "paper_iv_global_gate_validator",
+      "paper_iv_d7_evaluator"
+    ],
+    "common_root_cause": "coverage contract had 15 required Tier-1 rows while comparator matrix and stored D7 attempt still had 14",
+    "interpretation": "The parallel validators correctly rejected an internally inconsistent census. This was not three independent scientific failures."
+  },
+  "synchronization": {
+    "tier1_before": 14,
+    "tier1_after": 15,
+    "strict_terminal_after": 1,
+    "strict_nonterminal_after": 14,
+    "added_family": "RELATIONAL_QUANTUM_CAUSAL_PROCESSES",
+    "added_family_coverage_status": "PARTIAL_SUBFAMILY_ONLY",
+    "terminal_count_change": 0,
+    "candidate_gravity_active": false,
+    "candidate_gravity_r3_percent": 24
+  },
+  "global_gate_effect": {
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D3": "PARTIAL",
+    "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+    "EXISTING_SUFFICIENT": false,
+    "ADAPT_EXISTING": false,
+    "HYBRID_REQUIRED": false,
+    "NEW_REQUIRED": false
+  },
+  "scientific_boundary": "RQCP has a reproducible scoped fixed-band same-family Einstein-response control but does not have the all-band background-independent autonomous gravity parent and family-scope quantum-gravity state/constraint/topology/observable/comparator package required for terminalization.",
+  "next_action": "Validate the synchronized 15-row census through parallel methodology CI and prevent future partial census updates with an executable cross-artifact census-sync invariant."
+}
