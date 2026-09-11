@@ -1,0 +1,22 @@
+{
+  "iteration": "Iter290",
+  "date": "2026-09-11",
+  "family": "LQG_SPINFOAM",
+  "object": "Bianchi_Chen_Gamonal_2026_causal_Lorentzian_spinfoam_vertex",
+  "scientific_run": 34561212081,
+  "scientific_head": "a6cbecf7507adb9dc52dc0090d171905e1432b50",
+  "summary_artifact_id": 10184373486,
+  "summary_artifact_digest": "sha256:ee0ba2168b4ea3113517fadc94abdac82dcfd9c1bfbafff94a686ef3a1e264ec",
+  "aggregate_digest": "sha256:573a5590ffe7a4bfcd298f0a14c13e77c5a034a31bc8d69b280b17dd23493b02",
+  "scoped_result": "HIGH_VALUE_CAUSAL_LARGE_SPIN_LORENTZIAN_REGGE_ENDPOINT__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT",
+  "causal_toller_split_vertex_scope": true,
+  "causal_large_spin_single_phase_lorentzian_regge_endpoint": true,
+  "complete_stack_transport_ready": false,
+  "continuous_same_realization_transport_ready": false,
+  "family_terminal": false,
+  "d7_changed": false,
+  "d7_authorized": false,
+  "candidate_gravity_active": false,
+  "paper_iii_impact": "NOT_NEEDED",
+  "paper_iv_impact": "READY"
+}
