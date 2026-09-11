@@ -185,8 +185,8 @@ Interpretation: the obsolete weak sub-blocker "rank-two Einstein structure is on
 
 ## Publication handoff
 `recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative.
-- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–291 = `NOT_NEEDED` as additional rules except where already stated.
-- Paper IV: Iter277–291 = `READY` with stated claim boundaries.
+- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–294 = `NOT_NEEDED` as additional rules except where already stated.
+- Paper IV: Iter277–294 = `READY` with stated claim boundaries.
 
 ## Anti-idle compute policy
 Whenever scientifically meaningful, nonduplicating tasks are independent, launch them immediately in parallel (`fail-fast:false`, highest safe practical runner parallelism). Dependent classification/aggregate stages wait behind explicit barriers. When runners are saturated, queue additional useful independent jobs rather than suppressing them. Never repeat saturated or duplicate calculations merely to manufacture activity. The active KMQGB auto-research automation is configured with the same mandatory rule.
@@ -196,7 +196,7 @@ Whenever scientifically meaningful, nonduplicating tasks are independent, launch
 
 Priority:
 1. seek/compute an explicit complete-stack LQG stack-coupling/`gamma`/spin-scale flow or valid reduction/equivalence map connecting the Iter287 UV/entropy sector through the Iter291 semiclassical `gamma` observable bridge to the Iter290 causal large-spin Regge/Einstein endpoint, with normalized observable/comparator/error transport;
-2. seek an explicit CFS rank-two/higher-rank gravity tensor evaluation that produces a normalized beyond-Einstein residual/comparator object rather than a prospective pathway;
+2. evaluate an explicit CFS beyond-Einstein correction from the Iter294 hierarchy into a normalized same-domain gravity observable/residual with comparator and propagated uncertainty;
 3. stable public AS contact-complete `s+t+u+A4`;
 4. RQCP all-band/background-independent autonomy bridge;
 5. other Tier-1 authority only when materially status-changing.
