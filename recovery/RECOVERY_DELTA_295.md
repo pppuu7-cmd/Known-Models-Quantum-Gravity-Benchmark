@@ -11,3 +11,4 @@
 - Refined blocker: `BLOCKED_MISSING_CAUSAL_VERTEX_LIFT_THROUGH_HAN_COMPLETE_STACK_SUM_FACE_MULTIPLICITIES_AND_LAMBDA_F_WEIGHTS_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`.
 - Global D7 state unchanged: strict terminal `1/15`, candidate terminal `0/14`, D7 NOT_CLOSED / NOT_YET_AUTHORIZED, Candidate Gravity inactive at R3=24%.
 - Paper III impact: NOT_NEEDED. Paper IV impact: READY.
+- Recovery integration authority: `c71aee6d77db42745787f4924f8f806c50771e8d`; this line is provenance-only and does not change the scientific classification or frozen criteria.
