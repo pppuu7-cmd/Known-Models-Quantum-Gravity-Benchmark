@@ -1,0 +1,36 @@
+{
+  "iteration": 278,
+  "date": "2026-09-11",
+  "family": "ASYMPTOTIC_SAFETY",
+  "trigger": "arXiv:2609.07829v1",
+  "scientific_workflow": {
+    "name": "asymptotic-safety-pirg-table3-audit",
+    "run_id": 34552838082,
+    "head": "4c775ea7c2af2f84e1d8b181a45cf87b967cdf61",
+    "independent_jobs": 4,
+    "independent_jobs_success": 4,
+    "aggregate": "SUCCESS",
+    "aggregate_digest": "sha256:6452b6bb77549182e4ca6aeaff8c3ddfd892b2380cd093b455df89726019a6a7"
+  },
+  "methodology_validation": {
+    "run_id": 34552838007,
+    "preflight": "SUCCESS",
+    "methodology_shards": "4/4 SUCCESS",
+    "aggregate_bundle": "SUCCESS"
+  },
+  "scoped_result": "PASS_SCOPED_DIFFEO_INVARIANT_RELEVANCE_PRESERVING_REUTER_FIXED_POINT_WITH_TABLEIII_VARIANT_ROBUSTNESS__NOT_CONTACT_COMPLETE_NOT_UV_IR_COMPLETE",
+  "family_status_before": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "family_status_after": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "terminal_count_before": 1,
+  "terminal_count_after": 1,
+  "tier1_total": 15,
+  "candidate_terminal_count": 0,
+  "candidate_total": 14,
+  "active_terminalization_blocker": "BLOCKED_PENDING_PUBLIC_CONTACT_COMPLETE_S_PLUS_T_PLUS_U_PLUS_A4_LORENTZIAN_SCATTERING_CERTIFICATE_WITH_FORWARD_LIMIT_TREATMENT_APPROXIMATION_UNCERTAINTY_BUDGET_AND_SAME_DOMAIN_COMPARATORS",
+  "paper_impact": {
+    "paper_III": "NOT_NEEDED_AS_NEW_RULE__CORROBORATES_ITER277_MULTI_AXIS_RESOURCE_CLOSURE",
+    "paper_IV": "READY__ADD_PIRG_PRIMARY_SOURCE_TABLEIII_ROBUSTNESS_AND_NONTERMINAL_INTERPRETATION"
+  },
+  "global_decision_change": false,
+  "candidate_gravity_activation_change": false
+}
