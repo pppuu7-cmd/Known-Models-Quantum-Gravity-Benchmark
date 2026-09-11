@@ -1,0 +1,51 @@
+name: apply-iter294-front-consistency
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-iter294-front-consistency.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Patch Iter294 front consistency fail-closed
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('recovery/CURRENT_BENCHMARK_FRONT.md')
+          s=p.read_text()
+          pairs={
+            '- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–291 = `NOT_NEEDED` as additional rules except where already stated.':'- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–294 = `NOT_NEEDED` as additional rules except where already stated.',
+            '- Paper IV: Iter277–291 = `READY` with stated claim boundaries.':'- Paper IV: Iter277–294 = `READY` with stated claim boundaries.',
+            '2. seek an explicit CFS rank-two/higher-rank gravity tensor evaluation that produces a normalized beyond-Einstein residual/comparator object rather than a prospective pathway;':'2. evaluate an explicit CFS beyond-Einstein correction from the Iter294 hierarchy into a normalized same-domain gravity observable/residual with comparator and propagated uncertainty;'
+          }
+          for old,new in pairs.items():
+              if old in s:
+                  s=s.replace(old,new,1)
+              elif new not in s:
+                  raise SystemExit(f'fail-closed: expected front text absent: {old}')
+          p.write_text(s)
+          PY
+      - name: Commit only if changed
+        run: |
+          if git diff --quiet -- recovery/CURRENT_BENCHMARK_FRONT.md; then
+            echo 'No consistency changes required.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add recovery/CURRENT_BENCHMARK_FRONT.md
+          git commit -m 'Iter294: synchronize current-front publication and CFS gate wording'
+          git push origin HEAD:main
