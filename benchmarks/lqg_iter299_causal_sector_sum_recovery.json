@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "iteration": 299,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_EXACT_ALGEBRAIC_SECTOR_SUM_RECOVERY",
+  "predecessor": {
+    "iteration": 298,
+    "scientific_run": 34598197609,
+    "summary_artifact": 10263221608,
+    "summary_artifact_digest": "sha256:393effdb28a73118e587c9ba49e5caf07cde78e108de6478c4bdc8c384805c56",
+    "raw_summary_digest": "sha256:c1d445802eb484457526355e99a252a67448a935c0e012e724001f1fec3713ee"
+  },
+  "sources": {
+    "han_stack": {
+      "title": "Summation and triangulation independence of Lorentzian spinfoam amplitudes for all LQG",
+      "author": "Muxin Han",
+      "journal": "Physical Review D 113, 084034 (2026)",
+      "doi": "10.1103/n76f-31gf",
+      "arxiv": "2510.26926",
+      "authority_level": "PEER_REVIEWED"
+    },
+    "causal_vertex": {
+      "title": "Causal spinfoam vertex for 4D Lorentzian quantum gravity",
+      "authors": "Eugenio Bianchi; Chaosong Chen; Mauricio Gamonal",
+      "journal": "Physical Review D 113, 126020 (2026)",
+      "doi": "10.1103/fwql-t4yr",
+      "arxiv": "2601.23162",
+      "authority_level": "PEER_REVIEWED"
+    },
+    "generalized_causal": {
+      "title": "Causal Structure for Generalized Spinfoams",
+      "author": "Carlos E. Beltran",
+      "arxiv": "2603.22661v2",
+      "authority_level": "PUBLIC_PREPRINT"
+    }
+  },
+  "prospectively_frozen_claims": {
+    "toller_identity_D_equals_Tplus_plus_Tminus": true,
+    "unrestricted_unit_weight_sum_over_all_local_toller_sign_assignments_exactly_reconstructs_product_of_D_factors": true,
+    "this_unrestricted_identity_is_formal_algebra_not_a_causal_admissibility_theorem": true,
+    "sources_define_a_causally_admissible_sector_measure_equal_to_the_unrestricted_unit_weight_measure_for_han_stack": false,
+    "sources_prove_sector_weights_and_normalization_reconstruct_han_half_link_kernel": false,
+    "sources_prove_han_face_factorization_after_causal_sector_sum": false,
+    "sources_prove_lambda_f_weighted_causal_complete_stack_finiteness_and_cutoff_control": false,
+    "sources_prove_same_realization_uv_to_causal_regge_gr_transport": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_EXACT_UNRESTRICTED_TOLLER_SECTOR_SUM_RECONSTRUCTS_STANDARD_D_PRODUCT__CAUSALLY_ADMISSIBLE_WEIGHTED_SECTOR_MEASURE_HAN_GLUE_FACTORIZATION_AND_UV_IR_TRANSPORT_REMAIN_UNPROVEN",
+  "scope_rule": "This gate establishes only the exact distributive identity obtained by summing every local Toller sign assignment with unit coefficient. It does not identify the physically admissible causal sector set or measure, prove that causal consistency permits the unrestricted set, fix sector weights or normalization, reconstruct Han half-link gluing/factorization, prove lambda_f-weighted stack convergence/cutoff removal, or provide same-realization UV-to-Regge/GR observable transport. Missing causal-measure and gluing objects remain BLOCKED/undefined, not FAIL."
+}
