@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "iteration": 301,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_EXACT_CAUSAL_SECTOR_SUPPORT_ENUMERATION",
+  "predecessor": {
+    "iteration": 300,
+    "scientific_run": 34602793992,
+    "scientific_head": "f8e661a6ff52fd9ee00a2a21cac4528485a7b8a3",
+    "summary_artifact": 10265255466,
+    "summary_artifact_digest": "sha256:65d443d95a63376f9454bafc47a87ad71c8014eb78bf50b1628935acd83e9809",
+    "raw_summary_digest": "sha256:74210a18880ce7e202bc7703fc31fb472b4b65246464c5413adfd5c335a42e91"
+  },
+  "source_contract": {
+    "bcbc_2026": "Bianchi-Chen-Gamonal causal EPRL vertex: edge/tetrahedron signs sigma_a in {+1,-1} induce wedge Toller signs kappa_ab=sigma_a sigma_b; T^(+)+T^(-)=D.",
+    "beltran_2026": "Generalized EPRL-KKL causal structure: causal orientations on arbitrary 2-complexes obey an explicit consistency criterion naturally expressed over GF(2).",
+    "scope": "This audit tests only the exact combinatorial support implied by sigma-induced pair signs on connected vertex graphs."
+  },
+  "prospectively_frozen_claims": {
+    "connected_graph_sigma_to_edge_sign_map_has_global_flip_kernel": true,
+    "connected_graph_induced_causal_sector_count_is_2_to_V_minus_1": true,
+    "induced_edge_signs_obey_positive_cycle_product": true,
+    "positive_cycle_product_is_sufficient_for_sigma_induced_edge_signs_on_connected_graph": true,
+    "k5_vertex_has_16_sigma_induced_causal_sectors_out_of_1024_unrestricted_wedge_sign_sectors": true,
+    "sigma_induced_support_is_strict_subset_when_connected_graph_has_a_cycle": true,
+    "generic_independent_monomial_reconstruction_of_full_D_product_from_only_sigma_induced_support_is_not_available": true,
+    "this_is_not_a_no_go_for_causal_spinfoams": true,
+    "source_specific_post_integration_identities_cancellations_or_extended_causal_sums_are_not_excluded": true,
+    "han_half_link_haar_glue_equivalence_proven": false,
+    "lambda_f_weighted_causal_stack_finiteness_normalization_cutoff_control_proven": false,
+    "same_realization_uv_to_causal_regge_gr_transport_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_SOURCE_SPECIFIC_SIGMA_INDUCED_CAUSAL_SECTOR_SUPPORT_IS_EXACT_CYCLE_EVEN_CUT_SPACE_AND_STRICTLY_SMALLER_THAN_UNRESTRICTED_TOLLER_SUPPORT_ON_CYCLIC_VERTEX_GRAPHS__NO_GENERIC_FULL_D_PRODUCT_RECOVERY_FROM_CAUSAL_SUPPORT_ALONE__NO_NO_GO_AND_HAN_GLUE_STACK_UV_IR_TRANSPORT_REMAIN_OPEN",
+  "scope_rule": "A strict support mismatch in the generic independent sector-monomial basis is not a scientific FAIL of the causal model and is not a family-level result. The causal construction is allowed to differ from standard EPRL. Source-specific relations after Haar/integration, additional physically justified causal sums, or a new factorization may change the comparison. Missing such objects remains BLOCKED/undefined."
+}
