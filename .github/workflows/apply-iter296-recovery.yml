@@ -1,0 +1,37 @@
+name: apply-iter296-recovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'code/apply_iter296_recovery.py'
+      - '.github/workflows/apply-iter296-recovery.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Apply frozen interpreted Iter296 recovery update
+        run: python code/apply_iter296_recovery.py
+      - name: Commit only if changed
+        run: |
+          FILES='paper_iv/P_LQG_FACE_STACKING_CAUSAL_LIFT_AUDIT_ITER296_2026-09-11.md paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_296.json recovery/RECOVERY_DELTA_296.md recovery/PUBLICATION_IMPACT_LEDGER.md recovery/CURRENT_BENCHMARK_FRONT.md'
+          if git diff --quiet -- $FILES; then
+            echo 'No recovery changes required.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add $FILES
+          git commit -m 'Iter296: integrate LQG face-stacking causal-lift recovery state'
+          git push origin HEAD:main
