@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.1",
+  "as_of": "2026-09-11",
+  "coverage_iteration": 275,
+  "tier1_total": 15,
+  "nonterminal_total": 14,
+  "classes": {
+    "C1": "FAMILY_OR_BRANCH_SCOPE",
+    "C2": "SAME_REALIZATION_TRANSPORT",
+    "C3": "AMPLITUDE_OR_COMPARATOR_COMPLETENESS",
+    "C4": "EXPLICIT_BEYOND_BASELINE_CORRECTION_OBJECT",
+    "C5": "PHYSICAL_STATE_RELATIONAL_OBSERVABLE_CLOSURE"
+  },
+  "assignments": {
+    "PERTURBATIVE_HIGHER_DERIVATIVE": "C1",
+    "HORAVA_LIFSHITZ": "C1",
+    "ASYMPTOTIC_SAFETY": "C3",
+    "NONLOCAL_QG": "C1",
+    "STRING_MTHEORY_HOLOGRAPHY": "C1",
+    "CAUSAL_SETS": "C2",
+    "CDT_EDT": "C2",
+    "LQG_SPINFOAM": "C2",
+    "GFT_TENSOR_MODELS": "C2",
+    "CFS": "C4",
+    "NONCOMMUTATIVE_SPECTRAL_GEOMETRY": "C2",
+    "CANONICAL_WDW_GEOMETRODYNAMICS": "C5",
+    "QUANTUM_GRAPHITY": "C2",
+    "RELATIONAL_QUANTUM_CAUSAL_PROCESSES": "C1"
+  },
+  "baseline_counts": {"C1":5,"C2":6,"C3":1,"C4":1,"C5":1,"total":14},
+  "robust_aggregate": {"C1_plus_C2":11,"percent":78.6},
+  "sensitivity": {
+    "transport_first": {"C1":2,"C2":9,"C3":1,"C4":1,"C5":1},
+    "scope_maximal": {"C1":6,"C2":5,"C3":1,"C4":1,"C5":1}
+  },
+  "notes": [
+    "RQCP is C1 under the deterministic baseline because the positive fixed-band result is scoped while family-level exhaustion remains open.",
+    "The exact C1/C2 split is projection-dependent.",
+    "The robust Iter275 statement is C1+C2=11/14 across the tested projections.",
+    "Do not present the five classes as a universal taxonomy of quantum gravity."
+  ]
+}
