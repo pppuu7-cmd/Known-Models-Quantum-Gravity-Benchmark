@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "iteration": 272,
+  "date": "2026-09-11",
+  "action": "ADD_FROZEN_ADDITIVE_D7_STAGED_DECISION_WRAPPER",
+  "scientific_status_promotion": false,
+  "new_scientific_claim": false,
+  "source_state": {
+    "operational_polygon_readiness_percent": 100,
+    "tier1_total": 14,
+    "strict_terminal_rows": 1,
+    "strict_nonterminal_rows": 13,
+    "candidate_rows_internally_saturated": 13,
+    "internal_actionable_fronts": 0,
+    "tier2_unresolved": 0
+  },
+  "d7_stage_delta": {
+    "D7-S0": "PASS",
+    "D7-S1": "PASS_INHERITED_FROM_ITER270",
+    "D7-S2": "NOT_CLOSED",
+    "D7-S3": "NOT_CLOSED",
+    "D7-S4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "D7-S5": "NOT_AUTHORIZED",
+    "D7-S6": "INACTIVE"
+  },
+  "global_gates_unchanged": {
+    "D2A_framework_set_coverage": "NOT_CLOSED",
+    "D2B_same_realization_objects": "NOT_CLOSED",
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D3_common_domain_comparability": "PARTIAL",
+    "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+    "paper_iv_global_decision": "NOT_YET_AUTHORIZED",
+    "new_required_authorized": false,
+    "candidate_gravity_active": false,
+    "candidate_gravity_r3_percent": 24,
+    "heavy_compute": "IDLE"
+  },
+  "files_added": [
+    "protocol/PAPER_IV_D7_GLOBAL_DECISION_CONTRACT.json",
+    "paper_iv/PAPER_IV_D7_READINESS_STATE.json",
+    "paper_iv/PAPER_IV_D7_STAGE0_DECISION_CONTRACT_AUDIT_ITER272_2026-09-11.md",
+    "paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_272.json"
+  ],
+  "methodology_result": "The D7 decision topology is now explicit and fail-closed. Terminal outputs are restricted to EXISTING_SUFFICIENT, ADAPT_EXISTING, HYBRID_REQUIRED, or NEW_REQUIRED after D7-S0 through D7-S4 close; otherwise NOT_AUTHORIZED is mandatory.",
+  "forbidden_interpretations": [
+    "operational_polygon_readiness_percent=100 means D7 is scientifically closed",
+    "13 nonterminal families are 13 excluded families",
+    "BLOCKED or PARTIAL is equivalent to FAIL",
+    "Candidate Gravity is authorized merely because no current known family is terminally sufficient",
+    "R1/R2=100 implies NEW_REQUIRED"
+  ],
+  "next_authorized_work": {
+    "stage": "D7-S2",
+    "description": "External-authority-driven strict Tier-1 family terminalization, one materially changeable family/reduction object at a time.",
+    "generic_rescan_of_parked_families": "FORBIDDEN_UNLESS_NEW_MATERIAL_AUTHORITY_OR_OBJECT_EXISTS"
+  }
+}
