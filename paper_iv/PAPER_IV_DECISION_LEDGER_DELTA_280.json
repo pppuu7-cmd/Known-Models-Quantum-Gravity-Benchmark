@@ -1,0 +1,54 @@
+{
+  "iteration": 280,
+  "date": "2026-09-11",
+  "family": "ASYMPTOTIC_SAFETY",
+  "primary_object": {
+    "title": "Self-consistent graviton spectral function in Lorentzian quantum gravity",
+    "journal": "Physics Letters B 880 (2026) 140844",
+    "doi": "10.1016/j.physletb.2026.140844",
+    "arxiv": "2507.22169v1",
+    "published": "2026-08-13"
+  },
+  "scientific_workflow": {
+    "name": "asymptotic-safety-spectral-unitarity-audit",
+    "run_id": 34553743544,
+    "head": "415eed1991ba5a289e6a26226de397fb301cf1c6",
+    "independent_jobs_success": "4/4",
+    "aggregate": "SUCCESS",
+    "aggregate_digest": "sha256:a822813cd95a0a5987b79920fbcbed1f5cf3b5798ef2170f2f71c6b226a6a7f4"
+  },
+  "methodology_validation": {
+    "run_id": 34553743421,
+    "preflight": "SUCCESS",
+    "methodology_shards": "4/4 SUCCESS",
+    "aggregate_bundle": "SUCCESS"
+  },
+  "scoped_result": "PASS_SCOPED_POSITIVE_NORMALISABLE_LORENTZIAN_TT_GRAVITON_SPECTRAL_FUNCTION_WITH_UNIT_WEIGHT__NOT_PHYSICAL_HILBERT_SPACE_NOT_CONTACT_COMPLETE_NOT_FULL_CURVE_INDEPENDENTLY_REPRODUCED",
+  "reproducibility_boundary": "BLOCKED_PUBLIC_NUMERICAL_DATA_OR_REFERENCE_IMPLEMENTATION_FOR_FULL_CURVE_REPRODUCTION",
+  "cross_checks": {
+    "gstar_exact": 0.9554263372261876,
+    "fixed_point_beta_abs": 0.0,
+    "trajectory_max_relative_residual": 1.6510330357476112e-06,
+    "uv_tail_unit_prefactor_integral_from_10_to_inf": 0.011788231063225867,
+    "uv_tail_fraction_captured_by_upper_1e32": 0.9990234375,
+    "z_spec_reported": 1.486,
+    "physical_pole_weight_fraction": 0.6729475100942126,
+    "physical_continuum_weight_fraction": 0.32705248990578734,
+    "ir_A_h": 0.32361505095352056,
+    "ir_tail_onset": 2.033333333333333
+  },
+  "family_status_before": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "family_status_after": "BLOCKED_MISSING_REQUIRED_OBJECT",
+  "terminal_count_before": 1,
+  "terminal_count_after": 1,
+  "tier1_total": 15,
+  "candidate_terminal_count": 0,
+  "candidate_total": 14,
+  "active_terminalization_blocker": "BLOCKED_PENDING_PUBLIC_CONTACT_COMPLETE_S_PLUS_T_PLUS_U_PLUS_A4_LORENTZIAN_SCATTERING_CERTIFICATE_WITH_FORWARD_LIMIT_TREATMENT_APPROXIMATION_UNCERTAINTY_BUDGET_AND_SAME_DOMAIN_COMPARATORS",
+  "paper_impact": {
+    "paper_III": "NOT_NEEDED_AS_NEW_RULE__OPTIONAL_CORROBORATION_OF_ITER277_MULTI_AXIS_RESOURCE_CLOSURE",
+    "paper_IV": "READY__ADD_PEER_REVIEWED_LORENTZIAN_SPECTRAL_POSITIVE_RESULT_WITH_PHYSICAL_HILBERT_AND_REPRODUCIBILITY_BOUNDARIES"
+  },
+  "global_decision_change": false,
+  "candidate_gravity_activation_change": false
+}

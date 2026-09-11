@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter279 NSF reduction and claim-boundary audit
+Iteration: Iter280 Asymptotic Safety Lorentzian spectral-function reopen
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -54,41 +54,53 @@ Methodological delta:
 Every materially independent regulator/truncation/domain/finite-volume/resolution/approximation axis must be separately removed with propagated uncertainty or physically selected with propagated uncertainty. Closing one axis does not close another.
 
 ### Iter278 — Asymptotic Safety diffeomorphism-invariant PIRG
-New primary object: Ihssen, Knorr, Mezger, Pawlowski, Sprenger, arXiv:2609.07829v1.
+Ihssen, Knorr, Mezger, Pawlowski, Sprenger, arXiv:2609.07829v1.
 
-Parallel Table-III audit workflow `asymptotic-safety-pirg-table3-audit`, run `34552838082`: 4/4 independent probes + aggregate success. Methodology CI run `34552838007`: success.
+Parallel Table-III audit run `34552838082`: 4/4 independent probes + aggregate success. Methodology CI run `34552838007`: success.
 
 Scoped result:
 `PASS_SCOPED_DIFFEO_INVARIANT_RELEVANCE_PRESERVING_REUTER_FIXED_POINT_WITH_TABLEIII_VARIANT_ROBUSTNESS__NOT_CONTACT_COMPLETE_NOT_UV_IR_COMPLETE`
 
-All six published variants retain two positive relevant directions. The second critical exponent is substantially more stable than the first, while fixed-point coordinates remain more scheme/procedure sensitive. This strengthens the Asymptotic-Safety evidence base but does not supply the missing public same-realization contact-complete `s+t+u+A4` package. Terminal count unchanged.
+All six published variants retain two positive relevant directions. This strengthens the Asymptotic-Safety evidence base but does not supply the missing public same-realization contact-complete `s+t+u+A4` package.
 
 ### Iter279 — Null Surface Formulation classification
 The 2025–2026 NSF quantum/scattering line was tested under the frozen new-parent rule.
 
-Authority chain identifies NSF as a formulation/quantization of General Relativity; the 2026 completed tree construction reproduces the standard Weinberg–DeWitt amplitude. This is a positive reduction signal rather than evidence for a new independent Tier-1 parent.
-
-Parallel workflow `nsf-tree-claim-boundary-audit`, run `34553257781`: 4/4 independent jobs + aggregate success. Methodology CI run `34553257768`: preflight + 4/4 shards + aggregate/bundle success.
-
-Numerical claim-boundary result:
-- normalization consistency error = 0;
-- t/u symmetry error = 0;
-- fixed-angle high-energy scaling exponent = 1 to floating precision;
-- forward/collinear finite-grid exponent ≈ -0.9794.
+Parallel workflow run `34553257781`: 4/4 independent jobs + aggregate success. Methodology CI run `34553257768`: success. Final archival head `33b5914dc1136449bac21f739088fe3a65e6ade7` subsequently passed full methodology CI run `34553466935`.
 
 Classification:
 `REDUCED_TO_EXISTING_GR_PARENT__NEW_REALIZATION_NOT_NEW_TIER1_PARENT`
 
-Therefore no 16th Tier-1 row is created. UV-finite perturbative/integration behavior must not be silently rephrased as bounded fixed-angle amplitude, forward regularity, or all-order equivalence.
+No 16th Tier-1 row was created. UV-finite perturbative/integration behavior is not silently substituted for bounded fixed-angle amplitude, forward regularity, or all-order equivalence.
+
+### Iter280 — Asymptotic Safety Lorentzian graviton spectral function
+Peer-reviewed primary object: Pawlowski, Reichert, Wessely, *Physics Letters B* 880 (2026) 140844, DOI `10.1016/j.physletb.2026.140844`.
+
+Parallel workflow `asymptotic-safety-spectral-unitarity-audit`, run `34553743544`: 4/4 independent jobs + aggregate success. Methodology CI run `34553743421`: preflight + 4/4 shards + aggregate/bundle success.
+
+Scoped result:
+`PASS_SCOPED_POSITIVE_NORMALISABLE_LORENTZIAN_TT_GRAVITON_SPECTRAL_FUNCTION_WITH_UNIT_WEIGHT__NOT_PHYSICAL_HILBERT_SPACE_NOT_CONTACT_COMPLETE_NOT_FULL_CURVE_INDEPENDENTLY_REPRODUCED`
+
+Key KMQGB checks:
+- `g*=0.9554263372261876` and Eq.23–25 trajectory consistency;
+- the `1/[lambda^2 log^3(lambda^2)]` UV spectral tail is sum-rule integrable;
+- reported `z_spec≈1.486` implies ~67.29% pole and ~32.71% continuum weight after the stated physical rescaling;
+- `2*pi*(61/(60*pi)) = 61/30` reproduces the reported IR onset relation.
+
+Scope boundary:
+- the source explicitly states that the fluctuation-graviton states are not diffeomorphism invariant and are not part of the physical Hilbert space;
+- publisher data are available on request and no public article-specific numerical dataset/reference implementation was located, so the full numerical spectral curve is not independently reproduced in Iter280;
+- the contact-complete `s+t+u+A4` scattering blocker remains active and independent.
+
+Asymptotic Safety therefore remains `BLOCKED_MISSING_REQUIRED_OBJECT`; terminal count unchanged.
 
 ## Publication handoff
 `recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative for manuscript impact.
 
 Current required changes:
-- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; add as a modest general methodological strengthening.
-- Paper III: Iter278 = `NOT_NEEDED` as a new rule; optional corroboration only.
-- Paper III: Iter279 = `NOT_NEEDED` as a new rule; optional reduction/claim-domain corroboration only.
-- Paper IV: Iter277 RQCP, Iter278 PIRG Asymptotic Safety, and Iter279 NSF reduction case = `READY` for inclusion.
+- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; modest general methodological strengthening.
+- Paper III: Iter278–280 = `NOT_NEEDED` as additional rules; optional corroboration only.
+- Paper IV: Iter277 RQCP, Iter278 PIRG Asymptotic Safety, Iter279 NSF reduction case, and Iter280 Lorentzian spectral result = `READY` for inclusion.
 
 ## Current scientific decision state
 - 15 Tier-1 families remain in the canonical census.

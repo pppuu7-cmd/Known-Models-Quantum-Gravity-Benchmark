@@ -55,11 +55,27 @@ Status vocabulary:
 - **Required boundary:** do not convert this reduction decision into rejection of the NSF UV-finiteness claim. The audit does not independently prove or disprove all-loop finiteness; it only fixes taxonomy and separates the claim domains.
 - **Provenance:** scientific workflow run `34553257781`; methodology CI run `34553257768`; audit `paper_iv/P_NSF_REDUCTION_AND_CLAIM_BOUNDARY_AUDIT_ITER279_2026-09-11.md`.
 
+## Iter280 — Asymptotic Safety self-consistent Lorentzian graviton spectral function
+
+### Paper III
+- **Status:** `NOT_NEEDED`
+- **Impact:** no new methodological rule is required beyond Iter277.
+- **Reason:** the result independently confirms the importance of separating closure axes: spectral positivity and normalisability, physical-state/Hilbert-space status, diffeomorphism invariance, scattering unitarity and contact-complete observables are not interchangeable certificates.
+- **Optional use:** one concise corroborating sentence may be added near the Iter277 multi-axis/resource-closure strengthening if helpful; no Asymptotic-Safety technical discussion is required in Paper III.
+
+### Paper IV
+- **Status:** `READY`
+- **Impact type:** peer-reviewed evidentiary + numerical + reproducibility-boundary.
+- **What to add:** Pawlowski–Reichert–Wessely, Physics Letters B 880 (2026) 140844, as a major positive Lorentzian Asymptotic-Safety result. State that the stated on-shell TT fluctuation-graviton calculation yields a positive normalisable spectral function and, after physical rescaling, unit total spectral weight.
+- **KMQGB cross-checks to report:** `g*=0.9554263372261876`; Eq.23–25 trajectory consistency; analytic UV-tail sum-rule integrability; the decomposition implied by `z_spec≈1.486` (~67.29% pole and ~32.71% continuum after the stated rescaling); and the exact `2*pi*A_h=61/30` IR relation.
+- **Required boundaries:** the authors explicitly state that the fluctuation-graviton states are not diffeomorphism invariant and are not part of the physical Hilbert space; the publisher exposes numerical data only on request and no article-specific public dataset/reference implementation was found, so the complete spectral curve was not independently reproduced in Iter280; the Iter274 contact-complete `s+t+u+A4` scattering blocker remains independent and active.
+- **Provenance:** scientific workflow run `34553743544`; methodology CI run `34553743421`; audit `paper_iv/P_ASYMPTOTIC_SAFETY_LORENTZIAN_SPECTRAL_AUDIT_ITER280_2026-09-11.md`.
+
 ## Standing rule for subsequent iterations
 For every scientifically relevant benchmark iteration, record here:
 1. affected paper(s),
 2. exact manuscript correction/addition/check required,
-3. whether the change is methodological, numerical, evidentiary, taxonomy-related, or editorial,
+3. whether the change is methodological, numerical, evidentiary, taxonomy-related, reproducibility-related, or editorial,
 4. status (`TODO/READY/APPLIED/NOT_NEEDED`),
 5. an explicit note when no paper change is warranted.
 
