@@ -1,0 +1,67 @@
+name: cfs-geometric-einstein-correction-audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/cfs_geometric_einstein_common.py'
+      - 'code/cfs_geometric_einstein_scope_guard.py'
+      - 'code/cfs_geometric_conservation_scaling_guard.py'
+      - 'code/cfs_geometric_corrections_maturity_guard.py'
+      - 'code/cfs_geometric_blocker_guard.py'
+      - 'code/cfs_geometric_einstein_aggregate.py'
+      - '.github/workflows/cfs-geometric-einstein-correction-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {label: endpoint, script: cfs_geometric_einstein_scope_guard.py}
+          - {label: conservation, script: cfs_geometric_conservation_scaling_guard.py}
+          - {label: corrections, script: cfs_geometric_corrections_maturity_guard.py}
+          - {label: blocker, script: cfs_geometric_blocker_guard.py}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Run independent Iter294 CFS guard
+        run: python code/${{ matrix.script }} --output build/cfs-geometric/${{ matrix.label }}.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cfs-geometric-${{ matrix.label }}
+          path: build/cfs-geometric/${{ matrix.label }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: guards
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: cfs-geometric-*
+          path: build/cfs-geometric-results
+          merge-multiple: true
+      - name: Aggregate after dependency barrier
+        run: python code/cfs_geometric_einstein_aggregate.py --input-dir build/cfs-geometric-results --output build/cfs-geometric-iter294-summary.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cfs-geometric-iter294-summary
+          path: build/cfs-geometric-iter294-summary.json
+          if-no-files-found: error
+          retention-days: 90
