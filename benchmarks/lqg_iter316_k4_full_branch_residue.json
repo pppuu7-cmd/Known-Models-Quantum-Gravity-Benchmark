@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "iteration": 316,
+  "date": "2026-09-11",
+  "derivation_type": "EXACT_MINIMAL_SPIN_K4_INTERNAL_RESIDUE_AND_SOURCE_CPLUS_EXTERNAL_BRANCH_POLYNOMIAL_AUDIT",
+  "predecessor": {
+    "iteration": 314,
+    "scientific_run": 34627526453,
+    "scientific_head": "7cb53470794641e3f9a69545d7ee5e91d02da14e"
+  },
+  "source_contract": {
+    "boundary_state": "Use the same normalized all-j=1/2 boundary intertwiners (A,A,B,A,A) as Iter307 and Iter315.",
+    "k4_collapse": "For each K4 subset, six internal j=1/2 fixed-causal leading kernels contribute beta^-12 while four external edges connect the collapsed K4 to the remaining node. Leave the eight external endpoint magnetic indices open.",
+    "source_cplus": "For a K4 subset S with complement node o, the four external causal signs kappa_ao=sigma_a sigma_o range independently over all 2^4 patterns in the 16 distinct C+ sectors. The internal K4 leading scalar sign is product_{a in S} sigma_a = product_{a in S} kappa_ao.",
+    "formal_factorization": "Therefore the source-C+ leading external branch polynomial is exactly tensor_product_{a in S}(T^+_{ao}-T^-_{ao}). The vanishing scalar sign sum is only the specialization T^+=T^-=1 and does not imply the formal residue polynomial is zero."
+  },
+  "prospectively_frozen_claims": {
+    "k4_subset_count": 5,
+    "internal_edge_count_each": 6,
+    "external_edge_count_each": 4,
+    "open_external_endpoint_index_count": 8,
+    "nonzero_unnormalized_components_each": 16,
+    "normalized_component_magnitude_0123": "1/32",
+    "normalized_component_magnitude_0124": "1/32",
+    "normalized_component_magnitude_0134": "1/16",
+    "normalized_component_magnitude_0234": "1/32",
+    "normalized_component_magnitude_1234": "1/32",
+    "normalized_squared_norm_0123": "1/64",
+    "normalized_squared_norm_0124": "1/64",
+    "normalized_squared_norm_0134": "1/16",
+    "normalized_squared_norm_0234": "1/64",
+    "normalized_squared_norm_1234": "1/64",
+    "internal_k4_residue_tensor_nonzero_all_5": true,
+    "cplus_external_star_patterns_each": 16,
+    "cplus_formal_k4_branch_polynomial": "tensor_product_four(Tplus-Tminus)",
+    "cplus_formal_k4_branch_polynomial_identically_zero": false,
+    "unit_scalar_sign_sum_zero_implies_full_k4_residue_zero": false,
+    "explicit_physical_external_toller_evaluation_nonzero_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_ALL_FIVE_MINIMAL_SPIN_K4_COLLAPSES_HAVE_NONZERO_INTERNAL_RESIDUE_TENSORS_AFTER_BOUNDARY_INTERTWINER_CONTRACTION__THE_SOURCE_CPLUS_SUM_OVER_16_EXTERNAL_STAR_PATTERNS_FACTORIZES_AS_THE_TENSOR_PRODUCT_OF_FOUR_TPLUS_MINUS_TMINUS_DIFFERENCES__THE_ZERO_UNIT_SCALAR_SIGN_SUM_DOES_NOT_FORCE_THE_FULL_K4_RESIDUE_TO_VANISH__EXPLICIT_PHYSICAL_EXTERNAL_TOLLER_EVALUATION_REMAINS_OPEN",
+  "scope_rule": "PASS eliminates the interpretation that Iter312/313 K4 scalar sign cancellation by itself removes the K4 subdivergence. It remains necessary to evaluate the four external Toller differences on physical group data and construct or constrain the corresponding distributional extension."
+}
