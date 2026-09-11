@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter288 LQG hierarchy-overlap + Iter289 CFS correction-pathway results ready for archival
+Iteration: Iter290 LQG causal Lorentzian Regge endpoint integrated; Iter289 CFS correction-pathway retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -38,7 +38,8 @@ Iter281–287 established a progressively stronger four-component near-bridge:
 Important scoped refinements:
 - explicit Euclidean↔Lorentzian EPRL vertex analytic continuation exists, but not same-real-`gamma` full state/stack transport;
 - UV fixed point and entropy observable are aligned inside the same Lorentzian spinfoam-stack architecture;
-- the remaining decisive object is controlled compatible same-realization transport to the large-spin/Einstein regime with parameter identity, normalized observable, comparator and propagated uncertainty.
+- Iter290 adds an explicit causal Lorentzian EPRL-vertex large-spin Regge endpoint with a single causal Regge phase, strengthening the IR/semiclassical endpoint but not supplying complete-stack transport;
+- the remaining decisive object is controlled compatible same-realization transport from the complete-stack UV sector to the causal large-spin Regge/Einstein regime with parameter identity, normalized observable, comparator and propagated uncertainty.
 
 ### Iter288 — semiclassical hierarchy / entropy-domain overlap
 Scientific run `34557797109`: 4/4 sensitivity jobs + aggregate SUCCESS.
@@ -58,9 +59,24 @@ Classification:
 
 Boundary: these are sensitivity thresholds under chosen operational meanings of `<<`, not physical gamma bounds. They establish domain overlap, not a running law or UV→IR trajectory.
 
+### Iter290 — causal Lorentzian vertex / Regge endpoint
+Primary object: Bianchi–Chen–Gamonal, *Causal spinfoam vertex for 4d Lorentzian quantum gravity*, arXiv:2601.23162 (2026).
+Scientific run `34561212081`: four independent guards in parallel + aggregate SUCCESS on head `a6cbecf7507adb9dc52dc0090d171905e1432b50`.
+Summary artifact `10184373486`; artifact digest `sha256:ee0ba2168b4ea3113517fadc94abdac82dcfd9c1bfbafff94a686ef3a1e264ec`; raw aggregate digest `sha256:573a5590ffe7a4bfcd298f0a14c13e77c5a034a31bc8d69b280b17dd23493b02`.
+
+Aggregate:
+- causal Toller split at EPRL-vertex scope = PASS;
+- large-spin causally compatible Lorentzian Regge endpoint / single `exp(+i S_Regge/hbar)` phase = PASS;
+- complete-stack/refinement transport = false;
+- continuous same-realization UV→IR transport = false;
+- family terminal = false.
+
+Classification:
+`HIGH_VALUE_CAUSAL_LARGE_SPIN_LORENTZIAN_REGGE_ENDPOINT__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT`
+
 LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS.
-Canonical blocker remains:
-`BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT`
+Canonical blocker remains, with the endpoint sharpened:
+`BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_COMPLETE_STACK_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE`
 
 ## CFS front
 The existing PF1 authority already includes Fischer–Finster arXiv:2605.30199 as exact curved-spacetime Einstein–Dirac comparator evidence and rejects obsolete blockers about absence of curved-spacetime GR/Fock/relational controls. The frozen blocker is a gravity-specific beyond-continuum observable / normalized non-Einstein correction tensor plus same-domain comparator residual.
@@ -90,17 +106,17 @@ CFS therefore remains `BLOCKED_MISSING_REQUIRED_OBJECT`, not FAIL. Iter289 makes
 
 ## Publication handoff
 `recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative.
-- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–289 = `NOT_NEEDED` as additional rules.
-- Paper IV: Iter277–289 = `READY` with stated claim boundaries.
+- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–290 = `NOT_NEEDED` as additional rules except where already stated.
+- Paper IV: Iter277–290 = `READY` with stated claim boundaries.
 
 ## Anti-idle compute policy
-Whenever scientifically meaningful, nonduplicating tasks are independent, launch them immediately in parallel (`fail-fast:false`, highest safe practical runner parallelism). Dependent classification/aggregate stages wait behind explicit barriers. When runners are saturated, queue additional useful independent jobs rather than suppress them. Never repeat saturated or duplicate calculations merely to manufacture activity. The active KMQGB auto-research automation is configured with the same mandatory rule.
+Whenever scientifically meaningful, nonduplicating tasks are independent, launch them immediately in parallel (`fail-fast:false`, highest safe practical runner parallelism). Dependent classification/aggregate stages wait behind explicit barriers. When runners are saturated, queue additional useful independent jobs rather than suppressing them. Never repeat saturated or duplicate calculations merely to manufacture activity. The active KMQGB auto-research automation is configured with the same mandatory rule.
 
 ## Exact next gate
-`D7_S2_EXTERNAL_AUTHORITY_DRIVEN_TERMINALIZATION_WITH_MULTI_AXIS_RESOURCE_CLOSURE_EXPLICIT_REDUCTION_MAPS_PHYSICAL_CONTINUUM_CERTIFICATES_AND_SAME_REALIZATION_TRANSPORT`
+`D7_S2_LQG_COMPLETE_STACK_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT_OR_EQUIVALENCE_CERTIFICATE`
 
 Priority:
-1. seek/compute an explicit LQG stack-coupling/`gamma`/spin-scale flow connecting the Iter287 same-stack UV/entropy sector to the large-spin Einstein endpoint;
+1. seek/compute an explicit complete-stack LQG stack-coupling/`gamma`/spin-scale flow or valid reduction/equivalence map connecting the Iter287 UV/entropy sector to the Iter290 causal large-spin Regge/Einstein endpoint, with normalized observable/comparator/error transport;
 2. seek an explicit CFS rank-two/higher-rank gravity tensor evaluation that produces a normalized beyond-Einstein residual/comparator object rather than a prospective pathway;
 3. stable public AS contact-complete `s+t+u+A4`;
 4. RQCP all-band/background-independent autonomy bridge;
