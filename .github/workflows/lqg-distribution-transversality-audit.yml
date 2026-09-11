@@ -1,0 +1,65 @@
+name: lqg-distribution-transversality-audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'benchmarks/lqg_iter309_distribution_transversality.json'
+      - 'code/lqg_iter309_*.py'
+      - '.github/workflows/lqg-distribution-transversality-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        probe:
+          - generic_rank
+          - collinear_rank
+          - conormal_nullspace
+          - source_limit_scope
+          - transversality_guard
+          - scope_guard
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Run independent Iter309 probe
+        run: |
+          mkdir -p build/lqg-iter309
+          python code/lqg_iter309_${{ matrix.probe }}.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter309-${{ matrix.probe }}
+          path: build/lqg-iter309/${{ matrix.probe }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: probes
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter309-*
+          path: build/lqg-iter309-results
+          merge-multiple: true
+      - run: python code/lqg_iter309_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter309-summary
+          path: |
+            build/lqg-iter309-summary.json
+            build/lqg-iter309-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
