@@ -1,0 +1,55 @@
+name: lqg-global-s5-linkage-audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/lqg_iter327_*.py'
+      - '.github/workflows/lqg-global-s5-linkage-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  size:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        size: [3,4,5]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/lqg-iter327
+          python code/lqg_iter327_global_s5_linkage.py --size '${{ matrix.size }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter327-size-${{ matrix.size }}
+          path: build/lqg-iter327/size_*.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: size
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter327-size-*
+          path: build/lqg-iter327-results
+          merge-multiple: true
+      - run: python code/lqg_iter327_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter327-summary
+          path: build/lqg-iter327-summary.json
+          if-no-files-found: error
+          retention-days: 90
