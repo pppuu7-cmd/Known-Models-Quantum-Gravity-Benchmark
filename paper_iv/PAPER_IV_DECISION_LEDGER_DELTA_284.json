@@ -1,0 +1,47 @@
+{
+  "iteration": 284,
+  "date": "2026-09-11",
+  "family": "LQG_SPINFOAM",
+  "object": "YANG_ZHANG_MA_2021_CANONICAL_COVARIANT_PHYSICAL_STATE_LINK",
+  "scientific_workflow": {
+    "name": "lqg-physical-state-link-compatibility-audit",
+    "run_id": 34556068228,
+    "head": "db998ad568524c7b777e896c67ce5350f2c7c90d",
+    "independent_guards_success": "4/4",
+    "aggregate": "SUCCESS",
+    "aggregate_digest": "sha256:61a71ea3aab1fa23b58ad2760b27500c84f34ac62aca5d020526516125cb7d47"
+  },
+  "methodology_validation": {
+    "run_id": 34556068266,
+    "conclusion": "SUCCESS"
+  },
+  "result": "HIGH_VALUE_EUCLIDEAN_BETA1_RIGGING_MAP_COMPONENT__NO_EXPLICIT_COMPATIBLE_TRANSPORT_INTO_LORENTZIAN_UV_IR_CHAIN",
+  "scoped_positive": {
+    "physical_state_component": "HIGH_VALUE_SCOPED_POSITIVE",
+    "rigging_map": true,
+    "constraint_satisfaction": "weak",
+    "signature": "Euclidean",
+    "immmirzi_beta": 1.0,
+    "state_scope": "certain_spin_network_states"
+  },
+  "same_realization_chain_ready": false,
+  "missing_transport": [
+    "Euclidean-to-Lorentzian same-realization map",
+    "generic-Immirzi/full-state-space certificate",
+    "state/signature/parameter identity into the 2017/2026 chain",
+    "normalized gravity observable transported through the full UV-to-IR chain"
+  ],
+  "family_result": "PARTIAL_BLOCKED_NONTERMINAL",
+  "existing_blocker_preserved": "BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT",
+  "tier1_total_before": 15,
+  "tier1_total_after": 15,
+  "strict_terminal_before": 1,
+  "strict_terminal_after": 1,
+  "candidate_terminal_count": 0,
+  "d7_change": false,
+  "candidate_gravity_activation_change": false,
+  "paper_impact": {
+    "paper_III": "NOT_NEEDED__NO_NEW_GENERAL_SENSING_RESOURCE_RULE",
+    "paper_IV": "READY__ADD_SCOPED_EUCLIDEAN_BETA1_RIGGING_MAP_COMPONENT_AND_EXPLICITLY_PRESERVE_MISSING_LORENTZIAN_TRANSPORT"
+  }
+}

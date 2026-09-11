@@ -89,7 +89,22 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Required bridge gaps: no explicit equality/reduction identity between the 2017 refining-triangulation amplitude and 2026 stack-summed complete amplitude; no explicit map from `lambda/delta/mu` to the stack/UV variables; no demonstrated small-spin-UV -> large-spin-semiclassical trajectory; no normalized same-domain gravity observable transported through the chain with comparator/errors.
 - Reframe the existing LQG blocker in prose as **missing bridge/transport, not missing UV and GR endpoints**. Keep the canonical blocker string unchanged unless the full D7 decision stack is synchronized atomically.
 - Canonical result: `HIGH_VALUE_UV_AND_GR_ENDPOINTS_IN_SHARED_LQG_PARENT__NO_EXPLICIT_SAME_REALIZATION_PARAMETER_AND_OBSERVABLE_TRANSPORT_BRIDGE`.
-- Provenance: scientific run `34555702346`; methodology CI `34555702337`; aggregate digest `sha256:32701d4931ddce73e1674025cda8e518195fc64b477e1a02d9227fda9913cbc5`.
+- Provenance: scientific run `34555702346`; methodology CI `34555702337`; archival methodology CI `34555959626`; reproducibility release `34556045719`; aggregate digest `sha256:32701d4931ddce73e1674025cda8e518195fc64b477e1a02d9227fda9913cbc5`.
+
+## Iter284 — LQG canonical/covariant physical-state link compatibility
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific physical-state evidence; no new general sensing/resource-closure rule.
+- Do not modify Paper III for this result.
+
+### Paper IV — `READY`
+- **Type:** physical-state evidence + compatibility boundary.
+- Add Yang–Zhang–Ma, Phys. Rev. D 104, 044025 (2021), DOI `10.1103/PhysRevD.104.044025`, as a genuine scoped canonical/covariant physical-state component.
+- Report that the generalized Euclidean EPRL calculation supplies a rigging-map interpretation and weak Euclidean Hamiltonian-constraint satisfaction on certain states at `beta=1`.
+- Required scope boundary: this is not generic in Immirzi parameter, not a full-state-space certificate, and not a Lorentzian same-realization certificate.
+- Required bridge boundary: no explicit state/signature/parameter map transports the 2021 Euclidean `beta=1` result into the Lorentzian Han 2017/2026 UV-to-IR chain, and no normalized gravity observable is transported through that full chain.
+- Canonical result: `HIGH_VALUE_EUCLIDEAN_BETA1_RIGGING_MAP_COMPONENT__NO_EXPLICIT_COMPATIBLE_TRANSPORT_INTO_LORENTZIAN_UV_IR_CHAIN`.
+- Interpretation: LQG now has three strong but incompletely stitched components — scoped physical-state link, GR endpoint, UV endpoint. The unresolved object remains compatible same-realization transport among them.
+- Provenance: scientific run `34556068228`; methodology CI `34556068266`; aggregate digest `sha256:61a71ea3aab1fa23b58ad2760b27500c84f34ac62aca5d020526516125cb7d47`.
 
 ## Standing rule
 For every subsequent scientifically relevant iteration, record here:

@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter283 LQG UV-to-IR same-realization bridge identity audit
+Iteration: Iter284 LQG canonical/covariant physical-state link compatibility audit
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -68,37 +68,56 @@ Endpoint authorities:
 - Han 2026, Phys. Rev. D 114, 044040: small-spin complete-amplitude UV fixed point with topological leading regime;
 - Han 2026, Phys. Rev. D 113, 084034: stack/cutoff topological localization structure.
 
-Parallel workflow `lqg-uv-ir-bridge-identity-audit`, run `34555702346`: 4/4 independent guards + aggregate SUCCESS. Methodology CI `34555702337`: SUCCESS. Aggregate digest: `sha256:32701d4931ddce73e1674025cda8e518195fc64b477e1a02d9227fda9913cbc5`.
+Run `34555702346`: 4/4 independent guards + aggregate SUCCESS. Methodology CI `34555702337`, archival methodology `34555959626`, reproducibility release `34556045719`: SUCCESS.
 
 Aggregate state:
 - `shared_parent_family = true`;
 - `material_positive_endpoints = true`;
 - `same_realization_terminal_bridge_ready = false`.
 
-Guard results:
-- `PASS_SHARED_LQG_PARENT__SAME_REALIZATION_IDENTITY_NOT_EXPLICIT`;
-- `PASS_ENDPOINTS_IN_DISTINCT_SPIN_REGIMES__EXPLICIT_UV_TO_IR_TRAJECTORY_MISSING`;
-- `PASS_DISTINCT_REGULATOR_LIMITS_IDENTIFIED__PARAMETER_TRANSPORT_MAP_MISSING`;
-- `PASS_MATERIAL_UV_AND_GR_ENDPOINTS_IDENTIFIED__NORMALIZED_OBSERVABLE_TRANSPORT_MISSING`.
-
 Canonical interpretation:
 `HIGH_VALUE_UV_AND_GR_ENDPOINTS_IN_SHARED_LQG_PARENT__NO_EXPLICIT_SAME_REALIZATION_PARAMETER_AND_OBSERVABLE_TRANSPORT_BRIDGE`
 
-This materially localizes the remaining LQG problem. The benchmark no longer treats the family as simply lacking both a UV and GR endpoint. Strong evidence exists for both endpoints. The missing object is the middle same-realization transport certificate: amplitude identity/reduction, parameter mapping, demonstrated small-spin-UV -> large-spin-semiclassical trajectory, and normalized observable/comparator/error transport.
+Interpretive refinement: **missing bridge/transport, not missing endpoints**.
 
-LQG/spinfoam therefore remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS.
+### Iter284 — LQG canonical/covariant physical-state link
+Primary object: Yang, Zhang, Ma, *Relating spin-foam to canonical loop quantum gravity by graphical calculus*, Phys. Rev. D 104, 044025 (2021), DOI `10.1103/PhysRevD.104.044025`.
+
+Parallel workflow `lqg-physical-state-link-compatibility-audit`, run `34556068228`: 4/4 independent guards + aggregate SUCCESS. Methodology CI `34556068266`: preflight + 4/4 shards + aggregate/bundle SUCCESS. Aggregate digest: `sha256:61a71ea3aab1fa23b58ad2760b27500c84f34ac62aca5d020526516125cb7d47`.
+
+Aggregate state:
+- `physical_state_component = HIGH_VALUE_SCOPED_POSITIVE`;
+- `same_realization_chain_ready = false`.
+
+Guard results:
+- `PASS_SCOPED_EPRL_RIGGING_MAP_WITH_WEAK_CONSTRAINT_SATISFACTION_ON_CERTAIN_STATES`;
+- `PASS_EUCLIDEAN_PHYSICAL_STATE_LINK__LORENTZIAN_SAME_REALIZATION_MAP_MISSING`;
+- `PASS_SCOPED_BETA1_CERTAIN_STATES__NO_GENERIC_BETA_OR_FULL_STATE_SPACE_CERTIFICATE`;
+- `PASS_HIGH_VALUE_PHYSICAL_STATE_COMPONENT__NOT_YET_COMPATIBLE_SAME_REALIZATION_UV_IR_CHAIN`.
+
+Canonical result:
+`HIGH_VALUE_EUCLIDEAN_BETA1_RIGGING_MAP_COMPONENT__NO_EXPLICIT_COMPATIBLE_TRANSPORT_INTO_LORENTZIAN_UV_IR_CHAIN`
+
+Interpretation: LQG now has three strong but incompletely stitched components:
+1. a scoped canonical/covariant physical-state/rigging-map link;
+2. a large-spin/refinement Einstein-equation endpoint;
+3. a small-spin Lorentzian complete-amplitude UV fixed-point endpoint.
+
+The 2021 physical-state component is genuinely positive but scoped to generalized Euclidean EPRL, `beta=1`, certain states, and weak Euclidean Hamiltonian-constraint satisfaction. No explicit state/signature/parameter transport maps it into the Lorentzian 2017/2026 UV-to-IR chain, and no normalized gravity observable is transported through all three components.
+
+LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS.
 
 Canonical blocker remains:
 `BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT`
 
-Interpretive refinement: **missing bridge/transport, not missing endpoints**.
+Interpretive refinement: physical-state evidence exists, but the compatible Lorentzian same-realization transport remains missing.
 
 ## Publication handoff
 `recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative.
 - Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`.
-- Paper III: Iter278–283 = `NOT_NEEDED` as additional rules; optional corroboration only.
-- Paper IV: Iter277–283 = `READY` for inclusion with their stated scope boundaries.
-- Paper IV LQG wording should explicitly distinguish strong UV + GR endpoints from the still-missing same-realization transport certificate.
+- Paper III: Iter278–284 = `NOT_NEEDED` as additional rules; optional corroboration only.
+- Paper IV: Iter277–284 = `READY` for inclusion with stated scope boundaries.
+- Paper IV LQG wording should now present a **three-component near-bridge** (physical-state link + GR endpoint + UV endpoint) whose missing object is compatible same-realization signature/parameter/observable transport.
 
 ## Current scientific decision state
 - 15 Tier-1 families.
@@ -114,9 +133,10 @@ Shard every scientifically independent calculation immediately with `fail-fast: 
 `D7_S2_EXTERNAL_AUTHORITY_DRIVEN_TERMINALIZATION_WITH_MULTI_AXIS_RESOURCE_CLOSURE_EXPLICIT_REDUCTION_MAPS_PHYSICAL_CONTINUUM_CERTIFICATES_AND_SAME_REALIZATION_TRANSPORT`
 
 Priority:
-1. audit canonical/covariant physical-state links (including Yang–Zhang–Ma 2021) for compatibility with the Lorentzian 2017/2026 chain; do not silently stitch Euclidean beta=1 scoped results onto Lorentzian amplitudes;
-2. search for an explicit published map connecting 2017 `lambda/delta/mu` refinement variables to the 2026 stack/UV variables and for a normalized observable transported across that map;
-3. retain immediate external watch for a stable public contact-complete Asymptotic-Safety `s+t+u+A4` package;
-4. RQCP all-band/background-independent autonomy bridge with Hilbert-cutoff closure;
-5. other Tier-1 families only on materially new primary authority;
-6. any apparently new QG parent must first pass explicit reduction/equivalence audit before census promotion.
+1. search for a Lorentzian or generic-Immirzi canonical/covariant physical-state construction compatible with the Han 2017/2026 chain;
+2. search for an explicit state/signature/parameter map connecting Yang–Zhang–Ma-type rigging-map evidence into the Lorentzian complete-stack realization;
+3. search for a normalized physical gravity observable transported across the whole UV -> physical-state -> semiclassical GR chain;
+4. retain immediate external watch for a stable public contact-complete Asymptotic-Safety `s+t+u+A4` package;
+5. RQCP all-band/background-independent autonomy bridge with Hilbert-cutoff closure;
+6. other Tier-1 families only on materially new primary authority;
+7. any apparently new QG parent must first pass explicit reduction/equivalence audit before census promotion.
