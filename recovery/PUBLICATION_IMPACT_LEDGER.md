@@ -119,6 +119,16 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `HIGH_VALUE_CAUSAL_LARGE_SPIN_LORENTZIAN_REGGE_ENDPOINT__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT`.
 - Provenance: scientific `34561212081`; scientific head `a6cbecf7507adb9dc52dc0090d171905e1432b50`; summary artifact `10184373486`; artifact digest `sha256:ee0ba2168b4ea3113517fadc94abdac82dcfd9c1bfbafff94a686ef3a1e264ec`; raw aggregate digest `sha256:573a5590ffe7a4bfcd298f0a14c13e77c5a034a31bc8d69b280b17dd23493b02`.
 
+## Iter291 — LQG gamma-duality semiclassical observable / parameter bridge
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific parameter-to-observable evidence; no new general methodology rule.
+### Paper IV — `READY`
+- Add Bianchi–Rincon-Ramirez, *Spinfoams, gamma-duality, and parity violation in primordial gravitational waves*, PRD 113, 124013 (2026), as a scoped EPRL semiclassical `gamma`-observable bridge.
+- Record that `gamma` controls the relation between parity-even and parity-odd higher-curvature EFT couplings in the authors' gamma-dual construction, and that primordial tensor polarization together with tensor tilt and tensor-to-scalar ratio gives an in-principle inference route for `gamma` in the studied inflationary realization.
+- **Required boundary:** this is not the missing complete-stack same-realization UV→IR transport law, does not establish identity with the Iter287 UV stack coupling throughout the flow, and does not provide a full propagated quantum-gravity error/comparator certificate. Keep LQG `PARTIAL/BLOCKED` and D7 unauthorized.
+- Result: `HIGH_VALUE_LQG_GAMMA_DUALITY_SEMICLASSICAL_OBSERVABLE_PARAMETER_BRIDGE__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT`.
+- Provenance: scientific `34568777275`; scientific head `4b2212fe21830964b43fa8c0f9fabef842c6e6aa`; summary artifact `10186981524`; artifact digest `sha256:3ef255ea6377cc487447b5ac62df01c43e870ca1f9913e2f7bedbba165b714ad`; raw aggregate digest `sha256:3b7f1797aa37d1722a3fce276520a7e7467c27f834823c6240764f1c32f727b0`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),
