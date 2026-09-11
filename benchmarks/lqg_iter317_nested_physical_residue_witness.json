@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "iteration": 317,
+  "date": "2026-09-11",
+  "derivation_type": "EXACT_TWO_SCALE_PHYSICAL_COLLINEAR_CAUSAL_RESIDUE_EXISTENCE_WITNESS",
+  "predecessor": {
+    "iteration": 316,
+    "scientific_run_k3": 34628640585,
+    "scientific_run_k4": 34628640569,
+    "scientific_head": "424d672ecd1f348ef54379a7558ea6d11d1561e0"
+  },
+  "source_contract": {
+    "toller_leading_kernel": "For j=1/2 and finite real gamma, T^(kappa)(boost n,beta) ~ -kappa*C_gamma*(n.sigma)*beta^-2 with C_gamma=2/(1+gamma^2), nonzero for every finite real gamma.",
+    "source_cplus": "The published C+ vertex is the unit sum over the 16 distinct sigma-induced causal wedge-sign patterns, up to the irrelevant global sigma-flip normalization.",
+    "physical_two_scale_geometry": "For a collapsing subset S, assign collinear boost rapidities x_a=delta*r_a for a in S with distinct integer r_a=1..|S|, and x_b=epsilon*q_b for outside nodes with q_b=1..(5-|S|). Take delta/epsilon->0 first, then epsilon->0. These are group-consistent node rapidities, not independent edge variables.",
+    "full_network_contraction": "With normalized boundary intertwiners (A,A,B,A,A), the Pauli-z network contraction including edge orientation signs has magnitude 4 before the common 1/32 intertwiner normalization for every tested K3/K4 hierarchy. The full K5 causal branch scalar product is +1 per C+ sector.",
+    "scope": "A nonzero sequential asymptotic coefficient proves that the K3/K4 internal residue, viewed as a function/distribution of physically consistent external group variables away from the inner diagonal, is not identically zero: for sufficiently small nonzero epsilon it has a nonzero physical evaluation. This does not choose a unique extension on the collapse diagonal."
+  },
+  "prospectively_frozen_claims": {
+    "subset_jobs": 15,
+    "k3_jobs": 10,
+    "k4_jobs": 5,
+    "normalized_spin_network_contraction_magnitude": "1/8",
+    "cplus_distinct_sector_count": 16,
+    "k3_internal_edge_count": 3,
+    "k3_external_edge_count": 7,
+    "k3_scaling": "delta^-6 epsilon^-14",
+    "k3_coefficient_magnitude_without_Cgamma10": "1/128",
+    "k4_internal_edge_count": 6,
+    "k4_external_edge_count": 4,
+    "k4_scaling": "delta^-12 epsilon^-8",
+    "k4_coefficient_magnitude_without_Cgamma10": "1/72",
+    "cplus_nested_coefficient_nonzero_all_15": true,
+    "cplus_plus_cminus_nested_coefficient_is_twice_cplus": true,
+    "finite_real_gamma_can_zero_the_leading_coefficient": false,
+    "physical_external_evaluation_exists_for_each_k3_k4_residue": true,
+    "global_distributional_extension_unique": false,
+    "complete_stack_control_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_TWO_SCALE_COLLINEAR_GROUP_CONSISTENT_WITNESSES_SHOW_NONZERO_SOURCE_CPLUS_MINIMAL_SPIN_RESIDUES_ON_ALL_TEN_K3_AND_ALL_FIVE_K4_COLLAPSE_STRATA__K3_LEADS_AS_NONZERO_CGAMMA10_OVER128_DELTA6_EPSILON14_AND_K4_AS_NONZERO_CGAMMA10_OVER72_DELTA12_EPSILON8_UP_TO_SUBSET_SIGNS__CAUSAL_PLUS_COCAUSAL_DOUBLES_THE_FULL_TWO_SCALE_LEADING_COEFFICIENT__PHYSICAL_EXTERNAL_EVALUATION_LOOPHOLE_CLOSED",
+  "scope_rule": "PASS establishes existence of physically consistent external group configurations with nonzero K3/K4 residues for the chosen valid boundary state and all finite real gamma. It does not define the singular integrals on the partial diagonals, prove uniqueness of a forest extension, control the complete spin/complex stack, or authorize D7."
+}
