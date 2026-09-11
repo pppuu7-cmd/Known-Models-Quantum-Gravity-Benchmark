@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-09-11",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "target_journal": "Classical and Quantum Gravity",
+  "canonical_working_manuscript": {
+    "path": "paper_iv/PAPER_IV_CQG_DRAFT_v1_1.md",
+    "commit": "74f7a9532b817585071c7ca41177356b9a05821e",
+    "blob_sha": "943b10c16bce4d00ef86c1241db0ba93b2ead22a",
+    "snapshot": "coverage Iter275 / D7 readiness Iter276",
+    "tier1_total": 15,
+    "strict_terminal": 1,
+    "strict_nonterminal": 14,
+    "d7": "NOT_AUTHORIZED"
+  },
+  "historical_manuscripts": [
+    {
+      "path": "paper_iv/PAPER_IV_CQG_FIRST_DRAFT_v1_0.md",
+      "snapshot": "Iter274 / 14-family",
+      "preserve_unchanged": true
+    }
+  ],
+  "canonical_audit": "paper_iv/PAPER_IV_CQG_DRAFT_v1_1_AUDIT.md",
+  "article_claim_control": "paper_iv/PAPER_IV_CQG_CLAIM_EVIDENCE_MATRIX_v0_2.md",
+  "primary_literature_table": "paper_iv/PAPER_IV_PRIMARY_LITERATURE_EVIDENCE_TABLE_v0_2.md",
+  "bibliography": "paper_iv/references_cqg.bib",
+  "obstruction_taxonomy": "paper_iv/PAPER_IV_OBSTRUCTION_TAXONOMY_v1_1.json",
+  "proposition_prior_art": "paper_iv/PAPER_IV_PROPOSITION1_PRIOR_ART_AUDIT_v0_1.md",
+  "lqg_equation_attribution": "paper_iv/PAPER_IV_LQG_EQUATION_ATTRIBUTION_AUDIT_v0_1.md",
+  "coverage_transition": "paper_iv/PAPER_IV_ITER275_ARTICLE_TRANSITION.md",
+  "scientific_authorities": [
+    "protocol/RQIR_CORE_V1_BENCHMARK_FIREWALL.md",
+    "protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json",
+    "protocol/PAPER_IV_D7_GLOBAL_DECISION_CONTRACT.json",
+    "paper_iv/PAPER_IV_D7_READINESS_STATE.json"
+  ],
+  "state_notes": {
+    "coverage_iteration": 275,
+    "d7_readiness_iteration": 276,
+    "iter276_sync_validation": "PENDING",
+    "current_benchmark_front": "STALE_AT_ITER274_DO_NOT_USE_TO_OVERRIDE_NEWER_D7_READINESS",
+    "operational_readiness_percent": 100,
+    "tier2_unresolved": 0,
+    "internal_actionable_fronts": 0,
+    "obstruction_baseline": [5, 6, 1, 1, 1],
+    "robust_structural_count": 11,
+    "robust_structural_denominator": 14,
+    "robust_structural_percent": 78.6
+  },
+  "permanent_guardrails": [
+    "BLOCKED != FAIL",
+    "Do not promote scoped child PASS or FAIL to parent-family sufficiency/exclusion without family-scope closure.",
+    "Do not claim Proposition 1 as a new theorem of statistics or logic.",
+    "Do not call the five obstruction classes universal quantum-gravity failure modes.",
+    "Do not attribute KMQGB Delta_gamma or derived gamma/psi residual identities directly to external authors.",
+    "Do not authorize EXISTING_SUFFICIENT, ADAPT_EXISTING, HYBRID_REQUIRED, or NEW_REQUIRED unless a newer synchronized D7 authority explicitly does so.",
+    "Never overwrite historical manuscript versions; create v1_2, v1_3, etc."
+  ],
+  "resume_order": [
+    "recovery/CURRENT_PAPER_IV_ARTICLE.md",
+    "recovery/PAPER_IV_ARTICLE_MANIFEST.json",
+    "paper_iv/PAPER_IV_D7_READINESS_STATE.json",
+    "protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json",
+    "paper_iv/PAPER_IV_CQG_DRAFT_v1_1.md",
+    "paper_iv/PAPER_IV_CQG_DRAFT_v1_1_AUDIT.md",
+    "paper_iv/PAPER_IV_CQG_CLAIM_EVIDENCE_MATRIX_v0_2.md",
+    "paper_iv/PAPER_IV_PRIMARY_LITERATURE_EVIDENCE_TABLE_v0_2.md",
+    "paper_iv/PAPER_IV_OBSTRUCTION_TAXONOMY_v1_1.json",
+    "paper_iv/PAPER_IV_LQG_EQUATION_ATTRIBUTION_AUDIT_v0_1.md",
+    "paper_iv/PAPER_IV_PROPOSITION1_PRIOR_ART_AUDIT_v0_1.md"
+  ],
+  "next_priority": [
+    "direct-primary-source audit for each exact nonterminal blocker sentence",
+    "render Figures 1-4",
+    "assemble v1.2 with citation-complete blocker layer and figures",
+    "convert to IOP/CQG LaTeX and compile",
+    "freeze immutable release/DOI and run final claim-evidence audit"
+  ]
+}
