@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter293 generalized EPRL-KKL causal scope integrated; Iter292 refinement-flow authority, Iter291 gamma-duality bridge and Iter290 causal Regge endpoint retained
+Iteration: Iter294 CFS geometric Lorentzian Einstein endpoint scoped; Iter293 generalized EPRL-KKL causal scope and earlier LQG bridge refinements retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -156,6 +156,27 @@ Classification:
 `HIGH_VALUE_CFS_SYSTEMATIC_CURRENT_AND_HIGHER_RANK_PATHWAY__GRAVITY_CORRECTION_TENSOR_REMAINS_PROSPECTIVE_AND_BLOCKER_STAYS_OPEN`
 
 CFS therefore remains `BLOCKED_MISSING_REQUIRED_OBJECT`, not FAIL. Iter289 makes the route to the missing object more concrete but does not supply it.
+
+### Iter294 — geometric Lorentzian Einstein endpoint / correction hierarchy
+Primary object: Finster–Krpoun, *A Geometric Derivation of the Einstein Equations from the Causal Action Principle*, arXiv:2607.13871v1 (2026), public preprint.
+Scientific run `34585821754`: four independent guards in parallel + aggregate SUCCESS on head `9d821ea02aae8a85c093cec27ecffb120250d6b7`.
+Methodology run `34585821764`: SUCCESS.
+Summary artifact `10193537053`; artifact digest `sha256:996064f831648b6f2a5e788b3e8f63f20f7a0213a13422d65d085676cd61439b`; raw summary digest `sha256:89a2f8b287d637b7d2ae664bfe84d4abd0e27b254d99adf5c353c72677343902`.
+
+Aggregate:
+- explicit Lorentzian 4D Einstein endpoint from causal action = PASS;
+- explicit symmetric/divergence-free energy-momentum tensor = PASS;
+- leading `T_ij = O(delta^2)` and gravitational-coupling/regularization-length scaling contract = PASS;
+- systematic correction hierarchy = PASS;
+- concrete evaluated normalized beyond-Einstein correction tensor/residual = false;
+- same-domain comparator residual = false;
+- family terminal = false;
+- D7 authorized = false.
+
+Classification:
+`HIGH_VALUE_CFS_GEOMETRIC_LORENTZIAN_EINSTEIN_DERIVATION_AND_SYSTEMATIC_CORRECTION_HIERARCHY__CONCRETE_NORMALIZED_BEYOND_EINSTEIN_RESIDUAL_COMPARATOR_STILL_MISSING`
+
+Interpretation: the obsolete weak sub-blocker "rank-two Einstein structure is only prospective" is removed. The decisive CFS blocker is now narrower: evaluate at least one explicit beyond-Einstein correction from the stated hierarchy into a normalized same-domain gravity observable/residual with comparator and propagated uncertainty.
 
 ## Other priority fronts
 - Asymptotic Safety: stable public contact-complete Lorentzian `s+t+u+A4` package remains decisive external object.

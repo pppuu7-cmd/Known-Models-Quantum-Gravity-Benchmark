@@ -149,6 +149,16 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `HIGH_VALUE_GENERALIZED_EPRL_KKL_CAUSAL_SCOPE_EXTENSION__NO_COMPLETE_STACK_EQUIVALENCE_OR_UV_TO_IR_TRANSPORT`.
 - Provenance: scientific `34584685590`; scientific head `3edcaf9feb3a308750fd6a84a25056f9f105c61d`; summary artifact `10193076711`; artifact digest `sha256:d14df68d7b1c98464bacd38644d75271ab5c75745e75bf69c6a6d048bc04cd42`; raw summary digest `sha256:a0521f16d90f393376d7899556a3c452123025baa172f1248f7bcbad6eb1b277`.
 
+## Iter294 — CFS geometric Lorentzian Einstein derivation
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific CFS gravity/evidentiary refinement; no new general resource-closure rule beyond Iter277.
+### Paper IV — `READY`
+- Add Finster–Krpoun, *A Geometric Derivation of the Einstein Equations from the Causal Action Principle*, arXiv:2607.13871v1 (2026), as the explicit Lorentzian Einstein endpoint that supersedes the earlier Iter289 wording that rank-two Einstein structure was only prospective.
+- Record explicit four-dimensional Lorentzian Einstein equations, an explicit symmetric/divergence-free energy-momentum tensor with `O(delta^2)` scaling, and the systematic correction hierarchy (higher-order `delta`, osculation/torsion, regularizing-vector, modified-measure effects).
+- **Required boundary:** the paper explicitly leaves these correction classes to be worked out in detail; it does not supply the frozen concrete normalized beyond-Einstein gravity correction residual/comparator/error certificate. Keep CFS `BLOCKED_MISSING_REQUIRED_OBJECT`, not FAIL and not terminal.
+- Result: `HIGH_VALUE_CFS_GEOMETRIC_LORENTZIAN_EINSTEIN_DERIVATION_AND_SYSTEMATIC_CORRECTION_HIERARCHY__CONCRETE_NORMALIZED_BEYOND_EINSTEIN_RESIDUAL_COMPARATOR_STILL_MISSING`.
+- Provenance: scientific `34585821754`; scientific head `9d821ea02aae8a85c093cec27ecffb120250d6b7`; methodology `34585821764`; summary artifact `10193537053`; artifact digest `sha256:996064f831648b6f2a5e788b3e8f63f20f7a0213a13422d65d085676cd61439b`; raw summary digest `sha256:89a2f8b287d637b7d2ae664bfe84d4abd0e27b254d99adf5c353c72677343902`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),
