@@ -1,0 +1,100 @@
+name: paper-iv-iter363-365-lee-wick-threshold-contour
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/LEE_WICK_SOURCE_AUTHORITY_ITER363_365.json'
+      - 'code/lee_wick_iter363_*.py'
+      - 'code/lee_wick_iter364_*.py'
+      - 'code/lee_wick_iter365_*.py'
+      - 'code/iter363_365_aggregate.py'
+      - '.github/workflows/paper-iv-iter363-365-lee-wick-threshold-contour.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  bound-state-threshold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        case: ['m01','m05','m1a','m1b','m2','m5']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter363
+          python code/lee_wick_iter363_bound_state_threshold.py --case '${{ matrix.case }}' --output 'build/iter363/threshold-${{ matrix.case }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter363-lee-wick-threshold-${{ matrix.case }}
+          path: build/iter363/threshold-${{ matrix.case }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  contour-topology:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        im_m2: ['1e-6','1e-3','0.1','1','10']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter364
+          python code/lee_wick_iter364_contour_topology.py --im-m2 '${{ matrix.im_m2 }}' --output 'build/iter364/contour-${{ matrix.im_m2 }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter364-lee-wick-contour-${{ matrix.im_m2 }}
+          path: build/iter364/contour-${{ matrix.im_m2 }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  source-scope-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python code/lee_wick_iter365_scope_guard.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter365-lee-wick-scope
+          path: iter365-lee-wick-scope.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: [bound-state-threshold, contour-topology, source-scope-guard]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter36*'
+          path: iter363-365-results
+      - run: python code/iter363_365_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter363-365-summary
+          path: iter363-365-summary.json
+          if-no-files-found: error
+          retention-days: 90

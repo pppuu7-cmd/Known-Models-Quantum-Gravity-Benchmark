@@ -1,0 +1,34 @@
+{
+  "schema_version":"1.0",
+  "iteration_bundle":"363-365",
+  "family":"PERTURBATIVE_HIGHER_DERIVATIVE",
+  "branch":"LEE_WICK_UNSTABLE_RESONANCE",
+  "primary_source":{
+    "title":"Bound States in Lee's Complex Ghost Model",
+    "author":"Ichiro Oda",
+    "arxiv":"2602.05562",
+    "submitted":"2026-02-05",
+    "url":"https://arxiv.org/abs/2602.05562"
+  },
+  "source_relations":{
+    "stationary_threshold":"omega^*_{p-k}+omega_k = 2 Re omega_k >= 2 Re M at p_vec=0",
+    "complex_delta_inactive_window":"-2 Re M < p0 < 2 Re M",
+    "feynman_parameter_imaginary_part":"Im Delta = (2x-1) Im M^2",
+    "positive_pair_norm":"||alpha^dagger beta^dagger |0>||^2 = 1",
+    "bound_state_threshold":"2 Re M",
+    "source_conclusion":"positive-norm bound-state formation does not imply permanent confinement of the massive ghost; the massive-ghost problem in higher-derivative gravity remains unresolved"
+  },
+  "prescription_caveat":"source explicitly notes the result might change if the 2025 amplitude-prescription contour is used instead of the Lee-Wick contour",
+  "authority_conflict":{
+    "Donoghue_Menezes_2019":"claims all-orders unitarity with only stable-state cuts for unstable ghost resonance",
+    "Kubo_Kugo_2023":"operator formalism claims complex ghosts are created and physical unitarity is violated above a definite threshold",
+    "Oda_2026":"uses the Kubo-Kugo canonical formalism; finds a positive-norm bound-state possibility below threshold but states this is not permanent confinement and does not solve the massive-ghost problem"
+  },
+  "protocol_guard":{
+    "threshold_certificate_is_not_branch_unitarity_certificate":true,
+    "positive_bound_state_norm_is_not_permanent_ghost_confinement":true,
+    "contour_dependence_prevents_cross_prescription_merging":true,
+    "family_terminal":false,
+    "d7_promotion_authorized":false
+  }
+}
