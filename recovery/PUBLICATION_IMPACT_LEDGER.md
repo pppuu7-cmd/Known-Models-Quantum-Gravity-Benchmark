@@ -109,6 +109,16 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `HIGH_VALUE_CFS_SYSTEMATIC_CURRENT_AND_HIGHER_RANK_PATHWAY__GRAVITY_CORRECTION_TENSOR_REMAINS_PROSPECTIVE_AND_BLOCKER_STAYS_OPEN`.
 - Provenance: scientific `34558237027`; methodology `34558237116`; aggregate digest `sha256:b27830783f0fa7a90e75689e38584eb21263296c78bdd97d5226e5ac8e4dc9e3`.
 
+## Iter290 — LQG causal Lorentzian vertex / Regge endpoint
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific causal/semiclassical endpoint evidence; no new general methodology rule beyond the already frozen same-realization/resource-closure obligations.
+### Paper IV — `READY`
+- Add Bianchi–Chen–Gamonal, *Causal spinfoam vertex for 4d Lorentzian quantum gravity*, arXiv:2601.23162 (2026), as an explicit causal Lorentzian EPRL-vertex endpoint.
+- Record the vertex-scope causal Toller decomposition and the large-spin selection of causally compatible Lorentzian Regge data with a single `exp(+i S_Regge/hbar)` phase.
+- **Required boundary:** this is a vertex-level result, not a complete-stack/refinement UV→IR trajectory. It does not supply one continuous coupling/Immirzi/spin-scale transport law from the Iter287 UV sector to the causal Regge/Einstein endpoint, nor a normalized transported observable, same-domain comparator residual, or propagated uncertainty certificate.
+- Result: `HIGH_VALUE_CAUSAL_LARGE_SPIN_LORENTZIAN_REGGE_ENDPOINT__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT`.
+- Provenance: scientific `34561212081`; scientific head `a6cbecf7507adb9dc52dc0090d171905e1432b50`; summary artifact `10184373486`; artifact digest `sha256:ee0ba2168b4ea3113517fadc94abdac82dcfd9c1bfbafff94a686ef3a1e264ec`; raw aggregate digest `sha256:573a5590ffe7a4bfcd298f0a14c13e77c5a034a31bc8d69b280b17dd23493b02`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),
