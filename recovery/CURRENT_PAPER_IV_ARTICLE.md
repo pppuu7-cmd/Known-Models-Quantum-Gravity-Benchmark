@@ -31,6 +31,20 @@ Current bibliography:
 
 `paper_iv/references_cqg.bib`
 
+### v1.1 preparation files already completed
+
+Primary-literature family evidence table:
+
+`paper_iv/PAPER_IV_PRIMARY_LITERATURE_EVIDENCE_TABLE_v0_1.md`
+
+Obstruction-topology robustness audit:
+
+`paper_iv/PAPER_IV_OBSTRUCTION_TAXONOMY_ROBUSTNESS_v0_1.md`
+
+Machine-readable obstruction projection:
+
+`paper_iv/PAPER_IV_OBSTRUCTION_TAXONOMY_v1.json`
+
 ## Frozen scientific authority
 
 Read these before modifying article claims:
@@ -64,8 +78,24 @@ Paper IV is not an exclusion census and not a review. Its central contribution i
 1. **Operational saturation versus scientific closure:** the benchmark can be complete as a reproducible comparison infrastructure while scientific family-level closure remains 1/14.
 2. **Proposition 1 — no promotion under incomplete realization closure:** scoped PASS/FAIL does not entail family-level sufficiency/exclusion while a material branch is unresolved or a required same-realization/common-domain residual is undefined.
 3. **Corollary 1:** more numerical precision cannot repair a structurally undefined comparison caused by a missing physical map, observable, normalization or comparator.
-4. **Primary-obstruction topology:** the current 13 nonterminal Tier-1 rows project into five recurring primary blocker classes. The draft count vector is `(4,6,1,1,1)` and must be treated as a primary-blocker projection rather than an exclusive taxonomy until the robustness audit is complete.
-5. **Prospective frozen-judge stress tests:** Iter273 LQG/spinfoam and Iter274 Asymptotic Safety materially narrow blockers without changing the pre-frozen terminal criterion.
+4. **Primary-obstruction topology:** the current 13 nonterminal Tier-1 rows can be projected into five recurring current primary blocker classes. The deterministic baseline vector is `(4,6,1,1,1)`, but the exact C1/C2 split is projection-dependent.
+5. **Robust obstruction result:** across the baseline, transport-first, and scope-maximal bounded projections, family/branch scope plus same-realization transport accounts for `10/13 = 76.9%` of current nonterminal rows. This aggregate is the preferred v1.1 quantitative claim.
+6. **Prospective frozen-judge stress tests:** Iter273 LQG/spinfoam and Iter274 Asymptotic Safety materially narrow blockers without changing the pre-frozen terminal criterion.
+
+## Important v1.0 → v1.1 correction
+
+The v1.0 manuscript's prose assignment of Hořava–Lifshitz versus GFT/tensor models inside the `4/6` split was informal. The deterministic v1.1 rule now assigns:
+
+- Hořava–Lifshitz → `C1 FAMILY_OR_BRANCH_SCOPE` because projectable/non-projectable branch non-inheritance is the first blocker;
+- GFT/tensor models → `C2 SAME_REALIZATION_TRANSPORT` after explicit EPRL/FK reduction, because the remaining independent branches require continuum/FRG→gravity observable transport.
+
+The total baseline vector remains `(4,6,1,1,1)`, but v1.1 must use the machine-readable assignments in `PAPER_IV_OBSTRUCTION_TAXONOMY_v1.json` and emphasize the robust aggregate `10/13`, not the uniqueness of the 4-versus-6 split.
+
+## Primary-literature progress
+
+Every one of the 14 Tier-1 rows now has at least one primary external physics anchor in `PAPER_IV_PRIMARY_LITERATURE_EVIDENCE_TABLE_v0_1.md`. The CQG bibliography has been expanded with core primary references for GR/EFT, higher-derivative gravity, Hořava gravity, asymptotic safety, nonlocal gravity, holography/string, causal sets, CDT, LQG/spinfoams, GFT, CFS, noncommutative spectral geometry, WDW geometrodynamics and Quantum Graphity.
+
+This is not yet citation-complete: every specific blocker sentence and material branch distinction still requires direct primary-source support before submission.
 
 ## Latest scientific updates already incorporated
 
@@ -82,18 +112,27 @@ If a future chat says “continue Paper IV”, restore state in this order:
 1. Read this file.
 2. Read `paper_iv/PAPER_IV_CQG_FIRST_DRAFT_v1_0.md`.
 3. Read `paper_iv/PAPER_IV_CQG_FIRST_DRAFT_AUDIT_v1_0.md`.
-4. Read `paper_iv/PAPER_IV_D7_READINESS_STATE.json` and `recovery/CURRENT_BENCHMARK_FRONT.md` for any scientific state change since the manuscript snapshot.
-5. Do not overwrite the canonical v1.0 draft. Create the next version (`v1_1`, `v1_2`, etc.) and update this recovery file to point to the newest canonical manuscript.
-6. Preserve all previous article versions for provenance.
+4. Read the three v1.1 preparation files listed above.
+5. Read `paper_iv/PAPER_IV_D7_READINESS_STATE.json` and `recovery/CURRENT_BENCHMARK_FRONT.md` for any scientific state change since the manuscript snapshot.
+6. Do not overwrite the canonical v1.0 draft. When the next full manuscript is assembled, create `paper_iv/PAPER_IV_CQG_DRAFT_v1_1.md`, then update this recovery file to point to it.
+7. Preserve all previous article versions for provenance.
 
 ## Current preparation priority
 
-The next article version is v1.1. Priority order:
+Completed in the current v1.1 preparation cycle:
 
-1. citation-complete primary-literature evidence table for all 14 Tier-1 families;
-2. deterministic assignment rule and robustness audit for the five-class obstruction topology;
-3. prior-art audit for Proposition 1 / no-promotion logic;
-4. equation-by-equation attribution audit of LQG gamma/Delta/RG relations;
+- first-pass primary-literature anchor table for all 14 rows;
+- expanded CQG bibliography;
+- deterministic five-class assignment rule;
+- machine-readable assignments;
+- bounded robustness test of the obstruction topology.
+
+Next priority:
+
+1. prior-art audit for Proposition 1 / no-promotion logic;
+2. direct primary-source audit for each exact blocker sentence and branch distinction;
+3. equation-by-equation attribution audit of LQG gamma/Delta/RG relations;
+4. assemble full `PAPER_IV_CQG_DRAFT_v1_1.md` with corrected obstruction language and citations;
 5. figures 1–3;
 6. IOP/CQG LaTeX conversion and PDF compilation;
 7. final line-by-line claim/evidence audit.
