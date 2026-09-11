@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter277 RQCP multi-axis resource-closure audit
+Iteration: Iter279 NSF reduction and claim-boundary audit
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -31,131 +31,81 @@ Authoritative 15-row census synchronization milestone: Iter276
 - Candidate Gravity remains inactive at canonical R3 = 24%.
 
 ## Readiness metrics
-Iter270 established:
-- `OPERATIONAL_POLYGON_READINESS = 100%`.
-- `INTERNALLY_ACTIONABLE_UNRESOLVED_FRONTS = 0` at the then-current census.
+- Operational polygon readiness = 100% (Iter270).
+- D7 protocol infrastructure readiness = 100% (Iter272).
+- 15-row decision-stack synchronization = validated (Iter276 and subsequent green methodology CI).
 
-Iter272 established D7 protocol infrastructure at 100%.
+These are infrastructure/operational metrics, not scientific D7 closure.
 
-Iter276 synchronized the Iter275 RQCP promotion across the executable Paper-IV decision stack and added `paper_iv_census_sync_validator.py`. Methodology CI run `34551142803` passed. The cutoff-extension head was independently revalidated by methodology CI run `34551533303`, with preflight, 4/4 methodology shards and aggregate/bundle all success.
+## Recent material reopens
 
-These operational/infrastructure metrics are not scientific D7 closure.
+### Iter273 — LQG / spinfoam
+Muxin Han, *Ultraviolet Fixed Point in Covariant Loop Quantum Gravity* (2026), supplies a complete summed-spinfoam continuum/fixed-point object. Scoped continuum result is positive. Family remains nonterminal because the same-realization physical UV-to-IR/GR trajectory, normalized gravity observable, parameter/refinement transport and comparator/error certificate remain missing.
 
-## Iter273 material positive reopen — LQG/spinfoam
-Muxin Han, *Ultraviolet fixed point in covariant loop quantum gravity*, Physical Review D 114, 044040 (2026), supplies a materially new complete Lorentzian EPRL/KKL summed-spinfoam continuum/fixed-point object. LQG remains nonterminal because the same-realization physical UV-to-IR/GR trajectory, normalized gravity observable, parameter/refinement transport and comparator/error certificate remain missing.
+### Iter274 — Asymptotic Safety contact-complete front
+The stable Lorentzian scalar-scattering preprint supplies the mediated `s+t+u` contribution but omits direct `A4`; ERG2026 reports Lorentzian contact-term progress without a stable public reproducible contact-complete package. Family remains `BLOCKED_MISSING_REQUIRED_OBJECT`.
 
-## Iter274 material positive reopen — Asymptotic Safety
-The stable archival scalar-scattering calculation supplies a strong Lorentzian graviton-mediated control but omits the direct `A4` contact contribution. ERG2026 reports Lorentzian contact-term progress, but no stable public reproducible same-realization complete `s+t+u+A4` package has yet been frozen into KMQGB.
+### Iter275–277 — RQCP
+RQCP was promoted as a new independent Tier-1 parent, moving the census 14 -> 15 without increasing terminal coverage. Four-environment semantic reproduction passed. Iter277 then quantified an independent Hilbert/domain-cutoff resource axis: cutoff 8 -> 28 moves G by ~7.32%, gap by ~3.07%, and G*gap^2 by ~1.36%, while the high-cutoff sequence stabilizes strongly.
 
-Asymptotic Safety therefore remains `BLOCKED_MISSING_REQUIRED_OBJECT`, not FAIL.
-
-## Iter275 — RQCP promoted into Tier-1
-The concrete RQCP-QG parent was not reducible by an explicit map to an existing Tier-1 row, so the frozen rule `new_concrete_independent_parent_triggers_tier1_promotion` required a new row:
-
-`RELATIONAL_QUANTUM_CAUSAL_PROCESSES`
-
-The public v1.0.3 reproducibility archive was independently recomputed across four environments in run `34549781006`; all four semantic recomputations passed while preserving a separately identified zero-frequency roundoff-amplification diagnostic defect.
-
-Scoped result:
-
-`PASS_SCOPED_FIXED_BAND_SAME_FAMILY_EINSTEIN_RESPONSE_AND_REPRODUCIBILITY_CONTROL`
-
-Family status remains:
-
-`PARTIAL_SUBFAMILY_ONLY`
-
-The promotion changed the census from 14 to 15 but did not increase the terminal count.
-
-## Iter276 — fail-closed 15-row synchronization
-The coverage contract had moved to 15 rows while the comparator/D7 stack still contained 14. Parallel methodology CI correctly failed in three independent validators. The common cause was the single census mismatch, not three scientific failures.
-
-The matrix, D7 attempt and readiness state were synchronized to 15 rows and a new cross-artifact census validator was registered. Methodology CI run `34551142803` then passed.
-
-## Iter277 — RQCP multi-axis resource closure
-A new independent NumPy implementation reproduced the published cutoff-8 fixed-band point to floating numerical precision and then tested resource axes not removed by the upstream spatial-refinement certificate.
-
-### Parallel compute wave 1
-Workflow `rqcp-scoped-robustness-probes`, run `34551324978`:
-- 19 independent jobs, up to 8 concurrent;
-- Hilbert cutoffs 4/6/8/10/12/14/16;
-- quartic factors 0/0.5/0.75/1/1.25/1.5/2;
-- mixed-response sigma steps 5e-4/1e-3/2e-3/5e-3/1e-2;
-- aggregate after the dependency barrier.
-
-Result: 19/19 independent jobs + aggregate success.
-
-### Parallel compute wave 2
-Workflow `rqcp-cutoff-extension`, run `34551533448`:
-- independent cutoffs 18/20/24/28;
-- 4/4 success.
-
-### Numerical result
-Published cutoff 8:
-- `G = 23.200280752211146`;
-- `gap = 0.48633956724666694`;
-- `G gap^2 = 5.487473657582998`.
-
-Cutoff 28:
-- `G = 21.50096842760798`;
-- `gap = 0.5017460974407341`;
-- `G gap^2 = 5.412850446209202`.
-
-Relative cutoff-8 -> cutoff-28 shifts:
-- `G`: ~7.3245%;
-- gap: ~3.0706%;
-- `G gap^2`: ~1.3599%.
-
-High-cutoff stabilization is very strong. Cutoff 24 -> 28 relative changes:
-- `G`: ~1.80e-8;
-- gap: ~1.35e-9;
-- `G gap^2`: ~1.53e-8.
-
-Quartic variation over the finite tested `0 ... 2 lambda_*` grid keeps `G` positive and gives modest local variation. Mixed-response step variation has relative span ~5.67e-8.
-
-Scoped result:
-
-`PASS_SCOPED_BASE_REPRODUCTION_AND_HIGH_CUTOFF_STABILIZATION__PUBLISHED_CUTOFF8_EINSTEIN_RESPONSE_IS_MATERIALLY_SHIFTED_RELATIVE_TO_THE_HIGH_CUTOFF_PLATEAU`
-
-This does not refute RQCP's published fixed-band result because cutoff 8 is a declared physical-domain input rather than a regulator the upstream theorem claims to remove. It does establish a material independent resource axis.
-
-## Iter277 methodological delta
+Methodological delta:
 `MULTI_AXIS_RESOURCE_CLOSURE`
 
-Convergence/closure on one regulator or refinement axis does not silently close an independent Hilbert truncation, basis/domain, finite-volume, resolution or approximation axis that materially changes a normalized target observable.
+Every materially independent regulator/truncation/domain/finite-volume/resolution/approximation axis must be separately removed with propagated uncertainty or physically selected with propagated uncertainty. Closing one axis does not close another.
 
-Each material axis must instead be:
-1. removed with controlled convergence/error propagation; or
-2. justified by an autonomous physical-selection principle with its induced observable uncertainty propagated.
+### Iter278 — Asymptotic Safety diffeomorphism-invariant PIRG
+New primary object: Ihssen, Knorr, Mezger, Pawlowski, Sprenger, arXiv:2609.07829v1.
 
-This is additive benchmark methodology; RQIR Core v1.0 remains unchanged. It is a candidate Paper-III strengthening only if Paper III does not already encode the same independent-axis closure requirement.
+Parallel Table-III audit workflow `asymptotic-safety-pirg-table3-audit`, run `34552838082`: 4/4 independent probes + aggregate success. Methodology CI run `34552838007`: success.
 
-## Iter277 RQCP refined blocker
-`BLOCKED_MISSING_ALL_BAND_BACKGROUND_INDEPENDENT_AUTONOMOUS_GRAVITY_PARENT_PLUS_INDEPENDENT_HILBERT_CUTOFF_REMOVAL_OR_AUTONOMOUS_PHYSICAL_SELECTION_WITH_PROPAGATED_OBSERVABLE_ERROR_QUANTUM_GRAVITY_STATE_CONSTRAINT_TOPOLOGY_AND_NORMALIZED_SAME_DOMAIN_COMPARATOR_CERTIFICATE`
+Scoped result:
+`PASS_SCOPED_DIFFEO_INVARIANT_RELEVANCE_PRESERVING_REUTER_FIXED_POINT_WITH_TABLEIII_VARIANT_ROBUSTNESS__NOT_CONTACT_COMPLETE_NOT_UV_IR_COMPLETE`
 
-Family status remains `PARTIAL_SUBFAMILY_ONLY`.
+All six published variants retain two positive relevant directions. The second critical exponent is substantially more stable than the first, while fixed-point coordinates remain more scheme/procedure sensitive. This strengthens the Asymptotic-Safety evidence base but does not supply the missing public same-realization contact-complete `s+t+u+A4` package. Terminal count unchanged.
 
-## Iter277 provenance
-- `paper_iv/P_RQCP_MULTI_AXIS_RESOURCE_CLOSURE_AUDIT_ITER277_2026-09-11.md`
-- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_277.json`
-- `recovery/RECOVERY_DELTA_277.md`
-- coverage contract updated with independent-resource-axis closure rule and refined RQCP minimum-resolution obligation.
-- D7 attempt/readiness synchronized to Iter277 without changing terminal authorization.
+### Iter279 — Null Surface Formulation classification
+The 2025–2026 NSF quantum/scattering line was tested under the frozen new-parent rule.
 
-## Current compute state
-The useful RQCP fixed-band robustness scans presently identified are complete. Re-running the same saturated grid would create activity without changing the family-level proof obligation.
+Authority chain identifies NSF as a formulation/quantization of General Relativity; the 2026 completed tree construction reproduces the standard Weinberg–DeWitt amplitude. This is a positive reduction signal rather than evidence for a new independent Tier-1 parent.
 
-Heavy compute state:
+Parallel workflow `nsf-tree-claim-boundary-audit`, run `34553257781`: 4/4 independent jobs + aggregate success. Methodology CI run `34553257768`: preflight + 4/4 shards + aggregate/bundle success.
 
-`IDLE_PENDING_NEW_FAMILY_SCOPE_OBJECT`
+Numerical claim-boundary result:
+- normalization consistency error = 0;
+- t/u symmetry error = 0;
+- fixed-angle high-energy scaling exponent = 1 to floating precision;
+- forward/collinear finite-grid exponent ≈ -0.9794.
 
-This does not mean GitHub should be serialized: whenever the next reopen contains independent calculations, they should again be sharded and executed concurrently subject to dependency barriers.
+Classification:
+`REDUCED_TO_EXISTING_GR_PARENT__NEW_REALIZATION_NOT_NEW_TIER1_PARENT`
+
+Therefore no 16th Tier-1 row is created. UV-finite perturbative/integration behavior must not be silently rephrased as bounded fixed-angle amplitude, forward regularity, or all-order equivalence.
+
+## Publication handoff
+`recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative for manuscript impact.
+
+Current required changes:
+- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; add as a modest general methodological strengthening.
+- Paper III: Iter278 = `NOT_NEEDED` as a new rule; optional corroboration only.
+- Paper III: Iter279 = `NOT_NEEDED` as a new rule; optional reduction/claim-domain corroboration only.
+- Paper IV: Iter277 RQCP, Iter278 PIRG Asymptotic Safety, and Iter279 NSF reduction case = `READY` for inclusion.
+
+## Current scientific decision state
+- 15 Tier-1 families remain in the canonical census.
+- 1/15 is strict terminal in its declared benchmark domain (GR + controlled low-energy EFT baseline).
+- 0/14 candidate-QG families are strict terminal.
+- Remaining families are PARTIAL/BLOCKED/nonterminal; this is not equivalent to refutation.
+- D7-S2/S3/S4 remain open, therefore no global adaptation/new-theory verdict is authorized.
+
+## Current compute policy
+Do not repeat saturated grids solely to create runner activity. When a new object admits independent tests, shard them immediately and aggregate only after a dependency barrier. Literature-only missing objects remain external-authority blockers rather than excuses for artificial compute.
 
 ## Exact next gate
-`D7_S2_EXTERNAL_AUTHORITY_DRIVEN_TERMINALIZATION_WITH_MULTI_AXIS_RESOURCE_CLOSURE`
+`D7_S2_EXTERNAL_AUTHORITY_DRIVEN_TERMINALIZATION_WITH_MULTI_AXIS_RESOURCE_CLOSURE_AND_EXPLICIT_REDUCTION_MAPS`
 
 Priority:
-1. immediately ingest/validate a stable public same-realization Asymptotic-Safety `s+t+u+A4` package if it appears;
-2. reopen RQCP only for a genuinely new all-band/background-independent autonomous-gravity bridge plus Hilbert-cutoff removal or autonomous finite-domain selection with propagated uncertainty;
-3. otherwise reopen another parked Tier-1 family only when materially new authority can change strict family classification.
-
-Do not repeat saturated broad scans or compute merely to keep a runner busy; parallelize independent scientifically useful tasks when they exist.
+1. stable public contact-complete Asymptotic-Safety `s+t+u+A4` package;
+2. LQG same-realization physical UV-to-IR/GR observable/transport package;
+3. RQCP all-band/background-independent autonomy bridge with Hilbert-cutoff closure;
+4. other Tier-1 families only when new primary authority can materially change family classification;
+5. any apparently new QG parent must first pass an explicit reduction/equivalence audit before census promotion.

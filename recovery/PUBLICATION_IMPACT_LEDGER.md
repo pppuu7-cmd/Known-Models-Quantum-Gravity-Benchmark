@@ -39,11 +39,27 @@ Status vocabulary:
 - **Required boundary:** family status remains `BLOCKED_MISSING_REQUIRED_OBJECT`; the Iter274 public contact-complete `s+t+u+A4` Lorentzian scattering certificate is still missing. The PIRG object must not be used to bypass that same-realization observable blocker.
 - **Provenance:** scientific workflow run `34552838082`; methodology CI run `34552838007`; audit `paper_iv/P_ASYMPTOTIC_SAFETY_PIRG_DIFFEO_INVARIANT_REOPEN_AUDIT_ITER278_2026-09-11.md`.
 
+## Iter279 — Null Surface Formulation reduction and claim-boundary audit
+
+### Paper III
+- **Status:** `NOT_NEEDED`
+- **Impact:** no new methodological rule beyond Iter277.
+- **Reason:** Iter279 independently illustrates two already-required separations: an explicit reduction map prevents unnecessary Tier-1 proliferation, and closure of one claim domain (UV finiteness of a perturbative/integration construction) cannot be substituted for another claim domain (bounded fixed-angle amplitude, forward regularity, or all-order equivalence).
+- **Optional use:** one sentence or footnote may be used as corroboration of `MULTI_AXIS_RESOURCE_CLOSURE` / claim-domain discipline if useful, but no NSF case study is required in Paper III.
+
+### Paper IV
+- **Status:** `READY`
+- **Impact type:** taxonomy + evidentiary + numerical.
+- **What to add:** NSF as a worked reduction-map case. The source lineage explicitly treats NSF as a formulation/quantization of GR and the 2026 trilogy reproduces the standard tree amplitude, so the present evidence supports `REDUCED_TO_EXISTING_GR_PARENT__NEW_REALIZATION_NOT_NEW_TIER1_PARENT` rather than creation of a 16th Tier-1 row.
+- **Numerical claim-boundary check:** normalization and t/u symmetry agree exactly on the test set; fixed-angle amplitude scales as s^1; forward/collinear behavior is pole-like with fitted finite-grid exponent about -0.9794.
+- **Required boundary:** do not convert this reduction decision into rejection of the NSF UV-finiteness claim. The audit does not independently prove or disprove all-loop finiteness; it only fixes taxonomy and separates the claim domains.
+- **Provenance:** scientific workflow run `34553257781`; methodology CI run `34553257768`; audit `paper_iv/P_NSF_REDUCTION_AND_CLAIM_BOUNDARY_AUDIT_ITER279_2026-09-11.md`.
+
 ## Standing rule for subsequent iterations
 For every scientifically relevant benchmark iteration, record here:
 1. affected paper(s),
 2. exact manuscript correction/addition/check required,
-3. whether the change is methodological, numerical, evidentiary, or editorial,
+3. whether the change is methodological, numerical, evidentiary, taxonomy-related, or editorial,
 4. status (`TODO/READY/APPLIED/NOT_NEEDED`),
 5. an explicit note when no paper change is warranted.
 

@@ -1,0 +1,46 @@
+{
+  "iteration": 279,
+  "date": "2026-09-11",
+  "object": "NULL_SURFACE_FORMULATION_QG_SCATTERING_LINE",
+  "classification_question": "NEW_INDEPENDENT_TIER1_PARENT_OR_REDUCTION_TO_EXISTING_GR_PARENT",
+  "scientific_workflow": {
+    "name": "nsf-tree-claim-boundary-audit",
+    "run_id": 34553257781,
+    "head": "7bebcbc81aeae418da180d1fb08be1649a3dd525",
+    "independent_jobs_success": "4/4",
+    "aggregate": "SUCCESS",
+    "aggregate_digest": "sha256:f39af3a4ba9c0da0ddf54c53ca5099b3193611cf141f059a380f652e7f2f1a8c"
+  },
+  "methodology_validation": {
+    "run_id": 34553257768,
+    "preflight": "SUCCESS",
+    "methodology_shards": "4/4 SUCCESS",
+    "aggregate_bundle": "SUCCESS"
+  },
+  "result": "REDUCED_TO_EXISTING_GR_PARENT__NEW_REALIZATION_NOT_NEW_TIER1_PARENT",
+  "reduction_basis": [
+    "NSF is explicitly a formulation of General Relativity in its source lineage",
+    "the nonlinear NSF construction solves Einstein equations",
+    "the 2025 quantum construction quantizes NSF field-equation solutions",
+    "the 2026 completed tree amplitude reproduces the standard Weinberg-DeWitt tree amplitude"
+  ],
+  "claim_boundary": {
+    "normalization_max_relative_error": 0.0,
+    "tu_symmetry_max_relative_error": 0.0,
+    "fixed_angle_loglog_exponents": [1.0000000000000002, 1.0, 1.0000000000000002],
+    "forward_collinear_epsilon_exponent": -0.9793860345408437,
+    "interpretation": "UV-finite perturbative integration/renormalization is not equivalent to bounded fixed-angle amplitude or forward-limit regularity"
+  },
+  "tier1_total_before": 15,
+  "tier1_total_after": 15,
+  "strict_terminal_before": 1,
+  "strict_terminal_after": 1,
+  "candidate_terminal_count": 0,
+  "candidate_total": 14,
+  "d7_change": false,
+  "candidate_gravity_activation_change": false,
+  "paper_impact": {
+    "paper_III": "NOT_NEEDED_AS_NEW_RULE__OPTIONAL_CORROBORATION_OF_ITER277_ONLY",
+    "paper_IV": "READY__ADD_NSF_REDUCTION_MAP_AND_CLAIM_BOUNDARY_CASE"
+  }
+}
