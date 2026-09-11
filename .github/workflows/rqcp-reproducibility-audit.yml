@@ -86,11 +86,13 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - name: Checkout frozen RQCP v1.0.3 release tree
+      - name: Checkout frozen RQCP v1.0.3 release tree with ancestry
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: ${{ env.RQCP_REPO }}
           ref: ${{ env.RQCP_RELEASE_COMMIT }}
+          fetch-depth: 0
+          fetch-tags: true
           persist-credentials: false
 
       - name: Verify release and scientific-payload identities
