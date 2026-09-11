@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "iteration": 293,
+  "date": "2026-09-11",
+  "source": {
+    "title": "Causal Structure for Generalized Spinfoams",
+    "author": "Carlos E. Beltran",
+    "arxiv": "2603.22661",
+    "submitted": "2026-03-24",
+    "authority_level": "PUBLIC_PREPRINT"
+  },
+  "prospectively_frozen_claims": {
+    "generalized_model": "EPRL-KKL",
+    "arbitrary_2_complex_causal_structure_defined": true,
+    "orientation_consistency_criterion_1_to_2_skeleton": true,
+    "causal_vertex_generalizes_bianchi_chen_gamonal": true,
+    "semiclassical_asymptotic_analysis_present": true,
+    "explicit_equivalence_to_han_spinfoam_stack": false,
+    "explicit_same_realization_uv_to_ir_parameter_transport": false,
+    "normalized_same_realization_observable_comparator_error_certificate": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "HIGH_VALUE_GENERALIZED_EPRL_KKL_CAUSAL_SCOPE_EXTENSION__NO_COMPLETE_STACK_EQUIVALENCE_OR_UV_TO_IR_TRANSPORT",
+  "scope_rule": "A causal construction on generalized EPRL-KKL 2-complexes may strengthen the scope of the Lorentzian causal endpoint, but it must not be promoted to complete-stack Han equivalence, family terminality, or D7 authorization without an explicit reduction/equivalence and same-realization transport object."
+}
