@@ -1,0 +1,36 @@
+name: apply-iter293-recovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'code/apply_iter293_recovery.py'
+      - '.github/workflows/apply-iter293-recovery.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Apply frozen interpreted Iter293 recovery update
+        run: python code/apply_iter293_recovery.py
+      - name: Commit only if changed
+        run: |
+          if git diff --quiet -- paper_iv/P_LQG_GENERALIZED_CAUSAL_SCOPE_AUDIT_ITER293_2026-09-11.md recovery/PUBLICATION_IMPACT_LEDGER.md recovery/CURRENT_BENCHMARK_FRONT.md; then
+            echo 'No recovery changes required.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add paper_iv/P_LQG_GENERALIZED_CAUSAL_SCOPE_AUDIT_ITER293_2026-09-11.md recovery/PUBLICATION_IMPACT_LEDGER.md recovery/CURRENT_BENCHMARK_FRONT.md
+          git commit -m 'Iter293: integrate generalized causal scope recovery state'
+          git push origin HEAD:main
