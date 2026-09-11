@@ -5,6 +5,9 @@
   "authority": {
     "validated_pre_iter272_head": "963e3a1440fb067fc3f447852d749edec01ee111",
     "d7_contract_commit": "ed0412aace9e1c76af1f18022e4aa9a1f0ad7989",
+    "iter272_recovery_head_validated": "746043467cebaae5cf82949cfbaad4aa367c97ea",
+    "iter272_methodology_ci_run": 34545563636,
+    "iter272_methodology_ci_conclusion": "success",
     "coverage_contract": "protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json",
     "d7_contract": "protocol/PAPER_IV_D7_GLOBAL_DECISION_CONTRACT.json",
     "iter270_global_saturation_audit": "paper_iv/PAPER_IV_GLOBAL_INTERNAL_SATURATION_AUDIT_ITER270_2026-09-11.md",
@@ -12,8 +15,8 @@
   },
   "metric_separation": {
     "operational_polygon_readiness_percent": 100,
-    "d7_protocol_infrastructure_readiness_percent": 90,
-    "d7_protocol_infrastructure_status": "STRUCTURALLY_COMPLETE_PENDING_ITER272_AUDIT_LEDGER_RECOVERY_AND_POST_COMMIT_CI",
+    "d7_protocol_infrastructure_readiness_percent": 100,
+    "d7_protocol_infrastructure_status": "COMPLETE_AND_VALIDATED",
     "d7_scientific_authorization": "NOT_AUTHORIZED",
     "candidate_gravity_r3_percent": 24,
     "candidate_gravity_active": false
@@ -34,7 +37,7 @@
         "RQIR Core v1.0 remains FROZEN",
         "Paper-IV major-framework coverage contract remains authoritative",
         "current D7 wrapper is additive and explicitly non-redefining",
-        "validated pre-Iter272 repository head passed methodology and reproducibility validation"
+        "Iter272 D7 infrastructure/recovery head passed methodology CI"
       ]
     },
     "D7-S1": {
