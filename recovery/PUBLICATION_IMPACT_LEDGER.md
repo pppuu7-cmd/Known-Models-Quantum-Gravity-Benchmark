@@ -189,6 +189,52 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `PASS_SCOPED_FORMAL_MEMBERWISE_CAUSAL_VERTEX_SUBSTITUTION_ON_ITER296_ADMISSIBLE_HAN_STACK_COMPLEXES_WITH_RETAINED_EXTERNAL_LAMBDA_MULTIPLICITY_BOOKKEEPING__NO_HALF_LINK_GLUE_EQUIVALENCE_FINITE_NORMALIZED_CAUSAL_STACK_SUM_CUTOFF_REMOVAL_OR_UV_IR_OBSERVABLE_CERTIFICATE`.
 - Provenance: scientific `34593574762`; scientific head `880b01f89488492c50deda7b315d02f425e0a3f4`; methodology `34593574674`; summary artifact `10260556884`; artifact digest `sha256:56e8aa47970c6bb29d11bd013466262b08495325d7b612aca5ba9d1374bb14c9`; raw summary digest `sha256:d2886d62a8b590a6be83b4e9eb318f10f9454950a74abc3fa0afb505301af95a`.
 
+## Iter298 — fixed causal Toller sector decomposition
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific exact formal decomposition; no new general methodology rule.
+### Paper IV — `READY`
+- Record that `D=T^(+)+T^(-)` implies the standard EPRL product expands over all local Toller-sign assignments, while a fixed causal assignment is one component of that formal expansion.
+- **Required boundary:** generic nonidentity of one fixed sector with the full `D` product is not a dynamical no-go; special data, cancellations, an admissible sector sum or a new factorization remain open. No family promotion.
+- Result: `PASS_SCOPED_ALGEBRAIC_NONIDENTITY_OF_ONE_FIXED_CAUSAL_TOLLER_SECTOR_WITH_FULL_STANDARD_EPRL_D_PRODUCT__HAN_HALF_LINK_EQUIVALENCE_REQUIRES_EXPLICIT_SECTOR_SUM_OR_NEW_CAUSAL_FACTORIZATION_PROOF`.
+- Provenance: scientific `34598197609`; summary artifact `10263221608`; artifact digest `sha256:393effdb28a73118e587c9ba49e5caf07cde78e108de6478c4bdc8c384805c56`; raw summary digest `sha256:c1d445802eb484457526355e99a252a67448a935c0e012e724001f1fec3713ee`.
+
+## Iter299 — unrestricted Toller sector-sum recovery
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific exact algebraic recovery identity; no new general methodology rule.
+### Paper IV — `READY`
+- Record the exact distributive identity that the unrestricted unit-weight sum over all local Toller-sign assignments reconstructs the standard `D` product.
+- **Required boundary:** this does not establish that the physically admissible causal sector set is unrestricted, that its measure has unit weights, or that Han half-link gluing/face factorization and the `lambda_f` stack limit survive the physical causal sum.
+- Result: `PASS_SCOPED_EXACT_UNRESTRICTED_TOLLER_SECTOR_SUM_RECONSTRUCTS_STANDARD_D_PRODUCT__CAUSALLY_ADMISSIBLE_WEIGHTED_SECTOR_MEASURE_HAN_GLUE_FACTORIZATION_AND_UV_IR_TRANSPORT_REMAIN_UNPROVEN`.
+- Provenance: scientific `34601894692`; scientific head `e0ec53785f312871b91307f8df854b4a8edd66c5`; summary artifact `10264955714`; artifact digest `sha256:7db47f3b76568e8de11832c6447c4cb27779bceec41318934a435e12ea178f34`; raw summary digest `sha256:5101d4ffce7b2307e035a1a5b64402527712ec90746d6ed47eb6ed1236f96f95`.
+
+## Iter300 — generic Toller sector-weight uniqueness
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific exact generic coefficient matching; no new general methodology rule.
+### Paper IV — `READY`
+- In the prospectively frozen algebraically independent sector-monomial basis, state that exact standard-`D` recovery requires full support and `w_sigma=1`; recovery up to nonzero overall normalization requires full support and uniform `w_sigma=C`.
+- **Required boundary:** this is not a theorem about the physical causal measure. Source-specific relations, cancellations, post-integration identities and a new factorization remain admissible.
+- Result: `PASS_SCOPED_GENERIC_COEFFICIENT_MATCHING_REQUIRES_FULL_SECTOR_SUPPORT_AND_UNIFORM_WEIGHTS_UP_TO_GLOBAL_NORMALIZATION_FOR_STANDARD_D_PRODUCT_RECOVERY__PHYSICAL_CAUSAL_MEASURE_HAN_GLUE_AND_UV_IR_TRANSPORT_REMAIN_UNPROVEN`.
+- Provenance: scientific `34602793992`; scientific head `f8e661a6ff52fd9ee00a2a21cac4528485a7b8a3`; summary artifact `10265255466`; artifact digest `sha256:65d443d95a63376f9454bafc47a87ad71c8014eb78bf50b1628935acd83e9809`; raw summary digest `sha256:74210a18880ce7e202bc7703fc31fb472b4b65246464c5413adfd5c335a42e91`.
+
+## Iter301 — source-specific sigma-induced causal support
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific exact causal-support enumeration; no new general methodology rule.
+### Paper IV — `READY`
+- Record that on a connected graph `kappa_ab=sigma_a sigma_b` has only a global-flip kernel and therefore `2^(V-1)` induced sectors, equivalently positive cycle product. For K5 the support is exactly 16 causal sectors versus 1024 unrestricted wedge-sign sectors.
+- **Required boundary:** this strict support mismatch in the generic independent-monomial basis is not scientific FAIL of causal spinfoams. Post-Haar identities, source-specific cancellations, extended physically justified causal sums and new factorization remain open. No family promotion.
+- Result: `PASS_SCOPED_SOURCE_SPECIFIC_SIGMA_INDUCED_CAUSAL_SECTOR_SUPPORT_IS_EXACT_CYCLE_EVEN_CUT_SPACE_AND_STRICTLY_SMALLER_THAN_UNRESTRICTED_TOLLER_SUPPORT_ON_CYCLIC_VERTEX_GRAPHS__NO_GENERIC_FULL_D_PRODUCT_RECOVERY_FROM_CAUSAL_SUPPORT_ALONE__NO_NO_GO_AND_HAN_GLUE_STACK_UV_IR_TRANSPORT_REMAIN_OPEN`.
+- Provenance: scientific `34608395886`; scientific head `e2f6ea37e1bfcfcc90347e2366b0233fd56d18c1`; methodology `34608395856`; summary artifact `10267280795`; artifact digest `sha256:61f8c98a77a45b2cdd7806f44903ab187aa58f632612db052e9a6098853ffa3a`; raw summary digest `sha256:701a568536a1f1581878c78e1b0d7df2f45e4dec5c6dea0d1d729a65bd81ca74`.
+
+## Iter302 — Toller half-link representation-composition scope audit
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific source-grounded formal composition refinement; no new general methodology rule.
+### Paper IV — `READY`
+- Add Bianchi–Chen–Gamonal, *Toller matrices and the Feynman i-epsilon in spinfoams*, arXiv:2604.24945 (2026), and state the source relation `T^(+)+T^(-)=D` together with the fact that an individual Toller branch is not itself a group representation.
+- State that ordinary Wigner-`D` representation composition / half-link factorization cannot be silently inherited branchwise after a fixed causal replacement. The generic additive two-half-link expansion contains all four branch combinations, including two cross-branch terms.
+- **Required boundary:** this is not a causal-spinfoam no-go. Additive completion, source-specific cross-branch convolution, Haar-integrated identities/cancellations, or a new causal factorization theorem remain open. Han half-link/Haar glue equivalence, finite normalized `lambda_f` causal-stack cutoff control, and same-realization UV→causal-Regge/GR transport remain unproven.
+- Result: `PASS_SCOPED_SOURCE_GROUNDED_TOLLER_BRANCH_NONREPRESENTATION_SHARPENS_HALF_LINK_GLUE_BLOCKER__NAIVE_FIXED_BRANCH_STANDARD_REPRESENTATION_FACTORIZATION_NOT_AVAILABLE__ADDITIVE_COMPLETION_OR_SOURCE_SPECIFIC_CROSS_BRANCH_POST_INTEGRATION_GLUE_REMAINS_OPEN__NO_NO_GO`.
+- Provenance: scientific `34614044780`; scientific head `3453a20e48ff7ca859d2fcaa8175b6fbe7cdca90`; methodology `34614044721`; reproducibility `34614177446`; summary artifact `10269636788`; artifact digest `sha256:23fa9439b92fd815f07a10ee01e9ed47ab1aedf928dee460d13664b7bdd2f0b4`; raw summary digest `sha256:7b5f42e0e9b98bd4ffbac58a367107e77c9105aa4b57bdd22e89f679b6c2c273`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),
