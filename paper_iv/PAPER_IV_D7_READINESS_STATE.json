@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-09-11",
+  "iteration": 272,
+  "authority": {
+    "validated_pre_iter272_head": "963e3a1440fb067fc3f447852d749edec01ee111",
+    "d7_contract_commit": "ed0412aace9e1c76af1f18022e4aa9a1f0ad7989",
+    "coverage_contract": "protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json",
+    "d7_contract": "protocol/PAPER_IV_D7_GLOBAL_DECISION_CONTRACT.json",
+    "iter270_global_saturation_audit": "paper_iv/PAPER_IV_GLOBAL_INTERNAL_SATURATION_AUDIT_ITER270_2026-09-11.md",
+    "iter270_recovery": "recovery/RECOVERY_DELTA_270.md"
+  },
+  "metric_separation": {
+    "operational_polygon_readiness_percent": 100,
+    "d7_protocol_infrastructure_readiness_percent": 90,
+    "d7_protocol_infrastructure_status": "STRUCTURALLY_COMPLETE_PENDING_ITER272_AUDIT_LEDGER_RECOVERY_AND_POST_COMMIT_CI",
+    "d7_scientific_authorization": "NOT_AUTHORIZED",
+    "candidate_gravity_r3_percent": 24,
+    "candidate_gravity_active": false
+  },
+  "coverage_snapshot": {
+    "tier1_total": 14,
+    "strict_terminal_rows": 1,
+    "strict_nonterminal_rows": 13,
+    "candidate_rows_internally_saturated": 13,
+    "tier2_unresolved": 0,
+    "internal_actionable_fronts": 0
+  },
+  "stages": {
+    "D7-S0": {
+      "name": "FROZEN_JUDGE_INTEGRITY",
+      "status": "PASS",
+      "basis": [
+        "RQIR Core v1.0 remains FROZEN",
+        "Paper-IV major-framework coverage contract remains authoritative",
+        "current D7 wrapper is additive and explicitly non-redefining",
+        "validated pre-Iter272 repository head passed methodology and reproducibility validation"
+      ]
+    },
+    "D7-S1": {
+      "name": "INTERNAL_SATURATION",
+      "status": "PASS",
+      "basis": [
+        "Iter270 operational_polygon_readiness_percent=100",
+        "internal_actionable_fronts=0",
+        "tier2_unresolved=0",
+        "all 13 nonterminal candidate Tier-1 families have explicit external reopen conditions"
+      ]
+    },
+    "D7-S2": {
+      "name": "STRICT_TIER1_TERMINAL_COVERAGE",
+      "status": "NOT_CLOSED",
+      "blocking_fact": "Only 1/14 Tier-1 rows is strict terminal; 13/14 remain PARTIAL/BLOCKED/nonterminal under the frozen family-scope contract.",
+      "next_rule": "Resolve families only by new family-scope terminal evidence, exhaustive material-subfamily resolution, or explicit valid reduction/equivalence maps."
+    },
+    "D7-S3": {
+      "name": "SAME_REALIZATION_OBJECT_COMPLETENESS",
+      "status": "NOT_CLOSED",
+      "blocking_fact": "Multiple Tier-1 families still lack required same-realization theory/observable/parameter-transport/comparator/error objects.",
+      "next_rule": "Missing external objects remain blockers; absence is not FAIL."
+    },
+    "D7-S4": {
+      "name": "COMMON_DOMAIN_GLOBAL_COMPARABILITY",
+      "status": "PARTIAL_GLOBAL_NOT_CLOSED",
+      "blocking_fact": "D4 remains partial while unresolved families and incomplete same-realization bundles prevent terminal global comparison."
+    },
+    "D7-S5": {
+      "name": "GLOBAL_OUTCOME_CLASSIFIER",
+      "status": "NOT_AUTHORIZED",
+      "output": "NOT_AUTHORIZED",
+      "forbidden_outputs_now": [
+        "EXISTING_SUFFICIENT",
+        "ADAPT_EXISTING",
+        "HYBRID_REQUIRED",
+        "NEW_REQUIRED"
+      ],
+      "reason": "D7-S2, D7-S3, and D7-S4 are not closed."
+    },
+    "D7-S6": {
+      "name": "CANDIDATE_GRAVITY_ACTIVATION_EXPORT",
+      "status": "INACTIVE",
+      "candidate_gravity_active": false,
+      "reason": "D7-S5 has no authorized terminal output."
+    }
+  },
+  "global_gates": {
+    "D2A_framework_set_coverage": "NOT_CLOSED",
+    "D2B_same_realization_objects": "NOT_CLOSED",
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D3_common_domain_comparability": "PARTIAL",
+    "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+    "paper_iv_global_decision": "NOT_YET_AUTHORIZED",
+    "new_required_authorized": false,
+    "heavy_compute": "IDLE"
+  },
+  "next_stage": {
+    "id": "D7-S2",
+    "mode": "EXTERNAL_AUTHORITY_DRIVEN_FAMILY_TERMINALIZATION",
+    "policy": "Proceed one family/reduction object at a time. Reopen a parked family only when a materially new external authority or a genuinely new internally actionable object exists; do not repeat exhausted scans."
+  }
+}
