@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter273 scoped LQG external-authority reopen
+Iteration: Iter274 Asymptotic Safety contact-complete external-authority reopen
 Authoritative prior validated D7 infrastructure milestone: Iter272
 Authoritative operational-saturation milestone: Iter270
 
@@ -34,38 +34,45 @@ Iter270 established:
 
 Iter272 established and validated D7 protocol infrastructure at 100%. Neither metric is scientific D7 closure.
 
-## Iter273 external-authority reopen — LQG/spinfoam
+## Iter273 material positive reopen — LQG/spinfoam
 
-A peer-reviewed authority omitted from the Iter258 freshness ledger was identified:
+Muxin Han, *Ultraviolet fixed point in covariant loop quantum gravity*, Physical Review D 114, 044040 (2026), supplies a materially new complete Lorentzian EPRL/KKL summed-spinfoam continuum/fixed-point object. It remains nonterminal because the same-realization physical UV-to-IR/GR trajectory, normalized gravity observable, parameter/refinement transport and comparator/error certificate remain missing.
 
-Muxin Han, *Ultraviolet fixed point in covariant loop quantum gravity*, Physical Review D 114, 044040 (2026), published 2026-08-12, DOI `10.1103/d8s7-jqfl`, arXiv:`2602.18665`.
+## Iter274 external-authority reopen — Asymptotic Safety
 
-The work supplies a materially new scoped object: a complete Lorentzian EPRL/KKL spinfoam amplitude organized as a sum over 2-complex families with a candidate small-spin UV fixed point and fundamental continuum-limit construction.
+The frozen PF1-05 Asymptotic Safety blocker is a contact-complete approximation-controlled Lorentzian scalar-scattering certificate.
+
+The stable public archival calculation, Chiesa-Pawlowski-Reichert arXiv:`2603.10168v1`, is a strong positive control: it reconstructs a non-perturbative Lorentzian graviton-mediated scalar-scattering amplitude/cross section, recovers GR in the IR and remains bounded/compatible with unitarity in the UV. But it explicitly omits the direct contact contribution `A4`; its forward-limit divergence requires `A4` for resolution.
+
+A materially newer ERG2026 conference contribution dated 2026-09-03 reports a gravitational contact contribution resummed directly in Lorentzian signature and a UV-unitarity-compatible cross section. This directly attacks the frozen blocker.
 
 Scoped result:
 
-`PASS_SCOPED_CONTINUUM_CONSTRUCTION__LORENTZIAN_EPRL_KKL_SUM_OVER_2_COMPLEXES_HAS_A_CANDIDATE_UV_FIXED_POINT_AND_FUNDAMENTAL_CONTINUUM_LIMIT`
+`HIGH_VALUE_NEAR_MISS__LORENTZIAN_CONTACT_TERM_REPORTED_AT_ERG2026_BUT_NOT_YET_FROZEN_IN_A_PUBLIC_REPRODUCIBLE_CONTACT_COMPLETE_SAME_REALIZATION_PACKAGE`
 
-This does **not** terminalize `LQG_SPINFOAM`. At the identified fixed point the leading bulk dynamics is topological, and the frozen Paper-IV target still lacks one explicit same-realization physical UV-to-IR/GR trajectory with parameter/refinement identity, normalized gravity observable, common comparator and propagated error certificate.
+Family status remains:
+
+`ASYMPTOTIC_SAFETY = BLOCKED_MISSING_REQUIRED_OBJECT`
 
 Refined blocker:
 
-`BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT`
+`BLOCKED_PENDING_PUBLIC_CONTACT_COMPLETE_S_PLUS_T_PLUS_U_PLUS_A4_LORENTZIAN_SCATTERING_CERTIFICATE_WITH_FORWARD_LIMIT_TREATMENT_APPROXIMATION_UNCERTAINTY_BUDGET_AND_SAME_DOMAIN_COMPARATORS`
 
-Therefore strict Tier-1 coverage remains `1/14`, not `2/14`. BLOCKED is not FAIL and no NEW_REQUIRED inference is authorized.
+Therefore strict Tier-1 coverage remains `1/14`, not `2/14`. Conference progress is treated as an active watch trigger, not terminal authority. BLOCKED is not FAIL and no global outcome is authorized.
 
-## Iter273 provenance
-- `paper_iv/P_LQG_COMPLETE_SPINFOAM_UV_FIXED_POINT_REOPEN_AUDIT_ITER273_2026-09-11.md`
-- initial audit commit: `bdd17c68644226a46aa2c8ac3c41a75edba078d5`
-- `paper_iv/PAPER_IV_D7_READINESS_STATE.json` — Iter273 state, terminal count unchanged.
-- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_273.json`
-- `recovery/RECOVERY_DELTA_273.md`
+## Iter274 provenance
+- `paper_iv/P_ASYMPTOTIC_SAFETY_CONTACT_COMPLETE_REOPEN_AUDIT_ITER274_2026-09-11.md`
+- initial audit commit: `fb3d8dcfbc43d26357686b1ffde094ab31f2f856`
+- updated family result commit: `005959124dcd7f4c9294be19ae484ef6bad44e53`
+- `paper_iv/PAPER_IV_D7_READINESS_STATE.json` — Iter274 state, terminal count unchanged.
+- `paper_iv/PAPER_IV_DECISION_LEDGER_DELTA_274.json`
+- `recovery/RECOVERY_DELTA_274.md`
 
 ## Validation
-Prior D7 infrastructure is validated by Iter272 methodology-ci run `34545563636` = success.
-Iter273 validation must be read from the methodology-ci run attached to the final Iter273 synchronization head; do not treat a queued/in-progress run as success.
+Prior D7 infrastructure remains validated by Iter272 methodology-ci run `34545563636` = success.
+The Iter274 synchronization head must be validated independently by its attached methodology-ci run before being described as a validated Iter274 state.
 
 ## Exact next gate
-`D7_S2_NEXT_EXTERNAL_AUTHORITY_REOPEN__SEARCH_FOR_A_NEW_OBJECT_CAPABLE_OF_FAMILY_LEVEL_TERMINALIZATION_OR_VALID_REDUCTION`
+`D7_S2_EXTERNAL_AUTHORITY_WATCH__ASYMPTOTIC_SAFETY_CONTACT_COMPLETE_ARCHIVAL_PACKAGE_OR_OTHER_FAMILY_TERMINALIZATION_OBJECT`
 
-Priority rule: use genuinely new external authority with potential to change a strict family classification. Do not repeat saturated family scans merely to create activity. Asymptotic Safety remains a high-information watch target because September-2026 conference material reports Lorentzian contact-term progress, but conference-only progress cannot be promoted to terminal authority without a public reproducible contact-complete package.
+Priority rule: do not repeat saturated broad scans. For Asymptotic Safety, wait only for a stable public same-realization `s+t+u+A4` package with forward-limit/crossing treatment, uncertainty/approximation controls, reproducibility artifacts and same-domain comparator capsule. If that object appears, ingest and validate it immediately. Otherwise continue D7-S2 only when another parked family acquires comparably material external authority capable of changing its strict family classification.
