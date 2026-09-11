@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "iteration": 300,
+  "date": "2026-09-11",
+  "derivation_type": "EXACT_GENERIC_COEFFICIENT_MATCHING_FOR_TOLLER_SECTOR_SUM",
+  "predecessor": {
+    "iteration": 299,
+    "scientific_run": 34601894692,
+    "scientific_head": "e0ec53785f312871b91307f8df854b4a8edd66c5",
+    "summary_artifact": 10264955714,
+    "summary_artifact_digest": "sha256:7db47f3b76568e8de11832c6447c4cb27779bceec41318934a435e12ea178f34",
+    "raw_summary_digest": "sha256:5101d4ffce7b2307e035a1a5b64402527712ec90746d6ed47eb6ed1236f96f95"
+  },
+  "formal_problem": {
+    "basis_assumption": "generic algebraically independent Toller-sector monomials M_sigma",
+    "standard_D_product_coefficients": "all sector coefficients equal 1",
+    "weighted_sector_sum": "sum_sigma w_sigma M_sigma",
+    "exact_recovery_condition": "coefficient matching in independent monomial basis",
+    "global_normalization_variant": "sum_sigma w_sigma M_sigma = C * product_i D_i with C nonzero"
+  },
+  "prospectively_frozen_claims": {
+    "generic_exact_standard_D_product_recovery_requires_full_sector_support": true,
+    "generic_exact_standard_D_product_recovery_requires_all_sector_weights_equal_one": true,
+    "generic_recovery_up_to_nonzero_global_normalization_requires_full_sector_support": true,
+    "generic_recovery_up_to_nonzero_global_normalization_requires_all_sector_weights_equal_common_C": true,
+    "this_is_formal_coefficient_matching_not_a_physical_causal_measure_theorem": true,
+    "source_specific_sector_relations_cancellations_or_new_factorization_are_not_excluded": true,
+    "physical_causally_admissible_sector_support_measure_and_weights_identified": false,
+    "han_half_link_haar_glue_equivalence_proven": false,
+    "han_face_factorization_after_physical_causal_sector_sum_proven": false,
+    "lambda_f_weighted_causal_stack_finiteness_normalization_cutoff_control_proven": false,
+    "same_realization_uv_to_causal_regge_gr_transport_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_GENERIC_COEFFICIENT_MATCHING_REQUIRES_FULL_SECTOR_SUPPORT_AND_UNIFORM_WEIGHTS_UP_TO_GLOBAL_NORMALIZATION_FOR_STANDARD_D_PRODUCT_RECOVERY__PHYSICAL_CAUSAL_MEASURE_HAN_GLUE_AND_UV_IR_TRANSPORT_REMAIN_UNPROVEN",
+  "scope_rule": "This gate is restricted to a generic algebraically independent formal sector-monomial basis. It does not claim that physical causal spinfoams realize an independent basis, does not exclude source-specific identities/cancellations or a new factorization theorem, and does not infer impossibility from missing published causal-measure/gluing objects. Those objects remain BLOCKED/undefined, not FAIL."
+}
