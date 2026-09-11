@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "iteration": 303,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_EXACT_SU2_HAAR_HALF_LINK_GLUE_AUDIT",
+  "predecessor": {
+    "iteration": 302,
+    "scientific_run": 34614044780,
+    "scientific_head": "3453a20e48ff7ca859d2fcaa8175b6fbe7cdca90"
+  },
+  "source_contract": {
+    "han_stack_2026": "Han PRD 113, 084034 / arXiv:2510.26926, Eq. (13)-(14): adjacent stack vertex amplitudes are glued by internal SU(2) Haar integration over half-link holonomies; Schur orthogonality gives d_k delta^{kk'} Tr(H0^{-1} A B H2).",
+    "toller_2026": "Bianchi-Chen-Gamonal arXiv:2604.24945 Eq. (13)-(15): Toller T matrices are not SL(2,C) representations, but their Cartan form has ordinary SU(2) Wigner matrices on left/right magnetic-index spaces and T(+)+T(-)=D.",
+    "causal_vertex_2026": "Bianchi-Chen-Gamonal arXiv:2601.23162 Eq. (4),(7): the causal gamma-simple vertex uses Toller blocks T_{j m j n}(g_b^{-1}g_a) in the same finite spin-j magnetic-index spaces.",
+    "scope": "This audit tests only fixed-spin SU(2)-Haar boundary gluing / Schur contraction. It does not assert an SL(2,C) representation law for Toller branches and does not test causal-vertex finiteness or complete-stack cutoff removal."
+  },
+  "prospectively_frozen_claims": {
+    "han_half_link_glue_is_su2_haar_schur_contraction": true,
+    "han_glue_identity_is_matrix_index_contraction_after_su2_orthogonality": true,
+    "toller_cartan_form_preserves_left_right_su2_magnetic_index_spaces": true,
+    "gamma_simple_causal_block_has_matching_j_to_j_finite_index_space": true,
+    "fixed_toller_branch_is_not_sl2c_representation": true,
+    "sl2c_representation_composition_not_required_for_su2_boundary_schur_glue": true,
+    "fixed_spin_toller_half_link_su2_haar_glue_compatibility_target": true,
+    "causal_vertex_finiteness_proven": false,
+    "lambda_f_weighted_causal_stack_finiteness_normalization_cutoff_control_proven": false,
+    "same_realization_uv_to_causal_regge_gr_transport_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_FIXED_SPIN_TOLLER_BLOCK_SU2_HAAR_HALF_LINK_GLUE_COMPATIBILITY__SCHUR_CONTRACTION_SURVIVES_WITHOUT_SL2C_BRANCH_REPRESENTATION_LAW__CAUSAL_VERTEX_FINITE_NORMALIZATION_STACK_CUTOFF_AND_UV_IR_TRANSPORT_REMAIN_OPEN",
+  "scope_rule": "A PASS establishes only formal fixed-spin boundary gluing in the shared SU(2) magnetic-index spaces. It must not be promoted to a proof that Toller branches are SL(2,C) representations, to causal-vertex finiteness, to lambda_f-weighted complete-stack convergence/normalization, to cutoff removal, to same-realization UV-to-IR transport, family terminality, or D7 authorization."
+}
