@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter302 Toller half-link composition scope audit validated; Iter301 source-specific causal-sector support retained
+Iteration: Iter302 Toller half-link composition scope audit validated; Iter302A peer-reviewed authority delta recorded; Iter301 source-specific causal-sector support retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -54,13 +54,14 @@ Scientific run `34608395886`; scientific head `e2f6ea37e1bfcfcc90347e2366b0233fd
 Boundary: support mismatch is not scientific FAIL; post-Haar identities, source-specific cancellations, extended physically justified causal sums, or a new factorization remain admissible.
 
 ### Iter302 — Toller branch representation-composition audit
-Primary authority: Bianchi–Chen–Gamonal, *Toller matrices and the Feynman i-epsilon in spinfoams*, arXiv:2604.24945 (2026).
+Primary authority: Bianchi–Chen–Gamonal, *Toller matrices and the Feynman i-epsilon in spinfoams*, Physical Review D 114, 046014 (published 13 August 2026), DOI `10.1103/v3kc-4n3n`, arXiv:2604.24945. The Iter302 scientific run prospectively froze the arXiv-identified source object; Iter302A records the later checked peer-reviewed provenance without changing the frozen claims.
 Contract: `benchmarks/lqg_iter302_toller_half_link_composition.json`.
 Source-grounded result: `T^(+)+T^(-)=D`, while a fixed individual Toller branch is not itself a group representation. Therefore ordinary Wigner-`D` representation composition/half-link factorization cannot be silently inherited branchwise. Additive completion before composition recovers the standard `D` object; cross-branch or post-integration identities remain open.
 Classification: `PASS_SCOPED_SOURCE_GROUNDED_TOLLER_BRANCH_NONREPRESENTATION_SHARPENS_HALF_LINK_GLUE_BLOCKER__NAIVE_FIXED_BRANCH_STANDARD_REPRESENTATION_FACTORIZATION_NOT_AVAILABLE__ADDITIVE_COMPLETION_OR_SOURCE_SPECIFIC_CROSS_BRANCH_POST_INTEGRATION_GLUE_REMAINS_OPEN__NO_NO_GO`.
 Scientific run `34614044780` on head `3453a20e48ff7ca859d2fcaa8175b6fbe7cdca90`; 4/4 independent guards plus aggregate SUCCESS; methodology `34614044721` SUCCESS; reproducibility `34614177446` SUCCESS. Summary artifact `10269636788`; artifact digest `sha256:23fa9439b92fd815f07a10ee01e9ed47ab1aedf928dee460d13664b7bdd2f0b4`; raw summary digest `sha256:7b5f42e0e9b98bd4ffbac58a367107e77c9105aa4b57bdd22e89f679b6c2c273`.
 Boundary: no causal-spinfoam no-go, no Han half-link/Haar-glue equivalence, no causal-stack finiteness/normalization/cutoff certificate, no same-realization UV→Regge/GR transport, no family promotion, and D7 remains unauthorized.
 Audit: `paper_iv/P_LQG_TOLLER_HALF_LINK_COMPOSITION_SCOPE_AUDIT_ITER302_2026-09-11.md`.
+Peer-reviewed authority delta: `paper_iv/P_LQG_TOLLER_AUTHORITY_DELTA_ITER302A_2026-09-11.md`.
 
 ## Infrastructure note
 The old `iter299-recovery-integration` workflow can fire and fail on later heads because its recovery preconditions are stale. This is an infrastructure/synchronization defect only. It must not be interpreted as a scientific failure; the current scientific and methodology workflows remain authoritative.
