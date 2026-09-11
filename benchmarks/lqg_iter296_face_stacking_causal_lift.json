@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "iteration": 296,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_ALGEBRAIC_INFERENCE",
+  "sources": {
+    "han_stack": {
+      "title": "Summation and triangulation independence of Lorentzian spinfoam amplitudes for all LQG",
+      "author": "Muxin Han",
+      "journal": "Physical Review D 113, 084034 (2026)",
+      "doi": "10.1103/n76f-31gf",
+      "arxiv": "2510.26926",
+      "authority_level": "PEER_REVIEWED"
+    },
+    "beltran_causal": {
+      "title": "Causal Structure for Generalized Spinfoams",
+      "author": "Carlos E. Beltran",
+      "arxiv": "2603.22661v2",
+      "authority_level": "PUBLIC_PREPRINT"
+    }
+  },
+  "prospectively_frozen_claims": {
+    "han_stacking_keeps_vertices_and_edges_and_varies_face_multiplicity": true,
+    "han_each_stacked_member_is_generalized_eprl_kkl": true,
+    "beltran_vertex_causality_is_gf2_incidence_system": true,
+    "face_stacking_duplicates_wedge_constraints_for_same_edge_pair": true,
+    "diagonal_duplicate_orientation_lift_preserves_row_space": true,
+    "diagonal_duplicate_orientation_lift_preserves_rank": true,
+    "diagonal_duplicate_orientation_lift_preserves_solution_set_on_edge_orientations": true,
+    "orientation_level_lift_exists_for_every_positive_face_multiplicity_vector_when_root_assignment_is_causally_solvable": true,
+    "independent_conflicting_orientations_on_duplicate_faces_need_not_be_liftable": true,
+    "causal_vertex_amplitude_stack_sum_defined_and_proven_finite": false,
+    "lambda_f_weighted_causal_stack_sum_transport_proven": false,
+    "area_cutoff_removal_for_causal_stack_amplitude_proven": false,
+    "same_realization_uv_to_regge_gr_parameter_observable_error_transport_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_ORIENTATION_LEVEL_CAUSAL_LIFT_ACROSS_HAN_FACE_MULTIPLICITY_STACKS_BY_ROW_DUPLICATION__NO_CAUSAL_AMPLITUDE_SUM_FINITE_LAMBDA_TRANSPORT_OR_UV_IR_OBSERVABLE_CERTIFICATE",
+  "scope_rule": "The algebraic result concerns existence and consistency of a diagonal causal-orientation lift under Han face stacking. Repeating an incidence row and its right-hand-side causal bit leaves the original GF(2) solution set unchanged. This does not define, normalize, or prove finiteness/convergence of the generalized causal vertex amplitude after insertion into Han's lambda_f-weighted stack sum, does not remove area cutoffs, and does not establish same-realization UV-to-Regge/GR observable or uncertainty transport."
+}

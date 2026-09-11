@@ -1,0 +1,203 @@
+name: lqg-face-stacking-causal-lift-audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'benchmarks/lqg_iter296_face_stacking_causal_lift.json'
+      - '.github/workflows/lqg-face-stacking-causal-lift-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        guard: [source_contract, exhaustive_graph_lift, multiplicity_stress, conflict_and_amplitude_boundary]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Run frozen independent guard
+        shell: bash
+        run: |
+          mkdir -p build/lqg-iter296
+          python - <<'PY'
+          import itertools, json, pathlib
+          p=json.load(open('benchmarks/lqg_iter296_face_stacking_causal_lift.json'))
+          c=p['prospectively_frozen_claims']; g='${{ matrix.guard }}'
+
+          def incidence(n, edges):
+              return [[int(v in e) for v in range(n)] for e in edges]
+
+          def gf2_rank(a):
+              a=[row[:] for row in a]
+              if not a: return 0
+              m,n=len(a),len(a[0]); r=0
+              for col in range(n):
+                  pivot=next((i for i in range(r,m) if a[i][col]&1),None)
+                  if pivot is None: continue
+                  a[r],a[pivot]=a[pivot],a[r]
+                  for i in range(m):
+                      if i!=r and (a[i][col]&1):
+                          a[i]=[x^y for x,y in zip(a[i],a[r])]
+                  r+=1
+              return r
+
+          def matvec(a,x):
+              return [sum(u*v for u,v in zip(row,x))%2 for row in a]
+
+          def connected(n, edges):
+              if n==0: return True
+              adj={i:set() for i in range(n)}
+              for u,v in edges:
+                  adj[u].add(v); adj[v].add(u)
+              seen={0}; stack=[0]
+              while stack:
+                  u=stack.pop()
+                  for v in adj[u]-seen:
+                      seen.add(v); stack.append(v)
+              return len(seen)==n
+
+          def three_link_connected(n, edges):
+              if not connected(n,edges): return False
+              ids=range(len(edges))
+              for r in (1,2):
+                  for rem in itertools.combinations(ids,r):
+                      kept=[e for i,e in enumerate(edges) if i not in rem]
+                      if not connected(n,kept): return False
+              return True
+
+          def duplicate_rows(a, mult):
+              return [row[:] for row,m in zip(a,mult) for _ in range(m)]
+
+          details={}
+          if g=='source_contract':
+              ok=(c['han_stacking_keeps_vertices_and_edges_and_varies_face_multiplicity'] and
+                  c['han_each_stacked_member_is_generalized_eprl_kkl'] and
+                  c['beltran_vertex_causality_is_gf2_incidence_system'] and
+                  c['face_stacking_duplicates_wedge_constraints_for_same_edge_pair'] and
+                  c['diagonal_duplicate_orientation_lift_preserves_row_space'] and
+                  c['diagonal_duplicate_orientation_lift_preserves_rank'] and
+                  c['diagonal_duplicate_orientation_lift_preserves_solution_set_on_edge_orientations'])
+          elif g=='exhaustive_graph_lift':
+              tested=0; k5_seen=False; max_n=6
+              for n in range(4,max_n+1):
+                  possible=list(itertools.combinations(range(n),2))
+                  for mask in range(1,1<<len(possible)):
+                      edges=[e for i,e in enumerate(possible) if (mask>>i)&1]
+                      if not three_link_connected(n,edges): continue
+                      a=incidence(n,edges)
+                      root_rank=gf2_rank(a)
+                      if root_rank!=n-1: raise SystemExit('rank invariant violated at root')
+                      mult=[1+((i+2*n)%4) for i in range(len(edges))]
+                      astack=duplicate_rows(a,mult)
+                      if gf2_rank(astack)!=root_rank: raise SystemExit('duplicate-row rank changed')
+                      for x in itertools.product((0,1), repeat=n):
+                          k=matvec(a,x)
+                          kstack=[bit for bit,m in zip(k,mult) for _ in range(m)]
+                          if matvec(astack,x)!=kstack: raise SystemExit('diagonal lift failed')
+                      tested+=1
+                      if n==5 and len(edges)==10: k5_seen=True
+              ok=tested>0 and k5_seen
+              details={'three_link_connected_simple_graphs_n4_to_n6_tested':tested,'k5_seen':k5_seen,'max_n':max_n}
+          elif g=='multiplicity_stress':
+              n=5; edges=list(itertools.combinations(range(n),2)); a=incidence(n,edges); root_rank=gf2_rank(a)
+              vectors=0; max_mult=16
+              for seed in range(1,513):
+                  mult=[1+((seed*(i+3)+i*i+7*i)%max_mult) for i in range(len(edges))]
+                  astack=duplicate_rows(a,mult)
+                  if gf2_rank(astack)!=root_rank: raise SystemExit('rank changed under multiplicity')
+                  for x in itertools.product((0,1), repeat=n):
+                      k=matvec(a,x)
+                      kstack=[bit for bit,m in zip(k,mult) for _ in range(m)]
+                      if matvec(astack,x)!=kstack: raise SystemExit('solution lift failed')
+                  vectors+=1
+              ok=(root_rank==4 and vectors==512 and c['orientation_level_lift_exists_for_every_positive_face_multiplicity_vector_when_root_assignment_is_causally_solvable'])
+              details={'k5_rank':root_rank,'multiplicity_vectors_tested':vectors,'max_multiplicity':max_mult,'edge_orientation_assignments_per_vector':32}
+          elif g=='conflict_and_amplitude_boundary':
+              # A duplicated incidence row with opposite RHS bits cannot be satisfied by any x.
+              n=5; edges=list(itertools.combinations(range(n),2)); a=incidence(n,edges)
+              row=a[0]
+              a_bad=[row[:],row[:]]
+              k_bad=[0,1]
+              solutions=[x for x in itertools.product((0,1),repeat=n) if matvec(a_bad,x)==k_bad]
+              amplitude_boundary=(not c['causal_vertex_amplitude_stack_sum_defined_and_proven_finite'] and
+                  not c['lambda_f_weighted_causal_stack_sum_transport_proven'] and
+                  not c['area_cutoff_removal_for_causal_stack_amplitude_proven'] and
+                  not c['same_realization_uv_to_regge_gr_parameter_observable_error_transport_proven'] and
+                  not c['family_terminal'] and not c['d7_authorized'])
+              ok=(len(solutions)==0 and c['independent_conflicting_orientations_on_duplicate_faces_need_not_be_liftable'] and amplitude_boundary)
+              details={'conflicting_duplicate_rhs_solution_count':len(solutions),'amplitude_boundary_preserved':amplitude_boundary}
+          else:
+              raise SystemExit(2)
+
+          out={'guard':g,'pass':bool(ok),'iteration':p['iteration'],'details':details,
+               'classification_target':p['frozen_classification_target']}
+          pathlib.Path(f'build/lqg-iter296/{g}.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(1)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter296-${{ matrix.guard }}
+          path: build/lqg-iter296/${{ matrix.guard }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: guards
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter296-*
+          path: build/lqg-iter296-results
+          merge-multiple: true
+      - name: Aggregate after dependency barrier
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, pathlib
+          files=sorted(pathlib.Path('build/lqg-iter296-results').glob('*.json'))
+          rows=[json.loads(x.read_text()) for x in files]
+          if len(rows)!=4 or not all(x['pass'] for x in rows): raise SystemExit(1)
+          p=json.load(open('benchmarks/lqg_iter296_face_stacking_causal_lift.json'))
+          by={x['guard']:x for x in rows}
+          out={
+            'iteration':296,
+            'independent_guards':4,
+            'all_guards_pass':True,
+            'classification':p['frozen_classification_target'],
+            'orientation_level_causal_lift_across_positive_face_multiplicities':True,
+            'exhaustive_graph_details':by['exhaustive_graph_lift']['details'],
+            'multiplicity_stress_details':by['multiplicity_stress']['details'],
+            'conflict_boundary_details':by['conflict_and_amplitude_boundary']['details'],
+            'causal_vertex_amplitude_stack_sum_defined_and_proven_finite':False,
+            'lambda_f_weighted_causal_stack_sum_transport_proven':False,
+            'area_cutoff_removal_for_causal_stack_amplitude_proven':False,
+            'same_realization_uv_to_regge_gr_parameter_observable_error_transport_proven':False,
+            'family_terminal':False,
+            'd7_authorized':False,
+            'guard_files':[x.name for x in files]
+          }
+          payload=json.dumps(out,indent=2,sort_keys=True)+'\n'
+          pathlib.Path('build/lqg-iter296-summary.json').write_text(payload)
+          pathlib.Path('build/lqg-iter296-summary.sha256').write_text(hashlib.sha256(payload.encode()).hexdigest()+'\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter296-summary
+          path: |
+            build/lqg-iter296-summary.json
+            build/lqg-iter296-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
