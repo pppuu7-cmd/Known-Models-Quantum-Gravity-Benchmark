@@ -1,0 +1,32 @@
+{
+  "schema_version":"1.0",
+  "iteration_bundle":"366-369",
+  "family":"PERTURBATIVE_HIGHER_DERIVATIVE",
+  "branch":"IHO_DQFT_SPACELIKE_PV",
+  "source":{
+    "title":"Unitarity Quadratic Quantum Gravity in 4D",
+    "authors":["K. Sravan Kumar","Joao Marto"],
+    "arxiv":"2604.19707",
+    "submitted":"2026-04-21",
+    "url":"https://arxiv.org/abs/2604.19707"
+  },
+  "source_relations":{
+    "beta_positive_pole":"mu2^2 = Mp^2/beta > 0, k^2=mu2^2 spacelike",
+    "beta_negative_control":"Mp^2/beta = -m2^2, k^2=-m2^2 timelike",
+    "KL_domain":"s=M^2=-k^2 >= 0",
+    "beta_positive_KL_requirement":"s=-mu2^2<0, hence source concludes rho=0",
+    "PV_propagator":"Delta_dIHO(k)=PV(i/(k^2-mu2^2))",
+    "two_dIHO_Landau_branch":"P_*^2 = 4 mu2^2 > 0",
+    "mixed_Landau_ratio":"alpha2/alpha1 = i mu2/m, hence no real nonnegative Feynman-parameter solution",
+    "UV_full_spin2":"1/k^2 - 1/(k^2-mu2^2) ~ -mu2^2/k^4",
+    "source_unitarity_claim":"dIHO has no absorptive cut/asymptotic state and optical theorem is satisfied at all loop orders in the stated DQFT realization"
+  },
+  "branch_distinction":["NOT_FAKEON","NOT_LEE_WICK","NOT_PT_SYMMETRIC","NOT_EUCLIDEAN_OS"],
+  "protocol_guard":{
+    "source_all_loop_claim_not_numerically_reproved":true,
+    "spectral_and_landau_checks_are_kinematic_source_certificates":true,
+    "branch_requires_normalized_gravitational_observable_and_same_domain_comparator_for_KMQGB_terminalization":true,
+    "family_terminal":false,
+    "d7_promotion_authorized":false
+  }
+}

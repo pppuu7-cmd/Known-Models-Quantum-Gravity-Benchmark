@@ -1,0 +1,147 @@
+name: paper-iv-iter366-369-iho-dqft-unitarity-locality
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/IHO_DQFT_SOURCE_AUTHORITY_ITER366_369.json'
+      - 'code/iho_dqft_iter366_*.py'
+      - 'code/iho_dqft_iter367_*.py'
+      - 'code/iho_dqft_iter368_*.py'
+      - 'code/iho_dqft_iter369_*.py'
+      - 'code/iter366_369_aggregate.py'
+      - '.github/workflows/paper-iv-iter366-369-iho-dqft-unitarity-locality.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  spectral-support:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        beta: ['1e-6','1e-3','0.1','1','10','1e6']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter366
+          python code/iho_dqft_iter366_spectral_support.py --beta '${{ matrix.beta }}' --output 'build/iter366/spectral-${{ matrix.beta }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter366-iho-spectral-${{ matrix.beta }}
+          path: build/iter366/spectral-${{ matrix.beta }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  timelike-control:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        beta: ['-0.1','-1','-10']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter366-control
+          python code/iho_dqft_iter366_timelike_control.py --beta '${{ matrix.beta }}' --output 'build/iter366-control/control-${{ matrix.beta }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter366-iho-control-${{ matrix.beta }}
+          path: build/iter366-control/control-${{ matrix.beta }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  landau-pinch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        ratio: ['1e-3','0.1','1','10','1e3']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter367
+          python code/iho_dqft_iter367_landau_pinch.py --ratio '${{ matrix.ratio }}' --output 'build/iter367/landau-${{ matrix.ratio }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter367-iho-landau-${{ matrix.ratio }}
+          path: build/iter367/landau-${{ matrix.ratio }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  uv-falloff:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        mu2_sq: ['1e-6','1e-3','0.1','1','10','1e3']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter368
+          python code/iho_dqft_iter368_uv_falloff.py --mu2-sq '${{ matrix.mu2_sq }}' --output 'build/iter368/uv-${{ matrix.mu2_sq }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter368-iho-uv-${{ matrix.mu2_sq }}
+          path: build/iter368/uv-${{ matrix.mu2_sq }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  branch-scope-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python code/iho_dqft_iter369_scope_guard.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter369-iho-scope
+          path: iter369-iho-dqft-scope.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: [spectral-support, timelike-control, landau-pinch, uv-falloff, branch-scope-guard]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter36*'
+          path: iter366-369-results
+      - run: python code/iter366_369_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter366-369-summary
+          path: iter366-369-summary.json
+          if-no-files-found: error
+          retention-days: 90
