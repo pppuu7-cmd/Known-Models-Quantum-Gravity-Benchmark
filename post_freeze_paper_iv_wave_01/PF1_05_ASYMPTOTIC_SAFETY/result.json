@@ -11,23 +11,29 @@
     "effective action reconstructed through quadratic curvature with graviton-induced form factors",
     "2026 non-perturbative Lorentzian graviton-mediated scalar 2-to-2 amplitude and cross section",
     "IR recovery of General Relativity in the scalar-scattering observable",
-    "UV cross section compatible with the stated unitarity bounds",
-    "multiple Lorentzian reconstruction methods used as a robustness control"
+    "UV cross section compatible with the stated unitarity bounds for the graviton-mediated archival calculation",
+    "multiple Lorentzian reconstruction methods used as a robustness control",
+    "ERG2026 conference record reports a gravitational contact contribution resummed directly in Lorentzian signature"
   ],
   "obsolete_blockers_rejected": [
     "absence of Lorentzian spectral information",
-    "absence of any Lorentzian physical scattering observable"
+    "absence of any Lorentzian physical scattering observable",
+    "absence of any public evidence that the contact contribution is being computed in the same Lorentzian asymptotic-safety program"
   ],
   "remaining_requirements": [
-    "same-realization direct contact A4 contribution",
+    "stable public same-realization direct contact A4 contribution",
     "complete s+t+u+A4 physical amplitude certificate with crossing/forward-limit treatment",
-    "uncertainty and robustness budget including relevant flow/truncation/avatar approximations rather than reconstruction error only",
+    "uncertainty and robustness budget including relevant flow/truncation/avatar/contact/reconstruction approximations",
+    "machine-checkable or otherwise reproducible analytic/numerical package for the claimed contact-complete observable",
     "same-domain full GR/EFT and alternative-QG comparator predictions"
   ],
-  "conference_evidence": "ERG2026 reports a Lorentzian-resummed gravitational contact contribution, but it remains promising noncanonical authority until a stable reproducible same-realization package is available",
+  "conference_evidence": "ERG2026 contribution on 2026-09-03 reports the gravitational contact contribution resummed directly in Lorentzian signature and a UV-unitary cross-section. This materially strengthens the watch trigger but remains nonterminal until frozen in a stable public reproducible same-realization package.",
+  "latest_reopen_audit": "paper_iv/P_ASYMPTOTIC_SAFETY_CONTACT_COMPLETE_REOPEN_AUDIT_ITER274_2026-09-11.md",
+  "latest_reopen_result": "HIGH_VALUE_NEAR_MISS__LORENTZIAN_CONTACT_TERM_REPORTED_AT_ERG2026_BUT_NOT_YET_FROZEN_IN_A_PUBLIC_REPRODUCIBLE_CONTACT_COMPLETE_SAME_REALIZATION_PACKAGE",
+  "refined_active_blocker": "BLOCKED_PENDING_PUBLIC_CONTACT_COMPLETE_S_PLUS_T_PLUS_U_PLUS_A4_LORENTZIAN_SCATTERING_CERTIFICATE_WITH_FORWARD_LIMIT_TREATMENT_APPROXIMATION_UNCERTAINTY_BUDGET_AND_SAME_DOMAIN_COMPARATORS",
   "rqir_core_defect": false,
   "core_change_requested": false,
   "paper_iv_decision_authorized": false,
   "counts_as_new_required_evidence": false,
-  "reopen_condition": "freeze a contact-complete approximation-controlled Lorentzian scalar-scattering certificate in the same asymptotic-safety realization and run the same-domain comparator robustness audit"
+  "reopen_condition": "freeze a public contact-complete approximation-controlled Lorentzian scalar-scattering certificate in the same asymptotic-safety realization, reproduce/validate it, and run the same-domain comparator robustness audit"
 }
