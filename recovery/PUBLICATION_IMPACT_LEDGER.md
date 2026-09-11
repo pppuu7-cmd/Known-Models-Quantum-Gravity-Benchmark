@@ -169,6 +169,16 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `PASS_SCOPED_CONDITIONAL_GENERALIZED_EPRL_KKL_DOMAIN_OVERLAP_WITH_EXPLICIT_K5_CAUSAL_WITNESS__NO_HAN_STACK_SUM_LIFT_OR_SAME_REALIZATION_UV_TO_IR_TRANSPORT`.
 - Provenance: scientific `34592425741`; scientific head `300159ee62c096aeaff766658169be5d5fea83fe`; methodology `34592425770`; summary artifact `10196164627`; artifact digest `sha256:5ac870b2e59d0717913042bc2a0eb809e650c24bcc4c0ca7ad0facf929eeef70`; raw summary digest `sha256:55b371ffda6542839d1cdfc92b07196e207e4b4b83253d00142ed35d7bf86eb6`.
 
+## Iter296 — LQG face-stacking causal-orientation lift
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific algebraic/domain result; no new general sensing/resource-closure rule beyond Iter277.
+### Paper IV — `READY`
+- Add the source-grounded algebraic result that Han face stacking duplicates Beltrán GF(2) wedge constraints while preserving the vertex/edge skeleton. Under the diagonal assignment in which duplicate faces inherit the root causal bit, every causally solvable root assignment lifts to arbitrary positive face multiplicities without changing the edge-orientation solution set.
+- Report exact validation on 1,885 three-link-connected simple graphs with 4–6 vertices and K5 stress over 512 multiplicity vectors up to 16 with all 32 edge-orientation assignments; include the conflicting-duplicate negative control with zero solutions.
+- **Required boundary:** this is an orientation-level lift, not a causal-amplitude closure theorem. Beltrán leaves generalized causal-vertex finiteness open; no source proves its normalized insertion into Han's `lambda_f`-weighted stack sum, causal cutoff removal, or UV→Regge/GR observable/error transport.
+- Result: `PASS_SCOPED_ORIENTATION_LEVEL_CAUSAL_LIFT_ACROSS_HAN_FACE_MULTIPLICITY_STACKS_BY_ROW_DUPLICATION__NO_CAUSAL_AMPLITUDE_SUM_FINITE_LAMBDA_TRANSPORT_OR_UV_IR_OBSERVABLE_CERTIFICATE`.
+- Provenance: scientific `34593061657`; scientific head `079f94c11c0c222b5c8759b316538cfd12664c33`; methodology `34593061667`; summary artifact `10196412595`; artifact digest `sha256:7d1d4387def6de4921532e78d31f098c49f72e37a178619eeb4e2dc2ba9fab0b`; raw summary digest `sha256:c80bb2d1d5fc7fe58f8bbe059c6e1e3bba0cac1ab1819b5c54ab8286d829cd67`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),
