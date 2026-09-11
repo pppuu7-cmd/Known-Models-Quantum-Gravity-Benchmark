@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  methodology-self-tests:
+  preflight:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -22,6 +22,8 @@ jobs:
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # pinned v5 line
         with:
           python-version: '3.12.11'
+          cache: 'pip'
+          cache-dependency-path: requirements-ci.txt
 
       - name: Install hashed dependency lock
         run: python -m pip install --disable-pip-version-check --require-hashes -r requirements-ci.txt
@@ -61,89 +63,79 @@ jobs:
           print(f'validated_json_files={len(paths)}')
           PY
 
-      - name: Validate Candidate v1.3 against JSON Schema Draft 2020-12
-        run: python code/schema_validation.py
+      - name: Validate executable methodology registry and shard partition
+        run: |
+          python code/methodology_orchestrator.py --validate-only
+          for shard in 0 1 2 3; do
+            python code/methodology_orchestrator.py --validate-only --shard-index "$shard" --shard-count 4
+          done
 
-      - name: Run frozen-core Paper IV governance validator
-        run: python code/post_freeze_paper_iv_governance_validator.py
+  methodology-shards:
+    needs: preflight
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - name: Checkout exact action implementation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # pinned v4 line
 
-      - name: Run LQG gamma-duality identifiability self-test
-        run: python code/lqg_gamma_duality_identifiability_reference.py
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # pinned v5 line
+        with:
+          python-version: '3.12.11'
+          cache: 'pip'
+          cache-dependency-path: requirements-ci.txt
 
-      - name: Run LQG gamma-duality breaking identifiability self-test
-        run: python code/lqg_gamma_duality_breaking_identifiability_reference.py
+      - name: Install hashed dependency lock
+        run: python -m pip install --disable-pip-version-check --require-hashes -r requirements-ci.txt
 
-      - name: Run LQG gamma-duality RG tangency self-test
-        run: python code/lqg_gamma_duality_rg_tangency_reference.py
+      - name: Run deterministic methodology shard ${{ matrix.shard }}/4
+        run: >-
+          python code/methodology_orchestrator.py
+          --shard-index ${{ matrix.shard }}
+          --shard-count 4
+          --summary build/shard-${{ matrix.shard }}.json
 
-      - name: Run LQG area-metric birefringence gamma identifiability self-test
-        run: python code/lqg_area_metric_birefringence_gamma_identifiability_reference.py
+      - name: Upload shard result
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # pinned v4 line
+        with:
+          name: kmqgb-methodology-shard-${{ matrix.shard }}
+          path: build/shard-${{ matrix.shard }}.json
+          if-no-files-found: error
+          retention-days: 7
 
-      - name: Run LQG multiscale observable RG transport self-test
-        run: python code/lqg_multiscale_observable_rg_transport_reference.py
+  aggregate-and-bundle:
+    needs: [preflight, methodology-shards]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact action implementation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # pinned v4 line
 
-      - name: Run fail-closed candidate-record validator self-test
-        run: python code/kg_candidate_record_validator.py
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # pinned v5 line
+        with:
+          python-version: '3.12.11'
+          cache: 'pip'
+          cache-dependency-path: requirements-ci.txt
 
-      - name: Run prospective Candidate Gravity v1.3 scaffold validator
-        run: python code/kg_candidate_record_v13_validator.py
+      - name: Install hashed dependency lock
+        run: python -m pip install --disable-pip-version-check --require-hashes -r requirements-ci.txt
 
-      - name: Run inverse-kernel completeness self-test
-        run: python code/inverse_kernel_ordered_partitions.py
+      - name: Download all methodology shards
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # pinned v4 line
+        with:
+          pattern: kmqgb-methodology-shard-*
+          path: build/shards
+          merge-multiple: true
 
-      - name: Run residual-space geometry self-test
-        run: python code/residual_space_geometry_reference.py
-
-      - name: Run source-traceable detector-visible residual self-test
-        run: python code/detector_visible_residual_physical_covariance_reference.py
-
-      - name: Run nonlinear detector-facing probability-likelihood self-test
-        run: python code/detector_facing_nonlinear_likelihood_reference.py
-
-      - name: Run optimal comparator-contrast self-test
-        run: python code/optimal_comparator_contrasts_reference.py
-
-      - name: Run cross-order rigidity self-test
-        run: python code/cross_order_rigidity_reference.py
-
-      - name: Run intervention-design self-test
-        run: python code/intervention_design_reference.py
-
-      - name: Run predictive-holdout self-test
-        run: python code/predictive_holdout_reference.py
-
-      - name: Run minimal-test-suite self-test
-        run: python code/minimal_test_suite_reference.py
-
-      - name: Run cross-representation rigidity self-test
-        run: python code/cross_representation_rigidity_reference.py
-
-      - name: Run P4 functional-freedom self-test
-        run: python code/p4_functional_freedom_reference.py
-
-      - name: Run exact local TT-projector no-go witness
-        run: python code/local_tt_projector_no_go_reference.py
-
-      - name: Run MISP2 BCC spin2 representation-lift control
-        run: python code/misp2_spin2_representation_lift_control.py
-
-      - name: Run MISP2 same-lattice fractional-root no-go witness
-        run: python code/misp2_shared_clock_root_no_go_reference.py
-
-      - name: Run O3 q-difference uniqueness control
-        run: python code/o3_qdifference_uniqueness_reference.py
-
-      - name: Run O3 self-similar continuum control
-        run: python code/o3_self_similar_continuum_reference.py
-
-      - name: Validate executable methodology registry
-        run: python code/methodology_orchestrator.py --validate-only
-
-      - name: Independently recompute R1/R2 from atomic evidence
-        run: python code/readiness_score.py
-
-      - name: Run executable methodology orchestrator
-        run: python code/methodology_orchestrator.py
+      - name: Merge shards fail-closed in canonical registry order
+        run: python code/merge_methodology_shards.py --input-dir build/shards --expected-shards 4
 
       - name: Validate repository completion against independent 100-percent score
         run: python code/repository_completion_validator.py --require-100
@@ -200,6 +192,7 @@ jobs:
           test -s code/readiness_score.py
           test -s code/kg_candidate_record_v13_validator.py
           test -s code/methodology_orchestrator.py
+          test -s code/merge_methodology_shards.py
           test -s code/repository_completion_validator.py
           test -s code/build_release_bundle.py
           test -s paper_iv/O_CFS_GEOMETRIC_CORRECTION_GENERATOR_AUDIT_2026.md
