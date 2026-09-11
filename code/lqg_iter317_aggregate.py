@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import hashlib, json, pathlib
+from fractions import Fraction
 root=pathlib.Path('build/lqg-iter317-results')
 rows=[json.loads(p.read_text()) for p in sorted(root.glob('subset_*.json'))]
 expected={'012','013','014','023','024','034','123','124','134','234','0123','0124','0134','0234','1234'}
