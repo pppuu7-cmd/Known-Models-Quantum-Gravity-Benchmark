@@ -1,0 +1,67 @@
+name: lqg-minspin-contracted-local-witness
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'benchmarks/lqg_iter307_minspin_contracted_local_witness.json'
+      - 'code/lqg_iter307_*.py'
+      - '.github/workflows/lqg-minspin-contracted-local-witness.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        probe:
+          - jhalf_leading_kernel
+          - k5_causal_sign_product
+          - intertwiner_invariance
+          - exact_collinear_contraction
+          - absolute_integrability_power
+          - scope_guard
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Run independent Iter307 probe
+        shell: bash
+        run: |
+          mkdir -p build/lqg-iter307
+          python code/lqg_iter307_${{ matrix.probe }}.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter307-${{ matrix.probe }}
+          path: build/lqg-iter307/${{ matrix.probe }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: probes
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter307-*
+          path: build/lqg-iter307-results
+          merge-multiple: true
+      - name: Aggregate only after all independent probes succeed
+        run: python code/lqg_iter307_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter307-summary
+          path: |
+            build/lqg-iter307-summary.json
+            build/lqg-iter307-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
