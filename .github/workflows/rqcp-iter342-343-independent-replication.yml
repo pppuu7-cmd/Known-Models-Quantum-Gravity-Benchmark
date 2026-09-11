@@ -1,0 +1,113 @@
+name: rqcp-iter342-343-independent-replication
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/rqcp_iter342_*.py'
+      - 'code/rqcp_iter343_*.py'
+      - '.github/workflows/rqcp-iter342-343-independent-replication.yml'
+
+permissions:
+  contents: read
+
+env:
+  RQCP_SHA: 7c749f5f0aeefe07a897123295f3647fdc56d868
+
+jobs:
+  exact-reproduction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: Amordia/rqcp-toward-quantum-gravity
+          ref: 7c749f5f0aeefe07a897123295f3647fdc56d868
+          path: rqcp
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.10.20'
+      - name: Validate exact external payload
+        run: |
+          set -euo pipefail
+          test "$(git -C rqcp rev-parse HEAD)" = "$RQCP_SHA"
+          BEFORE=$(sha256sum rqcp/evidence/rqcp-unified-qg-closure-evidence.json | awk '{print $1}')
+          python -m pip install --disable-pip-version-check -r rqcp/requirements.txt
+          make -C rqcp PYTHON=python validate
+          AFTER=$(sha256sum rqcp/evidence/rqcp-unified-qg-closure-evidence.json | awk '{print $1}')
+          test "$BEFORE" = "$AFTER"
+          mkdir -p build/iter342-343
+          python - "$RQCP_SHA" "$BEFORE" "$AFTER" > build/iter342-343/replication-receipt.json <<'PY'
+          import json,sys
+          print(json.dumps({
+            "iteration":342,
+            "external_repository":"Amordia/rqcp-toward-quantum-gravity",
+            "external_head":sys.argv[1],
+            "evidence_sha256_before":sys.argv[2],
+            "evidence_sha256_after":sys.argv[3],
+            "make_validate_success":True,
+            "classification":"PASS_SCOPED_EXACT_EXTERNAL_REPRODUCTION",
+            "scope_guard":"Fixed-band author archive reproduction only; no all-band or family-wide promotion."
+          },indent=2,sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rqcp-iter342-exact-reproduction
+          path: build/iter342-343/replication-receipt.json
+          if-no-files-found: error
+          retention-days: 90
+
+  cutoff-stress:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        cutoff: [6, 8, 10, 12, 14, 16, 18, 20]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: Amordia/rqcp-toward-quantum-gravity
+          ref: 7c749f5f0aeefe07a897123295f3647fdc56d868
+          path: rqcp
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.10.20'
+      - run: python -m pip install --disable-pip-version-check -r rqcp/requirements.txt
+      - run: |
+          mkdir -p build/iter342-343
+          python code/rqcp_iter343_cutoff_stress.py \
+            --external-root rqcp \
+            --cutoff '${{ matrix.cutoff }}' \
+            --output 'build/iter342-343/cutoff-${{ matrix.cutoff }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rqcp-iter343-cutoff-${{ matrix.cutoff }}
+          path: build/iter342-343/cutoff-${{ matrix.cutoff }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: [exact-reproduction, cutoff-stress]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: rqcp-iter34*
+          path: iter342-343-results
+      - run: python code/rqcp_iter342_343_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rqcp-iter342-343-summary
+          path: iter342-343-summary.json
+          if-no-files-found: error
+          retention-days: 90
