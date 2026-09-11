@@ -1,0 +1,56 @@
+name: lqg-source-spectral-epsilon-local-pole
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/lqg_iter324_*.py'
+      - '.github/workflows/lqg-source-spectral-epsilon-local-pole.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        sector: [plus_mp, plus_mm, minus_mp, minus_mm]
+        gamma: [0.0, 0.1, 0.274, 1.0, 10.0]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/lqg-iter324
+          python code/lqg_iter324_spectral_epsilon_pole.py --sector '${{ matrix.sector }}' --gamma '${{ matrix.gamma }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter324-${{ matrix.sector }}-g${{ matrix.gamma }}
+          path: build/lqg-iter324/*.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: probe
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter324-*
+          path: build/lqg-iter324-results
+          merge-multiple: true
+      - run: python code/lqg_iter324_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter324-summary
+          path: build/lqg-iter324-summary.json
+          if-no-files-found: error
+          retention-days: 90
