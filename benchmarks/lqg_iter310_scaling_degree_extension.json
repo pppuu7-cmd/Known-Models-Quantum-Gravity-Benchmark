@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "iteration": 310,
+  "date": "2026-09-11",
+  "derivation_type": "EXACT_LOCAL_SCALING_DEGREE_AND_DISTRIBUTION_EXTENSION_AMBIGUITY_AUDIT",
+  "predecessor": {
+    "iteration": 309,
+    "scientific_head": "d0cb681d3a117232b762db4d01f1d4f5e4c05e87"
+  },
+  "source_contract": {
+    "iter307_witness": "For one admissible all-j=1/2 boundary-intertwiner component, on a collision-free angular cone near the total identity, the nonzero leading fixed-causal integrand is -[648(1+gamma^2)^10]^-1 delta^-20.",
+    "relative_dimension": "After one SL(2,C) gauge fixing, the local noncompact boost coincidence problem has four relative H3 variables, hence 12 normal directions.",
+    "extension_theorem": "Brunetti-Fredenhagen, Commun. Math. Phys. 208 (2000), Theorems 5.2-5.3: finite scaling degree below dimension gives a unique same-scaling-degree extension; at or above dimension, extensions exist but are nonunique and differ by local delta derivatives through degree floor(sd-d).",
+    "scope": "Apply the point-extension theorem only to the explicit collision-free angular-cone witness around the total identity. This certifies extension ambiguity of that local singular piece; it does not by itself construct a globally glued causal vertex distribution across all partial diagonals."
+  },
+  "prospectively_frozen_claims": {
+    "leading_homogeneous_power": -20,
+    "local_scaling_degree": 20,
+    "relative_dimension": 12,
+    "degree_of_divergence": 8,
+    "same_scaling_degree_extension_exists": true,
+    "same_scaling_degree_extension_unique": false,
+    "max_local_delta_derivative_order": 8,
+    "unconstrained_multiindex_counterterm_count_in_12d_through_order_8": 125970,
+    "physical_symmetry_or_normalization_conditions_may_reduce_ambiguity": true,
+    "source_eq4_alone_fixes_all_extension_coefficients": false,
+    "global_causal_vertex_distribution_constructed": false,
+    "complete_stack_control_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_ITER307_MINSPIN_IDENTITY_SINGULARITY_HAS_SCALING_DEGREE_20_IN_12_RELATIVE_BOOST_DIRECTIONS_AND_DEGREE_OF_DIVERGENCE_8__SAME_SCALING_DEGREE_DISTRIBUTIONAL_EXTENSIONS_EXIST_BUT_ARE_NONUNIQUE_UP_TO_LOCAL_DELTA_DERIVATIVES_THROUGH_ORDER_8__ADDITIONAL_RENORMALIZATION_NORMALIZATION_CONDITIONS_REQUIRED_BEFORE_CAUSAL_VERTEX_IS_MATHEMATICALLY_CLOSED",
+  "scope_rule": "PASS replaces the vague question of whether a distributional extension might exist with a precise result: local extensions exist but are not canonical from scaling degree alone. It does not assert that all 125970 unconstrained coefficients survive symmetries, nor construct the global vertex, complete spin stack, or D7 transport."
+}
