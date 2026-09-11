@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "iteration": 307,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_EXACT_MINIMAL_SPIN_INTERTWINER_CONTRACTED_LOCAL_SINGULARITY_WITNESS",
+  "predecessor": {
+    "iteration": 306,
+    "scientific_run": 34624586098,
+    "scientific_head": "0478906314e34bc5f77670ab49bff7a0ec39400d"
+  },
+  "source_contract": {
+    "causal_vertex_eq4": "Bianchi-Chen-Gamonal arXiv:2601.23162 Eq. (4): after fixing g_1=1 the vertex integrates four SL(2,C) variables and each K5 wedge contributes T^(sigma_a sigma_b) with magnetic indices m_ba,m_ab; boundary intertwiners contract the four magnetic indices at each node.",
+    "gamma_simple_toller_eq9": "Bianchi-Chen-Gamonal arXiv:2601.23162 Eq. (9), equivalently arXiv:2604.24945 Eq. (46), gives the exact gamma-simple reduced Toller matrix. At j=1/2 its beta->0 leading coefficients are t^+_{m=+1/2}=-C beta^-2, t^+_{m=-1/2}=+C beta^-2, t^-_{m=+1/2}=+C beta^-2, t^-_{m=-1/2}=-C beta^-2, with C=2/(1+gamma^2).",
+    "cartan_rotation": "For a boost in direction n, Cartan conjugation rotates sigma_z to n.sigma, hence T^(kappa)=-kappa*C*(n.sigma)*beta^-2+lower singular order at j=1/2, where kappa=+1 selects T+ and kappa=-1 selects T-.",
+    "boundary_witness": "Use normalized four-valent spin-1/2 SU(2)-invariant pairing tensors A=(epsilon_12 epsilon_34)/2 and B=(epsilon_13 epsilon_24)/2, with local neighbor order ascending. Choose node intertwiners (A,A,B,A,A).",
+    "local_ray": "Gauge-fix node 1 at x_1=0 and take five collinear boost coordinates x_a=(a-1) z for a=1..5, scaled by delta->0+. All pairwise separations are nonzero on the reference ray.",
+    "scope": "The audit targets local ABSOLUTE integrability of one legitimate fixed-spin, fixed-boundary-intertwiner causal-vertex component. It does not decide conditional, principal-value, distributional, or externally regularized definitions, nor the lambda_f-weighted complete stack or D7 transport."
+  },
+  "prospectively_frozen_claims": {
+    "j_half_branch_leading_kernel_exact": true,
+    "k5_causal_branch_scalar_product_independent_of_sigma": true,
+    "chosen_boundary_tensors_are_su2_invariant": true,
+    "unnormalized_collinear_geometric_contraction": "-1/20736",
+    "normalized_collinear_geometric_contraction": "-1/663552",
+    "full_leading_coefficient": "-1/[648*(1+gamma^2)^10]",
+    "leading_scaling_power": -20,
+    "reduced_noncompact_local_dimension": 12,
+    "absolute_radial_power_after_measure": -9,
+    "local_absolute_integrability_for_witness_component": false,
+    "conditional_or_distributional_vertex_nonexistence_proven": false,
+    "all_boundary_components_diverge_proven": false,
+    "lambda_f_weighted_complete_stack_control_proven": false,
+    "same_realization_uv_to_causal_regge_gr_transport_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_EXACT_MINIMAL_SPIN_INTERTWINER_CONTRACTED_LEADING_SINGULARITY_WITNESS__ONE_VALID_J_HALF_BOUNDARY_COMPONENT_HAS_NONZERO_DELTA_MINUS20_LEADING_COEFFICIENT_AND_FAILS_LOCAL_ABSOLUTE_INTEGRABILITY_NEAR_THE_SU2_IDENTITY_STRATUM__NO_CLAIM_ON_CONDITIONAL_DISTRIBUTIONAL_OR_REGULARIZED_VERTEX_DEFINITIONS__NO_STACK_FAMILY_OR_D7_PROMOTION",
+  "scope_rule": "A PASS refutes an unqualified absolute-convergence/finiteness claim for the fixed causal vertex as presently defined, by one explicit admissible boundary component. It must not be promoted to nonexistence of every conditional/distributional prescription, divergence of every boundary component, a family no-go, NEW_REQUIRED, or D7 authorization."
+}
