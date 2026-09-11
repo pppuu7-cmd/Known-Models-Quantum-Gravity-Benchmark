@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.3",
-  "iteration": 275,
+  "schema_version": "1.4",
+  "iteration": 277,
   "rqir_core": {"version": "1.0", "status": "FROZEN"},
   "purpose": "Prevent a Paper-IV terminal decision, especially NEW_REQUIRED, from being inferred from a benchmark set that omits materially distinct major quantum-gravity schools or silently lets one scoped submodel stand for an entire school.",
   "coverage_basis": {
@@ -21,7 +21,8 @@
     "scoped_child_fail_cannot_be_promoted_to_parent_fail_without_family_scope_proof": true,
     "scoped_child_pass_cannot_be_promoted_to_parent_sufficiency_without_family_scope_proof": true,
     "generic_program_labels_do_not_count_as_tested_physical_parents": true,
-    "new_concrete_independent_parent_triggers_tier1_promotion": true
+    "new_concrete_independent_parent_triggers_tier1_promotion": true,
+    "independent_resource_axes_require_independent_closure_or_physical_selection_with_propagated_uncertainty": true
   },
   "tier1_required_rows": [
     {"id":"GR_EFT","name":"General Relativity plus controlled low-energy gravitational EFT","role":"baseline_comparator","coverage_status":"BENCHMARKED_COMPLETE_REALIZATION","current_authority":"post_freeze_paper_iv_wave_01/PF1_02_GR_EFT/result.json"},
@@ -38,7 +39,7 @@
     {"id":"NONCOMMUTATIVE_SPECTRAL_GEOMETRY","name":"Noncommutative spectral geometry / spectral-action gravity","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md","minimum_resolution":"Freeze a genuine quantum dynamics/measure for the spectral data plus a normalized quantum-gravity observable, error ledger and same-domain comparator beyond the classical/asymptotic spectral action."},
     {"id":"CANONICAL_WDW_GEOMETRODYNAMICS","name":"Canonical Wheeler-DeWitt geometrodynamics","role":"candidate_family","coverage_status":"BLOCKED_MISSING_REQUIRED_OBJECT","current_authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md","minimum_resolution":"Freeze Hamiltonian/constraint realization, physical inner product, relational clock, anomaly/constraint closure, normalized Dirac observable, semiclassical GR map and comparator."},
     {"id":"QUANTUM_GRAPHITY","name":"Quantum Graphity / explicit dynamical-graph geometrogenesis","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md","minimum_resolution":"Freeze a connected low-energy phase with continuum Lorentzian spin-2/GR emergence and a normalized physical observable plus same-domain comparators."},
-    {"id":"RELATIONAL_QUANTUM_CAUSAL_PROCESSES","name":"Relational Quantum Causal Processes / RQCP-QG","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/P_RQCP_NEW_PARENT_PROMOTION_AUDIT_ITER275_2026-09-11.md","minimum_resolution":"Promote the reproducible fixed-band same-family Einstein-response control to one all-band background-independent autonomous gravity parent, including dynamically selected adjacency/time/volume/dimension/signature or an explicit equivalent construction, a quantum metric Hilbert space or equivalent gravity-state structure, anomaly-free quantum constraint/BV-BRST closure, topology/black-hole control, normalized operational gravity observables, same-domain comparators and propagated errors."}
+    {"id":"RELATIONAL_QUANTUM_CAUSAL_PROCESSES","name":"Relational Quantum Causal Processes / RQCP-QG","role":"candidate_family","coverage_status":"PARTIAL_SUBFAMILY_ONLY","current_authority":"paper_iv/P_RQCP_MULTI_AXIS_RESOURCE_CLOSURE_AUDIT_ITER277_2026-09-11.md","minimum_resolution":"Promote the reproducible fixed-band same-family Einstein-response control to one all-band background-independent autonomous gravity parent, including dynamically selected adjacency/time/volume/dimension/signature or an explicit equivalent construction, a quantum metric Hilbert space or equivalent gravity-state structure, anomaly-free quantum constraint/BV-BRST closure, topology/black-hole control, normalized operational gravity observables, same-domain comparators and propagated errors. In addition, close the independent local oscillator Hilbert-cutoff/domain axis either by controlled cutoff removal/convergence with propagated observable errors or by an autonomous physical selection principle for the finite cutoff/domain with its induced observable uncertainty."}
   ],
   "tier2_resolution_watchlist": [
     {"id":"SUPERGRAVITY_DOUBLE_COPY","status":"REDUCED_TO_TIER1_WITH_EXPLICIT_MAP","reduction_map":["Einstein/supergravity output -> GR_EFT or STRING_MTHEORY_HOLOGRAPHY according to UV ancestry","higher-derivative output -> PERTURBATIVE_HIGHER_DERIVATIVE or STRING_MTHEORY_HOLOGRAPHY according to ancestry"],"authority":"paper_iv/PAPER_IV_TIER2_CLASSIFICATION_AUDIT_2026-09-10.md"},
