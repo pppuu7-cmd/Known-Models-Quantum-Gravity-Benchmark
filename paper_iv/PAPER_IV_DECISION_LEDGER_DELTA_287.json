@@ -1,0 +1,19 @@
+{
+  "iteration": "Iter287",
+  "date": "2026-09-11",
+  "family": "LQG_SPINFOAM",
+  "object": "Han_2026_same_stack_UV_entropy_alignment",
+  "scientific_run": 34557575513,
+  "methodology_run": 34557575510,
+  "aggregate_digest": "sha256:c13d8089852e79beb737945bfad074fc021aaece721a297d43eeb273e0c8bd77",
+  "scoped_result": "HIGH_VALUE_SAME_STACK_UV_ENTROPY_ALIGNMENT__REALIZATION_IDENTITY_GAP_REDUCED_BUT_CONTROLLED_UV_TO_GR_TRANSPORT_STILL_OPEN",
+  "shared_lorentzian_stack_architecture": true,
+  "observable_anchor_inside_shared_stack": true,
+  "coupling_gamma_directional_anchor": true,
+  "uv_ir_regime_orientation_identified": true,
+  "continuous_same_realization_transport_ready": false,
+  "family_terminal": false,
+  "d7_changed": false,
+  "paper_iii_impact": "NOT_NEEDED",
+  "paper_iv_impact": "READY"
+}

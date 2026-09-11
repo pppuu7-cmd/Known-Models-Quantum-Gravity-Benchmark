@@ -1,0 +1,20 @@
+{
+  "iteration": "Iter286",
+  "date": "2026-09-11",
+  "family": "LQG_SPINFOAM",
+  "object": "Dona_Gozzini_Nicotra_2021_EPRL_Wick_rotation",
+  "scientific_run": 34557396727,
+  "methodology_run": 34557396730,
+  "reproducibility_run": 34557551569,
+  "aggregate_digest": "sha256:8ff5a0004e5de88b72f1a3b1ef50bb469ec2b09a961d6e59171b901e616969d6",
+  "scoped_result": "HIGH_VALUE_EPRL_SIGNATURE_ANALYTIC_CONTINUATION_BRIDGE__REAL_GAMMA_PHYSICAL_STATE_AND_COMPLETE_STACK_TRANSPORT_STILL_OPEN",
+  "explicit_euclidean_lorentzian_vertex_map": true,
+  "same_real_gamma_identity": false,
+  "rigging_map_transport_ready": false,
+  "complete_stack_transport_ready": false,
+  "same_realization_chain_ready": false,
+  "family_terminal": false,
+  "d7_changed": false,
+  "paper_iii_impact": "NOT_NEEDED",
+  "paper_iv_impact": "READY"
+}
