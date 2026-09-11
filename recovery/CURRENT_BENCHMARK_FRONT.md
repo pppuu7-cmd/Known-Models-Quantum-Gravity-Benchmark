@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter297 formal causal-vertex composition on Han stack members scoped; Iter296 orientation lift and earlier bridge refinements retained
+Iteration: Iter302 Toller half-link composition scope audit validated; Iter301 source-specific causal-sector support retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -8,7 +8,7 @@ Authoritative 15-row census synchronization milestone: Iter276
 ## Global lock
 - RQIR Core v1.0 remains FROZEN.
 - Tier-1 census = 15 families.
-- Strict terminal coverage = 1/15.
+- Strict terminal coverage = 1/15; strict nonterminal = 14/15.
 - Candidate-family terminal coverage = 0/14.
 - Tier-2 unresolved = 0.
 - D1 = PASS.
@@ -19,260 +19,62 @@ Authoritative 15-row census synchronization milestone: Iter276
 - D6 = PASS_RULE_TARGETS_OPEN.
 - D7 = NOT_CLOSED / NOT_YET_AUTHORIZED.
 - D7-S0 = PASS; D7-S1 = PASS; D7-S2 = NOT_CLOSED; D7-S3 = NOT_CLOSED; D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED; D7-S5 = NOT_AUTHORIZED; D7-S6 = INACTIVE.
-- `NEW_REQUIRED`, `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED` are not authorized.
+- `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, and `NEW_REQUIRED` are forbidden while S2-S4 remain open.
 - Candidate Gravity remains inactive at canonical R3 = 24%.
 
-## Readiness metrics
-- Operational polygon readiness = 100%.
-- D7 protocol infrastructure readiness = 100%.
-- 15-row decision-stack synchronization remains validated.
-These are infrastructure metrics, not scientific D7 closure.
+## Authoritative LQG/spinfoam progression
+The validated Iter281-297 chain established: a complete-stack/refinement architecture, scoped physical-continuum/physical-state components, small-spin UV and large-spin Einstein/Regge endpoints, a Lorentzian entropy observable anchor, a causal generalized-EPRL/KKL endpoint, a nonempty conditional Han/generalized-causal per-complex overlap, orientation-level lift through positive face multiplicities, and a formal memberwise causal-vertex substitution. None of these proves the required family-level same-realization complete-stack transport.
 
-## LQG/spinfoam front
-Iter281–287 established a progressively stronger four-component near-bridge:
-1. complete-stack/topological/refinement machinery;
-2. physical-continuum certificate adapter and scoped canonical/covariant physical-state component;
-3. small-spin Lorentzian complete-stack UV endpoint plus large-spin/refinement Einstein endpoint;
-4. Lorentzian entropy observable anchor inside the same stack architecture, with exact BH normalization after stated coupling selection.
+### Iter298 — fixed causal sector versus full standard EPRL product
+Contract: `benchmarks/lqg_iter298_causal_sector_decomposition.json`.
+Scoped result: one fixed causal Toller-sign assignment is one component of the formal expansion of the full standard EPRL `D`-product; generic algebraic identity with the full product is unavailable without additional vanishing, an admissible sector sum, or a new causal factorization theorem.
+Classification: `PASS_SCOPED_ALGEBRAIC_NONIDENTITY_OF_ONE_FIXED_CAUSAL_TOLLER_SECTOR_WITH_FULL_STANDARD_EPRL_D_PRODUCT__HAN_HALF_LINK_EQUIVALENCE_REQUIRES_EXPLICIT_SECTOR_SUM_OR_NEW_CAUSAL_FACTORIZATION_PROOF`.
+Scientific run `34598197609`; summary artifact `10263221608`; artifact digest `sha256:393effdb28a73118e587c9ba49e5caf07cde78e108de6478c4bdc8c384805c56`; raw digest `sha256:c1d445802eb484457526355e99a252a67448a935c0e012e724001f1fec3713ee`.
+Boundary: scoped formal result only; no no-go and no family promotion.
 
-Important scoped refinements:
-- explicit Euclidean↔Lorentzian EPRL vertex analytic continuation exists, but not same-real-`gamma` full state/stack transport;
-- UV fixed point and entropy observable are aligned inside the same Lorentzian spinfoam-stack architecture;
-- Iter290 adds an explicit causal Lorentzian EPRL-vertex large-spin Regge endpoint with a single causal Regge phase, strengthening the IR/semiclassical endpoint but not supplying complete-stack transport;
-- Iter291 adds an independent EPRL semiclassical `gamma`-to-observable bridge: in the Bianchi–Rincon-Ramirez gamma-dual EFT construction, `gamma` fixes parity-even/parity-odd higher-curvature coupling relations and is in principle inferable from primordial tensor polarization plus tensor tilt and tensor-to-scalar ratio;
-- the remaining decisive object is controlled compatible same-realization transport from the complete-stack UV sector to the causal large-spin Regge/Einstein regime with stack-coupling/`gamma`/spin-scale identity, normalized observable, comparator and propagated uncertainty.
+### Iter299 — unrestricted sector-sum recovery
+Contract: `benchmarks/lqg_iter299_causal_sector_sum_recovery.json`.
+Exact formal result: summing every local Toller-sign sector with unit weight reconstructs the standard `D`-product by distributivity.
+Classification: `PASS_SCOPED_EXACT_UNRESTRICTED_TOLLER_SECTOR_SUM_RECONSTRUCTS_STANDARD_D_PRODUCT__CAUSALLY_ADMISSIBLE_WEIGHTED_SECTOR_MEASURE_HAN_GLUE_FACTORIZATION_AND_UV_IR_TRANSPORT_REMAIN_UNPROVEN`.
+Scientific run `34601894692`; scientific head `e0ec53785f312871b91307f8df854b4a8edd66c5`; summary artifact `10264955714`; artifact digest `sha256:7db47f3b76568e8de11832c6447c4cb27779bceec41318934a435e12ea178f34`; raw digest `sha256:5101d4ffce7b2307e035a1a5b64402527712ec90746d6ed47eb6ed1236f96f95`.
+Boundary: the unrestricted unit-weight algebraic identity is not a theorem that the physical causal measure has unrestricted support or those weights.
 
-### Iter288 — semiclassical hierarchy / entropy-domain overlap
-Scientific run `34557797109`: 4/4 sensitivity jobs + aggregate SUCCESS.
-Methodology `34557797084`: SUCCESS. Reproducibility `34557875010`: SUCCESS.
-Digest: `sha256:57986e696cfb7e139bcb75a9cdf9c3f48b65e0f4120b567b624aa4a6b5945f6a`.
+### Iter300 — generic sector-weight uniqueness
+Contract: `benchmarks/lqg_iter300_sector_weight_uniqueness.json`.
+In a generic algebraically independent sector-monomial basis, exact standard-`D` recovery requires full support and `w_sigma=1`; recovery up to nonzero global normalization `C` requires full support and uniform `w_sigma=C`.
+Classification: `PASS_SCOPED_GENERIC_COEFFICIENT_MATCHING_REQUIRES_FULL_SECTOR_SUPPORT_AND_UNIFORM_WEIGHTS_UP_TO_GLOBAL_NORMALIZATION_FOR_STANDARD_D_PRODUCT_RECOVERY__PHYSICAL_CAUSAL_MEASURE_HAN_GLUE_AND_UV_IR_TRANSPORT_REMAIN_UNPROVEN`.
+Scientific run `34602793992`; scientific head `f8e661a6ff52fd9ee00a2a21cac4528485a7b8a3`; summary artifact `10265255466`; artifact digest `sha256:65d443d95a63376f9454bafc47a87ad71c8014eb78bf50b1628935acd83e9809`; raw digest `sha256:74210a18880ce7e202bc7703fc31fb472b4b65246464c5413adfd5c335a42e91`.
+Boundary: source-specific relations, cancellations, and alternative causal factorization remain open.
 
-Prospective sensitivity convention for published `1 << gamma^-1 << lambda << gamma^-2`:
-`lambda >= R/gamma`, `lambda <= 1/(R gamma^2)`, yielding a nonempty window iff `gamma < 1/R^2`.
-Results:
-- R=2 -> gamma<0.25
-- R=3 -> gamma<1/9
-- R=5 -> gamma<0.04
-- R=10 -> gamma<0.01
+### Iter301 — source-specific causal sector support
+Contract: `benchmarks/lqg_iter301_causal_sector_support.json`.
+The `sigma_a` construction induces `kappa_ab=sigma_a sigma_b`. On a connected graph its kernel is the global flip and the induced support has `2^(V-1)` sectors; equivalent edge signs obey positive cycle product. On K5 this gives exactly 16 induced causal sectors versus 1024 unrestricted wedge-sign sectors.
+Classification: `PASS_SCOPED_SOURCE_SPECIFIC_SIGMA_INDUCED_CAUSAL_SECTOR_SUPPORT_IS_EXACT_CYCLE_EVEN_CUT_SPACE_AND_STRICTLY_SMALLER_THAN_UNRESTRICTED_TOLLER_SUPPORT_ON_CYCLIC_VERTEX_GRAPHS__NO_GENERIC_FULL_D_PRODUCT_RECOVERY_FROM_CAUSAL_SUPPORT_ALONE__NO_NO_GO_AND_HAN_GLUE_STACK_UV_IR_TRANSPORT_REMAIN_OPEN`.
+Scientific run `34608395886`; scientific head `e2f6ea37e1bfcfcc90347e2366b0233fd56d18c1`; methodology `34608395856`; summary artifact `10267280795`; artifact digest `sha256:61f8c98a77a45b2cdd7806f44903ab187aa58f632612db052e9a6098853ffa3a`; raw digest `sha256:701a568536a1f1581878c78e1b0d7df2f45e4dec5c6dea0d1d729a65bd81ca74`.
+Boundary: support mismatch is not scientific FAIL; post-Haar identities, source-specific cancellations, extended physically justified causal sums, or a new factorization remain admissible.
 
-Classification:
-`QUANTIFIED_SEMICLASSICAL_HIERARCHY_OVERLAP__BH_RANGE_CONTAINS_SMALL_GAMMA_SUBDOMAIN_WITH_REGGE_WINDOW_BUT_NO_UNIQUE_NUMERICAL_DOUBLE_LESS_THAN_THRESHOLD`
+### Iter302 — Toller branch representation-composition audit
+Primary authority: Bianchi–Chen–Gamonal, *Toller matrices and the Feynman i-epsilon in spinfoams*, arXiv:2604.24945 (2026).
+Contract: `benchmarks/lqg_iter302_toller_half_link_composition.json`.
+Source-grounded result: `T^(+)+T^(-)=D`, while a fixed individual Toller branch is not itself a group representation. Therefore ordinary Wigner-`D` representation composition/half-link factorization cannot be silently inherited branchwise. Additive completion before composition recovers the standard `D` object; cross-branch or post-integration identities remain open.
+Classification: `PASS_SCOPED_SOURCE_GROUNDED_TOLLER_BRANCH_NONREPRESENTATION_SHARPENS_HALF_LINK_GLUE_BLOCKER__NAIVE_FIXED_BRANCH_STANDARD_REPRESENTATION_FACTORIZATION_NOT_AVAILABLE__ADDITIVE_COMPLETION_OR_SOURCE_SPECIFIC_CROSS_BRANCH_POST_INTEGRATION_GLUE_REMAINS_OPEN__NO_NO_GO`.
+Scientific run `34614044780` on head `3453a20e48ff7ca859d2fcaa8175b6fbe7cdca90`; 4/4 independent guards plus aggregate SUCCESS; methodology `34614044721` SUCCESS; reproducibility `34614177446` SUCCESS. Summary artifact `10269636788`; artifact digest `sha256:23fa9439b92fd815f07a10ee01e9ed47ab1aedf928dee460d13664b7bdd2f0b4`; raw summary digest `sha256:7b5f42e0e9b98bd4ffbac58a367107e77c9105aa4b57bdd22e89f679b6c2c273`.
+Boundary: no causal-spinfoam no-go, no Han half-link/Haar-glue equivalence, no causal-stack finiteness/normalization/cutoff certificate, no same-realization UV→Regge/GR transport, no family promotion, and D7 remains unauthorized.
+Audit: `paper_iv/P_LQG_TOLLER_HALF_LINK_COMPOSITION_SCOPE_AUDIT_ITER302_2026-09-11.md`.
 
-Boundary: these are sensitivity thresholds under chosen operational meanings of `<<`, not physical gamma bounds. They establish domain overlap, not a running law or UV→IR trajectory.
-
-### Iter290 — causal Lorentzian vertex / Regge endpoint
-Primary object: Bianchi–Chen–Gamonal, *Causal spinfoam vertex for 4d Lorentzian quantum gravity*, arXiv:2601.23162 (2026).
-Scientific run `34561212081`: four independent guards in parallel + aggregate SUCCESS on head `a6cbecf7507adb9dc52dc0090d171905e1432b50`.
-Summary artifact `10184373486`; artifact digest `sha256:ee0ba2168b4ea3113517fadc94abdac82dcfd9c1bfbafff94a686ef3a1e264ec`; raw aggregate digest `sha256:573a5590ffe7a4bfcd298f0a14c13e77c5a034a31bc8d69b280b17dd23493b02`.
-
-Aggregate:
-- causal Toller split at EPRL-vertex scope = PASS;
-- large-spin causally compatible Lorentzian Regge endpoint / single `exp(+i S_Regge/hbar)` phase = PASS;
-- complete-stack/refinement transport = false;
-- continuous same-realization UV→IR transport = false;
-- family terminal = false.
-
-Classification:
-`HIGH_VALUE_CAUSAL_LARGE_SPIN_LORENTZIAN_REGGE_ENDPOINT__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT`
-
-### Iter291 — gamma-duality semiclassical observable / parameter bridge
-Primary object: Bianchi–Rincon-Ramirez, *Spinfoams, gamma-duality, and parity violation in primordial gravitational waves*, Physical Review D 113, 124013 (2026), DOI `10.1103/qz89-26hk`.
-Scientific run `34568777275`: four independent guards in parallel + aggregate SUCCESS on head `4b2212fe21830964b43fa8c0f9fabef842c6e6aa`.
-Summary artifact `10186981524`; artifact digest `sha256:3ef255ea6377cc487447b5ac62df01c43e870ca1f9913e2f7bedbba165b714ad`; raw aggregate digest `sha256:3b7f1797aa37d1722a3fce276520a7e7467c27f834823c6240764f1c32f727b0`.
-
-Aggregate:
-- peer-reviewed authority identity = PASS;
-- EPRL `gamma`-duality/parity coupling scope = PASS;
-- semiclassical EFT parameter-to-observable route = PASS;
-- fail-closed complete-stack transport scope guard = PASS;
-- complete-stack same-realization UV→IR transport = false;
-- normalized observable with full propagated QG error = false;
-- family terminal = false;
-- D7 authorized = false.
-
-Classification:
-`HIGH_VALUE_LQG_GAMMA_DUALITY_SEMICLASSICAL_OBSERVABLE_PARAMETER_BRIDGE__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT`
-
-LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS. The new authority removes an obsolete sub-blocker (“no semiclassical gamma observable”) but does not supply the terminal bridge.
-Canonical blocker remains, sharpened to:
-`BLOCKED_MISSING_EXACT_HAN_HALF_LINK_GLUE_EQUIVALENCE_AND_FINITE_NORMALIZED_GENERALIZED_CAUSAL_VERTEX_STACK_AMPLITUDE_WITH_LAMBDA_F_WEIGHTED_AREA_CUTOFF_CONTROL_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
-
-### Iter292 — external refinement-flow authority
-Primary object: Tamburini, *ER = EPR in Loop Quantum Gravity: the Immirzi Parameter and the Continuum Limit*, arXiv:2508.18324v2 (2025). Public preprint; no peer-reviewed journal version located in the Iter292 authority check.
-Scientific run `34575046143`: four independent guards in parallel + aggregate SUCCESS on head `eb6ba509773ac50697b4c6c683b2f3638ea7ad71`.
-Summary artifact `10189283134`; artifact digest `sha256:3dfa5deb1bab46bfcb7c32f199969dcc8a1588a69937d408483ff202a48002f5`.
-
-Raw aggregate:
-- public preprint identity = PASS;
-- explicit refinement-renormalization / conditional regulator-independent continuum claim = PASS;
-- explicit equivalence map to active Han complete-stack = false;
-- continuous `gamma` / stack-coupling / spin-scale transport to Iter290 = false;
-- normalized same-realization observable/comparator/error certificate = false;
-- family terminal = false;
-- D7 authorized = false.
-
-Classification:
-`HIGH_VALUE_EXTERNAL_REFINEMENT_FLOW_AUTHORITY__NO_EXPLICIT_EQUIVALENCE_TO_THE_ACTIVE_COMPLETE_STACK_OR_CAUSAL_REGGE_CHAIN`
-
-This removes only the weak sub-blocker that no explicit LQG refinement-flow proposal exists. The decisive family-scope blocker remains the same-realization/equivalence transport into the active complete-stack + causal-Regge chain.
-
-### Iter293 — generalized EPRL-KKL causal scope
-Primary object: Beltrán, *Causal Structure for Generalized Spinfoams*, arXiv:2603.22661v2 (2026), public preprint.
-Scientific run `34584685590`: four independent guards in parallel + aggregate SUCCESS on head `3edcaf9feb3a308750fd6a84a25056f9f105c61d`.
-Summary artifact `10193076711`; artifact digest `sha256:d14df68d7b1c98464bacd38644d75271ab5c75745e75bf69c6a6d048bc04cd42`; raw summary digest `sha256:a0521f16d90f393376d7899556a3c452123025baa172f1248f7bcbad6eb1b277`.
-
-Aggregate:
-- public-preprint authority identity = PASS;
-- generalized EPRL-KKL arbitrary-2-complex causal structure / orientation consistency = PASS;
-- causal vertex generalizing Bianchi–Chen–Gamonal plus semiclassical asymptotic analysis = PASS;
-- explicit Han-stack equivalence = false;
-- complete-stack same-realization UV→IR transport = false;
-- normalized observable/comparator/error certificate = false;
-- family terminal = false;
-- D7 authorized = false.
-
-Classification:
-`HIGH_VALUE_GENERALIZED_EPRL_KKL_CAUSAL_SCOPE_EXTENSION__NO_COMPLETE_STACK_EQUIVALENCE_OR_UV_TO_IR_TRANSPORT`
-
-Interpretation: the Iter290 causal endpoint is no longer confined to a single simplicial EPRL-vertex construction; a generalized EPRL-KKL causal framework on arbitrary 2-complexes exists. This is a meaningful scope extension, but it does not establish identity with the active Han stack or close the decisive UV→IR transport blocker.
-
-### Iter295 — Han-stack / generalized causal EPRL-KKL conditional overlap
-Authorities: Han, PRD 113, 084034 (2026), and Beltrán, arXiv:2603.22661v2 (2026).
-Scientific run `34592425741`: 4/4 independent guards + aggregate SUCCESS on head `300159ee62c096aeaff766658169be5d5fea83fe`.
-Methodology `34592425770`: preflight + 4/4 shards + aggregate/bundle SUCCESS.
-Summary artifact `10196164627`; artifact digest `sha256:5ac870b2e59d0717913042bc2a0eb809e650c24bcc4c0ca7ad0facf929eeef70`; raw summary digest `sha256:55b371ffda6542839d1cdfc92b07196e207e4b4b83253d00142ed35d7bf86eb6`.
-
-Aggregate:
-- shared generalized EPRL-KKL per-complex formalism = PASS;
-- conditional common domain nonempty = PASS;
-- exact K5 witness = PASS: 5 nodes, 10 links, GF(2) rank 4, kernel dimension 1, all one/two-link cuts connected;
-- universal Han-stack inclusion in Beltrán working domain = false;
-- causal-vertex lift through Han complete stack sum = false;
-- `lambda_f` / face-multiplicity transport = false;
-- complete-stack same-realization UV→IR transport = false;
-- normalized observable/comparator/error = false;
-- family terminal = false; D7 authorized = false.
-
-Classification:
-`PASS_SCOPED_CONDITIONAL_GENERALIZED_EPRL_KKL_DOMAIN_OVERLAP_WITH_EXPLICIT_K5_CAUSAL_WITNESS__NO_HAN_STACK_SUM_LIFT_OR_SAME_REALIZATION_UV_TO_IR_TRANSPORT`
-
-Interpretation: the frameworks are no longer merely adjacent. A concrete admissible per-complex overlap exists. The decisive missing object is now the lift of the causal prescription through the complete Han stack sum and the subsequent physical same-realization transport to causal Regge/GR observables.
-
-Refined blocker:
-`BLOCKED_MISSING_CAUSAL_VERTEX_LIFT_THROUGH_HAN_COMPLETE_STACK_SUM_FACE_MULTIPLICITIES_AND_LAMBDA_F_WEIGHTS_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
-
-### Iter296 — face-stacking causal-orientation lift
-Source-grounded algebraic inference from Han PRD 113, 084034 (2026) and Beltrán arXiv:2603.22661v2.
-Scientific run `34593061657`: 4/4 independent guards + aggregate SUCCESS on `079f94c11c0c222b5c8759b316538cfd12664c33`.
-Methodology `34593061667`: preflight + 4/4 shards + aggregate/bundle SUCCESS.
-Summary artifact `10196412595`; artifact digest `sha256:7d1d4387def6de4921532e78d31f098c49f72e37a178619eeb4e2dc2ba9fab0b`; raw summary digest `sha256:c80bb2d1d5fc7fe58f8bbe059c6e1e3bba0cac1ab1819b5c54ab8286d829cd67`.
-
-Aggregate:
-- diagonal causal-orientation lift across positive Han face multiplicities = PASS_SCOPED;
-- exhaustive exact validation = 1,885 three-link-connected simple graphs, n=4..6;
-- K5 stress = 512 multiplicity vectors up to 16 × 32 edge-orientation assignments;
-- conflicting duplicated-face RHS negative control = 0 solutions;
-- causal generalized-vertex finiteness/normalization = open;
-- `lambda_f`-weighted causal complete-stack amplitude transport = false;
-- causal area-cutoff removal/control = false;
-- same-realization UV→Regge/GR observable/error transport = false;
-- family terminal = false; D7 authorized = false.
-
-Classification:
-`PASS_SCOPED_ORIENTATION_LEVEL_CAUSAL_LIFT_ACROSS_HAN_FACE_MULTIPLICITY_STACKS_BY_ROW_DUPLICATION__NO_CAUSAL_AMPLITUDE_SUM_FINITE_LAMBDA_TRANSPORT_OR_UV_IR_OBSERVABLE_CERTIFICATE`
-
-Interpretation: the orientation-consistency part of the Han-stack/Beltrán bridge now has an explicit lift through arbitrary positive face multiplicities. The decisive blocker moves from causal-structure existence to the actual causal amplitude and physical transport.
-
-Refined blocker:
-`BLOCKED_MISSING_FINITE_NORMALIZED_GENERALIZED_CAUSAL_VERTEX_INSERTION_AND_LAMBDA_F_WEIGHTED_COMPLETE_STACK_AMPLITUDE_SUM_WITH_AREA_CUTOFF_CONTROL_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
-
-### Iter297 — formal causal-vertex composition on Han stack members
-Source-grounded formal composition inference from Han PRD 113, 084034 (2026) and Beltrán arXiv:2603.22661v2.
-Scientific run `34593574762`: 4/4 independent guards + aggregate SUCCESS on `880b01f89488492c50deda7b315d02f425e0a3f4`.
-Methodology `34593574674`: preflight + 4/4 shards + aggregate/bundle SUCCESS.
-Summary artifact `10260556884`; artifact digest `sha256:56e8aa47970c6bb29d11bd013466262b08495325d7b612aca5ba9d1374bb14c9`; raw summary digest `sha256:d2886d62a8b590a6be83b4e9eb318f10f9454950a74abc3fa0afb505301af95a`.
-
-Aggregate:
-- formal memberwise causal vertex substitution on Iter296-admissible Han stack members = PASS_SCOPED;
-- same member multiplicity/spin index set retained = true;
-- external `lambda_f^p_f` bookkeeping retained formally = true;
-- member-label checks = 512;
-- exact-rational coupling-bookkeeping checks = 1,792;
-- exact Han half-link glue equivalence = not proven;
-- generalized causal-vertex finiteness/normalization = open;
-- causal cutoff removal / large-cutoff factorization = not proven;
-- same-realization UV→Regge/GR observable/error transport = not proven;
-- family terminal = false; D7 authorized = false.
-
-Classification:
-`PASS_SCOPED_FORMAL_MEMBERWISE_CAUSAL_VERTEX_SUBSTITUTION_ON_ITER296_ADMISSIBLE_HAN_STACK_COMPLEXES_WITH_RETAINED_EXTERNAL_LAMBDA_MULTIPLICITY_BOOKKEEPING__NO_HALF_LINK_GLUE_EQUIVALENCE_FINITE_NORMALIZED_CAUSAL_STACK_SUM_CUTOFF_REMOVAL_OR_UV_IR_OBSERVABLE_CERTIFICATE`
-
-Interpretation: causal structure and a formal per-member causal amplitude are now composable across the Han face-multiplicity family at the abstract generalized-EPRL/KKL level. The decisive blocker moves to exact Han gluing compatibility, finite/normalized causal dynamics, cutoff control and physical transport.
-
-Refined blocker:
-`BLOCKED_MISSING_EXACT_HAN_HALF_LINK_GLUE_EQUIVALENCE_AND_FINITE_NORMALIZED_GENERALIZED_CAUSAL_VERTEX_STACK_AMPLITUDE_WITH_LAMBDA_F_WEIGHTED_AREA_CUTOFF_CONTROL_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
-
-## CFS front
-The existing PF1 authority already includes Fischer–Finster arXiv:2605.30199 as exact curved-spacetime Einstein–Dirac comparator evidence and rejects obsolete blockers about absence of curved-spacetime GR/Fock/relational controls. The frozen blocker is a gravity-specific beyond-continuum observable / normalized non-Einstein correction tensor plus same-domain comparator residual.
-
-### Iter289 — systematic current / correction-tensor pathway
-Primary object: Finster–Fischer, *Construction of Currents in Causal Fermion Systems*, arXiv:2507.09633 (2025).
-Scientific run `34558237027`: 4/4 guards + aggregate SUCCESS.
-Methodology `34558237116`: preflight + 4/4 shards + aggregate/bundle SUCCESS.
-Digest: `sha256:b27830783f0fa7a90e75689e38584eb21263296c78bdd97d5226e5ac8e4dc9e3`.
-
-Aggregate:
-- explicit rank-one CFS current/Maxwell control = true;
-- systematic pathway extends in scope to gravity and higher-order quantum/discreteness corrections = true;
-- explicit rank-two gravity tensor = false;
-- explicit higher-rank gravity correction tensor = false;
-- frozen CFS blocker closed = false.
-
-Classification:
-`HIGH_VALUE_CFS_SYSTEMATIC_CURRENT_AND_HIGHER_RANK_PATHWAY__GRAVITY_CORRECTION_TENSOR_REMAINS_PROSPECTIVE_AND_BLOCKER_STAYS_OPEN`
-
-CFS therefore remains `BLOCKED_MISSING_REQUIRED_OBJECT`, not FAIL. Iter289 makes the route to the missing object more concrete but does not supply it.
-
-### Iter294 — geometric Lorentzian Einstein endpoint / correction hierarchy
-Primary object: Finster–Krpoun, *A Geometric Derivation of the Einstein Equations from the Causal Action Principle*, arXiv:2607.13871v1 (2026), public preprint.
-Scientific run `34585821754`: four independent guards in parallel + aggregate SUCCESS on head `9d821ea02aae8a85c093cec27ecffb120250d6b7`.
-Methodology run `34585821764`: SUCCESS.
-Summary artifact `10193537053`; artifact digest `sha256:996064f831648b6f2a5e788b3e8f63f20f7a0213a13422d65d085676cd61439b`; raw summary digest `sha256:89a2f8b287d637b7d2ae664bfe84d4abd0e27b254d99adf5c353c72677343902`.
-
-Aggregate:
-- explicit Lorentzian 4D Einstein endpoint from causal action = PASS;
-- explicit symmetric/divergence-free energy-momentum tensor = PASS;
-- leading `T_ij = O(delta^2)` and gravitational-coupling/regularization-length scaling contract = PASS;
-- systematic correction hierarchy = PASS;
-- concrete evaluated normalized beyond-Einstein correction tensor/residual = false;
-- same-domain comparator residual = false;
-- family terminal = false;
-- D7 authorized = false.
-
-Classification:
-`HIGH_VALUE_CFS_GEOMETRIC_LORENTZIAN_EINSTEIN_DERIVATION_AND_SYSTEMATIC_CORRECTION_HIERARCHY__CONCRETE_NORMALIZED_BEYOND_EINSTEIN_RESIDUAL_COMPARATOR_STILL_MISSING`
-
-Interpretation: the obsolete weak sub-blocker "rank-two Einstein structure is only prospective" is removed. The decisive CFS blocker is now narrower: evaluate at least one explicit beyond-Einstein correction from the stated hierarchy into a normalized same-domain gravity observable/residual with comparator and propagated uncertainty.
-
-## Other priority fronts
-- Asymptotic Safety: stable public contact-complete Lorentzian `s+t+u+A4` package remains decisive external object.
-- RQCP: all-band/background-independent autonomy plus Hilbert-cutoff/resource closure remains open.
-- Other Tier-1 families reopen only on genuinely new status-changing authority/computation/reduction objects.
+## Infrastructure note
+The old `iter299-recovery-integration` workflow can fire and fail on later heads because its recovery preconditions are stale. This is an infrastructure/synchronization defect only. It must not be interpreted as a scientific failure; the current scientific and methodology workflows remain authoritative.
 
 ## Publication handoff
-`recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative.
-- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–297 = `NOT_NEEDED` as additional rules except where already stated.
-- Paper IV: Iter277–297 = `READY` with stated claim boundaries.
+`recovery/PUBLICATION_IMPACT_LEDGER.md` is the manuscript-impact authority. Iter298-302 require Paper-IV scoped wording only; Paper III receives no new general rule. The ledger must preserve the distinction between formal algebra/support/composition results and family-level evidence.
 
-## Anti-idle compute policy
-Whenever scientifically meaningful, nonduplicating tasks are independent, launch them immediately in parallel (`fail-fast:false`, highest safe practical runner parallelism). Dependent classification/aggregate stages wait behind explicit barriers. When runners are saturated, queue additional useful independent jobs rather than suppressing them. Never repeat saturated or duplicate calculations merely to manufacture activity. The active KMQGB auto-research automation is configured with the same mandatory rule.
+## Current blocker and next permitted gate
+LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS.
 
-## Exact next gate
-`D7_S2_LQG_FINITE_NORMALIZED_CAUSAL_STACK_AMPLITUDE_AND_UV_TO_REGGE_GR_TRANSPORT_CERTIFICATE`
+Current blocker:
+`BLOCKED_MISSING_SOURCE_SPECIFIC_CROSS_BRANCH_OR_HAAR_INTEGRATED_CAUSAL_GLUE_IDENTITY_COMPATIBLE_WITH_HAN_HALF_LINKS_AND_FACE_FACTORIZATION_PLUS_FINITE_NORMALIZED_LAMBDA_F_WEIGHTED_CAUSAL_COMPLETE_STACK_CUTOFF_CONTROL_AND_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT_WITH_PARAMETER_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
 
-Priority:
-1. establish exact compatibility between Beltrán's causal vertex and Han's half-link/Haar gluing representation, then prove a finite/normalized `lambda_f`-weighted causal complete-stack amplitude with controlled area-cutoff removal/large-cutoff factorization and establish same-realization stack-coupling/`gamma`/spin-scale transport from the Iter287 UV/entropy sector through Iter291 to the Iter290 causal Regge/Einstein endpoint with normalized observable/comparator/error transport;
-2. evaluate an explicit CFS beyond-Einstein correction from the Iter294 hierarchy into a normalized same-domain gravity observable/residual with comparator and propagated uncertainty;
-3. stable public AS contact-complete `s+t+u+A4`;
-4. RQCP all-band/background-independent autonomy bridge;
-5. other Tier-1 authority only when materially status-changing.
+Exact next permitted gate:
+`D7_S2_LQG_SOURCE_SPECIFIC_CROSS_BRANCH_OR_HAAR_INTEGRATED_CAUSAL_GLUE_IDENTITY_COMPATIBLE_WITH_HAN_HALF_LINKS_AND_FACE_FACTORIZATION__THEN_LAMBDA_F_WEIGHTED_STACK_NORMALIZATION_CUTOFF_AND_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT`
+
+Do not launch the terminal D7 classifier while D7-S2, D7-S3, or D7-S4 remains open. Missing published objects remain blockers, not evidence of impossibility.
