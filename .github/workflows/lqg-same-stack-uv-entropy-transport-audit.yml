@@ -1,0 +1,67 @@
+name: lqg-same-stack-uv-entropy-transport-audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/lqg_stack_uv_entropy_common.py'
+      - 'code/lqg_stack_architecture_guard.py'
+      - 'code/lqg_stack_coupling_gamma_guard.py'
+      - 'code/lqg_stack_uv_ir_direction_guard.py'
+      - 'code/lqg_stack_observable_transport_guard.py'
+      - 'code/lqg_stack_uv_entropy_aggregate.py'
+      - '.github/workflows/lqg-same-stack-uv-entropy-transport-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {label: architecture, script: lqg_stack_architecture_guard.py}
+          - {label: coupling, script: lqg_stack_coupling_gamma_guard.py}
+          - {label: direction, script: lqg_stack_uv_ir_direction_guard.py}
+          - {label: observable, script: lqg_stack_observable_transport_guard.py}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Run independent same-stack UV/entropy transport guard
+        run: python code/${{ matrix.script }} --output build/lqg-stack/${{ matrix.label }}.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-stack-${{ matrix.label }}
+          path: build/lqg-stack/${{ matrix.label }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: guards
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-stack-*
+          path: build/lqg-stack-results
+          merge-multiple: true
+      - name: Aggregate after dependency barrier
+        run: python code/lqg_stack_uv_entropy_aggregate.py --input-dir build/lqg-stack-results --output build/lqg-stack-iter287-summary.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-stack-iter287-summary
+          path: build/lqg-stack-iter287-summary.json
+          if-no-files-found: error
+          retention-days: 90
