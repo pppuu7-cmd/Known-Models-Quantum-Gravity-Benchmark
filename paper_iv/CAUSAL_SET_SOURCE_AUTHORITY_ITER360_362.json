@@ -1,0 +1,33 @@
+{
+  "schema_version":"1.0",
+  "iteration_bundle":"360-362",
+  "family":"CAUSAL_SETS",
+  "source":{
+    "title":"The Einstein-Hilbert Action for Entropically Dominant Causal Sets",
+    "authors":["Peter Carlip","Steve Carlip","Sumati Surya"],
+    "arxiv":"2311.18238",
+    "url":"https://arxiv.org/abs/2311.18238"
+  },
+  "frozen_source_relations":{
+    "layered_entropy":"|Omega_K| ~ 2^(c(K) n^2 + o(n^2)), c(K)<=1/4 for K>=4",
+    "bdg_action":"S_BDG/hbar = -alpha_d (ell/ell_p)^(d-2) [n + (beta_d/alpha_d) sum_J C_J^(d) N_J]",
+    "link_action":"S_link/hbar = -alpha_d (ell/ell_p)^(d-2) [n + (beta_d/alpha_d) N_0]",
+    "suppression_condition":"tan[0.5 beta_d (ell/ell_p)^(d-2)] > sqrt((27/4) exp(-1/2)-1)",
+    "d4_threshold":"ell_0 approximately 1.136 ell_p",
+    "general_threshold_bound":"1.13 < ell_0/ell_p < 2.33",
+    "nonlink_interval_tail":"for N_{J>0} ~ kappa n^2, count is suppressed by factor 2^[-kappa gamma_2 |log_2 alpha| n^3] relative to the leading n^2 entropy exponent",
+    "full_layered_pathsum":"for typical K-layered sets with K << n, BDG action reduces to link action to leading order and layered sector is strongly suppressed above threshold",
+    "quoted_pathsum_suppression":"2^(-k n^2), k>0"
+  },
+  "open_questions_explicit_in_source":[
+    "sparse layered measure-zero class not covered",
+    "many non-layered causal sets plausibly non-continuumlike",
+    "dimension selection d versus d-prime remains open"
+  ],
+  "protocol_guard":{
+    "layered_sector_suppression_is_not_full_emergent_manifold_certificate":true,
+    "source_threshold_is_sufficient_not_a_family_terminalization_rule":true,
+    "blocked_is_not_fail":true,
+    "d7_promotion_authorized":false
+  }
+}

@@ -1,0 +1,100 @@
+name: paper-iv-iter360-362-causal-set-layered-suppression
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/CAUSAL_SET_SOURCE_AUTHORITY_ITER360_362.json'
+      - 'code/causal_set_iter360_*.py'
+      - 'code/causal_set_iter361_*.py'
+      - 'code/causal_set_iter362_*.py'
+      - 'code/iter360_362_aggregate.py'
+      - '.github/workflows/paper-iv-iter360-362-causal-set-layered-suppression.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  entropy-action-crossover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        preset: ['strong','mid','weak','veryweak','alphaclose1','thinlayer']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter360
+          python code/causal_set_iter360_entropy_action_crossover.py --preset '${{ matrix.preset }}' --output 'build/iter360/crossover-${{ matrix.preset }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter360-causal-set-crossover-${{ matrix.preset }}
+          path: build/iter360/crossover-${{ matrix.preset }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  discreteness-threshold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        mode: ['d4','all_d']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter361
+          python code/causal_set_iter361_discreteness_threshold.py --mode '${{ matrix.mode }}' --output 'build/iter361/threshold-${{ matrix.mode }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter361-causal-set-threshold-${{ matrix.mode }}
+          path: build/iter361/threshold-${{ matrix.mode }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  physical-scale-scope:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python code/causal_set_iter362_physical_scale_scope.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter362-causal-set-scope
+          path: iter362-causal-set-scope.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: [entropy-action-crossover, discreteness-threshold, physical-scale-scope]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter36*'
+          path: iter360-362-results
+      - run: python code/iter360_362_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter360-362-summary
+          path: iter360-362-summary.json
+          if-no-files-found: error
+          retention-days: 90
