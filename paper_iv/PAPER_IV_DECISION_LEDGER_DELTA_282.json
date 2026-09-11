@@ -1,0 +1,31 @@
+{
+  "iteration": 282,
+  "date": "2026-09-11",
+  "family": "LQG_SPINFOAM",
+  "object": "BRUNO_COLAFRANCESCHI_MELE_ROVELLI_CONTINUUM_LIMIT_STRUCTURE",
+  "scientific_workflow": {
+    "name": "lqg-continuum-certificate-compatibility-audit",
+    "run_id": 34555287209,
+    "head": "279c42316a1eba352e3da39dbb4a7419819efbeb",
+    "independent_guards_success": "4/4",
+    "aggregate": "SUCCESS",
+    "aggregate_digest": "sha256:bf352695d6f5acf1832c4944a1839e895766b673ed4b480d7e0a74313c31c293"
+  },
+  "methodology_validation": {"run_id":34555287201,"conclusion":"SUCCESS"},
+  "reproducibility_release": {"run_id":34555302796,"conclusion":"SUCCESS"},
+  "scoped_result": "PASS_SCOPED_CONTINUUM_CERTIFICATE_COMPATIBILITY__STRONG_HILBERT_LIMIT_TOPOLOGICAL_NO_GO_AND_DISTRIBUTIONAL_RIGGING_PATH__MODEL_SPECIFIC_PHYSICAL_UV_IR_GR_OBJECTS_STILL_MISSING",
+  "benchmark_delta": "PHYSICAL_CONTINUUM_CERTIFICATE_ADAPTER",
+  "family_result": "PARTIAL_BLOCKED_NONTERMINAL",
+  "existing_blocker_preserved": "BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT",
+  "tier1_total_before": 15,
+  "tier1_total_after": 15,
+  "strict_terminal_before": 1,
+  "strict_terminal_after": 1,
+  "candidate_terminal_count": 0,
+  "d7_change": false,
+  "candidate_gravity_activation_change": false,
+  "paper_impact": {
+    "paper_III": "NOT_NEEDED__THEORY_CONTINUUM_CERTIFICATE_REFINEMENT_NOT_NEW_SENSING_RESOURCE_FAILURE_MODE",
+    "paper_IV": "READY__ADD_STRONG_CONVERGENCE_TO_TQFT_NO_GO_DISTRIBUTIONAL_RIGGING_ROUTE_AND_MODEL_SPECIFIC_BOUNDARY"
+  }
+}

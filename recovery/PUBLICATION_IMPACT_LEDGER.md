@@ -59,7 +59,22 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Report: `det(M_6x6)=125`; strict negative definiteness/nondegeneracy; exact `M=-B^T B`; `rank(B)=6`, projected kernel=0; 18x18 block rank=18 and exact determinant identity; tested final `C0,C1,C2` positive; max relative 256->512 change on beta grid = `0.0` in binary64.
 - Scoped result: `PASS_SCOPED_EXPLICIT_TRIVIAL_TOPOLOGY_SPINFOAM_STACK_HESSIAN_NONDEGENERACY_INCIDENCE_FACTORIZATION_AND_COEFFICIENT_CONVERGENCE__TOPOLOGICAL_LARGE_CUTOFF_NOT_PHYSICAL_UV_IR_GR_CLOSURE`.
 - Required boundary: do not identify the topological/scale-invariant infinite-cutoff regime with the distinct finite-large-cutoff/small-gamma semiclassical Regge/GR regime. The same-realization physical UV->IR/GR trajectory, normalized gravity observable, transport, comparator, and propagated-error certificate remain missing.
-- Provenance: scientific run `34554825500`; methodology CI `34554825514`; reproducibility release `34554911718`; aggregate digest `sha256:4ebddf182b7b5c469947acab11eabab7a2422b92d43ea1cf2c85d4b687cb82e1`.
+- Provenance: scientific run `34554825500`; methodology CI `34554825514`; reproducibility release `34554911718`; archival methodology CI `34555185332`; aggregate digest `sha256:4ebddf182b7b5c469947acab11eabab7a2422b92d43ea1cf2c85d4b687cb82e1`.
+
+## Iter282 — Spin-foam physical continuum-certificate adapter
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific methodology; no new quantum-sensing/resource failure mode.
+- Do not add a new Paper-III rule. At most this can be used as a distant conceptual corroboration that the form of a closure certificate must match the physical object being certified, but it is outside Paper III's sensing focus.
+
+### Paper IV — `READY`
+- **Type:** methodology + peer-reviewed evidentiary + claim-boundary.
+- Add Bruno–Colafranceschi–Mele–Rovelli, Phys. Rev. D 114, 066005 (2026), DOI `10.1103/7493-9nb7`.
+- Add `PHYSICAL_CONTINUUM_CERTIFICATE_ADAPTER`: sufficiently strong convergence in the inductive boundary Hilbert space leads to a topological/TQFT continuum under the source assumptions, so that form of convergence must not be made the unique requirement for physical 4D gravity.
+- Permit a distributional continuum limit with a rigging-map/physical-Hilbert-space construction as admissible structural evidence.
+- Required boundary: the paper is model-independent and does not itself provide a concrete LQG constraint/state map, specified physical-observable algebra, normalized gravity observable, same-realization UV->IR/GR transport, comparator or propagated errors. Those obligations remain required.
+- Han compatibility: the Iter281 topological infinite-cutoff regime is compatible with the no-go, but this does not convert it into the distinct finite-large-cutoff/small-gamma semiclassical GR regime.
+- Scoped result: `PASS_SCOPED_CONTINUUM_CERTIFICATE_COMPATIBILITY__STRONG_HILBERT_LIMIT_TOPOLOGICAL_NO_GO_AND_DISTRIBUTIONAL_RIGGING_PATH__MODEL_SPECIFIC_PHYSICAL_UV_IR_GR_OBJECTS_STILL_MISSING`.
+- Provenance: scientific run `34555287209`; methodology CI `34555287201`; reproducibility release `34555302796`; aggregate digest `sha256:bf352695d6f5acf1832c4944a1839e895766b673ed4b480d7e0a74313c31c293`.
 
 ## Standing rule
 For every subsequent scientifically relevant iteration, record here:

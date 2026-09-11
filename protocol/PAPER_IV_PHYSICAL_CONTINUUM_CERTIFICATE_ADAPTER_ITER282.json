@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "iteration": 282,
+  "date": "2026-09-11",
+  "name": "PHYSICAL_CONTINUUM_CERTIFICATE_ADAPTER",
+  "scope": "PAPER_IV_LQG_SPINFOAM_CONTINUUM_EVIDENCE",
+  "rqir_core": {"version": "1.0", "status": "FROZEN_UNCHANGED"},
+  "basis": {
+    "source": "Bruno, Colafranceschi, Mele, Rovelli, Structure of the continuum limit of spin foams, Phys. Rev. D 114, 066005 (2026)",
+    "doi": "10.1103/7493-9nb7",
+    "arxiv": "2603.16999"
+  },
+  "rules": {
+    "strong_inductive_hilbert_convergence_is_not_required_for_physical_4d_gravity": true,
+    "strong_inductive_hilbert_convergence_that_forces_tqft_cannot_be_used_as_the_unique_physical_gravity_certificate": true,
+    "distributional_continuum_limit_is_admissible": true,
+    "rigging_map_physical_hilbert_construction_is_admissible": true,
+    "model_independent_structural_continuum_result_alone_closes_lqg_family": false,
+    "model_specific_constraint_or_state_map_still_required": true,
+    "model_specific_normalized_gravity_observable_still_required": true,
+    "same_realization_uv_to_ir_gr_transport_still_required": true,
+    "parameter_identity_comparator_and_propagated_errors_still_required": true
+  },
+  "interpretation": "This adapter prevents an over-strong continuum requirement from falsely excluding non-topological gravity. It does not weaken family-level physical-observable, transport, comparator or uncertainty obligations and does not modify RQIR Core v1.0."
+}

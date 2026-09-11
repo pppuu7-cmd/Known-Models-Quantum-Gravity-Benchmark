@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter281 LQG spinfoam-stack explicit Hessian/refinement audit
+Iteration: Iter282 spin-foam physical continuum-certificate compatibility audit
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -49,37 +49,47 @@ NSF was reduced to the existing GR parent rather than promoted as a new Tier-1 f
 Positive normalisable Lorentzian TT-graviton spectral evidence was cross-checked, but the source states those fluctuation states are not physical diffeomorphism-invariant Hilbert-space states, the full numerical curve was not independently reproduced from a public dataset, and the contact-complete scattering blocker remains active.
 
 ### Iter281 — LQG spinfoam-stack explicit audit
-Primary object: Muxin Han, *Summation and triangulation independence of Lorentzian spinfoam amplitudes for all LQG*, Phys. Rev. D 113, 084034 (2026), DOI `10.1103/n76f-31gf`.
+Muxin Han, Phys. Rev. D 113, 084034 (2026). Scientific run `34554825500`: 4/4 independent jobs + aggregate SUCCESS. Methodology CI `34554825514`, reproducibility release `34554911718`, and archival methodology CI `34555185332`: SUCCESS.
 
-Parallel workflow `lqg-spinfoam-stack-hessian-audit`, run `34554825500`: 4/4 independent jobs + aggregate `SUCCESS`, with `fail-fast: false` and `max-parallel: 4`.
-Methodology CI `34554825514`: `SUCCESS`.
-Reproducibility release `34554911718`: `SUCCESS`.
-Aggregate digest: `sha256:4ebddf182b7b5c469947acab11eabab7a2422b92d43ea1cf2c85d4b687cb82e1`.
-
-Exact/numerical result:
+Exact/scoped result:
 - `det(M_6x6)=125`;
 - strict negative definiteness and nondegeneracy;
 - exact `M=-B^T B`;
 - `rank(B)=6`, projected kernel `0`;
-- 18x18 block rank `18`, exact determinant identity and nondegeneracy;
-- final `C0,C1,C2` positive on beta = 0.25, 0.5, 1, 2;
-- max relative 256->512 change on that grid = `0.0` in binary64.
+- 18x18 block rank `18` and exact determinant identity;
+- tested final `C0,C1,C2` positive; max relative 256->512 change = `0.0` in binary64.
 
-Scoped result:
 `PASS_SCOPED_EXPLICIT_TRIVIAL_TOPOLOGY_SPINFOAM_STACK_HESSIAN_NONDEGENERACY_INCIDENCE_FACTORIZATION_AND_COEFFICIENT_CONVERGENCE__TOPOLOGICAL_LARGE_CUTOFF_NOT_PHYSICAL_UV_IR_GR_CLOSURE`
 
-Interpretation: the explicit localization/nondegeneracy and triangulation/refinement-control machinery is independently strengthened, but the infinite internal-area-cutoff regime is topological/scale-invariant and cannot be silently identified with the distinct finite-large-cutoff/small-Barbero-Immirzi semiclassical Regge/GR regime. Therefore the same-realization physical UV->IR/GR bridge remains open.
+### Iter282 — spin-foam physical continuum certificate
+Primary source: Bruno, Colafranceschi, Mele, Rovelli, *Structure of the continuum limit of spin foams*, Phys. Rev. D 114, 066005 (2026), DOI `10.1103/7493-9nb7`.
+
+Parallel workflow `lqg-continuum-certificate-compatibility-audit`, run `34555287209`: 4/4 independent guards + aggregate SUCCESS. Methodology CI `34555287201`: SUCCESS. Reproducibility release `34555302796`: SUCCESS. Aggregate digest: `sha256:bf352695d6f5acf1832c4944a1839e895766b673ed4b480d7e0a74313c31c293`.
+
+Aggregate result:
+- strong convergence in the inductive boundary Hilbert space is correctly classified as the source's topological/TQFT no-go regime;
+- a distributional continuum limit with rigging map and physical-Hilbert-space construction is an admissible structural physical-continuum route;
+- the source is model-independent and does not provide a concrete LQG constraint/state map or specified physical-observable algebra;
+- the Han topological infinite-cutoff regime is compatible with the no-go, but this does not establish the missing same-realization physical UV->IR/GR bridge.
+
+New additive Paper-IV methodology:
+`PHYSICAL_CONTINUUM_CERTIFICATE_ADAPTER`
+
+Meaning: KMQGB must not require a form of strong kinematical Hilbert-space convergence that would itself force TQFT as the unique acceptable continuum certificate for non-topological 4D gravity. Distributional/rigging-map continuum evidence is admissible, while all model-specific physical-observable, UV->IR/GR transport, parameter identity, comparator and propagated-error obligations remain unchanged.
+
+Scoped result:
+`PASS_SCOPED_CONTINUUM_CERTIFICATE_COMPATIBILITY__STRONG_HILBERT_LIMIT_TOPOLOGICAL_NO_GO_AND_DISTRIBUTIONAL_RIGGING_PATH__MODEL_SPECIFIC_PHYSICAL_UV_IR_GR_OBJECTS_STILL_MISSING`
 
 LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS.
 
-Current decisive LQG blocker:
+Current decisive LQG blocker remains:
 `BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT`
 
 ## Publication handoff
 `recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative.
 - Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`.
-- Paper III: Iter278–281 = `NOT_NEEDED` as additional rules; optional corroboration only.
-- Paper IV: Iter277–281 = `READY` for inclusion with their stated scope boundaries.
+- Paper III: Iter278–282 = `NOT_NEEDED` as additional rules; optional corroboration only.
+- Paper IV: Iter277–282 = `READY` for inclusion with their stated scope boundaries.
 
 ## Current scientific decision state
 - 15 Tier-1 families.
@@ -95,9 +105,8 @@ Shard every scientifically independent calculation immediately with `fail-fast: 
 `D7_S2_EXTERNAL_AUTHORITY_DRIVEN_TERMINALIZATION_WITH_MULTI_AXIS_RESOURCE_CLOSURE_EXPLICIT_REDUCTION_MAPS_AND_PHYSICAL_CONTINUUM_CERTIFICATES`
 
 Priority:
-1. audit Bruno–Colafranceschi–Mele–Rovelli, Phys. Rev. D 114, 066005 (2026), to determine how the strong-convergence-to-topological no-go and distributional/rigging-map physical continuum affect the LQG closure certificate;
+1. search for a concrete model-specific LQG/spinfoam realization that instantiates a non-topological physical continuum construction with explicit constraints/state map, normalized gravity observable and same-realization semiclassical GR transport;
 2. stable public contact-complete Asymptotic-Safety `s+t+u+A4` package;
-3. LQG same-realization physical UV->IR/GR observable/transport package;
-4. RQCP all-band/background-independent autonomy bridge with Hilbert-cutoff closure;
-5. other Tier-1 families only on materially new primary authority;
-6. any apparently new QG parent must first pass explicit reduction/equivalence audit before census promotion.
+3. RQCP all-band/background-independent autonomy bridge with Hilbert-cutoff closure;
+4. other Tier-1 families only on materially new primary authority;
+5. any apparently new QG parent must first pass explicit reduction/equivalence audit before census promotion.
