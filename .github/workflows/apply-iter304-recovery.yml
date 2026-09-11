@@ -1,0 +1,68 @@
+name: apply-iter304-recovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/P_LQG_TOLLER_FINITENESS_TRANSFER_SCOPE_AUDIT_ITER304_2026-09-11.md'
+      - 'recovery/RECOVERY_DELTA_ITER304_TOLLER_FINITENESS_TRANSFER.md'
+      - '.github/workflows/apply-iter304-recovery.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+      - name: Apply validated Iter304 recovery and publication handoff fail-closed
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          front_path=Path('recovery/CURRENT_BENCHMARK_FRONT.md')
+          ledger_path=Path('recovery/PUBLICATION_IMPACT_LEDGER.md')
+          front=front_path.read_text()
+          ledger=ledger_path.read_text()
+
+          old_iter='Iteration: Iter303 fixed-spin Toller SU(2)-Haar half-link glue compatibility validated; Iter302 branch-composition scope retained'
+          new_iter='Iteration: Iter304 Toller causal-vertex finiteness-theorem transfer applicability gap validated; Iter303 SU(2)-Haar glue compatibility retained'
+          assert old_iter in front, 'unexpected current-front iteration; refuse post-hoc merge'
+          assert '### Iter304 — Toller causal-vertex finiteness-theorem transfer' not in front
+          front=front.replace(old_iter,new_iter,1)
+
+          section='''### Iter304 — Toller causal-vertex finiteness-theorem transfer\nContract: `benchmarks/lqg_iter304_toller_finiteness_transfer.json`.\nScientific run `34622448515` on exact head `b6365b863fea2e6c61c7bcd0848deac0c81f4dc9`: four independent probes in parallel plus aggregate SUCCESS. Methodology `34622448482`: SUCCESS. Summary artifact `10272398533`; artifact digest `sha256:ad9072614d42f6f004b9fae8d3225c678e67315af84c7c3cf2a3ffb700e2280a`; raw summary digest `sha256:233709ebaceee04857e04b8b2de89aa84a7d9982e80657e3e4d0af331d428c80`.\n\nMachine result: Kamiński's positive 3-edge-connected standard-EPRL integrability theorem is not automatically transferable to a sign-selected fixed-causal Toller vertex from polynomial boundedness alone. Polynomial boundedness is logically insufficient for noncompact Haar/radial integrability; no explicit source extension theorem was found in the frozen contract.\n\nClassification: `PASS_SCOPED_STANDARD_EPRL_3_EDGE_CONNECTED_FINITENESS_THEOREM_NOT_AUTOMATICALLY_TRANSFERABLE_TO_FIXED_CAUSAL_TOLLER_VERTEX_FROM_POLYNOMIAL_BOUNDEDNESS_ALONE__EXPLICIT_TOLLER_INTEGRABILITY_BOUND_OR_EXTENSION_THEOREM_REQUIRED__NO_DIVERGENCE_NO_GO_OR_FAMILY_PROMOTION`.\n\nBoundary: this is an applicability gap, not a divergence result or no-go. Causal-vertex finiteness remains unproven; `lambda_f`-weighted complete-stack finite normalization/cutoff removal and same-realization UV→causal-Regge/GR transport remain open. No family promotion; D7 remains unauthorized.\n\n'''
+          marker='## Infrastructure note\n'
+          assert marker in front
+          front=front.replace(marker,section+marker,1)
+
+          old_block='`BLOCKED_MISSING_FINITE_NORMALIZED_GENERALIZED_CAUSAL_VERTEX_AND_LAMBDA_F_WEIGHTED_COMPLETE_STACK_FINITE_NORMALIZATION_AREA_CUTOFF_REMOVAL_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_PARAMETER_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`'
+          new_block='`BLOCKED_MISSING_EXPLICIT_TOLLER_CAUSAL_VERTEX_INTEGRABILITY_DECAY_BOUND_OR_EXTENSION_THEOREM_OR_DIRECT_FINITE_NORMALIZED_VERTEX_CERTIFICATE_PLUS_LAMBDA_F_WEIGHTED_COMPLETE_STACK_FINITE_NORMALIZATION_AREA_CUTOFF_REMOVAL_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_PARAMETER_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`'
+          assert old_block in front
+          front=front.replace(old_block,new_block,1)
+
+          old_gate='`D7_S2_LQG_GENERALIZED_CAUSAL_VERTEX_FINITE_NORMALIZATION_AND_LAMBDA_F_WEIGHTED_COMPLETE_STACK_CUTOFF_CONTROL__THEN_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT`'
+          new_gate='`D7_S2_LQG_EXPLICIT_TOLLER_CAUSAL_VERTEX_INTEGRABILITY_THEOREM_OR_DIRECT_FINITE_NORMALIZED_VERTEX_CERTIFICATE__THEN_LAMBDA_F_WEIGHTED_COMPLETE_STACK_CUTOFF_CONTROL__THEN_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT`'
+          assert old_gate in front
+          front=front.replace(old_gate,new_gate,1)
+
+          assert '## Iter304 — Toller causal-vertex finiteness-theorem transfer' not in ledger
+          ledger_entry='''## Iter304 — Toller causal-vertex finiteness-theorem transfer\n### Paper III — `NOT_NEEDED`\n- **Type:** theory-specific theorem-applicability refinement; no new general resource-closure rule beyond the already-frozen same-realization and multi-axis obligations.\n### Paper IV — `READY`\n- Add Kamiński's positive 3-edge-connected standard-EPRL integrability theorem next to the causal Toller vertex and state the scope distinction explicitly.\n- Record that a fixed Toller branch is not itself an `SL(2,C)` representation and that polynomial boundedness alone does not imply noncompact Haar/radial integrability; therefore the standard theorem cannot be counted as an automatic causal-vertex finiteness certificate without an explicit extension/decay argument.\n- **Required boundary:** this does not prove that the causal vertex diverges, does not establish a no-go or family FAIL, and does not close `lambda_f` stack normalization/cutoff or UV→Regge/GR transport. Require an explicit Toller-kernel integrability/decay theorem or direct finite normalized causal-vertex certificate before claiming finiteness.\n- Result: `PASS_SCOPED_STANDARD_EPRL_3_EDGE_CONNECTED_FINITENESS_THEOREM_NOT_AUTOMATICALLY_TRANSFERABLE_TO_FIXED_CAUSAL_TOLLER_VERTEX_FROM_POLYNOMIAL_BOUNDEDNESS_ALONE__EXPLICIT_TOLLER_INTEGRABILITY_BOUND_OR_EXTENSION_THEOREM_REQUIRED__NO_DIVERGENCE_NO_GO_OR_FAMILY_PROMOTION`.\n- Provenance: scientific `34622448515`; scientific head `b6365b863fea2e6c61c7bcd0848deac0c81f4dc9`; jobs `103339444457`, `103339444326`, `103339444484`, `103339444563`; aggregate `103339561820`; methodology `34622448482`; summary artifact `10272398533`; artifact digest `sha256:ad9072614d42f6f004b9fae8d3225c678e67315af84c7c3cf2a3ffb700e2280a`; raw summary digest `sha256:233709ebaceee04857e04b8b2de89aa84a7d9982e80657e3e4d0af331d428c80`.\n\n'''
+          standing='## Standing rule\n'
+          assert standing in ledger
+          ledger=ledger.replace(standing,ledger_entry+standing,1)
+
+          front_path.write_text(front)
+          ledger_path.write_text(ledger)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add recovery/CURRENT_BENCHMARK_FRONT.md recovery/PUBLICATION_IMPACT_LEDGER.md
+          git diff --cached --check
+          git commit -m 'Iter304: integrate finiteness-transfer recovery state'
+          git push
