@@ -10,101 +10,77 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Add explicit `MULTI_AXIS_RESOURCE_CLOSURE`: convergence/calibration on one independent regulator/truncation/domain/finite-volume/resolution/approximation axis cannot certify another. Every materially active independent axis must be removed with propagated uncertainty or fixed by an independently justified physical-selection rule with induced uncertainty propagated.
 - Motivation: RQCP cutoff 8 -> 28 shifts `G_eff` ~7.32%, gap ~3.07%, `G_eff*gap^2` ~1.36%, while cutoff 24 -> 28 is extremely stable.
 - Keep wording theory-agnostic; do not turn Paper III into an RQCP case study.
-
 ### Paper IV — `READY`
-- **Type:** evidentiary + numerical + reproducibility.
 - Add RQCP as distinct nonterminal Tier-1 parent; four-environment semantic reproduction; zero-frequency diagnostic artifact; 19-job robustness wave; cutoff extension through 28; refined Hilbert/domain-axis blocker.
-- Boundary: scoped positive / `PARTIAL_SUBFAMILY_ONLY`, neither family PASS nor FAIL.
 
 ## Iter278 — Asymptotic Safety diffeomorphism-invariant PIRG
 ### Paper III — `NOT_NEEDED`
-- No new general rule beyond Iter277; optional corroboration of systematic/multi-axis separation only.
-
+- No new general rule beyond Iter277.
 ### Paper IV — `READY`
-- **Type:** evidentiary + numerical.
-- Add arXiv:2609.07829v1 and four-probe Table-III audit. All six variants retain two positive relevant directions; theta2 is more stable than theta1 and fixed-point coordinates remain scheme/procedure sensitive.
-- Boundary: family remains `BLOCKED_MISSING_REQUIRED_OBJECT`; do not bypass the contact-complete `s+t+u+A4` blocker.
+- Add arXiv:2609.07829v1 and four-probe Table-III audit; retain contact-complete `s+t+u+A4` blocker.
 - Provenance: scientific run `34552838082`; methodology CI `34552838007`.
 
 ## Iter279 — Null Surface Formulation reduction / claim boundary
 ### Paper III — `NOT_NEEDED`
-- No new rule; optional example of reduction-map discipline and claim-domain separation.
-
+- No new rule.
 ### Paper IV — `READY`
-- **Type:** taxonomy + evidentiary + numerical.
-- Add NSF as reduction-map case: present evidence supports `REDUCED_TO_EXISTING_GR_PARENT__NEW_REALIZATION_NOT_NEW_TIER1_PARENT`, so no 16th Tier-1 row.
-- Report normalization/t-u symmetry exact on test set, fixed-angle amplitude ~`s^1`, forward/collinear finite-grid exponent ~`-0.9794`.
-- Boundary: taxonomy decision is not rejection of NSF UV-finiteness or proof/disproof of all-loop finiteness.
-- Provenance: scientific run `34553257781`; methodology CI `34553257768`; archival methodology run `34553466935`.
+- Present NSF as `REDUCED_TO_EXISTING_GR_PARENT__NEW_REALIZATION_NOT_NEW_TIER1_PARENT`; no 16th Tier-1 row.
+- Provenance: run `34553257781`; methodology `34553257768`; archival methodology `34553466935`.
 
 ## Iter280 — Asymptotic Safety Lorentzian graviton spectral function
 ### Paper III — `NOT_NEEDED`
-- No new general rule; optional corroboration that spectral positivity, physical-state/Hilbert-space status, diffeomorphism invariance, scattering unitarity, and contact-complete observables are distinct closure axes.
-
+- No new general rule.
 ### Paper IV — `READY`
-- **Type:** peer-reviewed evidentiary + numerical + reproducibility boundary.
-- Add Pawlowski–Reichert–Wessely, Physics Letters B 880 (2026) 140844; positive normalisable Lorentzian TT graviton spectral function with unit total spectral weight after stated rescaling.
-- KMQGB checks: `g*=0.9554263372261876`; Eq.23–25 trajectory consistency; integrable UV tail; `z_spec≈1.486` implies ~67.29% pole / ~32.71% continuum; exact `2*pi*A_h=61/30` IR relation.
-- Boundaries: fluctuation-graviton states are not diffeomorphism invariant / not physical Hilbert-space states; no public article-specific numerical dataset/reference implementation was found, so full curve not independently reproduced; `s+t+u+A4` blocker remains independent.
-- Provenance: scientific run `34553743544`; methodology CI `34553743421`; archival methodology CI `34554032216`.
+- Add positive normalisable Lorentzian TT spectral evidence and its physical-Hilbert-space/reproducibility boundaries; do not bypass `s+t+u+A4` blocker.
+- Provenance: run `34553743544`; methodology `34553743421`; archival `34554032216`.
 
 ## Iter281 — LQG spinfoam-stack explicit Hessian/refinement audit
 ### Paper III — `NOT_NEEDED`
-- **Type:** methodological corroboration only.
-- No new rule beyond Iter277. The result reinforces claim-domain separation: explicit triangulation/refinement control in a topological large-cutoff regime is not automatically physical UV->IR/GR closure.
-
+- Methodological corroboration only.
 ### Paper IV — `READY`
-- **Type:** peer-reviewed evidentiary + exact/numerical + continuum-boundary.
-- Add Muxin Han, Phys. Rev. D 113, 084034 (2026), DOI `10.1103/n76f-31gf`, and the four-way independent audit.
-- Report: `det(M_6x6)=125`; strict negative definiteness/nondegeneracy; exact `M=-B^T B`; `rank(B)=6`, projected kernel=0; 18x18 block rank=18 and exact determinant identity; tested final `C0,C1,C2` positive; max relative 256->512 change on beta grid = `0.0` in binary64.
-- Scoped result: `PASS_SCOPED_EXPLICIT_TRIVIAL_TOPOLOGY_SPINFOAM_STACK_HESSIAN_NONDEGENERACY_INCIDENCE_FACTORIZATION_AND_COEFFICIENT_CONVERGENCE__TOPOLOGICAL_LARGE_CUTOFF_NOT_PHYSICAL_UV_IR_GR_CLOSURE`.
-- Required boundary: do not identify the topological/scale-invariant infinite-cutoff regime with the distinct finite-large-cutoff/small-gamma semiclassical Regge/GR regime. The same-realization physical UV->IR/GR trajectory, normalized gravity observable, transport, comparator, and propagated-error certificate remain missing.
-- Provenance: scientific run `34554825500`; methodology CI `34554825514`; reproducibility release `34554911718`; archival methodology CI `34555185332`; aggregate digest `sha256:4ebddf182b7b5c469947acab11eabab7a2422b92d43ea1cf2c85d4b687cb82e1`.
+- Add Han, PRD 113, 084034 (2026): exact/nondegenerate stack Hessian and coefficient convergence evidence.
+- Boundary: topological/scale-invariant infinite-cutoff regime is not automatically physical UV->IR/GR closure.
+- Provenance: run `34554825500`; methodology `34554825514`; reproducibility `34554911718`; archival `34555185332`; digest `sha256:4ebddf182b7b5c469947acab11eabab7a2422b92d43ea1cf2c85d4b687cb82e1`.
 
 ## Iter282 — Spin-foam physical continuum-certificate adapter
 ### Paper III — `NOT_NEEDED`
-- **Type:** theory-specific methodology; no new quantum-sensing/resource failure mode.
-- Do not add a new Paper-III rule. At most this can be used as a distant conceptual corroboration that the form of a closure certificate must match the physical object being certified, but it is outside Paper III's sensing focus.
-
+- Theory-specific methodology; no new sensing/resource rule.
 ### Paper IV — `READY`
-- **Type:** methodology + peer-reviewed evidentiary + claim-boundary.
-- Add Bruno–Colafranceschi–Mele–Rovelli, Phys. Rev. D 114, 066005 (2026), DOI `10.1103/7493-9nb7`.
-- Add `PHYSICAL_CONTINUUM_CERTIFICATE_ADAPTER`: sufficiently strong convergence in the inductive boundary Hilbert space leads to a topological/TQFT continuum under the source assumptions, so that form of convergence must not be made the unique requirement for physical 4D gravity.
-- Permit a distributional continuum limit with a rigging-map/physical-Hilbert-space construction as admissible structural evidence.
-- Required boundary: the paper is model-independent and does not itself provide a concrete LQG constraint/state map, specified physical-observable algebra, normalized gravity observable, same-realization UV->IR/GR transport, comparator or propagated errors. Those obligations remain required.
-- Han compatibility: the Iter281 topological infinite-cutoff regime is compatible with the no-go, but this does not convert it into the distinct finite-large-cutoff/small-gamma semiclassical GR regime.
-- Scoped result: `PASS_SCOPED_CONTINUUM_CERTIFICATE_COMPATIBILITY__STRONG_HILBERT_LIMIT_TOPOLOGICAL_NO_GO_AND_DISTRIBUTIONAL_RIGGING_PATH__MODEL_SPECIFIC_PHYSICAL_UV_IR_GR_OBJECTS_STILL_MISSING`.
-- Provenance: scientific run `34555287209`; methodology CI `34555287201`; reproducibility release `34555302796`; archival methodology CI `34555562285`; aggregate digest `sha256:bf352695d6f5acf1832c4944a1839e895766b673ed4b480d7e0a74313c31c293`.
+- Add Bruno–Colafranceschi–Mele–Rovelli, PRD 114, 066005 (2026) and `PHYSICAL_CONTINUUM_CERTIFICATE_ADAPTER`.
+- Strong inductive-Hilbert convergence that forces TQFT must not be the unique accepted continuum certificate; distributional/rigging-map evidence is admissible, while model-specific state/observable/transport obligations remain.
+- Provenance: run `34555287209`; methodology `34555287201`; reproducibility `34555302796`; archival `34555562285`; digest `sha256:bf352695d6f5acf1832c4944a1839e895766b673ed4b480d7e0a74313c31c293`.
 
 ## Iter283 — LQG UV-to-IR same-realization bridge identity audit
 ### Paper III — `NOT_NEEDED`
-- **Type:** theory-specific evidentiary/taxonomy refinement.
-- No new general quantum-sensing/resource-closure rule is created. Do not expand Paper III for this result.
-
+- Theory-specific evidentiary/taxonomy refinement.
 ### Paper IV — `READY`
-- **Type:** high-value endpoint synthesis + claim-boundary + blocker localization.
-- Add Han 2017, Phys. Rev. D 96, 024047, as a material large-spin/refinement semiclassical endpoint yielding the continuum Einstein equation.
-- Present it next to Han 2026 UV fixed-point/complete-stack results, but explicitly **do not concatenate them into one trajectory without a transport certificate**.
-- Report aggregate result: `shared_parent_family=true`, `material_positive_endpoints=true`, `same_realization_terminal_bridge_ready=false`.
-- Required bridge gaps: no explicit equality/reduction identity between the 2017 refining-triangulation amplitude and 2026 stack-summed complete amplitude; no explicit map from `lambda/delta/mu` to the stack/UV variables; no demonstrated small-spin-UV -> large-spin-semiclassical trajectory; no normalized same-domain gravity observable transported through the chain with comparator/errors.
-- Reframe the existing LQG blocker in prose as **missing bridge/transport, not missing UV and GR endpoints**. Keep the canonical blocker string unchanged unless the full D7 decision stack is synchronized atomically.
-- Canonical result: `HIGH_VALUE_UV_AND_GR_ENDPOINTS_IN_SHARED_LQG_PARENT__NO_EXPLICIT_SAME_REALIZATION_PARAMETER_AND_OBSERVABLE_TRANSPORT_BRIDGE`.
-- Provenance: scientific run `34555702346`; methodology CI `34555702337`; archival methodology CI `34555959626`; reproducibility release `34556045719`; aggregate digest `sha256:32701d4931ddce73e1674025cda8e518195fc64b477e1a02d9227fda9913cbc5`.
+- Add Han 2017 large-spin/refinement Einstein endpoint next to Han 2026 small-spin complete-stack UV endpoint.
+- Explicitly state: `shared_parent_family=true`, `material_positive_endpoints=true`, `same_realization_terminal_bridge_ready=false`.
+- Reframe prose as **missing bridge/transport, not missing UV and GR endpoints**. Required missing object: amplitude/reduction identity, parameter map, small-spin->large-spin trajectory, normalized observable/comparator/error transport.
+- Provenance: run `34555702346`; methodology `34555702337`; archival `34555959626`; reproducibility `34556045719`; digest `sha256:32701d4931ddce73e1674025cda8e518195fc64b477e1a02d9227fda9913cbc5`.
 
 ## Iter284 — LQG canonical/covariant physical-state link compatibility
 ### Paper III — `NOT_NEEDED`
-- **Type:** theory-specific physical-state evidence; no new general sensing/resource-closure rule.
-- Do not modify Paper III for this result.
-
+- Theory-specific physical-state evidence.
 ### Paper IV — `READY`
-- **Type:** physical-state evidence + compatibility boundary.
-- Add Yang–Zhang–Ma, Phys. Rev. D 104, 044025 (2021), DOI `10.1103/PhysRevD.104.044025`, as a genuine scoped canonical/covariant physical-state component.
-- Report that the generalized Euclidean EPRL calculation supplies a rigging-map interpretation and weak Euclidean Hamiltonian-constraint satisfaction on certain states at `beta=1`.
-- Required scope boundary: this is not generic in Immirzi parameter, not a full-state-space certificate, and not a Lorentzian same-realization certificate.
-- Required bridge boundary: no explicit state/signature/parameter map transports the 2021 Euclidean `beta=1` result into the Lorentzian Han 2017/2026 UV-to-IR chain, and no normalized gravity observable is transported through that full chain.
+- Add Yang–Zhang–Ma, PRD 104, 044025 (2021) as a genuine scoped canonical/covariant physical-state component: generalized Euclidean EPRL, `beta=1`, certain states, rigging-map interpretation, weak Euclidean Hamiltonian-constraint satisfaction.
+- Required boundary: not generic in Immirzi parameter, not full-state-space, not Lorentzian same-realization; no explicit transport into Han 2017/2026 chain.
 - Canonical result: `HIGH_VALUE_EUCLIDEAN_BETA1_RIGGING_MAP_COMPONENT__NO_EXPLICIT_COMPATIBLE_TRANSPORT_INTO_LORENTZIAN_UV_IR_CHAIN`.
-- Interpretation: LQG now has three strong but incompletely stitched components — scoped physical-state link, GR endpoint, UV endpoint. The unresolved object remains compatible same-realization transport among them.
-- Provenance: scientific run `34556068228`; methodology CI `34556068266`; aggregate digest `sha256:61a71ea3aab1fa23b58ad2760b27500c84f34ac62aca5d020526516125cb7d47`.
+- Provenance: run `34556068228`; methodology `34556068266`; reproducibility `34556405328`; digest `sha256:61a71ea3aab1fa23b58ad2760b27500c84f34ac62aca5d020526516125cb7d47`.
+
+## Iter285 — LQG Lorentzian entropy observable anchor
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific gravitational-observable evidence; no new general quantum-sensing/resource-closure rule.
+- Do not modify Paper III for this result.
+### Paper IV — `READY`
+- **Type:** Lorentzian observable + normalization + discretization boundary + transport boundary.
+- Add Han, *Lorentzian spinfoam gravity path integral and geometrical area-law entanglement entropy*, PRD 113, 084044 (2026), DOI `10.1103/kbw3-m49g`.
+- Report the exact BH normalization identity from `A=4*pi*gamma*lP^2*a`, `S≈beta*a`: Bekenstein–Hawking requires `beta=pi*gamma`; independent probe verifies `S/(A/lP^2)=1/4` on gamma 0.05, 0.10, 0.25, 0.50.
+- Report positive leading area-law coefficient and leading coefficient independence from selected 2-complexes in the source construction.
+- Required boundaries: BH match requires explicit stack-coupling↔`gamma` relation and is therefore not parameter-free; logarithmic correction may retain boundary-graph dependence; no normalized observable has yet been transported through the Iter283 small-spin UV -> large-spin Einstein chain with common comparator/errors.
+- Canonical result: `HIGH_VALUE_LORENTZIAN_ENTROPY_OBSERVABLE_ANCHOR_WITH_BH_NORMALIZATION__COUPLING_SELECTION_AND_UV_IR_TRANSPORT_REMAIN_OPEN`.
+- Interpretation: LQG now has a material Lorentzian observable anchor in addition to the physical-state, GR and UV components; remaining decisive object is compatible same-realization transport among them.
+- Provenance: scientific run `34557034125`; methodology CI `34557034108`; aggregate digest `sha256:f86b1ac47148f9918a9efd46c6ab7efcea85e73208ea6ace9a224326ba24f7da`.
 
 ## Standing rule
 For every subsequent scientifically relevant iteration, record here:

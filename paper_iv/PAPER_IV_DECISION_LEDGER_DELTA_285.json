@@ -1,0 +1,21 @@
+{
+  "iteration": "Iter285",
+  "date": "2026-09-11",
+  "family": "LQG_SPINFOAM",
+  "object": "Han_2026_Lorentzian_spinfoam_entanglement_entropy",
+  "scientific_run": 34557034125,
+  "methodology_run": 34557034108,
+  "aggregate_digest": "sha256:f86b1ac47148f9918a9efd46c6ab7efcea85e73208ea6ace9a224326ba24f7da",
+  "scoped_result": "HIGH_VALUE_LORENTZIAN_ENTROPY_OBSERVABLE_ANCHOR_WITH_BH_NORMALIZATION__COUPLING_SELECTION_AND_UV_IR_TRANSPORT_REMAIN_OPEN",
+  "material_lorentzian_observable_anchor": true,
+  "bh_normalization_identity_verified": true,
+  "parameter_free_bh_normalization": false,
+  "leading_2complex_independence": true,
+  "full_discretization_independence": false,
+  "same_realization_uv_ir_observable_transport_ready": false,
+  "family_terminal": false,
+  "d7_changed": false,
+  "canonical_blocker_changed": false,
+  "paper_iii_impact": "NOT_NEEDED",
+  "paper_iv_impact": "READY"
+}
