@@ -1,0 +1,88 @@
+name: lqg-k4-full-branch-residue
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'benchmarks/lqg_iter316_k4_full_branch_residue.json'
+      - 'code/lqg_iter316_*.py'
+      - '.github/workflows/lqg-k4-full-branch-residue.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  k4_tensors:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        subset: ['0123','0124','0134','0234','1234']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Run independent K4 residue tensor
+        run: |
+          mkdir -p build/lqg-iter316
+          python code/lqg_iter316_k4_residue_tensor.py --subset ${{ matrix.subset }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter316-k4-${{ matrix.subset }}
+          path: build/lqg-iter316/k4_${{ matrix.subset }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        probe: [star_support,formal_factorization,scope_guard]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Run independent Iter316 guard
+        run: |
+          mkdir -p build/lqg-iter316-guards
+          python code/lqg_iter316_${{ matrix.probe }}.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter316-guard-${{ matrix.probe }}
+          path: build/lqg-iter316-guards/${{ matrix.probe }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: [k4_tensors,guards]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter316-k4-*
+          path: build/lqg-iter316-k4-results
+          merge-multiple: true
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter316-guard-*
+          path: build/lqg-iter316-guard-results
+          merge-multiple: true
+      - run: python code/lqg_iter316_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter316-summary
+          path: |
+            build/lqg-iter316-summary.json
+            build/lqg-iter316-summary.sha256
+          if-no-files-found: error
+          retention-days: 90

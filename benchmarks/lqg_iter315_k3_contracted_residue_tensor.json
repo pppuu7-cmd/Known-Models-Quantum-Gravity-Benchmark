@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "iteration": 315,
+  "date": "2026-09-11",
+  "derivation_type": "EXACT_MINIMAL_SPIN_K3_INTERNAL_RESIDUE_TENSOR_NONVANISHING_AUDIT",
+  "predecessor": {
+    "iteration": 314,
+    "scientific_run": 34627526453,
+    "scientific_head": "7cb53470794641e3f9a69545d7ee5e91d02da14e"
+  },
+  "source_contract": {
+    "boundary_state": "Use the normalized all-j=1/2 four-valent SU(2)-invariant intertwiners from Iter307: node choices (A,A,B,A,A), A=epsilon_12 epsilon_34/2 and B=epsilon_13 epsilon_24/2.",
+    "triangle_collapse": "For each of the ten K3 subsets, take a collinear internal boost-collapse ray. The three internal fixed-causal j=1/2 leading kernels are nonzero Pauli-z diagonal kernels with common beta^-2 scaling per internal edge. Leave all endpoint magnetic indices of the seven noninternal edges open.",
+    "residue_tensor": "The resulting object is the coefficient tensor multiplying the seven external edge matrices at leading beta^-6 order. Its nonvanishing is stronger than component-level power counting but does not evaluate the external Toller matrices on a physical group configuration.",
+    "cplus_support": "The restriction of the 16 distinct source C+ wedge-sign patterns to the seven noninternal edges is injective for every triangle, so the 16 external branch monomials remain distinct in the free branch-monomial algebra."
+  },
+  "prospectively_frozen_claims": {
+    "triangle_count": 10,
+    "external_edge_count_per_triangle": 7,
+    "open_external_endpoint_index_count": 14,
+    "tensor_component_count": 16384,
+    "nonzero_unnormalized_components_each_triangle": 128,
+    "positive_unnormalized_components_each_triangle": 64,
+    "negative_unnormalized_components_each_triangle": 64,
+    "normalized_nonzero_component_magnitude": "1/32",
+    "normalized_squared_tensor_norm_each_triangle": "1/8",
+    "fixed_sector_internal_k3_residue_tensor_nonzero_for_all_10_triangles": true,
+    "cplus_restricted_external_branch_pattern_count_each_triangle": 16,
+    "formal_cplus_k3_residue_vanishes_by_duplicate_monomial_cancellation": false,
+    "physical_external_toller_evaluation_nonzero_for_some_explicit_group_configuration_proven": false,
+    "global_distributional_extension_unique": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_ALL_TEN_MINIMAL_SPIN_K3_COLLAPSES_HAVE_NONZERO_INTERNAL_RESIDUE_TENSORS_AFTER_THE_CHOSEN_SU2_INTERTWINER_CONTRACTION__EACH_NORMALIZED_TENSOR_HAS_128_NONZERO_COMPONENTS_AND_SQUARED_NORM_ONE_EIGHTH__SOURCE_CPLUS_EXTERNAL_BRANCH_SUPPORT_REMAINS_16_DISTINCT_FORMAL_MONOMIALS_SO_NO_DUPLICATE_MONOMIAL_CANCELLATION_FORCES_THE_K3_RESIDUE_TO_ZERO__EXPLICIT_PHYSICAL_EXTERNAL_TOLLER_EVALUATION_REMAINS_OPEN",
+  "scope_rule": "PASS upgrades the K3 logarithmic power count to a nonzero contracted internal residue tensor for every triangle in one valid boundary state. It does not yet prove nonzero evaluation on an explicit physical set of seven external Toller matrices, nor a family no-go or D7 authorization."
+}
