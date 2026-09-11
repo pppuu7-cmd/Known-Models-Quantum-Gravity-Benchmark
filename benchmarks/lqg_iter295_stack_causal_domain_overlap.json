@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "iteration": 295,
+  "date": "2026-09-11",
+  "sources": {
+    "han_stack": {
+      "title": "On the summation and triangulation independence of Lorentzian spinfoam amplitudes for all LQG",
+      "author": "Muxin Han",
+      "arxiv": "2510.26926",
+      "authority_level": "PUBLIC_PREPRINT"
+    },
+    "beltran_causal": {
+      "title": "Causal Structure for Generalized Spinfoams",
+      "author": "Carlos E. Beltran",
+      "arxiv": "2603.22661v2",
+      "authority_level": "PUBLIC_PREPRINT"
+    }
+  },
+  "prospectively_frozen_claims": {
+    "han_stack_members_are_generalized_eprl_on_2_complexes_using_kkl": true,
+    "beltran_causal_model_is_generalized_eprl_kkl_on_arbitrary_2_complex": true,
+    "shared_per_complex_formalism": "GENERALIZED_EPRL_KKL",
+    "han_five_valent_root_vertex_is_dual_to_4_simplex": true,
+    "beltran_five_valent_causality_matrix_is_k5_incidence_over_gf2": true,
+    "beltran_requires_time_oriented_working_scope": true,
+    "beltran_assumes_timelike_edges_in_remainder": true,
+    "beltran_requires_each_vertex_boundary_graph_3_link_connected": true,
+    "conditional_common_domain_nonempty": true,
+    "universal_han_stack_inclusion_in_beltran_working_domain": false,
+    "explicit_causal_vertex_lift_through_han_stack_sum": false,
+    "explicit_lambda_f_face_multiplicity_transport": false,
+    "explicit_same_realization_uv_to_ir_parameter_transport": false,
+    "normalized_same_realization_observable_comparator_error_certificate": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_CONDITIONAL_GENERALIZED_EPRL_KKL_DOMAIN_OVERLAP_WITH_EXPLICIT_K5_CAUSAL_WITNESS__NO_HAN_STACK_SUM_LIFT_OR_SAME_REALIZATION_UV_TO_IR_TRANSPORT",
+  "scope_rule": "A shared generalized EPRL-KKL per-2-complex formalism plus an explicit admissible K5 witness proves a nonempty conditional overlap only. It does not prove universal inclusion of all Han stacks in Beltran's working domain, does not insert the causal vertex into Han's sum over face multiplicities with lambda_f weights and area cutoffs, and does not establish same-realization UV-to-IR transport, normalized observables, comparator identity, propagated uncertainty, family terminality, or D7 authorization."
+}
