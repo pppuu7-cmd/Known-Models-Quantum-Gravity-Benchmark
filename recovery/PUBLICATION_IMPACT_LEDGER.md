@@ -246,6 +246,16 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `PASS_SCOPED_FIXED_SPIN_TOLLER_BLOCK_SU2_HAAR_HALF_LINK_GLUE_COMPATIBILITY__SCHUR_CONTRACTION_SURVIVES_WITHOUT_SL2C_BRANCH_REPRESENTATION_LAW__CAUSAL_VERTEX_FINITE_NORMALIZATION_STACK_CUTOFF_AND_UV_IR_TRANSPORT_REMAIN_OPEN`.
 - Provenance: scientific `34614776339`; scientific head `d2238ee1e3e43b16ec550a49317c2aab459fdc01`; methodology `34614776311`; summary artifact `10269418152`; artifact digest `sha256:0cf3f16acf0a00211ef4cb55f009a5eaff296903b6ed6b38d2718bbedc4a662f`; raw summary digest `sha256:b638c92c7790f660a14d64410eda2c699a7589a73aebc12e5ce3058061095acf`.
 
+## Iter304 — Toller causal-vertex finiteness-theorem transfer
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific theorem-applicability refinement; no new general resource-closure rule beyond the already-frozen same-realization and multi-axis obligations.
+### Paper IV — `READY`
+- Add Kamiński's positive 3-edge-connected standard-EPRL integrability theorem next to the causal Toller vertex and state the scope distinction explicitly.
+- Record that a fixed Toller branch is not itself an `SL(2,C)` representation and that polynomial boundedness alone does not imply noncompact Haar/radial integrability; therefore the standard theorem cannot be counted as an automatic causal-vertex finiteness certificate without an explicit extension/decay argument.
+- **Required boundary:** this does not prove that the causal vertex diverges, does not establish a no-go or family FAIL, and does not close `lambda_f` stack normalization/cutoff or UV→Regge/GR transport. Require an explicit Toller-kernel integrability/decay theorem or direct finite normalized causal-vertex certificate before claiming finiteness.
+- Result: `PASS_SCOPED_STANDARD_EPRL_3_EDGE_CONNECTED_FINITENESS_THEOREM_NOT_AUTOMATICALLY_TRANSFERABLE_TO_FIXED_CAUSAL_TOLLER_VERTEX_FROM_POLYNOMIAL_BOUNDEDNESS_ALONE__EXPLICIT_TOLLER_INTEGRABILITY_BOUND_OR_EXTENSION_THEOREM_REQUIRED__NO_DIVERGENCE_NO_GO_OR_FAMILY_PROMOTION`.
+- Provenance: scientific `34622448515`; scientific head `b6365b863fea2e6c61c7bcd0848deac0c81f4dc9`; jobs `103339444457`, `103339444326`, `103339444484`, `103339444563`; aggregate `103339561820`; methodology `34622448482`; summary artifact `10272398533`; artifact digest `sha256:ad9072614d42f6f004b9fae8d3225c678e67315af84c7c3cf2a3ffb700e2280a`; raw summary digest `sha256:233709ebaceee04857e04b8b2de89aa84a7d9982e80657e3e4d0af331d428c80`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),

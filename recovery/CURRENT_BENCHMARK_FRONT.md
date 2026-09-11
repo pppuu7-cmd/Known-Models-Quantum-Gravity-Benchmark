@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter303 fixed-spin Toller SU(2)-Haar half-link glue compatibility validated; Iter302 branch-composition scope retained
+Iteration: Iter304 Toller causal-vertex finiteness-theorem transfer applicability gap validated; Iter303 SU(2)-Haar glue compatibility retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -73,6 +73,16 @@ Classification: `PASS_SCOPED_FIXED_SPIN_TOLLER_BLOCK_SU2_HAAR_HALF_LINK_GLUE_COM
 
 Boundary: causal-vertex finiteness, `lambda_f`-weighted complete-stack finite normalization/cutoff removal, and same-realization UV→causal-Regge/GR transport remain open. No family promotion; D7 remains unauthorized.
 
+### Iter304 — Toller causal-vertex finiteness-theorem transfer
+Contract: `benchmarks/lqg_iter304_toller_finiteness_transfer.json`.
+Scientific run `34622448515` on exact head `b6365b863fea2e6c61c7bcd0848deac0c81f4dc9`: four independent probes in parallel plus aggregate SUCCESS. Methodology `34622448482`: SUCCESS. Summary artifact `10272398533`; artifact digest `sha256:ad9072614d42f6f004b9fae8d3225c678e67315af84c7c3cf2a3ffb700e2280a`; raw summary digest `sha256:233709ebaceee04857e04b8b2de89aa84a7d9982e80657e3e4d0af331d428c80`.
+
+Machine result: Kamiński's positive 3-edge-connected standard-EPRL integrability theorem is not automatically transferable to a sign-selected fixed-causal Toller vertex from polynomial boundedness alone. Polynomial boundedness is logically insufficient for noncompact Haar/radial integrability; no explicit source extension theorem was found in the frozen contract.
+
+Classification: `PASS_SCOPED_STANDARD_EPRL_3_EDGE_CONNECTED_FINITENESS_THEOREM_NOT_AUTOMATICALLY_TRANSFERABLE_TO_FIXED_CAUSAL_TOLLER_VERTEX_FROM_POLYNOMIAL_BOUNDEDNESS_ALONE__EXPLICIT_TOLLER_INTEGRABILITY_BOUND_OR_EXTENSION_THEOREM_REQUIRED__NO_DIVERGENCE_NO_GO_OR_FAMILY_PROMOTION`.
+
+Boundary: this is an applicability gap, not a divergence result or no-go. Causal-vertex finiteness remains unproven; `lambda_f`-weighted complete-stack finite normalization/cutoff removal and same-realization UV→causal-Regge/GR transport remain open. No family promotion; D7 remains unauthorized.
+
 ## Infrastructure note
 The old `iter299-recovery-integration` workflow can fire and fail on later heads because its recovery preconditions are stale. This is an infrastructure/synchronization defect only. It must not be interpreted as a scientific failure; the current scientific and methodology workflows remain authoritative.
 
@@ -83,9 +93,9 @@ The old `iter299-recovery-integration` workflow can fire and fail on later heads
 LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS.
 
 Current blocker:
-`BLOCKED_MISSING_FINITE_NORMALIZED_GENERALIZED_CAUSAL_VERTEX_AND_LAMBDA_F_WEIGHTED_COMPLETE_STACK_FINITE_NORMALIZATION_AREA_CUTOFF_REMOVAL_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_PARAMETER_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
+`BLOCKED_MISSING_EXPLICIT_TOLLER_CAUSAL_VERTEX_INTEGRABILITY_DECAY_BOUND_OR_EXTENSION_THEOREM_OR_DIRECT_FINITE_NORMALIZED_VERTEX_CERTIFICATE_PLUS_LAMBDA_F_WEIGHTED_COMPLETE_STACK_FINITE_NORMALIZATION_AREA_CUTOFF_REMOVAL_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_PARAMETER_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
 
 Exact next permitted gate:
-`D7_S2_LQG_GENERALIZED_CAUSAL_VERTEX_FINITE_NORMALIZATION_AND_LAMBDA_F_WEIGHTED_COMPLETE_STACK_CUTOFF_CONTROL__THEN_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT`
+`D7_S2_LQG_EXPLICIT_TOLLER_CAUSAL_VERTEX_INTEGRABILITY_THEOREM_OR_DIRECT_FINITE_NORMALIZED_VERTEX_CERTIFICATE__THEN_LAMBDA_F_WEIGHTED_COMPLETE_STACK_CUTOFF_CONTROL__THEN_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT`
 
 Do not launch the terminal D7 classifier while D7-S2, D7-S3, or D7-S4 remains open. Missing published objects remain blockers, not evidence of impossibility.
