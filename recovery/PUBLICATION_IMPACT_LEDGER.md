@@ -159,6 +159,16 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `HIGH_VALUE_CFS_GEOMETRIC_LORENTZIAN_EINSTEIN_DERIVATION_AND_SYSTEMATIC_CORRECTION_HIERARCHY__CONCRETE_NORMALIZED_BEYOND_EINSTEIN_RESIDUAL_COMPARATOR_STILL_MISSING`.
 - Provenance: scientific `34585821754`; scientific head `9d821ea02aae8a85c093cec27ecffb120250d6b7`; methodology `34585821764`; summary artifact `10193537053`; artifact digest `sha256:996064f831648b6f2a5e788b3e8f63f20f7a0213a13422d65d085676cd61439b`; raw summary digest `sha256:89a2f8b287d637b7d2ae664bfe84d4abd0e27b254d99adf5c353c72677343902`.
 
+## Iter295 — LQG Han-stack / generalized causal EPRL-KKL overlap
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific domain/equivalence evidence; no new general sensing/resource-closure rule beyond Iter277.
+### Paper IV — `READY`
+- Add the explicit shared generalized-EPRL/KKL per-2-complex domain between Han's spinfoam-stack construction and Beltrán's generalized causal spinfoam framework.
+- Report the exact five-valent K5 witness: 5 nodes, 10 links, GF(2) rank 4, one-dimensional global-sign kernel, and connectivity under every one- and two-link deletion.
+- **Required boundary:** this is a conditional nonempty overlap, not universal inclusion of all Han stacks in Beltrán's working domain. No source inserts the causal vertex through Han's complete sum over face multiplicities with `lambda_f` weights/area cutoffs or transports a normalized observable with comparator/errors from the stack UV sector to causal Regge/GR.
+- Result: `PASS_SCOPED_CONDITIONAL_GENERALIZED_EPRL_KKL_DOMAIN_OVERLAP_WITH_EXPLICIT_K5_CAUSAL_WITNESS__NO_HAN_STACK_SUM_LIFT_OR_SAME_REALIZATION_UV_TO_IR_TRANSPORT`.
+- Provenance: scientific `34592425741`; scientific head `300159ee62c096aeaff766658169be5d5fea83fe`; methodology `34592425770`; summary artifact `10196164627`; artifact digest `sha256:5ac870b2e59d0717913042bc2a0eb809e650c24bcc4c0ca7ad0facf929eeef70`; raw summary digest `sha256:55b371ffda6542839d1cdfc92b07196e207e4b4b83253d00142ed35d7bf86eb6`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),

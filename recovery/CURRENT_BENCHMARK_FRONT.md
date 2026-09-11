@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter294 CFS geometric Lorentzian Einstein endpoint scoped; Iter293 generalized EPRL-KKL causal scope and earlier LQG bridge refinements retained
+Iteration: Iter295 Han-stack / generalized causal EPRL-KKL conditional domain overlap scoped; Iter294 CFS Einstein endpoint and earlier bridge refinements retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -95,7 +95,7 @@ Classification:
 
 LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS. The new authority removes an obsolete sub-blocker (“no semiclassical gamma observable”) but does not supply the terminal bridge.
 Canonical blocker remains, sharpened to:
-`BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_COMPLETE_STACK_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRAJECTORY_WITH_STACK_COUPLING_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE`
+`BLOCKED_MISSING_CAUSAL_VERTEX_LIFT_THROUGH_HAN_COMPLETE_STACK_SUM_FACE_MULTIPLICITIES_AND_LAMBDA_F_WEIGHTS_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
 
 ### Iter292 — external refinement-flow authority
 Primary object: Tamburini, *ER = EPR in Loop Quantum Gravity: the Immirzi Parameter and the Continuum Limit*, arXiv:2508.18324v2 (2025). Public preprint; no peer-reviewed journal version located in the Iter292 authority check.
@@ -135,6 +135,31 @@ Classification:
 `HIGH_VALUE_GENERALIZED_EPRL_KKL_CAUSAL_SCOPE_EXTENSION__NO_COMPLETE_STACK_EQUIVALENCE_OR_UV_TO_IR_TRANSPORT`
 
 Interpretation: the Iter290 causal endpoint is no longer confined to a single simplicial EPRL-vertex construction; a generalized EPRL-KKL causal framework on arbitrary 2-complexes exists. This is a meaningful scope extension, but it does not establish identity with the active Han stack or close the decisive UV→IR transport blocker.
+
+### Iter295 — Han-stack / generalized causal EPRL-KKL conditional overlap
+Authorities: Han, PRD 113, 084034 (2026), and Beltrán, arXiv:2603.22661v2 (2026).
+Scientific run `34592425741`: 4/4 independent guards + aggregate SUCCESS on head `300159ee62c096aeaff766658169be5d5fea83fe`.
+Methodology `34592425770`: preflight + 4/4 shards + aggregate/bundle SUCCESS.
+Summary artifact `10196164627`; artifact digest `sha256:5ac870b2e59d0717913042bc2a0eb809e650c24bcc4c0ca7ad0facf929eeef70`; raw summary digest `sha256:55b371ffda6542839d1cdfc92b07196e207e4b4b83253d00142ed35d7bf86eb6`.
+
+Aggregate:
+- shared generalized EPRL-KKL per-complex formalism = PASS;
+- conditional common domain nonempty = PASS;
+- exact K5 witness = PASS: 5 nodes, 10 links, GF(2) rank 4, kernel dimension 1, all one/two-link cuts connected;
+- universal Han-stack inclusion in Beltrán working domain = false;
+- causal-vertex lift through Han complete stack sum = false;
+- `lambda_f` / face-multiplicity transport = false;
+- complete-stack same-realization UV→IR transport = false;
+- normalized observable/comparator/error = false;
+- family terminal = false; D7 authorized = false.
+
+Classification:
+`PASS_SCOPED_CONDITIONAL_GENERALIZED_EPRL_KKL_DOMAIN_OVERLAP_WITH_EXPLICIT_K5_CAUSAL_WITNESS__NO_HAN_STACK_SUM_LIFT_OR_SAME_REALIZATION_UV_TO_IR_TRANSPORT`
+
+Interpretation: the frameworks are no longer merely adjacent. A concrete admissible per-complex overlap exists. The decisive missing object is now the lift of the causal prescription through the complete Han stack sum and the subsequent physical same-realization transport to causal Regge/GR observables.
+
+Refined blocker:
+`BLOCKED_MISSING_CAUSAL_VERTEX_LIFT_THROUGH_HAN_COMPLETE_STACK_SUM_FACE_MULTIPLICITIES_AND_LAMBDA_F_WEIGHTS_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
 
 ## CFS front
 The existing PF1 authority already includes Fischer–Finster arXiv:2605.30199 as exact curved-spacetime Einstein–Dirac comparator evidence and rejects obsolete blockers about absence of curved-spacetime GR/Fock/relational controls. The frozen blocker is a gravity-specific beyond-continuum observable / normalized non-Einstein correction tensor plus same-domain comparator residual.
@@ -185,17 +210,17 @@ Interpretation: the obsolete weak sub-blocker "rank-two Einstein structure is on
 
 ## Publication handoff
 `recovery/PUBLICATION_IMPACT_LEDGER.md` is authoritative.
-- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–294 = `NOT_NEEDED` as additional rules except where already stated.
-- Paper IV: Iter277–294 = `READY` with stated claim boundaries.
+- Paper III: Iter277 `MULTI_AXIS_RESOURCE_CLOSURE` = `READY`; Iter278–295 = `NOT_NEEDED` as additional rules except where already stated.
+- Paper IV: Iter277–295 = `READY` with stated claim boundaries.
 
 ## Anti-idle compute policy
 Whenever scientifically meaningful, nonduplicating tasks are independent, launch them immediately in parallel (`fail-fast:false`, highest safe practical runner parallelism). Dependent classification/aggregate stages wait behind explicit barriers. When runners are saturated, queue additional useful independent jobs rather than suppressing them. Never repeat saturated or duplicate calculations merely to manufacture activity. The active KMQGB auto-research automation is configured with the same mandatory rule.
 
 ## Exact next gate
-`D7_S2_LQG_COMPLETE_STACK_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT_OR_EQUIVALENCE_CERTIFICATE`
+`D7_S2_LQG_CAUSAL_LIFT_THROUGH_COMPLETE_STACK_AND_SAME_REALIZATION_UV_TO_REGGE_GR_TRANSPORT_CERTIFICATE`
 
 Priority:
-1. seek/compute an explicit complete-stack LQG stack-coupling/`gamma`/spin-scale flow or valid reduction/equivalence map connecting the Iter287 UV/entropy sector through the Iter291 semiclassical `gamma` observable bridge to the Iter290 causal large-spin Regge/Einstein endpoint, with normalized observable/comparator/error transport;
+1. seek/compute an explicit lift of the generalized causal EPRL-KKL prescription through Han's complete face-multiplicity/`lambda_f` stack sum, then a same-realization stack-coupling/`gamma`/spin-scale transport from the Iter287 UV/entropy sector through Iter291 to the Iter290 causal Regge/Einstein endpoint with normalized observable/comparator/error transport;
 2. evaluate an explicit CFS beyond-Einstein correction from the Iter294 hierarchy into a normalized same-domain gravity observable/residual with comparator and propagated uncertainty;
 3. stable public AS contact-complete `s+t+u+A4`;
 4. RQCP all-band/background-independent autonomy bridge;
