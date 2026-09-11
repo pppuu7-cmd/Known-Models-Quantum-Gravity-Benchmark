@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "iteration": 306,
+  "date": "2026-09-11",
+  "derivation_type": "SOURCE_GROUNDED_COMPONENT_LEVEL_LOCAL_SINGULARITY_POWER_COUNT_AUDIT",
+  "predecessor": {
+    "iteration": 305,
+    "scientific_run": 34624252940,
+    "scientific_head": "25200d1ee6fcb9ab0c2cf066183abf4e5ca99a36",
+    "summary_artifact": 10273434988
+  },
+  "source_contract": {
+    "toller_gamma_simple_formula": "For k=j=l and rho=gamma*j, Eq. (46) of Bianchi-Chen-Gamonal arXiv:2604.24945 has hypergeometric parameters with c-a-b=-(2j+1) for either Toller branch; source examples at j=1/2 and j=1 exhibit inverse powers sinh(beta)^-2 and sinh(beta)^-3.",
+    "boost_coset_measure": "Kaminski arXiv:1010.5384 decomposes SL(2,C) Haar measure into normalized SU(2) measure times the measure on SL(2,C)/SU(2)=H_+, a three-dimensional hyperboloid. Near coincident boost points, the noncompact local dimension per independent vertex is 3.",
+    "graph": "The Lorentzian 4-simplex vertex graph is K5 with five nodes and ten edges; after one gauge-fixed node there are four independent noncompact H_+ variables.",
+    "scope": "This is a component-level superficial degree audit. It identifies where fixed-branch local singularities can overwhelm noncompact measure before magnetic/intertwiner cancellations. It does not establish divergence of the fully contracted causal vertex."
+  },
+  "prospectively_frozen_claims": {
+    "gamma_simple_hypergeometric_c_minus_a_minus_b_equals_minus_2j_minus_1": true,
+    "source_explicit_j_half_branch_has_beta_minus_2_singularity": true,
+    "source_explicit_j_one_branch_has_beta_minus_3_singularity": true,
+    "noncompact_coset_local_dimension": 3,
+    "k5_nodes": 5,
+    "k5_edges": 10,
+    "uniform_minimal_spin_component_power_count_has_marginal_or_positive_degree_subcollapses": true,
+    "component_level_power_count_risk_established": true,
+    "full_intertwiner_contracted_leading_coefficient_nonzero_proven": false,
+    "full_causal_vertex_divergence_proven": false,
+    "full_causal_vertex_finiteness_proven": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "frozen_classification_target": "PASS_SCOPED_COMPONENT_LEVEL_TOLLER_LOCAL_POWER_COUNT_EXHIBITS_MARGINAL_AND_SUPERFICIALLY_NONINTEGRABLE_K5_COLLAPSE_SECTORS_ALREADY_AT_MINIMAL_NONZERO_SPIN__FULL_INTERTWINER_MAGNETIC_CONTRACTION_CANCELLATION_NOT_YET_RESOLVED__NO_CAUSAL_VERTEX_DIVERGENCE_THEOREM_NO_NO_GO_OR_FAMILY_PROMOTION",
+  "scope_rule": "A PASS establishes a local singularity risk map and selects the next decisive object: the leading fixed-branch K5 tensor after SU(2)-invariant intertwiner contraction. It must not be promoted to full-vertex divergence, family failure, NEW_REQUIRED, or D7 authorization."
+}
