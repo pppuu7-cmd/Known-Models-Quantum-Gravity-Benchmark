@@ -4,6 +4,10 @@ The registry is data; this runner is the single machine entrypoint. It does not
 reinterpret scientific outcomes: a registered script is authoritative for its
 own PASS/BLOCKED/negative-control semantics. The orchestrator only requires
 that every critical control exists and exits successfully as a regression test.
+
+For CI wall-clock acceleration the registry may be partitioned into deterministic
+non-overlapping shards. Sharding changes execution placement only: registry order,
+PASS/FAIL semantics and the frozen scientific judge remain unchanged.
 """
 from __future__ import annotations
 
@@ -63,14 +67,28 @@ def load_registry() -> dict:
     return data
 
 
-def run_registry(timeout_s: int) -> dict:
+def select_shard(tests: list[dict], shard_index: int, shard_count: int) -> list[dict]:
+    if shard_count < 1:
+        raise ValueError("shard_count must be >= 1")
+    if shard_index < 0 or shard_index >= shard_count:
+        raise ValueError("shard_index must satisfy 0 <= shard_index < shard_count")
+    selected = [item for index, item in enumerate(tests) if index % shard_count == shard_index]
+    if not selected:
+        raise ValueError(
+            f"empty methodology shard: index={shard_index} count={shard_count} tests={len(tests)}"
+        )
+    return selected
+
+
+def run_registry(timeout_s: int, shard_index: int = 0, shard_count: int = 1) -> dict:
     data = load_registry()
+    selected = select_shard(data["tests"], shard_index, shard_count)
     env = dict(os.environ)
     env.setdefault("PYTHONHASHSEED", "0")
     results = []
     failed = False
 
-    for item in data["tests"]:
+    for item in selected:
         command = list(item["command"])
         command[0] = sys.executable
         try:
@@ -110,6 +128,10 @@ def run_registry(timeout_s: int) -> dict:
     return {
         "registry_version": data["registry_version"],
         "rqir_core": data.get("rqir_core"),
+        "registry_total": len(data["tests"]),
+        "execution_mode": "single" if shard_count == 1 else "deterministic_shard",
+        "shard_index": shard_index,
+        "shard_count": shard_count,
         "total": len(results),
         "passed": sum(r["status"] == "PASS" for r in results),
         "failed": sum(r["status"] != "PASS" for r in results),
@@ -123,14 +145,20 @@ def main() -> int:
     parser.add_argument("--validate-only", action="store_true")
     parser.add_argument("--timeout", type=int, default=120)
     parser.add_argument("--summary", default=str(DEFAULT_SUMMARY))
+    parser.add_argument("--shard-index", type=int, default=0)
+    parser.add_argument("--shard-count", type=int, default=1)
     args = parser.parse_args()
 
     if args.validate_only:
         data = load_registry()
-        print(f"PASS: executable registry valid; tests={len(data['tests'])}")
+        select_shard(data["tests"], args.shard_index, args.shard_count)
+        print(
+            f"PASS: executable registry valid; tests={len(data['tests'])}; "
+            f"shard={args.shard_index}/{args.shard_count}"
+        )
         return 0
 
-    summary = run_registry(args.timeout)
+    summary = run_registry(args.timeout, args.shard_index, args.shard_count)
     out = Path(args.summary)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(summary, indent=2, sort_keys=True), encoding="utf-8")
@@ -142,7 +170,8 @@ def main() -> int:
 
     print(
         f"methodology_orchestrator status={summary['status']} "
-        f"passed={summary['passed']}/{summary['total']}"
+        f"passed={summary['passed']}/{summary['total']} "
+        f"shard={summary['shard_index']}/{summary['shard_count']}"
     )
     return 0 if summary["status"] == "PASS" else 1
 
