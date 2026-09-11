@@ -3,6 +3,7 @@
   "iteration": 301,
   "date": "2026-09-11",
   "derivation_type": "SOURCE_GROUNDED_EXACT_CAUSAL_SECTOR_SUPPORT_ENUMERATION",
+  "workflow_registration_trigger": true,
   "predecessor": {
     "iteration": 300,
     "scientific_run": 34602793992,
