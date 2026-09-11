@@ -74,7 +74,22 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Required boundary: the paper is model-independent and does not itself provide a concrete LQG constraint/state map, specified physical-observable algebra, normalized gravity observable, same-realization UV->IR/GR transport, comparator or propagated errors. Those obligations remain required.
 - Han compatibility: the Iter281 topological infinite-cutoff regime is compatible with the no-go, but this does not convert it into the distinct finite-large-cutoff/small-gamma semiclassical GR regime.
 - Scoped result: `PASS_SCOPED_CONTINUUM_CERTIFICATE_COMPATIBILITY__STRONG_HILBERT_LIMIT_TOPOLOGICAL_NO_GO_AND_DISTRIBUTIONAL_RIGGING_PATH__MODEL_SPECIFIC_PHYSICAL_UV_IR_GR_OBJECTS_STILL_MISSING`.
-- Provenance: scientific run `34555287209`; methodology CI `34555287201`; reproducibility release `34555302796`; aggregate digest `sha256:bf352695d6f5acf1832c4944a1839e895766b673ed4b480d7e0a74313c31c293`.
+- Provenance: scientific run `34555287209`; methodology CI `34555287201`; reproducibility release `34555302796`; archival methodology CI `34555562285`; aggregate digest `sha256:bf352695d6f5acf1832c4944a1839e895766b673ed4b480d7e0a74313c31c293`.
+
+## Iter283 — LQG UV-to-IR same-realization bridge identity audit
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific evidentiary/taxonomy refinement.
+- No new general quantum-sensing/resource-closure rule is created. Do not expand Paper III for this result.
+
+### Paper IV — `READY`
+- **Type:** high-value endpoint synthesis + claim-boundary + blocker localization.
+- Add Han 2017, Phys. Rev. D 96, 024047, as a material large-spin/refinement semiclassical endpoint yielding the continuum Einstein equation.
+- Present it next to Han 2026 UV fixed-point/complete-stack results, but explicitly **do not concatenate them into one trajectory without a transport certificate**.
+- Report aggregate result: `shared_parent_family=true`, `material_positive_endpoints=true`, `same_realization_terminal_bridge_ready=false`.
+- Required bridge gaps: no explicit equality/reduction identity between the 2017 refining-triangulation amplitude and 2026 stack-summed complete amplitude; no explicit map from `lambda/delta/mu` to the stack/UV variables; no demonstrated small-spin-UV -> large-spin-semiclassical trajectory; no normalized same-domain gravity observable transported through the chain with comparator/errors.
+- Reframe the existing LQG blocker in prose as **missing bridge/transport, not missing UV and GR endpoints**. Keep the canonical blocker string unchanged unless the full D7 decision stack is synchronized atomically.
+- Canonical result: `HIGH_VALUE_UV_AND_GR_ENDPOINTS_IN_SHARED_LQG_PARENT__NO_EXPLICIT_SAME_REALIZATION_PARAMETER_AND_OBSERVABLE_TRANSPORT_BRIDGE`.
+- Provenance: scientific run `34555702346`; methodology CI `34555702337`; aggregate digest `sha256:32701d4931ddce73e1674025cda8e518195fc64b477e1a02d9227fda9913cbc5`.
 
 ## Standing rule
 For every subsequent scientifically relevant iteration, record here:

@@ -1,0 +1,39 @@
+{
+  "iteration": 283,
+  "date": "2026-09-11",
+  "family": "LQG_SPINFOAM",
+  "object": "HAN_2017_GR_ENDPOINT_TO_HAN_2026_UV_ENDPOINT_BRIDGE",
+  "scientific_workflow": {
+    "name": "lqg-uv-ir-bridge-identity-audit",
+    "run_id": 34555702346,
+    "head": "38734d01a4f88fa45c341dd395e3bded15a07d4c",
+    "independent_guards_success": "4/4",
+    "aggregate": "SUCCESS",
+    "aggregate_digest": "sha256:32701d4931ddce73e1674025cda8e518195fc64b477e1a02d9227fda9913cbc5"
+  },
+  "methodology_validation": {"run_id":34555702337,"conclusion":"SUCCESS"},
+  "result": "HIGH_VALUE_UV_AND_GR_ENDPOINTS_IN_SHARED_LQG_PARENT__NO_EXPLICIT_SAME_REALIZATION_PARAMETER_AND_OBSERVABLE_TRANSPORT_BRIDGE",
+  "bridge_state": {
+    "shared_parent_family": true,
+    "material_positive_endpoints": true,
+    "same_realization_terminal_bridge_ready": false,
+    "explicit_same_realization_amplitude_identity": false,
+    "explicit_parameter_transport": false,
+    "explicit_small_spin_uv_to_large_spin_semiclassical_trajectory": false,
+    "normalized_observable_transport": false
+  },
+  "family_result": "PARTIAL_BLOCKED_NONTERMINAL",
+  "existing_blocker_preserved": "BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_UV_TO_IR_GR_TRAJECTORY_NORMALIZED_GRAVITY_OBSERVABLE_PARAMETER_IDENTITY_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE_FROM_COMPLETE_SPINFOAM_CONTINUUM_FIXED_POINT",
+  "blocker_interpretation": "MISSING_BRIDGE_TRANSPORT_NOT_MISSING_ENDPOINTS",
+  "tier1_total_before": 15,
+  "tier1_total_after": 15,
+  "strict_terminal_before": 1,
+  "strict_terminal_after": 1,
+  "candidate_terminal_count": 0,
+  "d7_change": false,
+  "candidate_gravity_activation_change": false,
+  "paper_impact": {
+    "paper_III": "NOT_NEEDED__NO_NEW_GENERAL_SENSING_RESOURCE_RULE",
+    "paper_IV": "READY__PRESENT_LQG_AS_STRONG_TWO_ENDPOINT_CASE_WITH_EXPLICIT_MISSING_IDENTITY_PARAMETER_AND_OBSERVABLE_TRANSPORT_BRIDGE"
+  }
+}
