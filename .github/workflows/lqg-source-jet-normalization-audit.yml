@@ -1,0 +1,60 @@
+name: lqg-source-jet-normalization-audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/lqg_iter331_*.py'
+      - '.github/workflows/lqg-source-jet-normalization-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        source:
+          - bcg_causal_vertex_2601_23162
+          - bcg_toller_2604_24945
+          - beltran_generalized_2603_22661_v2
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter331
+          python code/lqg_iter331_source_jet_normalization_audit.py --source '${{ matrix.source }}' --output 'build/iter331/${{ matrix.source }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter331-${{ matrix.source }}
+          path: build/iter331/${{ matrix.source }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter331-*
+          path: iter331-results
+      - run: python code/lqg_iter331_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter331-summary
+          path: iter331-summary.json
+          if-no-files-found: error
+          retention-days: 90
