@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "as_of": "2026-09-11",
-  "iteration": 276,
+  "iteration": 277,
   "authority": {
     "validated_pre_iter272_head": "963e3a1440fb067fc3f447852d749edec01ee111",
     "d7_contract_commit": "ed0412aace9e1c76af1f18022e4aa9a1f0ad7989",
@@ -11,19 +11,21 @@
     "coverage_contract": "protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json",
     "d7_contract": "protocol/PAPER_IV_D7_GLOBAL_DECISION_CONTRACT.json",
     "iter270_global_saturation_audit": "paper_iv/PAPER_IV_GLOBAL_INTERNAL_SATURATION_AUDIT_ITER270_2026-09-11.md",
-    "iter270_recovery": "recovery/RECOVERY_DELTA_270.md",
     "iter275_rqcp_promotion_audit": "paper_iv/P_RQCP_NEW_PARENT_PROMOTION_AUDIT_ITER275_2026-09-11.md",
-    "iter275_rqcp_audit_commit": "16950e1d4dc941d958e13c4b9218d68c1a911ffc",
-    "iter275_coverage_promotion_commit": "6eb948d5f3843eabd433e4c38cfbee9f5a58835b",
     "iter275_cross_environment_run": 34549781006,
     "iter275_cross_environment_conclusion": "success",
-    "iter276_matrix_sync_commit": "b75ea2a52a71ca6036ba38fc3acdaed760c8ccd2",
-    "iter276_d7_attempt_sync_commit": "824d4a7236688b0ceb8bbccbc97e812f64882cfc"
+    "iter276_census_sync_validation_run": 34551142803,
+    "iter276_census_sync_validation_conclusion": "success",
+    "iter277_rqcp_multi_axis_audit": "paper_iv/P_RQCP_MULTI_AXIS_RESOURCE_CLOSURE_AUDIT_ITER277_2026-09-11.md",
+    "iter277_rqcp_multi_axis_audit_commit": "7f90a88075117dd0f9ae7dff06d1e447d4bb0b6d",
+    "iter277_first_robustness_run": 34551324978,
+    "iter277_high_cutoff_extension_run": 34551533448,
+    "iter277_high_cutoff_extension_head_methodology_ci": 34551533303
   },
   "metric_separation": {
     "operational_polygon_readiness_percent": 100,
     "d7_protocol_infrastructure_readiness_percent": 100,
-    "d7_protocol_infrastructure_status": "COMPLETE_AND_PRIOR_VALIDATED__ITER276_SYNC_VALIDATION_PENDING",
+    "d7_protocol_infrastructure_status": "COMPLETE_AND_VALIDATED_ON_15_ROW_CENSUS",
     "d7_scientific_authorization": "NOT_AUTHORIZED",
     "candidate_gravity_r3_percent": 24,
     "candidate_gravity_active": false
@@ -37,7 +39,7 @@
     "internal_actionable_fronts": 0,
     "latest_reopened_family": "RELATIONAL_QUANTUM_CAUSAL_PROCESSES",
     "latest_reopen_effect_on_terminal_count": 0,
-    "latest_reopen_effect_on_census": 1
+    "latest_reopen_effect_on_census": 0
   },
   "stages": {
     "D7-S0": {
@@ -46,8 +48,8 @@
       "basis": [
         "RQIR Core v1.0 remains FROZEN",
         "Paper-IV major-framework coverage contract remains authoritative",
-        "RQCP was promoted by the existing new-independent-parent rule rather than by changing RQIR Core",
-        "Iter272 D7 infrastructure/recovery head passed methodology CI"
+        "RQCP resource-axis refinement was added to the benchmark coverage obligation rather than used to modify RQIR Core",
+        "the 15-row decision stack and census-sync invariant passed parallel methodology CI"
       ]
     },
     "D7-S1": {
@@ -56,9 +58,9 @@
       "basis": [
         "Iter270 operational_polygon_readiness_percent=100",
         "Tier-2 unresolved=0",
-        "Iter275 completed an independent four-environment reproducibility audit for the newly promoted RQCP parent",
-        "all 14 nonterminal candidate Tier-1 families retain explicit external or family-scope reopen conditions",
-        "repeating the already stable RQCP fixed-band computation cannot close its all-band/background-independent blocker"
+        "Iter275 completed independent four-environment reproducibility audit for RQCP",
+        "Iter277 completed 19 independent robustness probes plus aggregate and four further high-cutoff extension jobs",
+        "the remaining RQCP blocker now requires genuinely new family-scope construction rather than repetition of the saturated fixed-band numerics"
       ]
     },
     "D7-S2": {
@@ -67,21 +69,28 @@
       "blocking_fact": "Only 1/15 Tier-1 rows is strict terminal; 14/15 remain PARTIAL/BLOCKED/nonterminal under the frozen family-scope contract.",
       "latest_reopen": {
         "family": "RELATIONAL_QUANTUM_CAUSAL_PROCESSES",
-        "archival_authority": "Xu, arXiv:2607.26672 and arXiv:2608.23117; public reproducibility archive Amordia/rqcp-toward-quantum-gravity v1.0.3",
-        "independent_compute": "GitHub Actions run 34549781006: four cross-environment semantic recomputations all passed",
-        "scoped_result": "PASS_SCOPED_FIXED_BAND_SAME_FAMILY_EINSTEIN_RESPONSE_AND_REPRODUCIBILITY_CONTROL",
+        "independent_compute": "Runs 34551324978 and 34551533448: published cutoff-8 point reproduced; Hilbert-cutoff sequence extended independently through cutoff 28",
+        "scoped_result": "PASS_SCOPED_BASE_REPRODUCTION_AND_HIGH_CUTOFF_STABILIZATION__PUBLISHED_CUTOFF8_EINSTEIN_RESPONSE_IS_MATERIALLY_SHIFTED_RELATIVE_TO_THE_HIGH_CUTOFF_PLATEAU",
         "family_result": "PARTIAL_SUBFAMILY_ONLY",
-        "refined_blocker": "BLOCKED_MISSING_ALL_BAND_BACKGROUND_INDEPENDENT_AUTONOMOUS_GRAVITY_PARENT_QUANTUM_METRIC_OR_EQUIVALENT_GRAVITY_HILBERT_STRUCTURE_ANOMALY_FREE_CONSTRAINT_CLOSURE_TOPOLOGY_CONTROL_AND_NORMALIZED_SAME_DOMAIN_COMPARATOR_CERTIFICATE",
+        "quantified_resource_axis": {
+          "cutoff8_to28_G_relative_shift": 0.0732453345178252,
+          "cutoff8_to28_gap_relative_shift": 0.03070582964700973,
+          "cutoff8_to28_G_gap2_relative_shift": 0.013598828173084108,
+          "cutoff24_to28_G_relative_change": 1.8007740347530377e-08,
+          "cutoff24_to28_gap_relative_change": 1.352999660925122e-09,
+          "cutoff24_to28_G_gap2_relative_change": 1.530174113246571e-08
+        },
+        "refined_blocker": "BLOCKED_MISSING_ALL_BAND_BACKGROUND_INDEPENDENT_AUTONOMOUS_GRAVITY_PARENT_PLUS_INDEPENDENT_HILBERT_CUTOFF_REMOVAL_OR_AUTONOMOUS_PHYSICAL_SELECTION_WITH_PROPAGATED_OBSERVABLE_ERROR_QUANTUM_GRAVITY_STATE_CONSTRAINT_TOPOLOGY_AND_NORMALIZED_SAME_DOMAIN_COMPARATOR_CERTIFICATE",
         "terminal_count_change": 0,
-        "census_change": 1
+        "census_change": 0
       },
-      "next_rule": "Resolve families only by new family-scope terminal evidence, exhaustive material-subfamily resolution, or explicit valid reduction/equivalence maps. Adding a new independent parent increases the denominator but does not count as a failure or exclusion."
+      "next_rule": "Resolve families only by new family-scope terminal evidence, exhaustive material-subfamily resolution, or explicit valid reduction/equivalence maps. Convergence on one resource axis does not silently close an orthogonal regulator/truncation/domain axis."
     },
     "D7-S3": {
       "name": "SAME_REALIZATION_OBJECT_COMPLETENESS",
       "status": "NOT_CLOSED",
-      "blocking_fact": "Multiple Tier-1 families still lack required same-realization theory/observable/parameter-transport/comparator/error objects. RQCP now adds an explicit all-band/background-independent autonomy and quantum-gravity-state/constraint bridge obligation; Asymptotic Safety still awaits a stable public contact-complete s+t+u+A4 package.",
-      "next_rule": "Missing external objects remain blockers; absence is not FAIL."
+      "blocking_fact": "Multiple Tier-1 families still lack required same-realization theory/observable/parameter-transport/comparator/error objects. For RQCP, the fixed-band spatial refinement is reproducible but the independent Hilbert/domain cutoff materially changes the normalized Einstein-response observable between cutoff 8 and the high-cutoff plateau; Asymptotic Safety still awaits a stable public contact-complete s+t+u+A4 package.",
+      "next_rule": "Missing external objects remain blockers; absence is not FAIL. Independent resource axes require their own convergence/error closure or autonomous physical selection with propagated uncertainty."
     },
     "D7-S4": {
       "name": "COMMON_DOMAIN_GLOBAL_COMPARABILITY",
@@ -111,11 +120,11 @@
     "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
     "paper_iv_global_decision": "NOT_YET_AUTHORIZED",
     "new_required_authorized": false,
-    "heavy_compute": "IDLE_NO_NEW_FAMILY_SCOPE_BRIDGE_OBJECT"
+    "heavy_compute": "IDLE_PENDING_NEW_FAMILY_SCOPE_OBJECT"
   },
   "next_stage": {
     "id": "D7-S2",
     "mode": "EXTERNAL_AUTHORITY_DRIVEN_FAMILY_TERMINALIZATION",
-    "policy": "Keep Asymptotic Safety on immediate public contact-complete s+t+u+A4 watch; reopen RQCP only for an all-band/background-independent autonomy or equivalent family-scope bridge; otherwise prioritize any other Tier-1 family receiving materially new terminalization-capable authority. Do not spend compute repeating saturated controls."
+    "policy": "Keep Asymptotic Safety on immediate public contact-complete s+t+u+A4 watch; reopen RQCP only for an all-band/background-independent autonomy bridge plus Hilbert-cutoff removal or autonomous physical selection/error propagation; otherwise prioritize another Tier-1 family only when materially new authority can change strict family classification. Do not spend compute repeating saturated controls."
   }
 }
