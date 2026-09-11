@@ -129,6 +129,16 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `HIGH_VALUE_LQG_GAMMA_DUALITY_SEMICLASSICAL_OBSERVABLE_PARAMETER_BRIDGE__NO_COMPLETE_STACK_SAME_REALIZATION_UV_TO_IR_TRANSPORT`.
 - Provenance: scientific `34568777275`; scientific head `4b2212fe21830964b43fa8c0f9fabef842c6e6aa`; summary artifact `10186981524`; artifact digest `sha256:3ef255ea6377cc487447b5ac62df01c43e870ca1f9913e2f7bedbba165b714ad`; raw aggregate digest `sha256:3b7f1797aa37d1722a3fce276520a7e7467c27f834823c6240764f1c32f727b0`.
 
+## Iter292 — LQG ER=EPR refinement-flow scope audit
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific refinement/continuum authority; no new general methodology rule.
+### Paper IV — `READY`
+- Add Tamburini, *ER = EPR in Loop Quantum Gravity: the Immirzi Parameter and the Continuum Limit*, arXiv:2508.18324v2 (2025), as a scoped public-preprint refinement-flow authority.
+- Record the explicit claim of a spin-foam refinement-renormalization flow and a conditional regulator-independent continuum limit.
+- **Required boundary:** no explicit equivalence/reduction map to the active Han complete-stack realization was located; no continuous stack-coupling/`gamma`/spin-scale identity transport to the Iter290 causal Regge endpoint is demonstrated; no normalized same-realization observable/comparator/error certificate is supplied. Do not promote preprint-scoped evidence to family terminal status.
+- Result: `HIGH_VALUE_EXTERNAL_REFINEMENT_FLOW_AUTHORITY__NO_EXPLICIT_EQUIVALENCE_TO_THE_ACTIVE_COMPLETE_STACK_OR_CAUSAL_REGGE_CHAIN`.
+- Provenance: scientific `34575046143`; scientific head `eb6ba509773ac50697b4c6c683b2f3638ea7ad71`; summary artifact `10189283134`; artifact digest `sha256:3dfa5deb1bab46bfcb7c32f199969dcc8a1588a69937d408483ff202a48002f5`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),

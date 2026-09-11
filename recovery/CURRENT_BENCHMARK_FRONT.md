@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter291 LQG gamma-duality semiclassical observable/parameter bridge integrated; Iter290 causal Lorentzian Regge endpoint retained
+Iteration: Iter292 LQG external refinement-flow authority scoped; Iter291 gamma-duality bridge and Iter290 causal Lorentzian Regge endpoint retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -96,6 +96,25 @@ Classification:
 LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS. The new authority removes an obsolete sub-blocker (“no semiclassical gamma observable”) but does not supply the terminal bridge.
 Canonical blocker remains, sharpened to:
 `BLOCKED_MISSING_SAME_REALIZATION_PHYSICAL_COMPLETE_STACK_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRAJECTORY_WITH_STACK_COUPLING_GAMMA_SPIN_SCALE_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR_CERTIFICATE`
+
+### Iter292 — external refinement-flow authority
+Primary object: Tamburini, *ER = EPR in Loop Quantum Gravity: the Immirzi Parameter and the Continuum Limit*, arXiv:2508.18324v2 (2025). Public preprint; no peer-reviewed journal version located in the Iter292 authority check.
+Scientific run `34575046143`: four independent guards in parallel + aggregate SUCCESS on head `eb6ba509773ac50697b4c6c683b2f3638ea7ad71`.
+Summary artifact `10189283134`; artifact digest `sha256:3dfa5deb1bab46bfcb7c32f199969dcc8a1588a69937d408483ff202a48002f5`.
+
+Raw aggregate:
+- public preprint identity = PASS;
+- explicit refinement-renormalization / conditional regulator-independent continuum claim = PASS;
+- explicit equivalence map to active Han complete-stack = false;
+- continuous `gamma` / stack-coupling / spin-scale transport to Iter290 = false;
+- normalized same-realization observable/comparator/error certificate = false;
+- family terminal = false;
+- D7 authorized = false.
+
+Classification:
+`HIGH_VALUE_EXTERNAL_REFINEMENT_FLOW_AUTHORITY__NO_EXPLICIT_EQUIVALENCE_TO_THE_ACTIVE_COMPLETE_STACK_OR_CAUSAL_REGGE_CHAIN`
+
+This removes only the weak sub-blocker that no explicit LQG refinement-flow proposal exists. The decisive family-scope blocker remains the same-realization/equivalence transport into the active complete-stack + causal-Regge chain.
 
 ## CFS front
 The existing PF1 authority already includes Fischer–Finster arXiv:2605.30199 as exact curved-spacetime Einstein–Dirac comparator evidence and rejects obsolete blockers about absence of curved-spacetime GR/Fock/relational controls. The frozen blocker is a gravity-specific beyond-continuum observable / normalized non-Einstein correction tensor plus same-domain comparator residual.
