@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.3",
-  "iteration": 276,
+  "schema_version": "1.4",
+  "iteration": 277,
   "rqir_core": {"version": "1.0", "status": "FROZEN"},
   "tier1_total": 15,
   "tier1_nonterminal": 14,
@@ -30,7 +30,7 @@
     {"family":"NONCOMMUTATIVE_SPECTRAL_GEOMETRY","coverage_status":"PARTIAL_SUBFAMILY_ONLY","object_status":"PARTIAL_SUBFAMILY_ONLY","missing_certificate":"NCG_SPECTRAL_ACTION_QUANTUM_DYNAMICS_PLUS_NORMALIZED_QG_OBSERVABLE_COMPARATOR_CERTIFICATE","residual_status":"UNDEFINED_AT_FAMILY_LEVEL__SPECTRAL_ACTION_GRAVITY_CONTROL_EXISTS"},
     {"family":"CANONICAL_WDW_GEOMETRODYNAMICS","coverage_status":"BLOCKED_MISSING_REQUIRED_OBJECT","object_status":"BLOCKED_MISSING_REQUIRED_OBJECT","missing_certificate":"WDW_PHYSICAL_HILBERT_SPACE_CLOCK_OBSERVABLE_SEMICLASSICAL_GR_COMPARATOR_CERTIFICATE","residual_status":"UNDEFINED_PENDING_PHYSICAL_HILBERT_SPACE_CLOCK_OBSERVABLE"},
     {"family":"QUANTUM_GRAPHITY","coverage_status":"PARTIAL_SUBFAMILY_ONLY","object_status":"PARTIAL_SUBFAMILY_ONLY","missing_certificate":"QUANTUM_GRAPHITY_CONTINUUM_LORENTZIAN_GRAVITY_PLUS_NORMALIZED_OBSERVABLE_COMPARATOR_CERTIFICATE","residual_status":"UNDEFINED_AT_FAMILY_LEVEL__EMERGENT_LOCALITY_CONTROL_EXISTS"},
-    {"family":"RELATIONAL_QUANTUM_CAUSAL_PROCESSES","coverage_status":"PARTIAL_SUBFAMILY_ONLY","object_status":"PARTIAL_SUBFAMILY_ONLY","missing_certificate":"RQCP_ALL_BAND_BACKGROUND_INDEPENDENT_AUTONOMOUS_GRAVITY_PARENT_QUANTUM_GRAVITY_STATE_CONSTRAINT_TOPOLOGY_OBSERVABLE_COMPARATOR_CERTIFICATE","residual_status":"UNDEFINED_AT_FAMILY_LEVEL__FIXED_BAND_SAME_FAMILY_EINSTEIN_RESPONSE_REPRODUCIBLE_WITH_ZERO_FREQUENCY_DIAGNOSTIC_DEFECT"}
+    {"family":"RELATIONAL_QUANTUM_CAUSAL_PROCESSES","coverage_status":"PARTIAL_SUBFAMILY_ONLY","object_status":"PARTIAL_SUBFAMILY_ONLY","missing_certificate":"RQCP_ALL_BAND_BACKGROUND_INDEPENDENT_AUTONOMOUS_GRAVITY_PARENT_PLUS_HILBERT_CUTOFF_REMOVAL_OR_AUTONOMOUS_SELECTION_WITH_PROPAGATED_ERROR_QUANTUM_GRAVITY_STATE_CONSTRAINT_TOPOLOGY_OBSERVABLE_COMPARATOR_CERTIFICATE","residual_status":"UNDEFINED_AT_FAMILY_LEVEL__FIXED_BAND_BASE_REPRODUCED__HIGH_CUTOFF_STABILIZATION_OBSERVED__CUTOFF8_NORMALIZED_OBSERVABLE_MATERIALLY_SHIFTED_FROM_HIGH_CUTOFF_PLATEAU"}
   ],
-  "interpretation": "Iter276 synchronizes the executable D7 attempt with the Iter275 promotion of Relational Quantum Causal Processes into Tier-1. RQCP contributes a reproducible scoped fixed-band Einstein-response control but remains nonterminal. Fourteen candidate-family rows still lack complete family-level objects/residuals; D2/D4/D7 and all terminal outcomes remain unauthorized; Candidate Gravity remains inactive."
+  "interpretation": "Iter277 preserves the 15-row census and refines the RQCP proof obligation after independent multi-axis robustness tests. The published cutoff-8 fixed-band result is reproduced, while a distinct Hilbert/domain cutoff axis moves the normalized Einstein-response observable before rapidly stabilizing at high cutoff. This is a scoped resource-closure finding, not a family FAIL. Fourteen candidate-family rows remain nonterminal; D2/D4/D7 and all terminal outcomes remain unauthorized; Candidate Gravity remains inactive."
 }
