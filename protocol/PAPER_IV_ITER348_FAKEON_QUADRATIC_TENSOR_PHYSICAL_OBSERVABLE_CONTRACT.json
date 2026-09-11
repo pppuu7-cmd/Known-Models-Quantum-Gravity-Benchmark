@@ -1,0 +1,26 @@
+{
+  "iteration": 348,
+  "family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "branch": "FAKEON_QUADRATIC_INFLATION",
+  "stage": "D7-S2/S3 scoped physical-observable comparator",
+  "status_before_run": "PROSPECTIVE_FROZEN",
+  "source": {
+    "citation": "A. Dondarini, Phys. Rev. D 108, 083526 (2023)",
+    "doi": "10.1103/PhysRevD.108.083526",
+    "objects": ["Eq. (3.18) heavy-fakeon/GR tensor power spectrum", "Eq. (4.16) projected full-theory fakeon tensor power spectrum"]
+  },
+  "frozen_equal_order_objects": {
+    "gr_heavy_fakeon_leading": "P_T_GR = 16 G m_phi^2/(9 pi alpha_k^2)",
+    "fakeon_full_leading": "P_T_F = 8 G m_phi^2/(pi xi^2), xi=m_phi/m_chi",
+    "leading_ratio": "P_T_F/P_T_GR = (9/2) alpha_k^2/xi^2"
+  },
+  "gates": {
+    "algebra_identity": "symbolically verify the leading ratio from the two published normalized tensor spectra",
+    "decoupling_scaling": "verify ratio grows as xi^-2 at fixed alpha_k and has no finite xi->0 limit",
+    "independent_grid": "evaluate the ratio on a frozen alpha,xi grid and verify monotone xi^-2 scaling",
+    "source_scope": "guard that the result concerns quadratic inflation and does not terminalize fakeon gravity or the parent family"
+  },
+  "allowed_classification": "PASS_SCOPED_SOURCE_DEFINED_QUADRATIC_INFLATION_PHYSICAL_TENSOR_POWER_SPECTRUM_HAS_SINGULAR_FAKEON_DECOUPLING_RELATIVE_TO_IDENTICAL_MODEL_HEAVY_FAKEON_GR_COMPARATOR",
+  "forbidden_promotions": ["PARENT_FAMILY_FAIL", "ALL_FAKEON_MODELS_FAIL", "D7_TERMINAL_CLASSIFIER", "NEW_REQUIRED", "CANDIDATE_GRAVITY_ACTIVATION"],
+  "notes": "A branch-level physical-observable discontinuity is not a family result. The source itself contrasts this quadratic-inflation behavior with the regular Starobinsky case."
+}
