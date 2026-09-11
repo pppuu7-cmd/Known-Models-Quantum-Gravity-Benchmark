@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Deterministic one-shot recovery handoff; scientific interpretation already frozen in Iter292 audit.
 from pathlib import Path
 
 run_id = "34575046143"
