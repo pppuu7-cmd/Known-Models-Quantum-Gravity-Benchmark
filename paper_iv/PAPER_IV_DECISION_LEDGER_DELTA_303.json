@@ -1,0 +1,36 @@
+{
+  "artifact_digest": "sha256:0cf3f16acf0a00211ef4cb55f009a5eaff296903b6ed6b38d2718bbedc4a662f",
+  "branch_bilinearity_dimensions_tested": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "candidate_terminal_count": "0/14",
+  "causal_vertex_finiteness_proven": false,
+  "classification": "PASS_SCOPED_FIXED_SPIN_TOLLER_BLOCK_SU2_HAAR_HALF_LINK_GLUE_COMPATIBILITY__SCHUR_CONTRACTION_SURVIVES_WITHOUT_SL2C_BRANCH_REPRESENTATION_LAW__CAUSAL_VERTEX_FINITE_NORMALIZATION_STACK_CUTOFF_AND_UV_IR_TRANSPORT_REMAIN_OPEN",
+  "d7_authorized": false,
+  "exact_schur_dimensions_tested": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "family": "LQG_SPINFOAM",
+  "family_terminal": false,
+  "fixed_spin_toller_su2_haar_half_link_glue_compatible": true,
+  "fixed_toller_branch_sl2c_representation": false,
+  "iteration": 303,
+  "lambda_f_weighted_causal_stack_finiteness_normalization_cutoff_control_proven": false,
+  "methodology_run": 34614776311,
+  "mismatched_spin_channels_zero": 42,
+  "raw_summary_digest": "sha256:b638c92c7790f660a14d64410eda2c699a7589a73aebc12e5ce3058061095acf",
+  "same_realization_uv_to_causal_regge_gr_transport_proven": false,
+  "scientific_head": "d2238ee1e3e43b16ec550a49317c2aab459fdc01",
+  "scientific_run": 34614776339,
+  "spin_channels_checked": 49,
+  "summary_artifact": 10269418152,
+  "terminal_count": "1/15"
+}

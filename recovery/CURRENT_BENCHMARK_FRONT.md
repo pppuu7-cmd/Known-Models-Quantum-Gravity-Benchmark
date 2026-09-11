@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-11
-Iteration: Iter302 Toller half-link composition scope audit validated; Iter302A peer-reviewed authority delta recorded; Iter301 source-specific causal-sector support retained
+Iteration: Iter303 fixed-spin Toller SU(2)-Haar half-link glue compatibility validated; Iter302 branch-composition scope retained
 Authoritative operational-saturation milestone: Iter270
 Authoritative D7 infrastructure milestone: Iter272
 Authoritative 15-row census synchronization milestone: Iter276
@@ -63,6 +63,16 @@ Boundary: no causal-spinfoam no-go, no Han half-link/Haar-glue equivalence, no c
 Audit: `paper_iv/P_LQG_TOLLER_HALF_LINK_COMPOSITION_SCOPE_AUDIT_ITER302_2026-09-11.md`.
 Peer-reviewed authority delta: `paper_iv/P_LQG_TOLLER_AUTHORITY_DELTA_ITER302A_2026-09-11.md`.
 
+### Iter303 — fixed-spin Toller SU(2)-Haar half-link glue
+Contract: `benchmarks/lqg_iter303_toller_su2_haar_glue.json`.
+Scientific run `34614776339` on exact head `d2238ee1e3e43b16ec550a49317c2aab459fdc01`: five independent probes in parallel plus aggregate SUCCESS. Methodology `34614776311`: SUCCESS. Summary artifact `10269418152`; artifact digest `sha256:0cf3f16acf0a00211ef4cb55f009a5eaff296903b6ed6b38d2718bbedc4a662f`; raw summary digest `sha256:b638c92c7790f660a14d64410eda2c699a7589a73aebc12e5ce3058061095acf`.
+
+Machine result: fixed-spin Toller SU(2)-Haar half-link glue compatibility = PASS; exact Schur contraction dimensions `1..6`; 49 spin channels checked with 42 mismatched channels zero; branch bilinearity dimensions `2..5`; fixed Toller branch remains not an `SL(2,C)` representation.
+
+Classification: `PASS_SCOPED_FIXED_SPIN_TOLLER_BLOCK_SU2_HAAR_HALF_LINK_GLUE_COMPATIBILITY__SCHUR_CONTRACTION_SURVIVES_WITHOUT_SL2C_BRANCH_REPRESENTATION_LAW__CAUSAL_VERTEX_FINITE_NORMALIZATION_STACK_CUTOFF_AND_UV_IR_TRANSPORT_REMAIN_OPEN`.
+
+Boundary: causal-vertex finiteness, `lambda_f`-weighted complete-stack finite normalization/cutoff removal, and same-realization UV→causal-Regge/GR transport remain open. No family promotion; D7 remains unauthorized.
+
 ## Infrastructure note
 The old `iter299-recovery-integration` workflow can fire and fail on later heads because its recovery preconditions are stale. This is an infrastructure/synchronization defect only. It must not be interpreted as a scientific failure; the current scientific and methodology workflows remain authoritative.
 
@@ -73,9 +83,9 @@ The old `iter299-recovery-integration` workflow can fire and fail on later heads
 LQG/spinfoam remains `PARTIAL/BLOCKED`, not FAIL and not family-level PASS.
 
 Current blocker:
-`BLOCKED_MISSING_SOURCE_SPECIFIC_CROSS_BRANCH_OR_HAAR_INTEGRATED_CAUSAL_GLUE_IDENTITY_COMPATIBLE_WITH_HAN_HALF_LINKS_AND_FACE_FACTORIZATION_PLUS_FINITE_NORMALIZED_LAMBDA_F_WEIGHTED_CAUSAL_COMPLETE_STACK_CUTOFF_CONTROL_AND_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT_WITH_PARAMETER_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
+`BLOCKED_MISSING_FINITE_NORMALIZED_GENERALIZED_CAUSAL_VERTEX_AND_LAMBDA_F_WEIGHTED_COMPLETE_STACK_FINITE_NORMALIZATION_AREA_CUTOFF_REMOVAL_PLUS_SAME_REALIZATION_UV_TO_CAUSAL_LARGE_SPIN_REGGE_GR_TRANSPORT_WITH_PARAMETER_IDENTITY_NORMALIZED_OBSERVABLE_COMMON_DOMAIN_COMPARATOR_AND_PROPAGATED_ERROR`
 
 Exact next permitted gate:
-`D7_S2_LQG_SOURCE_SPECIFIC_CROSS_BRANCH_OR_HAAR_INTEGRATED_CAUSAL_GLUE_IDENTITY_COMPATIBLE_WITH_HAN_HALF_LINKS_AND_FACE_FACTORIZATION__THEN_LAMBDA_F_WEIGHTED_STACK_NORMALIZATION_CUTOFF_AND_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT`
+`D7_S2_LQG_GENERALIZED_CAUSAL_VERTEX_FINITE_NORMALIZATION_AND_LAMBDA_F_WEIGHTED_COMPLETE_STACK_CUTOFF_CONTROL__THEN_SAME_REALIZATION_UV_TO_CAUSAL_REGGE_GR_TRANSPORT`
 
 Do not launch the terminal D7 classifier while D7-S2, D7-S3, or D7-S4 remains open. Missing published objects remain blockers, not evidence of impossibility.

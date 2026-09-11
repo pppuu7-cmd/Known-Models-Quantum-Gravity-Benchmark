@@ -235,6 +235,17 @@ Status: `TODO` / `READY` / `APPLIED` / `NOT_NEEDED`.
 - Result: `PASS_SCOPED_SOURCE_GROUNDED_TOLLER_BRANCH_NONREPRESENTATION_SHARPENS_HALF_LINK_GLUE_BLOCKER__NAIVE_FIXED_BRANCH_STANDARD_REPRESENTATION_FACTORIZATION_NOT_AVAILABLE__ADDITIVE_COMPLETION_OR_SOURCE_SPECIFIC_CROSS_BRANCH_POST_INTEGRATION_GLUE_REMAINS_OPEN__NO_NO_GO`.
 - Provenance: scientific `34614044780`; scientific head `3453a20e48ff7ca859d2fcaa8175b6fbe7cdca90`; methodology `34614044721`; reproducibility `34614177446`; summary artifact `10269636788`; artifact digest `sha256:23fa9439b92fd815f07a10ee01e9ed47ab1aedf928dee460d13664b7bdd2f0b4`; raw summary digest `sha256:7b5f42e0e9b98bd4ffbac58a367107e77c9105aa4b57bdd22e89f679b6c2c273`.
 
+## Iter303 — Toller SU(2)-Haar half-link glue compatibility
+### Paper III — `NOT_NEEDED`
+- **Type:** theory-specific exact algebraic/evidentiary refinement; no new general resource-closure rule beyond Iter277.
+### Paper IV — `READY`
+- Add the distinction between missing `SL(2,C)` branch representation composition (Iter302) and the separate fixed-spin SU(2)-Haar/Schur boundary gluing identity used by Han.
+- Report 5/5 independent probes + aggregate SUCCESS; exact Schur contraction on dimensions `1..6`, 49 spin-channel checks with all 42 mismatched channels zero, and branch-bilinearity checks on dimensions `2..5`.
+- State that formal fixed-spin Toller half-link gluing is compatible with Han's SU(2) Haar contraction even though a fixed Toller branch is not an `SL(2,C)` representation.
+- **Required boundary:** generalized causal-vertex finiteness, finite normalized `lambda_f`-weighted complete-stack amplitude/cutoff removal, and same-realization UV→causal-Regge/GR observable/error transport remain unproven. No family promotion and D7 remains unauthorized.
+- Result: `PASS_SCOPED_FIXED_SPIN_TOLLER_BLOCK_SU2_HAAR_HALF_LINK_GLUE_COMPATIBILITY__SCHUR_CONTRACTION_SURVIVES_WITHOUT_SL2C_BRANCH_REPRESENTATION_LAW__CAUSAL_VERTEX_FINITE_NORMALIZATION_STACK_CUTOFF_AND_UV_IR_TRANSPORT_REMAIN_OPEN`.
+- Provenance: scientific `34614776339`; scientific head `d2238ee1e3e43b16ec550a49317c2aab459fdc01`; methodology `34614776311`; summary artifact `10269418152`; artifact digest `sha256:0cf3f16acf0a00211ef4cb55f009a5eaff296903b6ed6b38d2718bbedc4a662f`; raw summary digest `sha256:b638c92c7790f660a14d64410eda2c699a7589a73aebc12e5ce3058061095acf`.
+
 ## Standing rule
 For every subsequent scientifically relevant iteration, record:
 1. affected paper(s),
