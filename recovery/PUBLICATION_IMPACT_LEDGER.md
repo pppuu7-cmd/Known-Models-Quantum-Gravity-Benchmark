@@ -24,6 +24,21 @@ Status vocabulary:
 - **What to add:** RQCP as a distinct nonterminal Tier-1 parent; four-environment semantic reproducibility result; the zero-frequency diagnostic defect as an implementation artifact; the 19-job robustness scan; extended Hilbert-cutoff scan through 28; and the refined blocker requiring independent closure/control of the Hilbert/domain truncation axis before any broader family-level sufficiency claim.
 - **Interpretation constraint:** this is neither a family-level PASS nor a family-level FAIL. It is a scoped positive fixed-band result plus a newly quantified independent resource axis.
 
+## Iter278 — Asymptotic Safety diffeomorphism-invariant PIRG reopen
+
+### Paper III
+- **Status:** `NOT_NEEDED`
+- **Impact:** no additional general methodological rule is required beyond Iter277.
+- **Reason:** the new PIRG result provides an independent example in which a robust structural conclusion (two relevant directions across all six published Table-III variants) coexists with materially larger scheme/procedure sensitivity in fixed-point coordinates and in the first critical exponent. This reinforces `MULTI_AXIS_RESOURCE_CLOSURE` and systematic-uncertainty separation, but does not establish a distinct failure mode.
+- **Optional use:** cite or mention only as corroborating motivation if space and narrative benefit justify it; do not expand Paper III into an Asymptotic-Safety case study.
+
+### Paper IV
+- **Status:** `READY`
+- **Impact type:** evidentiary + numerical.
+- **What to add:** arXiv:2609.07829v1 as a material positive Asymptotic-Safety reopen; explain its diffeomorphism-invariant/background-independent PIRG construction and relevance-preserving aim; report the independent four-probe Table-III audit; state that all six variants retain two positive relevant directions, while theta2 is substantially more stable than theta1 and the fixed-point coordinates remain procedure/scheme sensitive.
+- **Required boundary:** family status remains `BLOCKED_MISSING_REQUIRED_OBJECT`; the Iter274 public contact-complete `s+t+u+A4` Lorentzian scattering certificate is still missing. The PIRG object must not be used to bypass that same-realization observable blocker.
+- **Provenance:** scientific workflow run `34552838082`; methodology CI run `34552838007`; audit `paper_iv/P_ASYMPTOTIC_SAFETY_PIRG_DIFFEO_INVARIANT_REOPEN_AUDIT_ITER278_2026-09-11.md`.
+
 ## Standing rule for subsequent iterations
 For every scientifically relevant benchmark iteration, record here:
 1. affected paper(s),
