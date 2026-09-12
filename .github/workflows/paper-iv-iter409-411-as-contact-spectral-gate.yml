@@ -1,0 +1,77 @@
+name: paper-iv-iter409-411-as-contact-spectral-gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/AS_ERG2026_CONTACT_SPECTRAL_AUTHORITY_ITER409_411.json'
+      - 'code/as_iter409_411_source_gate.py'
+      - '.github/workflows/paper-iv-iter409-411-as-contact-spectral-gate.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        probe: [contact_claim, observable_claim, preprint_delta, spectral_authority, payload_guard]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter409
+          python code/as_iter409_411_source_gate.py --mode evidence --probe '${{ matrix.probe }}' --output 'build/iter409/${{ matrix.probe }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter409-as-${{ matrix.probe }}
+          path: build/iter409/${{ matrix.probe }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  composition-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter410
+          python code/as_iter409_411_source_gate.py --mode composition --output build/iter410/composition.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter410-as-composition
+          path: build/iter410/composition.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: [evidence, composition-guard]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter40*-as-*'
+          path: build/iter409-410-results
+          merge-multiple: true
+      - run: python code/as_iter409_411_source_gate.py --mode aggregate --input-dir build/iter409-410-results --output iter409-411-summary.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter409-411-summary
+          path: iter409-411-summary.json
+          if-no-files-found: error
+          retention-days: 90
