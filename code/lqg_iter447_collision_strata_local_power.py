@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Production trigger after frozen preregistration in status/ITERATION_447.md.
 import argparse,json,math,os,statistics
 import mpmath as mp
 
