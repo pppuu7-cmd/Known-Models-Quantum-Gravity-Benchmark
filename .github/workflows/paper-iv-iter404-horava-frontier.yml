@@ -1,0 +1,53 @@
+name: paper-iv-iter404-horava-frontier
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/HORAVA_FRONTIER_AUTHORITY_ITER404.json'
+      - 'code/iter404_horava_stitching_audit.py'
+      - 'code/iter404_horava_aggregate.py'
+      - '.github/workflows/paper-iv-iter404-horava-frontier.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  frontier-lanes:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        lane: [projectable_dictionary, projectable_trajectory, projectable_observable, nonprojectable_3p1]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter404
+          python code/iter404_horava_stitching_audit.py --lane '${{ matrix.lane }}' --output 'build/iter404/${{ matrix.lane }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter404-${{ matrix.lane }}
+          path: build/iter404/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [frontier-lanes]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter404-*'
+          path: iter404-results
+      - run: python code/iter404_horava_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter404-summary
+          path: iter404-summary.json
+          if-no-files-found: error
