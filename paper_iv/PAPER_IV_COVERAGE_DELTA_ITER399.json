@@ -1,0 +1,18 @@
+{
+  "iteration": 399,
+  "rqir_core": "1.0_FROZEN",
+  "tier1_row": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "branch_map_override": "paper_iv/HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_MAP_V2_ITER399.json",
+  "historical_map_retained": "paper_iv/HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_MAP_2026-09-10.json",
+  "material_branch_count": 6,
+  "newly_explicit_branch": "IHO_DQFT_SPACELIKE_PV",
+  "coverage_status": "PARTIAL_SUBFAMILY_ONLY",
+  "tier1_total": 15,
+  "tier1_terminal": 1,
+  "tier1_nonterminal": 14,
+  "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+  "candidate_gravity_activation": false,
+  "guard": "Adding a materially distinct branch repairs the family census; it does not terminalize the branch or family."
+}
