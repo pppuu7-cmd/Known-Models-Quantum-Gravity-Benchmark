@@ -1,0 +1,42 @@
+{
+  "iteration_bundle": "379-383",
+  "source": {
+    "title": "Finding origins of CMB anomalies in the inflationary quantum fluctuations",
+    "authors": ["Enrique Gaztanaga", "K. Sravan Kumar"],
+    "journal": "JCAP 06 (2024) 001",
+    "published": "2024-06-05"
+  },
+  "table1_p_M_given_D_percent": {
+    "C2": {"SI": 0.09, "DSI": 3.3, "reported_ratio": 37},
+    "RTT_lte20": {"SI": 0.7, "DSI": 39.5, "reported_ratio": 56},
+    "C2_RTT_lte20": {"SI": 0.003, "DSI": 1.96, "reported_ratio": 653},
+    "Z1": {"SI": 1.12, "DSI": 45.3, "reported_ratio": 40},
+    "Z3": {"SI": 2.10, "DSI": 45.6, "reported_ratio": 22},
+    "Z1_Z3": {"SI": 0.67, "DSI": 36.3, "reported_ratio": 54},
+    "Z1_RTT_lte20": {"SI": 0.45, "DSI": 34.6, "reported_ratio": 77},
+    "Z1_C2": {"SI": 0.016, "DSI": 2.65, "reported_ratio": 166}
+  },
+  "table2_p_D_given_M_percent": {
+    "C2": {"SI": 2.62, "DSI": 8.88, "reported_ratio": 3.4},
+    "RTT_lte20": {"SI": 1.00, "DSI": 39.7, "reported_ratio": 40},
+    "Z1": {"SI": 3.89, "DSI": 46.3, "reported_ratio": 12},
+    "Z3": {"SI": 1.78, "DSI": 37.1, "reported_ratio": 21},
+    "Z3_RTT": {"SI": 0.58, "DSI": 32.0, "reported_ratio": 55},
+    "C2_RTT": {"SI": 0.12, "DSI": 5.59, "reported_ratio": 47}
+  },
+  "table4_transfer_factors": {
+    "columns": ["ell", "DSI25", "DSI40", "DSI50"],
+    "rows": [
+      [1,1.475,1.471,1.468],[2,0.582,0.589,0.594],[3,1.385,1.373,1.363],[4,0.641,0.657,0.667],[5,1.339,1.320,1.305],[6,0.678,0.705,0.725],[7,1.305,1.278,1.258],[8,0.708,0.743,0.770],[9,1.277,1.235,1.199],[10,0.734,0.776,0.814],[11,1.254,1.203,1.168],[12,0.759,0.824,0.875],[13,1.233,1.165,1.073],[14,0.781,0.845,0.967],[15,1.208,1.126,1.012],[16,0.799,0.916,0.996],[17,1.188,1.045,1.001],[18,0.825,0.980,1.000],[19,1.169,1.007,1.000],[20,0.840,0.998,1.000],[21,1.143,1.001,1.000],[22,0.871,1.000,1.000],[23,1.124,1.000,1.000],[24,0.882,1.000,1.000],[25,1.102,1.000,1.000],[26,0.925,1.000,1.000],[27,1.047,1.000,1.000],[28,0.974,1.000,1.000],[29,1.012,1.000,1.000],[30,0.995,1.000,1.000],[31,1.002,1.000,1.000],[32,0.999,1.000,1.000],[33,1.000,1.000,1.000]
+    ],
+    "cutoff_labels": {"DSI25": "kc=k*/25", "DSI40": "kc=k*/40", "DSI50": "kc=k*/50"}
+  },
+  "reported_planck_RTT": {"value": 0.79, "ell_max": 27, "SI_p_value_approx": 0.01},
+  "scope_guard": {
+    "published_ratio_objects_present": true,
+    "published_low_ell_transfer_table_present": true,
+    "raw_planck_map_payload_present_in_repo": false,
+    "million_sky_realization_payload_present_in_repo": false,
+    "full_likelihood_reproduction_authorized": false
+  }
+}
