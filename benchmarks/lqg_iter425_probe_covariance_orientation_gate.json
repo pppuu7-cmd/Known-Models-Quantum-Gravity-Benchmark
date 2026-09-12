@@ -1,0 +1,21 @@
+{
+  "iteration": 425,
+  "title": "K5 probe-covariance gauge-vs-physical orientation audit",
+  "preregistered_before_compute": true,
+  "profile_count": 24,
+  "hypotheses": {
+    "H1_isotropic_probe_orientation_invariant": true,
+    "H2_anisotropic_probe_can_detect_relative_orientation": true,
+    "H3_corotating_probe_covariance_restores_invariance": true
+  },
+  "gates": {
+    "max_isotropic_relative_error": 3e-10,
+    "max_corotation_relative_error": 3e-10,
+    "min_profiles_with_anisotropic_effect": 18,
+    "min_global_anisotropic_effect_ratio": 1.03,
+    "max_spectrum_power_sum_relative_error": 2e-10,
+    "max_abs_logdet_S": 1e-10
+  },
+  "interpretation_policy": "A pass localizes fixed-spectrum orientation freedom: it is invisible to isotropic probe ensembles but becomes measurable relative to an anisotropic physical probe covariance. This does not establish that any spin-foam observable realizes the surrogate probe covariance.",
+  "scope_guard": "Linearized Gaussian K5 surrogate only; does not close D7 or NEW_REQUIRED and is not a physical EPRL/Toller i-epsilon derivation."
+}
