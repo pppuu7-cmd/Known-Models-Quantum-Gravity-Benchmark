@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "iteration": 444,
+  "date": "2026-09-12",
+  "status": "PREREGISTERED_NONTERMINAL_TWO_GROUP_RADIAL_GATE",
+  "scientific_question": "For two simultaneously escaping noncompact K5 group variables restricted to a common boost axis with fixed positive relative rapidity, does a conservative source-faithful Toller envelope overcome both radial Haar growth factors on the frozen gamma-simple j=2,5 matrix?",
+  "source_basis": {
+    "toller_formula": "Bianchi-Chen-Gamonal 2026 Eq.(45),(46), gamma-simple k=j=l",
+    "predecessor": "Iter443 established the one-group source envelope M_j(beta)=max_{m,branch}|t_branch| with asymptotic e^{-beta} scaling on the frozen matrix",
+    "k5_incidence": "For two escaping K5 vertices, each has three edges to the fixed complement and the pair has one mutual edge.",
+    "common_axis_scope": "The two escaping group variables are frozen to the same boost axis, beta1=B+c/2 and beta2=B-c/2, so the mutual relative boost has rapidity c."
+  },
+  "matrix": {
+    "gamma": [7.0, 8.0],
+    "j": [2, 5],
+    "m": "all integer m in [-j,j]",
+    "branches": ["plus", "minus"],
+    "relative_rapidity_c": [0.5, 1.0, 2.0, 4.0],
+    "common_shift_B": [8.0, 10.0, 12.0, 14.0],
+    "beta1": "B+c/2",
+    "beta2": "B-c/2",
+    "external_incident_wedges_per_escaping_vertex": 3,
+    "mutual_wedges": 1
+  },
+  "definition": {
+    "single_factor_envelope": "M_j(beta)=max_{m,branch}|t_branch(j,m;rho=gamma*j,beta)|",
+    "two_group_radial_envelope": "R2(B,c)=sinh(beta1)^2*sinh(beta2)^2*M_j(beta1)^3*M_j(beta2)^3*M_j(c)"
+  },
+  "precision": {
+    "dps": 100,
+    "expected_common_shift_log_slope": -2.0,
+    "maximum_allowed_common_shift_log_slope": -1.8,
+    "radial_envelope_must_be_strictly_decreasing_in_B": true,
+    "external_single_factor_exp_beta_relative_variation_max": 0.0001
+  },
+  "required_checks": [
+    "all source Toller values finite on the frozen matrix",
+    "for every frozen c, R2(B,c) is strictly decreasing across B=8,10,12,14",
+    "for every frozen c, fitted log R2 versus B slope is <= -1.8",
+    "external M_j(beta)*exp(beta) remains asymptotically stable on the frozen beta1/beta2 window"
+  ],
+  "interpretation_rule": {
+    "pass": "SOURCE_TWO_GROUP_SEPARATED_RADIAL_ENVELOPE_INTEGRABLE_ON_FROZEN_GRID",
+    "fail": "TWO_GROUP_SEPARATED_RADIAL_GATE_FAILED_OR_INVALID",
+    "absence_or_failure_scope": "A failed scoped envelope gate is not by itself a theorem that the causal vertex diverges."
+  },
+  "scope_guard": "PASS establishes only a conservative two-group common-axis fixed-separation noncompact escape witness on the frozen source matrix. It does not cover the collision strip c->0, arbitrary angular directions, three- or four-group simultaneous escape, full Haar/angular causal-vertex finiteness, generalized causal-vertex normalization, causal-stack cutoff removal, family terminality, D7-S3/S4 closure, terminal D7 authorization, or Candidate Gravity activation.",
+  "d7_s2_after_pass": "STRENGTHENED_BUT_NOT_CLOSED",
+  "d7_s5_authorized": false,
+  "candidate_gravity_authorized": false
+}
