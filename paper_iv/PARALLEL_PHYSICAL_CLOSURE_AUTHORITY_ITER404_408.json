@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "iteration_bundle": "404-408",
+  "rqir_core": "v1.0_FROZEN",
+  "purpose": "Run four nonduplicating, source-bounded closure probes in parallel across LQG/spinfoam, CFS, asymptotic safety and RQCP without promoting any source-open object to terminal status.",
+  "streams": {
+    "LQG_SPINFOAM": {
+      "source": {
+        "title": "Causal spinfoam vertex for 4d Lorentzian quantum gravity",
+        "authors": ["Eugenio Bianchi", "Chaosong Chen", "Mauricio Gamonal"],
+        "arxiv": "2601.23162",
+        "url": "https://arxiv.org/abs/2601.23162"
+      },
+      "source_objects": {
+        "toller_polynomial": "F_j(rho+sigma*q,rho)=product_{m=0}^{2j} [i(rho+sigma*q)-(m-j)]/[i rho-(m-j)]",
+        "coefficient_definition": "c_n^(rho,j)=d^n F_j(tilde_rho,rho)/d tilde_rho^n at tilde_rho=rho",
+        "fixed_gamma_large_spin": "rho=gamma*j: c_n=[i log((gamma-i)/(gamma+i))]^n + O(1/j)",
+        "causal_vertex_finiteness": "OPEN_IN_SOURCE"
+      },
+      "machine_scope": "Recompute c_n exactly from the finite polynomial and audit convergence to the published fixed-gamma large-spin coefficient. This is a Toller-building-block asymptotic audit, not a proof of causal-vertex finiteness or complete-stack convergence.",
+      "terminalization_forbidden": true
+    },
+    "CAUSAL_FERMION_SYSTEMS": {
+      "source": {
+        "title": "A Geometric Derivation of the Einstein Equations from the Causal Action Principle",
+        "authors": ["Felix Finster", "Christoph Krpoun"],
+        "arxiv": "2607.13871",
+        "url": "https://arxiv.org/abs/2607.13871"
+      },
+      "source_objects": {
+        "einstein_energy_momentum_order": "O(delta^2)",
+        "systematic_corrections": "delta^3 and higher require non-optimal osculation analysis",
+        "named_correction_classes": ["higher_delta", "osculation_and_torsion", "regularizing_vector_field", "modified_measure"],
+        "concrete_beyond_einstein_tensor": "NOT_WORKED_OUT_IN_SOURCE"
+      },
+      "machine_scope": "Dimensionless order-counting diagnostic after introducing a characteristic macroscopic scale L: a nominal O(delta^3) term is one power epsilon=delta/L below an O(delta^2) term, modulo an explicitly scanned unknown dimensionless coefficient C3. This is not a source prediction for C3 and not an evaluated correction tensor.",
+      "terminalization_forbidden": true
+    },
+    "ASYMPTOTIC_SAFETY": {
+      "source": {
+        "title": "Towards two-to-two scattering of scalars in asymptotically safe quantum gravity",
+        "authors": ["Angelo P. Chiesa", "Jan M. Pawlowski", "Manuel Reichert"],
+        "arxiv": "2603.10168",
+        "url": "https://arxiv.org/abs/2603.10168"
+      },
+      "source_objects": {
+        "full_identical_scalar_structure": "A=A_s+A_t+A_u+A_4",
+        "computed_scope": "graviton-mediated s+t+u; direct A_4 neglected",
+        "adapted_rg_vertex": "V_RG(s)=V*/(s+V* M_pl^2)",
+        "t_channel": "A_t=V_L(t)/t*(s^2-4 s u+u^2-t^2)",
+        "forward_boundary": "at fixed t and s->infinity, A_t remains proportional to s^2/t; source states resolution requires A_4"
+      },
+      "machine_scope": "Recompute the source kinematic scaling and an explicitly labelled normalized adapted-RG diagnostic. No contact-complete amplitude is inferred.",
+      "terminalization_forbidden": true
+    },
+    "RQCP": {
+      "authority": "repository-reproduced cutoff sequence from Iter342-343 and Iter394-398",
+      "cutoff_sequence": [8,10,12,14,16,18,20,24,28],
+      "observables": ["G", "gap", "G_gap2"],
+      "machine_scope": "Refit the reproduced high-cutoff sequence under multiple lower-window choices and two asymptotic ansatz classes. Quantify inferred-limit model disagreement and window sensitivity. Numerical cutoff stability cannot by itself certify background-independent or all-band autonomy.",
+      "terminalization_forbidden": true
+    }
+  },
+  "global_guards": {
+    "family_terminal_from_bundle": false,
+    "d7_promotion_authorized": false,
+    "candidate_gravity_activation": false,
+    "new_required_authorized": false
+  }
+}
