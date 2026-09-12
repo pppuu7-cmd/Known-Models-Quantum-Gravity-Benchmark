@@ -100,14 +100,22 @@ def main():
         d80, tp80, tm80 = eval_source(args.gamma, args.j, args.m, beta, STD_DPS)
         d120, tp120, tm120 = eval_source(args.gamma, args.j, args.m, beta, TIGHT_DPS)
 
-        finite = all(finite_complex(z) for z in (d80, tp80, tm80, d120, tp120, tm120))
+        # Numerical-repair note: eval_source intentionally computes at 80/120 dps,
+        # but mpmath restores the ambient default precision after workdps exits.
+        # All cross-precision and recombination residual arithmetic must therefore
+        # also be evaluated in a high-precision context; otherwise the exact source
+        # identity is spuriously rounded at the ~1e-18 level. Frozen equations,
+        # matrix, thresholds and interpretation are unchanged.
+        with mp.workdps(TIGHT_DPS + 20):
+            finite = all(finite_complex(z) for z in (d80, tp80, tm80, d120, tp120, tm120))
+            cross_d = scaled_abs_difference(d80, d120)
+            cross_p = scaled_abs_difference(tp80, tp120)
+            cross_m = scaled_abs_difference(tm80, tm120)
+            cross = max(cross_d, cross_p, cross_m)
+            eps80 = identity_residual(d80, tp80, tm80)
+            eps120 = identity_residual(d120, tp120, tm120)
+
         all_finite &= finite
-        cross_d = scaled_abs_difference(d80, d120)
-        cross_p = scaled_abs_difference(tp80, tp120)
-        cross_m = scaled_abs_difference(tm80, tm120)
-        cross = max(cross_d, cross_p, cross_m)
-        eps80 = identity_residual(d80, tp80, tm80)
-        eps120 = identity_residual(d120, tp120, tm120)
         max_cross = max(max_cross, cross)
         max_identity_std = max(max_identity_std, eps80)
         max_identity_tight = max(max_identity_tight, eps120)
