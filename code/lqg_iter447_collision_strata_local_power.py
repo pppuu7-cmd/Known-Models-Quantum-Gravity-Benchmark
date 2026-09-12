@@ -10,10 +10,19 @@ SAFETY=mp.mpf('0.10')
 SPREAD_MAX=mp.mpf('0.20')
 
 
+def hyp2f1_euler(a,b,c,z):
+    # Exact Euler transformation. Here c-b is a non-positive integer, so the
+    # transformed hypergeometric terminates and avoids mpmath's near-z=1
+    # analytic-continuation comparison bug without changing the source object.
+    return mp.power(1-z,c-a-b)*mp.hyp2f1(c-a,c-b,c,z)
+
+
 def tvals(j,m,rho,beta):
     jj=mp.mpf(j); mm=mp.mpf(m); rr=mp.mpf(str(rho)); b=mp.mpf(beta); z=mp.e**(-2*b)
-    tp=(mp.e**(-(jj-1j*rr+mm+1)*b)*mp.gamma(2*jj+2)*mp.gamma(1j*rr-mm)/(mp.gamma(jj-mm+1)*mp.gamma(jj+1+1j*rr))*mp.hyp2f1(jj+mm+1,jj+1-1j*rr,1+mm-1j*rr,z))
-    tm=(mp.e**(-(jj+1j*rr-mm+1)*b)*mp.gamma(2*jj+2)*mp.gamma(-1j*rr+mm)/(mp.gamma(jj+mm+1)*mp.gamma(jj+1-1j*rr))*mp.hyp2f1(jj-mm+1,jj+1+1j*rr,1-mm+1j*rr,z))
+    ap=jj+mm+1; bp=jj+1-1j*rr; cp=1+mm-1j*rr
+    am=jj-mm+1; bm=jj+1+1j*rr; cm=1-mm+1j*rr
+    tp=(mp.e**(-(jj-1j*rr+mm+1)*b)*mp.gamma(2*jj+2)*mp.gamma(1j*rr-mm)/(mp.gamma(jj-mm+1)*mp.gamma(jj+1+1j*rr))*hyp2f1_euler(ap,bp,cp,z))
+    tm=(mp.e**(-(jj+1j*rr-mm+1)*b)*mp.gamma(2*jj+2)*mp.gamma(-1j*rr+mm)/(mp.gamma(jj+mm+1)*mp.gamma(jj+1-1j*rr))*hyp2f1_euler(am,bm,cm,z))
     return mp.mpc(tp),mp.mpc(tm)
 
 
