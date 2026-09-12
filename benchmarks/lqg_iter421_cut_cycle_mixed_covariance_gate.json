@@ -1,0 +1,24 @@
+{
+  "iteration": 421,
+  "title": "K5 cut-cycle mixed common-order covariance universality audit",
+  "status": "PREREGISTERED_BEFORE_CODE_AND_RUN",
+  "scope": "Linearized Gaussian K5 surrogate only. Tests whether the p=6 density exponent found in Iter420 survives generic positive-definite cut/cycle cross-correlations under one common cycle scaling order.",
+  "construction": "In an orthonormal cut/cycle basis Q=[Qc,Qz], draw a full 10x10 SPD seed H. Define D_eta=diag(I_4, eta I_6) and Sigma_eta = Q D_eta H D_eta Q^T. This includes O(eta) cut-cycle covariance and O(eta^2) cycle covariance while remaining SPD.",
+  "profiles": 24,
+  "eta_grid": "10^(-x/2), x=2..10",
+  "frozen_predictions": {
+    "small_eigenvalue_scaling": "six eigenvalues scale asymptotically as eta^2",
+    "large_eigenvalue_scaling": "four eigenvalues approach finite nonzero limits",
+    "determinant_scaling": "det(Sigma_eta) proportional to eta^12",
+    "density_exponent": 6.0
+  },
+  "hard_gates": {
+    "all_samples_spd": true,
+    "density_exponent_abs_error_max": 0.00002,
+    "tail_density_exponent_abs_error_max": 0.00002,
+    "logdet_slope_abs_error_from_12_max": 0.00004,
+    "tail_logdet_slope_abs_error_from_12_max": 0.00004
+  },
+  "profile_variation": "24 deterministic seeds spanning weak through strong cut-cycle mixing and several SPD conditioning regimes; no gate tuning after results.",
+  "claim_lock": "A PASS establishes only universality of the K5 eta^-6 normalization exponent within this broad congruence-scaled Gaussian regulator class. It does not derive the physical causal EPRL/Toller i-epsilon prescription, does not prove finiteness of the true vertex, and does not close D7 or NEW_REQUIRED."
+}
