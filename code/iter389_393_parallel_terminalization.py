@@ -20,7 +20,8 @@ TERMINAL={
 def linfit(x,y):
     n=len(x); sx=sum(x); sy=sum(y); sxx=sum(v*v for v in x); sxy=sum(a*b for a,b in zip(x,y))
     den=n*sxx-sx*sx
-    if abs(den)<1e-30: raise ValueError('singular')
+    scale=max(abs(n*sxx),abs(sx*sx),1e-300)
+    if abs(den) < 1e-14*scale: return None
     a=(sy*sxx-sx*sxy)/den
     b=(n*sxy-sx*sy)/den
     sse=sum((yy-(a+b*xx))**2 for xx,yy in zip(x,y))
@@ -30,30 +31,39 @@ def rqcp_fit(observable,nmin):
     ns=[float(n) for n in RQCP['N'] if n>=nmin]
     ys=[float(v) for n,v in zip(RQCP['N'],RQCP[observable]) if n>=nmin]
     if len(ns)<4: raise ValueError('need >=4 points')
-    bestp=None
+    bestp=None; skipped_power=0
     p=0.50
     while p<=14.0000001:
         x=[n**(-p) for n in ns]
-        yinf,a,sse=linfit(x,ys)
-        rec=(sse,p,yinf,a)
-        if bestp is None or rec<bestp: bestp=rec
+        fit=linfit(x,ys)
+        if fit is None:
+            skipped_power+=1
+        else:
+            yinf,a,sse=fit
+            rec=(sse,p,yinf,a)
+            if bestp is None or rec<bestp: bestp=rec
         p+=0.01
-    beste=None
+    beste=None; skipped_exp=0
     b=0.05
     while b<=2.0000001:
         x=[math.exp(-b*n) for n in ns]
-        yinf,a,sse=linfit(x,ys)
-        rec=(sse,b,yinf,a)
-        if beste is None or rec<beste: beste=rec
+        fit=linfit(x,ys)
+        if fit is None:
+            skipped_exp+=1
+        else:
+            yinf,a,sse=fit
+            rec=(sse,b,yinf,a)
+            if beste is None or rec<beste: beste=rec
         b+=0.005
+    if bestp is None or beste is None: raise ValueError('no non-singular extrapolation model')
     sse_p,p,yip,ap=bestp; sse_e,b,yie,ae=beste
     model_spread=abs(yip-yie)/max(abs(yie),1e-30)
     tail_rel=abs(ys[-1]-ys[-2])/max(abs(ys[-1]),1e-30)
     return {
         'mode':'rqcp_fit','iteration':389,'observable':observable,'nmin':nmin,'npoints':len(ns),
         'last_cutoff':int(ns[-1]),'last_value':ys[-1],'last_step_relative_change':tail_rel,
-        'power_model':{'form':'y_inf+a/N^p','p':p,'y_inf':yip,'a':ap,'sse':sse_p},
-        'exponential_model':{'form':'y_inf+a*exp(-b*N)','b':b,'y_inf':yie,'a':ae,'sse':sse_e},
+        'power_model':{'form':'y_inf+a/N^p','p':p,'y_inf':yip,'a':ap,'sse':sse_p,'skipped_singular_grid_points':skipped_power},
+        'exponential_model':{'form':'y_inf+a*exp(-b*N)','b':b,'y_inf':yie,'a':ae,'sse':sse_e,'skipped_singular_grid_points':skipped_exp},
         'relative_asymptote_model_spread':model_spread,
         'pass':all(math.isfinite(v) for v in [yip,yie,sse_p,sse_e]) and model_spread<0.01,
         'classification':'SCOPED_FINITE_SEQUENCE_EXTRAPOLATION_DIAGNOSTIC',
@@ -64,7 +74,7 @@ def taylor_exp_minus(z,degree):
     s=0.0; term=1.0
     for k in range(degree+1):
         if k==0: term=1.0
-        elif k>0: term*=(-z)/k
+        else: term*=(-z)/k
         s+=term
     return s
 
@@ -97,8 +107,6 @@ def higher_derivative_branch():
     ids=[b['id'] for b in bm['material_branches']]
     explicit=any(('IHO' in x or 'DQFT' in x or 'DIRECT_SUM' in x) for x in ids)
     required=list(bm['minimum_payload'])
-    # Repo-authority evidence already present for the new realization. Keep this
-    # conservative: only fields explicit in the source-authority object count.
     present={
         'branch_identifier_and_fixed_action': bool(iho.get('branch')),
         'normalized_physical_observable': bool(iho.get('source_defined_observable')),
