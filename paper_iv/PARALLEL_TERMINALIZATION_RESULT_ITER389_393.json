@@ -1,0 +1,36 @@
+{
+  "iteration_bundle": "389-393",
+  "workflow_run": 34665450397,
+  "conclusion": "success",
+  "independent_jobs": 29,
+  "aggregate_jobs": 1,
+  "classification": "PASS_PARALLEL_TERMINALIZATION_WAVE__RQCP_CUTOFF_EXTRAPOLATION_AND_NONLOCAL_FINITE_DOMAIN_MAP_SHARPENED__HIGHER_DERIVATIVE_BRANCH_MAP_REOPEN_IDENTIFIED__D2_D4_REMAIN_OPEN",
+  "rqcp": {
+    "status": "SCOPED_FINITE_SEQUENCE_EXTRAPOLATION_STABLE_NOT_CUTOFF_REMOVAL_THEOREM",
+    "G": {"N16_last": 21.50096842760798, "late_two_model_relative_asymptote_envelope": 1.3395341921184525e-05, "last_step_relative_change": 1.8007851864132932e-08},
+    "gap": {"N16_last": 0.5017460974407341, "late_two_model_relative_asymptote_envelope": 2.353932587880525e-07, "last_step_relative_change": 1.3529990082335208e-09},
+    "G_gap2": {"N16_last": 5.412850446209202, "late_two_model_relative_asymptote_envelope": 3.205186826671965e-06, "last_step_relative_change": 1.530135284931471e-08},
+    "guard": "Finite-sequence extrapolation is not an Ncut->infinity theorem and does not establish the all-band autonomous RQCP gravity parent."
+  },
+  "nonlocal_qg": {
+    "status": "PASS_SCOPED_FINITE_DOMAIN_LOCAL_APPROXIMATION_MAP",
+    "selected_results": {
+      "degree2_z2_max_relative_error": 6.3890560989306495,
+      "degree4_z2_max_relative_error": 1.4630186996435497,
+      "degree6_z2_max_relative_error": 0.17127772804171068,
+      "degree8_z2_max_relative_error": 0.011309419322199912,
+      "degree12_z2_max_relative_error": 7.392760717589635e-06
+    },
+    "guard": "Finite-domain approximation quality is not exact functional equivalence and is not the missing source-normalized physical graviton amplitude/comparator certificate."
+  },
+  "higher_derivative": {
+    "status": "BRANCH_MAP_REOPEN_REQUIRED_FOR_MATERIAL_CLASSIFICATION",
+    "new_branch_label": "IHO_DQFT_SPACELIKE_PV",
+    "reason": "The post-Iter187 source-defined IHO/DQFT realization is not explicitly represented among the five Iter187 branch identifiers. Its material relationship to those branches must be classified before the family branch map can be treated as exhaustive."
+  },
+  "coverage": {"tier1_total": 15, "tier1_terminal": 1, "tier1_nonterminal": 14, "tier2_unresolved": 0},
+  "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+  "candidate_gravity_activation": false
+}
