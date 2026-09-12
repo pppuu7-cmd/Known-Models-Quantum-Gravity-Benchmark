@@ -11,6 +11,7 @@ must transport the same projected covariance/pseudodeterminant through +/-
 causal branches. A deliberately branch-dependent Hessian is a negative control.
 It does NOT prove Toller-vertex integrability, complete-stack cutoff removal, or
 supply physical Hessian entries. D7-S2/S3 remain open and D7-S4 remains partial.
+The 24 fixtures are independent numerical guards for this transport contract.
 """
 import argparse,json,math,os
 import numpy as np
