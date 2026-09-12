@@ -1,0 +1,25 @@
+{
+  "iteration_bundle": "399-403",
+  "workflow_run": 34665968934,
+  "head_sha": "3820c03c35daa360c3f9077810a835ec2f9700d7",
+  "conclusion": "success",
+  "independent_jobs": 5,
+  "aggregate_jobs": 1,
+  "artifact_id": 10288737087,
+  "artifact_digest": "sha256:f116b912b88d0bf7eec4dde7011ed8104ae95cce7565effea618262fdf19a292",
+  "classification": "PASS_PARALLEL_SOURCE_CLOSURE_WAVE__HIGHER_DERIVATIVE_BRANCH_CENSUS_REPAIRED__FOUR_ADDITIONAL_TIER1_BLOCKERS_REAUDITED__NO_FALSE_TERMINAL_PROMOTION",
+  "higher_derivative_branch_map_v2_valid": true,
+  "families_reaudited": ["HORAVA_LIFSHITZ","GFT_TENSOR_MODELS","CDT_EDT","STRING_MTHEORY_HOLOGRAPHY"],
+  "new_terminal_families": [],
+  "terminal_denominator_change": 0,
+  "next_frontier_order": [
+    {"priority":1,"family":"HORAVA_LIFSHITZ","route":"MIXED_SOURCE_AND_REDUCTION__PROJECTABLE_RELEVANT_IR_BRIDGE_PLUS_NONPROJECTABLE_3P1_DISPOSITION"},
+    {"priority":2,"family":"GFT_TENSOR_MODELS","route":"REDUCTION_OR_INDEPENDENT_OBSERVABLE__TGFT_REMAINDER"},
+    {"priority":3,"family":"CDT_EDT","route":"EXTERNAL_DATA_AND_COMPUTE_CAPSULE__MULTICOUPLING_CONTINUUM_SCALE_SETTING_ERRORS"},
+    {"priority":4,"family":"STRING_MTHEORY_HOLOGRAPHY","route":"SOURCE_CENSUS_AND_EQUIVALENCE__COMPACTIFICATION_SUBFAMILY_EXHAUSTION"}
+  ],
+  "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+  "candidate_gravity_activation": false
+}
