@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "iteration": 418,
+  "date": "2026-09-12",
+  "derivation_type": "SCOPED_K5_MULTI_WEDGE_JOINT_REGULATOR_PATH_DEPENDENCE_AUDIT",
+  "predecessor": {
+    "iteration": 417,
+    "scientific_run": 34668929784,
+    "scientific_head": "80151a3d8b3ad483609ab42867084e700b4e5c85"
+  },
+  "frozen_question": "On the linearized K5 common-support incidence geometry already implicated by the source-grounded transversality audit, does an independently width-regularized product of ten delta-like wedge constraints have a regulator-path-independent singular scaling as all widths go to zero?",
+  "geometry": {
+    "vertices": 5,
+    "edges": 10,
+    "gauge_fixed_relative_coordinates": 4,
+    "constraint_rows": "K5 oriented incidence rows with vertex 0 gauge fixed",
+    "source_sector_rule": "kappa_ab = sigma_a sigma_b with sigma_0=+1",
+    "source_sector_count": 16
+  },
+  "regularized_surrogate": {
+    "type": "normalized Gaussian delta widths",
+    "epsilon_e": "t^(a_e)",
+    "integral_scaling_identity": "I(t) proportional prod_e epsilon_e^-1 / sqrt(det(B^T diag(epsilon_e^-2) B))",
+    "matrix_tree_identity": "det(B^T W B) is the weighted K5 spanning-tree polynomial",
+    "predicted_divergence_exponent": "sum_e a_e - max_spanning_tree sum_{e in T} a_e"
+  },
+  "paths": {
+    "isotropic": "all a_e=1",
+    "star0_heavy": "a_e=2 for edges incident on vertex 0, otherwise 1",
+    "cycle_heavy": "a_e=2 on cycle 01-12-23-34-04, otherwise 1",
+    "single_edge_heavy": "a_01=2, otherwise 1",
+    "mixed": "fixed heterogeneous positive exponents"
+  },
+  "prospectively_frozen_claims": {
+    "sigma_signs_change_linear_rank": false,
+    "isotropic_expected_exponent": 6.0,
+    "path_independence_required_for_naive_unique_independent_width_limit": true,
+    "failure_of_path_independence_proves_no_source_backed_correlated_extension_exists": false,
+    "family_terminal": false,
+    "d7_authorized": false
+  },
+  "classification_if_path_dependent": "PASS_SCOPED_K5_LINEARIZED_DELTA_LIKE_PRODUCT_HAS_REGULATOR_PATH_DEPENDENT_SINGULAR_SCALING_ACROSS_INDEPENDENT_WEDGE_WIDTH_LIMITS__NAIVE_INDEPENDENT_EPSILON_EXTENSION_IS_NOT_UNIQUE__SOURCE_BACKED_CORRELATED_SPECTRAL_I_EPSILON_OR_EQUIVALENT_RENORMALIZED_DISTRIBUTIONAL_EXTENSION_REMAINS_REQUIRED__NO_DIVERGENCE_THEOREM_OR_FAMILY_NO_GO",
+  "scope_rule": "This is a linearized Gaussian delta-like surrogate on the already source-grounded K5 common-support incidence geometry. It can falsify uniqueness of a naive independent-width prescription but cannot establish or exclude the full Toller spectral boundary-value distribution, matrix/intertwiner cancellations, or a correlated source-defined i-epsilon extension."
+}
