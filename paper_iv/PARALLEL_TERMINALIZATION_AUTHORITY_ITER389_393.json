@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "iteration_bundle": "389-393",
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "purpose": "Run multiple independent terminalization-relevant computations in parallel, prioritizing gates that can be sharpened numerically without inventing missing source authority.",
+  "lanes": {
+    "RQCP_CUTOFF_EXTRAPOLATION": {
+      "goal": "Test whether the observed high-cutoff plateau supports a stable numerical Ncut->infinity extrapolation for normalized fixed-band observables.",
+      "guard": "Finite-sequence extrapolation is not an infinite-cutoff theorem and does not establish the all-band autonomous gravity parent."
+    },
+    "NONLOCAL_FINITE_DOMAIN_EFT_DISTINGUISHABILITY": {
+      "goal": "Quantify how well finite derivative Taylor comparators approximate the declared entire form factor exp(-z) on explicit finite momentum domains.",
+      "guard": "This is a functional-shape/domain audit, not a source-normalized graviton amplitude certificate or family terminalization."
+    },
+    "HIGHER_DERIVATIVE_IHO_DQFT_BRANCH_ADMISSION": {
+      "goal": "Machine-audit whether the post-Iter187 IHO/DQFT realization is explicitly represented in the five-branch quantization map and enumerate the exact family-scope gap if not.",
+      "source": "Kumar and Marto, arXiv:2603.07150v3",
+      "guard": "A branch-map reopen does not imply the branch is correct, sufficient, or terminal."
+    },
+    "GLOBAL_COVERAGE_COHERENCE": {
+      "goal": "Recompute the current 15-row terminal/nonterminal denominator and prevent stale 14-row promotion logic.",
+      "guard": "Coverage bookkeeping alone never closes D2, D4, or D7."
+    }
+  },
+  "global_guards": {
+    "blocked_is_fail": false,
+    "scoped_child_promotes_to_family": false,
+    "d2_promotion_authorized": false,
+    "d4_promotion_authorized": false,
+    "d7_promotion_authorized": false,
+    "candidate_gravity_activation_authorized": false
+  }
+}
