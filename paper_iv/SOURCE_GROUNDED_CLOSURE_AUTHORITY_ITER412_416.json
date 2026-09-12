@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "iteration_bundle": "412-416",
+  "date": "2026-09-12",
+  "rqir_core": "v1.0_FROZEN",
+  "purpose": "Run a nonduplicating source-grounded closure wave over explicit LQG Toller hypergeometric identities, CFS delta^3+ correction envelopes, and Lorentzian asymptotic-safety spectral UV-tail normalisability, while preserving fail-closed family and D7 boundaries.",
+  "streams": {
+    "LQG_SPINFOAM_TOLLER": {
+      "source": {
+        "title": "Toller matrices and the Feynman i epsilon in spinfoams",
+        "authors": ["Eugenio Bianchi", "Chaosong Chen", "Mauricio Gamonal"],
+        "arxiv": "2604.24945",
+        "submitted": "2026-04-27",
+        "url": "https://arxiv.org/abs/2604.24945"
+      },
+      "source_objects": {
+        "sum_identity": "t^(+,rho,k)_{jlm}(beta)+t^(-,rho,k)_{jlm}(beta)=d^(rho,k)_{jlm}(beta)",
+        "gamma_simple_domain": "k=j=l and rho=gamma*j",
+        "gamma_simple_wigner_d": "exp[-(j-i*rho+m+1) beta] * 2F1(j+m+1,j+1-i*rho;2j+2;1-exp(-2 beta))",
+        "gamma_simple_toller": "exp[-(j∓i*rho±m+1) beta] Gamma(2j+2)Gamma(±i*rho∓m)/[Gamma(j∓m+1)Gamma(j+1±i*rho)] * 2F1(j±m+1,j+1∓i*rho;1±m∓i*rho;exp(-2 beta))",
+        "large_beta_absolute_asymptotic": "|t^(±)| ~ exp[-(1+|k±m|) beta]"
+      },
+      "machine_scope": "Directly reproduce the source hypergeometric Toller branches, their sum back to the Lorentzian Wigner d element, and the published large-beta decay exponent on a gamma-simple grid.",
+      "matrix": {
+        "gamma": [0.1, 0.5, 1.0, 2.0, 5.0],
+        "j": [0.5, 1.0, 1.5, 2.0, 3.0],
+        "independent_jobs": 25
+      },
+      "pass_contract": {
+        "max_sum_identity_relative_residual": 1e-7,
+        "max_large_beta_slope_absolute_error": 0.005
+      },
+      "required_next_object_after_pass": "FULL_CAUSAL_VERTEX_ABSOLUTE_CONVERGENCE_NORMALIZATION_OR_EQUIVALENT_TERMINAL_OBJECT",
+      "terminalization_forbidden": true
+    },
+    "CFS_GEOMETRIC_CORRECTION_ENVELOPE": {
+      "source": {
+        "title": "A Geometric Derivation of the Einstein Equations from the Causal Action Principle",
+        "authors": ["Felix Finster", "Christoph Krpoun"],
+        "arxiv": "2607.13871",
+        "submitted": "2026-07-15",
+        "url": "https://arxiv.org/abs/2607.13871"
+      },
+      "source_boundary": {
+        "einstein_layer": "energy-momentum / Einstein contribution controlled at O(delta^2)",
+        "systematic_correction_layer": "O(delta^3) and higher requires non-optimal osculation analysis and is not explicitly worked out as a phenomenological correction tensor in the source"
+      },
+      "machine_scope": "Given x=delta/L and an explicitly assumed coefficient ratio bound |C_n/C_2|<=B, compute a finite O(delta^3..delta^8) envelope, the all-orders geometric delta^3+ envelope B*x/(1-x), and the critical B below which the total subleading envelope remains below the leading delta^2 term. B is an assumption scan, never a source fit or physical prediction.",
+      "matrix": {
+        "delta_over_L": [0.1, 0.03, 0.01, 0.003, 0.001],
+        "assumed_B": [1.0, 10.0, 100.0],
+        "independent_jobs": 15
+      },
+      "required_next_object_after_pass": "EXPLICIT_DELTA3PLUS_CORRECTION_TENSOR_WITH_SOURCE_DEFINED_COEFFICIENTS_AND_DOMAIN",
+      "terminalization_forbidden": true
+    },
+    "ASYMPTOTIC_SAFETY_LORENTZIAN_SPECTRAL_TAIL": {
+      "source": {
+        "title": "Self-consistent graviton spectral function in Lorentzian quantum gravity",
+        "authors": ["Jan M. Pawlowski", "Manuel Reichert", "Jonas Wessely"],
+        "arxiv": "2507.22169",
+        "submitted": "2025-07-29",
+        "url": "https://arxiv.org/abs/2507.22169"
+      },
+      "source_objects": {
+        "KL_measure": "integral_0^infinity d lambda * lambda / pi",
+        "spectral_sum_rule": "integral rho(lambda)=1 under the source KL measure",
+        "UV_tail": "f_h(lambda -> infinity)=c_h^UV/[lambda^2 log^3(lambda^2)]",
+        "source_conclusion": "the UV falloff makes the spectral integral finite",
+        "scope_caveat": "fluctuation states used for the spectral function are not diffeomorphism-invariant physical Hilbert-space states"
+      },
+      "machine_scope": "Set c_h^UV=1 only as a normalization for integrability/scaling, derive W_tail(Lambda)=1/[4 pi log^2(Lambda^2)] under the source KL measure, and independently reproduce it by numerical quadrature with an analytic far-tail remainder. This does not determine the physical numerical c_h^UV and is not composed with the ERG2026 contact amplitude.",
+      "cutoffs": [5.0, 10.0, 30.0, 100.0, 1000.0, 1000000.0, 1000000000000.0, 1e24],
+      "independent_jobs": 8,
+      "required_next_object_after_pass": "MACHINE_READABLE_CONTACT_COMPLETE_SAME_REALIZATION_AMPLITUDE_WITH_APPROXIMATION_AND_ERROR_LEDGER",
+      "terminalization_forbidden": true
+    },
+    "SOURCE_CONSTANT_GUARD": {
+      "source": "arXiv:2507.22169",
+      "objects": {
+        "A_h": "61/(60 pi)",
+        "IR_tail_coefficient": "61/30 = 2 pi A_h",
+        "fixed_point": "g_star=760 pi/2499"
+      },
+      "independent_jobs": 1
+    }
+  },
+  "expected_independent_jobs": 49,
+  "aggregate_iteration": 416,
+  "global_guards": {
+    "family_terminal_from_bundle": false,
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+    "candidate_gravity_activation": false,
+    "new_required_authorized": false
+  }
+}
