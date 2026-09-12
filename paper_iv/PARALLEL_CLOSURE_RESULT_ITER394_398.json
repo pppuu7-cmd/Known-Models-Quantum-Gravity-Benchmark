@@ -1,0 +1,48 @@
+{
+  "iteration_bundle": "394-398",
+  "workflow_run": 34665732985,
+  "head_sha": "6df7af1803812734900fecb32166e3baff7168e4",
+  "conclusion": "success",
+  "independent_jobs": 23,
+  "aggregate_jobs": 1,
+  "artifact_id": 10289695409,
+  "artifact_digest": "sha256:6a0526081e6e4bea2facdaa794947eedc87f74f5fcc876d188e9361454fc325d",
+  "classification": "PASS_SOURCE_AWARE_PARALLEL_CLOSURE_WAVE__IHO_BRANCH_PAYLOAD_SHARPENED__NONLOCAL_TREE_COMPARATOR_QUOTIENT_CLOSED_IN_THEOREM_SUBFAMILY__RQCP_HOLDOUT_CONVERGENCE_TESTED__GLOBAL_GATES_REMAIN_OPEN",
+  "IHO_DQFT": {
+    "minimum_payload_full_slots": 5,
+    "minimum_payload_partial_or_open_slots": 5,
+    "full_slots": [
+      "branch_identifier_and_fixed_action",
+      "physical_Hilbert_space_and_asymptotic_state_rule",
+      "same_prescription_unitarity_certificate",
+      "normalized_physical_observable",
+      "same_domain_comparators"
+    ],
+    "partial_open_slots": [
+      "dressed_pole_locations_and_residues",
+      "declared_causality_or_controlled_nonlocal_replacement",
+      "IR_GR_map",
+      "error_remainder_scheme_ledger",
+      "remaining_material_branch_disposition_map"
+    ],
+    "branch_map_v2_required": true,
+    "family_terminal": false
+  },
+  "NONLOCAL_QG": {
+    "analytic_eom_tree_subfamily_residual": "EXACT_ZERO_BY_THEOREM",
+    "analytic_eom_tree_subfamily_terminal_candidate": true,
+    "riemann_nonconstant_form_factor_branch": "OPEN_SEPARATE_MATERIAL_BRANCH",
+    "family_terminal": false
+  },
+  "RQCP": {
+    "holdout_windows": 9,
+    "G": {"last_window_target": 28, "last_window_worst_relative_holdout_error": 2.0386397442668926e-05, "last_window_model_prediction_disagreement": 1.0010129154815165e-05},
+    "gap": {"last_window_target": 28, "last_window_worst_relative_holdout_error": 5.159858161919628e-06, "last_window_model_prediction_disagreement": 5.7619699207897695e-06},
+    "G_gap2": {"last_window_target": 28, "last_window_worst_relative_holdout_error": 6.217600681227017e-05, "last_window_model_prediction_disagreement": 1.3495808602331028e-05},
+    "guard": "Finite holdout predictivity is numerical convergence evidence, not an Ncut->infinity theorem or all-band autonomous-parent closure."
+  },
+  "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+  "candidate_gravity_activation": false
+}
