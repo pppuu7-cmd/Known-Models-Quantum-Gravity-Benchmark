@@ -1,0 +1,119 @@
+name: lqg-iter440-toller-recombination
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'code/lqg_iter440_toller_recombination.py'
+      - 'recovery/ITER439_RESULT_AND_ITER440_PREREG_TOLLER_RECOMBINATION_2026-09-12.md'
+      - '.github/workflows/lqg-iter440-toller-recombination.yml'
+
+jobs:
+  recombination:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        gamma: [7.0, 8.0]
+        j: [2, 5]
+        m: [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+        exclude:
+          - j: 2
+            m: -5
+          - j: 2
+            m: -4
+          - j: 2
+            m: -3
+          - j: 2
+            m: 3
+          - j: 2
+            m: 4
+          - j: 2
+            m: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install frozen numerical dependency
+        run: python3 -m pip install --disable-pip-version-check 'mpmath==1.3.0'
+      - name: Evaluate frozen Eq.45/Eq.46 recombination lane
+        id: calc
+        continue-on-error: true
+        run: |
+          python3 code/lqg_iter440_toller_recombination.py \
+            --gamma '${{ matrix.gamma }}' \
+            --j '${{ matrix.j }}' \
+            --m '${{ matrix.m }}'
+      - name: Upload lane evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lqg-iter440-lane-g${{ matrix.gamma }}-j${{ matrix.j }}-m${{ matrix.m }}
+          path: build/lqg-iter440/*.json
+          if-no-files-found: error
+      - name: Enforce frozen lane gate
+        if: always()
+        run: test '${{ steps.calc.outcome }}' = 'success'
+
+  aggregate:
+    needs: recombination
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lqg-iter440-lane-*
+          path: build/lqg-iter440-lanes
+          merge-multiple: true
+      - name: Aggregate frozen matrix
+        run: |
+          python3 - <<'PY'
+          import glob, hashlib, json, os
+          files = sorted(glob.glob('build/lqg-iter440-lanes/*.json'))
+          rows = [json.load(open(p, encoding='utf-8')) for p in files]
+          expected = 32
+          valid = [r for r in rows if r.get('controls_valid') is True and r.get('classification') == 'SOURCE_TOLLER_RECOMBINATION_IDENTITY_REALIZED']
+          controls_valid = len(rows) == expected and len(valid) == expected
+          summary = {
+              'iteration': 440,
+              'expected_lane_count': expected,
+              'lane_count': len(rows),
+              'valid_count': len(valid),
+              'invalid_count': len(rows) - len(valid),
+              'controls_valid': controls_valid,
+              'max_scaled_cross_precision_difference': max((r.get('max_scaled_cross_precision_difference', float('inf')) for r in rows), default=float('inf')),
+              'max_scaled_identity_residual_80dps': max((r.get('max_scaled_identity_residual_80dps', float('inf')) for r in rows), default=float('inf')),
+              'max_scaled_identity_residual_120dps': max((r.get('max_scaled_identity_residual_120dps', float('inf')) for r in rows), default=float('inf')),
+              'classification': ('SOURCE_TOLLER_RECOMBINATION_IDENTITY_REALIZED_ON_FROZEN_GRID' if controls_valid else 'ITER440_CONTROL_OR_RECOMBINATION_INVALID'),
+              'scope_guard': 'Source-level gamma-simple reduced Toller/Wigner finite-beta recombination validation only; not full K5 Haar/angular contraction, causal-vertex convergence/divergence, spectral collision theorem, cutoff removal, family promotion, or terminal D7.',
+              'd2': 'NOT_CLOSED_COVERAGE_AND_OBJECTS',
+              'd4': 'PARTIAL_GLOBAL_NOT_CLOSED',
+              'd7_s2': 'NOT_CLOSED',
+              'd7_s3': 'NOT_CLOSED',
+              'd7_s4': 'PARTIAL_GLOBAL_NOT_CLOSED',
+              'd7': 'NOT_CLOSED / NOT_YET_AUTHORIZED',
+              'candidate_gravity_authorized': False,
+          }
+          os.makedirs('build/lqg-iter440-summary', exist_ok=True)
+          out='build/lqg-iter440-summary/lqg-iter440-summary.json'
+          with open(out,'w',encoding='utf-8') as f:
+              json.dump(summary,f,indent=2,sort_keys=True); f.write('\n')
+          digest=hashlib.sha256(open(out,'rb').read()).hexdigest()
+          with open('build/lqg-iter440-summary/SHA256SUMS.txt','w') as f:
+              f.write(f'{digest}  lqg-iter440-summary.json\n')
+          print(json.dumps(summary,indent=2,sort_keys=True))
+          PY
+      - name: Upload aggregate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lqg-iter440-summary
+          path: build/lqg-iter440-summary/*
+          if-no-files-found: error
+      - name: Enforce aggregate validity
+        run: |
+          python3 - <<'PY'
+          import json
+          x=json.load(open('build/lqg-iter440-summary/lqg-iter440-summary.json'))
+          raise SystemExit(0 if x['controls_valid'] else 2)
+          PY
