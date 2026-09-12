@@ -88,7 +88,8 @@ def main():
         for b0, b1, y0, y1 in zip(BETAS[:-1], BETAS[1:], weighted[:-1], weighted[1:])
     ]
     final_error = abs(slopes[-1] - expected_slope)
-    finite = all(mp.isfinite(x) and x > 0 for x in weighted + slopes)
+    finite = (all(mp.isfinite(x) and x > 0 for x in weighted)
+              and all(mp.isfinite(x) for x in slopes))
     numerical_valid = bool(finite and final_error < mp.mpf('2e-4'))
 
     if not numerical_valid:
