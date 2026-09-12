@@ -1,0 +1,33 @@
+{
+  "iteration": 424,
+  "title": "K5 Fixed-Spectrum Relative-Orientation Ambiguity Audit",
+  "status": "PREREGISTERED_BEFORE_COMPUTE",
+  "question": "After fixing det(S)=1 and the complete eigenvalue spectrum of the conditional cycle metric, does the scaled off-support profile still depend on the orientation of S relative to physically fixed cycle probes, while remaining invariant under simultaneous co-rotation of metric and probes?",
+  "model_scope": "linearized mixed Gaussian K5 surrogate with support rank 4 and cycle rank 6",
+  "profiles": 24,
+  "eta_grid": [0.1, 0.03, 0.01, 0.003],
+  "probe_count_per_profile": 6,
+  "construction": {
+    "reference_metric": "S0 = diag(lambda_1,...,lambda_6), product(lambda)=1",
+    "rotated_metric": "S = R S0 R^T with nontrivial orthogonal R",
+    "full_block_metric": "H = [[A,C],[C^T,S + C^T A^-1 C]] so Schur(H|A)=S",
+    "scaled_probe": "x_eta=(0_4, eta z)",
+    "profile": "rho_eta(x_eta)/rho_eta(0)=exp[-0.5 z^T S^-1 z]"
+  },
+  "hard_profile_gates": {
+    "abs_logdet_S_max": 1e-10,
+    "spectrum_match_relative_max": 2e-10,
+    "orthogonality_error_max": 2e-12,
+    "full_covariance_vs_schur_relative_error_max": 3e-8,
+    "eta_profile_relative_spread_max": 3e-7,
+    "corotation_relative_error_max": 3e-10
+  },
+  "hard_aggregate_gates": {
+    "all_24_profiles_pass": true,
+    "minimum_profiles_with_fixed_probe_orientation_effect": 20,
+    "fixed_probe_orientation_effect_ratio_min": 1.05,
+    "global_max_corotation_relative_error": 3e-10
+  },
+  "positive_result_interpretation": "Within this surrogate, fixing determinant and even the entire conditional-metric spectrum does not fix the finite off-support profile relative to a physically fixed probe frame. Exact co-rotation invariance shows that the residual effect is relative orientation, not a coordinate-basis artifact.",
+  "claim_lock": "A PASS does not establish ambiguity of a physical EPRL/Toller amplitude, does not identify cycle coordinates as observables, and does not close D7 or NEW_REQUIRED. It only sharpens what additional geometric data a microscopic prescription would have to fix or gauge-quotient in this Gaussian K5 class."
+}
