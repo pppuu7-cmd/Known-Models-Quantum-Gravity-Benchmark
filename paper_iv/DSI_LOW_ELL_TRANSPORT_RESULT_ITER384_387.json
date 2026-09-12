@@ -1,0 +1,22 @@
+{
+  "iteration_bundle": "384-387",
+  "workflow_run": 34665263028,
+  "head_sha": "b13d2c69ef81963e3f0ffdb5c41a8e0d9d7f111a",
+  "conclusion": "success",
+  "classification": "PASS_SOURCE_DEFINED_LOW_ELL_DSI_TRANSFER_DOMAIN_AND_CUTOFF_TRANSPORT_REPRODUCED__RAW_PLANCK_MONTE_CARLO_COVARIANCE_AND_END_TO_END_LIKELIHOOD_REMAIN_OPEN",
+  "transfer_pattern_jobs": 3,
+  "cutoff_convergence_jobs": 3,
+  "diagnostic_RTT_proxy_jobs": 6,
+  "domain_window_jobs": 6,
+  "scope_guard_jobs": 1,
+  "published_low_ell_transfer_domain_reproduced": true,
+  "diagnostic_RTT_proxies_explicitly_not_planck_reproduction": true,
+  "raw_planck_masked_map_present": false,
+  "million_sky_realization_payload_present": false,
+  "raw_covariance_present": false,
+  "full_likelihood_reproduction_authorized": false,
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "family_terminal": false,
+  "d7_promotion_authorized": false,
+  "refined_blocker": "RAW_PLANCK_MASKED_MAP_OR_EQUIVALENT_C_L_PAYLOAD_PLUS_REPRODUCIBLE_SKY_REALIZATION_PIPELINE_AND_COVARIANCE_FOR_END_TO_END_POSTERIOR_REPLICATION"
+}
