@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "iteration": 394,
+  "family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "branch": "IHO_DQFT_SPACELIKE_PV",
+  "source": {
+    "title": "Unitary Quadratic Quantum Gravity in 4D",
+    "authors": ["K. Sravan Kumar", "Joao Marto"],
+    "arxiv": "2604.19707v3",
+    "submitted": "2026-04-21",
+    "last_revised": "2026-07-07",
+    "url": "https://arxiv.org/abs/2604.19707"
+  },
+  "source_defined_objects": {
+    "positive_weyl_squared_extra_spin2": "dual inverted harmonic oscillator with spacelike pole",
+    "hilbert_structure": "DQFT split Hilbert space H=H_+ direct-sum H_- with geometric superselection sectors",
+    "spectral_statement": "Wightman/Kallen-Lehmann spectral density vanishes on the spacelike shell",
+    "propagator_statement": "principal-value Green distribution is uniquely fixed by spectral/Hilbert structure; it is not a fakeon, Lee-Wick, Feynman-Wheeler or PT prescription",
+    "asymptotic_state_rule": "dual-IHO spin-2 is not an asymptotic state and contributes only virtually",
+    "unitarity_statement": "source gives Cutkosky/optical-theorem analysis and claims unitarity at all loop orders for the stated realization",
+    "landau_statement": "source finds no physical timelike pinch for the spacelike dual-IHO channels considered",
+    "uv_locality_statement": "full spin-2 propagator retains 1/k^4 falloff and source argues UV divergent counterterms remain local",
+    "scope_of_source_claim": "Minkowski perturbative quadratic-gravity realization; this source does not by itself provide a family-wide non-Minkowski terminal theorem"
+  },
+  "source_lines_used_in_audit": {
+    "pv_hilbert_spectral": [23,24,25,27,57,107],
+    "landau_and_uv": [234,237,240,252,253,259,263],
+    "asymptotic_and_unitarity": [3,4,25,27,273]
+  },
+  "protocol_guard": {
+    "source_claim_is_not_independent_KMQGB_all_loop_reproof": true,
+    "published_source_authority_may_satisfy_source_certificate_slots": true,
+    "causality_beyond_local_counterterm_and_no_pinch_controls_remains_separate": true,
+    "full_IR_GR_transport_remains_separate": true,
+    "family_terminal": false,
+    "d7_promotion_authorized": false
+  }
+}
