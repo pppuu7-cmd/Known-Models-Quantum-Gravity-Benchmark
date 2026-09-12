@@ -1,0 +1,42 @@
+{
+  "iteration": 447,
+  "title": "Source-faithful Toller identity/collision asymptotics gate",
+  "status": "PREREGISTERED_BEFORE_IMPLEMENTATION",
+  "scientific_question": "For the published gamma-simple Toller boost matrix elements at fixed j, are the individual causal branches t+ and t- bounded/locally regular as beta -> 0 on the frozen source-faithful grid, and does their recombination remain stable?",
+  "source_scope": {
+    "family": "gamma-simple finite-beta Toller matrices",
+    "gamma": [7, 8],
+    "j": [2, 5],
+    "m": "all integers -j..j",
+    "branches": ["plus", "minus", "recombined"],
+    "beta_grid": ["1e-2", "1e-3", "1e-4", "1e-5", "1e-6", "1e-7", "1e-8", "1e-9", "1e-10"],
+    "precision_dps": 160
+  },
+  "frozen_checks": {
+    "finite_on_grid": true,
+    "estimate_local_log_power_p_from_last_four_points": true,
+    "bounded_branch_threshold_p": 0.05,
+    "recombined_identity_scaled_error_max": "1e-60",
+    "cross_precision_dps": [120, 160],
+    "cross_precision_scaled_difference_max": "1e-50",
+    "classification": [
+      "SOURCE_COLLISION_BOUNDED_ON_FROZEN_GRID",
+      "SOURCE_COLLISION_BRANCH_SINGULAR_BUT_RECOMBINATION_STABLE",
+      "SOURCE_COLLISION_UNRESOLVED"
+    ]
+  },
+  "fail_closed": true,
+  "scope_guard": [
+    "This is a local beta->0 source-matrix test, not a proof of full K5 collision integrability.",
+    "No conclusion about simultaneous multi-pair collision strata is authorized by this gate alone.",
+    "No conclusion about causal-stack normalization, cutoff removal, D7 terminality, or Candidate Gravity is authorized.",
+    "A fitted singular power is diagnostic only; it is not by itself a divergence theorem."
+  ],
+  "d7_policy": {
+    "d7_s2_if_pass": "STRENGTHENED_BUT_NOT_CLOSED",
+    "d7_s3": "NOT_CLOSED",
+    "d7_s4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "terminal_d7": "NOT_AUTHORIZED",
+    "candidate_gravity_authorized": false
+  }
+}
