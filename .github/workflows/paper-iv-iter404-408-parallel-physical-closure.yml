@@ -1,0 +1,155 @@
+name: paper-iv-iter404-408-parallel-physical-closure
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/PARALLEL_PHYSICAL_CLOSURE_AUTHORITY_ITER404_408.json'
+      - 'code/iter404_407_parallel_physical_closure.py'
+      - 'code/iter408_aggregate.py'
+      - '.github/workflows/paper-iv-iter404-408-parallel-physical-closure.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  lqg-toller-asymptotic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      max-parallel: 24
+      matrix:
+        gamma: ['0.1','0.274','0.5','1.0','2.0','5.0']
+        n: ['1','2','3','4']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter404
+          python code/iter404_407_parallel_physical_closure.py --mode lqg --gamma '${{ matrix.gamma }}' --n '${{ matrix.n }}' --output 'build/iter404/lqg-${{ matrix.gamma }}-n${{ matrix.n }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter404-lqg-${{ matrix.gamma }}-n${{ matrix.n }}
+          path: build/iter404/lqg-${{ matrix.gamma }}-n${{ matrix.n }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  cfs-order-transport:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        L_over_delta: ['10','100','10000','100000000']
+        C3: ['0.1','1.0','10.0']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter405
+          python code/iter404_407_parallel_physical_closure.py --mode cfs --L-over-delta '${{ matrix.L_over_delta }}' --C3 '${{ matrix.C3 }}' --output 'build/iter405/cfs-L${{ matrix.L_over_delta }}-C${{ matrix.C3 }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter405-cfs-L${{ matrix.L_over_delta }}-C${{ matrix.C3 }}
+          path: build/iter405/cfs-L${{ matrix.L_over_delta }}-C${{ matrix.C3 }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  as-forward:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        t_fixed: ['-0.1','-1.0','-10.0','-100.0']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter406
+          python code/iter404_407_parallel_physical_closure.py --mode as-forward --t-fixed '${{ matrix.t_fixed }}' --output 'build/iter406/as-forward-${{ matrix.t_fixed }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter406-as-forward-${{ matrix.t_fixed }}
+          path: build/iter406/as-forward-${{ matrix.t_fixed }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  as-bounded:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        theta: ['15','30','60','90']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter406
+          python code/iter404_407_parallel_physical_closure.py --mode as-bounded --theta-deg '${{ matrix.theta }}' --output 'build/iter406/as-bounded-${{ matrix.theta }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter406-as-bounded-${{ matrix.theta }}
+          path: build/iter406/as-bounded-${{ matrix.theta }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  rqcp-window-stability:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        observable: ['G','gap','G_gap2']
+        min_cutoff: ['10','12','14','16']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter407
+          python code/iter404_407_parallel_physical_closure.py --mode rqcp --observable '${{ matrix.observable }}' --min-cutoff '${{ matrix.min_cutoff }}' --output 'build/iter407/rqcp-${{ matrix.observable }}-N${{ matrix.min_cutoff }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter407-rqcp-${{ matrix.observable }}-N${{ matrix.min_cutoff }}
+          path: build/iter407/rqcp-${{ matrix.observable }}-N${{ matrix.min_cutoff }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: [lqg-toller-asymptotic, cfs-order-transport, as-forward, as-bounded, rqcp-window-stability]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter4*'
+          path: build/iter404-407-results
+          merge-multiple: true
+      - run: python code/iter408_aggregate.py --input-dir build/iter404-407-results --output iter404-408-summary.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter404-408-summary
+          path: iter404-408-summary.json
+          if-no-files-found: error
+          retention-days: 90
