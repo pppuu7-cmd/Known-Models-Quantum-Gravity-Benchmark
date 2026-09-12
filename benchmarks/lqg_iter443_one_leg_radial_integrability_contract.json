@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "iteration": 443,
+  "date": "2026-09-12",
+  "status": "PREREGISTERED_NONTERMINAL_RADIAL_GATE",
+  "scientific_question": "On a one-group-variable noncompact boost escape ray of the 4-simplex causal vertex, does a conservative source-faithful Toller matrix-element envelope overcome the SL(2,C)/H3 radial Haar growth on the frozen gamma-simple j=2,5 matrix?",
+  "source_basis": {
+    "toller_formula": "Bianchi-Chen-Gamonal 2026 Eq.(45),(46), gamma-simple k=j=l",
+    "causal_vertex_context": "Bianchi-Chen-Gamonal 2026 causal EPRL vertex",
+    "radial_measure": "sinh(beta)^2 d beta up to compact angular factors",
+    "cartan_bound_logic": "Compact SU(2) rotations only mix a finite-dimensional fixed-j magnetic basis; the noncompact radial exponent is controlled by the boost Toller entries. The gate therefore uses the maximum absolute diagonal boost entry over all m and both causal branches as a conservative fixed-j radial envelope."
+  },
+  "matrix": {
+    "gamma": [7.0, 8.0],
+    "j": [2, 5],
+    "m": "all integer m in [-j,j]",
+    "branches": ["plus", "minus"],
+    "incident_wedge_count": 4,
+    "beta": [4.0, 6.0, 8.0, 10.0, 12.0, 14.0]
+  },
+  "precision": {
+    "dps": 100,
+    "fit_beta_min": 8.0,
+    "expected_radial_log_slope": -2.0,
+    "maximum_allowed_radial_log_slope": -1.8,
+    "radial_envelope_must_be_strictly_decreasing": true,
+    "single_toller_envelope_scaled_e_plus_beta_variation_max": 0.0001
+  },
+  "required_checks": [
+    "all source Toller values finite on the frozen matrix",
+    "single-factor envelope max_{m,branch}|t_branch(beta)| has asymptotic e^{-beta} scaling on the frozen large-beta window",
+    "four-incident-wedge conservative product envelope multiplied by sinh(beta)^2 is strictly decreasing",
+    "late-window fitted log slope of the radial envelope is <= -1.8 and is numerically consistent with the expected -2 exponent"
+  ],
+  "scope_guard": "PASS establishes only a conservative one-group-variable radial escape-direction integrability witness for the frozen gamma-simple j=2,5 source matrix. It is not a proof of simultaneous multi-group escape integrability, full Haar/angular causal-vertex finiteness, generalized EPRL-KKL finiteness, stack normalization/cutoff removal, family terminality, D7-S3/S4 closure, terminal D7 authorization, or Candidate Gravity activation.",
+  "classification_on_pass": "SOURCE_ONE_LEG_RADIAL_ENVELOPE_INTEGRABLE_ON_FROZEN_GRID",
+  "d7_s2_after_pass": "STRENGTHENED_BUT_NOT_CLOSED",
+  "d7_s5_authorized": false,
+  "candidate_gravity_authorized": false
+}
