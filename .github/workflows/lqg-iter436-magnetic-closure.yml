@@ -23,11 +23,8 @@ jobs:
         cluster_size: [3,4]
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
-        with:
-          python-version: '3.12.11'
       - name: Audit local magnetic closure
-        run: python code/lqg_iter436_magnetic_closure.py --index ${{ matrix.index }} --cluster-size ${{ matrix.cluster_size }}
+        run: python3 code/lqg_iter436_magnetic_closure.py --index ${{ matrix.index }} --cluster-size ${{ matrix.cluster_size }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -50,7 +47,7 @@ jobs:
       - name: Scientific aggregate
         shell: bash
         run: |
-          python - <<'PY'
+          python3 - <<'PY'
           import glob, hashlib, json, pathlib
           files=sorted(glob.glob('build/lqg-iter436-results/sector_*_s*.json'))
           rows=[json.load(open(p)) for p in files]
