@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "iteration": 445,
+  "date": "2026-09-12",
+  "status": "PREREGISTERED_NONTERMINAL_ENVELOPE_REACH_DIAGNOSTIC",
+  "scientific_question": "For K5 with one gauge-fixed vertex, which simultaneous common-shift escape cardinalities k=1..4 can be certified by the already validated one-factor source envelope M(beta)~exp(-beta) without invoking additional angular/intertwiner/correlated bounds?",
+  "graph": {
+    "vertices": 5,
+    "edges": 10,
+    "unfixed_vertices": 4,
+    "escape_cardinality_k": [1, 2, 3, 4]
+  },
+  "frozen_counting_rule": {
+    "crossing_edges": "k*(5-k)",
+    "radial_haar_common_shift_exponent": "2*k",
+    "source_envelope_crossing_decay_exponent": "-k*(5-k)",
+    "net_common_shift_exponent": "2*k-k*(5-k)=k*(k-3)"
+  },
+  "expected_exact_table": {
+    "1": {"crossing_edges": 4, "net_exponent": -2, "envelope_certificate": "SUFFICIENT_BY_THIS_BOUND"},
+    "2": {"crossing_edges": 6, "net_exponent": -2, "envelope_certificate": "SUFFICIENT_BY_THIS_BOUND"},
+    "3": {"crossing_edges": 6, "net_exponent": 0, "envelope_certificate": "UNRESOLVED_BY_THIS_BOUND"},
+    "4": {"crossing_edges": 4, "net_exponent": 4, "envelope_certificate": "UNRESOLVED_BY_THIS_BOUND"}
+  },
+  "required_checks": [
+    "enumerate every subset of the four unfixed K5 vertices for each k=1..4",
+    "verify exact crossing-edge count for every subset",
+    "verify exact net common-shift exponent from the frozen counting rule",
+    "verify k=1 and k=2 are the only negative-exponent classes",
+    "verify k=3 and k=4 are reported UNRESOLVED_BY_THIS_BOUND rather than divergent or FAIL"
+  ],
+  "classification_on_pass": "EXACT_K5_SINGLE_FACTOR_ENVELOPE_CERTIFICATE_COVERS_K1_K2_ONLY__K3_K4_REQUIRE_STRONGER_CORRELATED_OR_ANGULAR_BOUND",
+  "scope_guard": "This diagnostic classifies the reach of a specific conservative envelope proof strategy. Nonnegative exponent means the bound is insufficient, not that the causal vertex diverges. The standard EPRL finiteness theorem already demonstrates why naive product bounds can be weaker than the full group-integral structure. No D7 terminal output or Candidate Gravity activation is authorized.",
+  "d7_s2_after_pass": "BLOCKER_LOCALIZED_TO_K3_K4_CORRELATED_MULTI_GROUP_DIRECTIONS_BUT_NOT_CLOSED",
+  "d7_s5_authorized": false,
+  "candidate_gravity_authorized": false
+}
