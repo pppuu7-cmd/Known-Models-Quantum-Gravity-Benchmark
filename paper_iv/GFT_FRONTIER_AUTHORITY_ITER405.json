@@ -1,0 +1,18 @@
+{
+  "schema_version":"1.0",
+  "iteration":405,
+  "rqir_core":"1.0_FROZEN",
+  "family":"GFT_TENSOR_MODELS",
+  "purpose":"Distinguish the already-supported scoped covariant GFT-to-spinfoam reduction from the independent TGFT remainder and test whether current authority closes family-level reduction or supplies an independent comparator-ready gravity observable.",
+  "sources":[
+    {"title":"Foundational Issues in Group Field Theory","year":2024,"role":"review authority","supports":"selected covariant GFT Feynman amplitudes can reproduce spin-foam amplitudes; not a universal GFT/TGFT equivalence theorem"},
+    {"arxiv":"2211.12768","title":"Mean-field phase transitions in TGFT quantum gravity","role":"TGFT continuum/condensate authority","supports":"nontrivial continuum-regime evidence in a specific TGFT setting; does not by itself provide a family-level reduction theorem or full gravity observable/comparator package"},
+    {"arxiv":"2603.16999","title":"The Structure of the Continuum Limit of Spin Foams","role":"spin-foam continuum authority","supports":"structural continuum-limit results for spin foams; does not by itself identify the independent TGFT remainder with spin foams"}
+  ],
+  "prospective_rules":{
+    "family_reduction_requires":["explicit map for every material GFT/TGFT branch claimed represented","state/amplitude/observable identity map","parameter and normalization identity","double-counting control","scope proof that no independent TGFT gravity response remains"],
+    "independent_route_requires":["frozen TGFT parent dynamics/state or measure","continuum Lorentzian gravity regime","normalized non-cosmology-only gravity observable","same-domain GR/EFT comparator","error transport"],
+    "blocked_is_fail":false,
+    "scoped_reduction_is_family_equivalence":false
+  }
+}
