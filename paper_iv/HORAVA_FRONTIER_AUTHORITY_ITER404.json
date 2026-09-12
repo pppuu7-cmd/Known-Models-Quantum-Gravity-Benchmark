@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "iteration": 404,
+  "rqir_core": "1.0_FROZEN",
+  "family": "HORAVA_LIFSHITZ",
+  "purpose": "Prospectively test whether currently identified projectable UV and IR authorities compose into the same-realization bridge required by the frozen Paper-IV coverage contract, while separately auditing whether the non-projectable authority supports a 3+1 disposition.",
+  "sources": {
+    "projectable_uv": {
+      "arxiv": "2411.13574",
+      "title": "Renormalization group flow of projectable Horava gravity in (3+1) dimensions",
+      "scope": "3+1 projectable; marginal UV RG flow",
+      "provides": ["marginal essential coupling flow", "asymptotically-free trajectories", "lambda-flow information"],
+      "does_not_by_itself_provide": ["frozen relevant lower-derivative coupling bridge through the IR", "normalized extra-scalar/tensor observable with same-domain GR comparator"]
+    },
+    "projectable_ir": {
+      "arxiv": "1309.7273",
+      "title": "Renormalization group flow of Horava-Lifshitz gravity at low energies",
+      "scope": "projectable low-energy FRG truncation",
+      "provides": ["low-energy flow of Newton/cosmological/anisotropy couplings", "example trajectories approaching an Einstein-Hilbert/GR regime"],
+      "does_not_by_itself_provide": ["explicit identity map to the 2025 marginal-UV trajectory", "single frozen UV-to-IR integration with shared normalization and error transport"]
+    },
+    "nonprojectable_quantization": {
+      "arxiv": "2512.14864",
+      "title": "Quantizing non-projectable Horava gravity with Lagrangian path integral",
+      "scope": "formal non-projectable path integral plus explicit one-loop case study in 2+1 dimensions",
+      "provides": ["configuration-space path integral construction", "2+1 one-loop locality/cancellation case study"],
+      "does_not_by_itself_provide": ["3+1 perturbative-renormalizability theorem", "3+1 comparator-ready normalized gravity observable"]
+    }
+  },
+  "prospective_rules": {
+    "same_realization_bridge_pass_requires_all": [
+      "explicit shared parameter dictionary",
+      "explicit common RG scale/normalization map",
+      "UV endpoint of IR authority matched to an allowed state of UV authority",
+      "relevant-coupling evolution attached to the same trajectory rather than spliced by analogy",
+      "uncertainty_or_truncation_error_transport",
+      "normalized physical observable and identical-domain GR comparator"
+    ],
+    "nonprojectable_3p1_disposition_pass_requires_one_of": [
+      "3+1 theorem or calculation establishing the required quantum closure package",
+      "explicit reduction theorem proving the 2+1 result controls the required 3+1 objects",
+      "family-scope exclusion/reduction certificate under the frozen coverage contract"
+    ],
+    "missing_object_is_scientific_fail": false,
+    "cross_source_similarity_is_equivalence": false,
+    "blocked_counts_as_terminal": false
+  }
+}
