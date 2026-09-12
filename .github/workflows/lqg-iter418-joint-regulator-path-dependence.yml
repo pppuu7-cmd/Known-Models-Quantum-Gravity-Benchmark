@@ -1,0 +1,82 @@
+name: lqg-iter418-joint-regulator-path-dependence
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'benchmarks/lqg_iter418_joint_regulator_path_dependence.json'
+      - 'code/lqg_iter418_joint_regulator_path_dependence.py'
+      - '.github/workflows/lqg-iter418-joint-regulator-path-dependence.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  sectors:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        sector: ['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001','1010','1011','1100','1101','1110','1111']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Audit one source-specific sigma sector
+        run: |
+          mkdir -p build/lqg-iter418
+          python code/lqg_iter418_joint_regulator_path_dependence.py --sector '${{ matrix.sector }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter418-sector-${{ matrix.sector }}
+          path: build/lqg-iter418/sector_${{ matrix.sector }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: sectors
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter418-sector-*
+          path: build/lqg-iter418-results
+          merge-multiple: true
+      - name: Aggregate exact sector invariance and path dependence
+        run: |
+          python - <<'PY'
+          import glob, json, hashlib
+          files=sorted(glob.glob('build/lqg-iter418-results/sector_*.json'))
+          if len(files)!=16: raise SystemExit(f'expected 16 sector files, got {len(files)}')
+          data=[json.load(open(f)) for f in files]
+          if not all(d['path_dependent'] for d in data): raise SystemExit('path dependence not reproduced in all sectors')
+          sigs={tuple(d['unique_predicted_exponents']) for d in data}
+          if len(sigs)!=1: raise SystemExit('unexpected sigma-sector dependence of exponent set')
+          out={
+            'iteration':418,
+            'sector_count':16,
+            'all_sector_jobs_scientifically_pass':True,
+            'sigma_sector_invariant_exponent_set':list(next(iter(sigs))),
+            'path_dependence_reproduced_in_all_sectors':True,
+            'classification':'PASS_SCOPED_K5_LINEARIZED_DELTA_LIKE_PRODUCT_HAS_REGULATOR_PATH_DEPENDENT_SINGULAR_SCALING_ACROSS_ALL_16_SOURCE_SIGMA_SECTORS__NAIVE_INDEPENDENT_WIDTH_LIMIT_NOT_UNIQUE__CORRELATED_SOURCE_BACKED_EXTENSION_REMAINS_REQUIRED',
+            'scope_guard':'Gaussian linearized surrogate only; no Toller divergence theorem, no family no-go, no D7 authorization'
+          }
+          raw=(json.dumps(out,indent=2,sort_keys=True)+'\n').encode()
+          open('build/lqg-iter418-summary.json','wb').write(raw)
+          open('build/lqg-iter418-summary.sha256','w').write(hashlib.sha256(raw).hexdigest()+'\n')
+          print(raw.decode())
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter418-summary
+          path: |
+            build/lqg-iter418-summary.json
+            build/lqg-iter418-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
