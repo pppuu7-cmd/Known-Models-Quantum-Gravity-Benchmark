@@ -1,0 +1,98 @@
+{
+  "schema_version": "2.0",
+  "iteration": 399,
+  "rqir_core": {"version": "1.0", "status": "FROZEN"},
+  "family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "supersedes_for_current_research": "paper_iv/HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_MAP_2026-09-10.json",
+  "historical_iter187_map_preserved": true,
+  "material_branch_count": 6,
+  "material_branches": [
+    {
+      "id": "BARE_OR_INDEFINITE_METRIC_GHOST",
+      "status": "SCOPED_STRUCTURAL_GHOST_POLE_CONTROL__NOT_FAMILY_TERMINAL",
+      "terminal": false,
+      "blocker": "dressing/asymptotic-state interpretation is not fixed by the bare pole alone"
+    },
+    {
+      "id": "FAKEON_AVERAGE_CONTINUATION",
+      "status": "SCOPED_RENORMALIZABILITY_UNITARITY_CONTROL__MICROCAUSALITY_REPLACEMENT_OPEN",
+      "terminal": false,
+      "blocker": "same-realization controlled-nonlocal causality replacement plus normalized observable/comparator package not yet frozen"
+    },
+    {
+      "id": "LEE_WICK_UNSTABLE_RESONANCE",
+      "status": "BLOCKED_CONTESTED_UNITARITY_AUTHORITY__SAME_REALIZATION_CUT_CERTIFICATE_REQUIRED",
+      "terminal": false,
+      "blocker": "published all-orders unitarity and operator-formalism unitarity-violation conclusions conflict for complex/unstable ghost treatments"
+    },
+    {
+      "id": "PT_SYMMETRIC_OR_MODIFIED_INNER_PRODUCT",
+      "status": "BLOCKED_DISTINCT_HILBERT_SPACE_REALIZATIONS__NO_COMMON_TERMINAL_OBJECT",
+      "terminal": false,
+      "blocker": "positive-inner-product claims and explicit conformal-gravity unitarity-violation analysis are not the same fixed realization"
+    },
+    {
+      "id": "EUCLIDEAN_OS_LATTICE",
+      "status": "SCOPED_EUCLIDEAN_OS_POSITIVITY_CONTROL__LORENTZIAN_CONTINUUM_MATCH_OPEN",
+      "terminal": false,
+      "blocker": "same-realization Lorentzian continuum observable map to the perturbative/cosmology benchmark domain is not frozen"
+    },
+    {
+      "id": "IHO_DQFT_SPACELIKE_PV",
+      "status": "PARTIAL_SOURCE_DEFINED_REALIZATION__5_OF_10_MINIMUM_PAYLOAD_SLOTS_FULL",
+      "terminal": false,
+      "source_authority": [
+        "paper_iv/IHO_DQFT_SOURCE_AUTHORITY_ITER366_369.json",
+        "paper_iv/IHO_DQFT_COSMOLOGY_SOURCE_AUTHORITY_ITER370_373.json",
+        "paper_iv/IHO_DQFT_PARITY_SOURCE_AUTHORITY_ITER374_378.json",
+        "paper_iv/IHO_DQFT_SOURCE_UPDATE_ITER394.json",
+        "paper_iv/DSI_LOW_ELL_TRANSPORT_RESULT_ITER384_387.json"
+      ],
+      "material_distinction": {
+        "distinct_from_fakeon": true,
+        "distinct_from_lee_wick": true,
+        "distinct_from_pt_symmetric": true,
+        "distinct_from_euclidean_os": true,
+        "beta_negative_timelike_ghost_sector_is_sign_control_not_same_branch": true
+      },
+      "full_minimum_payload_slots": [
+        "branch_identifier_and_fixed_action",
+        "physical_Hilbert_space_and_asymptotic_state_rule",
+        "same_prescription_unitarity_certificate",
+        "normalized_physical_observable",
+        "same_domain_comparators"
+      ],
+      "partial_or_open_minimum_payload_slots": [
+        "dressed_pole_locations_and_residues",
+        "declared_causality_or_controlled_nonlocal_replacement",
+        "IR_GR_map",
+        "error_remainder_scheme_ledger",
+        "remaining_material_branch_disposition_map"
+      ],
+      "blocker": "Complete dressed pole/residue domain ledger, causal observable or controlled-nonlocal replacement, full IR-GR transport beyond scoped inflationary limits, source-grounded covariance/remainder ledger, and family branch-exhaustion disposition.",
+      "source_all_loop_unitarity_claim_independently_reproved_by_KMQGB": false
+    }
+  ],
+  "minimum_payload": [
+    "branch_identifier_and_fixed_action",
+    "dressed_pole_locations_and_residues",
+    "physical_Hilbert_space_and_asymptotic_state_rule",
+    "same_prescription_unitarity_certificate",
+    "declared_causality_or_controlled_nonlocal_replacement",
+    "normalized_physical_observable",
+    "IR_GR_map",
+    "same_domain_comparators",
+    "error_remainder_scheme_ledger",
+    "remaining_material_branch_disposition_map"
+  ],
+  "family_effect": {
+    "branch_map_exhaustive_terminal_disposition": false,
+    "family_terminal": false,
+    "counts_as_family_exclusion": false,
+    "D2_closed": false,
+    "D4_closed": false,
+    "D7_promotion_authorized": false,
+    "candidate_gravity_activation": false
+  }
+}
