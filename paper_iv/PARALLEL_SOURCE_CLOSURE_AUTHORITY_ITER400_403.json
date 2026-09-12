@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "iteration_bundle": "400-403",
+  "rqir_core": "1.0_FROZEN",
+  "purpose": "Re-audit four nonterminal Tier-1 families against recent source authority specifically for the missing D2/D4 objects, without converting absence into scientific failure.",
+  "families": {
+    "HORAVA_LIFSHITZ": {
+      "sources": [
+        {"title":"Renormalization group flow of projectable Horava gravity in (3+1) dimensions","authors":["Andrei O. Barvinsky","Alexander V. Kurov","Sergey M. Sibiryakov"],"journal":"Phys. Rev. D 111, 024030 (2025)","arxiv":"2411.13574"},
+        {"title":"Quantizing non-projectable Horava gravity with Lagrangian path integral","authors":["D. Blas","F. Del Porro","M. Herrero-Valea","J. Radkovski","S. Sibiryakov"],"arxiv":"2512.14864"}
+      ],
+      "source_update": "Projectable 3+1 marginal RG flow has asymptotically free trajectories spanning the unitary lambda range and reaching lambda near 1; non-projectable quantization made progress, but the 2025 source performs an explicit one-loop case study in 2+1 dimensions and states questions still required for a perturbative-renormalizability proof.",
+      "required_gate": "3+1 same-realization UV-to-IR trajectory including relevant lower-derivative couplings, normalized extra-scalar/tensor observable and GR comparator, plus independent non-projectable/BPS disposition.",
+      "terminal_object_found": false,
+      "status": "SOURCE_PROGRESS_BUT_GATE_NOT_CLOSED"
+    },
+    "CDT_EDT": {
+      "sources": [
+        {"title":"Is lattice quantum gravity asymptotically safe? Making contact between causal dynamical triangulations and the functional renormalization group","authors":["J. Ambjorn","J. Gizbert-Studnicki","A. Gorlich","D. Nemeth"],"journal":"Phys. Rev. D 110, 126006 (2024)","arxiv":"2408.07808"},
+        {"title":"Causal Dynamical Triangulations: New Lattice Theory of Quantum Gravity","authors":["J. Ambjorn","R. Loll"],"arxiv":"2604.05641"}
+      ],
+      "source_update": "CDT simulations permit a putative UV fixed point and provide a lattice/FRG matching program, but the 2024 source explicitly says current data precision does not prove the UV fixed point; the 2026 review states the continuum-observable program remains under development.",
+      "required_gate": "same-realization multi-coupling continuum trajectory with lattice-spacing/scale setting, normalized invariant observable, identical-domain GR/EFT comparator and propagated finite-size/discretization/systematic errors.",
+      "terminal_object_found": false,
+      "status": "SOURCE_PROGRESS_BUT_EXTERNAL_DATA_CAPSULE_STILL_MISSING"
+    },
+    "GFT_TENSOR_MODELS": {
+      "sources": [
+        {"title":"Foundational Issues in Group Field Theory","author":"Alvaro Mozota Frauca","journal":"Foundations of Physics 54, 33 (2024)"}
+      ],
+      "source_update": "Recent review authority confirms that selected covariant GFT perturbative Feynman diagrams generate spin-foam amplitudes, supporting the already-frozen scoped EPRL/FK reduction, but does not supply a universal equivalence theorem for non-EPRL TGFT/canonical/Barrett-Crane remainders.",
+      "required_gate": "universality/reduction theorem for the independent TGFT remainder or a comparator-ready independent gravity observable with error transport.",
+      "terminal_object_found": false,
+      "status": "SCOPED_REDUCTION_CONFIRMED_REMAINDER_OPEN"
+    },
+    "STRING_MTHEORY_HOLOGRAPHY": {
+      "sources": [
+        {"title":"Matching the Vilkovisky-DeWitt Effective Action of Quantum Gravity to String Theory","year":2024,"journal":"Fortschritte der Physik"}
+      ],
+      "source_update": "Low-energy quantum-gravity EFT can be matched to explicit string constructions, but local Wilson coefficients depend on compactification details; this strengthens the requirement for a material subfamily/compactification map rather than allowing one string realization to represent the family.",
+      "required_gate": "material subfamily and compactification census plus explicit reduction/equivalence or exhaustive family-scope certificate with comparator-ready normalized observables.",
+      "terminal_object_found": false,
+      "status": "LOW_ENERGY_MATCHING_CONFIRMED_FAMILY_EXHAUSTION_OPEN"
+    }
+  },
+  "global_guard": {
+    "blocked_is_fail": false,
+    "source_absence_is_exclusion": false,
+    "tier1_terminal_denominator_changes": false,
+    "D2_promotion_authorized": false,
+    "D4_promotion_authorized": false,
+    "D7_promotion_authorized": false,
+    "candidate_gravity_activation": false
+  }
+}
