@@ -1,0 +1,26 @@
+{
+  "iteration": 404,
+  "workflow_run": 34666309297,
+  "head_sha": "c3d762e9853f4e4c25b7d527dfdbd7383b3177cd",
+  "conclusion": "success",
+  "independent_jobs": 4,
+  "aggregate_jobs": 1,
+  "summary_artifact_id": 10289581649,
+  "summary_artifact_digest": "sha256:2d18134d426d31415fe95883e00e2c5bdb181272d8ecf5f4161b53b2b66b269e",
+  "raw_artifacts_consumed": true,
+  "classification": "PASS_HORAVA_FRONTIER_DISCRIMINATOR__FOUR_BLOCKERS_LOCALIZED__NO_FALSE_TERMINAL_PROMOTION",
+  "family": "HORAVA_LIFSHITZ",
+  "family_terminal": false,
+  "coverage_status_after": "PARTIAL_SUBFAMILY_ONLY",
+  "localized_blockers": [
+    "BLOCKED_PROJECTABLE_CROSS_AUTHORITY_DICTIONARY_AND_SCALE_MAP",
+    "BLOCKED_SAME_REALIZATION_UV_IR_STITCHING_NOT_ESTABLISHED",
+    "BLOCKED_NORMALIZED_OBSERVABLE_COMPARATOR_PACKAGE",
+    "BLOCKED_NONPROJECTABLE_3P1_DISPOSITION__2P1_CASE_STUDY_NOT_DIMENSION_TRANSFER"
+  ],
+  "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+  "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+  "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+  "candidate_gravity_activation": false,
+  "next_family_priority": "GFT_TENSOR_MODELS"
+}
