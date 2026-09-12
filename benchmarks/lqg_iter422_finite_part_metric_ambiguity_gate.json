@@ -1,0 +1,24 @@
+{
+  "iteration": 422,
+  "title": "K5 common-order mixed covariance finite-part metric ambiguity audit",
+  "status": "PREREGISTERED_BEFORE_CODE_AND_RUN",
+  "scope": "Linearized Gaussian K5 surrogate only. Iter421 established a universal eta^-6 exponent under generic cut/cycle mixing with one common cycle scaling order. Iter422 tests whether the renormalized finite coefficient is itself unique or retains seed-metric dependence.",
+  "construction": "Use the same orthonormal K5 cut/cycle split Q=[Qc,Qz] and full SPD seed H as Iter421, with Sigma_eta = Q D_eta H D_eta Q^T and D_eta=diag(I_4, eta I_6). Define R_H(eta)=eta^6 exp[-0.5 log det Sigma_eta]. Since det(Q)^2=1 and det(D_eta)^2=eta^12, the exact prediction is R_H = det(H)^(-1/2), independent of eta but dependent on H. A determinant-normalized control Hbar=H/det(H)^(1/10) must give R_Hbar=1.",
+  "profiles": 24,
+  "eta_grid": "10^(-x/2), x=2..10",
+  "frozen_predictions": {
+    "raw_renormalized_factor": "det(H)^(-1/2)",
+    "eta_dependence": "constant to numerical precision",
+    "unit_determinant_control": 1.0,
+    "interpretation": "common spectral order fixes the divergence exponent but not the finite normalization unless the microscopic prescription also fixes the regulator metric volume"
+  },
+  "hard_gates": {
+    "all_samples_spd": true,
+    "max_relative_error_raw_factor": 0.000001,
+    "max_relative_spread_over_eta": 0.000001,
+    "max_relative_error_unitdet_control": 0.000001,
+    "minimum_cross_profile_raw_factor_ratio": 1.05
+  },
+  "profile_variation": "24 deterministic full-SPD seeds spanning weak through strong cut-cycle mixing and multiple conditioning regimes. No gate tuning after results.",
+  "claim_lock": "A PASS establishes finite-part non-universality only inside this linearized Gaussian regulator class. It does not identify the physical EPRL/Toller regulator metric, does not prove the true spin-foam vertex is ambiguous, and does not close D7 or NEW_REQUIRED."
+}
