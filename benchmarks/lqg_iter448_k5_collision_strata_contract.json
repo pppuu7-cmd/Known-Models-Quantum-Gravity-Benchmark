@@ -1,0 +1,52 @@
+{
+  "iteration": 448,
+  "title": "Exact K5 collision-strata combinatorics and local power-counting map",
+  "status": "PREREGISTERED_BEFORE_IMPLEMENTATION",
+  "scientific_question": "Enumerate every nontrivial collision partition of the five K5 vertex variables modulo relabeling and determine which strata can be certified by a supplied one-pair local bound versus which require a correlated multi-pair collision estimate.",
+  "graph": {
+    "vertices": 5,
+    "edges": 10,
+    "complete_graph": true,
+    "gauge_fixed_vertex": 0
+  },
+  "frozen_enumeration": {
+    "all_set_partitions_of_5": true,
+    "exclude_discrete_no_collision_partition": true,
+    "canonicalize_under_S5_block_size_type": true,
+    "report_bell_total_expected": 52,
+    "report_nontrivial_total_expected": 51,
+    "report_integer_partition_types_expected": 6,
+    "per_stratum": [
+      "block_sizes",
+      "internal_collision_edges",
+      "cross_block_edges",
+      "independent_relative_vectors_per_colliding_block",
+      "local_relative_dimension_3_per_vector",
+      "pairwise_singular_factor_count"
+    ]
+  },
+  "power_counting": {
+    "input_local_pair_power_symbol": "p",
+    "radial_measure_dimension_per_independent_relative_vector": 3,
+    "naive_local_integrability_margin": "3 * sum(block_size-1) - p * internal_collision_edges",
+    "classification": [
+      "COVERED_BY_NAIVE_LOCAL_POWER_COUNTING",
+      "UNRESOLVED_NEEDS_CORRELATED_COLLISION_BOUND"
+    ],
+    "rule": "Negative or zero naive margin is UNRESOLVED, never automatically DIVERGENT, because edge singularities and relative coordinates are correlated."
+  },
+  "fail_closed": true,
+  "scope_guard": [
+    "This is exact graph/combinatorial bookkeeping, not a causal-vertex finiteness theorem.",
+    "It does not infer a local pair exponent; Iter447 or source analysis must supply p.",
+    "UNRESOLVED means the simple independent-coordinate power count is insufficient, not that the stratum diverges.",
+    "No D7 terminal classification or Candidate Gravity authorization can follow from this gate alone."
+  ],
+  "d7_policy": {
+    "d7_s2_if_complete": "MAP_COMPLETE_BUT_NOT_CLOSED_WITHOUT_COLLISION_BOUND",
+    "d7_s3": "NOT_CLOSED",
+    "d7_s4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "terminal_d7": "NOT_AUTHORIZED",
+    "candidate_gravity_authorized": false
+  }
+}
