@@ -98,7 +98,8 @@ def source_pattern_valid():
         return False
     for v in VERTICES:
         js = [source_spin(e) for e in EDGES if v in e]
-        if max(js) > sum(js)-max(js) or sum(js) % 2:
+        tjs = [2*j for j in js]
+        if max(tjs) > sum(tjs)-max(tjs) or sum(tjs) % 2:
             return False
     return True
 
