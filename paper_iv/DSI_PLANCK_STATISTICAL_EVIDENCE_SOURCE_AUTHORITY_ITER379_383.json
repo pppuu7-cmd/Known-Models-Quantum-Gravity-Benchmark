@@ -1,0 +1,59 @@
+{
+  "iteration_bundle": "379-383",
+  "purpose": "Audit the statistical-evidence layer behind the published DSI-versus-SI CMB anomaly ratios without conflating empirical tail-probability ratios with formal Bayesian evidence.",
+  "sources": [
+    {
+      "arxiv": "2401.08288",
+      "title": "Finding origins of CMB anomalies in the inflationary quantum fluctuations",
+      "role": "Primary Monte-Carlo, parity-statistic, table-ratio and covariance source"
+    },
+    {
+      "arxiv": "2403.05587",
+      "title": "CMB Parity Asymmetry from Unitary Quantum Gravitational Physics",
+      "role": "Later source using Bayes-factor language for the reported model-data ratio"
+    }
+  ],
+  "simulation_count": 1000000,
+  "operational_probability_definition": "Published p-values are estimated as fractions of Monte-Carlo skies with statistics more extreme than the model prediction/data statistic in the source analysis.",
+  "table1_p_M_given_D_times_1e2": [
+    {"id":"t1_c2","metric":"C2","si":0.09,"dsi":3.3,"ratio":37,"si_decimals":2,"dsi_decimals":1},
+    {"id":"t1_rtt","metric":"RTT","si":0.7,"dsi":39.5,"ratio":56,"si_decimals":1,"dsi_decimals":1},
+    {"id":"t1_c2_rtt","metric":"C2_RTT","si":0.003,"dsi":1.96,"ratio":653,"si_decimals":3,"dsi_decimals":2},
+    {"id":"t1_z1","metric":"Z1","si":1.12,"dsi":45.3,"ratio":40,"si_decimals":2,"dsi_decimals":1},
+    {"id":"t1_z3","metric":"Z3","si":2.10,"dsi":45.6,"ratio":22,"si_decimals":2,"dsi_decimals":1},
+    {"id":"t1_z1_z3","metric":"Z1_Z3","si":0.67,"dsi":36.3,"ratio":54,"si_decimals":2,"dsi_decimals":1},
+    {"id":"t1_z1_rtt","metric":"Z1_RTT","si":0.45,"dsi":34.6,"ratio":77,"si_decimals":2,"dsi_decimals":1},
+    {"id":"t1_z1_c2","metric":"Z1_C2","si":0.016,"dsi":2.65,"ratio":166,"si_decimals":3,"dsi_decimals":2}
+  ],
+  "table2_p_D_given_M_times_1e2": [
+    {"id":"t2_c2","metric":"C2","si":2.62,"dsi":8.88,"ratio":3.4,"si_decimals":2,"dsi_decimals":2},
+    {"id":"t2_rtt","metric":"RTT","si":1.00,"dsi":39.7,"ratio":40,"si_decimals":2,"dsi_decimals":1},
+    {"id":"t2_z1","metric":"Z1","si":3.89,"dsi":46.3,"ratio":12,"si_decimals":2,"dsi_decimals":1},
+    {"id":"t2_z3","metric":"Z3","si":1.78,"dsi":37.1,"ratio":21,"si_decimals":2,"dsi_decimals":1},
+    {"id":"t2_z3_rtt","metric":"Z3_RTT","si":0.58,"dsi":32.0,"ratio":55,"si_decimals":2,"dsi_decimals":0},
+    {"id":"t2_c2_rtt","metric":"C2_RTT","si":0.12,"dsi":5.59,"ratio":47,"si_decimals":2,"dsi_decimals":2}
+  ],
+  "parity_statistic": "R_TT = sum_even[l(l+1) C_l] / sum_odd[l(l+1) C_l]",
+  "reported_planck_masked_smica_R_TT_approx": 0.79,
+  "covariance": {
+    "normalized_residual_definition": "Delta_hat_i=(P_i_sim-<P_i_sim>)/sigma_i",
+    "matrix_definition": "C_ij=<Delta_hat_i Delta_hat_j>",
+    "inverse_method": "SVD pseudo-inverse",
+    "reported_cross_correlation_upper_approx": 0.15,
+    "reported_likelihood_ratio_impact_upper_approx": 0.15,
+    "reported_cumulative_low_l_cl_likelihood_ratio_approx": 150,
+    "raw_covariance_matrix_available_in_current_source_payload": false,
+    "raw_monte_carlo_realizations_available_in_current_source_payload": false
+  },
+  "audit_boundaries": {
+    "published_table_ratios_machine_reproducible_from_rounded_values": true,
+    "finite_monte_carlo_precision_can_be_proxied_from_published_probabilities": true,
+    "raw_monte_carlo_counts_reproduced": false,
+    "raw_covariance_matrix_reproduced": false,
+    "formal_bayes_factor_reproduced_from_table_ratios_alone": false,
+    "posterior_odds_reproduced_from_table_ratios_alone": false,
+    "explicit_model_priors_and_marginal_likelihood_normalization_available_as_machine_auditable_payload": false,
+    "d7_promotion_authorized": false
+  },
+  "scientific_boundary": "The 653 ratio is directly reproducible as a ratio of the rounded published empirical probabilities. This audit must not relabel that arithmetic ratio as a formal Bayes factor or posterior odds without an explicit evidence construction, priors/normalization, and underlying likelihood or Monte-Carlo payload."
+}
