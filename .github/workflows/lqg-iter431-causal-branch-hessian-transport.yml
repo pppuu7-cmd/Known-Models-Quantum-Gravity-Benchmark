@@ -1,0 +1,59 @@
+name: lqg-iter431-causal-branch-hessian-transport
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'code/lqg_iter431_causal_branch_hessian_transport.py'
+      - '.github/workflows/lqg-iter431-causal-branch-hessian-transport.yml'
+
+jobs:
+  profile:
+    strategy:
+      fail-fast: false
+      max-parallel: 24
+      matrix:
+        profile: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.11'
+      - run: pip install numpy==2.3.3
+      - name: Audit causal-branch Hessian transport
+        run: python code/lqg_iter431_causal_branch_hessian_transport.py --index ${{ matrix.profile }}
+      - name: Upload profile evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter431-profile-${{ matrix.profile }}
+          path: build/lqg-iter431/profile_${{ matrix.profile }}.json
+          if-no-files-found: warn
+
+  aggregate:
+    if: always()
+    needs: profile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter431-profile-*
+          path: evidence
+          merge-multiple: true
+      - name: Strict aggregate
+        shell: python
+        run: |
+          import glob,json,sys
+          fs=sorted(glob.glob('evidence/profile_*.json'))
+          rows=[json.load(open(f)) for f in fs]
+          ok=len(rows)==24 and all(r.get('numerical_pass') for r in rows)
+          out={'iteration':431,'profiles_found':len(rows),'profiles_passed':sum(bool(r.get('numerical_pass')) for r in rows),'classification':'PASS_SOURCE_BACKED_CAUSAL_BRANCH_HESSIAN_TRANSPORT_STRUCTURE' if ok else 'FAIL_CAUSAL_BRANCH_HESSIAN_TRANSPORT_STRUCTURE','max_common_branch_covariance_relative_error':max((r['common_branch_covariance_relative_error'] for r in rows),default=None),'min_negative_control_covariance_shift':min((r['negative_control_covariance_shift'] for r in rows),default=None),'d7_s2':'OPEN','d7_s3':'OPEN','d7_s4':'PARTIAL_GLOBAL_NOT_CLOSED','d7_status':'OPEN','candidate_gravity_authorized':False,'scope_guard':'No Toller integrability theorem/certificate, stack cutoff removal, physical Hessian entries, or terminal D7 classification.'}
+          print(json.dumps(out,indent=2,sort_keys=True)); open('iter431-aggregate.json','w').write(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          if not ok: sys.exit(2)
+      - name: Upload aggregate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter431-aggregate
+          path: iter431-aggregate.json
+          if-no-files-found: error
