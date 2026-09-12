@@ -1,0 +1,139 @@
+name: paper-iv-iter379-383-dsi-planck-statistics
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/DSI_PLANCK_STATISTICAL_EVIDENCE_SOURCE_AUTHORITY_ITER379_383.json'
+      - 'code/dsi_iter379_table_ratio.py'
+      - 'code/dsi_iter380_mc_precision.py'
+      - 'code/dsi_iter381_semantics_guard.py'
+      - 'code/dsi_iter382_covariance_scope.py'
+      - 'code/iter379_383_aggregate.py'
+      - '.github/workflows/paper-iv-iter379-383-dsi-planck-statistics.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  published-ratio:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 14
+      matrix:
+        include:
+          - {id: t1_c2, table: '1', metric: C2, si: '0.09', dsi: '3.3', reported: '37', si_dec: '2', dsi_dec: '1'}
+          - {id: t1_rtt, table: '1', metric: RTT, si: '0.7', dsi: '39.5', reported: '56', si_dec: '1', dsi_dec: '1'}
+          - {id: t1_c2_rtt, table: '1', metric: C2_RTT, si: '0.003', dsi: '1.96', reported: '653', si_dec: '3', dsi_dec: '2'}
+          - {id: t1_z1, table: '1', metric: Z1, si: '1.12', dsi: '45.3', reported: '40', si_dec: '2', dsi_dec: '1'}
+          - {id: t1_z3, table: '1', metric: Z3, si: '2.10', dsi: '45.6', reported: '22', si_dec: '2', dsi_dec: '1'}
+          - {id: t1_z1_z3, table: '1', metric: Z1_Z3, si: '0.67', dsi: '36.3', reported: '54', si_dec: '2', dsi_dec: '1'}
+          - {id: t1_z1_rtt, table: '1', metric: Z1_RTT, si: '0.45', dsi: '34.6', reported: '77', si_dec: '2', dsi_dec: '1'}
+          - {id: t1_z1_c2, table: '1', metric: Z1_C2, si: '0.016', dsi: '2.65', reported: '166', si_dec: '3', dsi_dec: '2'}
+          - {id: t2_c2, table: '2', metric: C2, si: '2.62', dsi: '8.88', reported: '3.4', si_dec: '2', dsi_dec: '2'}
+          - {id: t2_rtt, table: '2', metric: RTT, si: '1.00', dsi: '39.7', reported: '40', si_dec: '2', dsi_dec: '1'}
+          - {id: t2_z1, table: '2', metric: Z1, si: '3.89', dsi: '46.3', reported: '12', si_dec: '2', dsi_dec: '1'}
+          - {id: t2_z3, table: '2', metric: Z3, si: '1.78', dsi: '37.1', reported: '21', si_dec: '2', dsi_dec: '1'}
+          - {id: t2_z3_rtt, table: '2', metric: Z3_RTT, si: '0.58', dsi: '32', reported: '55', si_dec: '2', dsi_dec: '0'}
+          - {id: t2_c2_rtt, table: '2', metric: C2_RTT, si: '0.12', dsi: '5.59', reported: '47', si_dec: '2', dsi_dec: '2'}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter379
+          python code/dsi_iter379_table_ratio.py --table '${{ matrix.table }}' --metric '${{ matrix.metric }}' --si-percent '${{ matrix.si }}' --dsi-percent '${{ matrix.dsi }}' --reported-ratio '${{ matrix.reported }}' --si-decimals '${{ matrix.si_dec }}' --dsi-decimals '${{ matrix.dsi_dec }}' --output 'build/iter379/${{ matrix.id }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter379-383-ratio-${{ matrix.id }}
+          path: build/iter379/*.json
+          if-no-files-found: error
+          retention-days: 90
+
+  mc-precision:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        include:
+          - {id: t1_c2, metric: C2, si: '0.09', dsi: '3.3'}
+          - {id: t1_rtt, metric: RTT, si: '0.7', dsi: '39.5'}
+          - {id: t1_c2_rtt, metric: C2_RTT, si: '0.003', dsi: '1.96'}
+          - {id: t1_z1, metric: Z1, si: '1.12', dsi: '45.3'}
+          - {id: t1_z3, metric: Z3, si: '2.10', dsi: '45.6'}
+          - {id: t1_z1_z3, metric: Z1_Z3, si: '0.67', dsi: '36.3'}
+          - {id: t1_z1_rtt, metric: Z1_RTT, si: '0.45', dsi: '34.6'}
+          - {id: t1_z1_c2, metric: Z1_C2, si: '0.016', dsi: '2.65'}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: |
+          mkdir -p build/iter380
+          python code/dsi_iter380_mc_precision.py --metric '${{ matrix.metric }}' --si-percent '${{ matrix.si }}' --dsi-percent '${{ matrix.dsi }}' --n-simulations 1000000 --output 'build/iter380/${{ matrix.id }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter379-383-mc-${{ matrix.id }}
+          path: build/iter380/*.json
+          if-no-files-found: error
+          retention-days: 90
+
+  semantics-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python code/dsi_iter381_semantics_guard.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter379-383-semantics
+          path: iter381-semantics-guard.json
+          if-no-files-found: error
+          retention-days: 90
+
+  covariance-scope:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python code/dsi_iter382_covariance_scope.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter379-383-covariance
+          path: iter382-covariance-scope.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: [published-ratio, mc-precision, semantics-guard, covariance-scope]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter379-383-*'
+          path: iter379-383-results
+      - run: python code/iter379_383_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter379-383-summary
+          path: iter379-383-summary.json
+          if-no-files-found: error
+          retention-days: 90
