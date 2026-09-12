@@ -1,0 +1,17 @@
+{
+  "iteration": 423,
+  "title": "K5 Unit-Determinant Conditional Shape Ambiguity Audit",
+  "hypothesis": "Fixing the common eta order and det(S)=1 removes only volume normalization; scaled off-support profiles remain dependent on the conditional cycle metric shape through exp[-1/2 z^T S^-1 z].",
+  "profiles": 24,
+  "cycle_rank": 6,
+  "probe_count": 6,
+  "eta_values": [0.1, 0.03, 0.01, 0.003],
+  "hard_gates": {
+    "abs_logdet_S_max": 1e-10,
+    "full_vs_schur_profile_relative_error_max": 2e-8,
+    "eta_profile_relative_spread_max": 2e-7,
+    "cross_profile_fixed_probe_ratio_min": 1.20,
+    "within_profile_probe_ratio_min_for_at_least_one_profile": 1.20
+  },
+  "scope_guard": "Linearized Gaussian K5 regulator audit only. A PASS demonstrates residual conditional-metric shape dependence after unit-determinant normalization inside this surrogate class; it does not derive or refute the physical causal EPRL/Toller prescription and does not close D7 or NEW_REQUIRED."
+}
