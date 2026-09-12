@@ -20,7 +20,19 @@ jobs:
         j: [2, 5]
         m: [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
         branch: [plus, minus]
-    if: ${{ matrix.j == 5 || (matrix.m >= -2 && matrix.m <= 2) }}
+        exclude:
+          - j: 2
+            m: -5
+          - j: 2
+            m: -4
+          - j: 2
+            m: -3
+          - j: 2
+            m: 3
+          - j: 2
+            m: 4
+          - j: 2
+            m: 5
     steps:
       - uses: actions/checkout@v4
       - name: Evaluate frozen Eq.46 branch lane
