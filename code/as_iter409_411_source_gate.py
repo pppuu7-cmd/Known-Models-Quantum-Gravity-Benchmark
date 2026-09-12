@@ -34,7 +34,8 @@ def evidence(name):
   f=FACTS['erg_contact']; ok=f['cross_section_gr_ir_claim'] and f['cross_section_uv_unitarity_claim']
   c='PASS_PUBLIC_ERG2026_IR_GR_AND_UV_UNITARITY_OBSERVABLE_CLAIM_ADMITTED__NUMERIC_LEDGER_PENDING'
  elif name=='preprint_delta':
-  a=FACTS['march_v1']; b=FACTS['erg_contact']; ok=a['direct_A4_explicit_future_work'] and b['contact_resummed_lorentzian_claim'] and b['date']>'2026-03-10'
+  a=FACTS['march_v1']; b=FACTS['erg_contact']; f={'march_v1':a,'erg2026':b}
+  ok=a['direct_A4_explicit_future_work'] and b['contact_resummed_lorentzian_claim'] and b['date']>'2026-03-10'
   c='PASS_MATERIAL_POST_V1_CONTACT_PROGRESS_DETECTED'
  elif name=='spectral_authority':
   f=FACTS['spectral']; ok=f['lorentzian_KL'] and f['normalisable_spectral_functions'] and f['IR_EFT_match'] and f['effective_action_R2']
