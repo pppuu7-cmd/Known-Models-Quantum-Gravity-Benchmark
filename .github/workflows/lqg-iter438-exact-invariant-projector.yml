@@ -1,0 +1,105 @@
+name: lqg-iter438-exact-invariant-projector
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/lqg_iter438_exact_invariant_projector.py'
+      - '.github/workflows/lqg-iter438-exact-invariant-projector.yml'
+      - 'recovery/ITER438_PREREG_EXACT_INVARIANT_PROJECTOR_2026-09-12.md'
+
+permissions:
+  contents: read
+
+jobs:
+  lane:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        include:
+          - { index: 10, cluster_size: 3 }
+          - { index: 10, cluster_size: 4 }
+          - { index: 11, cluster_size: 3 }
+          - { index: 12, cluster_size: 3 }
+          - { index: 12, cluster_size: 4 }
+          - { index: 13, cluster_size: 3 }
+          - { index: 14, cluster_size: 3 }
+          - { index: 3, cluster_size: 4 }
+          - { index: 5, cluster_size: 4 }
+          - { index: 6, cluster_size: 4 }
+          - { index: 9, cluster_size: 3 }
+          - { index: 9, cluster_size: 4 }
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Exact invariant-projector/global-magnetic audit
+        run: python3 code/lqg_iter438_exact_invariant_projector.py --index ${{ matrix.index }} --cluster-size ${{ matrix.cluster_size }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: lqg-iter438-${{ matrix.index }}-s${{ matrix.cluster_size }}
+          path: build/lqg-iter438/sector_${{ matrix.index }}_s${{ matrix.cluster_size }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter438-*
+          path: build/lqg-iter438-results
+          merge-multiple: true
+      - name: Scientific aggregate
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import glob, hashlib, json, pathlib
+          files=sorted(glob.glob('build/lqg-iter438-results/sector_*_s*.json'))
+          rows=[json.load(open(p)) for p in files]
+          controls=(len(rows)==12 and all(r.get('controls_valid') for r in rows))
+          survivors=[r for r in rows if r.get('classification')=='SOURCE_BACKED_PROFILE_SURVIVES_EXACT_INVARIANT_PROJECTOR']
+          excluded=[r for r in rows if r.get('classification')=='SOURCE_BACKED_PROFILE_EXCLUDED_BY_EXACT_INVARIANT_PROJECTOR']
+          if not controls:
+              classification='CONTROL_INVALID'
+          elif survivors:
+              classification='SOURCE_BACKED_SLOW_OBSTRUCTION_SURVIVES_EXACT_INVARIANT_PROJECTOR'
+          else:
+              classification='SOURCE_BACKED_SLOW_OBSTRUCTION_KILLED_BY_EXACT_INVARIANT_PROJECTOR'
+          summary={
+            'iteration':438,
+            'lane_count':len(rows),
+            'controls_valid':controls,
+            'surviving_count':len(survivors),
+            'excluded_count':len(excluded),
+            'surviving_profiles':[(r['sector_index'],r['cluster_size']) for r in survivors],
+            'classification':classification,
+            'd2':'NOT_CLOSED_COVERAGE_AND_OBJECTS',
+            'd4':'PARTIAL_GLOBAL_NOT_CLOSED',
+            'd7_s2':'NOT_CLOSED','d7_s3':'NOT_CLOSED','d7_s4':'PARTIAL_GLOBAL_NOT_CLOSED',
+            'd7':'NOT_CLOSED / NOT_YET_AUTHORIZED',
+            'candidate_gravity_authorized':False,
+            'scope_guard':'Exact discrete invariant-projector/global-magnetic support only; full Haar/angular contraction, normalized causal vertex, cutoff removal, same-realization UV-to-Regge/GR transport and terminal D7 remain open.'
+          }
+          out=pathlib.Path('build/lqg-iter438-summary.json')
+          out.write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
+          pathlib.Path('build/lqg-iter438-summary.sha256').write_text(hashlib.sha256(out.read_bytes()).hexdigest()+'  '+out.name+'\n')
+          print(json.dumps(summary,indent=2,sort_keys=True))
+          if not controls:
+              raise SystemExit(2)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: lqg-iter438-summary
+          path: |
+            build/lqg-iter438-summary.json
+            build/lqg-iter438-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
