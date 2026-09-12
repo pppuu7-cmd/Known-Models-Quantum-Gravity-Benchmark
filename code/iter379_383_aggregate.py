@@ -18,12 +18,13 @@ assert len(mc)==8, len(mc)
 assert len(sem)==1, len(sem)
 assert len(cov)==1, len(cov)
 assert all(r['raw_ratio']>1 for r in ratios)
-assert all(r['reported_ratio_inside_rounding_interval'] for r in ratios)
+assert all(r['rounding_bins_overlap'] for r in ratios)
 assert all(r['relative_error_to_reported_ratio']<0.05 for r in ratios)
 key=next(r for r in ratios if r['table']=='1' and r['metric']=='C2_RTT')
 assert key['raw_ratio']>600
 assert abs(key['reported_ratio']-653)<1e-12
-assert key['published_rounding_ratio_interval'][0]>500
+assert key['published_input_rounding_ratio_interval'][0]>500
+assert key['rounding_bins_overlap'] is True
 keymc=next(r for r in mc if r['metric']=='C2_RTT')
 assert keymc['conservative_ratio_interval95'][0]>1
 s=sem[0]; c=cov[0]
@@ -40,11 +41,12 @@ out={
  'family_status':'PARTIAL_SUBFAMILY_ONLY','family_terminal':False,'d7_promotion_authorized':False,
  'published_ratio_jobs':len(ratios),'mc_precision_jobs':len(mc),'semantics_guard_jobs':len(sem),'covariance_scope_jobs':len(cov),
  'key_c2_rtt_raw_ratio':key['raw_ratio'],'key_c2_rtt_reported_ratio':key['reported_ratio'],
- 'key_c2_rtt_rounding_ratio_interval':key['published_rounding_ratio_interval'],
+ 'key_c2_rtt_input_rounding_ratio_interval':key['published_input_rounding_ratio_interval'],
+ 'key_c2_rtt_reported_display_interval':key['published_reported_ratio_display_interval'],
  'key_c2_rtt_mc_proxy_ratio_interval95':keymc['conservative_ratio_interval95'],
  'formal_bayes_factor_reproduced':False,'raw_covariance_matrix_reproduced':False,'raw_monte_carlo_realizations_reproduced':False,
  'refined_blocker':'RAW_PLANCK_OR_AUTHOR_MONTE_CARLO_REALIZATIONS_PLUS_EXPLICIT_MODEL_EVIDENCE_OR_MARGINAL_LIKELIHOOD_DEFINITION_AND_PRIORS_PLUS_RAW_COVARIANCE_MATRIX_PLUS_FULL_FAMILY_DOMAIN_TRANSPORT',
- 'scientific_boundary':'The published DSI/SI empirical-tail probability ratios, including the 653 C2+RTT ratio, are arithmetically reproducible and remain strongly above unity under a finite-one-million-simulation precision proxy. This is not a reproduction of formal Bayesian model evidence, posterior odds, the raw Planck/author Monte-Carlo ensemble, or the raw covariance matrix; D7 remains closed to promotion.'
+ 'scientific_boundary':'The published DSI/SI empirical-tail probability ratios, including the 653 C2+RTT ratio, are arithmetically reproducible within the mutual rounding envelopes of the published inputs and ratio column and remain strongly above unity under a finite-one-million-simulation precision proxy. This is not a reproduction of formal Bayesian model evidence, posterior odds, the raw Planck/author Monte-Carlo ensemble, or the raw covariance matrix; D7 remains closed to promotion.'
 }
 Path('iter379-383-summary.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
 print(json.dumps(out,sort_keys=True))
