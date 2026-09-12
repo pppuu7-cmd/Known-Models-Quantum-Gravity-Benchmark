@@ -1,0 +1,105 @@
+name: paper-iv-iter394-398-source-aware-parallel-closure
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/IHO_DQFT_SOURCE_UPDATE_ITER394.json'
+      - 'paper_iv/NONLOCAL_TREE_EQUIVALENCE_SOURCE_AUTHORITY_ITER395.json'
+      - 'code/iter394_398_parallel_closure.py'
+      - 'code/iter394_398_aggregate.py'
+      - '.github/workflows/paper-iv-iter394-398-source-aware-parallel-closure.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  iho-payload:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        field:
+          - branch_identifier_and_fixed_action
+          - dressed_pole_locations_and_residues
+          - physical_Hilbert_space_and_asymptotic_state_rule
+          - same_prescription_unitarity_certificate
+          - declared_causality_or_controlled_nonlocal_replacement
+          - normalized_physical_observable
+          - IR_GR_map
+          - same_domain_comparators
+          - error_remainder_scheme_ledger
+          - remaining_material_branch_disposition_map
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter394
+          python code/iter394_398_parallel_closure.py --mode iho --field '${{ matrix.field }}' --output 'build/iter394/${{ matrix.field }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter394-iho-${{ matrix.field }}
+          path: build/iter394/*.json
+          if-no-files-found: error
+
+  nonlocal-theorem-scope:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        case: [analytic_eom_tree, riemann2_branch, loop_level, off_shell_shape]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter395
+          python code/iter394_398_parallel_closure.py --mode nonlocal --case '${{ matrix.case }}' --output 'build/iter395/${{ matrix.case }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter395-nonlocal-${{ matrix.case }}
+          path: build/iter395/*.json
+          if-no-files-found: error
+
+  rqcp-holdout:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 9
+      matrix:
+        observable: [G, gap, prod]
+        train_max: ['18','20','24']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter396
+          python code/iter394_398_parallel_closure.py --mode rqcp --observable '${{ matrix.observable }}' --train-max '${{ matrix.train_max }}' --output 'build/iter396/${{ matrix.observable }}-train${{ matrix.train_max }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter396-rqcp-${{ matrix.observable }}-train${{ matrix.train_max }}
+          path: build/iter396/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [iho-payload, nonlocal-theorem-scope, rqcp-holdout]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter39*'
+          path: iter394-398-results
+      - run: python code/iter394_398_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter394-398-summary
+          path: iter394-398-summary.json
+          if-no-files-found: error
