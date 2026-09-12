@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "iteration": 395,
+  "family": "NONLOCAL_QG",
+  "source": {
+    "title": "Tree-level scattering amplitudes in nonlocal field theories",
+    "authors": ["Leonardo Modesto", "Gianluca Calcagni"],
+    "arxiv": "2107.04558",
+    "submitted": "2021-07-09",
+    "url": "https://arxiv.org/abs/2107.04558"
+  },
+  "theorem_domain": {
+    "action_class": "S = S_loc + E_i F_ij E_j with analytic/weakly-nonlocal operators and the stated EOM-based construction",
+    "gravity_specialization": "nonlocal gravity without the material Riemann^2 form-factor branch covered by the field-redefinition equivalence",
+    "observable": "on-shell n-point tree-level S-matrix amplitudes",
+    "comparator": "underlying local theory; for gravity, Einstein GR",
+    "result": "all on-shell n-point tree-level amplitudes coincide with the local comparator within theorem scope",
+    "asymptotic_state_statement": "the perturbative spectra and asymptotic-state Hilbert spaces coincide within theorem scope"
+  },
+  "scope_exclusions": [
+    "Riemann^2-form-factor branches for which the cited tree equivalence statement is not automatically inherited",
+    "generic loop-level amplitudes not closed by the tree theorem",
+    "off-shell Green functions and bare form-factor shape diagnostics",
+    "material non-scattering observables not reduced by the theorem"
+  ],
+  "rqir_interpretation": {
+    "tree_level_comparator_quotient": "EXACT_ZERO_BY_THEOREM_WITHIN_DECLARED_SUBFAMILY_SCOPE",
+    "previous_exp_minus_z_taylor_map_role": "OFF_SHELL_FUNCTIONAL_DIAGNOSTIC_ONLY_NOT_TREE_S_MATRIX_RESIDUAL",
+    "subfamily_terminal_candidate": true,
+    "family_terminal": false,
+    "d7_promotion_authorized": false,
+    "next_family_gate": "DISPOSITION_OF_RIEMANN2_MATERIAL_BRANCHES_PLUS_LOOP_LEVEL_OR_INDEPENDENT_NONSCATTERING_NORMALIZED_OBSERVABLES_AND_FAMILY_SCOPE_EXHAUSTION"
+  }
+}
