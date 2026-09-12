@@ -1,0 +1,118 @@
+name: lqg-iter442-toller-spectral-projector
+
+on:
+  push:
+    branches:
+      - research/iter442-toller-spectral-projector
+    paths:
+      - 'benchmarks/lqg_iter442_toller_spectral_projector_contract.json'
+      - 'code/lqg_iter442_toller_spectral_projector.py'
+      - '.github/workflows/lqg-iter442-toller-spectral-projector.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spectral-lane:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 32
+      matrix:
+        gamma: [7.0, 8.0]
+        lane:
+          - '2,-2'
+          - '2,-1'
+          - '2,0'
+          - '2,1'
+          - '2,2'
+          - '5,-5'
+          - '5,-4'
+          - '5,-3'
+          - '5,-2'
+          - '5,-1'
+          - '5,0'
+          - '5,1'
+          - '5,2'
+          - '5,3'
+          - '5,4'
+          - '5,5'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Install frozen numerical dependency
+        run: python -m pip install --disable-pip-version-check 'mpmath==1.3.0'
+      - name: Evaluate source spectral projector lane
+        shell: bash
+        run: |
+          IFS=',' read -r J M <<< '${{ matrix.lane }}'
+          python code/lqg_iter442_toller_spectral_projector.py --gamma '${{ matrix.gamma }}' --j "$J" --m "$M"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: iter442-g${{ matrix.gamma }}-lane-${{ strategy.job-index }}
+          path: build/lqg-iter442/*.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: spectral-lane
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: iter442-*
+          path: build/lqg-iter442-results
+          merge-multiple: true
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Scientific aggregate and fail-closed gate
+        shell: bash
+        run: |
+          python - <<'PY'
+          import glob, hashlib, json, pathlib
+          files=sorted(glob.glob('build/lqg-iter442-results/g*_j*_m*.json'))
+          rows=[json.load(open(p)) for p in files]
+          valid=(len(rows)==32 and all(r.get('controls_valid') for r in rows))
+          max_res=max((r.get('max_final_residue_scaled_error',float('inf')) for r in rows), default=float('inf'))
+          max_pole=max((r.get('max_toller_pole_last_pair_scaled_difference',float('inf')) for r in rows), default=float('inf'))
+          min_sep=min((r.get('minimum_feynman_to_toller_pole_distance',0.0) for r in rows), default=0.0)
+          summary={
+            'iteration':442,
+            'lane_count':len(rows),
+            'controls_valid':valid,
+            'pass_count':sum(bool(r.get('controls_valid')) for r in rows),
+            'max_final_residue_scaled_error':max_res,
+            'max_toller_pole_last_pair_scaled_difference':max_pole,
+            'minimum_feynman_to_toller_pole_distance':min_sep,
+            'classification':'SOURCE_SPECTRAL_PROJECTOR_AND_TOLLER_POLE_CANCELLATION_REALIZED' if valid else 'CONTROL_OR_GATE_INVALID',
+            'd7_s2':'STRENGTHENED_BUT_NOT_CLOSED' if valid else 'NOT_CLOSED',
+            'd7_s3':'NOT_CLOSED',
+            'd7_s4':'PARTIAL_GLOBAL_NOT_CLOSED',
+            'd7':'NOT_CLOSED / NOT_YET_AUTHORIZED',
+            'candidate_gravity_authorized':False,
+            'next_gate':'If valid, move from source spectral pole cancellation to full causal-vertex/Haar-angular integrability or a source-backed normalized causal-vertex object; do not promote this source-level gate to family terminality.'
+          }
+          out=pathlib.Path('iter442-summary.json')
+          out.write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
+          pathlib.Path('iter442-summary.sha256').write_text(hashlib.sha256(out.read_bytes()).hexdigest()+'  '+out.name+'\n')
+          print(json.dumps(summary,indent=2,sort_keys=True))
+          if not valid:
+            raise SystemExit(2)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: iter442-summary
+          path: |
+            iter442-summary.json
+            iter442-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
