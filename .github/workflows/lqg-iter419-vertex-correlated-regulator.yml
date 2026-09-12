@@ -1,0 +1,88 @@
+name: lqg-iter419-vertex-correlated-regulator
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'benchmarks/lqg_iter419_vertex_correlated_regulator_gate.json'
+      - 'code/lqg_iter419_vertex_correlated_regulator.py'
+      - '.github/workflows/lqg-iter419-vertex-correlated-regulator.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  profiles:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        index: [0,1,2,3,4,5,6,7,8,9,10,11]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Audit one vertex-correlated regulator profile
+        run: |
+          mkdir -p build/lqg-iter419
+          python code/lqg_iter419_vertex_correlated_regulator.py --index '${{ matrix.index }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter419-profile-${{ matrix.index }}
+          path: build/lqg-iter419/profile_*.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: profiles
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter419-profile-*
+          path: build/lqg-iter419-results
+          merge-multiple: true
+      - name: Aggregate vertex-correlated uniqueness audit
+        run: |
+          python - <<'PY'
+          import glob,json,hashlib
+          files=sorted(glob.glob('build/lqg-iter419-results/profile_*.json'))
+          if len(files)!=12: raise SystemExit(f'expected 12 profile files, got {len(files)}')
+          data=[json.load(open(f)) for f in files]
+          vals=[round(d['predicted_singular_exponent'],12) for d in data]
+          uniq=sorted(set(vals))
+          spread=max(vals)-min(vals)
+          path_dependent=len(uniq)>1 and spread>1e-9
+          if not path_dependent: raise SystemExit('vertex-correlated family unexpectedly produced unique exponent')
+          out={
+            'iteration':419,
+            'profile_count':len(data),
+            'spanning_tree_count':125,
+            'all_profiles_completed':True,
+            'unique_predicted_exponents':uniq,
+            'exponent_min':min(vals),
+            'exponent_max':max(vals),
+            'exponent_spread':spread,
+            'vertex_correlated_path_dependence_reproduced':path_dependent,
+            'classification':'PASS_SCOPED_VERTEX_FACTORIZED_CORRELATED_WIDTHS_DO_NOT_RESTORE_UNIQUE_K5_SINGULAR_SCALING__MORE_SPECIFIC_JOINT_SPECTRAL_OR_MICROLOCAL_PRESCRIPTION_REQUIRED',
+            'scope_guard':'linearized Gaussian surrogate only; not a Toller divergence theorem, not a causal EPRL family no-go, not D7 authorization'
+          }
+          raw=(json.dumps(out,indent=2,sort_keys=True)+'\n').encode()
+          open('build/lqg-iter419-summary.json','wb').write(raw)
+          open('build/lqg-iter419-summary.sha256','w').write(hashlib.sha256(raw).hexdigest()+'\n')
+          print(raw.decode())
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lqg-iter419-summary
+          path: |
+            build/lqg-iter419-summary.json
+            build/lqg-iter419-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
