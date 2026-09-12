@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "iteration": 411,
+  "date": "2026-09-12",
+  "rqir_core": "v1.0_FROZEN",
+  "family": "ASYMPTOTIC_SAFETY",
+  "workflow": {
+    "name": "paper-iv-iter409-411-as-contact-spectral-gate",
+    "run_id": 34667177766,
+    "head_sha": "c3483170e40703c6b1f2c66d97c45e03930df893",
+    "independent_jobs": 6,
+    "independent_jobs_success": 6,
+    "aggregate": "SUCCESS",
+    "summary_artifact_digest": "sha256:4b8145232c1344718d613b3b738e9656e1e4bade036a827108fbf0a2720aa53c"
+  },
+  "scoped_result": "PASS_AS_ERG2026_CONTACT_FRONT_REOPENED__MATERIAL_PUBLIC_PROGRESS__FORMULA_ERROR_LEDGER_AND_SAME_REALIZATION_COMPOSITION_STILL_OPEN",
+  "contact_front_reopened": true,
+  "evidence_delta": {
+    "march_2026_preprint": "arXiv:2603.10168 publicly computes the graviton-mediated identical-scalar s+t+u amplitude and explicitly leaves the direct A4 contact term outside the calculation.",
+    "september_2026_erg": "ERG2026 public contribution by the same research programme states that the gravitational contact amplitude is resummed directly in Lorentzian signature and that the resulting cross-section is GR-compatible in the IR and respects unitarity in the UV.",
+    "lorentzian_spectral_corroboration": "arXiv:2606.19321 supplies normalisable Lorentzian graviton and scalar-graviton spectral functions, IR EFT agreement and a quadratic-curvature effective action, but no explicit source-level realization map to the ERG2026 contact-complete scalar-scattering calculation was located.",
+    "distinct_contact_guard": "arXiv:2602.21285 is a distinct two-species scalar scattering realization and is not imported as the A4 object for arXiv:2603.10168."
+  },
+  "terminalization": {
+    "contact_complete_terminal_certificate": false,
+    "family_terminal": false,
+    "reason": "The ERG2026 presentation establishes material public progress but the machine-readable contact-amplitude formula, numerical/approximation/error ledger and explicit same-realization composition map are not yet available in the audited public payload."
+  },
+  "required_next_object": "MACHINE_READABLE_ERG2026_CONTACT_AMPLITUDE_FORMULA_OR_UPDATED_PUBLICATION_PLUS_SAME_REALIZATION_PARAMETER_APPROXIMATION_AND_ERROR_LEDGER",
+  "global": {
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+    "tier1_terminal_count": 1,
+    "tier1_total": 15,
+    "candidate_gravity_R3_percent": 24,
+    "candidate_gravity_activation": false,
+    "new_required_authorized": false
+  },
+  "paper_impact": {
+    "paper_III": "NOT_NEEDED_AS_NEW_RULE",
+    "paper_IV": "READY__UPDATE_ASYMPTOTIC_SAFETY_FRONTIER_FROM_CONTACT_ABSENT_TO_PUBLIC_CONTACT_REOPENED_WITH_PAYLOAD_PENDING"
+  }
+}
