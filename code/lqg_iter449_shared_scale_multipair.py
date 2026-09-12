@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Implementation after prospective freeze in status/ITERATION_449.md.
+# Production trigger after workflow installation; frozen science unchanged.
 import argparse,json,os,statistics
 import mpmath as mp
 
