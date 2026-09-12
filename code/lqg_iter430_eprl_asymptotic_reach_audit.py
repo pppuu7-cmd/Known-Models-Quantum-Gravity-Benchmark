@@ -30,6 +30,7 @@ def slope(xs,ys):
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--index',type=int,required=True); a=ap.parse_args(); idx=a.index
     if not 0<=idx<24: raise SystemExit('index must be 0..23')
+    # Preserve Iter429 fixture map exactly; only extend asymptotic reach.
     areas=[.25,.5,1.,2.]; conds=[1,2,4]; corrs=[.03,.10]
     area=areas[idx%4]; cond=conds[(idx//4)%3]; corr=corrs[(idx//12)%2]; imag=[.03,.10,.25][(idx//2)%3]
     rng=np.random.default_rng(429000+idx); h,k=make_core(rng,cond,imag); k*=corr
