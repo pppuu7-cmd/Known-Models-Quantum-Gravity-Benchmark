@@ -1,0 +1,133 @@
+name: paper-iv-iter384-387-dsi-low-ell-transport
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/DSI_PLANCK_SOURCE_OBJECTS_ITER379_383.json'
+      - 'paper_iv/DSI_LOW_ELL_TRANSPORT_AUTHORITY_ITER384_387.json'
+      - 'code/dsi_iter384_387_low_ell_transport.py'
+      - 'code/iter384_387_aggregate.py'
+      - '.github/workflows/paper-iv-iter384-387-dsi-low-ell-transport.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  transfer-pattern:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        column: [DSI25, DSI40, DSI50]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter384
+          python code/dsi_iter384_387_low_ell_transport.py --mode transfer --column '${{ matrix.column }}' --output 'build/iter384/transfer-${{ matrix.column }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter384-transfer-${{ matrix.column }}
+          path: build/iter384/*.json
+          if-no-files-found: error
+
+  cutoff-convergence:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        include:
+          - {a: DSI25, b: DSI40}
+          - {a: DSI25, b: DSI50}
+          - {a: DSI40, b: DSI50}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter385
+          python code/dsi_iter384_387_low_ell_transport.py --mode convergence --a '${{ matrix.a }}' --b '${{ matrix.b }}' --output 'build/iter385/convergence-${{ matrix.a }}-${{ matrix.b }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter385-convergence-${{ matrix.a }}-${{ matrix.b }}
+          path: build/iter385/*.json
+          if-no-files-found: error
+
+  rtt-proxy:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        column: [DSI25, DSI40, DSI50]
+        ellmax: ['20','27']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter386
+          python code/dsi_iter384_387_low_ell_transport.py --mode rtt_proxy --column '${{ matrix.column }}' --ellmax '${{ matrix.ellmax }}' --output 'build/iter386/rtt-${{ matrix.column }}-l${{ matrix.ellmax }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter386-rtt-${{ matrix.column }}-l${{ matrix.ellmax }}
+          path: build/iter386/*.json
+          if-no-files-found: error
+
+  domain-window:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        column: [DSI25, DSI40, DSI50]
+        window: ['low','tail']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter387
+          if [ '${{ matrix.window }}' = 'low' ]; then S=2; E=20; else S=21; E=33; fi
+          python code/dsi_iter384_387_low_ell_transport.py --mode window --column '${{ matrix.column }}' --start "$S" --end "$E" --output 'build/iter387/window-${{ matrix.column }}-${{ matrix.window }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter387-window-${{ matrix.column }}-${{ matrix.window }}
+          path: build/iter387/*.json
+          if-no-files-found: error
+
+  scope-guard:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: python code/dsi_iter384_387_low_ell_transport.py --mode scope --output iter387-scope.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter387-scope
+          path: iter387-scope.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [transfer-pattern, cutoff-convergence, rtt-proxy, domain-window, scope-guard]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter38*'
+          path: iter384-387-results
+      - run: python code/iter384_387_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter384-387-summary
+          path: iter384-387-summary.json
+          if-no-files-found: error
