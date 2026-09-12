@@ -1,0 +1,16 @@
+{
+  "iteration": 420,
+  "title": "K5 common-order correlated spectral covariance universality audit",
+  "frozen_hypothesis": "Within the linearized K5 Gaussian surrogate, replacing independent/vertex-factorized edge widths by a single joint covariance with all six cycle-space eigenmodes scaling at the same spectral order eta^2 yields an invariant density exponent 6, independent of the positive-definite shape matrices on support and cycle space.",
+  "hard_gate": {
+    "profile_count": 16,
+    "expected_cycle_rank": 6,
+    "expected_density_exponent": 6.0,
+    "absolute_exponent_tolerance": 0.000002,
+    "fit_rmse_max": 0.000002,
+    "all_profiles_required": true
+  },
+  "interpretation_if_pass": "A common spectral order is sufficient to restore exponent uniqueness inside this explicitly correlated surrogate class; Iter419 path dependence came from unequal scaling orders, not merely covariance-shape anisotropy.",
+  "interpretation_if_fail": "Even a common-order joint spectral covariance does not stabilize the surrogate exponent, so the regulator ambiguity is deeper than unequal edge/vertex scaling orders.",
+  "scope_guard": "Not a derivation of the physical Toller/EPRL i-epsilon prescription, not a full causal vertex convergence theorem, and not D7 authorization."
+}
