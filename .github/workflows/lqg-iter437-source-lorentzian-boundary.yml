@@ -1,0 +1,95 @@
+name: lqg-iter437-source-lorentzian-boundary
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/lqg_iter437_source_lorentzian_boundary_closure.py'
+      - '.github/workflows/lqg-iter437-source-lorentzian-boundary.yml'
+      - 'recovery/ITER437_PREREG_SOURCE_LORENTZIAN_BOUNDARY_2026-09-12.md'
+
+permissions:
+  contents: read
+
+jobs:
+  lane:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        index: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        cluster_size: [3,4]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Audit source-backed Lorentzian boundary closure
+        run: python3 code/lqg_iter437_source_lorentzian_boundary_closure.py --index ${{ matrix.index }} --cluster-size ${{ matrix.cluster_size }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: lqg-iter437-${{ matrix.index }}-s${{ matrix.cluster_size }}
+          path: build/lqg-iter437/sector_${{ matrix.index }}_s${{ matrix.cluster_size }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: lqg-iter437-*
+          path: build/lqg-iter437-results
+          merge-multiple: true
+      - name: Scientific aggregate
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import glob, hashlib, json, pathlib
+          files=sorted(glob.glob('build/lqg-iter437-results/sector_*_s*.json'))
+          rows=[json.load(open(p)) for p in files]
+          controls=(len(rows)==32 and all(r['controls_valid'] for r in rows))
+          allowed=[r for r in rows if r.get('classification')=='SOURCE_BACKED_LORENTZIAN_BOUNDARY_ALLOWS_SLOW_EXTREMAL_PROFILE']
+          excluded=[r for r in rows if r.get('classification')=='SOURCE_BACKED_LORENTZIAN_BOUNDARY_EXCLUDES_SLOW_EXTREMAL_PROFILE']
+          if not controls:
+              classification='CONTROL_INVALID'
+          elif allowed:
+              classification='SOURCE_BACKED_SLOW_OBSTRUCTION_SURVIVES_LOCAL_MAGNETIC_CLOSURE'
+          else:
+              classification='SOURCE_BACKED_SLOW_OBSTRUCTION_KILLED_BY_LOCAL_MAGNETIC_CLOSURE'
+          summary={
+            'iteration':437,
+            'lane_count':len(rows),
+            'controls_valid':controls,
+            'allowed_count':len(allowed),
+            'excluded_count':len(excluded),
+            'allowed_profiles':[(r['sector_index'],r['cluster_size']) for r in allowed],
+            'classification':classification,
+            'source_boundary_pattern':'Dona-Fanizza-Sarno-Speziale Lorentzian isosceles 4-simplex: four j=5, six j=2 at lambda=1',
+            'd2':'NOT_CLOSED_COVERAGE_AND_OBJECTS',
+            'd4':'PARTIAL_GLOBAL_NOT_CLOSED',
+            'd7_s2':'NOT_CLOSED','d7_s3':'NOT_CLOSED','d7_s4':'PARTIAL_GLOBAL_NOT_CLOSED',
+            'd7':'NOT_CLOSED / NOT_YET_AUTHORIZED',
+            'candidate_gravity_authorized':False,
+            'scope_guard':'Necessary local SU(2) magnetic-closure test under a published Lorentzian-Regge boundary-spin pattern only; survival is not physical divergence and exclusion is not a no-go. Full Haar/intertwiner contraction, angular integration, normalized causal vertex, stack cutoff removal and terminal D7 remain open.'
+          }
+          out=pathlib.Path('build/lqg-iter437-summary.json')
+          out.write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
+          pathlib.Path('build/lqg-iter437-summary.sha256').write_text(hashlib.sha256(out.read_bytes()).hexdigest()+'  '+out.name+'\n')
+          print(json.dumps(summary,indent=2,sort_keys=True))
+          if not controls:
+              raise SystemExit(2)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: lqg-iter437-summary
+          path: |
+            build/lqg-iter437-summary.json
+            build/lqg-iter437-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
