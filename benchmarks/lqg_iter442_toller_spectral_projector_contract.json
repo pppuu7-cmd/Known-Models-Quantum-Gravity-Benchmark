@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "iteration": 442,
+  "date": "2026-09-12",
+  "status": "PREREGISTERED_NONTERMINAL_SOURCE_GATE",
+  "scientific_question": "Do the published Feynman-i-epsilon Toller projector and kernel cancellation remain numerically realized beyond the old j=1/2 special case on the source-faithful gamma-simple j=2,5 channels already used in Iter439-440?",
+  "source": {
+    "paper": "Bianchi, Chen, Gamonal, Toller matrices and the Feynman i-epsilon in spinfoams, arXiv:2604.24945v1 (2026)",
+    "equations": [11, 16, 17, 18, 19, 20, 45, 46],
+    "kernel": "P_jj(rhotilde;rho)=product_{n=0}^{2j} [i*rhotilde-(n-j)]/[i*rho-(n-j)]",
+    "feynman_poles": "rhotilde=rho+i*epsilon for plus and rhotilde=rho-i*epsilon for minus",
+    "toller_poles": "i*rhotilde=-j,-j+1,...,j",
+    "important_guard": "epsilon acts in spectral rhotilde, never as beta+i*epsilon"
+  },
+  "matrix": {
+    "gamma": [7.0, 8.0],
+    "j": [2, 5],
+    "m": "all integer m in [-j,j]",
+    "beta": [0.5, 2.0, 8.0],
+    "epsilon": [0.01, 0.0001, 0.000001, 0.00000001],
+    "pole_delta": [0.00000001, 0.0000000001, 0.000000000001]
+  },
+  "precision": {
+    "dps": 140,
+    "residue_final_scaled_error_max": 0.000001,
+    "residue_error_must_be_monotone": true,
+    "pole_product_last_pair_scaled_difference_max": 0.000001,
+    "minimum_feynman_to_toller_pole_distance": 10.0
+  },
+  "required_checks": [
+    "P_jj(rho;rho)=1",
+    "all Feynman poles remain separated from all Toller poles on the frozen source matrix",
+    "P_jj(rho+i*epsilon;rho)*t_plus(rho+i*epsilon) converges monotonically to t_plus(rho)",
+    "P_jj(rho-i*epsilon;rho)*t_minus(rho-i*epsilon) converges monotonically to t_minus(rho)",
+    "P_jj(rhotilde;rho)*t_plus/minus(rhotilde) has a finite Cauchy-stable boundary value at every published Toller-pole location on the frozen delta grid"
+  ],
+  "scope_guard": "A pass is a source-level spectral projector/pole-cancellation realization on the frozen j=2,5 gamma-simple matrix. It is not a proof of the full K5 Haar/angular causal vertex, cutoff removal, family terminality, D7-S3/S4 closure, terminal D7 authorization, or Candidate Gravity activation.",
+  "d7_s2_after_pass": "STRENGTHENED_BUT_NOT_CLOSED",
+  "d7_s5_authorized": false,
+  "candidate_gravity_authorized": false
+}
