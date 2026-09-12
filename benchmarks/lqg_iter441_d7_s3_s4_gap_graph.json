@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "iteration": 441,
+  "date": "2026-09-12",
+  "status": "PREREGISTERED_NONTERMINAL_DIAGNOSTIC",
+  "scope": "D7-S3 same-realization completeness and D7-S4 common-domain comparability gap graph",
+  "authority": "DIAGNOSTIC_ONLY_NO_TERMINAL_D7_AUTHORIZATION",
+  "inputs": [
+    "protocol/PAPER_IV_D7_GLOBAL_DECISION_CONTRACT.json",
+    "benchmarks/lqg_iter295_stack_causal_domain_overlap.json",
+    "benchmarks/lqg_iter296_face_stacking_causal_lift.json",
+    "benchmarks/lqg_iter297_formal_causal_stack_composition.json"
+  ],
+  "s3_required_capabilities": {
+    "same_realization_parameter_transport": [
+      "explicit_same_realization_uv_to_ir_parameter_transport",
+      "same_realization_uv_to_regge_gr_parameter_observable_error_transport_proven"
+    ],
+    "normalized_comparator_error_certificate": [
+      "normalized_same_realization_observable_comparator_error_certificate"
+    ],
+    "causal_stack_physical_realization": [
+      "causal_vertex_amplitude_stack_sum_defined_and_proven_finite",
+      "generalized_causal_vertex_finiteness_proven",
+      "generalized_causal_vertex_normalization_proven"
+    ],
+    "stack_parameter_weight_transport": [
+      "explicit_lambda_f_face_multiplicity_transport",
+      "lambda_f_weighted_causal_stack_sum_transport_proven"
+    ]
+  },
+  "s4_required_capabilities": {
+    "conditional_common_domain": [
+      "conditional_common_domain_nonempty"
+    ],
+    "universal_stack_domain_inclusion": [
+      "universal_han_stack_inclusion_in_beltran_working_domain"
+    ],
+    "causal_stack_cutoff_domain": [
+      "area_cutoff_removal_for_causal_stack_amplitude_proven",
+      "causal_stack_cutoff_removal_proven"
+    ],
+    "global_common_domain_normalization": [
+      "generalized_causal_vertex_normalization_proven"
+    ]
+  },
+  "exact_k5_diagnostic": {
+    "vertices": 5,
+    "graph": "K5",
+    "field": "GF(2)",
+    "enumerate_all_vertex_orientation_assignments": true,
+    "quotient_global_flip": true,
+    "verify_all_one_and_two_edge_removals_connected": true
+  },
+  "evidence_rule": "A capability is marked PRESENT only when at least one input benchmark contains an explicitly true prospectively_frozen_claim with an allowed alias for that capability. False or absent claims remain unresolved; absence is never converted to scientific FAIL.",
+  "authorization_rule": "This audit may identify PRESENT and UNRESOLVED prerequisite nodes and exact conditional-domain witnesses. It must not emit EXISTING_SUFFICIENT, ADAPT_EXISTING, HYBRID_REQUIRED, or NEW_REQUIRED and must leave D7-S5 NOT_AUTHORIZED while D7-S2/S3/S4 remain open.",
+  "frozen_expected_classification": "NONTERMINAL_GAP_GRAPH_ONLY"
+}
