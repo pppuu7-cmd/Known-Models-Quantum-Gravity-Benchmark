@@ -1,0 +1,28 @@
+{
+  "iteration_bundle": "384-387",
+  "purpose": "Reproduce the published low-ell DSI transfer-domain object independently of the published tail-probability arithmetic layer.",
+  "source": {
+    "title": "Finding origins of CMB anomalies in the inflationary quantum fluctuations",
+    "authors": ["Enrique Gaztanaga", "K. Sravan Kumar"],
+    "journal": "JCAP 06 (2024) 001",
+    "published": "2024-06-05",
+    "source_object": "Table 4 low-ell transfer factors 1±Delta C_l"
+  },
+  "cutoffs": {
+    "DSI25": "kc=k*/25",
+    "DSI40": "kc=k*/40",
+    "DSI50": "kc=k*/50"
+  },
+  "audit_contract": {
+    "transfer_pattern_jobs": 3,
+    "cutoff_pair_jobs": 3,
+    "diagnostic_RTT_proxy_jobs": 6,
+    "domain_window_jobs": 6,
+    "scope_guard_jobs": 1,
+    "aggregate_jobs": 1,
+    "diagnostic_RTT_proxy_is_planck_reproduction": false,
+    "full_likelihood_reproduction_authorized": false,
+    "d7_promotion_authorized": false
+  },
+  "scientific_boundary": "This bundle audits the published low-ell transfer function and its cutoff/domain behavior. It does not recreate masked Planck maps or the authors' million-sky Monte Carlo likelihood analysis."
+}
