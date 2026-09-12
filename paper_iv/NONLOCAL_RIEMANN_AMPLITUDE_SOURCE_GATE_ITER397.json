@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "iteration": 397,
+  "family": "NONLOCAL_QG",
+  "source": {
+    "title": "Scattering amplitudes in super-renormalizable gravity",
+    "authors": ["Pietro Dona", "Stefano Giaccari", "Leonardo Modesto", "Leslaw Rachwal", "Yiwei Zhu"],
+    "arxiv": "1506.04589",
+    "journal": "JHEP 08 (2015) 038",
+    "url": "https://arxiv.org/abs/1506.04589"
+  },
+  "source_results": {
+    "ricci_scalar_analytic_nonlocal_tree": "on-shell graviton amplitudes coincide with Einstein gravity in the theorem class",
+    "riemann_form_factor_branch": "turning on a non-constant Riemann/Weyl form factor changes the scattering amplitudes and makes them form-factor dependent",
+    "four_dimensional_exact_nonconstant_gamma4_amplitude_in_source": false,
+    "source_statement_on_exact_gamma4_computation": "The source states that varying the non-constant Riemann form factor and covariant boxes is involved and does not present the exact D=4 result.",
+    "observable_potential": "ideal graviton scattering could in principle fit gamma0-prime, gamma2-prime and gamma4"
+  },
+  "rqir_gate": {
+    "status": "BLOCKED_SOURCE_EXACT_D4_NONCONSTANT_RIEMANN_AMPLITUDE_OBJECT_NOT_SUPPLIED_BY_THIS_AUTHORITY",
+    "required_payload": [
+      "fixed_Riemann_or_Weyl_form_factor",
+      "external_states_and_helicities",
+      "normalized_full_amplitude_vector",
+      "identical_domain_GR_and_local_higher_curvature_EFT_comparator_basis",
+      "form_factor_parameter_incidence",
+      "unitarity_and_pole_rule",
+      "causality_status",
+      "error_or_approximation_ledger",
+      "comparator_orthogonal_residual"
+    ],
+    "blocked_is_fail": false,
+    "family_terminal": false,
+    "d7_promotion_authorized": false
+  }
+}
