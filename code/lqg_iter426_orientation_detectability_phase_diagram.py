@@ -48,8 +48,11 @@ def rotation(seed):
     return Q
 
 def ensemble_factor(S,W):
-    M=add(eye(N),mm(W,inv(S)))
-    return math.exp(-0.5*logdet(M))
+    # det(I + W S^{-1}) = det((S+W) S^{-1}) = det(S+W)/det(S).
+    # I + W S^{-1} is generally non-symmetric when S and W do not commute,
+    # so applying Cholesky directly to that product is invalid even though the
+    # determinant is positive. Evaluate the exactly equivalent SPD ratio instead.
+    return math.exp(-0.5*(logdet(add(S,W))-logdet(S)))
 
 def quantile(xs,q):
     ys=sorted(xs); pos=q*(len(ys)-1); lo=int(math.floor(pos)); hi=int(math.ceil(pos))
