@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "iteration": 408,
+  "date": "2026-09-12",
+  "rqir_core": "v1.0_FROZEN",
+  "workflow": {
+    "name": "paper-iv-iter404-408-parallel-physical-closure",
+    "run_id": 34666424694,
+    "head_sha": "c509bc93adc3a0529aa9ddf65856a74772597a0d",
+    "independent_jobs": 56,
+    "independent_jobs_success": 56,
+    "aggregate": "SUCCESS",
+    "summary_artifact_digest": "sha256:d8bec9a087ee8fe5d5252dd0ff1b75bb0cbf1a275cf764fea3d5d301bd31c4a8"
+  },
+  "results": {
+    "LQG_SPINFOAM": {
+      "classification": "PASS_TOLLER_FIXED_GAMMA_LARGE_SPIN_BUILDING_BLOCK__CAUSAL_VERTEX_FINITE_NORMALIZATION_STILL_OPEN",
+      "max_final_relative_error_j64": 0.019371964622562174,
+      "least_negative_tail_error_slope": -0.866104326603228,
+      "terminal": false
+    },
+    "CAUSAL_FERMION_SYSTEMS": {
+      "classification": "PASS_PARAMETRIC_DELTA_ORDER_TRANSPORT__CONCRETE_CORRECTION_TENSOR_AND_COEFFICIENTS_OPEN",
+      "min_nominal_delta3_over_delta2": 1e-09,
+      "max_nominal_delta3_over_delta2": 1.0,
+      "terminal": false
+    },
+    "ASYMPTOTIC_SAFETY": {
+      "classification": "PASS_GRAVITON_MEDIATED_UV_BOUNDEDNESS_DIAGNOSTIC_AND_FORWARD_S2_DIVERGENCE_REPRODUCTION__CONTACT_COMPLETE_A4_OPEN",
+      "forward_slope_range": [2.000000134066753, 2.00013413210912],
+      "bounded_diagnostic_jobs": 4,
+      "terminal": false
+    },
+    "RQCP": {
+      "classification": "PASS_STRONG_NUMERIC_CUTOFF_WINDOW_STABILITY__ALL_BAND_BACKGROUND_INDEPENDENT_AUTONOMY_OPEN",
+      "max_within_window_power_vs_exp_limit_disagreement": 2.8577497800631036e-05,
+      "full_window_ansatz_spread": {
+        "G": 4.5055966087867834e-05,
+        "gap": 1.5903720843090923e-05,
+        "G_gap2": 0.00011189936607742919
+      },
+      "terminal": false
+    }
+  },
+  "global": {
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+    "family_terminal_promotions": 0,
+    "candidate_gravity_R3_percent": 24,
+    "candidate_gravity_activation": false,
+    "new_required_authorized": false
+  },
+  "next_highest_value_front": "ASYMPTOTIC_SAFETY_ERG2026_PUBLIC_CONTACT_AMPLITUDE_ADMISSION_AND_SAME_REALIZATION_COMPOSITION_GATE"
+}
