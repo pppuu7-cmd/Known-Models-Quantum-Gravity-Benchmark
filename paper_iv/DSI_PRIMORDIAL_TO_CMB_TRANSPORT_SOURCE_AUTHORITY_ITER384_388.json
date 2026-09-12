@@ -1,0 +1,45 @@
+{
+  "iteration_bundle": "384-388",
+  "purpose": "Independently audit the source-defined transport Delta P_v(k) -> Delta C_l -> C_l^DSI and compare the numerical output with published Table 4, without claiming reproduction of the masked Planck map pipeline.",
+  "primary_source": {
+    "arxiv": "2401.08288",
+    "title": "Finding origins of CMB anomalies in the inflationary quantum fluctuations",
+    "equations": ["3.4", "D.1", "D.2", "D.3"],
+    "table": "Table 4"
+  },
+  "source_parameters": {
+    "k_star_Mpc_inv": 0.05,
+    "k_s_Mpc_inv": 0.00007,
+    "n_s_central": 0.9634,
+    "n_s_sigma": 0.0048,
+    "cutoff_fractions_kc_over_kstar": [0.04, 0.025, 0.02],
+    "cutoff_labels": ["DSI25", "DSI40", "DSI50"]
+  },
+  "formulae": {
+    "DeltaP_v": "(1-n_s) Re[(2/H^(1)_{3/2}(k/k_star)) (partial H^(1)_nu(k/k_star)/partial nu)|_{nu=3/2}]",
+    "DeltaC_l": "[integral_0^kc dk/k A_s (k/k_s)^(n_s-1) j_l(k/k_s)^2 DeltaP_v] / C_l^SI",
+    "C_l_SI": "integral_0^infinity dk/k A_s (k/k_s)^(n_s-1) j_l(k/k_s)^2",
+    "C_l_DSI": "C_l^SI (1 +/- DeltaC_l), plus for odd l and minus for even l",
+    "R_TT": "sum_even l(l+1)C_l / sum_odd l(l+1)C_l"
+  },
+  "table4_modulation_l2_to_l20": {
+    "DSI25": [0.582,1.385,0.641,1.339,0.678,1.305,0.708,1.277,0.734,1.254,0.759,1.233,0.781,1.208,0.799,1.188,0.825,1.169,0.840],
+    "DSI40": [0.589,1.373,0.657,1.320,0.705,1.278,0.743,1.235,0.776,1.203,0.824,1.165,0.845,1.126,0.916,1.045,0.980,1.007,0.998],
+    "DSI50": [0.594,1.363,0.667,1.305,0.725,1.258,0.770,1.199,0.814,1.168,0.875,1.073,0.967,1.012,0.996,1.001,1.000,1.000,1.000]
+  },
+  "audit_grid": {
+    "n_s": [0.9586, 0.9634, 0.9682],
+    "cutoff_fractions": [0.04, 0.025, 0.02],
+    "ell_range": [2,20],
+    "reason": "central Planck value and the quoted +/-1 sigma interval; all three cutoffs shown in Table 4"
+  },
+  "scope_boundaries": {
+    "A_s_cancels_in_DeltaC_ratio": true,
+    "LCDM_transfer_function_cancellation_claim_is_source_defined": true,
+    "table4_is_a_machine_auditable_numeric_target": true,
+    "masked_SMICA_R_TT_0p79_reproduced_by_this_bundle": false,
+    "healpix_mask_beam_downgrade_pipeline_reproduced_by_this_bundle": false,
+    "raw_planck_map_or_author_mc_ensemble_reproduced": false,
+    "d7_promotion_authorized": false
+  }
+}
