@@ -1,0 +1,22 @@
+{
+  "iteration": 399,
+  "family": "NONLOCAL_QG",
+  "subfamily": "ANALYTIC_EOM_QUADRATIC_WEAKLY_NONLOCAL_NO_MATERIAL_RIEMANN2_TREE_LEVEL",
+  "disposition": "EQUIVALENCE_CLASS_CLOSED_BY_THEOREM_SCOPED_SUBFAMILY",
+  "observable": "on-shell n-point tree-level graviton S-matrix",
+  "comparator": "Einstein GR on the same asymptotic states and kinematic domain",
+  "comparator_residual": "EXACT_ZERO_BY_THEOREM",
+  "authority": "paper_iv/NONLOCAL_TREE_EQUIVALENCE_SOURCE_AUTHORITY_ITER395.json",
+  "excluded_from_promotion": [
+    "nonconstant Riemann/Weyl form-factor branch",
+    "generic loop amplitudes",
+    "off-shell Green functions/form-factor shape",
+    "independent non-scattering observables"
+  ],
+  "open_material_branch_authority": "paper_iv/NONLOCAL_RIEMANN_AMPLITUDE_SOURCE_GATE_ITER397.json",
+  "family_status": "PARTIAL_SUBFAMILY_ONLY",
+  "family_terminal": false,
+  "D2_promotion": false,
+  "D4_global_promotion": false,
+  "D7_promotion": false
+}
