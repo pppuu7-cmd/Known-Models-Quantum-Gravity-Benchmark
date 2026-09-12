@@ -1,0 +1,73 @@
+name: lqg-iter446-kaminski-tail-comparison
+on:
+  push:
+    branches: [research/iter446-kaminski-tail-comparison]
+    paths:
+      - 'benchmarks/lqg_iter446_kaminski_tail_comparison_contract.json'
+      - 'code/lqg_iter446_kaminski_tail_comparison.py'
+      - '.github/workflows/lqg-iter446-kaminski-tail-comparison.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lane:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {gamma: 7.0, j: 2}
+          - {gamma: 7.0, j: 5}
+          - {gamma: 8.0, j: 2}
+          - {gamma: 8.0, j: 5}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python -m pip install --disable-pip-version-check 'mpmath==1.3.0'
+      - name: Audit collision-excised comparison lane
+        run: python code/lqg_iter446_kaminski_tail_comparison.py --gamma '${{ matrix.gamma }}' --j '${{ matrix.j }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: iter446-g${{ matrix.gamma }}-j${{ matrix.j }}
+          path: build/lqg-iter446/*.json
+          if-no-files-found: error
+          retention-days: 30
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: iter446-*
+          path: evidence
+          merge-multiple: true
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Aggregate source-backed comparison gate
+        shell: bash
+        run: |
+          python - <<'PY'
+          import glob,json,hashlib,pathlib
+          rows=[json.load(open(f)) for f in sorted(glob.glob('evidence/g*_j*.json'))]
+          ok=len(rows)==4 and all(r.get('controls_valid') for r in rows)
+          out={'iteration':446,'lanes_found':len(rows),'lanes_passed':sum(bool(r.get('controls_valid')) for r in rows),'controls_valid':ok,'classification':'SOURCE_BACKED_CAUSAL_K5_COLLISION_EXCISED_DOMAIN_ABSOLUTELY_INTEGRABLE_BY_KAMINSKI_COMPARISON' if ok else 'KAMINSKI_COLLISION_EXCISED_COMPARISON_CONTROL_INVALID','k5_min_cut':min((r['k5_min_cut'] for r in rows),default=None),'max_frozen_comparison_ratio':max((x['comparison_ratio_M_times_cosh_pow_0p95'] for r in rows for x in r['rows']),default=None),'d7_s2':'NONCOMPACT_TAIL_LOCALIZED__COLLISION_STRATA_REMAIN_OPEN' if ok else 'NOT_CLOSED','d7_s3':'NOT_CLOSED','d7_s4':'PARTIAL_GLOBAL_NOT_CLOSED','d7':'NOT_CLOSED / NOT_YET_AUTHORIZED','candidate_gravity_authorized':False,'next_gate':'If valid, stop treating noncompact infinity as the primary K5 blocker and attack the local pair/multi-pair collision strata of fixed Toller branches, with exact invariant contraction/distributional extension controls.'}
+          payload=json.dumps(out,indent=2,sort_keys=True)+'\n'; pathlib.Path('iter446-summary.json').write_text(payload); pathlib.Path('iter446-summary.sha256').write_text(hashlib.sha256(payload.encode()).hexdigest()+'\n'); print(payload)
+          if not ok: raise SystemExit(2)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: iter446-summary
+          path: |
+            iter446-summary.json
+            iter446-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
