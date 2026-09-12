@@ -1,0 +1,78 @@
+name: lqg-iter447-collision-strata-local-power
+on:
+  push:
+    branches: [research/iter447-collision-strata-local-power]
+    paths:
+      - 'code/lqg_iter447_collision_strata_local_power.py'
+      - '.github/workflows/lqg-iter447-collision-strata-local-power.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lane:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {gamma: 7.0, j: 2}
+          - {gamma: 7.0, j: 5}
+          - {gamma: 8.0, j: 2}
+          - {gamma: 8.0, j: 5}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - run: python -m pip install --disable-pip-version-check 'mpmath==1.3.0'
+      - name: Audit frozen pair-collision local powers
+        run: python code/lqg_iter447_collision_strata_local_power.py --gamma '${{ matrix.gamma }}' --j '${{ matrix.j }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: iter447-g${{ matrix.gamma }}-j${{ matrix.j }}
+          path: build/lqg-iter447/*.json
+          if-no-files-found: error
+          retention-days: 30
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: iter447-*
+          path: evidence
+          merge-multiple: true
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.11'
+      - name: Aggregate frozen scientific classifier
+        shell: bash
+        run: |
+          python - <<'PY'
+          import glob,json,hashlib,pathlib
+          rows=[json.load(open(f)) for f in sorted(glob.glob('evidence/g*_j*.json'))]
+          valid=len(rows)==4 and all(r.get('numerically_valid') for r in rows)
+          n_pass=sum(bool(r.get('scientific_lane_pass')) for r in rows)
+          if not valid: cls='COLLISION_LOCAL_POWER_NUMERICAL_INVALID'
+          elif n_pass==4: cls='SOURCE_TOLLER_PAIR_COLLISION_LOCAL_POWER_INTEGRABLE_ON_FROZEN_GRID'
+          else: cls='SOURCE_TOLLER_PAIR_COLLISION_LOCAL_POWER_OBSTRUCTION_ON_FROZEN_GRID'
+          worst=max((r['worst_witness']['p_local'] for r in rows),default=None)
+          spread=max((r['worst_witness']['stability_spread'] for r in rows),default=None)
+          out={'iteration':447,'lanes_found':len(rows),'lanes_scientifically_passed':n_pass,'numerically_valid':valid,'classification':cls,'worst_p_local':worst,'worst_witness_stability_spread':spread,'d7_s2':'PAIR_COLLISION_LOCAL_POWER_SUPPORTED__MULTI_PAIR_REMAINS_OPEN' if cls.endswith('INTEGRABLE_ON_FROZEN_GRID') else 'PAIR_COLLISION_LOCAL_POWER_OBSTRUCTION_OR_INVALID__NOT_CLOSED','d7_s3':'NOT_CLOSED','d7_s4':'PARTIAL_GLOBAL_NOT_CLOSED','d7':'NOT_CLOSED / NOT_YET_AUTHORIZED','candidate_gravity_authorized':False,'next_gate':'If PASS, preregister explicit shared-variable simultaneous two-/three-pair collision geometry/invariant-contraction audit. If obstruction, preregister branch-sum/invariant-contraction cancellation diagnostic without retuning this grid.'}
+          payload=json.dumps(out,indent=2,sort_keys=True)+'\n'; pathlib.Path('iter447-summary.json').write_text(payload); pathlib.Path('iter447-summary.sha256').write_text(hashlib.sha256(payload.encode()).hexdigest()+'\n'); print(payload)
+          if not valid: raise SystemExit(3)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: iter447-summary
+          path: |
+            iter447-summary.json
+            iter447-summary.sha256
+          if-no-files-found: error
+          retention-days: 90
