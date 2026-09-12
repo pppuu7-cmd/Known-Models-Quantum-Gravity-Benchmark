@@ -1,0 +1,104 @@
+name: paper-iv-iter389-393-parallel-terminalization
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_iv/PARALLEL_TERMINALIZATION_AUTHORITY_ITER389_393.json'
+      - 'paper_iv/HIGHER_DERIVATIVE_QUANTIZATION_BRANCH_MAP_2026-09-10.json'
+      - 'paper_iv/IHO_DQFT_COSMOLOGY_SOURCE_AUTHORITY_ITER370_373.json'
+      - 'protocol/PAPER_IV_MAJOR_FRAMEWORK_COVERAGE_CONTRACT.json'
+      - 'code/iter389_393_parallel_terminalization.py'
+      - 'code/iter389_393_aggregate.py'
+      - '.github/workflows/paper-iv-iter389-393-parallel-terminalization.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  rqcp-cutoff-extrapolation:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        observable: [G, gap, prod]
+        nmin: ['10','12','14','16']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter389
+          python code/iter389_393_parallel_terminalization.py --mode rqcp --observable '${{ matrix.observable }}' --nmin '${{ matrix.nmin }}' --output 'build/iter389/rqcp-${{ matrix.observable }}-n${{ matrix.nmin }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter389-rqcp-${{ matrix.observable }}-n${{ matrix.nmin }}
+          path: build/iter389/*.json
+          if-no-files-found: error
+
+  nonlocal-domain-map:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 15
+      matrix:
+        degree: ['2','4','6','8','12']
+        zmax: ['0.5','1.0','2.0']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: |
+          mkdir -p build/iter390
+          python code/iter389_393_parallel_terminalization.py --mode nonlocal --degree '${{ matrix.degree }}' --zmax '${{ matrix.zmax }}' --output 'build/iter390/nonlocal-n${{ matrix.degree }}-z${{ matrix.zmax }}.json'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter390-nonlocal-n${{ matrix.degree }}-z${{ matrix.zmax }}
+          path: build/iter390/*.json
+          if-no-files-found: error
+
+  higher-derivative-branch-admission:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: python code/iter389_393_parallel_terminalization.py --mode higher --output iter391-higher-derivative-branch.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter391-higher-derivative-branch
+          path: iter391-higher-derivative-branch.json
+          if-no-files-found: error
+
+  coverage-coherence:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - run: python code/iter389_393_parallel_terminalization.py --mode coverage --output iter392-coverage.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter392-coverage
+          path: iter392-coverage.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [rqcp-cutoff-extrapolation, nonlocal-domain-map, higher-derivative-branch-admission, coverage-coherence]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: 'iter39*'
+          path: iter389-393-results
+      - run: python code/iter389_393_aggregate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: iter389-393-summary
+          path: iter389-393-summary.json
+          if-no-files-found: error
