@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "iteration_bundle": "409-411",
+  "family": "ASYMPTOTIC_SAFETY",
+  "purpose": "Reopen the contact-complete Lorentzian scattering frontier using public ERG2026 evidence while preserving same-realization fail-closed composition.",
+  "contact_presentation": {
+    "event": "13th International Conference on the Exact Renormalization Group 2026",
+    "date": "2026-09-03",
+    "speaker": "Angelo Portas Chiesa",
+    "coauthors": ["Jan M. Pawlowski", "Manuel Reichert"],
+    "linked_paper": "arXiv:2603.10168",
+    "public_contribution_url": "https://indico.global/event/16125/contributions/164384/",
+    "material_name": "scalar-grav-ERG-26.pdf",
+    "public_claims": {
+      "mediated_amplitude": "non-perturbative momentum-dependent resummed scalar-graviton vertex and propagators",
+      "contact_amplitude": "gravitational contribution to the contact amplitude is resummed directly in Lorentzian signature",
+      "observable": "non-perturbative amplitude and cross-section",
+      "ir": "cross-section compatible with GR at small energies",
+      "uv": "cross-section respects unitarity in the UV"
+    },
+    "machine_payload_status": "PRESENTATION_LISTED_BUT_ATTACHMENT_FORMULAS_NOT_MACHINE_RETRIEVED_IN_THIS_AUDIT",
+    "terminal_effect": "REOPEN_FRONT_ONLY_NOT_TERMINAL"
+  },
+  "march_preprint_boundary": {
+    "source": "arXiv:2603.10168v1",
+    "submitted": "2026-03-10",
+    "scope": "graviton-mediated identical-scalar amplitude; direct A4 contact contribution explicitly left for future work",
+    "relation_to_erg2026": "ERG2026 is a newer public same-author-program statement that contact resummation exists, but the March v1 formula payload does not contain it"
+  },
+  "lorentzian_spectral_authority": {
+    "source": "arXiv:2606.19321v1",
+    "title": "Spectral Functions of Lorentzian Quantum Gravity",
+    "authors": ["Gabriel Assant", "Daniel F. Litim", "Manuel Reichert"],
+    "submitted": "2026-06-17",
+    "objects": [
+      "Lorentzian Kallen-Lehmann graviton and scalar-graviton spectral functions",
+      "normalisable spectral functions under several renormalisation conditions",
+      "IR agreement with effective theory",
+      "quantum effective action to quadratic order in curvature",
+      "graviton-induced form factors"
+    ],
+    "erg2026_update": "conference description states all resulting spectral functions are compatible with causality and unitarity and reports first Lorentzian spectral flow for Newton coupling",
+    "composition_guard": "No explicit source-level map found that identifies this spectral truncation/renormalisation setup with the exact contact-complete scalar-scattering realization of the Chiesa presentation. Treat as corroborating AS Lorentzian authority, not silently as one realization."
+  },
+  "distinct_contact_control": {
+    "source": "arXiv:2602.21285",
+    "note": "Contains explicit contact form factors for a distinct two-species scalar process phi phi -> chi chi and cannot be imported as A4 for the 2603.10168 identical-scalar realization."
+  },
+  "gate": {
+    "admit_erg2026_contact_as_material_new_evidence": true,
+    "contact_formula_payload_machine_available": false,
+    "cross_paper_same_realization_composition_authorized": false,
+    "family_terminal": false,
+    "D7_promotion_authorized": false,
+    "candidate_gravity_activation": false,
+    "required_next_object": "MACHINE_READABLE_ERG2026_CONTACT_AMPLITUDE_FORMULA_OR_UPDATED_PUBLICATION_PLUS_SAME_REALIZATION_PARAMETER_APPROXIMATION_AND_ERROR_LEDGER"
+  }
+}
