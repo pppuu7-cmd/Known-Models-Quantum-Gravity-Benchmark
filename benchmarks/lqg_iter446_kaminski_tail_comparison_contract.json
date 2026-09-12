@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "iteration": 446,
+  "date": "2026-09-12",
+  "status": "PREREGISTERED_NONTERMINAL_COLLISION_EXCISED_INTEGRABILITY_GATE",
+  "scientific_question": "Can the source-defined full Toller T-matrix be pointwise dominated, away from pair-collision loci, by the hyperbolic edge kernel used in Kaminski's 3-edge-connected EPRL integrability theorem, thereby localizing any remaining causal-vertex divergence to collision strata rather than noncompact infinity?",
+  "authorities": {
+    "toller_source": "Bianchi-Chen-Gamonal, Toller matrices and the Feynman i-epsilon in spinfoams, Phys. Rev. D 114, 046014 (2026), Cartan/KAK Eq.(13), asymptotic statement following Eq.(13)",
+    "causal_vertex_source": "Bianchi-Chen-Gamonal, Causal spinfoam vertex for 4D Lorentzian quantum gravity, Phys. Rev. D 113, 126020 (2026), causal vertex Eq.(4), Toller KAK Eq.(7)",
+    "comparison_theorem": "W. Kaminski, arXiv:1010.5384, Theorem 2: for every 3-edge-connected graph, product edge kernel (cosh r_e)^(-(1-tau)) is integrable with tau=1/(2|E1|)"
+  },
+  "logic": {
+    "k5_edges": 10,
+    "tau": 0.05,
+    "comparison_exponent": 0.95,
+    "source_toller_worst_radial_decay_exponent": 1.0,
+    "angular_bound": "Eq.(13)/(7): finite SU(2) Wigner sums imply |T_pm(g)| <= (2*min(j,l)+1)*max_m |t_pm_m(beta)| because each compact Wigner entry has modulus <=1",
+    "away_from_collision": "For every fixed delta>0 and fixed finite labels with physical real rho away from Toller poles, t_pm(beta) is continuous on beta>=delta; asymptotic e^{-beta} is stronger than (cosh beta)^(-0.95), so a finite label-dependent C_delta exists for all beta>=delta.",
+    "graph_comparison": "On D_delta={all K5 relative rapidities r_ab>=delta}, the absolute causal integrand is bounded by C_delta times the Kaminski K5 comparison kernel. Since K5 is 3-edge-connected, the comparison integral is finite."
+  },
+  "frozen_numerical_matrix": {
+    "gamma": [7.0, 8.0],
+    "j": [2, 5],
+    "beta": [0.5, 1.0, 2.0, 4.0, 8.0, 12.0, 16.0],
+    "tau": 0.05,
+    "dps": 100
+  },
+  "required_checks": [
+    "exactly verify every nontrivial K5 cut has at least three crossing edges",
+    "verify source worst radial exponent 1 is strictly larger than Kaminski comparison exponent 0.95",
+    "verify the finite-dimensional KAK angular prefactor is finite for all frozen j",
+    "numerically verify max_m,branch |t(beta)|*(cosh beta)^(0.95) remains finite on every frozen lane for beta>=0.5",
+    "retain collision exclusion explicitly; do not infer behavior as beta->0"
+  ],
+  "classification_on_pass": "SOURCE_BACKED_CAUSAL_K5_COLLISION_EXCISED_DOMAIN_ABSOLUTELY_INTEGRABLE_BY_KAMINSKI_COMPARISON",
+  "scope_guard": "PASS localizes the remaining fixed-label causal-vertex finiteness problem to neighborhoods of pair/multi-pair collision strata r_ab->0. It does not prove collision integrability, full causal-vertex finiteness, generalized EPRL-KKL normalization, spin/refinement sums, causal-stack cutoff removal, D7-S3/S4 closure, terminal D7 authorization, or Candidate Gravity activation. It is not an automatic transfer of representation composition; it uses the source-defined Toller KAK formula directly.",
+  "d7_s2_after_pass": "NONCOMPACT_TAIL_LOCALIZED__COLLISION_STRATA_REMAIN_OPEN",
+  "d7_s5_authorized": false,
+  "candidate_gravity_authorized": false
+}
