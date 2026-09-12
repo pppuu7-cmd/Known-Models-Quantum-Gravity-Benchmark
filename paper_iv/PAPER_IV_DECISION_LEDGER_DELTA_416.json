@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "iteration": 416,
+  "date": "2026-09-12",
+  "rqir_core": "v1.0_FROZEN",
+  "workflow": {
+    "name": "paper-iv-iter412-416-parallel-source-closure",
+    "run_id": 34668474576,
+    "head_sha": "8da5b8fe30fb729c1d7829322fac33848d9feaa6",
+    "independent_jobs_expected": 49,
+    "independent_jobs_success": 49,
+    "aggregate": "SUCCESS",
+    "summary_artifact_id": 10290355031,
+    "summary_artifact_digest": "sha256:12719f442ce9f969224d9650e987f837a416dd1b7504e72af227fd3a9a8643c1"
+  },
+  "classification": "PASS_THREE_STREAM_SOURCE_GROUNDED_CLOSURE_WAVE__LQG_TOLLER_EXACT_BUILDING_BLOCK__CFS_DELTA3PLUS_ENVELOPE__AS_SPECTRAL_NORMALISABILITY",
+  "counts": {
+    "LQG_SPINFOAM_TOLLER": 25,
+    "CFS_GEOMETRIC_CORRECTION_ENVELOPE": 15,
+    "ASYMPTOTIC_SAFETY_LORENTZIAN_SPECTRAL_TAIL": 8,
+    "SOURCE_CONSTANT_GUARD": 1
+  },
+  "metrics": {
+    "lqg_max_sum_identity_relative_residual": 2.8492760421822307e-10,
+    "lqg_max_large_beta_slope_absolute_error": 0.0010731862634933975,
+    "cfs_max_geometric_series_arithmetic_relative_residual": 1.8448205925854687e-16,
+    "as_tail_max_numeric_vs_analytic_relative_error": 9.80684775558694e-10
+  },
+  "scientific_delta": {
+    "LQG_SPINFOAM": {
+      "result": "The source-defined gamma-simple hypergeometric Toller branches were independently reproduced over gamma in {0.1,0.5,1,2,5} and j in {1/2,1,3/2,2,3}; t+ + t- returned the Lorentzian Wigner d element to sub-1e-9 relative residual and the published large-beta absolute decay exponent was reproduced to about 1e-3 worst-case slope error.",
+      "scope": "This materially strengthens the causal-sector building block but does not establish absolute convergence, finiteness or normalization of the full causal spinfoam vertex."
+    },
+    "CAUSAL_FERMION_SYSTEMS": {
+      "result": "A fail-closed bounded-coefficient envelope for the entire delta^3+ correction hierarchy was audited over delta/L in {0.1,0.03,0.01,0.003,0.001} and assumed coefficient bounds B in {1,10,100}; the geometric-envelope arithmetic is internally consistent to machine precision.",
+      "scope": "B is an explicit assumption scan, not a source fit or CFS prediction. The missing scientific object remains the explicit source-defined delta^3+ correction tensor and coefficients."
+    },
+    "ASYMPTOTIC_SAFETY": {
+      "result": "The Lorentzian graviton spectral UV tail proportional to 1/[lambda^2 log^3(lambda^2)] was independently integrated under the source KL measure from Lambda=5 through 1e24 and matched the analytic normalized tail 1/[4 pi log^2(Lambda^2)] to below 1e-9 relative error.",
+      "scope": "This is a spectral normalisability/scaling certificate with c_h^UV normalized to one, not an extraction of the physical coefficient and not a same-realization composition with the ERG2026 contact-complete scattering amplitude."
+    }
+  },
+  "terminalization": {
+    "LQG_SPINFOAM": false,
+    "CAUSAL_FERMION_SYSTEMS": false,
+    "ASYMPTOTIC_SAFETY": false,
+    "any_family_promoted": false
+  },
+  "required_next_objects": {
+    "LQG_SPINFOAM": "FULL_CAUSAL_VERTEX_ABSOLUTE_CONVERGENCE_NORMALIZATION_OR_EQUIVALENT_TERMINAL_OBJECT",
+    "CAUSAL_FERMION_SYSTEMS": "EXPLICIT_DELTA3PLUS_CORRECTION_TENSOR_WITH_SOURCE_DEFINED_COEFFICIENTS_AND_DOMAIN",
+    "ASYMPTOTIC_SAFETY": "MACHINE_READABLE_CONTACT_COMPLETE_SAME_REALIZATION_AMPLITUDE_WITH_APPROXIMATION_AND_ERROR_LEDGER"
+  },
+  "global": {
+    "D2": "NOT_CLOSED_COVERAGE_AND_OBJECTS",
+    "D4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "D7": "NOT_CLOSED_NOT_YET_AUTHORIZED",
+    "candidate_gravity_activation": false,
+    "new_required_authorized": false
+  },
+  "paper_impact": {
+    "paper_III": "NO_NEW_RULE_REQUIRED",
+    "paper_IV": "UPDATE_LQG_CAUSAL_BUILDING_BLOCK_CFS_CORRECTION_ENVELOPE_AND_AS_SPECTRAL_NORMALISABILITY_EVIDENCE"
+  }
+}
