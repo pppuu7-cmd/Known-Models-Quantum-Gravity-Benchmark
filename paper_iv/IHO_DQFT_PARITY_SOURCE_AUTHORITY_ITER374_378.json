@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "iteration_bundle": "374-378",
+  "family": "PERTURBATIVE_HIGHER_DERIVATIVE",
+  "branch": "IHO_DQFT_SPACELIKE_PV",
+  "source": {
+    "title": "Quantum (quadratic) gravity: replacing the massive tensor ghost with an inverted harmonic oscillator-like instability",
+    "authors": ["K. Sravan Kumar", "Joao Marto"],
+    "arxiv": "2603.07150v3",
+    "url": "https://arxiv.org/html/2603.07150v3"
+  },
+  "independent_observable_layer": {
+    "statement": "Section 7 explicitly presents two distinct unitary-QQG predictions: the tensor-to-scalar/spectral-tilt branch and the DQFT parity-asymmetry branch.",
+    "scalar_fractional_asymmetry": {
+      "equation": "7.55",
+      "formula": "DeltaP_v(z)=(1-n_s)*Re[(2/H^(1)_{3/2}(z))*d H^(1)_nu(z)/dnu|_{nu=3/2}]",
+      "baseline": "parity-symmetric vacuum: DeltaP_v=0",
+      "source_relation_for_tilt": "n_s-1 ~= -2/N (Eq. 7.17)"
+    },
+    "tensor_fractional_asymmetry": {
+      "equation": "7.88",
+      "formula": "DeltaP_u(z)=(r/8)*Re[(2/H^(1)_{3/2}(z))*d H^(1)_nu(z)/dnu|_{nu=3/2}]",
+      "baseline": "parity-symmetric/SI: DeltaP_u=0",
+      "r_relation": "r ~= (12/N^2)*(12 alpha)/(12 alpha-beta) (Eq. 7.39)"
+    },
+    "angular_indicators": {
+      "scalar_equations": ["7.56", "7.57", "7.58"],
+      "reported_R_TT": 0.79,
+      "reported_domain": "ell_max approximately <=20-30",
+      "reported_interpretation": "approximately 20 percent excess power in odd multipoles",
+      "reported_posterior_odds_statement": "DSI parity asymmetry reported as 650 times more probable than SI for combined low-C2 and R_TT indicators using Monte-Carlo sky realizations in cited earlier work"
+    }
+  },
+  "numerical_protocol": {
+    "z_definition": "z=k/k_star",
+    "z_grid": [0.005,0.01,0.02,0.05,0.1,0.25,0.5,1.0],
+    "order_derivative": "symmetric finite difference in Hankel order around nu=3/2",
+    "convergence_steps": [0.0001,0.00005],
+    "N_grid": [50,55,60],
+    "x_grid": [0.0,0.25,0.5,0.75],
+    "x_definition": "beta/(12 alpha)"
+  },
+  "protocol_guard": {
+    "parity_branch_is_independent_of_r_only_scan": true,
+    "source_defined_formula_present": true,
+    "same_domain_zero_asymmetry_baseline_present": true,
+    "reported_posterior_odds_is_not_a_reproducible_likelihood_dataset_in_this_source": true,
+    "no_external_likelihood_reconstruction_in_this_bundle": true,
+    "no_family_terminalization_from_this_bundle": true,
+    "d7_promotion_authorized": false,
+    "required_after_success": "Promote only the scoped parity observable layer; retain D7 blocker until a reproducible source-grounded likelihood/covariance object and full family-domain transport are audited."
+  }
+}
