@@ -65,7 +65,7 @@ jobs:
           python-version: '3.12.11'
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          pattern: 'iter40*-as-*'
+          pattern: 'iter4*-as-*'
           path: build/iter409-410-results
           merge-multiple: true
       - run: python code/as_iter409_411_source_gate.py --mode aggregate --input-dir build/iter409-410-results --output iter409-411-summary.json
