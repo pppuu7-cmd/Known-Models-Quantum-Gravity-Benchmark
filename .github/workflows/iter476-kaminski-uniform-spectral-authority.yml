@@ -1,0 +1,17 @@
+name: iter476-kaminski-uniform-spectral-authority
+on:
+  push:
+    branches: [research/iter476-kaminski-uniform-spectral-authority]
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python code/iter476_kaminski_uniform_spectral_authority.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter476-summary
+          path: artifacts/iter476-summary.json
