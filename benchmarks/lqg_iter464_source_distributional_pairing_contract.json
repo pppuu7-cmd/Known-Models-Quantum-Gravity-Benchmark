@@ -1,0 +1,32 @@
+{
+  "iteration": 464,
+  "gate": "SOURCE_P11_D_EXACT_EXPONENTIAL_POLYNOMIAL_DISTRIBUTIONAL_PAIRING",
+  "frozen_before_implementation": true,
+  "purpose": "After Iter463 qualified the leading source phases, test whether the exact source-specific P11*d_source factor admits a finite exponential-polynomial decomposition whose published Feynman boundary kernel 1/(x-rho-i*s*epsilon) has a canonical tempered-distribution pairing at nonzero beta. This is a one-dimensional spectral pairing gate only.",
+  "source_formula_lock": "Use exactly the Iter460/463 d_source and degree-3 P11 formulas. Preserve denominator x-rho-i*s*epsilon. No beta+i*epsilon, damping, fitted subtraction, counterterm, contour deformation chosen after results, or coefficient fitting.",
+  "exact_identity": "P11(x;rho)/(x+x^3) = -i/((i*rho+1)(i*rho)(i*rho-1)) for rho != 0, so P11*d_source must reduce exactly to finitely many x^n exp(i*sigma*beta*x) channels with n<=2 and sigma in {-1,+1}.",
+  "distribution_rule": "For beta>0, k=sigma*beta != 0 and z=rho+i*s*epsilon, define J_n(k,z)=<exp(i*k*x), x^n/(x-z)> in the standard tempered/Feynman boundary sense. Polynomial division plus the Fourier transform of polynomials away from k=0 gives J_n=z^n J_0, and J_0=2*pi*i*sign(k)*exp(i*k*z) when k*Im(z)>0, else 0. Therefore epsilon->0+ selects only sigma=s and yields J_n=2*pi*i*s*rho^n*exp(i*s*beta*rho).",
+  "panel": {
+    "m": [-1,0,1],
+    "beta": [0.8,2.1],
+    "rho": [0.35,1.6],
+    "boundary_sign_s": [-1,1],
+    "heldout_x": [-7.3,-2.4,-0.7,0.45,1.9,5.6,11.2],
+    "epsilon": [0.2,0.1,0.05,0.025]
+  },
+  "frozen_tests": {
+    "exact_p11_denominator_cancellation": true,
+    "direct_vs_channel_reconstruction_relative_error_max": 1e-40,
+    "plemelj_pv_plus_delta_vs_selector_relative_error_max": 1e-40,
+    "finite_epsilon_closed_form_vs_boundary_monotone_last3": true,
+    "finite_epsilon_last_relative_error_max": 0.12,
+    "wrong_boundary_sign_control_min_relative_difference": 1e-3,
+    "all_values_finite": true
+  },
+  "interpretation": {
+    "pass": "ITER464_SOURCE_P11_D_DISTRIBUTIONAL_PAIRING_QUALIFIED_SCOPED",
+    "fail": "SCIENTIFIC_FAIL_ITER464_SOURCE_DISTRIBUTIONAL_PAIRING",
+    "invalid": "INVALID_ITER464_IMPLEMENTATION_OR_CONTROL",
+    "scope": "PASS qualifies only the exact source P11*d_source pairing with the one-dimensional published spectral Feynman boundary kernel on the frozen panel. It does not prove full causal-vertex finiteness, absolute integrability, multi-variable pullback validity, D7-S2 closure by itself, or any terminal D7 classifier. Candidate Gravity remains inactive."
+  }
+}
