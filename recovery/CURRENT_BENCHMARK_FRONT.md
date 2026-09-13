@@ -1,6 +1,6 @@
 # Current Benchmark Front
 Updated: 2026-09-13
-Current authoritative frontier: Iter456 terminal PASS has been consumed. The source-faithful reduced Toller pure-boost Appendix-B layer for `k=j=l=1`, `m=-1,0,+1` is qualified under the published Rühl phase convention. The exact source Eq. (7) Cartan magnetic reconstruction is now the next permitted dependent gate; full causal-vertex convergence remains forbidden until that reconstruction is terminally qualified.
+Current authoritative frontier: Iter457 terminal PASS has been consumed. The source Eq. (7) full magnetic reconstruction for the already-qualified `k=j=l=1` Toller sector is now independently qualified. The next permitted dependent step is a separately prospectively frozen source-defined finite-`i epsilon` / noncompact convergence pilot. The published regulator prescription and measure must be pinned exactly before implementation; no retuned or replacement regulator is allowed.
 
 ## Global lock
 - RQIR Core v1.0 remains FROZEN.
@@ -19,30 +19,29 @@ Current authoritative frontier: Iter456 terminal PASS has been consumed. The sou
 ## Recent authoritative causal-Toller chain
 - Iter452 run `34732114506`: `PRIMARY_SOURCE_CAUSAL_VERTEX_OBJECT_PINNED_COMPLETE`.
 - Iter453 run `34734577271`, aggregate artifact `10309998447`: `ITER453_EQ4_MAGNETIC_INTERTWINER_CONTRACTION_TOPOLOGY_QUALIFIED`.
-- Iter454 run `34736575423`, aggregate artifact `10311670155`: historical frozen `SCIENTIFIC_FAIL_ITER454_TOLLER_FEYNMAN_PROJECTOR_KERNEL`; causal audit localized the sole failure to an overconstrained finite-displacement reciprocal-Gamma predicate. Historical result remains immutable.
-- Iter455 run `34739025302`, head `5a974e9ac8843a79f374d5ccd1aaa54655a8f127`, aggregate job `103675539451`, summary artifact `10311248731`, digest `sha256:a473971667b2518b46e300e2ad910452badb610be0c624a6e705f8a50f9c69e5`: `ITER455_TOLLER_RECIPROCAL_GAMMA_SIMPLE_ZERO_QUALIFIED_SCOPED`, 4/4 valid, 4/4 pass.
-- Iter456 run `34741722163`, head `697da0a1b0a277f9164e5d4486032b5f22ea82ce`, aggregate job `103682446066`, summary artifact `10312439637`, digest `sha256:d701f3562a86e514430a4a3eafc12290238d791d126a22282cde9fbd6cbaa65b`: `ITER456_REDUCED_TOLLER_APPENDIXB_RUHL_PHASE_QUALIFIED_SCOPED`, 4/4 valid, 4/4 pass.
+- Iter454 run `34736575423`, aggregate artifact `10311670155`: immutable historical `SCIENTIFIC_FAIL_ITER454_TOLLER_FEYNMAN_PROJECTOR_KERNEL`; causal audit localized the sole failure to an overconstrained finite-displacement reciprocal-Gamma predicate.
+- Iter455 run `34739025302`, artifact `10311248731`: `ITER455_TOLLER_RECIPROCAL_GAMMA_SIMPLE_ZERO_QUALIFIED_SCOPED`.
+- Iter456 run `34741722163`, artifact `10312439637`: `ITER456_REDUCED_TOLLER_APPENDIXB_RUHL_PHASE_QUALIFIED_SCOPED`.
+- Iter457 run `34741925566`, head `680e4e7d9b1360a6699a4676f0f9cd72de6ad143`, aggregate job `103683031716`, summary artifact `10313410848`, digest `sha256:7ba47ac6e73567f017100b780c23e1f1c951fb667b4fc48a378685b733765a11`: `ITER457_TOLLER_EQ7_FULL_MAGNETIC_RECONSTRUCTION_QUALIFIED_SCOPED`, 4/4 valid, 4/4 pass.
 
-### Iter456 result
-The explicit Appendix-B reduced Toller formulas for `k=j=l=1`, all `m=-1,0,+1`, passed the prospectively frozen additive `t+ + t- = d` identity, an independently reorganized formula evaluation, source-pole/simple-residue scaling, near-pole branch-sum recovery, and wrong-phase / wrong-pole negative controls. Worst additive residual was `8.56e-80`; worst independent-formula residual `2.71e-79`; worst near-pole relative residual `2.46e-57`; all applicable residue-drift errors were below `4.0e-15` against the frozen `5e-6` ceiling.
+### Iter457 result
+All four raw lanes passed the frozen Eq. (7) reconstruction gate. Worst residuals were route agreement `2.49e-81`, SU(2) unitarity `4.53e-81`, sum/product agreement `6.80e-80`, additive reconstruction `7.66e-80`, Cartan redundancy `2.00e-81`, and left/right covariance `2.08e-81`. Both deliberately wrong p-index and wrong right-conjugation controls were rejected in every lane.
 
-Durable result: `results/ITER456_REDUCED_TOLLER_APPENDIXB_RESULT_2026-09-13.md`.
+Durable result: `results/ITER457_TOLLER_EQ7_MAGNETIC_RECONSTRUCTION_RESULT_2026-09-13.md`.
 
 ## Current blocker
-D7-S2 remains open. The next missing object is the exact Eq. (7) magnetic/group reconstruction
-`T_{jm,ln}^{(±,rho,k)}(g)=sum_p D^{(j)}_{mp}(U1) t_{jlp}^{(±,rho,k)}(beta) D^{(l)}_{pn}(U2)`
-for the Cartan decomposition `g=U1 exp(beta sigma_z/2) U2`. The source explicitly gives this formula and identifies the reduced `t` objects used in Iter456. It must be checked prospectively for complete magnetic-index reconstruction, SU(2) covariance/Cartan redundancy, additive recovery to the reconstructed Wigner `D`, and negative controls before any noncompact/finite-i-epsilon vertex convergence gate.
+D7-S2 remains open. The reduced source kernel and Eq. (7) magnetic reconstruction are now qualified, but there is still no terminal source-faithful finite-`i epsilon` / noncompact convergence certificate for the contracted causal-vertex object. A pilot must preserve the published spectral prescription, integration measure and branch structure exactly and must distinguish absolute convergence, conditional/PV behavior and distributional boundary values.
 
 ## Exact next permitted gate
-1. Prospectively freeze Eq. (7) reconstruction before implementation.
-2. Use the already-qualified `k=j=l=1`, `p=-1,0,+1` reduced source formulas from Iter456; no coefficient fitting or phase retuning.
-3. Reconstruct all 3x3 magnetic entries for deterministic off-pole `(rho,beta)` panels and independent deterministic `U1,U2 in SU(2)` rotation panels.
-4. Require entrywise `T+ + T- = D`, matrix-product vs explicit-sum agreement, SU(2) Wigner unitarity/composition controls, and exact Cartan `U(1)` redundancy consistency within frozen high-precision tolerances.
-5. Include wrong-index and wrong-phase/conjugation negative controls that must be rejected.
-6. A PASS may authorize the next source-defined finite-i-epsilon / noncompact convergence pilot. It does not close D7-S2 by itself unless that later gate also closes.
+1. Prospectively freeze the finite-`i epsilon` / noncompact pilot before implementation.
+2. Pin the published regulator insertion and noncompact measure verbatim from the primary source / already-authoritative source note; do not infer or replace them.
+3. Use only already-qualified Iter453-Iter457 building blocks; no fitted coefficients or phase retuning.
+4. Freeze epsilon ladder, truncation/radial windows, precision, lane panel, convergence diagnostics, null controls and interpretation rules before production.
+5. Independently test regulator convergence and truncation/window stability; include a wrong-prescription control where mathematically well-defined.
+6. A finite-panel PASS is scoped support only. D7-S2 closes only if its preregistered closure rule is actually met; no full causal-vertex finiteness theorem follows automatically.
 
 ## Progress rubric
-Working research-readiness scale after Iter456: D2 82%, D4 68%, D7 67%, integrated path 75%. Relative to the Iter455 state, Iter456 earns +2 pp on D7 and +1 pp integrated because a distinct source-faithful reduced Toller kernel prerequisite was terminally qualified. These are readiness metrics, not probabilities and not a terminal classifier.
+Working research-readiness scale after Iter457: D2 82%, D4 68%, D7 69%, integrated path 76%. Relative to the post-Iter456 state, Iter457 earns +2 pp D7 and +1 pp integrated for terminally qualifying the independent source Eq. (7) magnetic reconstruction prerequisite. These are readiness metrics, not probabilities or a terminal classifier.
 
 ## Claim guards
 No complete-QG claim. No physical causal-vertex finiteness/divergence theorem. No universal causal-EPRL/contour no-go theorem. Keep absolute integrability, conditional/PV finite part, and source-defined distributional amplitude distinct. No fitted completion or modified published spectral `i epsilon`. Candidate Gravity remains inactive.
