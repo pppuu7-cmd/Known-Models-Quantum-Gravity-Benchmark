@@ -26,7 +26,7 @@ jobs:
           python - <<'PY'
           import pathlib
           p=pathlib.Path('recovery/ITER485_PREREG_TEN_EDGE_TOLLER_MAGNETIC_NETWORK_2026-09-14.md').read_text()
-          for s in ['FROZEN BEFORE IMPLEMENTATION/PRODUCTION','24 lanes','3^5=243','pre-Haar','do not integrate shared group variables or spectral variables']:
+          for s in ['FROZEN BEFORE IMPLEMENTATION/PRODUCTION','24 lanes','3^5=243','pre-Haar','does not integrate shared group variables or spectral variables']:
               assert s in p, s
           for q in ['code/iter482_common_node_su2_control.py','code/iter483_common_node_sl2c_polar.py','code/iter484_source_toller_kak_one_edge.py','sources/arxiv_2601_23162v1_causal_vertex.json','sources/arxiv_2604_24945v1_toller_cartan.json']:
               assert pathlib.Path(q).exists(), q
