@@ -82,7 +82,11 @@ def evaluate(panel,regime):
       'rapidity_consistency':finite_nonneg and svrel<1e-10,'inversion_rapidity':inveta<1e-10,
       'corrupt_negative':corrupt_cycle>1e-4,'compact_regression':comp_eta<1e-10 and comp_unit<1e-10,
     }
-    ok=all(checks.values())
+    # Infrastructure-only normalization: NumPy scalar comparisons can yield np.bool_,
+    # which json.dumps cannot serialize.  Preserve every frozen predicate exactly and
+    # convert only their already-computed truth values to built-in Python bools.
+    checks={k:bool(v) for k,v in checks.items()}
+    ok=bool(all(checks.values()))
     return {'iteration':'483','lane':f'{panel}-{regime}','panel':panel,'regime':regime,'scientific_pass':ok,
       'classification':'ITER483_COMMON_NODE_SL2C_POLAR_GEOMETRY_QUALIFIED_SCOPED' if ok else 'FAIL_ITER483_COMMON_NODE_SL2C_POLAR_GEOMETRY',
       'checks':checks,'node_det_max':float(node_det),'edge_det_max':float(edge_det),'cycle_residual':cyc,'gauge_residual':gauge,
