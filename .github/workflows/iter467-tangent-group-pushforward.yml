@@ -1,0 +1,73 @@
+name: iter467-tangent-group-pushforward
+
+on:
+  push:
+    branches:
+      - research/iter467-tangent-group-pushforward
+    paths:
+      - 'scripts/iter467_tangent_group_pushforward.py'
+      - '.github/workflows/iter467-tangent-group-pushforward.yml'
+      - 'prereg/ITER467_EQ4_TANGENT_GROUP_DIFFERENCE_PUSHFORWARD.md'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    strategy:
+      fail-fast: false
+      matrix:
+        root: [0, 1, 2, 3, 4]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen root lane
+        run: |
+          mkdir -p out
+          python scripts/iter467_tangent_group_pushforward.py --root ${{ matrix.root }} --out out/root_${{ matrix.root }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter467-root-${{ matrix.root }}
+          path: out/root_${{ matrix.root }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: audit
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter467-root-*
+          path: lanes
+          merge-multiple: true
+      - name: Frozen aggregate classification
+        run: |
+          python - <<'PY'
+          import glob,json,pathlib
+          fs=sorted(glob.glob('lanes/root_*.json'))
+          rows=[json.load(open(f)) for f in fs]
+          valid=(len(rows)==5 and sorted(r['root'] for r in rows)==[0,1,2,3,4])
+          qualified=valid and all(r.get('qualified') for r in rows)
+          out={
+            'iteration':467,
+            'lane_count':len(rows),
+            'valid':valid,
+            'qualified':qualified,
+            'roots':[r.get('root') for r in rows],
+            'ranks':[r.get('rank') for r in rows],
+            'nullities':[r.get('nullity') for r in rows],
+            'tree_counts':[r.get('nonzero_maximal_minors') for r in rows],
+            'classification':('ITER467_EQ4_TANGENT_GROUP_DIFFERENCE_PUSHFORWARD_LATTICE_QUALIFIED_SCOPED' if qualified else 'SCIENTIFIC_FAIL_ITER467_TANGENT_GROUP_PUSHFORWARD_LATTICE'),
+            'scope':'tangent group-difference lattice/conservation geometry only; no nonlinear SL(2,C) integral, convergence theorem, or D7-S2 closure'
+          }
+          pathlib.Path('aggregate.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(out,sort_keys=True))
+          if not qualified: raise SystemExit(2)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter467-aggregate
+          path: aggregate.json
+          if-no-files-found: error
