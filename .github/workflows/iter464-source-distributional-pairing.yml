@@ -1,0 +1,66 @@
+name: iter464-source-distributional-pairing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter464-source-distributional-pairing.yml'
+  workflow_dispatch:
+
+jobs:
+  lane:
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        include:
+          - {m: -1, beta: '0.8', tag: 'm-1-b0.8'}
+          - {m: -1, beta: '2.1', tag: 'm-1-b2.1'}
+          - {m: 0, beta: '0.8', tag: 'm0-b0.8'}
+          - {m: 0, beta: '2.1', tag: 'm0-b2.1'}
+          - {m: 1, beta: '0.8', tag: 'm1-b0.8'}
+          - {m: 1, beta: '2.1', tag: 'm1-b2.1'}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install --disable-pip-version-check mpmath
+      - run: mkdir -p out && python code/lqg_iter464_source_distributional_pairing.py --m ${{ matrix.m }} --beta ${{ matrix.beta }} --out out/result.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter464-${{ matrix.tag }}
+          path: out/result.json
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter464-*
+          path: raw
+      - run: |
+          python - <<'PY'
+          import glob,json,os,sys
+          files=glob.glob('raw/**/result.json',recursive=True)
+          rows=[]
+          for p in files:
+              with open(p) as f: rows.append(json.load(f))
+          valid=(len(rows)==6 and all(r.get('iteration')==464 for r in rows))
+          passed=sum(bool(r.get('pass')) for r in rows)
+          out={'iteration':464,'valid':valid,'n_lanes':len(rows),'pass_lanes':passed,'lanes':rows,
+               'classification':'ITER464_SOURCE_P11_D_DISTRIBUTIONAL_PAIRING_QUALIFIED_SCOPED' if valid and passed==6 else ('INVALID_ITER464_IMPLEMENTATION_OR_CONTROL' if not valid else 'SCIENTIFIC_FAIL_ITER464_SOURCE_DISTRIBUTIONAL_PAIRING'),
+               'scope':'One-dimensional source-specific distributional pairing only; no full causal-vertex theorem; D7-S2 not closed by this gate alone.'}
+          os.makedirs('out',exist_ok=True)
+          with open('out/iter464_aggregate.json','w') as f: json.dump(out,f,indent=2)
+          print(json.dumps(out,indent=2))
+          sys.exit(0 if valid and passed==6 else 1)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter464-aggregate
+          path: out/iter464_aggregate.json
