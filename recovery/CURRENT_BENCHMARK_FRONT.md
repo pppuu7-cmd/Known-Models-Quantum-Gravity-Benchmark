@@ -1,6 +1,8 @@
 # Current Benchmark Front
 Updated: 2026-09-13
-Current authoritative frontier: Iter458 is terminal and has been consumed. The source-faithful ordinary symmetric real-line truncation of the published Toller Feynman `i epsilon` kernel failed its frozen finite-panel convergence/target gate in all four valid lanes. This rejects that numerical realization only; it does not reject the source-defined distributional amplitude. The next permitted dependent step is a prospectively frozen distributional/Plemelj boundary-value audit that preserves the published spectral `i epsilon` prescription and cleanly separates principal-value and delta-supported contributions.
+
+## Authoritative frontier
+The repository has moved beyond Iter458. Iter459, Iter460 and Iter462 are terminal and consumed; Iter461 and Iter463 are active/queued. Repository artifacts and frozen contracts remain authoritative; D7 stays fail-closed.
 
 ## Global lock
 - RQIR Core v1.0 remains FROZEN.
@@ -13,36 +15,49 @@ Current authoritative frontier: Iter458 is terminal and has been consumed. The s
 - D6 = PASS_RULE_TARGETS_OPEN.
 - D7 = NOT_CLOSED / NOT_YET_AUTHORIZED.
 - D7-S0 = PASS; D7-S1 = PASS; D7-S2 = NOT_CLOSED; D7-S3 = NOT_CLOSED; D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED; D7-S5 = NOT_AUTHORIZED; D7-S6 = INACTIVE.
-- `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, and `NEW_REQUIRED` are forbidden while S2-S4 remain open.
+- `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, and `NEW_REQUIRED` remain forbidden while S2-S4 remain open.
 - Candidate Gravity remains inactive.
 
-## Recent authoritative causal-Toller chain
-- Iter452 run `34732114506`: `PRIMARY_SOURCE_CAUSAL_VERTEX_OBJECT_PINNED_COMPLETE`.
-- Iter453 run `34734577271`, aggregate artifact `10309998447`: `ITER453_EQ4_MAGNETIC_INTERTWINER_CONTRACTION_TOPOLOGY_QUALIFIED`.
-- Iter454 run `34736575423`, aggregate artifact `10311670155`: immutable historical `SCIENTIFIC_FAIL_ITER454_TOLLER_FEYNMAN_PROJECTOR_KERNEL`; causal audit localized the sole failure to an overconstrained finite-displacement reciprocal-Gamma predicate.
-- Iter455 run `34739025302`, artifact `10311248731`: `ITER455_TOLLER_RECIPROCAL_GAMMA_SIMPLE_ZERO_QUALIFIED_SCOPED`.
-- Iter456 run `34741722163`, artifact `10312439637`: `ITER456_REDUCED_TOLLER_APPENDIXB_RUHL_PHASE_QUALIFIED_SCOPED`.
-- Iter457 run `34741925566`, head `680e4e7d9b1360a6699a4676f0f9cd72de6ad143`, aggregate job `103683031716`, summary artifact `10313410848`, digest `sha256:7ba47ac6e73567f017100b780c23e1f1c951fb667b4fc48a378685b733765a11`: `ITER457_TOLLER_EQ7_FULL_MAGNETIC_RECONSTRUCTION_QUALIFIED_SCOPED`.
-- Iter458 run `34744070219`, head `4f105e5af640208532799cc6556727e592beed6b`, aggregate job `103688630826`, summary artifact `10313389047`, digest `sha256:e0ed79ee20c142f4bd67f46495c3b24fd0f6977a07eda6507b086981c438e68a`: `SCIENTIFIC_FAIL_ITER458_TOLLER_FEYNMAN_IEPSILON_ORDINARY_TRUNCATION`, 4/4 valid, 0/4 pass.
+## Consumed causal-Toller / distributional chain
+- Iter457 run `34741925566`, artifact `10313410848`: `ITER457_TOLLER_EQ7_FULL_MAGNETIC_RECONSTRUCTION_QUALIFIED_SCOPED`.
+- Iter458 run `34744070219`, artifact `10313389047`: `SCIENTIFIC_FAIL_ITER458_TOLLER_FEYNMAN_IEPSILON_ORDINARY_TRUNCATION`. This rejects only the frozen ordinary symmetric truncation realization.
+- Iter459 run `34746472976`, artifact `10313863332`, digest `sha256:f54e6e4ee1b787f17b7bab924409611297ce06ac73a005e308be3d1613a9aa8d`: `ITER459_TOLLER_PLEMELJ_DISTRIBUTIONAL_KERNEL_QUALIFIED_SCOPED`, 6/6 Schwartz lanes. This qualifies the universal Sokhotski-Plemelj denominator boundary identity only.
+- Iter460 branch `research/iter460-source-spectral-tail`, run `34748501676`, artifact `10314837771`, digest `sha256:ce4f1a8a18c6c8282dad4a7f424f322e0e5133c926dfb327ce0c68f7f34163d0`: `ITER460_SOURCE_P11_D_TAIL_CHARACTERIZED_SCOPED`, 24/24 records. The source `P11*d_source` tail is non-Schwartz and shows growing oscillatory/polynomial envelope on the frozen panel (roughly slope +0.84 for m=0 and +1.67 for m=+/-1). No physical divergence theorem follows.
+- Iter462 branch `research/iter462-d7-s3-s4-evidence-audit`, run `34748508906`, artifact `10315340931`, digest `sha256:97cc6c2e18df2467b2f4130b8cf2866b021c212d81fb9d9878a0448455adbc3a`: `ITER462_D7_S3_S4_EVIDENCE_LOCALIZATION_COMPLETE_SCOPED`. Six of seven unresolved S3/S4 gate names have no formal candidate artifact in the tracked snapshot; the sole normalized-comparator candidate is explicitly negative/not transport-ready. No positive S3/S4 closure artifact was found.
 
-### Iter458 result
-The frozen ordinary-truncation realization is not supported. All lanes remained finite and direct-vs-compensated accumulation agreed to roughly `1e-14` or better, but the branch-target and final-window Cauchy criteria failed broadly. In the m=+/-1 sectors representative smallest-epsilon target discrepancies remain O(1)-O(10^2) and final-window Cauchy discrepancies O(2). The separate polynomial-route floating control is numerically ill-conditioned at the `~1.19e-7` level relative to its `1e-12` tolerance, but this is far too small to explain the branch/window failures and does not change the terminal interpretation.
+## Active independent work
+### Iter461 — exact K5 collision partitions
+- Branch: `research/iter461-k5-collision-partitions`
+- Head: `05c7f87c8519349057332bf90021f1128e1eefc3`
+- Run: `34748503239`
+- Status at this update: queued.
+- Do not duplicate. Terminal classification requires raw artifact consumption against its preregistered exact Bell(5)/local-pair-power gate.
 
-Durable result: `results/ITER458_TOLLER_FEYNMAN_IEPSILON_NONCOMPACT_PILOT_RESULT_2026-09-13.md`.
+### Iter463 — source P11*d leading oscillatory asymptotics
+- Preregistration commit: `6c99b1593c14ed1fcd9b0469c64e745b903510a5`.
+- Implementation commit: `c8a2c9d708795a2152002a75b41ef13d21a197f1`.
+- Workflow/head commit: `4aa4f51e68cae30e6cec766e7359103218cb3b16`.
+- Production run: `34748683091`.
+- Frozen panel: m=-1,0,+1; beta=0.8,2.1; rho=0.35,1.6; both spectral tails; radii 80..1280.
+- Frozen hypothesis: leading power 1 with +/-beta pair for m=0; leading power 2 with +beta for m=-1 and -beta for m=+1. Tests include P11 route agreement, scaled-envelope stabilization, phase recurrence/increment, wrong-power and wrong-phase controls. No damping, fitted subtraction, modified i-epsilon, contour change or coefficient fitting.
+- Status at this update: queued. Scientific classification is absent until all raw lanes and aggregate are terminal and consumed.
 
-## Current blocker
-D7-S2 remains open. A source-defined distributional realization of the Toller Feynman kernel is still missing. Ordinary symmetric truncation cannot be promoted to the required boundary-value object. Absolute convergence, conditional/PV behavior and the source-defined distributional amplitude remain distinct.
+## Current blockers
+### D7-S2
+The universal Plemelj kernel is qualified, but the actual source object is non-Schwartz. A source-specific oscillatory/distributional realization preserving the published spectral i-epsilon remains missing. Iter463 is a prerequisite asymptotic-structure audit, not the boundary-value reconstruction itself.
 
-## Exact next permitted gate
-1. Prospectively freeze a distributional/Plemelj boundary-value audit before implementation.
-2. Preserve the published denominator displacement exactly; do not replace it by `beta+i epsilon`, damping, fitted subtraction, or a changed contour.
-3. Test the universal local boundary identity against independent Schwartz test functions and both signs, with independently computed PV and delta-supported terms.
-4. Freeze epsilon ladder, precision, test functions, integration windows, convergence metric, sign controls and interpretation rules before production.
-5. A PASS may qualify only the distributional kernel realization as a mathematical prerequisite. It does not by itself reconstruct the full causal vertex or close D7-S2.
-6. Only after that prerequisite is terminal may the source-specific `P_11 * d` object be inserted into a separately preregistered oscillatory/distributional reconstruction gate.
+### D7-S3 / D7-S4
+Iter462 found no positive closure artifact for the unresolved tracked gate names and one explicit negative comparator/transport candidate. Do not invent missing transport/closure maps.
 
-## Progress rubric
-Working research-readiness scale after consuming Iter458: D2 82%, D4 68%, D7 69%, integrated path 76%. No percentage increase is awarded: Iter458 produced a scientifically useful negative result that eliminates ordinary symmetric truncation but does not close or materially narrow the formal D7-S2 boundary-value blocker enough to claim an additional rubric point.
+## Exact next permitted decisions
+1. Consume Iter461 and Iter463 immediately when terminal; distinguish scientific FAIL from numerical/infrastructure failure.
+2. If Iter463 qualifies the frozen source asymptotics, preregister a mathematically justified source-specific oscillatory/distributional boundary-value gate that preserves the published i-epsilon; no ordinary denser truncation, arbitrary damping or beta+i*epsilon replacement.
+3. If Iter461 passes its exact combinatorial audit, use it only as collision-geometry evidence; do not close D7-S2 from K5 local power counting alone.
+4. D7 terminal classifier and all four terminal labels remain forbidden until S2-S4 are formally closed.
+
+## Working progress rubric
+D2 82%, D4 68%, D7 56%, integrated path 67%.
+This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. The D7/integrated values are lower than the earlier provisional 69%/76% because Iter460 established a harder non-Schwartz source-tail blocker and Iter462 showed that the expected S3/S4 closure artifacts are largely absent rather than merely unconsumed.
 
 ## Claim guards
-No complete-QG claim. No physical causal-vertex finiteness/divergence theorem. No universal causal-EPRL/contour no-go theorem. Keep absolute integrability, conditional/PV finite part, and source-defined distributional amplitude distinct. No fitted completion or modified published spectral `i epsilon`. Candidate Gravity remains inactive.
+No complete-QG claim. No physical causal-vertex finiteness/divergence theorem. No universal causal-EPRL/contour no-go theorem. Keep absolute integrability, conditional/PV finite part and source-defined distributional amplitude distinct. No fitted completion or modified published spectral i-epsilon. Candidate Gravity remains inactive.
