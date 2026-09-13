@@ -2,7 +2,7 @@
 Updated: 2026-09-13
 
 ## Authoritative frontier
-Iter459, Iter460, Iter462, Iter463, Iter464 and Iter465 are terminal and consumed. Iter461 remains independently queued on its research branch. Mainline D7-S2 has now qualified the one-dimensional source distributional pairing and a transversal two-factor pullback/order-independence prerequisite. The next dependent layer is the actual correlated/shared-variable or non-transversal contraction object; do not substitute another independent tensor-product test.
+Iter459, Iter460, Iter462, Iter463, Iter464, Iter465 and Iter466 are terminal and consumed. Iter461 remains independently queued on its research branch. Mainline D7-S2 has qualified the one-dimensional source distributional pairing, a transversal two-factor pullback/order-independence prerequisite, and now the exact Eq.(4) group-mediated correlation carrier. The next dependent layer is the source-faithful group-integrated/tangent pushforward that turns the K5 incidence carrier into explicit correlated constraints; do not substitute another independent tensor-product test.
 
 ## Global lock
 - RQIR Core v1.0 remains FROZEN.
@@ -22,8 +22,9 @@ Iter459, Iter460, Iter462, Iter463, Iter464 and Iter465 are terminal and consume
 - Iter459 run `34746472976`, artifact `10313863332`, digest `sha256:f54e6e4ee1b787f17b7bab924409611297ce06ac73a005e308be3d1613a9aa8d`: universal Plemelj kernel qualified on frozen Schwartz lanes only.
 - Iter460 run `34748501676`, artifact `10314837771`, digest `sha256:ce4f1a8a18c6c8282dad4a7f424f322e0e5133c926dfb327ce0c68f7f34163d0`: actual source `P11*d_source` is non-Schwartz with growing oscillatory/polynomial envelope on the frozen panel; no divergence theorem follows.
 - Iter463 run `34748737283`, aggregate job `103701422450`, artifact `10315131796`, digest `sha256:1fdd4f0258795fa23d9c2625035f31aca7bdd5634ddafa0a3a134330d34450da`: source leading oscillatory powers/phases qualified scoped.
-- Iter464 run `34750582787`, aggregate job `103706358448`, artifact `10316110295`, digest `sha256:d628fbf9cf259cb6522d6d73d12d5e7a3ab3fd2c2d5c242be9cb35f2f559585d`: `ITER464_SOURCE_P11_D_DISTRIBUTIONAL_PAIRING_QUALIFIED_SCOPED`, 6/6 lanes and 24/24 frozen records PASS. This qualifies only the one-dimensional source-specific spectral pairing under the published Feynman prescription.
-- Iter465 prereg `9b968ec425b857cc94fb320eb2ebe6cf2f89ffbe`, implementation `bf37d728a4f2e140b3aa0425ac937d6e0d36d2f9`, head `bbdeeb86a9ffb228eed2c1e536734264ee32512c`, run `34753163940`, aggregate job `103713030609`, artifact `10316632559`, digest `sha256:40b9b41a6eb238f0eb14c68521ed45bb7d25a3394c8f59a9d9ec7432c88a918b`: `ITER465_SOURCE_TWOFACTOR_TRANSVERSAL_PULLBACK_ORDER_INDEPENDENCE_QUALIFIED_SCOPED`. All 6 lanes PASS. Canonical selector, transformed common-pole/Jacobian value, and both sequential Schur-complement resolutions agree to ~1e-81 or exactly; wrong-sign, wrong-Jacobian and singular-normal controls pass. This is only a transversal two-factor prerequisite and does not close D7-S2.
+- Iter464 run `34750582787`, aggregate job `103706358448`, artifact `10316110295`, digest `sha256:d628fbf9cf259cb6522d6d73d12d5e7a3ab3fd2c2d5c242be9cb35f2f559585d`: `ITER464_SOURCE_P11_D_DISTRIBUTIONAL_PAIRING_QUALIFIED_SCOPED`, 6/6 lanes and 24/24 frozen records PASS. One-dimensional source-specific spectral pairing only.
+- Iter465 prereg `9b968ec425b857cc94fb320eb2ebe6cf2f89ffbe`, implementation `bf37d728a4f2e140b3aa0425ac937d6e0d36d2f9`, head `bbdeeb86a9ffb228eed2c1e536734264ee32512c`, run `34753163940`, aggregate job `103713030609`, artifact `10316632559`, digest `sha256:40b9b41a6eb238f0eb14c68521ed45bb7d25a3394c8f59a9d9ec7432c88a918b`: `ITER465_SOURCE_TWOFACTOR_TRANSVERSAL_PULLBACK_ORDER_INDEPENDENCE_QUALIFIED_SCOPED`. Transversal prerequisite only.
+- Iter466 prereg `438bf5e19981761f2e753bda635802fca1e8e5a3`, implementation `a95d7e5eaeb5a3a228c41e0e87f92c6c0e67fbe0`, head `9f52d3d38b7b8f8fa77182802321cff1acc71178`, run `34761134425`, aggregate job `103734079105`, artifact `10318549431`, digest `sha256:bec33a3eb420d20461ac44f9b8fa132892ded35b598703e8dc79f53e4fb36edb`: `ITER466_EQ4_GROUP_MEDIATED_SPECTRAL_CORRELATION_CARRIER_PINNED_SCOPED`. Five gauge-root lanes all qualified; exact K5 reduced-incidence rank `4`, nullity `6` for every root. This pins the topology/correlation carrier only; it is not a distributional pushforward or convergence theorem and does not close D7-S2.
 
 ## Active independent work
 ### Iter461 — exact K5 collision partitions
@@ -35,20 +36,21 @@ Iter459, Iter460, Iter462, Iter463, Iter464 and Iter465 are terminal and consume
 
 ## Current blockers
 ### D7-S2
-The remaining missing object is no longer an independent-factor pullback. It is the **source-faithful correlated/shared-variable or non-transversal distributional contraction** arising from the actual causal-vertex topology. Iter453 qualifies the finite Eq.(4)/(5)/(6) contraction topology only with deterministic synthetic tensors; Iter457 qualifies a scoped exact Eq.(7) Toller magnetic reconstruction. A new D7-S2 gate must first pin an actual shared spectral-variable contraction from these source-defined ingredients before numerical or distributional classification. Until that object is explicitly pinned, this next gate is BLOCKED at object-definition level rather than numerically failed.
+Iter466 removes the earlier object-definition ambiguity at the carrier-topology level: the ten wedge-local channels are coupled through the K5 vertex-difference incidence structure, with four independent constraints and six cycle directions. The remaining missing object is now more specific: a source-faithful group-integrated or controlled tangent pushforward that derives the actual correlated constraint/Jacobian structure from the Eq.(4) group arguments and validated spectral ingredients. Until that pushforward is explicitly qualified, the non-transversal distributional product remains `BLOCKED_OBJECT_DEFINITION`, not scientific FAIL.
 
 ### D7-S3 / D7-S4
 Iter462 found no positive closure artifact for six of seven unresolved tracked gate names and one explicit negative comparator/transport candidate. Do not invent missing transport/closure maps.
 
 ## Exact next permitted decisions
 1. Consume Iter461 immediately if/when terminal.
-2. For D7-S2, derive and pin a source-faithful correlated/shared-variable contraction object from the actual Eq.(4)/(5)/(6) topology plus validated Eq.(7)/spectral ingredients. Only after the object is explicit may a prospective shared-variable/non-transversal distribution gate be registered.
-3. Do not launch a third transversal tensor-product or denser one-dimensional quadrature gate.
-4. D7 terminal classifier and all four terminal labels remain forbidden until S2-S4 are formally closed.
+2. For D7-S2, prospectively test an exact source-faithful group-difference/tangent pushforward prerequisite: conservation map, root/tree/permutation invariance and Jacobian/unimodularity controls. Keep it explicitly scoped away from the full nonlinear SL(2,C) causal vertex.
+3. Only after that prerequisite may a non-transversal/shared-variable distributional gate be registered.
+4. Do not launch a third transversal tensor-product or denser one-dimensional quadrature gate.
+5. D7 terminal classifier and all four terminal labels remain forbidden until S2-S4 are formally closed.
 
 ## Working progress rubric
-D2 82%, D4 68%, D7 59%, integrated path 70%.
-This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. Relative to the preceding frontier, +1 pp D7 and +1 pp integrated are credited only to terminal Iter465 qualification of the two-factor transversal pullback/order prerequisite. D7-S2 remains open because the source-faithful correlated/shared-variable contraction object is not yet pinned.
+D2 82%, D4 68%, D7 60%, integrated path 71%.
+This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. Relative to the preceding frontier, +1 pp D7 and +1 pp integrated are credited to terminal Iter466 because it materially narrows D7-S2 from an ambiguous correlated-object blocker to a pinned K5 incidence/cycle carrier. No D7-S2 closure credit is claimed.
 
 ## Claim guards
 No complete-QG claim. No physical causal-vertex finiteness/divergence theorem. No universal causal-EPRL/contour no-go theorem. Keep absolute integrability, conditional/PV finite part and source-defined distributional amplitude distinct. No fitted completion or modified published spectral i-epsilon. Candidate Gravity remains inactive.
