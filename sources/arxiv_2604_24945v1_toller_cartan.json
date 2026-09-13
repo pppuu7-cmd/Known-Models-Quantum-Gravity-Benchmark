@@ -1,0 +1,22 @@
+{
+  "source_id": "arXiv:2604.24945v1",
+  "title": "Toller matrices and the Feynman i epsilon in spinfoams",
+  "authors": ["Eugenio Bianchi", "Chaosong Chen", "Mauricio Gamonal"],
+  "submitted_utc": "2026-04-27T19:40:07Z",
+  "immutable_url": "https://arxiv.org/html/2604.24945v1",
+  "source_scope": "Structured source lock for Iter484 one-edge Cartan/Toller reconstruction only.",
+  "eq2_cartan": "g = U1 exp(-i beta Kz) U2, U1,U2 in SU(2), beta>=0, Kz=(i/2) sigma_z",
+  "eq13_toller_cartan": "T^(+/-;rho,k)_{jp,ln}(g) = sum_m D^(j)_{pm}(U1) t^(+/-;rho,k)_{jlm}(beta) D^(l)_{mn}(U2)",
+  "eq14_nonrepresentation": "T(g1 g2) is not equal in general to the matrix product T(g1)T(g2)",
+  "eq15_additive": "T^(+,rho,k)(g)+T^(-,rho,k)(g)=D^(rho,k)(g)",
+  "gamma_simple_scope": "k=j=l and rho=gamma*j",
+  "reduced_object_authority": "Iter456 already qualifies the source-published Ruhl-phase reduced t functions for k=j=l=1, m=-1,0,+1; Iter484 must reuse that implementation rather than refit it.",
+  "scope_guards": {
+    "no_group_representation_assumption_for_T": true,
+    "no_polar_factor_substitution_for_source_KAK": true,
+    "no_haar_convergence_claim": true,
+    "no_full_vertex_claim": true,
+    "no_D7_S2_closure": true,
+    "candidate_gravity_inactive": true
+  }
+}
