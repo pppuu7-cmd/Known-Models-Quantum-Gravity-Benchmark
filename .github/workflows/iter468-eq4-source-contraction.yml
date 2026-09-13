@@ -1,0 +1,66 @@
+name: iter468-eq4-source-contraction
+on:
+  push:
+    branches:
+      - research/iter468-eq4-source-contraction-object
+  workflow_dispatch:
+
+jobs:
+  audit:
+    strategy:
+      fail-fast: false
+      matrix:
+        stream: [A, B, C, D]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run frozen Iter468 stream
+        run: |
+          mkdir -p artifacts
+          python code/iter468_eq4_source_contraction.py --stream ${{ matrix.stream }} --out artifacts/iter468-${{ matrix.stream }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter468-${{ matrix.stream }}
+          path: artifacts/iter468-${{ matrix.stream }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: audit
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter468-*
+          path: collected
+          merge-multiple: true
+      - name: Frozen aggregate classification
+        run: |
+          python - <<'PY'
+          import glob,json,sys,hashlib
+          fs=sorted(glob.glob('collected/iter468-*.json'))
+          rows=[json.load(open(f)) for f in fs]
+          streams=sorted(r.get('stream') for r in rows)
+          ok=(streams==['A','B','C','D'] and all(r.get('pass') is True for r in rows))
+          out={
+            'gate':'ITER468_EQ4_SOURCE_SPECTRAL_GROUP_CONTRACTION_OBJECT_PINNED_SCOPED',
+            'streams':streams,
+            'stream_pass':{r['stream']:r['pass'] for r in rows},
+            'scientific_pass':ok,
+            'scope':'formal source substitution/contraction object only; no convergence, distributional product, or D7-S2 closure'
+          }
+          raw=json.dumps(out,sort_keys=True,indent=2).encode()
+          open('iter468-aggregate.json','wb').write(raw)
+          print(raw.decode())
+          print('sha256='+hashlib.sha256(raw).hexdigest())
+          sys.exit(0 if ok else 3)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter468-aggregate
+          path: iter468-aggregate.json
+          if-no-files-found: error
