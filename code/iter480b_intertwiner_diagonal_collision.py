@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import itertools, json, pathlib
+import itertools, json, pathlib, os
 import mpmath as mp
 import numpy as np
 from sympy.physics.wigner import wigner_3j
@@ -72,7 +72,6 @@ def build_path(tensors):
 
 
 def reindexed_tensors(tensors):
-    # pure m -> -m relabel on every incident axis
     return [T[::-1,::-1,::-1,::-1].copy() for T in tensors]
 
 
@@ -116,34 +115,35 @@ def evaluate_panel(gamma, name, sig, tensors, path):
 
 
 def main():
+    gamma=int(os.environ.get('ITER480B_GAMMA','7'))
+    name=os.environ.get('ITER480B_CLASS','0to5')
+    if gamma not in GAMMAS or name not in SIGMAS:
+        raise SystemExit('invalid frozen lane')
     tensors=[intertwiner(i) for i in range(3)]
     support_ok, gram_res, intertwiner_ok=controls(tensors)
     path=build_path(tensors)
-    panels=[]
-    for gamma in GAMMAS:
-        for name,sig in SIGMAS.items():
-            panels.append(evaluate_panel(gamma,name,sig,tensors,path))
+    panel=evaluate_panel(gamma,name,SIGMAS[name],tensors,path)
     checks={
         'eq90_intertwiner_support_norm_orthogonality': intertwiner_ok,
-        'all_scales_finite_positive': all(p['scale_finite_positive'] for p in panels),
-        'nonzero_witness_every_panel': all(p['witness_exists'] for p in panels),
-        'reindex_control_all_panels': all(p['reindex_control_pass'] for p in panels),
-        'zero_vector_negative_all_panels': all(p['zero_vector_negative_pass'] for p in panels),
+        'scale_finite_positive': panel['scale_finite_positive'],
+        'nonzero_witness': panel['witness_exists'],
+        'reindex_control': panel['reindex_control_pass'],
+        'zero_vector_negative': panel['zero_vector_negative_pass'],
     }
     ok=all(checks.values())
     out={
-        'iteration':'480B',
+        'iteration':'480B','lane':f'g{gamma}-{name}',
         'classification':'ITER480B_SOURCE_INTERTWINER_CONTRACTION_NONZERO_WITNESS_SCOPED' if ok else 'FAIL_ITER480B_SOURCE_INTERTWINER_CONTRACTION',
-        'scientific_pass':ok,
-        'checks':checks,
+        'scientific_pass':ok,'checks':checks,
         'intertwiner_gram_max_residual':gram_res,
         'dimensionless_nonzero_threshold':ZERO_RATIO_THRESHOLD,
-        'panels':panels,
+        'panel':panel,
         'scope':'j=1 equal-spin diagonal-collision boundary-intertwiner contraction only; no angular U matrices, Haar/group integration, spectral integration, Jacobian or full K5 collision conclusion',
         'd7_s2':'NOT_CLOSED','d7_s3':'NOT_CLOSED','d7_s4':'PARTIAL_GLOBAL_NOT_CLOSED'
     }
     pathlib.Path('artifacts').mkdir(exist_ok=True)
-    pathlib.Path('artifacts/iter480b-summary.json').write_text(json.dumps(out,indent=2)+'\n')
+    fn=f'artifacts/iter480b-g{gamma}-{name}.json'
+    pathlib.Path(fn).write_text(json.dumps(out,indent=2)+'\n')
     print(json.dumps(out,indent=2))
     raise SystemExit(0 if ok else 2)
 
