@@ -1,0 +1,18 @@
+name: iter462-d7-evidence-audit
+on:
+  push:
+    branches: [research/iter462-d7-s3-s4-evidence-audit]
+  workflow_dispatch:
+jobs:
+  scientific:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python code/lqg_iter462_d7_s3_s4_evidence_audit.py --out iter462_summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter462-summary
+          path: iter462_summary.json
