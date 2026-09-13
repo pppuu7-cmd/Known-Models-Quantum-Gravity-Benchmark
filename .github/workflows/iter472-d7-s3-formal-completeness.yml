@@ -1,0 +1,18 @@
+name: iter472-d7-s3-formal-completeness
+on:
+  push:
+    branches: [research/iter472-d7-s3-formal-completeness]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python code/iter472_d7_s3_formal_completeness.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter472-summary
+          path: artifacts/iter472-summary.json
