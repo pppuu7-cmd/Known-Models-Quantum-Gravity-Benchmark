@@ -1,0 +1,62 @@
+name: iter459-toller-plemelj-distributional-boundary
+on:
+  push:
+    paths:
+      - 'code/iter459_toller_plemelj_distributional_boundary.py'
+      - '.github/workflows/iter459-toller-plemelj-distributional-boundary.yml'
+  workflow_dispatch:
+
+jobs:
+  lane:
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        lane: [R035_G0, R035_G1, R035_G2, R160_G0, R160_G1, R160_G2]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy scipy
+      - name: Frozen Iter459 lane audit
+        run: |
+          mkdir -p artifacts
+          python code/iter459_toller_plemelj_distributional_boundary.py --lane ${{ matrix.lane }} --out artifacts/${{ matrix.lane }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter459-${{ matrix.lane }}
+          path: artifacts/${{ matrix.lane }}.json
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter459-*
+          path: raw
+          merge-multiple: true
+      - name: Frozen Iter459 aggregate
+        run: |
+          python - <<'PY'
+          import glob,json,os
+          files=sorted(glob.glob('raw/*.json'))
+          rec=[json.load(open(f)) for f in files]
+          valid=len(rec)==6 and all(x.get('valid') for x in rec)
+          passed=valid and all(x.get('pass') for x in rec)
+          cls=('ITER459_TOLLER_PLEMELJ_DISTRIBUTIONAL_KERNEL_QUALIFIED_SCOPED' if passed else
+               'SCIENTIFIC_FAIL_ITER459_TOLLER_PLEMELJ_DISTRIBUTIONAL_PANEL' if valid else
+               'INFRASTRUCTURE_OR_NUMERICAL_FAIL')
+          summary={'n_artifacts':len(rec),'valid_lanes':sum(bool(x.get('valid')) for x in rec),
+                   'pass_lanes':sum(bool(x.get('pass')) for x in rec),'classification':cls,'lanes':rec}
+          os.makedirs('summary',exist_ok=True)
+          json.dump(summary,open('summary/iter459_summary.json','w'),indent=2)
+          print(json.dumps(summary,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter459-summary
+          path: summary/iter459_summary.json
