@@ -1,0 +1,58 @@
+name: iter458-toller-feynman-iepsilon-noncompact-pilot
+on:
+  push:
+    paths:
+      - 'code/iter458_toller_feynman_iepsilon_noncompact_pilot.py'
+      - '.github/workflows/iter458-toller-feynman-iepsilon-noncompact-pilot.yml'
+  workflow_dispatch:
+
+jobs:
+  lane:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        lane: [L0, L1, L2, L3]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - name: Frozen Iter458 lane audit
+        run: |
+          mkdir -p artifacts
+          python code/iter458_toller_feynman_iepsilon_noncompact_pilot.py --lane ${{ matrix.lane }} --out artifacts/${{ matrix.lane }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter458-${{ matrix.lane }}
+          path: artifacts/${{ matrix.lane }}.json
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter458-*
+          path: raw
+          merge-multiple: true
+      - name: Frozen aggregate
+        run: |
+          python - <<'PY'
+          import glob,json,os
+          files=sorted(glob.glob('raw/*.json')); rec=[json.load(open(f)) for f in files]
+          valid=len(rec)==4 and all(x.get('valid') for x in rec)
+          passed=valid and all(x.get('pass') for x in rec)
+          cls=('ITER458_TOLLER_FEYNMAN_IEPSILON_ORDINARY_TRUNCATION_SUPPORTED_SCOPED' if passed else
+               'SCIENTIFIC_FAIL_ITER458_TOLLER_FEYNMAN_IEPSILON_ORDINARY_TRUNCATION' if valid else
+               'INFRASTRUCTURE_OR_NUMERICAL_FAIL')
+          summary={'n_artifacts':len(rec),'valid_lanes':sum(bool(x.get('valid')) for x in rec),'pass_lanes':sum(bool(x.get('pass')) for x in rec),'classification':cls,'lanes':rec}
+          os.makedirs('summary',exist_ok=True); json.dump(summary,open('summary/iter458_summary.json','w'),indent=2); print(json.dumps(summary,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter458-summary
+          path: summary/iter458_summary.json
