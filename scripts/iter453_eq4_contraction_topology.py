@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, json, math
+import argparse, json
 from pathlib import Path
 import numpy as np
 
@@ -38,15 +38,13 @@ def vertex_label(v,n):
 
 
 def contract(edge_tensors, vertex_tensors, vertex_orders=None, optimize='greedy'):
-    operands = []
-    subs = []
+    operands, subs = [], []
     for e in EDGES:
         operands.append(edge_tensors[e]); subs.append(edge_label_pair(e))
     for v in VERTICES:
         order = vertex_neighbors(v) if vertex_orders is None else tuple(vertex_orders[v])
         operands.append(vertex_tensors[v]); subs.append(''.join(vertex_label(v,n) for n in order))
-    expr = ','.join(subs) + '->'
-    return np.einsum(expr, *operands, optimize=optimize)
+    return np.einsum(','.join(subs) + '->', *operands, optimize=optimize)
 
 
 def normalized_complex(rng, shape):
@@ -84,9 +82,9 @@ def lane(seed):
 
     counts = {c:0 for c in LETTERS}
     for e in EDGES:
-        for c in edge_label_pair(e): counts[c]+=1
+        for c in edge_label_pair(e): counts[c] += 1
     for v in VERTICES:
-        for n in vertex_neighbors(v): counts[vertex_label(v,n)]+=1
+        for n in vertex_neighbors(v): counts[vertex_label(v,n)] += 1
     incidence_exact = all(counts[c] == 2 for c in LETTERS)
 
     aD = complex(contract(dmat, verts, optimize='greedy'))
@@ -95,14 +93,12 @@ def lane(seed):
 
     branch_sum = 0j
     for mask in range(1<<len(EDGES)):
-        chosen = {}
-        for i,e in enumerate(EDGES): chosen[e] = tplus[e] if ((mask>>i)&1) else tminus[e]
+        chosen = {e:(tplus[e] if ((mask>>i)&1) else tminus[e]) for i,e in enumerate(EDGES)}
         branch_sum += complex(contract(chosen, verts, optimize='greedy'))
     eq6_rel = relerr(branch_sum,aD)
     eq6_abs = float(abs(branch_sum-aD))
     eq6_abs_lim = 5e-11*(1.0+abs(aD))
 
-    # Frozen nontrivial S5 relabeling derived from seed, with rejection of identity.
     p = np.arange(5); rng.shuffle(p)
     if np.all(p == np.arange(5)): p = np.array([1,2,3,4,0])
     perm = {i:int(p[i]) for i in VERTICES}
@@ -110,7 +106,6 @@ def lane(seed):
     aperm = complex(contract(pe,pv,optimize='greedy'))
     perm_rel = relerr(aperm,aD)
 
-    # Reorder each intertwiner's legs while supplying the matching leg-order metadata.
     rv, orders = {}, {}
     for v in VERTICES:
         canon = list(vertex_neighbors(v))
@@ -120,27 +115,25 @@ def lane(seed):
     areorder = complex(contract(dmat,rv,vertex_orders=orders,optimize='greedy'))
     reorder_rel = relerr(areorder,aD)
 
-    # Negative incidence control: transpose one non-symmetric wedge without compensating at vertices.
     bad_edges = {e:x.copy() for e,x in dmat.items()}
-    bad_edge = EDGES[0]
-    bad_edges[bad_edge] = bad_edges[bad_edge].T.copy()
+    bad_edges[EDGES[0]] = bad_edges[EDGES[0]].T.copy()
     abad = complex(contract(bad_edges,verts,optimize='greedy'))
     bad_incidence_delta = relerr(abad,aD)
 
-    # Negative Eq.(5) control: perturb one D entry, leaving branch tensors untouched.
     bad_d = {e:x.copy() for e,x in dmat.items()}
     bad_d[EDGES[1]][0,0] += 1e-3*(1+0.5j)
     abadD = complex(contract(bad_d,verts,optimize='greedy'))
     bad_eq5_delta = relerr(abadD,branch_sum)
 
-    # Independently assembled contraction path: reverse operand ordering and use optimal path search.
-    # Reversal leaves labels attached to tensors, so the scalar must be unchanged.
-    operands=[]; subs=[]
+    # Independently assemble the same network with operands reversed. Greedy path search is bounded and
+    # deterministic; the independent operand ordering changes the contraction path without an exponential
+    # optimal-path search.
+    operands, subs = [], []
     for v in reversed(VERTICES):
         operands.append(verts[v]); subs.append(''.join(vertex_label(v,n) for n in vertex_neighbors(v)))
     for e in reversed(EDGES):
         operands.append(dmat[e]); subs.append(edge_label_pair(e))
-    a2 = complex(np.einsum(','.join(subs)+'->',*operands,optimize='optimal'))
+    a2 = complex(np.einsum(','.join(subs)+'->',*operands,optimize='greedy'))
     repeat_rel = relerr(a2,aD)
 
     checks = {
@@ -154,17 +147,12 @@ def lane(seed):
       'precision_repeatability': repeat_rel <= 5e-11,
     }
     return {
-      'iteration':453,'seed':seed,'source_id':'arXiv:2601.23162v1',
-      'checks':checks,'qualified':all(checks.values()),
-      'metrics':{
-        'eq5_max_abs_residual':eq5_res,'eq6_relative_residual':eq6_rel,'eq6_absolute_residual':eq6_abs,
-        'eq6_absolute_limit':eq6_abs_lim,'permutation_relative_residual':perm_rel,
-        'leg_order_relative_residual':reorder_rel,'negative_incidence_relative_delta':bad_incidence_delta,
-        'negative_eq5_relative_delta':bad_eq5_delta,'repeat_relative_residual':repeat_rel,
-        'A_D_abs':float(abs(aD)),'branch_sum_abs':float(abs(branch_sum))
-      },
-      'scope_guard':'Finite deterministic Eq.(4) contraction-topology qualification only; no physical Toller-integral finiteness or D7-S2 closure.'
-    }
+      'iteration':453,'seed':seed,'source_id':'arXiv:2601.23162v1','checks':checks,'qualified':all(checks.values()),
+      'metrics':{'eq5_max_abs_residual':eq5_res,'eq6_relative_residual':eq6_rel,'eq6_absolute_residual':eq6_abs,
+        'eq6_absolute_limit':eq6_abs_lim,'permutation_relative_residual':perm_rel,'leg_order_relative_residual':reorder_rel,
+        'negative_incidence_relative_delta':bad_incidence_delta,'negative_eq5_relative_delta':bad_eq5_delta,
+        'repeat_relative_residual':repeat_rel,'A_D_abs':float(abs(aD)),'branch_sum_abs':float(abs(branch_sum))},
+      'scope_guard':'Finite deterministic Eq.(4) contraction-topology qualification only; no physical Toller-integral finiteness or D7-S2 closure.'}
 
 
 def aggregate(paths):
@@ -172,12 +160,10 @@ def aggregate(paths):
     valid = len(lanes)==4 and sorted(x['seed'] for x in lanes)==[17,29,43,71]
     q = sum(bool(x.get('qualified')) for x in lanes)
     passed = valid and q==4 and all(x.get('source_id')=='arXiv:2601.23162v1' for x in lanes)
-    return {
-      'iteration':453,'lane_count':len(lanes),'qualified_lanes':q,'structurally_valid':valid,
+    return {'iteration':453,'lane_count':len(lanes),'qualified_lanes':q,'structurally_valid':valid,
       'classification':'ITER453_EQ4_MAGNETIC_INTERTWINER_CONTRACTION_TOPOLOGY_QUALIFIED' if passed else 'ITER453_EQ4_CONTRACTION_TOPOLOGY_QUALIFICATION_FAIL',
       'lanes':sorted(lanes,key=lambda x:x['seed']),
-      'scope_guard':'PASS is executable finite-panel topology/algebra qualification only; no convergence/finiteness/D7 terminal claim.'
-    }
+      'scope_guard':'PASS is executable finite-panel topology/algebra qualification only; no convergence/finiteness/D7 terminal claim.'}
 
 
 def main():
