@@ -1,0 +1,35 @@
+{
+  "iteration": 483,
+  "recorded": "2026-09-14",
+  "classification": "ITER483_COMMON_NODE_SL2C_POLAR_GEOMETRY_QUALIFIED_SCOPED",
+  "authority": {
+    "preregistration": "a745b14adc9e554e77c51eb5572fb34879990747",
+    "implementation": "9a2eb176f87124f0f87481b25f03202da522d89f",
+    "workflow": "cc1ffe237953728aa61d953c0a928cac3efaa09e",
+    "authoritative_retry_head": "9eb185779ab316591bb6383923182c0b4472883d",
+    "run": 34782171609,
+    "aggregate_job": 103791079718,
+    "aggregate_artifact": 10325219145,
+    "aggregate_digest": "sha256:4839a846ae235b3d5992e20739a94f35ed1d785e141a44c9432b1149483ed2b0"
+  },
+  "scientific_result": {
+    "expected_lanes": 8,
+    "consumed_lanes": 8,
+    "all_lane_scientific_pass": true,
+    "scope": "shared-node SL2C kinematic/polar prerequisite only"
+  },
+  "gate_state": {
+    "D7_S2": "NOT_CLOSED",
+    "D7_S3": "NOT_CLOSED",
+    "D7_S4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "terminal_D7_classifier": "FORBIDDEN",
+    "candidate_gravity": "INACTIVE"
+  },
+  "next_gate": "SOURCE_FAITHFUL_COMMON_NODE_TOLLER_KAK_MAPPING_PREREGISTRATION",
+  "claim_guards": [
+    "NO_SOURCE_TOLLER_KAK_IDENTIFICATION_FROM_POLAR_PASS",
+    "NO_HAAR_OR_SPECTRAL_CONVERGENCE_CLAIM",
+    "NO_FULL_CAUSAL_VERTEX_CLAIM",
+    "NO_D7_TERMINAL_LABEL"
+  ]
+}
