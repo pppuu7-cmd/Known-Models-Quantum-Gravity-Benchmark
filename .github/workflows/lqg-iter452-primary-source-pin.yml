@@ -1,0 +1,71 @@
+name: lqg-iter452-primary-source-pin
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/lqg-iter452-primary-source-pin.yml'
+      - 'scripts/iter452_primary_source_pin.py'
+      - 'sources/arxiv_2601_23162v1_causal_vertex.json'
+  workflow_dispatch:
+
+jobs:
+  source-pin:
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        lane:
+          - toller_feynman_eq3
+          - causal_vertex_eq4
+          - boundary_domains
+          - eprl_controls_eq5_eq6
+          - cartan_magnetic_eq7
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Frozen source-pin lane
+        run: |
+          mkdir -p out
+          python scripts/iter452_primary_source_pin.py \
+            --lane '${{ matrix.lane }}' \
+            --out 'out/${{ matrix.lane }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter452-${{ matrix.lane }}
+          path: out/${{ matrix.lane }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: source-pin
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter452-*
+          path: lane-artifacts
+          merge-multiple: true
+      - name: Frozen aggregate
+        run: |
+          mkdir -p out
+          python scripts/iter452_primary_source_pin.py \
+            --aggregate \
+              lane-artifacts/toller_feynman_eq3.json \
+              lane-artifacts/causal_vertex_eq4.json \
+              lane-artifacts/boundary_domains.json \
+              lane-artifacts/eprl_controls_eq5_eq6.json \
+              lane-artifacts/cartan_magnetic_eq7.json \
+            --out out/iter452_summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter452-primary-source-pin-summary
+          path: out/iter452_summary.json
+          if-no-files-found: error
