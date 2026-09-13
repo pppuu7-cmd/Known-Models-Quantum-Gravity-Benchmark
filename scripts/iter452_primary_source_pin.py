@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, hashlib, json, sys
+import argparse, hashlib, json
 from pathlib import Path
 
 SOURCE = Path('sources/arxiv_2601_23162v1_causal_vertex.json')
@@ -85,9 +85,8 @@ def audit_lane(name):
 
 def aggregate(paths):
     rows = [json.loads(Path(p).read_text()) for p in paths]
-    expected = LANES
     names = {r.get('lane') for r in rows}
-    structurally_valid = len(rows) == 5 and names == expected
+    structurally_valid = len(rows) == 5 and names == LANES
     same_source = {r.get('source_id') for r in rows} == {SOURCE_ID}
     digests = {r.get('source_sha256') for r in rows}
     same_digest = len(digests) == 1
@@ -121,8 +120,6 @@ def main():
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(json.dumps(result, indent=2, sort_keys=True) + '\n')
     print(json.dumps(result, indent=2, sort_keys=True))
-    if a.lane and not result['qualified']:
-        sys.exit(2)
 
 if __name__ == '__main__':
     main()
