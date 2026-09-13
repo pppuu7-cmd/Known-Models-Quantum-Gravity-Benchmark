@@ -1,0 +1,102 @@
+name: iter484-source-toller-kak-one-edge
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'code/iter484_source_toller_kak_one_edge.py'
+      - 'code/iter484_aggregate.py'
+      - 'recovery/ITER484_PREREG_SOURCE_TOLLER_KAK_ONE_EDGE_2026-09-14.md'
+      - 'sources/arxiv_2604_24945v1_toller_cartan.json'
+      - '.github/workflows/iter484-source-toller-kak-one-edge.yml'
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen source/prereg authority
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          s=json.loads(pathlib.Path('sources/arxiv_2604_24945v1_toller_cartan.json').read_text())
+          p=pathlib.Path('recovery/ITER484_PREREG_SOURCE_TOLLER_KAK_ONE_EDGE_2026-09-14.md').read_text()
+          assert s['source_id']=='arXiv:2604.24945v1'
+          assert 'T^(+/-;rho,k)' in s['eq13_toller_cartan']
+          assert 'not equal in general' in s['eq14_nonrepresentation']
+          assert 'FROZEN BEFORE IMPLEMENTATION/PRODUCTION' in p
+          assert 'code/iter456_reduced_toller_appendixb.py' in p
+          print('SOURCE_LOCK_PASS')
+          PY
+
+  lane:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        panel: [A, B, C, D]
+        regime: [mild, strong]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deterministic dependencies
+        run: python -m pip install --disable-pip-version-check numpy==2.3.3 mpmath==1.3.0
+      - name: Run frozen scientific lane
+        shell: bash
+        run: |
+          mkdir -p artifacts
+          set +e
+          python code/iter484_source_toller_kak_one_edge.py \
+            --panel '${{ matrix.panel }}' \
+            --regime '${{ matrix.regime }}' \
+            --out 'artifacts/iter484-${{ matrix.panel }}-${{ matrix.regime }}.json'
+          rc=$?
+          echo "$rc" > 'artifacts/iter484-${{ matrix.panel }}-${{ matrix.regime }}.exit.txt'
+          # Scientific FAIL/BLOCKED is preserved in JSON and aggregated later.
+          exit 0
+      - name: Upload raw lane artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter484-${{ matrix.panel }}-${{ matrix.regime }}
+          path: artifacts/iter484-${{ matrix.panel }}-${{ matrix.regime }}.*
+          if-no-files-found: error
+
+  aggregate:
+    if: always()
+    needs: [source-lock, lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all raw lane artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: iter484-*
+          path: artifacts
+          merge-multiple: true
+      - name: Aggregate frozen verdict
+        run: python code/iter484_aggregate.py
+      - name: Upload aggregate artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter484-summary
+          path: artifacts/iter484-summary.json
+          if-no-files-found: error
+      - name: Enforce source-lock infrastructure status
+        if: needs.source-lock.result != 'success'
+        run: |
+          echo 'Source-lock job failed; aggregate payload remains available but workflow is not authoritative.'
+          exit 1
