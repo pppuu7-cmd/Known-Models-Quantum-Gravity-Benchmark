@@ -1,0 +1,18 @@
+name: iter478-lqg-s3-minimal-bridge-map
+on:
+  push:
+    branches: [research/iter478-lqg-s3-minimal-bridge-map]
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python code/iter478_lqg_s3_minimal_bridge_map.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter478-summary
+          path: artifacts/iter478-summary.json
