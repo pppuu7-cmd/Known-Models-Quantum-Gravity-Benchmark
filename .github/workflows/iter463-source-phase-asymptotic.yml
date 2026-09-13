@@ -1,0 +1,72 @@
+name: iter463-source-phase-asymptotic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'benchmarks/lqg_iter463_source_phase_asymptotic_contract.json'
+      - 'code/lqg_iter463_source_phase_asymptotic.py'
+      - '.github/workflows/iter463-source-phase-asymptotic.yml'
+  workflow_dispatch:
+
+jobs:
+  lane:
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        m: ['-1','0','1']
+        beta: ['0.8','2.1']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check numpy
+      - id: science
+        continue-on-error: true
+        run: |
+          mkdir -p out
+          python code/lqg_iter463_source_phase_asymptotic.py --m '${{ matrix.m }}' --beta '${{ matrix.beta }}' --out 'out/iter463_m${{ matrix.m }}_b${{ matrix.beta }}.json'
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter463-m${{ matrix.m }}-b${{ matrix.beta }}
+          path: out/*.json
+          if-no-files-found: error
+
+  aggregate:
+    if: always()
+    needs: [lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter463-*
+          path: raw
+          merge-multiple: true
+      - run: |
+          python - <<'PY'
+          import glob,json,hashlib,os
+          fs=sorted(glob.glob('raw/*.json'))
+          rec=[]
+          for f in fs:
+              with open(f) as h: rec.append(json.load(h))
+          valid=len(rec)==6 and all(x.get('iteration')==463 for x in rec)
+          pass_lanes=sum(bool(x.get('pass')) for x in rec)
+          classification=('ITER463_SOURCE_P11_D_LEADING_OSCILLATORY_ASYMPTOTICS_QUALIFIED_SCOPED'
+                          if valid and pass_lanes==6 else
+                          'SCIENTIFIC_FAIL_ITER463_SOURCE_PHASE_ASYMPTOTIC_MODEL')
+          out={'iteration':463,'valid':valid,'n_lanes':len(rec),'pass_lanes':pass_lanes,'classification':classification,
+               'lanes':rec,
+               'scope':'Leading source-tail powers/phases only; D7-S2 remains open; no physical causal-vertex convergence/divergence theorem; Candidate Gravity inactive.'}
+          os.makedirs('aggregate',exist_ok=True)
+          p='aggregate/iter463_aggregate.json'
+          with open(p,'w') as h: json.dump(out,h,indent=2)
+          print(json.dumps({k:out[k] for k in ('iteration','valid','n_lanes','pass_lanes','classification')},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter463-aggregate
+          path: aggregate/iter463_aggregate.json
