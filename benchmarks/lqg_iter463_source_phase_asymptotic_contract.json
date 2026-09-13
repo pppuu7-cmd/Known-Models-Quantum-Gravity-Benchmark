@@ -1,0 +1,32 @@
+{
+  "iteration": 463,
+  "gate": "SOURCE_P11_D_PHASE_ASYMPTOTIC_CERTIFICATE",
+  "frozen_before_implementation": true,
+  "purpose": "Characterize the source-specific large-|x| leading powers and oscillatory phases of P11(x;rho)*d_source(m,x;beta) after Iter460 showed non-Schwartz growth. This is an asymptotic-structure gate only, not a causal-vertex convergence or divergence theorem.",
+  "source_formula_lock": "Use exactly the d_source and degree-3 P11 polynomial route already exercised by Iter460; no beta+i*epsilon replacement, damping, fitted subtraction, counterterm, contour change, or coefficient fitting is permitted.",
+  "panel": {
+    "m": [-1, 0, 1],
+    "beta": [0.8, 2.1],
+    "rho": [0.35, 1.6],
+    "side": ["positive", "negative"],
+    "radii": [80.0, 160.0, 320.0, 640.0, 1280.0]
+  },
+  "predictions": {
+    "m0": {"leading_power": 1, "leading_phase_channels": ["+beta", "-beta"]},
+    "m_minus1": {"leading_power": 2, "leading_phase_channels": ["+beta"]},
+    "m_plus1": {"leading_power": 2, "leading_phase_channels": ["-beta"]}
+  },
+  "frozen_tests": {
+    "finite_all": true,
+    "p11_route_relative_error_max": 1e-12,
+    "scaled_leading_magnitude_last_ratio_max": 0.15,
+    "dominant_phase_increment_error_max_rad": 0.08,
+    "wrong_power_control_min_ratio": 1.35,
+    "wrong_phase_control_min_mean_increment_error_rad": 0.20
+  },
+  "interpretation": {
+    "pass": "ITER463_SOURCE_P11_D_LEADING_OSCILLATORY_ASYMPTOTICS_QUALIFIED_SCOPED",
+    "fail": "SCIENTIFIC_FAIL_ITER463_SOURCE_PHASE_ASYMPTOTIC_MODEL",
+    "scope": "A PASS qualifies only the tested leading source-tail powers/phases and supports designing a later mathematically justified oscillatory/distributional gate. D7-S2 remains open; no physical causal-vertex finiteness/divergence claim; Candidate Gravity remains inactive."
+  }
+}
