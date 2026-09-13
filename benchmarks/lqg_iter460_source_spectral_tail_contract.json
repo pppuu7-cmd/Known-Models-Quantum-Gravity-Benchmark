@@ -1,0 +1,33 @@
+{
+  "iteration": 460,
+  "title": "Source P11*d spectral-tail asymptotic admissibility audit",
+  "status": "PREREGISTERED_BEFORE_IMPLEMENTATION",
+  "source_parent": "03ddb10c2a11ac26ca4ea59e32e16d38aab9a11e",
+  "panel": {
+    "m": [-1,0,1],
+    "rho": [0.35,1.60],
+    "beta": [0.80,2.10],
+    "radii": [40,80,160,320,640],
+    "window_width": 40.0,
+    "samples_per_window": 4001,
+    "sides": ["positive","negative"]
+  },
+  "object": "F(x)=P11(x,rho)*d_source(m,x,beta), using the source formulas already frozen in Iter458",
+  "checks": {
+    "finite_complete": true,
+    "poly_route_relative_error_max": 1e-12,
+    "tail_power_stability_abs": 0.20,
+    "fit_last_points": [3,4],
+    "report_d_source_and_P11_control_slopes": true
+  },
+  "classification": {
+    "pass": "ITER460_SOURCE_P11_D_TAIL_CHARACTERIZED_SCOPED",
+    "scientific_fail": "SCIENTIFIC_FAIL_ITER460_SOURCE_TAIL_MODEL",
+    "invalid": "INFRASTRUCTURE_OR_NUMERICAL_FAIL"
+  },
+  "claim_locks": [
+    "Polynomial or oscillatory growth is not a proof of physical vertex divergence.",
+    "Tempered growth alone does not authorize naive principal-value composition.",
+    "No D7-S2 closure, no D7 terminal classifier, no Candidate Gravity activation."
+  ]
+}
