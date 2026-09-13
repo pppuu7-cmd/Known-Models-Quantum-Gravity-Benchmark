@@ -1,0 +1,89 @@
+name: iter487-scale-normalized-haar-escape
+
+on:
+  push:
+    paths:
+      - '.github/workflows/iter487-scale-normalized-haar-escape.yml'
+      - 'code/iter487_scale_normalized_haar_escape.py'
+      - 'code/iter487_aggregate.py'
+      - 'recovery/ITER487_PREREG_SCALE_NORMALIZED_HAAR_ESCAPE_2026-09-14.md'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen authorities
+        run: |
+          python - <<'PY'
+          import pathlib
+          pre=pathlib.Path('recovery/ITER487_PREREG_SCALE_NORMALIZED_HAAR_ESCAPE_2026-09-14.md').read_text()
+          assert 'FROZEN BEFORE IMPLEMENTATION/PRODUCTION' in pre
+          assert 'REL' not in ''  # serialization-stable no-op
+          assert 'q_rel' in pre and '1e-6' in pre
+          assert 'actual_slope <= -0.10' in pre
+          assert 'actual_slope >= 0.00' in pre
+          p486=pathlib.Path('results/ITER486_SHARED_NODE_HAAR_ESCAPE_RESULT_2026-09-14.md').read_text()
+          assert 'INFRASTRUCTURE_OR_SOURCE_FAIL_ITER486' in p486
+          p485=pathlib.Path('results/ITER485_SHARED_NODE_TEN_EDGE_TOLLER_MAGNETIC_NETWORK_RESULT_2026-09-14.md').read_text()
+          assert 'ITER485_SHARED_NODE_TEN_EDGE_TOLLER_MAGNETIC_NETWORK_QUALIFIED_SCOPED' in p485
+          PY
+
+  lane:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 24
+      matrix:
+        panel: [A, C]
+        cluster: [1, 2, 3, 4]
+        causal: [0to5, 1to4, 2to3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy
+      - name: Run frozen scientific lane
+        run: |
+          mkdir -p artifacts
+          python code/iter487_scale_normalized_haar_escape.py \
+            --panel '${{ matrix.panel }}' \
+            --cluster '${{ matrix.cluster }}' \
+            --causal '${{ matrix.causal }}' \
+            --out 'artifacts/iter487-${{ matrix.panel }}-s${{ matrix.cluster }}-${{ matrix.causal }}.json'
+      - name: Upload raw lane artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter487-${{ matrix.panel }}-s${{ matrix.cluster }}-${{ matrix.causal }}
+          path: artifacts/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [source-lock, lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all raw lane artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: iter487-*
+          path: raw
+          merge-multiple: false
+      - name: Aggregate frozen verdict
+        run: |
+          mkdir -p aggregate
+          python code/iter487_aggregate.py --root raw --out aggregate/iter487-summary.json
+      - name: Upload aggregate artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter487-summary
+          path: aggregate/iter487-summary.json
+          if-no-files-found: error
