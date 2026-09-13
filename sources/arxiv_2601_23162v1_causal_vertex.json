@@ -1,0 +1,63 @@
+{
+  "source_id": "arXiv:2601.23162v1",
+  "title": "Causal spinfoam vertex for 4d Lorentzian quantum gravity",
+  "authors": ["Eugenio Bianchi", "Chaosong Chen", "Mauricio Gamonal"],
+  "submitted_utc": "2026-01-30T16:45:04Z",
+  "immutable_url": "https://arxiv.org/html/2601.23162v1",
+  "source_scope": "Structured mathematical snapshot of source equations/definitions used only for source-object qualification; not a new physical result.",
+  "eq3_toller_feynman": {
+    "equation": 3,
+    "object": "T^(+/-;rho,k)_{jm,ln}(g)",
+    "definition_type": "Feynman_i_epsilon_spectral_integral",
+    "tilde_rho_domain": "(-infinity,+infinity)",
+    "measure": "d_tilde_rho/(2*pi*i)",
+    "branch_kernel": "(+/-1)/(tilde_rho-rho -/+ i*epsilon), epsilon->0+",
+    "gamma_ratio": "Gamma(-j-i*rho) Gamma(l-i*tilde_rho+1) / [Gamma(-j-i*tilde_rho) Gamma(l-i*rho+1)]",
+    "integrand_representation": "D^(tilde_rho,k)_{jm,ln}(g)"
+  },
+  "eq4_causal_vertex": {
+    "equation": 4,
+    "boundary_basis_amplitude": "<A_v^(sigma_a sigma_b)|Psi_{j_ab,m_ab}>",
+    "group_integrations": ["g_2", "g_3", "g_4", "g_5"],
+    "gauge_fix": "g_1=identity",
+    "wedge_domain": "1<=a<b<=5",
+    "wedge_count": 10,
+    "wedge_factor": "T^(sigma_a sigma_b,gamma*j_ab,j_ab)_{j_ab m_ba,j_ab m_ab}(g_b^{-1} g_a)",
+    "gamma_simple": "(rho,k)=(gamma*j_ab,j_ab)"
+  },
+  "boundary_state": {
+    "basis": "|Psi_{j_ab,i_a}> = sum_{m_ab} (i_a)_{m_ab} |Psi_{j_ab,m_ab}>",
+    "spin_count": 10,
+    "intertwiner_count": 5,
+    "spin_labels": "j_ab",
+    "intertwiner_labels": "i_a",
+    "magnetic_labels": "m_ab",
+    "contraction_relation": "intertwiner coefficients (i_a)_{m_ab} contract the magnetic-number basis amplitude defined in Eq.(4)"
+  },
+  "eq5_additive_control": {
+    "equation": 5,
+    "identity": "T^(+,rho,k)_{jm,ln}(g)+T^(-,rho,k)_{jm,ln}(g)=D^(rho,k)_{jm,ln}(g)"
+  },
+  "eq6_eprl_control": {
+    "equation": 6,
+    "identity": "<A_v^EPRL| = sum_{kappa_ab=+/-1} <A_v^(kappa_ab)|",
+    "sum_scope": "unconstrained independent wedge signs kappa_ab=+/-1",
+    "fixed_wedge_factor": "T^(kappa_ab,gamma*j_ab,j_ab)_{j_ab m_ba,j_ab m_ab}(g_b^{-1} g_a)",
+    "causal_structure_warning": "sum over sigma_a-induced factorized signs is not the same as the unconstrained EPRL wedge-sign sum"
+  },
+  "eq7_cartan_magnetic": {
+    "equation": 7,
+    "cartan": "g=U_1 exp(beta sigma_z/2) U_2 with U_1,U_2 in SU(2)",
+    "decomposition": "T^(+/-;rho,k)_{jm,ln}(g)=sum_p D^(j)_{mp}(U_1) t^(+/-;rho,k)_{jlp}(beta) D^(l)_{pn}(U_2)",
+    "p_domain": "p=-min(j,l),...,min(j,l)",
+    "finite_sum": true
+  },
+  "scope_guards": {
+    "source_pinning_only": true,
+    "no_finiteness_claim": true,
+    "no_terminal_D7": true,
+    "no_candidate_gravity": true,
+    "no_modified_i_epsilon": true,
+    "no_fitted_completion": true
+  }
+}
