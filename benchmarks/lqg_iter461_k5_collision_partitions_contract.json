@@ -1,0 +1,39 @@
+{
+  "iteration": 461,
+  "title": "Exact K5 collision partition and naive local power thresholds",
+  "status": "PREREGISTERED_BEFORE_IMPLEMENTATION",
+  "source_parent": "03ddb10c2a11ac26ca4ea59e32e16d38aab9a11e",
+  "n_vertices": 5,
+  "expected": {
+    "bell_total": 52,
+    "nontrivial_partitions": 51,
+    "collision_types": 6,
+    "type_multiplicities": {
+      "2+1+1+1": 10,
+      "2+2+1": 15,
+      "3+1+1": 10,
+      "3+2": 10,
+      "4+1": 5,
+      "5": 1
+    }
+  },
+  "per_partition": {
+    "internal_edges": "sum C(block_size,2)",
+    "cross_edges": "10-internal_edges",
+    "relative_vectors": "sum(block_size-1)",
+    "local_dimension": "3*relative_vectors",
+    "critical_pair_power": "local_dimension/internal_edges",
+    "naive_margin": "local_dimension-p*internal_edges"
+  },
+  "boundary_rule": "margin <= 0 is UNRESOLVED_NEEDS_CORRELATED_COLLISION_BOUND, never a divergence declaration",
+  "classification": {
+    "pass": "ITER461_EXACT_K5_COLLISION_PARTITION_THRESHOLDS_QUALIFIED_SCOPED",
+    "fail": "SCIENTIFIC_FAIL_ITER461_K5_PARTITION_ENUMERATION",
+    "invalid": "INFRASTRUCTURE_OR_NUMERICAL_FAIL"
+  },
+  "claim_locks": [
+    "Naive pair-power thresholds are prioritization diagnostics, not a correlated collision theorem.",
+    "No physical divergence conclusion from a nonpositive naive margin.",
+    "No D7-S2 closure, no D7 terminal classifier, no Candidate Gravity activation."
+  ]
+}
