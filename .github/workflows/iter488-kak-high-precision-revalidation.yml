@@ -1,0 +1,76 @@
+name: iter488-kak-high-precision-revalidation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/iter488-kak-high-precision-revalidation.yml'
+      - 'code/iter488_kak_high_precision_revalidation.py'
+      - 'code/iter488_aggregate.py'
+      - 'recovery/ITER488_PREREG_KAK_HIGH_PRECISION_REVALIDATION_2026-09-14.md'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen authority
+        run: |
+          python - <<'PY'
+          import pathlib
+          p=pathlib.Path('recovery/ITER488_PREREG_KAK_HIGH_PRECISION_REVALIDATION_2026-09-14.md').read_text()
+          assert 'FROZEN BEFORE IMPLEMENTATION/PRODUCTION' in p
+          assert 'No lowering or reinterpretation of `1e-8` is permitted' in p
+          assert '34789538305' in p and '10327910402' in p
+          PY
+
+  geometry:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        cluster: [2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy
+      - name: Run high-precision validation-only audit
+        run: |
+          mkdir -p artifacts
+          python code/iter488_kak_high_precision_revalidation.py \
+            --cluster '${{ matrix.cluster }}' \
+            --out 'artifacts/iter488-C-s${{ matrix.cluster }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter488-C-s${{ matrix.cluster }}
+          path: artifacts/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [source-lock, geometry]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter488-C-s*
+          path: raw
+          merge-multiple: false
+      - name: Aggregate frozen validation verdict
+        run: |
+          mkdir -p aggregate
+          python code/iter488_aggregate.py --root raw --out aggregate/iter488-summary.json
+      - name: Upload aggregate artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter488-summary
+          path: aggregate/iter488-summary.json
+          if-no-files-found: error
