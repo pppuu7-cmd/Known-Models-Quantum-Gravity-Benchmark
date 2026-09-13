@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/lqg-iter451-primary-source-causal-vertex.yml'
+      - 'scripts/iter451_primary_source_causal_vertex.py'
   workflow_dispatch:
 
 jobs:
