@@ -93,8 +93,8 @@ def evaluate_panel(gamma, name, sig, tensors, path):
     rvecs=[v[::-1].copy() for v in vecs]
     rvals=np.array([contract(ch,rtens,rvecs,path) for ch in channels],dtype=np.complex128)
     sm=np.sort(mags); srm=np.sort(np.abs(rvals))
-    denom=np.maximum(1e-300,np.maximum(sm,srm))
-    reindex_res=float(np.max(np.abs(sm-srm)/denom))
+    multiset_scale=float(max(np.max(sm),np.max(srm),1e-300))
+    reindex_res=float(np.max(np.abs(sm-srm))/multiset_scale)
     reindex_ok=bool(reindex_res<REINDEX_RTOL)
 
     zeros=[np.zeros(3,dtype=np.complex128) for _ in range(10)]
