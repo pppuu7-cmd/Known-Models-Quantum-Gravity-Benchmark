@@ -30,7 +30,7 @@ def audit(lane, text, digest):
         checks={
           'eq4_vertex_definition': has_all(text,[r'vertex amplitude',r'Toller',r'g\s*b\s*-?1\s*g\s*a|g b - 1 g a|g b − 1 g a',r'Eq\.?\s*\(?4\)?|\(4\) defines the vertex']),
           'gamma_simple': has_all(text,[r'gamma.?simple',r'ρ\s*,\s*k|rho\s*,\s*k',r'γ\s*j|gamma\s*j']),
-          'five_edges': bool(re.search(r'a\s*=\s*1\s*,?\s*…?\s*,?\s*5|a=1,\s*\.\.\.,?5|a=1,\ldots,5',text,re.I)),
+          'five_edges': bool(re.search(r'a\s*=\s*1\s*,?\s*…?\s*,?\s*5|a=1,\s*\.\.\.,?5',text,re.I)),
           'wedge_range': bool(re.search(r'1\s*[≤<]=?\s*a\s*<\s*b\s*[≤<]=?\s*5|1\s*≤\s*a\s*<\s*b\s*≤\s*5',text,re.I)),
           'gauge_fix': has_all(text,[r'gauge.?fix',r'g\s*1\s*=\s*(?:1|𝟙|I)|g1\s*=\s*1',r'g\s*a|g_a']),
         }
