@@ -149,7 +149,7 @@ def evaluate(gamma,cname,pattern):
       'nonzero_witness':bool(np.any(nz)),
       'identity_angle_iter480b_regression':regression,
       'basis_reindex_control':reindex<RTOL,
-      'zero_matrix_negative':zmax<1e-14,
+      'zero_matrix_negative':bool(zmax<1e-14),
     }
     ok=all(checks.values())
     return {
