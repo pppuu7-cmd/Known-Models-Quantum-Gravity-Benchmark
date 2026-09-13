@@ -1,0 +1,65 @@
+name: lqg-iter451-primary-source-causal-vertex
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/lqg-iter451-primary-source-causal-vertex.yml'
+  workflow_dispatch:
+
+jobs:
+  source-audit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        lane:
+          - eq4_vertex_object
+          - boundary_contraction_domains
+          - toller_source_definition
+          - eprl_control
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen primary-source lane
+        run: |
+          mkdir -p out
+          python scripts/iter451_primary_source_causal_vertex.py \
+            --lane '${{ matrix.lane }}' \
+            --out 'out/${{ matrix.lane }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter451-${{ matrix.lane }}
+          path: out/${{ matrix.lane }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: source-audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter451-*
+          path: lane-artifacts
+          merge-multiple: true
+      - name: Frozen aggregate
+        run: |
+          mkdir -p out
+          python scripts/iter451_primary_source_causal_vertex.py \
+            --aggregate \
+              lane-artifacts/eq4_vertex_object.json \
+              lane-artifacts/boundary_contraction_domains.json \
+              lane-artifacts/toller_source_definition.json \
+              lane-artifacts/eprl_control.json \
+            --out out/iter451_summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter451-primary-source-summary
+          path: out/iter451_summary.json
+          if-no-files-found: error
