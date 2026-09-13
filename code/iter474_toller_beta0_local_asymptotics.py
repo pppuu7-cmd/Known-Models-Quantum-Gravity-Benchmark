@@ -5,9 +5,9 @@ BETAS=[mp.mpf('0.4'),mp.mpf('0.2'),mp.mpf('0.1'),mp.mpf('0.05'),mp.mpf('0.025'),
 PANEL=[(7,2),(7,5),(8,2),(8,5)]
 
 def tvals(j,m,rho,beta,dps):
-    mp.mp.dps=dps; jx=mp.mpf(j); mx=mp.mpf(m); rx=mp.mpf(rho); b=mp.mpf(beta); z=mp.e**(-2*b)
-    tp=(mp.e**(-(jx-1j*rx+mx+1)*b)*mp.gamma(2*jx+2)*mp.gamma(1j*rx-mx)/(mp.gamma(jx-mx+1)*mp.gamma(jx+1+1j*rx))*mp.hyp2f1(jx+mx+1,jx+1-1j*rx,1+mx-1j*rx,z))
-    tm=(mp.e**(-(jx+1j*rx-mx+1)*b)*mp.gamma(2*jx+2)*mp.gamma(-1j*rx+mx)/(mp.gamma(jx+mx+1)*mp.gamma(jx+1-1j*rx))*mp.hyp2f1(jx-mx+1,jx+1+1j*rx,1-mx+1j*rx,z))
+    mp.mp.dps=dps; jx=mp.mpf(j); mx=mp.mpf(m); rx=mp.mpf(rho); b=mp.mpf(beta); z=mp.e**(-2*b); ii=mp.j
+    tp=(mp.e**(-(jx-ii*rx+mx+1)*b)*mp.gamma(2*jx+2)*mp.gamma(ii*rx-mx)/(mp.gamma(jx-mx+1)*mp.gamma(jx+1+ii*rx))*mp.hyp2f1(jx+mx+1,jx+1-ii*rx,1+mx-ii*rx,z))
+    tm=(mp.e**(-(jx+ii*rx-mx+1)*b)*mp.gamma(2*jx+2)*mp.gamma(-ii*rx+mx)/(mp.gamma(jx+mx+1)*mp.gamma(jx+1-ii*rx))*mp.hyp2f1(jx-mx+1,jx+1+ii*rx,1-mx+ii*rx,z))
     return tp,tm
 
 def relerr(a,b):
