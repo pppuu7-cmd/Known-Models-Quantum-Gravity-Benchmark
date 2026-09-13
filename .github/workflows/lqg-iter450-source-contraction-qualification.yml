@@ -1,0 +1,69 @@
+name: lqg-iter450-source-contraction-qualification
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/lqg-iter450-source-contraction-qualification.yml'
+      - 'scripts/iter450_source_contraction_qualification.py'
+      - 'status/ITERATION_450.md'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    name: source-audit-${{ matrix.lane }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        lane:
+          - formula_identity
+          - index_domains
+          - weights_phases_norms
+          - controls_conventions
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen lane
+        run: |
+          mkdir -p out
+          python scripts/iter450_source_contraction_qualification.py \
+            --lane '${{ matrix.lane }}' \
+            --out 'out/${{ matrix.lane }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter450-${{ matrix.lane }}
+          path: out/${{ matrix.lane }}.json
+          if-no-files-found: error
+
+  aggregate:
+    name: aggregate-frozen-classification
+    needs: audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter450-*
+          path: lane-artifacts
+          merge-multiple: true
+      - name: Aggregate without post-hoc retuning
+        run: |
+          mkdir -p out
+          python scripts/iter450_source_contraction_qualification.py \
+            --aggregate \
+              lane-artifacts/formula_identity.json \
+              lane-artifacts/index_domains.json \
+              lane-artifacts/weights_phases_norms.json \
+              lane-artifacts/controls_conventions.json \
+            --out out/iter450_summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter450-source-contraction-summary
+          path: out/iter450_summary.json
+          if-no-files-found: error
