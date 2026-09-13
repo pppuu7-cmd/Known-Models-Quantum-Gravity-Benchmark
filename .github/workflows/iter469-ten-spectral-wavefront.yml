@@ -1,0 +1,42 @@
+name: iter469-ten-spectral-wavefront
+on:
+  push:
+    branches: [research/iter469-ten-spectral-wavefront]
+  workflow_dispatch:
+jobs:
+  audit:
+    strategy:
+      fail-fast: false
+      matrix:
+        stream: [A,B,C,D]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: |
+          mkdir -p artifacts
+          python code/iter469_ten_spectral_wavefront.py --stream ${{ matrix.stream }} --out artifacts/iter469-${{ matrix.stream }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter469-${{ matrix.stream }}
+          path: artifacts/iter469-${{ matrix.stream }}.json
+          if-no-files-found: error
+  aggregate:
+    needs: audit
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'iter469-*', path: collected, merge-multiple: true}
+      - run: |
+          python - <<'PY'
+          import glob,json,sys
+          rows=[json.load(open(f)) for f in sorted(glob.glob('collected/*.json'))]
+          ok=sorted(r['stream'] for r in rows)==list('ABCD') and all(r['pass'] for r in rows)
+          out={'gate':'ITER469_TEN_SPECTRAL_PLEMEJ_LOCAL_PRODUCT_WAVEFRONT_QUALIFIED_SCOPED','scientific_pass':ok,'streams':{r['stream']:r['pass'] for r in rows},'scope':'local wavefront/tensor-product only; global noncompact pairing and D7-S2 remain open'}
+          json.dump(out,open('iter469-aggregate.json','w'),indent=2,sort_keys=True); print(json.dumps(out,indent=2,sort_keys=True)); sys.exit(0 if ok else 3)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: iter469-aggregate, path: iter469-aggregate.json, if-no-files-found: error}
