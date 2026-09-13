@@ -1,0 +1,89 @@
+name: iter486-shared-node-haar-escape
+
+on:
+  push:
+    paths:
+      - '.github/workflows/iter486-shared-node-haar-escape.yml'
+      - 'code/iter486_shared_node_haar_escape.py'
+      - 'code/iter486_aggregate.py'
+      - 'recovery/ITER486_PREREG_SHARED_NODE_HAAR_ESCAPE_ENVELOPE_2026-09-14.md'
+      - 'sources/arxiv_2202_04360_sl2c_haar_cartan.json'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen authorities
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          src=json.loads(pathlib.Path('sources/arxiv_2202_04360_sl2c_haar_cartan.json').read_text())
+          assert src['source_id']=='arXiv:2202.04360'
+          assert src['haar_measure']['radial_density']=='sinh(r)^2'
+          assert src['guards']['no_artificial_suppressing_weight'] is True
+          pre=pathlib.Path('recovery/ITER486_PREREG_SHARED_NODE_HAAR_ESCAPE_ENVELOPE_2026-09-14.md').read_text()
+          assert 'FROZEN BEFORE IMPLEMENTATION/PRODUCTION' in pre
+          assert 'SCIENTIFIC_FAIL_ITER486_HAAR_ESCAPE_ACTUAL_ENVELOPE' in pre
+          parent=pathlib.Path('results/ITER485_SHARED_NODE_TEN_EDGE_TOLLER_MAGNETIC_NETWORK_RESULT_2026-09-14.md').read_text()
+          assert 'ITER485_SHARED_NODE_TEN_EDGE_TOLLER_MAGNETIC_NETWORK_QUALIFIED_SCOPED' in parent
+          PY
+
+  lane:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 24
+      matrix:
+        panel: [A, C]
+        cluster: [1, 2, 3, 4]
+        causal: [0to5, 1to4, 2to3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath
+      - name: Run frozen scientific lane
+        run: |
+          mkdir -p artifacts
+          python code/iter486_shared_node_haar_escape.py \
+            --panel '${{ matrix.panel }}' \
+            --cluster '${{ matrix.cluster }}' \
+            --causal '${{ matrix.causal }}' \
+            --out 'artifacts/iter486-${{ matrix.panel }}-s${{ matrix.cluster }}-${{ matrix.causal }}.json'
+      - name: Upload raw lane artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter486-${{ matrix.panel }}-s${{ matrix.cluster }}-${{ matrix.causal }}
+          path: artifacts/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [source-lock, lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all raw lane artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: iter486-*
+          path: raw
+          merge-multiple: false
+      - name: Aggregate frozen verdict
+        run: |
+          mkdir -p aggregate
+          python code/iter486_aggregate.py --root raw --out aggregate/iter486-summary.json
+      - name: Upload aggregate artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter486-summary
+          path: aggregate/iter486-summary.json
+          if-no-files-found: error
