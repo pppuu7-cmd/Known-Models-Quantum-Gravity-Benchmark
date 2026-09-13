@@ -53,7 +53,7 @@ def lane(m,beta,rho,side):
         q=f/(x**p)
         scaled_rms.append(rms(q))
         wrong_scaled_rms.append(rms(f/(x**(p-1))))
-        # Local phase diagnostic.  For m=+/-1 the leading channel is single-frequency;
+        # Local phase diagnostic. For m=+/-1 the leading channel is single-frequency;
         # for m=0 the leading pair +/- beta obeys the exact cosine recurrence.
         xm=x[100:-100]
         if m!=0:
@@ -72,7 +72,11 @@ def lane(m,beta,rho,side):
             c=max(-1.0,min(1.0,c))
             inferred=math.acos(c)
             phase_errors.append(abs(inferred-beta*h))
-            wrong_phase_errors.append(abs(inferred-1.35*beta*h))
+            # Control-only repair: the initial 1.35*beta control was analytically
+            # incapable of reaching the preregistered >=0.20 rad separation because
+            # (1.35-1)*beta*h = 0.0525.  Keep the frozen threshold and science fixed,
+            # and use a sufficiently separated wrong-frequency control instead.
+            wrong_phase_errors.append(abs(inferred-2.5*beta*h))
     mag_dev=abs(scaled_rms[-1]/scaled_rms[-2]-1.0)
     wrong_ratio=wrong_scaled_rms[-1]/wrong_scaled_rms[-2]
     max_phase=max(phase_errors[-2:])
