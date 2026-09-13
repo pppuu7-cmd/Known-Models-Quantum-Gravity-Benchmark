@@ -2,7 +2,7 @@
 Updated: 2026-09-13
 
 ## Authoritative frontier
-The repository has moved beyond Iter463. Iter459, Iter460, Iter462 and Iter463 are terminal and consumed; Iter461 and Iter464 are active/queued. Repository artifacts and frozen contracts remain authoritative; D7 stays fail-closed.
+The repository has moved beyond Iter464. Iter459, Iter460, Iter462, Iter463 and Iter464 are terminal and consumed. Iter461 remains independently queued on its research branch; Iter465 is the active mainline D7-S2 prerequisite. Repository artifacts and frozen contracts remain authoritative; D7 stays fail-closed.
 
 ## Global lock
 - RQIR Core v1.0 remains FROZEN.
@@ -22,9 +22,10 @@ The repository has moved beyond Iter463. Iter459, Iter460, Iter462 and Iter463 a
 - Iter457 run `34741925566`, artifact `10313410848`: `ITER457_TOLLER_EQ7_FULL_MAGNETIC_RECONSTRUCTION_QUALIFIED_SCOPED`.
 - Iter458 run `34744070219`, artifact `10313389047`: `SCIENTIFIC_FAIL_ITER458_TOLLER_FEYNMAN_IEPSILON_ORDINARY_TRUNCATION`. This rejects only the frozen ordinary symmetric truncation realization.
 - Iter459 run `34746472976`, artifact `10313863332`, digest `sha256:f54e6e4ee1b787f17b7bab924409611297ce06ac73a005e308be3d1613a9aa8d`: `ITER459_TOLLER_PLEMELJ_DISTRIBUTIONAL_KERNEL_QUALIFIED_SCOPED`, 6/6 Schwartz lanes. This qualifies the universal Sokhotski-Plemelj denominator boundary identity only.
-- Iter460 branch `research/iter460-source-spectral-tail`, run `34748501676`, artifact `10314837771`, digest `sha256:ce4f1a8a18c6c8282dad4a7f424f322e0e5133c926dfb327ce0c68f7f34163d0`: `ITER460_SOURCE_P11_D_TAIL_CHARACTERIZED_SCOPED`, 24/24 records. The source `P11*d_source` tail is non-Schwartz and shows growing oscillatory/polynomial envelope on the frozen panel (roughly slope +0.84 for m=0 and +1.67 for m=+/-1). No physical divergence theorem follows.
-- Iter462 branch `research/iter462-d7-s3-s4-evidence-audit`, run `34748508906`, artifact `10315340931`, digest `sha256:97cc6c2e18df2467b2f4130b8cf2866b021c212d81fb9d9878a0448455adbc3a`: `ITER462_D7_S3_S4_EVIDENCE_LOCALIZATION_COMPLETE_SCOPED`. Six of seven unresolved S3/S4 gate names have no formal candidate artifact in the tracked snapshot; the sole normalized-comparator candidate is explicitly negative/not transport-ready. No positive S3/S4 closure artifact was found.
-- Iter463 prereg `6c99b1593c14ed1fcd9b0469c64e745b903510a5`, authoritative retry head `97d2f39d20026e97b3268551dd595210dd3206b5`, run `34748737283`, aggregate job `103701422450`, artifact `10315131796`, digest `sha256:1fdd4f0258795fa23d9c2625035f31aca7bdd5634ddafa0a3a134330d34450da`: `ITER463_SOURCE_P11_D_LEADING_OSCILLATORY_ASYMPTOTICS_QUALIFIED_SCOPED`. All 6 lanes / 24 records pass after the separately recorded control-only repair. On the frozen panel m=0 has leading power 1 with +/-beta pair; m=-1 has leading power 2 with +beta; m=+1 has leading power 2 with -beta. This is an asymptotic-structure prerequisite only.
+- Iter460 run `34748501676`, artifact `10314837771`, digest `sha256:ce4f1a8a18c6c8282dad4a7f424f322e0e5133c926dfb327ce0c68f7f34163d0`: `ITER460_SOURCE_P11_D_TAIL_CHARACTERIZED_SCOPED`, 24/24 records. The source `P11*d_source` tail is non-Schwartz and shows a growing oscillatory/polynomial envelope on the frozen panel. No physical divergence theorem follows.
+- Iter462 run `34748508906`, artifact `10315340931`, digest `sha256:97cc6c2e18df2467b2f4130b8cf2866b021c212d81fb9d9878a0448455adbc3a`: `ITER462_D7_S3_S4_EVIDENCE_LOCALIZATION_COMPLETE_SCOPED`. Six of seven unresolved S3/S4 gate names have no formal candidate artifact in the tracked snapshot; the sole normalized-comparator candidate is explicitly negative/not transport-ready.
+- Iter463 prereg `6c99b1593c14ed1fcd9b0469c64e745b903510a5`, retry head `97d2f39d20026e97b3268551dd595210dd3206b5`, run `34748737283`, aggregate job `103701422450`, artifact `10315131796`, digest `sha256:1fdd4f0258795fa23d9c2625035f31aca7bdd5634ddafa0a3a134330d34450da`: `ITER463_SOURCE_P11_D_LEADING_OSCILLATORY_ASYMPTOTICS_QUALIFIED_SCOPED`.
+- Iter464 prereg `599f49a76df6e745724cdc1fa06010e5442ca4af`, head `933da7cf5cfeac82b643b2ab457d744670a6dcc1`, run `34750582787`, aggregate job `103706358448`, artifact `10316110295`, digest `sha256:d628fbf9cf259cb6522d6d73d12d5e7a3ab3fd2c2d5c242be9cb35f2f559585d`: `ITER464_SOURCE_P11_D_DISTRIBUTIONAL_PAIRING_QUALIFIED_SCOPED`. All 6 lanes / 24 frozen records pass. Exact denominator cancellation and source-channel reconstruction hold at high precision; Plemelj and Fourier-selector boundary values agree; finite-epsilon errors approach the boundary monotonically under the frozen rule. This qualifies only the one-dimensional source-specific spectral pairing and does not close D7-S2.
 
 ## Active independent work
 ### Iter461 — exact K5 collision partitions
@@ -34,32 +35,31 @@ The repository has moved beyond Iter463. Iter459, Iter460, Iter462 and Iter463 a
 - Status at this update: queued.
 - Do not duplicate. Terminal classification requires raw artifact consumption against its preregistered exact Bell(5)/local-pair-power gate.
 
-### Iter464 — exact source exponential-polynomial / Feynman distributional pairing
-- Preregistration commit: `599f49a76df6e745724cdc1fa06010e5442ca4af`.
-- Implementation commit: `06774a643170161ba873721f4c93d597a55d7af7`.
-- Workflow/head commit: `933da7cf5cfeac82b643b2ab457d744670a6dcc1`.
-- Production run: `34750582787`.
+### Iter465 — source two-factor transversal pullback / order independence
+- Preregistration commit: `9b968ec425b857cc94fb320eb2ebe6cf2f89ffbe`.
+- Implementation commit: `bf37d728a4f2e140b3aa0425ac937d6e0d36d2f9`.
+- Workflow/head commit: `bbdeeb86a9ffb228eed2c1e536734264ee32512c`.
+- Production run: `34753163940`.
 - Status at this update: queued.
-- Frozen identity uses the exact algebraic cancellation `P11/(x+x^3)=-i/[(i rho+1)(i rho)(i rho-1)]`, reducing the source factor to a finite sum of `x^n exp(i sigma beta x)` channels with n<=2. The frozen Feynman pairing uses the published denominator `x-rho-i*s*epsilon` and the standard tempered-distribution/Plemelj Fourier rule at nonzero beta; no damping, fitted subtraction, contour tuning or `beta+i*epsilon` replacement is allowed.
-- Matrix: m=-1,0,+1; beta=0.8,2.1; rho=0.35,1.6; boundary sign s=+/-1; high-precision held-out source reconstruction, Plemelj-vs-selector equality, finite-epsilon approach and wrong-sign controls.
-- PASS, if obtained, qualifies only the one-dimensional source-specific spectral pairing; it does not by itself close D7-S2 or prove a full causal-vertex theorem.
+- Six independent source-pair lanes, all four boundary-sign pairs and four invertible nontrivial integer reparameterizations are frozen. The gate compares the canonical tensor-product selector, direct transformed common-pole residue/Jacobian evaluation, and both Schur-complement sequential resolution orders. Wrong-sign, wrong-Jacobian and singular-normal controls are frozen.
+- PASS, if obtained, qualifies only a transversal two-factor source-defined pullback/order-independence prerequisite. Shared-variable/non-transversal collision structure from the actual causal vertex remains outside this gate.
 
 ## Current blockers
 ### D7-S2
-The universal Plemelj kernel and source leading phase/power structure are qualified. The key remaining question is whether the actual non-Schwartz source factor admits a source-faithful distributional pairing under the published spectral i-epsilon and, after that, whether the required multivariable/pullback structure is valid. Iter464 addresses only the one-dimensional source pairing prerequisite.
+The universal Plemelj kernel, source leading phase/power structure and exact one-dimensional source-specific distributional pairing are qualified. The next unresolved layer is multivariable pullback/order independence and then correlated/shared-variable or non-transversal causal-vertex structure. Iter465 addresses only the transversal two-factor layer.
 
 ### D7-S3 / D7-S4
 Iter462 found no positive closure artifact for the unresolved tracked gate names and one explicit negative comparator/transport candidate. Do not invent missing transport/closure maps.
 
 ## Exact next permitted decisions
-1. Consume Iter461 and Iter464 immediately when terminal; distinguish scientific FAIL from numerical/infrastructure failure.
-2. If Iter464 qualifies, preregister the next multivariable/pullback/order-independence D7-S2 gate using the source-defined distributional object; do not promote D7-S2 from the one-dimensional pairing alone.
-3. If Iter461 passes its exact combinatorial audit, use it only as collision-geometry evidence; do not close D7-S2 from K5 local power counting alone.
+1. Consume Iter465 immediately when terminal; distinguish scientific FAIL from numerical/infrastructure failure.
+2. Consume Iter461 when it starts/terminates; use a PASS only as collision-geometry evidence.
+3. If Iter465 qualifies, prospectively preregister a correlated/shared-variable or non-transversal source-distribution gate grounded in an actual causal-vertex contraction object. Do not infer that layer from tensor-product transversality.
 4. D7 terminal classifier and all four terminal labels remain forbidden until S2-S4 are formally closed.
 
 ## Working progress rubric
-D2 82%, D4 68%, D7 57%, integrated path 68%.
-This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. The +1 pp D7 / +1 pp integrated update reflects the terminal qualification of the source-specific leading oscillatory structure in Iter463, which removes one prerequisite uncertainty but does not close D7-S2.
+D2 82%, D4 68%, D7 58%, integrated path 69%.
+This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. The +1 pp D7 / +1 pp integrated update reflects terminal Iter464 qualification of the actual one-dimensional non-Schwartz source pairing under the published spectral i-epsilon. D7-S2 remains open.
 
 ## Claim guards
 No complete-QG claim. No physical causal-vertex finiteness/divergence theorem. No universal causal-EPRL/contour no-go theorem. Keep absolute integrability, conditional/PV finite part and source-defined distributional amplitude distinct. No fitted completion or modified published spectral i-epsilon. Candidate Gravity remains inactive.
