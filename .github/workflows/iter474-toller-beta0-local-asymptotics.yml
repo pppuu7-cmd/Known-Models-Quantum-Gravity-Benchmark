@@ -1,0 +1,19 @@
+name: iter474-toller-beta0-local-asymptotics
+on:
+  push:
+    branches: [research/iter474-toller-beta0-local-asymptotics]
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install mpmath
+      - run: python code/iter474_toller_beta0_local_asymptotics.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter474-summary
+          path: artifacts/iter474-summary.json
