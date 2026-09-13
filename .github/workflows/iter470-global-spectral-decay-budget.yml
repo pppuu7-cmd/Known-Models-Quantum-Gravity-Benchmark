@@ -1,0 +1,18 @@
+name: iter470-global-spectral-decay-budget
+on:
+  push:
+    branches: [research/iter470-global-spectral-decay-budget]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python code/iter470_global_spectral_decay_budget.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter470-summary
+          path: artifacts/iter470-summary.json
