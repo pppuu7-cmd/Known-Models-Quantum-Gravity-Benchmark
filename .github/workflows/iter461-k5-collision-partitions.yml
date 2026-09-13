@@ -1,0 +1,22 @@
+name: iter461-k5-collision-partitions
+on:
+  push:
+    branches: [research/iter461-k5-collision-partitions]
+    paths:
+      - 'benchmarks/lqg_iter461_k5_collision_partitions_contract.json'
+      - 'code/lqg_iter461_k5_collision_partitions.py'
+      - '.github/workflows/iter461-k5-collision-partitions.yml'
+  workflow_dispatch:
+jobs:
+  scientific:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python code/lqg_iter461_k5_collision_partitions.py --out iter461_summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter461-summary
+          path: iter461_summary.json
