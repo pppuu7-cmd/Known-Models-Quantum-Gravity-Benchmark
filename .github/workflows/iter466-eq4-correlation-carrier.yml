@@ -1,0 +1,68 @@
+name: iter466-eq4-correlation-carrier
+on:
+  push:
+    branches: [research/iter466-eq4-correlation-carrier]
+    paths:
+      - '.github/workflows/iter466-eq4-correlation-carrier.yml'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        root: [1, 2, 3, 4, 5]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen root lane
+        run: |
+          mkdir -p out
+          python scripts/iter466_eq4_correlation_carrier.py --root ${{ matrix.root }} --out out/root_${{ matrix.root }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter466-root-${{ matrix.root }}
+          path: out/root_${{ matrix.root }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: audit
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter466-root-*
+          path: lanes
+          merge-multiple: true
+      - name: Frozen aggregate classification
+        run: |
+          python - <<'PY'
+          import json, glob, pathlib
+          fs=sorted(glob.glob('lanes/root_*.json'))
+          rows=[json.load(open(f)) for f in fs]
+          valid=(len(rows)==5 and sorted(r['root'] for r in rows)==[1,2,3,4,5])
+          qualified=valid and all(r.get('qualified') for r in rows)
+          out={
+            'iteration':466,
+            'lane_count':len(rows),
+            'valid':valid,
+            'qualified':qualified,
+            'roots':[r.get('root') for r in rows],
+            'ranks':[r.get('rank') for r in rows],
+            'nullities':[r.get('nullity') for r in rows],
+            'classification':('ITER466_EQ4_GROUP_MEDIATED_SPECTRAL_CORRELATION_CARRIER_PINNED_SCOPED' if qualified else 'SCIENTIFIC_FAIL_ITER466_EQ4_CORRELATION_CARRIER'),
+            'scope':'topology/correlation-carrier only; no distributional pushforward, convergence, or D7-S2 closure'
+          }
+          pathlib.Path('aggregate.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(out,sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter466-aggregate
+          path: aggregate.json
+          if-no-files-found: error
