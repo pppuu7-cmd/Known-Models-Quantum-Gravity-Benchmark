@@ -1,0 +1,39 @@
+{
+  "iteration": 462,
+  "title": "D7 S3/S4 formal-evidence localization audit",
+  "status": "PREREGISTERED_BEFORE_IMPLEMENTATION",
+  "source_parent": "03ddb10c2a11ac26ca4ea59e32e16d38aab9a11e",
+  "gates": {
+    "S3": [
+      "same_realization_parameter_transport",
+      "normalized_comparator_error_certificate",
+      "causal_stack_physical_realization",
+      "stack_parameter_weight_transport"
+    ],
+    "S4": [
+      "universal_stack_domain_inclusion",
+      "causal_stack_cutoff_domain",
+      "global_common_domain_normalization"
+    ]
+  },
+  "scan": {
+    "tracked_files_only": true,
+    "formal_candidate_prefixes": ["code/","protocol/","benchmarks/"],
+    "mention_only_prefixes": ["recovery/","results/","docs/"],
+    "extensions": [".md",".json",".py",".yml",".yaml",".txt",".csv"]
+  },
+  "rules": [
+    "A textual mention never closes a gate.",
+    "A formal candidate artifact is localized for manual/source review but never auto-promoted to PRESENT.",
+    "No evidence found is reported as a negative evidence certificate for this repository snapshot, not as a theorem of nonexistence."
+  ],
+  "classification": {
+    "pass": "ITER462_D7_S3_S4_EVIDENCE_LOCALIZATION_COMPLETE_SCOPED",
+    "invalid": "INFRASTRUCTURE_OR_NUMERICAL_FAIL"
+  },
+  "claim_locks": [
+    "No synthetic transport map may be invented.",
+    "No S3/S4 status may be auto-closed by this audit.",
+    "D7-S5 remains NOT_AUTHORIZED and Candidate Gravity remains inactive."
+  ]
+}
