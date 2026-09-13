@@ -1,0 +1,23 @@
+name: iter460-source-spectral-tail
+on:
+  push:
+    branches: [research/iter460-source-spectral-tail]
+    paths:
+      - 'benchmarks/lqg_iter460_source_spectral_tail_contract.json'
+      - 'code/lqg_iter460_source_spectral_tail.py'
+      - '.github/workflows/iter460-source-spectral-tail.yml'
+  workflow_dispatch:
+jobs:
+  scientific:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install numpy
+      - run: python code/lqg_iter460_source_spectral_tail.py --out iter460_summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter460-summary
+          path: iter460_summary.json
