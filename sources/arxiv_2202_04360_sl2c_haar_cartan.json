@@ -1,0 +1,24 @@
+{
+  "source_id": "arXiv:2202.04360",
+  "title": "How-To compute EPRL spin foam amplitudes",
+  "authors": ["Pietro Dona", "Pietropaolo Frisoni"],
+  "source_scope": "Structured source snapshot for the SL(2,C) Cartan/Haar measure used only by the Iter486 radial escape gate.",
+  "cartan_parameterization": {
+    "form": "g = u exp(r sigma_3/2) v^{-1}",
+    "u_domain": "SU(2)",
+    "v_domain": "SU(2)",
+    "r_domain": "r >= 0"
+  },
+  "haar_measure": {
+    "equation_label": "A36 in the cited paper",
+    "form": "dg = (1/(4*pi)) sinh(r)^2 dr du dv",
+    "radial_density": "sinh(r)^2",
+    "normalization_note": "The overall constant 1/(4*pi) is irrelevant to logarithmic large-r slopes and is omitted only for that slope diagnostic."
+  },
+  "guards": {
+    "no_artificial_suppressing_weight": true,
+    "no_claim_that_radial_profile_equals_full_group_integral": true,
+    "no_absolute_convergence_claim_from_finite_cutoff_data_alone": true,
+    "conditional_or_distributional_interpretation_separate": true
+  }
+}
