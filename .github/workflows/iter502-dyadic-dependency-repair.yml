@@ -1,0 +1,85 @@
+name: iter502-dyadic-dependency-repair
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER502_PREREG_DYADIC_DEPENDENCY_REPAIR_2026-09-14.md'
+      - 'code/iter502_dyadic_dependency_repair.py'
+      - 'code/iter502_aggregate.py'
+      - '.github/workflows/iter502-dyadic-dependency-repair.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen authority
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('recovery/ITER502_PREREG_DYADIC_DEPENDENCY_REPAIR_2026-09-14.md').read_text().lower()
+          assert 'frozen before implementation / production' in p
+          assert '243 intertwiner channels' in p
+          assert '8 equal closed dyadic subboxes' in p
+          assert 'python-flint==0.9.0' in p
+          assert 'fail-fast:false' in p.replace(' ','')
+          assert 'iter502_numerical_method_blocker' in p
+          assert 'scientific_fail_iter502_uniform_nondecay_interval' in p
+          assert 'candidate gravity remains inactive' in p
+          PY
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        block: [0,1,2,3]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+          python - <<'PY'
+          import flint
+          assert flint.__version__ == '0.9.0'
+          PY
+      - name: Run frozen dyadic dependency-repair lane
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter502_dyadic_dependency_repair.py --causal '${{ matrix.causal }}' --block '${{ matrix.block }}' --out 'artifacts/iter502-${{ matrix.causal }}-b${{ matrix.block }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter502-${{ matrix.causal }}-b${{ matrix.block }}
+          path: artifacts/iter502-${{ matrix.causal }}-b${{ matrix.block }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter502-*
+          path: downloaded
+      - name: Aggregate frozen Iter502 verdict
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter502_aggregate.py --root downloaded --out artifacts/iter502-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter502-summary
+          path: artifacts/iter502-summary.json
+          if-no-files-found: error
