@@ -4,6 +4,14 @@
 
 Outcome-blind analytical scaffold only. This document does **not** close D7-S2, D7-S3, or D7-S4, does not establish absolute convergence, and does not authorize a terminal D7 selector. It is independent of the still-active Iter503V endpoint-contract verifier and of the queued Iter461 K5 collision-partition computation.
 
+## Upstream authority
+
+This scaffold is a downstream refinement of, not a replacement for, `research/TEN_SPECTRAL_TENSOR_PRODUCT_SOURCE_AUDIT_2026-09-14.md` committed at `7321c9b8a045a7d5018de97c7c7297c49e6ae548`.
+
+That audit anchors the source object to Bianchi–Chen–Gamonal and to the Iter468 direct-substitution audit. Iter468 authority is run `34770144171`, aggregate artifact `10322025879`, digest `sha256:f45fe3012ed14fa4449554e9cd87edbedbe81a551a694d349adae2211a61a5ff`, classification `ITER468_EQ4_SOURCE_SPECTRAL_GROUP_CONTRACTION_OBJECT_PINNED_SCOPED`.
+
+The upstream audit already establishes the separate-variable statement used below: once the source-defined one-wedge distributional limits exist, the finite ten-fold tensor product exists, and a common epsilon versus independent epsilons is not a new ambiguity at that separate-variable level. The unresolved object is their action on the correlated four-group kernel. This file freezes the next proof obligations for that unresolved object.
+
 ## Purpose
 
 Freeze the proof obligations needed before the already-constructed ten-fold one-wedge boundary-value tensor product may be applied to the correlated four-group kernel. The point is to prevent a later exchange of a distributional boundary-value limit with correlated group integrations from being treated as automatic.
@@ -22,7 +30,7 @@ Let `g=(g1,g2,g3,g4)` denote the four gauge-fixed group variables and let `K(lam
 
 ## What is already allowed
 
-The separate-variable tensor product `T` may be formed once the ten one-wedge boundary values are fixed. Equality of common-regularizer and independent-regularizer approaches at that separate tensor-product level, when established, is an identity **before** the correlated group integration.
+The separate-variable tensor product `T` may be formed once the ten one-wedge boundary values are fixed. The upstream tensor-product audit establishes that common-regulator and independent-regulator approaches have the same finite tensor-product limit when every one-wedge source-defined distributional limit exists. That statement lives **before** the correlated group integration.
 
 It must not be promoted to any of the following without an additional theorem:
 
@@ -64,6 +72,16 @@ For each returned stratum `Sigma_alpha`, at least one of the following routes mu
 
 Failure of route 1 does not imply failure of route 2. Failure to prove either route does not authorize an ad hoc regularization.
 
+## Microlocal operation discipline
+
+A later proof must name the operation whose existence is being justified. The criteria are not interchangeable:
+
+- for a product, check the absence of opposite covectors in the relevant wavefront sets;
+- for a pullback by a smooth map, check that the distributional wavefront set does not meet the normal set of that map;
+- for a pushforward/group integration, state the support/properness or local cutoff hypothesis and propagate the resulting wavefront estimate.
+
+Therefore the phrase `transversality holds` is not an admissible terminal proof statement unless the map/product/pushforward and the corresponding normal/conormal set are explicitly identified for the stratum.
+
 ## Away-from-collision obligation
 
 On the complement of the collision set, establish smooth dependence on all ten independent spectral variables together with group-integrable bounds for every seminorm/derivative required by `T`. This regular-region proof must be separated from all collision-stratum arguments so that singular geometry is not hidden inside a global formal manipulation.
@@ -83,6 +101,8 @@ The labels `ABSOLUTE_JUSTIFIED`, `DISTRIBUTIONAL_JUSTIFIED`, and `PV_SOURCE_DEFI
 ## Iter461 dependency
 
 The queued authoritative collision computation remains run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3c`. No duplicate collision run is authorized by this scaffold.
+
+Its prospective consumer contract is frozen separately in `recovery/ITER461_CONSUMER_PREREG_SPECTRAL_COLLISION_MAP_2026-09-15.md`.
 
 After Iter461 is terminal and its artifact is validated, the next analytical action is:
 
