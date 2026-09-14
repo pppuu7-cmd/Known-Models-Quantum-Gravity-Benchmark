@@ -1,0 +1,38 @@
+name: source-j1-full-collision-leading-certificate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'code/source_j1_full_collision_leading_certificate.py'
+      - 'research/SOURCE_J1_TOLLER_COLLISION_POLE_LEDGER_2026-09-15.md'
+      - 'research/SOURCE_J1_FULL_COLLISION_ABSOLUTE_DIVERGENCE_THEOREM_2026-09-15.md'
+      - '.github/workflows/source-j1-full-collision-leading-certificate.yml'
+  workflow_dispatch:
+
+jobs:
+  exact-certificate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact certificate dependencies
+        run: python -m pip install --disable-pip-version-check numpy sympy mpmath 'python-flint==0.9.0'
+      - name: Run exact leading-network certificate
+        env:
+          PYTHONPATH: code
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_full_collision_leading_certificate.py | tee artifacts/source_j1_full_collision_leading_certificate.json
+          grep -F 'SOURCE_J1_FULL_COLLISION_LEADING_CERTIFIED_SCOPED' artifacts/source_j1_full_collision_leading_certificate.json
+          grep -F '"channel_00000_leading_angular_coefficient": "11/24"' artifacts/source_j1_full_collision_leading_certificate.json
+          grep -F '"nonzero_channels": 224' artifacts/source_j1_full_collision_leading_certificate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-j1-full-collision-leading-certificate
+          path: artifacts/source_j1_full_collision_leading_certificate.json
+          if-no-files-found: error
