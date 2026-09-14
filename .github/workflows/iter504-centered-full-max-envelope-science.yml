@@ -1,0 +1,146 @@
+name: iter504-centered-full-max-envelope-science
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504_PREREG_CENTERED_FULL_MAX_ENVELOPE_SCIENCE_2026-09-15.md'
+      - 'code/iter504_centered_shard.py'
+      - 'code/iter504_point_lane.py'
+      - 'code/iter504_aggregate.py'
+      - '.github/workflows/iter504-centered-full-max-envelope-science.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate prospective authority and syntax
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 1ab46b7add51b36b5499f866eb4579137838bfae HEAD
+          test -f recovery/ITER504_PREREG_CENTERED_FULL_MAX_ENVELOPE_SCIENCE_2026-09-15.md
+          grep -F '3072' recovery/ITER504_PREREG_CENTERED_FULL_MAX_ENVELOPE_SCIENCE_2026-09-15.md
+          grep -F 'ITER504_NUMERICAL_METHOD_BLOCKER' recovery/ITER504_PREREG_CENTERED_FULL_MAX_ENVELOPE_SCIENCE_2026-09-15.md
+          grep -F 'SCIENTIFIC_FAIL_ITER504_UNIFORM_NONDECAY_INTERVAL' recovery/ITER504_PREREG_CENTERED_FULL_MAX_ENVELOPE_SCIENCE_2026-09-15.md
+          grep -F 'max-parallel:12' recovery/ITER504_PREREG_CENTERED_FULL_MAX_ENVELOPE_SCIENCE_2026-09-15.md
+          python -m py_compile code/iter504_centered_shard.py code/iter504_point_lane.py code/iter504_aggregate.py
+      - name: Install pinned dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Import frozen modules
+        env:
+          PYTHONPATH: code
+        run: |
+          python - <<'PY'
+          import iter499_arb_core as core
+          import iter503_ad_core
+          import iter504_centered_shard as s
+          assert len(core.DIRS) == 8 and len(core.BLOCKS) == 4
+          assert all(len(b) == 2 for b in core.BLOCKS)
+          assert core.RHOS == [0.35,0.9,1.6,2.7]
+          assert core.R_GRID == [6,8,10,12]
+          for b in range(4):
+              for p in range(4):
+                  d,sg=s.path_spec(b,p)
+                  assert d == list(core.BLOCKS[b][p//2])
+                  assert sg == (1 if p%2==0 else -1)
+          print('ITER504_SOURCE_LOCK_PASS')
+          PY
+
+  centered-shard:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        block: [0, 1, 2, 3]
+        path: [0, 1, 2, 3]
+        half: [0, 1]
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Run frozen centered box shard
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter504_centered_shard.py \
+            --causal '${{ matrix.causal }}' \
+            --block '${{ matrix.block }}' \
+            --path '${{ matrix.path }}' \
+            --half '${{ matrix.half }}' \
+            --out 'artifacts/iter504-box-${{ matrix.causal }}-b${{ matrix.block }}-p${{ matrix.path }}-h${{ matrix.half }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504-box-${{ matrix.causal }}-b${{ matrix.block }}-p${{ matrix.path }}-h${{ matrix.half }}
+          path: artifacts/iter504-box-${{ matrix.causal }}-b${{ matrix.block }}-p${{ matrix.path }}-h${{ matrix.half }}.json
+          if-no-files-found: error
+
+  point-lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        block: [0, 1, 2, 3]
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Run frozen source point lane
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter504_point_lane.py \
+            --causal '${{ matrix.causal }}' \
+            --block '${{ matrix.block }}' \
+            --out 'artifacts/iter504-point-${{ matrix.causal }}-b${{ matrix.block }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504-point-${{ matrix.causal }}-b${{ matrix.block }}
+          path: artifacts/iter504-point-${{ matrix.causal }}-b${{ matrix.block }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [centered-shard, point-lane]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504-*
+          path: downloaded
+          merge-multiple: false
+      - name: Aggregate frozen 12-lane Iter504 verdict
+        run: |
+          mkdir -p artifacts
+          python code/iter504_aggregate.py --root downloaded --out artifacts/iter504-summary.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504-summary
+          path: artifacts/iter504-summary.json
+          if-no-files-found: error
