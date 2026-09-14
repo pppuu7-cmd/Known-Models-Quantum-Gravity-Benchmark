@@ -2,13 +2,13 @@
 Updated: 2026-09-14
 
 ## Authoritative frontier
-Mainline has advanced through terminal Iter496. Iter461 remains independently queued on its research branch and must not be duplicated.
+Mainline has advanced through terminal Iter497. Iter461 remains independently queued on its research branch and must not be duplicated.
 
-The consumed D7-S2 chain includes Iter468 source contraction pinning; Iter479 source Toller leading magnetic rank; Iter480B boundary-intertwiner noncancellation; Iter481 full angular/intertwiner network; Iter482 compact common-node correlation; Iter483 shared-node noncompact SL(2,C) geometry; Iter484 source one-edge Toller/KAK lift; Iter485 correlated ten-edge Toller magnetic network; Iter487/489 one-dimensional shared-Haar NONDECAY witness; Iter491 negative fixed-radius sampled thickening; Iter492 shrinking tangent-boundary-layer bracket; Iter493 full-basis q=1 local first/second variation; Iter494 mixed q=1 curvature; Iter495 simultaneous multivariate Taylor stress; and Iter496 coefficient-stencil/Richardson convergence.
+The consumed D7-S2 chain includes Iter468 source contraction pinning; Iter479 source Toller leading magnetic rank; Iter480B boundary-intertwiner noncancellation; Iter481 full angular/intertwiner network; Iter482 compact common-node correlation; Iter483 shared-node noncompact SL(2,C) geometry; Iter484 source one-edge Toller/KAK lift; Iter485 correlated ten-edge Toller magnetic network; Iter487/489 one-dimensional shared-Haar NONDECAY witness; Iter491 negative fixed-radius sampled thickening; Iter492 shrinking tangent-boundary-layer bracket; Iter493 full-basis q=1 local first/second variation; Iter494 mixed q=1 curvature; Iter495 simultaneous multivariate Taylor stress; Iter496 coefficient-stencil/Richardson convergence; and Iter497 independent Richardson-enclosure holdout validation.
 
-Iter496 authority: prereg `fb9b2a5f8ed3dc24beba31e6e55fdf3f60692898`, evaluator `4351165495050e533bd812b30dbcd31276c15634`, aggregate implementation `c277968c65ddd2587250ce8b859cad6409cbd579`, production head `1098eb1f8a8ceac78013e8c85194bad61d43cf6a`; run `34807803061`; aggregate artifact `10333948552`; digest `sha256:3d8f62cc56d51ae0045c6a8ad30a1655713e1b18fda7caed6420b784bb68d274`. Terminal classification: `ITER496_COEFFICIENT_STENCIL_CONVERGENCE_QUALIFIED_SCOPED`.
+Iter497 authority: prereg `3209cdadeed3dc7d5c1ceb12d72e8841fb688901`, evaluator `742199df295815841725820052aad6a468786ee9`, aggregate implementation `359492922a100582994dc6eb5e44845761b987d2`, production head `a7517b7fcd12e3a1a129a16881ee3e348a7b72e8`; run `34811898887`; aggregate artifact `10336250420`; digest `sha256:1804657dd14eb939da835c0c8f0eca84a5a93d76014f11016b0f642bcad19f0f`. Terminal classification: `ITER497_RICHARDSON_ENCLOSURE_HOLDOUT_QUALIFIED_SCOPED`.
 
-All 12 Iter496 raw lanes are valid (240 frozen states). Richardson improves 220/240 states, reduces the worst original-stencil target remainder from `2.08029730732611e-4` to `1.75971898034259e-6`, and restores median small/large amplitude scaling to `0.125010164300838`, essentially cubic `1/8`. The result is not yet uniform: max scaling ratio is `0.193858822037374`, max cubic-normalized Richardson remainder `112.621961946326`, and the largest coefficient stencil change is `0.192565945056137` for Q11 (`1to4`, rho=0.15). Thus coefficient truncation explains most of the Iter495 anomaly, but a conservative enclosure still requires independent validation.
+All 12 Iter497 raw lanes are represented in the terminal aggregate: 192 frozen states and 768 independent holdouts. All 768/768 holdouts are covered by the prospectively frozen conservative Richardson enclosure; worst coverage ratio is `0.483944238351976`. All source/training/frozen predicates pass and there are no missing or invalid jobs. This materially validates finite holdout generalization, but it is not a continuum interval/uniform certificate.
 
 ## Global lock
 - RQIR Core v1.0 remains FROZEN.
@@ -32,33 +32,33 @@ All 12 Iter496 raw lanes are valid (240 frozen states). Richardson improves 220/
 - Last authoritative status: queued; do not duplicate.
 
 ### Next D7-S2 dependent gate
-Prospectively validate a conservative Richardson coefficient/remainder enclosure on predeclared holdout amplitudes using the already-frozen q=1 chart, causal classes, rho witnesses and directions. No post-hoc h/direction tuning. A finite holdout PASS is only a prerequisite for a true interval/uniform certificate, not that certificate itself.
+Attempt a genuinely continuous/validated uniform-neighborhood certificate for the already-qualified q=1 local Richardson envelope. The next gate must prospectively distinguish a true interval/analytic certificate from mere dense sampling. If the current source/KAK/network evaluator cannot support rigorous interval propagation, that inability must be exposed as a numerical-method blocker rather than papered over by sample density.
 
 ### Ten-source-spectral object audit
 Iter468 remains the source authority for ten independent spectral variables and the shared group kernel. Exact published normalization, ordering and i-epsilon prescription remain mandatory before a production ten-spectral gate. No shared-spectral-variable shortcut or fitted contour is authorized.
 
 ## Current blockers
 ### D7-S2
-1. conservative coefficient/remainder enclosure validation after Iter496, followed by a genuine interval/uniform neighborhood certificate if supported;
+1. genuine continuous/validated uniform-neighborhood certification after the successful Iter497 finite holdout enclosure;
 2. exact coupling to ten independent/source-defined spectral integrations with published normalization, order and i-epsilon;
 3. K5 collision geometry and correlated boundary-value admissibility (Iter461 stream);
 4. separation of absolute convergence from conditional/PV/source-defined distributional amplitudes.
 
-No independent-edge surrogate, shared spectral-variable fiction, fitted cancellation, replacement of source KAK by polar factors, false Toller composition, artificial Haar-suppressing weight, post-hoc q/h refinement, or post-hoc contour modification is allowed.
+No independent-edge surrogate, shared spectral-variable fiction, fitted cancellation, replacement of source KAK by polar factors, false Toller composition, artificial Haar-suppressing weight, post-hoc q/h refinement, post-hoc safety-factor enlargement, or post-hoc contour modification is allowed.
 
 ### D7-S3 / D7-S4
 Remain open/partial. Preserve existing negative and blocked transport/closure evidence; do not invent missing closure maps.
 
 ## Exact next permitted decisions
-1. Prospectively freeze and run a conservative Richardson coefficient/remainder enclosure validation on independent holdout amplitudes; any failure must first be separated into infrastructure/numerical versus scientific failure.
-2. If the frozen enclosure covers all holdouts with stable margin, move to a genuine interval/uniform certificate. If not, open a higher-order/direct interval blocker without tuning h/directions post hoc.
+1. Prospectively freeze and attempt a genuine continuous/validated uniform-neighborhood certificate using the already-qualified q=1 geometry and Richardson local model. Dense-grid evidence alone is not sufficient for certification.
+2. If rigorous interval propagation is blocked by the source/KAK/network implementation, record a numerical-method blocker and open only the minimal enabling gate required for validated propagation; do not relabel sampling as proof.
 3. Consume Iter461 immediately if terminal; never duplicate its authoritative queued run.
 4. Continue exact ten-spectral source audit independently; keep Haar, spectral, PV/conditional and distributional questions separate.
 5. D7 terminal classifier and all four terminal labels remain forbidden until S2-S4 are formally closed.
 
 ## Working progress rubric
-D2 82%, D4 68%, D7 64%, integrated path 75%.
-This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. Iter496 earns +1 point on D7 and integrated readiness because it materially separates coefficient truncation from genuine higher-order structure and narrows the next step to a conservative enclosure problem; it does not close D7-S2.
+D2 82%, D4 68%, D7 65%, integrated path 76%.
+This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. Iter497 earns +1 point on D7 and integrated readiness because every prospectively frozen independent holdout is enclosed with worst coverage ratio below 0.484, materially narrowing the finite-validation blocker to the genuine continuum/uniform-certification problem; it does not close D7-S2.
 
 ## Claim guards
 No complete-QG claim. No physical causal-vertex finiteness/divergence theorem. No positive-measure or absolute Haar convergence/divergence theorem. No universal causal-EPRL/contour no-go theorem. No terminal D7 label. No fitted completion or modified published spectral i-epsilon. Candidate Gravity remains inactive.
