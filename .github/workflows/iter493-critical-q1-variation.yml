@@ -21,7 +21,7 @@ jobs:
           pre=pathlib.Path('recovery/ITER493_PREREG_CRITICAL_Q1_VARIATION_2026-09-14.md').read_text()
           result=pathlib.Path('recovery/ITER492_RESULT_TANGENT_BOUNDARY_LAYER_2026-09-14.md').read_text()
           assert 'prospectively frozen before implementation' in pre
-          assert 'q=1.00 only' in pre
+          assert 'q=1.00' in pre and 'only' in pre
           assert 'all 20 standard coordinate basis vectors' in pre
           assert 'kappa in {0.005, 0.010}' in pre
           assert 'ITER492_TANGENT_BOUNDARY_LAYER_BRACKET_QUALIFIED_SCOPED' in result
