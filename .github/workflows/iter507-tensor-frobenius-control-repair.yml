@@ -1,4 +1,5 @@
 name: iter507-tensor-frobenius-control-repair
+# launch marker: frozen Iter507 control-only rerun
 on:
   push:
     branches: [research/iter507-tensor-frobenius-control-repair]
