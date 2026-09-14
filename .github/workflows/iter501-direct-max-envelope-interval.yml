@@ -1,0 +1,86 @@
+name: iter501-direct-max-envelope-interval
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER501_PREREG_DIRECT_MAX_ENVELOPE_INTERVAL_SCIENCE_2026-09-14.md'
+      - 'code/iter501_direct_max_envelope_interval.py'
+      - 'code/iter501_aggregate.py'
+      - '.github/workflows/iter501-direct-max-envelope-interval.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen authority
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('recovery/ITER501_PREREG_DIRECT_MAX_ENVELOPE_INTERVAL_SCIENCE_2026-09-14.md').read_text().lower()
+          assert 'frozen before implementation / production' in p
+          assert '243 intertwiner channels' in p
+          assert '16 amplitude subintervals' in p
+          assert 'python-flint==0.9.0' in p
+          assert 'fail-fast:false' in p.replace(' ','')
+          assert 'iter501_direct_max_envelope_interval_nondecay_qualified_scoped' in p
+          assert 'scientific_fail_iter501_uniform_nondecay_interval' in p
+          assert 'iter501_numerical_method_blocker' in p
+          assert 'candidate gravity remains inactive' in p
+          PY
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        block: [0,1,2,3]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+          python - <<'PY'
+          import flint
+          assert flint.__version__ == '0.9.0'
+          PY
+      - name: Run frozen direct interval science lane
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter501_direct_max_envelope_interval.py --causal '${{ matrix.causal }}' --block '${{ matrix.block }}' --out 'artifacts/iter501-${{ matrix.causal }}-b${{ matrix.block }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter501-${{ matrix.causal }}-b${{ matrix.block }}
+          path: artifacts/iter501-${{ matrix.causal }}-b${{ matrix.block }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter501-*
+          path: downloaded
+      - name: Aggregate frozen direct interval verdict
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter501_aggregate.py --root downloaded --out artifacts/iter501-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter501-summary
+          path: artifacts/iter501-summary.json
+          if-no-files-found: error
