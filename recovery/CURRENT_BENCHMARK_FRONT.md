@@ -2,13 +2,13 @@
 Updated: 2026-09-14
 
 ## Authoritative frontier
-Mainline has advanced through terminal Iter492. Iter461 remains independently queued on its research branch and must not be duplicated.
+Mainline has advanced through terminal Iter493. Iter461 remains independently queued on its research branch and must not be duplicated.
 
-The consumed D7-S2 chain now includes: source Eq.(3)->Eq.(4) contraction pinning (Iter468), source Toller leading magnetic rank (Iter479), boundary-intertwiner noncancellation (Iter480B), full local angular/intertwiner network (Iter481), compact common-node correlation (Iter482), shared-node noncompact SL(2,C) geometry (Iter483), source one-edge Toller/KAK lift (Iter484), correlated ten-edge Toller magnetic network (Iter485), a valid one-dimensional shared-Haar NONDECAY witness after Iter487/489 revalidation, a valid negative fixed-radius sampled angular-thickening result (Iter491), and now a prospectively frozen shrinking tangent-boundary-layer bracket (Iter492).
+The consumed D7-S2 chain includes Iter468 source Eq.(3)->Eq.(4) contraction pinning; Iter479 source Toller leading magnetic rank; Iter480B boundary-intertwiner noncancellation; Iter481 full angular/intertwiner network; Iter482 compact common-node correlation; Iter483 shared-node noncompact SL(2,C) geometry; Iter484 source one-edge Toller/KAK lift; Iter485 correlated ten-edge Toller magnetic network; Iter487/489 one-dimensional shared-Haar NONDECAY witness; Iter491 negative fixed-radius sampled thickening; Iter492 shrinking tangent-boundary-layer bracket; and Iter493 full-basis q=1 local first/second variation.
 
-Iter492 authority: prereg `6288e7543f52f714e0887e4cf120f2dd19c4fc7d`, evaluator `35b2a7c44b4c3bc9b6742513ef9fa375d189e2e1`, aggregate implementation `94730270d8b2b900aff270de9e9f0812c902db91`, production/workflow head `65e01fc8bf3b3e090da000501802d27a8d4aaca8`; run `34794279921`; source-lock job `103824262832`; aggregate job `103824804978`; aggregate artifact `10328863006`; digest `sha256:1821129dbbad0b8f9e4f435235b4d4f2695dbc7326cf899d40b196a989e197c8`. Terminal classification: `ITER492_TANGENT_BOUNDARY_LAYER_BRACKET_QUALIFIED_SCOPED`.
+Iter493 authority: prereg `c372ae3b662349203aa39501696ea57aceeb77b5`, evaluator `bfed21574f3d5ea80f2695009561c22dc5efefea`, aggregate implementation `7a1759bb3baafd7f585fdb1178230069bdeab129`, production/source-lock repair head `38f67256aae6b778ad748baa2135340ad0968c1b`; run `34797703185`; source-lock job `103833913367`; aggregate job `103834905468`; aggregate artifact `10330606775`; digest `sha256:9ee36ed509ccfe8c4e95f0e5529cd2a97abef3024a02aa779b944a7cdbc471bb`. Terminal classification: `ITER493_CRITICAL_Q1_LOCAL_VARIATION_QUALIFIED_SCOPED`.
 
-All 15 Iter492 raw matrix artifacts were consumed. There are no missing/invalid jobs. On the frozen `eps_q(R)=0.02 exp(-qR)` matrix, q=0.50 and q=0.75 fail FULL_NONDECAY (21/24 lanes fail for each), while q=1.00, q=1.25 and q=1.50 pass FULL_NONDECAY and robustness in all 24/24 lanes. Thus the smallest prospectively frozen passing q is 1.00 and the finite-grid critical bracket is `(0.75, 1.00]`. This is not an open-neighborhood or positive-measure theorem.
+Iter493 aggregate is valid over 240 causal×coordinate×rho states with no missing/invalid jobs. Max |D| is `0.01004981469607813`; median |D| `0.00020609675681626527`; max |Q| `1.9784279772139257`; median |Q| `2.417976929791621e-07`. The response is strongly anisotropic and the largest Q two-step discrepancy is large, so a scalar or diagonal-only Taylor/Lipschitz certificate is not authorized.
 
 ## Global lock
 - RQIR Core v1.0 remains FROZEN.
@@ -30,44 +30,43 @@ All 15 Iter492 raw matrix artifacts were consumed. There are no missing/invalid 
 - Head: `05c7f87c8519349057332bf90021f1128e1eefc3`
 - Run: `34748503239`
 - Last authoritative status: queued; do not duplicate.
-- A terminal PASS is collision-geometry evidence only and cannot close D7-S2 by itself.
 
-### Iter493 — critical q=1 local first/second angular variation
-- Prereg: `c372ae3b662349203aa39501696ea57aceeb77b5`.
-- Evaluator: `bfed21574f3d5ea80f2695009561c22dc5efefea`.
-- Aggregate implementation: `7a1759bb3baafd7f585fdb1178230069bdeab129`.
-- Workflow launch: `724b8c0b3dfa9613b1ee9598ef4b1d37da25ed20`.
-- Source-lock-only text repair: `38f67256aae6b778ad748baa2135340ad0968c1b`; no frozen scientific panel, equation, amplitude, threshold, or interpretation rule changed.
-- Matrix: 3 causal classes × 4 fixed blocks covering all 20 standard angular basis coordinates, `fail-fast:false`, `max-parallel:12`.
-- Critical scaling only: q=1; symmetric kappa amplitudes 0.005 and 0.010; all four rho witnesses; inherited source/HP controls.
-- Purpose: measure finite-grid first/second variation tensor of the actual radial slope at the critical boundary layer. Even a valid result is not an analytic/uniform certificate.
+### Iter494 — critical q=1 mixed-curvature audit
+- Prereg: `ad699fe7f6bfadbafb11a79607fbaaa5aa2de517`.
+- Evaluator: `fe0c98b2a4f36b026401b3f6549eef7026b367a0`.
+- Aggregate implementation: `97a509a1330ed5e6296344611a090c260d3f31e9`.
+- Production/workflow head: `d37ea411509b1993ccf40898e791e10c36669872`.
+- Run: `34800772592`.
+- Frozen active coordinates: `[0,1,3,5,6,11]`; all 15 unordered pairs; 3 causal classes × 3 fixed pair blocks = 9 independent jobs; `fail-fast:false`, `max-parallel:9`.
+- q=1 only; h in `{0.005,0.010}`; all four rho witnesses; inherited source/HP controls.
+- Purpose: quantify mixed angular curvature before any validated Taylor-envelope certificate. Even PASS is a scoped finite-grid prerequisite, not a uniform/interval proof.
 
 ### Ten-source-spectral object audit
-Iter468 remains the source authority for ten independent spectral variables and shared group kernel. Exact published normalization, ordering and i-epsilon prescription remain mandatory before any production ten-spectral gate. No shared-spectral-variable shortcut or fitted contour is authorized.
+Iter468 remains the source authority for ten independent spectral variables and the shared group kernel. Exact published normalization, ordering and i-epsilon prescription remain mandatory before a production ten-spectral gate. No shared-spectral-variable shortcut or fitted contour is authorized.
 
 ## Current blockers
 ### D7-S2
-Iter492 narrows the angular-Haar question from an unknown shrinking neighborhood to a finite-grid critical boundary layer: frozen perturbations shrinking as exp(-R) survive, while exp(-0.75R) do not on the tested matrix. Remaining blockers are:
-1. local response and then analytic/uniform control of the critical angular boundary layer; Iter493 is the next finite-grid prerequisite, not the final certificate;
+Iter492 established finite-grid critical bracket `(0.75,1.00]`; Iter493 shows the q=1 local response is finite but anisotropic. Remaining blockers:
+1. mixed curvature and then analytic/validated-uniform control of the q=1 angular boundary layer; Iter494 is the next frozen prerequisite;
 2. exact coupling to ten independent/source-defined spectral integrations with published normalization, order and i-epsilon;
 3. K5 collision geometry and correlated boundary-value admissibility (Iter461 stream);
 4. separation of absolute convergence from conditional/PV/source-defined distributional amplitudes.
 
-No independent-edge surrogate, shared spectral-variable fiction, fitted cancellation, replacement of source KAK by polar factors, false Toller composition, artificial Haar-suppressing weight, post-hoc q refinement to manufacture a threshold, or post-hoc contour modification is allowed.
+No independent-edge surrogate, shared spectral-variable fiction, fitted cancellation, replacement of source KAK by polar factors, false Toller composition, artificial Haar-suppressing weight, post-hoc q refinement, or post-hoc contour modification is allowed.
 
 ### D7-S3 / D7-S4
 Remain open/partial. Preserve existing negative and blocked transport/closure evidence; do not invent missing closure maps.
 
 ## Exact next permitted decisions
-1. Consume Iter493 matrix/aggregate when terminal. If any failure occurs, identify the first causal failure and distinguish source/numerical/infrastructure failure from science before classification.
-2. If Iter493 is valid, use its measured spanning-basis first/second response to design a new prospectively frozen analytic/validated-uniform neighborhood certificate; do not simply add q points.
+1. Consume Iter494 matrix/aggregate when terminal. If any failure occurs, identify the first causal failure and distinguish source/numerical/infrastructure failure from science before classification.
+2. If Iter494 is valid, use measured diagonal + mixed curvature to prospectively design an interval/validated Taylor-envelope certificate; do not simply add more q or h values.
 3. Consume Iter461 immediately if terminal; never duplicate its authoritative queued run.
 4. Continue exact ten-spectral source audit independently; keep Haar, spectral, PV/conditional and distributional questions separate.
 5. D7 terminal classifier and all four terminal labels remain forbidden until S2-S4 are formally closed.
 
 ## Working progress rubric
-D2 82%, D4 68%, D7 61%, integrated path 72%.
-This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. The +1 percentage-point D7 / +1 integrated update is credited only to terminal Iter492 because it materially narrows the angular-Haar blocker to a frozen critical boundary-layer bracket. Launching Iter493 carries no readiness credit until terminal evidence exists.
+D2 82%, D4 68%, D7 62%, integrated path 73%.
+This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. The +1 percentage-point D7 / +1 integrated update is credited only to terminal Iter493 because it materially replaces an unknown full-basis local-response blocker with measured anisotropic first/second response and identifies mixed curvature as the next precise prerequisite. Launching Iter494 carries no readiness credit until terminal evidence exists.
 
 ## Claim guards
 No complete-QG claim. No physical causal-vertex finiteness/divergence theorem. No positive-measure or absolute Haar convergence/divergence theorem. No universal causal-EPRL/contour no-go theorem. No terminal D7 label. No fitted completion or modified published spectral i-epsilon. Candidate Gravity remains inactive.
