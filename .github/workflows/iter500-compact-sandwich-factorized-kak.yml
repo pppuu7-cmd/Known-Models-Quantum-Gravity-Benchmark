@@ -1,0 +1,85 @@
+name: iter500-compact-sandwich-factorized-kak
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER500_PREREG_COMPACT_SANDWICH_FACTORIZED_KAK_2026-09-14.md'
+      - 'code/iter500_compact_sandwich_kak.py'
+      - 'code/iter500_aggregate.py'
+      - '.github/workflows/iter500-compact-sandwich-factorized-kak.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen authority
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('recovery/ITER500_PREREG_COMPACT_SANDWICH_FACTORIZED_KAK_2026-09-14.md').read_text().lower()
+          assert 'frozen before implementation / production' in p
+          assert 'compact-sandwich' in p
+          assert '1024' in p
+          assert 'python-flint==0.9.0' in p
+          assert 'ctx.prec=384' in p
+          assert 'iter500_compact_sandwich_factorized_kak_qualified_scoped' in p
+          assert 'scientific_fail_iter500_compact_kak_covariance' in p
+          assert 'iter500_numerical_method_blocker' in p
+          assert 'no nondecay' in p
+          PY
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        block: [0,1,2,3]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+          python - <<'PY'
+          import flint
+          assert flint.__version__ == '0.9.0'
+          PY
+      - name: Run frozen enabling lane
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter500_compact_sandwich_kak.py --block '${{ matrix.block }}' --out 'artifacts/iter500-b${{ matrix.block }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter500-b${{ matrix.block }}
+          path: artifacts/iter500-b${{ matrix.block }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter500-b*
+          path: downloaded
+      - name: Aggregate frozen enabling verdict
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter500_aggregate.py --root downloaded --out artifacts/iter500-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter500-summary
+          path: artifacts/iter500-summary.json
+          if-no-files-found: error
