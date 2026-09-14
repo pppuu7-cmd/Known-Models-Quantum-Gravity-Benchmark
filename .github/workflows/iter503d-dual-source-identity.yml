@@ -1,0 +1,84 @@
+name: iter503d-dual-source-identity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER503D_PREREG_DUAL_SOURCE_IDENTITY_2026-09-14.md'
+      - 'code/iter503d_dual_source_identity.py'
+      - 'code/iter503d_aggregate.py'
+      - '.github/workflows/iter503d-dual-source-identity.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen authority and syntax
+        run: |
+          python -m py_compile code/iter503d_dual_source_identity.py code/iter503d_aggregate.py
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('recovery/ITER503D_PREREG_DUAL_SOURCE_IDENTITY_2026-09-14.md').read_text().lower()
+          assert 'outcome-blind' in p
+          assert '1440' in p
+          assert 'dual_source_identity_confirmed' in p
+          assert 'dual_source_identity_violation' in p
+          q=Path('code/iter503d_dual_source_identity.py').read_text()
+          assert 'p.d + n.d - d.d' in q
+          assert 'len(checks) == 480' in q
+          PY
+      - name: Install pinned dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        box: [0,7,15]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Run frozen derivative identity lane
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter503d_dual_source_identity.py --box '${{ matrix.box }}' --out 'artifacts/iter503d-box${{ matrix.box }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter503d-box${{ matrix.box }}
+          path: artifacts/iter503d-box${{ matrix.box }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter503d-box*
+          path: downloaded
+      - name: Aggregate frozen derivative verdict
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter503d_aggregate.py --root downloaded --out artifacts/iter503d-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter503d-summary
+          path: artifacts/iter503d-summary.json
+          if-no-files-found: error
