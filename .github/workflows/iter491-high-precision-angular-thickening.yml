@@ -1,0 +1,86 @@
+name: iter491-high-precision-angular-thickening
+
+on:
+  push:
+    paths:
+      - '.github/workflows/iter491-high-precision-angular-thickening.yml'
+      - 'code/iter491_high_precision_angular_thickening.py'
+      - 'code/iter491_aggregate.py'
+      - 'recovery/ITER491_PREREG_HIGH_PRECISION_ANGULAR_THICKENING_2026-09-14.md'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen authority
+        run: |
+          python - <<'PY'
+          import pathlib
+          pre=pathlib.Path('recovery/ITER491_PREREG_HIGH_PRECISION_ANGULAR_THICKENING_2026-09-14.md').read_text()
+          assert 'FROZEN BEFORE IMPLEMENTATION/PRODUCTION' in pre
+          assert '100 decimal digits' in pre
+          assert '1e-50' in pre and '1e-20' in pre and '1e-9' in pre
+          assert 'actual_slope >= 0.00' in pre and 'actual_slope >= +1.00' in pre
+          parent=pathlib.Path('results/ITER490_ANGULAR_NEIGHBORHOOD_THICKENING_RESULT_2026-09-14.md').read_text()
+          assert 'INFRASTRUCTURE_OR_NUMERICAL_FAIL_ITER490' in parent
+          assert 'raw perturbed slopes' in parent
+          PY
+
+  lane:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        radius_index: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy
+      - name: Run frozen high-precision angular lane
+        run: |
+          mkdir -p artifacts
+          python code/iter491_high_precision_angular_thickening.py \
+            --causal '${{ matrix.causal }}' \
+            --radius-index '${{ matrix.radius_index }}' \
+            --out 'artifacts/iter491-${{ matrix.causal }}-r${{ matrix.radius_index }}.json'
+      - name: Upload raw lane artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter491-${{ matrix.causal }}-r${{ matrix.radius_index }}
+          path: artifacts/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [source-lock, lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all raw lanes
+        uses: actions/download-artifact@v4
+        with:
+          pattern: iter491-*
+          path: raw
+          merge-multiple: false
+      - name: Aggregate frozen verdict
+        run: |
+          mkdir -p aggregate
+          python code/iter491_aggregate.py --root raw --out aggregate/iter491-summary.json
+      - name: Upload aggregate artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter491-summary
+          path: aggregate/iter491-summary.json
+          if-no-files-found: error
