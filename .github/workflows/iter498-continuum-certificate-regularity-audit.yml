@@ -26,7 +26,7 @@ jobs:
           assert '0.00140625' in p and '0.00234375' in p
           assert '1e-6' in p
           assert 'dense sampling' in low and 'not' in low
-          assert 'candidate gravity inactive' in low
+          assert 'candidate gravity activation' in low
           PY
 
   lane:
