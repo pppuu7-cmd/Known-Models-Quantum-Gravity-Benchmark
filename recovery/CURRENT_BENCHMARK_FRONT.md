@@ -2,13 +2,13 @@
 Updated: 2026-09-14
 
 ## Authoritative frontier
-Mainline has advanced through terminal Iter494. Iter461 remains independently queued on its research branch and must not be duplicated.
+Mainline has advanced through terminal Iter495. Iter461 remains independently queued on its research branch and must not be duplicated.
 
-The consumed D7-S2 chain includes Iter468 source Eq.(3)->Eq.(4) contraction pinning; Iter479 source Toller leading magnetic rank; Iter480B boundary-intertwiner noncancellation; Iter481 full angular/intertwiner network; Iter482 compact common-node correlation; Iter483 shared-node noncompact SL(2,C) geometry; Iter484 source one-edge Toller/KAK lift; Iter485 correlated ten-edge Toller magnetic network; Iter487/489 one-dimensional shared-Haar NONDECAY witness; Iter491 negative fixed-radius sampled thickening; Iter492 shrinking tangent-boundary-layer bracket; Iter493 full-basis q=1 local first/second variation; and Iter494 mixed q=1 curvature.
+The consumed D7-S2 chain includes Iter468 source Eq.(3)->Eq.(4) contraction pinning; Iter479 source Toller leading magnetic rank; Iter480B boundary-intertwiner noncancellation; Iter481 full angular/intertwiner network; Iter482 compact common-node correlation; Iter483 shared-node noncompact SL(2,C) geometry; Iter484 source one-edge Toller/KAK lift; Iter485 correlated ten-edge Toller magnetic network; Iter487/489 one-dimensional shared-Haar NONDECAY witness; Iter491 negative fixed-radius sampled thickening; Iter492 shrinking tangent-boundary-layer bracket; Iter493 full-basis q=1 local first/second variation; Iter494 mixed q=1 curvature; and Iter495 simultaneous multivariate Taylor stress.
 
-Iter494 authority: prereg `ad699fe7f6bfadbafb11a79607fbaaa5aa2de517`, evaluator `fe0c98b2a4f36b026401b3f6549eef7026b367a0`, aggregate implementation `97a509a1330ed5e6296344611a090c260d3f31e9`, source-lock-only repair/production head `f7570e994a4ac7919de66d7aa6918a71fb3296a7`; authoritative retry run `34800831631`; source-lock job `103843009836`; aggregate job `103843648511`; aggregate artifact `10331736755`; digest `sha256:a04710304e7e9f4cf1e49c19ed6192ab5da7ea65be6b99bf3b78cebbc6cc9ed8`. Terminal classification: `ITER494_CRITICAL_Q1_MIXED_CURVATURE_QUALIFIED_SCOPED`.
+Iter495 authority: prereg `1b73918e53663186eb4811a62922cd4402220958`, evaluator `7ab222baf9fede2e5ff39a07d770c0f5544c1f61`, aggregate implementation `1a2f6974156dc4e6a1eaae7f4b95e3258f5c5ebe`, production head `49a4695e2ecc43391d3477d0ff9554b910e425ee`; run `34804409129`; aggregate job `103854581566`; aggregate artifact `10333052075`; digest `sha256:6d0cf4c19a3735d4509772ab43e246ab58da3d408534cbd09578348e3ed44a77`. Terminal classification: `ITER495_MULTIVARIATE_TAYLOR_STRESS_QUALIFIED_SCOPED`.
 
-All 9 Iter494 scientific jobs are terminal success and the aggregate consumed all 9 raw artifacts with no missing/invalid jobs. Max |M| is `1.9656594047123832`, median |M| `0.00031101842767888854`, max scaled two-step discrepancy `0.8247973630248762`, and sign stability `167/180`. The response is strongly anisotropic; diagonal/separable Taylor control is not authorized.
+All 12 Iter495 scientific jobs are terminal success and aggregate is valid with no missing/invalid jobs. However the quadratic remainder is not uniformly cubic on the frozen simultaneous perturbations: max absolute remainder `2.1820206151890176e-4`, max `|r|/a^3=4069.3407635785657`, observed small/large remainder ratio median `0.22654674656585128` and max `9.533261802575108` versus cubic expectation `0.125`. Therefore a direct validated quadratic Taylor-envelope certificate is not authorized.
 
 ## Global lock
 - RQIR Core v1.0 remains FROZEN.
@@ -31,22 +31,23 @@ All 9 Iter494 scientific jobs are terminal success and the aggregate consumed al
 - Run: `34748503239`
 - Last authoritative status: queued; do not duplicate.
 
-### Iter495 — multivariate q=1 Taylor-envelope stress audit
-- Prereg: `1b73918e53663186eb4811a62922cd4402220958`.
-- Evaluator: `7ab222baf9fede2e5ff39a07d770c0f5544c1f61`.
-- Aggregate implementation: `1a2f6974156dc4e6a1eaae7f4b95e3258f5c5ebe`.
-- Workflow launch head: `49a4695e2ecc43391d3477d0ff9554b910e425ee`.
-- Frozen chart `[0,1,3,5,6,11]`; 8 prospectively fixed six-dimensional directions and both signs; amplitudes `{0.0025,0.0050}`; q=1 only; all four rho witnesses.
-- Matrix: 3 causal classes × 4 fixed direction blocks = 12 independent jobs; `fail-fast:false`, `max-parallel:12`.
-- Purpose: stress the full quadratic model (first + diagonal-second + all mixed-second terms) against simultaneous multi-coordinate source-locked evaluations and measure the higher-order remainder. Even PASS is finite-set evidence, not an interval/uniform certificate.
+### Iter496 — coefficient-stencil convergence / Richardson diagnostic
+- Prereg: `fb9b2a5f8ed3dc24beba31e6e55fdf3f60692898`.
+- Evaluator: `4351165495050e533bd812b30dbcd31276c15634`.
+- Aggregate implementation: `c277968c65ddd2587250ce8b859cad6409cbd579`.
+- Workflow/production head: `1098eb1f8a8ceac78013e8c85194bad61d43cf6a`.
+- Run: `34807803061`.
+- Frozen coefficient stencils `{0.0050,0.0025,0.00125}`, second-order Richardson from the two finest stencils, target amplitudes `{0.00125,0.0025}`, same Iter495 chart/directions/q=1/rho witnesses.
+- Matrix: 3 causal classes × 4 direction blocks = 12 independent jobs; `fail-fast:false`, `max-parallel:12`.
+- Purpose: distinguish finite-difference coefficient truncation from genuine higher-order/nonlocal angular structure before choosing an interval certificate or higher-order model.
 
 ### Ten-source-spectral object audit
 Iter468 remains the source authority for ten independent spectral variables and the shared group kernel. Exact published normalization, ordering and i-epsilon prescription remain mandatory before a production ten-spectral gate. No shared-spectral-variable shortcut or fitted contour is authorized.
 
 ## Current blockers
 ### D7-S2
-Iter492 established finite-grid critical bracket `(0.75,1.00]`; Iter493 established finite anisotropic first/diagonal-second response; Iter494 established finite but strongly anisotropic mixed response. Remaining blockers:
-1. multivariate remainder control and then analytic/validated interval-uniform control of the q=1 shrinking angular boundary layer; Iter495 is the next frozen finite-set prerequisite, not the final certificate;
+Iter492 established finite-grid critical bracket `(0.75,1.00]`; Iter493/494 measured anisotropic first/second/mixed local response; Iter495 shows the resulting finite-difference quadratic model has a non-uniformly-cubic remainder on simultaneous perturbations. Remaining blockers:
+1. separate coefficient-stencil truncation from genuine higher-order angular structure (Iter496); then choose either validated coefficient/remainder enclosure or a prospectively frozen higher-order/direct interval treatment;
 2. exact coupling to ten independent/source-defined spectral integrations with published normalization, order and i-epsilon;
 3. K5 collision geometry and correlated boundary-value admissibility (Iter461 stream);
 4. separation of absolute convergence from conditional/PV/source-defined distributional amplitudes.
@@ -57,15 +58,15 @@ No independent-edge surrogate, shared spectral-variable fiction, fitted cancella
 Remain open/partial. Preserve existing negative and blocked transport/closure evidence; do not invent missing closure maps.
 
 ## Exact next permitted decisions
-1. Consume Iter495 matrix/aggregate when terminal. If any failure occurs, identify the first causal failure and distinguish source/numerical/infrastructure failure from science before classification.
-2. If Iter495 has a stable small remainder, use its measured remainder scaling to prospectively design a genuine interval/validated-uniform certificate. If the remainder is large/non-cubic, treat that as a new scientific blocker rather than widening thresholds or tuning directions.
+1. Consume Iter496 matrix/aggregate when terminal. Any failure must first be separated into infrastructure/numerical versus scientific failure.
+2. If coefficient refinement/Richardson materially suppresses the remainder across the frozen states, prospectively design a validated coefficient/remainder enclosure. If not, prospectively design a third-order-or-direct interval treatment; do not tune h or directions post hoc.
 3. Consume Iter461 immediately if terminal; never duplicate its authoritative queued run.
 4. Continue exact ten-spectral source audit independently; keep Haar, spectral, PV/conditional and distributional questions separate.
 5. D7 terminal classifier and all four terminal labels remain forbidden until S2-S4 are formally closed.
 
 ## Working progress rubric
 D2 82%, D4 68%, D7 63%, integrated path 74%.
-This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. The +1 percentage-point D7 / +1 integrated update is credited only to terminal Iter494 because it materially replaces an unknown mixed-curvature blocker with measured cross-coordinate response and narrows the next question to multivariate remainder/validated-uniform control. Launching Iter495 carries no readiness credit until terminal evidence exists.
+This is a research-readiness metric, not a formal gate status and not a probability of `NEW_REQUIRED`. Iter495 materially identifies a new remainder-scaling blocker but does not close or sufficiently narrow D7-S2 to earn readiness credit; therefore the stable rubric is unchanged. Launching Iter496 carries no readiness credit until terminal evidence exists.
 
 ## Claim guards
 No complete-QG claim. No physical causal-vertex finiteness/divergence theorem. No positive-measure or absolute Haar convergence/divergence theorem. No universal causal-EPRL/contour no-go theorem. No terminal D7 label. No fitted completion or modified published spectral i-epsilon. Candidate Gravity remains inactive.
