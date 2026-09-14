@@ -27,7 +27,7 @@ jobs:
           assert 'frozen before implementation / production' in p
           assert 'single common amplitude parameter' in p
           assert 'centered/mean-value' in p
-          assert 'k = {0,7,15}' in p.replace(' ','')
+          assert 'k={0,7,15}' in p.replace(' ','')
           assert 'iter503_centered_dependency_repair_enabled_scoped' in p
           assert 'iter503_numerical_method_blocker' in p
           assert 'candidate gravity remains inactive' in p
