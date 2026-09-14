@@ -12,11 +12,31 @@ This is a leading-coefficient survival gate only. It is not a local-integrabilit
 
 - Iter452 pins the source causal vertex / Eq.(3)/(4)/(7) object.
 - Iter477 establishes the one-wedge fixed-branch order `beta^(-(2j+1))`; for `j=1` the order is `beta^-3` and the leading magnetic coefficients are finite/nonzero on the frozen rho authorities used there.
-- Iter479 establishes the source Eq.(7) leading matrix `U1 diag(C_m) U2` and its full rank.
+- Iter479 establishes the source Eq.(7) leading matrix and its full rank. Its rank statement is insensitive to an overall nonzero scalar normalization.
 - Iter480B establishes that genuine j=1 boundary intertwiners alone do not universally cancel the diagonal-collision leading coefficient.
 - Iter481/482 establish the frozen angular and common-node compact contraction conventions.
 - Iter484/485 pin the `spin1`, KAK, branch, magnetic-basis, edge-order and ten-edge contraction conventions used here.
 - Iter471 gives exact K5 collision-stratum geometry, but its naive `pcrit` values are prioritization diagnostics only and are **not** used as an Iter504 classifier.
+
+## Pre-implementation normalization correction
+
+This correction is frozen **before Iter504 implementation and before any Iter504 production evidence**.
+
+Iter477 defines its hypergeometric coefficient `C_m^(src)` by the exact limit
+
+`t_m(beta) (1-exp(-2 beta))^3 / C_m^(src) -> 1`
+
+for `j=1`. Since
+
+`1-exp(-2 beta) = 2 beta + O(beta^2)`,
+
+the coefficient multiplying `beta^-3` is
+
+`B_m = C_m^(src) / 8`.
+
+Iter479's full-rank conclusion is unchanged by this common nonzero factor. Iter504, however, uses `B_m` rather than `C_m^(src)` because its finite-`t` regression compares directly with `t^3 T(beta(t))`.
+
+No threshold, tangent panel, causal class, rho value, or classifier is changed by this normalization correction.
 
 ## Frozen collision blow-up
 
@@ -61,9 +81,9 @@ For each edge choose the fixed causal branch exactly as Iter485:
 
 In the Iter484 contraction basis `m=(-1,0,+1)`, define
 
-`L_ab = r_ab^-3 D^1(U(n_ab)) diag(C_-1,C_0,C_+1) D^1(U(n_ab))^dagger`,
+`L_ab = r_ab^-3 D^1(U(n_ab)) diag(B_-1,B_0,B_+1) D^1(U(n_ab))^dagger`,
 
-where `C_m` is the exact Iter477/479 leading coefficient for the selected source branch and rho. No branch sum is allowed.
+where `B_m = C_m^(src)/8` is the exact coefficient multiplying `beta^-3` for the selected source branch and rho. No branch sum is allowed.
 
 This is the coefficient of the common full-collision factor `t^-30` for ten `j=1` wedges, before any claim about the 12-dimensional normal measure or remainder integrability.
 
@@ -88,7 +108,7 @@ There are exactly `3 panels x 3 causal classes x 2 rho values = 18` scientific l
 
 Every lane must pass all of the following before its witness can be scientific evidence:
 
-1. **Source coefficient control** — every selected `C_m` is finite and nonzero.
+1. **Source coefficient control** — every selected `C_m^(src)` and `B_m=C_m^(src)/8` is finite and nonzero.
 2. **Tangent geometry control** — all ten `r_ab>0`; all triangle difference-cycle identities hold to machine/exact-integer tolerance.
 3. **SU(2) section control** — `U(n)` is unitary with determinant one; `D^1(U)` matches the already-qualified Iter484 `spin1` convention.
 4. **Axial-section invariance** — replacing every `U(n)` by `U(n) Rz(0.371)` leaves each `L_ab` unchanged within `1e-11` relative max norm.
@@ -114,7 +134,7 @@ iff all 18 lanes are valid and in every lane
 
 PASS means: on every prospectively frozen generic common-node collision tangent panel, the exact source fixed-causal `t^-30` leading coefficient survives the full ten-edge Eq.(7)-magnetic / five-intertwiner contraction in at least one boundary channel. Therefore universal pre-integration cancellation of the leading singular coefficient is not available on these frozen generic panels.
 
-PASS does **not** establish local absolute divergence, because a uniform blow-up angular neighborhood and a source-faithful remainder/asymptotic domination theorem are still required before combining the coefficient with the collision measure.
+PASS does **not** establish local absolute divergence, because a uniform blow-up angular neighborhood and a source-faithful remainder/asymptotic domination theorem are still required before combining the coefficient with the 12-dimensional full-collision normal measure.
 
 ### FAIL
 
