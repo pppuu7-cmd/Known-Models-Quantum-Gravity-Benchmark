@@ -1,0 +1,81 @@
+name: iter490-angular-neighborhood-thickening
+
+on:
+  push:
+    paths:
+      - '.github/workflows/iter490-angular-neighborhood-thickening.yml'
+      - 'code/iter490_angular_neighborhood_thickening.py'
+      - 'code/iter490_aggregate.py'
+      - 'recovery/ITER490_PREREG_ANGULAR_NEIGHBORHOOD_THICKENING_2026-09-14.md'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen authority
+        run: |
+          python - <<'PY'
+          import pathlib
+          p=pathlib.Path('recovery/ITER490_PREREG_ANGULAR_NEIGHBORHOOD_THICKENING_2026-09-14.md').read_text()
+          assert 'FROZEN BEFORE IMPLEMENTATION/PRODUCTION' in p
+          assert 'eps in {0.0025,0.005,0.01,0.02}' in p
+          assert 'exactly 16 deterministic 20-D perturbation vectors' in p
+          assert 'actual_slope >= +1.00' in p
+          assert 'not a uniform-neighborhood theorem' in p
+          r=pathlib.Path('results/ITER487_ITER489_HAAR_ESCAPE_REVALIDATED_RESULT_2026-09-14.md').read_text()
+          assert 'SCIENTIFIC_FAIL_ITER487_HAAR_ESCAPE_ACTUAL_ENVELOPE_REVALIDATED_BY_ITER489' in r
+          PY
+
+  lane:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        radius_index: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy
+      - name: Run frozen sampled thickening lane
+        run: |
+          mkdir -p artifacts
+          python code/iter490_angular_neighborhood_thickening.py \
+            --causal '${{ matrix.causal }}' \
+            --radius-index '${{ matrix.radius_index }}' \
+            --out 'artifacts/iter490-${{ matrix.causal }}-r${{ matrix.radius_index }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter490-${{ matrix.causal }}-r${{ matrix.radius_index }}
+          path: artifacts/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [source-lock, lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter490-*
+          path: raw
+          merge-multiple: false
+      - name: Aggregate frozen verdict
+        run: |
+          mkdir -p aggregate
+          python code/iter490_aggregate.py --root raw --out aggregate/iter490-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter490-summary
+          path: aggregate/iter490-summary.json
+          if-no-files-found: error
