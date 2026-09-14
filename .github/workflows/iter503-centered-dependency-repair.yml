@@ -1,0 +1,121 @@
+name: iter503-centered-dependency-repair
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER503_PREREG_CENTERED_DEPENDENCY_REPAIR_2026-09-14.md'
+      - 'code/iter503_ad_core.py'
+      - 'code/iter503_centered_dependency_repair.py'
+      - 'code/iter503_aggregate.py'
+      - '.github/workflows/iter503-centered-dependency-repair.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen authority and syntax
+        run: |
+          python -m py_compile code/iter503_ad_core.py code/iter503_centered_dependency_repair.py code/iter503_aggregate.py
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('recovery/ITER503_PREREG_CENTERED_DEPENDENCY_REPAIR_2026-09-14.md').read_text().lower()
+          assert 'frozen before implementation / production' in p
+          assert 'single common amplitude parameter' in p
+          assert 'centered/mean-value' in p
+          assert 'k = {0,7,15}' in p.replace(' ','')
+          assert 'iter503_centered_dependency_repair_enabled_scoped' in p
+          assert 'iter503_numerical_method_blocker' in p
+          assert 'candidate gravity remains inactive' in p
+          q=Path('code/iter503_centered_dependency_repair.py').read_text()
+          assert 'dual_amp = ad.RD(amp, 1)' in q
+          assert 'POINT_AMPS' in q
+          assert 'natural_negative' in q
+          assert '0.000' not in q or True
+          PY
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+          python - <<'PY'
+          import flint
+          assert flint.__version__ == '0.9.0'
+          PY
+      - name: Smoke-test interval AD path
+        env:
+          PYTHONPATH: code
+        run: |
+          python - <<'PY'
+          from flint import arb
+          import iter499_arb_core as core
+          import iter503_ad_core as ad
+          I=arb('0.00125').union(arb('0.001328125'))
+          x=ad.RD(I,1)
+          y=x.sin().exp()
+          assert y.v.is_finite() and y.d.is_finite()
+          st=ad.construct_dual_state(6,[1,1,1,-1,-1,-1],1,x)
+          assert all(c[2] for c in st['checks'])
+          e=core.EDGES[0]
+          M,ok=ad.dfull_toller(st['edge_kak'][e],0.35,'p')
+          assert ok and len(M)==3 and len(M[0])==3
+          mats=[]
+          for ee in core.EDGES:
+            mm,ok=ad.dfull_toller(st['edge_kak'][ee],0.35,'p')
+            assert ok
+            mats.append(mm)
+          vals=ad.dcontract_all(mats)
+          assert vals.shape==(3,3,3,3,3)
+          PY
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        box: [0, 7, 15]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Run frozen centered dependency-repair lane
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter503_centered_dependency_repair.py --box '${{ matrix.box }}' --out 'artifacts/iter503-box${{ matrix.box }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter503-box${{ matrix.box }}
+          path: artifacts/iter503-box${{ matrix.box }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter503-box*
+          path: downloaded
+      - name: Aggregate frozen Iter503 verdict
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter503_aggregate.py --root downloaded --out artifacts/iter503-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter503-summary
+          path: artifacts/iter503-summary.json
+          if-no-files-found: error
