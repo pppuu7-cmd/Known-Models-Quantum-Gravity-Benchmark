@@ -1,0 +1,82 @@
+name: iter504-fixed-causal-k5-full-collision-leading
+on:
+  push:
+    branches: [research/iter504-fixed-causal-k5-collision-leading]
+    paths:
+      - 'recovery/ITER504_PREREG_FIXED_CAUSAL_K5_FULL_COLLISION_LEADING_2026-09-14.md'
+      - 'code/iter504_fixed_causal_k5_full_collision_leading.py'
+      - 'code/iter504_aggregate.py'
+      - '.github/workflows/iter504-fixed-causal-k5-full-collision-leading.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen authority and classifications
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('recovery/ITER504_PREREG_FIXED_CAUSAL_K5_FULL_COLLISION_LEADING_2026-09-14.md').read_text().lower()
+          assert 'prospectively frozen before iter504 implementation or production evidence' in p
+          assert 'b_m = c_m^(src) / 8' in p
+          assert 't^-30' in p
+          assert '18' in p and 'scientific lanes' in p
+          assert 'no branch sum' in p
+          assert 'iter504_fixed_causal_k5_full_collision_leading_contraction_survives_qualified_scoped' in p
+          assert 'scientific_fail_iter504_uniform_frozen_full_collision_leading_survival' in p
+          assert 'blocked_or_infrastructure_iter504' in p
+          assert 'candidate gravity remains inactive' in p
+          PY
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 18
+      matrix:
+        panel: [T0, T1, T2]
+        causal: [0to5, 1to4, 2to3]
+        rho: [7, 8]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy
+      - name: Run frozen full-collision leading lane
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter504_fixed_causal_k5_full_collision_leading.py --panel '${{ matrix.panel }}' --causal '${{ matrix.causal }}' --rho '${{ matrix.rho }}' --out 'artifacts/iter504-${{ matrix.panel }}-${{ matrix.causal }}-rho${{ matrix.rho }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504-${{ matrix.panel }}-${{ matrix.causal }}-rho${{ matrix.rho }}
+          path: artifacts/iter504-${{ matrix.panel }}-${{ matrix.causal }}-rho${{ matrix.rho }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504-*
+          path: downloaded
+      - name: Aggregate frozen Iter504 verdict
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter504_aggregate.py --root downloaded --out artifacts/iter504-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504-summary
+          path: artifacts/iter504-summary.json
+          if-no-files-found: error
