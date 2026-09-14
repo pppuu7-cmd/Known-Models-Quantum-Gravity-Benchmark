@@ -92,6 +92,6 @@ No Iter503 outcome is a NONDECAY/DECAY science classification.
 
 ## Scope guards
 
-D7-S2 remains `NOT_CLOSED`; D7-S3 remains `NOT_CLOSED`; D7-S4 remains `PARTIAL_GLOBAL_NOT_CLOSED`. No positive-Haar-measure theorem, Haar convergence/divergence theorem, source spectral certification, terminal D7 classifier, terminal four-way label, physical causal-vertex finiteness/divergence theorem, or Candidate Gravity activation is authorized.
+D7-S2 remains `NOT_CLOSED`; D7-S3 remains `NOT_CLOSED`; D7-S4 remains `PARTIAL_GLOBAL_NOT_CLOSED`. No positive-Haar-measure theorem, Haar convergence/divergence theorem, source spectral certification, terminal D7 classifier, terminal four-way label, or physical causal-vertex finiteness/divergence theorem is authorized. Candidate Gravity remains inactive.
 
 The ten-source spectral pairing problem and Iter461 K5 collision geometry remain independent blockers.
