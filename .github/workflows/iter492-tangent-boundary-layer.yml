@@ -1,0 +1,84 @@
+name: iter492-tangent-boundary-layer
+
+on:
+  push:
+    paths:
+      - '.github/workflows/iter492-tangent-boundary-layer.yml'
+      - 'code/iter492_tangent_boundary_layer.py'
+      - 'code/iter492_aggregate.py'
+      - 'recovery/ITER492_PREREG_TANGENT_BOUNDARY_LAYER_2026-09-14.md'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen authority and scope guards
+        run: |
+          python - <<'PY'
+          import pathlib
+          pre=pathlib.Path('recovery/ITER492_PREREG_TANGENT_BOUNDARY_LAYER_2026-09-14.md').read_text()
+          front=pathlib.Path('recovery/CURRENT_BENCHMARK_FRONT.md').read_text()
+          assert 'FROZEN BEFORE IMPLEMENTATION/PRODUCTION' in pre
+          assert 'eps_q(R) = kappa * exp(-q R)' in pre
+          assert 'q = {0.50, 0.75, 1.00, 1.25, 1.50}' in pre
+          assert 'Both signs `+d` and `-d`' in pre
+          assert 'SCIENTIFIC_FAIL_ITER491_ANGULAR_THICKENING_HP' in front
+          assert 'post-hoc shrinking of the Iter491 radius grid' in front
+          assert 'Candidate Gravity remains inactive' in front
+          PY
+
+  lane:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        q_index: [0, 1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy
+      - name: Run frozen tangent boundary-layer job
+        run: |
+          mkdir -p artifacts
+          python code/iter492_tangent_boundary_layer.py \
+            --causal '${{ matrix.causal }}' \
+            --q-index '${{ matrix.q_index }}' \
+            --out 'artifacts/iter492-${{ matrix.causal }}-q${{ matrix.q_index }}.json'
+      - name: Upload raw job artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter492-${{ matrix.causal }}-q${{ matrix.q_index }}
+          path: artifacts/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [source-lock, lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all raw jobs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: iter492-*
+          path: raw
+          merge-multiple: false
+      - name: Aggregate frozen verdict
+        run: |
+          mkdir -p aggregate
+          python code/iter492_aggregate.py --root raw --out aggregate/iter492-summary.json
+      - name: Upload aggregate artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter492-summary
+          path: aggregate/iter492-summary.json
+          if-no-files-found: error
