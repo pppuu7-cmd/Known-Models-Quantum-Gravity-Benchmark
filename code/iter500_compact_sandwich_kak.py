@@ -148,15 +148,13 @@ def evaluate(block):
                     max_matrix=max(max_matrix,reg['matrix_relative_max']); max_beta=max(max_beta,reg['beta_absolute_max']); max_toller=max(max_toller,reg['toller_relative_max'])
                     records.append({'direction':direction,'sign':sign,'box':k,'R':R,'identity_pass':bool(allid),'regression':reg})
     neg=old_negative_control() if block==0 else None
-    if method_blocker:
+    if method_blocker or regress_fail or not source_add:
         cls='ITER500_NUMERICAL_METHOD_BLOCKER'
     elif covariance_fail:
         cls='SCIENTIFIC_FAIL_ITER500_COMPACT_KAK_COVARIANCE'
-    elif regress_fail or not source_add:
-        cls='SCIENTIFIC_FAIL_ITER500_COMPACT_KAK_COVARIANCE'
     else:
         cls='ITER500_COMPACT_SANDWICH_FACTORIZED_KAK_LANE_QUALIFIED_SCOPED'
-    return {'iteration':500,'block':block,'valid':bool(not method_blocker),'method_blocker':bool(method_blocker),'covariance_fail':bool(covariance_fail),'regression_fail':bool(regress_fail),
+    return {'iteration':500,'block':block,'valid':bool(not method_blocker and not regress_fail and source_add),'method_blocker':bool(method_blocker or regress_fail or not source_add),'covariance_fail':bool(covariance_fail),'regression_fail':bool(regress_fail),
             'classification':cls,'states_expected':256,'states_evaluated':states,'min_beta_lower':None if min_beta is None else float(min_beta),
             'max_midpoint_matrix_relative_error':max_matrix,'max_midpoint_beta_absolute_error':max_beta,'max_midpoint_toller_relative_error':max_toller,
             'source_additive_all':bool(source_add),'negative_control':neg,'records':records,
