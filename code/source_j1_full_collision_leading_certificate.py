@@ -100,7 +100,8 @@ def contract(cart, mats, channel, path):
     for ei, M in enumerate(mats):
         args += [M, ctrl.EDGE_LABELS[ei]]
     args += [[]]
-    return np.einsum(*args, optimize=path).item()
+    result = np.einsum(*args, optimize=path)
+    return result.item() if hasattr(result, 'item') else result
 
 
 def main():
