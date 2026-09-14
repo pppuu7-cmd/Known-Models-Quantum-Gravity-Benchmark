@@ -1,0 +1,81 @@
+name: iter505-finite-t-asymptotic-regression-repair
+on:
+  push:
+    branches: [research/iter505-finite-t-asymptotic-regression-repair]
+    paths:
+      - 'recovery/ITER505_PREREG_FINITE_T_ASYMPTOTIC_REGRESSION_REPAIR_2026-09-14.md'
+      - 'code/iter505_finite_t_asymptotic_regression_repair.py'
+      - 'code/iter505_aggregate.py'
+      - '.github/workflows/iter505-finite-t-asymptotic-regression-repair.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen authority and guards
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('recovery/ITER505_PREREG_FINITE_T_ASYMPTOTIC_REGRESSION_REPAIR_2026-09-14.md').read_text().lower()
+          assert 'prospectively frozen after consuming iter504 and before iter505 production evidence' in p
+          assert 't_coarse = 1.25e-4' in p
+          assert 't_fine = 6.25e-5' in p
+          assert '5e-3 criterion is unchanged' in p
+          assert 'same witness threshold 1e-12' in p
+          assert 'no branch sum' in p
+          assert 'candidate gravity remains inactive' in p
+          assert 'terminal d7 classifier remains forbidden' in p
+          PY
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 18
+      matrix:
+        panel: [T0, T1, T2]
+        causal: [0to5, 1to4, 2to3]
+        rho: [7, 8]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy
+      - name: Run frozen smaller-t repair lane
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter505_finite_t_asymptotic_regression_repair.py --panel '${{ matrix.panel }}' --causal '${{ matrix.causal }}' --rho '${{ matrix.rho }}' --out 'artifacts/iter505-${{ matrix.panel }}-${{ matrix.causal }}-rho${{ matrix.rho }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter505-${{ matrix.panel }}-${{ matrix.causal }}-rho${{ matrix.rho }}
+          path: artifacts/iter505-${{ matrix.panel }}-${{ matrix.causal }}-rho${{ matrix.rho }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter505-*
+          path: downloaded
+      - name: Aggregate frozen Iter505 verdict
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p artifacts
+          python code/iter505_aggregate.py --root downloaded --out artifacts/iter505-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter505-summary
+          path: artifacts/iter505-summary.json
+          if-no-files-found: error
