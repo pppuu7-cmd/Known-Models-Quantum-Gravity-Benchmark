@@ -1,0 +1,81 @@
+name: iter495-multivariate-taylor-stress
+
+on:
+  push:
+    paths:
+      - '.github/workflows/iter495-multivariate-taylor-stress.yml'
+      - 'code/iter495_multivariate_taylor_stress.py'
+      - 'code/iter495_aggregate.py'
+      - 'recovery/ITER495_PREREG_MULTIVARIATE_TAYLOR_STRESS_2026-09-14.md'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen authority and scope guards
+        run: |
+          python - <<'PY'
+          import pathlib
+          pre=pathlib.Path('recovery/ITER495_PREREG_MULTIVARIATE_TAYLOR_STRESS_2026-09-14.md').read_text()
+          result=pathlib.Path('recovery/ITER494_RESULT_MIXED_CURVATURE_2026-09-14.md').read_text()
+          low=pre.lower()
+          assert 'prospectively frozen before implementation' in low
+          assert '[0,1,3,5,6,11]' in pre
+          assert '8 six-dimensional sign directions' in low
+          assert 'q=`1.00` only' in pre
+          assert 'ITER494_CRITICAL_Q1_MIXED_CURVATURE_QUALIFIED_SCOPED' in result
+          assert 'Candidate Gravity remains inactive' in result
+          PY
+
+  lane:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        block: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy
+      - name: Run frozen multivariate Taylor stress job
+        run: |
+          mkdir -p artifacts
+          python code/iter495_multivariate_taylor_stress.py --causal '${{ matrix.causal }}' --block '${{ matrix.block }}' --out 'artifacts/iter495-${{ matrix.causal }}-b${{ matrix.block }}.json'
+      - name: Upload raw job artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter495-${{ matrix.causal }}-b${{ matrix.block }}
+          path: artifacts/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [source-lock, lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all raw jobs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: iter495-*
+          path: raw
+          merge-multiple: false
+      - name: Aggregate frozen verdict
+        run: |
+          mkdir -p aggregate
+          python code/iter495_aggregate.py --root raw --out aggregate/iter495-summary.json
+      - name: Upload aggregate artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter495-summary
+          path: aggregate/iter495-summary.json
+          if-no-files-found: error
