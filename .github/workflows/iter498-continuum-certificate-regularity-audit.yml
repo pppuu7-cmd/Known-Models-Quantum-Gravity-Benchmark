@@ -1,0 +1,80 @@
+name: iter498-continuum-certificate-regularity-audit
+
+on:
+  push:
+    paths:
+      - '.github/workflows/iter498-continuum-certificate-regularity-audit.yml'
+      - 'code/iter498_continuum_certificate_regularity_audit.py'
+      - 'code/iter498_aggregate.py'
+      - 'recovery/ITER498_PREREG_CONTINUUM_CERTIFICATE_REGULARITY_AUDIT_2026-09-14.md'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen authority and scope guards
+        run: |
+          python - <<'PY'
+          import pathlib
+          p=pathlib.Path('recovery/ITER498_PREREG_CONTINUUM_CERTIFICATE_REGULARITY_AUDIT_2026-09-14.md').read_text()
+          low=p.lower()
+          assert 'prospectively frozen before implementation' in low
+          assert 'iter497_richardson_enclosure_holdout_qualified_scoped' in low
+          assert '[0,1,3,5,6,11]' in p
+          assert '0.00140625' in p and '0.00234375' in p
+          assert '1e-6' in p
+          assert 'dense sampling' in low and 'not' in low
+          assert 'candidate gravity inactive' in low
+          PY
+
+  lane:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        block: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy
+      - name: Run frozen continuum-certificate regularity audit
+        run: |
+          mkdir -p artifacts
+          python code/iter498_continuum_certificate_regularity_audit.py --causal '${{ matrix.causal }}' --block '${{ matrix.block }}' --out 'artifacts/iter498-${{ matrix.causal }}-b${{ matrix.block }}.json'
+      - name: Upload raw job artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter498-${{ matrix.causal }}-b${{ matrix.block }}
+          path: artifacts/*.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [source-lock, lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter498-*
+          path: raw
+          merge-multiple: false
+      - name: Aggregate frozen verdict
+        run: |
+          mkdir -p aggregate
+          python code/iter498_aggregate.py --root raw --out aggregate/iter498-summary.json
+      - name: Upload aggregate artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iter498-summary
+          path: aggregate/iter498-summary.json
+          if-no-files-found: error
