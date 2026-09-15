@@ -1,0 +1,79 @@
+{
+  "gate": "SOURCE_J1_K5_VERTEX_LEVEL_CONJUGATION_NORMALIZATION_AUTHORITY_GATE",
+  "date": "2026-09-15",
+  "prereg_commit": "c65c00a1671985b3abcb037adcd55ff267fe3546",
+  "audit_snapshot_main": "c65c00a1671985b3abcb037adcd55ff267fe3546",
+  "decision_rule": {
+    "requirements": [
+      "complete_joint_vertex_product_object",
+      "causal_cocausal_branch_sign_transformation",
+      "rho_representation_transformation",
+      "magnetic_boundary_index_transformation",
+      "collision_supported_distribution_action_or_equivalent_joint_limit",
+      "decides_frozen_plus_i_minus_i_zero_counterterm"
+    ],
+    "pass": "no frozen validated input pins all six requirements and all positive controls are recovered",
+    "fail": "at least one frozen validated input pins all six requirements and supplies an admissible source-level witness test"
+  },
+  "frozen_inputs": [
+    {
+      "path": "research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md",
+      "blob_sha": "9a5531b6dbecc367c2869c6e9d873071a6444a66",
+      "requirements": ["PINNED", "PARTIAL", "ABSENT", "ABSENT", "ABSENT", "ABSENT"],
+      "note": "Pins the Eq.(4) product and one-wedge i-epsilon scope, but no joint vertex conjugation/index map or collision-supported normalization prescription."
+    },
+    {
+      "path": "research/SOURCE_J1_K5_EQ4_LOCAL_EXTENSION_EXISTENCE_RESULT_2026-09-15.md",
+      "blob_sha": "0ac5b961619ac836e03d6a0b2852e016bc4546d4",
+      "requirements": ["PINNED", "ABSENT", "ABSENT", "ABSENT", "PARTIAL", "ABSENT"],
+      "note": "Pins the scoped joint collision object and mathematical extension freedom, but not a source-derived vertex conjugation/normalization law selecting an extension."
+    },
+    {
+      "path": "research/SOURCE_J1_K5_ONE_WEDGE_UNIQUENESS_VS_JOINT_EXTENSION_RESULT_2026-09-15.md",
+      "blob_sha": "c3f89598d54e6fc06be1615de12338fdac5eadf2",
+      "requirements": ["PARTIAL", "PARTIAL", "PARTIAL", "ABSENT", "ABSENT", "ABSENT"],
+      "note": "One-wedge uniqueness and branch structure are source-pinned only at the factor level; the record explicitly concludes that a genuinely joint condition is still required."
+    },
+    {
+      "path": "research/SOURCE_J1_K5_CAUSAL_COCAUSAL_CONJUGATION_AMBIGUITY_PREREG_2026-09-15.md",
+      "blob_sha": "de8916bb0444d54249ffa7ffc33553ff39d5db0f",
+      "requirements": ["PARTIAL", "PINNED_COEFFICIENT_ONLY", "ABSENT", "ABSENT", "PINNED_ADVERSARIAL_OBJECT_ONLY", "ABSENT_FULL_VERTEX"],
+      "note": "Defines an exact coefficient-level collision witness and sign-reversal/conjugation test, while prospectively forbidding promotion to a complete representation-valued vertex law."
+    },
+    {
+      "path": "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CAUSAL_COCAUSAL_CONJUGATION_AMBIGUITY_2026-09-15.md",
+      "blob_sha": "f6ca3a686dab84bab78fec07b1b7ffae25497436",
+      "requirements": ["PARTIAL", "PINNED_COEFFICIENT_ONLY", "ABSENT", "ABSENT", "PINNED_ADVERSARIAL_OBJECT_ONLY", "ABSENT_FULL_VERTEX"],
+      "note": "Critic confirms the coefficient witness but explicitly identifies omitted rho, magnetic, boundary-index and representation transformations."
+    },
+    {
+      "commit": "ef550221cd755db7f0398b28b15ada98ef6c357b",
+      "path": "code/lqg_iter314_cocausal_flip_rule.py",
+      "requirements": ["ABSENT", "PINNED_SIGN_SECTOR_CONTROL_ONLY", "ABSENT", "ABSENT", "ABSENT", "ABSENT"],
+      "note": "Historical exact sign-sector parity control; not source authority for a complete vertex or collision-supported extension."
+    }
+  ],
+  "positive_controls": {
+    "one_wedge_iepsilon_not_joint_regulator": true,
+    "one_wedge_uniqueness_does_not_fix_joint_extension": true,
+    "coefficient_conjugation_witness_not_full_vertex_theorem": true,
+    "critic_omitted_rho_magnetic_boundary_representation_maps_recovered": true,
+    "historical_sign_flip_is_control_not_source_authority": true
+  },
+  "negative_controls": {
+    "one_toller_relation_rejected_as_joint_authority": true,
+    "scalar_kappa_identity_rejected_as_full_vertex_authority": true,
+    "semiclassical_phase_reversal_not_used_as_collision_prescription": true,
+    "invented_joint_regulator_not_imported": true,
+    "combinatorial_sign_parity_not_promoted_to_source_theorem": true,
+    "absence_of_pinned_authority_not_promoted_to_physical_nonexistence": true
+  },
+  "all_frozen_inputs_readable": true,
+  "any_single_input_pins_all_six": false,
+  "classification": "SOURCE_J1_K5_VERTEX_LEVEL_CONJUGATION_NORMALIZATION_AUTHORITY_NOT_YET_PINNED_SCOPED",
+  "status": "PASS_SCOPED_SOURCE_AUTHORITY_AUDIT",
+  "new_actions_run": null,
+  "new_artifact_id": null,
+  "new_artifact_digest": null,
+  "reason_no_new_actions": "This gate is a bounded source-authority audit over prospectively frozen immutable repository records; no heavy computation or stochastic/numerical inference is involved."
+}
