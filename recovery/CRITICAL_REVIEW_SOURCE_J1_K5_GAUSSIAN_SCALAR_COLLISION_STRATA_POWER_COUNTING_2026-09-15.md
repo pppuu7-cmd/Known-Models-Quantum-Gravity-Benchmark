@@ -5,7 +5,7 @@ Lane: independent Critical Review / Verification
 
 ## RESULT_REVIEWED
 
-Exactly one latest terminal substantive Research result was reviewed:
+Exactly one clearly bounded terminal substantive Research result was reviewed:
 
 - `results/SOURCE_J1_K5_GAUSSIAN_SCALAR_COLLISION_STRATA_POWER_COUNTING_TERMINAL_2026-09-15.md`
 - historical result commit `81094144184751770256ab3bb144bd9189a6a9ad`
@@ -19,6 +19,8 @@ Exactly one latest terminal substantive Research result was reviewed:
 - artifact digest `sha256:abaf3129d9555eed4d78f9fcb4464a60fd6c022cad82224431c9a5157ab11320`
 
 The review is bounded to the exact scalar K5 partition/power-counting theorem and the combined-scientific-meaning sentence that imports the parent P1/P3 claim. Historical result text is not rewritten.
+
+During final synchronization, fresh `main` had advanced beyond this bounded target. A newer terminal Research result exists at `d4e037c75a542590f8d68bebefce9af8d323eb25` (`results: terminalize P1 forest numerical kernel pilot`) with recovery commit `5f1ef12970ecf9b5d80a7a09eddf68749a3ac0a3`, and an even newer prospectively frozen/implemented P1 mixed Taylor grid-method pilot is active at prereg `aca376c7933c20bb5cbea1f95c6fc601a82af070` and implementation `4f73b7822ba910ea0904c9add0d5a1c52c206bbf`. Neither newer result/pilot is substantively reviewed here; no partial value from the active pilot is consumed and no competing verdict is created.
 
 ## PREREG_CHECK
 
@@ -148,6 +150,7 @@ The exact scalar K5 collision-strata theorem and terminal classification are ind
 5. Historical Research result remains immutable; no scientific FAIL is introduced.
 6. Iter504 run `34907349374` and Iter461 run `34748503239` were freshly checked and remain `queued / conclusion=null`; no partial substantive values were consumed.
 7. `RQIR Core v1.0 = FROZEN`; `D7-S2 = NOT_CLOSED`; `D7-S3 = NOT_CLOSED`; `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`; terminal selectors remain forbidden; Candidate Gravity remains inactive.
+8. Newer terminal P1 forest numerical-kernel result and newer active P1 mixed-Taylor pilot are outside this bounded review and receive no verdict here.
 
 ## UPDATED_STATE
 
@@ -158,12 +161,14 @@ The exact scalar K5 collision-strata theorem and terminal classification are ind
 - full-collision-only analysis = structurally incomplete under the frozen scalar power count.
 - parent P1 divergence = still independently stable.
 - parent P3 divergence = not validated; must not be imported unqualified.
-- no forest subtraction existence/uniqueness/path-independence result yet.
+- no forest subtraction existence/uniqueness/path-independence result is established by this reviewed gate.
+- newer terminal P1 forest numerical-kernel result awaits separate Critic review if it remains the latest admissible terminal target after the active pilot resolves.
+- active P1 mixed Taylor grid-method pilot: nonterminal from the perspective of this audit; no partial values consumed.
 - governance state unchanged.
 
 ## NEXT_ADMISSIBLE_GATE
 
-Proceed only with a prospectively frozen connected-collision / laminar-forest certificate on the same auxiliary scalar object, as the Research result already proposes. Freeze before execution:
+For this reviewed scalar-strata line, the next admissible combinatorial step is a prospectively frozen connected-collision / laminar-forest certificate on the same auxiliary scalar object, as the Research result already proposes. Freeze before execution:
 
 - connected collision subsets `S subseteq {1,...,5}`, `2<=|S|<=5`;
 - exact scalar superficial degree for each subset from the same frozen formula;
@@ -174,3 +179,5 @@ Proceed only with a prospectively frozen connected-collision / laminar-forest ce
 - interpretation ceiling separating combinatorial forest structure from existence, uniqueness, path independence, source authorization, and physical EPRL claims.
 
 Any downstream use of the Gaussian parent numerical lane must carry the existing P3 precision qualification. A P3 numerical repair may raise precision/conditioning controls without changing the frozen scientific object; changes to grids, basis, classifier, thresholds, or object require a new prospectively frozen gate.
+
+Repository-wide next review selection must use fresh `main`, not this bounded gate: consume the newest terminal P1 forest numerical-kernel result only if no newer authoritative workflow has terminalized; while the P1 mixed Taylor grid-method pilot remains nonterminal, restrict that active line to chronology/provenance/contract/code audit and outcome-independent counterexample preparation.
