@@ -1,5 +1,6 @@
 name: source-j1-k5-contact-representation-derivation-v2
 
+# Production trigger for the prospectively frozen V2 source-authority audit.
 on:
   push:
     branches: [main]
