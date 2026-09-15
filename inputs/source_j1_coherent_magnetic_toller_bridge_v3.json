@@ -19,7 +19,7 @@
     "A_EQ3": "T^(sigma,rho,k)_jm_ln(g)=lim_eps->0+ int_R d(rhot)/(2*pi*i) sigma/(rhot-rho-i*sigma*eps) Gamma(-j-i*rho)Gamma(l-i*rhot+1)/(Gamma(-j-i*rhot)Gamma(l-i*rho+1)) D^(rhot,k)_jm_ln(g)",
     "A_EQ4": "g_ab=g_b^-1*g_a; sigma_ab=sigma_a*sigma_b; (rho,k)=(gamma*j_ab,j_ab)",
     "A_C2": "J(z0,z1)=(-conjugate(z1),conjugate(z0))",
-    "A_C4": "c_m(zeta)=sqrt((2*j)!/((j+m)!*(j-m)!))*zeta0^(j+m*zeta1^0)/<zeta|zeta>^j",
+    "A_C4": "c_m(zeta)=sqrt((2*j)!/((j+m)!*(j-m)!))*zeta0^(j+m)*zeta1^(j-m)/<zeta|zeta>^j",
     "A_C5": "D_coh=<j,J*xi|D^(rho,j)(g)|j,zeta>",
     "A_D1": "T_coh^(sigma)=FeynmanProjector_sigma[D_coh] with the same kernel as A_EQ3",
     "B_EQ1": "D^(rho,k)_jp_ln(g)=<(rho,k);j,p|D^(rho,k)(g)|(rho,k);l,n>",
