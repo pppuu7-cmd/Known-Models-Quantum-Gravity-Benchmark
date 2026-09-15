@@ -5,7 +5,7 @@ Lane: independent Critical Review / Verification
 
 ## RESULT_REVIEWED
 
-Exactly one latest terminal substantive Research result was reviewed:
+Exactly one bounded terminal substantive Research result was reviewed:
 
 - `results/SOURCE_J1_K5_GAUSSIAN_FULL_COLLISION_RADIAL_ACTION_COMPLETENESS_TERMINAL_2026-09-15.md`
 - historical result commit `5e95318f29e26f4ea954f269cbec2c69fa8089d8`
@@ -18,7 +18,7 @@ Exactly one latest terminal substantive Research result was reviewed:
 - artifact `10392691339`
 - artifact digest `sha256:c387f77e850452292e82d5ad43cce223c3327f2c81c4c53c0789de5911af7627`
 
-The exact action-space theorem and the parent-dependent strengthened consequence are distinguished below. A newer scalar K5 collision-strata gate was launched after this result; no partial substantive value from that child is used here and no competing child verdict is created.
+At target selection this was the latest terminal Research result. During final synchronization, the direct child scalar collision-strata gate terminalized at result commit `81094144184751770256ab3bb144bd9189a6a9ad`. That child is not substantively reviewed here; no child numerical/substantive output is used to decide this verdict. This audit remains a clearly bounded review of the radial action-space result and of the parent P1/P3 premise explicitly consumed by its frozen consequence.
 
 ## PREREG_CHECK
 
@@ -140,7 +140,7 @@ The exact radial action-space theorem is confirmed. The parent-dependent P1 cons
 2. Parent run `34958385950` remains terminal historically; its aggregate ansatz-insufficient classification remains supported by stable P1 divergence.
 3. Parent P3 `DIVERGENT_AFTER_LOCAL_SUBTRACTION` must not be used as a validated scientific premise.
 4. This review does not assert that P3 has a regulator-independent renormalized limit; it establishes only that the reported 180-digit P3 divergence sequence is a cancellation artifact under the frozen numerical protocol.
-5. Proper collision strata, derivative order >26 under separately justified power counting, and source-defined/nonlocal extensions remain open.
+5. Proper collision strata, derivative order >26 under separately justified power counting, and source-defined/nonlocal extensions remain open within this reviewed result.
 6. No Eq. (4) existence/nonexistence conclusion, model/family failure, D7 closure, terminal selector, or Candidate Gravity activation follows.
 
 ## UPDATED_STATE
@@ -151,6 +151,8 @@ The exact radial action-space theorem is confirmed. The parent-dependent P1 cons
 - strengthened full-collision consequence for P1 = confirmed scoped
 - strengthened full-collision consequence for P3 = not validated; parent numerical cancellation counterexample established
 - parent aggregate ansatz-insufficient classification = still supported by P1
+- direct child `SOURCE_J1_K5_GAUSSIAN_SCALAR_COLLISION_STRATA_POWER_COUNTING` terminalized after target selection at commit `81094144184751770256ab3bb144bd9189a6a9ad`; its exact result is not reviewed by this audit
+- any downstream sentence in that child importing `P1/P3` divergence must consume the present P3 qualification
 - `D7-S2 = NOT_CLOSED`
 - `D7-S3 = NOT_CLOSED`
 - `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`
@@ -163,4 +165,4 @@ Do not rewrite the historical result and do not infer a P3 scientific FAIL.
 
 For P3, a repair may keep the same scientific contract but must raise working precision adaptively or prospectively freeze a conditioning/precision-doubling control that demonstrates stability of `R = F-C` after the approximately 160+ digit raw/counterterm cancellation. Since the frozen preregistration specified a **minimum** of 180 digits, increasing precision without changing object, grids, basis, classifier, or thresholds is an implementation repair rather than a new scientific hypothesis; any change to those scientific fields requires a new prospective gate.
 
-For the active Research frontier, the newly launched scalar K5 collision-strata power-counting workflow is outcome-independent of this P3 correction at the level of exact partition/power-counting combinatorics and may proceed. Its partial outputs must not be consumed before terminalization. Any downstream statement that imports parent P3 divergence must instead consume this qualification.
+The now-terminal scalar K5 collision-strata result at `81094144184751770256ab3bb144bd9189a6a9ad` was not used to decide this review and requires its own later review if it remains the latest admissible target. Its exact partition/power-counting result is logically separable from the P3 numerical correction, but its combined-scientific-meaning sentence that imports parent `P1/P3` divergence is already constrained by this qualification: P1 is independently stable; P3 is not validated.
