@@ -24,7 +24,7 @@ jobs:
           set -euo pipefail
           test "$(git rev-parse HEAD:research/prereg/SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2_2026-09-15.md)" = "32070d0c1d0120d0f6a062e28bb6588aa687bdbb"
           test "$(git rev-parse HEAD:research/prereg/SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2_PROTOCOL_SUPPLEMENT_2026-09-15.md)" = "5ede09ac7bcf6a7221aeb6799b1f2cf471c8e0ad"
-          test "$(git rev-parse HEAD:code/source_j1_k5_contact_representation_derivation_v2.py)" = "94a10850c9a1a0de49482c41b50567d687b2d995"
+          test "$(git rev-parse HEAD:code/source_j1_k5_contact_representation_derivation_v2.py)" = "ab9d5a9984f92bf53b94125981176f0292fc607c"
           test "$(git cat-file -t e7c2546236fea1b6913a253fc354efc769dc544a)" = "commit"
           echo "SOURCE_LOCK=PASS"
 
