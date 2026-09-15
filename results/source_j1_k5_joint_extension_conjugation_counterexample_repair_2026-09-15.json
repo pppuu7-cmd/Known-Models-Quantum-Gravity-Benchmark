@@ -1,0 +1,142 @@
+{
+  "antilinear_covariance_checks": 1024,
+  "antilinear_covariance_failures": 0,
+  "bad_C": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      -1,
+      0
+    ],
+    [
+      -1,
+      0,
+      0
+    ]
+  ],
+  "bad_node_exact_components": 77,
+  "bad_node_first_mismatch": {
+    "m": [
+      -1,
+      1,
+      0,
+      0
+    ],
+    "original": "-1/3",
+    "transformed": "1/3"
+  },
+  "bad_node_mismatch_count": 4,
+  "canonical_C": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      -1,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ],
+  "canonical_C_squared_identity": true,
+  "canonical_node_exact_components": 81,
+  "canonical_node_mismatch_count": 0,
+  "causal_distinct_patterns": 16,
+  "causal_negative_intersection": 0,
+  "causal_only_covariance_failures": 32,
+  "causal_preimage_counts": [
+    2
+  ],
+  "classification": "SOURCE_J1_K5_FROZEN_CONJUGATION_CONSTRAINTS_LEAVE_NONZERO_COLLISION_AMBIGUITY_SCOPED",
+  "conditional_family_statement": "If any base joint extension satisfies the frozen constraints, E_lambda=E+lambda*Delta for real lambda is a distinct family satisfying the same tested constraints because Delta is a nonzero homogeneous solution.",
+  "edge_order": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "fixed_channel_C_absorption_derived": true,
+  "full_independent_sign_sum": [
+    0,
+    0
+  ],
+  "independent_sign_patterns": 1024,
+  "k5_vertex_permutations": 120,
+  "negative_controls": {
+    "C_bad_breaks_node_invariance": true,
+    "causal_only_breaks_antilinear_covariance": true,
+    "uniform_nonzero_breaks_zero_sum": true
+  },
+  "negative_distinct_patterns": 16,
+  "permutation_failures": 0,
+  "permutation_pattern_checks": 122880,
+  "positive_controls": {
+    "antilinear_covariance_all_1024": true,
+    "canonical_C_involution": true,
+    "canonical_C_tensor4_node_exact_81_of_81": true,
+    "causal_distinct_patterns_16": true,
+    "causal_negative_disjoint": true,
+    "causal_two_preimages_each": true,
+    "fixed_channel_C_absorption_derived": true,
+    "full_independent_sign_sum_zero": true,
+    "negative_distinct_patterns_16": true,
+    "permutation_invariance_all_122880": true,
+    "scaling_ceiling": true,
+    "witness_nonzero": true
+  },
+  "scaling_ceiling": 30,
+  "scaling_degree_delta_N": 12,
+  "schema": "kmqgb.source-j1-k5-joint-extension-conjugation-counterexample-repair.v2",
+  "source_channel_support_size": 9,
+  "uniform_negative_control_sum": [
+    1024,
+    0
+  ],
+  "vertex_sign_assignments": 32,
+  "witness_nonzero_sector_count": 32
+}
