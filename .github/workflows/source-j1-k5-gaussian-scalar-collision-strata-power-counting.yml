@@ -1,0 +1,71 @@
+name: source-j1-k5-gaussian-scalar-collision-strata-power-counting
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-gaussian-scalar-collision-strata-power-counting.yml'
+      - 'code/source_j1_k5_gaussian_scalar_collision_strata_power_counting.py'
+      - 'research/prereg/SOURCE_J1_K5_GAUSSIAN_SCALAR_COLLISION_STRATA_POWER_COUNTING_2026-09-15.md'
+  workflow_dispatch:
+
+jobs:
+  exact-strata-certificate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen contract and parents
+        shell: bash
+        run: |
+          set -euo pipefail
+          p='research/prereg/SOURCE_J1_K5_GAUSSIAN_SCALAR_COLLISION_STRATA_POWER_COUNTING_2026-09-15.md'
+          git show 2f6d3af60439af4bc8b7c62e6813c58fb21ec1f4:"$p" > /tmp/prereg.frozen
+          cmp /tmp/prereg.frozen "$p"
+          git merge-base --is-ancestor ae29ddbb41153e73d182173d6261e01f48a0bd00 HEAD
+          git merge-base --is-ancestor 5e95318f29e26f4ea954f269cbec2c69fa8089d8 HEAD
+          grep -F 'AUX_GAUSSIAN_FULL_COLLISION_ORDER26_RADIAL_ACTION_SPACE_EXHAUSTED_SCOPED' results/SOURCE_J1_K5_GAUSSIAN_FULL_COLLISION_RADIAL_ACTION_COMPLETENESS_TERMINAL_2026-09-15.md
+          grep -F 'edge singularity scaling degree: exactly 3' "$p"
+          grep -F 'scalar dimension: one scalar coordinate' "$p"
+      - name: Syntax check
+        run: python -m py_compile code/source_j1_k5_gaussian_scalar_collision_strata_power_counting.py
+      - name: Run exact scalar collision-strata certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_gaussian_scalar_collision_strata_power_counting.py \
+            --out artifacts/scalar-collision-strata-power-counting.json
+      - name: Validate frozen verdict
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('artifacts/scalar-collision-strata-power-counting.json'))
+          allowed={
+            'AUX_GAUSSIAN_K5_PROPER_COLLISION_SUBDIVERGENCES_PRESENT_SCOPED',
+            'AUX_GAUSSIAN_K5_NO_PROPER_COLLISION_SUBDIVERGENCE_BY_FROZEN_COUNT_SCOPED',
+            'SCIENTIFIC_FAIL_GAUSSIAN_SCALAR_COLLISION_STRATA_POWER_COUNTING',
+            'INVALID_IMPLEMENTATION',
+          }
+          assert x['classification'] in allowed
+          assert x['bell_total']==52
+          assert x['collision_partition_count']==51
+          print('classification='+x['classification'])
+          print('controls_pass='+str(x['controls_pass']))
+          print('proper_count='+str(x['proper_collision_partition_count']))
+          print('proper_divergent_count='+str(x['proper_superficially_divergent_count']))
+          print('all_proper_divergent='+str(x['all_proper_collision_strata_superficially_divergent']))
+          print('proper_omega_values='+str(x['proper_omega_values']))
+          print('scalar_type_table='+json.dumps(x['scalar_type_table'],sort_keys=True))
+          print('checks='+json.dumps(x['checks'],sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scalar-collision-strata-power-counting
+          path: artifacts/scalar-collision-strata-power-counting.json
+          if-no-files-found: error
