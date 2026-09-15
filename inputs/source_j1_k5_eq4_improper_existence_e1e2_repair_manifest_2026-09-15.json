@@ -1,0 +1,104 @@
+{
+  "schema": "kmqgb.eq4_improper_distributional_existence_e1e2_repair.v1",
+  "date": "2026-09-15",
+  "prereg_commit": "0d9615e1dec1f2fe5bcf66f3458a0e541a6b2ba4",
+  "object": {
+    "source_order": true,
+    "j": 1,
+    "rho_scope": "nonzero_real",
+    "channel": "00000",
+    "stratum": "full_K5_collision",
+    "group_object": "gauge_fixed_SL2C^4_product_of_ten_source_defined_Toller_distributions"
+  },
+  "premises": [
+    {
+      "id": "P1_PUBLISHED_IEPSILON_SCOPE",
+      "path": "research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md",
+      "commit": "8c6582371d6e763e4f37b30fbe42f67684edcdb7",
+      "required_text": [
+        "SOURCE_CAUSAL_VERTEX_PUBLISHED_IEPSILON_IS_ONE_WEDGE_NOT_JOINT_COLLISION_REGULATOR_SCOPED",
+        "The published Feynman `i epsilon` prescription is authoritative for the **individual Toller matrices**.",
+        "do not themselves provide a joint ten-wedge prelimit regulator/removal prescription"
+      ],
+      "semantic_facts": {
+        "validated": true,
+        "one_wedge_distributions_source_defined": true,
+        "joint_K5_collision_prescription_established": false,
+        "necessary_nonexistence_theorem": false
+      }
+    },
+    {
+      "id": "P2_COHERENT_CONTACT_HORMANDER",
+      "path": "research/SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_RESULT_2026-09-15.md",
+      "commit": "051d0c71382b55f2ce37994a95aa704b8725a599",
+      "required_text": [
+        "SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_CRITERION_FAILS_SCOPED",
+        "dB_12 + dB_23 - dB_13 = 0",
+        "does **not** prove:",
+        "that the correlated product does not exist"
+      ],
+      "semantic_facts": {
+        "validated": true,
+        "allowed_collision_witness": true,
+        "standard_Hormander_sufficient_product_criterion_passes": false,
+        "standard_Hormander_sufficient_product_criterion_fails_at_allowed_witness": true,
+        "necessary_nonexistence_theorem": false
+      }
+    },
+    {
+      "id": "P3_ALIGNED_CONTACT_CYCLESPACE",
+      "path": "research/SOURCE_J1_K5_ALIGNED_CONTACT_CYCLESPACE_RESULT_2026-09-15.md",
+      "commit": "397a55009e88e4a43453e07c015bc566c9c9412c",
+      "required_text": [
+        "SOURCE_J1_K5_ALIGNED_CONTACT_CYCLESPACE_HORMANDER_OBSTRUCTION_SCOPED",
+        "relation-space dimension `10-4=6`",
+        "does **not** prove:",
+        "nonexistence of the ten-wedge product"
+      ],
+      "semantic_facts": {
+        "validated": true,
+        "allowed_collision_witness": true,
+        "standard_Hormander_sufficient_product_criterion_passes": false,
+        "standard_Hormander_sufficient_product_criterion_fails_at_allowed_witness": true,
+        "necessary_nonexistence_theorem": false
+      }
+    },
+    {
+      "id": "P4_FULL_COLLISION_ABSOLUTE_DIVERGENCE",
+      "path": "research/SOURCE_J1_FULL_COLLISION_ABSOLUTE_DIVERGENCE_THEOREM_2026-09-15.md",
+      "commit": "bf43183b12799e217e452c6335edc1114e389352",
+      "critic_commit": "a4d775ff799e629ccb6970dc587cd91cd8f6810b",
+      "required_text": [
+        "not locally absolutely integrable",
+        "ordinary absolute Haar integral",
+        "does **not** rule out a source-defined distributional/Feynman boundary value"
+      ],
+      "semantic_facts": {
+        "validated": true,
+        "ordinary_absolute_Haar_local_integrability": false,
+        "distributional_nonexistence_implied": false,
+        "necessary_nonexistence_theorem": false
+      }
+    },
+    {
+      "id": "P5_EQ4_V2_CRITIC_INVALIDATION",
+      "path": "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_2026-09-15.md",
+      "commit": "2fda454298a3d2594e24242c49fc96a91df76958",
+      "required_text": [
+        "`INVALID_IMPLEMENTATION`",
+        "do not treat the v2 BLOCKED result as a validated scientific premise",
+        "Alternatively, a separately prospectively frozen Eq. (4) distributional-existence gate may proceed only if it does not use this invalid v2 blocker as a validated premise"
+      ],
+      "semantic_facts": {
+        "validated": true,
+        "v2_authority_result_validated_scientific_premise": false,
+        "must_exclude_from_decision": true,
+        "necessary_nonexistence_theorem": false
+      }
+    }
+  ],
+  "forbidden_scientific_premises": [
+    "SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V1_RESULT",
+    "SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_RESULT"
+  ]
+}
