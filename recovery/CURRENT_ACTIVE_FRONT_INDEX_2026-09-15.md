@@ -5,6 +5,7 @@ This is a navigation index over immutable prereg/result/recovery records. Fresh 
 ## Frozen global state
 
 - Repository: `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark`.
+- KMQGB is downstream of pinned `pppuu7-cmd/Dark-Sector-Influence-Reconstruction` authority; imports must preserve exact provenance.
 - `RQIR Core v1.0 = FROZEN`.
 - `D7-S2 = NOT_CLOSED`.
 - `D7-S3 = NOT_CLOSED`.
@@ -15,42 +16,51 @@ This is a navigation index over immutable prereg/result/recovery records. Fresh 
 
 ## Latest terminal Research execution
 
-`SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4`
+`SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4` — fresh same-contract repaired execution.
 
-Prospective chain:
+Prospective/frozen chain:
 
-- prereg `01ccbad09d4a413066b1bcfbf77861d386926e73`;
+- scientific prereg `01ccbad09d4a413066b1bcfbf77861d386926e73`;
 - frozen input `8b933f94b8eea1c6990b33f9f2f563f7fabae461`;
-- implementation `921c2b4e3456ed6b98a24cd8896188eeea5ac2d8`;
-- workflow `896ef424efe07e9662aa017119d8e7e86d74f2c6`;
-- rotation-control repair `f903669dd08c6ae6fa9ac4d140ff85f294dd36c1`.
+- accepted rotation-control repair `f903669dd08c6ae6fa9ac4d140ff85f294dd36c1`;
+- historical independent Critic `c0358e348bbb225719bb1617f905e38d91f33e21`, verdict `INVALID_IMPLEMENTATION` for the old implementation;
+- same-contract repair protocol `91bcaadc83be2934e09ec3e32b17709b3306d059`, frozen before repair implementation;
+- repair implementation `bbb39f58bbda2a24977d2ab1438a7f78c80bdb91`;
+- repair workflow `0b13ccac5eaf4cbb4d463411d0048c483af93af1`.
 
-Repaired authoritative run `35023270636` is terminal `completed/success` and historically reports
+Fresh repair run `35033194283` is terminal `completed/success`. Source-lock, Python 3.11 lane, Python 3.13 lane and aggregate all completed successfully.
 
-`SOURCE_J1_K5_CHANNEL00000_HIGHEST_CONTACT_SURVIVES_LEADING_SCOPED`.
+Aggregate classification:
 
-Aggregate artifact `10419176929`, digest `sha256:4e199ba756f57e1776454c3a0fe67708e55f6a89acfeedacdedd372b41d1f5bf`.
+`SOURCE_J1_K5_CHANNEL00000_HIGHEST_CONTACT_SURVIVES_LEADING_SCOPED`
+
+Fresh aggregate artifact `10421794928`, digest `sha256:8f969582092101fb270afd0251f9f603b3695ff913332098fd75511b7fb0976b`.
 
 Exact lane artifacts:
 
-- `10418704347`, digest `sha256:3ae0be72d4160ac663def736edc485aa6d7c52520e2371f38684071297747ecd`;
-- `10419141859`, digest `sha256:540a1707ec8f94d5543081012b08b0f98a5688ded7e8ed50d1dd74d7cbc0c731`.
+- Python 3.11 `10422336163`, digest `sha256:08808cef77802a9c19ac2ddf8c075baa311a3bed1adbd3d3786d366aaf1823e8`;
+- Python 3.13 `10421889454`, digest `sha256:6d8d8f94825f4cb1f0faf180242c3e6d23383ef0fe83f88f65bb63bbfdfec889`.
 
-Exact reported values include angular contraction `11/24` and physical leading coefficient `-216513/[8388608 rho^10 (rho^2+1)^10]`.
+The previously invalid mandatory controls are now executable: the source collision hierarchy is derived as `step=0`, `delta=-1`, `delta_prime=-2`, `delta_double_prime=-3`; actual removal of `c3/delta''` is seen by the same production classifier and is rejected with `NO_UNIQUE_CUBIC_SOURCE_COMPONENT`. Both exact lanes agree and all frozen controls pass.
+
+Exact values remain angular contraction `11/24` and physical leading coefficient `-216513/[8388608 rho^10 (rho^2+1)^10]`.
+
+Canonical terminal note: `results/SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_REPAIR_TERMINAL_2026-09-16.md`, commit `8f1e3fe98dc34f1bef671b3dbbe6b303a404fefc`.
+Recovery delta: `recovery/V4_REPAIR_TERMINAL_FRONT_LEDGER_DELTA_2026-09-16.md`, commit `c03166a1b73ef8e3d4723a8776211b91b450229f`.
 
 ## Latest independent Critical Review
 
+The latest completed independent Critical Review remains the pre-repair V4 review:
+
 - audit `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_2026-09-15.md`;
 - Critic commit `c0358e348bbb225719bb1617f905e38d91f33e21`;
-- verdict `INVALID_IMPLEMENTATION`.
+- verdict `INVALID_IMPLEMENTATION` for the historical execution.
 
-The prior rotation-covariance counterexample is repaired. The remaining invalidity is frozen-control fidelity: `UNIQUE_CUBIC_SOURCE` is encoded through a hard-coded scaling-order table rather than derived by executable bookkeeping, and `REMOVE_HIGHEST_CONTACT_NEGATIVE` never deletes `c3/delta''` or reruns the same transfer classifier. Therefore the historical V4 PASS must not be consumed as validated downstream authority.
-
-This is not a scientific FAIL and does not establish cancellation.
+That historical verdict is preserved. It does not automatically apply to the fresh repaired execution, whose explicit purpose is to repair the two identified implementation defects under the unchanged contract. The fresh repaired result is therefore `TERMINAL_REPAIRED_RESULT_PENDING_INDEPENDENT_CRITIC` until the next Critic review.
 
 ## Outcome-independent analytic support
 
-`research/SOURCE_J1_CONTACT_COLLISION_SCALING_LEMMA_2026-09-15.md`, commit `e98cb3cf6f90b7d2f5bacbf5ca75b8c966ab3cd1`, independently supports the frozen one-wedge contact-order hierarchy. It does not replace mandatory frozen executable controls.
+`research/SOURCE_J1_CONTACT_COLLISION_SCALING_LEMMA_2026-09-15.md`, commit `e98cb3cf6f90b7d2f5bacbf5ca75b8c966ab3cd1`, independently supports the one-wedge contact-order hierarchy. It does not replace the executable controls, which are now also present in the fresh repaired run.
 
 ## V3 / V3K source dependencies
 
@@ -72,19 +82,21 @@ V3K:
 
 ## Independent registered workflows
 
-- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: freshly checked `queued / conclusion=null`; do not consume partial values.
-- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: freshly checked `queued / conclusion=null`; do not consume partial values.
+- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: workflow-level REST still reports `queued / conclusion=null`; many jobs are materialized/completed, but no partial substantive values are authorized for consumption without a terminal aggregate/authority.
+- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: workflow-level REST still reports `queued / conclusion=null`; do not duplicate and do not consume partial substantive values.
 
 ## Next admissible frontier
 
-A same-contract V4 implementation repair may proceed only if the scientific contract is unchanged. It must derive/check the frozen D1-D4 scaling orders in executable logic and actually run the remove-`c3/delta''` adversarial fixture through the same production transfer classifier. Preserve the repaired rotation controls, then rerun dual exact lanes and aggregate with fresh artifacts/digests.
+First consume an independent Critical Review of fresh repair run `35033194283`. The review should verify specifically that the scaling derivation is not a disguised conclusion table, that the remove-highest fixture physically mutates the source split observed by the common classifier, and that no scientific scope changed.
 
-Changing source authority, the scientific scaling lemma, source split, object, tangent witness, channel, decision semantics, or interpretation ceiling requires a new prospectively frozen gate.
+If the repaired V4 execution survives independent review, choose the next scientific gate by maximum information gain on the missing same-realization step beyond the fixed highest-contact tangent/channel certificate. Do not merely rerun V4. The next gate should address joint distribution-product/contact transversality or stronger K5 contact neighborhood/channel coverage, as authorized by the fresh post-review front.
+
+The repaired V4 result remains scoped: it is not a theorem of full joint distribution-product nonexistence, complete K5 divergence/convergence, family failure, D7 closure, or any terminal selector.
 
 ## Restoration procedure
 
 1. Read fresh `main` first.
-2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, this index, the newest Critic, and any newer prereg/workflow/result.
+2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, this index, newest Critic, and any newer prereg/workflow/result.
 3. Recheck Iter504 and Iter461 without consuming partial substantive values.
-4. Preserve historical Research outputs while applying Critic qualifications downstream.
+4. Preserve historical invalid/blocked results while applying newer repair/critic qualifications only prospectively.
 5. Keep governance locks and claim ceilings unchanged unless separately frozen authority closes them.
