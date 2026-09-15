@@ -1,0 +1,59 @@
+name: source-j1-k5-p1-s4-forest-orbit-reduction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/prereg/SOURCE_J1_K5_P1_S4_FOREST_ORBIT_REDUCTION_2026-09-15.md'
+      - 'code/source_j1_k5_p1_s4_forest_orbit_reduction.py'
+      - '.github/workflows/source-j1-k5-p1-s4-forest-orbit-reduction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify prospective P1 symmetry contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f research/prereg/SOURCE_J1_K5_P1_S4_FOREST_ORBIT_REDUCTION_2026-09-15.md
+          test -f code/source_j1_k5_p1_s4_forest_orbit_reduction.py
+          grep -Fq 'PROSPECTIVELY_FROZEN_BEFORE_IMPLEMENTATION_OR_RESULT' research/prereg/SOURCE_J1_K5_P1_S4_FOREST_ORBIT_REDUCTION_2026-09-15.md
+          grep -Fq '(1,1,1,1,2,2,2,2,2,2)' research/prereg/SOURCE_J1_K5_P1_S4_FOREST_ORBIT_REDUCTION_2026-09-15.md
+          grep -Fq 'P1_S4_FOREST_ORBIT_REDUCTION_CONFIRMED_SCOPED' code/source_j1_k5_p1_s4_forest_orbit_reduction.py
+
+  exact-reduction:
+    needs: source-lock
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run exact P1 S4 orbit reduction certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_p1_s4_forest_orbit_reduction.py \
+            --out artifacts/source_j1_k5_p1_s4_forest_orbit_reduction.json \
+            | tee artifacts/source_j1_k5_p1_s4_forest_orbit_reduction.log
+          sha256sum artifacts/source_j1_k5_p1_s4_forest_orbit_reduction.json \
+            > artifacts/source_j1_k5_p1_s4_forest_orbit_reduction.json.sha256
+          sha256sum artifacts/source_j1_k5_p1_s4_forest_orbit_reduction.log \
+            > artifacts/source_j1_k5_p1_s4_forest_orbit_reduction.log.sha256
+      - name: Upload exact reduction certificate
+        uses: actions/upload-artifact@v4
+        with:
+          name: p1-s4-forest-orbit-reduction-py${{ matrix.python-version }}
+          path: artifacts/
+          if-no-files-found: error
