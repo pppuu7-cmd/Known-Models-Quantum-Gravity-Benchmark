@@ -39,6 +39,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          mkdir -p artifacts
           PYTHONPATH=code python code/source_j1_k5_channel00000_contact_realization_transfer_certificate.py | tee artifacts/source_j1_k5_channel00000_contact_realization_transfer.log
           sha256sum artifacts/source_j1_k5_channel00000_contact_realization_transfer.json > artifacts/source_j1_k5_channel00000_contact_realization_transfer.json.sha256
           sha256sum artifacts/source_j1_k5_channel00000_contact_realization_transfer.log > artifacts/source_j1_k5_channel00000_contact_realization_transfer.log.sha256
