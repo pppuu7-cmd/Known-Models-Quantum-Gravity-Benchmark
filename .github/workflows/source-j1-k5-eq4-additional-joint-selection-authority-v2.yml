@@ -1,0 +1,96 @@
+name: source-j1-k5-eq4-additional-joint-selection-authority-v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_PREREG_2026-09-15.md'
+      - 'code/source_j1_k5_eq4_additional_joint_selection_authority_v2.py'
+      - '.github/workflows/source-j1-k5-eq4-additional-joint-selection-authority-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective freeze and immutable dependency files
+        shell: bash
+        run: |
+          set -euo pipefail
+          check_unchanged() {
+            commit="$1"
+            path="$2"
+            git merge-base --is-ancestor "$commit" HEAD
+            git diff --quiet "$commit"..HEAD -- "$path"
+          }
+
+          grep -F 'Status: `PROSPECTIVE_FROZEN`' research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_PREREG_2026-09-15.md
+          grep -F 'exactly six scientific authority classes' research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_PREREG_2026-09-15.md
+
+          check_unchanged b50934de049c6597c3732a0d1a334c2cabb4302f research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_PREREG_2026-09-15.md
+          check_unchanged edc1bfa00b720e07cb08c2a2961e32267dee1a23 code/source_j1_k5_eq4_additional_joint_selection_authority_v2.py
+          check_unchanged 9e4627fd02204b27be3f211660db4c689776d808 results/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_RESULT_2026-09-15.md
+          check_unchanged 2eb0da9c987eb706df29971ccea29f65928005d7 recovery/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_HANDOFF_2026-09-15.md
+          check_unchanged 97a4821f85f13e6f5c6d41356612c88939d45f2c recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_REPAIR_2026-09-15.md
+          check_unchanged 8c6582371d6e763e4f37b30fbe42f67684edcdb7 research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md
+          check_unchanged 4b8abb10d89e36801012972ec84f34eb722a5b49 research/SOURCE_J1_K5_ONE_WEDGE_UNIQUENESS_VS_JOINT_EXTENSION_RESULT_2026-09-15.md
+          check_unchanged 048692cb497ec91a6aa7709e221dc5051a10225f research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+          check_unchanged a59b6bdd08c9fd416dd81df32dfe1d612b5f0d9b code/lqg_iter331_source_jet_normalization_audit.py
+          check_unchanged 8c0502b7e892354a89d5387c5e789514e1d2a9d9 code/lqg_iter331_aggregate.py
+          check_unchanged fcc22dcf4f186b2de3557507242d5186e4e96caa recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_2026-09-15.md
+
+          sha256sum \
+            research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_PREREG_2026-09-15.md \
+            results/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_RESULT_2026-09-15.md \
+            recovery/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_HANDOFF_2026-09-15.md \
+            recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_REPAIR_2026-09-15.md \
+            research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md \
+            research/SOURCE_J1_K5_ONE_WEDGE_UNIQUENESS_VS_JOINT_EXTENSION_RESULT_2026-09-15.md \
+            research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md \
+            code/lqg_iter331_source_jet_normalization_audit.py \
+            code/lqg_iter331_aggregate.py \
+            recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_2026-09-15.md
+          echo 'SOURCE_LOCK=PASS'
+
+  authority-audit:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Execute frozen six-class authority matrix
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python code/source_j1_k5_eq4_additional_joint_selection_authority_v2.py \
+            --output out/source_j1_k5_eq4_additional_joint_selection_authority_v2.json \
+            --raw-log out/source_j1_k5_eq4_additional_joint_selection_authority_v2.log
+          sha256sum out/source_j1_k5_eq4_additional_joint_selection_authority_v2.json \
+            > out/source_j1_k5_eq4_additional_joint_selection_authority_v2.sha256
+          cat out/source_j1_k5_eq4_additional_joint_selection_authority_v2.log
+          cat out/source_j1_k5_eq4_additional_joint_selection_authority_v2.sha256
+      - name: Record provenance
+        shell: bash
+        run: |
+          {
+            echo "workflow=${GITHUB_WORKFLOW}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_attempt=${GITHUB_RUN_ATTEMPT}"
+            echo "head_sha=${GITHUB_SHA}"
+            echo "prereg_commit=b50934de049c6597c3732a0d1a334c2cabb4302f"
+            echo "code_commit=edc1bfa00b720e07cb08c2a2961e32267dee1a23"
+          } > out/source_j1_k5_eq4_additional_joint_selection_authority_v2.provenance.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-eq4-additional-joint-selection-authority-v2
+          path: out/
+          if-no-files-found: error
