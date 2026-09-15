@@ -1,0 +1,20 @@
+classification=SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_NOT_PINNED_SCOPED
+reason=all six one-to-one frozen authority classes were traced, but none is source-pinned strongly enough in the frozen corpus to act on Delta
+controls_ok=True
+matrix_ids=['C1_CORRELATED_COMMON_REGULATOR_REMOVAL', 'C2_INDEPENDENT_REGULATOR_PATH_ORDER_THEOREM', 'C3_MICROLOCAL_PRODUCT_PULLBACK_EXTENSION_THEOREM', 'C4_VERTEX_LEVEL_NORMALIZATION_BOUNDARY_CONDITION', 'C5_NESTED_FOREST_GLUING', 'C6_OTHER_GENUINELY_JOINT_SOURCE_THEOREM']
+source_pinned_acts_on_delta_count=0
+source_pinned_action_undetermined_count=0
+iter504_status={'run_id': 34907349374, 'status': 'queued', 'conclusion': None, 'head_sha': '56362459a826e3e376c529446678f2fbcaa269ae', 'head_branch': 'main', 'updated_at': '2026-09-14T23:07:30Z'}
+iter461_status={'run_id': 34748503239, 'status': 'queued', 'conclusion': None, 'head_sha': '05c7f87c8519349057332bf90021f1128e1eefc3', 'head_branch': 'research/iter461-k5-collision-partitions', 'updated_at': '2026-09-13T08:48:36Z'}
+class=C1_CORRELATED_COMMON_REGULATOR_REMOVAL status=NOT_SOURCE_PINNED_IN_FROZEN_CORPUS action_on_delta=None
+evidence={"companion_explicitly_lacks_correlated_family": true, "eq4_explicitly_lacks_common_regulator_removal_path": true, "iter331_all_common_multiwedge_limit_flags_false": true}
+class=C2_INDEPENDENT_REGULATOR_PATH_ORDER_THEOREM status=NOT_SOURCE_PINNED_IN_FROZEN_CORPUS action_on_delta=None
+evidence={"class_separate_from_common_regulator": true, "companion_no_path_order_independence_theorem": true, "scaling_audit_says_independent_path_order_must_be_proved_not_assumed": true}
+class=C3_MICROLOCAL_PRODUCT_PULLBACK_EXTENSION_THEOREM status=NOT_SOURCE_PINNED_IN_FROZEN_CORPUS action_on_delta=None
+evidence={"iter331_all_partial_diagonal_extension_flags_false": true, "microlocal_route_listed_as_possible_future_route_not_completed_theorem": true, "ten_wedge_correlated_product_not_yet_justified": true}
+class=C4_VERTEX_LEVEL_NORMALIZATION_BOUNDARY_CONDITION status=NOT_SOURCE_PINNED_IN_FROZEN_CORPUS action_on_delta=None
+evidence={"broad_class_not_reduced_to_jet_flags": true, "iter331_aggregate_source_defined_normalization_false": true, "iter331_all_k3_normal_jet_values_unfixed_supporting_only": true, "iter331_all_k4_normal_jet_values_unfixed_supporting_only": true, "one_wedge_result_treats_vertex_identity_or_normalization_as_open_frontier": true, "repaired_witness_survives_already_tested_vertex_constraints": true}
+class=C5_NESTED_FOREST_GLUING status=NOT_SOURCE_PINNED_IN_FROZEN_CORPUS action_on_delta=None
+evidence={"iter331_aggregate_source_defined_forest_glue_false": true, "iter331_all_forest_gluing_flags_false": true, "scaling_audit_nested_conditions_are_possible_not_established": true}
+class=C6_OTHER_GENUINELY_JOINT_SOURCE_THEOREM status=NOT_SOURCE_PINNED_IN_FROZEN_CORPUS action_on_delta=None
+evidence={"all_dependency_records_traced": true, "no_unclassified_dependency_record": true, "only_positive_theorems_authorities_in_trace_are_frozen_exclusions_or_nonselecting_generic_results": true}
