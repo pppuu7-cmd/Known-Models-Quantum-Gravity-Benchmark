@@ -1,0 +1,53 @@
+name: source-j1-k5-channel00000-contact-realization-transfer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-channel00000-contact-realization-transfer.yml'
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen prereg/input/code blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD:research/SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_PREREG_2026-09-15.md)" = "ad10b2dba0e2b70abe09c7a1079c2410b702e80d"
+          test "$(git rev-parse HEAD:inputs/source_j1_k5_channel00000_contact_transfer_authority_2026-09-15.json)" = "1dc73e98f58ee1eba302415ffa4cde62a19a9967"
+          test "$(git rev-parse HEAD:code/source_j1_k5_channel00000_contact_realization_transfer_certificate.py)" = "2f0fb1c9deb8ba0855e4d3bf1ed906688b344ca3"
+          test "$(git rev-parse HEAD:recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_2026-09-15.md)" = "ba69745dc472d9f215d77b0f2a9c275052dcd9e4"
+          echo SOURCE_LOCK=PASS
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen runtime dependencies
+        run: python -m pip install --disable-pip-version-check numpy==2.3.3 sympy==1.14.0 mpmath==1.3.0 python-flint==0.9.0
+      - name: Run exact/bounded transfer certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=code python code/source_j1_k5_channel00000_contact_realization_transfer_certificate.py | tee artifacts/source_j1_k5_channel00000_contact_realization_transfer.log
+          sha256sum artifacts/source_j1_k5_channel00000_contact_realization_transfer.json > artifacts/source_j1_k5_channel00000_contact_realization_transfer.json.sha256
+          sha256sum artifacts/source_j1_k5_channel00000_contact_realization_transfer.log > artifacts/source_j1_k5_channel00000_contact_realization_transfer.log.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-channel00000-contact-realization-transfer
+          path: |
+            artifacts/source_j1_k5_channel00000_contact_realization_transfer.json
+            artifacts/source_j1_k5_channel00000_contact_realization_transfer.json.sha256
+            artifacts/source_j1_k5_channel00000_contact_realization_transfer.log
+            artifacts/source_j1_k5_channel00000_contact_realization_transfer.log.sha256
+          if-no-files-found: error
