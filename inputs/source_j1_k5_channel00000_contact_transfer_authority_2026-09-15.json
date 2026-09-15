@@ -1,0 +1,67 @@
+{
+  "gate": "SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_GATE",
+  "frozen_main_at_prereg": "ccc682bd8e0ac0178c02c1cd13d8946c8530f73b",
+  "prereg_commit": "d14cdd7594d23ce55fbab9504a5a003aa7c3d925",
+  "records": [
+    {
+      "id": "coherent_contact",
+      "path": "research/SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_RESULT_2026-09-15.md",
+      "blob_sha": "771649210491df9744a164379efc99fad2d1b099",
+      "realization": "coherent_spinor",
+      "object_role": "contact_distribution",
+      "required_markers": ["delta''(B)", "i/[rho(1+rho^2)]", "coherent spinor"],
+      "contact_nonzero_for_real_nonzero_rho": true,
+      "explicit_contact_to_magnetic_map": false
+    },
+    {
+      "id": "fixed_channel_leading",
+      "path": "research/SOURCE_J1_FULL_COLLISION_ABSOLUTE_DIVERGENCE_THEOREM_2026-09-15.md",
+      "blob_sha": "2bbe85fb9541e4fe517daa9d57d0117f9315b6aa",
+      "realization": "magnetic_intertwiner_channel_00000",
+      "object_role": "cubic_pole_leading_radial",
+      "required_markers": ["Q=diag(1,-2,1)", "C_00000 = 11/24 != 0", "ordinary absolute Haar"],
+      "exact_leading_channel00000_coefficient": "11/24",
+      "is_contact_transfer_authority": false
+    },
+    {
+      "id": "published_iepsilon_scope",
+      "path": "research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md",
+      "blob_sha": "9a5531b6dbecc367c2869c6e9d873071a6444a66",
+      "realization": "source_one_wedge_and_vertex_scope_audit",
+      "object_role": "source_authority_scope",
+      "required_markers": ["single", "Toller", "Eq. (4)", "coherent realization"],
+      "explicit_contact_to_magnetic_map": false
+    },
+    {
+      "id": "all_contact_causal_sign",
+      "path": "research/SOURCE_J1_K5_ALL_CONTACT_CAUSAL_SIGN_RESULT_2026-09-15.md",
+      "blob_sha": "d64a36ff699f30944dc9aa2867035dc116fc5818",
+      "realization": "formal_contact_sign_combinatorics",
+      "object_role": "causal_sign_non_cancellation_only",
+      "required_markers": ["cannot cancel by constrained causal signs alone", "channel/intertwiner contraction", "does not prove"],
+      "explicit_contact_to_magnetic_map": false
+    },
+    {
+      "id": "latest_critic",
+      "path": "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_2026-09-15.md",
+      "blob_sha": "ba69745dc472d9f215d77b0f2a9c275052dcd9e4",
+      "realization": "independent_critical_review",
+      "object_role": "same_realization_gap_diagnosis",
+      "required_markers": ["same-realization", "channel `00000`", "representation-transfer", "must be proved"],
+      "explicit_contact_to_magnetic_map": false,
+      "explicitly_diagnoses_missing_bridge": true
+    },
+    {
+      "id": "leading_certificate",
+      "path": "code/source_j1_full_collision_leading_certificate.py",
+      "blob_sha": "c79f3aa5e869e2c2572fe43c2d91e9f72bd75545",
+      "realization": "magnetic_intertwiner_exact_certificate",
+      "object_role": "cubic_pole_leading_control",
+      "required_markers": ["allzero == F(11, 24)", "exact leading cubic-pole angular contraction only"],
+      "is_contact_transfer_authority": false
+    }
+  ],
+  "actual_contact_map": null,
+  "actual_contact_channel00000_exact_coefficient": null,
+  "interpretation": "The ledger is a bounded frozen-repository authority audit. The independent cubic-pole Q/11/24 result is retained only as a positive contraction-survival control and is not promoted to the coherent contact tensor."
+}
