@@ -1,0 +1,63 @@
+name: source-j1-k5-collision-counterterm-sumrule
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_K5_COLLISION_COUNTERTERM_SUMRULE_PREREG_2026-09-15.md'
+      - 'code/source_j1_k5_collision_counterterm_sumrule_certificate.py'
+      - '.github/workflows/source-j1-k5-collision-counterterm-sumrule.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate prospective authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/SOURCE_J1_K5_COLLISION_COUNTERTERM_SUMRULE_PREREG_2026-09-15.md'
+          FROZEN_COMMIT='7e38d2a3aac339a7133e51b5589f3ba23b7f42c3'
+          test -f "$PREREG"
+          test -f code/source_j1_k5_collision_counterterm_sumrule_certificate.py
+          git cat-file -e "${FROZEN_COMMIT}^{commit}"
+          test "$(git log -1 --format=%H -- "$PREREG")" = "$FROZEN_COMMIT"
+          grep -Fq 'SOURCE_J1_K5_EPRL_SUMRULE_DOES_NOT_FIX_COLLISION_EXTENSION_SCOPED' "$PREREG"
+          grep -Fq '16*63 + 1008*(-1) = 0' "$PREREG"
+          grep -Fq 'D7-S2 = NOT_CLOSED' "$PREREG"
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run exact exhaustive certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/source_j1_k5_collision_counterterm_sumrule_certificate.py | tee source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq 'SOURCE_J1_K5_EPRL_SUMRULE_DOES_NOT_FIX_COLLISION_EXTENSION_SCOPED' source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq '"n_distinct_constrained_kappa_patterns": 16' source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq '"n_unconstrained_patterns": 1008' source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq '"full_independent_sign_counterterm_sum": 0' source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq '"distinct_constrained_counterterm_sum": 1008' source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq '"sigma_counted_constrained_counterterm_sum": 2016' source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq '"s5_pattern_checks": 122880' source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq '"delta_N_within_same_scaling_extension_window": true' source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq '"eprl_sign_sum_preserved_by_witness": true' source-j1-k5-collision-counterterm-sumrule.json
+          grep -Fq '"causal_sector_shift_nonzero": true' source-j1-k5-collision-counterterm-sumrule.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-collision-counterterm-sumrule
+          path: source-j1-k5-collision-counterterm-sumrule.json
+          if-no-files-found: error
