@@ -1,0 +1,67 @@
+name: source-j1-k5-eq4-local-extension-existence
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_K5_EQ4_LOCAL_EXTENSION_EXISTENCE_PREREG_2026-09-15.md'
+      - 'code/source_j1_k5_eq4_local_extension_existence_certificate.py'
+      - '.github/workflows/source-j1-k5-eq4-local-extension-existence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate frozen authority chain
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/SOURCE_J1_K5_EQ4_LOCAL_EXTENSION_EXISTENCE_PREREG_2026-09-15.md'
+          FROZEN_COMMIT='43a4cb12289509a2b4f74192aa709e0c0c6c240e'
+          test -f "$PREREG"
+          test -f research/SOURCE_J1_FULL_COLLISION_ABSOLUTE_DIVERGENCE_THEOREM_2026-09-15.md
+          test -f research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+          test -f research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md
+          test -f research/SOURCE_J1_K5_COLLISION_COUNTERTERM_SUMRULE_RESULT_2026-09-15.md
+          test -f code/source_j1_k5_eq4_local_extension_existence_certificate.py
+          git cat-file -e "${FROZEN_COMMIT}^{commit}"
+          test "$(git log -1 --format=%H -- "$PREREG")" = "$FROZEN_COMMIT"
+          grep -Fq 'SOURCE_J1_K5_EQ4_LOCAL_EXTENSION_EXISTS_UNIQUENESS_OPEN_SCOPED' "$PREREG"
+          grep -Fq 'sd_N=30' "$PREREG"
+          grep -Fq 'codim(N)=12' "$PREREG"
+          grep -Fq 'D7-S2 = NOT_CLOSED' "$PREREG"
+
+  exact-premise-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run exact premise certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/source_j1_k5_eq4_local_extension_existence_certificate.py | tee source-j1-k5-eq4-local-extension-existence.json
+          grep -Fq 'SOURCE_J1_K5_EQ4_LOCAL_EXTENSION_EXISTS_UNIQUENESS_OPEN_SCOPED' source-j1-k5-eq4-local-extension-existence.json
+          grep -Fq '"scaling_degree": 30' source-j1-k5-eq4-local-extension-existence.json
+          grep -Fq '"normal_codimension": 12' source-j1-k5-eq4-local-extension-existence.json
+          grep -Fq '"singular_order": 18' source-j1-k5-eq4-local-extension-existence.json
+          grep -Fq '"radial_integrand_power": -19' source-j1-k5-eq4-local-extension-existence.json
+          grep -Fq '"eprl_preserving_counterterm_full_sum_shift": 0' source-j1-k5-eq4-local-extension-existence.json
+          grep -Fq '"causal_counterterm_shift": 1008' source-j1-k5-eq4-local-extension-existence.json
+          grep -Fq '"finite_scaling_degree_implies_local_extension_exists": true' source-j1-k5-eq4-local-extension-existence.json
+          grep -Fq '"automatic_uniqueness_from_scaling_theorem": false' source-j1-k5-eq4-local-extension-existence.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-eq4-local-extension-existence
+          path: source-j1-k5-eq4-local-extension-existence.json
+          if-no-files-found: error
