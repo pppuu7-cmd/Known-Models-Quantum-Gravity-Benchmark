@@ -1,0 +1,129 @@
+{
+  "candidate_matrix": [
+    {
+      "action_on_delta": null,
+      "candidate": "correlated_or_independent_multiwedge_regulator_with_removal_rule",
+      "evidence": {
+        "iter331_common_multiwedge_iepsilon_limit_any": false,
+        "published_iepsilon_scope_one_wedge_only": true
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    },
+    {
+      "action_on_delta": null,
+      "candidate": "partial_diagonal_microlocal_product_or_extension_prescription",
+      "evidence": {
+        "iter331_partial_diagonal_extension_any": false,
+        "scaling_audit_joint_product_not_yet_justified": true
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    },
+    {
+      "action_on_delta": null,
+      "candidate": "forest_or_nested_stratum_gluing_normalization",
+      "evidence": {
+        "iter331_forest_compatible_gluing_any": false
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    },
+    {
+      "action_on_delta": null,
+      "candidate": "source_fixed_collision_normal_jet_values",
+      "evidence": {
+        "iter331_k3_second_normal_jet_values_fixed_any": false,
+        "iter331_k4_first_normal_jet_values_fixed_any": false
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    },
+    {
+      "action_on_delta": null,
+      "candidate": "other_genuinely_joint_source_theorem_in_frozen_corpus",
+      "evidence": {
+        "critic_next_gate_requests_additional_authority": true,
+        "one_wedge_result_requires_genuinely_joint_condition": true
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    }
+  ],
+  "claim_ceiling": [
+    "no base-extension existence/nonexistence claim",
+    "no unconditional physical/global nonuniqueness claim",
+    "no source authorization of Delta",
+    "no impossibility claim for future source-compatible joint constructions",
+    "no other-spin/channel/family/lower-stratum claim",
+    "no D7-S2/S3/S4 closure",
+    "no terminal D7 selector",
+    "Candidate Gravity remains inactive"
+  ],
+  "classification": "SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_NOT_PINNED_SCOPED",
+  "controls": {
+    "critic_confirmed": true,
+    "critic_nonzero_witness_control": true,
+    "delta_witness_present": true,
+    "iepsilon_one_wedge_scope": true,
+    "joint_condition_required": true,
+    "joint_product_not_yet_justified": true,
+    "no_common_epsilon_in_displayed_eq4": true,
+    "one_wedge_uniqueness_insufficient": true,
+    "prereg_frozen": true,
+    "repair_classification_present": true,
+    "scaling_30_vs_12": true
+  },
+  "frozen_input_sha256": {
+    "code/lqg_iter331_aggregate.py": "39b854dbd5bd144f7db16afb32827097b165118a9c14273f8838bd2459204830",
+    "code/lqg_iter331_source_jet_normalization_audit.py": "ead08a05175bc1f07b4b01ae1bf37240bd6e07ef9661a1a077203cb7edb254d5",
+    "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_REPAIR_2026-09-15.md": "fc23a6de3bf32f16263381c15912f23bc36633c90ae7845d57b224cdd4a3e70d",
+    "recovery/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_HANDOFF_2026-09-15.md": "cd24f1ac34fd0c18e8f3aa5056abcf169485fa5e009cbca027dc8eea2b31f8f8",
+    "research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md": "3419a94e372c8b4e2e38084a36d12ec5e57a10e66673e832098b97c13e74b698",
+    "research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_PREREG_2026-09-15.md": "5470d5b44df2cf4925e9f1227707d9ca79eeee5dd633714292126effbfb758c9",
+    "research/SOURCE_J1_K5_ONE_WEDGE_UNIQUENESS_VS_JOINT_EXTENSION_RESULT_2026-09-15.md": "4cfc5101019552269a73ec03e231636fd250a441407db80d263c29f3df9cd668",
+    "research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md": "903b72efd167978e22ff0bb7155e08863e32c5ee8bdf251b2f953ae1d428ce1a",
+    "results/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_RESULT_2026-09-15.md": "03ba9f0749accd858f758392889e7fc621db675102345df0a2c9241c0c588eeb"
+  },
+  "gate": "SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_GATE",
+  "iter331_source_facts": {
+    "bcg_causal_vertex_2601_23162": {
+      "common_multiwedge_iepsilon_limit": false,
+      "fixed_causal_vertex_formula": true,
+      "forest_compatible_gluing_normalization": false,
+      "individual_toller_iepsilon_definition": true,
+      "k3_second_normal_jet_values_fixed": false,
+      "k4_first_normal_jet_values_fixed": false,
+      "partial_diagonal_extension_prescription": false
+    },
+    "bcg_toller_2604_24945": {
+      "common_multiwedge_iepsilon_limit": false,
+      "fixed_causal_vertex_formula": false,
+      "forest_compatible_gluing_normalization": false,
+      "individual_toller_iepsilon_definition": true,
+      "k3_second_normal_jet_values_fixed": false,
+      "k4_first_normal_jet_values_fixed": false,
+      "partial_diagonal_extension_prescription": false
+    },
+    "beltran_generalized_2603_22661_v2": {
+      "common_multiwedge_iepsilon_limit": false,
+      "fixed_causal_vertex_formula": true,
+      "forest_compatible_gluing_normalization": false,
+      "individual_toller_iepsilon_definition": false,
+      "k3_second_normal_jet_values_fixed": false,
+      "k4_first_normal_jet_values_fixed": false,
+      "partial_diagonal_extension_prescription": false
+    }
+  },
+  "negative_controls": {
+    "generic_extension_theory_not_selection": true,
+    "iter331_rank_detector_not_physical_normalization": true,
+    "one_wedge_iepsilon_not_joint": true,
+    "one_wedge_uniqueness_not_joint": true
+  },
+  "object_scope": {
+    "channel": "00000",
+    "collision": "full K5 collision N=SU(2)^4 in SL(2,C)^4",
+    "rho": "nonzero real",
+    "spin": "j=1",
+    "witness": "Delta(kappa)=c(kappa) delta_N; +i causal, -i global-negated causal, 0 otherwise"
+  },
+  "pinned_but_action_undetermined_count": 0,
+  "reason": "the frozen validated corpus contains no genuinely joint source rule pinned strongly enough to decide the Delta coefficient",
+  "source_pinned_acts_on_delta_count": 0
+}
