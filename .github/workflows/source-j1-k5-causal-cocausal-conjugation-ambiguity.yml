@@ -1,0 +1,64 @@
+name: source-j1-k5-causal-cocausal-conjugation-ambiguity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_K5_CAUSAL_COCAUSAL_CONJUGATION_AMBIGUITY_PREREG_2026-09-15.md'
+      - 'code/source_j1_k5_causal_cocausal_conjugation_ambiguity_certificate.py'
+      - '.github/workflows/source-j1-k5-causal-cocausal-conjugation-ambiguity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate prospective authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/SOURCE_J1_K5_CAUSAL_COCAUSAL_CONJUGATION_AMBIGUITY_PREREG_2026-09-15.md'
+          FROZEN_COMMIT='cb8b6e5a6824ef11cb39b00fd0dae15d1e753b53'
+          test -f "$PREREG"
+          test -f code/source_j1_k5_causal_cocausal_conjugation_ambiguity_certificate.py
+          test -f research/SOURCE_J1_K5_EQ4_LOCAL_EXTENSION_EXISTENCE_RESULT_2026-09-15.md
+          test -f research/SOURCE_J1_K5_ONE_WEDGE_UNIQUENESS_VS_JOINT_EXTENSION_RESULT_2026-09-15.md
+          git cat-file -e "${FROZEN_COMMIT}^{commit}"
+          test "$(git log -1 --format=%H -- "$PREREG")" = "$FROZEN_COMMIT"
+          grep -Fq 'SOURCE_J1_K5_CAUSAL_COCAUSAL_CONJUGATION_STILL_LEAVES_COLLISION_AMBIGUITY_SCOPED' "$PREREG"
+          grep -Fq 'c(-kappa)=conj(c(kappa))' "$PREREG"
+          grep -Fq 'D7-S2 = NOT_CLOSED' "$PREREG"
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run exact conjugation ambiguity certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/source_j1_k5_causal_cocausal_conjugation_ambiguity_certificate.py | tee source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          grep -Fq 'SOURCE_J1_K5_CAUSAL_COCAUSAL_CONJUGATION_STILL_LEAVES_COLLISION_AMBIGUITY_SCOPED' source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          grep -Fq '"n_distinct_causal_patterns": 16' source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          grep -Fq '"n_distinct_cocausal_patterns": 16' source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          grep -Fq '"n_noncausal_patterns": 992' source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          grep -Fq '"sign_reversal_conjugation_checks": 1024' source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          grep -Fq '"s5_pattern_checks": 122880' source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          grep -Fq '"full_eprl_sum_re_im": [' source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          grep -Fq '"coefficient_sign_reversal_conjugation_covariant": true' source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          grep -Fq '"coefficient_level_conjugation_eliminates_collision_ambiguity": false' source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-causal-cocausal-conjugation-ambiguity
+          path: source-j1-k5-causal-cocausal-conjugation-ambiguity.json
+          if-no-files-found: error
