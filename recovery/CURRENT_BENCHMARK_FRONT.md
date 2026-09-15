@@ -7,74 +7,74 @@ Fresh repository `main` always outranks this navigation document if they diverge
 
 `SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_GATE`
 
-Terminal classification:
+Historical Research classification:
 
 `SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_BLOCKED_SCOPED`
 
-The gate was prospectively frozen specifically to repair the latest Critic's same-realization objection: the coherent-contact Hörmander evidence and the fixed magnetic/intertwiner channel-`00000` object live in different realizations unless an exact representation transfer is proved.
-
-Durable chain:
+Durable Research chain:
 
 - prereg `research/SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_PREREG_2026-09-15.md`, commit `d14cdd7594d23ce55fbab9504a5a003aa7c3d925`;
 - frozen authority ledger `inputs/source_j1_k5_channel00000_contact_transfer_authority_2026-09-15.json`, commit `271733aaf19f8982ab2c8b46f56657b9b50d7b48`;
-- exact/bounded certificate `code/source_j1_k5_channel00000_contact_realization_transfer_certificate.py`, commit `4160e498bc548452db6afadbacb0ef01cd4c68d0`;
-- initial workflow head `1a1957de67d806e8d12b9256517b9b8e39912932`, run `34946262055`, infrastructure-only artifact-directory failure after source lock;
-- workflow-only repair `278315b8332e71c89a06e35645190fc3d62aa099`, adding `mkdir -p artifacts` without changing frozen science;
+- certificate `code/source_j1_k5_channel00000_contact_realization_transfer_certificate.py`, commit `4160e498bc548452db6afadbacb0ef01cd4c68d0`;
+- initial run `34946262055`, infrastructure-only missing-artifact-directory failure;
+- workflow-only repair/head `278315b8332e71c89a06e35645190fc3d62aa099`;
 - authoritative run `34946470045`, terminal `completed/success`;
 - source-lock job `104306951367`, success;
 - exact-certificate job `104307018863`, success;
 - artifact `10387222229`, 4188 bytes, digest `sha256:21f65599e304cf4131981089163c90151d30d1c0229240e926f057a48f9f1459`;
 - canonical JSON SHA256 `454653ec9664cef94f0cae5846ac213cbc2a9fef1e63c93d617878d73c6bfd7c`;
-- canonical JSON persistence commit `a57f239280c627a41c0ec4d374730ff2636bc7a0`;
-- raw log persistence commit `3b24a731057cd48b4cf41ee22ef52f941d2c1e8b`;
-- hash persistence commit `0a8f13a3d90b55e3f6af83a90ddef7ca3bc20726`;
-- terminal result `results/SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_RESULT_2026-09-15.md`, commit `b7db6c3f095346d3de87e090f811dbec4df5a4ea`;
-- durable handoff `recovery/SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_HANDOFF_2026-09-15.md`, commit `d9ba5f05823f80f9efbb1c3070561aca44b82e53`.
+- terminal result commit `b7db6c3f095346d3de87e090f811dbec4df5a4ea`;
+- durable Research handoff commit `d9ba5f05823f80f9efbb1c3070561aca44b82e53`.
 
-## Scientific meaning
-
-All frozen source locks and all outcome-sensitivity controls passed. The exact independent cubic-pole channel-`00000` contraction was recomputed as `11/24 != 0`, but it is explicitly a control and **not** the coherent contact tensor. The actual frozen source authority has `actual_contact_map_source_pinned=false` and therefore no physical contact-channel coefficient was computed.
-
-New scoped fact: nonzero coherent contact evidence plus a separately nonzero fixed-channel cubic-pole contraction does not provide the missing coherent-contact -> magnetic/intertwiner representation theorem. The dangerous coherent contact component is therefore neither certified to survive nor certified to cancel in channel `00000`. Missing transfer is not zero.
-
-This is a source/realization **BLOCKED** result, not a model/scientific FAIL.
+The exact cubic-pole channel-`00000` control `11/24` remains valid only in its own leading-radial object and is not a coherent-contact coefficient.
 
 ## Latest independent Critical Review
 
-The newest Critic preceding this gate remains:
+`recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_2026-09-15.md`
 
-- `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_2026-09-15.md`;
-- Critic commit `0af10d7a0fd6ae58bd831eb5e1c14ef50037dc94`;
-- verdict `REQUIRES_NEW_PREREGISTERED_GATE`.
+Critic commit:
 
-That Critic's requested representation-transfer/fixed-channel bridge has now been tested. The result is BLOCKED because the frozen repository/source chain does not pin the exact contact transfer map. The Critic did not establish the opposite science, and this gate does not establish contact cancellation.
+`671596eb4f00d4a8bcc9bfae42453fb0450ff39e`
 
-The earlier Eq. (4) joint-selection-authority V2 Critic remains valid history at commit `2fda454298a3d2594e24242c49fc96a91df76958`, verdict `INVALID_IMPLEMENTATION`. The conjugation/collision counterexample witness remains independently `CONFIRMED_SCOPED` under Critic commit `97a4821f85f13e6f5c6d41356612c88939d45f2c`, conditional on base-extension existence.
+Verdict:
+
+`INVALID_IMPLEMENTATION`
+
+Reason: the prospectively frozen gate asks whether the frozen source/repository authority determines an exact coherent-contact -> magnetic/intertwiner map, but the certificate does not derive or exhaustively audit that predicate. It reads the conclusion-bearing authority-ledger fields `actual_contact_map = null` and `actual_contact_channel00000_exact_coefficient = null`; therefore the actual run's BLOCKED branch is predetermined at the evidence-extraction layer. The synthetic PASS/FAIL/BLOCKED/INVALID fixtures validate only the downstream classifier after `map_pinned` and a coefficient are supplied.
+
+Concrete implementation counterexample: even if one of the six hash-locked records contained a complete qualifying map outside the few marker strings checked by the certificate, the actual run would still set `map_pinned = false` because the record semantics are never parsed. Likewise, a qualifying record elsewhere in frozen main is ignored unless manually copied into the ledger. Thus prospective freezing of a null is not proof of source-authority absence.
+
+The historical Research classification remains preserved as history but **must not be consumed downstream as an independently validated repository-authority blocker**.
+
+This Critic does not prove the opposite science: it does not establish that a transfer map exists, does not establish contact survival or cancellation, and does not determine Eq. (4) distributional existence/nonexistence.
 
 ## Scoped facts retained
 
-- published i-epsilon is a one-wedge Toller prescription, not an already-proved ten-wedge joint collision regulator/removal theorem;
-- coherent-spinor contact realization has a witness defeating the elementary Hörmander sufficient multiplication criterion in that realization;
-- aligned coherent-state witness has exact K5 conormal rank 4 and cycle-space dimension 6;
-- fixed channel-`00000` full-collision object is not locally absolutely Haar-integrable in its independently reviewed scope;
-- exact fixed-channel cubic-pole angular coefficient `11/24` is valid only for that leading operator and is not contact-transfer authority.
+- coherent-contact evidence remains scoped to the coherent-spinor realization;
+- fixed channel-`00000` ordinary absolute full-collision Haar divergence remains scoped and independently reviewed;
+- exact fixed-channel cubic-pole angular coefficient `11/24` remains a leading-radial control only;
+- published one-wedge i-epsilon authority is not a ten-wedge joint regulator/removal theorem;
+- the same-realization transfer question remains scientifically unresolved after this Critic.
 
 ## Independent registered workflows
 
 Do not consume partial substantive values:
 
-- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: freshly checked in this closure run and still non-terminal/queued;
-- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: freshly checked in this closure run and still non-terminal/queued.
+- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: freshly checked by Critic and still `queued / conclusion=null`;
+- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: freshly checked by Critic and still `queued / conclusion=null`.
 
 Fresh Actions state outranks these navigation lines.
 
 ## Next admissible gate
 
-`SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_GATE`
+Require a new prospectively frozen source-authority/representation-transfer gate whose **evidence-extraction layer is itself outcome-sensitive** before any actual `map_pinned` or coefficient field is populated.
 
-Prospectively derive, from source-defined representation identities only, the exact distribution-valued coherent-contact -> magnetic operator map, freezing rho mapping, spherical-basis phases, normalization and edge orientation before calculation. Then execute the exact K5 channel-`00000` projection/contraction. If the derivation requires unstated model data, classify a source-derivation BLOCKER rather than scientific FAIL.
+Admissible forms include:
 
-Do not reuse the historical Eq. (4) E1/E2 BLOCKED label as a validated fixed-channel premise until this bridge is actually obtained.
+- an exhaustive frozen authority corpus plus exact matching-convention predicates and extraction logic, with positive/negative extraction fixtures; or
+- `SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_GATE`, directly deriving the distribution-valued coherent-contact -> magnetic operator map from source-defined identities with rho mapping, spherical-basis phases, normalization and edge orientation frozen before calculation.
+
+If source data are insufficient, classify a source-derivation BLOCKER rather than scientific FAIL. Do not reuse the historical contact-transfer BLOCKED label as a validated premise until this implementation defect is repaired prospectively.
 
 ## Governance lock
 
@@ -88,7 +88,7 @@ Do not reuse the historical Eq. (4) E1/E2 BLOCKED label as a validated fixed-cha
 - A scoped child result is not family closure.
 - Missing/cancelled objects are not zero residuals.
 - CI color is provenance, not science.
-- Historical FAIL/BLOCKED/INVALID records remain preserved.
+- Historical results remain preserved.
 - No authority exists for `QUANTUM_GRAVITY_SOLVED`, `ALL_KNOWN_MODELS_FAIL`, `NEW_THEORY_REQUIRED`, or `NEW_PHYSICS_FOUND`.
 
 ## Immediate restoration rule
