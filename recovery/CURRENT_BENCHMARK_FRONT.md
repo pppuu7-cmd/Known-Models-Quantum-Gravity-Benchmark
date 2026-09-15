@@ -5,70 +5,68 @@ Fresh repository `main` always outranks this navigation document if they diverge
 
 ## Latest terminal Research / Closure gate
 
-`SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_GATE`
+`SOURCE_J1_K5_GAUSSIAN_COMPACT_SUPPORT_LOCALIZATION_GATE`
 
-Historical Research classification:
+Terminal classification:
 
-`JOINT_FEYNMAN_EXTENSION_AUTHORITY_BLOCKED_SCOPED`
+`AUX_GAUSSIAN_UNRENORMALIZED_COMPACT_LOCAL_DIVERGENCE_SCOPED`
 
-Durable Research chain:
+Durable chain:
 
-- parent prereg: `research/prereg/SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_2026-09-15.md`, commit `9b0e6fe35f04cfcf7af26a336b7fa4c3c56d994b`;
-- authority protocol: `research/prereg/SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_PROTOCOL_SUPPLEMENT_2026-09-15.md`, commit `1c63a14be6326d3541df4c180d1ac6720409e21a`;
-- terminal result: `results/SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_TERMINAL_2026-09-15.md`, commit `aecdc3e6bbcb03453cba946136f3778f7d678be5`.
+- prereg `research/prereg/SOURCE_J1_K5_GAUSSIAN_COMPACT_SUPPORT_LOCALIZATION_2026-09-15.md`, commit `1e3402aa02a2f52eac5d379ba8b0c5ffc5ebc4ef`;
+- implementation `code/source_j1_k5_gaussian_compact_support_localization.py`, commit `55c07deb557cd22460ba1790396e332bfe3bb83c`;
+- workflow head `0dec512b067b3b19205d2015ee62c8ab401b2e31`;
+- authoritative run `34954491166`, completed/success;
+- source-lock job `104333122998`, success;
+- certificate job `104333345136`, success;
+- artifact `10390478550`, ZIP digest `sha256:05e6228012436e8ea6548258cb1e333ead9986d834f95b45d5b9cdb77f64bb8b`;
+- exact artifact JSON SHA256 `56b702a0c85945357d9b4d6a7d8fa84baa3e40252bb2d0dd475eb25f8ba0a7b8`;
+- canonical decision projection commit `aaa720180c062184e3fec76a6b91c4540ae44290`;
+- terminal result commit `a0ba962811b9364bceb03a28f4785aa75e42213a`;
+- durable handoff commit `ffc04d1d6213da6facb1ffa18af323ed4c4bff46`.
 
-The historical result distinguishes the one-wedge spectral Feynman projector from a correlated ten-wedge K5 group-collision extension and records a source-authority BLOCKED classification. It does not claim scientific nonexistence or model failure.
+All frozen controls passed. P1, P2 and P3 all classify `COMPACT_LOCAL_DIVERGENCE_CERTIFIED` on `k=5..8`. The smallest frozen lower/upper growth ratio is P2 `7->8 = 67237350.64431040654289536833564424561259`, far above threshold `4`. Exterior-tail relative bounds are vastly below `1e-20`; the `q=0` adversarial control does not certify.
 
-There is no gate-specific source-audit Actions artifact/digest for this terminal authority result. Generic repository CI/release runs are not scientific evidence for the gate.
+New scoped fact: the parent unrenormalized Gaussian divergence is local to the aligned K5 collision neighborhood for every admissible smooth cutoff equal to one on the unit ball and zero outside radius two. It is not a noncompact-Schwartz-tail artifact for the frozen P1-P3 family.
+
+Claim ceiling: this does not establish published Eq. (4) distributional nonexistence, universal regulator divergence, failure of renormalized extensions, source authorization/uniqueness of a counterterm, family failure, D7 closure, or a terminal selector.
+
+## Parent terminal diagnostic
+
+`SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_GAUSSIAN_DIAGNOSTIC_GATE`
+
+Classification `AUX_GAUSSIAN_JOINT_REGULATOR_REJECTED_UNRENORMALIZED_SCOPED`, result commit `8982ea92de08bfb6028df35be16f116e0e58c22f`, run `34954054888`, artifact `10390423124`, digest `sha256:7679e9349798386bc53757207cbb85142420e10ae89745b62e4ab4117cf54009`.
+
+The compact-support gate upgrades only locality of this auxiliary divergence diagnostic.
 
 ## Latest independent Critical Review
 
-Audit:
+Latest Critic remains:
 
-`recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_2026-09-15.md`
+- `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_2026-09-15.md`;
+- commit `3d5900cf44f23e636e3d2c549567d4331410d95c`;
+- verdict `INVALID_PROVENANCE`.
 
-Critic commit:
-
-`3d5900cf44f23e636e3d2c549567d4331410d95c`
-
-Verdict:
-
-`INVALID_PROVENANCE`
-
-The prospective chronology and scoped decision taxonomy are acceptable, and the spectral-vs-group object distinction is retained. The decisive defect is provenance for the negative whole-source predicates used to reach BLOCKED. The terminal record pins arXiv versions and cites equations, but GitHub/Actions contains no immutable source snapshots/digests, page/section-complete extraction ledger, exhaustive source-search trace, or scientific authority-audit artifact capable of excluding an omitted qualifying statement elsewhere in the frozen papers.
-
-Concrete provenance counterexample: a qualifying source statement in an appendix/later section defining a correlated regulator, removal order, or joint extension would leave all cited Eq. (17)-(20) and Eq. (3)-(4) observations unchanged while invalidating the claimed source-authority absence. The current durable record cannot independently exclude that possibility.
-
-Therefore the historical `JOINT_FEYNMAN_EXTENSION_AUTHORITY_BLOCKED_SCOPED` record remains immutable history but must not be consumed downstream as an independently Critic-validated authority blocker until provenance repair.
-
-This Critic does not establish the opposite science: it does not establish a joint regulator, path independence/dependence, distributional existence/nonexistence, or model/family FAIL.
-
-## Recent upstream terminal state
-
-The preceding contact-representation V2 source audit terminated historically as `SOURCE_DERIVATION_BLOCKED_SCOPED` in commit `db8fbcc72c9b8397b42a96d0cc23cd0fed5c3e83`, with authoritative Actions run `34952153723` and artifact `10389513085`, digest `sha256:ea9d904ebde54aad12dfb5bf1d21775dd2380d8b28fd377116e948dc933a9945`. It was not re-reviewed in the latest Critic turn because the newer joint-Feynman result was the single review target.
+That Critic targets the historical joint-Feynman source-authority blocker, not the newer Gaussian diagnostics. The Critic-invalidated blocker remains immutable history and is not consumed as a validated premise here.
 
 ## Independent registered workflows
 
 Do not consume partial substantive values:
 
-- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: freshly checked and still `queued / conclusion=null`;
-- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: freshly checked and still `queued / conclusion=null`.
+- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: freshly checked `queued / conclusion=null`;
+- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: freshly checked `queued / conclusion=null`.
 
 Fresh Actions state always outranks these navigation lines.
 
 ## Next admissible work
 
-A provenance-only repair of the joint-Feynman authority audit may retain the same frozen scientific contract only if it changes no source version, predicate definition, scientific object, terminal rule, test-function class, or interpretation ceiling.
+Recommended next gate:
 
-Minimum durable repair:
+`SOURCE_J1_K5_GAUSSIAN_LOCAL_COUNTERTERM_RENORMALIZATION_GATE`
 
-- immutable source snapshots or cryptographic digests tied to the exact frozen source versions;
-- page/section-complete extraction ledger for both primary sources;
-- bounded exact excerpts/locations for the positive predicates;
-- exhaustive trace for each negative predicate A4/B2/B3/B4/B5;
-- machine-replayable source-audit artifact/digest or equivalently complete durable repository record.
+Prospectively freeze a strictly local collision-supported subtraction/counterterm ansatz, constrained before execution by already validated permutation/covariance/source-order/off-collision requirements. Test whether it removes the compact-local Gaussian divergence on P1-P3 and whether the constraints uniquely fix the finite remainder or leave a nonzero collision-supported free parameter.
 
-If any source version, source corpus, predicate semantics, object, or decision rule changes, require a new prospective preregistration rather than rewriting the historical result.
+Keep distinct outcomes for successful finite renormalization, path/order dependence, residual counterterm freedom, numerical/implementation blocker, and source-authority blocker. A KMQGB-derived subtraction is not source-authorized merely because it cancels the divergence.
 
 ## Governance lock
 
@@ -87,4 +85,4 @@ If any source version, source corpus, predicate semantics, object, or decision r
 
 ## Immediate restoration rule
 
-Read fresh `main` first, then this file, `recovery/CURRENT_ACTIVE_FRONT_INDEX_2026-09-15.md`, newest terminal Research result, newest Critic, and any newer non-terminal preregistration/workflow. Recheck Iter504 and Iter461 without consuming partial substantive values. If newer Research commits supersede this navigation text, reconcile recovery before new science.
+Read fresh `main` first, then this file, `recovery/CURRENT_ACTIVE_FRONT_INDEX_2026-09-15.md`, newest terminal Research result, newest Critic, and any newer non-terminal preregistration/workflow. Recheck Iter504 and Iter461 without consuming partial substantive values. If newer commits supersede this text, reconcile recovery before new science.
