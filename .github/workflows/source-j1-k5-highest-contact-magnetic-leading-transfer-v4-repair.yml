@@ -1,0 +1,162 @@
+name: source-j1-k5-highest-contact-magnetic-leading-transfer-v4-repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-highest-contact-magnetic-leading-transfer-v4-repair.yml'
+      - 'code/source_j1_k5_highest_contact_magnetic_leading_transfer_v4_repair.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen V4 contract and repair authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/prereg/SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_2026-09-15.md'
+          INPUT='inputs/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.json'
+          PROTOCOL='recovery/V4_IMPLEMENTATION_REPAIR_PROTOCOL_2026-09-16.md'
+          REPAIR='code/source_j1_k5_highest_contact_magnetic_leading_transfer_v4_repair.py'
+          BASE='code/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.py'
+
+          git show 01ccbad09d4a413066b1bcfbf77861d386926e73:"$PREREG" > /tmp/v4-prereg.frozen
+          cmp /tmp/v4-prereg.frozen "$PREREG"
+          git show 8b933f94b8eea1c6990b33f9f2f563f7fabae461:"$INPUT" > /tmp/v4-input.frozen
+          cmp /tmp/v4-input.frozen "$INPUT"
+
+          grep -F 'FROZEN_BEFORE_REPAIR_IMPLEMENTATION_OR_RERUN' "$PROTOCOL"
+          grep -F '01ccbad09d4a413066b1bcfbf77861d386926e73' "$REPAIR"
+          grep -F '8b933f94b8eea1c6990b33f9f2f563f7fabae461' "$REPAIR"
+          grep -F 'c0358e348bbb225719bb1617f905e38d91f33e21' "$REPAIR"
+          grep -F 'f903669dd08c6ae6fa9ac4d140ff85f294dd36c1' "$REPAIR"
+          grep -F '91bcaadc83be2934e09ec3e32b17709b3306d059' "$REPAIR"
+          grep -F 'b9b9e7104f13f8f3b38722eea76fc02c93444148' "$REPAIR"
+
+          test "$(git hash-object "$BASE")" = 'b9b9e7104f13f8f3b38722eea76fc02c93444148'
+
+          python - <<'PY'
+          import hashlib, json, pathlib
+          data=json.load(open('inputs/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.json',encoding='utf-8'))
+          for rel, expected in data['repository_authority_blobs'].items():
+              raw=pathlib.Path(rel).read_bytes()
+              got=hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()
+              assert got==expected,(rel,got,expected)
+          assert data['terminal_dependencies']['V3']['artifact_digest']=='sha256:09268182961e09b3413d13684526574c1924d6aa37f17b39a9d65477907cabc1'
+          assert data['terminal_dependencies']['V3K']['artifact_digest']=='sha256:bfa25bdfe600f090ca5f273c1797e8804b94dc190d5d68130466e692876ec292'
+          print('V4_REPAIR_SOURCE_LOCK_OK')
+          PY
+
+  exact-lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Pin exact dependencies
+        run: python -m pip install --disable-pip-version-check 'sympy==1.14.0' 'numpy==2.3.3'
+      - name: Run exact same-contract V4 repair certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          OUT="artifacts/highest-contact-v4-repair-py${{ matrix.python-version }}.json"
+          LOG="artifacts/highest-contact-v4-repair-py${{ matrix.python-version }}.log"
+          python code/source_j1_k5_highest_contact_magnetic_leading_transfer_v4_repair.py --out "$OUT" | tee "$LOG"
+          sha256sum "$OUT" > "$OUT.sha256"
+          sha256sum "$LOG" > "$LOG.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: highest-contact-v4-repair-py${{ matrix.python-version }}
+          path: artifacts/
+          if-no-files-found: error
+
+  aggregate:
+    needs: exact-lane
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: highest-contact-v4-repair-py*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate frozen repaired verdict
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p aggregate
+          python - <<'PY'
+          import glob,json
+          files=sorted(glob.glob('downloaded/highest-contact-v4-repair-py*.json'))
+          assert len(files)==2,files
+          rows=[json.load(open(f,encoding='utf-8')) for f in files]
+          allowed={
+            'SOURCE_J1_K5_CHANNEL00000_HIGHEST_CONTACT_SURVIVES_LEADING_SCOPED',
+            'SOURCE_J1_K5_CHANNEL00000_HIGHEST_CONTACT_CANCELS_LEADING_SCOPED',
+            'SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_TRANSFER_BLOCKED_SCOPED'
+          }
+          keys=[
+            'classification','controls','derived_scaling_orders_plus','derived_scaling_orders_minus',
+            'derived_scaling_proofs_plus','derived_scaling_proofs_minus',
+            'production_classifier_plus','production_classifier_minus',
+            'remove_highest_classifier_plus','remove_highest_classifier_minus',
+            'wrong_ratio_classifier','synthetic_cancellation_classifier',
+            'channel_00000_angular_contraction','physical_highest_contact_leading_coefficient',
+            'magnetic_cubic_limits'
+          ]
+          same=all(rows[0][k]==rows[1][k] for k in keys)
+          controls=all(all(bool(v) for v in r['controls'].values()) for r in rows)
+          cls=rows[0]['classification'] if same and controls and rows[0]['classification'] in allowed else 'INVALID_IMPLEMENTATION'
+          out={
+            'gate':'SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4',
+            'repair':'V4_SAME_CONTRACT_IMPLEMENTATION_REPAIR',
+            'classification':cls,
+            'lane_classifications':[r['classification'] for r in rows],
+            'lanes_exactly_agree':same,
+            'all_controls_pass':controls,
+            'derived_scaling_orders_plus':rows[0]['derived_scaling_orders_plus'],
+            'derived_scaling_orders_minus':rows[0]['derived_scaling_orders_minus'],
+            'remove_highest_classifier_plus':rows[0]['remove_highest_classifier_plus'],
+            'remove_highest_classifier_minus':rows[0]['remove_highest_classifier_minus'],
+            'wrong_ratio_classifier':rows[0]['wrong_ratio_classifier'],
+            'synthetic_cancellation_classifier':rows[0]['synthetic_cancellation_classifier'],
+            'channel_00000_angular_contraction':rows[0]['channel_00000_angular_contraction'],
+            'physical_highest_contact_leading_coefficient':rows[0]['physical_highest_contact_leading_coefficient'],
+            'magnetic_to_contact_scalar_ratio_plus':rows[0]['magnetic_to_contact_scalar_ratio_plus'],
+            'magnetic_to_contact_scalar_ratio_minus':rows[0]['magnetic_to_contact_scalar_ratio_minus'],
+            'new_scientific_fact':rows[0]['new_scientific_fact'] if cls==rows[0]['classification'] else None,
+            'interpretation_ceiling':rows[0]['interpretation_ceiling'],
+          }
+          p='aggregate/source_j1_k5_highest_contact_magnetic_leading_transfer_v4_repair_aggregate.json'
+          open(p,'w',encoding='utf-8').write(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({
+            'classification':cls,
+            'lanes_exactly_agree':same,
+            'all_controls_pass':controls,
+            'derived_orders':out['derived_scaling_orders_plus'],
+            'remove_highest_reason':out['remove_highest_classifier_plus']['reason'],
+            'angular':out['channel_00000_angular_contraction'],
+            'physical_leading':out['physical_highest_contact_leading_coefficient'],
+          },sort_keys=True))
+          if cls=='INVALID_IMPLEMENTATION': raise SystemExit(2)
+          PY
+          sha256sum aggregate/source_j1_k5_highest_contact_magnetic_leading_transfer_v4_repair_aggregate.json > aggregate/source_j1_k5_highest_contact_magnetic_leading_transfer_v4_repair_aggregate.json.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-highest-contact-magnetic-leading-transfer-v4-repair-aggregate
+          path: aggregate/
+          if-no-files-found: error
