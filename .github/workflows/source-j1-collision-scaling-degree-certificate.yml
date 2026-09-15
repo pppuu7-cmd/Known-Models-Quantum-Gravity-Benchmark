@@ -1,0 +1,53 @@
+name: source-j1-collision-scaling-degree-certificate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md'
+      - 'code/source_j1_collision_scaling_degree_certificate.py'
+      - '.github/workflows/source-j1-collision-scaling-degree-certificate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen scoped authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+          test -f code/source_j1_collision_scaling_degree_certificate.py
+          grep -Fq 'sd_N = 30' research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+          grep -Fq 'omega = sd_N - codim(N) = 30 - 12 = 18' research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+          grep -Fq 'TEN_WEDGE_CORRELATED_COLLISION_PRODUCT = NOT_YET_JUSTIFIED' research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+          grep -Fq 'D7-S2 = NOT_CLOSED' research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run exact arithmetic certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/source_j1_collision_scaling_degree_certificate.py | tee source-j1-collision-scaling-degree-certificate.json
+          grep -Fq 'SOURCE_J1_FULL_COLLISION_SCALING_DEGREE_CERTIFIED_SCOPED' source-j1-collision-scaling-degree-certificate.json
+          grep -Fq '"normal_codimension": 12' source-j1-collision-scaling-degree-certificate.json
+          grep -Fq '"scaling_degree": 30' source-j1-collision-scaling-degree-certificate.json
+          grep -Fq '"singular_order": 18' source-j1-collision-scaling-degree-certificate.json
+          grep -Fq '"radial_integrand_power": -19' source-j1-collision-scaling-degree-certificate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-collision-scaling-degree-certificate
+          path: source-j1-collision-scaling-degree-certificate.json
+          if-no-files-found: error
