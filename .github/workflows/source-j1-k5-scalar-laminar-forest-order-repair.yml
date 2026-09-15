@@ -1,0 +1,60 @@
+name: source-j1-k5-scalar-laminar-forest-order-repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/prereg/SOURCE_J1_K5_SCALAR_LAMINAR_FOREST_ORDER_REPAIR_2026-09-15.md'
+      - 'code/source_j1_k5_scalar_laminar_forest_order_repair.py'
+      - '.github/workflows/source-j1-k5-scalar-laminar-forest-order-repair.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify prospective contract and implementation identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f research/prereg/SOURCE_J1_K5_SCALAR_LAMINAR_FOREST_ORDER_REPAIR_2026-09-15.md
+          test -f code/source_j1_k5_scalar_laminar_forest_order_repair.py
+          grep -Fq 'PROSPECTIVELY_FROZEN_BEFORE_IMPLEMENTATION_OR_RESULT' research/prereg/SOURCE_J1_K5_SCALAR_LAMINAR_FOREST_ORDER_REPAIR_2026-09-15.md
+          grep -Fq 'd_perp(S)=|S|-1' research/prereg/SOURCE_J1_K5_SCALAR_LAMINAR_FOREST_ORDER_REPAIR_2026-09-15.md
+          grep -Fq 'proper-only forests' research/prereg/SOURCE_J1_K5_SCALAR_LAMINAR_FOREST_ORDER_REPAIR_2026-09-15.md
+          grep -Fq 'SCALAR_K5_LAMINAR_FOREST_ORDER_REPAIR_CONFIRMED_SCOPED' code/source_j1_k5_scalar_laminar_forest_order_repair.py
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run exact scalar forest repair certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_scalar_laminar_forest_order_repair.py \
+            --out artifacts/source_j1_k5_scalar_laminar_forest_order_repair.json \
+            | tee artifacts/source_j1_k5_scalar_laminar_forest_order_repair.log
+          sha256sum artifacts/source_j1_k5_scalar_laminar_forest_order_repair.json \
+            > artifacts/source_j1_k5_scalar_laminar_forest_order_repair.json.sha256
+          sha256sum artifacts/source_j1_k5_scalar_laminar_forest_order_repair.log \
+            > artifacts/source_j1_k5_scalar_laminar_forest_order_repair.log.sha256
+      - name: Upload exact certificate
+        uses: actions/upload-artifact@v4
+        with:
+          name: scalar-k5-laminar-forest-order-repair-py${{ matrix.python-version }}
+          path: artifacts/
+          if-no-files-found: error
