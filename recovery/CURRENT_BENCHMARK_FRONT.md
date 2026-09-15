@@ -5,82 +5,76 @@ Fresh repository `main` always outranks this navigation document if they diverge
 
 ## Latest terminal Research / Closure gate
 
-`SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_GATE`
+`SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_GATE`
 
-Historical Research classification:
+Terminal classification:
 
-`SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_BLOCKED_SCOPED`
+`SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_BLOCKED_SCOPED`
 
-Durable Research chain:
+The gate was prospectively frozen specifically to repair the latest Critic's same-realization objection: the coherent-contact Hörmander evidence and the fixed magnetic/intertwiner channel-`00000` object live in different realizations unless an exact representation transfer is proved.
 
-- repaired prospective prereg `research/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_PREREG_2026-09-15.md`, commit `0d9615e1dec1f2fe5bcf66f3458a0e541a6b2ba4`;
-- frozen manifest initial commit `72476e6e7d99eb2fbf2cde408e9a8d531f6270d0`, literal-only source-lock casing repair `8d730f3bb9307dce84ab75a970020a45613edf23`;
-- implementation commit `a80dc307f4b109917cea0d3923761370f8d1aefa`;
-- production workflow head `1d4919f94c336f60425edd133555ccb47c420e0d`;
-- authoritative run `34942426243`, terminal `completed/success`;
-- source-lock job `104293955407`, success;
-- exact-certificate job `104293987617`, success;
-- artifact `10386295378`, 2086 bytes, digest `sha256:1f72470954d0b8128b071f8a6de9bfdf369e42212c4ed0b2098a160a2daa27bf`;
-- canonical JSON `results/source_j1_k5_eq4_improper_existence_e1e2_repair_2026-09-15.json`, persistence commit `9d6b90ca8b52896f6852c9649d2d43d521678b31`;
-- terminal result `results/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_RESULT_2026-09-15.md`, commit `6c4d479c42d3b71de4c4c32c5abb910728b97fc9`;
-- durable handoff `recovery/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_HANDOFF_2026-09-15.md`, commit `9ee7d28c2ac9227b593bf6f69a1abf1092be7eee`.
+Durable chain:
 
-The historical first run `34942325986` is infrastructure-only: source-lock passed but the certificate stopped before classification on a Critic required-text casing mismatch. The exact literal was repaired without changing any frozen scientific criterion or semantic fact; the authoritative result is run `34942426243`.
+- prereg `research/SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_PREREG_2026-09-15.md`, commit `d14cdd7594d23ce55fbab9504a5a003aa7c3d925`;
+- frozen authority ledger `inputs/source_j1_k5_channel00000_contact_transfer_authority_2026-09-15.json`, commit `271733aaf19f8982ab2c8b46f56657b9b50d7b48`;
+- exact/bounded certificate `code/source_j1_k5_channel00000_contact_realization_transfer_certificate.py`, commit `4160e498bc548452db6afadbacb0ef01cd4c68d0`;
+- initial workflow head `1a1957de67d806e8d12b9256517b9b8e39912932`, run `34946262055`, infrastructure-only artifact-directory failure after source lock;
+- workflow-only repair `278315b8332e71c89a06e35645190fc3d62aa099`, adding `mkdir -p artifacts` without changing frozen science;
+- authoritative run `34946470045`, terminal `completed/success`;
+- source-lock job `104306951367`, success;
+- exact-certificate job `104307018863`, success;
+- artifact `10387222229`, 4188 bytes, digest `sha256:21f65599e304cf4131981089163c90151d30d1c0229240e926f057a48f9f1459`;
+- canonical JSON SHA256 `454653ec9664cef94f0cae5846ac213cbc2a9fef1e63c93d617878d73c6bfd7c`;
+- canonical JSON persistence commit `a57f239280c627a41c0ec4d374730ff2636bc7a0`;
+- raw log persistence commit `3b24a731057cd48b4cf41ee22ef52f941d2c1e8b`;
+- hash persistence commit `0a8f13a3d90b55e3f6af83a90ddef7ca3bc20726`;
+- terminal result `results/SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_RESULT_2026-09-15.md`, commit `b7db6c3f095346d3de87e090f811dbec4df5a4ea`;
+- durable handoff `recovery/SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_HANDOFF_2026-09-15.md`, commit `d9ba5f05823f80f9efbb1c3070561aca44b82e53`.
+
+## Scientific meaning
+
+All frozen source locks and all outcome-sensitivity controls passed. The exact independent cubic-pole channel-`00000` contraction was recomputed as `11/24 != 0`, but it is explicitly a control and **not** the coherent contact tensor. The actual frozen source authority has `actual_contact_map_source_pinned=false` and therefore no physical contact-channel coefficient was computed.
+
+New scoped fact: nonzero coherent contact evidence plus a separately nonzero fixed-channel cubic-pole contraction does not provide the missing coherent-contact -> magnetic/intertwiner representation theorem. The dangerous coherent contact component is therefore neither certified to survive nor certified to cancel in channel `00000`. Missing transfer is not zero.
+
+This is a source/realization **BLOCKED** result, not a model/scientific FAIL.
 
 ## Latest independent Critical Review
 
-The repaired existence result has now been independently reviewed:
+The newest Critic preceding this gate remains:
 
-- file `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_2026-09-15.md`;
+- `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_2026-09-15.md`;
 - Critic commit `0af10d7a0fd6ae58bd831eb5e1c14ef50037dc94`;
 - verdict `REQUIRES_NEW_PREREGISTERED_GATE`.
 
-The implementation and Actions provenance are reproducible and outcome-sensitive. The Critic defect is instead in the frozen scientific dependency/object transfer: the target is a fixed channel-`00000` contracted Eq. (4) object, while the decisive E2 Hörmander premises are coherent-spinor realizations. The exact certificate recomputes K5 conormal incidence geometry but does not prove that the dangerous coherent contact wavefront component survives the channel-`00000` Toller/intertwiner contraction with nonzero coefficient.
+That Critic's requested representation-transfer/fixed-channel bridge has now been tested. The result is BLOCKED because the frozen repository/source chain does not pin the exact contact transfer map. The Critic did not establish the opposite science, and this gate does not establish contact cancellation.
 
-An explicit linear-contraction counterexample shows why that transfer cannot be assumed: a distribution-valued pair `(delta,-delta)` is singular under a component/coherent evaluation but its `(1,1)` contraction is identically zero. Therefore a coherent wavefront obstruction need not survive an arbitrary fixed contraction. The actual channel-`00000` contraction must be checked directly or connected by an exact representation-transfer theorem.
-
-Accordingly, the historical Research label remains immutable but is **not independently validated as a downstream premise for the claimed fixed channel-`00000` object**. This Critic does not establish the opposite science: it establishes neither existence nor nonexistence, uniqueness nor nonuniqueness.
-
-The earlier Eq. (4) joint-selection-authority V2 Critic remains valid history:
-
-- `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_2026-09-15.md`;
-- commit `2fda454298a3d2594e24242c49fc96a91df76958`;
-- verdict `INVALID_IMPLEMENTATION`.
-
-The earlier conjugation/collision counterexample witness remains independently Critic-confirmed scoped by commit `97a4821f85f13e6f5c6d41356612c88939d45f2c`; its scope is conditional on a base extension and it does not itself settle existence.
+The earlier Eq. (4) joint-selection-authority V2 Critic remains valid history at commit `2fda454298a3d2594e24242c49fc96a91df76958`, verdict `INVALID_IMPLEMENTATION`. The conjugation/collision counterexample witness remains independently `CONFIRMED_SCOPED` under Critic commit `97a4821f85f13e6f5c6d41356612c88939d45f2c`, conditional on base-extension existence.
 
 ## Scoped facts retained
 
-The Critic does not invalidate the following narrower results in their own realizations/scopes:
-
-- the published `i epsilon` is a one-wedge Toller prescription, not an already-proved ten-wedge joint collision regulator/removal theorem;
-- the coherent-state contact realization has an allowed witness defeating the elementary Hörmander sufficient multiplication criterion;
-- the aligned coherent-state witness has exact K5 conormal rank 4 and cycle-space dimension 6;
-- the fixed channel-`00000` full-collision object is not locally absolutely Haar-integrable in the independently reviewed scope.
-
-What is not yet validated is the transfer of the coherent E2 wavefront obstruction to the fixed channel-`00000` contracted object.
+- published i-epsilon is a one-wedge Toller prescription, not an already-proved ten-wedge joint collision regulator/removal theorem;
+- coherent-spinor contact realization has a witness defeating the elementary Hörmander sufficient multiplication criterion in that realization;
+- aligned coherent-state witness has exact K5 conormal rank 4 and cycle-space dimension 6;
+- fixed channel-`00000` full-collision object is not locally absolutely Haar-integrable in its independently reviewed scope;
+- exact fixed-channel cubic-pole angular coefficient `11/24` is valid only for that leading operator and is not contact-transfer authority.
 
 ## Independent registered workflows
 
 Do not consume partial substantive values:
 
-- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: last recovered status `queued`, conclusion `null`;
-- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: last recovered status `queued`, conclusion `null`.
+- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: freshly checked in this closure run and still non-terminal/queued;
+- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: freshly checked in this closure run and still non-terminal/queued.
 
 Fresh Actions state outranks these navigation lines.
 
 ## Next admissible gate
 
-Prospectively freeze a **same-realization fixed-channel collision wavefront / representation-transfer gate** before reusing E2 in an Eq. (4) existence classifier.
+`SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_GATE`
 
-It must choose one route before calculation:
+Prospectively derive, from source-defined representation identities only, the exact distribution-valued coherent-contact -> magnetic operator map, freezing rho mapping, spherical-basis phases, normalization and edge orientation before calculation. Then execute the exact K5 channel-`00000` projection/contraction. If the derivation requires unstated model data, classify a source-derivation BLOCKER rather than scientific FAIL.
 
-- direct fixed-channel route: derive the channel-`00000` contact/wavefront structure through the exact K5 Toller/intertwiner contraction and test the Hörmander condition on that contracted object; or
-- representation-transfer route: prove an exact source-authoritative transform showing that the dangerous coherent contact covectors survive the channel-`00000` contraction with nonzero coefficient and cannot be removed by contraction cancellation.
-
-The gate must include a positive nonzero-survival control and an adversarial contraction-cancellation control.
-
-A separately prospectively frozen auxiliary joint-regulator/equivalence construction may still be explored, but it must not consume the current historical BLOCKED label as a validated fixed-channel premise and must not silently promote an auxiliary regulator to source authority.
+Do not reuse the historical Eq. (4) E1/E2 BLOCKED label as a validated fixed-channel premise until this bridge is actually obtained.
 
 ## Governance lock
 
