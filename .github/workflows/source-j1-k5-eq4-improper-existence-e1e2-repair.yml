@@ -28,7 +28,7 @@ jobs:
           MANIFEST='inputs/source_j1_k5_eq4_improper_existence_e1e2_repair_manifest_2026-09-15.json'
           CODE='code/source_j1_k5_eq4_improper_existence_e1e2_repair_certificate.py'
           PREREG_COMMIT='0d9615e1dec1f2fe5bcf66f3458a0e541a6b2ba4'
-          MANIFEST_COMMIT='72476e6e7d99eb2fbf2cde408e9a8d531f6270d0'
+          MANIFEST_COMMIT='8d730f3bb9307dce84ab75a970020a45613edf23'
           CODE_COMMIT='a80dc307f4b109917cea0d3923761370f8d1aefa'
 
           test "$(git log -1 --format=%H -- "$PREREG")" = "$PREREG_COMMIT"
