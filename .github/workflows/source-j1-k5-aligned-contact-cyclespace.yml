@@ -1,0 +1,62 @@
+name: source-j1-k5-aligned-contact-cyclespace
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_K5_ALIGNED_CONTACT_CYCLESPACE_PREREG_2026-09-15.md'
+      - 'code/source_j1_k5_aligned_contact_cyclespace_certificate.py'
+      - '.github/workflows/source-j1-k5-aligned-contact-cyclespace.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate prospective authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/SOURCE_J1_K5_ALIGNED_CONTACT_CYCLESPACE_PREREG_2026-09-15.md'
+          FROZEN_COMMIT='000bfca5619f34c55d67be9dde6babae0af9d29a'
+          test -f "$PREREG"
+          test -f code/source_j1_k5_aligned_contact_cyclespace_certificate.py
+          git cat-file -e "${FROZEN_COMMIT}^{commit}"
+          test "$(git log -1 --format=%H -- "$PREREG")" = "$FROZEN_COMMIT"
+          grep -Fq 'SOURCE_J1_K5_ALIGNED_CONTACT_CYCLESPACE_HORMANDER_OBSTRUCTION_SCOPED' "$PREREG"
+          grep -Fq 'rank `4`' "$PREREG"
+          grep -Fq 'dimension `10-4 = 6`' "$PREREG"
+          grep -Fq 'D7-S2 = NOT_CLOSED' "$PREREG"
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run exact cycle-space certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/source_j1_k5_aligned_contact_cyclespace_certificate.py | tee source-j1-k5-aligned-contact-cyclespace.json
+          grep -Fq 'SOURCE_J1_K5_ALIGNED_CONTACT_CYCLESPACE_HORMANDER_OBSTRUCTION_SCOPED' source-j1-k5-aligned-contact-cyclespace.json
+          grep -Fq '"incidence_rank": 4' source-j1-k5-aligned-contact-cyclespace.json
+          grep -Fq '"conormal_rank": 4' source-j1-k5-aligned-contact-cyclespace.json
+          grep -Fq '"relation_space_dimension": 6' source-j1-k5-aligned-contact-cyclespace.json
+          grep -Fq '"spanning_tree_nullity": 0' source-j1-k5-aligned-contact-cyclespace.json
+          grep -Fq '"fundamental_relation_coeff_rank": 6' source-j1-k5-aligned-contact-cyclespace.json
+          grep -Fq '"all_triangle_relations_zero": true' source-j1-k5-aligned-contact-cyclespace.json
+          grep -Fq '"wrong_sign_triangle_relation_nonzero": true' source-j1-k5-aligned-contact-cyclespace.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-aligned-contact-cyclespace
+          path: source-j1-k5-aligned-contact-cyclespace.json
+          if-no-files-found: error
