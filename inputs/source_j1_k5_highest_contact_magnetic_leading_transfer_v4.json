@@ -1,0 +1,38 @@
+{
+  "gate": "SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4",
+  "prereg_commit": "01ccbad09d4a413066b1bcfbf77861d386926e73",
+  "terminal_dependencies": {
+    "V3": {
+      "classification": "SOURCE_J1_COHERENT_MAGNETIC_TOLLER_BRIDGE_CONFIRMED_SCOPED",
+      "run": 35017297255,
+      "artifact": 10415708250,
+      "artifact_digest": "sha256:09268182961e09b3413d13684526574c1924d6aa37f17b39a9d65477907cabc1",
+      "result_commit": "f98a2d41dc67db42ced6890179b3d09dbda0b885"
+    },
+    "V3K": {
+      "classification": "SOURCE_J1_TOLLER_PROJECTOR_KERNEL_EQUIVALENCE_CONFIRMED_SCOPED",
+      "run": 35017730315,
+      "artifact": 10416047992,
+      "artifact_digest": "sha256:bfa25bdfe600f090ca5f273c1797e8804b94dc190d5d68130466e692876ec292",
+      "result_commit": "8ee4f29d99419182a9506519007563ba452185b2"
+    }
+  },
+  "repository_authority_blobs": {
+    "code/iter499_arb_core.py": "1736f727ee956c181d8ff513eb0c243085131668",
+    "code/source_j1_k5_coherent_contact_hormander_certificate.py": "a6c1f6686bdb8228ac7ed059c36a63d518c32d01",
+    "code/source_j1_full_collision_leading_certificate.py": "c79f3aa5e869e2c2572fe43c2d91e9f72bd75545",
+    "research/SOURCE_J1_TOLLER_COLLISION_POLE_LEDGER_2026-09-15.md": "37fb4d2d1ec218061b341d9719a5a01288b58ae9"
+  },
+  "primary_source": {
+    "title": "Causal spinfoam vertex for 4d Lorentzian quantum gravity",
+    "arxiv": "2601.23162v1",
+    "equations": ["3", "17", "C6", "C7", "C8", "C9", "D1", "D2", "D3", "D4"]
+  },
+  "source_j1_polynomial": "F_1(rhot,rho)=rhot*(1+rhot^2)/(rho*(1+rho^2))",
+  "source_contact_split": "Theta_sigma=theta(sigma*B)+sigma*sum_n=0^2 c_(n+1)/(n+1)!*(-i)^(n+1)*delta^(n)(B)",
+  "magnetic_order": [-1, 0, 1],
+  "k5_edges_zero_based": [[0,1],[0,2],[0,3],[0,4],[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]],
+  "tangent_points_zero_based": [[0,0,0],[1,0,0],[0,1,0],[0,0,1],[1,1,1]],
+  "channel": [0,0,0,0,0],
+  "scope_firewall": "highest delta'' contact leading homogeneous tensor only; no joint distribution-product existence or D7/selector claim"
+}
