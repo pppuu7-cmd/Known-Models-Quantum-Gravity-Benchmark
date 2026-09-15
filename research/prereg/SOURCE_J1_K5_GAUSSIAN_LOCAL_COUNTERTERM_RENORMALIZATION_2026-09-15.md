@@ -95,7 +95,7 @@ No held-out value participates in fitting.
 
 ## Positive controls
 
-1. At `alpha=1`, reproduce the source-locked parent P1-P3 pairings for `k=5..8` to relative tolerance `1e-100`.
+1. At `alpha=1`, reproduce the source-locked parent P1-P3 pairings for `k=5..8` to relative tolerance `1e-45`. The durable parent artifact serializes these values to approximately 50 significant digits, so this is the strongest prospective lock supported by the stored authority record; demanding more digits would test unavailable serialization rather than scientific drift.
 2. Reproduce the exact K5 star-coordinate-basis incidence rows.
 3. All covariance matrices used by the Wick evaluator are positive definite.
 4. Calibration interpolation residual at every `A_cal` point is <= `1e-130` relative (absolute fallback `1e-130`).
