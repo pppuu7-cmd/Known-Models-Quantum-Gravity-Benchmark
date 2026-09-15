@@ -7,11 +7,11 @@ Fresh repository `main` always outranks this navigation document if they diverge
 
 `SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_GATE`
 
-Terminal classification:
+Historical Research classification:
 
 `SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_BLOCKED_SCOPED`
 
-Durable chain:
+Durable Research chain:
 
 - repaired prospective prereg `research/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_PREREG_2026-09-15.md`, commit `0d9615e1dec1f2fe5bcf66f3458a0e541a6b2ba4`;
 - frozen manifest initial commit `72476e6e7d99eb2fbf2cde408e9a8d531f6270d0`, literal-only source-lock casing repair `8d730f3bb9307dce84ab75a970020a45613edf23`;
@@ -27,48 +27,60 @@ Durable chain:
 
 The historical first run `34942325986` is infrastructure-only: source-lock passed but the certificate stopped before classification on a Critic required-text casing mismatch. The exact literal was repaired without changing any frozen scientific criterion or semantic fact; the authoritative result is run `34942426243`.
 
-## Scientific meaning of the new BLOCKED result
+## Latest independent Critical Review
 
-Exact object: fixed source-order `j=1`, nonzero-real-rho, channel `00000`, full-K5-collision published Eq. (4) group product of ten source-defined one-wedge Toller distributions.
+The repaired existence result has now been independently reviewed:
 
-The terminal certificate established:
+- file `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_2026-09-15.md`;
+- Critic commit `0af10d7a0fd6ae58bd831eb5e1c14ef50037dc94`;
+- verdict `REQUIRES_NEW_PREREGISTERED_GATE`.
 
-- `E1_SOURCE_JOINT_PRESCRIPTION_ESTABLISHED = false`;
-- `E2_SUFFICIENT_PRODUCT_CRITERION_PASSES = false`;
-- `E2_SUFFICIENT_PRODUCT_CRITERION_FAILS_AT_ALLOWED_WITNESS = true`;
-- `E4_NECESSARY_NONEXISTENCE_THEOREM_ESTABLISHED = false`;
-- `INVALIDATED_AUTHORITY_USED = false`.
+The implementation and Actions provenance are reproducible and outcome-sensitive. The Critic defect is instead in the frozen scientific dependency/object transfer: the target is a fixed channel-`00000` contracted Eq. (4) object, while the decisive E2 Hörmander premises are coherent-spinor realizations. The exact certificate recomputes K5 conormal incidence geometry but does not prove that the dangerous coherent contact wavefront component survives the channel-`00000` Toller/intertwiner contraction with nonzero coefficient.
 
-It independently recomputed the exact K5 collision geometry: 10 nonzero conormals in ambient dimension 12, exact relation `dB_12 + dB_23 - dB_13 = 0`, conormal rank 4, relation-space dimension 6, and star spanning-tree rank 4. All six prospectively frozen outcome-sensitivity fixtures passed through the same classifier, including reachable EXISTENCE, NONEXISTENCE, BLOCKED and INVALID outcomes.
+An explicit linear-contraction counterexample shows why that transfer cannot be assumed: a distribution-valued pair `(delta,-delta)` is singular under a component/coherent evaluation but its `(1,1)` contraction is identically zero. Therefore a coherent wavefront obstruction need not survive an arbitrary fixed contraction. The actual channel-`00000` contraction must be checked directly or connected by an exact representation-transfer theorem.
 
-Therefore current validated routes establish neither distributional existence nor a necessary distributional-nonexistence theorem for this exact full-collision product. Failure of ordinary absolute Haar integrability and failure of the standard sufficient Hörmander multiplication criterion remain distinct from nonexistence.
+Accordingly, the historical Research label remains immutable but is **not independently validated as a downstream premise for the claimed fixed channel-`00000` object**. This Critic does not establish the opposite science: it establishes neither existence nor nonexistence, uniqueness nor nonuniqueness.
 
-## Latest independent Critical Review retained
+The earlier Eq. (4) joint-selection-authority V2 Critic remains valid history:
 
-The newest independent Critic still predates the repaired existence result:
+- `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_2026-09-15.md`;
+- commit `2fda454298a3d2594e24242c49fc96a91df76958`;
+- verdict `INVALID_IMPLEMENTATION`.
 
-- file `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_2026-09-15.md`;
-- Critic commit `2fda454298a3d2594e24242c49fc96a91df76958`;
-- verdict `INVALID_IMPLEMENTATION` for historical `SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_GATE`.
+The earlier conjugation/collision counterexample witness remains independently Critic-confirmed scoped by commit `97a4821f85f13e6f5c6d41356612c88939d45f2c`; its scope is conditional on a base extension and it does not itself settle existence.
 
-That invalid V2 blocker was explicitly excluded from the new existence classifier. Historical V1/V2 results remain immutable but are not validated downstream scientific premises.
+## Scoped facts retained
 
-The earlier conjugation/collision counterexample witness remains independently Critic-confirmed scoped by commit `97a4821f85f13e6f5c6d41356612c88939d45f2c`; its scope is conditional on base extension existence and it does not itself settle existence.
+The Critic does not invalidate the following narrower results in their own realizations/scopes:
+
+- the published `i epsilon` is a one-wedge Toller prescription, not an already-proved ten-wedge joint collision regulator/removal theorem;
+- the coherent-state contact realization has an allowed witness defeating the elementary Hörmander sufficient multiplication criterion;
+- the aligned coherent-state witness has exact K5 conormal rank 4 and cycle-space dimension 6;
+- the fixed channel-`00000` full-collision object is not locally absolutely Haar-integrable in the independently reviewed scope.
+
+What is not yet validated is the transfer of the coherent E2 wavefront obstruction to the fixed channel-`00000` contracted object.
 
 ## Independent registered workflows
 
-Fresh status check on 2026-09-15; do not consume partial substantive values:
+Do not consume partial substantive values:
 
-- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: `queued`, conclusion `null`;
-- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: `queued`, conclusion `null`.
+- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: last recovered status `queued`, conclusion `null`;
+- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: last recovered status `queued`, conclusion `null`.
 
-## Next recommended gate
+Fresh Actions state outranks these navigation lines.
 
-`SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_EQUIVALENCE_GATE`.
+## Next admissible gate
 
-This must be separately prospectively frozen. An auxiliary common or independent multiwedge regulator may be introduced only as a candidate extension construction, not silently promoted to published-source authority. The gate should test controlled distributional convergence, admissible regulator path/order independence, agreement with already source-defined one-wedge boundary values off collision strata, and whether any collision-supported counterterm freedom is fixed without hidden model data.
+Prospectively freeze a **same-realization fixed-channel collision wavefront / representation-transfer gate** before reusing E2 in an Eq. (4) existence classifier.
 
-No such second gate has yet been executed from this front.
+It must choose one route before calculation:
+
+- direct fixed-channel route: derive the channel-`00000` contact/wavefront structure through the exact K5 Toller/intertwiner contraction and test the Hörmander condition on that contracted object; or
+- representation-transfer route: prove an exact source-authoritative transform showing that the dangerous coherent contact covectors survive the channel-`00000` contraction with nonzero coefficient and cannot be removed by contraction cancellation.
+
+The gate must include a positive nonzero-survival control and an adversarial contraction-cancellation control.
+
+A separately prospectively frozen auxiliary joint-regulator/equivalence construction may still be explored, but it must not consume the current historical BLOCKED label as a validated fixed-channel premise and must not silently promote an auxiliary regulator to source authority.
 
 ## Governance lock
 
@@ -83,6 +95,7 @@ No such second gate has yet been executed from this front.
 - Missing/cancelled objects are not zero residuals.
 - CI color is provenance, not science.
 - Historical FAIL/BLOCKED/INVALID records remain preserved.
+- No authority exists for `QUANTUM_GRAVITY_SOLVED`, `ALL_KNOWN_MODELS_FAIL`, `NEW_THEORY_REQUIRED`, or `NEW_PHYSICS_FOUND`.
 
 ## Immediate restoration rule
 
