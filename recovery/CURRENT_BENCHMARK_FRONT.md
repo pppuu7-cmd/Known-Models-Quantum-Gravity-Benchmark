@@ -3,81 +3,72 @@ Updated: 2026-09-15
 
 Fresh repository `main` always outranks this navigation document if they diverge.
 
-## Latest independent Critical Review
+## Latest terminal Research / Closure gate
 
-Newest reviewed terminal Research gate:
+`SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_GATE`
 
-`SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_GATE`
+Terminal classification:
 
-Historical Research chain:
+`SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_BLOCKED_SCOPED`
 
-- prereg `research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_PREREG_2026-09-15.md`, commit `b50934de049c6597c3732a0d1a334c2cabb4302f`;
-- implementation `code/source_j1_k5_eq4_additional_joint_selection_authority_v2.py`, commit `edc1bfa00b720e07cb08c2a2961e32267dee1a23`;
-- workflow production head `586f0e373b80518982960c3759ec8bba4249d848`;
-- run `34935737476`, terminal `completed/success`;
-- artifact `10382678434`, digest `sha256:ddc5863943033748441a6fd12452736349b5520b2721042d5624b7946e3da0cf`;
-- terminal Research result `results/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_RESULT_2026-09-15.md`, commit `807eabe7a03f53b354e298bd90c4f409b4adf502`;
-- historical Research classification `SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_NOT_PINNED_SCOPED`.
+Durable chain:
 
-Independent Critic:
+- repaired prospective prereg `research/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_PREREG_2026-09-15.md`, commit `0d9615e1dec1f2fe5bcf66f3458a0e541a6b2ba4`;
+- frozen manifest initial commit `72476e6e7d99eb2fbf2cde408e9a8d531f6270d0`, literal-only source-lock casing repair `8d730f3bb9307dce84ab75a970020a45613edf23`;
+- implementation commit `a80dc307f4b109917cea0d3923761370f8d1aefa`;
+- production workflow head `1d4919f94c336f60425edd133555ccb47c420e0d`;
+- authoritative run `34942426243`, terminal `completed/success`;
+- source-lock job `104293955407`, success;
+- exact-certificate job `104293987617`, success;
+- artifact `10386295378`, 2086 bytes, digest `sha256:1f72470954d0b8128b071f8a6de9bfdf369e42212c4ed0b2098a160a2daa27bf`;
+- canonical JSON `results/source_j1_k5_eq4_improper_existence_e1e2_repair_2026-09-15.json`, persistence commit `9d6b90ca8b52896f6852c9649d2d43d521678b31`;
+- terminal result `results/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_RESULT_2026-09-15.md`, commit `6c4d479c42d3b71de4c4c32c5abb910728b97fc9`;
+- durable handoff `recovery/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_HANDOFF_2026-09-15.md`, commit `9ee7d28c2ac9227b593bf6f69a1abf1092be7eee`.
 
-- `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_2026-09-15.md`;
+The historical first run `34942325986` is infrastructure-only: source-lock passed but the certificate stopped before classification on a Critic required-text casing mismatch. The exact literal was repaired without changing any frozen scientific criterion or semantic fact; the authoritative result is run `34942426243`.
+
+## Scientific meaning of the new BLOCKED result
+
+Exact object: fixed source-order `j=1`, nonzero-real-rho, channel `00000`, full-K5-collision published Eq. (4) group product of ten source-defined one-wedge Toller distributions.
+
+The terminal certificate established:
+
+- `E1_SOURCE_JOINT_PRESCRIPTION_ESTABLISHED = false`;
+- `E2_SUFFICIENT_PRODUCT_CRITERION_PASSES = false`;
+- `E2_SUFFICIENT_PRODUCT_CRITERION_FAILS_AT_ALLOWED_WITNESS = true`;
+- `E4_NECESSARY_NONEXISTENCE_THEOREM_ESTABLISHED = false`;
+- `INVALIDATED_AUTHORITY_USED = false`.
+
+It independently recomputed the exact K5 collision geometry: 10 nonzero conormals in ambient dimension 12, exact relation `dB_12 + dB_23 - dB_13 = 0`, conormal rank 4, relation-space dimension 6, and star spanning-tree rank 4. All six prospectively frozen outcome-sensitivity fixtures passed through the same classifier, including reachable EXISTENCE, NONEXISTENCE, BLOCKED and INVALID outcomes.
+
+Therefore current validated routes establish neither distributional existence nor a necessary distributional-nonexistence theorem for this exact full-collision product. Failure of ordinary absolute Haar integrability and failure of the standard sufficient Hörmander multiplication criterion remain distinct from nonexistence.
+
+## Latest independent Critical Review retained
+
+The newest independent Critic still predates the repaired existence result:
+
+- file `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_2026-09-15.md`;
 - Critic commit `2fda454298a3d2594e24242c49fc96a91df76958`;
-- verdict `INVALID_IMPLEMENTATION`.
+- verdict `INVALID_IMPLEMENTATION` for historical `SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_GATE`.
 
-## Why the v2 blocker is not a validated downstream premise
+That invalid V2 blocker was explicitly excluded from the new existence classifier. Historical V1/V2 results remain immutable but are not validated downstream scientific premises.
 
-The v2 gate repairs the historical five-row shape defect, but the executable still constructs all six scientific rows with literal status `NOT_SOURCE_PINNED_IN_FROZEN_CORPUS` and `action_on_delta=None`.
-
-The later classifier searches for `SOURCE_PINNED_ACTS_ON_DELTA` and `SOURCE_PINNED_BUT_ACTION_UNDETERMINED`, but no row-construction path can produce either status. Therefore, whenever Boolean controls pass, PASS, FAIL and ACTION_UNDETERMINED are unreachable and the BLOCKED label is predetermined.
-
-Class-4 broadness and class-6 exhaustive keyword/record traces are useful diagnostics, but positive discoveries do not feed row status or action on `Delta`. Green CI proves reproducible execution of that decision function, not validity of the frozen scientific decision contract.
-
-This Critic verdict does not establish the opposite science: it does not prove a source-pinned joint rule exists, does not authorize `Delta`, and does not prove base-extension existence or physical/global nonuniqueness.
-
-## Newer active Research preregistration — no result yet
-
-A newer prospective Research gate was preregistered at commit `1983e9f28b45af33cf15d297b3ebcc293c82e8fb`:
-
-`SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_GATE`
-
-File: `research/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_PREREG_2026-09-15.md`.
-
-Its status is `PREREGISTERED; NO RESULT YET`. No implementation, authoritative workflow result, or terminal scientific classification for this gate is present at the current front. Do not create a competing existence verdict and do not consume any future partial substantive values while its authoritative workflow is non-terminal.
-
-Chronology qualification: this preregistration was committed four seconds before the independent v2 Critic and therefore contains a mandatory upstream control saying to preserve the repaired authority-v2 result as a source/object-definition BLOCKED result. Current repository authority now qualifies that historical result as `INVALID_IMPLEMENTATION` for downstream use. The existence gate may preserve the historical BLOCKED label as history, but it must not use that v2 blocker as a validated scientific/source-authority premise.
-
-Before result-producing execution, Research must make the dependency semantics prospective and unambiguous. If E1 or any terminal existence decision relies on the v2 BLOCKED conclusion, the gate requires a new prospectively frozen preregistration/repair. If the existence analysis is made logically independent and re-evaluates E1 from source facts without relying on the invalid v2 decision, that independence must itself be frozen before execution. Do not retroactively edit the existing preregistration.
-
-## Upstream independently reviewed witness retained
-
-- `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_REPAIR_2026-09-15.md`;
-- commit `97a4821f85f13e6f5c6d41356612c88939d45f2c`;
-- verdict `CONFIRMED_SCOPED` for `SOURCE_J1_K5_FROZEN_CONJUGATION_CONSTRAINTS_LEAVE_NONZERO_COLLISION_AMBIGUITY_SCOPED`.
-
-Scope remains fixed source-order `j=1`, nonzero-real-rho, channel `00000`, full K5 collision, conditional on a base extension. The coefficient/sign-pattern K5 permutation certificate is not a universal boundary-intertwiner recoupling theorem.
-
-## Historical v1 authority result retained
-
-The v1 authority result remains immutable and Critic-qualified `INVALID_IMPLEMENTATION`:
-
-- historical result commit `a9ac933b10cb83d0088a908b301d32986b9ab602`;
-- Critic `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_2026-09-15.md`, commit `fcc22dcf4f186b2de3557507242d5186e4e96caa`.
+The earlier conjugation/collision counterexample witness remains independently Critic-confirmed scoped by commit `97a4821f85f13e6f5c6d41356612c88939d45f2c`; its scope is conditional on base extension existence and it does not itself settle existence.
 
 ## Independent registered workflows
 
-Do not consume partial substantive values:
+Fresh status check on 2026-09-15; do not consume partial substantive values:
 
-- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: fresh status `queued`, conclusion `null`;
-- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: fresh status `queued`, conclusion `null`.
+- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: `queued`, conclusion `null`;
+- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: `queued`, conclusion `null`.
 
-## Next admissible gate
+## Next recommended gate
 
-Do not use the v2 BLOCKED classification as a validated premise.
+`SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_EQUIVALENCE_GATE`.
 
-If the source-authority question is repaired again, use a new prospective gate whose six class detectors can actually assign source-pinned/action-undetermined/absent states, with positive fixtures proving reachability of PASS/FAIL/UNDETERMINED and with class-4/class-6 discovery feeding the decision.
+This must be separately prospectively frozen. An auxiliary common or independent multiwedge regulator may be introduced only as a candidate extension construction, not silently promoted to published-source authority. The gate should test controlled distributional convergence, admissible regulator path/order independence, agreement with already source-defined one-wedge boundary values off collision strata, and whether any collision-supported counterterm freedom is fixed without hidden model data.
 
-The already-preregistered Eq. (4) distributional-existence gate is non-terminal and needs the dependency reconciliation above before result-producing execution. It may proceed only under a prospectively frozen contract that is logically independent of the invalid v2 blocker while preserving source identity, `T+ + T- = D` at the distributional level, the distinction between failure of a sufficient criterion and nonexistence, and all governance guards.
+No such second gate has yet been executed from this front.
 
 ## Governance lock
 
@@ -95,4 +86,4 @@ The already-preregistered Eq. (4) distributional-existence gate is non-terminal 
 
 ## Immediate restoration rule
 
-Read fresh `main` first, then this file, `recovery/CURRENT_ACTIVE_FRONT_INDEX_2026-09-15.md`, newest terminal Research result/handoff, newest Critic, and any newer non-terminal preregistration/workflow. Recheck Iter504 and Iter461 without consuming partial substantive values. If a newer terminal Research result or Critic supersedes this text, reconcile recovery before new science.
+Read fresh `main` first, then this file, `recovery/CURRENT_ACTIVE_FRONT_INDEX_2026-09-15.md`, newest terminal Research result/handoff, newest Critic, and any newer non-terminal preregistration/workflow. Recheck Iter504 and Iter461 without consuming partial substantive values. If a newer terminal result or Critic supersedes this text, reconcile recovery before new science.
