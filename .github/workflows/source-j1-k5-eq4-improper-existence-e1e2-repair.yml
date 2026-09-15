@@ -1,0 +1,93 @@
+name: source-j1-k5-eq4-improper-existence-e1e2-repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_PREREG_2026-09-15.md'
+      - 'inputs/source_j1_k5_eq4_improper_existence_e1e2_repair_manifest_2026-09-15.json'
+      - 'code/source_j1_k5_eq4_improper_existence_e1e2_repair_certificate.py'
+      - '.github/workflows/source-j1-k5-eq4-improper-existence-e1e2-repair.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate prospective authority and frozen premises
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_PREREG_2026-09-15.md'
+          MANIFEST='inputs/source_j1_k5_eq4_improper_existence_e1e2_repair_manifest_2026-09-15.json'
+          CODE='code/source_j1_k5_eq4_improper_existence_e1e2_repair_certificate.py'
+          PREREG_COMMIT='0d9615e1dec1f2fe5bcf66f3458a0e541a6b2ba4'
+          MANIFEST_COMMIT='72476e6e7d99eb2fbf2cde408e9a8d531f6270d0'
+          CODE_COMMIT='a80dc307f4b109917cea0d3923761370f8d1aefa'
+
+          test "$(git log -1 --format=%H -- "$PREREG")" = "$PREREG_COMMIT"
+          test "$(git log -1 --format=%H -- "$MANIFEST")" = "$MANIFEST_COMMIT"
+          test "$(git log -1 --format=%H -- "$CODE")" = "$CODE_COMMIT"
+          grep -Fq 'The invalid V1/V2 joint-selection-authority results are explicitly EXCLUDED' "$PREREG"
+          grep -Fq '0d9615e1dec1f2fe5bcf66f3458a0e541a6b2ba4' "$MANIFEST"
+
+          while IFS='|' read -r c p; do
+            git merge-base --is-ancestor "$c" HEAD
+            git cat-file -e "$c:$p"
+            git diff --quiet "$c" HEAD -- "$p"
+          done <<'EOF'
+          8c6582371d6e763e4f37b30fbe42f67684edcdb7|research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md
+          051d0c71382b55f2ce37994a95aa704b8725a599|research/SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_RESULT_2026-09-15.md
+          397a55009e88e4a43453e07c015bc566c9c9412c|research/SOURCE_J1_K5_ALIGNED_CONTACT_CYCLESPACE_RESULT_2026-09-15.md
+          bf43183b12799e217e452c6335edc1114e389352|research/SOURCE_J1_FULL_COLLISION_ABSOLUTE_DIVERGENCE_THEOREM_2026-09-15.md
+          2fda454298a3d2594e24242c49fc96a91df76958|recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_2026-09-15.md
+          EOF
+          git merge-base --is-ancestor a4d775ff799e629ccb6970dc587cd91cd8f6810b HEAD
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run outcome-sensitive exact closure certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='source-j1-k5-eq4-improper-existence-e1e2-repair.json'
+          python code/source_j1_k5_eq4_improper_existence_e1e2_repair_certificate.py | tee "$OUT"
+          python - "$OUT" <<'PY'
+          import json, sys
+          p=sys.argv[1]
+          d=json.load(open(p, encoding='utf-8'))
+          allowed={
+              'SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_ESTABLISHED_SCOPED',
+              'SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_NONEXISTENCE_ESTABLISHED_SCOPED',
+              'SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_BLOCKED_SCOPED',
+              'INVALID_IMPLEMENTATION',
+          }
+          assert d['classification'] in allowed
+          assert d['all_controls_pass'] is True
+          assert d['exact_k5_witness_recomputation']['triangle_12_23_minus_13_exact_zero'] is True
+          assert d['exact_k5_witness_recomputation']['relation_space_dimension'] == 6
+          assert d['claim_ceiling']['D7_S2_closed'] is False
+          print('SCIENTIFIC_CLASSIFICATION=' + d['classification'])
+          PY
+          sha256sum "$OUT" > "$OUT.sha256"
+          sha256sum inputs/source_j1_k5_eq4_improper_existence_e1e2_repair_manifest_2026-09-15.json > manifest.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-eq4-improper-existence-e1e2-repair
+          path: |
+            source-j1-k5-eq4-improper-existence-e1e2-repair.json
+            source-j1-k5-eq4-improper-existence-e1e2-repair.json.sha256
+            manifest.sha256
+          if-no-files-found: error
