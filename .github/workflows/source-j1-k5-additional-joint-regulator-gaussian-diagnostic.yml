@@ -1,0 +1,101 @@
+name: source-j1-k5-additional-joint-regulator-gaussian-diagnostic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-additional-joint-regulator-gaussian-diagnostic.yml'
+      - 'code/source_j1_k5_additional_joint_regulator_gaussian_diagnostic.py'
+      - 'research/prereg/SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_GAUSSIAN_DIAGNOSTIC_2026-09-15.md'
+      - 'research/prereg/SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_GAUSSIAN_DIAGNOSTIC_PROTOCOL_2026-09-15.md'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen preregistration and protocol
+        shell: bash
+        run: |
+          set -euo pipefail
+          p='research/prereg/SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_GAUSSIAN_DIAGNOSTIC_2026-09-15.md'
+          q='research/prereg/SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_GAUSSIAN_DIAGNOSTIC_PROTOCOL_2026-09-15.md'
+          git show b4d5fc5734fe3fdde4b1008651b4e86f911e457a:"$p" > /tmp/prereg.frozen
+          cmp /tmp/prereg.frozen "$p"
+          git show 1d5b9123f71db860816ba7e8948c7ee5a78b364d:"$q" > /tmp/protocol.frozen
+          cmp /tmp/protocol.frozen "$q"
+          grep -F 'P1 NEW' "$p"
+          grep -F 'P2 NEW' "$p"
+          grep -F 'P3 NEW' "$p"
+          grep -F 'P0 remains reproduction-only' "$q"
+      - name: Reproduce exact conormal authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/source_j1_k5_aligned_contact_cyclespace_certificate.py > /tmp/conormal.json
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/conormal.json'))
+          assert x['n_edges']==10
+          assert x['ambient_normal_dimension']==12
+          assert x['conormal_rank']==4
+          assert x['relation_space_dimension']==6
+          assert x['all_triangle_relations_zero'] is True
+          assert x['wrong_sign_triangle_relation_nonzero'] is True
+          PY
+      - name: Syntax check diagnostic
+        run: python -m py_compile code/source_j1_k5_additional_joint_regulator_gaussian_diagnostic.py
+
+  diagnostic:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependency
+        run: python -m pip install --disable-pip-version-check 'mpmath==1.3.0'
+      - name: Run frozen high-precision Gaussian diagnostic
+        run: |
+          set -euo pipefail
+          python code/source_j1_k5_additional_joint_regulator_gaussian_diagnostic.py > source_j1_k5_gaussian_diagnostic.json
+          cat source_j1_k5_gaussian_diagnostic.json
+      - name: Validate terminal output shape
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          p='source_j1_k5_gaussian_diagnostic.json'
+          x=json.load(open(p))
+          allowed={
+            'AUX_GAUSSIAN_JOINT_REGULATOR_PATH_DEPENDENCE_WITNESS_SCOPED',
+            'AUX_GAUSSIAN_JOINT_REGULATOR_REJECTED_UNRENORMALIZED_SCOPED',
+            'AUX_GAUSSIAN_JOINT_REGULATOR_SURVIVES_DIAGNOSTIC_SCOPED',
+            'AUX_GAUSSIAN_JOINT_REGULATOR_DIAGNOSTIC_INCONCLUSIVE',
+            'INVALID_IMPLEMENTATION',
+          }
+          assert x['classification'] in allowed
+          assert x['precision_decimal_digits'] >= 100
+          assert x['k_grid'] == [3,4,5,6,7,8]
+          assert x['new_scientific_paths'] == ['P1','P2','P3']
+          assert x['p0_role'] == 'EXPLORATORY_REPRODUCTION_ONLY'
+          assert set(x['path_results']) == {'P0','P1','P2','P3'}
+          if x['classification'] != 'INVALID_IMPLEMENTATION':
+              assert x['controls_pass'] is True
+          print('classification='+x['classification'])
+          for p in ['P1','P2','P3']:
+              print(p, x['path_results'][p]['status'], x['path_results'][p]['g_tail'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-additional-joint-regulator-gaussian-diagnostic
+          path: source_j1_k5_gaussian_diagnostic.json
+          if-no-files-found: error
