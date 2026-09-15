@@ -1,0 +1,6 @@
+workflow=source-j1-k5-eq4-additional-joint-selection-authority
+run_id=34931853615
+run_attempt=1
+head_sha=45a0143cadbfe7cc1b6ea384558e4d70fa528fce
+prereg_commit=96295d36855b7e3e0dd1ca943adb46f1c969b315
+code_commit=09f2a73fc9d7276f05ce20977422efdd407d3931
