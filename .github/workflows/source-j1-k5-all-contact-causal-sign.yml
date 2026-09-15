@@ -1,0 +1,61 @@
+name: source-j1-k5-all-contact-causal-sign
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_K5_ALL_CONTACT_CAUSAL_SIGN_PREREG_2026-09-15.md'
+      - 'code/source_j1_k5_all_contact_causal_sign_certificate.py'
+      - '.github/workflows/source-j1-k5-all-contact-causal-sign.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate prospective authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/SOURCE_J1_K5_ALL_CONTACT_CAUSAL_SIGN_PREREG_2026-09-15.md'
+          FROZEN_COMMIT='d22d456e3f978f5cbb99c76ea20df0b583eaa57c'
+          test -f "$PREREG"
+          test -f code/source_j1_k5_all_contact_causal_sign_certificate.py
+          git cat-file -e "${FROZEN_COMMIT}^{commit}"
+          test "$(git log -1 --format=%H -- "$PREREG")" = "$FROZEN_COMMIT"
+          grep -Fq 'SOURCE_J1_K5_ALL_CONTACT_CAUSAL_SIGN_NONCANCELLATION_SCOPED' "$PREREG"
+          grep -Fq 'prod_{a<b} kappa_ab = +1' "$PREREG"
+          grep -Fq 'D7-S2 = NOT_CLOSED' "$PREREG"
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run exact exhaustive certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/source_j1_k5_all_contact_causal_sign_certificate.py | tee source-j1-k5-all-contact-causal-sign.json
+          grep -Fq 'SOURCE_J1_K5_ALL_CONTACT_CAUSAL_SIGN_NONCANCELLATION_SCOPED' source-j1-k5-all-contact-causal-sign.json
+          grep -Fq '"n_sigma_assignments": 32' source-j1-k5-all-contact-causal-sign.json
+          grep -Fq '"n_distinct_kappa_patterns": 16' source-j1-k5-all-contact-causal-sign.json
+          grep -Fq '"signed_sum_over_32_sigma_assignments": 32' source-j1-k5-all-contact-causal-sign.json
+          grep -Fq '"product_plus_one_count": 512' source-j1-k5-all-contact-causal-sign.json
+          grep -Fq '"product_minus_one_count": 512' source-j1-k5-all-contact-causal-sign.json
+          grep -Fq '"signed_sum": 0' source-j1-k5-all-contact-causal-sign.json
+          grep -Fq '"formal_all_contact_causal_sign_cancellation": false' source-j1-k5-all-contact-causal-sign.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-all-contact-causal-sign
+          path: source-j1-k5-all-contact-causal-sign.json
+          if-no-files-found: error
