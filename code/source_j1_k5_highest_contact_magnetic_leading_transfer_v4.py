@@ -145,6 +145,31 @@ def spherical_cartesian_intertwiner_control(cart):
     return True, S
 
 
+def exact_rotation_covariance_control(Qz):
+    """Prove the target Q(n) law modulo the exact rotation constraint R R^T = I.
+
+    The previous control compared R Qz R^T with R R^T - 3 n n^T, which is a
+    tautology for every matrix R.  Here the actual target is I - 3 n n^T.
+    Its residual must equal the orthogonality residual exactly, so it vanishes
+    for every orthogonal R.  A frozen non-rotation counterexample additionally
+    verifies that the old vacuous acceptance path is rejected.
+    """
+    R = sp.Matrix(3, 3, sp.symbols("r00:03 r10:13 r20:23"))
+    ez = sp.Matrix([0, 0, 1])
+    n = R * ez
+    target_residual = sp.simplify(R * Qz * R.T - (sp.eye(3) - 3 * n * n.T))
+    orthogonality_residual = sp.simplify(R * R.T - sp.eye(3))
+    implication_identity = sp.simplify(target_residual - orthogonality_residual) == sp.zeros(3)
+
+    R_bad = sp.diag(2, 1, 1)
+    n_bad = R_bad * ez
+    bad_is_not_rotation = sp.simplify(R_bad * R_bad.T - sp.eye(3)) != sp.zeros(3)
+    bad_violates_target = sp.simplify(R_bad * Qz * R_bad.T - (sp.eye(3) - 3 * n_bad * n_bad.T)) != sp.zeros(3)
+    nonrotation_counterexample_rejected = bool(bad_is_not_rotation and bad_violates_target)
+
+    return bool(implication_identity), nonrotation_counterexample_rejected
+
+
 EDGES = [(a, b) for a in range(5) for b in range(a + 1, 5)]
 LABEL = {}
 _k = 0
@@ -217,7 +242,7 @@ def main(out_path: str) -> int:
     scalar_transfer_minus = sp.simplify((-A) / (-highest))
     scalar_transfer_ok = scalar_transfer_plus == sp.Rational(3, 4) and scalar_transfer_minus == sp.Rational(3, 4)
 
-    # Exact spherical -> Cartesian tensor identification and symbolic rotation covariance.
+    # Exact spherical -> Cartesian tensor identification and exact rotation covariance.
     cart = cartesian_intertwiners()
     basis_ok, S = spherical_cartesian_intertwiner_control(cart)
     Qs = sp.diag(1, -2, 1)
@@ -225,11 +250,7 @@ def main(out_path: str) -> int:
     sph_cart_q_ok = sp.simplify(S * Qs * S.H - Qz) == sp.zeros(3)
     wrong_Qs = sp.diag(-2, 1, 1)
     wrong_order_rejected = sp.simplify(S * wrong_Qs * S.H - Qz) != sp.zeros(3)
-
-    R = sp.Matrix(3, 3, sp.symbols("r00:03 r10:13 r20:23"))
-    ez = sp.Matrix([0, 0, 1])
-    n = R * ez
-    rotation_identity = sp.simplify(R * Qz * R.T - (R * R.T - 3 * n * n.T)) == sp.zeros(3)
+    rotation_identity, nonrotation_counterexample_rejected = exact_rotation_covariance_control(Qz)
 
     norms = [sum(x * x for x in T.flat) for T in cart]
     intertwiner_norms_ok = norms == [F(1), F(1, 3), F(1, 5)]
@@ -271,6 +292,7 @@ def main(out_path: str) -> int:
         "spherical_cartesian_intertwiners": basis_ok,
         "spherical_cartesian_Q": sph_cart_q_ok,
         "rotation_covariance_identity": rotation_identity,
+        "nonrotation_counterexample_rejected": nonrotation_counterexample_rejected,
         "intertwiner_norms": intertwiner_norms_ok,
         "k5_contraction_recomputed": angular == F(11, 24),
         "branch_parity": branch_parity_ok,
@@ -283,7 +305,15 @@ def main(out_path: str) -> int:
     }
 
     implementation_ok = all(bool(v) for v in controls.values())
-    transfer_established = bool(source_poly_ok and laurent_ok and unique_cubic and scalar_transfer_ok and sph_cart_q_ok and rotation_identity)
+    transfer_established = bool(
+        source_poly_ok
+        and laurent_ok
+        and unique_cubic
+        and scalar_transfer_ok
+        and sph_cart_q_ok
+        and rotation_identity
+        and nonrotation_counterexample_rejected
+    )
     if not implementation_ok:
         classification = INVALID
     elif not transfer_established:
