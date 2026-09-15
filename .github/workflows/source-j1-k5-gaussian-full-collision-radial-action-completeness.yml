@@ -1,0 +1,65 @@
+name: source-j1-k5-gaussian-full-collision-radial-action-completeness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-gaussian-full-collision-radial-action-completeness.yml'
+      - 'code/source_j1_k5_gaussian_full_collision_radial_action_completeness.py'
+      - 'research/prereg/SOURCE_J1_K5_GAUSSIAN_FULL_COLLISION_RADIAL_ACTION_COMPLETENESS_2026-09-15.md'
+  workflow_dispatch:
+
+jobs:
+  exact-certificate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen contract and parent
+        shell: bash
+        run: |
+          set -euo pipefail
+          p='research/prereg/SOURCE_J1_K5_GAUSSIAN_FULL_COLLISION_RADIAL_ACTION_COMPLETENESS_2026-09-15.md'
+          git show ca36d4a61cff7e32746d1c13a676117d1e392c87:"$p" > /tmp/prereg.frozen
+          cmp /tmp/prereg.frozen "$p"
+          git merge-base --is-ancestor ae29ddbb41153e73d182173d6261e01f48a0bd00 HEAD
+          grep -F 'AUX_GAUSSIAN_LOCAL_COUNTERTERM_ANSATZ_INSUFFICIENT_SCOPED' results/SOURCE_J1_K5_GAUSSIAN_LOCAL_COUNTERTERM_RENORMALIZATION_TERMINAL_2026-09-15.md
+          grep -F 'rank 14' "$p"
+          grep -F 'derivative order <=26' "$p"
+      - name: Run exact certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_gaussian_full_collision_radial_action_completeness.py \
+            --out artifacts/full-collision-radial-action-completeness.json
+      - name: Validate frozen verdict
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('artifacts/full-collision-radial-action-completeness.json'))
+          allowed={
+            'AUX_GAUSSIAN_FULL_COLLISION_ORDER26_RADIAL_ACTION_SPACE_EXHAUSTED_SCOPED',
+            'SCIENTIFIC_FAIL_GAUSSIAN_FULL_COLLISION_RADIAL_ACTION_COMPLETENESS',
+          }
+          assert x['classification'] in allowed
+          assert x['main_certificate']['dimension']==4
+          assert x['main_certificate']['order_cap']==26
+          print('classification='+x['classification'])
+          print('multiindex_count='+str(x['main_certificate']['multiindex_count']))
+          print('nonzero_radial_actions='+str(x['main_certificate']['nonzero_radial_actions']))
+          print('rank='+str(x['main_certificate']['rank']))
+          print('degree_set='+str(x['main_certificate']['degree_set']))
+          print('positive_controls='+str(x['positive_controls']))
+          print('adversarial_controls='+str(x['adversarial_controls']))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: full-collision-radial-action-completeness
+          path: artifacts/full-collision-radial-action-completeness.json
+          if-no-files-found: error
