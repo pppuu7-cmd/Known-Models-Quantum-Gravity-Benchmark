@@ -1,0 +1,82 @@
+name: source-j1-k5-joint-extension-conjugation-counterexample-repair
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/source-j1-k5-joint-extension-conjugation-counterexample-repair.yml'
+      - 'code/source_j1_k5_joint_extension_conjugation_counterexample_repair.py'
+      - 'research/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_PREREG_V2_2026-09-15.md'
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen authority and ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          for sha in \
+            1a54df61c780eb44aeef56986d2481dcfdd55410 \
+            29ed9ba003e549623db237798836006907285f97 \
+            181ca68f524fee5d9eab1c9501142d409cd02c2b \
+            79b29ff4a3fcc0675a8d0f2958aff57310fdc20f \
+            6dedf5e02b63147420f2ebf5fb7abd99499095fd \
+            7b83dc0f29ef142d56d36ceb89909810a1f1fc26 \
+            5ce3a5fafd19f7ade17f3f9dc83ff252124376df
+          do
+            git merge-base --is-ancestor "$sha" HEAD
+          done
+          git cat-file -e 1a54df61c780eb44aeef56986d2481dcfdd55410:recovery/CRITICAL_REVIEW_SOURCE_J1_K5_VERTEX_CONJUGATION_DERIVATION_2026-09-15.md
+          git cat-file -e 29ed9ba003e549623db237798836006907285f97:recovery/KMQGB_RESEARCH_CLOSURE_SYNC_POST_CRITIC_2026-09-15.md
+          git cat-file -e 181ca68f524fee5d9eab1c9501142d409cd02c2b:research/SOURCE_J1_K5_VERTEX_LEVEL_CONJUGATION_DERIVATION_COUNTERTERM_RESULT_2026-09-15.md
+          git cat-file -e 79b29ff4a3fcc0675a8d0f2958aff57310fdc20f:research/SOURCE_J1_K5_COLLISION_COUNTERTERM_SUMRULE_RESULT_2026-09-15.md
+          git cat-file -e 7b83dc0f29ef142d56d36ceb89909810a1f1fc26:research/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_PREREG_V2_2026-09-15.md
+          test -f code/iter499_arb_core.py
+          test -f research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+          test -f code/source_j1_k5_joint_extension_conjugation_counterexample_repair.py
+          grep -Fq 'sd_N = 30' research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+          grep -Fq 'omega = sd_N - codim(N) = 30 - 12 = 18' research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md
+          grep -Fq "(-1,1,-1,1):'1/3'" code/iter499_arb_core.py
+          echo "SOURCE_LOCK=PASS"
+          echo "HEAD=$(git rev-parse HEAD)"
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run exact certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p results
+          python3 code/source_j1_k5_joint_extension_conjugation_counterexample_repair.py \
+            --repo-root . \
+            --output results/source_j1_k5_joint_extension_conjugation_counterexample_repair_2026-09-15.json \
+            | tee results/source_j1_k5_joint_extension_conjugation_counterexample_repair_2026-09-15.log
+          sha256sum results/source_j1_k5_joint_extension_conjugation_counterexample_repair_2026-09-15.json \
+            | tee results/source_j1_k5_joint_extension_conjugation_counterexample_repair_2026-09-15.sha256
+          {
+            echo "head=$(git rev-parse HEAD)"
+            echo "prereg=7b83dc0f29ef142d56d36ceb89909810a1f1fc26"
+            echo "code=5ce3a5fafd19f7ade17f3f9dc83ff252124376df"
+          } > results/source_j1_k5_joint_extension_conjugation_counterexample_repair_2026-09-15.provenance.txt
+      - name: Upload exact certificate
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-joint-extension-conjugation-counterexample-repair
+          if-no-files-found: error
+          path: |
+            results/source_j1_k5_joint_extension_conjugation_counterexample_repair_2026-09-15.json
+            results/source_j1_k5_joint_extension_conjugation_counterexample_repair_2026-09-15.log
+            results/source_j1_k5_joint_extension_conjugation_counterexample_repair_2026-09-15.sha256
+            results/source_j1_k5_joint_extension_conjugation_counterexample_repair_2026-09-15.provenance.txt
