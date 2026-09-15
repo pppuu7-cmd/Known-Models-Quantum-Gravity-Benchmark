@@ -1,0 +1,13 @@
+# GitHub Actions byte-exact outputs
+f24fb2e9efd7e2f97dcb037b98534b812024885c812fc6d07f37ad81830d6820  artifact/source_j1_k5_eq4_additional_joint_selection_authority_v2.json
+aaa85cc2465d40bab9a23055e94e37765fd03d36b1d393e5a2438b024609d96f  artifact/source_j1_k5_eq4_additional_joint_selection_authority_v2.log
+d42438d73f1b5b0127a1c12871d430b18ee84babcde3d4d76af63a9b17ca0547  artifact/source_j1_k5_eq4_additional_joint_selection_authority_v2.provenance.txt
+96521a7e1e7ca728d5858fc1f05312b14e9b676b95f01aad91a8363ba3ca975f  artifact/source_j1_k5_eq4_additional_joint_selection_authority_v2.sha256
+
+# GitHub Actions artifact ZIP digest
+sha256:ddc5863943033748441a6fd12452736349b5520b2721042d5624b7946e3da0cf  artifact_id=10382678434
+
+# Repository decision-preserving canonical projection
+27306667862713fdba4b8981ca46f6de1d093d617955c54e31ae20ff453afee7  results/source_j1_k5_eq4_additional_joint_selection_authority_v2_2026-09-15.json
+
+# Note: the repository JSON is a decision-preserving projection, not a byte copy of the 65,751-byte Action JSON. The full canonical Action JSON remains in artifact 10382678434 and is identified by f24fb2e9... above.
