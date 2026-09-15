@@ -76,7 +76,8 @@ def has(pat: str, s: str) -> bool:
 
 def features(text: str) -> dict:
     s = re.sub(r"\s+", " ", text)
-    coherent = has(r"(?:coherent|spinor).{0,180}(?:delta\s*\^?\(?\s*rho|delta\s*''|theta|B\s*\(\s*z\s*,\s*g)|contact)|(?:delta\s*''|delta\s*\^?\(?\s*rho).{0,180}(?:coherent|spinor|B\s*\()", s)
+    coherent = ((has(r"(?:coherent|spinor)", s) and has(r"(?:delta|theta|B\s*\()", s))
+                or has(r"coherent[- ]contact", s))
     magnetic = has(r"(?:D\s*\^?\s*1|magnetic|spherical\s+basis|m\s*=\s*[+\-]?1|rank[- ]?2\s+(?:tensor|operator)|matrix\s+operator|intertwiner)", s)
     rho = has(r"rho", s) and has(r"(?:real\s+nonzero|nonzero\s+real|rho\s*!=\s*0|rho\s*\\neq\s*0|rho\s*->|rho\s+map|same\s+rho|matching.{0,40}rho)", s)
     basis = has(r"(?:spherical\s+basis|basis\s+phase|magnetic\s+(?:index|indices)|m\s*=\s*\+?1.{0,80}0.{0,80}-1|exact\s+basis\s+transform)", s)
@@ -84,8 +85,6 @@ def features(text: str) -> dict:
     normalization = has(r"(?:normalization|gram\s+norm|intertwiner.{0,120}(?:norm|ordering|incidence)|frozen\s+K5\s+incidence)", s)
     map_words = has(r"(?:coherent.{0,180}(?:magnetic|operator|tensor)|(?:magnetic|operator|tensor).{0,180}coherent)", s) and has(r"(?:map|maps|mapped|transfer|transferred|identity|equals|=|->|transform)", s)
     distribution_bridge = coherent and magnetic and map_words and has(r"(?:distribution|delta|contact)", s)
-    # A convention conflict is accepted only as an explicit semantic assertion, not because a prereg
-    # discusses hypothetical wrong conventions in prose.
     wrong = has(r"(?:WRONG_CONVENTION|SOURCE_CONVENTION_CONFLICT)\s*:", s)
     coeff = None
     m = re.search(r"(?:C_contact_00000|contact_channel00000_(?:exact_)?coefficient)\s*=\s*([+-]?\d+(?:/\d+)?)", s, re.I)
