@@ -1,0 +1,133 @@
+name: source-j1-k5-gaussian-local-counterterm-renormalization
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-gaussian-local-counterterm-renormalization.yml'
+      - 'code/source_j1_k5_gaussian_local_counterterm_renormalization.py'
+      - 'code/source_j1_k5_gaussian_local_counterterm_aggregate.py'
+      - 'research/prereg/SOURCE_J1_K5_GAUSSIAN_LOCAL_COUNTERTERM_RENORMALIZATION_2026-09-15.md'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify prospective contract and parent authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          p='research/prereg/SOURCE_J1_K5_GAUSSIAN_LOCAL_COUNTERTERM_RENORMALIZATION_2026-09-15.md'
+          git show ef8d34d3e82bec110c072f2b23361f7e2d07339c:"$p" > /tmp/p.frozen
+          cmp /tmp/p.frozen "$p"
+          git merge-base --is-ancestor a0ba962811b9364bceb03a28f4785aa75e42213a HEAD
+          grep -F 'AUX_GAUSSIAN_UNRENORMALIZED_COMPACT_LOCAL_DIVERGENCE_SCOPED' results/SOURCE_J1_K5_GAUSSIAN_COMPACT_SUPPORT_LOCALIZATION_RESULT_2026-09-15.md
+          grep -F 'A_cal = {0.50,0.60,0.70,0.80,0.90,1.00,1.10,1.20,1.30,1.40,1.50,1.60,1.70,1.80}' "$p"
+          grep -F 'A_test = {0.55,0.95,1.35,1.75,1.95}' "$p"
+          grep -F 'omega = 30 - 4 = 26' "$p"
+      - name: Syntax check
+        run: |
+          python -m py_compile code/source_j1_k5_gaussian_local_counterterm_renormalization.py
+          python -m py_compile code/source_j1_k5_gaussian_local_counterterm_aggregate.py
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        path: [P1, P2, P3]
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependency
+        run: python -m pip install --disable-pip-version-check 'mpmath==1.3.0'
+      - name: Run frozen local-counterterm lane
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_gaussian_local_counterterm_renormalization.py \
+            --path '${{ matrix.path }}' \
+            --out 'artifacts/local-counterterm-${{ matrix.path }}.json'
+      - name: Validate lane output
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          p='${{ matrix.path }}'
+          x=json.load(open(f'artifacts/local-counterterm-{p}.json'))
+          assert x['path']==p
+          assert x['precision_decimal_digits'] >= 180
+          assert x['k_used']==[5,6,7,8]
+          assert x['alpha_cal']==['0.5','0.6','0.7','0.8','0.9','1.0','1.1','1.2','1.3','1.4','1.5','1.6','1.7','1.8']
+          assert x['alpha_test']==['0.55','0.95','1.35','1.75','1.95']
+          allowed={'LANE_DIVERGENT_AFTER_LOCAL_SUBTRACTION','LANE_FINITE_COMPATIBLE','LANE_INCONCLUSIVE','INVALID_IMPLEMENTATION'}
+          assert x['classification'] in allowed
+          print('classification='+x['classification'])
+          print(x['heldout_path_classification'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: local-counterterm-${{ matrix.path }}
+          path: artifacts/local-counterterm-${{ matrix.path }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependency
+        run: python -m pip install --disable-pip-version-check 'mpmath==1.3.0'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: local-counterterm-*
+          path: downloaded
+          merge-multiple: false
+      - name: Aggregate frozen verdict
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_gaussian_local_counterterm_aggregate.py \
+            --root downloaded \
+            --out artifacts/source-j1-k5-gaussian-local-counterterm-summary.json
+      - name: Validate aggregate
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('artifacts/source-j1-k5-gaussian-local-counterterm-summary.json'))
+          allowed={
+            'AUX_GAUSSIAN_LOCAL_RENORMALIZED_EXTENSION_COMPATIBLE_SCOPED',
+            'AUX_GAUSSIAN_LOCAL_RENORMALIZED_PATH_DEPENDENCE_WITNESS_SCOPED',
+            'AUX_GAUSSIAN_LOCAL_COUNTERTERM_ANSATZ_INSUFFICIENT_SCOPED',
+            'AUX_GAUSSIAN_LOCAL_RENORMALIZATION_INCONCLUSIVE',
+            'INVALID_IMPLEMENTATION',
+          }
+          assert x['classification'] in allowed
+          assert x['finite_ambiguity_dimension_before_renormalization_conditions']==14
+          print('classification='+x['classification'])
+          print(json.dumps(x['alpha_results'], indent=2, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-gaussian-local-counterterm-summary
+          path: artifacts/source-j1-k5-gaussian-local-counterterm-summary.json
+          if-no-files-found: error
