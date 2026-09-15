@@ -18,7 +18,7 @@ SELECTORS = [
     "inputs/source_j1*.json",
     "recovery/CRITICAL_REVIEW_SOURCE_J1*.md",
 ]
-PRELOAD_RE = re.compile(r"(?im)^.*(?:actual_[a-z0-9_]*\s*=|source_pinned\s*=|terminal\s+classification).*?$", re.M)
+PRELOAD_RE = re.compile(r"(?im)^.*(?:actual_[a-z0-9_]*\s*=|source_pinned\s*=|terminal\s+classification).*?$")
 
 
 def git(*args: str) -> str:
@@ -59,13 +59,13 @@ def split_records(path: str, text: str) -> list[dict]:
             return [{"heading": "<json>", "text": json.dumps(obj, sort_keys=True)}]
         except Exception:
             return [{"heading": "<json-invalid>", "text": text}]
-    # Python: module plus top-level def/class blocks; enough to expose exact equations/comments.
     starts = [m.start() for m in re.finditer(r"(?m)^(?:def|class)\s+\w+", text)]
     if not starts: return [{"heading": "<python>", "text": text}]
     out = [{"heading": "<python-preamble>", "text": text[:starts[0]]}]
     for i, s in enumerate(starts):
         e = starts[i+1] if i+1 < len(starts) else len(text)
-        line = text[s:text.find("\n", s) if "\n" in text[s:] else e]
+        nl = text.find("\n", s)
+        line = text[s:nl if nl != -1 else e]
         out.append({"heading": line.strip(), "text": text[s:e]})
     return out
 
@@ -84,9 +84,10 @@ def features(text: str) -> dict:
     normalization = has(r"(?:normalization|gram\s+norm|intertwiner.{0,120}(?:norm|ordering|incidence)|frozen\s+K5\s+incidence)", s)
     map_words = has(r"(?:coherent.{0,180}(?:magnetic|operator|tensor)|(?:magnetic|operator|tensor).{0,180}coherent)", s) and has(r"(?:map|maps|mapped|transfer|transferred|identity|equals|=|->|transform)", s)
     distribution_bridge = coherent and magnetic and map_words and has(r"(?:distribution|delta|contact)", s)
-    wrong = has(r"(?:WRONG_CONVENTION|wrong\s+(?:rho|basis|phase|normalization|orientation)|rho\s*->\s*-rho|orientation\s*=\s*wrong)", s)
+    # A convention conflict is accepted only as an explicit semantic assertion, not because a prereg
+    # discusses hypothetical wrong conventions in prose.
+    wrong = has(r"(?:WRONG_CONVENTION|SOURCE_CONVENTION_CONFLICT)\s*:", s)
     coeff = None
-    # Exact coherent-contact contraction coefficient only when explicitly labelled as such.
     m = re.search(r"(?:C_contact_00000|contact_channel00000_(?:exact_)?coefficient)\s*=\s*([+-]?\d+(?:/\d+)?)", s, re.I)
     if m:
         coeff = str(Fraction(m.group(1)))
