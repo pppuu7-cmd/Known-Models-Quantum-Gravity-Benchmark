@@ -29,7 +29,7 @@ jobs:
           test "$(git log -1 --format=%H -- "$PREREG")" = "$FROZEN_COMMIT"
           grep -Fq 'SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_CRITERION_FAILS_SCOPED' "$PREREG"
           grep -Fq 'dB_12 + dB_23 - dB_13 = 0' "$PREREG"
-          grep -Fq 'delta''(B)' "$PREREG"
+          grep -Fq "delta''(B)" "$PREREG"
           grep -Fq 'D7-S2 = NOT_CLOSED' "$PREREG"
 
   exact-certificate:
