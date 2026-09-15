@@ -1,0 +1,57 @@
+{
+  "gate": "SOURCE_J1_K5_GAUSSIAN_COMPACT_SUPPORT_LOCALIZATION_GATE",
+  "classification": "AUX_GAUSSIAN_UNRENORMALIZED_COMPACT_LOCAL_DIVERGENCE_SCOPED",
+  "run_id": 34954491166,
+  "head_sha": "0dec512b067b3b19205d2015ee62c8ab401b2e31",
+  "source_lock_job": 104333122998,
+  "certificate_job": 104333345136,
+  "artifact_id": 10390478550,
+  "artifact_name": "source-j1-k5-gaussian-compact-support-localization",
+  "artifact_size_bytes": 2392,
+  "artifact_zip_sha256": "05e6228012436e8ea6548258cb1e333ead9986d834f95b45d5b9cdb77f64bb8b",
+  "artifact_json_sha256": "56b702a0c85945357d9b4d6a7d8fa84baa3e40252bb2d0dd475eb25f8ba0a7b8",
+  "precision_decimal_digits": 180,
+  "k_used": [5, 6, 7, 8],
+  "deciding_paths": ["P1", "P2", "P3"],
+  "controls_pass": true,
+  "controls": {
+    "all_bounds_positive_finite": true,
+    "inflated_bound_fixture_inconclusive": true,
+    "q_zero_adversarial_does_not_certify": true,
+    "radial_formula_agreement": true,
+    "star_coordinate_basis": true
+  },
+  "path_status": {
+    "P1": "COMPACT_LOCAL_DIVERGENCE_CERTIFIED",
+    "P2": "COMPACT_LOCAL_DIVERGENCE_CERTIFIED",
+    "P3": "COMPACT_LOCAL_DIVERGENCE_CERTIFIED"
+  },
+  "growth_lower_ratios": {
+    "P1": {
+      "5->6": "2193417796431.691183903921679740495239581",
+      "6->7": "2197617679332.462308667124341439542125833",
+      "7->8": "2198671597692.246569358536862715526440698"
+    },
+    "P2": {
+      "5->6": "69189597.32375369983168745699594268385695",
+      "6->7": "67624051.66844050125684318728296678016721",
+      "7->8": "67237350.64431040654289536833564424561259"
+    },
+    "P3": {
+      "5->6": "75238913781770803832.06690429590958038794",
+      "6->7": "74148615190004086235.34650838683962638002",
+      "7->8": "73877301625163501870.00514766312236259214"
+    }
+  },
+  "relative_bound_at_k8": {
+    "P1": "1.0642267834229880065894907202235975416096540763936e-28361",
+    "P2": "3.4056844890810658670334274078419193150890806548833e-1865280495",
+    "P3": "3.2431864727991539050606790560266062965862730696177e-28258"
+  },
+  "q_zero_relative_bounds_at_k8": {
+    "P1": "1.530025752845605391407851431733289470293e+111",
+    "P2": "1.552195631778415140544313395317100099286e+117",
+    "P3": "4.66268928949793900966245245938638714254e+214"
+  },
+  "claim_ceiling": "Local compact-support diagnostic for the same unrenormalized Gaussian auxiliary family only; not Eq4 nonexistence and not D7 closure."
+}
