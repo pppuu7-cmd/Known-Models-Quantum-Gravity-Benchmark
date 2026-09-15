@@ -1,0 +1,59 @@
+name: source-j1-k5-scalar-forest-operator-pilot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/prereg/SOURCE_J1_K5_SCALAR_FOREST_OPERATOR_PILOT_2026-09-15.md'
+      - 'code/source_j1_k5_scalar_forest_operator_pilot.py'
+      - '.github/workflows/source-j1-k5-scalar-forest-operator-pilot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify prospective operator contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f research/prereg/SOURCE_J1_K5_SCALAR_FOREST_OPERATOR_PILOT_2026-09-15.md
+          test -f code/source_j1_k5_scalar_forest_operator_pilot.py
+          grep -Fq 'PROSPECTIVELY_FROZEN_BEFORE_IMPLEMENTATION_OR_RESULT' research/prereg/SOURCE_J1_K5_SCALAR_FOREST_OPERATOR_PILOT_2026-09-15.md
+          grep -Fq 'W_full = (I - T_V^26) W_prop' research/prereg/SOURCE_J1_K5_SCALAR_FOREST_OPERATOR_PILOT_2026-09-15.md
+          grep -Fq 'SCALAR_K5_FOREST_OPERATOR_PILOT_CONFIRMED_SCOPED' code/source_j1_k5_scalar_forest_operator_pilot.py
+
+  exact-operator:
+    needs: source-lock
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run exact forest operator audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_scalar_forest_operator_pilot.py \
+            --out artifacts/source_j1_k5_scalar_forest_operator_pilot.json \
+            | tee artifacts/source_j1_k5_scalar_forest_operator_pilot.log
+          sha256sum artifacts/source_j1_k5_scalar_forest_operator_pilot.json \
+            > artifacts/source_j1_k5_scalar_forest_operator_pilot.json.sha256
+          sha256sum artifacts/source_j1_k5_scalar_forest_operator_pilot.log \
+            > artifacts/source_j1_k5_scalar_forest_operator_pilot.log.sha256
+      - name: Upload exact operator certificate
+        uses: actions/upload-artifact@v4
+        with:
+          name: scalar-k5-forest-operator-pilot-py${{ matrix.python-version }}
+          path: artifacts/
+          if-no-files-found: error
