@@ -1,0 +1,58 @@
+name: source-j1-k5-coherent-contact-hormander
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_PREREG_2026-09-15.md'
+      - 'code/source_j1_k5_coherent_contact_hormander_certificate.py'
+      - '.github/workflows/source-j1-k5-coherent-contact-hormander.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate prospective authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_PREREG_2026-09-15.md'
+          FROZEN_COMMIT='d13c6672125c022dce6b645a4efa1f25cc31aff4'
+          test -f "$PREREG"
+          test -f code/source_j1_k5_coherent_contact_hormander_certificate.py
+          git cat-file -e "${FROZEN_COMMIT}^{commit}"
+          test "$(git log -1 --format=%H -- "$PREREG")" = "$FROZEN_COMMIT"
+          grep -Fq 'SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_CRITERION_FAILS_SCOPED' "$PREREG"
+          grep -Fq 'dB_12 + dB_23 - dB_13 = 0' "$PREREG"
+          grep -Fq 'delta''(B)' "$PREREG"
+          grep -Fq 'D7-S2 = NOT_CLOSED' "$PREREG"
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run exact certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/source_j1_k5_coherent_contact_hormander_certificate.py | tee source-j1-k5-coherent-contact-hormander.json
+          grep -Fq 'SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_CRITERION_FAILS_SCOPED' source-j1-k5-coherent-contact-hormander.json
+          grep -Fq '"triangle_rank": 2' source-j1-k5-coherent-contact-hormander.json
+          grep -Fq '"forest_pair_rank_dB12_dB13": 2' source-j1-k5-coherent-contact-hormander.json
+          grep -Fq '"noncycle_triple_rank": 3' source-j1-k5-coherent-contact-hormander.json
+          grep -Fq '"delta2_nonzero_for_real_rho_ne_0": true' source-j1-k5-coherent-contact-hormander.json
+          grep -Fq '"hormander_sufficient_criterion_at_frozen_witness": false' source-j1-k5-coherent-contact-hormander.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-coherent-contact-hormander
+          path: source-j1-k5-coherent-contact-hormander.json
+          if-no-files-found: error
