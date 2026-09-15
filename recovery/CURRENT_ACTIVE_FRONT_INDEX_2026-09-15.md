@@ -13,61 +13,67 @@ This is a navigation index over immutable prereg/result/recovery records. Fresh 
 - Candidate Gravity remains inactive.
 - BLOCKED/INVALID is distinct from scientific FAIL.
 
-## Active prospective Research / Closure repair
+## Active prospective Research gate
 
-`SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2`
+`SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_GAUSSIAN_DIAGNOSTIC_GATE`
 
-- prereg file: `research/prereg/SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2_2026-09-15.md`;
-- prereg commit: `cd7b4134b1dc465ed5e85f5e749cdf1ef61ac53a`;
-- status: preregistered, no terminal scientific result at reconciliation time;
-- admissible implementation: direct exact derivation or exhaustive outcome-sensitive source-authority extraction;
-- historical contact-transfer BLOCKED classification is excluded as a validated premise because latest Critic classified its implementation `INVALID_IMPLEMENTATION`.
+- parent prereg: `research/prereg/SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_GAUSSIAN_DIAGNOSTIC_2026-09-15.md`;
+- prereg commit: `b4d5fc5734fe3fdde4b1008651b4e86f911e457a`;
+- decision-precedence protocol: `research/prereg/SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_GAUSSIAN_DIAGNOSTIC_PROTOCOL_2026-09-15.md`;
+- protocol commit: `1d5b9123f71db860816ba7e8948c7ee5a78b364d`;
+- status at this reconciliation: prospectively frozen before new-path execution; no terminal result is consumed here;
+- P0 is reproduction-only; new scientific evidence is restricted to prospectively frozen anisotropic paths P1-P3;
+- this is explicitly an auxiliary KMQGB-derived Gaussian diagnostic and cannot establish nonexistence of the published Eq. (4) distribution or a terminal D7 selector.
 
-## Latest terminal Research / Closure gate
+Do not use any non-terminal values from this gate in a competing verdict.
 
-`SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_GATE`
+## Latest terminal Research / Closure gate reviewed by Critic
+
+`SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_GATE`
 
 Historical Research classification:
 
-`SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_BLOCKED_SCOPED`
+`JOINT_FEYNMAN_EXTENSION_AUTHORITY_BLOCKED_SCOPED`
 
 Research chain:
 
-- prereg commit `d14cdd7594d23ce55fbab9504a5a003aa7c3d925`;
-- frozen authority-ledger commit `271733aaf19f8982ab2c8b46f56657b9b50d7b48`;
-- certificate commit `4160e498bc548452db6afadbacb0ef01cd4c68d0`;
-- workflow-only repair/head `278315b8332e71c89a06e35645190fc3d62aa099`;
-- authoritative run `34946470045`, `completed/success`;
-- artifact `10387222229`, digest `sha256:21f65599e304cf4131981089163c90151d30d1c0229240e926f057a48f9f1459`;
-- terminal result commit `b7db6c3f095346d3de87e090f811dbec4df5a4ea`;
-- Research handoff commit `d9ba5f05823f80f9efbb1c3070561aca44b82e53`.
+- parent prereg commit `9b0e6fe35f04cfcf7af26a336b7fa4c3c56d994b`;
+- outcome-blind authority protocol commit `1c63a14be6326d3541df4c180d1ac6720409e21a`;
+- terminal result `results/SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_TERMINAL_2026-09-15.md`;
+- terminal result commit `aecdc3e6bbcb03453cba946136f3778f7d678be5`.
 
-The Research record remains immutable history. The exact `11/24` channel-`00000` coefficient is a cubic-pole leading-radial control, not a coherent-contact coefficient.
+The historical result distinguishes the one-wedge spectral Feynman projector from a correlated ten-wedge K5 group-collision extension and records an authority/definition blocker. It does not claim scientific nonexistence or model/family failure.
 
 ## Latest independent Critic
 
-- audit: `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_2026-09-15.md`;
-- commit: `671596eb4f00d4a8bcc9bfae42453fb0450ff39e`;
-- verdict: `INVALID_IMPLEMENTATION`.
+- audit: `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_2026-09-15.md`;
+- Critic commit: `3d5900cf44f23e636e3d2c549567d4331410d95c`;
+- verdict: `INVALID_PROVENANCE`.
 
-The certificate's downstream classifier is mechanically outcome-sensitive, but the actual source-authority extraction is not. `actual_contact_map = null` and `actual_contact_channel00000_exact_coefficient = null` are already stored in the frozen hand-authored ledger, and the certificate merely consumes those fields. It does not derive or exhaustively audit the preregistered proposition that no matching map exists in the frozen source/repository authority.
+Prospective chronology, scoped taxonomy, and the spectral-vs-group object distinction are acceptable. The decisive defect is that the terminal blocker depends on negative whole-source predicates about two external frozen arXiv sources, while the durable GitHub/Actions record contains no immutable primary-source snapshot/digest, page/section-complete extraction ledger, exhaustive source-search trace, or gate-specific scientific artifact capable of independently reproducing those negative predicates.
 
-Therefore the historical `...CONTACT_REALIZATION_TRANSFER_BLOCKED_SCOPED` label must not be used downstream as an independently validated repository-authority blocker. The Critic does not establish the opposite outcome: existence of a transfer map, contact survival, and contact cancellation all remain unresolved.
+Concrete provenance counterexample: a qualifying statement in an appendix or other uncited section defining a correlated regulator, removal order, or joint distributional extension would leave all cited Eq. (17)-(20) and Eq. (3)-(4) observations unchanged while invalidating the source-authority absence conclusion. The current durable record does not exclude that possibility. This does not assert that such a statement exists.
 
-## Upstream scoped facts retained
+Therefore the historical `JOINT_FEYNMAN_EXTENSION_AUTHORITY_BLOCKED_SCOPED` label remains immutable history but must not be consumed downstream as an independently Critic-validated authority blocker until provenance repair.
 
-- coherent-contact evidence remains scoped to the coherent-spinor realization;
-- fixed channel-`00000` ordinary absolute full-collision Haar divergence remains independently scoped;
-- exact cubic-pole channel-`00000` coefficient `11/24` remains a leading-radial control only;
-- one-wedge published i-epsilon authority remains distinct from a joint K5 regulator/removal theorem;
-- historical Eq. (4) E1/E2 and contact-transfer blockers cannot be promoted to validated fixed-channel premises across the unresolved representation bridge.
+## Recent upstream terminal state
+
+The contact-representation V2 audit terminated historically as `SOURCE_DERIVATION_BLOCKED_SCOPED`:
+
+- terminal result commit `db8fbcc72c9b8397b42a96d0cc23cd0fed5c3e83`;
+- authoritative Actions run `34952153723`, terminal success;
+- source-lock job `104325419229`, success;
+- authority-audit job `104325459346`, success;
+- artifact `10389513085`, digest `sha256:ea9d904ebde54aad12dfb5bf1d21775dd2380d8b28fd377116e948dc933a9945`.
+
+It was not re-reviewed in the joint-Feynman Critic turn because the newer joint-Feynman terminal result was the single review target.
 
 ## Independent D7-S2 numerical front — Iter504
 
 - prereg commit `1ab46b7add51b36b5499f866eb4579137838bfae`;
 - production head `56362459a826e3e376c529446678f2fbcaa269ae`;
 - run `34907349374`;
-- freshly rechecked at the start of this repair run: still non-terminal; no partial substantive values consumed.
+- freshly checked: still `queued / conclusion=null`; no partial substantive values consumed.
 
 Fresh Actions state outranks this navigation line.
 
@@ -76,20 +82,30 @@ Fresh Actions state outranks this navigation line.
 - branch `research/iter461-k5-collision-partitions`;
 - head `05c7f87c8519349057332bf90021f1128e1eefc3`;
 - run `34748503239`;
-- freshly rechecked at the start of this repair run: still non-terminal; no partial substantive values consumed.
+- freshly checked: still `queued / conclusion=null`; no partial substantive values consumed.
 
 Do not duplicate or consume partial values. Fresh Actions state outranks this navigation line.
 
-## Next admissible work
+## Next admissible work for the reviewed joint-Feynman blocker
 
-Execute the active prospectively frozen `SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2` repair. The evidence-extraction layer itself must be outcome-sensitive. Either use an exhaustive authority corpus with exact matching-convention extraction predicates and positive/negative extraction fixtures, or directly derive the map from source-defined identities with rho mapping, spherical-basis phases, normalization and edge orientation explicit before contraction.
+A provenance-only repair may retain the same frozen scientific contract only if it changes no source version, predicate definition, scientific object, terminal rule, test-function class, or interpretation ceiling.
 
-If source data are insufficient, return a source-derivation BLOCKER rather than scientific FAIL. Do not preload a conclusion-bearing null/boolean as the actual authority outcome.
+Minimum durable repair:
+
+1. immutable source snapshots or cryptographic digests tied to the exact frozen source versions;
+2. page/section-complete extraction ledger for both primary sources;
+3. bounded exact excerpts/locations for positive predicates A1-A3/B1;
+4. exhaustive trace for negative predicates A4/B2/B3/B4/B5;
+5. a machine-replayable source-audit artifact/digest or equivalently complete durable repository record.
+
+If source version/corpus, predicate semantics, scientific object, or decision rule changes, require a new prospective preregistration rather than rewriting history.
+
+The newer Gaussian diagnostic is an independent prospective auxiliary gate. Its non-terminal values must not be used to repair or override the joint-Feynman provenance verdict.
 
 ## Restoration procedure
 
 1. Read fresh `main` before this index.
-2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, this index, newest terminal Research result/handoff, newest Critic, and any newer non-terminal preregistration/workflow.
+2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, this index, newest terminal Research result, newest Critic, and any newer non-terminal preregistration/workflow.
 3. Recheck Iter504 and Iter461 without consuming partial substantive values.
 4. Preserve all frozen source conventions, historical classifications, Critic qualifications and claim ceilings.
-5. If a newer terminal result or Critic supersedes this navigation text, reconcile recovery first.
+5. If a newer terminal result or Critic supersedes this navigation text, reconcile recovery before new science.
