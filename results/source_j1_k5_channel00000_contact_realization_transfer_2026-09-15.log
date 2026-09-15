@@ -1,0 +1,118 @@
+{
+  "actual_contact_channel00000_exact_coefficient": null,
+  "actual_contact_map_conventions_match": null,
+  "actual_contact_map_source_pinned": false,
+  "claim_ceiling": "Same-realization transfer gate only; the independent Q=diag(1,-2,1), 11/24 control is not the coherent contact tensor. No Eq4 distributional existence/nonexistence, uniqueness, family, D7, or terminal-selector conclusion.",
+  "classification": "SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_BLOCKED_SCOPED",
+  "classifier_fixtures": {
+    "adversarial_exact_cancellation": "SOURCE_J1_K5_CHANNEL00000_COHERENT_CONTACT_CANCELS_EXACTLY_SCOPED",
+    "convention_mismatch": "SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_INVALID",
+    "missing_transfer": "SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_BLOCKED_SCOPED",
+    "positive_nonzero_survival": "SOURCE_J1_K5_CHANNEL00000_COHERENT_CONTACT_SURVIVES_EXACT_CONTRACTION_SCOPED"
+  },
+  "classifier_fixtures_expected": {
+    "adversarial_exact_cancellation": "SOURCE_J1_K5_CHANNEL00000_COHERENT_CONTACT_CANCELS_EXACTLY_SCOPED",
+    "convention_mismatch": "SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_INVALID",
+    "missing_transfer": "SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_BLOCKED_SCOPED",
+    "positive_nonzero_survival": "SOURCE_J1_K5_CHANNEL00000_COHERENT_CONTACT_SURVIVES_EXACT_CONTRACTION_SCOPED"
+  },
+  "classifier_outcome_sensitive": true,
+  "controls_ok": true,
+  "exact_cancellation_control": {
+    "coefficient": "0",
+    "construction": "C + (-C)",
+    "pass": true,
+    "physical_contact_evidence": false
+  },
+  "exact_positive_control": {
+    "channel_00000_coefficient": "11/24",
+    "expected": "11/24",
+    "object": "independent cubic-pole Q contraction only",
+    "pass": true,
+    "physical_contact_evidence": false
+  },
+  "gate": "SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_GATE",
+  "new_fact": "The frozen repository authority contains nonzero coherent contact evidence and an independent nonzero fixed-channel cubic-pole contraction, but no source-pinned coherent-contact-to-magnetic map sufficient to execute the physical channel-00000 contact contraction.",
+  "record_checks": [
+    {
+      "blob_ok": true,
+      "blob_sha_actual": "771649210491df9744a164379efc99fad2d1b099",
+      "blob_sha_expected": "771649210491df9744a164379efc99fad2d1b099",
+      "id": "coherent_contact",
+      "markers": {
+        "coherent spinor": true,
+        "delta''(B)": true,
+        "i/[rho(1+rho^2)]": true
+      },
+      "markers_ok": true,
+      "path": "research/SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_RESULT_2026-09-15.md"
+    },
+    {
+      "blob_ok": true,
+      "blob_sha_actual": "2bbe85fb9541e4fe517daa9d57d0117f9315b6aa",
+      "blob_sha_expected": "2bbe85fb9541e4fe517daa9d57d0117f9315b6aa",
+      "id": "fixed_channel_leading",
+      "markers": {
+        "C_00000 = 11/24 != 0": true,
+        "Q=diag(1,-2,1)": true,
+        "ordinary absolute Haar": true
+      },
+      "markers_ok": true,
+      "path": "research/SOURCE_J1_FULL_COLLISION_ABSOLUTE_DIVERGENCE_THEOREM_2026-09-15.md"
+    },
+    {
+      "blob_ok": true,
+      "blob_sha_actual": "9a5531b6dbecc367c2869c6e9d873071a6444a66",
+      "blob_sha_expected": "9a5531b6dbecc367c2869c6e9d873071a6444a66",
+      "id": "published_iepsilon_scope",
+      "markers": {
+        "Eq. (4)": true,
+        "Toller": true,
+        "coherent realization": true,
+        "single": true
+      },
+      "markers_ok": true,
+      "path": "research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md"
+    },
+    {
+      "blob_ok": true,
+      "blob_sha_actual": "d64a36ff699f30944dc9aa2867035dc116fc5818",
+      "blob_sha_expected": "d64a36ff699f30944dc9aa2867035dc116fc5818",
+      "id": "all_contact_causal_sign",
+      "markers": {
+        "cannot cancel by constrained causal signs alone": true,
+        "channel/intertwiner contraction": true,
+        "does not prove": true
+      },
+      "markers_ok": true,
+      "path": "research/SOURCE_J1_K5_ALL_CONTACT_CAUSAL_SIGN_RESULT_2026-09-15.md"
+    },
+    {
+      "blob_ok": true,
+      "blob_sha_actual": "ba69745dc472d9f215d77b0f2a9c275052dcd9e4",
+      "blob_sha_expected": "ba69745dc472d9f215d77b0f2a9c275052dcd9e4",
+      "id": "latest_critic",
+      "markers": {
+        "channel `00000`": true,
+        "must be proved": true,
+        "representation-transfer": true,
+        "same-realization": true
+      },
+      "markers_ok": true,
+      "path": "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_E1E2_REPAIR_2026-09-15.md"
+    },
+    {
+      "blob_ok": true,
+      "blob_sha_actual": "c79f3aa5e869e2c2572fe43c2d91e9f72bd75545",
+      "blob_sha_expected": "c79f3aa5e869e2c2572fe43c2d91e9f72bd75545",
+      "id": "leading_certificate",
+      "markers": {
+        "allzero == F(11, 24)": true,
+        "exact leading cubic-pole angular contraction only": true
+      },
+      "markers_ok": true,
+      "path": "code/source_j1_full_collision_leading_certificate.py"
+    }
+  ],
+  "source_locks_ok": true
+}
