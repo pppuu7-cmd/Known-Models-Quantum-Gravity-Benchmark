@@ -86,7 +86,7 @@
       "commit": "2fda454298a3d2594e24242c49fc96a91df76958",
       "required_text": [
         "`INVALID_IMPLEMENTATION`",
-        "do not treat the v2 BLOCKED result as a validated scientific premise",
+        "Do not treat the v2 BLOCKED result as a validated scientific premise",
         "Alternatively, a separately prospectively frozen Eq. (4) distributional-existence gate may proceed only if it does not use this invalid v2 blocker as a validated premise"
       ],
       "semantic_facts": {
