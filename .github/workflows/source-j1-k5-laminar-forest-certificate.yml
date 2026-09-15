@@ -1,0 +1,25 @@
+name: source-j1-k5-laminar-forest-certificate
+on:
+  push:
+    paths:
+      - 'code/source_j1_k5_laminar_forest_certificate.py'
+      - '.github/workflows/source-j1-k5-laminar-forest-certificate.yml'
+  workflow_dispatch:
+jobs:
+  exact-forest-certificate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11','3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Exact exhaustive certificate
+        run: python code/source_j1_k5_laminar_forest_certificate.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-laminar-forest-certificate-py${{ matrix.python-version }}
+          path: source_j1_k5_laminar_forest_certificate.json
