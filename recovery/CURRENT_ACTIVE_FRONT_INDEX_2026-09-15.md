@@ -13,6 +13,16 @@ This is a navigation index over immutable prereg/result/recovery records. Fresh 
 - Candidate Gravity remains inactive.
 - BLOCKED/INVALID is distinct from scientific FAIL.
 
+## Active prospective Research / Closure repair
+
+`SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2`
+
+- prereg file: `research/prereg/SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2_2026-09-15.md`;
+- prereg commit: `cd7b4134b1dc465ed5e85f5e749cdf1ef61ac53a`;
+- status: preregistered, no terminal scientific result at reconciliation time;
+- admissible implementation: direct exact derivation or exhaustive outcome-sensitive source-authority extraction;
+- historical contact-transfer BLOCKED classification is excluded as a validated premise because latest Critic classified its implementation `INVALID_IMPLEMENTATION`.
+
 ## Latest terminal Research / Closure gate
 
 `SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_GATE`
@@ -57,22 +67,22 @@ Therefore the historical `...CONTACT_REALIZATION_TRANSFER_BLOCKED_SCOPED` label 
 - prereg commit `1ab46b7add51b36b5499f866eb4579137838bfae`;
 - production head `56362459a826e3e376c529446678f2fbcaa269ae`;
 - run `34907349374`;
-- freshly rechecked by Critic: `queued / conclusion=null`.
+- freshly rechecked at the start of this repair run: still non-terminal; no partial substantive values consumed.
 
-No partial substantive values may be used. Fresh Actions state outranks this navigation line.
+Fresh Actions state outranks this navigation line.
 
 ## Independent collision-partition stream — Iter461
 
 - branch `research/iter461-k5-collision-partitions`;
 - head `05c7f87c8519349057332bf90021f1128e1eefc3`;
 - run `34748503239`;
-- freshly rechecked by Critic: `queued / conclusion=null`.
+- freshly rechecked at the start of this repair run: still non-terminal; no partial substantive values consumed.
 
 Do not duplicate or consume partial values. Fresh Actions state outranks this navigation line.
 
 ## Next admissible work
 
-Prospectively freeze a replacement source-authority/representation-transfer gate in which the evidence-extraction layer itself is outcome-sensitive. Either freeze an exhaustive authority corpus with exact matching-convention extraction predicates and positive/negative extraction fixtures, or directly execute `SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_GATE` from source-defined identities with rho mapping, spherical-basis phases, normalization and edge orientation frozen before calculation.
+Execute the active prospectively frozen `SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2` repair. The evidence-extraction layer itself must be outcome-sensitive. Either use an exhaustive authority corpus with exact matching-convention extraction predicates and positive/negative extraction fixtures, or directly derive the map from source-defined identities with rho mapping, spherical-basis phases, normalization and edge orientation explicit before contraction.
 
 If source data are insufficient, return a source-derivation BLOCKER rather than scientific FAIL. Do not preload a conclusion-bearing null/boolean as the actual authority outcome.
 
