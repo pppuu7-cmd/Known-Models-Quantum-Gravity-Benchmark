@@ -1,0 +1,53 @@
+name: source-j1-k5-contact-representation-derivation-v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-contact-representation-derivation-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective source locks
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse research/prereg/SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2_2026-09-15.md)" = "32070d0c1d0120d0f6a062e28bb6588aa687bdbb"
+          test "$(git rev-parse research/prereg/SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2_PROTOCOL_SUPPLEMENT_2026-09-15.md)" = "5ede09ac7bcf6a7221aeb6799b1f2cf471c8e0ad"
+          test "$(git rev-parse code/source_j1_k5_contact_representation_derivation_v2.py)" = "94a10850c9a1a0de49482c41b50567d687b2d995"
+          test "$(git cat-file -t e7c2546236fea1b6913a253fc354efc769dc544a)" = "commit"
+          echo "SOURCE_LOCK=PASS"
+
+  authority-audit:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run exhaustive frozen-corpus semantic extraction
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_contact_representation_derivation_v2.py --out artifacts/source_j1_k5_contact_representation_derivation_v2.json | tee artifacts/source_j1_k5_contact_representation_derivation_v2.log
+          sha256sum artifacts/source_j1_k5_contact_representation_derivation_v2.log > artifacts/source_j1_k5_contact_representation_derivation_v2.log.sha256
+      - name: Upload exact audit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-contact-representation-derivation-v2
+          path: |
+            artifacts/source_j1_k5_contact_representation_derivation_v2.json
+            artifacts/source_j1_k5_contact_representation_derivation_v2.sha256
+            artifacts/source_j1_k5_contact_representation_derivation_v2.log
+            artifacts/source_j1_k5_contact_representation_derivation_v2.log.sha256
+          if-no-files-found: error
