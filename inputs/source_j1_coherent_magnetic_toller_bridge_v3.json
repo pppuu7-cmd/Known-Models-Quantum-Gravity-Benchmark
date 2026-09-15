@@ -1,0 +1,42 @@
+{
+  "gate": "SOURCE_J1_COHERENT_MAGNETIC_TOLLER_BRIDGE_V3",
+  "prereg_commit": "9bfcbeb0048e8e3ea75032a394dafcc8986c7f68",
+  "sources": {
+    "A": {
+      "title": "Causal spinfoam vertex for 4d Lorentzian quantum gravity",
+      "authors": ["Eugenio Bianchi", "Chaosong Chen", "Mauricio Gamonal"],
+      "arxiv": "2601.23162v1",
+      "equations": ["3", "4", "C2", "C4", "C5", "D1", "D2", "D3", "D4"]
+    },
+    "B": {
+      "title": "Toller matrices and the Feynman i epsilon in spinfoams",
+      "authors": ["Eugenio Bianchi", "Chaosong Chen", "Mauricio Gamonal"],
+      "arxiv": "2604.24945v1",
+      "equations": ["1", "2", "3", "4", "13", "15", "16", "17", "18", "19", "20", "uniqueness_after_20"]
+    }
+  },
+  "formula_strings": {
+    "A_EQ3": "T^(sigma,rho,k)_jm_ln(g)=lim_eps->0+ int_R d(rhot)/(2*pi*i) sigma/(rhot-rho-i*sigma*eps) Gamma(-j-i*rho)Gamma(l-i*rhot+1)/(Gamma(-j-i*rhot)Gamma(l-i*rho+1)) D^(rhot,k)_jm_ln(g)",
+    "A_EQ4": "g_ab=g_b^-1*g_a; sigma_ab=sigma_a*sigma_b; (rho,k)=(gamma*j_ab,j_ab)",
+    "A_C2": "J(z0,z1)=(-conjugate(z1),conjugate(z0))",
+    "A_C4": "c_m(zeta)=sqrt((2*j)!/((j+m)!*(j-m)!))*zeta0^(j+m*zeta1^0)/<zeta|zeta>^j",
+    "A_C5": "D_coh=<j,J*xi|D^(rho,j)(g)|j,zeta>",
+    "A_D1": "T_coh^(sigma)=FeynmanProjector_sigma[D_coh] with the same kernel as A_EQ3",
+    "B_EQ1": "D^(rho,k)_jp_ln(g)=<(rho,k);j,p|D^(rho,k)(g)|(rho,k);l,n>",
+    "B_EQ4": "Phi(rho;j,l)=(-1)^(-(j-l)/2)*Gamma(j+i*rho+1)/|Gamma(j+i*rho+1)|*Gamma(l-i*rho+1)/|Gamma(l-i*rho+1)|",
+    "B_EQ13": "T^(sigma,rho,k)_jp_ln(g)=sum_m D^j_pm(U1)*t^(sigma,rho,k)_jlm(beta)*D^l_mn(U2)",
+    "B_EQ15": "T_plus+T_minus=D",
+    "B_EQ20": "t^(sigma,rho,k)_jlm(beta)=lim_eps->0+ int_R d(rhot)/(2*pi*i) sigma/(rhot-rho-i*sigma*eps)*prod_n=0^(j+l)((i*rhot-(n-j))/(i*rho-(n-j)))*d^(rhot,k)_jlm(beta)",
+    "B_UNIQUENESS": "Feynman i epsilon projector uniquely extracts each admissible Toller branch from the reduced Wigner d matrix under the stated analytic properties"
+  },
+  "formula_strings_sha256": "a54741269fc4da8cd039a113b0cc2d7ada240f4bbf361265d881382e6248b3cd",
+  "scope": {
+    "j": 1,
+    "l": 1,
+    "k": 1,
+    "rho": "real_nonzero",
+    "branches": [1, -1],
+    "orientation": "g_b^-1*g_a",
+    "wedge_sign": "sigma_a*sigma_b"
+  }
+}
