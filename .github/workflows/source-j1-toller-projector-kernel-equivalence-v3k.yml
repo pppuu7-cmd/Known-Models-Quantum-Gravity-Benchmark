@@ -1,0 +1,49 @@
+name: source-j1-toller-projector-kernel-equivalence-v3k
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-toller-projector-kernel-equivalence-v3k.yml'
+      - 'code/source_j1_toller_projector_kernel_equivalence_v3k.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-verifier:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify prospective/source locks
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/prereg/SOURCE_J1_TOLLER_PROJECTOR_KERNEL_EQUIVALENCE_V3K_2026-09-15.md'
+          INPUT='inputs/source_j1_coherent_magnetic_toller_bridge_v3.json'
+          git show d9b95dee3f090f828eb54cfed4432fb20f13a625:"$PREREG" > /tmp/prereg.frozen
+          cmp /tmp/prereg.frozen "$PREREG"
+          git show 98034792ccd2f87e05ab0d9b4fde46cd1bcf3033:"$INPUT" > /tmp/input.frozen
+          cmp /tmp/input.frozen "$INPUT"
+          grep -F 'SOURCE_J1_TOLLER_PROJECTOR_KERNEL_EQUIVALENCE_CONFIRMED_SCOPED' "$PREREG"
+      - name: Pin symbolic dependency
+        run: python -m pip install --disable-pip-version-check 'sympy==1.14.0'
+      - name: Run exact cross-source kernel verifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_toller_projector_kernel_equivalence_v3k.py --out artifacts/source_j1_toller_projector_kernel_equivalence_v3k.json | tee artifacts/source_j1_toller_projector_kernel_equivalence_v3k.log
+          sha256sum artifacts/source_j1_toller_projector_kernel_equivalence_v3k.json > artifacts/source_j1_toller_projector_kernel_equivalence_v3k.json.sha256
+          sha256sum artifacts/source_j1_toller_projector_kernel_equivalence_v3k.log > artifacts/source_j1_toller_projector_kernel_equivalence_v3k.log.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-toller-projector-kernel-equivalence-v3k
+          path: artifacts/
+          if-no-files-found: error
