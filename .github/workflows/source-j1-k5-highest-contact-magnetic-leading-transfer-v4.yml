@@ -1,0 +1,136 @@
+name: source-j1-k5-highest-contact-magnetic-leading-transfer-v4
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-highest-contact-magnetic-leading-transfer-v4.yml'
+      - 'code/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.py'
+      - 'inputs/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective chronology and frozen authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/prereg/SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_2026-09-15.md'
+          INPUT='inputs/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.json'
+          git show 01ccbad09d4a413066b1bcfbf77861d386926e73:"$PREREG" > /tmp/v4-prereg.frozen
+          cmp /tmp/v4-prereg.frozen "$PREREG"
+          git show 8b933f94b8eea1c6990b33f9f2f563f7fabae461:"$INPUT" > /tmp/v4-input.frozen
+          cmp /tmp/v4-input.frozen "$INPUT"
+          grep -F 'PROSPECTIVELY_FROZEN_BEFORE_V4_IMPLEMENTATION_OR_RESULT' "$PREREG"
+          grep -F 'SOURCE_J1_K5_CHANNEL00000_HIGHEST_CONTACT_SURVIVES_LEADING_SCOPED' "$PREREG"
+          grep -F 'SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_TRANSFER_BLOCKED_SCOPED' "$PREREG"
+          grep -F '01ccbad09d4a413066b1bcfbf77861d386926e73' code/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.py
+          grep -F '8b933f94b8eea1c6990b33f9f2f563f7fabae461' code/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.py
+          python - <<'PY'
+          import hashlib, json, pathlib
+          data=json.load(open('inputs/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.json',encoding='utf-8'))
+          for rel, expected in data['repository_authority_blobs'].items():
+              raw=pathlib.Path(rel).read_bytes()
+              got=hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()
+              assert got==expected,(rel,got,expected)
+          assert data['terminal_dependencies']['V3']['artifact_digest']=='sha256:09268182961e09b3413d13684526574c1924d6aa37f17b39a9d65477907cabc1'
+          assert data['terminal_dependencies']['V3K']['artifact_digest']=='sha256:bfa25bdfe600f090ca5f273c1797e8804b94dc190d5d68130466e692876ec292'
+          print('V4_SOURCE_LOCK_OK')
+          PY
+
+  exact-lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Pin exact dependencies
+        run: python -m pip install --disable-pip-version-check 'sympy==1.14.0' 'numpy==2.3.3'
+      - name: Run exact V4 certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          OUT="artifacts/highest-contact-v4-py${{ matrix.python-version }}.json"
+          LOG="artifacts/highest-contact-v4-py${{ matrix.python-version }}.log"
+          python code/source_j1_k5_highest_contact_magnetic_leading_transfer_v4.py --out "$OUT" | tee "$LOG"
+          sha256sum "$OUT" > "$OUT.sha256"
+          sha256sum "$LOG" > "$LOG.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: highest-contact-v4-py${{ matrix.python-version }}
+          path: artifacts/
+          if-no-files-found: error
+
+  aggregate:
+    needs: exact-lane
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: highest-contact-v4-py*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate frozen exact verdict
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p aggregate
+          python - <<'PY'
+          import glob,json
+          files=sorted(glob.glob('downloaded/highest-contact-v4-py*.json'))
+          assert len(files)==2,files
+          rows=[json.load(open(f,encoding='utf-8')) for f in files]
+          allowed={
+            'SOURCE_J1_K5_CHANNEL00000_HIGHEST_CONTACT_SURVIVES_LEADING_SCOPED',
+            'SOURCE_J1_K5_CHANNEL00000_HIGHEST_CONTACT_CANCELS_LEADING_SCOPED',
+            'SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_TRANSFER_BLOCKED_SCOPED'
+          }
+          same=(
+            rows[0]['classification']==rows[1]['classification'] and
+            rows[0]['controls']==rows[1]['controls'] and
+            rows[0]['channel_00000_angular_contraction']==rows[1]['channel_00000_angular_contraction'] and
+            rows[0]['physical_highest_contact_leading_coefficient']==rows[1]['physical_highest_contact_leading_coefficient'] and
+            rows[0]['magnetic_cubic_limits']==rows[1]['magnetic_cubic_limits']
+          )
+          controls=all(all(bool(v) for v in r['controls'].values()) for r in rows)
+          cls=rows[0]['classification'] if same and controls and rows[0]['classification'] in allowed else 'INVALID_IMPLEMENTATION'
+          out={
+            'gate':'SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4',
+            'classification':cls,
+            'lane_classifications':[r['classification'] for r in rows],
+            'lanes_exactly_agree':same,
+            'all_controls_pass':controls,
+            'channel_00000_angular_contraction':rows[0]['channel_00000_angular_contraction'],
+            'physical_highest_contact_leading_coefficient':rows[0]['physical_highest_contact_leading_coefficient'],
+            'A_rho':rows[0]['A_rho'],
+            'magnetic_to_contact_scalar_ratio_plus':rows[0]['magnetic_to_contact_scalar_ratio_plus'],
+            'magnetic_to_contact_scalar_ratio_minus':rows[0]['magnetic_to_contact_scalar_ratio_minus'],
+            'all_32_k5_vertex_sign_products_are_plus_one':rows[0]['all_32_k5_vertex_sign_products_are_plus_one'],
+            'new_scientific_fact':rows[0]['new_scientific_fact'] if cls==rows[0]['classification'] else None,
+            'interpretation_ceiling':rows[0]['interpretation_ceiling'],
+          }
+          open('aggregate/source_j1_k5_highest_contact_magnetic_leading_transfer_v4_aggregate.json','w',encoding='utf-8').write(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({'classification':cls,'lanes_exactly_agree':same,'all_controls_pass':controls,'angular':out['channel_00000_angular_contraction'],'physical_leading':out['physical_highest_contact_leading_coefficient']},sort_keys=True))
+          if cls=='INVALID_IMPLEMENTATION': raise SystemExit(2)
+          PY
+          sha256sum aggregate/source_j1_k5_highest_contact_magnetic_leading_transfer_v4_aggregate.json > aggregate/source_j1_k5_highest_contact_magnetic_leading_transfer_v4_aggregate.json.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-highest-contact-magnetic-leading-transfer-v4-aggregate
+          path: aggregate/
+          if-no-files-found: error
