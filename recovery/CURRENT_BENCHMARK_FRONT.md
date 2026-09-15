@@ -3,6 +3,17 @@ Updated: 2026-09-15
 
 Fresh repository `main` always outranks this navigation document if they diverge.
 
+## Active prospective Research / Closure repair
+
+`SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2`
+
+- prereg: `research/prereg/SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2_2026-09-15.md`;
+- prereg commit: `cd7b4134b1dc465ed5e85f5e749cdf1ef61ac53a`;
+- status at this recovery reconciliation: prospectively frozen, no terminal scientific result yet;
+- purpose: repair the latest Critic `INVALID_IMPLEMENTATION` by making the source-authority extraction/derivation itself outcome-sensitive;
+- admissible paths: direct exact representation derivation, or exhaustive frozen authority extraction from parsed mathematical semantics;
+- guard: the historical contact-transfer BLOCKED result is not a validated premise for this repair.
+
 ## Latest terminal Research / Closure gate
 
 `SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_GATE`
@@ -67,14 +78,14 @@ Fresh Actions state outranks these navigation lines.
 
 ## Next admissible gate
 
-Require a new prospectively frozen source-authority/representation-transfer gate whose **evidence-extraction layer is itself outcome-sensitive** before any actual `map_pinned` or coefficient field is populated.
+The active admissible gate is the prospectively frozen `SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2` at commit `cd7b4134b1dc465ed5e85f5e749cdf1ef61ac53a`.
 
-Admissible forms include:
+Its evidence-extraction layer must itself be outcome-sensitive. Admissible forms are:
 
 - an exhaustive frozen authority corpus plus exact matching-convention predicates and extraction logic, with positive/negative extraction fixtures; or
-- `SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_GATE`, directly deriving the distribution-valued coherent-contact -> magnetic operator map from source-defined identities with rho mapping, spherical-basis phases, normalization and edge orientation frozen before calculation.
+- direct derivation of the distribution-valued coherent-contact -> magnetic operator map from source-defined identities with rho mapping, spherical-basis phases, normalization and edge orientation frozen before calculation.
 
-If source data are insufficient, classify a source-derivation BLOCKER rather than scientific FAIL. Do not reuse the historical contact-transfer BLOCKED label as a validated premise until this implementation defect is repaired prospectively.
+If source data are insufficient, classify a source-derivation BLOCKER rather than scientific FAIL. Do not reuse the historical contact-transfer BLOCKED label as a validated premise.
 
 ## Governance lock
 
