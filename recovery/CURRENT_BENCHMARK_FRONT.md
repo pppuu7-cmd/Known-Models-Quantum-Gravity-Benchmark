@@ -35,6 +35,20 @@ Class-4 broadness and class-6 exhaustive keyword/record traces are useful diagno
 
 This Critic verdict does not establish the opposite science: it does not prove a source-pinned joint rule exists, does not authorize `Delta`, and does not prove base-extension existence or physical/global nonuniqueness.
 
+## Newer active Research preregistration — no result yet
+
+A newer prospective Research gate was preregistered at commit `1983e9f28b45af33cf15d297b3ebcc293c82e8fb`:
+
+`SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_GATE`
+
+File: `research/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_PREREG_2026-09-15.md`.
+
+Its status is `PREREGISTERED; NO RESULT YET`. No implementation, authoritative workflow result, or terminal scientific classification for this gate is present at the current front. Do not create a competing existence verdict and do not consume any future partial substantive values while its authoritative workflow is non-terminal.
+
+Chronology qualification: this preregistration was committed four seconds before the independent v2 Critic and therefore contains a mandatory upstream control saying to preserve the repaired authority-v2 result as a source/object-definition BLOCKED result. Current repository authority now qualifies that historical result as `INVALID_IMPLEMENTATION` for downstream use. The existence gate may preserve the historical BLOCKED label as history, but it must not use that v2 blocker as a validated scientific/source-authority premise.
+
+Before result-producing execution, Research must make the dependency semantics prospective and unambiguous. If E1 or any terminal existence decision relies on the v2 BLOCKED conclusion, the gate requires a new prospectively frozen preregistration/repair. If the existence analysis is made logically independent and re-evaluates E1 from source facts without relying on the invalid v2 decision, that independence must itself be frozen before execution. Do not retroactively edit the existing preregistration.
+
 ## Upstream independently reviewed witness retained
 
 - `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_REPAIR_2026-09-15.md`;
@@ -63,7 +77,7 @@ Do not use the v2 BLOCKED classification as a validated premise.
 
 If the source-authority question is repaired again, use a new prospective gate whose six class detectors can actually assign source-pinned/action-undetermined/absent states, with positive fixtures proving reachability of PASS/FAIL/UNDETERMINED and with class-4/class-6 discovery feeding the decision.
 
-A separate prospectively frozen Eq. (4) distributional-existence gate may proceed only without relying on the invalid v2 blocker as validated authority and while preserving the existing source/object/governance guards.
+The already-preregistered Eq. (4) distributional-existence gate is non-terminal and needs the dependency reconciliation above before result-producing execution. It may proceed only under a prospectively frozen contract that is logically independent of the invalid v2 blocker while preserving source identity, `T+ + T- = D` at the distributional level, the distinction between failure of a sufficient criterion and nonexistence, and all governance guards.
 
 ## Governance lock
 
@@ -81,4 +95,4 @@ A separate prospectively frozen Eq. (4) distributional-existence gate may procee
 
 ## Immediate restoration rule
 
-Read fresh `main` first, then this file, `recovery/CURRENT_ACTIVE_FRONT_INDEX_2026-09-15.md`, newest terminal Research result/handoff, and newest Critic. Recheck Iter504 and Iter461 without consuming partial substantive values. If a newer terminal Research result or Critic supersedes this text, reconcile recovery before new science.
+Read fresh `main` first, then this file, `recovery/CURRENT_ACTIVE_FRONT_INDEX_2026-09-15.md`, newest terminal Research result/handoff, newest Critic, and any newer non-terminal preregistration/workflow. Recheck Iter504 and Iter461 without consuming partial substantive values. If a newer terminal Research result or Critic supersedes this text, reconcile recovery before new science.
