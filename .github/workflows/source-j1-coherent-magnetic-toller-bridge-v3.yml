@@ -1,0 +1,133 @@
+name: source-j1-coherent-magnetic-toller-bridge-v3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-coherent-magnetic-toller-bridge-v3.yml'
+      - 'code/source_j1_coherent_magnetic_toller_bridge_v3.py'
+      - 'inputs/source_j1_coherent_magnetic_toller_bridge_v3.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective preregistration and source transcription
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/prereg/SOURCE_J1_COHERENT_MAGNETIC_TOLLER_BRIDGE_V3_2026-09-15.md'
+          INPUT='inputs/source_j1_coherent_magnetic_toller_bridge_v3.json'
+          git show 9bfcbeb0048e8e3ea75032a394dafcc8986c7f68:"$PREREG" > /tmp/prereg.frozen
+          cmp /tmp/prereg.frozen "$PREREG"
+          git show 98034792ccd2f87e05ab0d9b4fde46cd1bcf3033:"$INPUT" > /tmp/input.frozen
+          cmp /tmp/input.frozen "$INPUT"
+          grep -F 'PROSPECTIVELY_FROZEN_BEFORE_IMPLEMENTATION_OR_RESULT' "$PREREG"
+          grep -F 'SOURCE_J1_COHERENT_MAGNETIC_TOLLER_BRIDGE_CONFIRMED_SCOPED' "$PREREG"
+          grep -F 'No K5 contraction' "$PREREG"
+          grep -F '9bfcbeb0048e8e3ea75032a394dafcc8986c7f68' code/source_j1_coherent_magnetic_toller_bridge_v3.py
+          grep -F '98034792ccd2f87e05ab0d9b4fde46cd1bcf3033' code/source_j1_coherent_magnetic_toller_bridge_v3.py
+          python - <<'PY'
+          import hashlib, json
+          p='inputs/source_j1_coherent_magnetic_toller_bridge_v3.json'
+          d=json.load(open(p, encoding='utf-8'))
+          payload=json.dumps(d['formula_strings'], sort_keys=True, separators=(',',':')).encode()
+          got=hashlib.sha256(payload).hexdigest()
+          expected='a54741269fc4da8cd039a113b0cc2d7ada240f4bbf361265d881382e6248b3cd'
+          assert got == expected, (got, expected)
+          assert d['formula_strings_sha256'] == expected
+          assert d['sources']['A']['arxiv'] == '2601.23162v1'
+          assert d['sources']['B']['arxiv'] == '2604.24945v1'
+          print('SOURCE_LOCK_OK', got)
+          PY
+
+  exact-lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Pin symbolic dependency
+        run: python -m pip install --disable-pip-version-check 'sympy==1.14.0'
+      - name: Run exact symbolic bridge certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          OUT="artifacts/bridge-v3-py${{ matrix.python-version }}.json"
+          python code/source_j1_coherent_magnetic_toller_bridge_v3.py --out "$OUT" | tee "artifacts/bridge-v3-py${{ matrix.python-version }}.log"
+          sha256sum "$OUT" > "$OUT.sha256"
+          sha256sum "artifacts/bridge-v3-py${{ matrix.python-version }}.log" > "artifacts/bridge-v3-py${{ matrix.python-version }}.log.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bridge-v3-py${{ matrix.python-version }}
+          path: artifacts/
+          if-no-files-found: error
+
+  aggregate:
+    needs: exact-lane
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: bridge-v3-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate exact lanes under frozen classifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p aggregate
+          python - <<'PY'
+          import glob, hashlib, json
+          files=sorted(glob.glob('downloaded/bridge-v3-py*.json'))
+          assert len(files)==2, files
+          rows=[json.load(open(f, encoding='utf-8')) for f in files]
+          expected='SOURCE_J1_COHERENT_MAGNETIC_TOLLER_BRIDGE_CONFIRMED_SCOPED'
+          same_controls=rows[0]['controls']==rows[1]['controls']
+          same_digest=rows[0]['source_formula_digest']==rows[1]['source_formula_digest']
+          same_phase=rows[0]['phase_proof']==rows[1]['phase_proof']
+          same_span=rows[0]['coherent_span_det']==rows[1]['coherent_span_det']
+          all_controls=all(all(bool(v) for v in r['controls'].values()) for r in rows)
+          classifications=[r['classification'] for r in rows]
+          aggregate_class=(expected if classifications==[expected,expected] and same_controls and same_digest and same_phase and same_span and all_controls else 'INVALID_IMPLEMENTATION')
+          out={
+            'gate':'SOURCE_J1_COHERENT_MAGNETIC_TOLLER_BRIDGE_V3',
+            'classification':aggregate_class,
+            'lane_files':files,
+            'lane_classifications':classifications,
+            'same_controls':same_controls,
+            'same_source_digest':same_digest,
+            'same_phase_proof':same_phase,
+            'same_span_det':same_span,
+            'all_controls_pass':all_controls,
+            'source_formula_digest':rows[0]['source_formula_digest'],
+            'phase_proof':rows[0]['phase_proof'],
+            'coherent_span_det':rows[0]['coherent_span_det'],
+            'authorized_next_gate': rows[0]['authorized_next_gate'] if aggregate_class==expected else None,
+            'interpretation_ceiling':rows[0]['interpretation_ceiling'],
+          }
+          open('aggregate/source_j1_coherent_magnetic_toller_bridge_v3_aggregate.json','w',encoding='utf-8').write(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({'classification':aggregate_class,'all_controls_pass':all_controls,'same_controls':same_controls,'same_source_digest':same_digest},sort_keys=True))
+          if aggregate_class != expected:
+              raise SystemExit(2)
+          PY
+          sha256sum aggregate/source_j1_coherent_magnetic_toller_bridge_v3_aggregate.json > aggregate/source_j1_coherent_magnetic_toller_bridge_v3_aggregate.json.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-coherent-magnetic-toller-bridge-v3-aggregate
+          path: aggregate/
+          if-no-files-found: error
