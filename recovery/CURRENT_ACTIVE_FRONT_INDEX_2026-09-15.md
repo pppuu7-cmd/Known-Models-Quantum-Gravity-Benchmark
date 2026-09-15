@@ -15,81 +15,96 @@ This is a navigation index over immutable prereg/result/recovery records. Fresh 
 
 ## Research / Closure newest terminal gate
 
+`SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_GATE`
+
+Authority chain:
+
+- prereg `research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_PREREG_2026-09-15.md`, commit `b50934de049c6597c3732a0d1a334c2cabb4302f`;
+- implementation `code/source_j1_k5_eq4_additional_joint_selection_authority_v2.py`, commit `edc1bfa00b720e07cb08c2a2961e32267dee1a23`;
+- workflow `.github/workflows/source-j1-k5-eq4-additional-joint-selection-authority-v2.yml`, production head `586f0e373b80518982960c3759ec8bba4249d848`;
+- run `34935737476`, terminal `completed/success`;
+- source-lock job `104273108027`, `success`;
+- authority-audit job `104273131510`, `success`;
+- artifact `10382678434`, size `18501`, digest `sha256:ddc5863943033748441a6fd12452736349b5520b2721042d5624b7946e3da0cf`;
+- full Action canonical JSON SHA256 `f24fb2e9efd7e2f97dcb037b98534b812024885c812fc6d07f37ad81830d6820`;
+- terminal result `results/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_RESULT_2026-09-15.md`, commit `807eabe7a03f53b354e298bd90c4f409b4adf502`;
+- handoff `recovery/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_HANDOFF_2026-09-15.md`, commit `9311c8c4630d588a62746f309bbbc45ed3be1d0d`.
+
+Terminal classification:
+
+`SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_NOT_PINNED_SCOPED`.
+
+This is a source/object-definition blocker, not scientific/model FAIL.
+
+## V2 repaired six-class decision
+
+The terminal certificate implements exactly these six one-to-one classes:
+
+1. `C1_CORRELATED_COMMON_REGULATOR_REMOVAL` — `NOT_SOURCE_PINNED_IN_FROZEN_CORPUS`;
+2. `C2_INDEPENDENT_REGULATOR_PATH_ORDER_THEOREM` — `NOT_SOURCE_PINNED_IN_FROZEN_CORPUS`;
+3. `C3_MICROLOCAL_PRODUCT_PULLBACK_EXTENSION_THEOREM` — `NOT_SOURCE_PINNED_IN_FROZEN_CORPUS`;
+4. `C4_VERTEX_LEVEL_NORMALIZATION_BOUNDARY_CONDITION` — `NOT_SOURCE_PINNED_IN_FROZEN_CORPUS`;
+5. `C5_NESTED_FOREST_GLUING` — `NOT_SOURCE_PINNED_IN_FROZEN_CORPUS`;
+6. `C6_OTHER_GENUINELY_JOINT_SOURCE_THEOREM` — `NOT_SOURCE_PINNED_IN_FROZEN_CORPUS`.
+
+Controls:
+
+- exact six rows and unique stable IDs: pass;
+- class 2 separate from common-regulator authority: pass;
+- broad class-4 normalization/boundary audit not reduced to jet flags: pass;
+- class-6 exhaustive trace over all nine frozen dependency records: pass;
+- positive and negative controls: pass;
+- `source_pinned_acts_on_delta_count=0`;
+- `source_pinned_action_undetermined_count=0`.
+
+Validated scoped fact: within the exact frozen nine-record repository corpus, no genuinely joint Eq. (4) authority is pinned strongly enough to act on the Critic-confirmed `Delta(kappa)=c(kappa) delta_N` witness for the fixed source-order `j=1`, nonzero-real-rho, channel-`00000`, full-K5-collision realization.
+
+Ceiling: no claim of absence outside the frozen corpus; no base-extension existence/nonexistence claim; no physical/global nonuniqueness claim; no source authorization of `Delta`.
+
+## Historical v1 authority gate retained
+
 Historical gate:
 
 `SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_GATE`
 
-Authority chain:
+- historical result commit `a9ac933b10cb83d0088a908b301d32986b9ab602`;
+- historical classification `SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_NOT_PINNED_SCOPED`;
+- independent Critic `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_2026-09-15.md`, commit `fcc22dcf4f186b2de3557507242d5186e4e96caa`;
+- Critic verdict `INVALID_IMPLEMENTATION`.
 
-- prereg `research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_PREREG_2026-09-15.md`, commit `96295d36855b7e3e0dd1ca943adb46f1c969b315`;
-- implementation `code/source_j1_k5_eq4_additional_joint_selection_authority.py`, commit `09f2a73fc9d7276f05ce20977422efdd407d3931`;
-- workflow `.github/workflows/source-j1-k5-eq4-additional-joint-selection-authority.yml`, production head `45a0143cadbfe7cc1b6ea384558e4d70fa528fce`;
-- run `34931853615`, terminal `success`;
-- source-lock job `104261523515`, `success`;
-- authority-audit job `104261554525`, `success`;
-- artifact `10381543990`, size `3631`, digest `sha256:922d45439a099999dc08b66f7fa69353cbcb490c41249af23c784d695be3faa2`;
-- canonical JSON SHA256 `71f639bce5268cc7753c0fce63318e3de8c7b18fe54781b4e4c720cc27e4a44e`;
-- terminal result `results/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_RESULT_2026-09-15.md`, commit `a9ac933b10cb83d0088a908b301d32986b9ab602`;
-- handoff `recovery/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_HANDOFF_2026-09-15.md`, commit `bb0e1ef6fe78547853cb4dd4a3416b10929931e1`.
-
-Historical Research classification:
-
-`SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_NOT_PINNED_SCOPED`.
-
-## Latest independent Critic qualification
-
-Critic record:
-
-- `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_2026-09-15.md`;
-- commit `fcc22dcf4f186b2de3557507242d5186e4e96caa`;
-- verdict `INVALID_IMPLEMENTATION`.
-
-The historical blocker is preserved but is not a validated terminal premise. The preregistration froze **six** candidate joint-authority classes, while the executed implementation produced five matrix rows. The independent-regulator/path-order class was merged into a predicate that only detects common-multiwedge-i-epsilon authority; the vertex-level normalization/boundary-condition class was narrowed to two Iter331 jet flags; and the catch-all “other genuinely joint theorem” row was assigned absent without an exhaustive trace over every frozen dependency record.
-
-Therefore the artifact proves what the code executed, but not that every frozen candidate class was exhausted. Green CI does not cure this mismatch.
-
-No opposite scientific conclusion is inferred: the Critic does not prove that a qualifying authority exists, that `Delta` is source-authorized, or that a base Eq. (4) extension exists.
+The historical result remains immutable and is not a validated downstream premise. The v2 result above is a separate prospectively frozen repair.
 
 ## Upstream Critic-confirmed witness retained
 
-Earlier independent Critic:
-
 - `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_REPAIR_2026-09-15.md`;
 - commit `97a4821f85f13e6f5c6d41356612c88939d45f2c`;
-- verdict `CONFIRMED_SCOPED`.
+- verdict `CONFIRMED_SCOPED`;
+- confirmed classification `SOURCE_J1_K5_FROZEN_CONJUGATION_CONSTRAINTS_LEAVE_NONZERO_COLLISION_AMBIGUITY_SCOPED`.
 
-Confirmed classification:
-
-`SOURCE_J1_K5_FROZEN_CONJUGATION_CONSTRAINTS_LEAVE_NONZERO_COLLISION_AMBIGUITY_SCOPED`.
-
-Scope remains fixed source-order `j=1`, nonzero-real-rho, channel `00000`, full K5 collision, conditional on a base extension. The `122880` checks certify coefficient/sign-pattern K5 relabeling, not a universal boundary-intertwiner recoupling theorem.
+Scope remains fixed source-order `j=1`, nonzero-real-rho, channel `00000`, full K5 collision, conditional on a base extension. `122880` permutation checks certify coefficient/sign-pattern K5 relabeling, not universal boundary-intertwiner recoupling.
 
 ## Source-authority facts that remain pinned
 
 1. Published Eq. (3) `i epsilon` is one-wedge authority, not an already-pinned common ten-wedge collision regulator.
-2. One-wedge Toller uniqueness does not by itself fix the joint K5 collision extension.
-3. Full-collision off-stratum data have scaling degree `30` in codimension `12`; generic extension theory admits same-scaling local ambiguity but does not select a coefficient.
-4. The repaired representation-valued conjugation/symmetry gate leaves an explicit nonzero scoped `Delta` witness.
-5. The narrow Iter331 source-table facts consumed by the invalidated authority audit remain historical source-audit facts; what is invalid is the claim that they exhaust the six-class frozen decision contract.
+2. The audited companion Toller formulation supplies neither a ten-wedge correlated regulator family nor a path/order-independence theorem resolving the K5 collision product.
+3. One-wedge Toller uniqueness does not by itself fix the joint K5 collision extension.
+4. Full-collision off-stratum data have scaling degree `30` in codimension `12`; generic extension theory permits same-scaling local ambiguity but does not select a coefficient.
+5. The repaired representation-valued conjugation/sign-pattern symmetry gate leaves a nonzero scoped `Delta` witness.
+6. The corrected six-class authority audit finds no source-pinned joint selection rule within its exact frozen repository corpus.
 
 ## Next recommended high-information gate
 
-Preferred repair:
+`SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_GATE`
 
-`SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_GATE`.
+Prospectively determine whether Eq. (4), using the already source-defined one-wedge Toller distributions and without silently adding model data, exists on the full K5 collision as a controlled distribution in the same fixed realization.
 
-Freeze and execute a one-to-one matrix for all six classes:
+Required guards for the future gate:
 
-1. correlated/common regulator-removal;
-2. independent regulator plus path/order-independence theorem;
-3. microlocal product/pullback/extension theorem;
-4. vertex-level normalization/boundary condition without reducing it to preselected jet flags;
-5. nested/forest gluing;
-6. exhaustive “other genuinely joint theorem” trace across every frozen dependency record.
-
-Record fresh Iter504/Iter461 status in the terminal audit record without consuming partial values. Preserve PASS/FAIL/BLOCKED distinctions and the current interpretation ceiling.
-
-The separately proposed `SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_GATE` remains logically separate and may be prospectively justified independently, but it must not consume the invalidated absence-of-authority result as a validated premise.
+- preserve `T+ + T- = D` at distributional/joint level as a mandatory control;
+- distinguish failure of the Hörmander sufficient criterion from an actual nonexistence theorem;
+- do not infer source/physical nonuniqueness from the current authority blocker;
+- do not consume partial values from Iter504 or Iter461;
+- keep source-order product existence distinct from reordered ten-spectral pairing/exchange justification.
 
 ## Independent D7-S2 numerical front — Iter504
 
@@ -97,7 +112,7 @@ The separately proposed `SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_GATE
 - prereg commit `1ab46b7add51b36b5499f866eb4579137838bfae`;
 - production head `56362459a826e3e376c529446678f2fbcaa269ae`;
 - run `34907349374`;
-- latest Critic check: `queued`, conclusion `null`.
+- v2 terminal-audit fresh status: `queued`, conclusion `null`.
 
 No partial substantive values may be used.
 
@@ -106,13 +121,13 @@ No partial substantive values may be used.
 - branch `research/iter461-k5-collision-partitions`;
 - head `05c7f87c8519349057332bf90021f1128e1eefc3`;
 - run `34748503239`;
-- latest Critic check: `queued`, conclusion `null`.
+- v2 terminal-audit fresh status: `queued`, conclusion `null`.
 
 Do not duplicate or consume partial values.
 
 ## Historical exact full-collision certificate workflow
 
-Run `34908370750`, head `020f43695f16332d749f3d6d5c65dbd0b6a098d8`, remains terminal `failure` because the original certificate called `.item()` on an already-Python `Fraction`. This is code/reproducibility history, not a scientific verdict and not authority to erase later independently frozen scoped results.
+Run `34908370750`, head `020f43695f16332d749f3d6d5c65dbd0b6a098d8`, remains terminal `failure` because the original certificate called `.item()` on an already-Python `Fraction`. This is code/reproducibility history, not a scientific verdict.
 
 ## Restoration procedure
 
