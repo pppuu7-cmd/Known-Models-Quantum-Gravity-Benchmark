@@ -43,6 +43,20 @@ The class-6 exhaustive trace and keyword capture do not drive scientific status;
 
 This Critic does not prove the opposite scientific result.
 
+## Newer active Research preregistration — non-terminal
+
+Commit `1983e9f28b45af33cf15d297b3ebcc293c82e8fb` preregistered:
+
+`SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_GATE`
+
+File: `research/SOURCE_J1_K5_EQ4_IMPROPER_DISTRIBUTIONAL_EXISTENCE_PREREG_2026-09-15.md`.
+
+Status in that immutable preregistration: `PREREGISTERED; NO RESULT YET`. No terminal result for this gate is present at the current front. Do not create a competing existence verdict or consume partial values from any future non-terminal workflow.
+
+Chronology qualification: the existence preregistration landed immediately before the independent v2 Critic and includes a mandatory control preserving the repaired v2 authority result as a source/object-definition BLOCKED result. The historical label remains immutable, but current Critic authority marks that v2 decision `INVALID_IMPLEMENTATION` for validated downstream use. Therefore the existence gate cannot use the v2 BLOCKED conclusion as an established E1/source-authority premise.
+
+Before result-producing execution, Research must prospectively resolve this dependency: either issue a new frozen preregistration/repair if the v2 result is scientifically outcome-determining, or freeze explicit logical independence and recompute E1 from source facts rather than the invalid v2 classifier. Do not edit the historical preregistration in place.
+
 ## Upstream retained validated witness
 
 - `SOURCE_J1_K5_FROZEN_CONJUGATION_CONSTRAINTS_LEAVE_NONZERO_COLLISION_AMBIGUITY_SCOPED = CONFIRMED_SCOPED`;
@@ -82,12 +96,12 @@ Do not use the v2 BLOCKED classification as validated source authority.
 
 A new source-authority repair must be prospectively frozen and make all scientific states reachable from evidence: each class must be able to classify as source-pinned/action-determining, source-pinned/action-undetermined, or absent; positive fixtures must demonstrate PASS/FAIL/UNDETERMINED reachability; class-4 and class-6 discovery must feed the decision.
 
-A separate prospectively frozen Eq. (4) distributional-existence gate remains admissible only if it is logically independent of the invalid v2 blocker and preserves source identity and all governance guards.
+The already-preregistered distributional-existence gate remains non-terminal. It may proceed only after prospective dependency reconciliation as described above, preserving source identity, the full distributional `T+ + T- = D` control, the rule that failure of a sufficient microlocal criterion is not nonexistence, and all governance guards.
 
 ## Restoration procedure
 
 1. Read fresh `main` before this index.
-2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, this index, newest terminal Research result/handoff, and newest Critic.
+2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, this index, newest terminal Research result/handoff, newest Critic, and any newer non-terminal preregistration/workflow.
 3. Recheck Iter504 and Iter461 without consuming partial substantive values.
 4. Preserve all frozen source conventions, objects, controls, historical classifications and claim ceilings.
 5. If a newer terminal result or Critic supersedes this navigation text, reconcile recovery first.
