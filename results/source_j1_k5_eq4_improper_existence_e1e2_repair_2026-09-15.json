@@ -1,0 +1,81 @@
+{
+  "all_controls_pass": true,
+  "claim_ceiling": {
+    "D7_S2_closed": false,
+    "D7_S3_closed": false,
+    "D7_S4_closed": false,
+    "candidate_gravity_active": false,
+    "distributional_nonexistence_proved": false,
+    "family_closure": false,
+    "uniqueness_decided": false
+  },
+  "classification": "SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_BLOCKED_SCOPED",
+  "derived_predicates": {
+    "e1_joint_prescription": false,
+    "e2_criterion_fails_at_allowed_witness": true,
+    "e2_sufficient_criterion_passes": false,
+    "e4_necessary_nonexistence_theorem": false,
+    "invalidated_authority_used": false
+  },
+  "exact_k5_witness_recomputation": {
+    "all_conormals_nonzero": true,
+    "ambient_dimension": 12,
+    "conormal_rank": 4,
+    "edge_count": 10,
+    "expected_cycle_dimension": 6,
+    "relation_space_dimension": 6,
+    "star_spanning_tree_rank": 4,
+    "triangle_12_23_minus_13_exact_zero": true,
+    "wrong_sign_triangle_nonzero": true
+  },
+  "manifest_sha256": "89f4077539655096e0d9824742ca6628d3b93feb4ea064f6af3bca24876d5ec5",
+  "object": {
+    "channel": "00000",
+    "group_object": "gauge_fixed_SL2C^4_product_of_ten_source_defined_Toller_distributions",
+    "j": 1,
+    "rho_scope": "nonzero_real",
+    "source_order": true,
+    "stratum": "full_K5_collision"
+  },
+  "outcome_sensitivity_controls": {
+    "contradictory_exist_nonexist": {
+      "expected": "INVALID_IMPLEMENTATION",
+      "got": "INVALID_IMPLEMENTATION",
+      "pass": true
+    },
+    "invalidated_authority": {
+      "expected": "INVALID_IMPLEMENTATION",
+      "got": "INVALID_IMPLEMENTATION",
+      "pass": true
+    },
+    "negative_blocked": {
+      "expected": "SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_BLOCKED_SCOPED",
+      "got": "SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_BLOCKED_SCOPED",
+      "pass": true
+    },
+    "positive_necessary_nonexistence": {
+      "expected": "SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_NONEXISTENCE_ESTABLISHED_SCOPED",
+      "got": "SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_NONEXISTENCE_ESTABLISHED_SCOPED",
+      "pass": true
+    },
+    "positive_source_joint": {
+      "expected": "SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_ESTABLISHED_SCOPED",
+      "got": "SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_ESTABLISHED_SCOPED",
+      "pass": true
+    },
+    "positive_sufficient_criterion": {
+      "expected": "SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_ESTABLISHED_SCOPED",
+      "got": "SOURCE_J1_K5_EQ4_DISTRIBUTIONAL_EXISTENCE_ESTABLISHED_SCOPED",
+      "pass": true
+    }
+  },
+  "prereg_commit": "0d9615e1dec1f2fe5bcf66f3458a0e541a6b2ba4",
+  "schema": "kmqgb.eq4_improper_distributional_existence_e1e2_repair.result.v1",
+  "source_locked_file_sha256": {
+    "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_2026-09-15.md": "bd98955e87cd9944bdb2f795cdbcde6290680fdf21f05bfb62b6bfc5aa08aa6f",
+    "research/SOURCE_J1_FULL_COLLISION_ABSOLUTE_DIVERGENCE_THEOREM_2026-09-15.md": "c4ff19636ca1f803becbae998277f621bac6ae80589424acc61655d96516f70a",
+    "research/SOURCE_J1_K5_ALIGNED_CONTACT_CYCLESPACE_RESULT_2026-09-15.md": "7fdbc8438779175f2183e2fd66476125f3385019e438d1e5bb9794c9457883fd",
+    "research/SOURCE_J1_K5_COHERENT_CONTACT_HORMANDER_RESULT_2026-09-15.md": "fa2f46178e0ee0493b09ed319242c58a1140a354a7834f1ba46cd06c22a67fac",
+    "research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md": "903b72efd167978e22ff0bb7155e08863e32c5ee8bdf251b2f953ae1d428ce1a"
+  }
+}
