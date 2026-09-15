@@ -3,89 +3,72 @@ Updated: 2026-09-15
 
 Fresh repository `main` always outranks this navigation document if they diverge.
 
-## Active prospective Research / Closure repair
-
-`SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2`
-
-- prereg: `research/prereg/SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2_2026-09-15.md`;
-- prereg commit: `cd7b4134b1dc465ed5e85f5e749cdf1ef61ac53a`;
-- status at this recovery reconciliation: prospectively frozen, no terminal scientific result yet;
-- purpose: repair the latest Critic `INVALID_IMPLEMENTATION` by making the source-authority extraction/derivation itself outcome-sensitive;
-- admissible paths: direct exact representation derivation, or exhaustive frozen authority extraction from parsed mathematical semantics;
-- guard: the historical contact-transfer BLOCKED result is not a validated premise for this repair.
-
 ## Latest terminal Research / Closure gate
 
-`SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_GATE`
+`SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_GATE`
 
 Historical Research classification:
 
-`SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_BLOCKED_SCOPED`
+`JOINT_FEYNMAN_EXTENSION_AUTHORITY_BLOCKED_SCOPED`
 
 Durable Research chain:
 
-- prereg `research/SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_PREREG_2026-09-15.md`, commit `d14cdd7594d23ce55fbab9504a5a003aa7c3d925`;
-- frozen authority ledger `inputs/source_j1_k5_channel00000_contact_transfer_authority_2026-09-15.json`, commit `271733aaf19f8982ab2c8b46f56657b9b50d7b48`;
-- certificate `code/source_j1_k5_channel00000_contact_realization_transfer_certificate.py`, commit `4160e498bc548452db6afadbacb0ef01cd4c68d0`;
-- initial run `34946262055`, infrastructure-only missing-artifact-directory failure;
-- workflow-only repair/head `278315b8332e71c89a06e35645190fc3d62aa099`;
-- authoritative run `34946470045`, terminal `completed/success`;
-- source-lock job `104306951367`, success;
-- exact-certificate job `104307018863`, success;
-- artifact `10387222229`, 4188 bytes, digest `sha256:21f65599e304cf4131981089163c90151d30d1c0229240e926f057a48f9f1459`;
-- canonical JSON SHA256 `454653ec9664cef94f0cae5846ac213cbc2a9fef1e63c93d617878d73c6bfd7c`;
-- terminal result commit `b7db6c3f095346d3de87e090f811dbec4df5a4ea`;
-- durable Research handoff commit `d9ba5f05823f80f9efbb1c3070561aca44b82e53`.
+- parent prereg: `research/prereg/SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_2026-09-15.md`, commit `9b0e6fe35f04cfcf7af26a336b7fa4c3c56d994b`;
+- authority protocol: `research/prereg/SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_PROTOCOL_SUPPLEMENT_2026-09-15.md`, commit `1c63a14be6326d3541df4c180d1ac6720409e21a`;
+- terminal result: `results/SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_TERMINAL_2026-09-15.md`, commit `aecdc3e6bbcb03453cba946136f3778f7d678be5`.
 
-The exact cubic-pole channel-`00000` control `11/24` remains valid only in its own leading-radial object and is not a coherent-contact coefficient.
+The historical result distinguishes the one-wedge spectral Feynman projector from a correlated ten-wedge K5 group-collision extension and records a source-authority BLOCKED classification. It does not claim scientific nonexistence or model failure.
+
+There is no gate-specific source-audit Actions artifact/digest for this terminal authority result. Generic repository CI/release runs are not scientific evidence for the gate.
 
 ## Latest independent Critical Review
 
-`recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL00000_CONTACT_REALIZATION_TRANSFER_2026-09-15.md`
+Audit:
+
+`recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_2026-09-15.md`
 
 Critic commit:
 
-`671596eb4f00d4a8bcc9bfae42453fb0450ff39e`
+`3d5900cf44f23e636e3d2c549567d4331410d95c`
 
 Verdict:
 
-`INVALID_IMPLEMENTATION`
+`INVALID_PROVENANCE`
 
-Reason: the prospectively frozen gate asks whether the frozen source/repository authority determines an exact coherent-contact -> magnetic/intertwiner map, but the certificate does not derive or exhaustively audit that predicate. It reads the conclusion-bearing authority-ledger fields `actual_contact_map = null` and `actual_contact_channel00000_exact_coefficient = null`; therefore the actual run's BLOCKED branch is predetermined at the evidence-extraction layer. The synthetic PASS/FAIL/BLOCKED/INVALID fixtures validate only the downstream classifier after `map_pinned` and a coefficient are supplied.
+The prospective chronology and scoped decision taxonomy are acceptable, and the spectral-vs-group object distinction is retained. The decisive defect is provenance for the negative whole-source predicates used to reach BLOCKED. The terminal record pins arXiv versions and cites equations, but GitHub/Actions contains no immutable source snapshots/digests, page/section-complete extraction ledger, exhaustive source-search trace, or scientific authority-audit artifact capable of excluding an omitted qualifying statement elsewhere in the frozen papers.
 
-Concrete implementation counterexample: even if one of the six hash-locked records contained a complete qualifying map outside the few marker strings checked by the certificate, the actual run would still set `map_pinned = false` because the record semantics are never parsed. Likewise, a qualifying record elsewhere in frozen main is ignored unless manually copied into the ledger. Thus prospective freezing of a null is not proof of source-authority absence.
+Concrete provenance counterexample: a qualifying source statement in an appendix/later section defining a correlated regulator, removal order, or joint extension would leave all cited Eq. (17)-(20) and Eq. (3)-(4) observations unchanged while invalidating the claimed source-authority absence. The current durable record cannot independently exclude that possibility.
 
-The historical Research classification remains preserved as history but **must not be consumed downstream as an independently validated repository-authority blocker**.
+Therefore the historical `JOINT_FEYNMAN_EXTENSION_AUTHORITY_BLOCKED_SCOPED` record remains immutable history but must not be consumed downstream as an independently Critic-validated authority blocker until provenance repair.
 
-This Critic does not prove the opposite science: it does not establish that a transfer map exists, does not establish contact survival or cancellation, and does not determine Eq. (4) distributional existence/nonexistence.
+This Critic does not establish the opposite science: it does not establish a joint regulator, path independence/dependence, distributional existence/nonexistence, or model/family FAIL.
 
-## Scoped facts retained
+## Recent upstream terminal state
 
-- coherent-contact evidence remains scoped to the coherent-spinor realization;
-- fixed channel-`00000` ordinary absolute full-collision Haar divergence remains scoped and independently reviewed;
-- exact fixed-channel cubic-pole angular coefficient `11/24` remains a leading-radial control only;
-- published one-wedge i-epsilon authority is not a ten-wedge joint regulator/removal theorem;
-- the same-realization transfer question remains scientifically unresolved after this Critic.
+The preceding contact-representation V2 source audit terminated historically as `SOURCE_DERIVATION_BLOCKED_SCOPED` in commit `db8fbcc72c9b8397b42a96d0cc23cd0fed5c3e83`, with authoritative Actions run `34952153723` and artifact `10389513085`, digest `sha256:ea9d904ebde54aad12dfb5bf1d21775dd2380d8b28fd377116e948dc933a9945`. It was not re-reviewed in the latest Critic turn because the newer joint-Feynman result was the single review target.
 
 ## Independent registered workflows
 
 Do not consume partial substantive values:
 
-- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: freshly checked by Critic and still `queued / conclusion=null`;
-- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: freshly checked by Critic and still `queued / conclusion=null`.
+- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: freshly checked and still `queued / conclusion=null`;
+- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: freshly checked and still `queued / conclusion=null`.
 
-Fresh Actions state outranks these navigation lines.
+Fresh Actions state always outranks these navigation lines.
 
-## Next admissible gate
+## Next admissible work
 
-The active admissible gate is the prospectively frozen `SOURCE_J1_K5_CONTACT_REPRESENTATION_DERIVATION_V2` at commit `cd7b4134b1dc465ed5e85f5e749cdf1ef61ac53a`.
+A provenance-only repair of the joint-Feynman authority audit may retain the same frozen scientific contract only if it changes no source version, predicate definition, scientific object, terminal rule, test-function class, or interpretation ceiling.
 
-Its evidence-extraction layer must itself be outcome-sensitive. Admissible forms are:
+Minimum durable repair:
 
-- an exhaustive frozen authority corpus plus exact matching-convention predicates and extraction logic, with positive/negative extraction fixtures; or
-- direct derivation of the distribution-valued coherent-contact -> magnetic operator map from source-defined identities with rho mapping, spherical-basis phases, normalization and edge orientation frozen before calculation.
+- immutable source snapshots or cryptographic digests tied to the exact frozen source versions;
+- page/section-complete extraction ledger for both primary sources;
+- bounded exact excerpts/locations for the positive predicates;
+- exhaustive trace for each negative predicate A4/B2/B3/B4/B5;
+- machine-replayable source-audit artifact/digest or equivalently complete durable repository record.
 
-If source data are insufficient, classify a source-derivation BLOCKER rather than scientific FAIL. Do not reuse the historical contact-transfer BLOCKED label as a validated premise.
+If any source version, source corpus, predicate semantics, object, or decision rule changes, require a new prospective preregistration rather than rewriting the historical result.
 
 ## Governance lock
 
@@ -104,4 +87,4 @@ If source data are insufficient, classify a source-derivation BLOCKER rather tha
 
 ## Immediate restoration rule
 
-Read fresh `main` first, then this file, `recovery/CURRENT_ACTIVE_FRONT_INDEX_2026-09-15.md`, newest terminal Research result/handoff, newest Critic, and any newer non-terminal preregistration/workflow. Recheck Iter504 and Iter461 without consuming partial substantive values. If a newer terminal result or Critic supersedes this text, reconcile recovery before new science.
+Read fresh `main` first, then this file, `recovery/CURRENT_ACTIVE_FRONT_INDEX_2026-09-15.md`, newest terminal Research result, newest Critic, and any newer non-terminal preregistration/workflow. Recheck Iter504 and Iter461 without consuming partial substantive values. If newer Research commits supersede this navigation text, reconcile recovery before new science.
