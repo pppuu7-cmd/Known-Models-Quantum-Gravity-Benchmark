@@ -1,0 +1,177 @@
+{
+  "action_canonical_json_sha256": "f24fb2e9efd7e2f97dcb037b98534b812024885c812fc6d07f37ad81830d6820",
+  "artifact": {
+    "artifact_id": 10382678434,
+    "artifact_name": "source-j1-k5-eq4-additional-joint-selection-authority-v2",
+    "artifact_size_bytes": 18501,
+    "artifact_zip_sha256": "ddc5863943033748441a6fd12452736349b5520b2721042d5624b7946e3da0cf",
+    "authority_audit_job": 104273131510,
+    "production_head": "586f0e373b80518982960c3759ec8bba4249d848",
+    "run_id": 34935737476,
+    "source_lock_job": 104273108027
+  },
+  "candidate_matrix": [
+    {
+      "action_on_delta": null,
+      "class_id": "C1_CORRELATED_COMMON_REGULATOR_REMOVAL",
+      "evidence_predicates": {
+        "companion_explicitly_lacks_correlated_family": true,
+        "eq4_explicitly_lacks_common_regulator_removal_path": true,
+        "iter331_all_common_multiwedge_limit_flags_false": true
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    },
+    {
+      "action_on_delta": null,
+      "class_id": "C2_INDEPENDENT_REGULATOR_PATH_ORDER_THEOREM",
+      "evidence_predicates": {
+        "class_separate_from_common_regulator": true,
+        "companion_no_path_order_independence_theorem": true,
+        "scaling_audit_says_independent_path_order_must_be_proved_not_assumed": true
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    },
+    {
+      "action_on_delta": null,
+      "class_id": "C3_MICROLOCAL_PRODUCT_PULLBACK_EXTENSION_THEOREM",
+      "evidence_predicates": {
+        "iter331_all_partial_diagonal_extension_flags_false": true,
+        "microlocal_route_listed_as_possible_future_route_not_completed_theorem": true,
+        "ten_wedge_correlated_product_not_yet_justified": true
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    },
+    {
+      "action_on_delta": null,
+      "class_id": "C4_VERTEX_LEVEL_NORMALIZATION_BOUNDARY_CONDITION",
+      "evidence_predicates": {
+        "broad_class_not_reduced_to_jet_flags": true,
+        "iter331_aggregate_source_defined_normalization_false": true,
+        "iter331_all_k3_normal_jet_values_unfixed_supporting_only": true,
+        "iter331_all_k4_normal_jet_values_unfixed_supporting_only": true,
+        "one_wedge_result_treats_vertex_identity_or_normalization_as_open_frontier": true,
+        "repaired_witness_survives_already_tested_vertex_constraints": true
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    },
+    {
+      "action_on_delta": null,
+      "class_id": "C5_NESTED_FOREST_GLUING",
+      "evidence_predicates": {
+        "iter331_aggregate_source_defined_forest_glue_false": true,
+        "iter331_all_forest_gluing_flags_false": true,
+        "scaling_audit_nested_conditions_are_possible_not_established": true
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    },
+    {
+      "action_on_delta": null,
+      "class_id": "C6_OTHER_GENUINELY_JOINT_SOURCE_THEOREM",
+      "evidence_predicates": {
+        "all_dependency_records_traced": true,
+        "no_unclassified_dependency_record": true,
+        "only_positive_theorems_authorities_in_trace_are_frozen_exclusions_or_nonselecting_generic_results": true
+      },
+      "status": "NOT_SOURCE_PINNED_IN_FROZEN_CORPUS"
+    }
+  ],
+  "claim_ceiling": [
+    "no base Eq4 joint-extension existence or nonexistence claim",
+    "no unconditional physical/global nonuniqueness claim",
+    "no source authorization of Delta",
+    "no claim of absence outside the frozen repository corpus",
+    "no impossibility claim for future source-compatible joint constructions",
+    "no other-spin/channel/family/lower-stratum claim",
+    "no D7-S2/S3/S4 closure",
+    "no terminal D7 selector",
+    "Candidate Gravity remains inactive"
+  ],
+  "classification": "SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_NOT_PINNED_SCOPED",
+  "controls": {
+    "companion_no_correlated_family_or_path_order_theorem": true,
+    "eq4_no_common_or_vector_regulator_path": true,
+    "every_row_has_evidence_predicates": true,
+    "every_row_has_record_trace": true,
+    "fresh_workflow_status_read": true,
+    "genuinely_joint_condition_required": true,
+    "independent_regulator_path_order_separate_predicate": true,
+    "iter331_aggregate_no_source_forest_glue": true,
+    "iter331_aggregate_no_source_normalization": true,
+    "iter331_all_common_multiwedge_limits_false": true,
+    "iter331_all_forest_gluing_false": true,
+    "iter331_all_k3_jet_values_unfixed": true,
+    "iter331_all_k4_jet_values_unfixed": true,
+    "iter331_all_partial_extension_prescriptions_false": true,
+    "matrix_exactly_six_rows": true,
+    "matrix_unique_stable_ids": true,
+    "no_partial_workflow_values_consumed": true,
+    "nonzero_witness_32_of_1024": true,
+    "one_wedge_uniqueness_insufficient": true,
+    "other_class_exhaustive_trace_all_dependency_records": true,
+    "repaired_witness_classification": true,
+    "repaired_witness_critic_confirmed": true,
+    "scaling_30_gt_12": true,
+    "six_class_contract_frozen": true,
+    "ten_wedge_product_not_yet_justified": true,
+    "v1_critic_catchall_hardcode_defect": true,
+    "v1_critic_independent_class_defect": true,
+    "v1_critic_invalid_implementation": true,
+    "v1_critic_six_class_requirement": true,
+    "v1_critic_vertex_normalization_defect": true,
+    "v2_prereg_frozen": true,
+    "vertex_normalization_broad_class_not_reduced_to_jets": true
+  },
+  "frozen_input_sha256": {
+    "code/lqg_iter331_aggregate.py": "39b854dbd5bd144f7db16afb32827097b165118a9c14273f8838bd2459204830",
+    "code/lqg_iter331_source_jet_normalization_audit.py": "ead08a05175bc1f07b4b01ae1bf37240bd6e07ef9661a1a077203cb7edb254d5",
+    "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_2026-09-15.md": "3e8d2e819c6b21791dcbf6bc55f6414d4942fc5c23d98078212e4c03c86dfdda",
+    "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_REPAIR_2026-09-15.md": "fc23a6de3bf32f16263381c15912f23bc36633c90ae7845d57b224cdd4a3e70d",
+    "recovery/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_HANDOFF_2026-09-15.md": "cd24f1ac34fd0c18e8f3aa5056abcf169485fa5e009cbca027dc8eea2b31f8f8",
+    "research/SOURCE_J1_FULL_COLLISION_SCALING_EXTENSION_AUDIT_2026-09-15.md": "3419a94e372c8b4e2e38084a36d12ec5e57a10e66673e832098b97c13e74b698",
+    "research/SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_PREREG_2026-09-15.md": "4d3812845f23d05e84d06055bba92af289f6f060beba669f4e9d231b6d004caf",
+    "research/SOURCE_J1_K5_ONE_WEDGE_UNIQUENESS_VS_JOINT_EXTENSION_RESULT_2026-09-15.md": "4cfc5101019552269a73ec03e231636fd250a441407db80d263c29f3df9cd668",
+    "research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md": "903b72efd167978e22ff0bb7155e08863e32c5ee8bdf251b2f953ae1d428ce1a",
+    "results/SOURCE_J1_K5_JOINT_EXTENSION_CONJUGATION_COUNTEREXAMPLE_REPAIR_RESULT_2026-09-15.md": "03ba9f0749accd858f758392889e7fc621db675102345df0a2c9241c0c588eeb"
+  },
+  "full_action_canonical_location": "GitHub Actions artifact 10382678434 / source_j1_k5_eq4_additional_joint_selection_authority_v2.json",
+  "gate": "SOURCE_J1_K5_EQ4_ADDITIONAL_JOINT_SELECTION_AUTHORITY_V2_GATE",
+  "negative_controls": {
+    "fixture_common_without_removal_rejected": true,
+    "fixture_independent_without_path_order_theorem_rejected": true,
+    "fixture_negated_normalization_rejected": true,
+    "generic_extension_theory_not_promoted": true,
+    "iter331_detector_not_promoted": true,
+    "one_wedge_iepsilon_not_promoted": true,
+    "one_wedge_uniqueness_not_promoted": true
+  },
+  "note": "This repository file is a decision-preserving projection. The byte-exact full canonical JSON remains in the immutable GitHub Actions artifact and is identified by action_canonical_json_sha256.",
+  "object_scope": {
+    "channel": "00000",
+    "collision": "full K5 collision N=SU(2)^4 in gauge-fixed SL(2,C)^4",
+    "rho": "nonzero real",
+    "spin": "j=1",
+    "witness": "Delta(kappa)=c(kappa) delta_N; +i on 16 causal, -i on 16 global negatives, 0 on 992 others"
+  },
+  "reason": "all six one-to-one frozen authority classes were traced, but none is source-pinned strongly enough in the frozen corpus to act on Delta",
+  "schema": "KMQGB_ACTION_CANONICAL_PROJECTION_V1",
+  "source_pinned_action_undetermined_count": 0,
+  "source_pinned_acts_on_delta_count": 0,
+  "workflow_status_provenance_only": {
+    "Iter461": {
+      "conclusion": null,
+      "head_branch": "research/iter461-k5-collision-partitions",
+      "head_sha": "05c7f87c8519349057332bf90021f1128e1eefc3",
+      "run_id": 34748503239,
+      "status": "queued",
+      "updated_at": "2026-09-13T08:48:36Z"
+    },
+    "Iter504": {
+      "conclusion": null,
+      "head_branch": "main",
+      "head_sha": "56362459a826e3e376c529446678f2fbcaa269ae",
+      "run_id": 34907349374,
+      "status": "queued",
+      "updated_at": "2026-09-14T23:07:30Z"
+    }
+  }
+}
