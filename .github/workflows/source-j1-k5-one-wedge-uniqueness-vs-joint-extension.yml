@@ -1,0 +1,64 @@
+name: source-j1-k5-one-wedge-uniqueness-vs-joint-extension
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/SOURCE_J1_K5_ONE_WEDGE_UNIQUENESS_VS_JOINT_EXTENSION_PREREG_2026-09-15.md'
+      - 'code/source_j1_k5_one_wedge_uniqueness_vs_joint_extension_certificate.py'
+      - '.github/workflows/source-j1-k5-one-wedge-uniqueness-vs-joint-extension.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate prospective authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREREG='research/SOURCE_J1_K5_ONE_WEDGE_UNIQUENESS_VS_JOINT_EXTENSION_PREREG_2026-09-15.md'
+          FROZEN_COMMIT='88c3d04a627b4cbef29c6b3246052a58508aaa0a'
+          test -f "$PREREG"
+          test -f research/SOURCE_J1_K5_EQ4_LOCAL_EXTENSION_EXISTENCE_RESULT_2026-09-15.md
+          test -f research/SOURCE_J1_K5_COLLISION_COUNTERTERM_SUMRULE_RESULT_2026-09-15.md
+          test -f research/SOURCE_J1_K5_PUBLISHED_IEPSILON_SCOPE_RESULT_2026-09-15.md
+          test -f code/source_j1_k5_one_wedge_uniqueness_vs_joint_extension_certificate.py
+          git cat-file -e "${FROZEN_COMMIT}^{commit}"
+          test "$(git log -1 --format=%H -- "$PREREG")" = "$FROZEN_COMMIT"
+          grep -Fq 'SOURCE_J1_K5_ONE_WEDGE_TOLLER_UNIQUENESS_INSUFFICIENT_FOR_JOINT_EXTENSION_SCOPED' "$PREREG"
+          grep -Fq 'E_prime' "$PREREG" || grep -Fq "E'" "$PREREG"
+          grep -Fq 'D7-S2 = NOT_CLOSED' "$PREREG"
+
+  exact-certificate:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run exact logical/arithmetic certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/source_j1_k5_one_wedge_uniqueness_vs_joint_extension_certificate.py | tee source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+          grep -Fq 'SOURCE_J1_K5_ONE_WEDGE_TOLLER_UNIQUENESS_INSUFFICIENT_FOR_JOINT_EXTENSION_SCOPED' source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+          grep -Fq '"all_one_wedge_factors_identical_between_E_and_Eprime": true' source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+          grep -Fq '"individual_factors_modified": false' source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+          grep -Fq '"full_eprl_shift": 0' source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+          grep -Fq '"causal_distinct_shift": 1008' source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+          grep -Fq '"s5_pattern_checks": 122880' source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+          grep -Fq '"one_wedge_uniqueness_alone_excludes_joint_counterterm": false' source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+          grep -Fq '"genuinely_joint_source_condition_required_for_uniqueness": true' source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-one-wedge-uniqueness-vs-joint-extension
+          path: source-j1-k5-one-wedge-uniqueness-vs-joint-extension.json
+          if-no-files-found: error
