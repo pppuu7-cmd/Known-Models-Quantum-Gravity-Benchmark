@@ -1,6 +1,6 @@
 # Current active front index — 2026-09-15
 
-This is a navigation index over immutable prereg/result/recovery records. Fresh repository `main` always outranks this index if they diverge.
+This is a navigation index over immutable prereg/result/recovery records. Fresh repository `main` and fresh Actions state always outrank this index if they diverge.
 
 ## Frozen global state
 
@@ -13,82 +13,78 @@ This is a navigation index over immutable prereg/result/recovery records. Fresh 
 - Candidate Gravity remains inactive.
 - BLOCKED/INVALID is distinct from scientific FAIL.
 
-## Latest terminal Research / Closure gate
+## Latest terminal Research execution
 
-`SOURCE_J1_K5_GAUSSIAN_COMPACT_SUPPORT_LOCALIZATION_GATE`
+`SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4`
 
-Classification:
+Prospective chain:
 
-`AUX_GAUSSIAN_UNRENORMALIZED_COMPACT_LOCAL_DIVERGENCE_SCOPED`
+- prereg `01ccbad09d4a413066b1bcfbf77861d386926e73`;
+- frozen input `8b933f94b8eea1c6990b33f9f2f563f7fabae461`;
+- implementation `921c2b4e3456ed6b98a24cd8896188eeea5ac2d8`;
+- workflow `896ef424efe07e9662aa017119d8e7e86d74f2c6`;
+- rotation-control repair `f903669dd08c6ae6fa9ac4d140ff85f294dd36c1`.
 
-Chain:
+Repaired authoritative run `35023270636` is terminal `completed/success` and historically reports
 
-- prereg commit `1e3402aa02a2f52eac5d379ba8b0c5ffc5ebc4ef`;
-- implementation commit `55c07deb557cd22460ba1790396e332bfe3bb83c`;
-- workflow head `0dec512b067b3b19205d2015ee62c8ab401b2e31`;
-- authoritative run `34954491166`, terminal completed/success;
-- source-lock job `104333122998`, success;
-- certificate job `104333345136`, success;
-- artifact `10390478550`, digest `sha256:05e6228012436e8ea6548258cb1e333ead9986d834f95b45d5b9cdb77f64bb8b`;
-- exact artifact JSON SHA256 `56b702a0c85945357d9b4d6a7d8fa84baa3e40252bb2d0dd475eb25f8ba0a7b8`;
-- canonical projection commit `aaa720180c062184e3fec76a6b91c4540ae44290`;
-- terminal result commit `a0ba962811b9364bceb03a28f4785aa75e42213a`;
-- durable handoff commit `ffc04d1d6213da6facb1ffa18af323ed4c4bff46`.
+`SOURCE_J1_K5_CHANNEL00000_HIGHEST_CONTACT_SURVIVES_LEADING_SCOPED`.
 
-All controls pass and P1/P2/P3 are all `COMPACT_LOCAL_DIVERGENCE_CERTIFIED` on the frozen `k=5..8` grid. The result certifies locality of the same unrenormalized Gaussian auxiliary divergence, not published Eq. (4) nonexistence or D7 closure.
+Aggregate artifact `10419176929`, digest `sha256:4e199ba756f57e1776454c3a0fe67708e55f6a89acfeedacdedd372b41d1f5bf`.
 
-## Parent Gaussian diagnostic
+Exact lane artifacts:
 
-`SOURCE_J1_K5_ADDITIONAL_JOINT_REGULATOR_GAUSSIAN_DIAGNOSTIC_GATE`
+- `10418704347`, digest `sha256:3ae0be72d4160ac663def736edc485aa6d7c52520e2371f38684071297747ecd`;
+- `10419141859`, digest `sha256:540a1707ec8f94d5543081012b08b0f98a5688ded7e8ed50d1dd74d7cbc0c731`.
 
-- classification `AUX_GAUSSIAN_JOINT_REGULATOR_REJECTED_UNRENORMALIZED_SCOPED`;
-- result commit `8982ea92de08bfb6028df35be16f116e0e58c22f`;
-- run `34954054888`;
-- artifact `10390423124`;
-- digest `sha256:7679e9349798386bc53757207cbb85142420e10ae89745b62e4ab4117cf54009`.
+Exact reported values include angular contraction `11/24` and physical leading coefficient `-216513/[8388608 rho^10 (rho^2+1)^10]`.
 
-## Latest independent Critic
+## Latest independent Critical Review
 
-- audit `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_JOINT_FEYNMAN_REGULATOR_EXTENSION_2026-09-15.md`;
-- commit `3d5900cf44f23e636e3d2c549567d4331410d95c`;
-- verdict `INVALID_PROVENANCE`.
+- audit `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_2026-09-15.md`;
+- Critic commit `c0358e348bbb225719bb1617f905e38d91f33e21`;
+- verdict `INVALID_IMPLEMENTATION`.
 
-This Critic applies to the historical joint-Feynman source-authority blocker, not to the newer Gaussian diagnostics. The invalidated blocker remains historical and is not a validated premise downstream.
+The prior rotation-covariance counterexample is repaired. The remaining invalidity is frozen-control fidelity: `UNIQUE_CUBIC_SOURCE` is encoded through a hard-coded scaling-order table rather than derived by executable bookkeeping, and `REMOVE_HIGHEST_CONTACT_NEGATIVE` never deletes `c3/delta''` or reruns the same transfer classifier. Therefore the historical V4 PASS must not be consumed as validated downstream authority.
 
-## Recent contact-representation V2 state
+This is not a scientific FAIL and does not establish cancellation.
 
-Historical terminal classification `SOURCE_DERIVATION_BLOCKED_SCOPED`:
+## Outcome-independent analytic support
 
-- terminal result commit `db8fbcc72c9b8397b42a96d0cc23cd0fed5c3e83`;
-- run `34952153723`, terminal success;
-- artifact `10389513085`, digest `sha256:ea9d904ebde54aad12dfb5bf1d21775dd2380d8b28fd377116e948dc933a9945`.
+`research/SOURCE_J1_CONTACT_COLLISION_SCALING_LEMMA_2026-09-15.md`, commit `e98cb3cf6f90b7d2f5bacbf5ca75b8c966ab3cd1`, independently supports the frozen one-wedge contact-order hierarchy. It does not replace mandatory frozen executable controls.
 
-## Independent D7-S2 numerical front — Iter504
+## V3 / V3K source dependencies
 
-- prereg commit `1ab46b7add51b36b5499f866eb4579137838bfae`;
-- production head `56362459a826e3e376c529446678f2fbcaa269ae`;
-- run `34907349374`;
-- freshly checked: `queued / conclusion=null`; no partial values consumed.
+V3:
 
-## Independent collision-partition stream — Iter461
+- `SOURCE_J1_COHERENT_MAGNETIC_TOLLER_BRIDGE_CONFIRMED_SCOPED`;
+- run `35017297255`;
+- artifact `10415708250`;
+- digest `sha256:09268182961e09b3413d13684526574c1924d6aa37f17b39a9d65477907cabc1`;
+- result `f98a2d41dc67db42ced6890179b3d09dbda0b885`.
 
-- branch `research/iter461-k5-collision-partitions`;
-- head `05c7f87c8519349057332bf90021f1128e1eefc3`;
-- run `34748503239`;
-- freshly checked: `queued / conclusion=null`; no partial values consumed.
+V3K:
 
-## Next recommended gate
+- `SOURCE_J1_TOLLER_PROJECTOR_KERNEL_EQUIVALENCE_CONFIRMED_SCOPED`;
+- run `35017730315`;
+- artifact `10416047992`;
+- digest `sha256:bfa25bdfe600f090ca5f273c1797e8804b94dc190d5d68130466e692876ec292`;
+- result `8ee4f29d99419182a9506519007563ba452185b2`.
 
-`SOURCE_J1_K5_GAUSSIAN_LOCAL_COUNTERTERM_RENORMALIZATION_GATE`
+## Independent registered workflows
 
-Prospectively freeze a local collision-supported subtraction ansatz and test whether the compact-local Gaussian divergence can be removed while preserving already validated symmetry/source/off-collision constraints. The decision must separately record finite renormalized limits, path/order dependence, residual free counterterm dimension, implementation blocker, and source-authority blocker.
+- Iter504 run `34907349374`, head `56362459a826e3e376c529446678f2fbcaa269ae`: freshly checked `queued / conclusion=null`; do not consume partial values.
+- Iter461 run `34748503239`, branch `research/iter461-k5-collision-partitions`, head `05c7f87c8519349057332bf90021f1128e1eefc3`: freshly checked `queued / conclusion=null`; do not consume partial values.
 
-A successful KMQGB-derived subtraction is mathematical extension data only unless separately source-authorized. The existing Critic-confirmed homogeneous collision ambiguity remains a uniqueness limitation conditional on base-extension existence.
+## Next admissible frontier
+
+A same-contract V4 implementation repair may proceed only if the scientific contract is unchanged. It must derive/check the frozen D1-D4 scaling orders in executable logic and actually run the remove-`c3/delta''` adversarial fixture through the same production transfer classifier. Preserve the repaired rotation controls, then rerun dual exact lanes and aggregate with fresh artifacts/digests.
+
+Changing source authority, the scientific scaling lemma, source split, object, tangent witness, channel, decision semantics, or interpretation ceiling requires a new prospectively frozen gate.
 
 ## Restoration procedure
 
 1. Read fresh `main` first.
-2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, this index, newest terminal Research result, newest Critic, and any newer non-terminal prereg/workflow.
+2. Read `recovery/CURRENT_BENCHMARK_FRONT.md`, this index, the newest Critic, and any newer prereg/workflow/result.
 3. Recheck Iter504 and Iter461 without consuming partial substantive values.
-4. Preserve frozen criteria, historical classifications, Critic qualifications and claim ceilings.
-5. If newer substantive commits supersede this index, reconcile recovery before new science.
+4. Preserve historical Research outputs while applying Critic qualifications downstream.
+5. Keep governance locks and claim ceilings unchanged unless separately frozen authority closes them.
