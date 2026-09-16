@@ -1,0 +1,56 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE",
+  "date": "2026-09-16",
+  "target_triangle": ["12", "23", "13"],
+  "parent_terminal_commit": "115a33f7d131198d600c036d6d0df44079d0c723",
+  "source_records": [
+    {
+      "path": "sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json",
+      "blob_sha": "fdfb13f9974ebc891cb3f490ca553dd0991d9136",
+      "source_id": "arXiv:2601.23162v1",
+      "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+      "authorized_primitives": {
+        "eq4_parent": true,
+        "face_gauge_fixing": true,
+        "one_wedge_contact_argument_B": true,
+        "one_wedge_delta_derivative_contact": true,
+        "common_triangle_local_coordinates": null,
+        "three_contact_maps_on_common_coordinates": null,
+        "triangle_jacobian_normalization_transport": null,
+        "s3_local_coordinate_transport": null
+      }
+    },
+    {
+      "path": "sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json",
+      "blob_sha": "c742e8cab0648b8fbaef88f09876644c6c2c3077",
+      "source_id": "arXiv:2604.24945v1",
+      "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046",
+      "authorized_primitives": {
+        "one_group_cartan_coordinates": true,
+        "one_wedge_toller_reconstruction": true,
+        "representation_and_branch_symmetries": true,
+        "common_triangle_local_coordinates": null,
+        "three_contact_maps_on_common_coordinates": null,
+        "triangle_jacobian_normalization_transport": null,
+        "s3_local_coordinate_transport": null
+      }
+    }
+  ],
+  "required_fields": [
+    "COMMON_LOCAL_COORDINATES",
+    "THREE_CONTACT_MAPS",
+    "RANK_TRANSVERSALITY",
+    "JACOBIAN_NORMALIZATION_TRANSPORT",
+    "S3_COORDINATE_TRANSPORT"
+  ],
+  "bridge_target_only": {
+    "historical_v8_auxiliary_contacts": {
+      "B12": "x",
+      "B23": "y",
+      "B13": "x+y"
+    },
+    "authority": "TARGET_ONLY_NOT_SOURCE_PREMISE"
+  },
+  "decision_rule": "derive only from explicit frozen source primitives; absent joint relation remains missing and gives BLOCKED, never zero",
+  "interpretation_ceiling": "local chart only; no smooth remainder, order-7 jet, physical quotient, model/family/D7/Candidate Gravity conclusion"
+}
