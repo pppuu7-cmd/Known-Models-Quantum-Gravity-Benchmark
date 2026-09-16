@@ -1,0 +1,74 @@
+name: KMQGB Iter504P aggregate-only Windows fallback
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504p-aggregate-only-windows-fallback.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  aggregate-fallback:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN: '35151656186'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen fallback ancestry and completed lane artifact metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 77bac4728401200b226dda16447befce85df0c66 HEAD
+          git merge-base --is-ancestor e18ed81f33271e3cab66ac8b67119587702eb7d2 HEAD
+          git merge-base --is-ancestor f8f983ee98b4d01101ef6d5ca72e7ba6053e1855 HEAD
+          git merge-base --is-ancestor b7f4f1f94d7668eba22c8bad25050ef632648ec9 HEAD
+          git merge-base --is-ancestor 31d1ce9fbd33a4742247274deaafdbdaee72d888 HEAD
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN}/artifacts?per_page=100" > lane-artifacts.json
+          python - <<'PY'
+          import json
+          rows=json.load(open('lane-artifacts.json'))['artifacts']
+          by={x['name']:x for x in rows}
+          exp={
+            'iter504p-point-drift-decimal':(10468939725,'sha256:aeeac0ba27efa51bf05b7da1761b799c257d4c94b0c9c7db20bd3e935217fb06'),
+            'iter504p-point-drift-float':(10469641510,'sha256:4034866a04e7221c576ec58da3d6c2ac1429b26081e4814a958f240e7b25d621'),
+          }
+          for name,(aid,dig) in exp.items():
+              x=by.get(name)
+              assert x is not None, name
+              assert x['id']==aid, (name,x['id'],aid)
+              assert x['digest']==dig, (name,x['digest'],dig)
+              assert x['expired'] is False, name
+              assert x['workflow_run']['id']==35151656186, name
+              assert x['workflow_run']['head_sha']=='b7f4f1f94d7668eba22c8bad25050ef632648ec9', name
+          print('immutable_lane_artifacts_verified=2')
+          PY
+      - name: Download exactly the completed frozen arithmetic lanes
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh run download "${SOURCE_RUN}" --name iter504p-point-drift-decimal --dir artifacts/decimal
+          gh run download "${SOURCE_RUN}" --name iter504p-point-drift-float --dir artifacts/float
+      - name: Execute unchanged frozen aggregate classifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object code/iter504p_point_drift_localization_aggregate.py)" = "$(git rev-parse e18ed81f33271e3cab66ac8b67119587702eb7d2:code/iter504p_point_drift_localization_aggregate.py)"
+          mkdir -p out
+          python code/iter504p_point_drift_localization_aggregate.py \
+            --decimal artifacts/decimal \
+            --float artifacts/float \
+            --out out/aggregate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504p-point-drift-aggregate-windows-fallback
+          path: out/aggregate.json
