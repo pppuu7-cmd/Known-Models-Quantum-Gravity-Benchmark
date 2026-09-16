@@ -5,95 +5,88 @@ Fresh repository `main` and fresh Actions state always outrank this navigation d
 
 ## Latest terminal Research execution reviewed
 
-`SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4` — fresh same-contract repaired execution.
+`SOURCE_J1_K5_CHANNEL_COVERAGE_V5`
 
 Prospective/frozen chain:
 
-- scientific prereg `01ccbad09d4a413066b1bcfbf77861d386926e73`;
-- frozen input `8b933f94b8eea1c6990b33f9f2f563f7fabae461`;
-- historical Critic `c0358e348bbb225719bb1617f905e38d91f33e21`, verdict `INVALID_IMPLEMENTATION` for old run `35023270636`;
-- accepted rotation-control repair `f903669dd08c6ae6fa9ac4d140ff85f294dd36c1`;
-- same-contract repair protocol `91bcaadc83be2934e09ec3e32b17709b3306d059`, frozen before repair implementation;
-- repair implementation `bbb39f58bbda2a24977d2ab1438a7f78c80bdb91`;
-- repair workflow head `0b13ccac5eaf4cbb4d463411d0048c483af93af1`;
-- terminal repaired result `8f1e3fe98dc34f1bef671b3dbbe6b303a404fefc`.
+- parent Critic-confirmed V4 front `fd7905526514fbf5768041bd1aedc305b638f773`;
+- V5 preregistration `d30274a74e206287b5dc3cf9cba02fa66e13c74b`;
+- V5 implementation `abff2fceb51519ef47461f0060454f89ca798353`;
+- workflow head `22fb468b79218176fe628266d311909cf87ddca5`;
+- authoritative run `35041893961`, terminal `completed/success`.
 
-Authoritative fresh run `35033194283` is `completed/success`:
+Jobs:
 
-- source-lock job `104596220542`;
-- exact Python 3.11 lane `104596257007`;
-- exact Python 3.13 lane `104596256994`;
-- aggregate job `104596351274`;
-- aggregate artifact `10421794928`, digest `sha256:8f969582092101fb270afd0251f9f603b3695ff913332098fd75511b7fb0976b`;
-- Python 3.11 artifact `10422336163`, digest `sha256:08808cef77802a9c19ac2ddf8c075baa311a3bed1adbd3d3786d366aaf1823e8`;
-- Python 3.13 artifact `10421889454`, digest `sha256:6d8d8f94825f4cb1f0faf180242c3e6d23383ef0fe83f88f65bb63bbfdfec889`.
+- Python 3.11 exact lane `104623351833`, success;
+- Python 3.13 exact lane `104623351638`, success;
+- aggregate `104624134356`, success.
+
+Artifacts:
+
+- Python 3.11 `10424574808`, digest `sha256:847ce7d9f818069861adb98e8b05c62ca4a9f5ceefb3a3437ec5b8ce0b5c238f`;
+- Python 3.13 `10425721638`, digest `sha256:c4cd1f7c94254344347d55cff51eac7f5d0464a7780ec5485c01fc5a00122b29`;
+- aggregate `10425727109`, digest `sha256:a8775abfca4f5059eb55a72d1ed58a1ee4464fecc211e122ca15a51850666e7d`.
 
 Research classification:
 
-`SOURCE_J1_K5_CHANNEL00000_HIGHEST_CONTACT_SURVIVES_LEADING_SCOPED`.
+`CHANNEL_COVERAGE_NONZERO_SCOPED`.
 
-Exact values:
+Exact finite result on the frozen `j=1` fixed-tangent intertwiner basis:
 
-- channel-`00000` angular contraction `11/24`;
-- magnetic/contact scalar ratio `3/4` in both branches;
-- physical highest-contact leading coefficient `-216513/[8388608 rho^10 (rho^2+1)^10]`, nonzero for real `rho != 0`.
+- complete channel cube = `243 = 3^5` channels;
+- nonzero channels = `224`;
+- zero channels = `19`;
+- channel `00000 = 11/24`;
+- complete map SHA256 `2bceeb84db17ef0f01df4aa3350f8800d9e8e531ed68ed9ef10ca10cecfc9d0d`;
+- both exact Python lanes agree on the complete map and all decision-critical fields.
 
 ## Latest independent Critical Review
 
-`recovery/CRITICAL_REVIEW_SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_REPAIR_2026-09-16.md`
+Audit:
 
-Critic commit `1f61dafb51726e36cdc11e903621be8809d6dfa0`.
+`recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL_COVERAGE_V5_2026-09-16.md`
+
+Critic commit:
+
+`d7c51b25c88c2f0600e5d7db13f25938822dd7ea`
 
 Verdict:
 
-`CONFIRMED_SCOPED`.
+`QUALIFIED`
 
-The fresh repair removes both frozen-control defects that invalidated historical run `35023270636`:
+The exact finite channel map and the `224/243` support census are independently confirmed. The qualification is contract-level rather than an implementation mismatch: V5 requires the positive control `channel 00000 = 11/24`, which already guarantees at least one nonzero channel. Therefore the frozen classification `CHANNEL_COVERAGE_NONZERO_SCOPED` is logically implied by that mandatory control once the other controls pass and does not prospectively discriminate a one-channel-support cube from a broadly supported cube.
 
-1. `UNIQUE_CUBIC_SOURCE` is now derived executably from the positive-scale distribution action, yielding `step=0`, `delta=-1`, `delta_prime=-2`, `delta_double_prime=-3` rather than loading a conclusion-bearing table.
-2. `REMOVE_HIGHEST_CONTACT_NEGATIVE` now physically omits `c3/delta''`, preserves `theta`, `delta`, and `delta'`, and passes the mutated source split through the same production classifier, which rejects it with `NO_UNIQUE_CUBIC_SOURCE_COMPONENT`.
+The observed exact count `224/243` is valid scoped data. There is no prospectively frozen metric or threshold defining `broad nonzero support`, so no downstream thresholded breadth claim may be retrofitted to this result.
 
-Production, remove-highest, wrong-ratio, and synthetic-cancellation fixtures use one common transfer classifier. The accepted exact SO(3)/non-orthogonal rotation controls remain active. Two pinned Python lanes agree exactly on all decision-critical fields.
+The zero-edge negative control is valid but weak: multilinearity makes the whole network vanish when an edge tensor is replaced by exact zero. It confirms that the edge participates but does not independently validate the `224/19` support structure. The full exact replay does validate that structure.
 
-Historical run `35023270636` remains immutable history with Critic verdict `INVALID_IMPLEMENTATION`; the fresh repair does not rewrite it.
+## Parent V4 authority
+
+Fresh same-contract repaired V4 run `35033194283` remains independently `CONFIRMED_SCOPED` by Critic commit `1f61dafb51726e36cdc11e903621be8809d6dfa0`.
+
+V4 established only survival of the highest `delta''` contact leading homogeneous tensor for frozen `j=1`, real nonzero `rho`, fixed full-K5 tangent witness, and channel `00000`. Historical run `35023270636` remains immutable `INVALID_IMPLEMENTATION` history.
+
+V5 broadens only the finite channel basis at the same tangent realization; it does not broaden tangent, spin, collision-stratum, or distribution-product scope.
 
 ## Scope / interpretation ceiling
 
-The independently validated fresh result establishes only survival of the highest `delta''` contact leading homogeneous tensor for frozen `j=1`, real nonzero `rho`, fixed full-K5 tangent witness, and channel `00000`.
+V5 does **not** establish:
 
-It does **not** establish:
-
+- all tangents or all spins;
+- a basis-independent support-density theorem;
 - existence/nonexistence of the joint product of the ten contact distributions;
 - complete K5 vertex convergence/divergence;
 - joint source Feynman-regulator success/failure;
-- survival of every lower contact/Laurent order;
-- all channels, spins, or collision strata;
 - model/family failure;
 - D7 closure;
 - any terminal selector;
 - Candidate Gravity activation.
 
-## Outcome-independent analytic support
+Finite channel census != universal theorem and scoped child result != family closure.
 
-`research/SOURCE_J1_CONTACT_COLLISION_SCALING_LEMMA_2026-09-15.md`, commit `e98cb3cf6f90b7d2f5bacbf5ca75b8c966ab3cd1`, independently derives the one-wedge positive pure-boost contact hierarchy and supports the unique cubic source attribution. It does not replace the executable controls and is not a joint-product theorem.
+## Provenance hardening note
 
-## Parent source authorities
-
-V3:
-
-- classification `SOURCE_J1_COHERENT_MAGNETIC_TOLLER_BRIDGE_CONFIRMED_SCOPED`;
-- run `35017297255`;
-- artifact `10415708250`;
-- digest `sha256:09268182961e09b3413d13684526574c1924d6aa37f17b39a9d65477907cabc1`;
-- result `f98a2d41dc67db42ced6890179b3d09dbda0b885`.
-
-V3K:
-
-- classification `SOURCE_J1_TOLLER_PROJECTOR_KERNEL_EQUIVALENCE_CONFIRMED_SCOPED`;
-- run `35017730315`;
-- artifact `10416047992`;
-- digest `sha256:bfa25bdfe600f090ca5f273c1797e8804b94dc190d5d68130466e692876ec292`;
-- result `8ee4f29d99419182a9506519007563ba452185b2`.
+The run is reproducible at workflow head `22fb468...`, and parent-to-head comparison changed only the V5 preregistration, V5 implementation, and V5 workflow. V5 imports the exact V4 angular kernel and tangent/input realization without modifying them. Future descendants should additionally emit exact blob SHAs for the imported contraction-kernel file and tangent/input file in their artifacts rather than relying only on ancestry.
 
 ## Independent registered workflows
 
@@ -104,14 +97,12 @@ Do not consume partial substantive values:
 
 ## Next admissible work
 
-Do not rerun V4 merely to repeat the same certificate. Prospectively freeze a higher-information same-realization gate beyond the fixed highest-contact tangent/channel witness.
+Keep two questions separate.
 
-Preferred frontiers:
+1. For **channel-support breadth**, prospectively freeze a new gate with the support statistic, basis dependence, any symmetry/orbit quotient, and exact PASS/FAIL threshold before using `224/243` as a deciding criterion. Do not retrofit a threshold after seeing the census.
+2. For **joint contact-distribution transversality / wavefront admissibility**, prospectively freeze the actual joint distribution-product object, covectors/wavefront criterion, same-realization dependencies, positive/negative controls, and distinct PASS/FAIL/BLOCKED semantics. The V5 channel map may be an input, but `224/243` alone is not a product-existence or failure theorem.
 
-1. an exact joint contact-distribution transversality / wavefront gate in the same source realization, with `BLOCKED` distinct from `FAIL`; or
-2. a stronger K5 contact-neighborhood/channel-coverage gate that broadens beyond one tangent/channel without promoting a finite certificate to family closure.
-
-Any distribution-product object must be prospectively frozen before use. Preserve V3/V3K/source-version provenance and current interpretation ceilings.
+Any change of tangent realization, intertwiner basis, source authority, channel definition, or decision threshold requires a new prospectively frozen gate.
 
 ## Governance lock
 
