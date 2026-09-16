@@ -1,0 +1,29 @@
+{
+  "gate": "D7_S2_EQ4_FULL_K5_GROUP_TANGENT_PUSHFORWARD_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "32a2575ded77a938ed742526a9d62fe1e4756d41",
+  "source_identity_record": {
+    "path": "sources/arxiv_2601_23162v1_eq4_triangle_wedge_group_argument_identity_v15.json",
+    "blob_sha": "92a43e79a0f0934db78933c453fd45fcad6daab9",
+    "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+    "general_identity": "g_ab = g_b^{-1} g_a",
+    "ordered_wedges": "1 <= a < b <= 5",
+    "gauge_fact": "one global vertex group variable may be fixed to identity"
+  },
+  "terminal_triangle_identity_commit": "6df9d695afb4aa406af8aae7fdfe17a9f5ac0f71",
+  "terminal_triangle_rank_commit": "bfb0cf44c3a95e667941d34ae9961234c8923bf2",
+  "terminal_physical_quotient_authority_commit": "b2d94b6bd0ca47b80b3eeaf0092c47e8426e4604",
+  "terminal_iter466_carrier_commit": "67c66a2edc3425f06aaadb369d2f3606184d3733",
+  "iter466_expected_topology_invariant": {
+    "per_generator_rank": 4,
+    "cycle_dimension": 6,
+    "gauge_roots": [1,2,3,4,5]
+  },
+  "forbidden_inputs": [
+    "nonterminal Iter461 substantive values",
+    "physical quotient or projection",
+    "V8 auxiliary relation",
+    "guessed contact projection",
+    "numerical tolerance"
+  ]
+}
