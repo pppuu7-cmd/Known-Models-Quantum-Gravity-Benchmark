@@ -1,0 +1,59 @@
+{
+  "gate": "ITER504R_ROOT_AFFINE_REUSE_CONTINUOUS_DRIFT_DIAGNOSTIC_GATE",
+  "date": "2026-09-17",
+  "source": {
+    "parent_iteration": "Iter504",
+    "parent_terminal_commit": "e3816c0437a1f895196d2bbccacfb05e8dd38e74",
+    "parent_run_id": 34907349374,
+    "parent_workflow_head": "56362459a826e3e376c529446678f2fbcaa269ae",
+    "artifact_name": "iter504-box-0to5-b0-p2-h1",
+    "artifact_id": 10378191574,
+    "artifact_digest": "sha256:416e374269786a5fae6ec319c45929a2e759ff02b40b06ad038374af1deca653"
+  },
+  "frozen_lane": {
+    "causal": "0to5",
+    "block": 0,
+    "path": 2,
+    "direction": [1, 1, 1, -1, -1, -1],
+    "sign": 1
+  },
+  "boxes": {
+    "13": {
+      "amp_lower": 0.002265625,
+      "amp_upper": 0.00234375,
+      "min_beta_lower": 0.501460402736484,
+      "max_possible_count": 46,
+      "per_rho": {
+        "0.35": {"S_lower": 3.9618800194318737, "S_upper": 4.042734778245794, "E_lower": 3.9547732253271026, "E_upper": 4.06557418164959, "drift_upper": 0.10369416221771677},
+        "0.9": {"S_lower": 3.9292772710444623, "S_upper": 4.073866716764571, "E_lower": 3.924117437178598, "E_upper": 4.079202301058003, "drift_upper": 0.14992503001354035},
+        "1.6": {"S_lower": 3.70456881933792, "S_upper": 4.314707604220987, "E_lower": 3.7088441977496096, "E_upper": 4.318012971609031, "drift_upper": 0.6134441522711114},
+        "2.7": {"S_lower": 3.742920831346586, "S_upper": 4.2394355455577015, "E_lower": 3.7802615705484843, "E_upper": 4.2181233422351045, "drift_upper": 0.4752025108885187}
+      }
+    },
+    "14": {
+      "amp_lower": 0.00234375,
+      "amp_upper": 0.002421875,
+      "min_beta_lower": 0.5013024304043938,
+      "max_possible_count": 46,
+      "per_rho": {
+        "0.35": {"S_lower": 3.9618663281560296, "S_upper": 4.042746310736709, "E_lower": 3.9547691045691566, "E_upper": 4.065574977475017, "drift_upper": 0.10370864931898785},
+        "0.9": {"S_lower": 3.929317347942106, "S_upper": 4.073832255469324, "E_lower": 3.9241428407715486, "E_upper": 4.079223023328466, "drift_upper": 0.14990567538636043},
+        "1.6": {"S_lower": 3.7043204775862724, "S_upper": 4.315008165844857, "E_lower": 3.7085707882042764, "E_upper": 4.318150029610175, "drift_upper": 0.6138295520239021},
+        "2.7": {"S_lower": 3.742764353631425, "S_upper": 4.239607780567602, "E_lower": 3.78008566845729, "E_upper": 4.218226172199613, "drift_upper": 0.475461818568189}
+      }
+    },
+    "15": {
+      "amp_lower": 0.002421875,
+      "amp_upper": 0.0025,
+      "min_beta_lower": 0.5011445004474808,
+      "max_possible_count": 46,
+      "per_rho": {
+        "0.35": {"S_lower": 3.961852692769403, "S_upper": 4.042757773447393, "E_lower": 3.954765039246048, "E_upper": 4.065575715989749, "drift_upper": 0.10372302322034627},
+        "0.9": {"S_lower": 3.9293574926285313, "S_upper": 4.073797704900481, "E_lower": 3.9241682790132626, "E_upper": 4.079243703068497, "drift_upper": 0.14988621043996497},
+        "1.6": {"S_lower": 3.704072282326188, "S_upper": 4.315308586737589, "E_lower": 3.708297378329622, "E_upper": 4.318287176417122, "drift_upper": 0.6142148940909335},
+        "2.7": {"S_lower": 3.7426084285296097, "S_upper": 4.239780096489656, "E_lower": 3.7799099073022924, "E_upper": 4.218328811956991, "drift_upper": 0.47572038342738093}
+      }
+    }
+  },
+  "acceptance": "Iter504R depth-zero/root diagnostics must reproduce the frozen parent Iter504 root-box values at display precision before any narrowing claim is accepted. Child narrowing may only arise from the separately preregistered exact delta subdivision."
+}
