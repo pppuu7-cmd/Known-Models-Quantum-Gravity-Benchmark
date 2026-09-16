@@ -1,0 +1,66 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_COMMON_LOCAL_LIE_PULLBACK_TRANSVERSE_RANK_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "2d6b2b8565a825e9864fbbd779c842cdedc60299",
+  "primary_source": {
+    "source_id": "arXiv:2601.23162v1",
+    "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713"
+  },
+  "frozen_parent_records": {
+    "wedge_identity": "sources/arxiv_2601_23162v1_eq4_triangle_wedge_group_argument_identity_v15.json",
+    "wedge_identity_blob": "92a43e79a0f0934db78933c453fd45fcad6daab9",
+    "primary_map_audit": "sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json",
+    "primary_map_audit_blob": "fdfb13f9974ebc891cb3f490ca553dd0991d9136",
+    "toller_cartan_audit": "sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json",
+    "toller_cartan_audit_blob": "c742e8cab0648b8fbaef88f09876644c6c2c3077"
+  },
+  "source_authorized_raw_object": {
+    "group": "SL(2,C)",
+    "gauge": "g1=1",
+    "integration_variables": ["g2", "g3", "g4", "g5"],
+    "target_triangle": ["12", "23", "13"],
+    "maps": {
+      "G12": "g_2^{-1}",
+      "G23": "g_3^{-1} g_2",
+      "G13": "g_3^{-1}"
+    },
+    "orientation": "ordered wedges a<b; kappa_ab=sigma_a sigma_b",
+    "contact_inputs": {
+      "12": "B(z_12,g_2^{-1})",
+      "23": "B(z_23,g_3^{-1}g_2)",
+      "13": "B(z_13,g_3^{-1})"
+    }
+  },
+  "authority_assessment": {
+    "raw_common_local_group_map_defined": true,
+    "raw_local_lie_differential_mathematically_defined": true,
+    "physical_transverse_quotient_defined": false,
+    "physical_quotient_projection_defined": false,
+    "simultaneous_contact_scalar_pullback_to_physical_quotient_defined": false,
+    "jacobian_haar_contact_normalization_transport_defined": false,
+    "s3_orientation_coordinate_transport_on_physical_quotient_defined": false
+  },
+  "evidence": [
+    {
+      "record": "arxiv_2601_23162v1_eq4_triangle_wedge_group_argument_identity_v15.json",
+      "supports": "literal same-realization group maps, gauge, orientation and one-wedge contact group arguments"
+    },
+    {
+      "record": "arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json",
+      "supports": "Eq.(4) four-SL(2,C) integration domain and one-wedge B(z,g)",
+      "explicit_limit": "does not specify a local simultaneous three-contact coordinate chart, its Jacobian, or isolated physical quotient"
+    },
+    {
+      "record": "arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json",
+      "supports": "one-group Cartan/Toller representation",
+      "explicit_limit": "does not define simultaneous three-wedge collision coordinate transport or physical permutation action"
+    }
+  ],
+  "forbidden_substitutions": [
+    "historical V8 additive relation",
+    "Toller matrix composition as group composition",
+    "textbook physical quotient not present in frozen source",
+    "raw Jacobian rank relabeled as physical transverse rank"
+  ],
+  "assessment": "RAW_LIE_PULLBACK_DEFINED__PHYSICAL_TRANSVERSE_QUOTIENT_AND_NORMALIZATION_TRANSPORT_NOT_SOURCE_DEFINED"
+}
