@@ -1,0 +1,90 @@
+name: KMQGB D7-S2 Eq4 K5 group-variable tangent pushforward
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/d7-s2-eq4-k5-group-variable-tangent-pushforward.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify preregistration, source blobs and parent terminal ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor bc9aa01263df1172206eb211b456bf5d78fe1b1b HEAD
+          git merge-base --is-ancestor bfb0cf44c3a95e667941d34ae9961234c8923bf2 HEAD
+          git merge-base --is-ancestor 67c66a2edc3425f06aaadb369d2f3606184d3733 HEAD
+          git merge-base --is-ancestor c0d3f97d45fe0a248a4d94e73352043a47dc0ded HEAD
+          test "$(git hash-object sources/arxiv_2601_23162v1_causal_vertex.json)" = "f0b520fc04904e038f252dc5b45d23893cb020ed"
+          test "$(git hash-object sources/arxiv_2601_23162v1_eq4_triangle_wedge_group_argument_identity_v15.json)" = "92a43e79a0f0934db78933c453fd45fcad6daab9"
+
+  exact-lanes:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - method: rref
+            python: '3.11'
+            artifact: d7-s2-k5-tangent-rref
+          - method: trees
+            python: '3.13'
+            artifact: d7-s2-k5-tangent-trees
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Execute exact K5 tangent pushforward
+        run: |
+          python code/d7_s2_eq4_k5_group_variable_tangent_pushforward.py \
+            --source sources/arxiv_2601_23162v1_causal_vertex.json \
+            --identity sources/arxiv_2601_23162v1_eq4_triangle_wedge_group_argument_identity_v15.json \
+            --method "${{ matrix.method }}" \
+            --out "out/${{ matrix.method }}.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: out/${{ matrix.method }}.json
+
+  aggregate:
+    needs: exact-lanes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: d7-s2-k5-tangent-rref
+          path: artifacts/rref
+      - uses: actions/download-artifact@v4
+        with:
+          name: d7-s2-k5-tangent-trees
+          path: artifacts/trees
+      - name: Aggregate independent exact methods
+        run: |
+          python code/d7_s2_eq4_k5_group_variable_tangent_pushforward_aggregate.py \
+            --rref artifacts/rref \
+            --trees artifacts/trees \
+            --out out/aggregate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: d7-s2-k5-tangent-aggregate
+          path: out/aggregate.json
