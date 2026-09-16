@@ -1,0 +1,84 @@
+name: KMQGB D7-S2 full K5 group tangent pushforward
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/d7-s2-eq4-full-k5-group-tangent-pushforward.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen provenance and ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          for c in \
+            32a2575ded77a938ed742526a9d62fe1e4756d41 \
+            716bf34bec114e160c88ff5a84bcd3d697f62fdd \
+            4a2c69213d726cdd98501e0e9316688515868077 \
+            453387a0d50d8426af52bee22dc8b1ddba7d9335 \
+            f0d09e2eedb5a132247559028bee5da4b0f29f63 \
+            67c66a2edc3425f06aaadb369d2f3606184d3733 \
+            b2d94b6bd0ca47b80b3eeaf0092c47e8426e4604; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+          test "$(git hash-object sources/arxiv_2601_23162v1_eq4_triangle_wedge_group_argument_identity_v15.json)" = "92a43e79a0f0934db78933c453fd45fcad6daab9"
+
+  rref-s5:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Exact RREF and S5 lane
+        run: python scripts/d7_s2_k5_tangent_rref.py > d7_s2_k5_rref.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: d7-s2-k5-rref-s5
+          path: d7_s2_k5_rref.json
+
+  tree-minors:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Independent spanning-tree minor lane
+        run: python scripts/d7_s2_k5_tangent_tree.py > d7_s2_k5_tree.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: d7-s2-k5-tree-minors
+          path: d7_s2_k5_tree.json
+
+  aggregate:
+    needs: [rref-s5, tree-minors]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: d7-s2-k5-rref-s5
+          path: rref
+      - uses: actions/download-artifact@v4
+        with:
+          name: d7-s2-k5-tree-minors
+          path: tree
+      - name: Aggregate independent exact lanes
+        run: python scripts/d7_s2_k5_tangent_aggregate.py rref/d7_s2_k5_rref.json tree/d7_s2_k5_tree.json > d7_s2_k5_aggregate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: d7-s2-k5-tangent-aggregate
+          path: d7_s2_k5_aggregate.json
