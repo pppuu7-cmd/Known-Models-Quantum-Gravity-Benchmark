@@ -1,0 +1,39 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE",
+  "status": "FROZEN_BEFORE_PRIMARY_SOURCE_EXTRACTION_OR_RESULT",
+  "parent_result_commit": "d9b050b638153b7042b8e1ace55952231d936854",
+  "required_fields": [
+    "LOCAL_COLLISION_CHART",
+    "SMOOTH_REMAINDER_OBJECT",
+    "JET_ORDER_7_COMPLETENESS",
+    "PERMUTATION_COORDINATE_CONSISTENCY"
+  ],
+  "primary_sources": [
+    {
+      "source_id": "arXiv:2601.23162v1",
+      "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+      "snapshot_path": "sources/arxiv_2601_23162v1_causal_vertex.json",
+      "snapshot_blob_sha": "f0b520fc04904e038f252dc5b45d23893cb020ed",
+      "full_primary_audit_path": "sources/arxiv_2601_23162v1_finite_renormalization_full_primary_audit_v10.json",
+      "full_primary_audit_blob_sha": "9002dca7da1a72b8768c7db7ed72104d44fd25c3"
+    },
+    {
+      "source_id": "arXiv:2604.24945v1",
+      "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046",
+      "snapshot_path": "sources/arxiv_2604_24945v1_toller_cartan.json",
+      "snapshot_blob_sha": "8dc58f3c9c191289f2f148469f8df3ea95f77ad5",
+      "full_primary_audit_path": "sources/arxiv_2604_24945v1_finite_renormalization_full_primary_audit_v10.json",
+      "full_primary_audit_blob_sha": "4a29e7ce1379ca3b2aeb8b5910a3e4b959d7a088"
+    }
+  ],
+  "parent_authority_path": "inputs/source_j1_k5_eq4_local_collision_test_jet_map_authority.json",
+  "parent_authority_blob_sha": "a9b4fdd1da929de9b2e366cc082b9d21511598ca",
+  "pass_label": "EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANDED_SCOPED",
+  "partial_blocked_label": "EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_PARTIAL_BLOCKED_SCOPED",
+  "blocked_label": "EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_AUTHORITY_BLOCKED_SCOPED",
+  "inconsistent_label": "EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_INCONSISTENT_SCOPED",
+  "invalid_label": "INVALID_IMPLEMENTATION",
+  "missing_is_not_zero": true,
+  "synthetic_substitution_forbidden": true,
+  "external_source_decision_forbidden": true
+}
