@@ -1,0 +1,93 @@
+name: source-j1-k5-triangle-derivative-contact-primary-source-expansion-v10
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-triangle-derivative-contact-primary-source-expansion-v10.yml'
+      - 'code/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10.py'
+      - 'code/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10_aggregate.py'
+      - 'inputs/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10_candidates.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective chronology and frozen corpus
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 6188178d92b8a4c2885e14eb90923168224d83ee HEAD
+          git merge-base --is-ancestor 7d3d4de295f3d5b3b5968621ffcb8fd35bfd2bd6 HEAD
+          grep -F 'SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED' research/prereg/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE_2026-09-16.md
+          grep -F 'arXiv:2601.23162v1' inputs/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10.json
+          grep -F 'arXiv:2604.24945v1' inputs/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10.json
+          test "$(find sources -maxdepth 1 -type f -name '*.json' | wc -l)" -ge 3
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install deterministic PDF text utility
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
+      - name: Run exact frozen source audit
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10.py \
+            --candidates inputs/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10_candidates.json \
+            --v8 results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_CANONICAL_2026-09-16.json \
+            --v9 results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_FINITE_RENORMALIZATION_AUTHORITY_V9_CANONICAL_2026-09-16.json \
+            --out artifacts/v10_${{ matrix.python }}.json | tee artifacts/v10_${{ matrix.python }}.log
+          sha256sum artifacts/v10_${{ matrix.python }}.json artifacts/v10_${{ matrix.python }}.log > artifacts/v10_${{ matrix.python }}.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v10-${{ matrix.python }}
+          path: artifacts/v10_${{ matrix.python }}.*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v10-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate independent lanes
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10_aggregate.py \
+            --a downloaded/v10_3.11.json \
+            --b downloaded/v10_3.13.json \
+            --out artifacts/v10_aggregate.json | tee artifacts/v10_aggregate.log
+          sha256sum artifacts/v10_aggregate.json artifacts/v10_aggregate.log > artifacts/v10_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v10-aggregate
+          path: artifacts/v10_aggregate.*
+          if-no-files-found: error
