@@ -3,53 +3,48 @@ Updated: 2026-09-16
 
 Fresh repository `main` and fresh Actions state always outrank this navigation document if they diverge.
 
-## Active nonterminal Research gate
+## Latest terminal Research execution
 
 `SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE`
 
-Status: `IN_PROGRESS_NOT_CLASSIFIED` — not PASS, FAIL, BLOCKED, or INVALID.
-
-- prospective freeze + immutable authority commit: `60d9c7afa4eeb81a41c3334ac4bac71c1d1a8869`;
-- implementation/workflow head: `5c524b2d00ae2b1278960c275b21824c3065f11e`;
-- authoritative Actions run: `35120674022`;
-- last observed source-lock job: `104877355301`, queued;
-- partial substantive values are forbidden and have not been consumed;
-- durable launch handoff: `recovery/SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE_LAUNCH_HANDOFF_2026-09-16.md`.
-
-The active gate asks only whether the source-authorized Eq. (4) parent/gauge-fixed variables plus one-wedge contact/Toller primitives derive a common same-realization chart for the fixed triangle `(12,23,13)`, including three contact maps, rank/transversality, Jacobian/normalization transport and S3 coordinate transport. Historical V8 `B12=x, B23=y, B13=x+y` is frozen as bridge target only, never as source authority.
-
-## Latest terminal Research execution
-
-`SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE`
-
 Terminal Research classification:
 
-`EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_AUTHORITY_BLOCKED_SCOPED`
+`EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_BLOCKED_SCOPED`
 
 This is **BLOCKED, not FAIL**.
 
 Authority / execution chain:
 
-- prospective preregistration + frozen authority `978fb67fa03fa8c1d86c7cd5f14af5cebc527cb4`;
-- durable two-source primary audit `fba120918e0895f2c18fb4493583ee1d971559eb`;
-- implementation/workflow head `a78166beb5ba2f054ea2d6dda395a32cf9a50ad9`;
-- authoritative Actions run `35113734916`, terminal success;
-- jobs: source lock `104853754193`, Python 3.11 `104853792174`, Python 3.13 `104853792393`, aggregate `104853877471`;
-- artifacts: Python 3.11 `10453900357` / `sha256:8416decf64cfe3c8ef5b20c80d8f85f4aa89b4c73299ae746b74b0d090f94f8c`; Python 3.13 `10453626587` / `sha256:79dae358175eac6a364f3ff87e1c290bce47097320dcf0b62a2226dd0f7985e9`; aggregate `10453352669` / `sha256:55b97bd30631b893c003c59f7fbee3ad952d0449de595176f74d092e99552685`;
-- lane decision SHA256 `a905b5cf58e121c1b632f414a9beb43a649e168da15dce5993eeba0bf7e6a6bf`;
-- aggregate decision SHA256 `341afd392215f155a0bc38ca11678a4ae1902fc3977aab399c91dbf6b2c64239`;
-- durable raw terminal-projection SHA256 `6b65133d393fe57445a7aa7fe8cab5241346fa8fa62262ac5e76013bc36332bd`;
-- durable canonical SHA256 `2b2b16be46682aa1f4d4d5ea7b72fe13f78d00c856d6d30702d175e9dc3f5716`.
+- prospective preregistration + authority freeze `60d9c7afa4eeb81a41c3334ac4bac71c1d1a8869`;
+- implementation/workflow head `5c524b2d00ae2b1278960c275b21824c3065f11e`;
+- authoritative Actions run `35120674022`, terminal `completed/success`;
+- jobs: source-lock `104877355301`, Python 3.11 `104877640199`, Python 3.13 `104877640217`, aggregate `104877703389`;
+- artifacts: Python 3.11 `10456944863` / `sha256:e8e843510b9e07ac6a6be5abbc3ff19a7b3fe3b25c0b0cfd6c70b2be2cad8e2f`; Python 3.13 `10456624902` / `sha256:1a3357a10080ba1d31f555a85aff783ddccb95fa1726243ddcc023f5f10dd0da`; aggregate `10456999865` / `sha256:25cd559c0666006d76efa48c02964bc59c7587757c658e68acf4f8d6e9b62c24`;
+- lane decision SHA256 `cd3a6f0c2a51ab286e866aba9f330a61a3774c8756378bfb4b06594e603f1fbf`;
+- aggregate decision SHA256 `c6e0355df985c9b7a0f71966a9e3354d42da8caa4a312f01b6f58081235e4ea7`;
+- durable terminal-projection SHA256 `93a2626396168f5f9e9fc933a371fbdf656ba27dfc1db9bfba2f516e66a271b8`;
+- durable canonical SHA256 `86f1a196a65fbbd54628fd7eaacad97c1df93b8abb12b7e505e66bc8853fe86a`.
 
 Green CI is provenance only.
 
-## Exact terminal result retained
+## Exact result
 
-The frozen full-primary corpus was exactly `arXiv:2601.23162v1` plus `arXiv:2604.24945v1`. The map-targeted full-primary audits found no actionable same-realization passage for `LOCAL_COLLISION_CHART`, `SMOOTH_REMAINDER_OBJECT`, `JET_ORDER_7_COMPLETENESS`, or `PERMUTATION_COORDINATE_CONSISTENCY`. Therefore `new_actionable_fields=[]`, `map_complete=false`, and `nullspace_action_rank=null`, not zero.
+The fixed Eq. (4) triangle was `(12,23,13)`. The gate required one common local coordinate tuple, three explicit contact maps, exact rank/transversality, Jacobian/contact-normalization transport and S3 coordinate transport. Historical V8 `B12=x, B23=y, B13=x+y` was frozen as bridge target only and never used as source authority.
+
+All frozen controls passed in both independent lanes, but the production authority yielded:
+
+- `common_coordinates_present=false`;
+- `three_contact_maps_present=false`;
+- `contact_differential_rank=null`, not zero;
+- `jacobian_normalization_transport_present=false`;
+- `s3_coordinate_transport_present=false`.
+
+Thus all five conjunctive chart requirements remain missing. The durable Eq. (4) parent/gauge fixing, one-wedge contact data and one-group Toller/Cartan reconstruction do not themselves authorize the common simultaneous-contact coordinate relation needed to define the three-contact differential. This is a source/object derivation blocker, not a transversality failure.
 
 ## Parent Research state retained
 
-- V12 remains historically `EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED`.
+- V13 remains historically `EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_AUTHORITY_BLOCKED_SCOPED`.
+- V12 remains `EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED`.
 - V11 remains `PHYSICAL_OBSERVABLE_QUOTIENT_MAP_BLOCKED_SCOPED`.
 - V10 remains `SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED`.
 - V8 remains `SOURCE_UNFIXED_FINITE_LOCAL_FREEDOM_SCOPED` with affine nullity 6.
@@ -57,11 +52,15 @@ The frozen full-primary corpus was exactly `arXiv:2601.23162v1` plus `arXiv:2604
 
 ## Latest independent Critical Review
 
-No independent Critic review of the latest terminal primary-source map-expansion result is recorded yet.
+No independent Critic review of this new triple-contact local-chart derivation terminal result is recorded yet.
 
 ## Next admissible work
 
-Do not launch any competing gate. First consume only the terminal aggregate of Actions run `35120674022`. If and only if the local chart is terminally established may later work proceed to the smooth Eq. (4) remainder and complete order-7 jet. Missing chart relations remain missing, never zero.
+Highest-information next gate: prospectively freeze `SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_GATE`.
+
+Start from explicit Eq. (4) wedge arguments on the shared gauge-fixed group variables and test whether the three one-wedge contact functions can be pulled back to one common local Lie-algebra neighborhood with an exact two-dimensional transverse quotient, Jacobian/normalization transport and S3 action. Do not assume the V8 `x,y,x+y` chart. If explicit wedge-to-common-group formulas are absent from source authority, classify BLOCKED rather than substituting them.
+
+Do not infer the smooth Eq. (4) remainder or complete order-7 jet until a common chart is terminally established.
 
 ## Governance lock
 

@@ -1,0 +1,32 @@
+{
+  "aggregate_decision_sha256": "c6e0355df985c9b7a0f71966a9e3354d42da8caa4a312f01b6f58081235e4ea7",
+  "classification": "EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_BLOCKED_SCOPED",
+  "decision": {
+    "claim_ceiling": "local chart only; no smooth remainder, order-7 jet, physical quotient, model/family/D7/Candidate Gravity conclusion",
+    "classification": "EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_BLOCKED_SCOPED",
+    "common_coordinates_present": false,
+    "contact_differential_rank": null,
+    "controls": {
+      "bridge_target_not_source_authority": true,
+      "negative_disjoint_missing_joint_map": true,
+      "negative_missing_transport": true,
+      "negative_rank_deficient": true,
+      "positive_invertible_basis_change": true,
+      "positive_shared_chart": true,
+      "source_identity": true
+    },
+    "jacobian_normalization_transport_present": false,
+    "missing_fields": ["COMMON_LOCAL_COORDINATES", "THREE_CONTACT_MAPS", "RANK_TRANSVERSALITY", "JACOBIAN_NORMALIZATION_TRANSPORT", "S3_COORDINATE_TRANSPORT"],
+    "required_fields": ["COMMON_LOCAL_COORDINATES", "THREE_CONTACT_MAPS", "RANK_TRANSVERSALITY", "JACOBIAN_NORMALIZATION_TRANSPORT", "S3_COORDINATE_TRANSPORT"],
+    "s3_coordinate_transport_present": false,
+    "source_facts": {
+      "sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json": {"blob_sha": "fdfb13f9974ebc891cb3f490ca553dd0991d9136", "candidate_passages": 2, "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713"},
+      "sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json": {"blob_sha": "c742e8cab0648b8fbaef88f09876644c6c2c3077", "candidate_passages": 3, "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046"}
+    },
+    "target_triangle": ["12", "23", "13"],
+    "three_contact_maps_present": false
+  },
+  "gate": "SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE",
+  "lane_decision_sha256": "cd3a6f0c2a51ab286e866aba9f330a61a3774c8756378bfb4b06594e603f1fbf",
+  "lanes_agree": true
+}

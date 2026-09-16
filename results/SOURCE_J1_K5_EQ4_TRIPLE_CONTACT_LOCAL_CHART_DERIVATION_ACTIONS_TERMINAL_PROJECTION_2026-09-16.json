@@ -1,0 +1,15 @@
+{
+  "aggregate_decision_sha256": "c6e0355df985c9b7a0f71966a9e3354d42da8caa4a312f01b6f58081235e4ea7",
+  "artifacts": {
+    "aggregate": {"digest": "sha256:25cd559c0666006d76efa48c02964bc59c7587757c658e68acf4f8d6e9b62c24", "id": 10456999865},
+    "python_3_11": {"digest": "sha256:e8e843510b9e07ac6a6be5abbc3ff19a7b3fe3b25c0b0cfd6c70b2be2cad8e2f", "id": 10456944863},
+    "python_3_13": {"digest": "sha256:1a3357a10080ba1d31f555a85aff783ddccb95fa1726243ddcc023f5f10dd0da", "id": 10456624902}
+  },
+  "classification": "EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_BLOCKED_SCOPED",
+  "conclusion": "success",
+  "head_sha": "5c524b2d00ae2b1278960c275b21824c3065f11e",
+  "jobs": {"aggregate": 104877703389, "python_3_11": 104877640199, "python_3_13": 104877640217, "source_lock": 104877355301},
+  "lane_decision_sha256": "cd3a6f0c2a51ab286e866aba9f330a61a3774c8756378bfb4b06594e603f1fbf",
+  "run_id": 35120674022,
+  "status": "completed"
+}
