@@ -1,0 +1,46 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_ESCALATION_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "b0c40b0c8c65f8eec9eecb4e9e25ee2eb05f1d88",
+  "critic_role": "adversarial independent source/convention audit",
+  "challenges": [
+    {
+      "question": "Could the global gauge fixing g1=1 itself be the missing physical transverse quotient?",
+      "verdict": "NO",
+      "reason": "It fixes the already-consumed global SL(2,C) redundancy of the vertex before the raw 12-dimensional tangent map is formed; no source projection from that raw tangent space to a further physical transverse quotient is defined."
+    },
+    {
+      "question": "Could CP1 invariance of the auxiliary spinor integral supply the quotient?",
+      "verdict": "NO",
+      "reason": "The projectivization is z_ab~alpha z_ab in the auxiliary one-wedge spinor variable. It is not a quotient/projection of Eq.(4) group tangent variables X2,X3 and cannot be substituted across variable classes."
+    },
+    {
+      "question": "Could one infer a standard complement to gauge directions or an orthogonal transverse subspace?",
+      "verdict": "INVALID",
+      "reason": "No admissible primary record fixes such a complement, metric, or projection; choosing one would be a post-hoc textbook completion."
+    },
+    {
+      "question": "Does the complete arXiv v1 record explicitly define all three preregistered quotient fields?",
+      "verdict": "NO",
+      "reason": "The complete v1 text defines Eq.(4), g1=1 gauge fixing, g_ab, B(z,g), CP1 spinor measure and the one-wedge contact distribution, but no same-realization physical transverse quotient/projection/contact pullback from the raw group tangent variables."
+    },
+    {
+      "question": "Can the Critic certify that the published PRD version also lacks the definitions?",
+      "verdict": "NO_STRONG_ABSENCE_CLAIM",
+      "reason": "The version-of-record full text is not completely auditable in the current authority environment. Public APS metadata/abstract is available and states the accepted manuscript will be public starting 2027-06-15, but that is not a substitute for a full-text audit."
+    },
+    {
+      "question": "Was an admissible publisher-linked supplement or explicitly paper-linked author derivation/code found?",
+      "verdict": "NO",
+      "reason": "Exact-title/DOI and author-link searches surfaced no admissible official supplement or paper-linked derivation/code. Talks/slides and companion papers remain outside the frozen authority boundary."
+    }
+  ],
+  "required_field_assessment": {
+    "PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT": "NOT_ESTABLISHED",
+    "QUOTIENT_OR_PROJECTION_MAP_FROM_EQ4_LOCAL_TANGENT_VARIABLES": "NOT_ESTABLISHED",
+    "CONTACT_CONSTRAINT_PULLBACK_TO_QUOTIENT": "NOT_ESTABLISHED"
+  },
+  "minimal_blocker": "PUBLISHED_VERSION_FULLTEXT_AUTHORITY_ACCESS_CEILING",
+  "production_classification_recommendation": "EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_BLOCKED_SCOPED",
+  "claim_ceiling": "The gate may state that the frozen auditable authority does not establish the physical quotient/projection. It may not state that every inaccessible primary version definitively lacks such a definition, and it may not infer physical transversality failure."
+}
