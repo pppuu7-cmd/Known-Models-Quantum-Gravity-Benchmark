@@ -11,7 +11,7 @@
       "equations": ["D2", "D3", "D4"],
       "selector_category": "FINITE_COEFFICIENTS",
       "excerpt": "we define the distribution",
-      "anchor_tokens": ["coefficients", "Gamma"],
+      "anchor_tokens": ["coefficients"],
       "primary": true,
       "same_realization": true,
       "explicit": true,
@@ -47,7 +47,7 @@
       "equations": [],
       "selector_category": "FINITE_NORMALIZATION",
       "excerpt": "The question of finiteness needs to be investigated again",
-      "anchor_tokens": ["finiteness", "investigated", "divergences"],
+      "anchor_tokens": ["investigated", "divergences"],
       "primary": true,
       "same_realization": true,
       "explicit": true,
@@ -112,5 +112,5 @@
     }
   ],
   "expected_actionable_record_count": 0,
-  "semantic_audit_note": "All six records are primary-source candidates on the frozen corpus. None satisfies the preregistered MAPPABLE criterion for the V8 six-dimensional affine freedom without adding an unstated product-extension theorem or physical quotient."
+  "semantic_audit_note": "All six records are primary-source candidates on the frozen corpus. None satisfies the preregistered MAPPABLE criterion for the V8 six-dimensional affine freedom without adding an unstated product-extension theorem or physical quotient. PDF extraction anchor repairs only remove false-negative probe tokens and do not change source/page/equation, semantic assessment, actionable status, or frozen terminal criteria."
 }
