@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "gate": "ITER504P_OUT_OF_SAMPLE_POINT_DRIFT_LOCALIZATION_GATE",
+  "status": "TERMINAL",
+  "classification": "ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED",
+  "date": "2026-09-17",
+  "preregistration_commit": "77bac4728401200b226dda16447befce85df0c66",
+  "execution_only_repair": {
+    "preregistration_commit": "f8f983ee98b4d01101ef6d5ca72e7ba6053e1855",
+    "manifest_repair_commit": "91a6566648f16ac2b864f4d6215bfed6583054b6",
+    "workflow_repair_head": "b7f4f1f94d7668eba22c8bad25050ef632648ec9",
+    "reason": "initial production run failed before substantive artifact consumption because a nonexistent Iter504 terminal-record SHA was used in ancestry checking; only the terminal-record provenance binding was corrected"
+  },
+  "upstream_iter504": {
+    "run_id": 34907349374,
+    "workflow_head": "56362459a826e3e376c529446678f2fbcaa269ae",
+    "terminal_result_commit": "e3816c0437a1f895196d2bbccacfb05e8dd38e74",
+    "summary_artifact_id": 10436186009,
+    "summary_artifact_digest": "sha256:0273394cbd3d0be55589279645c8170a02042178210b145897bc21e721754163"
+  },
+  "frozen_science": {
+    "decisive_lanes": [
+      "0to5-b1", "0to5-b2", "0to5-b3",
+      "1to4-b0", "1to4-b1", "1to4-b2", "1to4-b3",
+      "2to3-b0", "2to3-b1", "2to3-b2", "2to3-b3"
+    ],
+    "known_non_decisive_control_lane": "0to5-b0",
+    "formula": "D_point = abs(actual_slope - early_actual_slope)",
+    "threshold": "0.05",
+    "expected_decisive_record_count": 1584
+  },
+  "authoritative_production": {
+    "run_id": 35151656186,
+    "workflow_head": "b7f4f1f94d7668eba22c8bad25050ef632648ec9",
+    "conclusion": "success",
+    "jobs": {
+      "source_lock": 104981172113,
+      "decimal": 104981427613,
+      "float": 104981427636,
+      "aggregate": 104982529228
+    },
+    "artifacts": {
+      "decimal": {
+        "id": 10468939725,
+        "digest": "sha256:aeeac0ba27efa51bf05b7da1761b799c257d4c94b0c9c7db20bd3e935217fb06",
+        "json_sha256": "0e7722c610e5f68a5e5430974a0df40c6dfea6363556537b079bd65c9a11fdf6"
+      },
+      "float": {
+        "id": 10469641510,
+        "digest": "sha256:4034866a04e7221c576ec58da3d6c2ac1429b26081e4814a958f240e7b25d621",
+        "json_sha256": "83cf1c9c8f8f57b6cb65e763c79b74982a4f76eb41a6b467862e91ca11ee8385"
+      },
+      "aggregate": {
+        "id": 10469975534,
+        "digest": "sha256:c8d031b4c3a05b49870217f688d6f6b9d4ac05312c55078760271f0968bd6786",
+        "json_sha256": "0fcbc4f0d8927a2fefbea0c22aae8fe1bbb4cd963ac66b4eb2d8eddc719a78a4",
+        "aggregate_sha256": "cda258218526ff4f556bb901e4fb8e4a51e819eb07c7881b3438d1416bbccb75",
+        "scientific_payload_sha256": "4dc3d408e768a6bc8ad613b286e0b920b0dc294d36184f836c767f7c5b8632a1"
+      }
+    }
+  },
+  "scientific_result": {
+    "decisive_record_count": 1584,
+    "structural_error_count": 0,
+    "violation_count": 0,
+    "independent_methods_agree": true,
+    "max_point_drift": "0.009396862546624",
+    "threshold_margin": "0.040603137453376",
+    "max_point_drift_fraction_of_threshold_percent": "18.79372509324800",
+    "max_point_drift_witness": {
+      "lane": "0to5-b1",
+      "causal": "0to5",
+      "block": 1,
+      "path": 2,
+      "sign": 1,
+      "direction": [1, -1, 1, -1, 1, -1],
+      "amplitude": "0.0025",
+      "rho": "1.6",
+      "actual_slope": "4.001444332976603",
+      "early_actual_slope": "4.010841195523227",
+      "D_point": "0.009396862546624"
+    },
+    "per_lane_max": {
+      "0to5-b1": "0.009396862546624",
+      "0to5-b2": "0.009342723689345",
+      "0to5-b3": "0.009252678041871",
+      "1to4-b0": "0.008756656122886",
+      "1to4-b1": "0.009196594991085",
+      "1to4-b2": "0.008980760702408",
+      "1to4-b3": "0.008936494193606",
+      "2to3-b0": "0.005203486310337",
+      "2to3-b1": "0.0051787520682785",
+      "2to3-b2": "0.0052106927066000",
+      "2to3-b3": "0.0051492235808150"
+    },
+    "per_causal_max": {
+      "0to5": "0.009396862546624",
+      "1to4": "0.009196594991085",
+      "2to3": "0.0052106927066000"
+    },
+    "per_block_max": {
+      "b0": "0.008756656122886",
+      "b1": "0.009396862546624",
+      "b2": "0.009342723689345",
+      "b3": "0.009252678041871"
+    },
+    "late_slope_sign_counts": {"positive": 1584, "zero": 0, "negative": 0},
+    "early_slope_sign_counts": {"positive": 1584, "zero": 0, "negative": 0},
+    "control_diagnostic_only": {
+      "lane": "0to5-b0",
+      "decisive": false,
+      "record_count": 144,
+      "violation_count": 0,
+      "max_point_drift": "0.009276174609423"
+    }
+  },
+  "independent_reproduction": {
+    "official_logic_replay_script_sha256": "96eb1770e322be2dfcb2a31da95f3536b993732017331403c6e12487ac46427b",
+    "decimal_json_sha256": "0e7722c610e5f68a5e5430974a0df40c6dfea6363556537b079bd65c9a11fdf6",
+    "float_json_sha256": "83cf1c9c8f8f57b6cb65e763c79b74982a4f76eb41a6b467862e91ca11ee8385",
+    "aggregate_json_sha256": "0fcbc4f0d8927a2fefbea0c22aae8fe1bbb4cd963ac66b4eb2d8eddc719a78a4",
+    "aggregate_byte_identical_to_production": true
+  },
+  "adversarial_critic": {
+    "script_sha256": "16592b97c4520ea6bb9e324324e00a4a98423f7f31088d291249f0c28b7897ee",
+    "result_json_sha256": "d1a00e470a28b86fa93720148dd76bad2743f2a92fd556767a5c5f538ab3e3df",
+    "independent_core_sha256": "5da43e58804213463f1be0e14e6bce821990deda7e4bd90f838ff30342efa059",
+    "arithmetic_crosscheck": "Decimal exact lexical arithmetic equals Fraction exact rational arithmetic for every decisive record",
+    "verdict": "CRITIC_CONFIRMS_ITER504P_WITHIN_FROZEN_TOLERANCE_SCOPED"
+  },
+  "scientific_meaning": "On the prospectively frozen out-of-sample decisive point grid, the point data themselves do not violate the 0.05 stationarity criterion. Therefore the Iter504 INCONCLUSIVE bottleneck is localized away from sampled point-level drift and toward the rigorous continuous interval enclosure/dependency/nonsmooth multi-channel max-envelope layer on this sampled-point scope.",
+  "claim_ceiling": "This is a finite frozen point-grid localization result only. It is not a continuous NONDECAY proof, decay witness, positive-measure Haar theorem, absolute-Haar divergence theorem, D7-S2 closure, selector authorization, model/family failure, Candidate Gravity activation, quantum-gravity solution or new-physics claim."
+}
