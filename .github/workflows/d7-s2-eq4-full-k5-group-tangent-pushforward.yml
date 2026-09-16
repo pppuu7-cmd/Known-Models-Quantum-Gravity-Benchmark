@@ -19,11 +19,13 @@ jobs:
         run: |
           set -euo pipefail
           for c in \
+            bc9aa01263df1172206eb211b456bf5d78fe1b1b \
             32a2575ded77a938ed742526a9d62fe1e4756d41 \
             716bf34bec114e160c88ff5a84bcd3d697f62fdd \
-            4a2c69213d726cdd98501e0e9316688515868077 \
+            c0f8500aee43d4ee5686fc8dfc7b313e94b299d5 \
+            0c536f05e2203509f38a2e4d82cb4f3e21947ef6 \
             453387a0d50d8426af52bee22dc8b1ddba7d9335 \
-            f0d09e2eedb5a132247559028bee5da4b0f29f63 \
+            67ee10b1dc21950eaaef4aa14273aadd8f9d72b1 \
             67c66a2edc3425f06aaadb369d2f3606184d3733 \
             b2d94b6bd0ca47b80b3eeaf0092c47e8426e4604; do
             git merge-base --is-ancestor "$c" HEAD
@@ -38,7 +40,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Exact RREF and S5 lane
+      - name: Exact RREF, cycle, root-change and S5 lane
         run: python scripts/d7_s2_k5_tangent_rref.py > d7_s2_k5_rref.json
       - uses: actions/upload-artifact@v4
         with:
@@ -76,7 +78,7 @@ jobs:
         with:
           name: d7-s2-k5-tree-minors
           path: tree
-      - name: Aggregate independent exact lanes
+      - name: Aggregate independent exact lanes under governing prereg
         run: python scripts/d7_s2_k5_tangent_aggregate.py rref/d7_s2_k5_rref.json tree/d7_s2_k5_tree.json > d7_s2_k5_aggregate.json
       - uses: actions/upload-artifact@v4
         with:
