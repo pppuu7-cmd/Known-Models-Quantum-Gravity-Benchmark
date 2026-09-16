@@ -1,0 +1,88 @@
+name: source-j1-k5-triangle-derivative-contact-physical-observable-quotient
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-triangle-derivative-contact-physical-observable-quotient.yml'
+      - 'code/source_j1_k5_triangle_derivative_contact_physical_observable_quotient.py'
+      - 'code/source_j1_k5_triangle_derivative_contact_physical_observable_quotient_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective freeze and authority blobs
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 2296ff6abd074b72b5d9d6fd3fb272ca1e4dbcb4 HEAD
+          test "$(git hash-object results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_CANONICAL_2026-09-16.json)" = "49e248993d0a23d85663aaa198cd5d87b6200b6e"
+          test "$(git hash-object sources/arxiv_2601_23162v1_causal_vertex.json)" = "f0b520fc04904e038f252dc5b45d23893cb020ed"
+          test "$(git hash-object results/ITER453_EQ4_CONTRACTION_TOPOLOGY_RESULT_2026-09-13.md)" = "8e827ce199cc1dca042988c5e0d9fab4c1250ffa"
+          test "$(git hash-object sources/arxiv_2601_23162v1_finite_renormalization_full_primary_audit_v10.json)" = "9002dca7da1a72b8768c7db7ed72104d44fd25c3"
+          test "$(git hash-object results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_TERMINAL_2026-09-16.md)" = "bc23ce03af6e079b5fbfa65bf2eb8023a956a73d"
+          grep -F 'PHYSICAL_OBSERVABLE_QUOTIENT_MAP_BLOCKED_SCOPED' research/prereg/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PHYSICAL_OBSERVABLE_QUOTIENT_GATE_2026-09-16.md
+          grep -F 'missing map != zero action' research/prereg/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PHYSICAL_OBSERVABLE_QUOTIENT_GATE_2026-09-16.md
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run exact frozen gate
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          tag="${{ matrix.python }}"
+          python code/source_j1_k5_triangle_derivative_contact_physical_observable_quotient.py --repo-root . --lane "$tag" --out "artifacts/observable_quotient_${tag}.json" | tee "artifacts/observable_quotient_${tag}.log"
+          sha256sum "artifacts/observable_quotient_${tag}.json" "artifacts/observable_quotient_${tag}.log" > "artifacts/observable_quotient_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: observable-quotient-${{ matrix.python }}
+          path: artifacts/observable_quotient_${{ matrix.python }}.*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: observable-quotient-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate exact decision
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_triangle_derivative_contact_physical_observable_quotient_aggregate.py \
+            --lane311 downloaded/observable_quotient_3.11.json \
+            --lane313 downloaded/observable_quotient_3.13.json \
+            --out artifacts/observable_quotient_aggregate.json | tee artifacts/observable_quotient_aggregate.log
+          sha256sum artifacts/observable_quotient_aggregate.json artifacts/observable_quotient_aggregate.log > artifacts/observable_quotient_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: observable-quotient-aggregate
+          path: artifacts/observable_quotient_aggregate.*
+          if-no-files-found: error
