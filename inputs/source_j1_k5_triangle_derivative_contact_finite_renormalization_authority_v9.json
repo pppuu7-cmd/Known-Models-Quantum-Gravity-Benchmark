@@ -1,0 +1,66 @@
+{
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_FINITE_RENORMALIZATION_AUTHORITY_GATE",
+  "status": "PROSPECTIVELY_FROZEN_BEFORE_SOURCE_AUDIT_IMPLEMENTATION_OR_RESULT",
+  "start_main": "57b647b177cd84a0b3162c289883019e6f195244",
+  "parent_result_commit": "3e6e069d728ccef2724c26f374c298f29d591043",
+  "structured_source_corpus_complete_at_freeze": true,
+  "structured_source_corpus": [
+    {
+      "path": "sources/arxiv_2202_04360_sl2c_haar_cartan.json",
+      "blob_sha": "4a8eb5762745f4b483c8aff87c0c9fb8b74cc236",
+      "role": "frozen structured source record; inspect only after preregistration for actionable finite-renormalization authority"
+    },
+    {
+      "path": "sources/arxiv_2601_23162v1_causal_vertex.json",
+      "blob_sha": "f0b520fc04904e038f252dc5b45d23893cb020ed",
+      "role": "frozen structured causal-vertex source record; primary candidate for same-realization selector authority"
+    },
+    {
+      "path": "sources/arxiv_2604_24945v1_toller_cartan.json",
+      "blob_sha": "8dc58f3c9c191289f2f148469f8df3ea95f77ad5",
+      "role": "frozen structured source record; inspect only after preregistration for actionable finite-renormalization authority"
+    }
+  ],
+  "same_realization_chain": [
+    {
+      "path": "results/SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_REPAIR_TERMINAL_2026-09-16.md",
+      "blob_sha": "fe69a936e561ddb84d933e9145be325d6ddc966b",
+      "role": "V4 highest delta-double-prime contact authority"
+    },
+    {
+      "path": "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL_COVERAGE_V5_2026-09-16.md",
+      "blob_sha": "943a0c5a9cbd7d806d6927569f109d17be65ef68",
+      "role": "V5 exact channel/source-realization audit; 00000=11/24 confirmed scoped"
+    },
+    {
+      "path": "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7_REPAIR_TERMINAL_2026-09-16.md",
+      "blob_sha": "3e38daea995a7f803181080b32310beb61d39da4",
+      "role": "repaired V7 scoped scheme-dependence authority"
+    },
+    {
+      "path": "inputs/source_j1_k5_triangle_derivative_contact_counterterm_authority_v8.json",
+      "blob_sha": "4d048a0cb130e7e5e1e632773f247572946f042c",
+      "role": "V8 prospective source-authority contract"
+    },
+    {
+      "path": "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_CANONICAL_2026-09-16.json",
+      "blob_sha": "49e248993d0a23d85663aaa198cd5d87b6200b6e",
+      "role": "exact V8 affine finite-renormalization object; basis/rank/nullity/nullspace authority"
+    },
+    {
+      "path": "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_TERMINAL_2026-09-16.md",
+      "blob_sha": "a63ffe988fa6584775a77892f695d776e9c142cc",
+      "role": "terminal V8 scientific scope and next-gate authority"
+    }
+  ],
+  "frozen_selector_categories": [
+    "FINITE_COEFFICIENTS",
+    "FINITE_NORMALIZATION",
+    "GLUING_COMPOSITION",
+    "RG_SCALE",
+    "AUTHORIZED_QUOTIENT"
+  ],
+  "non_authoritative_mentions_do_not_reduce_freedom": true,
+  "missing_selector_classifies_blocked_not_fail": true,
+  "new_external_source_after_result_forbidden": true
+}
