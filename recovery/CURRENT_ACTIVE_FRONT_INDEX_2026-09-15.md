@@ -16,75 +16,67 @@ This is a navigation index over immutable prereg/result/recovery records. Fresh 
 
 ## Latest terminal Research execution
 
-`SOURCE_J1_K5_CHANNEL_COVERAGE_V5`
+`SOURCE_J1_K5_TRIANGLE_CONTACT_REGULARIZATION_V6`
 
 Frozen chain:
 
-- parent V4 Critic-confirmed front `fd7905526514fbf5768041bd1aedc305b638f773`;
-- V5 prereg `d30274a74e206287b5dc3cf9cba02fa66e13c74b`;
-- implementation `abff2fceb51519ef47461f0060454f89ca798353`;
-- workflow head `22fb468b79218176fe628266d311909cf87ddca5`.
+- parent Critic-qualified V5 front `e79e63cc1796fd63600a20327c988d30806160f4`;
+- prereg `de880ad093d9d6d0c6978e81d3e69b33195b2b92`;
+- implementation `97faed8a94315b7abc9c24ba8d44c24e30894653`;
+- workflow head `4b2d716dc439f6388f3402884d2a3b9f774bfc8c`.
 
-Authoritative run `35041893961` is terminal `completed/success`.
+Authoritative run `35050058294` is terminal `completed/success`.
 
 Jobs:
 
-- Python 3.11 `104623351833` success;
-- Python 3.13 `104623351638` success;
-- aggregate `104624134356` success.
+- Python 3.11 exact `104648273263`, success;
+- Python 3.13 exact `104648273388`, success;
+- aggregate `104654114127`, success.
 
 Artifacts:
 
-- Python 3.11 `10424574808`, digest `sha256:847ce7d9f818069861adb98e8b05c62ca4a9f5ceefb3a3437ec5b8ce0b5c238f`;
-- Python 3.13 `10425721638`, digest `sha256:c4cd1f7c94254344347d55cff51eac7f5d0464a7780ec5485c01fc5a00122b29`;
-- aggregate `10425727109`, digest `sha256:a8775abfca4f5059eb55a72d1ed58a1ee4464fecc211e122ca15a51850666e7d`.
+- 3.11 `10429341416`, digest `sha256:ca49d3508bb8debf380adf0d9106c058df767639f37315b5fcffc8c65ffcbd67`;
+- 3.13 `10429710311`, digest `sha256:38d1807d42f3d9750e7d39d5daec048ab48d0779dbc001d36ad45f2910e0dda0`;
+- aggregate `10429422363`, digest `sha256:65ff56f618b3e1ba85614586e5721d64db48a4a64db6330dff6d5fe51163a388`.
 
 Research classification:
 
-`CHANNEL_COVERAGE_NONZERO_SCOPED`
+`TRIANGLE_CONTACT_REGULARIZATION_DEPENDENT_SCOPED`
 
-Exact map/census:
+Exact frozen values:
 
-- total `243` channels;
-- nonzero `224`;
-- zero `19`;
-- `00000 = 11/24`;
-- map SHA256 `2bceeb84db17ef0f01df4aa3350f8800d9e8e531ed68ed9ef10ca10cecfc9d0d`;
-- complete map agrees across both pinned Python lanes.
+- A `(1,1,1)` -> `1/3`;
+- B `(1,1,4)` -> `4/9`;
+- C `(1,2,3)` -> `6/11`;
+- aggregate decision SHA256 `0308fae590691f29a1ccbdc6370ebffd422f833da7a33db1a3f568712ca1f3ac`.
 
 ## Latest independent Critical Review
 
-- audit `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL_COVERAGE_V5_2026-09-16.md`;
-- Critic commit `d7c51b25c88c2f0600e5d7db13f25938822dd7ea`;
+- audit `recovery/CRITICAL_REVIEW_SOURCE_J1_K5_TRIANGLE_CONTACT_REGULARIZATION_V6_2026-09-16.md`;
+- Critic commit `67c0895bf16074091abd9e2643e1629344414263`;
 - verdict `QUALIFIED`.
 
-Confirmed scoped facts:
+Confirmed scoped fact: for the prospectively frozen local **plain-delta** triangle normal form with normalized Gaussian approximate identities, the leading coefficient depends exactly on the relative width scheme.
 
-- the frozen three-channel-per-vertex basis gives a complete `3^5=243` channel cube;
-- exact enumeration gives `224/243` nonzero and `19/243` zero;
-- `00000=11/24` and the complete channel map are independently reproduced;
-- no floating-point support decision is used.
+Qualification: parent V4 highest-contact authority is a highest **`delta''` contact** sector. V6 tests plain delta factors. Therefore V6 is not a same-realization proof of regulator dependence for the parent highest-derivative contact product. That transfer requires a new prospectively frozen derivative-contact gate.
 
-Qualification:
+The two-contact forest control is algebraically correct but weak/tautological in the implementation; a future derivative-contact gate should replay an actual transverse two-contact integral through the same machinery.
 
-The frozen PASS classification is not a prospectively discriminating test of support breadth. Its mandatory positive control already requires nonzero `00000=11/24`, so any otherwise-valid map with only that one nonzero channel would still receive `CHANNEL_COVERAGE_NONZERO_SCOPED`. There is no frozen definition or threshold for `broad nonzero support`. The observed `224/243` census is valid data, but no breadth threshold may be retrofitted after observing it.
+## Parent V5 / V4 state
 
-The zero-edge negative is structurally valid but weak because multilinearity forces all channels to vanish when an edge tensor is exact zero. The exact replay, rather than that fixture alone, validates the support census.
+V5 remains `QUALIFIED`: exact fixed-tangent channel census `224/243` nonzero, `19/243` zero, `00000=11/24`, but the frozen PASS label was not a prospective support-breadth discriminator.
 
-## Parent V4 state
-
-Fresh same-contract repaired V4 run `35033194283` remains `CONFIRMED_SCOPED` by independent Critic `1f61dafb51726e36cdc11e903621be8809d6dfa0`.
-
-Historical V4 run `35023270636` remains immutable `INVALID_IMPLEMENTATION` history. V5 reuses the exact V4 angular contraction kernel and same tangent realization; it does not broaden tangent, spin, distribution-product, or family scope.
+Fresh repaired V4 run `35033194283` remains `CONFIRMED_SCOPED` for the highest `delta''` contact leading homogeneous tensor in the frozen `j=1`, fixed-tangent, channel-`00000` realization.
 
 ## Scope lock
 
-V5 is only a finite fixed-tangent `j=1` channel census in the frozen intertwiner basis. It does not establish:
+V6 is only a local normalized-Gaussian plain-delta regularization certificate. It does not establish:
 
-- all tangents, spins, or collision strata;
-- basis-independent support density;
-- joint contact-distribution product existence/nonexistence;
-- complete K5 convergence/divergence;
+- the corresponding `delta''` product result;
+- all-mollifier regulator dependence;
+- distributional extension nonexistence;
+- full ten-contact K5 product failure;
+- complete vertex divergence/convergence;
 - model/family failure;
 - D7 closure;
 - terminal selectors;
@@ -99,12 +91,9 @@ Do not consume partial substantive values:
 
 ## Next admissible frontier
 
-Choose one prospectively frozen question before further inference.
+For transfer to the parent highest-contact sector, freeze a **new derivative-contact gate** with exact `delta''` regularizations, derivative convention/epsilon power, same coherent triangle realization, dimensionless statistic, width schemes plus common-rescaling control, independently integrated transverse two-contact control, covariance/permutation controls, synthetic negative fixture, and distinct PASS / invariant / BLOCKED / INVALID semantics.
 
-1. **Channel-support breadth:** freeze the statistic, basis dependence, symmetry/orbit quotient if any, and exact PASS/FAIL threshold before using the observed `224/243` as a decision variable.
-2. **Joint contact-distribution transversality / wavefront admissibility:** freeze the joint object, covectors/wavefront criterion, same-realization authorities, controls, and distinct PASS/FAIL/BLOCKED semantics. The V5 map may be input data but is not by itself a distribution-product theorem.
-
-Future descendants should also emit exact blob SHAs for imported V4 contraction-kernel and tangent/input files. Any change of tangent realization, intertwiner basis, source authority, channel definition, or threshold requires a new prospectively frozen gate.
+Keep this separate from a full joint ten-contact wavefront/product-existence gate. A change of contact derivative order is a scientific object change and may not be treated as an implementation repair of V6.
 
 ## Restoration procedure
 
