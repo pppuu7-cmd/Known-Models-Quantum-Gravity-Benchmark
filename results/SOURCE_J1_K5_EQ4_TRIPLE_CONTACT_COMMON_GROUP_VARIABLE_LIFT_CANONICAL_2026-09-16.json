@@ -1,0 +1,55 @@
+{
+  "aggregate_decision_sha256": "e3bc1d12580ee03c1c18049b7881668242e24990bfe0779292bc98b4e6eab32f",
+  "classification": "EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_BLOCKED_SCOPED",
+  "decision": {
+    "claim_ceiling": "fixed-triangle common-group/local-Lie lift only; no smooth remainder, order-7 jet, physical quotient, distributional existence/nonexistence, full-K5/model/family/D7/Candidate Gravity conclusion",
+    "classification": "EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_BLOCKED_SCOPED",
+    "common_gauge_fixed_group_tuple_present": true,
+    "common_local_group_lie_lift_present": false,
+    "controls": {
+      "bridge_target_not_source_authority": true,
+      "negative_missing_transport_blocked": true,
+      "negative_missing_wedge_maps_blocked": true,
+      "negative_rank_deficient_fail": true,
+      "parent_terminal_commit_locked": true,
+      "positive_basis_change_invariance": true,
+      "positive_orientation_sign_invariance": true,
+      "positive_rank2_shared_lift": true,
+      "source_identity": true
+    },
+    "jacobian_haar_contact_normalization_transport_present": false,
+    "missing_fields": [
+      "THREE_WEDGE_GROUP_ARGUMENT_MAPS",
+      "COMMON_LOCAL_GROUP_LIE_LIFT",
+      "TWO_DIMENSIONAL_TRANSVERSE_QUOTIENT",
+      "JACOBIAN_HAAR_CONTACT_NORMALIZATION_TRANSPORT",
+      "S3_ORIENTATION_COORDINATE_TRANSPORT"
+    ],
+    "required_fields": [
+      "COMMON_GAUGE_FIXED_GROUP_TUPLE",
+      "THREE_WEDGE_GROUP_ARGUMENT_MAPS",
+      "COMMON_LOCAL_GROUP_LIE_LIFT",
+      "TWO_DIMENSIONAL_TRANSVERSE_QUOTIENT",
+      "JACOBIAN_HAAR_CONTACT_NORMALIZATION_TRANSPORT",
+      "S3_ORIENTATION_COORDINATE_TRANSPORT"
+    ],
+    "s3_orientation_coordinate_transport_present": false,
+    "source_facts": {
+      "sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json": {
+        "blob_sha": "fdfb13f9974ebc891cb3f490ca553dd0991d9136",
+        "candidate_passages": 2,
+        "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713"
+      },
+      "sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json": {
+        "blob_sha": "c742e8cab0648b8fbaef88f09876644c6c2c3077",
+        "candidate_passages": 3,
+        "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046"
+      }
+    },
+    "target_triangle": ["12", "23", "13"],
+    "three_wedge_group_argument_maps_present": false,
+    "transverse_rank": null
+  },
+  "gate": "SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_GATE",
+  "lanes_agree": true
+}
