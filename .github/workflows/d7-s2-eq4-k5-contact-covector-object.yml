@@ -1,0 +1,81 @@
+name: KMQGB D7-S2 K5 simultaneous contact-covector object
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/d7-s2-eq4-k5-contact-covector-object.yml'
+  workflow_dispatch:
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen source/object authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          for c in \
+            e20aafb9c894759b8093bada4bacdbb9b8e1a425 \
+            9f94f8dae1f24ede68f1cb7dbe102710fc03f4e6 \
+            f26908e4a859584df4638f537d5342d1338198a6 \
+            b4c9c0a4ddfa0742f1ba9aad490f3d0510a36bcc \
+            5f6dfa2bac5915647aa21fe0cde2843bee25ed46 \
+            43082e1c6f0a887d00948eec5d32aa3557695cac \
+            71306a6f083ec0c4f1df7a1416fc71fd626966f4; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+          test "$(git hash-object sources/arxiv_2601_23162v1_eq4_k5_contact_covector_authority_v18.json)" = "$(git rev-parse 9f94f8dae1f24ede68f1cb7dbe102710fc03f4e6:sources/arxiv_2601_23162v1_eq4_k5_contact_covector_authority_v18.json)"
+
+  classify:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Frozen source/object classifier
+        run: |
+          python scripts/d7_s2_k5_contact_covector_object_classifier.py \
+            --source sources/arxiv_2601_23162v1_eq4_k5_contact_covector_authority_v18.json \
+            --manifest inputs/D7_S2_EQ4_K5_CONTACT_COVECTOR_OBJECT_AUTHORITY_2026-09-16.json \
+            --out contact-covector-${{ matrix.python }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: contact-covector-${{ matrix.python }}
+          path: contact-covector-${{ matrix.python }}.json
+
+  aggregate:
+    needs: classify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: contact-covector-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: contact-covector-3.13
+          path: b
+      - name: Aggregate independent environments
+        run: |
+          python scripts/d7_s2_k5_contact_covector_object_aggregate.py \
+            --a a/contact-covector-3.11.json \
+            --b b/contact-covector-3.13.json \
+            --out contact-covector-aggregate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: contact-covector-aggregate
+          path: contact-covector-aggregate.json
