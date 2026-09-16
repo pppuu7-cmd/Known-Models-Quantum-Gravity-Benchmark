@@ -1,0 +1,168 @@
+{
+  "candidate_checks": [
+    {
+      "anchor_tokens": {
+        "coefficients": true
+      },
+      "computed_actionable": false,
+      "declared_actionable": false,
+      "id": "CV_EQ_D3_D4_ONE_WEDGE_CONTACT",
+      "page": 10,
+      "page_anchor_verified": true,
+      "reason": "D3-D4 fixes the one-wedge contact distribution and its derivative coefficients before products of intersecting contacts are formed. Those coefficients are already upstream authority in the V4/V5/V7/V8 chain; the source gives no extension rule for the triple-contact product and therefore supplies no new row on the V8 six-dimensional affine nullspace.",
+      "selector_category": "FINITE_COEFFICIENTS",
+      "source_id": "arXiv:2601.23162v1"
+    },
+    {
+      "anchor_tokens": {
+        "Toller": true,
+        "amplitude": true,
+        "vertex": true
+      },
+      "computed_actionable": false,
+      "declared_actionable": false,
+      "id": "CV_EQ4_PRODUCT_VERTEX",
+      "page": 2,
+      "page_anchor_verified": true,
+      "reason": "Eq. (4) defines the product-form causal vertex but does not state a collision-extension or finite-normalization prescription for simultaneous contact singularities. It is the parent object, not an independent selector on its extension freedom.",
+      "selector_category": "FINITE_NORMALIZATION",
+      "source_id": "arXiv:2601.23162v1"
+    },
+    {
+      "anchor_tokens": {
+        "divergences": true,
+        "investigated": true
+      },
+      "computed_actionable": false,
+      "declared_actionable": false,
+      "id": "CV_FINITE_OPEN_QUESTION",
+      "page": 6,
+      "page_anchor_verified": true,
+      "reason": "The paper explicitly leaves finiteness of the causal vertex as an open question. This is affirmative evidence that the source does not provide a completed finiteness/extension prescription, but it is not a coefficient constraint or authorized quotient.",
+      "selector_category": "FINITE_NORMALIZATION",
+      "source_id": "arXiv:2601.23162v1"
+    },
+    {
+      "anchor_tokens": {
+        "Lorentz": true,
+        "group": true,
+        "representation": true
+      },
+      "computed_actionable": false,
+      "declared_actionable": false,
+      "id": "TM_EQ14_NO_COMPOSITION_REPRESENTATION",
+      "page": 3,
+      "page_anchor_verified": true,
+      "reason": "Eq. (14) explicitly denies the naive group-composition identity T(g1 g2)=T(g1)T(g2). It therefore cannot be used as a gluing selector on the V8 contact-extension coefficients; no replacement multi-contact composition law is supplied.",
+      "selector_category": "GLUING_COMPOSITION",
+      "source_id": "arXiv:2604.24945v1"
+    },
+    {
+      "anchor_tokens": {
+        "Wigner": true,
+        "additive": true,
+        "property": true
+      },
+      "computed_actionable": false,
+      "declared_actionable": false,
+      "id": "TM_EQ15_ADDITIVE_IDENTITY",
+      "page": 3,
+      "page_anchor_verified": true,
+      "reason": "T+ + T- = D is a one-wedge identity already present in the causal source chain. The primary source does not state that collision-supported extensions differing by the V8 local jet nullspace are physically equivalent or quotiented by this identity.",
+      "selector_category": "AUTHORIZED_QUOTIENT",
+      "source_id": "arXiv:2604.24945v1"
+    },
+    {
+      "anchor_tokens": {
+        "Uniqueness": true,
+        "projector": true,
+        "splitting": true
+      },
+      "computed_actionable": false,
+      "declared_actionable": false,
+      "id": "TM_UNIQUE_ONE_WEDGE_SPLITTING",
+      "page": 4,
+      "page_anchor_verified": true,
+      "reason": "The uniqueness theorem fixes each one-edge Toller branch given analytic decay, poles, and the sum rule. The source does not prove uniqueness of products of the resulting contact distributions at intersecting supports, nor map those one-edge analytic conditions to the six V8 local extension directions.",
+      "selector_category": "FINITE_COEFFICIENTS",
+      "source_id": "arXiv:2604.24945v1"
+    }
+  ],
+  "claim_ceiling": "Full-text audit of exactly arXiv:2601.23162v1 and arXiv:2604.24945v1 for finite-renormalization authority on the terminal V8 local delta-double-prime triangle only; no literature-global absence theorem, distributional existence/nonexistence, full-K5/model/family/D7 selector, or Candidate Gravity authority.",
+  "classification": "SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED",
+  "decision_projection": {
+    "actionable_record_count": 0,
+    "actual_actionable_record_ids": [],
+    "classification": "SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED",
+    "controls_pass": true,
+    "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE",
+    "pdf_sha256": {
+      "arXiv:2601.23162v1": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+      "arXiv:2604.24945v1": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046"
+    },
+    "remaining_affine_nullity": 6
+  },
+  "decision_sha256": "96b538221ca7c434e2555d1b29d2530ab926730ecc21344572f4eb15d338317e",
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE",
+  "lane_a_controls_pass": true,
+  "lane_b_controls_pass": true,
+  "lane_decision_agreement": true,
+  "source_records": {
+    "arXiv:2601.23162v1": {
+      "byte_length": 1406649,
+      "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+      "pdf_url": "https://arxiv.org/pdf/2601.23162v1",
+      "term_scan_counts": {
+        "ambigu": 0,
+        "composition": 1,
+        "contact": 0,
+        "counterterm": 0,
+        "distribution": 3,
+        "equivalent": 4,
+        "extension": 0,
+        "finite part": 0,
+        "gluing": 0,
+        "idempot": 0,
+        "normaliz": 1,
+        "prescription": 6,
+        "projector": 0,
+        "quotient": 0,
+        "regular": 1,
+        "renormal": 0,
+        "rg": 29,
+        "running": 0,
+        "scale": 1,
+        "scheme": 0
+      },
+      "version_marker_present": true
+    },
+    "arXiv:2604.24945v1": {
+      "byte_length": 884033,
+      "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046",
+      "pdf_url": "https://arxiv.org/pdf/2604.24945v1",
+      "term_scan_counts": {
+        "ambigu": 0,
+        "composition": 23,
+        "contact": 0,
+        "counterterm": 0,
+        "distribution": 1,
+        "equivalent": 17,
+        "extension": 0,
+        "finite part": 0,
+        "gluing": 0,
+        "idempot": 0,
+        "normaliz": 0,
+        "prescription": 7,
+        "projector": 4,
+        "quotient": 0,
+        "regular": 0,
+        "renormal": 0,
+        "rg": 24,
+        "running": 0,
+        "scale": 1,
+        "scheme": 0
+      },
+      "version_marker_present": true
+    }
+  }
+}
