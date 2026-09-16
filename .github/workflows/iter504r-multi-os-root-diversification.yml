@@ -1,0 +1,159 @@
+name: KMQGB Iter504R multi-OS root diversification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504r-multi-os-root-diversification.yml'
+      - 'research/prereg/ITER504R_EXECUTION_ONLY_MULTI_OS_ROOT_DIVERSIFICATION_2026-09-17.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen Iter504R and diversification ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          for c in \
+            147d68f26ed3a14ce3cd1fd77fcd96d5fb329ec8 \
+            f846820bae39963a48272deccb2e4a539100fce1 \
+            904cae881f86f213973110fc8f18a4c02d67cc3d \
+            e0367d4e0b91afc668e733c2027fd39bf27637fc \
+            42260891d4f9b1ce581924ef720557f866d550b0; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+          test "$(git hash-object code/iter504r_root_affine_reuse.py)" = "$(git rev-parse f846820bae39963a48272deccb2e4a539100fce1:code/iter504r_root_affine_reuse.py)"
+          test "$(git hash-object code/iter504r_affine_reuse_assemble.py)" = "$(git rev-parse 904cae881f86f213973110fc8f18a4c02d67cc3d:code/iter504r_affine_reuse_assemble.py)"
+          test "$(git hash-object code/iter504r_affine_reuse_aggregate.py)" = "$(git rev-parse e0367d4e0b91afc668e733c2027fd39bf27637fc:code/iter504r_affine_reuse_aggregate.py)"
+
+  roots:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - cohort: A
+            python: '3.11'
+            root_box: 13
+            os: windows-latest
+          - cohort: A
+            python: '3.11'
+            root_box: 14
+            os: ubuntu-latest
+          - cohort: A
+            python: '3.11'
+            root_box: 15
+            os: macos-latest
+          - cohort: B
+            python: '3.13'
+            root_box: 13
+            os: macos-latest
+          - cohort: B
+            python: '3.13'
+            root_box: 14
+            os: windows-latest
+          - cohort: B
+            python: '3.13'
+            root_box: 15
+            os: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install exact frozen numerical dependencies
+        shell: bash
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Execute exact frozen root-affine model
+        shell: bash
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p out
+          python code/iter504r_root_affine_reuse.py \
+            --root-box '${{ matrix.root_box }}' \
+            --out 'out/root-${{ matrix.root_box }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504r-${{ matrix.cohort }}-root-${{ matrix.root_box }}
+          path: out/root-${{ matrix.root_box }}.json
+          if-no-files-found: error
+
+  assemble:
+    needs: roots
+    strategy:
+      fail-fast: false
+      matrix:
+        cohort: [A,B]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504r-${{ matrix.cohort }}-root-13
+          path: roots/13
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504r-${{ matrix.cohort }}-root-14
+          path: roots/14
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504r-${{ matrix.cohort }}-root-15
+          path: roots/15
+      - name: Assemble frozen exact-cover classifier
+        run: |
+          mkdir -p out
+          python code/iter504r_affine_reuse_assemble.py \
+            --box13 roots/13/root-13.json \
+            --box14 roots/14/root-14.json \
+            --box15 roots/15/root-15.json \
+            --out 'out/iter504r-${{ matrix.cohort }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504r-diversified-${{ matrix.cohort }}
+          path: out/iter504r-${{ matrix.cohort }}.json
+
+  aggregate:
+    needs: assemble
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504r-diversified-A
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504r-diversified-B
+          path: b
+      - name: Aggregate frozen diversified cohorts
+        run: |
+          mkdir -p out
+          python code/iter504r_affine_reuse_aggregate.py \
+            --a a \
+            --b b \
+            --out out/iter504r-diversified-aggregate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504r-diversified-aggregate
+          path: out/iter504r-diversified-aggregate.json
+          if-no-files-found: error
