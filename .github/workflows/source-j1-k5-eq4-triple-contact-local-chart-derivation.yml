@@ -1,0 +1,78 @@
+name: source-j1-k5-eq4-triple-contact-local-chart-derivation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-eq4-triple-contact-local-chart-derivation.yml'
+      - 'code/source_j1_k5_eq4_triple_contact_local_chart_derivation.py'
+      - 'code/source_j1_k5_eq4_triple_contact_local_chart_derivation_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective freeze and source identities
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 60d9c7afa4eeb81a41c3334ac4bac71c1d1a8869 HEAD
+          test "$(git hash-object sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json)" = fdfb13f9974ebc891cb3f490ca553dd0991d9136
+          test "$(git hash-object sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json)" = c742e8cab0648b8fbaef88f09876644c6c2c3077
+          grep -F 'EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVED_SCOPED' research/prereg/SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE_2026-09-16.md
+          grep -F 'EQ4_TRIPLE_CONTACT_LOCAL_CHART_TRANSVERSALITY_FAIL_SCOPED' research/prereg/SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE_2026-09-16.md
+          grep -F 'EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_BLOCKED_SCOPED' research/prereg/SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE_2026-09-16.md
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run frozen exact derivation classifier
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          tag=$(echo '${{ matrix.python }}' | tr -d '.')
+          python code/source_j1_k5_eq4_triple_contact_local_chart_derivation.py --authority inputs/source_j1_k5_eq4_triple_contact_local_chart_derivation_authority.json --repo-root . --out "artifacts/chart_${tag}.json" | tee "artifacts/chart_${tag}.log"
+          sha256sum "artifacts/chart_${tag}.json" "artifacts/chart_${tag}.log" > "artifacts/chart_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chart-${{ matrix.python }}
+          path: artifacts/chart_*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: chart-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate frozen decision
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_eq4_triple_contact_local_chart_derivation_aggregate.py --a downloaded/chart_311.json --b downloaded/chart_313.json --out artifacts/chart_aggregate.json | tee artifacts/chart_aggregate.log
+          sha256sum artifacts/chart_aggregate.json artifacts/chart_aggregate.log > artifacts/chart_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chart-aggregate
+          path: artifacts/chart_aggregate.*
+          if-no-files-found: error
