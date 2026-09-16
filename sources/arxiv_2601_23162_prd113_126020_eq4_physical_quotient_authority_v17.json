@@ -1,0 +1,83 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_ESCALATION_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "b0c40b0c8c65f8eec9eecb4e9e25ee2eb05f1d88",
+  "source_boundary_frozen": true,
+  "required_fields": [
+    "PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT",
+    "QUOTIENT_OR_PROJECTION_MAP_FROM_EQ4_LOCAL_TANGENT_VARIABLES",
+    "CONTACT_CONSTRAINT_PULLBACK_TO_QUOTIENT"
+  ],
+  "sources": [
+    {
+      "source_id": "arXiv:2601.23162v1",
+      "role": "complete auditable primary preprint including appendices",
+      "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+      "retrieval_status": "COMPLETE_HTML_AND_PDF_AUDITABLE",
+      "relevant_source_facts": [
+        "Eq.(4) integrates g2,g3,g4,g5 in SL(2,C) after gauge fixing the global SL(2,C) invariance to g1=1 by delta(g1)",
+        "wedge group element is g_ab=g_b^{-1}g_a",
+        "one-wedge contact object uses B(z,g) and delta^(rho,j)(B)",
+        "Appendix-C CP1 invariance is auxiliary-spinor projectivization z~alpha z and is not a quotient of Eq.(4) group tangent variables"
+      ],
+      "term_and_synonym_audit": {
+        "quotient": "NO_EQ4_TANGENT_QUOTIENT_DEFINITION_FOUND",
+        "projection": "NO_EQ4_TANGENT_PROJECTION_FOUND",
+        "transverse": "NO_EQ4_PHYSICAL_TRANSVERSE_OBJECT_FOUND",
+        "tangent": "NO_EQ4_TANGENT_QUOTIENT_DEFINITION_FOUND",
+        "orthogonal": "NO_RELEVANT_DEFINITION_FOUND",
+        "jacobian": "NO_RELEVANT_SIMULTANEOUS_CONTACT_JACOBIAN_FOUND",
+        "haar": "NO_RELEVANT_QUOTIENT_TRANSPORT_FOUND",
+        "normalization": "NO_RELEVANT_CONTACT_NORMALIZATION_TRANSPORT_FOUND",
+        "gauge": "ONLY_GLOBAL_VERTEX_GAUGE_FIX_G1_EQUALS_IDENTITY_IS_EXPLICIT"
+      },
+      "required_field_status": {
+        "PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT": "ABSENT_FROM_COMPLETE_AUDITABLE_V1_RECORD",
+        "QUOTIENT_OR_PROJECTION_MAP_FROM_EQ4_LOCAL_TANGENT_VARIABLES": "ABSENT_FROM_COMPLETE_AUDITABLE_V1_RECORD",
+        "CONTACT_CONSTRAINT_PULLBACK_TO_QUOTIENT": "ABSENT_FROM_COMPLETE_AUDITABLE_V1_RECORD"
+      }
+    },
+    {
+      "source_id": "PhysRevD.113.126020",
+      "doi": "10.1103/fwql-t4yr",
+      "published": "2026-06-15",
+      "role": "published primary version of record",
+      "retrieval_status": "PUBLIC_METADATA_AND_ABSTRACT_ONLY__FULLTEXT_NOT_AUDITABLE_IN_CURRENT_AUTHORITY_ENVIRONMENT",
+      "publisher_metadata_fact": "APS public record states accepted manuscript will be available starting 2027-06-15",
+      "publisher_linked_supplement_search": "NO_EXPLICIT_OFFICIAL_SUPPLEMENTARY_MATERIAL_LINK_DISCOVERED_IN_PUBLIC_RECORD_OR_EXACT_TITLE_DOI_SEARCH",
+      "required_field_status": {
+        "PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT": "UNRESOLVED_IN_INACCESSIBLE_VERSION_OF_RECORD",
+        "QUOTIENT_OR_PROJECTION_MAP_FROM_EQ4_LOCAL_TANGENT_VARIABLES": "UNRESOLVED_IN_INACCESSIBLE_VERSION_OF_RECORD",
+        "CONTACT_CONSTRAINT_PULLBACK_TO_QUOTIENT": "UNRESOLVED_IN_INACCESSIBLE_VERSION_OF_RECORD"
+      }
+    },
+    {
+      "source_id": "author_linked_material_search",
+      "role": "explicitly paper-linked author derivation/code only",
+      "retrieval_status": "NO_ADMISSIBLE_EXPLICITLY_PAPER_LINKED_DERIVATION_OR_CODE_DISCOVERED",
+      "notes": "Author talks/slides and unrelated or companion papers are not promoted to authority under the preregistered boundary."
+    }
+  ],
+  "false_positive_rejections": [
+    {
+      "candidate": "CP1 invariant measure and z->alpha z projectivization",
+      "reason": "acts on auxiliary wedge spinor z_ab, not Eq.(4) group tangent variables X2,X3; variable-class substitution would be INVALID"
+    },
+    {
+      "candidate": "global SL(2,C) vertex gauge fix g1=1",
+      "reason": "already consumed raw-domain gauge fixing; it does not define a further physical transverse quotient/projection"
+    },
+    {
+      "candidate": "historical V8 auxiliary relation or textbook quotient",
+      "reason": "forbidden by preregistration"
+    }
+  ],
+  "production_required_field_status": {
+    "PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT": "NOT_ESTABLISHED_BY_AUDITABLE_FROZEN_PRIMARY_AUTHORITY",
+    "QUOTIENT_OR_PROJECTION_MAP_FROM_EQ4_LOCAL_TANGENT_VARIABLES": "NOT_ESTABLISHED_BY_AUDITABLE_FROZEN_PRIMARY_AUTHORITY",
+    "CONTACT_CONSTRAINT_PULLBACK_TO_QUOTIENT": "NOT_ESTABLISHED_BY_AUDITABLE_FROZEN_PRIMARY_AUTHORITY"
+  },
+  "minimal_blocker": "PUBLISHED_VERSION_FULLTEXT_AUTHORITY_ACCESS_CEILING",
+  "strong_absence_claim_authorized": false,
+  "assessment": "BLOCKED_SCOPED__AUDITABLE_V1_LACKS_REQUIRED_QUOTIENT_OBJECTS_BUT_VERSION_OF_RECORD_FULLTEXT_CANNOT_BE_COMPLETELY_AUDITED"
+}
