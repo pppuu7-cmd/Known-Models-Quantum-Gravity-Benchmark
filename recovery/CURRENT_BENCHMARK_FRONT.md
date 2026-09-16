@@ -5,50 +5,55 @@ Fresh repository `main` and fresh Actions state always outrank this navigation d
 
 ## Latest terminal Research execution
 
-`SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PHYSICAL_OBSERVABLE_QUOTIENT_GATE`
+`SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_GATE`
 
 Terminal Research classification:
 
-`PHYSICAL_OBSERVABLE_QUOTIENT_MAP_BLOCKED_SCOPED`
+`EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED`
 
 This is **BLOCKED, not FAIL**.
 
 Authority / execution chain:
 
-- prospective freeze + immutable authority ledger `2296ff6abd074b72b5d9d6fd3fb272ca1e4dbcb4`;
-- implementation/workflow head `f7b928d2ffbf06267c3e03c51e9e6e5d9ab82772`;
-- authoritative Actions run `35094058619`, terminal success;
-- jobs: source lock `104786944890`, Python 3.11 `104786982936`, Python 3.13 `104786982952`, aggregate `104787022994`;
-- artifacts: Python 3.11 `10445641691` / `sha256:a2fccaed6a819f24e84aca6cbaa6578fed5957b28e8e2185e44eaf4a0972d8d4`; Python 3.13 `10445491951` / `sha256:3c77872f488ac54fa62941b52e3dbda11fe25fa08e395d476d7191b5738e29fa`; aggregate `10445695875` / `sha256:2b7cc893ad1c784d0fbe6c95293fe92472f90cc59224bdb88d3276e10a03d059`;
-- frozen decision SHA256 `d34cb4c25131689396cb7607629bc6a455f935f823483aec9624c07746da2e60`;
-- durable canonical SHA256 `e3f928116c54929162af59df32273901049fb3765a872d0daa4731777bfea390`;
-- durable raw terminal-projection SHA256 `d28991291c64686248d856638edcb95d424b9e7460f716da33e9c781222e0bd0`.
+- prospective preregistration `8b9cb4d152e96fda01df0cb29a135a6caf9bd0b3`;
+- frozen authority ledger `02503ba89769a5746203573e950d97c6d9cb175b`;
+- implementation/workflow head `bb7e5b232c4946b49e9625fa9183f3c2b6995af2`;
+- authoritative Actions run `35100899454`, terminal success;
+- jobs: source lock `104809770048`, Python 3.11 `104809812033`, Python 3.13 `104809812016`, aggregate `104809865006`;
+- artifacts: Python 3.11 `10448590566` / `sha256:be2742e902400cee329181fa2905cdd2f53c9efef1ca49293c7d5e6afb09ffaf`; Python 3.13 `10448107759` / `sha256:a6940774068f63a1733d7a8dc44ab89ed1c5754c476cd6c735a46e05fdae623b`; aggregate `10448072945` / `sha256:f607f31f23d34b72077ef4b1e42b0893f99a3d4c17028b3b05760048a630a8d5`;
+- frozen lane decision SHA256 `5da277ae7e14cdb964f119c148f77fa43ec87546b88c8910340fded63064987b`;
+- aggregate decision SHA256 `d7533aae4018266a184bd4f264ba82d1a059027872655a3a48677b9b9eeb7808`;
+- durable raw terminal-projection SHA256 `a797f39e16b6ff6bc033c0f2222e2a1f4acc0131d20b349aa26a2ef258b63321`;
+- durable canonical SHA256 `2e3af3610aa2b706a64993d0ffc7004e3379cc7aa180917ab3101adc050ed086`.
 
-Green CI is provenance only; the classification is the frozen exact source/realization audit.
+Green CI is provenance only; the scientific/source classification follows from the prospectively frozen exact map predicate.
 
 ## Exact result
 
-The gate locked the terminal V8 object exactly: 8 invariant local collision jets, V8 rank/augmented rank `2/2`, affine nullity `6`, and all six nullspace vectors. It also locked the source Eq. (4) boundary-basis amplitude of `arXiv:2601.23162v1`: ten wedges, `g_1=identity`, four remaining group integrations, gamma-simple labels, magnetic boundary amplitude and intertwiner contraction.
+The gate confirms source authorization for the Eq. (4) parent identity, Eq. (3)/(7) Toller insertion identity, and parameter/normalization lock. It does not find the source-defined same-realization local collision chart, isolated smooth remainder/test factor, complete order-7 test jet, or permutation-coordinate map required to act with the eight V8 invariant collision distributions.
 
-The prospectively frozen observable action required an explicit same-realization local collision/test-jet map from the physical Eq. (4) amplitude to the eight V8 jets. No such map exists in the frozen durable authority corpus. Therefore `map_present=false`, observable-completeness authority is absent, and the action rank of the six V8 null directions is `null` / undefined rather than zero.
+Therefore `map_complete=false`, `jet_order_7_constructed=false`, and `nullspace_action_rank=null`, not zero.
 
-Iter453 cannot supply the map because its terminal scope explicitly uses synthetic deterministic tensors rather than physical Toller matrix elements. Terminal V10 also cannot supply it: its full-primary audit found that Eq. (4) defines the parent product vertex but does not provide a simultaneous-contact product-extension or finite-normalization prescription.
+New durable fact: the V11 missing-map blocker is narrowed to four explicit missing source/realization fields rather than an undifferentiated absence.
 
-New durable fact: the open physical-observable quotient question is now localized to an explicit missing source/realization object. Missing derivative/test-jet data are not zero action, so no physical quotient of the six V8 directions is authorized.
+## Parent Research state retained
 
-## Latest parent Research state retained
-
-Terminal V10 remains `SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED`: the two frozen full primary sources supplied zero actionable finite-renormalization selectors, leaving V8 affine nullity 6. Historical V8/V9/V10 BLOCKED/scoped results remain preserved. Historical V7 `INVALID_IMPLEMENTATION` and V5 `QUALIFIED` remain preserved.
+- V11 remains historically `PHYSICAL_OBSERVABLE_QUOTIENT_MAP_BLOCKED_SCOPED`; its rank was undefined because the local map was absent.
+- V10 remains `SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED`.
+- V8 remains `SOURCE_UNFIXED_FINITE_LOCAL_FREEDOM_SCOPED` with affine nullity 6.
+- Historical FAIL/BLOCKED/INVALID/QUALIFIED results remain preserved.
 
 ## Latest independent Critical Review
 
-No independent Critic review of the terminal physical-observable quotient gate is recorded on current main yet. No independent Critic review of terminal V10 was present at gate start either.
+No independent Critic review of the new Eq4 local collision test-jet map terminal result is recorded yet.
 
 ## Next admissible work
 
-Highest-information next gate: prospectively freeze `SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_GATE`.
+Highest-information next gate: prospectively freeze `SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE`.
 
-Construct from actual source-faithful Eq. (3)/(7) Toller data inside Eq. (4) a same-realization local highest-contact triangle chart and the smooth remainder/test factor through jet order 7. Lock parameter/normalization and observable identity, prohibit synthetic-tensor substitution, and distinguish missing-map BLOCKED from a validated exact/controlled map. Only after a terminal map result may the V8 physical-observable rank/quotient question be re-run.
+Target exactly the four missing fields: local collision chart, smooth remainder object, complete order-7 jet data, and permutation-coordinate consistency. Freeze immutable primary-source passages/equations and the derivation contract before extraction. Missing fields must remain missing, never zero.
+
+Only a terminal PASS on the local map may unlock a repaired physical-observable nullspace-action/rank gate.
 
 ## Governance lock
 

@@ -1,0 +1,63 @@
+{
+  "aggregate_frozen_projection": {
+    "aggregate_decision_sha256": "d7533aae4018266a184bd4f264ba82d1a059027872655a3a48677b9b9eeb7808",
+    "claim_ceiling": "Local Eq4 collision/test-jet map audit only; no physical nullspace action rank, quotient, distributional existence/nonexistence, model/family failure, D7 closure, selector, or Candidate Gravity conclusion.",
+    "classification": "EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED",
+    "controls_pass": true,
+    "gate": "SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_GATE",
+    "jet_order_7_constructed": false,
+    "lane_decision_agreement": true,
+    "lane_decision_sha256": "5da277ae7e14cdb964f119c148f77fa43ec87546b88c8910340fded63064987b",
+    "map_complete": false,
+    "missing_required_fields": [
+      "LOCAL_COLLISION_CHART",
+      "SMOOTH_REMAINDER_OBJECT",
+      "JET_ORDER_7_COMPLETENESS",
+      "PERMUTATION_COORDINATE_CONSISTENCY"
+    ],
+    "nullspace_action_rank": null,
+    "required_map_fields": {
+      "EQ4_PARENT_IDENTITY": true,
+      "JET_ORDER_7_COMPLETENESS": false,
+      "LOCAL_COLLISION_CHART": false,
+      "PARAMETER_NORMALIZATION_LOCK": true,
+      "PERMUTATION_COORDINATE_CONSISTENCY": false,
+      "SMOOTH_REMAINDER_OBJECT": false,
+      "TOLLER_INSERTION_IDENTITY": true
+    },
+    "runtime_python_versions": [
+      "3.11.16",
+      "3.13.15"
+    ],
+    "source_id": "arXiv:2601.23162v1",
+    "v10_open_finiteness_lock": true,
+    "v8_affine_nullity": 6,
+    "v8_basis_count": 8
+  },
+  "artifacts": {
+    "aggregate": {
+      "digest": "sha256:f607f31f23d34b72077ef4b1e42b0893f99a3d4c17028b3b05760048a630a8d5",
+      "id": 10448072945
+    },
+    "python_3_11": {
+      "digest": "sha256:be2742e902400cee329181fa2905cdd2f53c9efef1ca49293c7d5e6afb09ffaf",
+      "id": 10448590566
+    },
+    "python_3_13": {
+      "digest": "sha256:a6940774068f63a1733d7a8dc44ab89ed1c5754c476cd6c735a46e05fdae623b",
+      "id": 10448107759
+    }
+  },
+  "authoritative_run": 35100899454,
+  "gate": "SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_GATE",
+  "jobs": {
+    "aggregate": 104809865006,
+    "python_3_11": 104809812033,
+    "python_3_13": 104809812016,
+    "source_lock": 104809770048
+  },
+  "provenance_note": "Deterministic durable terminal projection reconstructed from the prospectively frozen classifier and immutable repository source state after the authoritative Actions run terminalized. Green CI is provenance only.",
+  "run_conclusion": "success",
+  "run_status": "completed",
+  "workflow_head": "bb7e5b232c4946b49e9625fa9183f3c2b6995af2"
+}
