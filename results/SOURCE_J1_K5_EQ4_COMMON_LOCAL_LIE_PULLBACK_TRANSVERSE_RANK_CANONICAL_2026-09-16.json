@@ -1,0 +1,33 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_COMMON_LOCAL_LIE_PULLBACK_TRANSVERSE_RANK_GATE",
+  "classification": "EQ4_COMMON_LOCAL_LIE_PULLBACK_TRANSVERSE_RANK_BLOCKED_SCOPED",
+  "workflow_head": "e4a373219aef548c64e1b689260f8dbc988b7746",
+  "authoritative_run": 35146616833,
+  "independent_methods_agree": true,
+  "raw_generator_matrix": [[-1,0],[1,-1],[0,-1]],
+  "raw_generator_rank": 2,
+  "raw_group_real_dimension": 6,
+  "raw_domain_dimension": 12,
+  "raw_codomain_dimension": 18,
+  "raw_total_rank": 12,
+  "raw_domain_nullity": 0,
+  "raw_codomain_left_nullity": 6,
+  "generator_left_relation": [1,1,-1],
+  "s3_raw_ranks": [2,2,2,2,2,2],
+  "physical_transverse_rank": null,
+  "rank_status": "raw_exact__physical_undefined",
+  "missing_physical_authority_fields": [
+    "physical_transverse_quotient_defined",
+    "physical_quotient_projection_defined",
+    "simultaneous_contact_scalar_pullback_to_physical_quotient_defined",
+    "jacobian_haar_contact_normalization_transport_defined",
+    "s3_orientation_coordinate_transport_on_physical_quotient_defined"
+  ],
+  "artifacts": {
+    "rref": {"id":10467168692,"digest":"sha256:d6815e77dc2354ce05d2c29bb52175377a469bd581da0708443943675b837ffb","json_sha256":"44360a76de4912e9b4f0c7cb56d31de5979d0172358e2438e749621755a98a7b","payload_sha256":"aa073dc4ea99f95a08d7db44275c9965776f61f773ba421d258438624bee97c0"},
+    "minors": {"id":10467412844,"digest":"sha256:208b00d197d36971161a89220c7e07352f6edd076720f0db3c7be8b82c7469a0","json_sha256":"8cff2875bb46cea6d28b97f9a2107d73ab0bd6d1fbb108cc34b0e338f9b3913e","payload_sha256":"032ac41cb0b37b0df4a8bcc051fd1e4dcf08adf7ce0da9a43658a83178caeb41"},
+    "aggregate": {"id":10467007793,"digest":"sha256:2d333d0c4b13a384f11616f2f9bd6a71c7f3768ec29ca3b265de8261d5b841e6","json_sha256":"7eeb379562c85d58783d771dc9bab29abae3f71c134ef4e08b6afdca295f3240","aggregate_sha256":"d185980c29db21a537c20815113619d0f4dc306f1dacef2182fa1bd56929f89c"}
+  },
+  "downstream_physical_transversality_authorized": false,
+  "scientific_boundary": "raw Lie pullback exact and full on the 12-dimensional gauge-fixed domain; physical quotient rank remains undefined because quotient/projection/contact-normalization/S3 transport authority is missing; BLOCKED != FAIL"
+}
