@@ -1,0 +1,65 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_GATE",
+  "date": "2026-09-16",
+  "target_triangle": ["12", "23", "13"],
+  "parent_terminal_commit": "5f9ec01076d6867e3eeadfa285d235159c7ae24b",
+  "source_records": [
+    {
+      "path": "sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json",
+      "blob_sha": "fdfb13f9974ebc891cb3f490ca553dd0991d9136",
+      "source_id": "arXiv:2601.23162v1",
+      "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+      "authorized_primitives": {
+        "eq4_parent": true,
+        "face_gauge_fixing": true,
+        "common_gauge_fixed_group_tuple": true,
+        "one_wedge_contact_argument_B": true,
+        "one_wedge_delta_derivative_contact": true,
+        "three_wedge_group_argument_maps": null,
+        "common_local_group_lie_lift": null,
+        "two_dimensional_transverse_quotient": null,
+        "jacobian_haar_contact_normalization_transport": null,
+        "s3_orientation_coordinate_transport": null
+      }
+    },
+    {
+      "path": "sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json",
+      "blob_sha": "c742e8cab0648b8fbaef88f09876644c6c2c3077",
+      "source_id": "arXiv:2604.24945v1",
+      "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046",
+      "authorized_primitives": {
+        "one_group_cartan_coordinates": true,
+        "one_wedge_toller_reconstruction": true,
+        "representation_and_branch_symmetries": true,
+        "three_wedge_group_argument_maps": null,
+        "common_local_group_lie_lift": null,
+        "two_dimensional_transverse_quotient": null,
+        "jacobian_haar_contact_normalization_transport": null,
+        "s3_orientation_coordinate_transport": null
+      }
+    }
+  ],
+  "required_fields": [
+    "COMMON_GAUGE_FIXED_GROUP_TUPLE",
+    "THREE_WEDGE_GROUP_ARGUMENT_MAPS",
+    "COMMON_LOCAL_GROUP_LIE_LIFT",
+    "TWO_DIMENSIONAL_TRANSVERSE_QUOTIENT",
+    "JACOBIAN_HAAR_CONTACT_NORMALIZATION_TRANSPORT",
+    "S3_ORIENTATION_COORDINATE_TRANSPORT"
+  ],
+  "bridge_target_only": {
+    "historical_v8_auxiliary_contacts": {
+      "B12": "x",
+      "B23": "y",
+      "B13": "x+y"
+    },
+    "authority": "TARGET_ONLY_NOT_SOURCE_PREMISE"
+  },
+  "explicit_non_authority": [
+    "ordinary group relations not explicitly tied to the frozen Eq4 wedge realization",
+    "Toller-matrix representation composition laws",
+    "historical V8 auxiliary contact coordinates"
+  ],
+  "decision_rule": "derive production fields only from explicit frozen durable source primitives; missing wedge-to-common-group maps or local lift remain missing and dependent rank is null, never zero",
+  "interpretation_ceiling": "fixed-triangle common-group/local-Lie lift only; no smooth remainder, order-7 jet, physical quotient, distributional existence/nonexistence, full-K5/model/family/D7/Candidate Gravity conclusion"
+}
