@@ -1,0 +1,46 @@
+{
+  "gate": "D7_S2_EQ4_K5_GROUP_VARIABLE_TANGENT_PUSHFORWARD_GATE",
+  "date": "2026-09-16",
+  "classification": "D7_S2_EQ4_K5_GROUP_VARIABLE_TANGENT_PUSHFORWARD_PASS_SCOPED",
+  "governing_preregistration": "bc9aa01263df1172206eb211b456bf5d78fe1b1b",
+  "compatible_later_preregistration": "32a2575ded77a938ed742526a9d62fe1e4756d41",
+  "execution_coverage_repair": "c0f8500aee43d4ee5686fc8dfc7b313e94b299d5",
+  "workflow_head": "da7f399e32dbacd41b7ae43c8a23ba991699bf84",
+  "actions_run": 35149367832,
+  "jobs": {
+    "source_lock": 104973468892,
+    "tree_minors": 104973521589,
+    "rref_cycle_root_s5": 104973521773,
+    "aggregate": 104973581115
+  },
+  "artifacts": {
+    "rref_cycle_root_s5": {"id": 10468946876, "digest": "sha256:e02799128bb64bf8cf41d3b11085b67564b95af11ed9927ca62227c18e26f03b", "json_sha256": "824bd06ad1b521bcf9804b4d7a56ce10db99d9f911c1d2d2851b9eebf750d8a1", "scientific_sha256": "579850f312d54804b759f835b9dc36f25488c66b1ca3e85e3137a51caf825f64"},
+    "tree_minors": {"id": 10468561566, "digest": "sha256:a04931dcfd31d496c5eb8fbdc031499325f16700fc0814dca652c2e3a7791032", "json_sha256": "26dcc0100dc86473c54d054377d9e6054b1831953aec9f5e4eb5c9fda58abf85", "scientific_sha256": "5421bced90d9c497c280b41e785c8d8d08ce50297ad70cb6430cf58c8035de7a"},
+    "aggregate": {"id": 10468447576, "digest": "sha256:5c05ba9947691e8bf5a8c36bb5a63a3fc448c2ae00af327f4ddb4406bdd0144a", "json_sha256": "e80384b0d0260bb6d30f1cef0be7399b1b8b6f3038c08755fb982fa7f29bef00", "scientific_sha256": "07b2de217778082501f679f70aca5365f176ee627265f81e3badd69181bbaea4"}
+  },
+  "scientific": {
+    "per_generator": {"domain_dimension": 4, "codomain_dimension": 10, "rank": 4, "domain_nullity": 0, "cycle_left_nullity": 6},
+    "full_real_sl2c": {"domain_dimension": 24, "codomain_dimension": 60, "rank": 24, "domain_nullity": 0, "cycle_left_nullity": 36},
+    "all_five_gauge_roots_agree": true,
+    "explicit_integer_cycle_basis_rank": 6,
+    "cycle_basis_annihilates_all_roots": true,
+    "root_change_cases_checked": 20,
+    "all_root_changes_integer_unimodular": true,
+    "root_change_determinant_values": [-1, 1],
+    "spanning_trees_per_root": 125,
+    "tree_root_minors_checked": 625,
+    "all_tree_minors_unimodular": true,
+    "tree_minor_values": [-1, 1],
+    "s5_root_transport_cases_checked": 600,
+    "s5_exact_orientation_transport": true,
+    "triangle_parent_differential_match": true,
+    "iter466_topology_consistency": true,
+    "d7_s2_layer_closed": "RAW_GROUP_VARIABLE_TANGENT_PUSHFORWARD_ONLY"
+  },
+  "noncanonical_prior_execution": {
+    "workflow_head": "0918d64d559ab63f56debb7e305896c51656eb14",
+    "actions_run": 35149108398,
+    "reason": "successful but omitted explicit cycle-basis and root-to-root coordinate-change checks required by earlier governing preregistration; retained as partial execution evidence only"
+  },
+  "claim_ceiling": "No distributional/contact pushforward, physical quotient/rank, Haar/contact normalization, observable pushforward, convergence/finiteness, D7-S2 closure, selector authority, model/family failure or new-theory conclusion."
+}
