@@ -1,3 +1,4 @@
+# Frozen execution-only fallback; scientific criteria are inherited unchanged.
 name: KMQGB Iter504P aggregate-only Windows fallback
 
 on:
