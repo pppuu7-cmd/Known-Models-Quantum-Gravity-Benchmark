@@ -1,0 +1,40 @@
+{
+  "actionable_selector_count": 0,
+  "candidate_passages": [
+    {
+      "equations": ["14"],
+      "id": "TM_EQ14_NO_COMPOSITION_REPRESENTATION",
+      "page": 3,
+      "section": "II. Wigner and Toller matrices",
+      "selector_category": "GLUING_COMPOSITION",
+      "status": "NON_ACTIONABLE",
+      "reason": "The source explicitly denies the naive group-composition representation identity and provides no replacement multi-contact composition selector."
+    },
+    {
+      "equations": ["15"],
+      "id": "TM_EQ15_ADDITIVE_IDENTITY",
+      "page": 3,
+      "section": "II. Wigner and Toller matrices",
+      "selector_category": "AUTHORIZED_QUOTIENT",
+      "status": "NON_ACTIONABLE",
+      "reason": "The one-wedge additive identity does not authorize quotienting the six V8 collision-supported extension directions."
+    },
+    {
+      "equations": ["19", "20"],
+      "id": "TM_UNIQUE_ONE_WEDGE_SPLITTING",
+      "page": 4,
+      "section": "III.A Toller matrices from the Feynman i epsilon",
+      "selector_category": "FINITE_COEFFICIENTS",
+      "status": "NON_ACTIONABLE",
+      "reason": "One-wedge splitting uniqueness is not a uniqueness theorem for products at intersecting contact supports and does not map to the V8 nullspace."
+    }
+  ],
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE",
+  "interpretation": "Full-text audit found no actionable same-realization selector mappable to the six-dimensional V8 affine finite-renormalization freedom.",
+  "pdf_byte_length": 884033,
+  "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046",
+  "pdf_url": "https://arxiv.org/pdf/2604.24945v1",
+  "role": "full immutable Toller/Cartan primary-source audit record for V10",
+  "source_id": "arXiv:2604.24945v1",
+  "version_marker_present": true
+}
