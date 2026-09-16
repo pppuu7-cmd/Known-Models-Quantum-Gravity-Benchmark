@@ -1,0 +1,180 @@
+{
+  "aggregate_sha256": "70369d7e0c78e4378f3c257519e2f7a32ed69f42414d3379cb35ac13967b759d",
+  "authoritative_decision_projection": {
+    "actual_decision": {
+      "actionable_records": [],
+      "classification": "SOURCE_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED",
+      "common_finite_normalization_fixed": false,
+      "mention_only_present": true,
+      "remaining_affine_nullity": 6,
+      "selector_augmented_rank": 0,
+      "selector_rank": 0,
+      "wrong_realization_records": []
+    },
+    "blob_records": {
+      "inputs/source_j1_k5_triangle_derivative_contact_counterterm_authority_v8.json": {
+        "actual": "4d048a0cb130e7e5e1e632773f247572946f042c",
+        "expected": "4d048a0cb130e7e5e1e632773f247572946f042c",
+        "match": true
+      },
+      "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL_COVERAGE_V5_2026-09-16.md": {
+        "actual": "943a0c5a9cbd7d806d6927569f109d17be65ef68",
+        "expected": "943a0c5a9cbd7d806d6927569f109d17be65ef68",
+        "match": true
+      },
+      "results/SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_REPAIR_TERMINAL_2026-09-16.md": {
+        "actual": "fe69a936e561ddb84d933e9145be325d6ddc966b",
+        "expected": "fe69a936e561ddb84d933e9145be325d6ddc966b",
+        "match": true
+      },
+      "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_CANONICAL_2026-09-16.json": {
+        "actual": "49e248993d0a23d85663aaa198cd5d87b6200b6e",
+        "expected": "49e248993d0a23d85663aaa198cd5d87b6200b6e",
+        "match": true
+      },
+      "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_TERMINAL_2026-09-16.md": {
+        "actual": "a63ffe988fa6584775a77892f695d776e9c142cc",
+        "expected": "a63ffe988fa6584775a77892f695d776e9c142cc",
+        "match": true
+      },
+      "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7_REPAIR_TERMINAL_2026-09-16.md": {
+        "actual": "3e38daea995a7f803181080b32310beb61d39da4",
+        "expected": "3e38daea995a7f803181080b32310beb61d39da4",
+        "match": true
+      },
+      "sources/arxiv_2202_04360_sl2c_haar_cartan.json": {
+        "actual": "4a8eb5762745f4b483c8aff87c0c9fb8b74cc236",
+        "expected": "4a8eb5762745f4b483c8aff87c0c9fb8b74cc236",
+        "match": true
+      },
+      "sources/arxiv_2601_23162v1_causal_vertex.json": {
+        "actual": "f0b520fc04904e038f252dc5b45d23893cb020ed",
+        "expected": "f0b520fc04904e038f252dc5b45d23893cb020ed",
+        "match": true
+      },
+      "sources/arxiv_2604_24945v1_toller_cartan.json": {
+        "actual": "8dc58f3c9c191289f2f148469f8df3ea95f77ad5",
+        "expected": "8dc58f3c9c191289f2f148469f8df3ea95f77ad5",
+        "match": true
+      }
+    },
+    "claim_ceiling": "Current durable structured-source authority audit for the local V8 delta-double-prime triangle only; no all-mollifier theorem, extension existence/nonexistence, full-K5/model/family/D7/global selector, or Candidate Gravity authority.",
+    "classification": "SOURCE_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED",
+    "controls": {
+      "all_blob_locks": true,
+      "frozen_source_set_exact": true,
+      "no_v8_canonical_representative_as_source_selector": true,
+      "synthetic_blocked_fixture": true,
+      "synthetic_inconsistent_fixture": true,
+      "synthetic_quotient_fixture": true,
+      "synthetic_unique_fixture": true,
+      "v8_object_reconstructed": true,
+      "wrong_realization_fixture": true
+    },
+    "controls_pass": true,
+    "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_FINITE_RENORMALIZATION_AUTHORITY_GATE",
+    "new_fact": "Whether the complete frozen structured source corpus provides an actionable same-realization finite-renormalization selector for the six-dimensional terminal V8 affine freedom.",
+    "source_scan": {
+      "sources/arxiv_2202_04360_sl2c_haar_cartan.json": {
+        "explicit_selector_key_records": [],
+        "mentions": [
+          {
+            "kind": "key",
+            "path": "$.haar_measure.normalization_note",
+            "terms": [
+              "normalization"
+            ]
+          },
+          {
+            "kind": "value",
+            "path": "$.haar_measure.normalization_note",
+            "terms": [
+              "rg"
+            ]
+          },
+          {
+            "kind": "key",
+            "path": "$.guards.no_absolute_convergence_claim_from_finite_cutoff_data_alone",
+            "terms": [
+              "rg"
+            ]
+          }
+        ],
+        "source_id": "arXiv:2202.04360",
+        "source_scope": "Structured source snapshot for the SL(2,C) Cartan/Haar measure used only by the Iter486 radial escape gate."
+      },
+      "sources/arxiv_2601_23162v1_causal_vertex.json": {
+        "explicit_selector_key_records": [],
+        "mentions": [
+          {
+            "kind": "value",
+            "path": "$.immutable_url",
+            "terms": [
+              "rg"
+            ]
+          },
+          {
+            "kind": "key",
+            "path": "$.eq7_cartan_magnetic.decomposition",
+            "terms": [
+              "composition"
+            ]
+          }
+        ],
+        "source_id": "arXiv:2601.23162v1",
+        "source_scope": "Structured mathematical snapshot of source equations/definitions used only for source-object qualification; not a new physical result."
+      },
+      "sources/arxiv_2604_24945v1_toller_cartan.json": {
+        "explicit_selector_key_records": [],
+        "mentions": [
+          {
+            "kind": "value",
+            "path": "$.immutable_url",
+            "terms": [
+              "rg"
+            ]
+          },
+          {
+            "kind": "key",
+            "path": "$.scope_guards.no_haar_convergence_claim",
+            "terms": [
+              "rg"
+            ]
+          }
+        ],
+        "source_id": "arXiv:2604.24945v1",
+        "source_scope": "Structured source lock for Iter484 one-edge Cartan/Toller reconstruction only."
+      }
+    },
+    "source_set_complete": true,
+    "synthetic_controls": {
+      "blocked_mention_only_fixture": true,
+      "inconsistent_fixture": true,
+      "quotient_fixture": true,
+      "unique_fixture": true,
+      "wrong_realization_rejected": true
+    },
+    "v8_controls": {
+      "augmented_rank_2": true,
+      "basis_count_8": true,
+      "classification": true,
+      "nullity_6": true,
+      "nullspace_exact": true,
+      "parent_controls_pass": true,
+      "rank_2": true
+    }
+  },
+  "claim_ceiling": "Current durable structured-source authority audit for the local V8 delta-double-prime triangle only; no all-mollifier theorem, extension existence/nonexistence, full-K5/model/family/D7/global selector, or Candidate Gravity authority.",
+  "classification": "SOURCE_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED",
+  "controls_pass": true,
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_FINITE_RENORMALIZATION_AUTHORITY_GATE",
+  "lane_classification_agreement": true,
+  "lane_controls_pass": true,
+  "lane_decision_agreement": true,
+  "lane_gate_identity": true,
+  "lane_hashes_self_consistent": true,
+  "lane_runtime_python": [
+    "3.11.16",
+    "3.13.15"
+  ]
+}

@@ -1,0 +1,2 @@
+cb016e2902d868e37c78c67ab1c9fbbe0d65409ad8051117d1d49700478e63a1  artifacts/v9_authority_aggregate.json
+219a6e6dda7a6d2d8c71dace9207acf4746c0859af0f88e5a7d907f8cbc04614  artifacts/v9_authority_aggregate.log
