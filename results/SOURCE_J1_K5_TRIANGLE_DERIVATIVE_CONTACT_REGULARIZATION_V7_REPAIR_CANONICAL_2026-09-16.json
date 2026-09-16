@@ -1,0 +1,125 @@
+{
+  "claim_ceiling": "Local parent-derivative-order Gaussian triangle only; no all-mollifier, extension-nonexistence, full-K5, model/family, D7, selector, or Candidate Gravity conclusion.",
+  "classification": "TRIANGLE_DELTA2_CONTACT_REGULARIZATION_DEPENDENT_SCOPED",
+  "controls": {
+    "common_rescaling_invariance": true,
+    "derivative_identity": true,
+    "one_factor_x2_normalization": true,
+    "one_factor_zero_mass": true,
+    "permutation_symmetry": true,
+    "plain_delta_object_fixture_distinct": true,
+    "source_authority": true,
+    "target_determinant_formula_positive": true,
+    "transverse_two_contact_normalization": true,
+    "wrong_conormal_map_rejected": true,
+    "wrong_derivative_plus_sign_rejected": true
+  },
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7",
+  "lane_classifications": [
+    "TRIANGLE_DELTA2_CONTACT_REGULARIZATION_DEPENDENT_SCOPED",
+    "TRIANGLE_DELTA2_CONTACT_REGULARIZATION_DEPENDENT_SCOPED"
+  ],
+  "lane_decision_agreement": true,
+  "one_factor": {
+    "a1_bad_plus_mass": "4",
+    "a1_mass": "0",
+    "a1_x2": "2",
+    "a4_bad_plus_mass": "16",
+    "a4_mass": "0",
+    "a4_x2": "2"
+  },
+  "permutation_records": {
+    "A": {
+      "E_values": [
+        "-5/9"
+      ],
+      "K_values": [
+        "1600/531441"
+      ]
+    },
+    "B": {
+      "E_values": [
+        "-80/243"
+      ],
+      "K_values": [
+        "204800/1162261467"
+      ]
+    },
+    "C": {
+      "E_values": [
+        "-540/1331"
+      ],
+      "K_values": [
+        "14400/19487171"
+      ]
+    }
+  },
+  "schemes": {
+    "A": [
+      1,
+      1,
+      1
+    ],
+    "A4": [
+      4,
+      4,
+      4
+    ],
+    "B": [
+      1,
+      1,
+      4
+    ],
+    "C": [
+      1,
+      2,
+      3
+    ]
+  },
+  "source_checks": {
+    "critic_local_map_lock": true,
+    "critic_requires_derivative_bridge": true,
+    "critic_v5_present": true,
+    "critic_v6_present": true,
+    "front_present": true,
+    "prereg_delta2_object_lock": true,
+    "prereg_parent_main_lock": true,
+    "prereg_present": true,
+    "prereg_v6_critic_lock": true,
+    "v4_delta2_lock": true,
+    "v4_repaired_run_lock": true,
+    "v5_channel00000_lock": true,
+    "v5_same_realization_lock": true,
+    "v5_source_realization_lock": true,
+    "v6_run_lock": true
+  },
+  "target_D_A": "3",
+  "transverse_two_contact_x2y2": "4",
+  "values": {
+    "A": {
+      "D": "3",
+      "E": "-5/9",
+      "K": "1600/531441",
+      "plain_delta_S_fixture": "1/3"
+    },
+    "A4": {
+      "D": "48",
+      "E": "-5/9",
+      "K": "1600/531441",
+      "plain_delta_S_fixture": "4/3"
+    },
+    "B": {
+      "D": "9",
+      "E": "-80/243",
+      "K": "204800/1162261467",
+      "plain_delta_S_fixture": "4/9"
+    },
+    "C": {
+      "D": "11",
+      "E": "-540/1331",
+      "K": "14400/19487171",
+      "plain_delta_S_fixture": "6/11"
+    }
+  },
+  "wrong_conormal_D_A": "6"
+}

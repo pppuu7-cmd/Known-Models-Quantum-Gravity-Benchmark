@@ -1,0 +1,25 @@
+SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7 same-contract repair terminal provenance
+Date: 2026-09-16
+
+Authoritative run: 35067251385
+Workflow head: b6f78151443dfc78c6ae07ceadf9977964a36df3
+
+Jobs:
+source-lock: 104700239717
+exact Python 3.13: 104700275681
+exact Python 3.11: 104700275717
+aggregate: 104700314512
+
+Artifacts / GitHub artifact digests:
+v7-source-lock: 10433814639  sha256:6f0b93237fa00e295099cba62a9efa1192c0a4f7d140593e006406d2c85b5907
+v7-python-3.13: 10435096047  sha256:03465ab60d701497d173b4be3f3bedcac5d0308b4da8019adb54badea6ab46f3
+v7-python-3.11: 10435011447  sha256:c3f4edd548c0cd55f2cdf81d93f9d731ead27acd5ec0b8922f980d880455ea10
+v7-aggregate: 10434348700  sha256:cc8a7175007e7589d2a9ce2ee9346e796c0b8f5bae770d48e37483502c8073cd
+
+Byte hashes inside downloaded terminal aggregate artifact:
+3906b6f76adc7469617550c14ecfc0165dcaefbede578318de55be1e569b9f77  v7_aggregate.json
+8f51a3a999da54481707ccd4a200753fc524458d694455dac4925a7e5e4ff013  v7_aggregate.log
+297369ad219ae79a14cd4862f6a68fd13c86a2947aea09f2a0a2f59e017c1223  v7_aggregate.sha256
+
+The downloaded ZIP SHA256 equals the GitHub artifact digest for this run:
+cc8a7175007e7589d2a9ce2ee9346e796c0b8f5bae770d48e37483502c8073cd  v7-aggregate-terminal.zip
