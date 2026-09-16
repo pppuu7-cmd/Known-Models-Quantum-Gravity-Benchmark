@@ -1,0 +1,83 @@
+name: KMQGB Eq4 triangle wedge group argument identity
+
+on:
+  push:
+    paths:
+      - '.github/workflows/source-j1-k5-eq4-triangle-wedge-group-argument-identity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify frozen source and prereg authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json)" = "fdfb13f9974ebc891cb3f490ca553dd0991d9136"
+          test "$(git hash-object sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json)" = "c742e8cab0648b8fbaef88f09876644c6c2c3077"
+          git merge-base --is-ancestor ddf246b861d4e367af409e3ae5b6c97ccfd1ea7e HEAD
+          git merge-base --is-ancestor 440c853516c2357029c848c83e48a7f6a39d0c86 HEAD
+          git merge-base --is-ancestor 4a21e9148393ebcefdfbb2a17cfbbf51af82b052 HEAD
+          git merge-base --is-ancestor 18133e8de9f919960e7100952da3aeee77c0bc06 HEAD
+
+  exact-lanes:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Execute frozen exact identity gate
+        run: |
+          mkdir -p artifacts
+          python code/source_j1_k5_eq4_triangle_wedge_group_argument_identity.py \
+            --authority inputs/source_j1_k5_eq4_triangle_wedge_group_argument_identity_authority.json \
+            --source-audit sources/arxiv_2601_23162v1_eq4_triangle_wedge_group_argument_identity_v15.json \
+            --repo-root . \
+            --out artifacts/decision.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-wedge-identity-py${{ matrix.python-version }}
+          path: artifacts/decision.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: exact-lanes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: eq4-wedge-identity-py3.11
+          path: artifacts/py311
+      - uses: actions/download-artifact@v4
+        with:
+          name: eq4-wedge-identity-py3.13
+          path: artifacts/py313
+      - name: Aggregate independent lanes
+        run: |
+          python code/source_j1_k5_eq4_triangle_wedge_group_argument_identity_aggregate.py \
+            --lane311 artifacts/py311 \
+            --lane313 artifacts/py313 \
+            --out artifacts/aggregate.json
+          cat artifacts/aggregate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-wedge-identity-aggregate
+          path: artifacts/aggregate.json
+          if-no-files-found: error
+          retention-days: 90
