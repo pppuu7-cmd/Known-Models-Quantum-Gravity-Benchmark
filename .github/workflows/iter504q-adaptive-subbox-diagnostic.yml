@@ -1,0 +1,119 @@
+name: KMQGB Iter504Q adaptive subbox continuous-drift diagnostic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504q-adaptive-subbox-diagnostic.yml'
+      - 'research/prereg/ITER504Q_ADAPTIVE_SUBBOX_CONTINUOUS_DRIFT_NARROWING_DIAGNOSTIC_2026-09-17.md'
+      - 'code/iter504q_adaptive_subbox_diagnostic.py'
+      - 'code/iter504q_adaptive_subbox_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen Iter504Q and parent-science ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          for c in \
+            881c804f56a9a9969f8c969ea3ccd1826da92846 \
+            18ef963041fe6ddec35e12cece0939aa18189a77 \
+            432c6a38b310eae177a2d0675b95994cb6a89f34 \
+            162014c7566afa4828e646f77e52d91140dc8388 \
+            f0844237cbf6ba1e042399d5a76dec8a4ab8b248 \
+            aeef88e899c2f3900a8735b30610e9adabebbb9d; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+      - name: Verify inherited Iter504 source implementation is unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          for p in \
+            code/iter499_arb_core.py \
+            code/iter500_compact_sandwich_kak.py \
+            code/iter501_direct_max_envelope_interval.py \
+            code/iter503_ad_core.py \
+            code/iter504_centered_shard.py; do
+            test "$(git hash-object "$p")" = "$(git rev-parse aeef88e899c2f3900a8735b30610e9adabebbb9d:"$p")"
+          done
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax and frozen constants check
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile code/iter504q_adaptive_subbox_diagnostic.py code/iter504q_adaptive_subbox_aggregate.py
+          grep -F 'MAX_DEPTH = 6' code/iter504q_adaptive_subbox_diagnostic.py
+          grep -F 'DRIFT_TOL = arb("0.05")' code/iter504q_adaptive_subbox_diagnostic.py
+          grep -F 'ROOT_BOXES = (13, 14, 15)' code/iter504q_adaptive_subbox_diagnostic.py
+          grep -F 'full_channel_count' code/iter504q_adaptive_subbox_diagnostic.py
+
+  diagnostic:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Execute full-channel adaptive diagnostic
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p out
+          python code/iter504q_adaptive_subbox_diagnostic.py \
+            --out 'out/iter504q-${{ matrix.python }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504q-subbox-${{ matrix.python }}
+          path: out/iter504q-${{ matrix.python }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: diagnostic
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504q-subbox-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504q-subbox-3.13
+          path: b
+      - name: Aggregate independent environments
+        run: |
+          mkdir -p out
+          python code/iter504q_adaptive_subbox_aggregate.py \
+            --a a \
+            --b b \
+            --out out/iter504q-aggregate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504q-subbox-aggregate
+          path: out/iter504q-aggregate.json
+          if-no-files-found: error
