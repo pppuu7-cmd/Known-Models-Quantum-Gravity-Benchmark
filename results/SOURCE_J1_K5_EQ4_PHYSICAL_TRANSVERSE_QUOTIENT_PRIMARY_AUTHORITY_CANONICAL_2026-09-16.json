@@ -1,0 +1,65 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_ESCALATION_GATE",
+  "date": "2026-09-16",
+  "classification": "EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_BLOCKED_SCOPED",
+  "authority_chain": {
+    "preregistration_commit": "b0c40b0c8c65f8eec9eecb4e9e25ee2eb05f1d88",
+    "source_audit_commit": "79c6b9df4c7e619e6d5c4ec41931ebccabf7c3fd",
+    "independent_critic_commit": "a1d8fb908feab5d0dc651a948b649cb7b5324939",
+    "object_ledger_commit": "44c2140c0b0386f4d647b4d793ea97fedda59357",
+    "frozen_authority_commit": "69a2724e978aea1d5aa03732eb12b448bc5eff49",
+    "classifier_commit": "6a205872efce9f6b3b5e88199a126146f06cf2d9",
+    "aggregate_code_commit": "243081e128a2bf14b975b26688376409747dc918",
+    "workflow_head": "62bbf808cb766c1fb79b59f396c2c06791374ff1"
+  },
+  "actions": {
+    "run_id": 35148538287,
+    "conclusion": "success",
+    "jobs": {
+      "source_lock": 104970657566,
+      "primary_lane": 104970695637,
+      "critic_lane": 104970695679,
+      "aggregate": 104970775553
+    },
+    "artifacts": {
+      "primary": {
+        "id": 10468170802,
+        "digest": "sha256:935212d4697a29cd74139b05e5e4bb59ff4b163fdbd7258d8f054d1db87c738c",
+        "json_sha256": "9e722041d612e699e4748b04b3aea05344c70477713e58f75a84f77208f38cae"
+      },
+      "critic": {
+        "id": 10468066766,
+        "digest": "sha256:768688a332681d83005ef0d7172ba5dab550550a36ad10d0d9a519ec3582519d",
+        "json_sha256": "66d3ad77101dcce67766708ad7f0f624266b159445c4c5fb56de6c9773cce42a"
+      },
+      "aggregate": {
+        "id": 10467827443,
+        "digest": "sha256:dcc2e9ae007a19ea24ad296451b9e4257da26a687b0ab26282531022aa0ed854",
+        "json_sha256": "5f4b3cdff438d7e7d9cdfb9e27634217ddf2895874291523a5478469bd431807",
+        "aggregate_payload_sha256": "04d522efbb733c313430bfa7f8f09ab5a39fef251b8a3b35346ad81fe0fecc66"
+      }
+    }
+  },
+  "scientific_payload_sha256": "5211f28fd939da3829eebde090014d8eb11d052b449c3cbf14b054f3767bffd5",
+  "independent_source_lanes_agree": true,
+  "required_fields": {
+    "PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT": "NOT_ESTABLISHED",
+    "QUOTIENT_OR_PROJECTION_MAP_FROM_EQ4_LOCAL_TANGENT_VARIABLES": "NOT_ESTABLISHED",
+    "CONTACT_CONSTRAINT_PULLBACK_TO_QUOTIENT": "NOT_ESTABLISHED"
+  },
+  "minimal_blocker": "PUBLISHED_VERSION_FULLTEXT_AUTHORITY_ACCESS_CEILING",
+  "source_search_status": "FROZEN_PRIMARY_BOUNDARY_EXHAUSTED_TO_PUBLISHED_FULLTEXT_ACCESS_CEILING",
+  "published_version_fulltext_auditable": false,
+  "strong_absence_claim_authorized": false,
+  "physical_transverse_rank": null,
+  "downstream_physical_projection_authorized": false,
+  "source_record_hashes": {
+    "source_audit_git_blob": "59666562d6f6376f29156ce81d2944988d991314",
+    "source_audit_sha256": "58b5769d6b557e7d8ee3d4c3508fd7701135060d24004d67c1f5921ac2ec6be2",
+    "critic_git_blob": "3dcec89f108e97762591e3b9417720a546eef17e",
+    "critic_sha256": "43d75149a184f17c8c2369d949f1831a38b21edaab6347a1d379c164e67a857b",
+    "object_ledger_git_blob": "59ec9ff2d145bcf2d69a1d1eef38cbd917da6acc",
+    "arxiv_v1_pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713"
+  },
+  "claim_ceiling": "The auditable frozen primary authority does not establish the same-realization physical transverse quotient/projection. This BLOCKED result is not a transversality FAIL and does not prove that the currently inaccessible published version of record lacks such a definition. Raw rank 12 remains raw only; physical transverse rank remains undefined."
+}
