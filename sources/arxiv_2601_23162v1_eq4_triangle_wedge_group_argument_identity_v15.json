@@ -1,0 +1,80 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "ddf246b861d4e367af409e3ae5b6c97ccfd1ea7e",
+  "authority_commit": "440c853516c2357029c848c83e48a7f6a39d0c86",
+  "source_id": "arXiv:2601.23162v1",
+  "locked_pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+  "locked_prior_record_blob_sha": "fdfb13f9974ebc891cb3f490ca553dd0991d9136",
+  "same_realization_parent": {
+    "integration_tuple": ["g2", "g3", "g4", "g5"],
+    "fixed_variable": "g1 = 1",
+    "source_location": "p.2, Eq.(4) and immediately following gauge-fixing sentence",
+    "wedge_product_ordering": "1 <= a < b <= 5"
+  },
+  "literal_general_wedge_identity": {
+    "formula": "g_ab = g_b^{-1} g_a",
+    "meaning": "Lorentz group element representing parallel transport along edges a and b forming wedge (ab)",
+    "source_location": "p.2, paragraph immediately preceding Eq.(3)/Eq.(4)",
+    "eq4_factor_argument": "T_ab(...)(g_b^{-1} g_a)"
+  },
+  "orientation": {
+    "formula": "kappa_ab = sigma_a sigma_b",
+    "source_location": "p.2, paragraph preceding Eq.(4)",
+    "ordered_wedge_convention": "Eq.(4) product uses 1 <= a < b <= 5"
+  },
+  "contact_scalar_input": {
+    "one_group_scalar": "B(z,g)",
+    "literal_wedge_scalar": "B_ab = B(z_ab, g_b^{-1} g_a)",
+    "source_location": "p.5, Eq.(16)-Eq.(17) discussion and preceding saddle-point definition; Appendix C Eq.(C7), Appendix D Eq.(D1)-Eq.(D3)",
+    "distribution_input": "delta^(rho,j)(B_ab) with B_ab evaluated on g_b^{-1} g_a"
+  },
+  "triangle_identity_ledger": [
+    {
+      "wedge": "12",
+      "integration_variables": ["g1", "g2"],
+      "gauge_reduced_variables": ["g2"],
+      "literal_group_argument": "g_2^{-1} g_1",
+      "gauge_fixed_group_argument": "g_2^{-1}",
+      "multiplication_order": ["g_2^{-1}", "g_1"],
+      "inversions": ["g2"],
+      "orientation": "a=1 < b=2; kappa_12=sigma_1 sigma_2",
+      "left_right_action_if_material": "no additional action convention is required beyond the literal ordered product g_b^{-1} g_a",
+      "contact_scalar_group_argument": "B(z_12, g_2^{-1} g_1)",
+      "primary_location": "p.2 Eq.(4) plus p.5 B_ab identity",
+      "literal_or_dummy_rename_equivalence": "LITERAL"
+    },
+    {
+      "wedge": "23",
+      "integration_variables": ["g2", "g3"],
+      "gauge_reduced_variables": ["g2", "g3"],
+      "literal_group_argument": "g_3^{-1} g_2",
+      "gauge_fixed_group_argument": "g_3^{-1} g_2",
+      "multiplication_order": ["g_3^{-1}", "g_2"],
+      "inversions": ["g3"],
+      "orientation": "a=2 < b=3; kappa_23=sigma_2 sigma_3",
+      "left_right_action_if_material": "no additional action convention is required beyond the literal ordered product g_b^{-1} g_a",
+      "contact_scalar_group_argument": "B(z_23, g_3^{-1} g_2)",
+      "primary_location": "p.2 Eq.(4) plus p.5 B_ab identity",
+      "literal_or_dummy_rename_equivalence": "LITERAL"
+    },
+    {
+      "wedge": "13",
+      "integration_variables": ["g1", "g3"],
+      "gauge_reduced_variables": ["g3"],
+      "literal_group_argument": "g_3^{-1} g_1",
+      "gauge_fixed_group_argument": "g_3^{-1}",
+      "multiplication_order": ["g_3^{-1}", "g_1"],
+      "inversions": ["g3"],
+      "orientation": "a=1 < b=3; kappa_13=sigma_1 sigma_3",
+      "left_right_action_if_material": "no additional action convention is required beyond the literal ordered product g_b^{-1} g_a",
+      "contact_scalar_group_argument": "B(z_13, g_3^{-1} g_1)",
+      "primary_location": "p.2 Eq.(4) plus p.5 B_ab identity",
+      "literal_or_dummy_rename_equivalence": "LITERAL"
+    }
+  ],
+  "historical_v8_auxiliary_relation_used": false,
+  "generic_textbook_group_formula_used": false,
+  "toller_matrix_composition_used": false,
+  "extraction_assessment": "ALL_THREE_WEDGE_IDENTITIES_EXPLICIT_IN_LOCKED_PRIMARY_AUTHORITY"
+}
