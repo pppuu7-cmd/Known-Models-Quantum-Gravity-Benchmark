@@ -1,0 +1,59 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "ddf246b861d4e367af409e3ae5b6c97ccfd1ea7e",
+  "parent_terminal_commit": "48f59aa10203903b494bd33edb5e498be24bb24f",
+  "target_triangle": ["12", "23", "13"],
+  "allowed_primary_authority": [
+    {
+      "source_id": "arXiv:2601.23162v1",
+      "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+      "durable_record_path": "sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json",
+      "durable_record_blob_sha": "fdfb13f9974ebc891cb3f490ca553dd0991d9136"
+    },
+    {
+      "source_id": "arXiv:2604.24945v1",
+      "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046",
+      "durable_record_path": "sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json",
+      "durable_record_blob_sha": "c742e8cab0648b8fbaef88f09876644c6c2c3077"
+    }
+  ],
+  "identity_gauge": {
+    "gauge_fixed_parent": "Eq.(4) realization with g1 fixed to identity",
+    "wedge_order": ["12", "23", "13"],
+    "generic_group_formula_authority": false,
+    "historical_v8_auxiliary_chart_authority": false,
+    "toller_matrix_composition_as_group_law_authority": false,
+    "dummy_renaming_only_if_literal_map_preserved": true
+  },
+  "required_per_wedge_fields": [
+    "integration_variables",
+    "multiplication_order",
+    "inversions",
+    "orientation",
+    "left_right_action_if_material",
+    "contact_scalar_group_argument",
+    "primary_location",
+    "literal_or_dummy_rename_equivalence"
+  ],
+  "production_values": {
+    "12": null,
+    "23": null,
+    "13": null
+  },
+  "frozen_labels": {
+    "pass": "EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_PASS_SCOPED",
+    "blocked": "EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_BLOCKED_SCOPED",
+    "invalid": "INVALID_IMPLEMENTATION"
+  },
+  "decision_rule": "PASS only if all three exact same-realization wedge group arguments and conventions are explicit in allowed primary authority; BLOCKED for any essential missing identity; INVALID for guessed/unlicensed conventions or provenance mutation",
+  "rank_policy": "No contact/transverse rank is computed or inferred in this gate. Missing identity implies no rank value.",
+  "governance": {
+    "RQIR_Core_v1_0": "FROZEN",
+    "D7_S2": "NOT_CLOSED",
+    "D7_S3": "NOT_CLOSED",
+    "D7_S4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "candidate_gravity": "INACTIVE",
+    "terminal_selectors_authorized": false
+  }
+}
