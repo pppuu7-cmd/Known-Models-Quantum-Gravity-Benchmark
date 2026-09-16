@@ -1,0 +1,28 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_ESCALATION_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "b0c40b0c8c65f8eec9eecb4e9e25ee2eb05f1d88",
+  "records": {
+    "source_audit": {
+      "path": "sources/arxiv_2601_23162_prd113_126020_eq4_physical_quotient_authority_v17.json",
+      "git_blob_sha": "59666562d6f6376f29156ce81d2944988d991314"
+    },
+    "independent_critic": {
+      "path": "critique/SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_CRITIC_2026-09-16.json",
+      "git_blob_sha": "3dcec89f108e97762591e3b9417720a546eef17e"
+    },
+    "object_ledger": {
+      "path": "research/ledgers/SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT_LEDGER_2026-09-16.json",
+      "git_blob_sha": "59ec9ff2d145bcf2d69a1d1eef38cbd917da6acc"
+    }
+  },
+  "external_primary_identifiers": {
+    "arxiv": "arXiv:2601.23162v1",
+    "arxiv_pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+    "published_article": "Phys. Rev. D 113, 126020 (2026)",
+    "doi": "10.1103/fwql-t4yr",
+    "publication_date": "2026-06-15",
+    "publisher_public_access_fact": "accepted manuscript announced for public availability starting 2027-06-15"
+  },
+  "scientific_lock": "Execution may classify only the frozen audit records. It may not add a textbook quotient, V8, a companion paper, a talk/slide, or a post-hoc source."
+}
