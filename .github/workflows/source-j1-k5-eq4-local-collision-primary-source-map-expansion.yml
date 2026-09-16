@@ -1,0 +1,90 @@
+name: source-j1-k5-eq4-local-collision-primary-source-map-expansion
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-eq4-local-collision-primary-source-map-expansion.yml'
+      - 'code/source_j1_k5_eq4_local_collision_primary_source_map_expansion.py'
+      - 'code/source_j1_k5_eq4_local_collision_primary_source_map_expansion_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective chronology and immutable source records
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 978fb67fa03fa8c1d86c7cd5f14af5cebc527cb4 HEAD
+          git merge-base --is-ancestor fba120918e0895f2c18fb4493583ee1d971559eb HEAD
+          test "$(git hash-object research/prereg/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE_2026-09-16.md)" = "7355598fe87075c19ba9e37683b96519fa49da09"
+          test "$(git hash-object inputs/source_j1_k5_eq4_local_collision_primary_source_map_expansion_authority.json)" = "815a6fc286ee821323177d02374049e01174bf6a"
+          test "$(git hash-object sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json)" = "fdfb13f9974ebc891cb3f490ca553dd0991d9136"
+          test "$(git hash-object sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json)" = "c742e8cab0648b8fbaef88f09876644c6c2c3077"
+          test "$(git hash-object results/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_TERMINAL_2026-09-16.md)" = "49b9abd653d89493c85969b1f0b3162c2611b9c8"
+          test "$(git hash-object inputs/source_j1_k5_eq4_local_collision_test_jet_map_authority.json)" = "a9b4fdd1da929de9b2e366cc082b9d21511598ca"
+          grep -F 'EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANDED_SCOPED' research/prereg/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE_2026-09-16.md
+          grep -F 'EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_PARTIAL_BLOCKED_SCOPED' research/prereg/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE_2026-09-16.md
+          grep -F 'EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_AUTHORITY_BLOCKED_SCOPED' research/prereg/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE_2026-09-16.md
+          grep -F 'INVALID_IMPLEMENTATION' research/prereg/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE_2026-09-16.md
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run frozen exact source-map expansion audit
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_eq4_local_collision_primary_source_map_expansion.py \
+            --repo-root . \
+            --out "artifacts/eq4_primary_map_expansion_py${{ matrix.python }}.json" \
+            | tee "artifacts/eq4_primary_map_expansion_py${{ matrix.python }}.log"
+          sha256sum artifacts/eq4_primary_map_expansion_py${{ matrix.python }}.* > "artifacts/eq4_primary_map_expansion_py${{ matrix.python }}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-primary-map-expansion-py${{ matrix.python }}
+          path: artifacts/eq4_primary_map_expansion_py${{ matrix.python }}.*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: eq4-primary-map-expansion-py*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate frozen decision
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_eq4_local_collision_primary_source_map_expansion_aggregate.py \
+            --a downloaded/eq4_primary_map_expansion_py3.11.json \
+            --b downloaded/eq4_primary_map_expansion_py3.13.json \
+            --out artifacts/eq4_primary_map_expansion_aggregate.json \
+            | tee artifacts/eq4_primary_map_expansion_aggregate.log
+          sha256sum artifacts/eq4_primary_map_expansion_aggregate.* > artifacts/eq4_primary_map_expansion_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-primary-map-expansion-aggregate
+          path: artifacts/eq4_primary_map_expansion_aggregate.*
+          if-no-files-found: error
