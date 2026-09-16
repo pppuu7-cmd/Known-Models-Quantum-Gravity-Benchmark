@@ -1,0 +1,56 @@
+{
+  "gate": "D7_S2_EQ4_K5_SIMULTANEOUS_CONTACT_COVECTOR_OBJECT_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "e20aafb9c894759b8093bada4bacdbb9b8e1a425",
+  "source_id": "arXiv:2601.23162v1",
+  "locked_pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+  "primary_url": "https://arxiv.org/html/2601.23162v1",
+  "facts": {
+    "eq4_group_domain": {
+      "location": "Eq.(4), Sec. II",
+      "group_variables": ["g2", "g3", "g4", "g5"],
+      "gauge": "g1=identity",
+      "wedge_argument": "g_ab=g_b^{-1}g_a",
+      "ordered_wedges": "1<=a<b<=5"
+    },
+    "coherent_state_domain": {
+      "location": "Eq.(12), Sec. IV",
+      "formula_summary": "integral over product_{a=2}^5 dg_a and product_{ab} dOmega_ab",
+      "auxiliary_variables": "z_ab in CP1, one independently integrated auxiliary spinor per wedge",
+      "assessment": "GROUP_AND_AUXILIARY_SPINOR_VARIABLES_ARE_SIMULTANEOUS_INTEGRATION_VARIABLES"
+    },
+    "contact_scalar": {
+      "location": "Appendix C Eq.(31)-Eq.(32)",
+      "formula": "B(z,g)=log(<g^dagger z|g^dagger z>/<z|z>)",
+      "domain": "CP1 x SL(2,C)",
+      "real_valued": true,
+      "assessment": "EXPLICIT_SOURCE_FORMULA_PRESENT"
+    },
+    "contact_distribution": {
+      "location": "Appendix D Eq.(35)-Eq.(36)",
+      "formula_summary": "Theta_(sigma,rho,j)[B(z,g)] = theta(sigma B(z,g)) + sigma delta^(rho,j)(B(z,g))",
+      "assessment": "SOURCE_DISTRIBUTION_IS_COMPOSED_WITH_FULL_B_Z_G_OBJECT"
+    }
+  },
+  "required_field_assessment": {
+    "exact_scalar_contact_function": "PRESENT",
+    "contact_locus_argument": "PRESENT_AS_B_EQUALS_ZERO_DISTRIBUTIONAL_SUPPORT_VARIABLE",
+    "group_and_spinor_variable_roles": "PRESENT_AS_JOINT_INTEGRATION_VARIABLES",
+    "exact_full_first_differential": "ALGEBRAICALLY_DEFINED_FROM_EXPLICIT_B_FORMULA_ON_CP1_X_SL2C",
+    "source_authorized_group_only_restriction_dz_zero": "NOT_ESTABLISHED",
+    "source_authorized_conditioning_on_fixed_z_for_contact_distribution": "NOT_ESTABLISHED",
+    "wedge_pullback_via_g_b_inverse_g_a": "PRESENT_AT_GROUP_ARGUMENT_LEVEL",
+    "ten_wedge_same_realization_assembly": "PRESENT_ONLY_ON_FULL_GROUP_X_CP1_DOMAIN",
+    "ten_wedge_group_only_contact_covectors": "NOT_ESTABLISHED_WITHOUT_AUXILIARY_SPINOR_RESTRICTION"
+  },
+  "negative_controls": {
+    "reverse_group_product_rejected": true,
+    "drop_inverse_rejected": true,
+    "cp1_not_group_tangent_quotient": true,
+    "silent_dz_zero_rejected": true,
+    "tree_minor_not_contact_normalization": true
+  },
+  "minimal_missing_object": "SOURCE_AUTHORIZED_RESTRICTION_OR_CONDITIONING_MAP_FROM_FULL_CONTACT_COVECTOR_ON_CP1_X_SL2C_TO_GROUP_ONLY_TANGENT_COVECTOR",
+  "classification_candidate": "BLOCKED_SCOPED",
+  "interpretation_ceiling": "The primary source explicitly defines B(z,g) and the contact distribution on the joint auxiliary-spinor/group domain, but does not authorize discarding the dz component or conditioning on fixed z to obtain a group-only contact covector. This absence is an object-definition ceiling, not a statement that the full contact covector is zero or degenerate."
+}
