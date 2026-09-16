@@ -1,0 +1,107 @@
+name: source-j1-k5-triangle-derivative-contact-counterterm-equivalence-v8
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-triangle-derivative-contact-counterterm-equivalence-v8.yml'
+      - 'code/source_j1_k5_triangle_derivative_contact_counterterm_equivalence_v8.py'
+      - 'recovery/PROTOCOL_SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_2026-09-16.md'
+      - 'inputs/source_j1_k5_triangle_derivative_contact_counterterm_authority_v8.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective chronology and frozen taxonomy
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 38054879237dd03e9d368ceb47356e669c02b516 HEAD
+          git merge-base --is-ancestor f5b4caa7e439262baee55a890b786d016101dbfc HEAD
+          grep -F 'SOURCE_FIXED_UNIQUE_SCOPED' recovery/PREREG_SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE_2026-09-16.md
+          grep -F 'SOURCE_UNFIXED_FINITE_LOCAL_FREEDOM_SCOPED' recovery/PREREG_SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE_2026-09-16.md
+          grep -F 'COUNTERTERM_CLASS_INSUFFICIENT_SCOPED' recovery/PREREG_SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE_2026-09-16.md
+          grep -F 'MISSING_AUTHORITY_BLOCKED' recovery/PREREG_SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE_2026-09-16.md
+          grep -F 'INVALID_IMPLEMENTATION' recovery/PREREG_SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE_2026-09-16.md
+      - name: Execute immutable authority audit
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_triangle_derivative_contact_counterterm_equivalence_v8.py --mode source --repo-root . --out artifacts/v8_source_lock.json | tee artifacts/v8_source_lock.log
+          python - <<'PY'
+          import json
+          x=json.load(open('artifacts/v8_source_lock.json'))
+          if not x['source_ok'] or not x['class_definition_authorized']:
+              raise SystemExit('frozen source/class authority lock failed')
+          PY
+          sha256sum artifacts/v8_source_lock.json artifacts/v8_source_lock.log > artifacts/v8_source_lock.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v8-source-lock
+          path: artifacts/v8_source_lock.*
+          if-no-files-found: error
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '${{ matrix.python }}'
+      - name: Run exact rational V8 lane
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_triangle_derivative_contact_counterterm_equivalence_v8.py --mode lane --repo-root . --out 'artifacts/v8_lane_${{ matrix.python }}.json' | tee 'artifacts/v8_lane_${{ matrix.python }}.log'
+          sha256sum 'artifacts/v8_lane_${{ matrix.python }}.json' 'artifacts/v8_lane_${{ matrix.python }}.log' > 'artifacts/v8_lane_${{ matrix.python }}.sha256'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v8-lane-${{ matrix.python }}
+          path: artifacts/v8_lane_${{ matrix.python }}.*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v8-lane-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate exact decision
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_triangle_derivative_contact_counterterm_equivalence_v8.py --mode aggregate --low downloaded/v8_lane_3.11.json --high downloaded/v8_lane_3.13.json --out artifacts/v8_counterterm_aggregate.json | tee artifacts/v8_counterterm_aggregate.log
+          python - <<'PY'
+          import json
+          x=json.load(open('artifacts/v8_counterterm_aggregate.json'))
+          if not x.get('lane_decision_agreement'):
+              raise SystemExit('lane decision disagreement')
+          if x.get('classification') == 'INVALID_IMPLEMENTATION':
+              raise SystemExit('invalid implementation')
+          PY
+          sha256sum artifacts/v8_counterterm_aggregate.json artifacts/v8_counterterm_aggregate.log > artifacts/v8_counterterm_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v8-counterterm-aggregate
+          path: artifacts/v8_counterterm_aggregate.*
+          if-no-files-found: error
