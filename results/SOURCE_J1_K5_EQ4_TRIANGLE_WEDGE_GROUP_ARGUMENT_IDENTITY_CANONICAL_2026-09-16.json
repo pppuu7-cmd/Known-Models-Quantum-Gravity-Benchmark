@@ -1,0 +1,33 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_GATE",
+  "classification": "EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_PASS_SCOPED",
+  "workflow_head": "5ede230e4b7a23b2215dc3b86232545c0bf93418",
+  "authoritative_run": 35145567502,
+  "source_provenance_ok": true,
+  "independent_lane_identity": true,
+  "lane_count": 2,
+  "lane_decision_sha256": "3a35f63623e12ea5cf6cc5857fa599f2a60c9989187c718955721acc78158751",
+  "identity_map_digest": "3335104f90e897232e81be2892339751de3b34b8fcf073af9fcd89660d074f20",
+  "missing_identity_fields": [],
+  "downstream_authorized": true,
+  "rank_status": "null_not_computed_in_this_gate",
+  "transverse_rank": null,
+  "maps": {
+    "G12": "g_2^{-1}",
+    "G23": "g_3^{-1} g_2",
+    "G13": "g_3^{-1}"
+  },
+  "target_triangle": ["12", "23", "13"],
+  "artifact_ids": {
+    "py311": 10467510918,
+    "py313": 10467176707,
+    "aggregate": 10467640795
+  },
+  "artifact_digests": {
+    "py311": "sha256:6240eeac4929b8b375f7f2f7d1cc2e98b734462a5975dc46204be09a9b9d97dc",
+    "py313": "sha256:6240eeac4929b8b375f7f2f7d1cc2e98b734462a5975dc46204be09a9b9d97dc",
+    "aggregate": "sha256:93aab926f9de411471061f80b87b30e1bb313523aed7a4b91bf47248b39fcbe5"
+  },
+  "aggregate_sha256": "f391d0b55c86c1ea35e1898d8b9e8633df581421019559dd54f7dd0b1f38128b",
+  "scientific_boundary": "identity-only PASS; no statement about transversality, rank, Jacobian, Haar normalization, contact normalization, D7 closure, selector authority, Candidate Gravity, or model/family failure"
+}
