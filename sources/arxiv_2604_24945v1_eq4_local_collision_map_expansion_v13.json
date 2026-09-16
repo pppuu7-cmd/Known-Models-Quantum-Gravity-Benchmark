@@ -1,0 +1,67 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE",
+  "source_id": "arXiv:2604.24945v1",
+  "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046",
+  "role": "full-primary Toller/Cartan map-expansion audit for the Eq4 highest-contact triangle",
+  "candidate_passages": [
+    {
+      "id": "TM_CARTAN_DECOMPOSITION",
+      "page": 2,
+      "section": "II. Wigner and Toller matrices",
+      "equations": ["2", "3", "13"],
+      "facts": [
+        "Each Lorentz-group element admits the Cartan decomposition g=U1 exp(-i beta Kz) U2.",
+        "Toller matrix elements are reconstructed from SU(2) rotations and reduced t-matrices in that one-group decomposition."
+      ],
+      "field_assessment": {
+        "LOCAL_COLLISION_CHART": "NON_ACTIONABLE",
+        "SMOOTH_REMAINDER_OBJECT": "NON_ACTIONABLE",
+        "JET_ORDER_7_COMPLETENESS": "NON_ACTIONABLE",
+        "PERMUTATION_COORDINATE_CONSISTENCY": "NON_ACTIONABLE"
+      },
+      "reason": "A Cartan decomposition of one group element is not a simultaneous three-wedge collision chart and supplies no change of variables/Jacobian to the V8 triangle coordinates."
+    },
+    {
+      "id": "TM_NO_GROUP_COMPOSITION_PLUS_ADDITIVE_SPLIT",
+      "page": 3,
+      "section": "II. Wigner and Toller matrices",
+      "equations": ["14", "15"],
+      "facts": [
+        "Toller matrices do not obey the ordinary group-representation composition identity.",
+        "The two causal branches add to the Wigner matrix."
+      ],
+      "field_assessment": {
+        "LOCAL_COLLISION_CHART": "NON_ACTIONABLE",
+        "SMOOTH_REMAINDER_OBJECT": "NON_ACTIONABLE",
+        "JET_ORDER_7_COMPLETENESS": "NON_ACTIONABLE",
+        "PERMUTATION_COORDINATE_CONSISTENCY": "NON_ACTIONABLE"
+      },
+      "reason": "These one-wedge algebraic identities do not define multi-contact coordinate transport or a physical permutation action on the local triangle chart."
+    },
+    {
+      "id": "TM_FEYNMAN_ONE_WEDGE_AND_SYMMETRIES",
+      "page": 4,
+      "section": "III.A Toller matrices from the Feynman i epsilon",
+      "equations": ["19", "20", "21", "22", "23", "24", "25"],
+      "facts": [
+        "The Feynman functional uniquely selects each one-wedge Toller branch from the reduced Wigner matrix.",
+        "The listed symmetry relations act on representation labels, magnetic indices and branch signs."
+      ],
+      "field_assessment": {
+        "LOCAL_COLLISION_CHART": "NON_ACTIONABLE",
+        "SMOOTH_REMAINDER_OBJECT": "NON_ACTIONABLE",
+        "JET_ORDER_7_COMPLETENESS": "NON_ACTIONABLE",
+        "PERMUTATION_COORDINATE_CONSISTENCY": "NON_ACTIONABLE"
+      },
+      "reason": "One-wedge uniqueness and label symmetries do not provide the Eq. (4) simultaneous-contact smooth remainder, its order-7 jet, or an S3 coordinate transport for the V8 triangle."
+    }
+  ],
+  "new_actionable_fields": [],
+  "required_fields_remaining_missing": [
+    "LOCAL_COLLISION_CHART",
+    "SMOOTH_REMAINDER_OBJECT",
+    "JET_ORDER_7_COMPLETENESS",
+    "PERMUTATION_COORDINATE_CONSISTENCY"
+  ],
+  "interpretation": "The Toller/Cartan primary source supplies exact one-group and one-wedge representations but none of the four missing same-realization Eq. (4) local-map fields under the frozen gate criteria."
+}

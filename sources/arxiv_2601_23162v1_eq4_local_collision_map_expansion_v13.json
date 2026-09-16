@@ -1,0 +1,50 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE",
+  "source_id": "arXiv:2601.23162v1",
+  "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+  "role": "full-primary source map-expansion audit for the Eq4 highest-contact triangle",
+  "candidate_passages": [
+    {
+      "id": "CV_EQ4_PARENT_AND_GAUGE_FIX",
+      "page": 2,
+      "section": "II. Causal vertex and Toller matrices",
+      "equations": ["4"],
+      "facts": [
+        "Eq. (4) is a four-SL(2,C)-integration product over the ten wedges after fixing g1 to the identity.",
+        "The source defines the parent causal vertex and its wedge-factor realization."
+      ],
+      "field_assessment": {
+        "LOCAL_COLLISION_CHART": "NON_ACTIONABLE",
+        "SMOOTH_REMAINDER_OBJECT": "NON_ACTIONABLE",
+        "JET_ORDER_7_COMPLETENESS": "NON_ACTIONABLE",
+        "PERMUTATION_COORDINATE_CONSISTENCY": "NON_ACTIONABLE"
+      },
+      "reason": "The group variables and gauge fixing define the parent integration domain but do not specify a local simultaneous three-contact coordinate chart, its Jacobian, or an isolated smooth remainder."
+    },
+    {
+      "id": "CV_APPENDIX_D_ONE_WEDGE_CONTACT",
+      "page": 10,
+      "section": "Appendix D",
+      "equations": ["D1", "D2", "D3", "D4", "D5"],
+      "facts": [
+        "The Feynman prescription isolates a one-wedge scalar B(z,g) and gives a step term plus a collision-supported derivative distribution.",
+        "The derivative distribution is a finite sum of delta derivatives with source-defined coefficients for that one wedge."
+      ],
+      "field_assessment": {
+        "LOCAL_COLLISION_CHART": "NON_ACTIONABLE",
+        "SMOOTH_REMAINDER_OBJECT": "NON_ACTIONABLE",
+        "JET_ORDER_7_COMPLETENESS": "NON_ACTIONABLE",
+        "PERMUTATION_COORDINATE_CONSISTENCY": "NON_ACTIONABLE"
+      },
+      "reason": "A one-wedge contact variable does not provide the simultaneous triangle relations B12=x, B23=y, B13=x+y, a three-contact Jacobian, a full Eq. (4) smooth remainder, or its complete order-7 jet."
+    }
+  ],
+  "new_actionable_fields": [],
+  "required_fields_remaining_missing": [
+    "LOCAL_COLLISION_CHART",
+    "SMOOTH_REMAINDER_OBJECT",
+    "JET_ORDER_7_COMPLETENESS",
+    "PERMUTATION_COORDINATE_CONSISTENCY"
+  ],
+  "interpretation": "The causal-vertex primary source strengthens one-wedge contact and parent-amplitude provenance but does not supply any of the four missing same-realization map fields under the frozen gate criteria."
+}
