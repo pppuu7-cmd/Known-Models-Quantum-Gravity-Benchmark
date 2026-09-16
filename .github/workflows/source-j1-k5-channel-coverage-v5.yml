@@ -1,0 +1,57 @@
+name: source-j1-k5-channel-coverage-v5
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'code/source_j1_k5_channel_coverage_v5.py'
+      - '.github/workflows/source-j1-k5-channel-coverage-v5.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '${{ matrix.python }}'}
+      - run: pip install 'numpy==2.3.3' 'sympy==1.14.0'
+      - name: Run exact channel cube
+        run: PYTHONPATH=code python code/source_j1_k5_channel_coverage_v5.py --out result-${{ matrix.python }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-channel-coverage-v5-${{ matrix.python }}
+          path: result-${{ matrix.python }}.json
+          if-no-files-found: error
+  aggregate:
+    needs: exact
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: source-j1-k5-channel-coverage-v5-*
+          path: artifacts
+      - name: Compare independent lanes
+        run: |
+          python - <<'PY'
+          import glob,json,sys
+          fs=sorted(glob.glob('artifacts/*/*.json'))
+          assert len(fs)==2,fs
+          a,b=[json.load(open(f)) for f in fs]
+          keys=['classification','controls','total_channels','nonzero_count','zero_count','channel_map_sha256','channel_00000','channel_map']
+          bad=[k for k in keys if a[k]!=b[k]]
+          if bad: raise SystemExit('lane mismatch: '+','.join(bad))
+          if a['classification']!='CHANNEL_COVERAGE_NONZERO_SCOPED': raise SystemExit('scientific gate not confirmed: '+a['classification'])
+          print(json.dumps({k:a[k] for k in keys[:-1]},indent=2,sort_keys=True))
+          open('aggregate.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-j1-k5-channel-coverage-v5-aggregate
+          path: aggregate.json
+          if-no-files-found: error
