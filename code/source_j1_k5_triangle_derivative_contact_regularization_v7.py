@@ -11,6 +11,7 @@ from pathlib import Path
 SCHEMES={"A":(1,1,1),"B":(1,1,4),"C":(1,2,3),"A4":(4,4,4)}
 PREREG="research/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7_PREREG_2026-09-16.md"
 FRONT="recovery/CURRENT_BENCHMARK_FRONT.md"
+CRITIC_V5="recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL_COVERAGE_V5_2026-09-16.md"
 CRITIC_V6="recovery/CRITICAL_REVIEW_SOURCE_J1_K5_TRIANGLE_CONTACT_REGULARIZATION_V6_2026-09-16.md"
 
 def fs(x): return str(x.numerator) if x.denominator==1 else f"{x.numerator}/{x.denominator}"
@@ -58,15 +59,20 @@ def gaussian_engine(a0,b0,c0=None):
 def gaussian_data(a,b,c): return gaussian_engine(a,b,c)
 
 def source_authority(root):
-    checks={}; prereg=root/PREREG; front=root/FRONT; critic=root/CRITIC_V6
-    checks.update(prereg_present=prereg.exists(),front_present=front.exists(),critic_v6_present=critic.exists())
-    pt=prereg.read_text() if prereg.exists() else ""; ft=front.read_text() if front.exists() else ""; ct=critic.read_text() if critic.exists() else ""
+    checks={}; prereg=root/PREREG; front=root/FRONT; critic_v5=root/CRITIC_V5; critic_v6=root/CRITIC_V6
+    checks.update(prereg_present=prereg.exists(),front_present=front.exists(),critic_v5_present=critic_v5.exists(),critic_v6_present=critic_v6.exists())
+    pt=prereg.read_text() if prereg.exists() else ""; ft=front.read_text() if front.exists() else ""; v5t=critic_v5.read_text() if critic_v5.exists() else ""; ct=critic_v6.read_text() if critic_v6.exists() else ""
     checks["prereg_parent_main_lock"]="5a6790ae9d9e020a3a73338293446e0501b3c8c4" in pt
     checks["prereg_v6_critic_lock"]="67c0895bf16074091abd9e2643e1629344414263" in pt
     checks["prereg_delta2_object_lock"]="D2_eps^a" in pt and "delta''" in pt
     checks["v4_repaired_run_lock"]="35033194283" in ft and "CONFIRMED_SCOPED" in ft
     checks["v4_delta2_lock"]="delta''" in ft
-    checks["v5_channel00000_lock"]="00000=11/24" in ft or "00000 = 11/24" in ft
+    # V5 was Critic-qualified only against a post-hoc "broad support" interpretation.
+    # The exact fixed-tangent channel 00000=11/24 and same-realization/source checks
+    # were independently confirmed and are the only V5 facts frozen into this V7 prereg.
+    checks["v5_channel00000_lock"]="00000 = 11/24" in v5t and "`00000 = 11/24` = confirmed" in v5t
+    checks["v5_same_realization_lock"]="## SAME_REALIZATION_CHECK" in v5t and "PASS_SCOPED" in v5t and "same exact tangent points" in v5t
+    checks["v5_source_realization_lock"]="## SOURCE/REALIZATION_CHECK" in v5t and "No source/realization mismatch was found" in v5t
     checks["v6_run_lock"]="35050058294" in ft
     checks["critic_requires_derivative_bridge"]="highest-`delta''`" in ct and "derivative-contact regularization" in ct
     checks["critic_local_map_lock"]="B12=x" in ct and "B23=y" in ct and "B13=x+y" in ct
