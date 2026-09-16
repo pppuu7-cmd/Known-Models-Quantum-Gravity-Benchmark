@@ -25,10 +25,11 @@ jobs:
         run: |
           set -euo pipefail
           git merge-base --is-ancestor 77bac4728401200b226dda16447befce85df0c66 HEAD
+          git merge-base --is-ancestor f8f983ee98b4d01101ef6d5ca72e7ba6053e1855 HEAD
           git merge-base --is-ancestor 56362459a826e3e376c529446678f2fbcaa269ae HEAD
-          git merge-base --is-ancestor 95870d0649d4b8d7b156c3f2b68bd55caa65d9c0 HEAD
+          git merge-base --is-ancestor e3816c0437a1f895196d2bbccacfb05e8dd38e74 HEAD
           git merge-base --is-ancestor 00018ceb5bcecbbff7ef800e452d544534e1ba77 HEAD
-          test "$(git hash-object research/authority/ITER504P_POINT_DRIFT_LOCALIZATION_FROZEN_2026-09-16.json)" = "375a497e5fe56ff35d5fb6d21c59b893daad1d3d"
+          test "$(git hash-object research/authority/ITER504P_POINT_DRIFT_LOCALIZATION_FROZEN_2026-09-16.json)" = "2c9f3e47abba8ca6860c23d1918675ddf9302aeb"
       - name: Verify exact Iter504 artifact IDs and digests against GitHub metadata
         shell: bash
         run: |
