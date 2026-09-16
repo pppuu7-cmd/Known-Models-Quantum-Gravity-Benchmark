@@ -1,0 +1,111 @@
+name: source-j1-k5-triangle-derivative-contact-finite-renormalization-authority-v9
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-triangle-derivative-contact-finite-renormalization-authority-v9.yml'
+      - 'code/source_j1_k5_triangle_derivative_contact_finite_renormalization_authority_v9.py'
+      - 'code/source_j1_k5_triangle_derivative_contact_finite_renormalization_authority_v9_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen V9 chronology and immutable source corpus
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 065d0a84d7f3cb96eac0fcd767f462f8c19be64d HEAD
+          test "$(git rev-parse HEAD:sources/arxiv_2202_04360_sl2c_haar_cartan.json)" = "4a8eb5762745f4b483c8aff87c0c9fb8b74cc236"
+          test "$(git rev-parse HEAD:sources/arxiv_2601_23162v1_causal_vertex.json)" = "f0b520fc04904e038f252dc5b45d23893cb020ed"
+          test "$(git rev-parse HEAD:sources/arxiv_2604_24945v1_toller_cartan.json)" = "8dc58f3c9c191289f2f148469f8df3ea95f77ad5"
+          test "$(git rev-parse HEAD:results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_CANONICAL_2026-09-16.json)" = "49e248993d0a23d85663aaa198cd5d87b6200b6e"
+          test "$(git rev-parse HEAD:results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_TERMINAL_2026-09-16.md)" = "a63ffe988fa6584775a77892f695d776e9c142cc"
+          test "$(git rev-parse HEAD:inputs/source_j1_k5_triangle_derivative_contact_finite_renormalization_authority_v9.json)" = "fff726b62e5bec5cbb975d579967d85ae93b53d1"
+          grep -F 'SOURCE_FINITE_RENORMALIZATION_UNIQUELY_FIXED_SCOPED' research/prereg/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_FINITE_RENORMALIZATION_AUTHORITY_GATE_2026-09-16.md
+          grep -F 'SOURCE_FINITE_RENORMALIZATION_QUOTIENT_FIXED_SCOPED' research/prereg/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_FINITE_RENORMALIZATION_AUTHORITY_GATE_2026-09-16.md
+          grep -F 'SOURCE_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED' research/prereg/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_FINITE_RENORMALIZATION_AUTHORITY_GATE_2026-09-16.md
+          grep -F 'SOURCE_FINITE_RENORMALIZATION_CONSTRAINT_INCONSISTENT_SCOPED' research/prereg/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_FINITE_RENORMALIZATION_AUTHORITY_GATE_2026-09-16.md
+          grep -F 'INVALID_IMPLEMENTATION' research/prereg/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_FINITE_RENORMALIZATION_AUTHORITY_GATE_2026-09-16.md
+          mkdir -p artifacts
+          {
+            echo "HEAD=$(git rev-parse HEAD)"
+            git rev-parse HEAD:sources/arxiv_2202_04360_sl2c_haar_cartan.json
+            git rev-parse HEAD:sources/arxiv_2601_23162v1_causal_vertex.json
+            git rev-parse HEAD:sources/arxiv_2604_24945v1_toller_cartan.json
+            git rev-parse HEAD:results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_CANONICAL_2026-09-16.json
+            git rev-parse HEAD:results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_TERMINAL_2026-09-16.md
+            git rev-parse HEAD:inputs/source_j1_k5_triangle_derivative_contact_finite_renormalization_authority_v9.json
+          } > artifacts/v9_source_lock.txt
+          sha256sum artifacts/v9_source_lock.txt > artifacts/v9_source_lock.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v9-source-lock
+          path: artifacts/v9_source_lock.*
+          if-no-files-found: error
+
+  exact-lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run exact V9 source-authority audit
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          tag="py${{ matrix.python }}"
+          python code/source_j1_k5_triangle_derivative_contact_finite_renormalization_authority_v9.py \
+            --repo-root . --out "artifacts/v9_authority_${tag}.json" \
+            | tee "artifacts/v9_authority_${tag}.log"
+          sha256sum "artifacts/v9_authority_${tag}.json" "artifacts/v9_authority_${tag}.log" \
+            > "artifacts/v9_authority_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v9-authority-py${{ matrix.python }}
+          path: artifacts/v9_authority_py${{ matrix.python }}.*
+          if-no-files-found: error
+
+  aggregate:
+    needs: exact-lane
+    if: ${{ always() && needs.exact-lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v9-authority-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate frozen V9 decision
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_triangle_derivative_contact_finite_renormalization_authority_v9_aggregate.py \
+            --py311 downloaded/v9_authority_py3.11.json \
+            --py313 downloaded/v9_authority_py3.13.json \
+            --out artifacts/v9_authority_aggregate.json \
+            | tee artifacts/v9_authority_aggregate.log
+          sha256sum artifacts/v9_authority_aggregate.json artifacts/v9_authority_aggregate.log \
+            > artifacts/v9_authority_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v9-authority-aggregate
+          path: artifacts/v9_authority_aggregate.*
+          if-no-files-found: error
