@@ -1,0 +1,40 @@
+{
+  "actionable_selector_count": 0,
+  "candidate_passages": [
+    {
+      "equations": ["D2", "D3", "D4"],
+      "id": "CV_EQ_D3_D4_ONE_WEDGE_CONTACT",
+      "page": 10,
+      "section": "Appendix D",
+      "selector_category": "FINITE_COEFFICIENTS",
+      "status": "NON_ACTIONABLE",
+      "reason": "One-wedge contact coefficients are upstream authority already; no triple-contact extension rule or new exact row on the V8 nullspace is supplied."
+    },
+    {
+      "equations": ["4"],
+      "id": "CV_EQ4_PRODUCT_VERTEX",
+      "page": 2,
+      "section": "II. Causal vertex and Toller matrices",
+      "selector_category": "FINITE_NORMALIZATION",
+      "status": "NON_ACTIONABLE",
+      "reason": "Eq. (4) defines the parent product-form vertex but supplies no simultaneous-contact finite-normalization or extension prescription."
+    },
+    {
+      "equations": [],
+      "id": "CV_FINITE_OPEN_QUESTION",
+      "page": 6,
+      "section": "V. Discussion",
+      "selector_category": "FINITE_NORMALIZATION",
+      "status": "NON_ACTIONABLE",
+      "reason": "The source explicitly leaves causal-vertex finiteness for further investigation; this is not a coefficient constraint or authorized quotient."
+    }
+  ],
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE",
+  "interpretation": "Full-text audit found no actionable same-realization selector mappable to the six-dimensional V8 affine finite-renormalization freedom.",
+  "pdf_byte_length": 1406649,
+  "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+  "pdf_url": "https://arxiv.org/pdf/2601.23162v1",
+  "role": "full immutable causal-vertex primary-source audit record for V10",
+  "source_id": "arXiv:2601.23162v1",
+  "version_marker_present": true
+}
