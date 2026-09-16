@@ -3,6 +3,21 @@ Updated: 2026-09-16
 
 Fresh repository `main` and fresh Actions state always outrank this navigation document if they diverge.
 
+## Active nonterminal Research gate
+
+`SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE`
+
+Status: `IN_PROGRESS_NOT_CLASSIFIED` — not PASS, FAIL, BLOCKED, or INVALID.
+
+- prospective freeze + immutable authority commit: `60d9c7afa4eeb81a41c3334ac4bac71c1d1a8869`;
+- implementation/workflow head: `5c524b2d00ae2b1278960c275b21824c3065f11e`;
+- authoritative Actions run: `35120674022`;
+- last observed source-lock job: `104877355301`, queued;
+- partial substantive values are forbidden and have not been consumed;
+- durable launch handoff: `recovery/SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE_LAUNCH_HANDOFF_2026-09-16.md`.
+
+The active gate asks only whether the source-authorized Eq. (4) parent/gauge-fixed variables plus one-wedge contact/Toller primitives derive a common same-realization chart for the fixed triangle `(12,23,13)`, including three contact maps, rank/transversality, Jacobian/normalization transport and S3 coordinate transport. Historical V8 `B12=x, B23=y, B13=x+y` is frozen as bridge target only, never as source authority.
+
 ## Latest terminal Research execution
 
 `SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE`
@@ -28,24 +43,13 @@ Authority / execution chain:
 
 Green CI is provenance only.
 
-## Exact result
+## Exact terminal result retained
 
-The frozen full-primary corpus was exactly `arXiv:2601.23162v1` plus `arXiv:2604.24945v1`, with the immutable PDF digests already locked by V10.
-
-The gate targeted exactly the four map fields left absent by the parent Eq. (4) local collision test-jet gate:
-
-- `LOCAL_COLLISION_CHART`;
-- `SMOOTH_REMAINDER_OBJECT`;
-- `JET_ORDER_7_COMPLETENESS`;
-- `PERMUTATION_COORDINATE_CONSISTENCY`.
-
-The map-targeted full-primary audits found no actionable same-realization passage for any of those four fields. Eq. (4) parent/gauge fixing, Appendix-D one-wedge contact formulas, one-group Cartan decomposition, Toller one-wedge Feynman construction and label/index symmetries are upstream provenance, not a simultaneous-contact local map.
-
-Therefore `new_actionable_fields=[]`, `map_complete=false`, and `nullspace_action_rank=null`, not zero.
+The frozen full-primary corpus was exactly `arXiv:2601.23162v1` plus `arXiv:2604.24945v1`. The map-targeted full-primary audits found no actionable same-realization passage for `LOCAL_COLLISION_CHART`, `SMOOTH_REMAINDER_OBJECT`, `JET_ORDER_7_COMPLETENESS`, or `PERMUTATION_COORDINATE_CONSISTENCY`. Therefore `new_actionable_fields=[]`, `map_complete=false`, and `nullspace_action_rank=null`, not zero.
 
 ## Parent Research state retained
 
-- Parent V12 remains historically `EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED`.
+- V12 remains historically `EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED`.
 - V11 remains `PHYSICAL_OBSERVABLE_QUOTIENT_MAP_BLOCKED_SCOPED`.
 - V10 remains `SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED`.
 - V8 remains `SOURCE_UNFIXED_FINITE_LOCAL_FREEDOM_SCOPED` with affine nullity 6.
@@ -53,15 +57,11 @@ Therefore `new_actionable_fields=[]`, `map_complete=false`, and `nullspace_actio
 
 ## Latest independent Critical Review
 
-No independent Critic review of this new primary-source map-expansion terminal result is recorded yet.
+No independent Critic review of the latest terminal primary-source map-expansion result is recorded yet.
 
 ## Next admissible work
 
-Highest-information next gate: prospectively freeze `SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE`.
-
-Use only source-authorized Eq. (4) gauge-fixed group variables and the source one-wedge contact functions to test a specific same-realization triple-contact local chart. Freeze the wedge triangle, coordinates, contact functions, Jacobian/rank/transversality, normalization transport and permutation action before calculation. Distinguish constructed chart, rank deficiency, missing source object and invalid implementation.
-
-Do not infer the smooth remainder or order-7 jet until the chart itself is terminally established.
+Do not launch any competing gate. First consume only the terminal aggregate of Actions run `35120674022`. If and only if the local chart is terminally established may later work proceed to the smooth Eq. (4) remainder and complete order-7 jet. Missing chart relations remain missing, never zero.
 
 ## Governance lock
 
