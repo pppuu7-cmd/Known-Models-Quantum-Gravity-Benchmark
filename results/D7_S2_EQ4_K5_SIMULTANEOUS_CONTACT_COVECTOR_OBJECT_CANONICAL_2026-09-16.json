@@ -1,0 +1,45 @@
+{
+  "gate": "D7_S2_EQ4_K5_SIMULTANEOUS_CONTACT_COVECTOR_OBJECT_GATE",
+  "date": "2026-09-16",
+  "classification": "D7_S2_EQ4_K5_SIMULTANEOUS_CONTACT_COVECTOR_OBJECT_BLOCKED_SCOPED",
+  "preregistration": "e20aafb9c894759b8093bada4bacdbb9b8e1a425",
+  "source_extraction": "9f94f8dae1f24ede68f1cb7dbe102710fc03f4e6",
+  "preterminal_critic": "f26908e4a859584df4638f537d5342d1338198a6",
+  "authority_manifest": "b4c9c0a4ddfa0742f1ba9aad490f3d0510a36bcc",
+  "classifier_normalization_repair": "d8bd1bc204d1e0ea91b59296a5163d46163a4f43",
+  "classifier_commit": "04e4bda8c3f80dcdec49c2629493e8d9fcd6cb20",
+  "aggregate_commit": "71306a6f083ec0c4f1df7a1416fc71fd626966f4",
+  "workflow_head": "ea5f576216cc1098cdcf82aeca1b1fc2c2a7b759",
+  "authoritative_run": 35150140512,
+  "jobs": {
+    "source_lock": 104976079713,
+    "python_3_11": 104976121380,
+    "python_3_13": 104976121634,
+    "aggregate": 104976188535
+  },
+  "artifacts": {
+    "python_3_11": {"id":10468778428,"digest":"sha256:e1a36b4f7edfb036f902dff368c82607fd6060770afff34672cfda3925542590"},
+    "python_3_13": {"id":10468039687,"digest":"sha256:610649ac1adf2d21b775c369ece8a02f235ee6fcb80d067d368be24385ac5e4d"},
+    "aggregate": {"id":10468089503,"digest":"sha256:73fa7ba06de3f024dbc953d4a6aec58bc134d881ba9added610cd33fbed1123b","json_sha256":"c3e57bd7f1abc3fd27b9ac919ae849de5620b6026ffd9a1d535836ddd06fde8a","scientific_sha256":"3e2aef96bd4029336490383c03f9b3a42b4f9cb0671d5f1faab559c4f8a48a58"}
+  },
+  "lane_scientific_sha256": "8c4dc6059e6b908575ea400099167e4da0eacde9a2ff3144862c0b135c5b0263",
+  "source_facts": {
+    "explicit_B_formula_present": true,
+    "contact_distribution_full_B_z_g_present": true,
+    "joint_group_cp1_integration_domain_present": true,
+    "full_first_differential_defined": true
+  },
+  "blocked_fields": [
+    "source_authorized_group_only_restriction_dz_zero",
+    "source_authorized_conditioning_on_fixed_z_for_contact_distribution",
+    "ten_wedge_group_only_contact_covectors"
+  ],
+  "minimal_missing_object": "SOURCE_AUTHORIZED_RESTRICTION_OR_CONDITIONING_MAP_FROM_FULL_CONTACT_COVECTOR_ON_CP1_X_SL2C_TO_GROUP_ONLY_TANGENT_COVECTOR",
+  "group_only_contact_covector_rank": null,
+  "physical_transverse_rank": null,
+  "noncanonical_first_run": {
+    "run": 35149976729,
+    "reason": "classification was BLOCKED but a derived diagnostic boolean mis-normalized NOT_ESTABLISHED_WITHOUT_*; retained only as execution evidence"
+  },
+  "claim_ceiling": "No contact-covector rank, physical transversality, distribution-product existence/nonexistence, Haar/contact normalization, physical quotient, observable pushforward, D7-S2 closure, selector or model/family conclusion."
+}
