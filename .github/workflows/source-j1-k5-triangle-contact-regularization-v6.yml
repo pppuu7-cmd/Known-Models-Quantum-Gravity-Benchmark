@@ -1,0 +1,64 @@
+name: source-j1-k5-triangle-contact-regularization-v6
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'code/source_j1_k5_triangle_contact_regularization_v6.py'
+      - 'research/SOURCE_J1_K5_TRIANGLE_CONTACT_REGULARIZATION_V6_PREREG_2026-09-16.md'
+      - '.github/workflows/source-j1-k5-triangle-contact-regularization-v6.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact:
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Exact certificate
+        run: |
+          mkdir -p out
+          python code/source_j1_k5_triangle_contact_regularization_v6.py --out out/v6-${{ matrix.python }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v6-${{ matrix.python }}
+          path: out/v6-${{ matrix.python }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: exact
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v6-*
+          path: artifacts
+          merge-multiple: true
+      - name: Exact lane agreement
+        run: |
+          python - <<'PY'
+          import json, glob, hashlib
+          fs=sorted(glob.glob('artifacts/*.json'))
+          assert len(fs)==2, fs
+          xs=[json.load(open(f)) for f in fs]
+          keys=['classification','statistics_pi_epsI_squared','controls','schemes','claim_ceiling','prereg_commit']
+          for k in keys: assert xs[0][k]==xs[1][k], k
+          payload=json.dumps({k:xs[0][k] for k in keys},sort_keys=True,separators=(',',':'))
+          out={'gate':'SOURCE_J1_K5_TRIANGLE_CONTACT_REGULARIZATION_V6','lane_agreement':True,'classification':xs[0]['classification'],'decision_sha256':hashlib.sha256(payload.encode()).hexdigest(),'decision':{k:xs[0][k] for k in keys}}
+          open('aggregate-v6.json','w').write(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v6-aggregate
+          path: aggregate-v6.json
+          if-no-files-found: error
