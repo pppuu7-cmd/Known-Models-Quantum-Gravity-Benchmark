@@ -11,124 +11,72 @@ permissions:
   contents: read
   actions: read
 
+# Execution-only fallback frozen in 31d1ce9fbd33a4742247274deaafdbdaee72d888.
+# It consumes immutable completed arithmetic-lane artifacts from repaired run
+# 35151656186 and does not rerun or alter the frozen point science.
 jobs:
-  source-lock:
-    runs-on: ubuntu-latest
+  aggregate-fallback:
+    runs-on: windows-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN: '35151656186'
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Verify preregistration and upstream terminal ancestry
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen science and aggregate-only fallback ancestry
         shell: bash
         run: |
           set -euo pipefail
           git merge-base --is-ancestor 77bac4728401200b226dda16447befce85df0c66 HEAD
+          git merge-base --is-ancestor 37a04752ccee6fd1caa901df36ecfcf5f50dced4 HEAD
+          git merge-base --is-ancestor e18ed81f33271e3cab66ac8b67119587702eb7d2 HEAD
           git merge-base --is-ancestor f8f983ee98b4d01101ef6d5ca72e7ba6053e1855 HEAD
-          git merge-base --is-ancestor 56362459a826e3e376c529446678f2fbcaa269ae HEAD
-          git merge-base --is-ancestor e3816c0437a1f895196d2bbccacfb05e8dd38e74 HEAD
-          git merge-base --is-ancestor 00018ceb5bcecbbff7ef800e452d544534e1ba77 HEAD
-          test "$(git hash-object research/authority/ITER504P_POINT_DRIFT_LOCALIZATION_FROZEN_2026-09-16.json)" = "2c9f3e47abba8ca6860c23d1918675ddf9302aeb"
-      - name: Verify exact Iter504 artifact IDs and digests against GitHub metadata
+          git merge-base --is-ancestor b7f4f1f94d7668eba22c8bad25050ef632648ec9 HEAD
+          git merge-base --is-ancestor 31d1ce9fbd33a4742247274deaafdbdaee72d888 HEAD
+          test "$(git hash-object code/iter504p_point_drift_localization_aggregate.py)" = "$(git rev-parse e18ed81f33271e3cab66ac8b67119587702eb7d2:code/iter504p_point_drift_localization_aggregate.py)"
+      - name: Verify completed immutable arithmetic-lane artifact metadata
         shell: bash
         run: |
           set -euo pipefail
-          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/34907349374/artifacts?per_page=100&page=1" > /tmp/artifacts1.json
-          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/34907349374/artifacts?per_page=100&page=2" > /tmp/artifacts2.json
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN}/artifacts?per_page=100" > lane-artifacts.json
           python - <<'PY'
           import json
-          from pathlib import Path
-          manifest=json.loads(Path('research/authority/ITER504P_POINT_DRIFT_LOCALIZATION_FROZEN_2026-09-16.json').read_text())
-          items=[]
-          for p in ('/tmp/artifacts1.json','/tmp/artifacts2.json'):
-              items.extend(json.loads(Path(p).read_text())['artifacts'])
-          by_name={x['name']:x for x in items}
-          expected=dict(manifest['decisive_artifacts'])
-          ctrl=manifest['known_non_decisive_control']
-          expected[ctrl['name']]={'id':ctrl['id'],'digest':ctrl['digest']}
-          for name,spec in expected.items():
-              got=by_name.get(name)
-              assert got is not None, name
-              assert got['id']==spec['id'], (name,got['id'],spec['id'])
-              assert got['digest']==spec['digest'], (name,got['digest'],spec['digest'])
-              assert got['expired'] is False, name
-              assert got['workflow_run']['id']==manifest['upstream_iter504']['run_id'], name
-              assert got['workflow_run']['head_sha']==manifest['upstream_iter504']['workflow_head'], name
-          print('verified_artifacts',len(expected))
+          rows=json.load(open('lane-artifacts.json'))['artifacts']
+          by={x['name']:x for x in rows}
+          exp={
+            'iter504p-point-drift-decimal':(10468939725,'sha256:aeeac0ba27efa51bf05b7da1761b799c257d4c94b0c9c7db20bd3e935217fb06'),
+            'iter504p-point-drift-float':(10469641510,'sha256:4034866a04e7221c576ec58da3d6c2ac1429b26081e4814a958f240e7b25d621'),
+          }
+          for name,(aid,dig) in exp.items():
+              x=by.get(name)
+              assert x is not None, name
+              assert x['id']==aid, (name,x['id'],aid)
+              assert x['digest']==dig, (name,x['digest'],dig)
+              assert x['expired'] is False, name
+              assert x['workflow_run']['id']==35151656186, name
+              assert x['workflow_run']['head_sha']=='b7f4f1f94d7668eba22c8bad25050ef632648ec9', name
+          print('immutable_lane_artifacts_verified=2')
           PY
-
-  exact-lanes:
-    needs: source-lock
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - method: decimal
-            python: '3.11'
-            artifact: iter504p-point-drift-decimal
-          - method: float
-            python: '3.13'
-            artifact: iter504p-point-drift-float
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
-      UPSTREAM_RUN: '34907349374'
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python }}
-      - name: Download frozen decisive cohort and disclosed control
+      - name: Download exactly the completed frozen arithmetic lanes
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p inputs
-          for lane in \
-            0to5-b0 0to5-b1 0to5-b2 0to5-b3 \
-            1to4-b0 1to4-b1 1to4-b2 1to4-b3 \
-            2to3-b0 2to3-b1 2to3-b2 2to3-b3; do
-              name="iter504-point-${lane}"
-              gh run download "${UPSTREAM_RUN}" --name "${name}" --dir "inputs/${name}"
-          done
-      - name: Execute frozen point-drift classifier
+          gh run download "${SOURCE_RUN}" --name iter504p-point-drift-decimal --dir artifacts/decimal
+          gh run download "${SOURCE_RUN}" --name iter504p-point-drift-float --dir artifacts/float
+      - name: Execute unchanged frozen aggregate classifier
+        shell: bash
         run: |
-          python code/iter504p_point_drift_localization.py \
-            --input-root inputs \
-            --method "${{ matrix.method }}" \
-            --out "out/${{ matrix.method }}.json"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.artifact }}
-          path: out/${{ matrix.method }}.json
-
-  aggregate:
-    needs: exact-lanes
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - uses: actions/download-artifact@v4
-        with:
-          name: iter504p-point-drift-decimal
-          path: artifacts/decimal
-      - uses: actions/download-artifact@v4
-        with:
-          name: iter504p-point-drift-float
-          path: artifacts/float
-      - name: Aggregate independent arithmetic paths
-        run: |
+          set -euo pipefail
+          mkdir -p out
           python code/iter504p_point_drift_localization_aggregate.py \
             --decimal artifacts/decimal \
             --float artifacts/float \
             --out out/aggregate.json
       - uses: actions/upload-artifact@v4
         with:
-          name: iter504p-point-drift-aggregate
+          name: iter504p-point-drift-aggregate-windows-fallback
           path: out/aggregate.json
