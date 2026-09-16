@@ -1,0 +1,29 @@
+{
+  "gate": "D7_S2_EQ4_K5_SIMULTANEOUS_CONTACT_COVECTOR_OBJECT_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "e20aafb9c894759b8093bada4bacdbb9b8e1a425",
+  "source_extraction_commit": "9f94f8dae1f24ede68f1cb7dbe102710fc03f4e6",
+  "preterminal_critic_commit": "f26908e4a859584df4638f537d5342d1338198a6",
+  "raw_k5_parent_terminal_commit": "5f6dfa2bac5915647aa21fe0cde2843bee25ed46",
+  "source_record": {
+    "path": "sources/arxiv_2601_23162v1_eq4_k5_contact_covector_authority_v18.json",
+    "source_id": "arXiv:2601.23162v1",
+    "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713"
+  },
+  "frozen_required_fields": [
+    "exact_scalar_contact_function",
+    "contact_locus_argument",
+    "group_and_spinor_variable_roles",
+    "exact_full_first_differential",
+    "source_authorized_group_only_restriction_dz_zero",
+    "source_authorized_conditioning_on_fixed_z_for_contact_distribution",
+    "wedge_pullback_via_g_b_inverse_g_a",
+    "ten_wedge_same_realization_assembly",
+    "ten_wedge_group_only_contact_covectors"
+  ],
+  "pass_requires_all_fields_operationally_present": true,
+  "blocked_if_any_essential_group_only_restriction_field_not_established": true,
+  "invalid_if_silent_dz_zero_or_physical_quotient_or_v8_or_textbook_completion": true,
+  "no_fail_rank_branch": true,
+  "claim_ceiling": "raw contact-covector object definition only; no rank/transversality/distribution-product/normalization/physical quotient/observable/D7 closure"
+}
