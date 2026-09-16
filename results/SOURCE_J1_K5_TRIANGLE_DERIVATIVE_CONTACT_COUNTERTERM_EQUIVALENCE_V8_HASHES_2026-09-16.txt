@@ -1,0 +1,23 @@
+SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE
+Authoritative run: 35072993488
+Workflow head: 6c4f286f3d7db91f9646788a54535486bde88585
+
+GitHub artifact ZIP digests
+10437017515  v8-source-lock             sha256:650ab9296f78dd6fab5ac4b95babc8be21b9a59559652a6f8f52af669d79f558
+10437400162  v8-lane-3.11              sha256:02d4da0f7cd248c8471c8bf5ab2101cfdcf105df0ae705475e8da87884ecb89e
+10436962644  v8-lane-3.13              sha256:eaafd3c9d7d462d5d47f3f85ba92ea7b32efd8eb11ee9b0aa4ccfea53a79460e
+10436264023  v8-counterterm-aggregate  sha256:a4b6b867d3cb3b29c119e342f6f399e0b37ec7b82797f3e5d2e3c4bb09d1b314
+
+Extracted payload SHA256
+source-lock JSON  55ade4a80d857864b236a72cb5b6e8e9dd78c6966b797615770efc987d77d05f
+source-lock log   81e4e9d072850d52cfd17f7ac780d4718bade7bf14bd0a737f0b5f90128094c2
+lane-3.11 JSON    8928408ad287ffd02d0e9bf6f271134df151c7ba158309d361c6fc9fe161b281
+lane-3.11 log     0ce5a605a4e42c7ab6f0b2985466b8d6aaface37ae4a2bd00d2d401dc7ea72f1
+lane-3.13 JSON    35c09271ceeb4de43d5a263ddad1b63344f56dc694dfd848409a247c168792ac
+lane-3.13 log     69c917d3b6ef78aacdbdba7297c68fbed234481bbb94c7a0077bfd850f3203ae
+aggregate JSON    7746fed4183fb1ada48db412218785299e5762da151ef1c9334db89197039cd6
+aggregate log     944f452139be6fcacd83ed015235622110f0cf0d0828c68a98346ee6be1eccca
+
+Artifact-provided aggregate sha256 manifest matched:
+7746fed4183fb1ada48db412218785299e5762da151ef1c9334db89197039cd6  artifacts/v8_counterterm_aggregate.json
+944f452139be6fcacd83ed015235622110f0cf0d0828c68a98346ee6be1eccca  artifacts/v8_counterterm_aggregate.log

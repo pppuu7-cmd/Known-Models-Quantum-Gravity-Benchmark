@@ -1,0 +1,596 @@
+{
+  "authority": {
+    "all_authority_blob_locks": true,
+    "blob_records": {
+      "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL_COVERAGE_V5_2026-09-16.md": {
+        "actual": "943a0c5a9cbd7d806d6927569f109d17be65ef68",
+        "expected": "943a0c5a9cbd7d806d6927569f109d17be65ef68",
+        "match": true
+      },
+      "recovery/PREREG_SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE_2026-09-16.md": {
+        "actual": "9ca8a41467293d7d6ec1bf3a2e57210e98602720",
+        "expected": "9ca8a41467293d7d6ec1bf3a2e57210e98602720",
+        "match": true
+      },
+      "results/SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_REPAIR_TERMINAL_2026-09-16.md": {
+        "actual": "fe69a936e561ddb84d933e9145be325d6ddc966b",
+        "expected": "fe69a936e561ddb84d933e9145be325d6ddc966b",
+        "match": true
+      },
+      "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7_REPAIR_CANONICAL_2026-09-16.json": {
+        "actual": "3146e3c42ce60e95f42530bee67951fe9ba10b08",
+        "expected": "3146e3c42ce60e95f42530bee67951fe9ba10b08",
+        "match": true
+      },
+      "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7_REPAIR_TERMINAL_2026-09-16.md": {
+        "actual": "3e38daea995a7f803181080b32310beb61d39da4",
+        "expected": "3e38daea995a7f803181080b32310beb61d39da4",
+        "match": true
+      }
+    },
+    "ledger_coeff_status_consistent": true,
+    "ledger_gate": true,
+    "ledger_parent_prereg_commit": true,
+    "ledger_present": true,
+    "prereg_present": true,
+    "protocol_present": true,
+    "v4_positive_scope": true,
+    "v5_positive_scope": true,
+    "v7_counterterm_question_explicitly_open": true,
+    "v7_positive_scope": true,
+    "v8_taxonomy_lock": true
+  },
+  "basis": [
+    {
+      "degree": 0,
+      "index": 0,
+      "slot": 0,
+      "terms": [
+        {
+          "coefficient": "1",
+          "i": 0,
+          "j": 0
+        }
+      ]
+    },
+    {
+      "degree": 2,
+      "index": 1,
+      "slot": 0,
+      "terms": [
+        {
+          "coefficient": "1",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coefficient": "-1",
+          "i": 1,
+          "j": 1
+        },
+        {
+          "coefficient": "1",
+          "i": 2,
+          "j": 0
+        }
+      ]
+    },
+    {
+      "degree": 3,
+      "index": 2,
+      "slot": 0,
+      "terms": [
+        {
+          "coefficient": "2",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coefficient": "-3",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coefficient": "-3",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coefficient": "2",
+          "i": 3,
+          "j": 0
+        }
+      ]
+    },
+    {
+      "degree": 4,
+      "index": 3,
+      "slot": 0,
+      "terms": [
+        {
+          "coefficient": "1",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coefficient": "-2",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coefficient": "3",
+          "i": 2,
+          "j": 2
+        },
+        {
+          "coefficient": "-2",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coefficient": "1",
+          "i": 4,
+          "j": 0
+        }
+      ]
+    },
+    {
+      "degree": 5,
+      "index": 4,
+      "slot": 0,
+      "terms": [
+        {
+          "coefficient": "2",
+          "i": 0,
+          "j": 5
+        },
+        {
+          "coefficient": "-5",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coefficient": "2",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coefficient": "2",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coefficient": "-5",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coefficient": "2",
+          "i": 5,
+          "j": 0
+        }
+      ]
+    },
+    {
+      "degree": 6,
+      "index": 5,
+      "slot": 0,
+      "terms": [
+        {
+          "coefficient": "1",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coefficient": "-2",
+          "i": 3,
+          "j": 3
+        },
+        {
+          "coefficient": "1",
+          "i": 4,
+          "j": 2
+        }
+      ]
+    },
+    {
+      "degree": 6,
+      "index": 6,
+      "slot": 1,
+      "terms": [
+        {
+          "coefficient": "1",
+          "i": 0,
+          "j": 6
+        },
+        {
+          "coefficient": "-3",
+          "i": 1,
+          "j": 5
+        },
+        {
+          "coefficient": "5",
+          "i": 3,
+          "j": 3
+        },
+        {
+          "coefficient": "-3",
+          "i": 5,
+          "j": 1
+        },
+        {
+          "coefficient": "1",
+          "i": 6,
+          "j": 0
+        }
+      ]
+    },
+    {
+      "degree": 7,
+      "index": 7,
+      "slot": 0,
+      "terms": [
+        {
+          "coefficient": "2",
+          "i": 0,
+          "j": 7
+        },
+        {
+          "coefficient": "-7",
+          "i": 1,
+          "j": 6
+        },
+        {
+          "coefficient": "9",
+          "i": 2,
+          "j": 5
+        },
+        {
+          "coefficient": "-5",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coefficient": "-5",
+          "i": 4,
+          "j": 3
+        },
+        {
+          "coefficient": "9",
+          "i": 5,
+          "j": 2
+        },
+        {
+          "coefficient": "-7",
+          "i": 6,
+          "j": 1
+        },
+        {
+          "coefficient": "2",
+          "i": 7,
+          "j": 0
+        }
+      ]
+    }
+  ],
+  "basis_count": 8,
+  "canonical_corrected_K": {
+    "A": "726034269538880/22649187954139857",
+    "A4": "726034269538880/22649187954139857",
+    "B": "726034269538880/22649187954139857",
+    "C": "726034269538880/22649187954139857"
+  },
+  "claim_ceiling": "Finite local counterterm equivalence for the frozen repaired-V7 Gaussian delta-double-prime triangle only; no all-mollifier theorem, no distributional-extension existence/nonexistence theorem, no full-K5 or model/family failure, no D7 closure, selector, or Candidate Gravity authority.",
+  "classification": "SOURCE_UNFIXED_FINITE_LOCAL_FREEDOM_SCOPED",
+  "controls": {
+    "authority_audit": true,
+    "common_rescaling_A4_equals_A": true,
+    "every_basis_vector_permutation_invariant": true,
+    "invariant_dimensions_expected": true,
+    "lane_decision_agreement": true,
+    "odd_invariant_jets_zero_on_centered_gaussians": true,
+    "off_collision_identity": true,
+    "rank_nullity_identity": true,
+    "synthetic_in_span_exact_recovery": true,
+    "synthetic_outside_span_exact_rejection": true,
+    "triangle_root_group_exact": true,
+    "v7_exact_values_reproduced": true
+  },
+  "controls_pass": true,
+  "counterterm_action_rows": {
+    "A": [
+      "1",
+      "-2",
+      "0",
+      "8",
+      "0",
+      "-32/9",
+      "-80/3",
+      "0"
+    ],
+    "A4": [
+      "1",
+      "-2",
+      "0",
+      "8",
+      "0",
+      "-32/9",
+      "-80/3",
+      "0"
+    ],
+    "B": [
+      "1",
+      "-2",
+      "0",
+      "9",
+      "0",
+      "-34/9",
+      "-130/3",
+      "0"
+    ],
+    "C": [
+      "1",
+      "-2",
+      "0",
+      "25/3",
+      "0",
+      "-4",
+      "-30",
+      "0"
+    ]
+  },
+  "difference_equation_order": [
+    "A4",
+    "B",
+    "C"
+  ],
+  "difference_matrix": [
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "1",
+      "0",
+      "-2/9",
+      "-50/3",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "1/3",
+      "0",
+      "-4/9",
+      "-10/3",
+      "0"
+    ]
+  ],
+  "difference_rhs": [
+    "0",
+    "3294400/1162261467",
+    "23526723200/10356281643411"
+  ],
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE",
+  "invariance_constraint_ranks_by_degree": {
+    "0": 0,
+    "1": 2,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 5,
+    "7": 7
+  },
+  "invariant_dimensions_by_degree": {
+    "0": 1,
+    "1": 0,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 2,
+    "7": 1
+  },
+  "lane_decision_agreement": true,
+  "lane_runtime_python": [
+    "3.11.16",
+    "3.13.15"
+  ],
+  "new_fact": "Whether the finite repaired-V7 Gaussian relative-width differences lie in the exact S3-invariant collision-jet action span through derivative order 7, with source-fixed versus source-unfixed finite freedom separated prospectively.",
+  "prior_source_fixes_all_finite_coefficients": false,
+  "prior_source_fixes_common_finite_normalization": false,
+  "scheme_order": [
+    "A",
+    "A4",
+    "B",
+    "C"
+  ],
+  "solve": {
+    "augmented_rank": 2,
+    "canonical_solution": [
+      "0",
+      "0",
+      "0",
+      "15388825729280/7549729318046619",
+      "0",
+      "-9016029477280/2516576439348873",
+      "0",
+      "0"
+    ],
+    "nullity": 6,
+    "nullspace_basis": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "18",
+        "0",
+        "6",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "rank": 2,
+    "solvable": true
+  },
+  "source_class_definition_authorized": true,
+  "synthetic_negative": {
+    "augmented_rank": 3,
+    "rank": 2,
+    "rejected": true,
+    "rhs": [
+      "1",
+      "0",
+      "0"
+    ],
+    "solvable": false
+  },
+  "synthetic_positive": {
+    "recovered_rhs_exactly": true,
+    "rhs": [
+      "0",
+      "-114",
+      "-74/3"
+    ],
+    "seed_coefficients": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "solvable": true
+  },
+  "triangle_group_matrices": [
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        -1,
+        -1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        -1,
+        -1
+      ]
+    ],
+    [
+      [
+        -1,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        -1,
+        -1
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  ],
+  "v7_K": {
+    "A": "1600/531441",
+    "A4": "1600/531441",
+    "B": "204800/1162261467",
+    "C": "14400/19487171"
+  }
+}
