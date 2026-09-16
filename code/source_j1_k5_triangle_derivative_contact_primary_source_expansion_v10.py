@@ -77,7 +77,7 @@ def main():
 
     controls = {}
     controls["v8_object_lock"] = (
-        v8.get("basis_count") == 8
+        len(v8.get("basis", [])) == 8
         and v8.get("solve", {}).get("rank") == 2
         and v8.get("solve", {}).get("augmented_rank") == 2
         and v8.get("solve", {}).get("nullity") == 6
@@ -139,7 +139,6 @@ def main():
     actual_actionable = [r for r in candidate_checks if r["computed_actionable"]]
     controls["expected_actionable_count"] = len(actual_actionable) == candidates.get("expected_actionable_record_count")
 
-    # Outcome-sensitive exact rank controls on a six-dimensional nullspace.
     controls["synthetic_unique_rank6"] = rank([[1 if i == j else 0 for j in range(6)] for i in range(6)]) == 6
     controls["synthetic_partial_rank3"] = rank([[1 if i == j else 0 for j in range(6)] for i in range(3)]) == 3
     controls["synthetic_quotient_rank6"] = rank([[1 if i == j else 0 for j in range(6)] for i in range(6)]) == 6
@@ -155,7 +154,6 @@ def main():
         classification = "SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED"
         remaining = 6
     else:
-        # No actual actionable rows are frozen in this run; future evidence must carry exact rows/quotients.
         classification = "INVALID_IMPLEMENTATION"
         remaining = None
 
@@ -179,7 +177,7 @@ def main():
     }
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(out, indent=2, sort_keys=True) + "\n")
-    print(json.dumps(decision_projection, sort_keys=True))
+    print(json.dumps({"decision_projection": decision_projection, "controls": controls}, sort_keys=True))
     print("decision_sha256=" + decision_sha256)
 
 if __name__ == "__main__":
