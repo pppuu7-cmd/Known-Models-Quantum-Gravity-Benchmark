@@ -1,0 +1,92 @@
+name: KMQGB Eq4 common local-Lie pullback transverse rank
+
+on:
+  push:
+    paths:
+      - '.github/workflows/source-j1-k5-eq4-common-local-lie-pullback-transverse-rank.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen authority and ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object sources/arxiv_2601_23162v1_eq4_triangle_wedge_group_argument_identity_v15.json)" = "92a43e79a0f0934db78933c453fd45fcad6daab9"
+          test "$(git hash-object sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json)" = "fdfb13f9974ebc891cb3f490ca553dd0991d9136"
+          test "$(git hash-object sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json)" = "c742e8cab0648b8fbaef88f09876644c6c2c3077"
+          test "$(git hash-object sources/arxiv_2601_23162v1_eq4_common_local_lie_pullback_authority_v16.json)" = "467c4bc9ee2b7a68eeaf2be0243b27900ec7c34e"
+          git merge-base --is-ancestor 2d6b2b8565a825e9864fbbd779c842cdedc60299 HEAD
+          git merge-base --is-ancestor 40f4db6a75f6765dd8ce80077a0f3690abb804bc HEAD
+          git merge-base --is-ancestor b9a486cace4133d66ab54384dae17f2cfe339ca2 HEAD
+          git merge-base --is-ancestor 413b4924b6184b6e1f8d70efecc20c6906a2890f HEAD
+
+  exact-lanes:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {method: rref, python: '3.11'}
+          - {method: minors, python: '3.13'}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Execute exact raw pullback and authority classifier
+        run: |
+          mkdir -p artifacts
+          python code/source_j1_k5_eq4_common_local_lie_pullback_transverse_rank.py \
+            --authority sources/arxiv_2601_23162v1_eq4_common_local_lie_pullback_authority_v16.json \
+            --method ${{ matrix.method }} \
+            --out artifacts/decision.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-lie-rank-${{ matrix.method }}
+          path: artifacts/decision.json
+          if-no-files-found: error
+          retention-days: 90
+
+  aggregate:
+    needs: exact-lanes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: eq4-lie-rank-rref
+          path: artifacts/rref
+      - uses: actions/download-artifact@v4
+        with:
+          name: eq4-lie-rank-minors
+          path: artifacts/minors
+      - name: Aggregate independent exact methods
+        run: |
+          python code/source_j1_k5_eq4_common_local_lie_pullback_transverse_rank_aggregate.py \
+            --rref artifacts/rref \
+            --minors artifacts/minors \
+            --out artifacts/aggregate.json
+          cat artifacts/aggregate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-lie-rank-aggregate
+          path: artifacts/aggregate.json
+          if-no-files-found: error
+          retention-days: 90
