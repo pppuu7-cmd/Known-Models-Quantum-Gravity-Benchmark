@@ -8,40 +8,52 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 - `RQIR Core v1.0 = FROZEN`.
 - `D7-S2 = NOT_CLOSED`; `D7-S3 = NOT_CLOSED`; `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`.
 - Candidate Gravity inactive; selector labels unauthorized.
-- `BLOCKED/INVALID != FAIL`; missing object/map/rank != zero.
+- `BLOCKED/INVALID != FAIL`; missing object/map/rank != zero; raw rank != physical rank.
 
 ## Latest terminal Research
 
-`SOURCE_J1_K5_EQ4_COMMON_LOCAL_LIE_PULLBACK_TRANSVERSE_RANK_GATE`
+`SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_ESCALATION_GATE`
 
-Classification: `EQ4_COMMON_LOCAL_LIE_PULLBACK_TRANSVERSE_RANK_BLOCKED_SCOPED`.
+Classification: `EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_BLOCKED_SCOPED`.
 
-Run `35146616833`, head `e4a373219aef548c64e1b689260f8dbc988b7746`, aggregate artifact `10467007793`, aggregate JSON SHA256 `7eeb379562c85d58783d771dc9bab29abae3f71c134ef4e08b6afdca295f3240`.
+Run `35148538287`, workflow head `62bbf808cb766c1fb79b59f396c2c06791374ff1`, scientific payload SHA256 `5211f28fd939da3829eebde090014d8eb11d052b449c3cbf14b054f3767bffd5`, aggregate payload SHA256 `04d522efbb733c313430bfa7f8f09ab5a39fef251b8a3b35346ad81fe0fecc66`.
 
-Exact raw result:
+Required physical-quotient fields are all `NOT_ESTABLISHED`; `physical_transverse_rank=null`; minimal blocker is `PUBLISHED_VERSION_FULLTEXT_AUTHORITY_ACCESS_CEILING`. The result does not assert that an inaccessible version-of-record definitively lacks the object.
 
-- `d(G12,G23,G13)=(-X2,X2-X3,-X3)`;
-- per-generator matrix `[[-1,0],[1,-1],[0,-1]]`, rank `2`;
-- raw `sl(2,C)` map: domain `12`, codomain `18`, rank `12`, domain nullity `0`, left-nullity `6`;
-- exact relation `Y12+Y23-Y13=0` per generator;
-- RREF and independent minor methods agree;
-- rational basis-change and six raw relabeling controls preserve rank.
+Latest post-terminal Critic: commit `90fd9b88e60789b144897e27831ad67d94b60f95`, verdict `CRITIC_CONFIRMS_SCOPED_AUTHORITY_BLOCKED_WITH_ACCESS_CEILING`.
 
-`physical_transverse_rank=null` because source authority does not define the physical quotient/projection, simultaneous contact pullback, Jacobian/Haar/contact-normalization transport, or S3/orientation quotient transport.
+## Exact raw prerequisite retained
 
-## Latest Critic
+The source-authorized triangle tangent map remains
 
-Commit `6f0e73bd68d8f83156b52347bd985e7dcc1fea00`.
-Verdict: `CRITIC_CONFIRMS_RAW_RANK_AND_PHYSICAL_BLOCKER_SEPARATION`.
+`(X2,X3) -> (-X2, X2-X3, -X3)`
 
-## Current highest-information frontier
+with raw rank `12/12`, raw domain nullity `0`, and relation `Y12+Y23-Y13=0`. It remains a raw group-coordinate fact only.
 
-Source-only authority escalation for the **physical transverse quotient/projection** in the same Eq.(4) realization. This is the first causal missing object; normalization and S3 quotient transport remain downstream.
+## Current highest-information admissible frontier
 
-Allowed authority must be prospectively frozen primary article/version, appendix, official supplementary material, or author-provided derivation/code. A generic textbook quotient or raw-rank substitution is INVALID.
+The physical-quotient branch must not be repeated until new preregistration-authorized primary authority becomes auditable.
 
-D7-S2 remains open; the exact raw group-difference/tangent map can inform its future prerequisite only after the physical quotient/normalization authority is resolved.
+The next independent high-information D7-S2 obligation is a **full-K5 source-faithful group-variable tangent pushforward** derived only from the already-authorized general identity `g_ab=g_b^{-1}g_a` and Eq.(4) gauge fixing. A new gate may prospectively freeze and test:
+
+1. all ten K5 wedge differentials for one gauge root;
+2. exact incidence/tangent rank and cycle left-nullspace;
+3. invariance across all five choices of gauge root;
+4. spanning-tree coordinate changes and exact determinant/unimodularity;
+5. S5 vertex relabeling/orientation transport at raw group-variable level;
+6. consistency with terminal Iter466 K5 correlation-carrier rank/nullity without treating that topology result as a physical quotient;
+7. explicit scope lock that no physical quotient, distributional/contact pushforward, measure normalization or D7-S2 closure is inferred.
+
+This gate is independent of the missing physical quotient and can materially close the group-variable-pushforward layer of D7-S2.
+
+## Independent nonterminal work
+
+Iter461 authoritative run `34748503239` remains queued/nonterminal on `research/iter461-k5-collision-partitions`. Its frozen consumer contract explicitly forbids rerun/duplicate enumeration; do not consume partial values.
 
 ## Restoration procedure
 
-Read fresh `main` and Actions first, then `CURRENT_BENCHMARK_FRONT`, this index, latest terminal result, latest Critic, and any newer preregistration. Never consume partial substantive values from nonterminal workflows.
+1. Read fresh `main` and Actions first.
+2. Read `CURRENT_BENCHMARK_FRONT`, this index, latest terminal Research/Critic and newer preregistration/workflow.
+3. Never consume partial substantive values from nonterminal workflows.
+4. Preserve historical FAIL/BLOCKED/INVALID records and claim ceilings.
+5. Keep D7/selector/Candidate Gravity locks until their own terminal authority changes them.
