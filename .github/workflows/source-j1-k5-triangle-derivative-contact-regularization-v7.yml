@@ -1,0 +1,103 @@
+name: source-j1-k5-triangle-derivative-contact-regularization-v7
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-triangle-derivative-contact-regularization-v7.yml'
+      - 'code/source_j1_k5_triangle_derivative_contact_regularization_v7.py'
+      - 'research/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7_PREREG_2026-09-16.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective chronology
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 764cd9f915cef15b6294f5f72329f12cb145c08e HEAD
+          git merge-base --is-ancestor 44da1edd39debce755f9ae7d48c4e7abd375604c HEAD
+      - name: Evaluate source authority locks
+        env:
+          PYTHONPATH: code
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_triangle_derivative_contact_regularization_v7.py --mode source --repo-root . --out artifacts/v7_source_lock.json | tee artifacts/v7_source_lock.log
+          python - <<'PY'
+          import json
+          d=json.load(open('artifacts/v7_source_lock.json'))
+          print('SOURCE_OK=', d['source_ok'])
+          PY
+          sha256sum artifacts/v7_source_lock.json artifacts/v7_source_lock.log > artifacts/v7_source_lock.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v7-source-lock
+          path: artifacts/v7_source_lock.*
+          if-no-files-found: error
+
+  exact:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run exact rational lane
+        env:
+          PYTHONPATH: code
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          tag="${{ matrix.python-version }}"
+          python code/source_j1_k5_triangle_derivative_contact_regularization_v7.py --mode lane --repo-root . --out "artifacts/v7_${tag}.json" | tee "artifacts/v7_${tag}.log"
+          sha256sum "artifacts/v7_${tag}.json" "artifacts/v7_${tag}.log" > "artifacts/v7_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v7-python-${{ matrix.python-version }}
+          path: artifacts/v7_${{ matrix.python-version }}.*
+          if-no-files-found: error
+
+  aggregate:
+    needs: exact
+    if: ${{ always() && needs.exact.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v7-python-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate frozen decision
+        env:
+          PYTHONPATH: code
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_triangle_derivative_contact_regularization_v7.py \
+            --mode aggregate \
+            --low downloaded/v7_3.11.json \
+            --high downloaded/v7_3.13.json \
+            --out artifacts/v7_aggregate.json | tee artifacts/v7_aggregate.log
+          sha256sum artifacts/v7_aggregate.json artifacts/v7_aggregate.log > artifacts/v7_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v7-aggregate
+          path: artifacts/v7_aggregate.*
+          if-no-files-found: error
