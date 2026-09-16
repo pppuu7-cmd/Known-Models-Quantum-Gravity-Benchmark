@@ -1,0 +1,274 @@
+name: terminalize-source-j1-k5-triangle-derivative-contact-primary-source-expansion-v10
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/terminalize-source-j1-k5-triangle-derivative-contact-primary-source-expansion-v10.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  terminalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Download authoritative terminal aggregate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(gh api repos/${GITHUB_REPOSITORY}/actions/runs/35088750770 --jq .status)" = completed
+          test "$(gh api repos/${GITHUB_REPOSITORY}/actions/runs/35088750770 --jq .conclusion)" = success
+          test "$(gh api repos/${GITHUB_REPOSITORY}/actions/runs/35088750770 --jq .head_sha)" = 17daa25c4629e26a632dffed83dfac68da344e48
+          rm -rf downloaded
+          mkdir downloaded
+          gh run download 35088750770 --name v10-aggregate --dir downloaded
+          gh api repos/${GITHUB_REPOSITORY}/actions/runs/35088750770/artifacts > downloaded/artifacts.json
+      - name: Validate frozen terminal decision and materialize durable records
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib, pathlib
+          R=pathlib.Path('.')
+          d=pathlib.Path('downloaded')
+          agg=json.loads((d/'v10_aggregate.json').read_text())
+          assert agg['gate']=='SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE'
+          assert agg['classification']=='SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED'
+          assert agg['lane_decision_agreement'] is True
+          assert agg['lane_a_controls_pass'] is True and agg['lane_b_controls_pass'] is True
+          dp=agg['decision_projection']
+          assert dp['controls_pass'] is True
+          assert dp['actionable_record_count']==0
+          assert dp['remaining_affine_nullity']==6
+          arts=json.loads((d/'artifacts.json').read_text())['artifacts']
+          byname={a['name']:a for a in arts}
+          for name in ('v10-3.11','v10-3.13','v10-aggregate'):
+              assert name in byname and byname[name]['expired'] is False
+          outdir=R/'results'; outdir.mkdir(exist_ok=True)
+          canon=outdir/'SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_CANONICAL_2026-09-16.json'
+          raw=outdir/'SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_RAW_2026-09-16.log'
+          hashes=outdir/'SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_HASHES_2026-09-16.sha256'
+          canon.write_text((d/'v10_aggregate.json').read_text())
+          raw.write_text((d/'v10_aggregate.log').read_text())
+          def sh(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+          hashes.write_text(f"{sh(canon)}  {canon.name}\n{sh(raw)}  {raw.name}\n")
+
+          candidates=json.loads((R/'inputs/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10_candidates.json').read_text())['candidate_records']
+          for sid in ('arXiv:2601.23162v1','arXiv:2604.24945v1'):
+              rec=agg['source_records'][sid]
+              obj={
+                  'source_id':sid,
+                  'gate':'SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE',
+                  'role':'full immutable primary-source audit record for V10',
+                  'pdf_url':rec['pdf_url'],
+                  'pdf_sha256':rec['pdf_sha256'],
+                  'pdf_byte_length':rec['byte_length'],
+                  'version_marker_present':rec['version_marker_present'],
+                  'full_text_term_scan_counts':rec['term_scan_counts'],
+                  'candidate_passages':[x for x in candidates if x['source_id']==sid],
+                  'actionable_selector_count':sum(1 for x in agg['candidate_checks'] if x['source_id']==sid and x['computed_actionable']),
+                  'interpretation':'No candidate passage in this frozen full-primary-source audit supplied a new exact mappable selector on the six-dimensional V8 affine freedom.'
+              }
+              slug=sid.split(':',1)[1].lower().replace('.','_')
+              (R/'sources'/f'{slug}_finite_renormalization_full_primary_audit_v10.json').write_text(json.dumps(obj,indent=2,sort_keys=True)+'\n')
+
+          art_lines=[]
+          for name in ('v10-3.11','v10-3.13','v10-aggregate'):
+              a=byname[name]
+              art_lines.append(f"- {name}: artifact `{a['id']}`, digest `{a['digest']}`.")
+          terminal=outdir/'SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_TERMINAL_2026-09-16.md'
+          terminal.write_text(f'''# SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10 — terminal result
+
+Date: 2026-09-16
+Status: TERMINAL
+
+## Authority
+
+- Gate: `SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE`
+- Prospective freeze commit: `6188178d92b8a4c2885e14eb90923168224d83ee`
+- Candidate-record hardening commit: `1bf668621e6cb36115e2ded95e7663529bf9f122`
+- Implementation commits: `5c76c0730104233463b688c18773d4ed0629b61b`, `b51a4efd8e73350aede3fa1da406e0ea7a17b416`
+- Authoritative workflow head: `17daa25c4629e26a632dffed83dfac68da344e48`
+- Authoritative Actions run: `35088750770`, terminal `completed/success`
+- Jobs: source-lock `104769749310`; Python 3.11 `104769780036`; Python 3.13 `104769780072`; aggregate `104769924093`.
+{chr(10).join(art_lines)}
+
+Green CI is execution provenance only. The substantive classification is the frozen classifier applied after both independent lanes agreed.
+
+## Frozen terminal classification
+
+`SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED`
+
+This is **BLOCKED, not FAIL**.
+
+## Exact result
+
+The terminal V8/V9 locks were reproduced: invariant basis count `8`, V8 rank/augmented-rank `2/2`, affine nullity `6`; V9 selector rank `0`, remaining nullity `6`.
+
+Both frozen immutable primary PDFs were retrieved inside Actions and independently audited under Python 3.11 and 3.13. The lanes agree exactly on decision SHA256 `{agg['decision_sha256']}`.
+
+Primary PDF SHA256 values:
+
+- `arXiv:2601.23162v1`: `{dp['pdf_sha256']['arXiv:2601.23162v1']}`;
+- `arXiv:2604.24945v1`: `{dp['pdf_sha256']['arXiv:2604.24945v1']}`.
+
+All frozen page anchors passed. Six semantically relevant primary-source candidates were checked. Actionable same-realization selectors satisfying PRIMARY + SAME_REALIZATION + EXPLICIT + MAPPABLE + INDEPENDENT = `0`. Remaining affine nullity = `6`.
+
+The most relevant source facts are: the causal paper fixes the one-wedge contact distribution/coefficients and defines the product-form causal vertex, but explicitly leaves causal-vertex finiteness for further investigation; the Toller paper proves one-wedge splitting uniqueness, explicitly states that Toller matrices are not a Lorentz-group representation, and gives the one-wedge additive identity. None of these passages supplies a collision-product extension rule, finite normalization, exact row on the V8 nullspace, or an explicit quotient of the six V8 local directions.
+
+## Scientific meaning
+
+Full-text expansion from the narrow structured snapshots to exactly `arXiv:2601.23162v1` and `arXiv:2604.24945v1` does **not** resolve the V9 finite-renormalization authority blocker. Within this frozen two-source corpus, the six-dimensional V8 finite local freedom remains source-unfixed.
+
+This does not prove absence of a selector in all literature. Missing source authority is not a zero counterterm, not distributional nonexistence, and not model/family falsification.
+
+## Claim ceiling
+
+Two-source full-primary-text finite-renormalization authority audit for the exact terminal V8 local highest-contact `delta''` triangle only. No literature-global absence theorem, no distributional existence/nonexistence theorem, no full-K5/model/family/D7 closure, no terminal selector, and no Candidate Gravity authority.
+
+## Next admissible frontier
+
+Prefer a same-realization physical-observable quotient gate over another generic lexical source search: prospectively freeze a source-defined Eq.(4) boundary observable/test family and determine whether the six V8 null directions are physically distinguishable or lie in an exact observable kernel. A complete observable-kernel result could justify a quotient; a detectable direction would establish physically relevant finite underdetermination. No such successor is executed in this gate.
+''')
+          print('classification='+agg['classification'])
+          print('canonical_sha256='+sh(canon))
+          print('raw_sha256='+sh(raw))
+          print('decision_sha256='+agg['decision_sha256'])
+          PY
+      - name: Commit terminal results
+        run: |
+          set -euo pipefail
+          git config user.name pppuu7-cmd
+          git config user.email pppuu7@gmail.com
+          git add results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_* sources/*_finite_renormalization_full_primary_audit_v10.json
+          git commit -m 'results: terminalize V10 primary-source expansion audit'
+          git push origin HEAD:main
+          echo "RESULT_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Write durable recovery handoff and current front
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, pathlib, hashlib
+          R=pathlib.Path('.')
+          result_commit=os.environ['RESULT_COMMIT']
+          agg=json.loads((R/'results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_CANONICAL_2026-09-16.json').read_text())
+          arts=json.loads(pathlib.Path('downloaded/artifacts.json').read_text())['artifacts']
+          by={a['name']:a for a in arts}
+          canonical=R/'results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_CANONICAL_2026-09-16.json'
+          raw=R/'results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_RAW_2026-09-16.log'
+          sh=lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+          front=R/'recovery/CURRENT_BENCHMARK_FRONT.md'
+          front.write_text(f'''# CURRENT BENCHMARK FRONT
+
+Fresh repository `main` and fresh Actions state always outrank this navigation document.
+
+## Latest terminal Research execution
+
+`SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE`
+
+Terminal Research classification:
+
+`SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED`
+
+This is **BLOCKED, not FAIL**.
+
+Authority chain: prospective freeze `6188178d92b8a4c2885e14eb90923168224d83ee`; workflow head `17daa25c4629e26a632dffed83dfac68da344e48`; authoritative run `35088750770`; terminal result commit `{result_commit}`.
+
+Jobs: source-lock `104769749310`; Python 3.11 `104769780036`; Python 3.13 `104769780072`; aggregate `104769924093`.
+
+Artifacts: 3.11 `{by['v10-3.11']['id']}` `{by['v10-3.11']['digest']}`; 3.13 `{by['v10-3.13']['id']}` `{by['v10-3.13']['digest']}`; aggregate `{by['v10-aggregate']['id']}` `{by['v10-aggregate']['digest']}`.
+
+Canonical JSON SHA256 `{sh(canonical)}`; raw aggregate log SHA256 `{sh(raw)}`; lane decision SHA256 `{agg['decision_sha256']}`.
+
+## New durable fact
+
+Exhaustive frozen full-primary-text audit of exactly `arXiv:2601.23162v1` and `arXiv:2604.24945v1` found zero actionable same-realization selectors mappable to the six-dimensional V8 affine finite-renormalization freedom. All page anchors and outcome-sensitive controls pass in both independent lanes. V8 nullity remains `6`.
+
+The source expansion therefore does not resolve V9. This is source-authority BLOCKED, not scientific/model FAIL and not a literature-global absence theorem.
+
+## Governance
+
+- RQIR Core v1.0 = FROZEN.
+- `D7-S2 = NOT_CLOSED`.
+- `D7-S3 = NOT_CLOSED`.
+- `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`.
+- terminal D7 selectors remain forbidden.
+- Candidate Gravity remains inactive.
+
+## Next recommended gate
+
+Prospectively freeze a same-realization physical-observable quotient/sensitivity gate: determine whether the six V8 null directions alter a source-defined Eq.(4) boundary observable/test family or lie in a complete exact observable kernel. Do not infer a quotient from source silence alone.
+''')
+          hand=R/'recovery/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_HANDOFF_2026-09-16.md'
+          hand.write_text(f'''# KMQGB Research / Closure handoff — V10 primary-source expansion
+
+Date: 2026-09-16
+Status: TERMINAL
+
+## STATE_READ
+Recovered V9 terminal front on main `7be8a59f4937e1de368e9d0bd713ef59badff374`, terminal V9 result `7d3d4de295f3d5b3b5968621ffcb8fd35bfd2bd6`, V8 exact nullity-6 object, frozen preregistrations, source records, and Actions provenance. V9 was `SOURCE_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED` because the then-complete structured source corpus had selector rank 0.
+
+## TARGET_GATE
+`SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE`
+
+## WHY_THIS_GATE
+Directly challenges the high-DAG V9 source-authority blocker by expanding from narrow snapshots to the exact full primary texts that define the same causal/Toller realization, while preserving the exact V8 object and selector taxonomy.
+
+## PREREG
+Prospective freeze commit `6188178d92b8a4c2885e14eb90923168224d83ee`; exact two-source corpus `arXiv:2601.23162v1` and `arXiv:2604.24945v1`; frozen UNIQUE/QUOTIENT/PARTIAL/BLOCKED/INCONSISTENT/INVALID taxonomy; criteria unchanged after retrieval/result.
+
+## WORK_PERFORMED
+Full immutable PDFs were retrieved and SHA256-hashed inside Actions. Full text plus frozen page anchors were audited independently under Python 3.11/3.13. Six relevant source passages were semantically checked against PRIMARY + SAME_REALIZATION + EXPLICIT + MAPPABLE + INDEPENDENT. V8/V9 locks and synthetic outcome-sensitive rank controls were replayed. Independent lanes were aggregated only after terminal success.
+
+## RESULT
+Actionable selector count `0`; selector rank remains `0`; V8 remaining affine nullity `6`. Both lanes agree on decision SHA256 `{agg['decision_sha256']}`. PDF SHA256: causal `{agg['decision_projection']['pdf_sha256']['arXiv:2601.23162v1']}`; Toller `{agg['decision_projection']['pdf_sha256']['arXiv:2604.24945v1']}`.
+
+## CLASSIFICATION
+`SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED` — BLOCKED, not FAIL.
+
+## NEW_FACT
+The exact full texts of the two frozen same-realization primary sources do not add an actionable finite-normalization, product-extension, gluing/RG, or authorized-quotient condition mappable to the six-dimensional V8 affine freedom. The causal source itself leaves causal-vertex finiteness for further investigation; the Toller source supplies one-wedge uniqueness/additivity and explicitly denies a naive representation/composition law, but no multi-contact extension selector.
+
+## CLAIM_CEILING
+Two-source primary-text audit only. No claim that all literature lacks a selector; no distributional existence/nonexistence theorem; no full-K5/model/family FAIL; no D7 closure/terminal selector; no Candidate Gravity activation.
+
+## FILES/ARTIFACTS
+- prereg: `research/prereg/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE_2026-09-16.md`
+- frozen input: `inputs/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10.json`
+- candidate audit: `inputs/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10_candidates.json`
+- code: `code/source_j1_k5_triangle_derivative_contact_primary_source_expansion_v10.py`, aggregate code, workflow
+- canonical result + raw log + hashes under `results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_*`
+- full-primary audit source records under `sources/*_finite_renormalization_full_primary_audit_v10.json`
+- run `35088750770`; jobs `104769749310`, `104769780036`, `104769780072`, `104769924093`
+- artifacts: 3.11 `{by['v10-3.11']['id']}` `{by['v10-3.11']['digest']}`; 3.13 `{by['v10-3.13']['id']}` `{by['v10-3.13']['digest']}`; aggregate `{by['v10-aggregate']['id']}` `{by['v10-aggregate']['digest']}`
+- canonical SHA256 `{sh(canonical)}`; raw SHA256 `{sh(raw)}`.
+
+## COMMITS
+- prospective freeze `6188178d92b8a4c2885e14eb90923168224d83ee`
+- candidate hardening `1bf668621e6cb36115e2ded95e7663529bf9f122`
+- implementation `5c76c0730104233463b688c18773d4ed0629b61b`, `b51a4efd8e73350aede3fa1da406e0ea7a17b416`
+- workflow head `17daa25c4629e26a632dffed83dfac68da344e48`
+- terminal result `{result_commit}`
+
+## OPEN_BLOCKERS
+1. Six-dimensional V8 finite-renormalization freedom remains source-unfixed.
+2. No source-authorized quotient of those six directions is established.
+3. Physical sensitivity of those directions to a complete source-defined observable family is not yet classified.
+4. D7-S2/S3 remain not closed; D7-S4 remains partial global not closed.
+
+## NEXT_RECOMMENDED_GATE
+Prospectively freeze `SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PHYSICAL_OBSERVABLE_QUOTIENT_GATE`: on the same V8 realization, derive a source-defined Eq.(4) boundary observable/test family and compute the exact action/rank of all six null directions. A complete zero action may authorize a quotient only with sufficient observable completeness; any nonzero direction establishes physically distinguishable finite underdetermination. No successor is run here.
+''')
+          PY
+          git add recovery/CURRENT_BENCHMARK_FRONT.md recovery/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_HANDOFF_2026-09-16.md
+          git commit -m 'recovery: synchronize V10 primary-source expansion front'
+          git push origin HEAD:main
