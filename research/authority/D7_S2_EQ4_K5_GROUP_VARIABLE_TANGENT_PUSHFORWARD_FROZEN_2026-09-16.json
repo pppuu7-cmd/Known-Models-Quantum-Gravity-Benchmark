@@ -1,0 +1,26 @@
+{
+  "gate": "D7_S2_EQ4_K5_GROUP_VARIABLE_TANGENT_PUSHFORWARD_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "bc9aa01263df1172206eb211b456bf5d78fe1b1b",
+  "source_records": {
+    "causal_vertex": {
+      "path": "sources/arxiv_2601_23162v1_causal_vertex.json",
+      "git_blob_sha": "f0b520fc04904e038f252dc5b45d23893cb020ed",
+      "source_id": "arXiv:2601.23162v1"
+    },
+    "general_wedge_identity": {
+      "path": "sources/arxiv_2601_23162v1_eq4_triangle_wedge_group_argument_identity_v15.json",
+      "git_blob_sha": "92a43e79a0f0934db78933c453fd45fcad6daab9",
+      "locked_pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713"
+    }
+  },
+  "parent_terminal_records": {
+    "triangle_raw_lie_terminal_commit": "bfb0cf44c3a95e667941d34ae9961234c8923bf2",
+    "iter466_correlation_carrier_terminal_commit": "67c66a2edc3425f06aaadb369d2f3606184d3733"
+  },
+  "implementation_commits": {
+    "classifier": "32f3f3b01d6fb840655d3005631ef30f5334674e",
+    "aggregate": "ec8ead9aa7416e6feaafaaa00db644977643fd13"
+  },
+  "scientific_lock": "Use only the literal source differential of g_ab=g_b^{-1}g_a after one global gauge root. No physical quotient, V8, distributional/contact product, Haar/contact normalization or Iter461 partial values may enter the production decision."
+}
