@@ -1,0 +1,40 @@
+{
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE",
+  "status": "PROSPECTIVELY_FROZEN_BEFORE_PRIMARY_SOURCE_RETRIEVAL_OR_RESULT",
+  "start_main": "7be8a59f4937e1de368e9d0bd713ef59badff374",
+  "parent_v9_result_commit": "7d3d4de295f3d5b3b5968621ffcb8fd35bfd2bd6",
+  "parent_v8_result_commit": "3e6e069d728ccef2724c26f374c298f29d591043",
+  "frozen_primary_source_corpus": [
+    {
+      "source_id": "arXiv:2601.23162v1",
+      "role": "full immutable causal-vertex primary source",
+      "existing_narrow_snapshot": "sources/arxiv_2601_23162v1_causal_vertex.json",
+      "existing_snapshot_blob_sha": "f0b520fc04904e038f252dc5b45d23893cb020ed"
+    },
+    {
+      "source_id": "arXiv:2604.24945v1",
+      "role": "full immutable Toller/Cartan primary source",
+      "existing_narrow_snapshot": "sources/arxiv_2604_24945v1_toller_cartan.json",
+      "existing_snapshot_blob_sha": "8dc58f3c9c191289f2f148469f8df3ea95f77ad5"
+    }
+  ],
+  "frozen_selector_categories": [
+    "FINITE_COEFFICIENTS",
+    "FINITE_NORMALIZATION",
+    "GLUING_COMPOSITION",
+    "RG_SCALE",
+    "AUTHORIZED_QUOTIENT"
+  ],
+  "frozen_terminal_labels": [
+    "SOURCE_EXPANDED_FINITE_RENORMALIZATION_UNIQUELY_FIXED_SCOPED",
+    "SOURCE_EXPANDED_FINITE_RENORMALIZATION_QUOTIENT_FIXED_SCOPED",
+    "SOURCE_EXPANDED_FINITE_RENORMALIZATION_PARTIALLY_CONSTRAINED_SCOPED",
+    "SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED",
+    "SOURCE_EXPANDED_FINITE_RENORMALIZATION_CONSTRAINT_INCONSISTENT_SCOPED",
+    "INVALID_IMPLEMENTATION"
+  ],
+  "external_sources_outside_frozen_corpus_decision_forbidden": true,
+  "lexical_mentions_non_authoritative": true,
+  "missing_selector_is_blocked_not_fail": true,
+  "claim_ceiling": "Two-source full-primary-text finite-renormalization authority audit for the exact terminal V8 local delta-double-prime triangle only."
+}
