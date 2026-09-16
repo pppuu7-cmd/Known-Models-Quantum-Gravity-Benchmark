@@ -1,0 +1,53 @@
+{
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PHYSICAL_OBSERVABLE_QUOTIENT_GATE",
+  "date": "2026-09-16",
+  "status": "FROZEN_AUTHORITY_LEDGER_BEFORE_RESULT",
+  "main_at_freeze": "8c504ed3ad9fe39ce3e2a410a7fb40edf407d8dd",
+  "objects": {
+    "v8_canonical": {
+      "path": "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_CANONICAL_2026-09-16.json",
+      "blob_sha": "49e248993d0a23d85663aaa198cd5d87b6200b6e",
+      "role": "exact 8-dimensional invariant collision-jet basis and six-dimensional affine nullspace"
+    },
+    "eq4_source_snapshot": {
+      "path": "sources/arxiv_2601_23162v1_causal_vertex.json",
+      "blob_sha": "f0b520fc04904e038f252dc5b45d23893cb020ed",
+      "source_id": "arXiv:2601.23162v1",
+      "role": "source-defined Eq. (4) boundary-basis amplitude identity"
+    },
+    "eq4_topology_parent": {
+      "path": "results/ITER453_EQ4_CONTRACTION_TOPOLOGY_RESULT_2026-09-13.md",
+      "blob_sha": "8e827ce199cc1dca042988c5e0d9fab4c1250ffa",
+      "role": "terminal finite magnetic/intertwiner contraction-topology qualification with explicit synthetic-tensor scope ceiling"
+    },
+    "v10_causal_full_primary_audit": {
+      "path": "sources/arxiv_2601_23162v1_finite_renormalization_full_primary_audit_v10.json",
+      "blob_sha": "9002dca7da1a72b8768c7db7ed72104d44fd25c3",
+      "role": "full-primary audit record for Eq. (4) and finite-extension authority"
+    },
+    "v10_terminal": {
+      "path": "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_TERMINAL_2026-09-16.md",
+      "blob_sha": "bc23ce03af6e079b5fbfa65bf2eb8023a956a73d",
+      "role": "terminal parent blocker and next-gate authority"
+    },
+    "current_front": {
+      "path": "recovery/CURRENT_BENCHMARK_FRONT.md",
+      "blob_sha": "ffb32c177ca9837946c97f2fb1bf3f1243bf62fe",
+      "role": "navigation/governance only; fresh repository state outranks it"
+    }
+  },
+  "actionable_map_predicate": [
+    "PRIMARY_OR_TERMINAL_SOURCE",
+    "SAME_EQ4_REALIZATION",
+    "EXPLICIT_LOCAL_COLLISION_MAP",
+    "EXACT_JET_MAPPABLE",
+    "OBSERVABLE_IDENTITY_PRESERVED"
+  ],
+  "zero_quotient_extra_requirement": "OBSERVABLE_FAMILY_COMPLETENESS_AUTHORITY",
+  "forbidden_substitutions": [
+    "synthetic Iter453 tensors",
+    "Gaussian regulator test functions",
+    "arbitrary polynomial local test functions",
+    "missing derivative data interpreted as zero"
+  ]
+}
