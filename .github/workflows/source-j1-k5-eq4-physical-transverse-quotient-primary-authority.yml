@@ -1,0 +1,101 @@
+name: KMQGB Eq4 physical transverse quotient primary authority
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-eq4-physical-transverse-quotient-primary-authority.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify preregistration, frozen audit ancestry and blob identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor b0c40b0c8c65f8eec9eecb4e9e25ee2eb05f1d88 HEAD
+          git merge-base --is-ancestor 69a2724e978aea1d5aa03732eb12b448bc5eff49 HEAD
+          test "$(git hash-object sources/arxiv_2601_23162_prd113_126020_eq4_physical_quotient_authority_v17.json)" = "59666562d6f6376f29156ce81d2944988d991314"
+          test "$(git hash-object critique/SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_CRITIC_2026-09-16.json)" = "3dcec89f108e97762591e3b9417720a546eef17e"
+          test "$(git hash-object research/ledgers/SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT_LEDGER_2026-09-16.json)" = "59ec9ff2d145bcf2d69a1d1eef38cbd917da6acc"
+
+  primary-lane:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Classify frozen primary-source extraction
+        run: |
+          python code/source_j1_k5_eq4_physical_transverse_quotient_primary_authority.py \
+            --authority sources/arxiv_2601_23162_prd113_126020_eq4_physical_quotient_authority_v17.json \
+            --critic critique/SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_CRITIC_2026-09-16.json \
+            --lane primary \
+            --out out/primary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-physical-quotient-primary
+          path: out/primary.json
+
+  critic-lane:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Independently classify frozen adversarial Critic
+        run: |
+          python code/source_j1_k5_eq4_physical_transverse_quotient_primary_authority.py \
+            --authority sources/arxiv_2601_23162_prd113_126020_eq4_physical_quotient_authority_v17.json \
+            --critic critique/SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_CRITIC_2026-09-16.json \
+            --lane critic \
+            --out out/critic.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-physical-quotient-critic
+          path: out/critic.json
+
+  aggregate:
+    needs: [primary-lane, critic-lane]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: eq4-physical-quotient-primary
+          path: artifacts/primary
+      - uses: actions/download-artifact@v4
+        with:
+          name: eq4-physical-quotient-critic
+          path: artifacts/critic
+      - name: Aggregate independent source lanes
+        run: |
+          python code/source_j1_k5_eq4_physical_transverse_quotient_primary_authority_aggregate.py \
+            --primary artifacts/primary \
+            --critic artifacts/critic \
+            --out out/aggregate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-physical-quotient-aggregate
+          path: out/aggregate.json
