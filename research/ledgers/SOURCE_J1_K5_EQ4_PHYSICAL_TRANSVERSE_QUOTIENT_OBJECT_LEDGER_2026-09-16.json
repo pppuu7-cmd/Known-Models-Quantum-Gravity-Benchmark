@@ -1,0 +1,64 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_ESCALATION_GATE",
+  "preregistration_commit": "b0c40b0c8c65f8eec9eecb4e9e25ee2eb05f1d88",
+  "dependency_graph": [
+    {
+      "object": "RAW_EQ4_TRIANGLE_TANGENT_MAP",
+      "status": "TERMINAL_EXACT",
+      "definition": "(X2,X3)->(-X2,X2-X3,-X3)",
+      "raw_rank": 12,
+      "domain_dimension": 12,
+      "parent_terminal_commit": "bfb0cf44c3a95e667941d34ae9961234c8923bf2"
+    },
+    {
+      "object": "GLOBAL_VERTEX_GAUGE_FIX",
+      "status": "SOURCE_AUTHORIZED",
+      "definition": "g1=identity via delta(g1)",
+      "role": "already applied before RAW_EQ4_TRIANGLE_TANGENT_MAP",
+      "not_equivalent_to": "PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT"
+    },
+    {
+      "object": "PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT",
+      "status": "NOT_ESTABLISHED_BY_AUDITABLE_FROZEN_PRIMARY_AUTHORITY",
+      "depends_on": ["RAW_EQ4_TRIANGLE_TANGENT_MAP"]
+    },
+    {
+      "object": "QUOTIENT_OR_PROJECTION_MAP_FROM_EQ4_LOCAL_TANGENT_VARIABLES",
+      "status": "NOT_ESTABLISHED_BY_AUDITABLE_FROZEN_PRIMARY_AUTHORITY",
+      "depends_on": ["PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT"]
+    },
+    {
+      "object": "CONTACT_CONSTRAINT_PULLBACK_TO_QUOTIENT",
+      "status": "NOT_ESTABLISHED_BY_AUDITABLE_FROZEN_PRIMARY_AUTHORITY",
+      "depends_on": ["QUOTIENT_OR_PROJECTION_MAP_FROM_EQ4_LOCAL_TANGENT_VARIABLES"]
+    },
+    {
+      "object": "JACOBIAN_HAAR_CONTACT_NORMALIZATION_TRANSPORT",
+      "status": "DOWNSTREAM_NOT_AUTHORIZED",
+      "depends_on": ["CONTACT_CONSTRAINT_PULLBACK_TO_QUOTIENT"]
+    },
+    {
+      "object": "S3_ORIENTATION_TRANSPORT_ON_QUOTIENT",
+      "status": "DOWNSTREAM_NOT_AUTHORIZED",
+      "depends_on": ["PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT"]
+    },
+    {
+      "object": "PHYSICAL_TRANSVERSE_RANK",
+      "status": "UNDEFINED",
+      "value": null,
+      "depends_on": [
+        "PHYSICAL_TRANSVERSE_QUOTIENT_OBJECT",
+        "QUOTIENT_OR_PROJECTION_MAP_FROM_EQ4_LOCAL_TANGENT_VARIABLES",
+        "CONTACT_CONSTRAINT_PULLBACK_TO_QUOTIENT"
+      ]
+    }
+  ],
+  "minimal_causal_blocker": "PUBLISHED_VERSION_FULLTEXT_AUTHORITY_ACCESS_CEILING",
+  "forbidden_equivalences": [
+    "CP1_SPINOR_PROJECTIVIZATION != EQ4_GROUP_TANGENT_PHYSICAL_QUOTIENT",
+    "GLOBAL_G1_GAUGE_FIX != DOWNSTREAM_PHYSICAL_TRANSVERSE_PROJECTION",
+    "RAW_RANK_12 != PHYSICAL_TRANSVERSE_RANK",
+    "MISSING_AUTHORITY != ZERO_MAP",
+    "BLOCKED != FAIL"
+  ]
+}
