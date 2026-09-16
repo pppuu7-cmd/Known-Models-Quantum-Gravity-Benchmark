@@ -24,8 +24,9 @@ jobs:
             f26908e4a859584df4638f537d5342d1338198a6 \
             b4c9c0a4ddfa0742f1ba9aad490f3d0510a36bcc \
             5f6dfa2bac5915647aa21fe0cde2843bee25ed46 \
-            43082e1c6f0a887d00948eec5d32aa3557695cac \
-            71306a6f083ec0c4f1df7a1416fc71fd626966f4; do
+            71306a6f083ec0c4f1df7a1416fc71fd626966f4 \
+            d8bd1bc204d1e0ea91b59296a5163d46163a4f43 \
+            04e4bda8c3f80dcdec49c2629493e8d9fcd6cb20; do
             git merge-base --is-ancestor "$c" HEAD
           done
           test "$(git hash-object sources/arxiv_2601_23162v1_eq4_k5_contact_covector_authority_v18.json)" = "$(git rev-parse 9f94f8dae1f24ede68f1cb7dbe102710fc03f4e6:sources/arxiv_2601_23162v1_eq4_k5_contact_covector_authority_v18.json)"
