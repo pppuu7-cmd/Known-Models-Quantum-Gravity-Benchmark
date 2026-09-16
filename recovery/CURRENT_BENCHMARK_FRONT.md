@@ -5,68 +5,77 @@ Fresh repository `main` and fresh Actions state always outrank this navigation d
 
 ## Latest terminal Research execution
 
-`SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_GATE`
+`SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_GATE`
 
 Terminal Research classification:
 
-`EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_BLOCKED_SCOPED`
+`EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_BLOCKED_SCOPED`
 
 This is **BLOCKED, not FAIL**.
 
 Authority / execution chain:
 
-- prospective preregistration + authority freeze `60d9c7afa4eeb81a41c3334ac4bac71c1d1a8869`;
-- implementation/workflow head `5c524b2d00ae2b1278960c275b21824c3065f11e`;
-- authoritative Actions run `35120674022`, terminal `completed/success`;
-- jobs: source-lock `104877355301`, Python 3.11 `104877640199`, Python 3.13 `104877640217`, aggregate `104877703389`;
-- artifacts: Python 3.11 `10456944863` / `sha256:e8e843510b9e07ac6a6be5abbc3ff19a7b3fe3b25c0b0cfd6c70b2be2cad8e2f`; Python 3.13 `10456624902` / `sha256:1a3357a10080ba1d31f555a85aff783ddccb95fa1726243ddcc023f5f10dd0da`; aggregate `10456999865` / `sha256:25cd559c0666006d76efa48c02964bc59c7587757c658e68acf4f8d6e9b62c24`;
-- lane decision SHA256 `cd3a6f0c2a51ab286e866aba9f330a61a3774c8756378bfb4b06594e603f1fbf`;
-- aggregate decision SHA256 `c6e0355df985c9b7a0f71966a9e3354d42da8caa4a312f01b6f58081235e4ea7`;
-- durable terminal-projection SHA256 `93a2626396168f5f9e9fc933a371fbdf656ba27dfc1db9bfba2f516e66a271b8`;
-- durable canonical SHA256 `86f1a196a65fbbd54628fd7eaacad97c1df93b8abb12b7e505e66bc8853fe86a`.
+- prospective preregistration `7620bc32ad691d37100642e8e33fd15cadd729a9`;
+- frozen authority ledger `bb5d7b922784231b8e89d6538fea11ab8ee0a09e`;
+- classifier `e46c47a96e77a2819d171e1888dca3b1a584360a`;
+- aggregate code `cd36c9311546db327cabac993927cb7b43658b7c`;
+- workflow head `8b190337ed61020cd0d4c264cf7195f2acfaf324`;
+- authoritative Actions run `35130513871`, terminal `completed/success`;
+- jobs: source-lock `104910071913`, Python 3.11 `104910115562`, Python 3.13 `104910115607`, aggregate `104910174438`;
+- artifacts: Python 3.11 `10461570684` / `sha256:ab0cbdcb80d3d09a12fa42d90b5b7257d7c06f4f7255b61743b121a5e9a30fb3`; Python 3.13 `10460832183` / `sha256:881b466212055fd229540f4cdb1643f4564db63fb3da645a5ea341602e5c37ca`; aggregate `10460872090` / `sha256:d4f99d3d3e6a31db9ff48bf82c8dc86e4eb1198d3f25f16bd5917ad9def29c2e`;
+- aggregate JSON SHA256 `b64dbd71a54f1c76f486ea4dbcbafc8ac909edc0d329f3a86f8837b18b92ac9d`;
+- aggregate log SHA256 `f807f8f44661bd05f59a81fbfd85b03c7929893bf7f367756622924d5c86d5bc`;
+- aggregate decision SHA256 `e3bc1d12580ee03c1c18049b7881668242e24990bfe0779292bc98b4e6eab32f`.
 
 Green CI is provenance only.
 
 ## Exact result
 
-The fixed Eq. (4) triangle was `(12,23,13)`. The gate required one common local coordinate tuple, three explicit contact maps, exact rank/transversality, Jacobian/contact-normalization transport and S3 coordinate transport. Historical V8 `B12=x, B23=y, B13=x+y` was frozen as bridge target only and never used as source authority.
+The fixed Eq. (4) triangle is `(12,23,13)`. The gate asked whether the already source-authorized shared gauge-fixed Eq. (4) variables can be lifted to explicit same-realization triangle wedge arguments and one common local Lie-algebra neighborhood, without assuming the historical V8 auxiliary relation.
 
-All frozen controls passed in both independent lanes, but the production authority yielded:
+All frozen controls passed and the two independent lanes agreed.
 
-- `common_coordinates_present=false`;
-- `three_contact_maps_present=false`;
-- `contact_differential_rank=null`, not zero;
-- `jacobian_normalization_transport_present=false`;
-- `s3_coordinate_transport_present=false`.
+Production authority establishes:
 
-Thus all five conjunctive chart requirements remain missing. The durable Eq. (4) parent/gauge fixing, one-wedge contact data and one-group Toller/Cartan reconstruction do not themselves authorize the common simultaneous-contact coordinate relation needed to define the three-contact differential. This is a source/object derivation blocker, not a transversality failure.
+- `common_gauge_fixed_group_tuple_present=true`.
+
+Production authority does not establish:
+
+- `three_wedge_group_argument_maps_present=false`;
+- `common_local_group_lie_lift_present=false`;
+- `transverse_rank=null`, not zero;
+- `jacobian_haar_contact_normalization_transport_present=false`;
+- `s3_orientation_coordinate_transport_present=false`.
+
+Thus the blocker has moved upstream and become more precise: the common Eq. (4) integration tuple exists, but the frozen durable source records do not pin the exact group arguments `G12`, `G23`, `G13` with multiplication/inversion/orientation conventions. Without those maps, the local Lie pullback and transverse rank are undefined. This is a source/object-definition blocker, not a transversality failure.
 
 ## Parent Research state retained
 
-- V13 remains historically `EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_AUTHORITY_BLOCKED_SCOPED`.
-- V12 remains `EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED`.
-- V11 remains `PHYSICAL_OBSERVABLE_QUOTIENT_MAP_BLOCKED_SCOPED`.
-- V10 remains `SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED`.
+- V14 `EQ4_TRIPLE_CONTACT_LOCAL_CHART_DERIVATION_BLOCKED_SCOPED` remains historical and consistent with this stronger localization.
+- V13 `EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_AUTHORITY_BLOCKED_SCOPED` remains historical.
+- V12 `EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED` remains historical.
+- V11 `PHYSICAL_OBSERVABLE_QUOTIENT_MAP_BLOCKED_SCOPED` remains historical.
+- V10 `SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED` remains historical.
 - V8 remains `SOURCE_UNFIXED_FINITE_LOCAL_FREEDOM_SCOPED` with affine nullity 6.
 - Historical FAIL/BLOCKED/INVALID/QUALIFIED results remain preserved.
 
 ## Latest independent Critical Review
 
-No independent Critic review of this new triple-contact local-chart derivation terminal result is recorded yet.
+No independent Critic review of this new common-group-variable-lift terminal result is recorded yet. Do not treat absence of a Critic review as validation beyond the frozen Research scope.
 
 ## Next admissible work
 
-Highest-information next gate: prospectively freeze `SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_GATE`.
+Highest-information next gate: prospectively freeze `SOURCE_J1_K5_EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_GATE`.
 
-Start from explicit Eq. (4) wedge arguments on the shared gauge-fixed group variables and test whether the three one-wedge contact functions can be pulled back to one common local Lie-algebra neighborhood with an exact two-dimensional transverse quotient, Jacobian/normalization transport and S3 action. Do not assume the V8 `x,y,x+y` chart. If explicit wedge-to-common-group formulas are absent from source authority, classify BLOCKED rather than substituting them.
+It should source-lock only the exact Eq. (4) wedge group arguments for `12`, `23`, `13`, including multiplication order, inversions/orientations, gauge-fixed variable identities and the exact input group element to the one-wedge contact scalar. Do not infer a rank or insert textbook group formulas. If the frozen primary authority does not explicitly pin those identities, classify BLOCKED; guessed conventions are INVALID.
 
-Do not infer the smooth Eq. (4) remainder or complete order-7 jet until a common chart is terminally established.
+Only after the three wedge maps are terminally pinned may a local Lie pullback/transverse-rank gate be reopened.
 
 ## Governance lock
 
 - `RQIR Core v1.0 = FROZEN`.
 - `BLOCKED != FAIL`.
-- missing object/map != zero residual/action.
+- missing object/map != zero residual/action/rank.
 - finite/local certificate != universal theorem.
 - scoped child result != family closure.
 - numerical/implementation blocker != scientific falsification.
