@@ -1,0 +1,64 @@
+{
+  "authority": {
+    "actions_run": 35094058619,
+    "artifacts": {
+      "aggregate": {
+        "digest": "sha256:2b7cc893ad1c784d0fbe6c95293fe92472f90cc59224bdb88d3276e10a03d059",
+        "id": 10445695875
+      },
+      "python_3_11": {
+        "digest": "sha256:a2fccaed6a819f24e84aca6cbaa6578fed5957b28e8e2185e44eaf4a0972d8d4",
+        "id": 10445641691
+      },
+      "python_3_13": {
+        "digest": "sha256:3c77872f488ac54fa62941b52e3dbda11fe25fa08e395d476d7191b5738e29fa",
+        "id": 10445491951
+      }
+    },
+    "frozen_blobs": {
+      "eq4_source_snapshot": "f0b520fc04904e038f252dc5b45d23893cb020ed",
+      "iter453_topology": "8e827ce199cc1dca042988c5e0d9fab4c1250ffa",
+      "v10_causal_audit": "9002dca7da1a72b8768c7db7ed72104d44fd25c3",
+      "v10_terminal": "bc23ce03af6e079b5fbfa65bf2eb8023a956a73d",
+      "v8_canonical": "49e248993d0a23d85663aaa198cd5d87b6200b6e"
+    },
+    "implementation_workflow_head": "f7b928d2ffbf06267c3e03c51e9e6e5d9ab82772",
+    "jobs": {
+      "aggregate": 104787022994,
+      "python_3_11": 104786982936,
+      "python_3_13": 104786982952,
+      "source_lock": 104786944890
+    },
+    "prereg_commit": "2296ff6abd074b72b5d9d6fd3fb272ca1e4dbcb4"
+  },
+  "claim_ceiling": "Same-realization terminal-V8 local delta-double-prime triangle versus pinned Eq. (4) boundary-observable authority only; no distributional existence/nonexistence, full-K5/model/family failure, D7 closure/selector, or Candidate Gravity authority.",
+  "classification": "PHYSICAL_OBSERVABLE_QUOTIENT_MAP_BLOCKED_SCOPED",
+  "controls": {
+    "all_authority_blob_locks": true,
+    "eq4_boundary_object_lock": true,
+    "iter453_synthetic_scope_lock": true,
+    "lane_classification_agreement": true,
+    "lane_decision_agreement": true,
+    "synthetic_complete_zero_classifies_zero_quotient": true,
+    "synthetic_nonzero_classifies_distinguishable": true,
+    "v10_no_extension_selector_scope_lock": true,
+    "v8_exact_parent_lock": true,
+    "wrong_realization_invalid": true,
+    "zero_without_completeness_not_quotient": true
+  },
+  "date": "2026-09-16",
+  "decision": {
+    "decision_sha256": "d34cb4c25131689396cb7607629bc6a455f935f823483aec9624c07746da2e60",
+    "eq4_equation": 4,
+    "eq4_source_id": "arXiv:2601.23162v1",
+    "explicit_map_records_found": [],
+    "map_present": false,
+    "nullspace_action_rank": null,
+    "observable_completeness_authority": false,
+    "v8_affine_nullity": 6,
+    "v8_basis_count": 8
+  },
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PHYSICAL_OBSERVABLE_QUOTIENT_GATE",
+  "new_fact": "The pinned Eq. (4) boundary observable identity and contraction topology do not, in the frozen durable authority corpus, supply an explicit same-realization local collision/test-jet map from the Eq. (4) amplitude to the eight V8 invariant jets. Therefore the action of the six V8 null directions on physical Eq. (4) observables is not defined by current authority and cannot be set to zero or quotiented.",
+  "status": "TERMINAL"
+}

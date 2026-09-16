@@ -5,84 +5,57 @@ Fresh repository `main` and fresh Actions state always outrank this navigation d
 
 ## Latest terminal Research execution
 
-`SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PRIMARY_SOURCE_EXPANSION_V10_GATE`
+`SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PHYSICAL_OBSERVABLE_QUOTIENT_GATE`
 
 Terminal Research classification:
 
-`SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED`
+`PHYSICAL_OBSERVABLE_QUOTIENT_MAP_BLOCKED_SCOPED`
 
 This is **BLOCKED, not FAIL**.
 
 Authority / execution chain:
 
-- V10 prospective freeze commit `6188178d92b8a4c2885e14eb90923168224d83ee`;
-- terminal V9 parent `7d3d4de295f3d5b3b5968621ffcb8fd35bfd2bd6`;
-- implementation `5c76c0730104233463b688c18773d4ed0629b61b`, aggregate `b51a4efd8e73350aede3fa1da406e0ea7a17b416`;
-- implementation-only V8 object-lock repair `251bdaa2b0949bb01fd49658619c52acf8444af8`;
-- extraction-anchor implementation repair / authoritative workflow head `5c5c7109143adec358435555a2eb402258da60e9`;
-- terminal result commit `c34d0e0fcd9dc660d03a936cafa4714e6000278a`;
-- authoritative Actions run `35089283894`, terminal success.
+- prospective freeze + immutable authority ledger `2296ff6abd074b72b5d9d6fd3fb272ca1e4dbcb4`;
+- implementation/workflow head `f7b928d2ffbf06267c3e03c51e9e6e5d9ab82772`;
+- authoritative Actions run `35094058619`, terminal success;
+- jobs: source lock `104786944890`, Python 3.11 `104786982936`, Python 3.13 `104786982952`, aggregate `104787022994`;
+- artifacts: Python 3.11 `10445641691` / `sha256:a2fccaed6a819f24e84aca6cbaa6578fed5957b28e8e2185e44eaf4a0972d8d4`; Python 3.13 `10445491951` / `sha256:3c77872f488ac54fa62941b52e3dbda11fe25fa08e395d476d7191b5738e29fa`; aggregate `10445695875` / `sha256:2b7cc893ad1c784d0fbe6c95293fe92472f90cc59224bdb88d3276e10a03d059`;
+- frozen decision SHA256 `d34cb4c25131689396cb7607629bc6a455f935f823483aec9624c07746da2e60`;
+- durable canonical SHA256 `e3f928116c54929162af59df32273901049fb3765a872d0daa4731777bfea390`;
+- durable raw terminal-projection SHA256 `d28991291c64686248d856638edcb95d424b9e7460f716da33e9c781222e0bd0`.
 
-Jobs:
+Green CI is provenance only; the classification is the frozen exact source/realization audit.
 
-- source lock `104771486509`;
-- Python 3.13 `104771530918`;
-- Python 3.11 `104771530957`;
-- aggregate `104771665678`.
+## Exact result
 
-Artifacts:
+The gate locked the terminal V8 object exactly: 8 invariant local collision jets, V8 rank/augmented rank `2/2`, affine nullity `6`, and all six nullspace vectors. It also locked the source Eq. (4) boundary-basis amplitude of `arXiv:2601.23162v1`: ten wedges, `g_1=identity`, four remaining group integrations, gamma-simple labels, magnetic boundary amplitude and intertwiner contraction.
 
-- Python 3.11 `10443124088`, digest `sha256:6c159015d460eb3e9dd18c736b6502309719a4bd122ea460cdbf241d4d91b4c4`;
-- Python 3.13 `10443702010`, digest `sha256:f04f734ffa41bcdf4d7f57d3dc69f0696de4ea039056ca7f33b694bee9528b66`;
-- aggregate `10443825785`, digest `sha256:f93f6a615053d679869d1a6d7a9a543dc5bf1ff91c8d4d6f5c943d26a59a7fdb`.
+The prospectively frozen observable action required an explicit same-realization local collision/test-jet map from the physical Eq. (4) amplitude to the eight V8 jets. No such map exists in the frozen durable authority corpus. Therefore `map_present=false`, observable-completeness authority is absent, and the action rank of the six V8 null directions is `null` / undefined rather than zero.
 
-Artifact-internal hashes:
+Iter453 cannot supply the map because its terminal scope explicitly uses synthetic deterministic tensors rather than physical Toller matrix elements. Terminal V10 also cannot supply it: its full-primary audit found that Eq. (4) defines the parent product vertex but does not provide a simultaneous-contact product-extension or finite-normalization prescription.
 
-- canonical aggregate JSON SHA256 `1dcc015289d66887b561fa50ccf022f2dd40adbdc5e72703d24d128aab0fc959`;
-- raw aggregate log SHA256 `dcf8d1263f5dc75e81f0b6e09f4b4597c04728ec41eec08be7f4ab12cd8d7e99`;
-- decision SHA256 `96b538221ca7c434e2555d1b29d2530ab926730ecc21344572f4eb15d338317e`.
+New durable fact: the open physical-observable quotient question is now localized to an explicit missing source/realization object. Missing derivative/test-jet data are not zero action, so no physical quotient of the six V8 directions is authorized.
 
-Green CI is provenance only; classification comes from the frozen two-source full-primary-text authority audit after both independent lanes agree.
+## Latest parent Research state retained
 
-## Exact V10 result
-
-V10 first reproduced the terminal V8/V9 state: invariant local-jet basis count `8`, V8 rank `2`, augmented rank `2`, affine nullity `6`; V9 selector rank `0`, remaining affine nullity `6`.
-
-The prospectively frozen full-primary-source corpus was exactly:
-
-- `arXiv:2601.23162v1`, causal-vertex source; PDF SHA256 `cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713`;
-- `arXiv:2604.24945v1`, Toller/Cartan source; PDF SHA256 `f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046`.
-
-Six semantically relevant primary-source passages were page-anchored and checked under the frozen actionable-selector predicate `PRIMARY + SAME_REALIZATION + EXPLICIT + MAPPABLE + INDEPENDENT`. All page anchors and controls pass in both independent lanes. Actionable selector count = `0`; remaining V8 affine nullity = `6`.
-
-The causal source fixes one-wedge contact data and defines the product vertex but supplies no simultaneous-contact finite extension prescription; it explicitly leaves causal-vertex finiteness for further investigation. The Toller source provides one-wedge splitting uniqueness and additivity and denies the naive group-representation composition identity, but supplies no multi-contact extension selector or explicit quotient of the six V8 directions.
-
-Historical V10 run `35088750770` remains `INVALID_IMPLEMENTATION` because of a wrong V8 JSON basis lock. Historical repaired run `35089159525` remains `INVALID_IMPLEMENTATION` because two PDF extraction probes produced false-negative anchors. Neither is scientific FAIL; frozen scientific criteria were unchanged.
-
-## Scientific meaning
-
-New durable fact: expanding V9 from narrow structured snapshots to the exact full text of the two frozen same-realization primary sources still supplies zero actionable finite-normalization, product-extension, gluing/RG, or authorized-quotient selectors mappable to the six-dimensional V8 finite-renormalization freedom.
-
-Therefore the V9 blocker survives a full-primary-text audit of this exact two-source corpus. This does not prove that all literature lacks a selector. Missing authority is not coefficient zero, not distributional nonexistence, and not model/family falsification.
+Terminal V10 remains `SOURCE_EXPANDED_FINITE_RENORMALIZATION_AUTHORITY_BLOCKED_SCOPED`: the two frozen full primary sources supplied zero actionable finite-renormalization selectors, leaving V8 affine nullity 6. Historical V8/V9/V10 BLOCKED/scoped results remain preserved. Historical V7 `INVALID_IMPLEMENTATION` and V5 `QUALIFIED` remain preserved.
 
 ## Latest independent Critical Review
 
-No independent Critic review of terminal V10 is recorded on current main yet.
-
-Historical V7 `INVALID_IMPLEMENTATION` and V5 `QUALIFIED` remain preserved. V8/V9/V10 consume only the repaired source/channel chain and do not revive invalidated P3 or broad-support claims.
+No independent Critic review of the terminal physical-observable quotient gate is recorded on current main yet. No independent Critic review of terminal V10 was present at gate start either.
 
 ## Next admissible work
 
-Highest-information next gate: prospectively freeze a same-realization `SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PHYSICAL_OBSERVABLE_QUOTIENT_GATE`.
+Highest-information next gate: prospectively freeze `SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_GATE`.
 
-On the same V8 object, derive a source-defined Eq. (4) boundary observable/test family and compute the exact action/rank of all six V8 null directions. A complete zero action may authorize a quotient only with sufficient observable-completeness authority; any nonzero direction establishes physically distinguishable finite underdetermination. Do not infer a quotient from source silence alone.
+Construct from actual source-faithful Eq. (3)/(7) Toller data inside Eq. (4) a same-realization local highest-contact triangle chart and the smooth remainder/test factor through jet order 7. Lock parameter/normalization and observable identity, prohibit synthetic-tensor substitution, and distinguish missing-map BLOCKED from a validated exact/controlled map. Only after a terminal map result may the V8 physical-observable rank/quotient question be re-run.
 
 ## Governance lock
 
 - `RQIR Core v1.0 = FROZEN`.
 - `BLOCKED != FAIL`.
-- missing authority != coefficient zero.
-- finite certificate != universal theorem.
+- missing object/map != zero residual/action.
+- finite/local certificate != universal theorem.
 - scoped child result != family closure.
 - numerical/implementation blocker != scientific falsification.
 - `D7-S2 = NOT_CLOSED`.
