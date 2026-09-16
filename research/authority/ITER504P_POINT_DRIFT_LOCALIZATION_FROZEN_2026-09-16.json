@@ -1,0 +1,39 @@
+{
+  "gate": "ITER504P_OUT_OF_SAMPLE_POINT_DRIFT_LOCALIZATION_GATE",
+  "date": "2026-09-16",
+  "preregistration_commit": "77bac4728401200b226dda16447befce85df0c66",
+  "upstream_iter504": {
+    "run_id": 34907349374,
+    "workflow_head": "56362459a826e3e376c529446678f2fbcaa269ae",
+    "summary_artifact_id": 10436186009,
+    "summary_artifact_digest": "sha256:0273394cbd3d0be55589279645c8170a02042178210b145897bc21e721754163",
+    "terminal_record_commit": "95870d0649d4b8d7b156c3f2b68bd55caa65d9c0"
+  },
+  "decisive_artifacts": {
+    "iter504-point-0to5-b1": {"id": 10373595538, "digest": "sha256:ceb96d269fcbfb8aa083eb849f373e6347b6ce1e1c3ba575a41364ae3bed91c1"},
+    "iter504-point-0to5-b2": {"id": 10373266796, "digest": "sha256:bbaea53e3516fa11f257c7bf9bc09e1d31d7980f1f83c0f4b76224b2a9740358"},
+    "iter504-point-0to5-b3": {"id": 10373157045, "digest": "sha256:45476ce8a96b137f9721b5126217684cdd1559edd1c0c4465202c3c77d59d6b6"},
+    "iter504-point-1to4-b0": {"id": 10373286673, "digest": "sha256:7bf964d4dfb22f0dbb67b557694d4b6e362c47b6494d0fe9fd352616f9de8fe4"},
+    "iter504-point-1to4-b1": {"id": 10372833682, "digest": "sha256:3cebcf6003c23b25df133f7fa25be5aacb8d23175f082b616c6f3737659afde9"},
+    "iter504-point-1to4-b2": {"id": 10372923129, "digest": "sha256:55ab67fe2a13a4c590147bfc0e213a089ef15bdf8df96a1373b7494c41225651"},
+    "iter504-point-1to4-b3": {"id": 10373695416, "digest": "sha256:38a849c2ef34bbfa529fd60e8302a2029e745546030d49c7c90ccb9aa710f1df"},
+    "iter504-point-2to3-b0": {"id": 10373630476, "digest": "sha256:af15bc13ccd70a6dd4870f8d71ca364097bf5551406e3d356524f6307a0cb065"},
+    "iter504-point-2to3-b1": {"id": 10373247009, "digest": "sha256:1f549341d9e7307b01d9b04838253374fbc43117235c44c57b1ac315aa9ad1ff"},
+    "iter504-point-2to3-b2": {"id": 10373616100, "digest": "sha256:46dbefb97858b2d797ffc7882a02dab24164018dd8ea7a72a114ea06414796ac"},
+    "iter504-point-2to3-b3": {"id": 10373585547, "digest": "sha256:ccd7e9bf7dd16c9daa74f10ca98cde854f87f0a15842624890723ed0056f9ed2"}
+  },
+  "known_non_decisive_control": {
+    "name": "iter504-point-0to5-b0",
+    "id": 10373506543,
+    "digest": "sha256:a70dbfe331738ae6bf560d49410178aea9d9d4e60d487e476514aec7aca1fa40",
+    "reason": "substantive values were inspected before ITER504P preregistration; this lane is forbidden from influencing the terminal decision"
+  },
+  "frozen_formula": "D_point = abs(actual_slope - early_actual_slope)",
+  "frozen_threshold": "0.05",
+  "expected_decisive_record_count": 1584,
+  "implementation_commits": {
+    "classifier": "37a04752ccee6fd1caa901df36ecfcf5f50dced4",
+    "aggregate": "e18ed81f33271e3cab66ac8b67119587702eb7d2"
+  },
+  "scientific_lock": "The 11 decisive point artifacts are the entire outcome-blind cohort. The previously inspected 0to5-b0 lane is control-only. No threshold, formula, lane set or continuous-interval interpretation may be changed after outcome."
+}
