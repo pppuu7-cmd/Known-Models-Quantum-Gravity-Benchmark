@@ -1,0 +1,85 @@
+name: source-j1-k5-eq4-local-collision-test-jet-map
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/source-j1-k5-eq4-local-collision-test-jet-map.yml'
+      - 'code/source_j1_k5_eq4_local_collision_test_jet_map.py'
+      - 'code/source_j1_k5_eq4_local_collision_test_jet_map_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective chronology and immutable authority
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 8b9cb4d152e96fda01df0cb29a135a6caf9bd0b3 HEAD
+          git merge-base --is-ancestor 02503ba89769a5746203573e950d97c6d9cb175b HEAD
+          test "$(git hash-object results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_PHYSICAL_OBSERVABLE_QUOTIENT_TERMINAL_2026-09-16.md)" = "8afd653c1dca77818d4293d63e3ee2a50ef4b3e3"
+          test "$(git hash-object inputs/source_j1_k5_triangle_derivative_contact_physical_observable_quotient_authority.json)" = "d1985e7d929e78acd339c2866da2c73b637892bb"
+          test "$(git hash-object results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_V8_CANONICAL_2026-09-16.json)" = "49e248993d0a23d85663aaa198cd5d87b6200b6e"
+          test "$(git hash-object sources/arxiv_2601_23162v1_causal_vertex.json)" = "f0b520fc04904e038f252dc5b45d23893cb020ed"
+          test "$(git hash-object sources/arxiv_2601_23162v1_finite_renormalization_full_primary_audit_v10.json)" = "9002dca7da1a72b8768c7db7ed72104d44fd25c3"
+          test "$(git hash-object results/ITER453_EQ4_CONTRACTION_TOPOLOGY_RESULT_2026-09-13.md)" = "8e827ce199cc1dca042988c5e0d9fab4c1250ffa"
+          grep -F 'EQ4_LOCAL_COLLISION_TEST_JET_MAP_CONSTRUCTED_SCOPED' research/prereg/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_GATE_2026-09-16.md
+          grep -F 'EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED' research/prereg/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_GATE_2026-09-16.md
+          grep -F 'INVALID_IMPLEMENTATION' research/prereg/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_GATE_2026-09-16.md
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run frozen exact map audit
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_eq4_local_collision_test_jet_map.py --repo-root . --out "artifacts/eq4_local_jet_map_py${{ matrix.python }}.json" | tee "artifacts/eq4_local_jet_map_py${{ matrix.python }}.log"
+          sha256sum artifacts/eq4_local_jet_map_py${{ matrix.python }}.* > "artifacts/eq4_local_jet_map_py${{ matrix.python }}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-local-jet-map-py${{ matrix.python }}
+          path: artifacts/eq4_local_jet_map_py${{ matrix.python }}.*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: eq4-local-jet-map-py*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate frozen decision
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/source_j1_k5_eq4_local_collision_test_jet_map_aggregate.py \
+            --a downloaded/eq4_local_jet_map_py3.11.json \
+            --b downloaded/eq4_local_jet_map_py3.13.json \
+            --out artifacts/eq4_local_jet_map_aggregate.json | tee artifacts/eq4_local_jet_map_aggregate.log
+          sha256sum artifacts/eq4_local_jet_map_aggregate.* > artifacts/eq4_local_jet_map_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eq4-local-jet-map-aggregate
+          path: artifacts/eq4_local_jet_map_aggregate.*
+          if-no-files-found: error
