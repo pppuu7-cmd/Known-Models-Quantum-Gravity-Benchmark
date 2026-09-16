@@ -1,0 +1,47 @@
+{
+  "claim_ceiling": "Primary-source local-map availability only. Missing map fields are not zero. No physical quotient/rank, distributional existence/nonexistence, full-K5/model/family failure, D7 closure/selector, or Candidate Gravity activation follows.",
+  "classification": "EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_AUTHORITY_BLOCKED_SCOPED",
+  "classification_kind": "BLOCKED_NOT_FAIL",
+  "controls_pass": true,
+  "decision_sha256": {
+    "aggregate": "341afd392215f155a0bc38ca11678a4ae1902fc3977aab399c91dbf6b2c64239",
+    "lane": "a905b5cf58e121c1b632f414a9beb43a649e168da15dce5993eeba0bf7e6a6bf"
+  },
+  "gate": "SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE",
+  "lanes_agree": true,
+  "map_complete": false,
+  "new_actionable_fields": [],
+  "nullspace_action_rank": null,
+  "parent": {
+    "classification": "EQ4_LOCAL_COLLISION_TEST_JET_MAP_SOURCE_BLOCKED_SCOPED",
+    "gate": "SOURCE_J1_K5_EQ4_LOCAL_COLLISION_TEST_JET_MAP_GATE",
+    "result_commit": "d9b050b638153b7042b8e1ace55952231d936854"
+  },
+  "provenance": {
+    "actions_run": 35113734916,
+    "implementation_workflow_commit": "a78166beb5ba2f054ea2d6dda395a32cf9a50ad9",
+    "prereg_commit": "978fb67fa03fa8c1d86c7cd5f14af5cebc527cb4",
+    "source_audit_commit": "fba120918e0895f2c18fb4493583ee1d971559eb"
+  },
+  "remaining_missing_fields": [
+    "LOCAL_COLLISION_CHART",
+    "SMOOTH_REMAINDER_OBJECT",
+    "JET_ORDER_7_COMPLETENESS",
+    "PERMUTATION_COORDINATE_CONSISTENCY"
+  ],
+  "scientific_fact": "The frozen full-primary two-source corpus adds no actionable same-realization authority for any of the four missing Eq.(4) local collision map fields. The parent missing-map blocker therefore remains, now after an explicit full-primary map-targeted audit.",
+  "source_corpus": [
+    {
+      "audit_blob_sha": "fdfb13f9974ebc891cb3f490ca553dd0991d9136",
+      "audit_record": "sources/arxiv_2601_23162v1_eq4_local_collision_map_expansion_v13.json",
+      "pdf_sha256": "cc533af3c84de8c0de57523a795ba4357523712f1746ce55fa78eb521cd51713",
+      "source_id": "arXiv:2601.23162v1"
+    },
+    {
+      "audit_blob_sha": "c742e8cab0648b8fbaef88f09876644c6c2c3077",
+      "audit_record": "sources/arxiv_2604_24945v1_eq4_local_collision_map_expansion_v13.json",
+      "pdf_sha256": "f37659f5cb4674dd0c1b81a6e55f5d1dfd992c60b0e85cb2859322b860e22046",
+      "source_id": "arXiv:2604.24945v1"
+    }
+  ]
+}

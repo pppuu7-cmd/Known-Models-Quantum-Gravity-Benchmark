@@ -1,0 +1,22 @@
+{
+  "artifact_digests": {
+    "10453352669": "sha256:55b97bd30631b893c003c59f7fbee3ad952d0449de595176f74d092e99552685",
+    "10453626587": "sha256:79dae358175eac6a364f3ff87e1c290bce47097320dcf0b62a2226dd0f7985e9",
+    "10453900357": "sha256:8416decf64cfe3c8ef5b20c80d8f85f4aa89b4c73299ae746b74b0d090f94f8c"
+  },
+  "decision_sha256": {
+    "aggregate": "341afd392215f155a0bc38ca11678a4ae1902fc3977aab399c91dbf6b2c64239",
+    "lane": "a905b5cf58e121c1b632f414a9beb43a649e168da15dce5993eeba0bf7e6a6bf"
+  },
+  "durable_files": {
+    "actions_terminal_projection": {
+      "path": "results/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_ACTIONS_TERMINAL_PROJECTION_2026-09-16.json",
+      "sha256": "6b65133d393fe57445a7aa7fe8cab5241346fa8fa62262ac5e76013bc36332bd"
+    },
+    "canonical_result": {
+      "path": "results/SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_CANONICAL_2026-09-16.json",
+      "sha256": "2b2b16be46682aa1f4d4d5ea7b72fe13f78d00c856d6d30702d175e9dc3f5716"
+    }
+  },
+  "gate": "SOURCE_J1_K5_EQ4_LOCAL_COLLISION_PRIMARY_SOURCE_MAP_EXPANSION_GATE"
+}
