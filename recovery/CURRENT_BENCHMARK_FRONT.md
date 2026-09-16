@@ -5,77 +5,50 @@ Fresh repository `main` and fresh Actions state always outrank this navigation d
 
 ## Latest terminal Research execution
 
-`SOURCE_J1_K5_EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_GATE`
+`SOURCE_J1_K5_EQ4_COMMON_LOCAL_LIE_PULLBACK_TRANSVERSE_RANK_GATE`
 
-Terminal Research classification:
+Classification: `EQ4_COMMON_LOCAL_LIE_PULLBACK_TRANSVERSE_RANK_BLOCKED_SCOPED` — **BLOCKED, not FAIL**.
 
-`EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_PASS_SCOPED`
+Authority/execution:
 
-Authority/execution chain:
+- prereg `2d6b2b8565a825e9864fbbd779c842cdedc60299`;
+- source audit `40f4db6a75f6765dd8ce80077a0f3690abb804bc`;
+- classifier `b9a486cace4133d66ab54384dae17f2cfe339ca2`;
+- aggregate `413b4924b6184b6e1f8d70efecc20c6906a2890f`;
+- workflow head `e4a373219aef548c64e1b689260f8dbc988b7746`;
+- Actions run `35146616833`, terminal `completed/success`;
+- artifacts: RREF `10467168692` / `sha256:d6815e77dc2354ce05d2c29bb52175377a469bd581da0708443943675b837ffb`; minors `10467412844` / `sha256:208b00d197d36971161a89220c7e07352f6edd076720f0db3c7be8b82c7469a0`; aggregate `10467007793` / `sha256:2d333d0c4b13a384f11616f2f9bd6a71c7f3768ec29ca3b265de8261d5b841e6`;
+- aggregate JSON SHA256 `7eeb379562c85d58783d771dc9bab29abae3f71c134ef4e08b6afdca295f3240`.
 
-- preregistration `ddf246b861d4e367af409e3ae5b6c97ccfd1ea7e`;
-- frozen authority `440c853516c2357029c848c83e48a7f6a39d0c86`;
-- source extraction `4a21e9148393ebcefdfbb2a17cfbbf51af82b052`;
-- parent-result Critic `18133e8de9f919960e7100952da3aeee77c0bc06`;
-- classifier `1f48955a2f8b15a544121ab07675cdba8830907f`;
-- aggregate `a4263330c207b5fdc048fa1996a3e64652490f72`;
-- execution-only repair freeze `03b3d0f1f22f6bb2318fc365372ba70a1b42d449`;
-- authoritative workflow head `5ede230e4b7a23b2215dc3b86232545c0bf93418`;
-- Actions run `35145567502`, terminal `completed/success`;
-- jobs `104959887288`, `104959924421`, `104959924158`, `104960607814`;
-- artifacts: py3.11 `10467510918` / `sha256:6240eeac4929b8b375f7f2f7d1cc2e98b734462a5975dc46204be09a9b9d97dc`; py3.13 `10467176707` / same digest; aggregate `10467640795` / `sha256:93aab926f9de411471061f80b87b30e1bb313523aed7a4b91bf47248b39fcbe5`;
-- decision SHA256 `3a35f63623e12ea5cf6cc5857fa599f2a60c9989187c718955721acc78158751`;
-- identity-map digest `3335104f90e897232e81be2892339751de3b34b8fcf073af9fcd89660d074f20`;
-- aggregate SHA256 `f391d0b55c86c1ea35e1898d8b9e8633df581421019559dd54f7dd0b1f38128b`.
+## Exact new fact
 
-Green CI is provenance/execution evidence only.
+The source-authorized same-realization maps have identity-point differential
 
-## Exact result
+`d(G12,G23,G13)=(-X2, X2-X3, -X3)`.
 
-For the fixed Eq.(4) triangle `(12,23,13)` in one source-authorized gauge-fixed realization `g1=1`:
+Per Lie generator the matrix `[[-1,0],[1,-1],[0,-1]]` has exact rank `2`. For real `sl(2,C)` dimension 6, raw domain/codomain/rank are `12 -> 18`, rank `12`; raw domain nullity `0`; raw codomain left-nullity `6`; exact relation `Y12+Y23-Y13=0` generator-wise. RREF and independent minor proof agree, fixed rational basis replacements preserve rank, and all six raw relabeling controls return generator rank 2.
 
-- `G12 = g_2^{-1}`;
-- `G23 = g_3^{-1} g_2`;
-- `G13 = g_3^{-1}`.
+This is a **raw local-group coordinate result only**.
 
-The source also pins the ordered identity `g_ab=g_b^{-1}g_a`, orientation `kappa_ab=sigma_a sigma_b`, Eq.(4) order `a<b`, and one-wedge contact input `B_ab=B(z_ab,g_b^{-1}g_a)`.
+Frozen primary authority still does not define the physical transverse quotient/projection, simultaneous contact-scalar pullback to it, Jacobian/Haar/contact-normalization transport, or S3/orientation quotient transport. Therefore `physical_transverse_rank=null`, not 0 and not 12.
 
-All essential identity fields are present; no historical V8 auxiliary relation, guessed textbook group formula or Toller composition is used. The two independent Python lanes are scientifically identical.
+## Latest independent Critic
 
-`transverse_rank=null` in this identity gate by design. No local-Lie rank, physical transverse quotient, Jacobian/Haar/contact-normalization transport or S3 differential transport is inferred.
+Commit `6f0e73bd68d8f83156b52347bd985e7dcc1fea00`.
+Verdict: `CRITIC_CONFIRMS_RAW_RANK_AND_PHYSICAL_BLOCKER_SEPARATION`.
 
-## Latest independent Critical Review
+No rank-arithmetic defect found; the Critic confirms that promoting raw rank to physical transversality would be invalid.
 
-`critique/SOURCE_J1_K5_EQ4_TRIANGLE_WEDGE_GROUP_ARGUMENT_IDENTITY_CRITIC_2026-09-16.md`, commit `4c4adc87b167caf6811d79e5953de012978684b8`.
+## Downstream update
 
-Verdict: `CRITIC_CONFIRMS_SCOPED_IDENTITY_PASS_NO_RANK_PROMOTION`.
+The prior wedge-identity blocker is closed at object-identity scope. The local-Lie differential is now also closed at raw-coordinate scope. The minimal remaining K5 blocker is narrower: **source-authorized physical transverse quotient/projection for this same Eq.(4) realization**. Normalization and S3 quotient transport remain downstream of that definition.
 
-The Critic independently confirms the literal source maps, variable identities, product order, inversions/orientation, contact argument, V8 exclusion, negative fixtures and rank hygiene. It explicitly does not authorize physical transversality.
+D7-S2 remains `NOT_CLOSED`, but this result is directly relevant to its previously identified group-difference/tangent-pushforward prerequisite. Do not consume it as a physical shared-variable distributional pushforward until the quotient/normalization authority is terminally pinned.
 
-## Historical parent state retained
+## Next highest-information gate
 
-The earlier `EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_BLOCKED_SCOPED` remains immutable as a result for its then-frozen source extraction. Its missing-wedge-map premise is superseded by the later independent source Critic and this terminal identity PASS; it is not converted into a physical FAIL.
-
-V14/V13/V12/V11/V10/V8 and all older FAIL/BLOCKED/INVALID/QUALIFIED results remain historical and immutable.
-
-## Next admissible work
-
-Highest-information next gate:
-
-`SOURCE_J1_K5_EQ4_COMMON_LOCAL_LIE_PULLBACK_TRANSVERSE_RANK_GATE`.
-
-It may construct the raw differential of the three now-authorized maps, but must separately establish the physical transverse quotient and Jacobian/Haar/contact-normalization/S3 transport before promoting any raw coordinate rank to physical transversality. It must distinguish rank deficiency, undefined rank, coordinate degeneracy and physical quotient degeneracy.
+A source-only authority-escalation gate for the physical transverse quotient/projection. Allowed evidence must be prospectively frozen primary article/version, appendix, official supplementary material, or author-provided derivation/code. Textbook quotient reconstruction is forbidden.
 
 ## Governance lock
 
-- `RQIR Core v1.0 = FROZEN`.
-- `BLOCKED != FAIL`.
-- missing object/map/rank != zero.
-- finite/local certificate != universal/global theorem.
-- child result != family closure.
-- `D7-S2 = NOT_CLOSED`.
-- `D7-S3 = NOT_CLOSED`.
-- `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`.
-- `EXISTING_SUFFICIENT / ADAPT_EXISTING / HYBRID_REQUIRED / NEW_REQUIRED` remain unauthorized.
-- Candidate Gravity remains inactive.
-- No authority exists for `QUANTUM_GRAVITY_SOLVED`, `ALL_KNOWN_MODELS_FAIL`, `NEW_THEORY_REQUIRED`, or `NEW_PHYSICS_FOUND`.
+`RQIR Core v1.0 = FROZEN`; `D7-S2 = NOT_CLOSED`; `D7-S3 = NOT_CLOSED`; `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`; selector labels unauthorized; Candidate Gravity inactive; no model/family/global/new-theory claim follows.
