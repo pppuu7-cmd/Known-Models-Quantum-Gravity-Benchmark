@@ -1,0 +1,27 @@
+{
+  "gate": "SOURCE_J1_K5_EQ4_TRIPLE_CONTACT_COMMON_GROUP_VARIABLE_LIFT_GATE",
+  "authoritative_run": 35130513871,
+  "workflow_head": "8b190337ed61020cd0d4c264cf7195f2acfaf324",
+  "jobs": {
+    "source_lock": 104910071913,
+    "python_3_11": 104910115562,
+    "python_3_13": 104910115607,
+    "aggregate": 104910174438
+  },
+  "artifacts": {
+    "python_3_11": {"id": 10461570684, "digest": "sha256:ab0cbdcb80d3d09a12fa42d90b5b7257d7c06f4f7255b61743b121a5e9a30fb3"},
+    "python_3_13": {"id": 10460832183, "digest": "sha256:881b466212055fd229540f4cdb1643f4564db63fb3da645a5ea341602e5c37ca"},
+    "aggregate": {"id": 10460872090, "digest": "sha256:d4f99d3d3e6a31db9ff48bf82c8dc86e4eb1198d3f25f16bd5917ad9def29c2e"}
+  },
+  "independent_zip_sha256": "d4f99d3d3e6a31db9ff48bf82c8dc86e4eb1198d3f25f16bd5917ad9def29c2e",
+  "aggregate_json_sha256": "b64dbd71a54f1c76f486ea4dbcbafc8ac909edc0d329f3a86f8837b18b92ac9d",
+  "aggregate_log_sha256": "f807f8f44661bd05f59a81fbfd85b03c7929893bf7f367756622924d5c86d5bc",
+  "aggregate_sha256_manifest_sha256": "0cab3362e419d50abd941dee1f81b535ce53db865f80462aedec060cbdadb5db",
+  "aggregate_decision_sha256": "e3bc1d12580ee03c1c18049b7881668242e24990bfe0779292bc98b4e6eab32f",
+  "prereg_commit": "7620bc32ad691d37100642e8e33fd15cadd729a9",
+  "authority_commit": "bb5d7b922784231b8e89d6538fea11ab8ee0a09e",
+  "classifier_commit": "e46c47a96e77a2819d171e1888dca3b1a584360a",
+  "aggregate_code_commit": "cd36c9311546db327cabac993927cb7b43658b7c",
+  "canonical_result_commit": "491e7e9a98ce9df0f9108d922e0d1bf8932e575c",
+  "exact_actions_log_commit": "37a6fb0b50ad6494244f91bef6714d8f47ebdd28"
+}
