@@ -5,10 +5,12 @@ s=json.load(open(a.source)); m=json.load(open(a.manifest)); f=s['required_field_
 required=m['frozen_required_fields']
 missing=[k for k in required if k not in f]
 invalid=bool(missing) or not all(s['negative_controls'].values())
+def authorized(status):
+    return isinstance(status,str) and not status.startswith('NOT_ESTABLISHED')
 blocked_fields=[]
 for k in ('source_authorized_group_only_restriction_dz_zero','source_authorized_conditioning_on_fixed_z_for_contact_distribution','ten_wedge_group_only_contact_covectors'):
-    if f.get(k)=='NOT_ESTABLISHED': blocked_fields.append(k)
-present_ok=all(f.get(k)!='NOT_ESTABLISHED' for k in required)
+    if not authorized(f.get(k)): blocked_fields.append(k)
+present_ok=all(authorized(f.get(k)) for k in required)
 if invalid: classification='INVALID'
 elif present_ok: classification='D7_S2_EQ4_K5_SIMULTANEOUS_CONTACT_COVECTOR_OBJECT_PASS_SCOPED'
 else: classification='D7_S2_EQ4_K5_SIMULTANEOUS_CONTACT_COVECTOR_OBJECT_BLOCKED_SCOPED'
@@ -21,9 +23,9 @@ scientific={
  'contact_distribution_full_B_z_g_present':s['facts']['contact_distribution']['assessment']=='SOURCE_DISTRIBUTION_IS_COMPOSED_WITH_FULL_B_Z_G_OBJECT',
  'joint_group_cp1_integration_domain_present':s['facts']['coherent_state_domain']['assessment']=='GROUP_AND_AUXILIARY_SPINOR_VARIABLES_ARE_SIMULTANEOUS_INTEGRATION_VARIABLES',
  'full_first_differential_defined':f['exact_full_first_differential']=='ALGEBRAICALLY_DEFINED_FROM_EXPLICIT_B_FORMULA_ON_CP1_X_SL2C',
- 'group_only_dz_zero_restriction_authorized':f['source_authorized_group_only_restriction_dz_zero']!='NOT_ESTABLISHED',
- 'fixed_z_conditioning_authorized':f['source_authorized_conditioning_on_fixed_z_for_contact_distribution']!='NOT_ESTABLISHED',
- 'ten_wedge_group_only_contact_covectors_authorized':f['ten_wedge_group_only_contact_covectors']!='NOT_ESTABLISHED',
+ 'group_only_dz_zero_restriction_authorized':authorized(f['source_authorized_group_only_restriction_dz_zero']),
+ 'fixed_z_conditioning_authorized':authorized(f['source_authorized_conditioning_on_fixed_z_for_contact_distribution']),
+ 'ten_wedge_group_only_contact_covectors_authorized':authorized(f['ten_wedge_group_only_contact_covectors']),
  'blocked_fields':blocked_fields,
  'minimal_missing_object':s['minimal_missing_object'],
  'negative_controls':s['negative_controls'],
