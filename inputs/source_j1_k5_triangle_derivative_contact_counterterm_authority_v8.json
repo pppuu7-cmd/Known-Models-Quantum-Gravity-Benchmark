@@ -1,0 +1,52 @@
+{
+  "gate": "SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE",
+  "status": "PROSPECTIVELY_FROZEN_BEFORE_IMPLEMENTATION_OR_RESULT",
+  "parent_preregistration_commit": "38054879237dd03e9d368ceb47356e669c02b516",
+  "authority_corpus": [
+    {
+      "path": "results/SOURCE_J1_K5_HIGHEST_CONTACT_MAGNETIC_LEADING_TRANSFER_V4_REPAIR_TERMINAL_2026-09-16.md",
+      "blob_sha": "fe69a936e561ddb84d933e9145be325d6ddc966b",
+      "role": "same-realization highest-contact delta-double-prime leading-transfer authority",
+      "positive_scope_fact": "channel 00000 highest delta-double-prime contact survives leading scoped",
+      "finite_counterterm_coefficients_fixed": false,
+      "reason": "The terminal scope establishes the surviving highest-contact coefficient and explicitly does not establish the full joint distribution product or a finite extension prescription."
+    },
+    {
+      "path": "recovery/CRITICAL_REVIEW_SOURCE_J1_K5_CHANNEL_COVERAGE_V5_2026-09-16.md",
+      "blob_sha": "943a0c5a9cbd7d806d6927569f109d17be65ef68",
+      "role": "independent exact fixed-tangent channel/source-realization audit",
+      "positive_scope_fact": "00000 = 11/24 confirmed; SOURCE/REALIZATION_CHECK and SAME_REALIZATION_CHECK pass scoped",
+      "finite_counterterm_coefficients_fixed": false,
+      "reason": "The reviewed object is the finite channel tensor/census, not a collision-supported extension or finite subtraction prescription."
+    },
+    {
+      "path": "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7_REPAIR_CANONICAL_2026-09-16.json",
+      "blob_sha": "3146e3c42ce60e95f42530bee67951fe9ba10b08",
+      "role": "exact repaired-V7 decision data",
+      "positive_scope_fact": "all production/object controls true and exact A/A4/B/C K values frozen",
+      "finite_counterterm_coefficients_fixed": false,
+      "reason": "This artifact records regulator-scheme diagnostics and controls only; it contains no source finite-subtraction coefficients."
+    },
+    {
+      "path": "results/SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_REGULARIZATION_V7_REPAIR_TERMINAL_2026-09-16.md",
+      "blob_sha": "3e38daea995a7f803181080b32310beb61d39da4",
+      "role": "terminal repaired-V7 scoped scientific authority",
+      "positive_scope_fact": "relative Gaussian widths remain observable in the frozen scale-free derivative-contact diagnostic",
+      "finite_counterterm_coefficients_fixed": false,
+      "reason": "The terminal result explicitly leaves whether a source-authorized local counterterm identifies the schemes to the next gate rather than supplying such a prescription."
+    },
+    {
+      "path": "recovery/PREREG_SOURCE_J1_K5_TRIANGLE_DERIVATIVE_CONTACT_COUNTERTERM_EQUIVALENCE_GATE_2026-09-16.md",
+      "blob_sha": "9ca8a41467293d7d6ec1bf3a2e57210e98602720",
+      "role": "V8 research-governance contract",
+      "positive_scope_fact": "defines the prospective admissible finite local jet analysis and frozen classification taxonomy",
+      "finite_counterterm_coefficients_fixed": false,
+      "reason": "A preregistration defines the test; it is not independent physical/source authority fixing finite renormalization coefficients."
+    }
+  ],
+  "class_definition_authorized": true,
+  "class_definition_basis_rule": "all point-supported derivatives through order 7 projected to exact S3-invariant subspace of the frozen triangle root representation",
+  "prior_source_fixes_all_finite_coefficients": false,
+  "prior_source_fixes_common_finite_normalization": false,
+  "classification_rule": "If the exact scheme-difference system is solvable and controls pass, nonzero mathematical nullity or unfixed common finite normalization is classified SOURCE_UNFIXED_FINITE_LOCAL_FREEDOM_SCOPED unless affirmative locked authority fixes all such freedom."
+}
