@@ -12,72 +12,58 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 
 ## Latest terminal Research
 
-`D7_S2_EQ4_K5_SIMULTANEOUS_CONTACT_COVECTOR_OBJECT_GATE`
+`ITER504P_OUT_OF_SAMPLE_POINT_DRIFT_LOCALIZATION_GATE`
 
-Classification: `D7_S2_EQ4_K5_SIMULTANEOUS_CONTACT_COVECTOR_OBJECT_BLOCKED_SCOPED`.
+Classification:
 
-Authoritative repaired run `35150140512`, workflow head `ea5f576216cc1098cdcf82aeca1b1fc2c2a7b759`, aggregate scientific SHA256 `3e2aef96bd4029336490383c03f9b3a42b4f9cb0671d5f1faab559c4f8a48a58`.
+`ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED`.
 
-Primary v1 explicitly defines the full contact scalar `B(z,g)` and the contact distribution on the joint auxiliary-spinor/group domain, but does not authorize `dz=0`, fixed-z conditioning, or an equivalent group-only ten-wedge contact-covector object. Minimal blocker:
+Authoritative repaired run `35151656186`, workflow head `b7f4f1f94d7668eba22c8bad25050ef632648ec9`.
 
-`SOURCE_AUTHORIZED_RESTRICTION_OR_CONDITIONING_MAP_FROM_FULL_CONTACT_COVECTOR_ON_CP1_X_SL2C_TO_GROUP_ONLY_TANGENT_COVECTOR`.
+Exact decisive result:
 
-Thus `group_only_contact_covector_rank=null`; this is BLOCKED, not contact/transversality FAIL.
+- `11` decisive lanes, control `0to5-b0` excluded;
+- `1584/1584` records structurally valid;
+- frozen threshold `0.05` unchanged;
+- violations `0`;
+- maximum `D_point = 0.009396862546624`;
+- threshold margin `0.040603137453376`;
+- maximum witness lane `0to5-b1`, path `2`, sign `+1`, amplitude `0.0025`, rho `1.6`;
+- all decisive early and late slopes positive in independent Critic.
 
-Latest post-terminal Critic: `515c947e27043b8c447ddd28ef81b4fb89c28a46`, verdict `CRITIC_CONFIRMS_SCOPED_CONTACT_OBJECT_BLOCKED_NO_ZERO_OR_RANK_PROMOTION`.
+Aggregate artifact `10469975534`, digest `sha256:c8d031b4c3a05b49870217f688d6f6b9d4ac05312c55078760271f0968bd6786`; aggregate JSON SHA256 `0fcbc4f0d8927a2fefbea0c22aae8fe1bbb4cd963ac66b4eb2d8eddc719a78a4`; scientific payload SHA256 `4dc3d408e768a6bc8ad613b286e0b920b0dc294d36184f836c767f7c5b8632a1`.
 
-Do not repeat this gate absent genuinely new authorized primary authority.
+Independent official-logic replay is byte-identical to the production Decimal, float and aggregate JSON outputs. Post-terminal Critic commit `f0844237cbf6ba1e042399d5a76dec8a4ab8b248`, verdict `CRITIC_CONFIRMS_ITER504P_WITHIN_FROZEN_TOLERANCE_SCOPED`.
 
-## Newly closed raw K5 layer
+Canonical terminal commit `162014c7566afa4828e646f77e52d91140dc8388`.
 
-`D7_S2_EQ4_K5_GROUP_VARIABLE_TANGENT_PUSHFORWARD_GATE`
+## Scientific consequence / current primary front
 
-Classification: `D7_S2_EQ4_K5_GROUP_VARIABLE_TANGENT_PUSHFORWARD_PASS_SCOPED`.
+The frozen point grid itself does not violate the `0.05` stationarity criterion. This does not prove continuous NONDECAY; it localizes the Iter504 INCONCLUSIVE bottleneck to the rigorous continuous enclosure/dependency/nonsmooth max-channel layer.
 
-Terminal commit `5f6dfa2bac5915647aa21fe0cde2843bee25ed46`; governing preregistration `bc9aa01263df1172206eb211b456bf5d78fe1b1b`; authoritative run `35149367832`; aggregate scientific SHA256 `07b2de217778082501f679f70aca5365f176ee627265f81e3badd69181bbaea4`.
+Highest-information next gate: continuous max-envelope narrowing under the unchanged Iter504 physics domain and classifier.
 
-Exact raw result:
+Method selection must be frozen before substantive successor outcome and must be based on expected enclosure reduction, compute cost and hidden-dependency-risk rather than on whether a method happens to produce PASS.
 
-- per real Lie generator: `Z^4 -> Z^10`, rank `4`, domain nullity `0`, cycle left-nullity `6` for every root;
-- full real `sl(2,C)`: `24 -> 60`, rank `24`, domain nullity `0`, left-nullity `36`;
-- explicit six-cycle basis rank `6` annihilates every root map;
-- all `20` root-coordinate changes unimodular;
-- all `625` root/tree minors `+/-1`;
-- all `600` S5/root signed transports exact;
-- exact triangle-parent consistency.
+Current preferred architecture to preregister is:
 
-Critic `f9c756d6cc6af1775bad2132245b5493b55f32e1` confirms no physical promotion. Independent auto-research reproduction record `97ff25be7120ab38fa7cccc32eae343cef061cd0` provides a separately implemented production confirmation under the same governing preregistration.
+1. interval-certified active-channel dominance pruning;
+2. deterministic amplitude subdivision only when channel dominance is not certified;
+3. unchanged Arb/Acb rigorous arithmetic and source formulas;
+4. unchanged R grid, rho grid, causal/block/path domain and `0.05` drift criterion;
+5. fail closed if subbox coverage, containment or channel-union controls fail.
 
-`RAW_GROUP_VARIABLE_TANGENT_PUSHFORWARD = CLOSED_SCOPED` only.
+Do not launch another full 3072-state campaign until this cheaper localization/narrowing method has its own frozen gate and validates the mechanism on a prospectively frozen diagnostic cohort.
 
-## Physical quotient branch
+## Parallel D7-S2 state
 
-`SOURCE_J1_K5_EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_ESCALATION_GATE` remains `EQ4_PHYSICAL_TRANSVERSE_QUOTIENT_PRIMARY_AUTHORITY_BLOCKED_SCOPED`; minimal blocker `PUBLISHED_VERSION_FULLTEXT_AUTHORITY_ACCESS_CEILING`; `physical_transverse_rank=null`.
+- raw K5 group-variable tangent pushforward — `CLOSED_SCOPED`;
+- group-only simultaneous contact-covector object — `BLOCKED_SCOPED` on the missing source-authorized `CP1 x SL(2,C) -> group-only` restriction/conditioning map;
+- physical transverse quotient/projection — `BLOCKED_SCOPED`;
+- measure/Haar/contact normalization — open;
+- observable/distributional final pushforward — open.
 
-Do not repeat broad quotient authority search until new preregistration-authorized primary material is auditable.
-
-## Current D7-S2 layer map
-
-1. raw group-variable pushforward — `CLOSED_SCOPED`;
-2. group-only simultaneous contact-covector object — `BLOCKED_SCOPED`;
-3. physical quotient/projection — `BLOCKED_SCOPED`;
-4. measure/Haar/contact normalization — open;
-5. observable/distributional final pushforward — open.
-
-D7-S2 as a whole remains `NOT_CLOSED`.
-
-## Highest-information independent frontier
-
-Do not create another K5 source gate from the same missing objects. The next admissible independent work must come from an already-pinned D7-S3 or D7-S4 obligation with sufficient same-realization/comparator authority for a genuine terminal outcome.
-
-Frozen D7 contract requirements remain:
-
-- S3: same-realization physical objects and parameter transport, normalized comparator-ready observable, propagated required theory/nuisance/covariance/numerical errors;
-- S4: common-domain normalization, explicit reduction/overlap maps, common frozen decision semantics and global D4 closure.
-
-If no concrete S3/S4 object is already pinned, do not invent one and do not launch a metadata-only audit. Wait for a real actionable object/data/authority reopen condition while preserving operational saturation separately from scientific closure.
-
-Iter461 run `34748503239` remains nonterminal and consumer-locked; no duplicate enumeration or partial-value consumption.
+Do not repeat blocked K5 source audits without genuinely new authorized primary material.
 
 ## Restoration procedure
 
