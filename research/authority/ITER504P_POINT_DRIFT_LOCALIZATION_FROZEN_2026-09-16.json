@@ -7,7 +7,7 @@
     "workflow_head": "56362459a826e3e376c529446678f2fbcaa269ae",
     "summary_artifact_id": 10436186009,
     "summary_artifact_digest": "sha256:0273394cbd3d0be55589279645c8170a02042178210b145897bc21e721754163",
-    "terminal_record_commit": "95870d0649d4b8d7b156c3f2b68bd55caa65d9c0"
+    "terminal_record_commit": "e3816c0437a1f895196d2bbccacfb05e8dd38e74"
   },
   "decisive_artifacts": {
     "iter504-point-0to5-b1": {"id": 10373595538, "digest": "sha256:ceb96d269fcbfb8aa083eb849f373e6347b6ce1e1c3ba575a41364ae3bed91c1"},
