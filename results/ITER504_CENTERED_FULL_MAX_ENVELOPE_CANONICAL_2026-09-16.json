@@ -1,0 +1,71 @@
+{
+  "iteration": 504,
+  "gate": "ITER504_CENTERED_FULL_MAX_ENVELOPE_SCIENCE",
+  "date": "2026-09-16",
+  "classification": "ITER504_VALIDATED_CENTERED_INTERVAL_INCONCLUSIVE_SCOPED",
+  "authority": {
+    "preregistration_commit": "1ab46b7add51b36b5499f866eb4579137838bfae",
+    "box_implementation_commit": "aeef88e899c2f3900a8735b30610e9adabebbb9d",
+    "point_implementation_commit": "b5e90ed0568e6ca5eb9657bf49f79c69f56cc369",
+    "aggregate_commit": "cf4729040b064f1eb77b651b717f0753cfaaed32",
+    "workflow_head": "56362459a826e3e376c529446678f2fbcaa269ae",
+    "actions_run": 34907349374,
+    "actions_conclusion": "success",
+    "summary_artifact_id": 10436186009,
+    "summary_artifact_digest": "sha256:0273394cbd3d0be55589279645c8170a02042178210b145897bc21e721754163",
+    "summary_json_sha256": "277971cbd394810c4f4185a203f15f8faddc5b88bde3a671e1801edcd861ae5b"
+  },
+  "structure": {
+    "valid_structure": true,
+    "method_blocker": false,
+    "logical_lane_count": 12,
+    "centered_shard_count": 96,
+    "point_artifact_count": 12,
+    "direction_box_records": 768,
+    "rho_box_states": 3072,
+    "point_containment_checks": 1728,
+    "expected_logical_lane_count": 12,
+    "expected_centered_shard_count": 96,
+    "expected_point_artifact_count": 12,
+    "expected_direction_box_records": 768,
+    "expected_rho_box_states": 3072,
+    "expected_point_containment_checks": 1728,
+    "missing_shards": [],
+    "duplicate_shards": [],
+    "extra_shards": [],
+    "missing_point_lanes": [],
+    "duplicate_point_lanes": [],
+    "extra_point_lanes": []
+  },
+  "science": {
+    "class_counts": {
+      "INTERVAL_ROBUST_NONDECAY": 1184,
+      "INTERVAL_INCONCLUSIVE": 1888,
+      "INTERVAL_NONDECAY": 0,
+      "INTERVAL_UNIFORM_DECAY_WITNESS": 0
+    },
+    "global_min_late_slope_lower": 3.704072282326188,
+    "global_max_late_slope_upper": 4.315308586737589,
+    "global_max_drift_upper": 0.6142148940909335,
+    "global_min_beta_lower": 0.5011445004474808,
+    "max_possible_max_channel_count": 46,
+    "known_crossing_region_records": 6,
+    "frozen_robust_nondecay_floor": 1.0,
+    "frozen_drift_tolerance": 0.05,
+    "frozen_uniform_decay_ceiling": -0.10
+  },
+  "independent_checks": {
+    "classifier_rederived_from_frozen_logic": true,
+    "no_uniform_decay_witness": true,
+    "not_all_states_robust_or_nondecay": true,
+    "all_late_slope_lower_bounds_exceed_robust_floor": true,
+    "inconclusive_states_localized_to_drift_criterion_under_frozen_classifier": true,
+    "sampled_crossing_shard_artifact_id": 10378191574,
+    "sampled_crossing_shard_artifact_digest": "sha256:416e374269786a5fae6ec319c45929a2e759ff02b40b06ad038374af1deca653",
+    "sampled_crossing_shard_json_sha256": "1f1e27cfb4a5d07dd067c6b66b62cbf8f9a5dcb4a4415aa5556f2bf8e39787d0",
+    "sampled_point_artifact_id": 10373506543,
+    "sampled_point_artifact_digest": "sha256:a70dbfe331738ae6bf560d49410178aea9d9d4e60d487e476514aec7aca1fa40",
+    "sampled_point_json_sha256": "6224318d5082cff8e3f575278e4f45744295dda8d3738fc7ffcbd01bfae0d3a1"
+  },
+  "claim_ceiling": "Validated centered continuous 243-channel max-envelope result only on the frozen one-dimensional q=1 signed-direction amplitude intervals. The result is scientifically inconclusive under the frozen drift criterion: no decay witness exists, but 1888 states are not qualified NONDECAY. It is not a positive-measure multidimensional Haar theorem, spectral/collision cutoff removal, fully contracted ten-spectral theorem, D7-S2 closure, selector authority, model/family failure or new-physics claim."
+}
