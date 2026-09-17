@@ -46,22 +46,32 @@ The gate genuinely closes the workflow-boundary counterexample identified by ind
 
 Both production lanes independently replayed immutable repair run `35205054496` and each classified it `ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`. All five required artifacts matched exact frozen IDs/digests, all inherited semantics controls passed, both lanes recomputed `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED`, unresolved leaves were zero across 12 leaves, and C1 remained 18 records / 70,056 booleans / zero false with no actual C4 contradiction.
 
-However, the prospectively frozen aggregate required exact lane decision-SHA equality. It failed only that control:
+The gate is terminally `INVALID_IMPLEMENTATION` because its cross-environment decision projection hashes execution-local path strings. The two lane classifications and substantive inherited review payloads agree, but outer decision hashes differ:
 
 - lane 3.11 decision SHA256 `4eec7f2966d9c0df79fdf381c73e88d5cc45acbb6a688f68f78616937e17ff96`;
-- lane 3.13 decision SHA256 `c12de65d9c2d0a065230198ecab78f09ecb43148ee0c45a130636a8f74144de5`;
-- `lane_classification_agreement=true`;
-- `lane_decision_sha256_agreement=false`.
+- lane 3.13 decision SHA256 `c12de65d9c2d0a065230198ecab78f09ecb43148ee0c45a130636a8f74144de5`.
 
-Terminal diagnostic localization finds exactly seven lane-payload differences: five environment-specific `local_path` strings (`terminal_311/...` versus `terminal_313/...`), their path-derived manifest SHA, and the final review decision SHA. Removing only those environment-local path-derived fields makes the lane payloads identical with normalized SHA256 `a7eda65e7407e7188ae67763df01f40187fd7659531f5bb24f29187e8bac11d0`.
+Independent Critic reconstruction finds exactly seven differences: five environment-specific `local_path` strings (`terminal_311/...` versus `terminal_313/...`), their path-derived manifest SHA, and the final outer review-decision SHA. Removing only those environment-local path-derived fields makes the lane payloads identical with normalized SHA256 `a7eda65e7407e7188ae67763df01f40187fd7659531f5bb24f29187e8bac11d0`.
 
-Frozen criteria cannot be changed after result. Therefore the gate is terminally `INVALID_IMPLEMENTATION`. The new defect is canonicalization/provenance hashing, not science, numerical disagreement, or physical falsification.
+The prospectively frozen requirement is equality of the terminal review decision across environments. Environment-local filesystem prefixes are not decision-critical scientific/provenance identity. Including them in the decision hash is therefore an implementation/canonicalization defect. This is not science, numerical disagreement, or physical falsification.
 
 ## Latest independent Critical Review
 
-No independent Critic review of this new artifact-boundary-repair terminal result is recorded yet.
+Audit:
 
-The preceding Critic verdict `INVALID_IMPLEMENTATION` for semantics-repair run `35232311780` remains historically correct for that implementation. Its specific workflow-boundary missing-artifact counterexample is now experimentally closed by the new gate, but the new gate has exposed its own narrower aggregate canonicalization defect.
+`recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_2026-09-17.md`
+
+Critic commit:
+
+`77357d92050a9bec2c8daefd4d4babf7ff032ed0`
+
+Verdict:
+
+`CONFIRMED_SCOPED`
+
+The historical terminal classification `INVALID_IMPLEMENTATION` is independently confirmed for this exact gate. The preceding missing-artifact workflow-boundary defect is genuinely closed; the remaining defect is specifically noncanonical outer decision hashing. Both production lanes use identical immutable upstream artifacts and their inherited exact-review JSON is byte-identical (Critic SHA256 `448508a79f77980b969dc156222a8872a18fd0467247501225131e5b0c9ecaee`).
+
+The Critic independently downloaded and rehashed all four current run artifacts; every ZIP SHA256 matched fresh Actions metadata. There is no `INVALID_PROVENANCE` basis.
 
 ## Historical qualifications retained
 
@@ -70,7 +80,7 @@ The preceding Critic verdict `INVALID_IMPLEMENTATION` for semantics-repair run `
 - C4 `ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED` remains independently `CONFIRMED_SCOPED` for the reusable scientific-validator path.
 - Original Iter504T run `35181094204` remains historically `INVALID_IMPLEMENTATION`, not scientific FAIL.
 - C1 VERIFIED, C2 REFUTED, C3 VERIFIED remain immutable history.
-- Exact repair run `35205054496` remains coherent supporting evidence for the three-root scientific PASS, but this latest gate does not issue validated authority because its own frozen aggregate control failed.
+- Exact repair run `35205054496` remains coherent supporting evidence for the three-root scientific PASS, but this latest invalid gate does not issue validated authority.
 - No Iter504T result is promoted to all 1888 states.
 
 ## Parallel D7-S2 retained state
@@ -85,9 +95,9 @@ Do not repeat blocked K5 source audits without genuinely new authorized primary 
 
 ## Next admissible work
 
-Highest-information same-object closure step: prospectively freeze a decision-canonicalization implementation repair only. The cross-environment decision projection must exclude execution-local filesystem paths and path-derived manifest hashes while retaining immutable artifact IDs/digests, content SHA256 values, run/head identity, boundary states, workflow-level missing-artifact BLOCKED control, present-identity-mismatch INVALID control, inherited C1/C3/C4/R/rho/root/channel/science checks, and the same interpretation ceiling.
+Highest-information same-object closure step: prospectively freeze a decision-canonicalization implementation repair only. The canonical cross-environment decision projection must exclude execution-local `local_path` strings and hashes derived solely from those paths while retaining immutable artifact IDs/digests, downloaded content SHA256 values, run/head identity, boundary states, inherited substantive review decision, workflow-level missing-artifact BLOCKED control, present-identity-mismatch INVALID control, C1/C3/C4/R/rho/root/channel/science checks, and the same interpretation ceiling.
 
-A positive control must show that the same immutable artifacts downloaded under two different directory prefixes produce identical decision SHA. A negative control must show that changing any artifact ID/digest/content SHA or substantive review field still changes/invalidates the decision. Do not rerun physics.
+A mandatory positive control must place the same immutable artifact bytes under at least two deliberately different directory prefixes and require identical canonical decision SHA. Mandatory negative controls must mutate artifact ID, digest, content SHA or substantive review field and require a changed/invalid decision. Do not rerun physics.
 
 A distinct scientific frontier may proceed only if it does not consume this `INVALID_IMPLEMENTATION` gate as validated authority.
 
