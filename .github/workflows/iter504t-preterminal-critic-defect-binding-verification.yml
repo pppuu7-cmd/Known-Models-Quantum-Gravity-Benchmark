@@ -1,0 +1,91 @@
+name: iter504t-preterminal-critic-defect-binding-verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504t-preterminal-critic-defect-binding-verification.yml'
+      - 'code/iter504t_preterminal_critic_defect_binding_verification.py'
+      - 'code/iter504t_preterminal_critic_defect_binding_verification_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective freeze and exact launch-head blobs
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 152e155692f80447cf75a97b86e17450a05534d6 HEAD
+          test "$(git hash-object code/iter504t_local_derivative_contraction.py)" = 1ae78fc309839da30d1c78fc25c8e5ea3d98693f
+          test "$(git hash-object code/iter504t_local_derivative_assemble.py)" = 6a886bf6ce8c263e586a6cb25d7441df5273a72d
+          test "$(git hash-object code/iter504t_local_derivative_critic.py)" = 950d22e97b1ca2a17b2bb08d4386de6d4fb39445
+          test "$(git hash-object research/prereg/ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md)" = f648b0e0d6a960bf60c32d5c34694497a50b7e68
+          test "$(git hash-object recovery/CRITICAL_PRETERMINAL_AUDIT_ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md)" = 9fffd4a3b755d0f6b10220390299d600e523e0b8
+          grep -F 'ITER504T_PRETERMINAL_CRITIC_DEFECT_CLAIMS_ALL_VERIFIED_SCOPED' research/prereg/ITER504T_PRETERMINAL_CRITIC_DEFECT_BINDING_VERIFICATION_GATE_2026-09-17.md
+          grep -F 'ITER504T_PRETERMINAL_CRITIC_DEFECT_CLAIMS_NOT_ALL_VERIFIED_SCOPED' research/prereg/ITER504T_PRETERMINAL_CRITIC_DEFECT_BINDING_VERIFICATION_GATE_2026-09-17.md
+          grep -F 'NO_ACTIVE_ITER504T_SCIENTIFIC_ARTIFACT_READS' inputs/iter504t_preterminal_critic_defect_binding_verification_authority.json
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run outcome-blind frozen defect-binding verification
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          tag=$(echo '${{ matrix.python }}' | tr -d '.')
+          python code/iter504t_preterminal_critic_defect_binding_verification.py \
+            --authority inputs/iter504t_preterminal_critic_defect_binding_verification_authority.json \
+            --repo-root . \
+            --out "artifacts/critic_binding_${tag}.json" \
+            | tee "artifacts/critic_binding_${tag}.log"
+          sha256sum "artifacts/critic_binding_${tag}.json" "artifacts/critic_binding_${tag}.log" > "artifacts/critic_binding_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: critic-binding-${{ matrix.python }}
+          path: artifacts/critic_binding_*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: critic-binding-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate exact closure decision
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/iter504t_preterminal_critic_defect_binding_verification_aggregate.py \
+            --a downloaded/critic_binding_311.json \
+            --b downloaded/critic_binding_313.json \
+            --out artifacts/critic_binding_aggregate.json \
+            | tee artifacts/critic_binding_aggregate.log
+          sha256sum artifacts/critic_binding_aggregate.json artifacts/critic_binding_aggregate.log > artifacts/critic_binding_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: critic-binding-aggregate
+          path: artifacts/critic_binding_aggregate.*
+          if-no-files-found: error
