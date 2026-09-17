@@ -3,6 +3,48 @@ Updated: 2026-09-17
 
 Fresh repository `main` and fresh Actions state always outrank this navigation document if they diverge.
 
+## Active nonterminal Closure gate
+
+Gate:
+
+`ITER504T_IMPLEMENTATION_CONTROL_REPAIR_RERUN_GATE`
+
+Status:
+
+`IN_PROGRESS_NOT_CLASSIFIED`
+
+This is not PASS, FAIL, BLOCKED, INVALID, or a scientific result. No substantive root/assembly/aggregate/Critic/verdict values from the active rerun have been consumed.
+
+Frozen repair chain:
+
+- repair preregistration `adc7bfb9df77a90455cac1b0f0cb7255d80c44d5`;
+- immutable repair authority `a47a9140cf10f2f0f912943133a01238ff1b5653`;
+- repaired producer commit `ec619bbe2212fe2affaddbd251d75408d534df88`;
+- repaired assembler commit `f9c180abd56e06521f177df06d34651f3f4a28fb`;
+- repaired aggregate commit `81e15e0d1586b7ad7d17c616eb0d2fd0f179670b`;
+- repaired independent Critic commit `f41e82a97e527c44e60c24d218015661b71e342a`;
+- repair-verdict code commit `e96979b650a67cc960b6f4be6ce37400da5bd88b`;
+- repair workflow commit `9239db6a9b1637dc10889afae289dc6e0908df61`, workflow blob `179c2ed4d45aab4490866df0157d0b8200fbeb27`;
+- launch head `10ae6bcc8447d14cecc6e550065504b23f792953`;
+- authoritative Actions run `35205054496`.
+
+Latest observed Actions state:
+
+- source-lock job `105148662991` = `completed/success`;
+- all six independent Python 3.11/3.13 x roots 13/14/15 root jobs have been created and are executing/queued under `fail-fast:false`;
+- assemblies, aggregate, repaired Critic and repair-verdict remain downstream/nonterminal.
+
+Source-lock verified prospective repair authority, unchanged original Iter504T preregistration/source/scientific contract, exact pre-repair identities, exact repaired code/workflow identities, syntax, and frozen constants before any scientific output was consumed.
+
+The repair changes only the two independently verified implementation-control defects:
+
+1. C1: compute/serialize and independently validate componentwise child-vs-parent derivative inclusion records for every visited non-root node, all 243 channel derivatives at every frozen R/rho, plus Haar/log derivatives. `false` inclusion remains diagnostic-only and is not a scientific failure;
+2. C3: serialize and independently bind the actual exact R cohort `[6,8,10,12]`, including adversarial `6 -> 7` rejection.
+
+C2 remains REFUTED: existing exact rational dyadic-cell validation is retained unchanged. No root/rho/R scientific values, source route, local-D construction, channel set, threshold `1/20`, floor `1`, `MAX_DEPTH=3`, scientific classifier or interpretation ceiling were changed.
+
+Do not launch a competing same-object gate and do not consume partial root outputs. Next action is only to consume terminal aggregate + repaired Critic + repair-verdict after run `35205054496` fully terminalizes.
+
 ## Latest terminal Research execution
 
 Gate:
@@ -82,15 +124,9 @@ No Iter504T result is promoted to all 1888 states while its frozen implementatio
 
 ## Next admissible work
 
-Only a same-contract implementation repair of Iter504T is admissible without a new scientific preregistration:
+While run `35205054496` is nonterminal, there is no second admissible same-object gate. Consume only its terminal aggregate, independent Critic and repair-verdict after full terminalization. If the repair gate terminally passes, the fresh same-contract scientific classification may be reconsidered under exactly the original three-root claim ceiling. If the repair fails/blocks/invalidates, preserve that result and do not reinterpret it as scientific FAIL.
 
-1. compute and serialize the required componentwise child-vs-parent inclusion checks for all 243 channel derivatives at every frozen R/rho plus Haar/log; preserve `false` as diagnostic-only exactly as preregistered;
-2. validate the exact R set `{6,8,10,12}` in producer/assembler/Critic and add an adversarial R mutation fixture that rejects `6 -> 7`;
-3. retain the already-correct exact rational dyadic-cell validation;
-4. preserve roots, rhos, R scientific values, source route, local-D construction, 243 channels, threshold `1/20`, floor `1`, `MAX_DEPTH=3`, classifier and interpretation ceiling;
-5. rerun Python 3.11 and 3.13, assemblies, aggregate and independent Critic with fresh artifacts/digests.
-
-Any change to scientific parameter, object, source authority, domain, classifier, threshold/floor or interpretation ceiling requires a new prospectively frozen gate and must not rewrite run `35181094204`.
+Any change to scientific parameter, object, source authority, domain, classifier, threshold/floor or interpretation ceiling requires a new prospectively frozen gate and must not rewrite historical run `35181094204`.
 
 ## D7 retained firewall
 
