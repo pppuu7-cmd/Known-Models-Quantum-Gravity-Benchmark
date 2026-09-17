@@ -4,6 +4,11 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/iter504t-local-d-methodology-ci.yml'
+      - 'code/iter504t_local_derivative_contraction.py'
+      - 'code/iter504t_local_derivative_assemble.py'
+      - 'code/iter504t_local_derivative_aggregate.py'
+      - 'code/iter504t_local_derivative_critic.py'
+      - 'research/prereg/ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md'
 permissions:
   contents: read
 jobs:
@@ -18,7 +23,11 @@ jobs:
           python-version: '3.12'
       - name: Syntax check Iter504T chain
         run: |
-          python -m py_compile code/iter504t_local_derivative_contraction.py code/iter504t_local_derivative_assemble.py code/iter504t_local_derivative_critic.py
+          python -m py_compile \
+            code/iter504t_local_derivative_contraction.py \
+            code/iter504t_local_derivative_assemble.py \
+            code/iter504t_local_derivative_aggregate.py \
+            code/iter504t_local_derivative_critic.py
       - name: Frozen contract checks
         shell: bash
         run: |
@@ -29,9 +38,12 @@ jobs:
           grep -F "FLOOR=arb('1.0')" code/iter504t_local_derivative_contraction.py
           grep -F "local_derivative_recomputed_each_visited_node':True" code/iter504t_local_derivative_contraction.py
           grep -F "channel_pruning_used':False" code/iter504t_local_derivative_contraction.py
+          grep -F "partition_identity_verified':'exact_rational_dyadic_cells'" code/iter504t_local_derivative_assemble.py
+          grep -F "outcome_dependent_non_dyadic_partition" code/iter504t_local_derivative_critic.py
           grep -F "threshold_exact':'1/20'" code/iter504t_local_derivative_critic.py
           grep -F "depth_increase" code/iter504t_local_derivative_critic.py
           grep -F "reuse_root_derivative" code/iter504t_local_derivative_critic.py
+          grep -F "cross_environment_exact_decision_agreement" code/iter504t_local_derivative_aggregate.py
       - name: Verify parent authorities present
         shell: bash
         run: |
