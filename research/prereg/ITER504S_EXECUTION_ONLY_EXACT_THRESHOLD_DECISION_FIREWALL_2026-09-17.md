@@ -20,15 +20,16 @@ The scientific threshold is the exact decimal/rational value
 
 `0.05 = 1/20`.
 
-The repaired root evaluator computes the full-envelope and derivative-radius predicates directly with Arb objects, e.g. `du <= arb('0.05')`. Those producer booleans are rigorous.
+The repaired root evaluator initially computes each full-envelope slope/drift enclosure with Arb and evaluates the composite `within_tolerance` boolean with exact Arb inequalities. However, it then serializes `S_lower`, `drift_upper`, and fixed-channel drift bounds through `core.bound_float(...)`. Several scientifically active mechanism predicates are subsequently reconstructed from those binary64 summaries rather than from exact Arb truth values. This includes:
 
-However, the fixed-channel convenience predicate currently serializes an Arb upper endpoint through `core.bound_float(..., 'upper')` and then tests
+- `derivative_radius_sensitivity` via serialized full-D and center-D `drift_upper`;
+- full-D and center-D violation tests used by the terminal classifier;
+- fixed-channel `all-within` competition tests via serialized maximum fixed-channel drift;
+- corresponding assembler and adversarial-Critic reconstructions.
 
-`float(max_fixed_channel_drift_upper) <= 0.05`.
+The core module itself labels ordinary Arb-to-float conversion as display-only and not suitable for validated decisions. Therefore the current Iter504S scientific classifier transport is not fully interval-rigorous at the exact threshold.
 
-The assembler and adversarial Critic repeat the same binary64 comparison.
-
-This is not formally identical to the preregistered Arb inequality. In CPython binary64,
+This is not formally equivalent to the preregistered Arb inequality. In CPython binary64,
 
 `0.05.as_integer_ratio() = 3602879701896397 / 72057594037927936`
 
@@ -36,40 +37,45 @@ which exceeds exact `1/20` by
 
 `1 / 360287970189639680`.
 
-Therefore a sufficiently near-threshold value can in principle be assigned a different fixed-channel truth value after binary64 conversion. In addition, selecting a maximum after conversion can collapse distinct high-precision endpoints to the same binary64 value.
+Thus a sufficiently near-threshold exact upper bound can in principle be assigned a different truth value after binary64 conversion. Converting before selecting a fixed-channel maximum can also collapse distinct high-precision endpoints to the same binary64 value.
 
-The issue was found by static source audit only. No partial mechanism number from run `35175533159` was consumed to discover or define this firewall.
+The issue was found by static source audit only. No partial mechanism number from run `35175533159` was consumed to discover, broaden, or define this firewall.
 
-## Dependency-localized authority rule for the running execution
+## Authority rule for the running execution
 
 Do not cancel, mutate, or duplicate run `35175533159`.
 
-After it becomes terminal:
+Because every non-INVALID terminal mechanism class depends on at least one drift comparison that is currently transported/reconstructed through binary64, **no terminal mechanism class from run `35175533159` is eligible for final scientific promotion** under the benchmark's validated-decision standard.
 
-1. If its terminal class is `ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED`, the fixed-channel all-within predicate is not on the winning classifier dependency path. The result may remain scientifically authoritative provided the existing assembler and Critic both confirm the producer exact-Arb full-envelope/derivative-radius booleans with no errors and both environments agree.
-2. If its terminal class is `ITER504S_CHANNEL_COMPETITION_NECESSARY_SCOPED`, `ITER504S_FIXED_CHANNEL_NONSTATIONARITY_REMAINS_SCOPED`, or `ITER504S_MIXED_MECHANISM_SCOPED`, do not promote that mechanism class from this execution. These branches depend on the fixed-channel threshold predicate and require the exact-threshold repair below.
-3. Any `ITER504S_INVALID`, failed aggregate, failed Critic, or cross-environment decision disagreement remains INVALID and is not converted into a scientific FAIL.
+After it becomes terminal, the run remains useful as an execution diagnostic and a reproducibility/control input, but its mechanism label is provisional/non-authoritative until reproduced by the exact-threshold implementation below.
 
-This conditional rule is frozen before the terminal outcome, so it cannot be selected to preserve a favorable class.
+Any `ITER504S_INVALID`, failed aggregate, failed Critic, or cross-environment decision disagreement remains INVALID and is not converted into a scientific FAIL.
+
+This authority rule is frozen before the terminal outcome and applies identically to `ROOT_DERIVATIVE_RADIUS_LOCALIZED`, `CHANNEL_COMPETITION_NECESSARY`, `FIXED_CHANNEL_NONSTATIONARITY_REMAINS`, and `MIXED`; it cannot be selected according to whether the observed outcome is favorable.
 
 ## Frozen minimal exact-threshold repair
 
-If repair is required by the dependency rule above, the next execution may change only threshold-decision transport/verification:
+After the current run is terminal, one repaired execution may change only threshold-decision transport and verification:
 
-1. During fixed-channel computation, keep each `du` as an Arb object until the scientific predicate has been evaluated.
-2. Define each channel flag only by the exact Arb predicate `du <= arb('0.05')`.
-3. Define `all_candidate_fixed_channel_drifts_within_tolerance` as `complete AND candidates_nonempty AND all(exact_channel_flags)`; never reconstruct this boolean from a serialized float maximum.
-4. Serialize a deterministic `violating_channel_indices` list (or equivalently all per-candidate exact boolean flags) so downstream consumers can verify the logical reduction without comparing binary64 values to the threshold.
-5. `max_fixed_channel_drift_upper` remains display/diagnostic metadata only. Its binary64 representation may not decide any scientific class.
-6. Assembler and independent Critic must reconstruct competition/nonstationarity solely from candidate completeness plus the serialized exact-Arb channel decision set. They must reject any mismatch between the all-within boolean and that decision set.
-7. Full-envelope and derivative-radius predicates must continue to be computed in Arb at the producer. Binary64 fields remain diagnostics only; downstream checks may confirm that float summaries are consistent away from the threshold but may not redefine the scientific inequality.
-8. Preserve `python-flint==0.9.0`, 384-bit precision, all 243 channels, exact LOW/MID/HIGH points, roots 13-15, rhos/R grid, source path, no-pruning rule, exact threshold `1/20`, floor `+1`, and the already frozen terminal classifier order.
+1. Keep every scientifically active `du`, `slo`, and related Arb quantity as an Arb object until all threshold/floor booleans have been evaluated.
+2. For every full-envelope row serialize explicit producer truth values computed only as Arb predicates:
+   - `slope_floor_satisfied := slo >= arb('1.0')`;
+   - `drift_within_tolerance := du <= arb('0.05')`;
+   - `within_tolerance := slope_floor_satisfied AND drift_within_tolerance`.
+3. Define `derivative_radius_sensitivity` only from the exact producer drift booleans: full-D `drift_within_tolerance=false` and center-D `drift_within_tolerance=true`. Never reconstruct it from float summaries.
+4. During fixed-channel computation, define each channel's `drift_within_tolerance` only by the exact Arb predicate `du <= arb('0.05')` before serialization.
+5. Define `all_candidate_fixed_channel_drifts_within_tolerance` as `complete AND candidates_nonempty AND all(exact_channel_flags)`; never reconstruct it from a serialized float maximum.
+6. Serialize a deterministic `violating_channel_indices` list, or equivalently all per-candidate exact boolean flags, so downstream consumers can verify the logical reduction without comparing binary64 values to the threshold.
+7. `S_lower`, `drift_upper`, `max_fixed_channel_drift_upper`, and similar binary64 fields remain display/diagnostic metadata only. They may not decide any scientific class or mechanism flag.
+8. Assembler and independent Critic must reconstruct all mechanism flags and the final classifier exclusively from producer exact-Arb booleans plus structural completeness/provenance fields. They must reject any inconsistency among composite booleans and their constituent exact decision flags.
+9. Cross-environment comparison must compare these exact decision booleans, candidate identities, possible-max identities, dominance booleans, exact rational case identities, and final classification. Floating serialization differences are diagnostic unless they alter a producer exact decision, in which case the gate is INVALID until explained.
+10. Preserve `python-flint==0.9.0`, 384-bit precision, all 243 channels, exact LOW/MID/HIGH points, roots 13-15, rhos/R grid, source path, no-pruning rule, exact threshold `1/20`, floor `+1`, and the already frozen terminal classifier order.
 
 ## Execution firewall
 
 No second Iter504S execution is authorized while run `35175533159` is nonterminal.
 
-If a repaired execution becomes necessary after terminalization, freeze repaired evaluator/assembler/Critic hashes and a single repaired workflow authority before launching it. Do not use the first run's numerical values to alter thresholds, points, channels, depth, precision, cohort, or classifier order.
+After terminalization, freeze exact-threshold evaluator/assembler/aggregate/Critic hashes and a single repaired workflow authority before launching exactly one repaired scientific execution. Do not use run `35175533159` numerical values to alter thresholds, points, channels, precision, cohort, source, or classifier order.
 
 ## Claim ceiling
 
