@@ -12,7 +12,8 @@ FROZEN_PARENT_CRITIC_BLOB = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
 
 
 def force_c4_contradiction(cases):
-    leaf = cases['H0_AMP_LOW']['leaves'][0]
+    case = cases['H0_AMP_LOW']
+    leaf = case['leaves'][0]
     rows = leaf['per_rho']
     if not rows:
         raise ValueError('C4 fixture requires at least one rho row')
@@ -23,6 +24,7 @@ def force_c4_contradiction(cases):
     rows[0]['drift_within_tolerance'] = False
     rows[0]['certified'] = False
     leaf['certified'] = True
+    case['unresolved_leaf_count'] = sum(not bool(x.get('certified')) for x in case['leaves'])
 
 
 def negative_controls(base_cases):
@@ -67,15 +69,22 @@ def self_test_fixture():
                 'drift_within_tolerance': bool(value),
                 'certified': bool(value),
             })
-        return {'H0_AMP_LOW': {'leaves': [{'certified': bool(certified), 'per_rho': rows}]}}
+        return {
+            'H0_AMP_LOW': {
+                'leaves': [{'certified': bool(certified), 'per_rho': rows}],
+                'unresolved_leaf_count': 0 if certified else 1,
+            }
+        }
 
     for initial_leaf in (False, True):
         for initial_row0 in (False, True):
             x = carrier(initial_leaf, initial_row0)
             force_c4_contradiction(x)
-            leaf = x['H0_AMP_LOW']['leaves'][0]
+            case = x['H0_AMP_LOW']
+            leaf = case['leaves'][0]
             rows = leaf['per_rho']
             assert leaf['certified'] is True
+            assert case['unresolved_leaf_count'] == 0
             assert rows[0]['certified'] is False
             assert rows[0]['drift_within_tolerance'] is False
             assert all(r['certified'] is bool(r['slope_floor_satisfied'] and r['drift_within_tolerance']) for r in rows)
