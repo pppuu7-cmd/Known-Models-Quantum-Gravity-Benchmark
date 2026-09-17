@@ -1,0 +1,79 @@
+{
+  "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_GATE",
+  "date": "2026-09-17",
+  "classification": "INVALID_IMPLEMENTATION",
+  "scientific_fail": false,
+  "workflow_head": "4e9a6ac95a10f89ba57eaa3aaa642a43e0236866",
+  "actions_run": {
+    "id": 35238357310,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "jobs": {
+    "source_lock": 105260048120,
+    "boundary_control": 105260104164,
+    "lane_3_11": 105260104179,
+    "lane_3_13": 105260104162,
+    "aggregate": 105260195631
+  },
+  "aggregate": {
+    "classification": "INVALID_IMPLEMENTATION",
+    "aggregate_decision_sha256": "09306cd3fc13b599d000f2e937ccdcf1c1bbf219d339a0396c06ac6a2d8624bb",
+    "controls": {
+      "lane_boundary_controls_all_pass": true,
+      "lane_classification_agreement": true,
+      "lane_decision_sha256_agreement": false,
+      "workflow_boundary_actual_download_failure_observed": true,
+      "workflow_boundary_missing_artifact_control_blocked": true
+    }
+  },
+  "boundary_control": {
+    "classification": "ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED",
+    "workflow_boundary_control_reached_classifier": true,
+    "simulated_role": "verdict",
+    "lookup_name": "iter504t-boundary-control-definitely-missing",
+    "download_attempted": true,
+    "download_returncode": 1,
+    "state": "MISSING_OR_UNAVAILABLE",
+    "manifest_sha256": "6ea411daa7173f3270dd9774e78188f2c61215a765be81d6c33e275456c632a1"
+  },
+  "lane_3_11": {
+    "classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+    "review_decision_sha256": "4eec7f2966d9c0df79fdf381c73e88d5cc45acbb6a688f68f78616937e17ff96",
+    "manifest_sha256": "c1d1b9ec24963fc4f9f66c4563f647bba1c84039ad5fb691ccfa2df5c3f62ab8",
+    "inherited_classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+    "boundary_controls_all_pass": true
+  },
+  "lane_3_13": {
+    "classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+    "review_decision_sha256": "c12de65d9c2d0a065230198ecab78f09ecb43148ee0c45a130636a8f74144de5",
+    "manifest_sha256": "50435de1a91baa1df668a9fe8913631839c744156c76050c72f4e01290e8c6cf",
+    "inherited_classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+    "boundary_controls_all_pass": true
+  },
+  "diagnostic_localization": {
+    "lane_payload_difference_count": 7,
+    "differences": [
+      "five environment-specific local_path prefixes terminal_311 vs terminal_313",
+      "artifact_manifest.manifest_sha256",
+      "review_decision_sha256"
+    ],
+    "normalized_lane_payloads_equal_after_removing_local_path_manifest_sha_and_review_decision_sha": true,
+    "normalized_lane_payload_sha256": "a7eda65e7407e7188ae67763df01f40187fd7659531f5bb24f29187e8bac11d0"
+  },
+  "exact_run_supporting_evidence": {
+    "immutable_physics_run": 35205054496,
+    "immutable_physics_head": "10ae6bcc8447d14cecc6e550065504b23f792953",
+    "all_required_artifacts_present_and_identity_matching_in_both_lanes": true,
+    "assembly_sha256": "dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24",
+    "underlying_scientific_classification_recomputed_in_both_lanes": "ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED",
+    "recomputed_unresolved_leaves": 0,
+    "terminal_leaf_count": 12,
+    "c1_record_count": 18,
+    "c1_component_count": 70056,
+    "c1_false_component_count": 0,
+    "c4_actual_violation_present": false
+  },
+  "new_fact": "The workflow-boundary missing-artifact defect identified by the prior Critic is genuinely repaired and exercised through a real nonzero gh download failure that reaches the frozen BLOCKED classifier. The gate nevertheless terminalizes INVALID_IMPLEMENTATION because the prospectively frozen aggregate requires exact cross-environment decision-SHA agreement, while the lane decision hashes include environment-specific local filesystem paths. The two substantive lane payloads are otherwise identical after removing those path-derived fields.",
+  "claim_ceiling": "exact completed run 35205054496 and terminal-review artifact boundary only; no all-1888/D7/model/family/selector/Candidate Gravity/Paper IV/global QG conclusion"
+}
