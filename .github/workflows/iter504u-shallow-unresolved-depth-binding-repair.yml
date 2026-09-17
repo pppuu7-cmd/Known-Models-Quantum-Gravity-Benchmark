@@ -1,0 +1,146 @@
+name: KMQGB Iter504U shallow unresolved depth-binding repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504U_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_LAUNCH_2026-09-17.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen methodology authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='inputs/iter504u_shallow_unresolved_depth_binding_repair_authority.json'
+          MARK='recovery/ITER504U_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_LAUNCH_2026-09-17.txt'
+          test -f "$AUTH" && test -f "$MARK"
+          python - <<'PY'
+          import json
+          a=json.load(open('inputs/iter504u_shallow_unresolved_depth_binding_repair_authority.json'))
+          assert a['gate']=='ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_GATE'
+          assert a['execution_count']==1
+          assert a['science_access_authorized'] is False
+          assert a['source_run_id']==35246605860
+          assert a['source_run_payload_access'] is False
+          assert a['preregistration_commit']=='a2dc229c849f5b15668e984b5947eb45386757f3'
+          assert a['preregistration_blob']=='82b9ce891855771f9614ac5bb44581527bcb8136'
+          assert a['repair_wrapper_blob']=='d10bb168e93b3e3b5496a4f40bb0f16a9bd59dd4'
+          assert a['gate_evaluator_blob']=='8f70f7c45b140b72c81f2d8fd158c61e0159d040'
+          assert a['original_critic_blob']=='c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          assert a['c4_wrapper_blob']=='bcea2946a0f9676b50897dc4bbe74fa1122a9965'
+          assert a['producer_blob']=='bf457eef08f7df32523c9e22ce3b3713f10d97a0'
+          assert a['assembler_blob']=='5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
+          assert a['aggregate_blob']=='23165f9d99ff9a2f90c27a51cb889d5920327f92'
+          assert a['python_lanes']==['3.11','3.13']
+          assert a['required_cross_environment_json_equality'] is True
+          assert a['production_science_changed'] is False
+          assert a['scientific_taxonomy_changed'] is False
+          PY
+          auth_commit="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          test -n "$auth_commit"
+          git merge-base --is-ancestor "$auth_commit" HEAD
+          git merge-base --is-ancestor a2dc229c849f5b15668e984b5947eb45386757f3 HEAD
+          test "$(git hash-object research/prereg/ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_2026-09-17.md)" = '82b9ce891855771f9614ac5bb44581527bcb8136'
+          test "$(git hash-object code/iter504u_heldout_critic_depth_binding_repair.py)" = 'd10bb168e93b3e3b5496a4f40bb0f16a9bd59dd4'
+          test "$(git hash-object code/iter504u_critic_depth_binding_repair_gate.py)" = '8f70f7c45b140b72c81f2d8fd158c61e0159d040'
+          test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          test "$(git hash-object code/iter504u_heldout_critic_c4_fixture_repair.py)" = 'bcea2946a0f9676b50897dc4bbe74fa1122a9965'
+          test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
+          test "$(git hash-object code/iter504u_heldout_assemble.py)" = '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
+          test "$(git hash-object code/iter504u_heldout_aggregate.py)" = '23165f9d99ff9a2f90c27a51cb889d5920327f92'
+          expected="$(python - <<'PY'
+          import json
+          print(json.load(open('inputs/iter504u_shallow_unresolved_depth_binding_repair_authority.json'))['workflow_blob'])
+          PY
+          )"
+          test "$(git hash-object .github/workflows/iter504u-shallow-unresolved-depth-binding-repair.yml)" = "$expected"
+
+  replay:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Execute frozen synthetic shared-validator repair gate
+        env:
+          PYTHONPATH: code
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p out
+          python code/iter504u_critic_depth_binding_repair_gate.py | tee out/result.json
+          rc=${PIPESTATUS[0]}
+          set -e
+          test "$rc" -eq 0 -o "$rc" -eq 2
+          python - <<PY
+          import json
+          d=json.load(open('out/result.json'))
+          assert d['classification'] in {
+            'ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED',
+            'ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_FAIL_SCOPED',
+          }
+          assert d['production_science_consumed'] is False
+          assert d['source_run_classified'] is False
+          open('out/returncode.txt','w').write(str($rc)+'\n')
+          PY
+          sha256sum out/result.json out/returncode.txt > out/replay.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-shallow-depth-repair-${{ matrix.python }}
+          path: out
+          if-no-files-found: error
+
+  aggregate:
+    needs: replay
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-shallow-depth-repair-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-shallow-depth-repair-3.13
+          path: b
+      - name: Require exact cross-environment agreement
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp a/result.json b/result.json
+          cmp a/returncode.txt b/returncode.txt
+          mkdir -p out
+          cp a/result.json out/result.json
+          cp a/returncode.txt out/returncode.txt
+          python - <<'PY'
+          import json
+          d=json.load(open('out/result.json'))
+          assert d['production_science_consumed'] is False
+          assert d['source_run_classified'] is False
+          assert d['classification'] in {
+            'ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED',
+            'ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_FAIL_SCOPED',
+          }
+          PY
+          sha256sum out/result.json out/returncode.txt > out/aggregate.sha256
+          cat out/result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-shallow-depth-repair-aggregate
+          path: out
+          if-no-files-found: error
