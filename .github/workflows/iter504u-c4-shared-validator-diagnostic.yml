@@ -1,0 +1,115 @@
+name: KMQGB Iter504U C4 shared-validator diagnostic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504U_C4_SHARED_VALIDATOR_DIAGNOSTIC_LAUNCH_2026-09-17.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify diagnostic-only frozen object
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='inputs/iter504u_c4_shared_validator_diagnostic_authority.json'
+          MARK='recovery/ITER504U_C4_SHARED_VALIDATOR_DIAGNOSTIC_LAUNCH_2026-09-17.txt'
+          test -f "$AUTH" && test -f "$MARK"
+          python - <<'PY'
+          import json
+          a=json.load(open('inputs/iter504u_c4_shared_validator_diagnostic_authority.json'))
+          assert a['gate']=='ITER504U_C4_SHARED_VALIDATOR_DIAGNOSTIC'
+          assert a['execution_count']==1
+          assert a['science_access_authorized'] is False
+          assert a['evaluator_blob']=='20a854869dbd0a61824b6c7e8a4f829507f5b126'
+          assert a['original_critic_blob']=='c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          assert a['repair_wrapper_blob']=='bcea2946a0f9676b50897dc4bbe74fa1122a9965'
+          PY
+          auth_commit="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          git merge-base --is-ancestor "$auth_commit" HEAD
+          git merge-base --is-ancestor dd8ea4c0f6df3f0da6139e293d6b8fd5bea5d02a HEAD
+          git merge-base --is-ancestor 151c4ea951c04278811e4c557847e01b32bbb97c HEAD
+          test "$(git hash-object code/iter504u_critic_c4_fixture_repair_gate.py)" = '20a854869dbd0a61824b6c7e8a4f829507f5b126'
+          test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          test "$(git hash-object code/iter504u_heldout_critic_c4_fixture_repair.py)" = 'bcea2946a0f9676b50897dc4bbe74fa1122a9965'
+          expected="$(python - <<'PY'
+          import json
+          print(json.load(open('inputs/iter504u_c4_shared_validator_diagnostic_authority.json'))['workflow_blob'])
+          PY
+          )"
+          test "$(git hash-object .github/workflows/iter504u-c4-shared-validator-diagnostic.yml)" = "$expected"
+
+  replay:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Replay exact frozen synthetic evaluator and expose JSON
+        env:
+          PYTHONPATH: code
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p out
+          python code/iter504u_critic_c4_fixture_repair_gate.py | tee out/result.json
+          rc=${PIPESTATUS[0]}
+          set -e
+          test "$rc" -eq 0 -o "$rc" -eq 2
+          python - <<PY
+          import json
+          d=json.load(open('out/result.json'))
+          assert d['production_science_consumed'] is False
+          assert d['source_run_classified'] is False
+          open('out/returncode.txt','w').write(str($rc)+'\n')
+          PY
+          sha256sum out/result.json > out/result.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-c4-shared-validator-diagnostic-${{ matrix.python }}
+          path: out
+          if-no-files-found: error
+
+  aggregate:
+    needs: replay
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-c4-shared-validator-diagnostic-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-c4-shared-validator-diagnostic-3.13
+          path: b
+      - name: Require exact diagnostic agreement
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp a/result.json b/result.json
+          cmp a/returncode.txt b/returncode.txt
+          mkdir -p out
+          cp a/result.json out/result.json
+          cp a/returncode.txt out/returncode.txt
+          sha256sum out/result.json out/returncode.txt > out/diagnostic.sha256
+          cat out/result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-c4-shared-validator-diagnostic-aggregate
+          path: out
+          if-no-files-found: error
