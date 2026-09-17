@@ -1,0 +1,222 @@
+name: KMQGB Iter504U repaired Critic closure
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504U_CRITIC_C4_FIXTURE_REPAIR_CLOSURE_LAUNCH_2026-09-17.txt'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospectively frozen closure repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='inputs/iter504u_critic_c4_fixture_repair_closure_authority.json'
+          MARK='recovery/ITER504U_CRITIC_C4_FIXTURE_REPAIR_CLOSURE_LAUNCH_2026-09-17.txt'
+          test -f "$AUTH"
+          test -f "$MARK"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('inputs/iter504u_critic_c4_fixture_repair_closure_authority.json').read_text())
+          assert a['gate']=='ITER504U_CRITIC_C4_FIXTURE_REPAIR_CLOSURE'
+          assert a['source_run_id']==35246605860
+          assert a['source_run_head']=='102c7f9cafec956f3bc7bed4384ae755c98f761a'
+          assert a['physics_rerun_authorized'] is False
+          assert a['science_changed'] is False
+          assert a['cohort_changed'] is False
+          assert a['critic_fixture_repair_only'] is True
+          assert a['repair_prereg_commit']=='5ad9664e88e517cd64bd9971bac5c4c239ba4672'
+          assert a['repair_methodology_run']==35250463093
+          assert a['repair_methodology_conclusion']=='success'
+          assert len(a['required_artifacts'])==15
+          assert len({x['name'] for x in a['required_artifacts']})==15
+          PY
+          auth_commit="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          test -n "$auth_commit"
+          git merge-base --is-ancestor "$auth_commit" HEAD
+          for c in \
+            5ad9664e88e517cd64bd9971bac5c4c239ba4672 \
+            3dadd0aa18bcac46366b1210f51ce678d06c6734 \
+            8a2ff66441eb9fc242489bf37db5099526b48556 \
+            102c7f9cafec956f3bc7bed4384ae755c98f761a \
+            05b8e9354c9a7805f0fce18b904346a986a0787f; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+          test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          test "$(git hash-object code/iter504u_heldout_critic_c4_fixture_repair.py)" = 'ff82b1dee8c26788083ad2ac6aff46c96040305c'
+          test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
+          test "$(git hash-object code/iter504u_heldout_assemble.py)" = '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
+          test "$(git hash-object code/iter504u_heldout_aggregate.py)" = '23165f9d99ff9a2f90c27a51cb889d5920327f92'
+          expected_workflow="$(python - <<'PY'
+          import json
+          print(json.load(open('inputs/iter504u_critic_c4_fixture_repair_closure_authority.json'))['workflow_blob_sha'])
+          PY
+          )"
+          test "$(git hash-object .github/workflows/iter504u-critic-c4-fixture-repair-closure.yml)" = "$expected_workflow"
+
+  review:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify immutable source-run metadata and artifact identities
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p frozen/raw-a frozen/raw-b frozen/asm-a frozen/asm-b frozen/aggregate out
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35246605860" > out/source-run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35246605860/artifacts?per_page=100" > out/source-artifacts.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          auth=json.loads(Path('inputs/iter504u_critic_c4_fixture_repair_closure_authority.json').read_text())
+          run=json.loads(Path('out/source-run.json').read_text())
+          arts=json.loads(Path('out/source-artifacts.json').read_text())['artifacts']
+          assert run['id']==auth['source_run_id']
+          assert run['head_sha']==auth['source_run_head']
+          assert run['status']=='completed'
+          by_name={x['name']:x for x in arts}
+          for req in auth['required_artifacts']:
+              got=by_name.get(req['name'])
+              assert got is not None, req['name']
+              assert got['id']==req['id'], (req,got)
+              assert got.get('digest')==req['digest'], (req,got)
+              assert got.get('expired') is False
+          print('ITER504U_CLOSURE_ARTIFACT_IDENTITIES_VERIFIED')
+          PY
+      - name: Download exact frozen upstream artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for cid in H0_AMP_LOW H1_AMP_MID H2_CAUSAL_1 H3_CAUSAL_2 H4_DIRECTION H5_SIGN; do
+            gh run download 35246605860 -n "iter504u-heldout-3.11-$cid" -D "frozen/raw-a/$cid"
+            gh run download 35246605860 -n "iter504u-heldout-3.13-$cid" -D "frozen/raw-b/$cid"
+          done
+          gh run download 35246605860 -n iter504u-heldout-assembled-3.11 -D frozen/asm-a
+          gh run download 35246605860 -n iter504u-heldout-assembled-3.13 -D frozen/asm-b
+          gh run download 35246605860 -n iter504u-heldout-aggregate -D frozen/aggregate
+          test "$(find frozen/raw-a -name case.json | wc -l)" -eq 6
+          test "$(find frozen/raw-b -name case.json | wc -l)" -eq 6
+          test -f frozen/asm-a/iter504u-3.11.json
+          test -f frozen/asm-b/iter504u-3.13.json
+          test -f frozen/aggregate/iter504u-aggregate.json
+          find frozen -type f -print0 | sort -z | xargs -0 sha256sum > out/downloaded-content.sha256
+      - name: Run repaired independent Critic only
+        env:
+          PYTHONPATH: code
+        shell: bash
+        run: |
+          set -euo pipefail
+          python code/iter504u_heldout_critic_c4_fixture_repair.py \
+            --a-dir frozen/raw-a \
+            --b-dir frozen/raw-b \
+            --a-assembled frozen/asm-a/iter504u-3.11.json \
+            --b-assembled frozen/asm-b/iter504u-3.13.json \
+            --aggregate frozen/aggregate/iter504u-aggregate.json \
+            --out out/repaired-critic.json | tee out/repaired-critic.log
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('out/repaired-critic.json').read_text())
+          assert d['classification'] in {
+              'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED',
+              'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED',
+          }, d
+          assert d['critic_errors']==[]
+          assert d['cross_environment_exact_decision_agreement'] is True
+          assert d['negative_controls']
+          assert all(d['negative_controls'].values())
+          if d['classification']=='ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED':
+              assert d['total_unresolved_leaves']==0
+          else:
+              assert d['total_unresolved_leaves']>0
+          print('ITER504U_REPAIRED_CRITIC_VALID',d['classification'])
+          PY
+          sha256sum out/repaired-critic.json out/repaired-critic.log out/downloaded-content.sha256 > out/review-files.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-repaired-critic-review-${{ matrix.python }}
+          path: out
+          if-no-files-found: error
+
+  closure:
+    needs: review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-repaired-critic-review-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-repaired-critic-review-3.13
+          path: b
+      - name: Require independent closure-review equality
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp a/repaired-critic.json b/repaired-critic.json
+          cmp a/downloaded-content.sha256 b/downloaded-content.sha256
+          mkdir -p out
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          a=json.loads(Path('a/repaired-critic.json').read_text())
+          b=json.loads(Path('b/repaired-critic.json').read_text())
+          assert a==b
+          assert a['critic_errors']==[]
+          assert a['cross_environment_exact_decision_agreement'] is True
+          assert all(a['negative_controls'].values())
+          classification=a['classification']
+          assert classification in {
+              'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED',
+              'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED',
+          }
+          review_sha=hashlib.sha256(Path('a/repaired-critic.json').read_bytes()).hexdigest()
+          payload={
+              'gate':'ITER504U_CRITIC_C4_FIXTURE_REPAIR_CLOSURE',
+              'source_run_id':35246605860,
+              'classification':classification,
+              'repaired_critic_sha256':review_sha,
+              'cross_python_repaired_review_equal':True,
+              'critic_errors':a['critic_errors'],
+              'negative_controls':a['negative_controls'],
+              'total_cases':a['total_cases'],
+              'total_terminal_leaves':a['total_terminal_leaves'],
+              'total_unresolved_leaves':a['total_unresolved_leaves'],
+              'decision_projection_sha256':a['decision_projection_sha256'],
+              'claim_ceiling':'exact frozen Iter504U six-case held-out run only; no all-domain/global promotion',
+          }
+          payload['closure_payload_sha256']=hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+          Path('out/iter504u-repaired-critic-closure.json').write_text(json.dumps(payload,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(payload,sort_keys=True))
+          PY
+          sha256sum out/iter504u-repaired-critic-closure.json > out/iter504u-repaired-critic-closure.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-repaired-critic-closure
+          path: out
+          if-no-files-found: error
