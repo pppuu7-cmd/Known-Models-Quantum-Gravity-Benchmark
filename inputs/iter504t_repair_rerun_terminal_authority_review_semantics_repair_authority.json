@@ -1,0 +1,96 @@
+{
+  "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_GATE",
+  "date": "2026-09-17",
+  "starting_reconciled_main": "cbce8ad400e1f0588f04e0a66eff26341647e055",
+  "preregistration_commit": "5b18ffbe46b967ef64c54d6181924aa8acf6f43e",
+  "latest_critic": {
+    "path": "recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_2026-09-17.md",
+    "blob_sha": "5362de2604715d198be4f2c426a430da80a9017d",
+    "commit": "15b323994844fd83dfa0dc71efb977ba4300de97",
+    "verdict": "INVALID_IMPLEMENTATION",
+    "required_repairs": [
+      "preserve exact original scientific INCONCLUSIVE label ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED",
+      "propagate structural lane blocked state to ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED"
+    ]
+  },
+  "historical_review_objects": {
+    "preregistration_path": "research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_GATE_2026-09-17.md",
+    "preregistration_blob_sha": "08cb812a08661c423e65949e51da532ca1724150",
+    "authority_path": "inputs/iter504t_repair_rerun_terminal_authority_review_authority.json",
+    "authority_blob_sha": "a923abe40cb6c08442013d696433bfc984794854",
+    "reviewer_path": "code/iter504t_repair_rerun_terminal_authority_review.py",
+    "reviewer_blob_sha": "82d86498c74e9953815eb9bcd807387c9deeec73",
+    "aggregate_path": "code/iter504t_repair_rerun_terminal_authority_review_aggregate.py",
+    "aggregate_blob_sha": "9f9f76676aeb043e3219efe73731fd9cfbfe9261",
+    "workflow_path": ".github/workflows/iter504t-repair-rerun-terminal-authority-review.yml",
+    "workflow_blob_sha": "abfa8e636b11290dd89d3f553e62cc263af13e35",
+    "historical_preregistration_commit": "a4be2171d5d325ba25b805603a2e9e30e542520b",
+    "historical_authority_commit": "525cea7c03dfae45c668f9fb57b23ad30ac15010",
+    "historical_reviewer_commit": "cd30ab36e61f4668a73214f603dd018eeb503825",
+    "historical_workflow_head": "8cf5aefa4b15b5a6c7dfaf7f08d1884ba8363658"
+  },
+  "scientific_preregistration_commit": "aa2b0256ce60d605574a18ec86c0bad5b5df1512",
+  "repair_preregistration_commit": "adc7bfb9df77a90455cac1b0f0cb7255d80c44d5",
+  "repair_authority_commit": "a47a9140cf10f2f0f912943133a01238ff1b5653",
+  "repair_launch_head": "10ae6bcc8447d14cecc6e550065504b23f792953",
+  "terminal_run": {
+    "id": 35205054496,
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "10ae6bcc8447d14cecc6e550065504b23f792953"
+  },
+  "terminal_c4_authority": {
+    "closure_preregistration_commit": "aa421bd0b1aec1cbcc7a381fb00e947798d1b084",
+    "closure_authority_commit": "9aa9f77093bd34e058641bb141c8f95a4794d841",
+    "classification": "ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED",
+    "independent_critic_verdict": "CONFIRMED_SCOPED",
+    "frozen_missing_binding": "leaf.certified == all(rho.certified for rho in leaf.per_rho)"
+  },
+  "required_terminal_artifacts": [
+    {
+      "name": "iter504t-repair-assembled-3.11",
+      "id": 10498265422,
+      "digest": "sha256:3e6739a93cd6e467ea4d1929c37bf68a830fabcd10e415bf2d08388ee4dc0075"
+    },
+    {
+      "name": "iter504t-repair-assembled-3.13",
+      "id": 10497554745,
+      "digest": "sha256:fee046299dee740c4a85df00eb8e6c21628ad98b7bf812a0518f8a423e6df2ff"
+    },
+    {
+      "name": "iter504t-repair-aggregate",
+      "id": 10497359984,
+      "digest": "sha256:dee8780bb093f8dfe35419a1e4749127cebf730972ed1a395bc894ebfb7d0d47"
+    },
+    {
+      "name": "iter504t-repair-critic",
+      "id": 10498490034,
+      "digest": "sha256:cbe6e8856f16850f5c4ecefe07a9c64aa6a7c2c0d035383f385da99c264078a1"
+    },
+    {
+      "name": "iter504t-repair-verdict",
+      "id": 10498015467,
+      "digest": "sha256:888edcf687b1c6705d32cd2aae3f03637732376f2eb2eadd8818690fd00cad49"
+    }
+  ],
+  "frozen_science": {
+    "roots": [13, 14, 15],
+    "rhos": [0.35, 0.9, 1.6, 2.7],
+    "R": [6, 8, 10, 12],
+    "channels": 243,
+    "precision_bits": 384,
+    "threshold": "1/20",
+    "slope_floor": "1",
+    "MAX_DEPTH": 3,
+    "PASS": "ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED",
+    "INCONCLUSIVE": "ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED"
+  },
+  "review_outcomes": {
+    "PASS": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+    "FAIL": "ITER504T_REPAIR_RERUN_AUTHORITY_RESTORATION_FAILED_SCOPED",
+    "BLOCKED": "ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED",
+    "INVALID": "INVALID_IMPLEMENTATION"
+  },
+  "decision_rule": "structural insufficiency => BLOCKED; authority/provenance/control failure => INVALID; complete valid exact data with leaf/science binding contradiction => FAIL; complete valid zero-unresolved original science PASS => exact-run authority PASS; complete valid nonzero-unresolved original science INCONCLUSIVE => preserve ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED",
+  "interpretation_ceiling": "exact completed run 35205054496 only; historical C4 remains confirmed for reusable launch-head validator; no all-1888/D7/model/family/selector/Candidate Gravity/Paper IV/global QG conclusion"
+}
