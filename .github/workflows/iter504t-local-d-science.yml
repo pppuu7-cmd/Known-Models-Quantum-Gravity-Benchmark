@@ -1,0 +1,225 @@
+name: KMQGB Iter504T local-D bounded science
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504T_LAUNCH_AUTHORIZED_2026-09-17.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify single Iter504T execution authority and frozen blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='research/methodology/ITER504T_SINGLE_EXECUTION_AUTHORITY_2026-09-17.txt'
+          MARK='recovery/ITER504T_LAUNCH_AUTHORIZED_2026-09-17.txt'
+          test -f "$AUTH"
+          test -f "$MARK"
+          grep -Fx 'EXECUTION_AUTHORIZED=true' "$AUTH"
+          grep -Fx 'SCIENCE_CHANGED=false' "$AUTH"
+          grep -Fx 'THRESHOLD_CHANGED=false' "$AUTH"
+          grep -Fx 'COHORT_CHANGED=false' "$AUTH"
+          grep -Fx 'SOURCE_CHANGED=false' "$AUTH"
+          grep -Fx 'MAX_DEPTH=3' "$AUTH"
+          grep -Fx 'THRESHOLD_EXACT=1/20' "$AUTH"
+          grep -Fx 'ROBUST_FLOOR_EXACT=1' "$AUTH"
+          auth_commit="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          test -n "$auth_commit"
+          git merge-base --is-ancestor "$auth_commit" HEAD
+          test "$(git hash-object code/iter504t_local_derivative_contraction.py)" = '1ae78fc309839da30d1c78fc25c8e5ea3d98693f'
+          test "$(git hash-object code/iter504t_local_derivative_assemble.py)" = '6a886bf6ce8c263e586a6cb25d7441df5273a72d'
+          test "$(git hash-object code/iter504t_local_derivative_aggregate.py)" = '10a4338f5b55485b98cfdb6bfecd1a7e646a130a'
+          test "$(git hash-object code/iter504t_local_derivative_critic.py)" = '950d22e97b1ca2a17b2bb08d4386de6d4fb39445'
+          test "$(git hash-object research/prereg/ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md)" = "$(git rev-parse aa2b0256ce60d605574a18ec86c0bad5b5df1512:research/prereg/ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md)"
+          expected_workflow="$(sed -n 's/^WORKFLOW_BLOB_SHA=//p' "$AUTH")"
+          test -n "$expected_workflow"
+          test "$(git hash-object .github/workflows/iter504t-local-d-science.yml)" = "$expected_workflow"
+          for c in 1b0004064575f046210383dc7b1ee22d4f25e66b aa2b0256ce60d605574a18ec86c0bad5b5df1512 81e0e94649a50cccc510dc2630456af45fd98e46 e2c9ed47f6788cc0018ceef11488a8a9c4424267; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax and constants recheck
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile code/iter504t_local_derivative_contraction.py code/iter504t_local_derivative_assemble.py code/iter504t_local_derivative_aggregate.py code/iter504t_local_derivative_critic.py
+          grep -F "MAX_DEPTH=3" code/iter504t_local_derivative_contraction.py
+          grep -F "TOL=arb('0.05')" code/iter504t_local_derivative_contraction.py
+          grep -F "FLOOR=arb('1.0')" code/iter504t_local_derivative_contraction.py
+
+  roots:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+        root_box: [13,14,15]
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Capture environment
+        shell: bash
+        run: |
+          mkdir -p out
+          python -VV > out/python.txt 2>&1
+          python -m pip freeze > out/pip-freeze.txt
+          python - <<'PY' > out/flint.txt
+          import flint
+          print(getattr(flint, '__version__', 'unknown'))
+          PY
+          uname -a > out/uname.txt
+      - name: Execute frozen bounded local-D root
+        env:
+          PYTHONPATH: code
+        run: python code/iter504t_local_derivative_contraction.py --root-box '${{ matrix.root_box }}' --out 'out/root-${{ matrix.root_box }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504t-local-d-${{ matrix.python }}-root-${{ matrix.root_box }}
+          path: out
+          if-no-files-found: error
+
+  assemble:
+    needs: roots
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-local-d-${{ matrix.python }}-root-13
+          path: roots/13
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-local-d-${{ matrix.python }}-root-14
+          path: roots/14
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-local-d-${{ matrix.python }}-root-15
+          path: roots/15
+      - name: Assemble one environment independently
+        run: |
+          mkdir -p out
+          python code/iter504t_local_derivative_assemble.py --root13 roots/13/root-13.json --root14 roots/14/root-14.json --root15 roots/15/root-15.json --out 'out/iter504t-${{ matrix.python }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-local-d-assembled-${{ matrix.python }}
+          path: out/iter504t-${{ matrix.python }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: assemble
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-local-d-assembled-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-local-d-assembled-3.13
+          path: b
+      - name: Aggregate exact scientific decisions
+        run: |
+          mkdir -p out
+          python code/iter504t_local_derivative_aggregate.py --a a/iter504t-3.11.json --b b/iter504t-3.13.json --out out/iter504t-aggregate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504t-local-d-aggregate
+          path: out/iter504t-aggregate.json
+          if-no-files-found: error
+
+  critic:
+    needs: [assemble, aggregate]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504t-local-d-3.11-root-*
+          path: roots-a
+          merge-multiple: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504t-local-d-3.13-root-*
+          path: roots-b
+          merge-multiple: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-local-d-assembled-3.11
+          path: asm-a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-local-d-assembled-3.13
+          path: asm-b
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-local-d-aggregate
+          path: aggregate
+      - name: Independent adversarial Critic
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python code/iter504t_local_derivative_critic.py \
+            --a-root13 roots-a/iter504t-local-d-3.11-root-13/root-13.json \
+            --a-root14 roots-a/iter504t-local-d-3.11-root-14/root-14.json \
+            --a-root15 roots-a/iter504t-local-d-3.11-root-15/root-15.json \
+            --a-assembled asm-a/iter504t-3.11.json \
+            --b-root13 roots-b/iter504t-local-d-3.13-root-13/root-13.json \
+            --b-root14 roots-b/iter504t-local-d-3.13-root-14/root-14.json \
+            --b-root15 roots-b/iter504t-local-d-3.13-root-15/root-15.json \
+            --b-assembled asm-b/iter504t-3.13.json \
+            --aggregate aggregate/iter504t-aggregate.json \
+            --out out/iter504t-critic.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('aggregate/iter504t-aggregate.json').read_text())
+          c=json.loads(Path('out/iter504t-critic.json').read_text())
+          assert a['classification']==c['classification']
+          assert a['classification']!='ITER504T_INVALID'
+          assert not c['critic_errors']
+          assert c['cross_environment_exact_decision_agreement'] is True
+          assert all(c['negative_controls'].values())
+          print('ITER504T_TERMINAL_CLASSIFICATION', a['classification'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504t-local-d-critic
+          path: out/iter504t-critic.json
+          if-no-files-found: error
