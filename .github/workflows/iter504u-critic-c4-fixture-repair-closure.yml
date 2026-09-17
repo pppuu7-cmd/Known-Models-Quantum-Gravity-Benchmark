@@ -37,7 +37,9 @@ jobs:
           assert a['cohort_changed'] is False
           assert a['critic_fixture_repair_only'] is True
           assert a['repair_prereg_commit']=='5ad9664e88e517cd64bd9971bac5c4c239ba4672'
-          assert a['repair_methodology_run']==35250463093
+          assert a['repair_wrapper_commit']=='f5cd17136ddfee8864bb7a46abbdb464f666f518'
+          assert a['repair_wrapper_blob']=='bcea2946a0f9676b50897dc4bbe74fa1122a9965'
+          assert a['repair_methodology_head']=='9793843843b53c1616af6fbfc72f7a8fa56a28ef'
           assert a['repair_methodology_conclusion']=='success'
           assert len(a['required_artifacts'])==15
           assert len({x['name'] for x in a['required_artifacts']})==15
@@ -47,14 +49,14 @@ jobs:
           git merge-base --is-ancestor "$auth_commit" HEAD
           for c in \
             5ad9664e88e517cd64bd9971bac5c4c239ba4672 \
-            3dadd0aa18bcac46366b1210f51ce678d06c6734 \
-            8a2ff66441eb9fc242489bf37db5099526b48556 \
+            f5cd17136ddfee8864bb7a46abbdb464f666f518 \
+            9793843843b53c1616af6fbfc72f7a8fa56a28ef \
             102c7f9cafec956f3bc7bed4384ae755c98f761a \
             05b8e9354c9a7805f0fce18b904346a986a0787f; do
             git merge-base --is-ancestor "$c" HEAD
           done
           test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
-          test "$(git hash-object code/iter504u_heldout_critic_c4_fixture_repair.py)" = 'ff82b1dee8c26788083ad2ac6aff46c96040305c'
+          test "$(git hash-object code/iter504u_heldout_critic_c4_fixture_repair.py)" = 'bcea2946a0f9676b50897dc4bbe74fa1122a9965'
           test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
           test "$(git hash-object code/iter504u_heldout_assemble.py)" = '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
           test "$(git hash-object code/iter504u_heldout_aggregate.py)" = '23165f9d99ff9a2f90c27a51cb889d5920327f92'
