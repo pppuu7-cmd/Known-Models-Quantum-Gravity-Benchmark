@@ -1,0 +1,155 @@
+name: KMQGB Iter504T terminal review artifact boundary repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504t-repair-rerun-terminal-authority-review-artifact-boundary-repair.yml'
+      - 'code/iter504t_artifact_boundary_collect.py'
+      - 'code/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair.py'
+      - 'code/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective freeze and immutable repository authority
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 4a5f7d1c651527249b2831b6886cd502dc18e648 HEAD
+          git merge-base --is-ancestor fbfca6f932dd540898de3d9d738e9f953de8ac84 HEAD
+          git merge-base --is-ancestor 7263accb799829fddef81c1b4759822261f8b8d4 HEAD
+          test "$(git hash-object research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_GATE_2026-09-17.md)" = 5595687c8771fdb043d2407cd614e45f5b6f0f68
+          test "$(git hash-object inputs/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_authority.json)" = 4fee46cc5f4b305282dfd68ba7a1abc5ed28fef3
+          test "$(git hash-object recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_2026-09-17.md)" = 9f89a4674afbdb313d12e7f72692177cfa0eb42a
+          test "$(git hash-object code/iter504t_repair_rerun_terminal_authority_review_semantics_repair.py)" = 8b8650751a6f7fc66ac2cba64e7335e0100180d6
+          grep -F 'ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED' research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_GATE_2026-09-17.md
+          grep -F 'ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED' research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_GATE_2026-09-17.md
+          grep -F 'INVALID_IMPLEMENTATION' research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_GATE_2026-09-17.md
+          python -m py_compile \
+            code/iter504t_artifact_boundary_collect.py \
+            code/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair.py \
+            code/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_aggregate.py \
+            code/iter504t_repair_rerun_terminal_authority_review_semantics_repair.py
+
+  boundary-control:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Exercise real workflow-boundary missing-artifact path
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p control artifacts
+          python code/iter504t_artifact_boundary_collect.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_authority.json \
+            --repo "$GITHUB_REPOSITORY" \
+            --out-dir control/terminal \
+            --manifest control/manifest.json \
+            --simulate-missing-role verdict \
+            --control-only | tee control/collector.log
+          python code/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_authority.json \
+            --manifest control/manifest.json \
+            --out artifacts/boundary_control.json | tee artifacts/boundary_control.log
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('artifacts/boundary_control.json').read_text())
+          assert d['classification']=='ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED'
+          assert d['workflow_boundary_control_reached_classifier'] is True
+          m=d['artifact_manifest']; role=m['simulate_missing_role']
+          e=next(x for x in m['entries'] if x['role']==role)
+          assert e['download_attempted'] is True
+          assert isinstance(e['download_returncode'], int) and e['download_returncode'] != 0
+          assert e['state']=='MISSING_OR_UNAVAILABLE'
+          PY
+          sha256sum artifacts/boundary_control.json artifacts/boundary_control.log control/manifest.json > artifacts/boundary_control.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-artifact-boundary-missing-control
+          path: artifacts/boundary_control.*
+          if-no-files-found: error
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Collect frozen terminal artifacts without aborting missing branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag=$(echo '${{ matrix.python }}' | tr -d '.')
+          mkdir -p "terminal_${tag}" artifacts
+          python code/iter504t_artifact_boundary_collect.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_authority.json \
+            --repo "$GITHUB_REPOSITORY" \
+            --out-dir "terminal_${tag}" \
+            --manifest "terminal_${tag}/manifest.json" | tee "terminal_${tag}/collector.log"
+      - name: Run frozen artifact-boundary repaired review
+        run: |
+          set -euo pipefail
+          tag=$(echo '${{ matrix.python }}' | tr -d '.')
+          python code/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_authority.json \
+            --manifest "terminal_${tag}/manifest.json" \
+            --out "artifacts/artifact_boundary_review_${tag}.json" | tee "artifacts/artifact_boundary_review_${tag}.log"
+          sha256sum "artifacts/artifact_boundary_review_${tag}.json" "artifacts/artifact_boundary_review_${tag}.log" "terminal_${tag}/manifest.json" > "artifacts/artifact_boundary_review_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-artifact-boundary-review-${{ matrix.python }}
+          path: artifacts/artifact_boundary_review_*
+          if-no-files-found: error
+
+  aggregate:
+    needs: [lane, boundary-control]
+    if: ${{ always() && needs.lane.result == 'success' && needs.boundary-control.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504t-artifact-boundary-review-*
+          path: downloaded/review
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-artifact-boundary-missing-control
+          path: downloaded/control
+      - name: Aggregate repaired boundary review
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_aggregate.py \
+            --a downloaded/review/artifact_boundary_review_311.json \
+            --b downloaded/review/artifact_boundary_review_313.json \
+            --control downloaded/control/boundary_control.json \
+            --out artifacts/artifact_boundary_review_aggregate.json | tee artifacts/artifact_boundary_review_aggregate.log
+          sha256sum artifacts/artifact_boundary_review_aggregate.json artifacts/artifact_boundary_review_aggregate.log > artifacts/artifact_boundary_review_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-artifact-boundary-review-aggregate
+          path: artifacts/artifact_boundary_review_aggregate.*
+          if-no-files-found: error
