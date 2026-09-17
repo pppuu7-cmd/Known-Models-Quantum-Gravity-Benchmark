@@ -1,0 +1,44 @@
+{
+  "baseline_validation_errors": [],
+  "claim_ceiling": "Critic C4 synthetic fixture repair only; no Iter504U science classification",
+  "classification": "ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED",
+  "contradiction_validation_errors": [
+    "H0_AMP_LOW:C4_leaf_binding"
+  ],
+  "controls": {
+    "coherent_noncontradictory_fixture_accepted": true,
+    "contradiction_hits_exact_c4_binding": true,
+    "contradictory_fixture_rejected_shared_validator": true,
+    "full_repaired_negative_control_suite_passes_on_coherent_fixture": true,
+    "original_critic_blob": true,
+    "outcome_independent_false_carrier_rejected_exact_c4": true,
+    "production_gate_unchanged": true,
+    "production_prereg_unchanged": true,
+    "repair_prereg": true
+  },
+  "errors": [],
+  "false_carrier_validation_errors": [
+    "H0_AMP_LOW:C4_leaf_binding"
+  ],
+  "formal_preregistration_commit": "662e1b40c4584a5b1989b821cd7a5c334ef8fc44",
+  "gate": "ITER504U_CRITIC_C4_FIXTURE_REPAIR_GATE",
+  "payload_sha256": "974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f",
+  "production_science_consumed": false,
+  "repaired_negative_controls": {
+    "C4_true_leaf_false_rho": true,
+    "changed_depth": true,
+    "changed_floor": true,
+    "changed_threshold": true,
+    "channel_pruning": true,
+    "development_box_inserted": true,
+    "float_decision_transport": true,
+    "leaf_binding_tag_removed": true,
+    "missing_heldout_case": true,
+    "non_dyadic_partition": true,
+    "root_derivative_reuse": true,
+    "wrong_R_cohort": true,
+    "wrong_case_identity": true,
+    "wrong_rho_cohort": true
+  },
+  "source_run_classified": false
+}
