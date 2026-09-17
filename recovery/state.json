@@ -1,68 +1,102 @@
 {
-  "schema_version": "10.0",
+  "schema_version": "iter504u-recovery-v3",
   "updated": "2026-09-17",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
-  "authority_rule": "fresh GitHub repository state and GitHub Actions state outrank this cached recovery snapshot",
-  "active_iteration": "Iter504U",
-  "active_gate": "ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL",
-  "state": "RUNNING",
-  "prereg_commit": "05b8e9354c9a7805f0fce18b904346a986a0787f",
-  "source_head": "102c7f9cafec956f3bc7bed4384ae755c98f761a",
-  "workflow_id": ".github/workflows/iter504u-heldout-science.yml",
-  "run_id": 35246605860,
-  "artifacts": {
-    "status": "PARTIAL_NONAUTHORITATIVE_UNTIL_TERMINAL",
-    "terminal_required_count_for_repaired_closure": 15,
-    "terminal_inventory": null
+  "project": "KMQGB",
+  "latest_terminal_science": {
+    "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_DECISION_CANONICALIZATION_REPAIR_GATE",
+    "classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+    "independent_review_commit": "8624532254981fbea6f8fcfac09cd538e2066aa4",
+    "scope": "bounded development cases only"
   },
-  "producer_status": {
-    "source_lock": "SUCCESS",
-    "case_jobs_total": 12,
-    "case_jobs_success_at_snapshot": 7,
-    "case_jobs_in_progress_at_snapshot": 5,
-    "case_jobs_failed_at_snapshot": 0,
-    "partial_scientific_values_consumed": false,
-    "duplicate_or_restart_authorized": false
+  "active_science": {
+    "gate": "ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL",
+    "preregistration_commit": "05b8e9354c9a7805f0fce18b904346a986a0787f",
+    "source_launch_head": "102c7f9cafec956f3bc7bed4384ae755c98f761a",
+    "run_id": 35246605860,
+    "run_attempt": 1,
+    "status": "in_progress",
+    "source_lock": "success",
+    "case_lanes_success": 8,
+    "case_lanes_in_progress": 4,
+    "case_lanes_failed": 0,
+    "terminal_required_case_lanes": 12,
+    "partial_artifact_metadata_count": 8,
+    "partial_science_consumed": false,
+    "duplicate_or_restart_authorized": false,
+    "scientific_classification": null,
+    "frozen_labels": [
+      "ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED",
+      "ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED",
+      "ITER504U_INVALID"
+    ]
   },
-  "critic_status": {
-    "production_critic": "NOT_STARTED",
-    "c4_repair_firewall": "ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED",
-    "shared_validator_run_id": 35252175158,
-    "shared_validator_head": "c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2",
-    "shared_validator_payload_sha256": "974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f",
-    "repair_wrapper_blob": "bcea2946a0f9676b50897dc4bbe74fa1122a9965",
-    "terminal_methodology_result": "research/results/ITER504U_CRITIC_C4_SHARED_VALIDATOR_DIAGNOSTIC_TERMINAL_2026-09-17.md",
-    "terminal_methodology_result_blob": "4bc12d4bb1dab45562cc51c8344700a0f31d75c3",
-    "closure_workflow": ".github/workflows/iter504u-critic-c4-fixture-repair-closure.yml",
-    "closure_workflow_blob": "0305154049491bdc697e67d6306c3a48cf386e87",
-    "closure_status": "PREPARED_NOT_AUTHORIZED_UNTIL_TERMINAL_ARTIFACT_FREEZE"
+  "critic_repairs": {
+    "c4": {
+      "status": "terminal_validated_scoped",
+      "classification": "ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED",
+      "run_id": 35252175158,
+      "payload_sha256": "974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f",
+      "wrapper_blob": "bcea2946a0f9676b50897dc4bbe74fa1122a9965",
+      "production_science_consumed": false
+    },
+    "shallow_unresolved_depth_binding": {
+      "status": "terminal_validated_scoped",
+      "classification": "ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED",
+      "preregistration_commit": "a2dc229c849f5b15668e984b5947eb45386757f3",
+      "wrapper_commit": "1ca51a9fa7875509f38c5bed445ce5d1793d26eb",
+      "wrapper_blob": "d10bb168e93b3e3b5496a4f40bb0f16a9bd59dd4",
+      "run_id": 35266020916,
+      "run_head": "2d1f4e89f6fec1055a45505f58de167ef32b8fd0",
+      "payload_sha256": "71766a16b881c0358e2aded5bdf085dc6e4944ca0ffa4db4c2385f6bc3c42bc5",
+      "terminal_result_blob": "a5f1da37a2ee28d7758c747898ac8344a9d31f48",
+      "production_science_consumed": false,
+      "source_run_classified": false
+    }
   },
-  "terminal_classification": null,
-  "interpretation_ceiling": "No Iter504U scientific classification until the single production run is terminal, the exact 15 required artifact identities are prospectively frozen, and the repaired independent Critic closure is terminal.",
-  "single_current_blocker": "terminal lifecycle completion of production run 35246605860",
-  "next_authorized_gate": "ITER504U_TERMINAL_ARTIFACT_FREEZE_THEN_REPAIRED_CRITIC_CLOSURE",
-  "forbidden_downstream_claims": [
-    "ALL_KNOWN_MODELS_FAIL",
-    "NEW_THEORY_REQUIRED",
-    "QUANTUM_GRAVITY_SOLVED",
-    "NEW_PHYSICS_FOUND",
-    "TERMINAL_D7_FAMILY_CLASSIFICATION",
-    "CANDIDATE_GRAVITY_ACTIVATION",
-    "PAPER_IV_GLOBAL_CONCLUSION"
-  ],
+  "artifact_freeze": {
+    "status": "blocked_until_terminal_production",
+    "required_count": 15,
+    "currently_visible_metadata_count": 8,
+    "freeze_authority_created": false,
+    "science_payload_read": false
+  },
+  "prepared_closure": {
+    "gate": "ITER504U_REPAIRED_CRITIC_CLOSURE",
+    "workflow_path": ".github/workflows/iter504u-critic-c4-fixture-repair-closure.yml",
+    "workflow_blob": "1ca55311eedac38bd2f6a515b8d463d957426117",
+    "authority_path": "inputs/iter504u_repaired_critic_closure_authority.json",
+    "launch_marker": "recovery/ITER504U_REPAIRED_CRITIC_CLOSURE_LAUNCH_2026-09-17.txt",
+    "authority_created": false,
+    "launch_created": false,
+    "critic_entrypoint": "code/iter504u_heldout_critic_depth_binding_repair.py",
+    "supports_frozen_terminal_taxonomy": true
+  },
+  "current_blocker": "Iter504U production run 35246605860 must naturally terminalize before exact 15-artifact freeze and closure authority",
+  "next_authorized_action": "When run 35246605860 is terminal, metadata-only verify complete 15-artifact inventory, freeze exact IDs/digests/source head/attempt/expiration into one prospective closure authority, then launch exactly one repaired-Critic closure. Until terminalization do not consume partial science or rerun producer.",
   "governance": {
-    "rqir_core_v1": "FROZEN",
-    "d7_s2": "NOT_CLOSED",
-    "d7_s3": "NOT_CLOSED",
-    "d7_s4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "rqir_core": "FROZEN_v1.0",
+    "D7_S2": "NOT_CLOSED",
+    "D7_S3": "NOT_CLOSED",
+    "D7_S4": "PARTIAL_GLOBAL_NOT_CLOSED",
     "candidate_gravity": "INACTIVE",
     "paper_iv": "NOT_YET_AUTHORIZED",
-    "inconclusive_not_fail": true,
-    "blocked_not_fail": true,
-    "invalid_implementation_not_scientific_fail": true,
-    "infrastructure_pass_not_science_pass": true
-  },
-  "recovery_head": "c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2",
-  "recovery_head_semantics": "repository head used as the basis for this atomic recovery update; the commit containing this file is its direct successor"
+    "semantic_locks": [
+      "INCONCLUSIVE != FAIL",
+      "BLOCKED != FAIL",
+      "INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL",
+      "green CI != scientific PASS",
+      "scoped result != global closure"
+    ],
+    "forbidden_claims_without_terminal_authority": [
+      "ALL_KNOWN_MODELS_FAIL",
+      "NEW_QG_THEORY_REQUIRED",
+      "QUANTUM_GRAVITY_SOLVED",
+      "UNIQUE_MECHANISM",
+      "D7_FULLY_CLOSED",
+      "CANDIDATE_GRAVITY_ESTABLISHED",
+      "NEW_PHYSICS_FOUND"
+    ]
+  }
 }

@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'recovery/ITER504U_CRITIC_C4_FIXTURE_REPAIR_CLOSURE_LAUNCH_2026-09-17.txt'
+      - 'recovery/ITER504U_REPAIRED_CRITIC_CLOSURE_LAUNCH_2026-09-17.txt'
 
 permissions:
   contents: read
@@ -17,94 +17,106 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Verify prospectively frozen closure repair
+      - name: Verify prospectively frozen repaired-Critic closure
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
-          AUTH='inputs/iter504u_critic_c4_fixture_repair_closure_authority.json'
-          MARK='recovery/ITER504U_CRITIC_C4_FIXTURE_REPAIR_CLOSURE_LAUNCH_2026-09-17.txt'
-          test -f "$AUTH"
-          test -f "$MARK"
+          AUTH='inputs/iter504u_repaired_critic_closure_authority.json'
+          MARK='recovery/ITER504U_REPAIRED_CRITIC_CLOSURE_LAUNCH_2026-09-17.txt'
+          test -f "$AUTH" && test -f "$MARK"
           python - <<'PY'
           import json
           from pathlib import Path
-          a=json.loads(Path('inputs/iter504u_critic_c4_fixture_repair_closure_authority.json').read_text())
-          assert a['gate']=='ITER504U_CRITIC_C4_FIXTURE_REPAIR_CLOSURE'
+          a=json.loads(Path('inputs/iter504u_repaired_critic_closure_authority.json').read_text())
+          assert a['gate']=='ITER504U_REPAIRED_CRITIC_CLOSURE'
           assert a['source_run_id']==35246605860
           assert a['source_run_head']=='102c7f9cafec956f3bc7bed4384ae755c98f761a'
+          assert a['source_run_attempt']==1
           assert a['physics_rerun_authorized'] is False
           assert a['science_changed'] is False
           assert a['cohort_changed'] is False
-          assert a['critic_fixture_repair_only'] is True
-          assert a['repair_prereg_commit']=='5ad9664e88e517cd64bd9971bac5c4c239ba4672'
-          assert a['repair_wrapper_commit']=='f5cd17136ddfee8864bb7a46abbdb464f666f518'
-          assert a['repair_wrapper_blob']=='bcea2946a0f9676b50897dc4bbe74fa1122a9965'
-          assert a['repair_methodology_head']=='9793843843b53c1616af6fbfc72f7a8fa56a28ef'
-          assert a['repair_methodology_conclusion']=='success'
-          assert a['repair_shared_validator_run_id']==35252175158
-          assert a['repair_shared_validator_head']=='c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2'
-          assert a['repair_shared_validator_classification']=='ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED'
-          assert a['repair_shared_validator_payload_sha256']=='974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f'
-          assert a['repair_terminal_result_blob']=='4bc12d4bb1dab45562cc51c8344700a0f31d75c3'
-          expected_diag={
+          assert a['critic_only_repairs'] is True
+          assert a['c4_shared_validator_run_id']==35252175158
+          assert a['c4_shared_validator_classification']=='ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED'
+          assert a['c4_shared_validator_payload_sha256']=='974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f'
+          assert a['depth_repair_prereg_commit']=='a2dc229c849f5b15668e984b5947eb45386757f3'
+          assert a['depth_repair_wrapper_commit']=='1ca51a9fa7875509f38c5bed445ce5d1793d26eb'
+          assert a['depth_repair_wrapper_blob']=='d10bb168e93b3e3b5496a4f40bb0f16a9bd59dd4'
+          assert a['depth_repair_run_id']==35266020916
+          assert a['depth_repair_run_head']=='2d1f4e89f6fec1055a45505f58de167ef32b8fd0'
+          assert a['depth_repair_classification']=='ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED'
+          assert a['depth_repair_payload_sha256']=='71766a16b881c0358e2aded5bdf085dc6e4944ca0ffa4db4c2385f6bc3c42bc5'
+          assert a['depth_repair_terminal_result_blob']=='a5f1da37a2ee28d7758c747898ac8344a9d31f48'
+          assert len(a['required_artifacts'])==15
+          assert len({x['name'] for x in a['required_artifacts']})==15
+          expected_c4={
             'iter504u-c4-shared-validator-diagnostic-3.11': (10510475771,'sha256:583c1935ee815b7d4ba80e0396212d725933f6eabe4ac1f8fb4279f3a16ad0a1'),
             'iter504u-c4-shared-validator-diagnostic-3.13': (10510765344,'sha256:f768f75cdc9794d70c4b5cced1ee8692c2fb8e38873094251baed9694c907cea'),
             'iter504u-c4-shared-validator-diagnostic-aggregate': (10509679536,'sha256:9df7eed7be9e89c0083d2cb6b0631f3d190b12085253b5786e8808ba70883880'),
           }
-          got_diag={x['name']:(x['id'],x['digest']) for x in a['repair_shared_validator_artifacts']}
-          assert got_diag==expected_diag
-          assert len(a['required_artifacts'])==15
-          assert len({x['name'] for x in a['required_artifacts']})==15
+          assert {x['name']:(x['id'],x['digest']) for x in a['c4_shared_validator_artifacts']}==expected_c4
+          expected_depth={
+            'iter504u-shallow-depth-repair-3.11': (10516133819,'sha256:2babfa6d0e0f531f6bec555056d5c556c3bc57669ff5ebd275a5533a6f498c1d'),
+            'iter504u-shallow-depth-repair-3.13': (10517121305,'sha256:efaf017adafb07a981d9dd1024468b439f509261f7d248796af3873bd1cdbae3'),
+            'iter504u-shallow-depth-repair-aggregate': (10517086354,'sha256:383e1a51cdb7142a24ca3f8cad4514bc7165f2801229447f2b6c7fc76b597ab5'),
+          }
+          assert {x['name']:(x['id'],x['digest']) for x in a['depth_repair_artifacts']}==expected_depth
           PY
           auth_commit="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
           test -n "$auth_commit"
           git merge-base --is-ancestor "$auth_commit" HEAD
           for c in \
+            05b8e9354c9a7805f0fce18b904346a986a0787f \
+            102c7f9cafec956f3bc7bed4384ae755c98f761a \
             5ad9664e88e517cd64bd9971bac5c4c239ba4672 \
             f5cd17136ddfee8864bb7a46abbdb464f666f518 \
-            9793843843b53c1616af6fbfc72f7a8fa56a28ef \
             662e1b40c4584a5b1989b821cd7a5c334ef8fc44 \
             dd8ea4c0f6df3f0da6139e293d6b8fd5bea5d02a \
             79e4a6a1e6ee100812f6247219fa79501c3720f3 \
             c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2 \
-            102c7f9cafec956f3bc7bed4384ae755c98f761a \
-            05b8e9354c9a7805f0fce18b904346a986a0787f; do
+            a2dc229c849f5b15668e984b5947eb45386757f3 \
+            1ca51a9fa7875509f38c5bed445ce5d1793d26eb \
+            0644bc7897ffcbd8842bcf33e63417901fa4ebfd \
+            97f3abbce2c4749d8f5ee0bdae7fb6e678fc0379 \
+            2d1f4e89f6fec1055a45505f58de167ef32b8fd0; do
             git merge-base --is-ancestor "$c" HEAD
           done
           test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
           test "$(git hash-object code/iter504u_heldout_critic_c4_fixture_repair.py)" = 'bcea2946a0f9676b50897dc4bbe74fa1122a9965'
+          test "$(git hash-object code/iter504u_heldout_critic_depth_binding_repair.py)" = 'd10bb168e93b3e3b5496a4f40bb0f16a9bd59dd4'
           test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
           test "$(git hash-object code/iter504u_heldout_assemble.py)" = '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
           test "$(git hash-object code/iter504u_heldout_aggregate.py)" = '23165f9d99ff9a2f90c27a51cb889d5920327f92'
-          test "$(git hash-object research/results/ITER504U_CRITIC_C4_SHARED_VALIDATOR_DIAGNOSTIC_TERMINAL_2026-09-17.md)" = '4bc12d4bb1dab45562cc51c8344700a0f31d75c3'
+          test "$(git hash-object research/results/ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_TERMINAL_2026-09-17.md)" = 'a5f1da37a2ee28d7758c747898ac8344a9d31f48'
           expected_workflow="$(python - <<'PY'
           import json
-          print(json.load(open('inputs/iter504u_critic_c4_fixture_repair_closure_authority.json'))['workflow_blob_sha'])
+          print(json.load(open('inputs/iter504u_repaired_critic_closure_authority.json'))['workflow_blob_sha'])
           PY
           )"
           test "$(git hash-object .github/workflows/iter504u-critic-c4-fixture-repair-closure.yml)" = "$expected_workflow"
-          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35252175158" > /tmp/repair-run.json
-          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35252175158/artifacts?per_page=100" > /tmp/repair-artifacts.json
-          python - <<'PY'
-          import json
+          for spec in '35252175158 c4_shared_validator_artifacts' '35266020916 depth_repair_artifacts'; do
+            set -- $spec
+            rid="$1"; field="$2"
+            gh api "repos/$GITHUB_REPOSITORY/actions/runs/$rid" > "/tmp/run-$rid.json"
+            gh api "repos/$GITHUB_REPOSITORY/actions/runs/$rid/artifacts?per_page=100" > "/tmp/artifacts-$rid.json"
+            RUN_ID="$rid" FIELD="$field" python - <<'PY'
+          import json,os
           from pathlib import Path
-          a=json.loads(Path('inputs/iter504u_critic_c4_fixture_repair_closure_authority.json').read_text())
-          run=json.loads(Path('/tmp/repair-run.json').read_text())
-          arts=json.loads(Path('/tmp/repair-artifacts.json').read_text())['artifacts']
-          assert run['id']==a['repair_shared_validator_run_id']
-          assert run['head_sha']==a['repair_shared_validator_head']
-          assert run['status']=='completed' and run['conclusion']=='success'
+          a=json.loads(Path('inputs/iter504u_repaired_critic_closure_authority.json').read_text())
+          rid=int(os.environ['RUN_ID']); field=os.environ['FIELD']
+          run=json.loads(Path(f'/tmp/run-{rid}.json').read_text())
+          arts=json.loads(Path(f'/tmp/artifacts-{rid}.json').read_text())['artifacts']
+          assert run['id']==rid and run['status']=='completed' and run['conclusion']=='success'
           by_name={x['name']:x for x in arts}
-          for req in a['repair_shared_validator_artifacts']:
+          for req in a[field]:
               got=by_name.get(req['name'])
               assert got is not None, req['name']
-              assert got['id']==req['id'], (req,got)
-              assert got.get('digest')==req['digest'], (req,got)
-              assert got.get('expired') is False
-          print('ITER504U_REPAIR_SHARED_VALIDATOR_AUTHORITY_VERIFIED')
+              assert got['id']==req['id'] and got.get('digest')==req['digest'] and got.get('expired') is False
           PY
+          done
+          echo ITER504U_REPAIRED_CRITIC_METHODOLOGY_AUTHORITIES_VERIFIED
 
   review:
     needs: source-lock
@@ -118,7 +130,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
-      - name: Verify immutable source-run metadata and artifact identities
+      - name: Verify immutable terminal source-run artifact identities
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -130,19 +142,22 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          auth=json.loads(Path('inputs/iter504u_critic_c4_fixture_repair_closure_authority.json').read_text())
+          auth=json.loads(Path('inputs/iter504u_repaired_critic_closure_authority.json').read_text())
           run=json.loads(Path('out/source-run.json').read_text())
           arts=json.loads(Path('out/source-artifacts.json').read_text())['artifacts']
           assert run['id']==auth['source_run_id']
           assert run['head_sha']==auth['source_run_head']
-          assert run['status']=='completed'
+          assert run['run_attempt']==auth['source_run_attempt']
+          assert run['status']=='completed' and run['conclusion']=='success'
           by_name={x['name']:x for x in arts}
+          assert len(auth['required_artifacts'])==15
           for req in auth['required_artifacts']:
               got=by_name.get(req['name'])
               assert got is not None, req['name']
               assert got['id']==req['id'], (req,got)
               assert got.get('digest')==req['digest'], (req,got)
               assert got.get('expired') is False
+              assert got.get('workflow_run',{}).get('head_sha')==auth['source_run_head']
           print('ITER504U_CLOSURE_ARTIFACT_IDENTITIES_VERIFIED')
           PY
       - name: Download exact frozen upstream artifacts
@@ -164,38 +179,48 @@ jobs:
           test -f frozen/asm-b/iter504u-3.13.json
           test -f frozen/aggregate/iter504u-aggregate.json
           find frozen -type f -print0 | sort -z | xargs -0 sha256sum > out/downloaded-content.sha256
-      - name: Run repaired independent Critic only
+      - name: Run independent repaired Critic only
         env:
           PYTHONPATH: code
         shell: bash
         run: |
-          set -euo pipefail
-          python code/iter504u_heldout_critic_c4_fixture_repair.py \
+          set +e
+          python code/iter504u_heldout_critic_depth_binding_repair.py \
             --a-dir frozen/raw-a \
             --b-dir frozen/raw-b \
             --a-assembled frozen/asm-a/iter504u-3.11.json \
             --b-assembled frozen/asm-b/iter504u-3.13.json \
             --aggregate frozen/aggregate/iter504u-aggregate.json \
             --out out/repaired-critic.json | tee out/repaired-critic.log
-          python - <<'PY'
+          rc=${PIPESTATUS[0]}
+          set -e
+          test "$rc" -eq 0 -o "$rc" -eq 2
+          python - <<PY
           import json
           from pathlib import Path
           d=json.loads(Path('out/repaired-critic.json').read_text())
-          assert d['classification'] in {
-              'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED',
-              'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED',
-          }, d
-          assert d['critic_errors']==[]
-          assert d['cross_environment_exact_decision_agreement'] is True
-          assert d['negative_controls']
-          assert all(d['negative_controls'].values())
-          if d['classification']=='ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED':
-              assert d['total_unresolved_leaves']==0
+          labels={
+            'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED',
+            'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED',
+            'ITER504U_INVALID',
+          }
+          assert d['classification'] in labels, d
+          if d['classification']=='ITER504U_INVALID':
+              assert d['critic_errors'], d
+              assert $rc == 2
           else:
-              assert d['total_unresolved_leaves']>0
-          print('ITER504U_REPAIRED_CRITIC_VALID',d['classification'])
+              assert d['critic_errors']==[]
+              assert d['cross_environment_exact_decision_agreement'] is True
+              assert d['negative_controls'] and all(d['negative_controls'].values())
+              assert $rc == 0
+              if d['classification']=='ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED':
+                  assert d['total_unresolved_leaves']==0
+              else:
+                  assert d['total_unresolved_leaves']>0
+          Path('out/critic-returncode.txt').write_text(str($rc)+'\n')
+          print('ITER504U_REPAIRED_CRITIC_TERMINAL_CLASS',d['classification'])
           PY
-          sha256sum out/repaired-critic.json out/repaired-critic.log out/downloaded-content.sha256 > out/review-files.sha256
+          sha256sum out/repaired-critic.json out/repaired-critic.log out/critic-returncode.txt out/downloaded-content.sha256 > out/review-files.sha256
       - uses: actions/upload-artifact@v4
         with:
           name: iter504u-repaired-critic-review-${{ matrix.python }}
@@ -215,11 +240,12 @@ jobs:
         with:
           name: iter504u-repaired-critic-review-3.13
           path: b
-      - name: Require independent closure-review equality
+      - name: Require independent closure-review equality and terminalize frozen taxonomy
         shell: bash
         run: |
           set -euo pipefail
           cmp a/repaired-critic.json b/repaired-critic.json
+          cmp a/critic-returncode.txt b/critic-returncode.txt
           cmp a/downloaded-content.sha256 b/downloaded-content.sha256
           mkdir -p out
           python - <<'PY'
@@ -228,28 +254,38 @@ jobs:
           a=json.loads(Path('a/repaired-critic.json').read_text())
           b=json.loads(Path('b/repaired-critic.json').read_text())
           assert a==b
-          assert a['critic_errors']==[]
-          assert a['cross_environment_exact_decision_agreement'] is True
-          assert all(a['negative_controls'].values())
           classification=a['classification']
-          assert classification in {
-              'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED',
-              'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED',
+          labels={
+            'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED',
+            'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED',
+            'ITER504U_INVALID',
           }
+          assert classification in labels
+          if classification=='ITER504U_INVALID':
+              assert a['critic_errors']
+          else:
+              assert a['critic_errors']==[]
+              assert a['cross_environment_exact_decision_agreement'] is True
+              assert a['negative_controls'] and all(a['negative_controls'].values())
+              if classification=='ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED':
+                  assert a['total_unresolved_leaves']==0
+              else:
+                  assert a['total_unresolved_leaves']>0
           review_sha=hashlib.sha256(Path('a/repaired-critic.json').read_bytes()).hexdigest()
           payload={
-              'gate':'ITER504U_CRITIC_C4_FIXTURE_REPAIR_CLOSURE',
+              'gate':'ITER504U_REPAIRED_CRITIC_CLOSURE',
               'source_run_id':35246605860,
               'classification':classification,
               'repaired_critic_sha256':review_sha,
               'cross_python_repaired_review_equal':True,
               'critic_errors':a['critic_errors'],
               'negative_controls':a['negative_controls'],
+              'cross_environment_exact_decision_agreement':a['cross_environment_exact_decision_agreement'],
               'total_cases':a['total_cases'],
               'total_terminal_leaves':a['total_terminal_leaves'],
               'total_unresolved_leaves':a['total_unresolved_leaves'],
               'decision_projection_sha256':a['decision_projection_sha256'],
-              'claim_ceiling':'exact frozen Iter504U six-case held-out run only; no all-domain/global promotion',
+              'claim_ceiling':'exact frozen Iter504U six-case held-out run only; not all-domain, D7, model-family, or global quantum gravity authority',
           }
           payload['closure_payload_sha256']=hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest()
           Path('out/iter504u-repaired-critic-closure.json').write_text(json.dumps(payload,indent=2,sort_keys=True)+'\n')
