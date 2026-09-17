@@ -1,0 +1,85 @@
+{
+  "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_GATE",
+  "date": "2026-09-17",
+  "classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+  "scientific_classification": "ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED",
+  "latest_critic_repaired": {
+    "commit": "15b323994844fd83dfa0dc71efb977ba4300de97",
+    "verdict": "INVALID_IMPLEMENTATION",
+    "defects_repaired": [
+      "exact original INCONCLUSIVE ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED is preserved",
+      "structurally insufficient required lane fields propagate to ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED"
+    ]
+  },
+  "prospective_preregistration_commit": "5b18ffbe46b967ef64c54d6181924aa8acf6f43e",
+  "authority_commit": "39bd24ff03cba8858dca39ceb2935509352f295a",
+  "reviewer_commit": "b0f9fa5f2efe1e1f09d72d33e78bbee904ad5eb5",
+  "aggregate_code_commit": "311ac4169bd3fd8e0ce8b8ded1f8bc566db3cdeb",
+  "workflow_head": "71b1e197192c17d0c74e06fe7eb12b9b4b332f60",
+  "authoritative_actions_run": {
+    "id": 35232311780,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "jobs": {
+    "source_lock": 105239292923,
+    "python_3_11": 105239369708,
+    "python_3_13": 105239369636,
+    "aggregate": 105239442328
+  },
+  "artifacts": {
+    "python_3_11": {
+      "id": 10501567806,
+      "digest": "sha256:70f4a0b7b4e2e7ab60c42c5e83abeaa28dd2b55bc45bbace7d448e2ccbbe888e",
+      "internal_json_sha256": "2f769095dfca88b00b02fd20d18dce726eb8b435f7d1af6bf7aa9728afa547cf",
+      "internal_log_sha256": "da3eb8a08dc6dd87779c4ebb28e2789363f0d10c2bb74a5ba1ece9ac629c5e9d"
+    },
+    "python_3_13": {
+      "id": 10501033269,
+      "digest": "sha256:7ae9953cfc780230007eb326ab8fc5c13532a30bde12b7c41e08d1ed156093ec",
+      "internal_json_sha256": "2f769095dfca88b00b02fd20d18dce726eb8b435f7d1af6bf7aa9728afa547cf",
+      "internal_log_sha256": "da3eb8a08dc6dd87779c4ebb28e2789363f0d10c2bb74a5ba1ece9ac629c5e9d"
+    },
+    "aggregate": {
+      "id": 10501338087,
+      "digest": "sha256:cec9f4eaa6192d0a2defc57d117ae5de89cc7e9b5f9c77a2ec9403ea1d545fe4",
+      "internal_json_sha256": "345642be3ad316d2c2cd704dce67670b41a364d78129411a1d8475b5a146ba23",
+      "internal_log_sha256": "af7dcc5e9c4badae68b09479af9cd7da10ad837c40ecd68f0160e51a9a06c1c3"
+    }
+  },
+  "lane_review_decision_sha256": "ab197395b971d3dc3c78574d4ae8176df839394ce902b72b126307b2674f604c",
+  "aggregate_decision_sha256": "627836dc469c726c280d7b00c3ac46413724683fd05cc8759fbb185735230d61",
+  "lanes_agree": true,
+  "review_errors": [],
+  "semantics_controls": {
+    "valid_pass_fixture_maps_to_review_pass": true,
+    "valid_original_inconclusive_preserved": true,
+    "missing_required_field_maps_to_blocked": true,
+    "C4_true_leaf_with_false_rho_maps_to_fail": true,
+    "per_rho_boolean_inconsistency_maps_to_fail": true,
+    "R_6_to_7_maps_to_fail": true,
+    "missing_C1_record_maps_to_fail": true,
+    "artifact_identity_mutation_is_invalid": true
+  },
+  "actual_exact_run_replay": {
+    "underlying_run": 35205054496,
+    "underlying_head": "10ae6bcc8447d14cecc6e550065504b23f792953",
+    "assembly_byte_identical": true,
+    "assembly_payload_sha256": "dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24",
+    "root_count": 3,
+    "terminal_leaf_count": 12,
+    "per_rho_row_count": 48,
+    "recomputed_unresolved_leaves": 0,
+    "c1_record_count": 18,
+    "c1_component_count": 70056,
+    "c1_false_component_count": 0,
+    "exact_R_cohort": [6, 8, 10, 12],
+    "C4_actual_leaf_binding_errors": 0
+  },
+  "historical_c4_retained": {
+    "classification": "ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED",
+    "independent_critic_verdict": "CONFIRMED_SCOPED",
+    "meaning": "general reusable launch-head validator remains unsafe until separately repaired; exact-run authority does not erase C4"
+  },
+  "claim_ceiling": "exact completed run 35205054496 only; no all-1888/D7/model/family/selector/Candidate Gravity/Paper IV/global QG conclusion"
+}
