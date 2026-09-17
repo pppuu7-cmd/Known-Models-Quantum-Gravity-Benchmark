@@ -1,0 +1,45 @@
+{
+  "gate": "ITER504T_PRETERMINAL_LEAF_CERTIFICATION_BINDING_VERIFICATION_GATE",
+  "date": "2026-09-17",
+  "prospective_preregistration_commit": "aa421bd0b1aec1cbcc7a381fb00e947798d1b084",
+  "repair_launch_head": "10ae6bcc8447d14cecc6e550065504b23f792953",
+  "active_repair_run": 35205054496,
+  "active_run_artifacts_forbidden": true,
+  "original_scientific_preregistration": {
+    "path": "research/prereg/ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md",
+    "commit": "aa2b0256ce60d605574a18ec86c0bad5b5df1512",
+    "blob_sha": "f648b0e0d6a960bf60c32d5c34694497a50b7e68",
+    "frozen_predicate": {
+      "rho_certified": "slope_floor_satisfied AND drift_within_tolerance",
+      "leaf_certified": "all four rho certifications",
+      "pass": "every terminal leaf scientifically certified"
+    }
+  },
+  "launch_head_files": [
+    {
+      "path": "code/iter504t_local_derivative_assemble.py",
+      "blob_sha": "62486912d9b930c12e8cddbb94999895fe8488df"
+    },
+    {
+      "path": "code/iter504t_local_derivative_critic.py",
+      "blob_sha": "779697e3c507d18be8ac9f377dfe0b5212ecc393"
+    },
+    {
+      "path": "code/iter504t_local_derivative_aggregate.py",
+      "blob_sha": "d19edf62ae10edbaa5d9eecb76ca8004595120fb"
+    }
+  ],
+  "preterminal_critic_refresh": {
+    "path": "recovery/CRITICAL_PRETERMINAL_AUDIT_ITER504T_IMPLEMENTATION_CONTROL_REPAIR_RERUN_2026-09-17.md",
+    "commit": "009923a0806a4306925fd9fda56f7f489d6313f1",
+    "blob_sha": "49f62f5aea12e1a2637d8ffdc199910c46023d0a"
+  },
+  "target_mutation": {
+    "one_per_rho_certified_false": true,
+    "top_level_leaf_certified": true,
+    "unresolved_leaf_count_consistent_with_top_level_flag": true,
+    "both_environment_lanes_identically_mutated": true
+  },
+  "decision_rule": "VERIFY C4 iff exact launch-head downstream validation accepts the targeted malformed synthetic leaf while unrelated positive controls pass; REFUTE iff exact path rejects it because leaf certified is independently bound to conjunction of per-rho certified; never inspect active substantive artifacts",
+  "interpretation_ceiling": "implementation/provenance C4 only; no active repair scientific classification, no D7 or Candidate Gravity conclusion"
+}
