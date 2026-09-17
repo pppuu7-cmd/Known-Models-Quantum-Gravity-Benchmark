@@ -1,0 +1,244 @@
+name: KMQGB Iter504U held-out local-D science
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504U_HELDOUT_LAUNCH_AUTHORIZED_2026-09-17.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen held-out execution authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='inputs/iter504u_heldout_execution_authority.json'
+          MARK='recovery/ITER504U_HELDOUT_LAUNCH_AUTHORIZED_2026-09-17.txt'
+          test -f "$AUTH"
+          test -f "$MARK"
+          grep -Fx 'EXECUTION_AUTHORIZED=true' "$AUTH"
+          grep -Fx 'NO_REFIT=true' "$AUTH"
+          grep -Fx 'CASE_COUNT=6' "$AUTH"
+          grep -Fx 'MAX_DEPTH=3' "$AUTH"
+          grep -Fx 'THRESHOLD_EXACT=1/20' "$AUTH"
+          grep -Fx 'ROBUST_FLOOR_EXACT=1' "$AUTH"
+          grep -Fx 'CHANNELS=243' "$AUTH"
+          grep -Fx 'METHODOLOGY_RUN=35246378450' "$AUTH"
+          auth_commit="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          test -n "$auth_commit"
+          git merge-base --is-ancestor "$auth_commit" HEAD
+          for c in \
+            05b8e9354c9a7805f0fce18b904346a986a0787f \
+            8624532254981fbea6f8fcfac09cd538e2066aa4 \
+            81e0e94649a50cccc510dc2630456af45fd98e46 \
+            10ae6bcc8447d14cecc6e550065504b23f792953; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+          test "$(git hash-object research/prereg/ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL_2026-09-17.md)" = 'c667283bb7ce3d6d4eb4a3dfde7617a03fd5b545'
+          test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
+          test "$(git hash-object code/iter504u_heldout_assemble.py)" = '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
+          test "$(git hash-object code/iter504u_heldout_aggregate.py)" = '23165f9d99ff9a2f90c27a51cb889d5920327f92'
+          test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          expected_workflow="$(sed -n 's/^WORKFLOW_BLOB_SHA=//p' "$AUTH")"
+          test -n "$expected_workflow"
+          test "$(git hash-object .github/workflows/iter504u-heldout-science.yml)" = "$expected_workflow"
+          for f in \
+            code/iter499_arb_core.py \
+            code/iter500_compact_sandwich_kak.py \
+            code/iter501_direct_max_envelope_interval.py \
+            code/iter503_ad_core.py \
+            code/iter504_centered_shard.py; do
+            test "$(git hash-object "$f")" = "$(git rev-parse 10ae6bcc8447d14cecc6e550065504b23f792953:"$f")"
+          done
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recheck syntax and frozen labels
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile code/iter504u_heldout_local_d_case.py code/iter504u_heldout_assemble.py code/iter504u_heldout_aggregate.py code/iter504u_heldout_critic.py
+          grep -F "PASS = 'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED'" code/iter504u_heldout_assemble.py
+          grep -F "INC = 'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED'" code/iter504u_heldout_assemble.py
+          grep -F "INVALID = 'ITER504U_INVALID'" code/iter504u_heldout_critic.py
+
+  cases:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+        case_id:
+          - H0_AMP_LOW
+          - H1_AMP_MID
+          - H2_CAUSAL_1
+          - H3_CAUSAL_2
+          - H4_DIRECTION
+          - H5_SIGN
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Capture environment
+        shell: bash
+        run: |
+          mkdir -p out
+          python -VV > out/python.txt 2>&1
+          python -m pip freeze > out/pip-freeze.txt
+          python - <<'PY' > out/flint.txt
+          import flint
+          print(getattr(flint, '__version__', 'unknown'))
+          PY
+          uname -a > out/uname.txt
+      - name: Execute frozen held-out case
+        env:
+          PYTHONPATH: code
+        run: python code/iter504u_heldout_local_d_case.py --case-id '${{ matrix.case_id }}' --out out/case.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504u-heldout-${{ matrix.python }}-${{ matrix.case_id }}
+          path: out
+          if-no-files-found: error
+
+  assemble:
+    needs: cases
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504u-heldout-${{ matrix.python }}-*
+          path: cases
+          merge-multiple: false
+      - name: Assemble held-out environment independently
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          args=()
+          while IFS= read -r f; do args+=(--case-file "$f"); done < <(find cases -type f -name case.json | sort)
+          test "${#args[@]}" -eq 12
+          python code/iter504u_heldout_assemble.py "${args[@]}" --out 'out/iter504u-${{ matrix.python }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504u-heldout-assembled-${{ matrix.python }}
+          path: out/iter504u-${{ matrix.python }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: assemble
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-heldout-assembled-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-heldout-assembled-3.13
+          path: b
+      - name: Aggregate exact held-out decisions
+        run: |
+          mkdir -p out
+          python code/iter504u_heldout_aggregate.py --a a/iter504u-3.11.json --b b/iter504u-3.13.json --out out/iter504u-aggregate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504u-heldout-aggregate
+          path: out/iter504u-aggregate.json
+          if-no-files-found: error
+
+  critic:
+    needs: [cases, assemble, aggregate]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504u-heldout-3.11-*
+          path: raw-a
+          merge-multiple: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504u-heldout-3.13-*
+          path: raw-b
+          merge-multiple: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-heldout-assembled-3.11
+          path: asm-a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-heldout-assembled-3.13
+          path: asm-b
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-heldout-aggregate
+          path: aggregate
+      - name: Run independent adversarial held-out Critic
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python code/iter504u_heldout_critic.py \
+            --a-dir raw-a \
+            --b-dir raw-b \
+            --a-assembled asm-a/iter504u-3.11.json \
+            --b-assembled asm-b/iter504u-3.13.json \
+            --aggregate aggregate/iter504u-aggregate.json \
+            --out out/iter504u-critic.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('aggregate/iter504u-aggregate.json').read_text())
+          c=json.loads(Path('out/iter504u-critic.json').read_text())
+          assert a['classification'] == c['classification']
+          assert c['classification'] != 'ITER504U_INVALID'
+          assert not c['critic_errors']
+          assert c['cross_environment_exact_decision_agreement'] is True
+          assert all(c['negative_controls'].values())
+          if c['classification'] == 'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED':
+              assert c['total_unresolved_leaves'] == 0
+          elif c['classification'] == 'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED':
+              assert c['total_unresolved_leaves'] > 0
+          else:
+              raise AssertionError(c['classification'])
+          print('ITER504U_TERMINAL_CLASSIFICATION', c['classification'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504u-heldout-critic
+          path: out/iter504u-critic.json
+          if-no-files-found: error
