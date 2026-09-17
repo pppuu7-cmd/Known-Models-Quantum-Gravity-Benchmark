@@ -11,61 +11,39 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 - Candidate Gravity remains inactive; Paper IV remains `NOT_YET_AUTHORIZED`.
 - `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`; `INCONCLUSIVE != FAIL`; missing object/certificate/rank != zero; scoped child result != family closure; green CI != science.
 
-## Latest terminal closure result and independent qualification
+## Latest terminal closure authority
 
-Latest historical closure gate:
+`ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_GATE`
 
-`ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_GATE`
-
-Historical emitted classification:
+Classification:
 
 `ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`
 
-Latest independent Critic:
+Prospective freeze `5b18ffbe46b967ef64c54d6181924aa8acf6f43e`; frozen authority `39bd24ff03cba8858dca39ceb2935509352f295a`; workflow head `71b1e197192c17d0c74e06fe7eb12b9b4b332f60`; terminal Actions run `35232311780`.
 
-- audit `recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_2026-09-17.md`;
-- Critic commit `15b323994844fd83dfa0dc71efb977ba4300de97`;
-- verdict `INVALID_IMPLEMENTATION`.
+This gate repairs exactly the two alternate-branch defects identified by independent Critic commit `15b323994844fd83dfa0dc71efb977ba4300de97`:
 
-The historical review result remains immutable history but is not independently accepted as a fully contract-valid authority-restoration gate. Two outcome-independent reviewer defects are frozen by the Critic:
+- original `ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED` is preserved as scientific INCONCLUSIVE rather than mapped to authority-restoration FAIL;
+- structurally insufficient required terminal fields propagate to `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED` rather than restoration FAIL.
 
-1. the implementation uses a non-authoritative INCONCLUSIVE label instead of the original `ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED`, so a valid unresolved exact run would be misrouted to restoration FAIL;
-2. lane-level `blocked=True` for structurally insufficient required fields is not propagated to the top-level classifier, so a frozen BLOCKED case is misrouted to restoration FAIL.
+Both independent Python environments agree exactly. All eight semantics controls pass. The actual exact-run assemblies remain byte-identical, all 48 per-rho and all 12 leaf bindings independently satisfy the frozen predicates, unresolved leaves recompute to zero, C1 has 18 records / 70,056 components / zero false, and both lanes recompute original science PASS `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED`.
 
-These are implementation/decision-semantics defects, not scientific FAIL and not provenance failure.
+Thus exact repair run `35205054496` is contract-correctly rebound as scoped scientific authority under the original three-root bounded local-D claim ceiling.
 
-## Exact repair-run evidence retained
+## Historical qualifications retained
 
-Underlying execution: `ITER504T_IMPLEMENTATION_CONTROL_REPAIR_RERUN_GATE`, Actions run `35205054496`, head `10ae6bcc8447d14cecc6e550065504b23f792953`.
-
-Independent replay of the exact terminal assemblies found:
-
-- byte-identical assembly payload SHA256 `dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24`;
-- roots `13,14,15`, exact R cohort `[6,8,10,12]`, 12 terminal leaves and 48 per-rho rows;
-- all 48 serialized `rho.certified` values equal the frozen slope/drift conjunction;
-- all 12 actual leaves satisfy `leaf.certified == all(rho.certified for rho in leaf.per_rho)`;
-- independently recomputed unresolved leaves = `0`;
-- independently recomputed scientific class = `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED`;
-- C1 = 18 inclusion records / 70,056 componentwise booleans per lane / zero false.
-
-The Critic therefore does not assert that the actual three-root numerical/scientific PASS is false. Downstream authority remains qualified because the latest authority-review implementation itself violates its frozen alternate-branch semantics.
-
-## C4 retained
-
-`ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED` remains independently `CONFIRMED_SCOPED` for the reusable launch-head validator path. The exact repair run happens to satisfy the missing conjunction on all leaves; that does not repair the general validator.
-
-## Historical state retained
-
+- The historical authority-review gate/run `35225818354` remains immutable, and its independent Critic verdict `INVALID_IMPLEMENTATION` remains historically true for that old reviewer implementation.
+- C4 `ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED` remains independently `CONFIRMED_SCOPED` for the reusable launch-head validator path.
+- Exact-run authority does not imply reusable-validator authority for future executions.
 - Original Iter504T run `35181094204` remains historically `INVALID_IMPLEMENTATION`, not scientific FAIL.
-- C1 VERIFIED, C2 REFUTED, C3 VERIFIED historical closure remains immutable.
-- Repair run `35205054496` retains its historical repair/scientific outputs as immutable evidence.
-- Parent retained results: `ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED`; `ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED`; `ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED`.
-- No Iter504T result is promoted to all 1888 states.
+- C1 VERIFIED, C2 REFUTED, C3 VERIFIED remain immutable history.
+- Parent results `ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED`, `ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED`, and `ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED` remain retained.
+- No Iter504T result is all-1888-state closure.
 
 ## Parallel D7-S2 retained state
 
 - raw K5 group-variable tangent pushforward = `CLOSED_SCOPED`;
-- group-only simultaneous contact-covector object = `BLOCKED_SCOPED` on missing source-authorized restriction/conditioning map;
+- group-only simultaneous contact-covector restriction/conditioning = `BLOCKED_SCOPED`;
 - physical transverse quotient/projection = `BLOCKED_SCOPED`;
 - measure/Haar/contact normalization = open;
 - observable/distributional final pushforward = open.
@@ -74,19 +52,16 @@ Do not repeat blocked K5 source audits without genuinely new authorized primary 
 
 ## Next admissible work
 
-Highest-information same-object closure gate is a prospectively frozen terminal-review semantics repair that:
+Do not repeat exact-run terminal review absent a genuinely new independent Critic defect.
 
-1. uses exact original scientific INCONCLUSIVE `ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED` and proves a valid unresolved fixture remains scientific INCONCLUSIVE rather than authority-restoration FAIL;
-2. propagates structural insufficiency to `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED` and proves it with a missing-required-field fixture;
-3. retains exact-run C4 recomputation, artifact ID/digest locks, C1/C3 checks, roots/rhos/R/channels/precision/threshold/floor/MAX_DEPTH and claim ceiling;
-4. uses two independent review lanes plus aggregate with `fail-fast:false`.
+The remaining reusable-pipeline obligation is a prospectively frozen C4 repair that explicitly enforces `leaf.certified == all(rho.certified for rho in leaf.per_rho)` in assembler and independent Critic and includes the exact adversarial C4 mutation without changing the science contract.
 
-No new physics execution is required for this repair. Any change to the scientific object, source realization, thresholds, scientific classifier meaning or interpretation ceiling requires a new prospective scientific gate.
+A distinct scientific frontier may outrank that implementation repair if it offers higher information gain and does not depend on reusing the defective validator path. Decide from fresh current DAG/recovery state.
 
 ## Restoration procedure
 
 1. Read fresh `main` and fresh Actions first.
-2. Read `CURRENT_BENCHMARK_FRONT`, this index, latest Critic, terminal authority-review prereg/authority/code, exact repair-run terminal evidence and C4 authority.
-3. Preserve historical emitted results and independent qualifications simultaneously.
-4. Preserve all FAIL/BLOCKED/INVALID/INCONCLUSIVE history and claim ceilings.
+2. Read `CURRENT_BENCHMARK_FRONT`, this index, latest semantics-repair terminal result/handoff, historical authority-review Critic, C4 authority/review, and the underlying repair preregistration.
+3. Preserve exact-run validation and general C4 validator defect simultaneously.
+4. Preserve all historical PASS/FAIL/BLOCKED/INCONCLUSIVE/INVALID results and claim ceilings.
 5. Keep D7/selector/Candidate Gravity locks until their own terminal authority changes them.
