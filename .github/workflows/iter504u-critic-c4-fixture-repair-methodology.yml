@@ -1,0 +1,46 @@
+name: Iter504U Critic C4 fixture repair methodology
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504u-critic-c4-fixture-repair-methodology.yml'
+      - 'code/iter504u_heldout_critic_c4_fixture_repair.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify prospective repair ancestry and unchanged production chain
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 5ad9664e88e517cd64bd9971bac5c4c239ba4672 HEAD
+          git merge-base --is-ancestor 3dadd0aa18bcac46366b1210f51ce678d06c6734 HEAD
+          git merge-base --is-ancestor 102c7f9cafec956f3bc7bed4384ae755c98f761a HEAD
+          test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
+          test "$(git hash-object code/iter504u_heldout_assemble.py)" = '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
+          test "$(git hash-object code/iter504u_heldout_aggregate.py)" = '23165f9d99ff9a2f90c27a51cb889d5920327f92'
+          test "$(git hash-object code/iter504u_heldout_critic_c4_fixture_repair.py)" = 'ff82b1dee8c26788083ad2ac6aff46c96040305c'
+      - name: Syntax and outcome-independent C4 fixture self-test
+        env:
+          PYTHONPATH: code
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile code/iter504u_heldout_critic.py code/iter504u_heldout_critic_c4_fixture_repair.py
+          python code/iter504u_heldout_critic_c4_fixture_repair.py --self-test
+          grep -F "reject('C4_true_leaf_false_rho', force_c4_contradiction)" code/iter504u_heldout_critic_c4_fixture_repair.py
+          grep -F "leaf['certified'] = True" code/iter504u_heldout_critic_c4_fixture_repair.py
+          grep -F "rows[0]['drift_within_tolerance'] = False" code/iter504u_heldout_critic_c4_fixture_repair.py
+          grep -F "rows[0]['certified'] = False" code/iter504u_heldout_critic_c4_fixture_repair.py
