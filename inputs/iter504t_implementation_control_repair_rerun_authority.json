@@ -1,0 +1,65 @@
+{
+  "gate": "ITER504T_IMPLEMENTATION_CONTROL_REPAIR_RERUN_GATE",
+  "date": "2026-09-17",
+  "starting_main": "51b8a95ed009761e542f8c50efaeca3a98bc2891",
+  "repair_preregistration_commit": "adc7bfb9df77a90455cac1b0f0cb7255d80c44d5",
+  "original_scientific_gate": "ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION",
+  "original_scientific_preregistration_commit": "aa2b0256ce60d605574a18ec86c0bad5b5df1512",
+  "original_single_execution_authority_commit": "3a485d34efaa500bbd0276b397c1a2078d18905e",
+  "original_launch_head": "d23f34cba57b220dd29474c0651bc727d6d85eae",
+  "original_actions_run": 35181094204,
+  "terminal_critic_commit": "33e2b9818c409843099aa136648a2da010a839a2",
+  "pre_repair_blobs": {
+    "code/iter504t_local_derivative_contraction.py": "1ae78fc309839da30d1c78fc25c8e5ea3d98693f",
+    "code/iter504t_local_derivative_assemble.py": "6a886bf6ce8c263e586a6cb25d7441df5273a72d",
+    "code/iter504t_local_derivative_aggregate.py": "10a4338f5b55485b98cfdb6bfecd1a7e646a130a",
+    "code/iter504t_local_derivative_critic.py": "950d22e97b1ca2a17b2bb08d4386de6d4fb39445",
+    ".github/workflows/iter504t-local-d-science.yml": "8356f1417016f4d084d6b799615e3f096dd99a5d",
+    "research/prereg/ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md": "f648b0e0d6a960bf60c32d5c34694497a50b7e68"
+  },
+  "verified_defects_to_repair": {
+    "C1_componentwise_parent_inclusion_control": "VERIFIED_MISSING_OR_UNBOUND",
+    "C2_dyadic_split_location": "REFUTED_ALREADY_BOUND_DO_NOT_REPAIR",
+    "C3_exact_R_cohort_binding": "VERIFIED_MISSING_OR_UNBOUND"
+  },
+  "frozen_science": {
+    "roots": [13, 14, 15],
+    "rhos": [0.35, 0.9, 1.6, 2.7],
+    "R_grid": [6, 8, 10, 12],
+    "full_channel_count": 243,
+    "channel_pruning_used": false,
+    "precision_bits": 384,
+    "python_flint": "0.9.0",
+    "threshold_exact": "1/20",
+    "robust_floor_exact": "1",
+    "max_depth": 3,
+    "partition_rule": "deterministic_dyadic_midpoint",
+    "scientific_labels": [
+      "ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED",
+      "ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED",
+      "ITER504T_INVALID"
+    ]
+  },
+  "allowed_changes": [
+    "serialize producer actual R cohort",
+    "compute and serialize child-vs-parent componentwise derivative inclusion booleans",
+    "bind exact inclusion-record shape/presence in assembler and Critic",
+    "bind exact R cohort in assembler and Critic",
+    "add repair-specific adversarial controls",
+    "fresh repair-rerun workflow and artifact namespace",
+    "recovery/provenance/result records for this repair gate"
+  ],
+  "forbidden_changes": [
+    "scientific source or realization",
+    "roots/rhos/R scientific values",
+    "local derivative construction",
+    "243-channel full envelope or pruning policy",
+    "threshold or floor",
+    "MAX_DEPTH or dyadic partition rule",
+    "scientific classifier",
+    "original Iter504T interpretation ceiling",
+    "historical run 35181094204"
+  ],
+  "decision_rule": "same-contract repair only; false parent inclusion is diagnostic-only; missing/malformed inclusion record or wrong R identity is implementation invalidity; never consume partial nonterminal rerun values",
+  "interpretation_ceiling": "implementation validity plus original Iter504T three-root bounded local-D claim ceiling only"
+}
