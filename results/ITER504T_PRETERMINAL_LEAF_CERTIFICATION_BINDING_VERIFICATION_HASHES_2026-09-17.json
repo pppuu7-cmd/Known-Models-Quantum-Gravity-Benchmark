@@ -1,0 +1,37 @@
+{
+  "gate": "ITER504T_PRETERMINAL_LEAF_CERTIFICATION_BINDING_VERIFICATION_GATE",
+  "actions_run": 35220141450,
+  "workflow_head": "2a550a44cdf69b1b165ba65fec8f6a5d56bd0f40",
+  "jobs": {
+    "source_lock": 105197957392,
+    "python_3_11": 105197992013,
+    "python_3_13": 105197992075,
+    "aggregate": 105198050663
+  },
+  "artifacts": {
+    "python_3_11": {
+      "id": 10496991098,
+      "digest": "sha256:011a0b8363dcf313d62bc9c2dd681afd1ecff0f91b2b3cee52a4f7492ca79562",
+      "json_sha256": "ebfc6d514f2c013e6eeaae01b651fc612b39b2445934fc250fa3f6e1ba91b544",
+      "log_sha256": "7189b0e87332e09cc5ab79573204ab3c0a070003e77e39d46ff832851bf2fc23",
+      "decision_sha256": "3eefcd29f0699da8c7bcae6639cabbffd04f0fa154f31862d6f716c216899c05"
+    },
+    "python_3_13": {
+      "id": 10496836236,
+      "digest": "sha256:71c367aa409fa18b3bd04b423b377cbbbd90589543a06c94387d424f2010617d",
+      "json_sha256": "ebfc6d514f2c013e6eeaae01b651fc612b39b2445934fc250fa3f6e1ba91b544",
+      "log_sha256": "7189b0e87332e09cc5ab79573204ab3c0a070003e77e39d46ff832851bf2fc23",
+      "decision_sha256": "3eefcd29f0699da8c7bcae6639cabbffd04f0fa154f31862d6f716c216899c05"
+    },
+    "aggregate": {
+      "id": 10496519019,
+      "digest": "sha256:7a932e0c36bdc09871ac114c9264c6997c4c352a84c2373e6323086ecbdb3daa",
+      "json_sha256": "5ce6c4ebf5ece9919e460aed1216e0145e03b4a6339d6461624481824cf6ae4b",
+      "log_sha256": "55f2a832e772f7fa0b6a8568806559c9ffdbe9a9a69ba4a45e72bc738a802c79",
+      "aggregate_decision_sha256": "770ec74f672105a303c792586a8f644f12c1a54788021ff9856511d7c3fea6e5"
+    }
+  },
+  "lanes_byte_identical_json": true,
+  "lanes_byte_identical_log": true,
+  "active_repair_run_35205054496_substantive_artifacts_consumed": false
+}
