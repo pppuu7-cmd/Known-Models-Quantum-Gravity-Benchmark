@@ -34,10 +34,13 @@ jobs:
           assert a['source_run_id']==35246605860
           assert a['source_run_head']=='102c7f9cafec956f3bc7bed4384ae755c98f761a'
           assert a['source_run_attempt']==1
+          assert isinstance(a['source_run_conclusion'],str) and a['source_run_conclusion']
           assert a['physics_rerun_authorized'] is False
           assert a['science_changed'] is False
           assert a['cohort_changed'] is False
           assert a['critic_only_repairs'] is True
+          assert a['source_terminal_semantics_prereg_commit']=='31f9870b608ea244d4384354d09210e270f1b524'
+          assert a['source_terminal_semantics_prereg_blob']=='f5b79cf62fd8072ceefe43404289132fe5e3388a'
           assert a['c4_shared_validator_run_id']==35252175158
           assert a['c4_shared_validator_classification']=='ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED'
           assert a['c4_shared_validator_payload_sha256']=='974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f'
@@ -49,8 +52,41 @@ jobs:
           assert a['depth_repair_classification']=='ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED'
           assert a['depth_repair_payload_sha256']=='71766a16b881c0358e2aded5bdf085dc6e4944ca0ffa4db4c2385f6bc3c42bc5'
           assert a['depth_repair_terminal_result_blob']=='a5f1da37a2ee28d7758c747898ac8344a9d31f48'
+
+          expected_jobs={
+            'source-lock',
+            'cases (3.11, H0_AMP_LOW)',
+            'cases (3.11, H1_AMP_MID)',
+            'cases (3.11, H2_CAUSAL_1)',
+            'cases (3.11, H3_CAUSAL_2)',
+            'cases (3.11, H4_DIRECTION)',
+            'cases (3.11, H5_SIGN)',
+            'cases (3.13, H0_AMP_LOW)',
+            'cases (3.13, H1_AMP_MID)',
+            'cases (3.13, H2_CAUSAL_1)',
+            'cases (3.13, H3_CAUSAL_2)',
+            'cases (3.13, H4_DIRECTION)',
+            'cases (3.13, H5_SIGN)',
+            'assemble (3.11)',
+            'assemble (3.13)',
+            'aggregate',
+          }
+          assert len(a['required_upstream_jobs'])==16
+          assert {x['name'] for x in a['required_upstream_jobs']}==expected_jobs
+          assert len({x['id'] for x in a['required_upstream_jobs']})==16
+          assert all(x['status']=='completed' and x['conclusion']=='success' for x in a['required_upstream_jobs'])
+
+          expected_artifacts={
+            *(f'iter504u-heldout-3.11-{cid}' for cid in ('H0_AMP_LOW','H1_AMP_MID','H2_CAUSAL_1','H3_CAUSAL_2','H4_DIRECTION','H5_SIGN')),
+            *(f'iter504u-heldout-3.13-{cid}' for cid in ('H0_AMP_LOW','H1_AMP_MID','H2_CAUSAL_1','H3_CAUSAL_2','H4_DIRECTION','H5_SIGN')),
+            'iter504u-heldout-assembled-3.11',
+            'iter504u-heldout-assembled-3.13',
+            'iter504u-heldout-aggregate',
+          }
           assert len(a['required_artifacts'])==15
-          assert len({x['name'] for x in a['required_artifacts']})==15
+          assert {x['name'] for x in a['required_artifacts']}==expected_artifacts
+          assert len({x['id'] for x in a['required_artifacts']})==15
+
           expected_c4={
             'iter504u-c4-shared-validator-diagnostic-3.11': (10510475771,'sha256:583c1935ee815b7d4ba80e0396212d725933f6eabe4ac1f8fb4279f3a16ad0a1'),
             'iter504u-c4-shared-validator-diagnostic-3.13': (10510765344,'sha256:f768f75cdc9794d70c4b5cced1ee8692c2fb8e38873094251baed9694c907cea'),
@@ -80,9 +116,11 @@ jobs:
             1ca51a9fa7875509f38c5bed445ce5d1793d26eb \
             0644bc7897ffcbd8842bcf33e63417901fa4ebfd \
             97f3abbce2c4749d8f5ee0bdae7fb6e678fc0379 \
-            2d1f4e89f6fec1055a45505f58de167ef32b8fd0; do
+            2d1f4e89f6fec1055a45505f58de167ef32b8fd0 \
+            31f9870b608ea244d4384354d09210e270f1b524; do
             git merge-base --is-ancestor "$c" HEAD
           done
+          test "$(git hash-object research/prereg/ITER504U_REPAIRED_CLOSURE_SOURCE_TERMINAL_SEMANTICS_2026-09-17.md)" = 'f5b79cf62fd8072ceefe43404289132fe5e3388a'
           test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
           test "$(git hash-object code/iter504u_heldout_critic_c4_fixture_repair.py)" = 'bcea2946a0f9676b50897dc4bbe74fa1122a9965'
           test "$(git hash-object code/iter504u_heldout_critic_depth_binding_repair.py)" = 'd10bb168e93b3e3b5496a4f40bb0f16a9bd59dd4'
@@ -96,6 +134,7 @@ jobs:
           PY
           )"
           test "$(git hash-object .github/workflows/iter504u-critic-c4-fixture-repair-closure.yml)" = "$expected_workflow"
+
           for spec in '35252175158 c4_shared_validator_artifacts' '35266020916 depth_repair_artifacts'; do
             set -- $spec
             rid="$1"; field="$2"
@@ -116,6 +155,39 @@ jobs:
               assert got['id']==req['id'] and got.get('digest')==req['digest'] and got.get('expired') is False
           PY
           done
+
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35246605860" > /tmp/source-run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35246605860/jobs?per_page=100" > /tmp/source-jobs.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35246605860/artifacts?per_page=100" > /tmp/source-artifacts.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('inputs/iter504u_repaired_critic_closure_authority.json').read_text())
+          run=json.loads(Path('/tmp/source-run.json').read_text())
+          jobs=json.loads(Path('/tmp/source-jobs.json').read_text())['jobs']
+          arts=json.loads(Path('/tmp/source-artifacts.json').read_text())['artifacts']
+          assert run['id']==a['source_run_id']
+          assert run['head_sha']==a['source_run_head']
+          assert run['run_attempt']==a['source_run_attempt']
+          assert run['status']=='completed'
+          assert run['conclusion']==a['source_run_conclusion']
+          by_job={x['name']:x for x in jobs}
+          for req in a['required_upstream_jobs']:
+              got=by_job.get(req['name'])
+              assert got is not None, req['name']
+              assert got['id']==req['id'], (req,got)
+              assert got['status']==req['status']=='completed', (req,got)
+              assert got['conclusion']==req['conclusion']=='success', (req,got)
+          by_art={x['name']:x for x in arts}
+          for req in a['required_artifacts']:
+              got=by_art.get(req['name'])
+              assert got is not None, req['name']
+              assert got['id']==req['id'], (req,got)
+              assert got.get('digest')==req['digest'], (req,got)
+              assert got.get('expired') is False
+              assert got.get('workflow_run',{}).get('head_sha')==a['source_run_head']
+          print('ITER504U_REPAIRED_CLOSURE_SOURCE_UPSTREAM_AUTHORITY_VERIFIED')
+          PY
           echo ITER504U_REPAIRED_CRITIC_METHODOLOGY_AUTHORITIES_VERIFIED
 
   review:
@@ -148,7 +220,8 @@ jobs:
           assert run['id']==auth['source_run_id']
           assert run['head_sha']==auth['source_run_head']
           assert run['run_attempt']==auth['source_run_attempt']
-          assert run['status']=='completed' and run['conclusion']=='success'
+          assert run['status']=='completed'
+          assert run['conclusion']==auth['source_run_conclusion']
           by_name={x['name']:x for x in arts}
           assert len(auth['required_artifacts'])==15
           for req in auth['required_artifacts']:
