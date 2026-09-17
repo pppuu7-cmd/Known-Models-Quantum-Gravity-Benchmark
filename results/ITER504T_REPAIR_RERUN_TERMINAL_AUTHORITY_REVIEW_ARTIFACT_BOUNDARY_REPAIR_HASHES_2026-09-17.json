@@ -1,0 +1,51 @@
+{
+  "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_GATE",
+  "date": "2026-09-17",
+  "workflow_head": "4e9a6ac95a10f89ba57eaa3aaa642a43e0236866",
+  "actions_run": 35238357310,
+  "jobs": {
+    "source_lock": 105260048120,
+    "boundary_control": 105260104164,
+    "lane_3_11": 105260104179,
+    "lane_3_13": 105260104162,
+    "aggregate": 105260195631
+  },
+  "artifacts": [
+    {
+      "id": 10503972713,
+      "name": "iter504t-artifact-boundary-missing-control",
+      "digest": "sha256:ea0edd702d8af7a525d88b3550753c805fa38cac78d9d1cdcede8bdae0fb2fb0"
+    },
+    {
+      "id": 10504281712,
+      "name": "iter504t-artifact-boundary-review-3.11",
+      "digest": "sha256:4103bd065f9351c021f2bf110088a9015cc1c0867f90877219badc1803a86c6c"
+    },
+    {
+      "id": 10504046837,
+      "name": "iter504t-artifact-boundary-review-3.13",
+      "digest": "sha256:61e8da2c5327bf225d127f5ba32898c9c85adb3daad32bfb358039fbc919e80a"
+    },
+    {
+      "id": 10504616531,
+      "name": "iter504t-artifact-boundary-review-aggregate",
+      "digest": "sha256:89619364918da0e663eaef9d882427a30392e11d441545d17585843596453987",
+      "independent_zip_sha256": "89619364918da0e663eaef9d882427a30392e11d441545d17585843596453987",
+      "internal_json_sha256": "823026fc00dcdddff765848f9513cdbf5a26ef7794288738662f4fcc7d4cb7f8",
+      "internal_log_sha256": "38790856fdec7d1e5751b3780b3260d8e4bfc36194e5c84e0caa765234a939d0",
+      "internal_sha256_manifest_sha256": "dcb2ca064d3789f08abb5993b6c6366ca68061691782dd9d0e953ecdbb035da7"
+    }
+  ],
+  "decision_hashes": {
+    "lane_3_11_review_decision_sha256": "4eec7f2966d9c0df79fdf381c73e88d5cc45acbb6a688f68f78616937e17ff96",
+    "lane_3_13_review_decision_sha256": "c12de65d9c2d0a065230198ecab78f09ecb43148ee0c45a130636a8f74144de5",
+    "boundary_control_review_decision_sha256": "eb08a36c1a60f081e05d70bc495033f7bd81213c47f156ddcc916b47a14e9858",
+    "aggregate_decision_sha256": "09306cd3fc13b599d000f2e937ccdcf1c1bbf219d339a0396c06ac6a2d8624bb",
+    "normalized_lane_payload_sha256_after_removing_environment_specific_path_fields": "a7eda65e7407e7188ae67763df01f40187fd7659531f5bb24f29187e8bac11d0"
+  },
+  "manifest_hashes": {
+    "lane_3_11": "c1d1b9ec24963fc4f9f66c4563f647bba1c84039ad5fb691ccfa2df5c3f62ab8",
+    "lane_3_13": "50435de1a91baa1df668a9fe8913631839c744156c76050c72f4e01290e8c6cf",
+    "boundary_control": "6ea411daa7173f3270dd9774e78188f2c61215a765be81d6c33e275456c632a1"
+  }
+}
