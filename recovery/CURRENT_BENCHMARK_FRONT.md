@@ -31,8 +31,9 @@ Frozen repair chain:
 Latest observed Actions state:
 
 - source-lock job `105148662991` = `completed/success`;
-- all six independent Python 3.11/3.13 x roots 13/14/15 root jobs have been created and are executing/queued under `fail-fast:false`;
-- assemblies, aggregate, repaired Critic and repair-verdict remain downstream/nonterminal.
+- all six independent Python 3.11/3.13 x roots 13/14/15 jobs are `in_progress` inside the frozen bounded local-D computation under `fail-fast:false`;
+- assemblies, aggregate, repaired Critic and repair-verdict remain downstream/nonterminal;
+- partial substantive root values remain unconsumed.
 
 Source-lock verified prospective repair authority, unchanged original Iter504T preregistration/source/scientific contract, exact pre-repair identities, exact repaired code/workflow identities, syntax, and frozen constants before any scientific output was consumed.
 
@@ -42,6 +43,31 @@ The repair changes only the two independently verified implementation-control de
 2. C3: serialize and independently bind the actual exact R cohort `[6,8,10,12]`, including adversarial `6 -> 7` rejection.
 
 C2 remains REFUTED: existing exact rational dyadic-cell validation is retained unchanged. No root/rho/R scientific values, source route, local-D construction, channel set, threshold `1/20`, floor `1`, `MAX_DEPTH=3`, scientific classifier or interpretation ceiling were changed.
+
+## Latest preterminal independent Critic audit
+
+Critic commit:
+
+`764378a89b4ae9fabe163fa27801119311c90381`
+
+Audit:
+
+`recovery/CRITICAL_PRETERMINAL_AUDIT_ITER504T_IMPLEMENTATION_CONTROL_REPAIR_RERUN_2026-09-17.md`
+
+No terminal verdict was issued because run `35205054496` is nonterminal, and no active substantive outputs were consumed.
+
+Outcome-independent static findings:
+
+- prospective repair chronology = PASS;
+- scientific object/source identity = static PASS, terminal artifact check pending;
+- source-lock/provenance = preterminal PASS only;
+- C1 missing-parent-inclusion counterexample is statically closed by producer + assembler + repaired Critic wiring;
+- malformed/missing inclusion records, wrong R identity/cardinality, duplicate/broken tree relations and malformed boolean payloads have explicit rejection paths;
+- C3 exact R-cohort counterexamples, including `R=6 -> 7`, are statically closed;
+- C2 dyadic-location suspicion remains REFUTED;
+- no new outcome-independent counterexample was found in the frozen repair wiring.
+
+This static audit is not repair PASS, not scientific PASS, and not terminal authority. Terminal aggregate + repaired Critic + repair-verdict remain mandatory.
 
 Do not launch a competing same-object gate and do not consume partial root outputs. Next action is only to consume terminal aggregate + repaired Critic + repair-verdict after run `35205054496` fully terminalizes.
 
@@ -73,7 +99,7 @@ Key terminal artifacts:
 
 Historical Research output is immutable. Green CI and lane agreement are provenance, not independent scientific validation.
 
-## Latest independent Critical Review
+## Latest terminal independent Critical Review
 
 Audit:
 
@@ -87,22 +113,18 @@ Verdict:
 
 `INVALID_IMPLEMENTATION`
 
-The terminal Research PASS is not accepted as validated downstream Iter504T authority because two prospectively frozen implementation obligations are demonstrably unbound at the exact launch head:
+The historical terminal Research PASS is not accepted as validated downstream Iter504T authority because two prospectively frozen implementation obligations were unbound at the exact launch head:
 
-1. the preregistered child-vs-parent `componentwise_parent_inclusion` comparison/record is absent; the producer does not serialize it and both assembler and Critic accept its absence. A false inclusion value would be diagnostic only; the defect is omission of the required computation/record, not failure of inclusion itself;
-2. the exact R cohort `[6,8,10,12]` is not independently bound by the validators. An explicit synthetic `R=6 -> R=7` mutation is accepted by both assembler and Critic and remains cross-environment indistinguishable if both lanes carry it.
+1. the preregistered child-vs-parent `componentwise_parent_inclusion` comparison/record was absent;
+2. the exact R cohort `[6,8,10,12]` was not independently bound by the validators.
 
-This is implementation invalidity, not scientific FAIL and not invalid provenance. The actual terminal producer is not accused of using the wrong R cohort; the verifier does not guarantee the frozen identity it claims to police.
+This is implementation invalidity, not scientific FAIL and not invalid provenance.
 
 ## Independent defect-binding closure retained
 
 Gate:
 
 `ITER504T_PRETERMINAL_CRITIC_DEFECT_BINDING_VERIFICATION_GATE`
-
-Terminal record:
-
-`results/ITER504T_PRETERMINAL_CRITIC_DEFECT_BINDING_VERIFICATION_TERMINAL_2026-09-17.md`
 
 Authoritative run `35192972048`, terminal `completed/success`.
 
@@ -112,7 +134,7 @@ Exact launch-head findings:
 - `FROZEN_DYADIC_SPLIT_LOCATION_NOT_INDEPENDENTLY_VERIFIED = REFUTED`;
 - `FROZEN_R_COHORT_NOT_INDEPENDENTLY_VERIFIED = VERIFIED`.
 
-The dyadic-split suspicion must not be used to invalidate Iter504T. Exact rational dyadic-cell verification is already implemented and should be retained.
+The dyadic-split suspicion must not be used to invalidate Iter504T. Exact rational dyadic-cell verification is already implemented and is retained in the repair.
 
 ## Parent retained state
 
@@ -120,7 +142,7 @@ The dyadic-split suspicion must not be used to invalidate Iter504T. Exact ration
 - `ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED` remains valid: child-delta subdivision with fixed full-root `D(I)` was insufficient.
 - `ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED` remains terminal; point-grid PASS is not a continuous theorem.
 
-No Iter504T result is promoted to all 1888 states while its frozen implementation contract is invalid.
+No Iter504T result is promoted to all 1888 states while the repaired rerun is nonterminal.
 
 ## Next admissible work
 
