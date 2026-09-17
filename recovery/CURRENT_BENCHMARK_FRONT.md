@@ -4,137 +4,124 @@ Updated: 2026-09-17
 
 Fresh repository `main` and fresh GitHub Actions state always outrank this navigation snapshot.
 
-## Latest terminal science
-
-The latest independently closed scientific authority remains Iter504T:
-
-`ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`
-
-Independent Critical Review commit: `8624532254981fbea6f8fcfac09cd538e2066aa4` (`CONFIRMED_SCOPED`). Its authority is bounded to the prospectively frozen development scope; it is not all-Iter504 or global closure.
-
-## Active science — Iter504U held-out generalization firewall
+## Latest terminal science — Iter504U
 
 Gate: `ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL`.
 
-Frozen authority:
-
-- preregistration `05b8e9354c9a7805f0fce18b904346a986a0787f`;
-- immutable launch/source head `102c7f9cafec956f3bc7bed4384ae755c98f761a`;
-- production run `35246605860`, attempt 1;
-- held-out H0–H5; development boxes 13–15 forbidden;
-- producer/assembler/aggregate remain byte-frozen.
-
-Latest fresh Actions snapshot in this recovery update:
-
-- source-lock: success;
-- case lanes: 8/12 success, 4/12 in progress, 0 failed;
-- completed new since prior snapshot: Python 3.11 `H4_DIRECTION`;
-- currently visible production artifact metadata: 8 case artifacts;
-- assemblies/aggregate are not yet authoritative;
-- production remains nonterminal.
-
-No partial scientific coefficient, leaf decision, slope/drift value, aggregate decision or individual-lane scientific classification has been consumed. No duplicate, restart or competing authoritative producer is authorized.
-
-Frozen terminal taxonomy remains exactly:
-
-- PASS `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED`;
-- INCONCLUSIVE `ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED`;
-- implementation/provenance invalidity `ITER504U_INVALID`.
-
-There is no frozen scientific FAIL label in this gate.
-
-## Independent Critic repairs — terminal methodology authorities
-
-### C4 fixture binding
-
-Terminal methodology classification:
-
-`ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED`
-
-Shared-validator run `35252175158` proved the coherent fixture is accepted, the intended contradiction is rejected exactly as `H0_AMP_LOW:C4_leaf_binding`, outcome-independent false carriers are rejected, the repaired negative-control suite passes, Python environments agree, and production science was not consumed.
-
-### Shallow unresolved depth binding
-
-Preterminal independent audit commit `97a99cdcfaacec1e87b216e0d3a4282b165ae59b` identified a distinct authority-path defect: original assembler/Critic validation allowed a structurally coherent terminal unresolved leaf at depth 0/1/2 even though the immutable producer itself correctly bisects every uncertified node until frozen `MAX_DEPTH=3`.
-
-Prospective preregistration before implementation:
-
-`a2dc229c849f5b15668e984b5947eb45386757f3`.
-
-Repair wrapper:
-
-- commit `1ca51a9fa7875509f38c5bed445ce5d1793d26eb`;
-- blob `d10bb168e93b3e3b5496a4f40bb0f16a9bd59dd4`.
-
-Formal synthetic methodology run:
-
-`35266020916`, head `2d1f4e89f6fec1055a45505f58de167ef32b8fd0`.
-
 Terminal classification:
 
-`ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED`.
+`ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED`.
 
-The gate established outcome-independently that:
+Scope: exactly the prospectively frozen six-case held-out cohort H0–H5. This is not all-domain, all-1888-state, D7, model-family, Candidate Gravity, Paper IV, or universal quantum-gravity authority.
 
-- the pre-repair shared validator accepts the frozen shallow-unresolved counterexample;
-- the repaired validator rejects that same object exactly as `H0_AMP_LOW:premature_unresolved_leaf_depth`;
-- a coherent unresolved depth-3 terminal object remains accepted;
-- the previously validated C4 contradiction remains exact;
-- the full C4 suite and successor depth-binding negative control pass;
-- Python 3.11/3.13 results are byte-identical;
-- `production_science_consumed=false` and `source_run_classified=false`.
+Frozen science preregistration: `05b8e9354c9a7805f0fce18b904346a986a0787f`.
 
-Formal payload SHA256: `71766a16b881c0358e2aded5bdf085dc6e4944ca0ffa4db4c2385f6bc3c42bc5`.
+Immutable source/launch head: `102c7f9cafec956f3bc7bed4384ae755c98f761a`.
 
-Terminal methodology result blob: `a5f1da37a2ee28d7758c747898ac8344a9d31f48`.
+Source production run `35246605860`, attempt 1: terminal `completed/success`.
 
-This is a Critic/authority repair, not a producer-science failure and not a scientific FAIL.
+No duplicate/restart was used. No partial scientific values were consumed before source terminalization and prospective artifact freeze.
 
-## Prepared repaired-Critic closure
+## Prospective immutable artifact freeze
 
-The existing prepared closure workflow has been hardened in place; no parallel closure system is created.
+Closure authority:
 
-Workflow path:
+`inputs/iter504u_repaired_critic_closure_authority.json`
 
-`.github/workflows/iter504u-critic-c4-fixture-repair-closure.yml`
+Authority commit:
 
-Prepared workflow blob:
+`3302f77593e668ab48fdff887801571fa46467b1`
 
-`1ca55311eedac38bd2f6a515b8d463d957426117`.
+Authority blob:
 
-Future closure gate:
+`6154f02e9e04c8c14c3b4433f1afddce37e4fb9f`.
 
-`ITER504U_REPAIRED_CRITIC_CLOSURE`.
+It was created after terminal source metadata was available and before repaired-Critic science consumption. It freezes exact source run/head/attempt/conclusion, 16 successful upstream job identities and 15 required upstream artifact IDs/digests/expiration states. The historical original source-workflow Critic job/artifact is explicitly excluded from repaired-closure authority.
 
-Future authority path:
+## Independent repaired Critic — terminal
 
-`inputs/iter504u_repaired_critic_closure_authority.json`.
+Single launch/head:
 
-Future one-shot launch marker:
+`732b9a035472f3b67b00ce985f695c03d7e90bb8`.
 
-`recovery/ITER504U_REPAIRED_CRITIC_CLOSURE_LAUNCH_2026-09-17.txt`.
+Run:
 
-The closure now uses `code/iter504u_heldout_critic_depth_binding_repair.py`, thereby preserving the validated C4 controls and adding the validated shallow-unresolved depth binding. It consumes immutable upstream artifacts only and does not rerun producer science.
+`35267499787` — `KMQGB Iter504U repaired Critic closure`, run number 1, attempt 1, terminal `completed/success`.
 
-Critically, the closure now preserves the complete frozen science taxonomy: PASS, INCONCLUSIVE, or `ITER504U_INVALID`. A valid INVALID result is terminal implementation/provenance classification, not a generic CI failure and not scientific FAIL.
+Jobs:
 
-No closure authority or launch marker exists yet. They are forbidden until source run `35246605860` is terminal and the complete 15-artifact inventory is prospectively frozen by exact IDs/digests/source head/run attempt/expiration state.
+- source-lock `105358214002`: success;
+- review Python 3.11 `105358279236`: success;
+- review Python 3.13 `105358279171`: success;
+- closure `105358414895`: success.
 
-## Single current blocker
+Both repaired reviews independently consumed the same frozen 15 source artifacts and returned byte-identical decision payloads.
 
-`Iter504U production run 35246605860 must naturally reach terminal state.`
+Canonical result:
 
-Until then:
+- classification `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED`;
+- 6 cases;
+- 19 terminal leaves;
+- 0 unresolved leaves;
+- `critic_errors=[]`;
+- cross-environment exact decision agreement `true`;
+- cross-Python repaired-review equality `true`;
+- repaired Critic SHA256 `5e81675fa60f344643675d45e3211e41406721fd96d53b1a5329755bda5956b2`;
+- decision projection SHA256 `b44f7bd0711a45d5469c8c1ce968f9b7f7e4cbe773dd33e0fb1bcf5beb22d3e6`;
+- closure payload SHA256 `56b86f4d8a8224544c55344cd08bfd8b9a6a05022059d1fb0af84e9e76439d6c`.
 
-- do not rerun or restart producer;
-- do not read partial scientific payloads;
-- do not classify completed lanes;
-- do not freeze a partial artifact inventory as closure authority;
-- do not launch the repaired closure.
+All repaired negative controls passed, including both `C4_true_leaf_false_rho` and `premature_unresolved_leaf_depth`.
 
-When production becomes terminal, the next authorized order is exactly:
+Closure artifacts at terminal read:
 
-`terminal production -> verify/freeze exact 15 immutable artifacts -> create one prospective repaired-closure authority -> launch exactly one independent repaired Critic in Python 3.11/3.13 -> require cross-environment equality -> terminalize frozen classification -> interpretation ceiling -> recovery reconciliation -> one bounded end-to-end infrastructure audit`.
+- review 3.11: id `10517615531`, digest `sha256:1d5301cc8f6cd7609989af78d1141588773e2d7c230194263cde56fa87771f2a`;
+- review 3.13: id `10517600640`, digest `sha256:1eda7268243dfe6d2168e5063788582cf91023a5c80af0ac9004cfe76cfe271d`;
+- canonical closure: id `10516579339`, digest `sha256:ee2399d5efdf58a829edfab57b30e31c2955663d538f89623bbba85c8390afdc`.
+
+## Critic repair methodology retained
+
+C4 fixture methodology is terminal:
+
+`ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED`, run `35252175158`.
+
+Shallow-unresolved depth-binding methodology is terminal:
+
+`ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED`, run `35266020916`.
+
+Source-terminal semantics repair was prospectively frozen at commit `31f9870b608ea244d4384354d09210e270f1b524` and applied to the closure authority.
+
+These are independent Critic/control repairs only. Producer science and frozen Iter504U criteria were never refit after held-out outcomes.
+
+## Immediate current blocker
+
+Iter504U science is no longer the blocker.
+
+The single required next step is the one bounded post-closure infrastructure audit mandated by the Iter504U operating contract:
+
+`prereg -> single production -> immutable artifacts -> independent Critic -> terminal authority -> recovery -> next gate`.
+
+Audit only:
+
+- duplicate launch prevention;
+- partial-value firewall;
+- artifact identity;
+- source identity;
+- chronology;
+- outcome-independent controls;
+- Critic independence;
+- recovery continuity.
+
+If the bounded audit finds no concrete blocker, infrastructure freezes: do not add dashboards, readiness layers, duplicate manifests, cosmetic CI, or additional authority layers.
+
+## Scientific frontier after the audit
+
+After the bounded audit, rebuild the unresolved science DAG and choose the strongest counterexample-first mechanism discriminator by approximately:
+
+`expected information gain × downstream unlocks × falsifiability / compute cost`.
+
+Do not advance mechanically to Iter504V merely because it is the next iteration number.
+
+Iter504U PASS supports local-D generalization across the six frozen held-out configurations tested. The next gate should therefore discriminate surviving mechanism explanations or test broader admissible scope with the cheapest exact falsifier, rather than merely increase numerical precision.
 
 ## Parallel D7 retained state
 
@@ -144,7 +131,7 @@ When production becomes terminal, the next authorized order is exactly:
 - measure/Haar/contact normalization = open;
 - observable/distributional final pushforward = open.
 
-No D7 branch supersedes the Iter504U closure blocker.
+No D7 branch is promoted by Iter504U.
 
 ## Governance / claim lock
 
@@ -160,4 +147,4 @@ No D7 branch supersedes the Iter504U closure blocker.
 - green CI != scientific PASS;
 - bounded held-out authority != all-domain/global authority.
 
-No authority exists for `ALL_KNOWN_MODELS_FAIL`, `NEW_QG_THEORY_REQUIRED`, `QUANTUM_GRAVITY_SOLVED`, `UNIQUE_MECHANISM`, `D7_FULLY_CLOSED`, `CANDIDATE_GRAVITY_ESTABLISHED`, or `NEW_PHYSICS_FOUND`.
+No authority exists for `ALL_KNOWN_MODELS_FAIL`, `NEW_QG_THEORY_REQUIRED`, `QUANTUM_GRAVITY_SOLVED`, `UNIQUE_MECHANISM`, `D7_FULLY_CLOSED`, `CANDIDATE_GRAVITY_ESTABLISHED`, `NEW_PHYSICS_FOUND`, or equivalent claims.
