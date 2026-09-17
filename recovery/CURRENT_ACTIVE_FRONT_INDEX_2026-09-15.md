@@ -11,30 +11,41 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 - Candidate Gravity remains inactive; Paper IV remains `NOT_YET_AUTHORIZED`.
 - `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`; missing object/certificate/rank != zero; scoped child result != family closure; green CI != science.
 
-## Terminal repair execution awaiting one closure review
-
-`ITER504T_IMPLEMENTATION_CONTROL_REPAIR_RERUN_GATE`
-
-Authoritative run `35205054496` is now terminal `completed/success` at immutable launch head `10ae6bcc8447d14cecc6e550065504b23f792953`. Terminal root, assembly, aggregate, independent-Critic and repair-verdict artifacts exist. Their presence and CI status are provenance only; substantive terminal values have not yet been consumed by the Closure lane after terminalization.
-
-The rerun is same-science and was prospectively intended to repair only C1 parent-inclusion and C3 exact-R binding. C2 dyadic-location remains REFUTED.
-
 ## Latest terminal closure authority
 
-`ITER504T_PRETERMINAL_LEAF_CERTIFICATION_BINDING_VERIFICATION_GATE`
+`ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_GATE`
 
-Classification `ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED`; independent Critic verdict `CONFIRMED_SCOPED`.
+Classification:
 
-C4 proves a decision-binding gap at the exact immutable repair launch head: the launch-head assembler/Critic chain does not enforce
+`ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`
 
-`leaf.certified == all(rho.certified for rho in leaf.per_rho)`.
+The exact completed repair run `35205054496` at head `10ae6bcc8447d14cecc6e550065504b23f792953` has been independently rebound post-terminal under a prospectively frozen review. Review run `35225818354` completed successfully at head `8cf5aefa4b15b5a6c7dfaf7f08d1884ba8363658`; independent Python 3.11/3.13 review lanes agree exactly and aggregate decision SHA256 is `6e764ea10206959a755914279a4dfa67adfcbe0935762377a38606a0b24be9c4`.
 
-A synthetic leaf can contain one internally consistent uncertified rho while top-level `leaf.certified=true` and `unresolved_leaf_count=0`; assembler, aggregate and Critic still transport the PASS class. Unrelated per-rho identity and exact-R controls remain live, so the counterexample isolates the top-level conjunction binding. C4 is implementation-only, not scientific FAIL and not evidence that actual terminal producer values violate the conjunction.
+Actual terminal data checks:
+
+- assembly JSONs byte-identical (`dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24`);
+- 3 roots and 12 terminal leaves per lane;
+- all 48 actual per-rho certifications independently reproduce their frozen slope/drift conjunction;
+- all 12 actual leaves independently satisfy `leaf.certified == all(rho.certified for rho in leaf.per_rho)`;
+- recomputed unresolved leaves = `0`;
+- recomputed original scientific class = `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED` in both lanes;
+- C1 = 18 records and 70,056 componentwise booleans per lane, zero false;
+- C3 exact R cohort `[6,8,10,12]` is bound;
+- all seven outcome-sensitive review controls pass;
+- review errors = empty.
+
+Therefore run `35205054496` is now admissible as exact-run scoped scientific authority under the original three-root bounded local-D claim ceiling.
+
+## C4 retained as a pipeline defect
+
+`ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED` remains independently `CONFIRMED_SCOPED` for launch head `10ae6bcc...`.
+
+The exact-run review does not validate the unchanged workflow generally. It establishes only that the actual completed data satisfy the missing conjunction and independently reconstruct the same result. A future execution of the unchanged validator path must not inherit authority solely from green CI/PASS without a C4 repair or equivalent independent rebinding.
 
 ## Historical state retained
 
-- Historical Iter504T Research PASS from run `35181094204` remains independently `INVALID_IMPLEMENTATION`, not scientific FAIL.
-- C1 VERIFIED, C2 REFUTED, C3 VERIFIED by prior defect-binding closure.
+- Original Iter504T run `35181094204` remains historically `INVALID_IMPLEMENTATION`, not scientific FAIL.
+- C1 VERIFIED, C2 REFUTED, C3 VERIFIED historical closure remains immutable.
 - Parent retained results: `ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED`; `ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED`; `ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED`.
 - No Iter504T result is promoted to all 1888 states.
 
@@ -50,14 +61,16 @@ Do not repeat blocked K5 source audits without genuinely new authorized primary 
 
 ## Next admissible work
 
-Prospectively freeze exactly one terminal authority review of completed repair run `35205054496`; then consume terminal aggregate + repaired independent Critic + repair-verdict and only the terminal assemblies needed to test whether any stronger independent binding closes C4. Apply C4 before promoting any PASS. Preserve `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`.
+For pipeline reuse, the highest-information same-object implementation gate is a prospective C4 repair that independently enforces the leaf-to-rho conjunction in assembler and Critic and adds the exact adversarial C4 mutation, without changing the scientific contract.
 
-Do not launch another same-object execution in the same run. If C4 remains unclosed, a later prospectively frozen same-science repair may add explicit top-level leaf-to-rho conjunction validation and its exact adversarial mutation without changing roots/rhos/R/channels/local-D/threshold/floor/classifier/ceiling.
+Because the exact repair run is already independently validated, that repair is a reusable-validator obligation rather than a prerequisite to retain the exact-run authority.
+
+A different scientific frontier may outrank this implementation repair if it has higher information gain and does not depend on reusing the defective launch-head validator; decide from fresh DAG/recovery state at the next run.
 
 ## Restoration procedure
 
 1. Read fresh `main` and fresh Actions first.
-2. Read `CURRENT_BENCHMARK_FRONT`, this index, terminal C4 result/review, original repair preregistration and completed repair-run metadata.
-3. Freeze any terminal review before consuming substantive terminal artifacts.
+2. Read `CURRENT_BENCHMARK_FRONT`, this index, terminal exact-run review result/handoff, terminal C4 result/review, and repair preregistration.
+3. Preserve exact-run validation and C4 general-validator defect simultaneously.
 4. Preserve historical FAIL/BLOCKED/INVALID and claim ceilings.
 5. Keep D7/selector/Candidate Gravity locks until their own terminal authority changes them.
