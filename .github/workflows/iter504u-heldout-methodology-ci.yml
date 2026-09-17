@@ -1,0 +1,76 @@
+name: Iter504U held-out methodology CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504u-heldout-methodology-ci.yml'
+      - 'code/iter504u_heldout_local_d_case.py'
+      - 'code/iter504u_heldout_assemble.py'
+      - 'code/iter504u_heldout_aggregate.py'
+      - 'code/iter504u_heldout_critic.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax check complete Iter504U chain
+        run: |
+          python -m py_compile \
+            code/iter504u_heldout_local_d_case.py \
+            code/iter504u_heldout_assemble.py \
+            code/iter504u_heldout_aggregate.py \
+            code/iter504u_heldout_critic.py
+      - name: Verify frozen cohort and scientific contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -F "PREREG = '05b8e9354c9a7805f0fce18b904346a986a0787f'" code/iter504u_heldout_local_d_case.py
+          grep -F "'H0_AMP_LOW': ('0to5', 0, 2, 0)" code/iter504u_heldout_local_d_case.py
+          grep -F "'H1_AMP_MID': ('0to5', 0, 2, 8)" code/iter504u_heldout_local_d_case.py
+          grep -F "'H2_CAUSAL_1': ('1to4', 0, 2, 8)" code/iter504u_heldout_local_d_case.py
+          grep -F "'H3_CAUSAL_2': ('2to3', 0, 2, 8)" code/iter504u_heldout_local_d_case.py
+          grep -F "'H4_DIRECTION': ('0to5', 3, 2, 8)" code/iter504u_heldout_local_d_case.py
+          grep -F "'H5_SIGN': ('0to5', 0, 3, 8)" code/iter504u_heldout_local_d_case.py
+          grep -F "MAX_DEPTH = 3" code/iter504u_heldout_local_d_case.py
+          grep -F "TOL = arb('0.05')" code/iter504u_heldout_local_d_case.py
+          grep -F "FLOOR = arb('1.0')" code/iter504u_heldout_local_d_case.py
+          grep -F "'full_channel_count': 243" code/iter504u_heldout_local_d_case.py
+          grep -F "'leaf_certification_binding': 'all_per_rho_exact'" code/iter504u_heldout_local_d_case.py
+          grep -F "certified = all(r['certified'] for r in prs)" code/iter504u_heldout_local_d_case.py
+          grep -F "PASS = 'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED'" code/iter504u_heldout_assemble.py
+          grep -F "INC = 'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED'" code/iter504u_heldout_assemble.py
+          grep -F "INVALID = 'ITER504U_INVALID'" code/iter504u_heldout_critic.py
+          grep -F "development_box_inserted" code/iter504u_heldout_critic.py
+          grep -F "C4_true_leaf_false_rho" code/iter504u_heldout_critic.py
+          grep -F "float_decision_transport" code/iter504u_heldout_critic.py
+          grep -F "non_dyadic_partition" code/iter504u_heldout_critic.py
+      - name: Verify authority ancestry and unchanged source realization
+        shell: bash
+        run: |
+          set -euo pipefail
+          for c in \
+            05b8e9354c9a7805f0fce18b904346a986a0787f \
+            8624532254981fbea6f8fcfac09cd538e2066aa4 \
+            81e0e94649a50cccc510dc2630456af45fd98e46 \
+            10ae6bcc8447d14cecc6e550065504b23f792953; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+          for f in \
+            code/iter499_arb_core.py \
+            code/iter500_compact_sandwich_kak.py \
+            code/iter501_direct_max_envelope_interval.py \
+            code/iter503_ad_core.py \
+            code/iter504_centered_shard.py; do
+            test "$(git hash-object "$f")" = "$(git rev-parse 10ae6bcc8447d14cecc6e550065504b23f792953:"$f")"
+          done
+          test "$(git hash-object research/prereg/ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL_2026-09-17.md)" = "$(git rev-parse 05b8e9354c9a7805f0fce18b904346a986a0787f:research/prereg/ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL_2026-09-17.md)"
