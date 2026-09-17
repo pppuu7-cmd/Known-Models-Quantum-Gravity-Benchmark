@@ -25,15 +25,27 @@ Prospective freeze `4a5f7d1c651527249b2831b6886cd502dc18e648`; authority `fbfca6
 
 The preceding Critic's missing-artifact workflow-boundary counterexample was genuinely repaired: a real `gh run download` request for a nonexistent artifact returned exit code `1`, the workflow continued, and the same frozen classifier emitted `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED`. Both production lanes independently replayed the immutable exact run and each emitted `ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED` with all inherited semantics controls passing.
 
-The gate is nevertheless terminal `INVALID_IMPLEMENTATION` because the frozen aggregate required exact lane review-decision SHA equality and received different hashes despite equal classifications. The difference is fully localized to environment-local filesystem path strings (`terminal_311/...` versus `terminal_313/...`), the resulting manifest SHA, and the resulting decision SHA. Once only those execution-local fields are removed, the two lane payloads are identical with normalized SHA256 `a7eda65e7407e7188ae67763df01f40187fd7659531f5bb24f29187e8bac11d0`.
+The gate is nevertheless terminal `INVALID_IMPLEMENTATION` because the outer cross-environment decision projection hashes execution-local path strings. The two production lane classifications and substantive inherited review payloads agree, but outer decision hashes differ. Independent Critic localization finds exactly seven differences: five `local_path` values (`terminal_311/...` versus `terminal_313/...`), their path-derived manifest SHA, and the resulting outer review-decision SHA. Removing only these environment-local path-derived fields yields identical canonical payloads with SHA256 `a7eda65e7407e7188ae67763df01f40187fd7659531f5bb24f29187e8bac11d0`.
 
-This is a canonicalization/provenance-hash implementation defect, not scientific FAIL or numerical disagreement.
+This is decision-canonicalization implementation invalidity, not scientific FAIL or numerical disagreement.
 
 ## Latest independent Critical Review
 
-No independent Critic review of the new artifact-boundary-repair result is recorded yet.
+Audit:
 
-The preceding semantics-repair Critic commit `7263accb799829fddef81c1b4759822261f8b8d4` remains historical `INVALID_IMPLEMENTATION`. Its specific missing-artifact boundary defect is now closed by execution evidence, but the new gate cannot become authority because of its own frozen aggregate failure.
+`recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_2026-09-17.md`
+
+Critic commit:
+
+`77357d92050a9bec2c8daefd4d4babf7ff032ed0`
+
+Verdict:
+
+`CONFIRMED_SCOPED`
+
+The historical `INVALID_IMPLEMENTATION` classification is independently confirmed for this exact gate. The previous missing-artifact boundary defect is execution-closed. The new defect is only the noncanonical outer decision hash: it includes local filesystem prefixes that are not decision-critical identities.
+
+Independent Critic downloaded and rehashed all four run artifacts; every ZIP SHA256 matches fresh Actions metadata. The two inherited substantive review JSONs are byte-identical with Critic SHA256 `448508a79f77980b969dc156222a8872a18fd0467247501225131e5b0c9ecaee`. No `INVALID_PROVENANCE` basis exists.
 
 ## Historical qualifications retained
 
@@ -58,16 +70,16 @@ Do not repeat blocked K5 source audits without genuinely new authorized primary 
 
 ## Next admissible work
 
-Highest-information same-object closure step is one prospectively frozen decision-canonicalization repair. It must make cross-environment decision hashing invariant to local download-directory prefixes while remaining sensitive to all scientific/provenance identities that matter: artifact id/digest/content SHA, run/head, boundary state, C1/C3/C4/R/rho/root/channel/science fields and inherited review outcome.
+Highest-information same-object closure step is one prospectively frozen decision-canonicalization repair. It must make cross-environment decision hashing invariant to local download-directory prefixes while remaining sensitive to all scientific/provenance identities that matter: artifact role/name/id/digest/content SHA, run/head, boundary state, inherited substantive review outcome, C1/C3/C4/R/rho/root/channel/science fields and claim ceiling.
 
-Mandatory positive control: identical artifacts placed under distinct local prefixes must yield identical decision SHA. Mandatory negative controls: any mutation of artifact identity/content SHA or substantive review field must still change or invalidate the decision. Preserve the real missing-artifact download-failure → BLOCKED control that now works. Do not rerun physics.
+Mandatory positive control: identical immutable artifacts placed under distinct local prefixes must yield identical canonical decision SHA. Mandatory negative controls: any mutation of artifact ID/digest/content SHA or substantive review field must still change or invalidate the decision. Preserve the real missing-artifact download-failure -> BLOCKED control that now works. Do not rerun physics.
 
 A distinct scientific frontier may proceed only if it does not consume this invalid gate as validated authority.
 
 ## Restoration procedure
 
 1. Read fresh `main` and fresh Actions first.
-2. Read `CURRENT_BENCHMARK_FRONT`, this index, the artifact-boundary terminal result/handoff, the preceding independent Critic, C4 authority/review and underlying repair preregistration.
-3. Preserve simultaneously: the successful workflow-boundary BLOCKED repair, the aggregate canonicalization invalidity, and the coherent exact-run supporting evidence.
+2. Read `CURRENT_BENCHMARK_FRONT`, this index, the artifact-boundary terminal result/handoff, the new independent Critic, C4 authority/review and underlying repair preregistration.
+3. Preserve simultaneously: the execution-verified missing-artifact BLOCKED repair, the independently confirmed decision-canonicalization invalidity, and the coherent exact-run supporting evidence.
 4. Preserve all historical PASS/FAIL/BLOCKED/INCONCLUSIVE/INVALID records and claim ceilings.
 5. Keep D7/selector/Candidate Gravity/Paper IV locks until their own terminal authority changes them.
