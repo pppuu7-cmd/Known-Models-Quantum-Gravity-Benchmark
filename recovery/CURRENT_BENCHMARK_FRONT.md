@@ -72,6 +72,30 @@ Required instantiated successor:
 
 `ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION`
 
+Scientific preregistration:
+
+`aa2b0256ce60d605574a18ec86c0bad5b5df1512`.
+
+Single-execution authority:
+
+`3a485d34efaa500bbd0276b397c1a2078d18905e`.
+
+Launch head:
+
+`d23f34cba57b220dd29474c0651bc727d6d85eae`.
+
+Authoritative Actions run:
+
+`35181094204`, run number `1`, attempt `1`.
+
+Current validated execution state at this reconciliation:
+
+- run `in_progress / conclusion=null`;
+- source-lock job `105073194770` terminal `success`;
+- all six root jobs for Python 3.11/3.13 and roots 13/14/15 remain `in_progress` in the frozen evaluator step;
+- no root payload, leaf classification, assembly, aggregate, Critic or other partial substantive value has been consumed;
+- no competing authoritative gate may be launched while this run is active.
+
 Scientific question: if the derivative enclosure is recomputed directly and rigorously on deterministic subintervals `J subset I`, does validated local `D(J)` contract enough to certify the continuous drift criterion that full-root `D(I)` could not certify?
 
 Mandatory construction:
@@ -87,6 +111,26 @@ Mandatory construction:
 Freeze deterministic partition, maximum depth, local derivative recomputation rule, stopping rule, PASS/INCONCLUSIVE/INVALID criteria and Critic before successor output. No post-outcome depth increase.
 
 If bounded three-root local-D repair succeeds, the next stage is a prospectively frozen held-out representative cohort. No direct 3-root -> 1888 promotion.
+
+## Latest independent Critic handoff for active Iter504T
+
+Preterminal Critic commit:
+
+`966924c4b03f5548d7c745fbaacc3cae10f2da87`.
+
+Audit record:
+
+`recovery/CRITICAL_PRETERMINAL_AUDIT_ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md`.
+
+Status remains PRETERMINAL: no scientific verdict and no partial substantive outputs consumed.
+
+Outcome-independent defect candidate durably recorded:
+
+`FROZEN_COMPONENTWISE_PARENT_INCLUSION_CONTROL_NOT_IMPLEMENTED_OR_RECORDED`.
+
+The frozen preregistration requires child-to-parent componentwise Arb inclusion checks to be computed and recorded for every child where meaningful, while the launched evaluator/assembler/Critic do not serialize or bind that certificate. Inclusion truth itself is diagnostic and is not a new PASS condition; the defect candidate is the missing/unperformed frozen check. If execution source remains unchanged through terminalization, any terminal Research PASS or INCONCLUSIVE must be audited against this mismatch before downstream consumption, with `INVALID_IMPLEMENTATION` the appropriate Critic branch if the omission remains.
+
+Do not repair the active run in place and do not launch a competing gate. First consume only the terminal authoritative run/aggregate/Critic/artifact provenance. If implementation-only repair is then required, preserve all frozen science fields and add only the missing inclusion computation/recording plus assembler/Critic binding that distinguishes missing from recorded true/false.
 
 ## Parent Iter504R retained
 
@@ -114,4 +158,4 @@ If bounded three-root local-D repair succeeds, the next stage is a prospectively
 - `BLOCKED != FAIL`.
 - green CI != scientific PASS.
 - diagnostic localization != full-domain theorem.
-- no model/family/global/new-theory/new-physics conclusion follows from Iter504S alone.
+- no model/family/global/new-theory/new-physics conclusion follows from Iter504S or nonterminal Iter504T.
