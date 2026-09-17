@@ -1,0 +1,161 @@
+name: KMQGB Iter504T terminal review decision canonicalization repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504t-repair-rerun-terminal-authority-review-decision-canonicalization-repair.yml'
+      - 'code/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair.py'
+      - 'code/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective freeze and immutable authority
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor c6d67dec8617202b9c3584a159dd9f66ab749bd5 HEAD
+          git merge-base --is-ancestor 107786de17159fdf4d16b9ee6cc71827fce7e45c HEAD
+          git merge-base --is-ancestor 77357d92050a9bec2c8daefd4d4babf7ff032ed0 HEAD
+          git merge-base --is-ancestor 05fdb2319f8375c3885cdb39ee99226b9b993005 HEAD
+          git merge-base --is-ancestor 520a4ccdc081dabd50c2f2005a0a259fdf4b5a32 HEAD
+          test "$(git hash-object research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_DECISION_CANONICALIZATION_REPAIR_GATE_2026-09-17.md)" = 7f683676feb0364c48062d15380a4eddb8de31c6
+          test "$(git hash-object inputs/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair_authority.json)" = b5e15294bbfb522c3162c0e48e2600b88aeeade5
+          test "$(git hash-object recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_2026-09-17.md)" = fe02b2c7f0a518a11c03a3334f93d23ff6960b78
+          test "$(git hash-object code/iter504t_artifact_boundary_collect.py)" = 6437c82d8170ff33db4a8a12ee4064d92dc6e4f0
+          test "$(git hash-object code/iter504t_repair_rerun_terminal_authority_review_semantics_repair.py)" = 8b8650751a6f7fc66ac2cba64e7335e0100180d6
+          test "$(git hash-object inputs/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_authority.json)" = 4fee46cc5f4b305282dfd68ba7a1abc5ed28fef3
+          grep -F 'ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED' research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_DECISION_CANONICALIZATION_REPAIR_GATE_2026-09-17.md
+          grep -F 'ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED' research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_DECISION_CANONICALIZATION_REPAIR_GATE_2026-09-17.md
+          grep -F 'INVALID_IMPLEMENTATION' research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_DECISION_CANONICALIZATION_REPAIR_GATE_2026-09-17.md
+          python -m py_compile \
+            code/iter504t_artifact_boundary_collect.py \
+            code/iter504t_repair_rerun_terminal_authority_review_semantics_repair.py \
+            code/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair.py \
+            code/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair_aggregate.py
+
+  boundary-control:
+    needs: source-lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Preserve real missing-artifact boundary semantics
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p control artifacts
+          python code/iter504t_artifact_boundary_collect.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair_authority.json \
+            --repo "$GITHUB_REPOSITORY" \
+            --out-dir control/terminal \
+            --manifest control/manifest.json \
+            --simulate-missing-role verdict \
+            --control-only | tee control/collector.log
+          python code/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair_authority.json \
+            --inherited-authority inputs/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_authority.json \
+            --manifest control/manifest.json \
+            --out artifacts/canonical_boundary_control.json | tee artifacts/canonical_boundary_control.log
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('artifacts/canonical_boundary_control.json').read_text())
+          assert d['classification']=='ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED'
+          assert d['workflow_boundary_control_reached_classifier'] is True
+          m=d['artifact_manifest']; role=m['simulate_missing_role']
+          e=next(x for x in m['entries'] if x['role']==role)
+          assert e['download_attempted'] is True
+          assert isinstance(e['download_returncode'], int) and e['download_returncode'] != 0
+          assert e['state']=='MISSING_OR_UNAVAILABLE'
+          assert isinstance(d['canonical_decision_sha256'], str) and len(d['canonical_decision_sha256'])==64
+          PY
+          sha256sum artifacts/canonical_boundary_control.json artifacts/canonical_boundary_control.log control/manifest.json > artifacts/canonical_boundary_control.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-canonicalization-missing-control
+          path: artifacts/canonical_boundary_control.*
+          if-no-files-found: error
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Collect identical frozen artifacts under environment-specific local prefixes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag=$(echo '${{ matrix.python }}' | tr -d '.')
+          mkdir -p "terminal_${tag}" artifacts
+          python code/iter504t_artifact_boundary_collect.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair_authority.json \
+            --repo "$GITHUB_REPOSITORY" \
+            --out-dir "terminal_${tag}" \
+            --manifest "terminal_${tag}/manifest.json" | tee "terminal_${tag}/collector.log"
+      - name: Run frozen canonical decision reviewer
+        run: |
+          set -euo pipefail
+          tag=$(echo '${{ matrix.python }}' | tr -d '.')
+          python code/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair_authority.json \
+            --inherited-authority inputs/iter504t_repair_rerun_terminal_authority_review_artifact_boundary_repair_authority.json \
+            --manifest "terminal_${tag}/manifest.json" \
+            --out "artifacts/canonical_review_${tag}.json" | tee "artifacts/canonical_review_${tag}.log"
+          sha256sum "artifacts/canonical_review_${tag}.json" "artifacts/canonical_review_${tag}.log" "terminal_${tag}/manifest.json" > "artifacts/canonical_review_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-canonicalization-review-${{ matrix.python }}
+          path: artifacts/canonical_review_*
+          if-no-files-found: error
+
+  aggregate:
+    needs: [lane, boundary-control]
+    if: ${{ always() && needs.lane.result == 'success' && needs.boundary-control.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504t-canonicalization-review-*
+          path: downloaded/review
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504t-canonicalization-missing-control
+          path: downloaded/control
+      - name: Aggregate canonicalized terminal review
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/iter504t_repair_rerun_terminal_authority_review_decision_canonicalization_repair_aggregate.py \
+            --a downloaded/review/canonical_review_311.json \
+            --b downloaded/review/canonical_review_313.json \
+            --control downloaded/control/canonical_boundary_control.json \
+            --out artifacts/canonical_review_aggregate.json | tee artifacts/canonical_review_aggregate.log
+          sha256sum artifacts/canonical_review_aggregate.json artifacts/canonical_review_aggregate.log > artifacts/canonical_review_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-canonicalization-review-aggregate
+          path: artifacts/canonical_review_aggregate.*
+          if-no-files-found: error
