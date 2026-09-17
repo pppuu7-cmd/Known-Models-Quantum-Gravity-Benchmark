@@ -1,0 +1,76 @@
+{
+  "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_GATE",
+  "date": "2026-09-17",
+  "starting_reconciled_main": "5d9ab0763d9ad64073e13b6ff9415a830483041b",
+  "preregistration_commit": "4a5f7d1c651527249b2831b6886cd502dc18e648",
+  "latest_critic": {
+    "path": "recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_2026-09-17.md",
+    "blob_sha": "9f89a4674afbdb313d12e7f72692177cfa0eb42a",
+    "commit": "7263accb799829fddef81c1b4759822261f8b8d4",
+    "verdict": "INVALID_IMPLEMENTATION",
+    "defect": "required upstream artifact absence/expiration/download failure aborts Actions before frozen BLOCKED classification"
+  },
+  "prior_semantics_repair": {
+    "preregistration_commit": "5b18ffbe46b967ef64c54d6181924aa8acf6f43e",
+    "authority_commit": "39bd24ff03cba8858dca39ceb2935509352f295a",
+    "reviewer_commit": "b0f9fa5f2efe1e1f09d72d33e78bbee904ad5eb5",
+    "aggregate_commit": "311ac4169bd3fd8e0ce8b8ded1f8bc566db3cdeb",
+    "workflow_head": "71b1e197192c17d0c74e06fe7eb12b9b4b332f60",
+    "terminal_run_id": 35232311780,
+    "historical_classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+    "independent_critic_verdict": "INVALID_IMPLEMENTATION",
+    "reviewer_path": "code/iter504t_repair_rerun_terminal_authority_review_semantics_repair.py",
+    "reviewer_blob_sha": "8b8650751a6f7fc66ac2cba64e7335e0100180d6",
+    "workflow_path": ".github/workflows/iter504t-repair-rerun-terminal-authority-review-semantics-repair.yml",
+    "workflow_blob_sha": "4d642bc8c08ffa27c3db6ed04a87b674b8d57d9d"
+  },
+  "terminal_run": {
+    "id": 35205054496,
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "10ae6bcc8447d14cecc6e550065504b23f792953"
+  },
+  "required_terminal_artifacts": [
+    {"role":"assembly_a","name":"iter504t-repair-assembled-3.11","id":10498265422,"digest":"sha256:3e6739a93cd6e467ea4d1929c37bf68a830fabcd10e415bf2d08388ee4dc0075","relative_path":"iter504t-3.11.json"},
+    {"role":"assembly_b","name":"iter504t-repair-assembled-3.13","id":10497554745,"digest":"sha256:fee046299dee740c4a85df00eb8e6c21628ad98b7bf812a0518f8a423e6df2ff","relative_path":"iter504t-3.13.json"},
+    {"role":"aggregate","name":"iter504t-repair-aggregate","id":10497359984,"digest":"sha256:dee8780bb093f8dfe35419a1e4749127cebf730972ed1a395bc894ebfb7d0d47","relative_path":"iter504t-repair-aggregate.json"},
+    {"role":"critic","name":"iter504t-repair-critic","id":10498490034,"digest":"sha256:cbe6e8856f16850f5c4ecefe07a9c64aa6a7c2c0d035383f385da99c264078a1","relative_path":"iter504t-repair-critic.json"},
+    {"role":"verdict","name":"iter504t-repair-verdict","id":10498015467,"digest":"sha256:888edcf687b1c6705d32cd2aae3f03637732376f2eb2eadd8818690fd00cad49","relative_path":"iter504t-repair-verdict.json"}
+  ],
+  "frozen_science": {
+    "roots": [13,14,15],
+    "rhos": [0.35,0.9,1.6,2.7],
+    "R": [6,8,10,12],
+    "channels": 243,
+    "precision_bits": 384,
+    "threshold": "1/20",
+    "slope_floor": "1",
+    "MAX_DEPTH": 3,
+    "PASS": "ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED",
+    "INCONCLUSIVE": "ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED"
+  },
+  "review_outcomes": {
+    "PASS": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+    "FAIL": "ITER504T_REPAIR_RERUN_AUTHORITY_RESTORATION_FAILED_SCOPED",
+    "BLOCKED": "ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED",
+    "INVALID": "INVALID_IMPLEMENTATION"
+  },
+  "artifact_state_semantics": {
+    "missing_or_unavailable_or_expired_or_download_failed": "ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED",
+    "present_identity_mismatch": "INVALID_IMPLEMENTATION",
+    "present_identity_match": "CONTINUE_EXACT_REVIEW"
+  },
+  "boundary_control": {
+    "nonexistent_name": "iter504t-boundary-control-definitely-missing",
+    "expected_download_failure": true,
+    "expected_classification": "ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED",
+    "must_not_abort_workflow_before_classifier": true
+  },
+  "terminal_c4_authority": {
+    "classification": "ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED",
+    "independent_critic_verdict": "CONFIRMED_SCOPED",
+    "frozen_missing_binding": "leaf.certified == all(rho.certified for rho in leaf.per_rho)"
+  },
+  "decision_rule": "missing/unavailable/download-failed required artifact => BLOCKED; present artifact identity mismatch or control/authority failure => INVALID; complete valid exact data contradiction => FAIL; exact zero-unresolved science PASS => exact-run authority PASS; exact nonzero-unresolved science INCONCLUSIVE => preserve original INCONCLUSIVE",
+  "interpretation_ceiling": "exact completed run 35205054496 and terminal-review artifact boundary only; no all-1888/D7/model/family/selector/Candidate Gravity/Paper IV/global QG conclusion"
+}
