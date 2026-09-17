@@ -11,11 +11,32 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 - Candidate Gravity remains inactive; Paper IV remains `NOT_YET_AUTHORIZED`.
 - `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`; `INCONCLUSIVE != FAIL`; missing object/certificate/rank != zero; scoped child result != family closure; green CI != science.
 
-## Latest independently closed authority
+## Latest terminal methodology/closure authority
 
-`ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_DECISION_CANONICALIZATION_REPAIR_GATE` → `ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`, independent Critic `CONFIRMED_SCOPED` at commit `8624532254981fbea6f8fcfac09cd538e2066aa4`.
+`ITER504U_C4_SHARED_VALIDATOR_DIAGNOSTIC` terminalized the repaired Critic C4 fixture on the actual shared validator path.
 
-Bounded development science remains `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED` only for boxes 13–15 in the frozen development realization.
+Exact evaluator classification: `ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED`.
+
+Authority:
+
+- formal repair prereg `662e1b40c4584a5b1989b821cd7a5c334ef8fc44`;
+- diagnostic prereg `dd8ea4c0f6df3f0da6139e293d6b8fd5bea5d02a`;
+- diagnostic authority `79e4a6a1e6ee100812f6247219fa79501c3720f3`;
+- launch/head `c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2`;
+- run `35252175158`, terminal `completed/success`;
+- jobs `105306929508`, `105307014713`, `105307014763`, `105307454169`;
+- artifacts 3.11 `10510475771` / `sha256:583c1935ee815b7d4ba80e0396212d725933f6eabe4ac1f8fb4279f3a16ad0a1`; 3.13 `10510765344` / `sha256:f768f75cdc9794d70c4b5cced1ee8692c2fb8e38873094251baed9694c907cea`; aggregate `10509679536` / `sha256:9df7eed7be9e89c0083d2cb6b0631f3d190b12085253b5786e8808ba70883880`.
+
+Shared-validator outcome:
+
+- coherent baseline accepted;
+- repaired C4 contradiction rejected exactly as `H0_AMP_LOW:C4_leaf_binding`;
+- false-carrier contradiction rejected by the same exact binding;
+- full repaired negative-control suite passes;
+- Python 3.11/3.13 result payloads byte-identical;
+- `production_science_consumed=false`, `source_run_classified=false`.
+
+The earlier formal repair result at commit `77189486ba4db1dd281832b962b1be290e323944` remains historical `INVALID_IMPLEMENTATION`; this successor closes only its missing shared-validator-path coverage.
 
 ## Active scientific run
 
@@ -23,44 +44,22 @@ Bounded development science remains `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTI
 
 Latest fresh Actions state: `in_progress / conclusion=null`. No partial scientific payload has been consumed. No duplicate producer run is authorized.
 
-## Active closure gate
+## Open independent Critic issue for terminal science review
 
-`ITER504U_CRITIC_C4_FIXTURE_REPAIR_GATE`.
+Preterminal Critic commit `97a99cdcfaacec1e87b216e0d3a4282b165ae59b` identified a separate outcome-independent validation-path defect candidate: an uncertified terminal leaf at depth `< MAX_DEPTH=3` is not explicitly rejected by assembler/Critic validation, even though producer recursion appears to split correctly.
 
-Why active: before terminal Iter504U science consumption, the old synthetic Critic control `C4_true_leaf_false_rho` was shown to be outcome-dependent and therefore not guaranteed to test the frozen leaf/per-rho binding.
+This shallow-unresolved-leaf depth-binding candidate remains open. The C4 diagnostic does not repair or adjudicate it.
 
-Authority chain:
+## Latest independently closed science authority below Iter504U
 
-- initial outcome-blind repair freeze `5ad9664e88e517cd64bd9971bac5c4c239ba4672`;
-- structurally isolated repair wrapper `f5cd17136ddfee8864bb7a46abbdb464f666f518`, blob `bcea2946a0f9676b50897dc4bbe74fa1122a9965`;
-- methodology binding head `9793843843b53c1616af6fbfc72f7a8fa56a28ef`;
-- formal complete closure-gate freeze `662e1b40c4584a5b1989b821cd7a5c334ef8fc44`;
-- Actions methodology run `35250717944`, latest fresh state `queued / conclusion=null`.
+Iter504T exact repair/canonicalization remains independently `CONFIRMED_SCOPED`; bounded development authority remains `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED` for boxes 13–15 only.
 
-The gate is strictly fixture/validator methodology. Production evaluator, assembler, aggregate scientific classifier, cohort, source, precision, channels, R/rho grids, thresholds, depth, partition and PASS/INCONCLUSIVE semantics are unchanged.
+## Next admissible action
 
-No methodology result has been consumed while run `35250717944` is nonterminal.
+While run `35246605860` is nonterminal: status/provenance checking only; do not consume partial science and do not launch a duplicate/competing gate.
 
-## Closure successor constraint
+After terminalization: prospectively freeze the exact terminal production artifact IDs/digests, then execute one closure-only terminal authority review against those immutable artifacts. It must preserve the validated C4 repair and separately adjudicate the shallow-unresolved-leaf depth-binding candidate before any scientific Iter504U classification is accepted as authority.
 
-Run `35246605860` must remain immutable. Do not rerun physics because of the synthetic Critic defect. Only after it terminalizes may closure freeze exact upstream artifact IDs/digests and run repaired Critic review against those exact artifacts. The prepared closure workflow is not yet authorized to launch because source-run terminalization/artifact freeze has not occurred.
+## Governance
 
-## Historical qualifications retained
-
-All historical Iter504T invalid implementations and Critic qualifications remain immutable; no bounded result is family/all-domain/D7 closure.
-
-## Parallel D7-S2 retained state
-
-- raw K5 group-variable tangent pushforward = `CLOSED_SCOPED`;
-- group-only simultaneous contact-covector restriction/conditioning = `BLOCKED_SCOPED`;
-- physical transverse quotient/projection = `BLOCKED_SCOPED`;
-- normalization and observable/distributional final pushforward remain open.
-
-## Restoration procedure
-
-1. Read fresh `main` and fresh Actions before this index.
-2. Read `CURRENT_BENCHMARK_FRONT`, this index, `ITER504U_ACTIVE_CRITIC_REPAIR_STATUS_2026-09-17.md`, the original held-out preregistration and both repair freezes.
-3. Do not consume partial output from run `35246605860` or methodology run `35250717944`.
-4. If the methodology repair terminalizes, record its result without altering frozen criteria.
-5. Only after source-run terminalization prospectively bind artifact IDs/digests for closure-only repaired Critic review.
-6. Preserve all governance locks and claim ceilings.
+No all-1888, D7, model/family, selector, Candidate Gravity, Paper IV or global quantum-gravity conclusion is authorized.
