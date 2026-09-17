@@ -1,0 +1,30 @@
+{
+  "gate": "ITER504T_PRETERMINAL_CRITIC_DEFECT_BINDING_VERIFICATION_GATE",
+  "date": "2026-09-17",
+  "scientific_run": 35181094204,
+  "scientific_launch_head": "d23f34cba57b220dd29474c0651bc727d6d85eae",
+  "scientific_preregistration_commit": "aa2b0256ce60d605574a18ec86c0bad5b5df1512",
+  "single_execution_authority_commit": "3a485d34efaa500bbd0276b397c1a2078d18905e",
+  "latest_preterminal_critic_commit": "d5ddeb699343c498b2c0a0640f21ac01529bf47d",
+  "locked_files": {
+    "code/iter504t_local_derivative_contraction.py": "1ae78fc309839da30d1c78fc25c8e5ea3d98693f",
+    "code/iter504t_local_derivative_assemble.py": "6a886bf6ce8c263e586a6cb25d7441df5273a72d",
+    "code/iter504t_local_derivative_critic.py": "950d22e97b1ca2a17b2bb08d4386de6d4fb39445",
+    "research/prereg/ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md": "f648b0e0d6a960bf60c32d5c34694497a50b7e68",
+    "recovery/CRITICAL_PRETERMINAL_AUDIT_ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md": "9fffd4a3b755d0f6b10220390299d600e523e0b8"
+  },
+  "claims": [
+    "FROZEN_COMPONENTWISE_PARENT_INCLUSION_CONTROL_NOT_IMPLEMENTED_OR_RECORDED",
+    "FROZEN_DYADIC_SPLIT_LOCATION_NOT_INDEPENDENTLY_VERIFIED",
+    "FROZEN_R_COHORT_NOT_INDEPENDENTLY_VERIFIED"
+  ],
+  "root_fixture": 13,
+  "frozen_rhos": [0.35, 0.9, 1.6, 2.7],
+  "frozen_R": [6, 8, 10, 12],
+  "channel_count": 243,
+  "max_depth": 3,
+  "threshold_exact": "1/20",
+  "robust_floor_exact": "1",
+  "artifact_firewall": "NO_ACTIVE_ITER504T_SCIENTIFIC_ARTIFACT_READS",
+  "claim_ceiling": "verification binding of three named Critic defect candidates only; no Iter504T scientific classification"
+}
