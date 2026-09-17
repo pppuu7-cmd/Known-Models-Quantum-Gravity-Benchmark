@@ -1,0 +1,129 @@
+{
+  "gate": "ITER504V_BROADER_DOMAIN_CAMPAIGN_DESIGN",
+  "date": "2026-09-17",
+  "status": "PROSPECTIVELY_FROZEN_CAMPAIGN_DESIGN",
+  "parent_iter504u_terminal_authority_commit": "a31db0d6b9f98448977a6fcdde80a45e3e7195fe",
+  "parent_iter504u_classification": "ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED",
+  "postclosure_audit_commit": "dd32ae2616f4cbe3826f73c7a1d2f51818b4954c",
+  "parent_domain_authority": {
+    "iter504_preregistration_commit": "1ab46b7add51b36b5499f866eb4579137838bfae",
+    "iter504_terminal_result_commit": "e3816c0437a1f895196d2bbccacfb05e8dd38e74",
+    "iter504_canonical_result_commit": "2e1fa7e772185b82387c7bb49da0c4f85bc06df8",
+    "direction_box_record_count": 768,
+    "rho_state_count": 3072,
+    "historical_robust_nondecay_count": 1184,
+    "historical_inconclusive_count": 1888,
+    "historical_uniform_decay_witness_count": 0
+  },
+  "domain": {
+    "causals": ["0to5", "1to4", "2to3"],
+    "blocks": [0, 1, 2, 3],
+    "paths": [0, 1, 2, 3],
+    "boxes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "box_interval_exact": "box k = [(16+k)/12800,(17+k)/12800]",
+    "rhos": [0.35, 0.9, 1.6, 2.7],
+    "R": [6, 8, 10, 12],
+    "channel_count": 243,
+    "precision_bits": 384,
+    "python_flint": "0.9.0",
+    "path_map": [
+      {"block": 0, "path": 0, "direction": [1,1,1,1,1,1], "sign": 1},
+      {"block": 0, "path": 1, "direction": [1,1,1,1,1,1], "sign": -1},
+      {"block": 0, "path": 2, "direction": [1,1,1,-1,-1,-1], "sign": 1},
+      {"block": 0, "path": 3, "direction": [1,1,1,-1,-1,-1], "sign": -1},
+      {"block": 1, "path": 0, "direction": [1,-1,-1,1,1,-1], "sign": 1},
+      {"block": 1, "path": 1, "direction": [1,-1,-1,1,1,-1], "sign": -1},
+      {"block": 1, "path": 2, "direction": [1,-1,1,-1,1,-1], "sign": 1},
+      {"block": 1, "path": 3, "direction": [1,-1,1,-1,1,-1], "sign": -1},
+      {"block": 2, "path": 0, "direction": [1,1,-1,1,-1,-1], "sign": 1},
+      {"block": 2, "path": 1, "direction": [1,1,-1,1,-1,-1], "sign": -1},
+      {"block": 2, "path": 2, "direction": [1,-1,1,1,-1,1], "sign": 1},
+      {"block": 2, "path": 3, "direction": [1,-1,1,1,-1,1], "sign": -1},
+      {"block": 3, "path": 0, "direction": [1,1,-1,-1,1,1], "sign": 1},
+      {"block": 3, "path": 1, "direction": [1,1,-1,-1,1,1], "sign": -1},
+      {"block": 3, "path": 2, "direction": [1,-1,-1,-1,-1,1], "sign": 1},
+      {"block": 3, "path": 3, "direction": [1,-1,-1,-1,-1,1], "sign": -1}
+    ]
+  },
+  "canonical_state_identity": {
+    "format": "<causal>|b<block>|p<path>|x<box02>",
+    "enumeration_order": ["causal", "block", "path", "box"],
+    "enumeration_definition": "for causal in [0to5,1to4,2to3], for block in [0,1,2,3], for path in [0,1,2,3], for box in [0..15]",
+    "record_count": 768,
+    "newline_terminated_enumeration_sha256": "3cac282175830e795394dca5202f5368b27120817f2d4abd9eba54fc6c9f1e6f"
+  },
+  "frozen_local_d_contract": {
+    "drift_tolerance_exact": "1/20",
+    "robust_floor_exact": "1",
+    "max_depth": 3,
+    "partition": "deterministic_dyadic_midpoint",
+    "local_derivative_recomputed_each_visited_node": true,
+    "leaf_certification_binding": "all_per_rho_exact",
+    "unresolved_terminal_depth_binding": "uncertified terminal leaf => depth == 3",
+    "scientific_decision_transport": "exact_arb_booleans_float_bounds_display_only",
+    "channel_pruning": false
+  },
+  "previous_local_d_records": [
+    "0to5|b0|p2|x00",
+    "0to5|b0|p2|x08",
+    "1to4|b0|p2|x08",
+    "2to3|b0|p2|x08",
+    "0to5|b3|p2|x08",
+    "0to5|b0|p3|x08",
+    "0to5|b0|p2|x13",
+    "0to5|b0|p2|x14",
+    "0to5|b0|p2|x15"
+  ],
+  "phase_a_sentinel": {
+    "selection_rule": "for each block b and path p: box=4*b+p; causal=[0to5,1to4,2to3][(b+p)%3]",
+    "record_count": 16,
+    "prior_exact_record_overlap_count": 0,
+    "covers_every_block_path_pair_once": true,
+    "covers_every_box_once": true,
+    "covers_all_directions": true,
+    "covers_both_signs": true,
+    "causal_counts": {"0to5": 6, "1to4": 5, "2to3": 5},
+    "state_ids": [
+      "0to5|b0|p0|x00",
+      "1to4|b0|p1|x01",
+      "2to3|b0|p2|x02",
+      "0to5|b0|p3|x03",
+      "1to4|b1|p0|x04",
+      "2to3|b1|p1|x05",
+      "0to5|b1|p2|x06",
+      "1to4|b1|p3|x07",
+      "2to3|b2|p0|x08",
+      "0to5|b2|p1|x09",
+      "1to4|b2|p2|x10",
+      "2to3|b2|p3|x11",
+      "0to5|b3|p0|x12",
+      "1to4|b3|p1|x13",
+      "2to3|b3|p2|x14",
+      "0to5|b3|p3|x15"
+    ],
+    "newline_terminated_state_id_sha256": "b56a2a32cd96b28c14aaaa86f1062d1f2f2a167a2295ed99f904a99fd8371e82",
+    "terminal_labels": [
+      "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+      "ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_TO_UNIFORM_CERTIFICATION_SCOPED",
+      "ITER504V_SENTINEL_INVALID"
+    ]
+  },
+  "phase_b_complete_cover_plan": {
+    "execution_authorized_by_this_manifest": false,
+    "unlock_condition": "Phase A terminal ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+    "logical_path_lanes": 48,
+    "box_quartiles": [[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]],
+    "compute_shards_per_environment": 192,
+    "python_environments": ["3.11", "3.13"],
+    "fail_fast": false,
+    "max_parallel": 12,
+    "complete_record_count": 768,
+    "complete_rho_state_count": 3072,
+    "planned_terminal_labels": [
+      "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+      "ITER504V_BROADER_DOMAIN_LOCAL_D_INCONCLUSIVE_SCOPED",
+      "ITER504V_BROADER_DOMAIN_INVALID"
+    ]
+  },
+  "claim_ceiling": "Campaign design and q=1 certificate-generalization only; no global quantum-gravity, D7, model-family, Candidate Gravity, Paper IV, new-theory or new-physics authority"
+}
