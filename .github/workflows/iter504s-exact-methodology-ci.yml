@@ -30,6 +30,8 @@ jobs:
         run: |
           set -euo pipefail
           grep -F "REPAIR_EXACT = '77d42eb58c03eef2356aed7a25795562760de4e3'" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "slope_ok = bool(slo >= FLOOR)" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "drift_ok = bool(du <= TOL)" code/iter504s_mechanism_discriminator_exact.py
           grep -F "'drift_within_tolerance': drift_ok" code/iter504s_mechanism_discriminator_exact.py
           grep -F "'violating_channel_indices': violating" code/iter504s_mechanism_discriminator_exact.py
           grep -F "'scientific_decision_transport': 'exact_arb_booleans_float_bounds_display_only'" code/iter504s_mechanism_discriminator_exact.py
@@ -38,10 +40,34 @@ jobs:
           grep -F "not F['drift_within_tolerance']" code/iter504s_mechanism_assemble_exact.py
           grep -F "violating_channel_indices" code/iter504s_mechanism_aggregate_exact.py
           grep -F "cross_environment_exact_decision_agreement" code/iter504s_adversarial_critic_exact.py
+          grep -F "center_D_is_control_only': True" code/iter504s_mechanism_assemble_exact.py
           if grep -E "float\([^)]*(drift_upper|S_lower|max_fixed_channel_drift_upper)[^)]*\).*(<=|>=|<|>)" code/iter504s_mechanism_assemble_exact.py code/iter504s_mechanism_aggregate_exact.py code/iter504s_adversarial_critic_exact.py; then
             echo 'scientific float threshold comparison reintroduced'
             exit 1
           fi
+      - name: Mandatory adversarial controls present
+        shell: bash
+        run: |
+          set -euo pipefail
+          for control in \
+            threshold_comparison_after_arb_to_float_conversion \
+            floor_comparison_from_serialized_float \
+            fixed_channel_maximum_used_as_threshold_authority \
+            missing_exact_decision_boolean \
+            inconsistent_all_within_vs_violating_channel_list \
+            omitted_channel \
+            candidate_set_incompleteness_mislabeled_complete \
+            channel_pruning \
+            changed_threshold \
+            changed_floor \
+            changed_root_rho_R_cohort \
+            changed_exact_LOW_MID_HIGH_amplitude \
+            center_D_treated_as_rigorous_enclosure \
+            result_dependent_case_deletion; do
+            grep -F "$control" code/iter504s_adversarial_critic_exact.py
+          done
+      - name: Execute synthetic adversarial self-test
+        run: python code/iter504s_adversarial_critic_exact.py --self-test
       - name: Frozen science constants unchanged
         shell: bash
         run: |
