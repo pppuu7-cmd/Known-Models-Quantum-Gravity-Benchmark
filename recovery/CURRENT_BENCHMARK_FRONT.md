@@ -30,7 +30,7 @@ Exact terminal facts:
 
 Scientific localization: child-delta refinement alone, while retaining the same full-root derivative enclosure `D(I)`, is not sufficient on the frozen three-root continuous-drift diagnostic. Residual mechanism space is full-root derivative-enclosure width and/or nonsmooth max-channel competition/crossings, with possible fixed-channel nonstationarity. Do not increase depth blindly or promote this diagnostic to the full Iter504 domain.
 
-## Active scientific gate — repaired Iter504S
+## Active scientific gate — Iter504S exact-threshold repair required
 
 Gate:
 
@@ -49,8 +49,8 @@ Frozen science remains unchanged:
 - roots `13,14,15`;
 - rhos `[0.35,0.9,1.6,2.7]`;
 - R grid `[6,8,10,12]`;
-- robust floor `+1.0`;
-- drift threshold `0.05`;
+- robust floor exact `+1`;
+- drift threshold exact `0.05 = 1/20`;
 - exact preregistered LOW/MID/HIGH rational points only;
 - center-D is control-only and is not a validated replacement enclosure.
 
@@ -76,61 +76,62 @@ Durable record:
 
 `f916873228f970844c775dbaaabeba999b432365`
 
-## Prospectively frozen execution-only repairs
+## First repaired Iter504S execution — terminal diagnostic only
 
-Both repairs were frozen before repaired execution and before substantive Iter504S output consumption:
+Execution-only repairs frozen before this run:
 
-1. derivative-component extraction repair `88c92f86a765e9d8b441152674fc2c303f3f1ff3`;
-2. fixed-channel drift-only competition repair `4ef41c0f4ceed3082fd4d80930ef5d848f18802b`.
+1. derivative-component extraction `88c92f86a765e9d8b441152674fc2c303f3f1ff3`;
+2. fixed-channel drift-only competition semantics `4ef41c0f4ceed3082fd4d80930ef5d848f18802b`.
 
-Repair 1 only extracts `ad.as_c(z).d` from the existing dual channel object. Full-D retains the unchanged validated full-root derivative ball; center-D uses only the deterministic midpoint of that same derivative ball.
+Repaired chain:
 
-Repair 2 affects only fixed-channel competition attribution. A complete fixed-channel candidate set is within competition tolerance iff `max_fixed_channel_drift_upper <= 0.05`; fixed-channel `S_lower` is not part of that predicate. The full-envelope predicate remains `S_lower >= 1.0 AND drift_upper <= 0.05`.
-
-## Repaired implementation and verification chain
-
-Prepared without triggering scientific execution:
-
-- repaired evaluator `b20077e77b421a68f1a99135ff652e52a0d53227`;
-- repaired independent assembler `7dc689f9b4d7e4f768a677e2afc80668a15b73d9`;
-- repaired cross-environment aggregate `b0347e225b986b63e079ef6ebf02cd928022eb39`;
-- repaired adversarial Critic `38c705865b0397c7cf664ad142ad232d3b0a312f`.
-
-Methodology CI run `35175274675` on head `38c705865b0397c7cf664ad142ad232d3b0a312f` completed/success. This is execution-quality evidence only, not a scientific PASS.
-
-Repaired execution authority was prospectively frozen in commit:
-
-`7931e10c31dc8f1db42215117ef2b1b15ac0ed6b`.
-
-Outcome-blind source-level semantics audit completed while the repaired run was nonterminal:
-
-`6334f6be04ffc5b1db0eb68f6b6debffa2b3b0f7`.
-
-It found no additional source-level mismatch with the frozen Iter504S contract and did not modify the running code.
-
-## Canonical repaired Iter504S run
-
-Single authorized repaired workflow launch:
-
+- evaluator `b20077e77b421a68f1a99135ff652e52a0d53227`;
+- assembler `7dc689f9b4d7e4f768a677e2afc80668a15b73d9`;
+- aggregate `b0347e225b986b63e079ef6ebf02cd928022eb39`;
+- adversarial Critic `38c705865b0397c7cf664ad142ad232d3b0a312f`;
+- execution authority `7931e10c31dc8f1db42215117ef2b1b15ac0ed6b`;
 - workflow head `7e3b266def723dc332239990bac01f9298c17b4e`;
-- Actions run `35175533159`;
-- run number `2`;
-- run attempt `1`.
+- Actions run `35175533159`.
 
-Latest checked state: `in_progress`.
+Run `35175533159` is terminal `completed/success`: all six root jobs, both Python 3.11/3.13 independent assemblies, cross-environment aggregate and adversarial Critic completed successfully. The two environments produced identical root hashes and identical assembled SHA256. Critic reported no errors, cross-environment discrete agreement `true`, and all frozen negative/semantic controls passed.
 
-Source-lock job `105056298469` completed/success. Six root jobs are running inside `Execute frozen repaired root mechanism discriminator` after successful dependency installation and environment capture:
+Its **provisional diagnostic** classification is:
 
-- Python 3.11 / root 13: `105056327923`;
-- Python 3.11 / root 14: `105056327973`;
-- Python 3.11 / root 15: `105056327935`;
-- Python 3.13 / root 13: `105056328012`;
-- Python 3.13 / root 14: `105056327976`;
-- Python 3.13 / root 15: `105056327972`.
+`ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED`
 
-No duplicate Iter504S execution is authorized. No partial/nonterminal mechanism numbers are scientific evidence.
+This is strong mechanism evidence but is **not promoted to terminal science** because an outcome-blind post-launch static audit found a validated-decision transport defect before the terminal result was consumed for scientific promotion.
 
-After terminal root production, two environment assemblies must be built independently; cross-environment aggregate must agree on every frozen scientific decision; repaired adversarial Critic must reconstruct all 36 cases, exact points/rhos/R values, channel completeness, no-pruning, derivative representation, fixed-channel drift-only semantics, possible-max identities, dominance/mechanism flags and final classifier. Any frozen-decision disagreement makes the gate INVALID until reconciled.
+## Exact-threshold decision firewall
+
+Authoritative firewall commit:
+
+`77d42eb58c03eef2356aed7a25795562760de4e3`
+
+File:
+
+`research/prereg/ITER504S_EXECUTION_ONLY_EXACT_THRESHOLD_DECISION_FIREWALL_2026-09-17.md`
+
+Defect: the repaired evaluator computes Arb enclosures, but several terminal mechanism predicates are reconstructed from binary64 summaries produced by `bound_float`, including derivative-radius drift comparisons, full/center violation tests, and fixed-channel competition threshold tests. The core module explicitly treats ordinary Arb-to-float conversion as display-only rather than a validated decision channel.
+
+Python binary64 `0.05` is not exact `1/20`:
+
+`0.05.as_integer_ratio() = 3602879701896397 / 72057594037927936`,
+
+which exceeds exact `1/20` by `1 / 360287970189639680`.
+
+Therefore no non-INVALID mechanism class from run `35175533159` is eligible for final scientific promotion. This authority rule was frozen outcome-blind and applies equally to every possible mechanism class.
+
+The next scientific execution may change only decision transport/verification:
+
+- evaluate full-envelope slope-floor and drift booleans directly in Arb;
+- evaluate derivative-radius sensitivity from producer exact-Arb drift booleans;
+- evaluate every fixed-channel drift boolean directly in Arb;
+- transport explicit exact-decision booleans / violating-channel identities downstream;
+- make binary64 bounds display-only;
+- make assembler, aggregate and independent Critic classify solely from exact producer booleans plus structural/provenance identities;
+- preserve every scientific threshold, point, channel, precision, source, cohort and classifier branch.
+
+Exactly one repaired scientific execution is authorized only after its implementation hashes and workflow authority are prospectively frozen.
 
 ## Outcome-blind successor machinery
 
@@ -151,7 +152,7 @@ It contains four generic routes without selecting any future witness/partition b
 
 Any successful three-root mechanism repair must pass a prospectively selected held-out representative cohort before full 1888-state expansion is considered.
 
-## Next decision after Iter504S terminal result
+## Next decision after exact-threshold Iter504S terminal result
 
 - `ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED` -> prospectively freeze bounded `ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION` using validated `D(J)`;
 - `CHANNEL_COMPETITION_NECESSARY_SCOPED` -> prospectively freeze switching-surface / dominance-cell certificate;
