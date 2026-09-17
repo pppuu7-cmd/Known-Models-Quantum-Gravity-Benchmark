@@ -1,0 +1,53 @@
+name: Iter504S exact-decision methodology CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504s-exact-methodology-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax check exact-decision chain
+        run: |
+          python -m py_compile \
+            code/iter504s_mechanism_discriminator_exact.py \
+            code/iter504s_mechanism_assemble_exact.py \
+            code/iter504s_mechanism_aggregate_exact.py \
+            code/iter504s_adversarial_critic_exact.py
+      - name: Static exact-decision contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -F "REPAIR_EXACT = '77d42eb58c03eef2356aed7a25795562760de4e3'" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "'drift_within_tolerance': drift_ok" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "'violating_channel_indices': violating" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "'scientific_decision_transport': 'exact_arb_booleans_float_bounds_display_only'" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "full_viol = not F['drift_within_tolerance']" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "center_viol = not C['drift_within_tolerance']" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "not F['drift_within_tolerance']" code/iter504s_mechanism_assemble_exact.py
+          grep -F "violating_channel_indices" code/iter504s_mechanism_aggregate_exact.py
+          grep -F "cross_environment_exact_decision_agreement" code/iter504s_adversarial_critic_exact.py
+          if grep -E "float\([^)]*(drift_upper|S_lower|max_fixed_channel_drift_upper)[^)]*\).*(<=|>=|<|>)" code/iter504s_mechanism_assemble_exact.py code/iter504s_mechanism_aggregate_exact.py code/iter504s_adversarial_critic_exact.py; then
+            echo 'scientific float threshold comparison reintroduced'
+            exit 1
+          fi
+      - name: Frozen science constants unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -F "TOL = arb('0.05')" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "FLOOR = arb('1.0')" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "ROOTS = (13, 14, 15)" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "full_channel_count': 243" code/iter504s_mechanism_discriminator_exact.py
+          grep -F "precision_bits': 384" code/iter504s_mechanism_discriminator_exact.py
