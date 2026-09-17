@@ -1,0 +1,41 @@
+{
+  "gate": "ITER504T_PRETERMINAL_CRITIC_DEFECT_BINDING_VERIFICATION_GATE",
+  "authoritative_actions_run": 35192972048,
+  "workflow_head": "f3a1ac941c63d92b2842b7fc09532c5463bffa37",
+  "jobs": {
+    "source_lock": 105109491926,
+    "python_3_11": 105109537847,
+    "python_3_13": 105109537816,
+    "aggregate": 105109599800
+  },
+  "artifacts": {
+    "python_3_11": {
+      "id": 10484507873,
+      "digest": "sha256:08c40f815c33258c3257bcc58369bca1e9683a00ced2d0f09201c9f8388a6029",
+      "zip_sha256": "08c40f815c33258c3257bcc58369bca1e9683a00ced2d0f09201c9f8388a6029",
+      "json_sha256": "e434469f558a82aabfda08202c6a49bf1b138bff59f3f430327d8835776d6bd9",
+      "log_sha256": "8b42bb6778c6c9b22edf96af1bb0961f6315f0fe68370208d0b69b9ebf6bce50",
+      "decision_sha256": "f171fc91f3aa64bc27624601661088909ac928860d07f0f9bf24c8ef1d0a2ec9"
+    },
+    "python_3_13": {
+      "id": 10484498017,
+      "digest": "sha256:19f01cbae99be78f0edeeb09bc5a00fed8ef652ce5e1225defd90a0df19db7ce",
+      "zip_sha256": "19f01cbae99be78f0edeeb09bc5a00fed8ef652ce5e1225defd90a0df19db7ce",
+      "json_sha256": "e434469f558a82aabfda08202c6a49bf1b138bff59f3f430327d8835776d6bd9",
+      "log_sha256": "8b42bb6778c6c9b22edf96af1bb0961f6315f0fe68370208d0b69b9ebf6bce50",
+      "decision_sha256": "f171fc91f3aa64bc27624601661088909ac928860d07f0f9bf24c8ef1d0a2ec9"
+    },
+    "aggregate": {
+      "id": 10484253835,
+      "digest": "sha256:7664f90e1fe24633bf8b36ab412a1b9076f30395666b6cf05daecb105e821c76",
+      "zip_sha256": "7664f90e1fe24633bf8b36ab412a1b9076f30395666b6cf05daecb105e821c76",
+      "json_sha256": "7fdb4388fc59a1bd21987a18eccb7e5d55e7922c88a53573ec0d70908fe253b7",
+      "log_sha256": "b57d87282e236120cda272cd8dfe4038b90f74e732b3b77a648c03c190d36d81",
+      "sha256_manifest_sha256": "01e503228acf9895061187ac52fa92651b034ccf6676ff90da56727ed64cbcd8",
+      "aggregate_decision_sha256": "b9379768534acb840c56a3c2a9875a57a4badfdceefc0c7b7bac9a6e2984821e"
+    }
+  },
+  "lanes_byte_identical_json": true,
+  "lanes_byte_identical_log": true,
+  "active_iter504t_scientific_artifacts_consumed": false
+}
