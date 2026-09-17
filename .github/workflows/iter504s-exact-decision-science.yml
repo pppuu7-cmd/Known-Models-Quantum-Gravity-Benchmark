@@ -1,0 +1,288 @@
+name: KMQGB Iter504S exact-decision scientific execution
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/notes/ITER504S_EXACT_DECISION_SINGLE_EXECUTION_TRIGGER_2026-09-17.md'
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen exact-decision execution authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='research/prereg/ITER504S_EXACT_DECISION_EXECUTION_AUTHORITY_2026-09-17.md'
+          TRIGGER='research/notes/ITER504S_EXACT_DECISION_SINGLE_EXECUTION_TRIGGER_2026-09-17.md'
+          test -f "$AUTH"
+          test -f "$TRIGGER"
+
+          # The launch commit must be trigger-only. This makes the new workflow a
+          # single prospectively authorized execution rather than a mutable rerun.
+          mapfile -t CHANGED < <(git show --format= --name-only HEAD | sed '/^$/d')
+          test "${#CHANGED[@]}" -eq 1
+          test "${CHANGED[0]}" = "$TRIGGER"
+          AUTH_COMMIT="$(git log -1 --format=%H -- "$AUTH")"
+          test -n "$AUTH_COMMIT"
+          git merge-base --is-ancestor "$AUTH_COMMIT" HEAD
+
+          for c in \
+            f6367456aa715fe6282ab70c1b2005971a4568c7 \
+            88c92f86a765e9d8b441152674fc2c303f3f1ff3 \
+            4ef41c0f4ceed3082fd4d80930ef5d848f18802b \
+            77d42eb58c03eef2356aed7a25795562760de4e3 \
+            d6fab0d6a42e79e0d9843c08c453cc0e283cc190 \
+            2acf07c0ac5b27e55c90f88a9ffc3af05264cf23 \
+            d8fac6d451f266df238bd6814eea7ec29fa27dc7 \
+            ecd40392d16f2c936d3d0ff9655a3ff6d390e26d \
+            932866e4be11f0ced241f5e3a1a854bb74dfb637 \
+            be7b6adf13dc987f58c8179a6e230ec4a58d76fc \
+            f846820bae39963a48272deccb2e4a539100fce1 \
+            598ede26e0db448411537e9d5f813aa344f88d0f \
+            6e300294e6c9a470099776d1c30357eed3fa4b93; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+
+          test "$(git hash-object code/iter504s_mechanism_discriminator_exact.py)" = "$(git rev-parse d6fab0d6a42e79e0d9843c08c453cc0e283cc190:code/iter504s_mechanism_discriminator_exact.py)"
+          test "$(git hash-object code/iter504s_mechanism_assemble_exact.py)" = "$(git rev-parse 2acf07c0ac5b27e55c90f88a9ffc3af05264cf23:code/iter504s_mechanism_assemble_exact.py)"
+          test "$(git hash-object code/iter504s_mechanism_aggregate_exact.py)" = "$(git rev-parse d8fac6d451f266df238bd6814eea7ec29fa27dc7:code/iter504s_mechanism_aggregate_exact.py)"
+          test "$(git hash-object code/iter504s_adversarial_critic_exact.py)" = "$(git rev-parse ecd40392d16f2c936d3d0ff9655a3ff6d390e26d:code/iter504s_adversarial_critic_exact.py)"
+          test "$(git hash-object research/prereg/ITER504S_ROOT_DERIVATIVE_VS_CHANNEL_COMPETITION_DISCRIMINATOR_2026-09-17.md)" = "$(git rev-parse f6367456aa715fe6282ab70c1b2005971a4568c7:research/prereg/ITER504S_ROOT_DERIVATIVE_VS_CHANNEL_COMPETITION_DISCRIMINATOR_2026-09-17.md)"
+          test "$(git hash-object research/prereg/ITER504S_EXECUTION_ONLY_EXACT_THRESHOLD_DECISION_FIREWALL_2026-09-17.md)" = "$(git rev-parse 77d42eb58c03eef2356aed7a25795562760de4e3:research/prereg/ITER504S_EXECUTION_ONLY_EXACT_THRESHOLD_DECISION_FIREWALL_2026-09-17.md)"
+
+          for f in code/iter499_arb_core.py code/iter500_compact_sandwich_kak.py code/iter501_direct_max_envelope_interval.py code/iter503_ad_core.py code/iter504_centered_shard.py code/iter504r_root_affine_reuse.py; do
+            test "$(git hash-object "$f")" = "$(git rev-parse f846820bae39963a48272deccb2e4a539100fce1:$f)"
+          done
+
+          FROZEN_WORKFLOW_BLOB="$(sed -n 's/^workflow_git_blob: `\([^`]*\)`$/\1/p' "$AUTH")"
+          test -n "$FROZEN_WORKFLOW_BLOB"
+          test "$(git hash-object .github/workflows/iter504s-exact-decision-science.yml)" = "$FROZEN_WORKFLOW_BLOB"
+
+          grep -F 'execution_only_repair: `true`' "$AUTH"
+          grep -F 'science_changed: `false`' "$AUTH"
+          grep -F 'threshold_changed: `false`' "$AUTH"
+          grep -F 'cohort_changed: `false`' "$AUTH"
+          grep -F 'classifier_changed: `false`' "$AUTH"
+          grep -F 'source_physics_changed: `false`' "$AUTH"
+          grep -F 'single_scientific_execution_authorized: `true`' "$AUTH"
+          grep -F 'exact_methodology_run: `35178027196` completed/success' "$AUTH"
+          grep -F 'general_methodology_run: `35178027113` completed/success' "$AUTH"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recheck exact decision firewall before science
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            code/iter504s_mechanism_discriminator_exact.py \
+            code/iter504s_mechanism_assemble_exact.py \
+            code/iter504s_mechanism_aggregate_exact.py \
+            code/iter504s_adversarial_critic_exact.py
+          python code/iter504s_adversarial_critic_exact.py --self-test
+
+  roots:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+        root_box: [13, 14, 15]
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install frozen numerical dependencies
+        shell: bash
+        run: |
+          python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+          python - <<'PY'
+          import importlib.metadata
+          assert importlib.metadata.version('python-flint') == '0.9.0'
+          PY
+      - name: Capture frozen execution environment
+        shell: bash
+        run: |
+          mkdir -p out
+          python -VV > out/python.txt 2>&1
+          python -m pip freeze > out/pip-freeze.txt
+          uname -a > out/uname.txt
+          python - <<'PY' > out/environment.json
+          import importlib.metadata, json, platform, sys
+          from flint import ctx
+          ctx.prec = 384
+          print(json.dumps({
+              'python': sys.version,
+              'python_flint': importlib.metadata.version('python-flint'),
+              'platform': platform.platform(),
+              'arb_precision_bits': ctx.prec,
+          }, indent=2, sort_keys=True))
+          PY
+      - name: Execute frozen exact-decision root discriminator
+        shell: bash
+        env:
+          PYTHONPATH: code
+        run: |
+          python code/iter504s_mechanism_discriminator_exact.py \
+            --root-box '${{ matrix.root_box }}' \
+            --out 'out/root-${{ matrix.root_box }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504s-exact-${{ matrix.python }}-root-${{ matrix.root_box }}
+          path: out
+          if-no-files-found: error
+
+  assemble:
+    needs: roots
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-exact-${{ matrix.python }}-root-13
+          path: roots/13
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-exact-${{ matrix.python }}-root-14
+          path: roots/14
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-exact-${{ matrix.python }}-root-15
+          path: roots/15
+      - name: Assemble exact producer decisions independently
+        shell: bash
+        run: |
+          mkdir -p out
+          python code/iter504s_mechanism_assemble_exact.py \
+            --root13 roots/13/root-13.json \
+            --root14 roots/14/root-14.json \
+            --root15 roots/15/root-15.json \
+            --out 'out/iter504s-exact-${{ matrix.python }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504s-exact-assembled-${{ matrix.python }}
+          path: out
+          if-no-files-found: error
+
+  aggregate:
+    needs: assemble
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-exact-assembled-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-exact-assembled-3.13
+          path: b
+      - name: Aggregate exact cross-environment decisions
+        shell: bash
+        run: |
+          mkdir -p out
+          python code/iter504s_mechanism_aggregate_exact.py \
+            --a a \
+            --b b \
+            --out out/iter504s-exact-aggregate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504s-exact-aggregate
+          path: out/iter504s-exact-aggregate.json
+          if-no-files-found: error
+
+  critic:
+    needs: [roots, assemble, aggregate]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504s-exact-3.11-root-*
+          path: roots-a
+          merge-multiple: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504s-exact-3.13-root-*
+          path: roots-b
+          merge-multiple: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-exact-assembled-3.11
+          path: asm-a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-exact-assembled-3.13
+          path: asm-b
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-exact-aggregate
+          path: aggregate
+      - name: Run exact-decision adversarial Critic
+        shell: bash
+        run: |
+          mkdir -p out
+          python code/iter504s_adversarial_critic_exact.py \
+            --a-root13 roots-a/iter504s-exact-3.11-root-13/root-13.json \
+            --a-root14 roots-a/iter504s-exact-3.11-root-14/root-14.json \
+            --a-root15 roots-a/iter504s-exact-3.11-root-15/root-15.json \
+            --a-assembled asm-a/iter504s-exact-3.11.json \
+            --b-root13 roots-b/iter504s-exact-3.13-root-13/root-13.json \
+            --b-root14 roots-b/iter504s-exact-3.13-root-14/root-14.json \
+            --b-root15 roots-b/iter504s-exact-3.13-root-15/root-15.json \
+            --b-assembled asm-b/iter504s-exact-3.13.json \
+            --aggregate aggregate/iter504s-exact-aggregate.json \
+            --out out/iter504s-exact-critic.json
+      - name: Require exact cross-environment terminal agreement
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a = json.loads(Path('aggregate/iter504s-exact-aggregate.json').read_text())
+          c = json.loads(Path('out/iter504s-exact-critic.json').read_text())
+          assert a['classification'] == c['classification']
+          assert a['classification'] != 'ITER504S_INVALID'
+          assert not c['critic_errors']
+          assert c['cross_environment_exact_decision_agreement'] is True
+          assert c['threshold_exact'] == '1/20'
+          assert c['robust_floor_exact'] == '1'
+          assert all(c['negative_controls'].values())
+          print('ITER504S_EXACT_TERMINAL_CLASSIFICATION', a['classification'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504s-exact-critic
+          path: out/iter504s-exact-critic.json
+          if-no-files-found: error
