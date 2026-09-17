@@ -68,14 +68,62 @@ Execution-only multi-OS run `35155085604` completed with aggregate failure/INVAL
 
 No rerun is required for Iter504R scientific terminalization.
 
-## Next highest-information frontier
+## Active next gate — Iter504S
 
-Prospectively freeze a bounded mechanism-discrimination gate before any new diagnostic output. It should use a deterministic subset of terminal Iter504R unresolved leaves and distinguish:
+Prospectively frozen gate:
 
-1. residual certification width that persists at zero child width under the unchanged full-root derivative enclosure;
-2. residual uncertainty specifically requiring nonsmooth channel competition/switching.
+`ITER504S_ROOT_DERIVATIVE_VS_CHANNEL_COMPETITION_DISCRIMINATOR`
 
-Preferred exact diagnostics are zero-width root-affine midpoint enclosure, fixed-channel drift under the same derivative balls, strict channel-dominance gaps, possible-max multiplicity and no-pruning controls. This must remain bounded; do not launch the 1888-state full campaign.
+Scientific preregistration:
+
+`f6367456aa715fe6282ab70c1b2005971a4568c7`
+
+Purpose: bounded mechanism discrimination at the exact `LOW/MID/HIGH` points of roots `13,14,15`, retaining the same full-root derivative balls, all `243` channels, threshold `0.05`, robust floor `+1.0`, same rhos/R grid and no-pruning rule. The derivative-center branch is control-only sensitivity and is not a validated replacement enclosure.
+
+Initial implementation chain:
+
+- evaluator `a008d782618ac6a1c397d571ed091138107ac1ee`;
+- assembler `0ef4a6c8e193eec5294485997e4cfdd60e8c0d19`;
+- cross-environment aggregate `3f5c21056d9d701948c918b307f76c67f17eed41`;
+- workflow head `cb50a107b24232ef1b652baa9443e69fc3fa6ca1`;
+- workflow run `35173442220`.
+
+Latest checked state: `35173442220` is nonterminal; source-lock completed successfully and all six root computations are in the frozen root mechanism-discriminator step. No duplicate Iter504S execution is authorized while this run is queued/running.
+
+Outcome-blind adversarial Critic was frozen before terminal Iter504S artifacts:
+
+- `code/iter504s_adversarial_critic.py` commit `7cf20886ee36b4621fe6ce36176a3f361d7927ea`;
+- methodology CI run `35173630591` completed/success.
+
+Independent root-affine set-inclusion note:
+
+- `research/notes/ITER504R_ROOT_AFFINE_RIGOR_INDEPENDENT_CHECK_2026-09-17.md` commit `f306b05e5dc4918f4c1edd42e85716e0f67f8fc9`.
+
+## Prospectively frozen Iter504S execution-only repairs
+
+Two implementation mismatches were discovered by static audit while first Iter504S run `35173442220` was still in progress and before any substantive Iter504S artifact was consumed.
+
+### Dual derivative extraction
+
+Repair preregistration:
+
+`88c92f86a765e9d8b441152674fc2c303f3f1ff3`
+
+`iter503_ad_core.dcontract_all()` returns full dual `CD` channel objects. The frozen root-affine construction requires the derivative component `ad.as_c(z).d`. A repaired execution, if needed after the first run becomes terminal, may only extract this already-intended derivative component; full-D then uses the unchanged derivative ball and center-D uses the deterministic midpoint of that derivative ball.
+
+### Fixed-channel drift semantics
+
+Repair preregistration:
+
+`4ef41c0f4ceed3082fd4d80930ef5d848f18802b`
+
+The frozen competition diagnostic is drift-only for fixed channels: all eligible possible-max fixed channels satisfy the competition condition iff their `drift_upper <= 0.05`. The first implementation reused a composite `S_lower>=1 AND drift<=0.05` convenience boolean. A repaired execution, if needed after terminalization of the first run, must reconstruct competition from fixed-channel drift only while leaving the full-envelope scientific predicate unchanged.
+
+These are execution/implementation repairs only. They do not authorize any change to points, roots, threshold, floor, source, rho/R grids, 243-channel completeness, no-pruning rule, mechanism categories or terminal classifier.
+
+If the first Iter504S run is terminal success despite these mismatches, green CI does not override the preregistration mismatch; that execution remains implementation-invalid for science and the already-frozen minimal repairs must be applied before one repaired scientific execution. If it terminally fails, first verify the exact failure point before applying the frozen repairs.
+
+No partial/nonterminal Iter504S numbers are scientific evidence.
 
 ## Iter504P retained baseline
 
