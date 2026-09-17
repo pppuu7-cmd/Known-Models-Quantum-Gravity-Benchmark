@@ -1,0 +1,41 @@
+name: Iter504T local-D methodology CI
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504t-local-d-methodology-ci.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax check Iter504T chain
+        run: |
+          python -m py_compile code/iter504t_local_derivative_contraction.py code/iter504t_local_derivative_assemble.py code/iter504t_local_derivative_critic.py
+      - name: Frozen contract checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -F "PREREG='aa2b0256ce60d605574a18ec86c0bad5b5df1512'" code/iter504t_local_derivative_contraction.py
+          grep -F "MAX_DEPTH=3" code/iter504t_local_derivative_contraction.py
+          grep -F "TOL=arb('0.05')" code/iter504t_local_derivative_contraction.py
+          grep -F "FLOOR=arb('1.0')" code/iter504t_local_derivative_contraction.py
+          grep -F "local_derivative_recomputed_each_visited_node':True" code/iter504t_local_derivative_contraction.py
+          grep -F "channel_pruning_used':False" code/iter504t_local_derivative_contraction.py
+          grep -F "threshold_exact':'1/20'" code/iter504t_local_derivative_critic.py
+          grep -F "depth_increase" code/iter504t_local_derivative_critic.py
+          grep -F "reuse_root_derivative" code/iter504t_local_derivative_critic.py
+      - name: Verify parent authorities present
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 1b0004064575f046210383dc7b1ee22d4f25e66b HEAD
+          git merge-base --is-ancestor aa2b0256ce60d605574a18ec86c0bad5b5df1512 HEAD
+          git merge-base --is-ancestor 81e0e94649a50cccc510dc2630456af45fd98e46 HEAD
