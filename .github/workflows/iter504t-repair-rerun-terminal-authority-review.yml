@@ -1,0 +1,116 @@
+name: KMQGB Iter504T repair rerun terminal authority review
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504t-repair-rerun-terminal-authority-review.yml'
+      - 'code/iter504t_repair_rerun_terminal_authority_review.py'
+      - 'code/iter504t_repair_rerun_terminal_authority_review_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective freeze and terminal artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor a4be2171d5d325ba25b805603a2e9e30e542520b HEAD
+          git merge-base --is-ancestor 525cea7c03dfae45c668f9fb57b23ad30ac15010 HEAD
+          test "$(git hash-object recovery/CRITICAL_REVIEW_ITER504T_PRETERMINAL_LEAF_CERTIFICATION_BINDING_VERIFICATION_2026-09-17.md)" = c29d31dfa9b7a423bbdfc7edfe522ae2be94bcc3
+          run_json=$(gh api repos/${GITHUB_REPOSITORY}/actions/runs/35205054496)
+          test "$(jq -r .status <<<"$run_json")" = completed
+          test "$(jq -r .conclusion <<<"$run_json")" = success
+          test "$(jq -r .head_sha <<<"$run_json")" = 10ae6bcc8447d14cecc6e550065504b23f792953
+          artifacts=$(gh api 'repos/'${GITHUB_REPOSITORY}'/actions/runs/35205054496/artifacts?per_page=100')
+          check_artifact() {
+            name="$1" id="$2" digest="$3"
+            got_id=$(jq -r --arg n "$name" '.artifacts[] | select(.name==$n) | .id' <<<"$artifacts")
+            got_digest=$(jq -r --arg n "$name" '.artifacts[] | select(.name==$n) | .digest' <<<"$artifacts")
+            test "$got_id" = "$id"
+            test "$got_digest" = "$digest"
+          }
+          check_artifact iter504t-repair-assembled-3.11 10498265422 sha256:3e6739a93cd6e467ea4d1929c37bf68a830fabcd10e415bf2d08388ee4dc0075
+          check_artifact iter504t-repair-assembled-3.13 10497554745 sha256:fee046299dee740c4a85df00eb8e6c21628ad98b7bf812a0518f8a423e6df2ff
+          check_artifact iter504t-repair-aggregate 10497359984 sha256:dee8780bb093f8dfe35419a1e4749127cebf730972ed1a395bc894ebfb7d0d47
+          check_artifact iter504t-repair-critic 10498490034 sha256:cbe6e8856f16850f5c4ecefe07a9c64aa6a7c2c0d035383f385da99c264078a1
+          check_artifact iter504t-repair-verdict 10498015467 sha256:888edcf687b1c6705d32cd2aae3f03637732376f2eb2eadd8818690fd00cad49
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Download frozen terminal repair artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p terminal/a terminal/b terminal/aggregate terminal/critic terminal/verdict
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-assembled-3.11 --dir terminal/a
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-assembled-3.13 --dir terminal/b
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-aggregate --dir terminal/aggregate
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-critic --dir terminal/critic
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-verdict --dir terminal/verdict
+      - name: Run frozen exact terminal authority review
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          tag=$(echo '${{ matrix.python }}' | tr -d '.')
+          python code/iter504t_repair_rerun_terminal_authority_review.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_authority.json \
+            --assembly-a terminal/a/iter504t-3.11.json \
+            --assembly-b terminal/b/iter504t-3.13.json \
+            --aggregate terminal/aggregate/iter504t-repair-aggregate.json \
+            --critic terminal/critic/iter504t-repair-critic.json \
+            --verdict terminal/verdict/iter504t-repair-verdict.json \
+            --out "artifacts/terminal_authority_review_${tag}.json" | tee "artifacts/terminal_authority_review_${tag}.log"
+          sha256sum "artifacts/terminal_authority_review_${tag}.json" "artifacts/terminal_authority_review_${tag}.log" > "artifacts/terminal_authority_review_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-terminal-authority-review-${{ matrix.python }}
+          path: artifacts/terminal_authority_review_*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504t-terminal-authority-review-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate independent review lanes
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/iter504t_repair_rerun_terminal_authority_review_aggregate.py \
+            --a downloaded/terminal_authority_review_311.json \
+            --b downloaded/terminal_authority_review_313.json \
+            --out artifacts/terminal_authority_review_aggregate.json | tee artifacts/terminal_authority_review_aggregate.log
+          sha256sum artifacts/terminal_authority_review_aggregate.json artifacts/terminal_authority_review_aggregate.log > artifacts/terminal_authority_review_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-terminal-authority-review-aggregate
+          path: artifacts/terminal_authority_review_aggregate.*
+          if-no-files-found: error
