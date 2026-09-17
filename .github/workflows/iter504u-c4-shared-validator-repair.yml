@@ -1,0 +1,145 @@
+name: KMQGB Iter504U C4 shared-validator repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504U_C4_SHARED_VALIDATOR_REPAIR_LAUNCH_2026-09-17.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen successor authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='inputs/iter504u_c4_shared_validator_repair_authority.json'
+          MARK='recovery/ITER504U_C4_SHARED_VALIDATOR_REPAIR_LAUNCH_2026-09-17.txt'
+          test -f "$AUTH"
+          test -f "$MARK"
+          python - <<'PY'
+          import json
+          a=json.load(open('inputs/iter504u_c4_shared_validator_repair_authority.json'))
+          assert a['gate']=='ITER504U_CRITIC_C4_SHARED_VALIDATOR_REPAIR_GATE'
+          assert a['execution_count']==1
+          assert a['production_science_access_authorized'] is False
+          assert a['source_run_classification_authorized'] is False
+          assert a['preregistration_commit']=='96507724596716666d61d8d8f11ad2ff071c33db'
+          assert a['gate_evaluator_commit']=='151c4ea951c04278811e4c557847e01b32bbb97c'
+          assert a['gate_evaluator_blob']=='20a854869dbd0a61824b6c7e8a4f829507f5b126'
+          assert a['repair_wrapper_blob']=='bcea2946a0f9676b50897dc4bbe74fa1122a9965'
+          assert a['original_critic_blob']=='c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          PY
+          auth_commit="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          test -n "$auth_commit"
+          git merge-base --is-ancestor "$auth_commit" HEAD
+          for c in \
+            96507724596716666d61d8d8f11ad2ff071c33db \
+            151c4ea951c04278811e4c557847e01b32bbb97c \
+            77189486ba4db1dd281832b962b1be290e323944 \
+            f5cd17136ddfee8864bb7a46abbdb464f666f518 \
+            05b8e9354c9a7805f0fce18b904346a986a0787f; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+          test "$(git hash-object research/prereg/ITER504U_CRITIC_C4_SHARED_VALIDATOR_REPAIR_GATE_2026-09-17.md)" = '2d325996f32bd3f96e13264eead5a3f8c20356db'
+          test "$(git hash-object code/iter504u_critic_c4_fixture_repair_gate.py)" = '20a854869dbd0a61824b6c7e8a4f829507f5b126'
+          test "$(git hash-object code/iter504u_heldout_critic_c4_fixture_repair.py)" = 'bcea2946a0f9676b50897dc4bbe74fa1122a9965'
+          test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
+          test "$(git hash-object code/iter504u_heldout_assemble.py)" = '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
+          test "$(git hash-object code/iter504u_heldout_aggregate.py)" = '23165f9d99ff9a2f90c27a51cb889d5920327f92'
+          expected_workflow="$(python - <<'PY'
+          import json
+          print(json.load(open('inputs/iter504u_c4_shared_validator_repair_authority.json'))['workflow_blob'])
+          PY
+          )"
+          test "$(git hash-object .github/workflows/iter504u-c4-shared-validator-repair.yml)" = "$expected_workflow"
+
+  validate:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Execute frozen shared-validator synthetic gate
+        env:
+          PYTHONPATH: code
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python -m py_compile \
+            code/iter504u_heldout_critic.py \
+            code/iter504u_heldout_critic_c4_fixture_repair.py \
+            code/iter504u_critic_c4_fixture_repair_gate.py
+          python code/iter504u_critic_c4_fixture_repair_gate.py > out/result.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('out/result.json').read_text())
+          assert d['classification']=='ITER504U_CRITIC_C4_SHARED_VALIDATOR_REPAIR_VALIDATED_SCOPED'
+          assert d['errors']==[]
+          assert d['production_science_consumed'] is False
+          assert d['source_run_classified'] is False
+          assert d['baseline_validation_errors']==[]
+          assert d['contradiction_validation_errors']==['H0_AMP_LOW:C4_leaf_binding']
+          assert d['false_carrier_validation_errors']==['H0_AMP_LOW:C4_leaf_binding']
+          assert all(d['controls'].values())
+          assert all(d['repaired_negative_controls'].values())
+          PY
+          sha256sum out/result.json > out/result.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-c4-shared-validator-${{ matrix.python }}
+          path: out
+          if-no-files-found: error
+
+  aggregate:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-c4-shared-validator-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-c4-shared-validator-3.13
+          path: b
+      - name: Require byte-identical independent decisions
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp a/result.json b/result.json
+          mkdir -p out
+          cp a/result.json out/result.json
+          sha256sum out/result.json > out/result.sha256
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('out/result.json').read_text())
+          assert d['classification']=='ITER504U_CRITIC_C4_SHARED_VALIDATOR_REPAIR_VALIDATED_SCOPED'
+          assert d['errors']==[]
+          assert all(d['controls'].values())
+          assert all(d['repaired_negative_controls'].values())
+          assert d['production_science_consumed'] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-c4-shared-validator-aggregate
+          path: out
+          if-no-files-found: error
