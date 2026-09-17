@@ -7,10 +7,13 @@ GATE='ITER504S_ROOT_DERIVATIVE_VS_CHANNEL_COMPETITION_DISCRIMINATOR';PREREG='f63
 REPAIRS=['88c92f86a765e9d8b441152674fc2c303f3f1ff3','4ef41c0f4ceed3082fd4d80930ef5d848f18802b','77d42eb58c03eef2356aed7a25795562760de4e3']
 ROOTS=(13,14,15);RHOS=(0.35,0.9,1.6,2.7);LOCS=('LOW','MID','HIGH')
 D='ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED';C='ITER504S_CHANNEL_COMPETITION_NECESSARY_SCOPED';F='ITER504S_FIXED_CHANNEL_NONSTATIONARITY_REMAINS_SCOPED';M='ITER504S_MIXED_MECHANISM_SCOPED';INVALID='ITER504S_INVALID'
-def load(p):raw=Path(p).read_bytes();return json.loads(raw),hashlib.sha256(raw).hexdigest()
+def load(p):
+ raw=Path(p).read_bytes();return json.loads(raw),hashlib.sha256(raw).hexdigest()
 def one(rows,r):
  h=[x for x in rows if float(x.get('rho'))==r]
- if len(h)!=1:raise ValueError('rho');return h[0]
+ if len(h)!=1:
+  raise ValueError('rho')
+ return h[0]
 def fixed_all(rr):
  cand=rr.get('candidate_union',[]);inc=rr.get('ineligible_candidates',[]);viol=rr.get('violating_channel_indices',[])
  return bool(not inc and rr.get('eligible_count')==len(cand) and rr.get('competition_test_complete') is True and len(cand)>0 and not viol and rr.get('all_candidate_fixed_channel_drifts_within_tolerance') is True)
