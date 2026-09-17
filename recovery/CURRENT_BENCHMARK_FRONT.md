@@ -6,60 +6,24 @@ Fresh repository `main` and fresh GitHub Actions state always outrank this navig
 
 ## Latest terminal science — Iter504U
 
-Gate: `ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL`.
+`ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL`
 
-Terminal classification:
+Terminal scientific classification:
 
 `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED`.
 
-Scope: exactly the prospectively frozen six-case held-out cohort H0–H5. This is not all-domain, all-1888-state, D7, model-family, Candidate Gravity, Paper IV, or universal quantum-gravity authority.
+Terminal science authority commit: `a31db0d6b9f98448977a6fcdde80a45e3e7195fe`.
 
-Frozen science preregistration: `05b8e9354c9a7805f0fce18b904346a986a0787f`.
+Scope remains exactly the six prospectively frozen held-out cases H0–H5. This does not promote to all-domain, all-1888-state, D7, model-family, Candidate Gravity, Paper IV, or universal quantum-gravity authority.
 
-Immutable source/launch head: `102c7f9cafec956f3bc7bed4384ae755c98f761a`.
+Source run `35246605860`, head `102c7f9cafec956f3bc7bed4384ae755c98f761a`, attempt 1, terminal `completed/success`.
 
-Source production run `35246605860`, attempt 1: terminal `completed/success`.
+Prospective closure/artifact authority commit `3302f77593e668ab48fdff887801571fa46467b1` froze exact 16 successful upstream jobs and 15 immutable upstream artifacts before any repaired-Critic science consumption.
 
-No duplicate/restart was used. No partial scientific values were consumed before source terminalization and prospective artifact freeze.
+Single repaired-Critic closure run `35267499787`, head `732b9a035472f3b67b00ce985f695c03d7e90bb8`, run number 1 / attempt 1, terminal `completed/success`.
 
-## Prospective immutable artifact freeze
+Canonical terminal values:
 
-Closure authority:
-
-`inputs/iter504u_repaired_critic_closure_authority.json`
-
-Authority commit:
-
-`3302f77593e668ab48fdff887801571fa46467b1`
-
-Authority blob:
-
-`6154f02e9e04c8c14c3b4433f1afddce37e4fb9f`.
-
-It was created after terminal source metadata was available and before repaired-Critic science consumption. It freezes exact source run/head/attempt/conclusion, 16 successful upstream job identities and 15 required upstream artifact IDs/digests/expiration states. The historical original source-workflow Critic job/artifact is explicitly excluded from repaired-closure authority.
-
-## Independent repaired Critic — terminal
-
-Single launch/head:
-
-`732b9a035472f3b67b00ce985f695c03d7e90bb8`.
-
-Run:
-
-`35267499787` — `KMQGB Iter504U repaired Critic closure`, run number 1, attempt 1, terminal `completed/success`.
-
-Jobs:
-
-- source-lock `105358214002`: success;
-- review Python 3.11 `105358279236`: success;
-- review Python 3.13 `105358279171`: success;
-- closure `105358414895`: success.
-
-Both repaired reviews independently consumed the same frozen 15 source artifacts and returned byte-identical decision payloads.
-
-Canonical result:
-
-- classification `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED`;
 - 6 cases;
 - 19 terminal leaves;
 - 0 unresolved leaves;
@@ -70,58 +34,61 @@ Canonical result:
 - decision projection SHA256 `b44f7bd0711a45d5469c8c1ce968f9b7f7e4cbe773dd33e0fb1bcf5beb22d3e6`;
 - closure payload SHA256 `56b86f4d8a8224544c55344cd08bfd8b9a6a05022059d1fb0af84e9e76439d6c`.
 
-All repaired negative controls passed, including both `C4_true_leaf_false_rho` and `premature_unresolved_leaf_depth`.
+## Post-closure bounded infrastructure audit — terminal PASS
 
-Closure artifacts at terminal read:
+Exactly one bounded end-to-end audit was performed after terminal science.
 
-- review 3.11: id `10517615531`, digest `sha256:1d5301cc8f6cd7609989af78d1141588773e2d7c230194263cde56fa87771f2a`;
-- review 3.13: id `10517600640`, digest `sha256:1eda7268243dfe6d2168e5063788582cf91023a5c80af0ac9004cfe76cfe271d`;
-- canonical closure: id `10516579339`, digest `sha256:ee2399d5efdf58a829edfab57b30e31c2955663d538f89623bbba85c8390afdc`.
+Classification:
 
-## Critic repair methodology retained
+`ITER504U_END_TO_END_INFRASTRUCTURE_AUDIT_PASS_SCOPED`.
 
-C4 fixture methodology is terminal:
+Audit result verifies all eight required risks:
 
-`ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED`, run `35252175158`.
+- duplicate launch prevention: PASS;
+- partial-value firewall: PASS;
+- artifact identity: PASS;
+- source identity: PASS;
+- chronology: PASS;
+- outcome-independent controls: PASS;
+- Critic independence: PASS;
+- recovery continuity: PASS.
 
-Shallow-unresolved depth-binding methodology is terminal:
+Recovery continuity is independently supported by repository-wide `methodology-ci` run `35267834370` on terminal authority head `a31db0d6...`: preflight PASS, all four deterministic methodology shards PASS, independent repository completion validation PASS, deterministic bundle PASS, recovery/frozen-core checks PASS, overall conclusion `success`.
 
-`ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED`, run `35266020916`.
+## Infrastructure freeze
 
-Source-terminal semantics repair was prospectively frozen at commit `31f9870b608ea244d4384354d09210e270f1b524` and applied to the closure authority.
+No concrete infrastructure blocker remains from Iter504U.
 
-These are independent Critic/control repairs only. Producer science and frozen Iter504U criteria were never refit after held-out outcomes.
+Effective state:
 
-## Immediate current blocker
+`ITER504U_POSTCLOSURE_INFRASTRUCTURE_FROZEN_SCOPED`.
 
-Iter504U science is no longer the blocker.
+Do not add dashboards, readiness frameworks, duplicate manifests, cosmetic CI refactors, generalized recovery machinery, or additional authority layers. Infrastructure may be modified only when a future substantive scientific gate exposes a concrete blocker that requires a prospective repair.
 
-The single required next step is the one bounded post-closure infrastructure audit mandated by the Iter504U operating contract:
+## Current scientific task
 
-`prereg -> single production -> immutable artifacts -> independent Critic -> terminal authority -> recovery -> next gate`.
+Iter504U is closed. Infrastructure is frozen.
 
-Audit only:
+The current task is now scientific DAG reconstruction, not another infrastructure cycle.
 
-- duplicate launch prevention;
-- partial-value firewall;
-- artifact identity;
-- source identity;
-- chronology;
-- outcome-independent controls;
-- Critic independence;
-- recovery continuity.
-
-If the bounded audit finds no concrete blocker, infrastructure freezes: do not add dashboards, readiness layers, duplicate manifests, cosmetic CI, or additional authority layers.
-
-## Scientific frontier after the audit
-
-After the bounded audit, rebuild the unresolved science DAG and choose the strongest counterexample-first mechanism discriminator by approximately:
+For each unresolved admissible scientific gate, compare approximately:
 
 `expected information gain × downstream unlocks × falsifiability / compute cost`.
 
-Do not advance mechanically to Iter504V merely because it is the next iteration number.
+Prefer a cheap exact counterexample or structural discriminator capable of eliminating an entire mechanism explanation over a broad expensive sweep.
 
-Iter504U PASS supports local-D generalization across the six frozen held-out configurations tested. The next gate should therefore discriminate surviving mechanism explanations or test broader admissible scope with the cheapest exact falsifier, rather than merely increase numerical precision.
+Do not select Iter504V merely because it is numerically next. Do not extend Iter504U thresholds/cohorts/channels/depth/partition post hoc.
+
+## Mechanism implications of Iter504U
+
+The bounded held-out result supports the no-refit local-D certificate across the six frozen amplitude/causal/direction/sign held-out configurations tested. Therefore a simple claim that the development result was only an accident of boxes 13–15 or one held-out variation is weakened within the tested scope.
+
+It does not discriminate all remaining explanations of why the certificate succeeds outside that scope. Relevant next discriminators should target mechanism-level alternatives such as:
+
+- broader-domain/local-D stability versus a hidden boundary failure;
+- local derivative enclosure versus channel-switching obstruction;
+- realization dependence versus structural continuity;
+- physical D7 normalization/observable obstruction versus group-variable-only closure.
 
 ## Parallel D7 retained state
 

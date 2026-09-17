@@ -50,6 +50,8 @@
     "gate": "ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL",
     "closure_gate": "ITER504U_REPAIRED_CRITIC_CLOSURE",
     "classification": "ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED",
+    "terminal_authority_commit": "a31db0d6b9f98448977a6fcdde80a45e3e7195fe",
+    "terminal_authority_blob": "1ded12e91e607176647ae78275c3e54b1efc33fc",
     "source_run_id": 35246605860,
     "source_run_head": "102c7f9cafec956f3bc7bed4384ae755c98f761a",
     "source_run_attempt": 1,
@@ -115,20 +117,29 @@
     {"name": "iter504u-repaired-critic-closure", "id": 10516579339, "digest": "sha256:ee2399d5efdf58a829edfab57b30e31c2955663d538f89623bbba85c8390afdc", "expired": false}
   ],
   "bounded_infrastructure_audit": {
-    "status": "PENDING_SINGLE_POSTCLOSURE_AUDIT",
-    "required_checks": [
-      "duplicate_launch_prevention",
-      "partial_value_firewall",
-      "artifact_identity",
-      "source_identity",
-      "chronology",
-      "outcome_independent_controls",
-      "critic_independence",
-      "recovery_continuity"
-    ]
+    "status": "TERMINAL_PASS_SCOPED",
+    "classification": "ITER504U_END_TO_END_INFRASTRUCTURE_AUDIT_PASS_SCOPED",
+    "result_blob": "8b0bc144aa0366fb1a96909c6cafed089333f02c",
+    "methodology_ci_run_id": 35267834370,
+    "methodology_ci_conclusion": "success",
+    "checks": {
+      "duplicate_launch_prevention": "PASS",
+      "partial_value_firewall": "PASS",
+      "artifact_identity": "PASS",
+      "source_identity": "PASS",
+      "chronology": "PASS",
+      "outcome_independent_controls": "PASS",
+      "critic_independence": "PASS",
+      "recovery_continuity": "PASS"
+    }
   },
-  "current_blocker": "Complete exactly one bounded post-Iter504U end-to-end infrastructure audit before selecting the next substantive scientific gate",
-  "next_authorized_action": "Perform one bounded end-to-end audit of prereg -> single production -> immutable artifact freeze -> independent repaired Critic -> terminal authority -> recovery. If no concrete blocker remains, freeze infrastructure, rebuild the unresolved scientific DAG, and select the strongest counterexample-first mechanism discriminator by EIG*downstream_unlocks*falsifiability/compute_cost.",
+  "infrastructure": {
+    "status": "FROZEN_AFTER_ITER504U_BOUNDED_AUDIT",
+    "freeze_label": "ITER504U_POSTCLOSURE_INFRASTRUCTURE_FROZEN_SCOPED",
+    "modification_rule": "Modify infrastructure only for a concrete blocker exposed by a future scientific gate; no new dashboards/readiness layers/duplicate manifests/cosmetic CI."
+  },
+  "current_blocker": "No remaining Iter504U infrastructure blocker; scientific DAG must now be rebuilt before freezing the next substantive gate",
+  "next_authorized_action": "Rebuild the unresolved scientific DAG from repository authority and select the strongest counterexample-first mechanism discriminator by EIG*downstream_unlocks*falsifiability/compute_cost. Do not mechanically advance the iteration number and do not expand Iter504U scope post hoc.",
   "governance": {
     "rqir_core": "FROZEN_v1.0",
     "D7_S2": "NOT_CLOSED",
