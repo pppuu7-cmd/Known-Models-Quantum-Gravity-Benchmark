@@ -1,0 +1,155 @@
+name: KMQGB Iter504S root derivative vs channel competition
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504s-root-derivative-vs-channel-competition.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen Iter504S authority and implementation ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          for c in \
+            f6367456aa715fe6282ab70c1b2005971a4568c7 \
+            a008d782618ac6a1c397d571ed091138107ac1ee \
+            0ef4a6c8e193eec5294485997e4cfdd60e8c0d19 \
+            3f5c21056d9d701948c918b307f76c67f17eed41 \
+            147d68f26ed3a14ce3cd1fd77fcd96d5fb329ec8 \
+            f846820bae39963a48272deccb2e4a539100fce1 \
+            598ede26e0db448411537e9d5f813aa344f88d0f \
+            6e300294e6c9a470099776d1c30357eed3fa4b93; do
+            git merge-base --is-ancestor "$c" HEAD
+          done
+          test "$(git hash-object code/iter504s_mechanism_discriminator.py)" = "$(git rev-parse a008d782618ac6a1c397d571ed091138107ac1ee:code/iter504s_mechanism_discriminator.py)"
+          test "$(git hash-object code/iter504s_mechanism_assemble.py)" = "$(git rev-parse 0ef4a6c8e193eec5294485997e4cfdd60e8c0d19:code/iter504s_mechanism_assemble.py)"
+          test "$(git hash-object code/iter504s_mechanism_aggregate.py)" = "$(git rev-parse 3f5c21056d9d701948c918b307f76c67f17eed41:code/iter504s_mechanism_aggregate.py)"
+          test "$(git hash-object code/iter504r_root_affine_reuse.py)" = "$(git rev-parse f846820bae39963a48272deccb2e4a539100fce1:code/iter504r_root_affine_reuse.py)"
+          for f in code/iter499_arb_core.py code/iter500_compact_sandwich_kak.py code/iter501_direct_max_envelope_interval.py code/iter503_ad_core.py code/iter504_centered_shard.py; do
+            test "$(git hash-object "$f")" = "$(git rev-parse f846820bae39963a48272deccb2e4a539100fce1:$f)"
+          done
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax and frozen constants check
+        shell: bash
+        run: |
+          python -m py_compile code/iter504s_mechanism_discriminator.py code/iter504s_mechanism_assemble.py code/iter504s_mechanism_aggregate.py
+          grep -F "TOL = arb('0.05')" code/iter504s_mechanism_discriminator.py
+          grep -F "FLOOR = arb('1.0')" code/iter504s_mechanism_discriminator.py
+          grep -F "TOL=0.05" code/iter504s_mechanism_assemble.py
+          grep -F "FLOOR=1.0" code/iter504s_mechanism_assemble.py
+
+  roots:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+        root_box: [13,14,15]
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install frozen numerical dependencies
+        shell: bash
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Execute frozen root mechanism discriminator
+        shell: bash
+        env:
+          PYTHONPATH: code
+        run: |
+          mkdir -p out
+          python code/iter504s_mechanism_discriminator.py --root-box '${{ matrix.root_box }}' --out 'out/root-${{ matrix.root_box }}.json'
+          python -VV > out/python.txt 2>&1
+          python -m pip freeze > out/pip-freeze.txt
+          uname -a > out/uname.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504s-${{ matrix.python }}-root-${{ matrix.root_box }}
+          path: out
+          if-no-files-found: error
+
+  assemble:
+    needs: roots
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-${{ matrix.python }}-root-13
+          path: roots/13
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-${{ matrix.python }}-root-14
+          path: roots/14
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-${{ matrix.python }}-root-15
+          path: roots/15
+      - name: Assemble frozen mechanism classifier
+        shell: bash
+        run: |
+          mkdir -p out
+          python code/iter504s_mechanism_assemble.py \
+            --root13 roots/13/root-13.json \
+            --root14 roots/14/root-14.json \
+            --root15 roots/15/root-15.json \
+            --out 'out/iter504s-${{ matrix.python }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504s-assembled-${{ matrix.python }}
+          path: out
+          if-no-files-found: error
+
+  aggregate:
+    needs: assemble
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-assembled-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-assembled-3.13
+          path: b
+      - name: Aggregate independent Iter504S environments
+        shell: bash
+        run: |
+          mkdir -p out
+          python code/iter504s_mechanism_aggregate.py --a a --b b --out out/iter504s-aggregate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504s-aggregate
+          path: out/iter504s-aggregate.json
+          if-no-files-found: error
