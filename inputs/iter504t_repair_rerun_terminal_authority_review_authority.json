@@ -1,0 +1,72 @@
+{
+  "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_GATE",
+  "date": "2026-09-17",
+  "preregistration_commit": "a4be2171d5d325ba25b805603a2e9e30e542520b",
+  "starting_reconciled_main": "76a306f78052c5227b2b3c136b09d50aa4697b2f",
+  "scientific_preregistration_commit": "aa2b0256ce60d605574a18ec86c0bad5b5df1512",
+  "repair_preregistration_commit": "adc7bfb9df77a90455cac1b0f0cb7255d80c44d5",
+  "repair_authority_commit": "a47a9140cf10f2f0f912943133a01238ff1b5653",
+  "repair_launch_head": "10ae6bcc8447d14cecc6e550065504b23f792953",
+  "terminal_run": {
+    "id": 35205054496,
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "10ae6bcc8447d14cecc6e550065504b23f792953"
+  },
+  "terminal_c4_authority": {
+    "closure_preregistration_commit": "aa421bd0b1aec1cbcc7a381fb00e947798d1b084",
+    "closure_authority_commit": "9aa9f77093bd34e058641bb141c8f95a4794d841",
+    "classification": "ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED",
+    "independent_critic_path": "recovery/CRITICAL_REVIEW_ITER504T_PRETERMINAL_LEAF_CERTIFICATION_BINDING_VERIFICATION_2026-09-17.md",
+    "independent_critic_blob_sha": "c29d31dfa9b7a423bbdfc7edfe522ae2be94bcc3",
+    "independent_critic_verdict": "CONFIRMED_SCOPED",
+    "frozen_missing_binding": "leaf.certified == all(rho.certified for rho in leaf.per_rho)"
+  },
+  "required_terminal_artifacts": [
+    {
+      "name": "iter504t-repair-assembled-3.11",
+      "id": 10498265422,
+      "digest": "sha256:3e6739a93cd6e467ea4d1929c37bf68a830fabcd10e415bf2d08388ee4dc0075"
+    },
+    {
+      "name": "iter504t-repair-assembled-3.13",
+      "id": 10497554745,
+      "digest": "sha256:fee046299dee740c4a85df00eb8e6c21628ad98b7bf812a0518f8a423e6df2ff"
+    },
+    {
+      "name": "iter504t-repair-aggregate",
+      "id": 10497359984,
+      "digest": "sha256:dee8780bb093f8dfe35419a1e4749127cebf730972ed1a395bc894ebfb7d0d47"
+    },
+    {
+      "name": "iter504t-repair-critic",
+      "id": 10498490034,
+      "digest": "sha256:cbe6e8856f16850f5c4ecefe07a9c64aa6a7c2c0d035383f385da99c264078a1"
+    },
+    {
+      "name": "iter504t-repair-verdict",
+      "id": 10498015467,
+      "digest": "sha256:888edcf687b1c6705d32cd2aae3f03637732376f2eb2eadd8818690fd00cad49"
+    }
+  ],
+  "root_artifacts_provenance_only_unless_needed": [
+    ["iter504t-repair-3.11-root-13", 10496235023, "sha256:1924e699c43686d3ebdaf11501739cfb244481e5b5cb312937a242da590ea457"],
+    ["iter504t-repair-3.13-root-13", 10494660416, "sha256:26131d26697fa9ddc4a93ddffadc3cc411be4715339f10615cb55adf165a7e35"],
+    ["iter504t-repair-3.11-root-14", 10497447325, "sha256:d798f108bba6c0fbe8a8c3a15c7d742f86e3b5a545ab363789b727b69edb5a09"],
+    ["iter504t-repair-3.13-root-14", 10497759238, "sha256:6fd473d11df14693f9af1dbe65f308430b89ee2a9319e018266997c952230aac"],
+    ["iter504t-repair-3.11-root-15", 10497084522, "sha256:481e720fc95540c897a4d07547df4c9c1540c97fe0dba57b672f4ca17b135752"],
+    ["iter504t-repair-3.13-root-15", 10496876225, "sha256:33a2e4a211abc6337ad4f68bb38931886f73ecb14a49986c18d48735ccf91c8c"]
+  ],
+  "frozen_science": {
+    "roots": [13, 14, 15],
+    "rhos": [0.35, 0.9, 1.6, 2.7],
+    "R": [6, 8, 10, 12],
+    "channels": 243,
+    "precision_bits": 384,
+    "threshold": "1/20",
+    "slope_floor": "1",
+    "MAX_DEPTH": 3
+  },
+  "decision_rule": "independently bind actual terminal per-rho certifications to each terminal leaf and recompute unresolved counts/scientific decision; launch-head green/PASS is insufficient because C4 is terminally confirmed",
+  "interpretation_ceiling": "exact completed run only; C4 remains true for general launch-head validator path; no all-1888/D7/model/family/selector/Candidate Gravity/global QG conclusion"
+}
