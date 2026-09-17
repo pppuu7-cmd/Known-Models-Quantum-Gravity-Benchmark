@@ -43,32 +43,13 @@ Authoritative Actions run:
 
 All source-lock, six roots, Python 3.11/3.13 assemblies, aggregate and independent adversarial Critic succeeded.
 
-Exact-decision facts:
-
-- scientific decision transport `exact_arb_booleans_float_bounds_display_only`;
-- exact threshold `1/20`;
-- exact robust floor `1`;
-- `python-flint==0.9.0`;
-- Arb/Acb precision 384 bits;
-- all 243 channels retained; no pruning;
-- exact cross-environment scientific decision agreement `true`;
-- Critic errors `[]`;
-- all frozen negative controls passed;
-- assembled SHA256 identical across cohorts: `fd612b031370722f08e95cf2bbefd922b9a32b21a488959b53dc1906d532c1c1`;
-- Critic payload SHA256 `bad54a49e64ecbf8ed42686c839c654fbb43d9e62c63a1cb97ceafe719e5e676`;
-- aggregate payload SHA256 `b26a1138ffcbd1c9863bac921f87cde491894da001a1a608cd8d1649f119631d`.
-
 Scientific localization: on the prospectively frozen roots 13-15 nine-point mechanism diagnostic, the residual continuous-drift obstruction is localized to the width/radius of the full-root validated derivative enclosure `D(I)`. This exact result reproduced the earlier provisional class after removing binary64 threshold authority.
 
-Do not reopen Iter504S, do not rerun `35173442220`, `35175533159`, or `35178186905`, and do not use deeper child subdivision while retaining the same root derivative enclosure as the next mechanism test.
+Do not reopen Iter504S or promote its three-root localization to all 1888 states.
 
 ## Active scientific gate — Iter504T Branch A
 
-Outcome-blind successor toolkit authority:
-
-`81e0e94649a50cccc510dc2630456af45fd98e46`.
-
-Required instantiated successor:
+Gate:
 
 `ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION`
 
@@ -88,49 +69,51 @@ Authoritative Actions run:
 
 `35181094204`, run number `1`, attempt `1`.
 
-Current validated execution state at this reconciliation:
+Fresh validated execution state at this reconciliation:
 
-- run `in_progress / conclusion=null`;
-- source-lock job `105073194770` terminal `success`;
-- all six root jobs for Python 3.11/3.13 and roots 13/14/15 remain `in_progress` in the frozen evaluator step;
-- no root payload, leaf classification, assembly, aggregate, Critic or other partial substantive value has been consumed;
-- no competing authoritative gate may be launched while this run is active.
+- run remains `in_progress / conclusion=null`;
+- source-lock `105073194770`: `completed/success`;
+- Python 3.11 root 13 `105073218689`: `completed/success`;
+- Python 3.11 root 14 `105073218688`: `completed/success`;
+- Python 3.11 root 15 `105073218687`: `in_progress`;
+- Python 3.13 root 13 `105073218737`: `in_progress`;
+- Python 3.13 root 14 `105073218650`: `completed/success`;
+- Python 3.13 root 15 `105073218671`: `in_progress`;
+- assemblies, aggregate and terminal Critic are not yet available;
+- completed root artifacts are partial substantive outputs and have not been opened or consumed;
+- no competing authoritative scientific gate may be launched while this run is active.
 
-Scientific question: if the derivative enclosure is recomputed directly and rigorously on deterministic subintervals `J subset I`, does validated local `D(J)` contract enough to certify the continuous drift criterion that full-root `D(I)` could not certify?
+Scientific question: if the derivative enclosure is recomputed directly and rigorously on deterministic local subintervals `J subset I`, does validated local `D(J)` contract enough to certify the frozen continuous drift criterion that full-root `D(I)` could not certify?
 
-Mandatory construction:
-
-- directly construct the dual/source geometry on each local interval `J`;
-- require `forall a in J: f_i'(a) in D_i(J)` for every retained channel;
-- use exact rational midpoint `m_J` and validated mean-value enclosure `f_i(J) subset f_i(m_J) + (J-m_J)D_i(J)`;
-- use analogous validated Haar/log derivative enclosure;
-- retain all 243 channels;
-- exact threshold `1/20`, floor `1`, rhos `[0.35,0.9,1.6,2.7]`, R `[6,8,10,12]`, precision 384 bits;
-- derivative midpoint and sampled derivative are forbidden as scientific substitutes.
-
-Freeze deterministic partition, maximum depth, local derivative recomputation rule, stopping rule, PASS/INCONCLUSIVE/INVALID criteria and Critic before successor output. No post-outcome depth increase.
-
-If bounded three-root local-D repair succeeds, the next stage is a prospectively frozen held-out representative cohort. No direct 3-root -> 1888 promotion.
+Frozen science remains roots 13-15, rhos `[0.35,0.9,1.6,2.7]`, R `[6,8,10,12]`, all 243 channels, exact threshold `1/20`, floor `1`, `MAX_DEPTH=3`, deterministic dyadic midpoint partition, Python 3.11/3.13, `python-flint==0.9.0`, 384-bit Arb/Acb precision and no post-outcome depth extension.
 
 ## Latest independent Critic handoff for active Iter504T
 
-Preterminal Critic commit:
+Latest preterminal Critic commit:
 
-`966924c4b03f5548d7c745fbaacc3cae10f2da87`.
+`d5ddeb699343c498b2c0a0640f21ac01529bf47d`.
 
 Audit record:
 
 `recovery/CRITICAL_PRETERMINAL_AUDIT_ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md`.
 
-Status remains PRETERMINAL: no scientific verdict and no partial substantive outputs consumed.
+Status remains PRETERMINAL: no Iter504T scientific verdict and no partial substantive root values consumed.
 
-Outcome-independent defect candidate durably recorded:
+The audit currently records three outcome-independent verification/implementation defect candidates for terminal review:
 
-`FROZEN_COMPONENTWISE_PARENT_INCLUSION_CONTROL_NOT_IMPLEMENTED_OR_RECORDED`.
+1. `FROZEN_COMPONENTWISE_PARENT_INCLUSION_CONTROL_NOT_IMPLEMENTED_OR_RECORDED`;
+2. `FROZEN_DYADIC_SPLIT_LOCATION_NOT_INDEPENDENTLY_VERIFIED`;
+3. `FROZEN_R_COHORT_NOT_INDEPENDENTLY_VERIFIED`.
 
-The frozen preregistration requires child-to-parent componentwise Arb inclusion checks to be computed and recorded for every child where meaningful, while the launched evaluator/assembler/Critic do not serialize or bind that certificate. Inclusion truth itself is diagnostic and is not a new PASS condition; the defect candidate is the missing/unperformed frozen check. If execution source remains unchanged through terminalization, any terminal Research PASS or INCONCLUSIVE must be audited against this mismatch before downstream consumption, with `INVALID_IMPLEMENTATION` the appropriate Critic branch if the omission remains.
+These are Critic defect candidates, not scientific FAILs. Their truth must be checked against the exact launch-head evaluator/assembler/Critic before they are used to invalidate a future terminal scientific aggregate. In particular, no terminal `INVALID_IMPLEMENTATION` may be inferred merely from this preterminal navigation summary.
 
-Do not repair the active run in place and do not launch a competing gate. First consume only the terminal authoritative run/aggregate/Critic/artifact provenance. If implementation-only repair is then required, preserve all frozen science fields and add only the missing inclusion computation/recording plus assembler/Critic binding that distinguishes missing from recorded true/false.
+## Next admissible closure work while Iter504T is active
+
+Do not launch a competing physical/scientific gate and do not consume partial root artifacts.
+
+The highest-information admissible closure question is an outcome-blind verifier-binding audit of the three Critic defect candidates against the exact frozen launch-head code blobs. It may use only source/static/synthetic malformed-payload fixtures and must not read Iter504T scientific root outputs. Its role is to determine which Critic candidates are actually supported before terminal Iter504T review.
+
+After run `35181094204` becomes terminal, consume only terminal assemblies/aggregate/Critic/artifact provenance and apply whatever verifier-binding findings are then durably established.
 
 ## Parent Iter504R retained
 
@@ -156,6 +139,7 @@ Do not repair the active run in place and do not launch a competing gate. First 
 - Paper IV remains `NOT_YET_AUTHORIZED`.
 - `INCONCLUSIVE != FAIL`.
 - `BLOCKED != FAIL`.
+- implementation/Critic defect != scientific FAIL.
 - green CI != scientific PASS.
 - diagnostic localization != full-domain theorem.
 - no model/family/global/new-theory/new-physics conclusion follows from Iter504S or nonterminal Iter504T.
