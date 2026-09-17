@@ -9,7 +9,7 @@ Gate:
 
 `ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_GATE`
 
-Terminal classification:
+Historical terminal classification:
 
 `ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`
 
@@ -28,45 +28,55 @@ Authority / execution chain:
 
 Green CI is provenance only.
 
-## Exact result
+## Exact observed result
 
-The latest independent Critic of the historical terminal authority review, commit `15b323994844fd83dfa0dc71efb977ba4300de97`, had verdict `INVALID_IMPLEMENTATION` because the historical reviewer mishandled two frozen alternate branches:
+The semantics-repair implementation genuinely fixes the two defects identified by the prior independent Critic `15b323994844fd83dfa0dc71efb977ba4300de97`:
 
-1. it used the wrong scientific INCONCLUSIVE label;
-2. it ignored lane-level structural BLOCKED state at the top-level classifier.
+1. valid original scientific INCONCLUSIVE is preserved exactly as `ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED`;
+2. deleting a required structural field from an already downloaded parseable lane object yields `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED`.
 
-The new prospectively frozen semantics-repair gate repairs both defects without changing the scientific object or rerunning physics.
+The actual immutable repair run `35205054496` remains internally coherent under the exact replay:
 
-All eight frozen outcome-sensitive semantics controls pass in both independent environments:
-
-- valid PASS fixture -> review PASS;
-- valid original `ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED` -> retained scientific INCONCLUSIVE;
-- missing required structural field -> `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED`;
-- C4 contradiction -> authority-restoration FAIL;
-- per-rho boolean contradiction -> authority-restoration FAIL;
-- `R=6 -> 7` -> authority-restoration FAIL;
-- missing C1 record -> authority-restoration FAIL;
-- artifact identity mutation -> `INVALID_IMPLEMENTATION`.
-
-For actual immutable repair run `35205054496`:
-
-- terminal assemblies remain byte-identical SHA256 `dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24`;
+- terminal assemblies are byte-identical SHA256 `dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24`;
 - roots `13,14,15`, exact R cohort `[6,8,10,12]`, 12 terminal leaves and 48 per-rho rows are present;
-- all per-rho and leaf certifications independently satisfy the frozen predicates;
+- all per-rho and leaf certifications satisfy the frozen predicates;
 - recomputed unresolved leaves = `0`;
 - both environments independently recompute `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED`;
 - C1 = 18 records / 70,056 boolean components per lane / zero false;
 - no actual C4 leaf-binding violation is present.
 
-Therefore exact run `35205054496` is now contract-correctly rebound as scoped scientific authority under the original three-root bounded local-D claim ceiling.
+These facts remain exact supporting evidence for the underlying three-root PASS path.
+
+## Latest independent Critical Review
+
+Audit:
+
+`recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_2026-09-17.md`
+
+Critic commit:
+
+`7263accb799829fddef81c1b4759822261f8b8d4`
+
+Verdict:
+
+`INVALID_IMPLEMENTATION`
+
+The terminal semantics-repair gate still fails one frozen alternate branch at the authoritative workflow boundary.
+
+The preregistration freezes `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED` when any required terminal artifact is unavailable, expired, missing, corrupted, or otherwise insufficient for independent recomputation without guessing. The Python reviewer has a local missing-path BLOCKED handler, but the Actions workflow checks exact upstream artifact ids/digests under `set -euo pipefail` in `source-lock` and later downloads all required artifacts under `set -euo pipefail` before invoking Python.
+
+Explicit workflow counterexample: if required upstream artifact `iter504t-repair-verdict` is unavailable/missing, source-lock fails before lane execution; if metadata passes but download fails, the lane exits before Python receives a missing path. In either case no frozen BLOCKED classification is emitted and aggregate cannot run. The implemented `missing_required_field_maps_to_blocked` fixture only deletes `roots` inside an already downloaded JSON object and therefore does not cover this workflow-level branch.
+
+This is implementation invalidity, not scientific FAIL and not observed-run provenance failure. Historical terminal classification is not rewritten. The actual exact-run replay may still be scientifically correct, but this gate is not independently confirmed as a fully contract-valid semantics repair.
 
 ## Historical qualifications retained
 
+- Historical terminal classification from run `35232311780` remains immutable Actions/repository history; independent Critic verdict is now `INVALID_IMPLEMENTATION`.
 - Historical authority-review result from run `35225818354` remains immutable and its independent Critic verdict `INVALID_IMPLEMENTATION` remains historically true for that implementation.
 - C4 `ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED` remains independently `CONFIRMED_SCOPED` for the reusable launch-head validator path.
 - Original Iter504T run `35181094204` remains historically `INVALID_IMPLEMENTATION`, not scientific FAIL.
 - C1 VERIFIED, C2 REFUTED, C3 VERIFIED remain immutable history.
-- Exact repair run `35205054496` is validated only by this new contract-correct post-terminal review; that does not make future executions of the unchanged validator generally valid.
+- Actual exact repair run `35205054496` remains coherent supporting evidence for the three-root scientific PASS, but authority restoration is not fully contract-validated by run `35232311780`.
 
 ## Parent / parallel state retained
 
@@ -76,17 +86,18 @@ Therefore exact run `35205054496` is now contract-correctly rebound as scoped sc
 - No Iter504T result is promoted to all 1888 states.
 - D7-S2 raw K5 group-variable tangent pushforward remains `CLOSED_SCOPED`, but group-only contact-covector restriction/conditioning remains BLOCKED; physical transverse quotient and measure/observable stages remain open.
 
-## Latest independent Critical Review
-
-No independent Critic review of this new terminal semantics-repair result is recorded yet.
-
 ## Next admissible work
 
-Do not repeat the terminal authority review for exact run `35205054496` absent a genuinely new independent Critic defect.
+A same-object implementation repair may preserve the existing scientific object and exact physics run while repairing review execution semantics:
 
-Remaining same-object implementation obligation: a prospective reusable-validator C4 repair that enforces `leaf.certified == all(rho.certified)` in assembler and independent Critic and includes the terminal adversarial C4 mutation, without changing the scientific contract.
+1. make required upstream artifact absence/expiration/download failure reach a classifier path that emits `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED` rather than failing the workflow before classification;
+2. add an outcome-sensitive missing-artifact fixture at the workflow/reviewer boundary, not only a missing field inside downloaded JSON;
+3. retain the now-correct original INCONCLUSIVE branch, structural-field BLOCKED branch, C4/per-rho/R/C1 controls, source/artifact identity locks and claim ceiling;
+4. do not rewrite run `35232311780`.
 
-A different scientific frontier may outrank C4 repair if it offers higher information gain and does not reuse the defective validator path. Decide from fresh current DAG/recovery state.
+Changing underlying science object, thresholds, roots/rhos/R cohort, classifier meaning, source realization, or interpretation ceiling requires a new prospectively frozen gate.
+
+A distinct scientific frontier may proceed only if it does not consume this terminal semantics-repair PASS as independently confirmed authority.
 
 ## Governance lock
 
