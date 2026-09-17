@@ -1,0 +1,64 @@
+{
+  "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_GATE",
+  "date": "2026-09-17",
+  "review_actions_run": 35225818354,
+  "review_head_sha": "8cf5aefa4b15b5a6c7dfaf7f08d1884ba8363658",
+  "jobs": {
+    "source_lock": 105217007869,
+    "python_3_11": 105217073486,
+    "python_3_13": 105217073481,
+    "aggregate": 105217171182
+  },
+  "review_artifacts": {
+    "python_3_11": {
+      "id": 10498984379,
+      "github_digest": "sha256:ecaa42b702fb6e823a90862adca0c6da9869774aa7de673abb8b9c186d6c49f9",
+      "verified_zip_sha256": "ecaa42b702fb6e823a90862adca0c6da9869774aa7de673abb8b9c186d6c49f9",
+      "json_sha256": "bab61981843310ed204caea2b81ef461a402c0e02bfd9df09593788e7772a15d",
+      "log_sha256": "0e6ab4be6ddb1085c180fce271db80528a52c816bb1d47e369deaad0203c5d33",
+      "review_decision_sha256": "7db8327005022341541ef0b62df9a87a02e8741d5716ddf2deb397fb1b95e989"
+    },
+    "python_3_13": {
+      "id": 10499010539,
+      "github_digest": "sha256:01ac6aa3746a4b3ada66080188e634fcc116f76b96cbfef9b737fa6ac30d4a24",
+      "verified_zip_sha256": "01ac6aa3746a4b3ada66080188e634fcc116f76b96cbfef9b737fa6ac30d4a24",
+      "json_sha256": "bab61981843310ed204caea2b81ef461a402c0e02bfd9df09593788e7772a15d",
+      "log_sha256": "0e6ab4be6ddb1085c180fce271db80528a52c816bb1d47e369deaad0203c5d33",
+      "review_decision_sha256": "7db8327005022341541ef0b62df9a87a02e8741d5716ddf2deb397fb1b95e989"
+    },
+    "aggregate": {
+      "id": 10499190200,
+      "github_digest": "sha256:7d2c7181896f396ad476fba2e073d91b04ee776d81d5efb1ebda0f368a278338",
+      "verified_zip_sha256": "7d2c7181896f396ad476fba2e073d91b04ee776d81d5efb1ebda0f368a278338",
+      "json_sha256": "5cd809948846750e51096ab19a23d8710915859a9f8afcca84bfb6ee32827dc1",
+      "log_sha256": "0c08257847b686994f8782ad89a3d49d62a074f54d0b78d225a480efc692630e",
+      "aggregate_decision_sha256": "6e764ea10206959a755914279a4dfa67adfcbe0935762377a38606a0b24be9c4"
+    }
+  },
+  "reviewed_terminal_repair_artifact_internal_sha256": {
+    "assembly_3_11": "dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24",
+    "assembly_3_13": "dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24",
+    "aggregate": "2b5d34f1479a184ff11b104247bfff196dce75f0e6eb8e319cd257b5f2a639a3",
+    "critic": "1c240c622e3eaa0f96282a05cb249bdbdd96adc22574bd78aeab15fc3622581c",
+    "repair_verdict": "fedfb72e5c47601bc39c8b3a489fe8ecac8a0e58cf8907efffbcfc2afd08d8ab"
+  },
+  "reviewed_terminal_repair_artifacts": {
+    "assembly_3_11": [10498265422, "sha256:3e6739a93cd6e467ea4d1929c37bf68a830fabcd10e415bf2d08388ee4dc0075"],
+    "assembly_3_13": [10497554745, "sha256:fee046299dee740c4a85df00eb8e6c21628ad98b7bf812a0518f8a423e6df2ff"],
+    "aggregate": [10497359984, "sha256:dee8780bb093f8dfe35419a1e4749127cebf730972ed1a395bc894ebfb7d0d47"],
+    "critic": [10498490034, "sha256:cbe6e8856f16850f5c4ecefe07a9c64aa6a7c2c0d035383f385da99c264078a1"],
+    "repair_verdict": [10498015467, "sha256:888edcf687b1c6705d32cd2aae3f03637732376f2eb2eadd8818690fd00cad49"]
+  },
+  "authority_commits": {
+    "terminal_review_preregistration": "a4be2171d5d325ba25b805603a2e9e30e542520b",
+    "terminal_review_authority": "525cea7c03dfae45c668f9fb57b23ad30ac15010",
+    "terminal_review_code": "cd30ab36e61f4668a73214f603dd018eeb503825",
+    "terminal_review_aggregate_code": "de9596f9fc1297e31ff9f11bbf1d3f30a2f79926",
+    "terminal_review_workflow_head": "8cf5aefa4b15b5a6c7dfaf7f08d1884ba8363658",
+    "repair_preregistration": "adc7bfb9df77a90455cac1b0f0cb7255d80c44d5",
+    "repair_authority": "a47a9140cf10f2f0f912943133a01238ff1b5653",
+    "repair_launch_head": "10ae6bcc8447d14cecc6e550065504b23f792953",
+    "c4_preregistration": "aa421bd0b1aec1cbcc7a381fb00e947798d1b084",
+    "c4_authority": "9aa9f77093bd34e058641bb141c8f95a4794d841"
+  }
+}
