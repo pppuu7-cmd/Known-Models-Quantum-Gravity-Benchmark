@@ -4,6 +4,10 @@
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
   "project": "KMQGB",
+  "rqir_core": {
+    "version": "1.0",
+    "status": "FROZEN"
+  },
   "latest_terminal_science": {
     "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_DECISION_CANONICALIZATION_REPAIR_GATE",
     "classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
@@ -18,11 +22,11 @@
     "run_attempt": 1,
     "status": "in_progress",
     "source_lock": "success",
-    "case_lanes_success": 8,
-    "case_lanes_in_progress": 4,
+    "case_lanes_success": 9,
+    "case_lanes_in_progress": 3,
     "case_lanes_failed": 0,
     "terminal_required_case_lanes": 12,
-    "partial_artifact_metadata_count": 8,
+    "partial_artifact_metadata_count": 9,
     "partial_science_consumed": false,
     "duplicate_or_restart_authorized": false,
     "scientific_classification": null,
@@ -58,7 +62,7 @@
   "artifact_freeze": {
     "status": "blocked_until_terminal_production",
     "required_count": 15,
-    "currently_visible_metadata_count": 8,
+    "currently_visible_metadata_count": 9,
     "freeze_authority_created": false,
     "science_payload_read": false
   },
