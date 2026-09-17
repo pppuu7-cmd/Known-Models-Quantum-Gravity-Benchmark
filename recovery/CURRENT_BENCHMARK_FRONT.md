@@ -3,51 +3,74 @@ Updated: 2026-09-17
 
 Fresh repository `main` and fresh Actions state always outrank this navigation document if they diverge.
 
-## Terminal execution awaiting closure review
-
-Gate: `ITER504T_IMPLEMENTATION_CONTROL_REPAIR_RERUN_GATE`.
-
-The authoritative repair execution is now terminal:
-
-- Actions run `35205054496`: `completed/success`;
-- immutable launch head `10ae6bcc8447d14cecc6e550065504b23f792953`;
-- source-lock and all root/assembly/aggregate/Critic/repair-verdict jobs completed;
-- terminal artifact set is present, including `iter504t-repair-aggregate`, `iter504t-repair-critic`, and `iter504t-repair-verdict`.
-
-This terminalization is execution/provenance only. No substantive repair-run artifact has yet been consumed by the Closure lane after terminalization, and no scientific/repair authority is promoted by green CI alone.
-
-The repair execution remains same-science by its prospective contract: roots 13/14/15, rhos 0.35/0.9/1.6/2.7, exact R cohort `[6,8,10,12]`, all 243 channels, precision 384, local-D construction, threshold `1/20`, floor `1`, `MAX_DEPTH=3`, scientific classifier and interpretation ceiling unchanged. The launch gate repaired C1 parent-inclusion and C3 R-cohort wiring; C2 dyadic-location remains REFUTED.
-
 ## Latest terminal closure authority
 
-Gate: `ITER504T_PRETERMINAL_LEAF_CERTIFICATION_BINDING_VERIFICATION_GATE`.
+Gate: `ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_GATE`.
 
 Terminal classification:
 
-`ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED`
+`ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`
 
-Independent Critic verdict: `CONFIRMED_SCOPED`.
+This is an exact-run authority validation PASS for completed repair run `35205054496`; it is not a universal validation of the immutable launch-head workflow.
 
-C4 is terminally verified for the immutable repair launch-head downstream path: assembler, aggregate and independent Critic do not independently enforce the original frozen relation
+Authority / execution chain:
 
-`leaf.certified == all(rho.certified for rho in leaf.per_rho)`.
+- prospective terminal-review preregistration `a4be2171d5d325ba25b805603a2e9e30e542520b`;
+- frozen review authority `525cea7c03dfae45c668f9fb57b23ad30ac15010`;
+- reviewer `cd30ab36e61f4668a73214f603dd018eeb503825`;
+- aggregate reviewer `de9596f9fc1297e31ff9f11bbf1d3f30a2f79926`;
+- workflow head `8cf5aefa4b15b5a6c7dfaf7f08d1884ba8363658`;
+- authoritative review Actions run `35225818354`, terminal `completed/success`;
+- jobs: source-lock `105217007869`, Python 3.11 `105217073486`, Python 3.13 `105217073481`, aggregate `105217171182`;
+- artifacts: Python 3.11 `10498984379` / `sha256:ecaa42b702fb6e823a90862adca0c6da9869774aa7de673abb8b9c186d6c49f9`; Python 3.13 `10499010539` / `sha256:01ac6aa3746a4b3ada66080188e634fcc116f76b96cbfef9b737fa6ac30d4a24`; aggregate `10499190200` / `sha256:7d2c7181896f396ad476fba2e073d91b04ee776d81d5efb1ebda0f368a278338`;
+- lane decision SHA256 `7db8327005022341541ef0b62df9a87a02e8741d5716ddf2deb397fb1b95e989`;
+- aggregate decision SHA256 `6e764ea10206959a755914279a4dfa67adfcbe0935762377a38606a0b24be9c4`.
 
-The verified synthetic replay shows that a leaf with an internally consistent `rho.certified=false` can retain top-level `leaf.certified=true` and `unresolved_leaf_count=0` and still traverse assembler -> aggregate -> Critic as the scientific PASS class. This is an implementation/decision-binding defect, not a scientific FAIL and not evidence that the actual producer emitted such a leaf.
+## Exact validated run
 
-## Historical Iter504T state retained
+The validated scientific execution is `ITER504T_IMPLEMENTATION_CONTROL_REPAIR_RERUN_GATE`, Actions run `35205054496`, head `10ae6bcc8447d14cecc6e550065504b23f792953`.
 
-- Historical Research run `35181094204` reported `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED`, but terminal independent Critic classified that execution `INVALID_IMPLEMENTATION`, not scientific FAIL, on C1/C3.
-- Defect-binding closure VERIFIED C1, REFUTED C2, VERIFIED C3.
-- Repair run `35205054496` was prospectively designed to repair C1/C3 only; C4 was discovered and independently confirmed after its immutable launch head was fixed.
-- Therefore a terminal green/PASS repair-verdict from launch head `10ae6bcc...` cannot by itself restore scientific authority under the original frozen predicate.
+The terminal review independently opened the frozen terminal assemblies after review preregistration and did not trust launch-head top-level certification. Both assembly payloads are byte-identical with SHA256 `dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24`.
+
+For each environment the review independently recomputed the original frozen certification predicate:
+
+- roots `13,14,15`;
+- 12 terminal leaves total;
+- all 48 per-rho boolean identities are exact;
+- all 12 actual terminal leaves satisfy `leaf.certified == all(rho.certified for rho in leaf.per_rho)`;
+- independently recomputed unresolved leaves = `0`;
+- independently recomputed scientific class = `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED`;
+- C1 parent-inclusion: 18 records / 70,056 component booleans per lane / 0 false;
+- exact R cohort `[6,8,10,12]` is independently bound;
+- all seven outcome-sensitive terminal-review controls pass;
+- review errors = `[]`; independent review lanes agree exactly.
+
+The frozen repair result `ITER504T_IMPLEMENTATION_CONTROLS_REPAIRED_AND_RERUN_VALID_SCOPED` is consistent with the independently rebound actual terminal data.
+
+## C4 retained
+
+`ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED` remains independently `CONFIRMED_SCOPED` for the immutable launch-head validator path.
+
+The present review does not erase C4. It establishes that this exact terminal execution happens to satisfy the missing leaf-to-rho conjunction on every actual terminal leaf and independently reconstructs the same scientific PASS. Therefore exact-run authority is restored for run `35205054496`, while the unchanged launch-head validators remain generally unsafe for future executions unless C4 is repaired or independently rebound again.
+
+## Historical state retained
+
+- Original Iter504T run `35181094204` remains historically `INVALID_IMPLEMENTATION`, not scientific FAIL.
+- C1 VERIFIED, C2 REFUTED, C3 VERIFIED historical closure remains immutable.
+- Parent results remain `ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED`, `ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED`, and `ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED`.
+- The validated Iter504T result is only three-root bounded local-D authority; it is not all-1888-state closure.
 
 ## Next admissible work
 
-Perform exactly one prospectively frozen terminal authority review of completed run `35205054496`. Only after that review is frozen may terminal aggregate/Critic/repair-verdict and, if required, terminal assemblies be consumed. The review must apply terminal C4 authority and distinguish implementation invalidity from scientific FAIL.
+No competing same-object execution was launched in this closure run.
 
-Do not launch a competing same-object execution during that review. Preserve the completed repair execution and all historical classifications.
+For reusable validator correctness, highest-information next implementation gate is a prospectively frozen same-science C4 repair: explicitly enforce in assembler and independent Critic
 
-If the terminal review confirms that no stronger independent terminal binding closes C4, the next implementation repair may prospectively add explicit assembler/Critic enforcement of `leaf.certified == all(rho.certified for rho in leaf.per_rho)` plus the exact adversarial C4 mutation while leaving the scientific object unchanged.
+`leaf.certified == all(rho.certified for rho in leaf.per_rho)`
+
+and include the terminal adversarial C4 mutation. Preserve roots/rhos/R/channels/local-D construction/threshold/floor/MAX_DEPTH/scientific classifier/claim ceiling exactly.
+
+Because exact run `35205054496` is independently validated, a C4 rerun is a pipeline-reusability obligation rather than a prerequisite to retain this exact-run three-root authority.
 
 ## Governance lock
 
