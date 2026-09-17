@@ -1,0 +1,23 @@
+{
+  "gate": "ITER504U_C4_SHARED_VALIDATOR_DIAGNOSTIC",
+  "date": "2026-09-17",
+  "execution_count": 1,
+  "science_access_authorized": false,
+  "source_run_id": 35246605860,
+  "source_run_payload_access": false,
+  "parent_failed_methodology_run": 35251855175,
+  "preregistration_commit": "dd8ea4c0f6df3f0da6139e293d6b8fd5bea5d02a",
+  "workflow_commit": "7cd6c8110077362d227b5ebf869887d44d473c97",
+  "workflow_blob": "9675aa8176971cf13c03a6748a641eed2abece4f",
+  "evaluator_commit": "151c4ea951c04278811e4c557847e01b32bbb97c",
+  "evaluator_blob": "20a854869dbd0a61824b6c7e8a4f829507f5b126",
+  "original_critic_blob": "c2a7ea31ddc151bf02a3995d761cae95bdabd0db",
+  "repair_wrapper_blob": "bcea2946a0f9676b50897dc4bbe74fa1122a9965",
+  "python_lanes": ["3.11", "3.13"],
+  "allowed_evaluator_return_codes": [0, 2],
+  "required_cross_environment_json_equality": true,
+  "criteria_changed": false,
+  "fixture_changed": false,
+  "validator_changed": false,
+  "claim_ceiling": "diagnostic visibility only; no Iter504U science classification"
+}
