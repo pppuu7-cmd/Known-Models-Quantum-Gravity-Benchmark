@@ -1,0 +1,25 @@
+{
+  "gate": "ITER504U_C4_SHARED_VALIDATOR_DIAGNOSTIC",
+  "authoritative_run": 35252175158,
+  "head_sha": "c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2",
+  "jobs": {
+    "source_lock": 105306929508,
+    "python_3_11": 105307014713,
+    "python_3_13": 105307014763,
+    "aggregate": 105307454169
+  },
+  "artifacts": {
+    "python_3_11": {"id": 10510475771, "digest": "sha256:583c1935ee815b7d4ba80e0396212d725933f6eabe4ac1f8fb4279f3a16ad0a1"},
+    "python_3_13": {"id": 10510765344, "digest": "sha256:f768f75cdc9794d70c4b5cced1ee8692c2fb8e38873094251baed9694c907cea"},
+    "aggregate": {"id": 10509679536, "digest": "sha256:9df7eed7be9e89c0083d2cb6b0631f3d190b12085253b5786e8808ba70883880", "independent_zip_sha256": "9df7eed7be9e89c0083d2cb6b0631f3d190b12085253b5786e8808ba70883880"}
+  },
+  "aggregate_internal": {
+    "result_json_sha256": "fbc96994dd7ccc53325e415133993f056e08af45401567aa79670225c12e49de",
+    "returncode_txt_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "diagnostic_sha256_file_sha256": "75bf96ba8ee8b46609c3b2225966fbe77afdf8e2f7bdd4ce3627ef88b5b40158",
+    "returncode": 0
+  },
+  "payload_sha256": "974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f",
+  "production_science_consumed": false,
+  "source_run_classified": false
+}
