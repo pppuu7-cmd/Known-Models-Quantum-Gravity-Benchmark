@@ -17,24 +17,33 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Verify frozen Iter504S authority and implementation ancestry
+      - name: Verify frozen Iter504S repaired execution authority
         shell: bash
         run: |
           set -euo pipefail
           for c in \
             f6367456aa715fe6282ab70c1b2005971a4568c7 \
-            a008d782618ac6a1c397d571ed091138107ac1ee \
-            0ef4a6c8e193eec5294485997e4cfdd60e8c0d19 \
-            3f5c21056d9d701948c918b307f76c67f17eed41 \
+            88c92f86a765e9d8b441152674fc2c303f3f1ff3 \
+            4ef41c0f4ceed3082fd4d80930ef5d848f18802b \
+            b20077e77b421a68f1a99135ff652e52a0d53227 \
+            7dc689f9b4d7e4f768a677e2afc80668a15b73d9 \
+            b0347e225b986b63e079ef6ebf02cd928022eb39 \
+            38c705865b0397c7cf664ad142ad232d3b0a312f \
+            f916873228f970844c775dbaaabeba999b432365 \
+            7931e10c31dc8f1db42215117ef2b1b15ac0ed6b \
             147d68f26ed3a14ce3cd1fd77fcd96d5fb329ec8 \
             f846820bae39963a48272deccb2e4a539100fce1 \
             598ede26e0db448411537e9d5f813aa344f88d0f \
             6e300294e6c9a470099776d1c30357eed3fa4b93; do
             git merge-base --is-ancestor "$c" HEAD
           done
-          test "$(git hash-object code/iter504s_mechanism_discriminator.py)" = "$(git rev-parse a008d782618ac6a1c397d571ed091138107ac1ee:code/iter504s_mechanism_discriminator.py)"
-          test "$(git hash-object code/iter504s_mechanism_assemble.py)" = "$(git rev-parse 0ef4a6c8e193eec5294485997e4cfdd60e8c0d19:code/iter504s_mechanism_assemble.py)"
-          test "$(git hash-object code/iter504s_mechanism_aggregate.py)" = "$(git rev-parse 3f5c21056d9d701948c918b307f76c67f17eed41:code/iter504s_mechanism_aggregate.py)"
+          test "$(git hash-object code/iter504s_mechanism_discriminator_repaired.py)" = "$(git rev-parse b20077e77b421a68f1a99135ff652e52a0d53227:code/iter504s_mechanism_discriminator_repaired.py)"
+          test "$(git hash-object code/iter504s_mechanism_assemble_repaired.py)" = "$(git rev-parse 7dc689f9b4d7e4f768a677e2afc80668a15b73d9:code/iter504s_mechanism_assemble_repaired.py)"
+          test "$(git hash-object code/iter504s_mechanism_aggregate_repaired.py)" = "$(git rev-parse b0347e225b986b63e079ef6ebf02cd928022eb39:code/iter504s_mechanism_aggregate_repaired.py)"
+          test "$(git hash-object code/iter504s_adversarial_critic_repaired.py)" = "$(git rev-parse 38c705865b0397c7cf664ad142ad232d3b0a312f:code/iter504s_adversarial_critic_repaired.py)"
+          test "$(git hash-object research/prereg/ITER504S_ROOT_DERIVATIVE_VS_CHANNEL_COMPETITION_DISCRIMINATOR_2026-09-17.md)" = "$(git rev-parse f6367456aa715fe6282ab70c1b2005971a4568c7:research/prereg/ITER504S_ROOT_DERIVATIVE_VS_CHANNEL_COMPETITION_DISCRIMINATOR_2026-09-17.md)"
+          test "$(git hash-object research/prereg/ITER504S_EXECUTION_ONLY_DUAL_DERIVATIVE_EXTRACTION_REPAIR_2026-09-17.md)" = "$(git rev-parse 88c92f86a765e9d8b441152674fc2c303f3f1ff3:research/prereg/ITER504S_EXECUTION_ONLY_DUAL_DERIVATIVE_EXTRACTION_REPAIR_2026-09-17.md)"
+          test "$(git hash-object research/prereg/ITER504S_EXECUTION_ONLY_FIXED_CHANNEL_DRIFT_SEMANTICS_REPAIR_2026-09-17.md)" = "$(git rev-parse 4ef41c0f4ceed3082fd4d80930ef5d848f18802b:research/prereg/ITER504S_EXECUTION_ONLY_FIXED_CHANNEL_DRIFT_SEMANTICS_REPAIR_2026-09-17.md)"
           test "$(git hash-object code/iter504r_root_affine_reuse.py)" = "$(git rev-parse f846820bae39963a48272deccb2e4a539100fce1:code/iter504r_root_affine_reuse.py)"
           for f in code/iter499_arb_core.py code/iter500_compact_sandwich_kak.py code/iter501_direct_max_envelope_interval.py code/iter503_ad_core.py code/iter504_centered_shard.py; do
             test "$(git hash-object "$f")" = "$(git rev-parse f846820bae39963a48272deccb2e4a539100fce1:$f)"
@@ -45,11 +54,21 @@ jobs:
       - name: Syntax and frozen constants check
         shell: bash
         run: |
-          python -m py_compile code/iter504s_mechanism_discriminator.py code/iter504s_mechanism_assemble.py code/iter504s_mechanism_aggregate.py
-          grep -F "TOL = arb('0.05')" code/iter504s_mechanism_discriminator.py
-          grep -F "FLOOR = arb('1.0')" code/iter504s_mechanism_discriminator.py
-          grep -F "TOL=0.05" code/iter504s_mechanism_assemble.py
-          grep -F "FLOOR=1.0" code/iter504s_mechanism_assemble.py
+          set -euo pipefail
+          python -m py_compile \
+            code/iter504s_mechanism_discriminator_repaired.py \
+            code/iter504s_mechanism_assemble_repaired.py \
+            code/iter504s_mechanism_aggregate_repaired.py \
+            code/iter504s_adversarial_critic_repaired.py
+          grep -F "PREREG = 'f6367456aa715fe6282ab70c1b2005971a4568c7'" code/iter504s_mechanism_discriminator_repaired.py
+          grep -F "REPAIR_DERIVATIVE = '88c92f86a765e9d8b441152674fc2c303f3f1ff3'" code/iter504s_mechanism_discriminator_repaired.py
+          grep -F "REPAIR_DRIFT = '4ef41c0f4ceed3082fd4d80930ef5d848f18802b'" code/iter504s_mechanism_discriminator_repaired.py
+          grep -F "TOL = arb('0.05')" code/iter504s_mechanism_discriminator_repaired.py
+          grep -F "FLOOR = arb('1.0')" code/iter504s_mechanism_discriminator_repaired.py
+          grep -F "TOL = 0.05" code/iter504s_mechanism_assemble_repaired.py
+          grep -F "FLOOR = 1.0" code/iter504s_mechanism_assemble_repaired.py
+          grep -F "'derivative_channel_representation': 'ad.as_c(z).d'" code/iter504s_mechanism_discriminator_repaired.py
+          grep -F "'fixed_channel_competition_semantics': 'drift_only'" code/iter504s_mechanism_assemble_repaired.py
 
   roots:
     needs: source-lock
@@ -68,20 +87,23 @@ jobs:
       - name: Install frozen numerical dependencies
         shell: bash
         run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
-      - name: Execute frozen root mechanism discriminator
+      - name: Capture repaired execution environment
+        shell: bash
+        run: |
+          mkdir -p out
+          python -VV > out/python.txt 2>&1
+          python -m pip freeze > out/pip-freeze.txt
+          uname -a > out/uname.txt
+      - name: Execute frozen repaired root mechanism discriminator
         shell: bash
         env:
           PYTHONPATH: code
         run: |
-          mkdir -p out
-          python code/iter504s_mechanism_discriminator.py --root-box '${{ matrix.root_box }}' --out 'out/root-${{ matrix.root_box }}.json'
-          python -VV > out/python.txt 2>&1
-          python -m pip freeze > out/pip-freeze.txt
-          uname -a > out/uname.txt
+          python code/iter504s_mechanism_discriminator_repaired.py --root-box '${{ matrix.root_box }}' --out 'out/root-${{ matrix.root_box }}.json'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: iter504s-${{ matrix.python }}-root-${{ matrix.root_box }}
+          name: iter504s-repaired-${{ matrix.python }}-root-${{ matrix.root_box }}
           path: out
           if-no-files-found: error
 
@@ -99,29 +121,29 @@ jobs:
           python-version: '3.12'
       - uses: actions/download-artifact@v4
         with:
-          name: iter504s-${{ matrix.python }}-root-13
+          name: iter504s-repaired-${{ matrix.python }}-root-13
           path: roots/13
       - uses: actions/download-artifact@v4
         with:
-          name: iter504s-${{ matrix.python }}-root-14
+          name: iter504s-repaired-${{ matrix.python }}-root-14
           path: roots/14
       - uses: actions/download-artifact@v4
         with:
-          name: iter504s-${{ matrix.python }}-root-15
+          name: iter504s-repaired-${{ matrix.python }}-root-15
           path: roots/15
-      - name: Assemble frozen mechanism classifier
+      - name: Assemble repaired frozen mechanism classifier independently
         shell: bash
         run: |
           mkdir -p out
-          python code/iter504s_mechanism_assemble.py \
+          python code/iter504s_mechanism_assemble_repaired.py \
             --root13 roots/13/root-13.json \
             --root14 roots/14/root-14.json \
             --root15 roots/15/root-15.json \
-            --out 'out/iter504s-${{ matrix.python }}.json'
+            --out 'out/iter504s-repaired-${{ matrix.python }}.json'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: iter504s-assembled-${{ matrix.python }}
+          name: iter504s-repaired-assembled-${{ matrix.python }}
           path: out
           if-no-files-found: error
 
@@ -136,20 +158,84 @@ jobs:
           python-version: '3.12'
       - uses: actions/download-artifact@v4
         with:
-          name: iter504s-assembled-3.11
+          name: iter504s-repaired-assembled-3.11
           path: a
       - uses: actions/download-artifact@v4
         with:
-          name: iter504s-assembled-3.13
+          name: iter504s-repaired-assembled-3.13
           path: b
-      - name: Aggregate independent Iter504S environments
+      - name: Aggregate repaired independent Iter504S environments
         shell: bash
         run: |
           mkdir -p out
-          python code/iter504s_mechanism_aggregate.py --a a --b b --out out/iter504s-aggregate.json
+          python code/iter504s_mechanism_aggregate_repaired.py --a a --b b --out out/iter504s-repaired-aggregate.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: iter504s-aggregate
-          path: out/iter504s-aggregate.json
+          name: iter504s-repaired-aggregate
+          path: out/iter504s-repaired-aggregate.json
+          if-no-files-found: error
+
+  critic:
+    needs: [assemble, aggregate]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504s-repaired-3.11-root-*
+          path: roots-a
+          merge-multiple: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504s-repaired-3.13-root-*
+          path: roots-b
+          merge-multiple: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-repaired-assembled-3.11
+          path: asm-a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-repaired-assembled-3.13
+          path: asm-b
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504s-repaired-aggregate
+          path: aggregate
+      - name: Run repaired adversarial Critic and compare aggregate authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python code/iter504s_adversarial_critic_repaired.py \
+            --a-root13 roots-a/iter504s-repaired-3.11-root-13/root-13.json \
+            --a-root14 roots-a/iter504s-repaired-3.11-root-14/root-14.json \
+            --a-root15 roots-a/iter504s-repaired-3.11-root-15/root-15.json \
+            --a-assembled asm-a/iter504s-repaired-3.11.json \
+            --b-root13 roots-b/iter504s-repaired-3.13-root-13/root-13.json \
+            --b-root14 roots-b/iter504s-repaired-3.13-root-14/root-14.json \
+            --b-root15 roots-b/iter504s-repaired-3.13-root-15/root-15.json \
+            --b-assembled asm-b/iter504s-repaired-3.13.json \
+            --out out/iter504s-repaired-critic.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('aggregate/iter504s-repaired-aggregate.json').read_text())
+          c=json.loads(Path('out/iter504s-repaired-critic.json').read_text())
+          assert a['classification'] == c['classification']
+          assert a['classification'] != 'ITER504S_INVALID'
+          assert not c['critic_errors']
+          assert c['cross_environment_discrete_agreement'] is True
+          print('ITER504S_REPAIRED_AGGREGATE_CRITIC_AGREEMENT', a['classification'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504s-repaired-critic
+          path: out/iter504s-repaired-critic.json
           if-no-files-found: error
