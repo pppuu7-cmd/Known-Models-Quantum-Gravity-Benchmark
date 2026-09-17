@@ -1,0 +1,48 @@
+{
+  "assemblies_byte_identical": true,
+  "assembly_a_sha256": "9036ced6bb7b252fab5c2b147ef652fe2ee817bc7d49c07f7f8114c6ead17837",
+  "assembly_b_sha256": "9036ced6bb7b252fab5c2b147ef652fe2ee817bc7d49c07f7f8114c6ead17837",
+  "claim_ceiling": "three-root-box Iter504R diagnostic only; not full Iter504 or global QG/D7 conclusion",
+  "critic_payload_sha256": "cd640f81b2313c6ca02815f51903f4cd54ac50e6830fb90a17c2022e5dbdb11d",
+  "critic_verdict": "CRITIC_CONFIRMS_ITER504R_INCONCLUSIVE_SCOPED",
+  "environment_a": {
+    "certified": 24,
+    "classification_recomputed": "ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED",
+    "errors": [],
+    "histogram": {"10": 2892, "6": 6, "7": 6, "8": 6, "9": 6},
+    "leaf_count": 2916,
+    "max_possible": 46,
+    "unresolved": 2892
+  },
+  "environment_b": {
+    "certified": 24,
+    "classification_recomputed": "ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED",
+    "errors": [],
+    "histogram": {"10": 2892, "6": 6, "7": 6, "8": 6, "9": 6},
+    "leaf_count": 2916,
+    "max_possible": 46,
+    "unresolved": 2892
+  },
+  "errors": [],
+  "negative_controls": {
+    "altered_path": true,
+    "altered_sign": true,
+    "depth_gt_10": true,
+    "descendant_derivative_recompute": true,
+    "duplicate_leaf": true,
+    "floor_changed": true,
+    "gap": true,
+    "missing_leaf": true,
+    "omitted_channel": true,
+    "outcome_dependent_leaf_removal": true,
+    "overlap": true,
+    "threshold_changed": true,
+    "wrong_box": true,
+    "wrong_rho": true,
+    "wrong_root_endpoint": true
+  },
+  "negative_controls_all_rejected": true,
+  "robust_floor": 1.0,
+  "terminal_classification_recomputed": "ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED",
+  "threshold": 0.05
+}
