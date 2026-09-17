@@ -102,7 +102,11 @@ Repaired execution authority was prospectively frozen in commit:
 
 `7931e10c31dc8f1db42215117ef2b1b15ac0ed6b`.
 
-It authorizes exactly one repaired scientific execution with independent Python 3.11 and 3.13 cohorts, independent assemblies, cross-environment frozen-decision comparison and adversarial Critic.
+Outcome-blind source-level semantics audit completed while the repaired run was nonterminal:
+
+`6334f6be04ffc5b1db0eb68f6b6debffa2b3b0f7`.
+
+It found no additional source-level mismatch with the frozen Iter504S contract and did not modify the running code.
 
 ## Canonical repaired Iter504S run
 
@@ -134,7 +138,9 @@ Generic successor mathematics was frozen before repaired Iter504S terminal outco
 
 `research/methodology/ITER504S_OUTCOME_BLIND_SUCCESSOR_TOOLKIT_2026-09-17.md`
 
-commit `81e0e946...` (resolve exact SHA from fresh main history when promotion-relevant).
+commit:
+
+`81e0e94649a50cccc510dc2630456af45fd98e46`.
 
 It contains four generic routes without selecting any future witness/partition based on outcome:
 
