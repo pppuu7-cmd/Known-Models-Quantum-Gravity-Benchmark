@@ -1,0 +1,123 @@
+name: KMQGB Iter504T terminal authority review semantics repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504t-repair-rerun-terminal-authority-review-semantics-repair.yml'
+      - 'code/iter504t_repair_rerun_terminal_authority_review_semantics_repair.py'
+      - 'code/iter504t_repair_rerun_terminal_authority_review_semantics_repair_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective freeze, Critic authority and terminal artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 5b18ffbe46b967ef64c54d6181924aa8acf6f43e HEAD
+          git merge-base --is-ancestor 39bd24ff03cba8858dca39ceb2935509352f295a HEAD
+          git merge-base --is-ancestor 15b323994844fd83dfa0dc71efb977ba4300de97 HEAD
+          test "$(git hash-object recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_2026-09-17.md)" = 5362de2604715d198be4f2c426a430da80a9017d
+          test "$(git hash-object research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_GATE_2026-09-17.md)" = 08cb812a08661c423e65949e51da532ca1724150
+          test "$(git hash-object inputs/iter504t_repair_rerun_terminal_authority_review_authority.json)" = a923abe40cb6c08442013d696433bfc984794854
+          test "$(git hash-object code/iter504t_repair_rerun_terminal_authority_review.py)" = 82d86498c74e9953815eb9bcd807387c9deeec73
+          grep -F 'ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED' research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_GATE_2026-09-17.md
+          grep -F 'ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED' research/prereg/ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_GATE_2026-09-17.md
+          python -m py_compile code/iter504t_repair_rerun_terminal_authority_review_semantics_repair.py code/iter504t_repair_rerun_terminal_authority_review_semantics_repair_aggregate.py
+          run_json=$(gh api repos/${GITHUB_REPOSITORY}/actions/runs/35205054496)
+          test "$(jq -r .status <<<"$run_json")" = completed
+          test "$(jq -r .conclusion <<<"$run_json")" = success
+          test "$(jq -r .head_sha <<<"$run_json")" = 10ae6bcc8447d14cecc6e550065504b23f792953
+          artifacts=$(gh api 'repos/'${GITHUB_REPOSITORY}'/actions/runs/35205054496/artifacts?per_page=100')
+          check_artifact() {
+            name="$1" id="$2" digest="$3"
+            got_id=$(jq -r --arg n "$name" '.artifacts[] | select(.name==$n) | .id' <<<"$artifacts")
+            got_digest=$(jq -r --arg n "$name" '.artifacts[] | select(.name==$n) | .digest' <<<"$artifacts")
+            test "$got_id" = "$id"
+            test "$got_digest" = "$digest"
+          }
+          check_artifact iter504t-repair-assembled-3.11 10498265422 sha256:3e6739a93cd6e467ea4d1929c37bf68a830fabcd10e415bf2d08388ee4dc0075
+          check_artifact iter504t-repair-assembled-3.13 10497554745 sha256:fee046299dee740c4a85df00eb8e6c21628ad98b7bf812a0518f8a423e6df2ff
+          check_artifact iter504t-repair-aggregate 10497359984 sha256:dee8780bb093f8dfe35419a1e4749127cebf730972ed1a395bc894ebfb7d0d47
+          check_artifact iter504t-repair-critic 10498490034 sha256:cbe6e8856f16850f5c4ecefe07a9c64aa6a7c2c0d035383f385da99c264078a1
+          check_artifact iter504t-repair-verdict 10498015467 sha256:888edcf687b1c6705d32cd2aae3f03637732376f2eb2eadd8818690fd00cad49
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Download frozen terminal repair artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p terminal/a terminal/b terminal/aggregate terminal/critic terminal/verdict
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-assembled-3.11 --dir terminal/a
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-assembled-3.13 --dir terminal/b
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-aggregate --dir terminal/aggregate
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-critic --dir terminal/critic
+          gh run download 35205054496 --repo "$GITHUB_REPOSITORY" --name iter504t-repair-verdict --dir terminal/verdict
+      - name: Run frozen repaired terminal authority review
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          tag=$(echo '${{ matrix.python }}' | tr -d '.')
+          python code/iter504t_repair_rerun_terminal_authority_review_semantics_repair.py \
+            --authority inputs/iter504t_repair_rerun_terminal_authority_review_semantics_repair_authority.json \
+            --assembly-a terminal/a/iter504t-3.11.json \
+            --assembly-b terminal/b/iter504t-3.13.json \
+            --aggregate terminal/aggregate/iter504t-repair-aggregate.json \
+            --critic terminal/critic/iter504t-repair-critic.json \
+            --verdict terminal/verdict/iter504t-repair-verdict.json \
+            --out "artifacts/terminal_authority_review_semantics_repair_${tag}.json" | tee "artifacts/terminal_authority_review_semantics_repair_${tag}.log"
+          sha256sum "artifacts/terminal_authority_review_semantics_repair_${tag}.json" "artifacts/terminal_authority_review_semantics_repair_${tag}.log" > "artifacts/terminal_authority_review_semantics_repair_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-terminal-authority-review-semantics-repair-${{ matrix.python }}
+          path: artifacts/terminal_authority_review_semantics_repair_*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504t-terminal-authority-review-semantics-repair-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate independent repaired review lanes
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/iter504t_repair_rerun_terminal_authority_review_semantics_repair_aggregate.py \
+            --a downloaded/terminal_authority_review_semantics_repair_311.json \
+            --b downloaded/terminal_authority_review_semantics_repair_313.json \
+            --out artifacts/terminal_authority_review_semantics_repair_aggregate.json | tee artifacts/terminal_authority_review_semantics_repair_aggregate.log
+          sha256sum artifacts/terminal_authority_review_semantics_repair_aggregate.json artifacts/terminal_authority_review_semantics_repair_aggregate.log > artifacts/terminal_authority_review_semantics_repair_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504t-terminal-authority-review-semantics-repair-aggregate
+          path: artifacts/terminal_authority_review_semantics_repair_aggregate.*
+          if-no-files-found: error
