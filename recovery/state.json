@@ -64,11 +64,11 @@
     "run_attempt": 1,
     "status": "in_progress",
     "source_lock": "success",
-    "case_lanes_success": 9,
-    "case_lanes_in_progress": 3,
+    "case_lanes_success": 10,
+    "case_lanes_in_progress": 2,
     "case_lanes_failed": 0,
     "terminal_required_case_lanes": 12,
-    "partial_artifact_metadata_count": 9,
+    "partial_artifact_metadata_count": 10,
     "partial_science_consumed": false,
     "duplicate_or_restart_authorized": false,
     "scientific_classification": null,
@@ -99,28 +99,36 @@
       "terminal_result_blob": "a5f1da37a2ee28d7758c747898ac8344a9d31f48",
       "production_science_consumed": false,
       "source_run_classified": false
+    },
+    "source_terminal_semantics": {
+      "status": "prospectively_frozen_preclosure",
+      "preregistration_commit": "31f9870b608ea244d4384354d09210e270f1b524",
+      "preregistration_blob": "f5b79cf62fd8072ceefe43404289132fe5e3388a",
+      "rule": "terminal source admissibility binds exact successful upstream jobs and exact 15 upstream artifacts; obsolete original source Critic is excluded from repaired closure authority",
+      "production_science_consumed": false
     }
   },
   "artifact_freeze": {
     "status": "blocked_until_terminal_production",
     "required_count": 15,
-    "currently_visible_metadata_count": 9,
+    "currently_visible_metadata_count": 10,
     "freeze_authority_created": false,
     "science_payload_read": false
   },
   "prepared_closure": {
     "gate": "ITER504U_REPAIRED_CRITIC_CLOSURE",
     "workflow_path": ".github/workflows/iter504u-critic-c4-fixture-repair-closure.yml",
-    "workflow_blob": "1ca55311eedac38bd2f6a515b8d463d957426117",
+    "workflow_blob": "ff228f9655f62825140e1c71279f815d7a9e9ec4",
     "authority_path": "inputs/iter504u_repaired_critic_closure_authority.json",
     "launch_marker": "recovery/ITER504U_REPAIRED_CRITIC_CLOSURE_LAUNCH_2026-09-17.txt",
     "authority_created": false,
     "launch_created": false,
     "critic_entrypoint": "code/iter504u_heldout_critic_depth_binding_repair.py",
-    "supports_frozen_terminal_taxonomy": true
+    "supports_frozen_terminal_taxonomy": true,
+    "source_admissibility": "exact 16 successful upstream jobs plus exact 15 upstream artifacts; overall run conclusion recorded but not used as producer-science proxy"
   },
   "current_blocker": "Iter504U production run 35246605860 must naturally terminalize before exact 15-artifact freeze and closure authority",
-  "next_authorized_action": "When run 35246605860 is terminal, metadata-only verify complete 15-artifact inventory, freeze exact IDs/digests/source head/attempt/expiration into one prospective closure authority, then launch exactly one repaired-Critic closure. Until terminalization do not consume partial science or rerun producer.",
+  "next_authorized_action": "When run 35246605860 is terminal, metadata-only freeze exact run conclusion, exact 16 successful upstream job identities, and exact 15 upstream artifact IDs/digests/source head/expiration into one prospective closure authority, then launch exactly one repaired-Critic closure. Until terminalization do not consume partial science or rerun producer.",
   "governance": {
     "rqir_core": "FROZEN_v1.0",
     "D7_S2": "NOT_CLOSED",
