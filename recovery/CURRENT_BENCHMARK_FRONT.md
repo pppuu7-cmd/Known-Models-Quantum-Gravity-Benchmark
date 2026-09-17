@@ -5,180 +5,107 @@ Fresh repository `main` and fresh Actions state always outrank this navigation d
 
 ## Latest terminal scientific execution
 
-`ITER504R_ROOT_AFFINE_REUSE_CONTINUOUS_DRIFT_DIAGNOSTIC_GATE`
-
-Classification:
-
-`ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED`
-
-Authority:
-
-- preregistration `147d68f26ed3a14ce3cd1fd77fcd96d5fb329ec8`;
-- implementation `f846820bae39963a48272deccb2e4a539100fce1`;
-- authoritative run `35154724661`, terminal `completed/success`;
-- terminal result `598ede26e0db448411537e9d5f813aa344f88d0f`;
-- independent Critic `6e300294e6c9a470099776d1c30357eed3fa4b93`.
-
-Exact terminal facts:
-
-- total leaves `2916`;
-- certified `24`;
-- unresolved depth-10 `2892`;
-- maximum `drift_upper = 0.6136407189670734`;
-- minimum terminal `S_lower = 3.7043291995581735`;
-- maximum possible-max count `46`.
-
-Scientific localization: child-delta refinement alone, while retaining the same full-root derivative enclosure `D(I)`, is not sufficient on the frozen three-root continuous-drift diagnostic. Residual mechanism space is full-root derivative-enclosure width and/or nonsmooth max-channel competition/crossings, with possible fixed-channel nonstationarity. Do not increase depth blindly or promote this diagnostic to the full Iter504 domain.
-
-## Active scientific gate — Iter504S exact-threshold repair required
-
-Gate:
-
 `ITER504S_ROOT_DERIVATIVE_VS_CHANNEL_COMPETITION_DISCRIMINATOR`
 
-Scientific preregistration remains exactly:
-
-`f6367456aa715fe6282ab70c1b2005971a4568c7`
-
-Frozen science remains unchanged:
-
-- `python-flint==0.9.0`;
-- Arb/Acb precision `384` bits;
-- all `243` channels retained, no pruning;
-- causal `0to5`, block `0`, path `2`, direction `[1,1,1,-1,-1,-1]`, sign `+1`;
-- roots `13,14,15`;
-- rhos `[0.35,0.9,1.6,2.7]`;
-- R grid `[6,8,10,12]`;
-- robust floor exact `+1`;
-- drift threshold exact `0.05 = 1/20`;
-- exact preregistered LOW/MID/HIGH rational points only;
-- center-D is control-only and is not a validated replacement enclosure.
-
-Allowed terminal scientific classes remain only:
-
-- `ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED`;
-- `ITER504S_CHANNEL_COMPETITION_NECESSARY_SCOPED`;
-- `ITER504S_FIXED_CHANNEL_NONSTATIONARITY_REMAINS_SCOPED`;
-- `ITER504S_MIXED_MECHANISM_SCOPED`;
-- `ITER504S_INVALID`.
-
-## Initial Iter504S execution — terminal implementation-invalid
-
-Initial run `35173442220`, workflow head `cb50a107b24232ef1b652baa9443e69fc3fa6ca1`, run number `1`, attempt `1`, is terminal `completed/failure`.
-
-Source-lock succeeded. All six root jobs failed in the evaluator step with the same representation error family across Python 3.11 and 3.13:
-
-`TypeError("cannot create acb from type <class 'iter503_ad_core.CD'>")`
-
-Assembly never produced a valid scientific payload. Therefore this first execution is implementation-invalid and non-authoritative for scientific classification; it is not a scientific FAIL.
-
-Durable record:
-
-`f916873228f970844c775dbaaabeba999b432365`
-
-## First repaired Iter504S execution — terminal diagnostic only
-
-Execution-only repairs frozen before this run:
-
-1. derivative-component extraction `88c92f86a765e9d8b441152674fc2c303f3f1ff3`;
-2. fixed-channel drift-only competition semantics `4ef41c0f4ceed3082fd4d80930ef5d848f18802b`.
-
-Repaired chain:
-
-- evaluator `b20077e77b421a68f1a99135ff652e52a0d53227`;
-- assembler `7dc689f9b4d7e4f768a677e2afc80668a15b73d9`;
-- aggregate `b0347e225b986b63e079ef6ebf02cd928022eb39`;
-- adversarial Critic `38c705865b0397c7cf664ad142ad232d3b0a312f`;
-- execution authority `7931e10c31dc8f1db42215117ef2b1b15ac0ed6b`;
-- workflow head `7e3b266def723dc332239990bac01f9298c17b4e`;
-- Actions run `35175533159`.
-
-Run `35175533159` is terminal `completed/success`: all six root jobs, both Python 3.11/3.13 independent assemblies, cross-environment aggregate and adversarial Critic completed successfully. The two environments produced identical root hashes and identical assembled SHA256. Critic reported no errors, cross-environment discrete agreement `true`, and all frozen negative/semantic controls passed.
-
-Its **provisional diagnostic** classification is:
+Terminal classification:
 
 `ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED`
 
-This is strong mechanism evidence but is **not promoted to terminal science** because an outcome-blind post-launch static audit found a validated-decision transport defect before the terminal result was consumed for scientific promotion.
+Authoritative terminal record:
 
-## Exact-threshold decision firewall
+`research/results/ITER504S_EXACT_DECISION_TERMINAL_2026-09-17.md`
 
-Authoritative firewall commit:
+Terminal record commit:
 
-`77d42eb58c03eef2356aed7a25795562760de4e3`
+`1b0004064575f046210383dc7b1ee22d4f25e66b`
 
-File:
+Scientific preregistration:
 
-`research/prereg/ITER504S_EXECUTION_ONLY_EXACT_THRESHOLD_DECISION_FIREWALL_2026-09-17.md`
+`f6367456aa715fe6282ab70c1b2005971a4568c7`
 
-Defect: the repaired evaluator computes Arb enclosures, but several terminal mechanism predicates are reconstructed from binary64 summaries produced by `bound_float`, including derivative-radius drift comparisons, full/center violation tests, and fixed-channel competition threshold tests. The core module explicitly treats ordinary Arb-to-float conversion as display-only rather than a validated decision channel.
+Execution-only repair authorities:
 
-Python binary64 `0.05` is not exact `1/20`:
+- derivative extraction `88c92f86a765e9d8b441152674fc2c303f3f1ff3`;
+- fixed-channel drift semantics `4ef41c0f4ceed3082fd4d80930ef5d848f18802b`;
+- exact-decision firewall `77d42eb58c03eef2356aed7a25795562760de4e3`.
 
-`0.05.as_integer_ratio() = 3602879701896397 / 72057594037927936`,
+Single exact-decision execution authority:
 
-which exceeds exact `1/20` by `1 / 360287970189639680`.
+`647d19c6ccdcc70d3d08e9275850fd4e3e98bee3`.
 
-Therefore no non-INVALID mechanism class from run `35175533159` is eligible for final scientific promotion. This authority rule was frozen outcome-blind and applies equally to every possible mechanism class.
+Workflow launch head:
 
-The next scientific execution may change only decision transport/verification:
+`fc2b869cc0d5b218bb5de9bceaa94c0838156cad`.
 
-- evaluate full-envelope slope-floor and drift booleans directly in Arb;
-- evaluate derivative-radius sensitivity from producer exact-Arb drift booleans;
-- evaluate every fixed-channel drift boolean directly in Arb;
-- transport explicit exact-decision booleans / violating-channel identities downstream;
-- make binary64 bounds display-only;
-- make assembler, aggregate and independent Critic classify solely from exact producer booleans plus structural/provenance identities;
-- preserve every scientific threshold, point, channel, precision, source, cohort and classifier branch.
+Authoritative Actions run:
 
-Exactly one repaired scientific execution is authorized only after its implementation hashes and workflow authority are prospectively frozen.
+`35178186905`, run number `1`, attempt `1`, terminal `completed/success`.
 
-## Outcome-blind successor machinery
+All source-lock, six roots, Python 3.11/3.13 assemblies, aggregate and independent adversarial Critic succeeded.
 
-Generic successor mathematics was frozen before repaired Iter504S terminal outcome in:
+Exact-decision facts:
 
-`research/methodology/ITER504S_OUTCOME_BLIND_SUCCESSOR_TOOLKIT_2026-09-17.md`
+- scientific decision transport `exact_arb_booleans_float_bounds_display_only`;
+- exact threshold `1/20`;
+- exact robust floor `1`;
+- `python-flint==0.9.0`;
+- Arb/Acb precision 384 bits;
+- all 243 channels retained; no pruning;
+- exact cross-environment scientific decision agreement `true`;
+- Critic errors `[]`;
+- all frozen negative controls passed;
+- assembled SHA256 identical across cohorts: `fd612b031370722f08e95cf2bbefd922b9a32b21a488959b53dc1906d532c1c1`;
+- Critic payload SHA256 `bad54a49e64ecbf8ed42686c839c654fbb43d9e62c63a1cb97ceafe719e5e676`;
+- aggregate payload SHA256 `b26a1138ffcbd1c9863bac921f87cde491894da001a1a608cd8d1649f119631d`.
 
-commit:
+Scientific localization: on the prospectively frozen roots 13-15 nine-point mechanism diagnostic, the residual continuous-drift obstruction is localized to the width/radius of the full-root validated derivative enclosure `D(I)`. This exact result reproduced the earlier provisional class after removing binary64 threshold authority.
+
+Do not reopen Iter504S, do not rerun `35173442220`, `35175533159`, or `35178186905`, and do not use deeper child subdivision while retaining the same root derivative enclosure as the next mechanism test.
+
+## Active scientific gate — Iter504T Branch A
+
+Outcome-blind successor toolkit authority:
 
 `81e0e94649a50cccc510dc2630456af45fd98e46`.
 
-It contains four generic routes without selecting any future witness/partition based on outcome:
+Required instantiated successor:
 
-- validated local derivative enclosure `D(J)` directly over child/subroot interval `J`, never midpoint derivative as truth;
-- validated max-channel switching via `Q_ij=|f_i|^2-|f_j|^2` and dominance cells, never fitted crossings or artificial smoothing;
-- direct source-faithful fixed-channel local-function Arb certificate;
-- mixed case-level mechanism matrix and deterministic factorial discriminator.
+`ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION`
 
-Any successful three-root mechanism repair must pass a prospectively selected held-out representative cohort before full 1888-state expansion is considered.
+Scientific question: if the derivative enclosure is recomputed directly and rigorously on deterministic subintervals `J subset I`, does validated local `D(J)` contract enough to certify the continuous drift criterion that full-root `D(I)` could not certify?
 
-## Next decision after exact-threshold Iter504S terminal result
+Mandatory construction:
 
-- `ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED` -> prospectively freeze bounded `ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION` using validated `D(J)`;
-- `CHANNEL_COMPETITION_NECESSARY_SCOPED` -> prospectively freeze switching-surface / dominance-cell certificate;
-- `FIXED_CHANNEL_NONSTATIONARITY_REMAINS_SCOPED` -> prospectively freeze direct fixed-channel local-function certificate;
-- `MIXED_MECHANISM_SCOPED` -> prospectively freeze bounded case-level factorial discriminator;
-- `INVALID` -> no science; localize exact minimal defect and do not change classifier.
+- directly construct the dual/source geometry on each local interval `J`;
+- require `forall a in J: f_i'(a) in D_i(J)` for every retained channel;
+- use exact rational midpoint `m_J` and validated mean-value enclosure `f_i(J) subset f_i(m_J) + (J-m_J)D_i(J)`;
+- use analogous validated Haar/log derivative enclosure;
+- retain all 243 channels;
+- exact threshold `1/20`, floor `1`, rhos `[0.35,0.9,1.6,2.7]`, R `[6,8,10,12]`, precision 384 bits;
+- derivative midpoint and sampled derivative are forbidden as scientific substitutes.
 
-Do not launch a full 1888-state campaign before bounded rigorous repair, independent Critic and representative held-out generalization.
+Freeze deterministic partition, maximum depth, local derivative recomputation rule, stopping rule, PASS/INCONCLUSIVE/INVALID criteria and Critic before successor output. No post-outcome depth increase.
+
+If bounded three-root local-D repair succeeds, the next stage is a prospectively frozen held-out representative cohort. No direct 3-root -> 1888 promotion.
+
+## Parent Iter504R retained
+
+`ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED` remains a valid parent localization result: child-delta subdivision alone with fixed full-root `D(I)` was insufficient. Do not reopen it.
 
 ## Iter504P retained baseline
 
-`ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED` remains terminal. Maximum decisive sampled point drift is `0.009396862546624` with threshold margin `0.040603137453376`. Point-grid PASS is not a continuous theorem.
+`ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED` remains terminal. Point-grid PASS is not a continuous theorem.
 
-## D7 state retained
+## D7 retained firewall
 
 - `D7-S2 = NOT_CLOSED`;
 - `D7-S3 = NOT_CLOSED`;
 - `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`;
-- raw group-variable tangent pushforward is closed scoped;
-- group-only simultaneous contact-covector object remains `BLOCKED_SCOPED` because no admissible primary authority defines the required `CP1 x SL(2,C) -> group tangent covector` map.
-
-Do not repeat the K5 source hunt absent genuinely new admissible primary authority.
+- continuous-drift progress does not automatically close D7 globally.
 
 ## Governance lock
 
-- KMQGB benchmark/methodology infrastructure = `100% ready`; this is not a physics-completion claim.
+- KMQGB benchmark/methodology infrastructure readiness is not a physics-completion claim.
 - `RQIR Core v1.0 = FROZEN`.
 - selector labels remain unauthorized.
 - Candidate Gravity remains inactive.
@@ -186,7 +113,5 @@ Do not repeat the K5 source hunt absent genuinely new admissible primary authori
 - `INCONCLUSIVE != FAIL`.
 - `BLOCKED != FAIL`.
 - green CI != scientific PASS.
-- point-grid PASS != continuous theorem.
 - diagnostic localization != full-domain theorem.
-- positive slope != absolute-Haar divergence theorem.
-- no model/family/global/new-theory/new-physics conclusion follows.
+- no model/family/global/new-theory/new-physics conclusion follows from Iter504S alone.
