@@ -7,97 +7,89 @@ Fresh repository `main` and fresh Actions state always outrank this navigation d
 
 Gate:
 
-`ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_GATE`
+`ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_ARTIFACT_BOUNDARY_REPAIR_GATE`
 
-Historical terminal classification:
-
-`ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`
-
-Authority / execution chain:
-
-- prospective preregistration `5b18ffbe46b967ef64c54d6181924aa8acf6f43e`;
-- frozen authority `39bd24ff03cba8858dca39ceb2935509352f295a`;
-- reviewer `b0f9fa5f2efe1e1f09d72d33e78bbee904ad5eb5`;
-- aggregate code `311ac4169bd3fd8e0ce8b8ded1f8bc566db3cdeb`;
-- workflow head `71b1e197192c17d0c74e06fe7eb12b9b4b332f60`;
-- authoritative Actions run `35232311780`, terminal `completed/success`;
-- jobs: source-lock `105239292923`, Python 3.11 `105239369708`, Python 3.13 `105239369636`, aggregate `105239442328`;
-- artifacts: Python 3.11 `10501567806` / `sha256:70f4a0b7b4e2e7ab60c42c5e83abeaa28dd2b55bc45bbace7d448e2ccbbe888e`; Python 3.13 `10501033269` / `sha256:7ae9953cfc780230007eb326ab8fc5c13532a30bde12b7c41e08d1ed156093ec`; aggregate `10501338087` / `sha256:cec9f4eaa6192d0a2defc57d117ae5de89cc7e9b5f9c77a2ec9403ea1d545fe4`;
-- lane review decision SHA256 `ab197395b971d3dc3c78574d4ae8176df839394ce902b72b126307b2674f604c`;
-- aggregate decision SHA256 `627836dc469c726c280d7b00c3ac46413724683fd05cc8759fbb185735230d61`.
-
-Green CI is provenance only.
-
-## Exact observed result
-
-The semantics-repair implementation genuinely fixes the two defects identified by the prior independent Critic `15b323994844fd83dfa0dc71efb977ba4300de97`:
-
-1. valid original scientific INCONCLUSIVE is preserved exactly as `ITER504T_LOCAL_D_INCONCLUSIVE_SCOPED`;
-2. deleting a required structural field from an already downloaded parseable lane object yields `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED`.
-
-The actual immutable repair run `35205054496` remains internally coherent under the exact replay:
-
-- terminal assemblies are byte-identical SHA256 `dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24`;
-- roots `13,14,15`, exact R cohort `[6,8,10,12]`, 12 terminal leaves and 48 per-rho rows are present;
-- all per-rho and leaf certifications satisfy the frozen predicates;
-- recomputed unresolved leaves = `0`;
-- both environments independently recompute `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED`;
-- C1 = 18 records / 70,056 boolean components per lane / zero false;
-- no actual C4 leaf-binding violation is present.
-
-These facts remain exact supporting evidence for the underlying three-root PASS path.
-
-## Latest independent Critical Review
-
-Audit:
-
-`recovery/CRITICAL_REVIEW_ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_SEMANTICS_REPAIR_2026-09-17.md`
-
-Critic commit:
-
-`7263accb799829fddef81c1b4759822261f8b8d4`
-
-Verdict:
+Terminal classification:
 
 `INVALID_IMPLEMENTATION`
 
-The terminal semantics-repair gate still fails one frozen alternate branch at the authoritative workflow boundary.
+This is **not scientific FAIL**.
 
-The preregistration freezes `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED` when any required terminal artifact is unavailable, expired, missing, corrupted, or otherwise insufficient for independent recomputation without guessing. The Python reviewer has a local missing-path BLOCKED handler, but the Actions workflow checks exact upstream artifact ids/digests under `set -euo pipefail` in `source-lock` and later downloads all required artifacts under `set -euo pipefail` before invoking Python.
+Authority / execution chain:
 
-Explicit workflow counterexample: if required upstream artifact `iter504t-repair-verdict` is unavailable/missing, source-lock fails before lane execution; if metadata passes but download fails, the lane exits before Python receives a missing path. In either case no frozen BLOCKED classification is emitted and aggregate cannot run. The implemented `missing_required_field_maps_to_blocked` fixture only deletes `roots` inside an already downloaded JSON object and therefore does not cover this workflow-level branch.
+- reconciled starting main `5d9ab0763d9ad64073e13b6ff9415a830483041b`;
+- prospective preregistration `4a5f7d1c651527249b2831b6886cd502dc18e648`;
+- frozen authority `fbfca6f932dd540898de3d9d738e9f953de8ac84`;
+- artifact collector `bb99b03fe4ea5f6e5e3950ca32191ba55e87c6e1`;
+- repaired boundary reviewer `8f0a72165479b870405bb51478a64e607777502b`;
+- aggregate code `2f4207d0c69f280fbe63fec4c75b45aec0041562`;
+- workflow head `4e9a6ac95a10f89ba57eaa3aaa642a43e0236866`;
+- authoritative Actions run `35238357310`, terminal `completed/success`;
+- jobs: source-lock `105260048120`, boundary-control `105260104164`, Python 3.11 `105260104179`, Python 3.13 `105260104162`, aggregate `105260195631`;
+- artifacts: boundary control `10503972713` / `sha256:ea0edd702d8af7a525d88b3550753c805fa38cac78d9d1cdcede8bdae0fb2fb0`; Python 3.11 `10504281712` / `sha256:4103bd065f9351c021f2bf110088a9015cc1c0867f90877219badc1803a86c6c`; Python 3.13 `10504046837` / `sha256:61e8da2c5327bf225d127f5ba32898c9c85adb3daad32bfb358039fbc919e80a`; aggregate `10504616531` / `sha256:89619364918da0e663eaef9d882427a30392e11d441545d17585843596453987`;
+- aggregate JSON SHA256 `823026fc00dcdddff765848f9513cdbf5a26ef7794288738662f4fcc7d4cb7f8`;
+- aggregate log SHA256 `38790856fdec7d1e5751b3780b3260d8e4bfc36194e5c84e0caa765234a939d0`;
+- aggregate decision SHA256 `09306cd3fc13b599d000f2e937ccdcf1c1bbf219d339a0396c06ac6a2d8624bb`.
 
-This is implementation invalidity, not scientific FAIL and not observed-run provenance failure. Historical terminal classification is not rewritten. The actual exact-run replay may still be scientifically correct, but this gate is not independently confirmed as a fully contract-valid semantics repair.
+Green CI is provenance only.
+
+## Exact result
+
+The gate genuinely closes the workflow-boundary counterexample identified by independent Critic `7263accb799829fddef81c1b4759822261f8b8d4`:
+
+- a deliberately nonexistent upstream artifact was requested through a real `gh run download` call;
+- the download returned exit code `1`;
+- CI continued rather than aborting;
+- the state was recorded as `MISSING_OR_UNAVAILABLE`;
+- the same frozen reviewer was reached and emitted `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED`;
+- aggregate records `workflow_boundary_actual_download_failure_observed=true` and `workflow_boundary_missing_artifact_control_blocked=true`.
+
+Both production lanes independently replayed immutable repair run `35205054496` and each classified it `ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`. All five required artifacts matched exact frozen IDs/digests, all inherited semantics controls passed, both lanes recomputed `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED`, unresolved leaves were zero across 12 leaves, and C1 remained 18 records / 70,056 booleans / zero false with no actual C4 contradiction.
+
+However, the prospectively frozen aggregate required exact lane decision-SHA equality. It failed only that control:
+
+- lane 3.11 decision SHA256 `4eec7f2966d9c0df79fdf381c73e88d5cc45acbb6a688f68f78616937e17ff96`;
+- lane 3.13 decision SHA256 `c12de65d9c2d0a065230198ecab78f09ecb43148ee0c45a130636a8f74144de5`;
+- `lane_classification_agreement=true`;
+- `lane_decision_sha256_agreement=false`.
+
+Terminal diagnostic localization finds exactly seven lane-payload differences: five environment-specific `local_path` strings (`terminal_311/...` versus `terminal_313/...`), their path-derived manifest SHA, and the final review decision SHA. Removing only those environment-local path-derived fields makes the lane payloads identical with normalized SHA256 `a7eda65e7407e7188ae67763df01f40187fd7659531f5bb24f29187e8bac11d0`.
+
+Frozen criteria cannot be changed after result. Therefore the gate is terminally `INVALID_IMPLEMENTATION`. The new defect is canonicalization/provenance hashing, not science, numerical disagreement, or physical falsification.
+
+## Latest independent Critical Review
+
+No independent Critic review of this new artifact-boundary-repair terminal result is recorded yet.
+
+The preceding Critic verdict `INVALID_IMPLEMENTATION` for semantics-repair run `35232311780` remains historically correct for that implementation. Its specific workflow-boundary missing-artifact counterexample is now experimentally closed by the new gate, but the new gate has exposed its own narrower aggregate canonicalization defect.
 
 ## Historical qualifications retained
 
-- Historical terminal classification from run `35232311780` remains immutable Actions/repository history; independent Critic verdict is now `INVALID_IMPLEMENTATION`.
-- Historical authority-review result from run `35225818354` remains immutable and its independent Critic verdict `INVALID_IMPLEMENTATION` remains historically true for that implementation.
-- C4 `ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED` remains independently `CONFIRMED_SCOPED` for the reusable launch-head validator path.
+- Historical semantics-repair run `35232311780` remains immutable with independent Critic verdict `INVALID_IMPLEMENTATION`.
+- Historical authority-review run `35225818354` remains immutable with independent `INVALID_IMPLEMENTATION` verdict.
+- C4 `ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED` remains independently `CONFIRMED_SCOPED` for the reusable scientific-validator path.
 - Original Iter504T run `35181094204` remains historically `INVALID_IMPLEMENTATION`, not scientific FAIL.
 - C1 VERIFIED, C2 REFUTED, C3 VERIFIED remain immutable history.
-- Actual exact repair run `35205054496` remains coherent supporting evidence for the three-root scientific PASS, but authority restoration is not fully contract-validated by run `35232311780`.
-
-## Parent / parallel state retained
-
-- `ITER504S_ROOT_DERIVATIVE_RADIUS_LOCALIZED_SCOPED` retained.
-- `ITER504R_ROOT_AFFINE_REUSE_INCONCLUSIVE_SCOPED` retained.
-- `ITER504P_POINT_GRID_DRIFT_WITHIN_FROZEN_TOLERANCE_SCOPED` retained.
+- Exact repair run `35205054496` remains coherent supporting evidence for the three-root scientific PASS, but this latest gate does not issue validated authority because its own frozen aggregate control failed.
 - No Iter504T result is promoted to all 1888 states.
-- D7-S2 raw K5 group-variable tangent pushforward remains `CLOSED_SCOPED`, but group-only contact-covector restriction/conditioning remains BLOCKED; physical transverse quotient and measure/observable stages remain open.
+
+## Parallel D7-S2 retained state
+
+- raw K5 group-variable tangent pushforward = `CLOSED_SCOPED`;
+- group-only simultaneous contact-covector restriction/conditioning = `BLOCKED_SCOPED`;
+- physical transverse quotient/projection = `BLOCKED_SCOPED`;
+- measure/Haar/contact normalization = open;
+- observable/distributional final pushforward = open.
+
+Do not repeat blocked K5 source audits without genuinely new authorized primary material.
 
 ## Next admissible work
 
-A same-object implementation repair may preserve the existing scientific object and exact physics run while repairing review execution semantics:
+Highest-information same-object closure step: prospectively freeze a decision-canonicalization implementation repair only. The cross-environment decision projection must exclude execution-local filesystem paths and path-derived manifest hashes while retaining immutable artifact IDs/digests, content SHA256 values, run/head identity, boundary states, workflow-level missing-artifact BLOCKED control, present-identity-mismatch INVALID control, inherited C1/C3/C4/R/rho/root/channel/science checks, and the same interpretation ceiling.
 
-1. make required upstream artifact absence/expiration/download failure reach a classifier path that emits `ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED` rather than failing the workflow before classification;
-2. add an outcome-sensitive missing-artifact fixture at the workflow/reviewer boundary, not only a missing field inside downloaded JSON;
-3. retain the now-correct original INCONCLUSIVE branch, structural-field BLOCKED branch, C4/per-rho/R/C1 controls, source/artifact identity locks and claim ceiling;
-4. do not rewrite run `35232311780`.
+A positive control must show that the same immutable artifacts downloaded under two different directory prefixes produce identical decision SHA. A negative control must show that changing any artifact ID/digest/content SHA or substantive review field still changes/invalidates the decision. Do not rerun physics.
 
-Changing underlying science object, thresholds, roots/rhos/R cohort, classifier meaning, source realization, or interpretation ceiling requires a new prospectively frozen gate.
-
-A distinct scientific frontier may proceed only if it does not consume this terminal semantics-repair PASS as independently confirmed authority.
+A distinct scientific frontier may proceed only if it does not consume this `INVALID_IMPLEMENTATION` gate as validated authority.
 
 ## Governance lock
 
