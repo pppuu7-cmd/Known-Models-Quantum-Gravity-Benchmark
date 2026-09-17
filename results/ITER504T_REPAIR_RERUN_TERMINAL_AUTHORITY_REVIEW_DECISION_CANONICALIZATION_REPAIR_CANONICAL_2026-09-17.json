@@ -1,0 +1,93 @@
+{
+  "aggregate_controls": {
+    "lane_boundary_controls_all_pass": true,
+    "lane_canonical_decision_sha256_agreement": true,
+    "lane_canonical_manifest_sha256_agreement": true,
+    "lane_canonicalization_controls_all_pass": true,
+    "lane_classification_agreement": true,
+    "lane_inherited_substantive_review_agreement": true,
+    "workflow_boundary_actual_download_failure_observed": true,
+    "workflow_boundary_missing_artifact_control_blocked": true
+  },
+  "aggregate_controls_all_pass": true,
+  "aggregate_decision_sha256": "233444879a2f052a8e6706800750e2a4940414eb61ee00eebe5cbf4f3be4f1ee",
+  "aggregate_json_sha256": "576131ecd0482908b5112a58fd97c0adade3ab280e265bb3c1bad52688805633",
+  "aggregate_log_sha256": "f7b25e8567321e357818ed428a6269acdafc51e09a26cd1ec773d0eed9ee8854",
+  "artifacts": {
+    "aggregate": {
+      "digest": "sha256:d460e12599ff349916e60e1148c207ce3cfe29ab589b87dfc8fa6fef56ad1ac9",
+      "id": 10507146412
+    },
+    "boundary_control": {
+      "digest": "sha256:0304ef867482f2cc1c95baa31f2bacefbc8f7670f62ec066487eb4c6fccc969d",
+      "id": 10506639126
+    },
+    "python_3_11": {
+      "digest": "sha256:4e4b3a2d24f22796482c98ab65ca3254bc4f11d5d0de45751136f25ea6fada2d",
+      "id": 10506853511
+    },
+    "python_3_13": {
+      "digest": "sha256:7265710f1aeac774e87f336c45d27a17ff5ff6845d71ec10ce84dfa6624f235d",
+      "id": 10506853498
+    }
+  },
+  "authoritative_run": {
+    "conclusion": "success",
+    "head_sha": "8b6c3ecf7d7a808a6978c78e1f28e7a30296e389",
+    "id": 35245037403,
+    "status": "completed"
+  },
+  "boundary_control": {
+    "canonical_decision_sha256": "9aff1125345baa7713ce6e60dcdb053f5901a9139d8a19636bd9d81c298c21f7",
+    "classification": "ITER504T_REPAIR_RERUN_TERMINAL_REVIEW_BLOCKED_SCOPED",
+    "download_failure_observed": true
+  },
+  "canonical_manifest_sha256": "1188f3cce3280035373074b68358a65cedf420616bfca76fe8d67ffe6e723766",
+  "canonicalization_controls": {
+    "artifact_digest_mutation_changes_canonical_decision": true,
+    "artifact_id_mutation_changes_canonical_decision": true,
+    "content_sha_mutation_changes_canonical_decision": true,
+    "different_local_prefixes_same_canonical_decision": true,
+    "different_local_prefixes_same_canonical_manifest": true,
+    "substantive_review_mutation_changes_canonical_decision": true
+  },
+  "claim_ceiling": "exact completed run 35205054496 and terminal-review decision canonicalization only; no all-1888/D7/model/family/selector/Candidate Gravity/Paper IV/global QG conclusion",
+  "classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+  "date": "2026-09-17",
+  "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_DECISION_CANONICALIZATION_REPAIR_GATE",
+  "inherited_review": {
+    "assembly_byte_identical": true,
+    "c1_3_11": {
+      "c1_component_count": 70056,
+      "c1_false_component_count": 0,
+      "c1_record_count": 18
+    },
+    "c1_3_13": {
+      "c1_component_count": 70056,
+      "c1_false_component_count": 0,
+      "c1_record_count": 18
+    },
+    "classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+    "recomputed_unresolved_leaves_3_11": 0,
+    "recomputed_unresolved_leaves_3_13": 0,
+    "review_errors": [],
+    "science": "ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED",
+    "semantics_controls_all_pass": true,
+    "terminal_leaf_count_3_11": 12,
+    "terminal_leaf_count_3_13": 12
+  },
+  "inherited_review_json_sha256": "448508a79f77980b969dc156222a8872a18fd0467247501225131e5b0c9ecaee",
+  "jobs": {
+    "aggregate": 105283316320,
+    "boundary_control": 105283224608,
+    "python_3_11": 105283224783,
+    "python_3_13": 105283224698,
+    "source_lock": 105282951727
+  },
+  "lane_a_json_sha256": "a835087fcfdf0a2b1d2f82d5ab60d4717cad34026d01fbf11d588490a947d21e",
+  "lane_a_raw_execution_record_sha256": "41ef6238bf6e651ed33b23791d85aa620faf1665c47375ba22b4aaac43ff2ac5",
+  "lane_b_json_sha256": "628268b633f7c994d4e6b0bf167bc3fb69e92c6b99256d8025cb1e4f8a84aaf5",
+  "lane_b_raw_execution_record_sha256": "16159732867f22fc92013a468639369ce0d9bdd8f9bcf658ebd968e61ca1a115",
+  "lane_canonical_decision_sha256": "8969d8746ca56f6999b02b3ff04055d91d72a19f404d8e125bae3d049ec00a9e",
+  "new_fact": "Raw execution records differ under terminal_311 versus terminal_313 local paths, while the path-free canonical manifest and canonical decision hashes are identical; immutable artifact id/digest/content and substantive review mutations remain decision-sensitive."
+}
