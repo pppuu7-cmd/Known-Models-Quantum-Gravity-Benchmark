@@ -1,0 +1,91 @@
+name: iter504t-preterminal-leaf-certification-binding-verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iter504t-preterminal-leaf-certification-binding-verification.yml'
+      - 'code/iter504t_preterminal_leaf_certification_binding_verification.py'
+      - 'code/iter504t_preterminal_leaf_certification_binding_verification_aggregate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective freeze and immutable launch authority
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor aa421bd0b1aec1cbcc7a381fb00e947798d1b084 HEAD
+          git merge-base --is-ancestor 9aa9f77093bd34e058641bb141c8f95a4794d841 HEAD
+          test "$(git hash-object inputs/iter504t_preterminal_leaf_certification_binding_verification_authority.json)" = 0e3b364366305d64631d9ed1bc1ad80efca645ac
+          test "$(git hash-object research/prereg/ITER504T_LOCAL_DERIVATIVE_ENCLOSURE_CONTRACTION_2026-09-17.md)" = f648b0e0d6a960bf60c32d5c34694497a50b7e68
+          test "$(git hash-object code/iter504t_local_derivative_assemble.py)" = 62486912d9b930c12e8cddbb94999895fe8488df
+          test "$(git hash-object code/iter504t_local_derivative_critic.py)" = 779697e3c507d18be8ac9f377dfe0b5212ecc393
+          test "$(git hash-object code/iter504t_local_derivative_aggregate.py)" = d19edf62ae10edbaa5d9eecb76ca8004595120fb
+          test "$(git hash-object recovery/CRITICAL_PRETERMINAL_AUDIT_ITER504T_IMPLEMENTATION_CONTROL_REPAIR_RERUN_2026-09-17.md)" = 49f62f5aea12e1a2637d8ffdc199910c46023d0a
+          grep -F 'ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED' research/prereg/ITER504T_PRETERMINAL_LEAF_CERTIFICATION_BINDING_VERIFICATION_GATE_2026-09-17.md
+          grep -F 'ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_REFUTED_SCOPED' research/prereg/ITER504T_PRETERMINAL_LEAF_CERTIFICATION_BINDING_VERIFICATION_GATE_2026-09-17.md
+          grep -F 'ITER504T_LEAF_CERTIFICATION_BINDING_VERIFICATION_BLOCKED_SCOPED' research/prereg/ITER504T_PRETERMINAL_LEAF_CERTIFICATION_BINDING_VERIFICATION_GATE_2026-09-17.md
+
+  lane:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Replay exact launch-head validator path on frozen synthetic controls
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          tag=$(echo '${{ matrix.python }}' | tr -d '.')
+          python code/iter504t_preterminal_leaf_certification_binding_verification.py \
+            --authority inputs/iter504t_preterminal_leaf_certification_binding_verification_authority.json \
+            --repo-root . \
+            --out "artifacts/leaf_binding_${tag}.json" \
+            | tee "artifacts/leaf_binding_${tag}.log"
+          sha256sum "artifacts/leaf_binding_${tag}.json" "artifacts/leaf_binding_${tag}.log" > "artifacts/leaf_binding_${tag}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: leaf-binding-${{ matrix.python }}
+          path: artifacts/leaf_binding_*
+          if-no-files-found: error
+
+  aggregate:
+    needs: lane
+    if: ${{ always() && needs.lane.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: leaf-binding-*
+          path: downloaded
+          merge-multiple: true
+      - name: Aggregate frozen decision
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python code/iter504t_preterminal_leaf_certification_binding_verification_aggregate.py \
+            --a downloaded/leaf_binding_311.json \
+            --b downloaded/leaf_binding_313.json \
+            --out artifacts/leaf_binding_aggregate.json \
+            | tee artifacts/leaf_binding_aggregate.log
+          sha256sum artifacts/leaf_binding_aggregate.json artifacts/leaf_binding_aggregate.log > artifacts/leaf_binding_aggregate.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: leaf-binding-aggregate
+          path: artifacts/leaf_binding_aggregate.*
+          if-no-files-found: error
