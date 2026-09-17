@@ -18,6 +18,8 @@ jobs:
         with:
           fetch-depth: 0
       - name: Verify prospectively frozen closure repair
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
@@ -41,6 +43,18 @@ jobs:
           assert a['repair_wrapper_blob']=='bcea2946a0f9676b50897dc4bbe74fa1122a9965'
           assert a['repair_methodology_head']=='9793843843b53c1616af6fbfc72f7a8fa56a28ef'
           assert a['repair_methodology_conclusion']=='success'
+          assert a['repair_shared_validator_run_id']==35252175158
+          assert a['repair_shared_validator_head']=='c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2'
+          assert a['repair_shared_validator_classification']=='ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED'
+          assert a['repair_shared_validator_payload_sha256']=='974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f'
+          assert a['repair_terminal_result_blob']=='4bc12d4bb1dab45562cc51c8344700a0f31d75c3'
+          expected_diag={
+            'iter504u-c4-shared-validator-diagnostic-3.11': (10510475771,'sha256:583c1935ee815b7d4ba80e0396212d725933f6eabe4ac1f8fb4279f3a16ad0a1'),
+            'iter504u-c4-shared-validator-diagnostic-3.13': (10510765344,'sha256:f768f75cdc9794d70c4b5cced1ee8692c2fb8e38873094251baed9694c907cea'),
+            'iter504u-c4-shared-validator-diagnostic-aggregate': (10509679536,'sha256:9df7eed7be9e89c0083d2cb6b0631f3d190b12085253b5786e8808ba70883880'),
+          }
+          got_diag={x['name']:(x['id'],x['digest']) for x in a['repair_shared_validator_artifacts']}
+          assert got_diag==expected_diag
           assert len(a['required_artifacts'])==15
           assert len({x['name'] for x in a['required_artifacts']})==15
           PY
@@ -51,6 +65,10 @@ jobs:
             5ad9664e88e517cd64bd9971bac5c4c239ba4672 \
             f5cd17136ddfee8864bb7a46abbdb464f666f518 \
             9793843843b53c1616af6fbfc72f7a8fa56a28ef \
+            662e1b40c4584a5b1989b821cd7a5c334ef8fc44 \
+            dd8ea4c0f6df3f0da6139e293d6b8fd5bea5d02a \
+            79e4a6a1e6ee100812f6247219fa79501c3720f3 \
+            c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2 \
             102c7f9cafec956f3bc7bed4384ae755c98f761a \
             05b8e9354c9a7805f0fce18b904346a986a0787f; do
             git merge-base --is-ancestor "$c" HEAD
@@ -60,12 +78,33 @@ jobs:
           test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
           test "$(git hash-object code/iter504u_heldout_assemble.py)" = '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
           test "$(git hash-object code/iter504u_heldout_aggregate.py)" = '23165f9d99ff9a2f90c27a51cb889d5920327f92'
+          test "$(git hash-object research/results/ITER504U_CRITIC_C4_SHARED_VALIDATOR_DIAGNOSTIC_TERMINAL_2026-09-17.md)" = '4bc12d4bb1dab45562cc51c8344700a0f31d75c3'
           expected_workflow="$(python - <<'PY'
           import json
           print(json.load(open('inputs/iter504u_critic_c4_fixture_repair_closure_authority.json'))['workflow_blob_sha'])
           PY
           )"
           test "$(git hash-object .github/workflows/iter504u-critic-c4-fixture-repair-closure.yml)" = "$expected_workflow"
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35252175158" > /tmp/repair-run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35252175158/artifacts?per_page=100" > /tmp/repair-artifacts.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('inputs/iter504u_critic_c4_fixture_repair_closure_authority.json').read_text())
+          run=json.loads(Path('/tmp/repair-run.json').read_text())
+          arts=json.loads(Path('/tmp/repair-artifacts.json').read_text())['artifacts']
+          assert run['id']==a['repair_shared_validator_run_id']
+          assert run['head_sha']==a['repair_shared_validator_head']
+          assert run['status']=='completed' and run['conclusion']=='success'
+          by_name={x['name']:x for x in arts}
+          for req in a['repair_shared_validator_artifacts']:
+              got=by_name.get(req['name'])
+              assert got is not None, req['name']
+              assert got['id']==req['id'], (req,got)
+              assert got.get('digest')==req['digest'], (req,got)
+              assert got.get('expired') is False
+          print('ITER504U_REPAIR_SHARED_VALIDATOR_AUTHORITY_VERIFIED')
+          PY
 
   review:
     needs: source-lock

@@ -1,83 +1,75 @@
 # Current Benchmark Front
 Updated: 2026-09-17
 
-Fresh repository `main` and fresh Actions state always outrank this navigation document if they diverge.
+Fresh repository `main` and fresh GitHub Actions state always outrank this navigation snapshot.
 
-## Latest independently closed authority result
+## Single current blocker
 
-`ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_DECISION_CANONICALIZATION_REPAIR_GATE`
+`Iter504U` production run `35246605860` must reach its natural terminal state. Until then: no duplicate launch, no producer restart, no partial scientific-value consumption, and no downstream science gate.
 
-Terminal classification: `ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED`.
+Latest recovery snapshot at this update: source-lock `SUCCESS`; 7/12 held-out case lanes `SUCCESS`; 5/12 `IN_PROGRESS`; 0 failed. Assemblies/aggregate/repaired scientific closure are not yet authoritative.
 
-Independent Critical Review commit `8624532254981fbea6f8fcfac09cd538e2066aa4`: `CONFIRMED_SCOPED`.
-
-Inherited bounded development authority remains `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED` for `(causal=0to5, block=0, path=2, boxes 13,14,15)` only. This is not all-Iter504 closure.
-
-## Active scientific execution — Iter504U held-out generalization firewall
+## Active scientific execution — Iter504U
 
 Gate: `ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL`.
 
-Scientific run `35246605860`, immutable launch head `102c7f9cafec956f3bc7bed4384ae755c98f761a`, remains nonterminal (`in_progress`, `conclusion=null`) at the latest fresh Actions read in this recovery update. Source-lock is successful; producer computation continues. No duplicate scientific execution is authorized and no partial held-out scientific values have been consumed.
+- preregistration: `05b8e9354c9a7805f0fce18b904346a986a0787f`
+- immutable science launch/source head: `102c7f9cafec956f3bc7bed4384ae755c98f761a`
+- single authoritative production run: `35246605860`
+- frozen held-out cohort: H0–H5; development boxes 13–15 excluded
+- partial scientific values consumed: `false`
+- duplicate/restart authorized: `false`
 
-Frozen held-out cohort remains six outcome-blind cases H0–H5 from preregistration `05b8e9354c9a7805f0fce18b904346a986a0787f`; development boxes 13–15 are excluded. PASS/INCONCLUSIVE semantics remain frozen; there is no scientific FAIL label in this bounded certificate gate.
+Frozen semantics remain: PASS=`ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED`; INCONCLUSIVE=`ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED`; implementation/provenance invalidity=`ITER504U_INVALID`. This bounded gate has no scientific FAIL label.
 
-## Active closure gate — outcome-independent Critic C4 fixture repair
+## Critic C4 repair firewall — terminal methodology authority
 
-Before terminal held-out science consumption, preterminal Critic work identified an implementation defect in synthetic control `C4_true_leaf_false_rho`: the old mutation was outcome-dependent and was not guaranteed to create the intended leaf/per-rho contradiction.
+The synthetic `C4_true_leaf_false_rho` fixture defect is closed at the methodology/control layer as:
 
-Original outcome-blind repair freeze: `5ad9664e88e517cd64bd9971bac5c4c239ba4672`.
+`ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED`.
 
-Formal closure-gate freeze: `662e1b40c4584a5b1989b821cd7a5c334ef8fc44`.
+Terminal shared-validator diagnostic:
 
-Gate: `ITER504U_CRITIC_C4_FIXTURE_REPAIR_GATE`.
+- formal repair preregistration: `662e1b40c4584a5b1989b821cd7a5c334ef8fc44`
+- diagnostic preregistration: `dd8ea4c0f6df3f0da6139e293d6b8fd5bea5d02a`
+- diagnostic authority: `79e4a6a1e6ee100812f6247219fa79501c3720f3`
+- diagnostic launch/head: `c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2`
+- run: `35252175158`, `completed/success`
+- actual source-locked repaired wrapper blob: `bcea2946a0f9676b50897dc4bbe74fa1122a9965`
+- payload SHA256: `974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f`
+- terminal result: `research/results/ITER504U_CRITIC_C4_SHARED_VALIDATOR_DIAGNOSTIC_TERMINAL_2026-09-17.md`
 
-Frozen repair objects:
+The common validator accepted the coherent synthetic fixture and rejected both intended C4 contradiction variants exactly as `H0_AMP_LOW:C4_leaf_binding`; the full repaired negative-control suite passed; Python 3.11/3.13 result payloads were byte-identical; `production_science_consumed=false`.
 
-- structurally isolated wrapper commit `f5cd17136ddfee8864bb7a46abbdb464f666f518`;
-- wrapper blob `bcea2946a0f9676b50897dc4bbe74fa1122a9965`;
-- methodology workflow binding head `9793843843b53c1616af6fbfc72f7a8fa56a28ef`;
-- exact methodology run `35250717944`, currently nonterminal (`queued`, `conclusion=null`) at latest fresh read.
+Historical failed/insufficient repair attempts remain historical `INVALID_IMPLEMENTATION`, not scientific FAIL.
 
-The repair is Critic-fixture-only. Producer evaluator, assembler, aggregate scientific classifier, held-out cohort, source realization, precision 384, 243 channels, R/rho grids, threshold `1/20`, floor `1`, `MAX_DEPTH=3`, partition/local-D construction and PASS/INCONCLUSIVE semantics are frozen unchanged.
+## Repaired closure — prepared, not yet authorized
 
-The repair gate may classify only:
+Prepared workflow: `.github/workflows/iter504u-critic-c4-fixture-repair-closure.yml`.
 
-- PASS `ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED`;
-- FAIL `ITER504U_CRITIC_C4_FIXTURE_REPAIR_FAIL_SCOPED`;
-- BLOCKED `ITER504U_CRITIC_C4_FIXTURE_REPAIR_BLOCKED_SCOPED`;
-- `INVALID_IMPLEMENTATION`.
+It is hardened to require the successful shared-validator run/head/classification/payload, terminal methodology-result blob, exact diagnostic artifact IDs/digests, original/repaired Critic identities, and the future exact 15-artifact production inventory.
 
-No result from nonterminal methodology run `35250717944` has been consumed in this state record.
+It must not launch until production run `35246605860` is terminal and the exact required artifact IDs/digests are prospectively frozen in the closure authority. Producer science must not be rerun merely because the historical Critic fixture was defective.
 
-## Closure-only successor rule
+## Required terminal order
 
-Source run `35246605860` remains immutable. No producer rerun is authorized merely for the synthetic Critic defect. After the source run is terminal and all required upstream artifact metadata are available, a separate closure-only repaired-Critic execution may freeze exact artifact IDs/digests and review those immutable artifacts. Until then, no terminal Iter504U scientific authority is established.
+`terminal production -> freeze exact 15 artifact IDs/digests -> repaired independent Critic in Python 3.11/3.13 -> cross-environment closure -> terminal classification -> interpretation ceiling -> recovery reconciliation -> bounded infrastructure audit -> next scientific gate`
 
-Prepared closure workflow: `.github/workflows/iter504u-critic-c4-fixture-repair-closure.yml`. It must not be launched before source run terminalization and prospective artifact-identity authority freeze.
+Green CI alone is not scientific PASS.
 
-## Historical qualifications retained
+## Latest independently closed science authority below Iter504U
 
-- Iter504T canonicalization exact-run authority remains independently `CONFIRMED_SCOPED`;
-- prior Iter504T artifact-boundary / semantics / authority-review invalid implementations remain historical `INVALID_IMPLEMENTATION`;
-- historical reusable-validator C4 defect remains confirmed for the old reusable path;
-- original Iter504T run `35181094204` remains historical `INVALID_IMPLEMENTATION`, not scientific FAIL;
-- C1 VERIFIED, C2 REFUTED, C3 VERIFIED remain immutable history;
-- no Iter504T/Iter504U result is promoted directly to all 1888 states.
-
-## Parallel D7-S2 retained state
-
-- raw K5 group-variable tangent pushforward = `CLOSED_SCOPED`;
-- group-only simultaneous contact-covector restriction/conditioning = `BLOCKED_SCOPED`;
-- physical transverse quotient/projection = `BLOCKED_SCOPED`;
-- measure/Haar/contact normalization = open;
-- observable/distributional final pushforward = open.
+Iter504T exact repair/canonicalization remains independently `CONFIRMED_SCOPED`; bounded development authority remains `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED` for `(causal=0to5, block=0, path=2, boxes 13,14,15)` only. No all-domain promotion follows from it.
 
 ## Governance lock
 
 - `RQIR Core v1.0 = FROZEN`.
 - `D7-S2 = NOT_CLOSED`; `D7-S3 = NOT_CLOSED`; `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`.
-- terminal D7 selectors and `EXISTING_SUFFICIENT / ADAPT_EXISTING / HYBRID_REQUIRED / NEW_REQUIRED` remain forbidden until required subgates close.
-- Candidate Gravity remains inactive; Paper IV remains `NOT_YET_AUTHORIZED`.
-- `INCONCLUSIVE != FAIL`; `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`.
-- missing object/rank/certificate != zero; scoped child result != family closure; green CI != science.
-- no authority exists for `QUANTUM_GRAVITY_SOLVED`, `ALL_KNOWN_MODELS_FAIL`, `NEW_THEORY_REQUIRED`, or `NEW_PHYSICS_FOUND`.
+- Candidate Gravity inactive; Paper IV `NOT_YET_AUTHORIZED`.
+- `INCONCLUSIVE != FAIL`; `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`; infrastructure PASS != science PASS.
+- finite/scoped child result != universal/family closure.
+- no authority for `QUANTUM_GRAVITY_SOLVED`, `ALL_KNOWN_MODELS_FAIL`, `NEW_THEORY_REQUIRED`, or `NEW_PHYSICS_FOUND`.
+
+## Session restart rule
+
+Read `recovery/state.json`, this front, the active preregistration/authority, and fresh Actions state. Fresh GitHub state wins if this snapshot is stale. The next admissible action while `35246605860` is nonterminal is status/provenance checking only; after terminalization it is exact artifact-identity freeze followed by the repaired closure-only Critic.
