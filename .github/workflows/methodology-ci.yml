@@ -46,7 +46,7 @@ jobs:
       - name: Compile reference code
         run: python -m compileall -q code
 
-      - name: Validate all JSON artifacts
+      - name: Validate JSON artifacts and frozen legacy authority ledger
         run: |
           python - <<'PY'
           import json
@@ -54,13 +54,47 @@ jobs:
           paths = sorted(Path('.').rglob('*.json'))
           if not paths:
               raise SystemExit('No JSON files found')
+          legacy = Path('inputs/iter504u_heldout_execution_authority.json')
+          legacy_count = 0
           for path in paths:
+              text = path.read_text(encoding='utf-8')
+              if path == legacy:
+                  lines = [line for line in text.splitlines() if line]
+                  if not lines or lines[0] != 'FORMAT=KEY_VALUE_LEDGER':
+                      raise SystemExit(f'INVALID_LEGACY_AUTHORITY path={path}: missing FORMAT=KEY_VALUE_LEDGER')
+                  ledger = {}
+                  for line in lines[1:]:
+                      if '=' not in line:
+                          raise SystemExit(f'INVALID_LEGACY_AUTHORITY path={path}: malformed line {line!r}')
+                      key, value = line.split('=', 1)
+                      if not key or key in ledger:
+                          raise SystemExit(f'INVALID_LEGACY_AUTHORITY path={path}: invalid/duplicate key {key!r}')
+                      ledger[key] = value
+                  required = {
+                      'GATE': 'ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL',
+                      'EXECUTION_AUTHORIZED': 'true',
+                      'PREREG_COMMIT': '05b8e9354c9a7805f0fce18b904346a986a0787f',
+                      'MAX_DEPTH': '3',
+                      'EVALUATOR_BLOB_SHA': 'bf457eef08f7df32523c9e22ce3b3713f10d97a0',
+                      'ASSEMBLER_BLOB_SHA': '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1',
+                      'AGGREGATE_BLOB_SHA': '23165f9d99ff9a2f90c27a51cb889d5920327f92',
+                      'CRITIC_BLOB_SHA': 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db',
+                      'PASS': 'ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED',
+                      'INCONCLUSIVE': 'ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED',
+                      'INVALID': 'ITER504U_INVALID',
+                  }
+                  for key, expected in required.items():
+                      if ledger.get(key) != expected:
+                          raise SystemExit(f'INVALID_LEGACY_AUTHORITY path={path}: {key}={ledger.get(key)!r} != {expected!r}')
+                  legacy_count += 1
+                  continue
               try:
-                  with path.open('r', encoding='utf-8') as fh:
-                      json.load(fh)
+                  json.loads(text)
               except Exception as exc:
                   raise SystemExit(f'INVALID_JSON path={path}: {exc}') from exc
-          print(f'validated_json_files={len(paths)}')
+          if legacy_count != 1:
+              raise SystemExit(f'legacy_authority_count={legacy_count} != 1')
+          print(f'validated_json_named_files={len(paths)} legacy_key_value_ledgers={legacy_count}')
           PY
 
       - name: Validate executable methodology registry and shard partition
