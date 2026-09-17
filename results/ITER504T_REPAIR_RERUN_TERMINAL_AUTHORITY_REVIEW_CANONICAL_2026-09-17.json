@@ -1,0 +1,76 @@
+{
+  "gate": "ITER504T_REPAIR_RERUN_TERMINAL_AUTHORITY_REVIEW_GATE",
+  "date": "2026-09-17",
+  "classification": "ITER504T_REPAIR_RERUN_EXACT_RUN_AUTHORITY_VALIDATED_SCOPED",
+  "exact_run_validated": {
+    "run_id": 35205054496,
+    "head_sha": "10ae6bcc8447d14cecc6e550065504b23f792953",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "review_execution": {
+    "run_id": 35225818354,
+    "head_sha": "8cf5aefa4b15b5a6c7dfaf7f08d1884ba8363658",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": {
+      "source_lock": 105217007869,
+      "python_3_11": 105217073486,
+      "python_3_13": 105217073481,
+      "aggregate": 105217171182
+    },
+    "artifacts": {
+      "python_3_11": {
+        "id": 10498984379,
+        "digest": "sha256:ecaa42b702fb6e823a90862adca0c6da9869774aa7de673abb8b9c186d6c49f9"
+      },
+      "python_3_13": {
+        "id": 10499010539,
+        "digest": "sha256:01ac6aa3746a4b3ada66080188e634fcc116f76b96cbfef9b737fa6ac30d4a24"
+      },
+      "aggregate": {
+        "id": 10499190200,
+        "digest": "sha256:7d2c7181896f396ad476fba2e073d91b04ee776d81d5efb1ebda0f368a278338"
+      }
+    }
+  },
+  "terminal_review": {
+    "lanes_agree": true,
+    "lane_decision_sha256": "7db8327005022341541ef0b62df9a87a02e8741d5716ddf2deb397fb1b95e989",
+    "aggregate_decision_sha256": "6e764ea10206959a755914279a4dfa67adfcbe0935762377a38606a0b24be9c4",
+    "review_errors": [],
+    "assembly_byte_identical": true,
+    "assembly_sha256": "dfaa14d7b07708b9cc59d04413a86661aed37dab662705499893e601ffcb9c24",
+    "terminal_leaf_count_per_lane": 12,
+    "recomputed_unresolved_leaves_per_lane": 0,
+    "recomputed_scientific_classification": "ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED",
+    "c1_record_count_per_lane": 18,
+    "c1_component_count_per_lane": 70056,
+    "c1_false_component_count_per_lane": 0,
+    "all_actual_leaf_to_rho_bindings_exact": true,
+    "all_actual_per_rho_boolean_identities_exact": true,
+    "exact_R_cohort_binding": true,
+    "outcome_sensitive_negative_controls": {
+      "C4_true_leaf_with_false_rho_rejected": true,
+      "C4_false_leaf_with_all_true_rhos_rejected": true,
+      "per_rho_boolean_inconsistency_rejected": true,
+      "R_6_to_7_rejected": true,
+      "missing_C1_record_rejected": true,
+      "artifact_identity_mutation_rejected": true,
+      "serialized_unresolved_count_mismatch_rejected": true
+    }
+  },
+  "underlying_terminal_outputs": {
+    "scientific_classification": "ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED",
+    "repair_classification": "ITER504T_IMPLEMENTATION_CONTROLS_REPAIRED_AND_RERUN_VALID_SCOPED",
+    "aggregate_internal_sha256": "2b5d34f1479a184ff11b104247bfff196dce75f0e6eb8e319cd257b5f2a639a3",
+    "critic_internal_sha256": "1c240c622e3eaa0f96282a05cb249bdbdd96adc22574bd78aeab15fc3622581c",
+    "repair_verdict_internal_sha256": "fedfb72e5c47601bc39c8b3a489fe8ecac8a0e58cf8907efffbcfc2afd08d8ab"
+  },
+  "c4_retained": {
+    "classification": "ITER504T_LEAF_CERTIFICATION_BINDING_DEFECT_VERIFIED_SCOPED",
+    "independent_critic_verdict": "CONFIRMED_SCOPED",
+    "meaning": "launch-head validators remain generally defective because they do not independently enforce leaf.certified == all(rho.certified for rho in leaf.per_rho); exact-run authority is restored only because this post-terminal review independently checked the actual terminal data"
+  },
+  "claim_ceiling": "Exact completed Iter504T three-root bounded local-D run only. No all-1888-state closure, D7 closure, model/family failure, terminal selector, Candidate Gravity, Paper IV authorization, QUANTUM_GRAVITY_SOLVED, ALL_KNOWN_MODELS_FAIL, NEW_THEORY_REQUIRED, or NEW_PHYSICS_FOUND."
+}
