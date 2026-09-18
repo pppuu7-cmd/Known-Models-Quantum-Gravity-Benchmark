@@ -1,0 +1,186 @@
+name: KMQGB Iter504V sentinel local-D science
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504V_SENTINEL_LAUNCH_AUTHORIZED_2026-09-18.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen sentinel execution authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='inputs/iter504v_sentinel_execution_authority.json'
+          MARK='recovery/ITER504V_SENTINEL_LAUNCH_AUTHORIZED_2026-09-18.txt'
+          test -f "$AUTH"
+          test -f "$MARK"
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          a=json.loads(Path('inputs/iter504v_sentinel_execution_authority.json').read_text())
+          assert a['EXECUTION_AUTHORIZED'] is True
+          assert a['NO_REFIT'] is True
+          assert a['CASE_COUNT'] == 16
+          assert a['PYTHON_ENVIRONMENTS'] == ['3.11','3.13']
+          assert a['MAX_PARALLEL'] == 12
+          assert a['MAX_DEPTH'] == 3
+          assert a['THRESHOLD_EXACT'] == '1/20'
+          assert a['ROBUST_FLOOR_EXACT'] == '1'
+          assert a['CHANNELS'] == 243
+          assert a['PRECISION_BITS'] == 384
+          assert a['PYTHON_FLINT'] == '0.9.0'
+          ids=tuple(a['STATE_IDS'])
+          assert len(ids) == 16 and len(set(ids)) == 16
+          assert hashlib.sha256(('\n'.join(ids)+'\n').encode()).hexdigest() == 'b56a2a32cd96b28c14aaaa86f1062d1f2f2a167a2295ed99f904a99fd8371e82'
+          PY
+          impl="$(python -c "import json; print(json.load(open('$AUTH'))['IMPLEMENTATION_COMMIT'])")"
+          authority="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          test -n "$impl"
+          test -n "$authority"
+          git merge-base --is-ancestor c162f23df45a58c567fa04fcdf99035497e482f2 HEAD
+          git merge-base --is-ancestor a31db0d6b9f98448977a6fcdde80a45e3e7195fe HEAD
+          git merge-base --is-ancestor dd32ae2616f4cbe3826f73c7a1d2f51818b4954c HEAD
+          git merge-base --is-ancestor 6a789730833120a5e3037fdc11fe03b28ed5b9cb HEAD
+          git merge-base --is-ancestor c0a87e65fca4e8ae91f828d68559f08f2bd2ade3 HEAD
+          test \"$(git hash-object research/results/ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_TERMINAL_2026-09-18.json)\" = 'ce81ca0d26b93904e6045031602e178e0434bf38'
+          git merge-base --is-ancestor "$impl" HEAD
+          git merge-base --is-ancestor "$authority" HEAD
+          test "$(git hash-object research/prereg/ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_FIRST_2026-09-17.md)" = '7bdfe2ae3582458ff462127258f1b5a14a620be2'
+          test "$(git hash-object inputs/iter504v_broader_domain_campaign_manifest.json)" = 'd3b8821e08243016bd475f3faf9f2161deed13d8'
+          test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
+          python - <<'PY'
+          import json, subprocess
+          a=json.load(open('inputs/iter504v_sentinel_execution_authority.json'))
+          for path,key in [
+              ('code/iter504v_sentinel_local_d_case.py','EVALUATOR_BLOB_SHA'),
+              ('code/iter504v_sentinel_assemble.py','ASSEMBLER_BLOB_SHA'),
+              ('code/iter504v_sentinel_aggregate.py','AGGREGATE_BLOB_SHA'),
+              ('.github/workflows/iter504v-sentinel-science.yml','WORKFLOW_BLOB_SHA'),
+          ]:
+              got=subprocess.check_output(['git','hash-object',path], text=True).strip()
+              assert got == a[key], (path, got, a[key])
+          PY
+          for f in             code/iter499_arb_core.py             code/iter500_compact_sandwich_kak.py             code/iter501_direct_max_envelope_interval.py             code/iter503_ad_core.py             code/iter504_centered_shard.py; do
+            test "$(git hash-object "$f")" = "$(git rev-parse 10ae6bcc8447d14cecc6e550065504b23f792953:"$f")"
+          done
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Outcome-blind static contract audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile code/iter504v_sentinel_local_d_case.py code/iter504v_sentinel_assemble.py code/iter504v_sentinel_aggregate.py
+          grep -F "PASS = 'ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED'" code/iter504v_sentinel_assemble.py
+          grep -F "INC = 'ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_TO_UNIFORM_CERTIFICATION_SCOPED'" code/iter504v_sentinel_assemble.py
+          grep -F "INVALID = 'ITER504V_SENTINEL_INVALID'" code/iter504v_sentinel_assemble.py
+
+  cases:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        python: ['3.11', '3.13']
+        index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Capture environment
+        shell: bash
+        run: |
+          mkdir -p out
+          python -VV > out/python.txt 2>&1
+          python -m pip freeze > out/pip-freeze.txt
+          python - <<'PY' > out/flint.txt
+          import flint
+          print(getattr(flint, '__version__', 'unknown'))
+          PY
+          uname -a > out/uname.txt
+      - name: Execute frozen sentinel record
+        env:
+          PYTHONPATH: code
+        run: python code/iter504v_sentinel_local_d_case.py --index '${{ matrix.index }}' --out out/case.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-sentinel-${{ matrix.python }}-${{ matrix.index }}
+          path: out
+          if-no-files-found: error
+
+  assemble:
+    needs: cases
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504v-sentinel-${{ matrix.python }}-*
+          path: cases
+          merge-multiple: false
+      - name: Assemble sentinel environment independently
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          args=()
+          while IFS= read -r f; do args+=(--case-file "$f"); done < <(find cases -type f -name case.json | sort)
+          test "${#args[@]}" -eq 32
+          python code/iter504v_sentinel_assemble.py "${args[@]}" --out 'out/iter504v-${{ matrix.python }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-sentinel-assembled-${{ matrix.python }}
+          path: out/iter504v-${{ matrix.python }}.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: assemble
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504v-sentinel-assembled-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504v-sentinel-assembled-3.13
+          path: b
+      - name: Aggregate exact sentinel decisions
+        run: |
+          mkdir -p out
+          python code/iter504v_sentinel_aggregate.py --a a/iter504v-3.11.json --b b/iter504v-3.13.json --out out/iter504v-aggregate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-sentinel-aggregate
+          path: out/iter504v-aggregate.json
+          if-no-files-found: error
