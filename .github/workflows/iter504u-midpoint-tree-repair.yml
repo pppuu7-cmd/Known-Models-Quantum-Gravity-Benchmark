@@ -1,0 +1,207 @@
+name: KMQGB Iter504U midpoint/tree verifier repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504U_MIDPOINT_TREE_REPAIR_LAUNCH_2026-09-18.txt'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective repair authority and immutable source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='inputs/iter504u_midpoint_tree_repair_authority.json'
+          MARK='recovery/ITER504U_MIDPOINT_TREE_REPAIR_LAUNCH_2026-09-18.txt'
+          test -f "$AUTH" && test -f "$MARK"
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          a=json.loads(Path('inputs/iter504u_midpoint_tree_repair_authority.json').read_text())
+          assert a['gate']=='ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR'
+          assert a['repair_prereg_commit']=='71403ec9a82106a7a2aa2d5bae37336ced25fcc5'
+          assert a['source_run_id']==35246605860
+          assert a['source_run_head']=='102c7f9cafec956f3bc7bed4384ae755c98f761a'
+          assert a['source_run_attempt']==1
+          assert a['physics_rerun_authorized'] is False
+          assert a['science_changed'] is False
+          assert a['cohort_changed'] is False
+          assert a['classifier_changed'] is False
+          assert a['frozen_source_authority_blob']=='6154f02e9e04c8c14c3b4433f1afddce37e4fb9f'
+          for path,key in [
+              ('code/iter504u_midpoint_tree_binding.py','binding_blob'),
+              ('code/iter504u_heldout_assemble_midpoint_tree_repair.py','assembler_repair_blob'),
+              ('code/iter504u_heldout_critic_midpoint_tree_repair.py','critic_repair_blob'),
+              ('.github/workflows/iter504u-midpoint-tree-repair.yml','workflow_blob'),
+          ]:
+              got=subprocess.check_output(['git','hash-object',path],text=True).strip()
+              assert got==a[key], (path,got,a[key])
+          PY
+          authority_commit="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          test -n "$authority_commit"
+          git merge-base --is-ancestor "$authority_commit" HEAD
+          git merge-base --is-ancestor 71403ec9a82106a7a2aa2d5bae37336ced25fcc5 HEAD
+          git merge-base --is-ancestor b3d4a81b65ec0f4d2ac8a8210c45b5c98a0354cd HEAD
+          test "$(git hash-object research/prereg/ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_2026-09-18.md)" = '3fe70e7531f3c97a077922ccbb9274251de9f699'
+          test "$(git hash-object inputs/iter504u_repaired_critic_closure_authority.json)" = '6154f02e9e04c8c14c3b4433f1afddce37e4fb9f'
+          test "$(git hash-object code/iter504u_heldout_assemble.py)" = '5c3b04f25c5fb2523c3788b725ccf84ca23a07f1'
+          test "$(git hash-object code/iter504u_heldout_critic.py)" = 'c2a7ea31ddc151bf02a3995d761cae95bdabd0db'
+          test "$(git hash-object code/iter504u_heldout_critic_depth_binding_repair.py)" = 'd10bb168e93b3e3b5496a4f40bb0f16a9bd59dd4'
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35246605860" > /tmp/source-run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/35246605860/artifacts?per_page=100" > /tmp/source-artifacts.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          frozen=json.loads(Path('inputs/iter504u_repaired_critic_closure_authority.json').read_text())
+          run=json.loads(Path('/tmp/source-run.json').read_text())
+          arts=json.loads(Path('/tmp/source-artifacts.json').read_text())['artifacts']
+          assert run['id']==frozen['source_run_id']==35246605860
+          assert run['head_sha']==frozen['source_run_head']
+          assert run['run_attempt']==1 and run['status']=='completed' and run['conclusion']=='success'
+          by={x['name']:x for x in arts}
+          assert len(frozen['required_artifacts'])==15
+          for req in frozen['required_artifacts']:
+              got=by[req['name']]
+              assert got['id']==req['id']
+              assert got.get('digest')==req['digest']
+              assert got.get('expired') is False
+          print('FROZEN_ITER504U_SOURCE_AUTHORITY_REVERIFIED')
+          PY
+
+  review:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Download exact frozen upstream artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p frozen/raw-a frozen/raw-b frozen/asm-a frozen/asm-b frozen/aggregate out
+          for cid in H0_AMP_LOW H1_AMP_MID H2_CAUSAL_1 H3_CAUSAL_2 H4_DIRECTION H5_SIGN; do
+            gh run download 35246605860 -n "iter504u-heldout-3.11-$cid" -D "frozen/raw-a/$cid"
+            gh run download 35246605860 -n "iter504u-heldout-3.13-$cid" -D "frozen/raw-b/$cid"
+          done
+          gh run download 35246605860 -n iter504u-heldout-assembled-3.11 -D frozen/asm-a
+          gh run download 35246605860 -n iter504u-heldout-assembled-3.13 -D frozen/asm-b
+          gh run download 35246605860 -n iter504u-heldout-aggregate -D frozen/aggregate
+          test "$(find frozen/raw-a -name case.json | wc -l)" -eq 6
+          test "$(find frozen/raw-b -name case.json | wc -l)" -eq 6
+          find frozen -type f -print0 | sort -z | xargs -0 sha256sum > out/downloaded-content.sha256
+      - name: Reconstruct repaired assemblies and independent Critic
+        env:
+          PYTHONPATH: code
+        shell: bash
+        run: |
+          set -euo pipefail
+          args_a=()
+          while IFS= read -r f; do args_a+=(--case-file "$f"); done < <(find frozen/raw-a -name case.json | sort)
+          args_b=()
+          while IFS= read -r f; do args_b+=(--case-file "$f"); done < <(find frozen/raw-b -name case.json | sort)
+          test "${#args_a[@]}" -eq 12
+          test "${#args_b[@]}" -eq 12
+          python code/iter504u_heldout_assemble_midpoint_tree_repair.py "${args_a[@]}" --out out/reassembled-3.11.json
+          python code/iter504u_heldout_assemble_midpoint_tree_repair.py "${args_b[@]}" --out out/reassembled-3.13.json
+          cmp out/reassembled-3.11.json frozen/asm-a/iter504u-3.11.json
+          cmp out/reassembled-3.13.json frozen/asm-b/iter504u-3.13.json
+          python code/iter504u_heldout_critic_midpoint_tree_repair.py             --a-dir frozen/raw-a             --b-dir frozen/raw-b             --a-assembled frozen/asm-a/iter504u-3.11.json             --b-assembled frozen/asm-b/iter504u-3.13.json             --aggregate frozen/aggregate/iter504u-aggregate.json             --out out/repaired-critic.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('out/repaired-critic.json').read_text())
+          assert d['classification']=='ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED', d
+          assert d['critic_errors']==[], d
+          assert d['cross_environment_exact_decision_agreement'] is True
+          assert d['total_cases']==6 and d['total_terminal_leaves']==19 and d['total_unresolved_leaves']==0
+          for k in (
+              'C4_true_leaf_false_rho',
+              'premature_unresolved_leaf_depth',
+              'wrong_exact_local_midpoint',
+              'wrong_parent_inclusion_child_interval',
+              'wrong_parent_inclusion_parent_interval',
+          ):
+              assert d['negative_controls'].get(k) is True, (k,d['negative_controls'])
+          assert all(d['negative_controls'].values())
+          print('ITER504U_MIDPOINT_TREE_REPAIR_REVIEW_PASS')
+          PY
+          sha256sum out/reassembled-3.11.json out/reassembled-3.13.json out/repaired-critic.json out/downloaded-content.sha256 > out/review-files.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-midpoint-tree-repair-review-${{ matrix.python }}
+          path: out
+          if-no-files-found: error
+
+  closure:
+    needs: review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-midpoint-tree-repair-review-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504u-midpoint-tree-repair-review-3.13
+          path: b
+      - name: Require cross-Python equality and terminalize repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp a/reassembled-3.11.json b/reassembled-3.11.json
+          cmp a/reassembled-3.13.json b/reassembled-3.13.json
+          cmp a/repaired-critic.json b/repaired-critic.json
+          cmp a/downloaded-content.sha256 b/downloaded-content.sha256
+          mkdir -p out
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          c=json.loads(Path('a/repaired-critic.json').read_text())
+          assert c['classification']=='ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED'
+          assert c['critic_errors']==[]
+          assert all(c['negative_controls'].values())
+          payload={
+              'gate':'ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR',
+              'classification':'ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_VALIDATED_SCOPED',
+              'source_run_id':35246605860,
+              'historical_science_classification':c['classification'],
+              'cross_python_repaired_review_equal':True,
+              'cross_environment_exact_decision_agreement':c['cross_environment_exact_decision_agreement'],
+              'total_cases':c['total_cases'],
+              'total_terminal_leaves':c['total_terminal_leaves'],
+              'total_unresolved_leaves':c['total_unresolved_leaves'],
+              'negative_controls':c['negative_controls'],
+              'decision_projection_sha256':c['decision_projection_sha256'],
+              'repaired_critic_sha256':hashlib.sha256(Path('a/repaired-critic.json').read_bytes()).hexdigest(),
+              'claim_ceiling':'same frozen Iter504U six-case held-out object only',
+          }
+          payload['closure_payload_sha256']=hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+          Path('out/iter504u-midpoint-tree-repair-closure.json').write_text(json.dumps(payload,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(payload,sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504u-midpoint-tree-repair-closure
+          path: out
+          if-no-files-found: error
