@@ -1,0 +1,653 @@
+{
+  "GATE": "ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_FIRST",
+  "FREEZE_KIND": "POST_SOURCE_COMPLETE_METADATA_FREEZE_BEFORE_SCIENCE_CONSUMPTION",
+  "SOURCE_RUN": {
+    "run_id": 35365466861,
+    "run_number": 3,
+    "attempt": 1,
+    "head_sha": "d10ccd5f9bb465d306dad0b74bedfd3ecf5ad05e",
+    "terminal": true,
+    "terminality_basis": "workflow DAG exhausted; 32/32 case artifacts, 2/2 assembly artifacts, 1 aggregate artifact present; aggregate created 2026-09-18T22:34:21Z; no downstream jobs exist"
+  },
+  "JOB_INVENTORY": [
+    {
+      "name": "aggregate",
+      "id": 105784087523,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T22:34:17Z",
+      "completed_at": "2026-09-18T22:34:24Z"
+    },
+    {
+      "name": "assemble (3.11)",
+      "id": 105784033867,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T22:34:03Z",
+      "completed_at": "2026-09-18T22:34:13Z"
+    },
+    {
+      "name": "assemble (3.13)",
+      "id": 105784033890,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T22:34:03Z",
+      "completed_at": "2026-09-18T22:34:08Z"
+    },
+    {
+      "name": "cases (3.11, 0)",
+      "id": 105666771947,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T19:13:11Z"
+    },
+    {
+      "name": "cases (3.11, 1)",
+      "id": 105666771962,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:47Z",
+      "completed_at": "2026-09-18T17:22:10Z"
+    },
+    {
+      "name": "cases (3.11, 10)",
+      "id": 105666771861,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T17:20:48Z"
+    },
+    {
+      "name": "cases (3.11, 11)",
+      "id": 105666771862,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T16:24:54Z"
+    },
+    {
+      "name": "cases (3.11, 12)",
+      "id": 105666772016,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T16:24:22Z",
+      "completed_at": "2026-09-18T19:41:33Z"
+    },
+    {
+      "name": "cases (3.11, 13)",
+      "id": 105666771906,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T16:24:08Z",
+      "completed_at": "2026-09-18T17:44:28Z"
+    },
+    {
+      "name": "cases (3.11, 14)",
+      "id": 105666771908,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T16:24:58Z",
+      "completed_at": "2026-09-18T16:54:35Z"
+    },
+    {
+      "name": "cases (3.11, 15)",
+      "id": 105666771966,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T16:26:55Z",
+      "completed_at": "2026-09-18T19:42:25Z"
+    },
+    {
+      "name": "cases (3.11, 2)",
+      "id": 105666771899,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T16:24:06Z"
+    },
+    {
+      "name": "cases (3.11, 3)",
+      "id": 105666771836,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T19:06:01Z"
+    },
+    {
+      "name": "cases (3.11, 4)",
+      "id": 105666771820,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T17:19:27Z"
+    },
+    {
+      "name": "cases (3.11, 5)",
+      "id": 105666771839,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T16:23:43Z"
+    },
+    {
+      "name": "cases (3.11, 6)",
+      "id": 105666771853,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T19:05:42Z"
+    },
+    {
+      "name": "cases (3.11, 7)",
+      "id": 105666771965,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T17:20:37Z"
+    },
+    {
+      "name": "cases (3.11, 8)",
+      "id": 105666771824,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T16:26:53Z"
+    },
+    {
+      "name": "cases (3.11, 9)",
+      "id": 105666771979,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:45Z",
+      "completed_at": "2026-09-18T18:04:10Z"
+    },
+    {
+      "name": "cases (3.13, 0)",
+      "id": 105666771888,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T16:54:39Z",
+      "completed_at": "2026-09-18T20:10:13Z"
+    },
+    {
+      "name": "cases (3.13, 1)",
+      "id": 105666772042,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T17:19:31Z",
+      "completed_at": "2026-09-18T18:25:29Z"
+    },
+    {
+      "name": "cases (3.13, 10)",
+      "id": 105666773636,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T18:41:33Z",
+      "completed_at": "2026-09-18T20:08:31Z"
+    },
+    {
+      "name": "cases (3.13, 11)",
+      "id": 105666773780,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T18:49:11Z",
+      "completed_at": "2026-09-18T19:12:22Z"
+    },
+    {
+      "name": "cases (3.13, 12)",
+      "id": 105666773844,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T18:53:57Z",
+      "completed_at": "2026-09-18T22:16:36Z"
+    },
+    {
+      "name": "cases (3.13, 13)",
+      "id": 105666773855,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T19:05:45Z",
+      "completed_at": "2026-09-18T20:14:42Z"
+    },
+    {
+      "name": "cases (3.13, 14)",
+      "id": 105666774004,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T19:06:04Z",
+      "completed_at": "2026-09-18T19:34:15Z"
+    },
+    {
+      "name": "cases (3.13, 15)",
+      "id": 105666774265,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T19:12:25Z",
+      "completed_at": "2026-09-18T22:33:58Z"
+    },
+    {
+      "name": "cases (3.13, 2)",
+      "id": 105666771895,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T17:20:40Z",
+      "completed_at": "2026-09-18T17:43:48Z"
+    },
+    {
+      "name": "cases (3.13, 3)",
+      "id": 105666771976,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T17:20:52Z",
+      "completed_at": "2026-09-18T20:44:00Z"
+    },
+    {
+      "name": "cases (3.13, 4)",
+      "id": 105666771958,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T17:22:13Z",
+      "completed_at": "2026-09-18T18:49:07Z"
+    },
+    {
+      "name": "cases (3.13, 5)",
+      "id": 105666771875,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T17:43:52Z",
+      "completed_at": "2026-09-18T18:13:02Z"
+    },
+    {
+      "name": "cases (3.13, 6)",
+      "id": 105666773470,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T17:44:31Z",
+      "completed_at": "2026-09-18T19:37:47Z"
+    },
+    {
+      "name": "cases (3.13, 7)",
+      "id": 105666773800,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T18:04:14Z",
+      "completed_at": "2026-09-18T18:53:51Z"
+    },
+    {
+      "name": "cases (3.13, 8)",
+      "id": 105666773799,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T18:13:06Z",
+      "completed_at": "2026-09-18T18:41:25Z"
+    },
+    {
+      "name": "cases (3.13, 9)",
+      "id": 105666773692,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T18:25:32Z",
+      "completed_at": "2026-09-18T20:38:11Z"
+    },
+    {
+      "name": "source-lock",
+      "id": 105666729295,
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-09-18T15:56:37Z",
+      "completed_at": "2026-09-18T15:56:42Z"
+    }
+  ],
+  "JOB_COUNTS": {
+    "completed": 36,
+    "success": 36,
+    "in_progress": 0,
+    "queued": 0,
+    "total": 36
+  },
+  "ARTIFACTS": [
+    {
+      "id": 10563476439,
+      "name": "iter504v-sentinel-3.11-0",
+      "digest": "sha256:02bf9f45b8e836d817306c8c412278ba36218f6d94e448ed68abca55f050607d",
+      "size_in_bytes": 6135,
+      "expired": false,
+      "created_at": "2026-09-18T19:13:08Z",
+      "updated_at": "2026-09-18T19:13:08Z"
+    },
+    {
+      "id": 10558937846,
+      "name": "iter504v-sentinel-3.11-1",
+      "digest": "sha256:f9e0aa2f80e9e1221b52aed0d3791aac8aa31800f9238f0f50f3502d345a5651",
+      "size_in_bytes": 3655,
+      "expired": false,
+      "created_at": "2026-09-18T17:22:07Z",
+      "updated_at": "2026-09-18T17:22:07Z"
+    },
+    {
+      "id": 10559342299,
+      "name": "iter504v-sentinel-3.11-10",
+      "digest": "sha256:1d4ca0d379d5548e9b54caa03cdcb637d5ccd4fb9ac5e2fc8b3044fcc25d49e4",
+      "size_in_bytes": 3684,
+      "expired": false,
+      "created_at": "2026-09-18T17:20:44Z",
+      "updated_at": "2026-09-18T17:20:44Z"
+    },
+    {
+      "id": 10557402643,
+      "name": "iter504v-sentinel-3.11-11",
+      "digest": "sha256:3d4480204bcd7812b2dc8f8619cd944524efbdb4cf0aa0bfe1d595a9549acd88",
+      "size_in_bytes": 2273,
+      "expired": false,
+      "created_at": "2026-09-18T16:24:51Z",
+      "updated_at": "2026-09-18T16:24:51Z"
+    },
+    {
+      "id": 10564656033,
+      "name": "iter504v-sentinel-3.11-12",
+      "digest": "sha256:1d564117f88c73b42a5221b84c2260e7309317fd66f74fbc481277d8498f541f",
+      "size_in_bytes": 6171,
+      "expired": false,
+      "created_at": "2026-09-18T19:41:30Z",
+      "updated_at": "2026-09-18T19:41:30Z"
+    },
+    {
+      "id": 10559693954,
+      "name": "iter504v-sentinel-3.11-13",
+      "digest": "sha256:1e9d575aa33ff2b008cba4859fa271809efac180636c0de2e236e2e97df9bae3",
+      "size_in_bytes": 3668,
+      "expired": false,
+      "created_at": "2026-09-18T17:44:26Z",
+      "updated_at": "2026-09-18T17:44:26Z"
+    },
+    {
+      "id": 10557767725,
+      "name": "iter504v-sentinel-3.11-14",
+      "digest": "sha256:fd3bf625675b1f00e35e6e89cc0696f7fa6789cf6b53aa3219f6b7304a447cdb",
+      "size_in_bytes": 2268,
+      "expired": false,
+      "created_at": "2026-09-18T16:54:33Z",
+      "updated_at": "2026-09-18T16:54:33Z"
+    },
+    {
+      "id": 10565160186,
+      "name": "iter504v-sentinel-3.11-15",
+      "digest": "sha256:fb2747e4ebc46339df633a7d638c82c79f8b1cbf225249392af4cdc3dcd2a27d",
+      "size_in_bytes": 6162,
+      "expired": false,
+      "created_at": "2026-09-18T19:42:24Z",
+      "updated_at": "2026-09-18T19:42:24Z"
+    },
+    {
+      "id": 10556788655,
+      "name": "iter504v-sentinel-3.11-2",
+      "digest": "sha256:ae7ff14d41bab1da72aec100ced80299c9b5038f4c54f67b732ae93e0b9c6118",
+      "size_in_bytes": 2275,
+      "expired": false,
+      "created_at": "2026-09-18T16:24:02Z",
+      "updated_at": "2026-09-18T16:24:02Z"
+    },
+    {
+      "id": 10562408527,
+      "name": "iter504v-sentinel-3.11-3",
+      "digest": "sha256:2c2a4c3d627a3398d18fabd50e1206753aad5805716a2610873a9d88f9e13e0f",
+      "size_in_bytes": 6180,
+      "expired": false,
+      "created_at": "2026-09-18T19:05:59Z",
+      "updated_at": "2026-09-18T19:05:59Z"
+    },
+    {
+      "id": 10559850649,
+      "name": "iter504v-sentinel-3.11-4",
+      "digest": "sha256:52a8983871c71e3a3aa79bc309f4f6569fa41c8a5c3df770f690f3fb516bb963",
+      "size_in_bytes": 3666,
+      "expired": false,
+      "created_at": "2026-09-18T17:19:25Z",
+      "updated_at": "2026-09-18T17:19:25Z"
+    },
+    {
+      "id": 10557542169,
+      "name": "iter504v-sentinel-3.11-5",
+      "digest": "sha256:0e6bb4a224f9c703e26b458aa3713bb6d7c24277ac4ec092d48a9f8a1fa2261f",
+      "size_in_bytes": 2267,
+      "expired": false,
+      "created_at": "2026-09-18T16:23:40Z",
+      "updated_at": "2026-09-18T16:23:40Z"
+    },
+    {
+      "id": 10563169579,
+      "name": "iter504v-sentinel-3.11-6",
+      "digest": "sha256:92a4dd648062240bf2512eab1901db870176235a8055991d5ec8c3efa702f168",
+      "size_in_bytes": 6184,
+      "expired": false,
+      "created_at": "2026-09-18T19:05:40Z",
+      "updated_at": "2026-09-18T19:05:40Z"
+    },
+    {
+      "id": 10559720940,
+      "name": "iter504v-sentinel-3.11-7",
+      "digest": "sha256:a5d1f1297f002f9d830da062537924ddc93dbd081ceab14df3dbf09b1b6b83ba",
+      "size_in_bytes": 3669,
+      "expired": false,
+      "created_at": "2026-09-18T17:20:35Z",
+      "updated_at": "2026-09-18T17:20:35Z"
+    },
+    {
+      "id": 10556504305,
+      "name": "iter504v-sentinel-3.11-8",
+      "digest": "sha256:c971ace3f9497e14c0a7c1ef99d26e3fa552d013c82eb85143cc4b1ca4e10bf7",
+      "size_in_bytes": 2264,
+      "expired": false,
+      "created_at": "2026-09-18T16:26:51Z",
+      "updated_at": "2026-09-18T16:26:51Z"
+    },
+    {
+      "id": 10560489729,
+      "name": "iter504v-sentinel-3.11-9",
+      "digest": "sha256:cbc3a5e943274a6121ca056035cf7ccf015a3656e2b047d4f6c0d6349a8773e3",
+      "size_in_bytes": 6169,
+      "expired": false,
+      "created_at": "2026-09-18T18:04:09Z",
+      "updated_at": "2026-09-18T18:04:09Z"
+    },
+    {
+      "id": 10566060532,
+      "name": "iter504v-sentinel-3.13-0",
+      "digest": "sha256:781599138ea276253279f5704eaea23daf06fbb129a210a91cd5741d5e0d19a9",
+      "size_in_bytes": 6135,
+      "expired": false,
+      "created_at": "2026-09-18T20:10:10Z",
+      "updated_at": "2026-09-18T20:10:10Z"
+    },
+    {
+      "id": 10561163564,
+      "name": "iter504v-sentinel-3.13-1",
+      "digest": "sha256:db302aeca46d29498a8bb9ee8b0fea112f57f02d88fb7f9aaacf1b0f60132dc2",
+      "size_in_bytes": 3655,
+      "expired": false,
+      "created_at": "2026-09-18T18:25:27Z",
+      "updated_at": "2026-09-18T18:25:27Z"
+    },
+    {
+      "id": 10565139679,
+      "name": "iter504v-sentinel-3.13-10",
+      "digest": "sha256:2db1518644102b7eb3ace4c590b15e8145e2c9b23e976b5bd39f1b53d9ffacf7",
+      "size_in_bytes": 3684,
+      "expired": false,
+      "created_at": "2026-09-18T20:08:28Z",
+      "updated_at": "2026-09-18T20:08:28Z"
+    },
+    {
+      "id": 10562214434,
+      "name": "iter504v-sentinel-3.13-11",
+      "digest": "sha256:4bdd888e1fcadfa4af23260287808f06e64a4f8ad4266324be71454ca4d1f654",
+      "size_in_bytes": 2273,
+      "expired": false,
+      "created_at": "2026-09-18T19:12:19Z",
+      "updated_at": "2026-09-18T19:12:19Z"
+    },
+    {
+      "id": 10571155222,
+      "name": "iter504v-sentinel-3.13-12",
+      "digest": "sha256:d2675773808835067e71a7e5997da4a410f41e2002c32c1e29ea345026cc7513",
+      "size_in_bytes": 6171,
+      "expired": false,
+      "created_at": "2026-09-18T22:16:33Z",
+      "updated_at": "2026-09-18T22:16:33Z"
+    },
+    {
+      "id": 10566320813,
+      "name": "iter504v-sentinel-3.13-13",
+      "digest": "sha256:605cbf103f26dcf8ae0cc667c141ce8da3cd748078c18bf24d327680aa4842ba",
+      "size_in_bytes": 3668,
+      "expired": false,
+      "created_at": "2026-09-18T20:14:40Z",
+      "updated_at": "2026-09-18T20:14:40Z"
+    },
+    {
+      "id": 10563634704,
+      "name": "iter504v-sentinel-3.13-14",
+      "digest": "sha256:4c3f3924621ffe5734d5ab2a69497edcfb268f01e29ce4649cc3713cac7d558a",
+      "size_in_bytes": 2268,
+      "expired": false,
+      "created_at": "2026-09-18T19:34:14Z",
+      "updated_at": "2026-09-18T19:34:14Z"
+    },
+    {
+      "id": 10571521168,
+      "name": "iter504v-sentinel-3.13-15",
+      "digest": "sha256:8746eba325be090403dd5cce4abb3ee541a62a7f7c13b70494c0bb5ac9dc53a3",
+      "size_in_bytes": 6162,
+      "expired": false,
+      "created_at": "2026-09-18T22:33:55Z",
+      "updated_at": "2026-09-18T22:33:55Z"
+    },
+    {
+      "id": 10559773676,
+      "name": "iter504v-sentinel-3.13-2",
+      "digest": "sha256:beaf4921c2d93866fb96f9ec5a2dc4692b9c9296173f7fa05aab1c3ddc40b0b1",
+      "size_in_bytes": 2275,
+      "expired": false,
+      "created_at": "2026-09-18T17:43:45Z",
+      "updated_at": "2026-09-18T17:43:45Z"
+    },
+    {
+      "id": 10566651016,
+      "name": "iter504v-sentinel-3.13-3",
+      "digest": "sha256:110b0b485a737169c3a135c2cb2eaf7220ac7145cc96ded6f9796b4b5e4c0290",
+      "size_in_bytes": 6180,
+      "expired": false,
+      "created_at": "2026-09-18T20:43:57Z",
+      "updated_at": "2026-09-18T20:43:57Z"
+    },
+    {
+      "id": 10563017328,
+      "name": "iter504v-sentinel-3.13-4",
+      "digest": "sha256:80441a1c71b4425d73d8df02f28379f62f1e74b25a443d6ab46189edac7f3ef9",
+      "size_in_bytes": 3666,
+      "expired": false,
+      "created_at": "2026-09-18T18:49:03Z",
+      "updated_at": "2026-09-18T18:49:03Z"
+    },
+    {
+      "id": 10561840891,
+      "name": "iter504v-sentinel-3.13-5",
+      "digest": "sha256:682bb0629d85a7daf073d80514791a6ae2f908ca4eceff055a4b20db03b4d990",
+      "size_in_bytes": 2267,
+      "expired": false,
+      "created_at": "2026-09-18T18:13:01Z",
+      "updated_at": "2026-09-18T18:13:01Z"
+    },
+    {
+      "id": 10564342329,
+      "name": "iter504v-sentinel-3.13-6",
+      "digest": "sha256:439de11150e24805a8ca8d4537eb2ba71705aa2746a727034ee361827f03d9aa",
+      "size_in_bytes": 6184,
+      "expired": false,
+      "created_at": "2026-09-18T19:37:44Z",
+      "updated_at": "2026-09-18T19:37:44Z"
+    },
+    {
+      "id": 10562913095,
+      "name": "iter504v-sentinel-3.13-7",
+      "digest": "sha256:3bddda0294c9a06f564083eb0a3548b9160cb6bbeebb19d23c19069a951b9b47",
+      "size_in_bytes": 3669,
+      "expired": false,
+      "created_at": "2026-09-18T18:53:48Z",
+      "updated_at": "2026-09-18T18:53:48Z"
+    },
+    {
+      "id": 10562796061,
+      "name": "iter504v-sentinel-3.13-8",
+      "digest": "sha256:72737be6b5f0d6e5a5cb466b33dc854853920f16ee284fcd7bc006b64657ae40",
+      "size_in_bytes": 2264,
+      "expired": false,
+      "created_at": "2026-09-18T18:41:23Z",
+      "updated_at": "2026-09-18T18:41:23Z"
+    },
+    {
+      "id": 10566445318,
+      "name": "iter504v-sentinel-3.13-9",
+      "digest": "sha256:fd7746f003068cc3cbb3460b46f39e6212c22d69c637bbbe2c9424bf04a358db",
+      "size_in_bytes": 6169,
+      "expired": false,
+      "created_at": "2026-09-18T20:38:09Z",
+      "updated_at": "2026-09-18T20:38:09Z"
+    },
+    {
+      "id": 10571306408,
+      "name": "iter504v-sentinel-aggregate",
+      "digest": "sha256:3732ffe44162e7874ba4178d89ebef045f3cbb97d3293b492aa23074acd3f1f5",
+      "size_in_bytes": 814,
+      "expired": false,
+      "created_at": "2026-09-18T22:34:21Z",
+      "updated_at": "2026-09-18T22:34:21Z"
+    },
+    {
+      "id": 10570926458,
+      "name": "iter504v-sentinel-assembled-3.11",
+      "digest": "sha256:6af96d13ed55f46be76a16d5dbd06d7182d863b23656c828905306fd26f45f3a",
+      "size_in_bytes": 31163,
+      "expired": false,
+      "created_at": "2026-09-18T22:34:11Z",
+      "updated_at": "2026-09-18T22:34:11Z"
+    },
+    {
+      "id": 10570767526,
+      "name": "iter504v-sentinel-assembled-3.13",
+      "digest": "sha256:162fe64f5770f3079adc07fab64580ce384310a3c491fde7faddeeedec8d563a",
+      "size_in_bytes": 31163,
+      "expired": false,
+      "created_at": "2026-09-18T22:34:07Z",
+      "updated_at": "2026-09-18T22:34:07Z"
+    }
+  ],
+  "ARTIFACT_COUNTS": {
+    "case": 32,
+    "assembly": 2,
+    "aggregate": 1,
+    "total": 35
+  },
+  "COVERAGE": {
+    "python_3_11_case_artifacts": 16,
+    "python_3_13_case_artifacts": 16,
+    "required_per_environment": 16
+  },
+  "FROZEN_IDENTITIES": {
+    "original_prereg_commit": "c162f23df45a58c567fa04fcdf99035497e482f2",
+    "execution_authority_commit": "4615c329386c77e3948da02e458269854a31ac7e",
+    "evaluator_blob_sha": "90361f45fdf6174297cb9bcd03d96af125358d26",
+    "assembler_blob_sha": "92deb76625ef54e07d5bf7d9950ee10487715d50",
+    "aggregate_blob_sha": "22631e8b42cb844e19d51512bc2b435c6361e713",
+    "workflow_blob_sha": "72fec7bb027bed2e809b5b648a9d9242da35b307",
+    "sentinel_sequence_sha256": "b56a2a32cd96b28c14aaaa86f1062d1f2f2a167a2295ed99f904a99fd8371e82"
+  },
+  "SUPERSEDES_METADATA_FREEZE_GIT_BLOB_SHA1": "fec48d5099df36503414be433b5ec9d2781c1d59",
+  "SCIENTIFIC_PAYLOAD_CONSUMED": false,
+  "PHASE_B_AUTHORIZED": false,
+  "NOTES": [
+    "All 36 workflow jobs are now frozen with exact GitHub job IDs from the complete per_page=100 job inventory.",
+    "No scientific artifact payload was read before this supplemental freeze."
+  ]
+}
