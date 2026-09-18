@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from fractions import Fraction
 from pathlib import Path
 
@@ -188,6 +189,30 @@ def case_run(causal, block, path, box, path_map):
     }
 
 
+def run_one(causal, block, path, box):
+    try:
+        _, path_map = load_manifest()
+        return box, case_run(causal, block, path, box, path_map), None
+    except Exception as e:
+        sid = state_id(causal, block, path, box)
+        out = {
+            'gate': GATE,
+            'preregistration_commit': PREREG,
+            'design_authority_commit': DESIGN_AUTHORITY,
+            'design_static_critic_commit': DESIGN_STATIC_CRITIC,
+            'implementation_authority_commit': IMPLEMENTATION_AUTHORITY,
+            'terminal_parent_commit': TERMINAL_PARENT,
+            'campaign_design_commit': CAMPAIGN_DESIGN,
+            'campaign_manifest_blob': MANIFEST_BLOB,
+            'canonical_768_record_sequence_sha256': CANONICAL_SHA256,
+            'state_id': sid,
+            'case_id': sid,
+            'invalid': True,
+            'error': repr(e),
+        }
+        return box, out, repr(e)
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--causal', choices=CAUSALS, required=True)
@@ -199,47 +224,25 @@ def main():
 
     out_dir = Path(a.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    invalid = []
-    try:
-        _, path_map = load_manifest()
-    except Exception as e:
-        path_map = None
-        invalid.append({'state_id': None, 'error': repr(e)})
-
     boxes = QUARTILES[a.quartile]
+    results = {}
+    with ProcessPoolExecutor(max_workers=4) as pool:
+        futures = {
+            pool.submit(run_one, a.causal, a.block, a.path, box): box
+            for box in boxes
+        }
+        for fut in as_completed(futures):
+            box, out, err = fut.result()
+            results[box] = (out, err)
+
+    invalid = []
     state_ids = []
     for box in boxes:
         sid = state_id(a.causal, a.block, a.path, box)
         state_ids.append(sid)
-        if path_map is None:
-            out = {
-                'gate': GATE,
-                'preregistration_commit': PREREG,
-                'state_id': sid,
-                'case_id': sid,
-                'invalid': True,
-                'error': invalid[0]['error'],
-            }
-        else:
-            try:
-                out = case_run(a.causal, a.block, a.path, box, path_map)
-            except Exception as e:
-                out = {
-                    'gate': GATE,
-                    'preregistration_commit': PREREG,
-                    'design_authority_commit': DESIGN_AUTHORITY,
-                    'design_static_critic_commit': DESIGN_STATIC_CRITIC,
-                    'implementation_authority_commit': IMPLEMENTATION_AUTHORITY,
-                    'terminal_parent_commit': TERMINAL_PARENT,
-                    'campaign_design_commit': CAMPAIGN_DESIGN,
-                    'campaign_manifest_blob': MANIFEST_BLOB,
-                    'canonical_768_record_sequence_sha256': CANONICAL_SHA256,
-                    'state_id': sid,
-                    'case_id': sid,
-                    'invalid': True,
-                    'error': repr(e),
-                }
-                invalid.append({'state_id': sid, 'error': repr(e)})
+        out, err = results[box]
+        if err is not None:
+            invalid.append({'state_id': sid, 'error': err})
         (out_dir / f'case-{box:02d}.json').write_text(
             json.dumps(out, indent=2, sort_keys=True) + '\n'
         )
@@ -247,6 +250,7 @@ def main():
     shard = {
         'gate': GATE,
         'python_environment_external': True,
+        'execution_topology': 'four_independent_box_processes_within_frozen_quartile_shard',
         'causal': a.causal,
         'block': a.block,
         'path': a.path,
@@ -255,7 +259,7 @@ def main():
         'state_ids': state_ids,
         'record_count': 4,
         'invalid_count': len(invalid),
-        'invalid_state_ids': [x['state_id'] for x in invalid if x['state_id'] is not None],
+        'invalid_state_ids': [x['state_id'] for x in invalid],
         'canonical_768_record_sequence_sha256': CANONICAL_SHA256,
     }
     (out_dir / 'shard.json').write_text(json.dumps(shard, indent=2, sort_keys=True) + '\n')
