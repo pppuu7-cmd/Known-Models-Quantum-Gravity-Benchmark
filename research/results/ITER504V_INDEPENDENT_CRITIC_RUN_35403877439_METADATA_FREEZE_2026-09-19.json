@@ -1,0 +1,57 @@
+{
+  "gate": "ITER504V_INDEPENDENT_CRITIC_REPAIR",
+  "freeze_kind": "POST_CRITIC_METADATA_FREEZE_BEFORE_CRITIC_RESULT_CONSUMPTION",
+  "critic_run": {
+    "id": 35403877439,
+    "run_number": 2,
+    "attempt": 1,
+    "head_sha": "095be005e21a85ccb860d24617fdb2343b958ae0",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "repair_prereg_commit": "9e5a5a71cb27396f9a667d293af6f291b8d0f1f8",
+  "repair_authority_commit": "d56a43b1b18b70ba392af96d80007aaea61ed958",
+  "critic_blob_sha": "8f3ffcd75376d9d1dfcb18f91353fa31aad2ed0a",
+  "workflow_blob_sha": "0d23d0e2399afc6bcf38de4bfaa28e19076a780b",
+  "source_run_id": 35365466861,
+  "source_metadata_freeze_commit": "7a60b8450ae6ecd1023f3f1a012e4a0b5b443ea4",
+  "jobs": [
+    {
+      "id": 105789470610,
+      "name": "critic (3.11)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 105789470717,
+      "name": "critic (3.13)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 105789523918,
+      "name": "aggregate-critic",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 10571930652,
+      "name": "iter504v-independent-critic-3.11",
+      "digest": "sha256:58dedd06cc935fc8035a031eefbc534d550ac263b33e8361ea370b445329ff05"
+    },
+    {
+      "id": 10572185515,
+      "name": "iter504v-independent-critic-3.13",
+      "digest": "sha256:8719b87eb25594a73e3f0b1f712206704e44ab37785b41d44b3b9dfbc9c797e6"
+    },
+    {
+      "id": 10571690773,
+      "name": "iter504v-independent-critic-aggregate",
+      "digest": "sha256:3785b7942d311b4030daeaf58a6325c0631ac58be61ea07a8f7cba99dfc58191"
+    }
+  ],
+  "critic_scientific_payload_consumed": false,
+  "phase_b_authorized": false
+}
