@@ -1,0 +1,101 @@
+{
+  "gate": "ITER504V_PHASE_B_IMPLEMENTATION_AUTHORITY",
+  "parent_gate": "ITER504V_BROADER_DOMAIN_COMPLETE_Q1_COVERAGE",
+  "date": "2026-09-19",
+  "status": "PROSPECTIVELY_FROZEN_BEFORE_PHASE_B_IMPLEMENTATION",
+  "design_prereg_commit": "e42caf47f9201d79cd89b79dc72b90f696e3ec5d",
+  "design_authority_commit": "a4006f336a49f655534a2f76a443a3d60a47cd85",
+  "design_static_critic_commit": "722c7e09bf077c0cb29c3ac0ac2ed724b99290f4",
+  "design_static_critic_verdict": "PASS_SCOPED",
+  "terminal_parent_commit": "d03cae09c04638cb02412435a284cfd9acdf8406",
+  "terminal_parent_classification": "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+  "frozen_campaign": {
+    "design_commit": "6a789730833120a5e3037fdc11fe03b28ed5b9cb",
+    "manifest_blob_sha1": "d3b8821e08243016bd475f3faf9f2161deed13d8",
+    "canonical_768_record_sequence_sha256": "3cac282175830e795394dca5202f5368b27120817f2d4abd9eba54fc6c9f1e6f"
+  },
+  "inherited_scientific_core": {
+    "centered_shard_blob_sha1": "fee4f4f44e71aaac8ad9d9c47d27a63301f9c43b",
+    "heldout_local_d_case_blob_sha1": "bf457eef08f7df32523c9e22ce3b3713f10d97a0",
+    "sentinel_reference_evaluator_blob_sha1": "90361f45fdf6174297cb9bcd03d96af125358d26"
+  },
+  "implementation_files": [
+    "code/iter504v_phase_b_shard.py",
+    "code/iter504v_phase_b_assemble.py",
+    "code/iter504v_phase_b_aggregate.py",
+    ".github/workflows/iter504v-phase-b-science.yml"
+  ],
+  "implementation_requirements": {
+    "record_count": 768,
+    "python_environments": [
+      "3.11",
+      "3.13"
+    ],
+    "logical_path_lanes": 48,
+    "box_quartiles": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        8,
+        9,
+        10,
+        11
+      ],
+      [
+        12,
+        13,
+        14,
+        15
+      ]
+    ],
+    "compute_shards_per_environment": 192,
+    "total_source_compute_shards": 384,
+    "records_per_shard": 4,
+    "fail_fast": false,
+    "max_parallel": 12,
+    "precision_bits": 384,
+    "python_flint": "0.9.0",
+    "channels": 243,
+    "R": [
+      6,
+      8,
+      10,
+      12
+    ],
+    "rho": [
+      0.35,
+      0.9,
+      1.6,
+      2.7
+    ],
+    "threshold_exact": "1/20",
+    "robust_floor_exact": "1",
+    "max_depth": 3,
+    "deterministic_dyadic_midpoint": true,
+    "local_D_recomputed_each_visited_node": true,
+    "leaf_certification_binding": "all_per_rho_exact",
+    "scientific_decision_transport": "exact_arb_booleans_float_bounds_display_only",
+    "no_channel_pruning": true,
+    "no_adaptive_shard_selection": true,
+    "source_workflow_authoritative_critic_forbidden": true
+  },
+  "implementation_strategy": "Thin deterministic wrapper over the same frozen iter504u_heldout_local_d_case.evaluate and iter504_centered_shard.path_spec scientific core used by Phase-A sentinel; no refit or scientific-core edits.",
+  "static_review_required_before_execution": true,
+  "implementation_authorized": true,
+  "execution_authorized": false,
+  "actions_launch_authorized": false,
+  "phase_b_science_consumption_authorized": false,
+  "phase_b_authorized_for_execution": false,
+  "next_stage": "IMPLEMENT_PHASE_B_SOURCE_STACK_THEN_FREEZE_STATIC_IMPLEMENTATION_REVIEW;_NO_ACTIONS_LAUNCH",
+  "claim_ceiling": "Implementation authority only; no Phase-B scientific result and no full-domain claim."
+}
