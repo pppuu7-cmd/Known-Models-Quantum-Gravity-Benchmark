@@ -1,0 +1,72 @@
+{
+  "gate": "ITER504V_INDEPENDENT_CRITIC_REPAIR",
+  "parent_gate": "ITER504V_INDEPENDENT_CRITIC",
+  "status": "PROSPECTIVELY_FROZEN_BEFORE_REPAIRED_CRITIC_EXECUTION",
+  "execution_authorized": true,
+  "execution_count": 1,
+  "repair_prereg_commit": "9e5a5a71cb27396f9a667d293af6f291b8d0f1f8",
+  "prior_critic_authority_commit": "486061ea90810bbc91a87e984cca15ec580e98b6",
+  "prior_critic_launch_commit": "7b0a8a6c8048020fbff29a0ae99c121c102f54a0",
+  "prior_critic_scientific_payload_consumed": false,
+  "prior_critic_status": "PRE_SCIENCE_CRITIC_INFRASTRUCTURE_DEFECT",
+  "source_run_id": 35365466861,
+  "source_run_head": "d10ccd5f9bb465d306dad0b74bedfd3ecf5ad05e",
+  "source_run_attempt": 1,
+  "source_rerun_authorized": false,
+  "source_science_changed": false,
+  "source_metadata_freeze_commit": "7a60b8450ae6ecd1023f3f1a012e4a0b5b443ea4",
+  "source_metadata_freeze_blob_sha": "fec48d5099df36503414be433b5ec9d2781c1d59",
+  "source_aggregate_artifact": {
+    "id": 10571306408,
+    "digest": "sha256:3732ffe44162e7874ba4178d89ebef045f3cbb97d3293b492aa23074acd3f1f5"
+  },
+  "source_assembled_artifacts": [
+    {
+      "python": "3.11",
+      "id": 10570926458,
+      "digest": "sha256:6af96d13ed55f46be76a16d5dbd06d7182d863b23656c828905306fd26f45f3a"
+    },
+    {
+      "python": "3.13",
+      "id": 10570767526,
+      "digest": "sha256:162fe64f5770f3079adc07fab64580ce384310a3c491fde7faddeeedec8d563a"
+    }
+  ],
+  "source_case_artifact_count": 32,
+  "critic_entrypoint": "code/iter504v_sentinel_independent_critic.py",
+  "critic_blob_sha": "8f3ffcd75376d9d1dfcb18f91353fa31aad2ed0a",
+  "workflow_path": ".github/workflows/iter504v-sentinel-independent-critic.yml",
+  "workflow_blob_sha": "0d23d0e2399afc6bcf38de4bfaa28e19076a780b",
+  "critic_python_environments": [
+    "3.11",
+    "3.13"
+  ],
+  "exact_semantic_agreement_required": true,
+  "repair_scope": [
+    "include parent_inclusion in independent decision projection",
+    "bind computed case.json SHA256 maps to frozen assembly case_file_sha256",
+    "bind assembly raw SHA256 to source aggregate lane_a_sha256/lane_b_sha256",
+    "bind aggregate projection hashes, counterexample set, constants and classification"
+  ],
+  "required_negative_controls": [
+    "C4_true_leaf_false_rho",
+    "premature_unresolved_leaf_depth",
+    "midpoint_binding",
+    "tree_partition_binding",
+    "wrong_state_identity",
+    "changed_threshold",
+    "changed_floor",
+    "changed_depth",
+    "channel_pruning",
+    "wrong_R_cohort",
+    "wrong_rho_cohort",
+    "root_derivative_reuse"
+  ],
+  "allowed_terminal_classifications": [
+    "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+    "ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_TO_UNIFORM_CERTIFICATION_SCOPED",
+    "ITER504V_SENTINEL_INVALID"
+  ],
+  "phase_b_authorized": false,
+  "claim_ceiling": "Independent repaired Critic of frozen 16-state Iter504V sentinel only; no full q=1-domain claim"
+}
