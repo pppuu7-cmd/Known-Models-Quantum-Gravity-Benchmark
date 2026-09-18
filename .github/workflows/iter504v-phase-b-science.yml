@@ -1,0 +1,239 @@
+name: KMQGB Iter504V Phase-B complete q1 source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504V_PHASE_B_SOURCE_LAUNCH_2026-09-19.txt'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen Phase-B execution authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='inputs/iter504v_phase_b_execution_authority.json'
+          MARK='recovery/ITER504V_PHASE_B_SOURCE_LAUNCH_2026-09-19.txt'
+          test -f "$AUTH"
+          test -f "$MARK"
+          python - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          a=json.loads(Path('inputs/iter504v_phase_b_execution_authority.json').read_text())
+          assert a['execution_authorized'] is True
+          assert a['actions_launch_authorized'] is True
+          assert a['phase_b_science_consumption_authorized'] is False
+          assert a['record_count'] == 768
+          assert a['compute_shards_per_environment'] == 192
+          assert a['total_source_compute_shards'] == 384
+          assert a['records_per_shard'] == 4
+          assert a['python_environments'] == ['3.11','3.13']
+          assert a['max_parallel'] == 12
+          assert a['fail_fast'] is False
+          assert a['canonical_768_record_sequence_sha256'] == '3cac282175830e795394dca5202f5368b27120817f2d4abd9eba54fc6c9f1e6f'
+          ids=[f'{c}|b{b}|p{p}|x{x:02d}' for c in ('0to5','1to4','2to3') for b in range(4) for p in range(4) for x in range(16)]
+          assert len(ids)==768 and len(set(ids))==768
+          assert hashlib.sha256(('\n'.join(ids)+'\n').encode()).hexdigest() == a['canonical_768_record_sequence_sha256']
+          for path,key in [
+              ('code/iter504v_phase_b_shard.py','shard_blob_sha'),
+              ('code/iter504v_phase_b_assemble.py','assembler_blob_sha'),
+              ('code/iter504v_phase_b_aggregate.py','aggregate_blob_sha'),
+              ('.github/workflows/iter504v-phase-b-science.yml','workflow_blob_sha'),
+          ]:
+              got=subprocess.check_output(['git','hash-object',path],text=True).strip()
+              assert got == a[key], (path,got,a[key])
+          PY
+          authority="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          test -n "$authority"
+          git merge-base --is-ancestor e42caf47f9201d79cd89b79dc72b90f696e3ec5d HEAD
+          git merge-base --is-ancestor a4006f336a49f655534a2f76a443a3d60a47cd85 HEAD
+          git merge-base --is-ancestor 722c7e09bf077c0cb29c3ac0ac2ed724b99290f4 HEAD
+          git merge-base --is-ancestor 42a2f035a80c474ebc7e5f57934ad9ba78ce9937 HEAD
+          git merge-base --is-ancestor "$authority" HEAD
+          test "$(git hash-object inputs/iter504v_broader_domain_campaign_manifest.json)" = 'd3b8821e08243016bd475f3faf9f2161deed13d8'
+          test "$(git hash-object code/iter504_centered_shard.py)" = 'fee4f4f44e71aaac8ad9d9c47d27a63301f9c43b'
+          test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
+      - name: Outcome-blind static contract audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile code/iter504v_phase_b_shard.py code/iter504v_phase_b_assemble.py code/iter504v_phase_b_aggregate.py
+          grep -F "PASS = 'ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED'" code/iter504v_phase_b_assemble.py
+          grep -F "INC = 'ITER504V_BROADER_DOMAIN_LOCAL_D_INCONCLUSIVE_SCOPED'" code/iter504v_phase_b_assemble.py
+          grep -F "INVALID = 'ITER504V_BROADER_DOMAIN_INVALID'" code/iter504v_phase_b_assemble.py
+
+  cases-311:
+    name: cases (3.11, ${{ matrix.causal }}, b${{ matrix.block }}, p${{ matrix.path }}, q${{ matrix.quartile }})
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        block: [0, 1, 2, 3]
+        path: [0, 1, 2, 3]
+        quartile: [0, 1, 2, 3]
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Capture environment
+        shell: bash
+        run: |
+          mkdir -p out
+          python -VV > out/python.txt 2>&1
+          python -m pip freeze > out/pip-freeze.txt
+          python - <<'PY' > out/flint.txt
+          import flint
+          print(getattr(flint,'__version__','unknown'))
+          PY
+          uname -a > out/uname.txt
+          nproc > out/nproc.txt
+      - name: Execute frozen quartile shard
+        env:
+          PYTHONPATH: code
+        run: |
+          python code/iter504v_phase_b_shard.py             --causal '${{ matrix.causal }}'             --block '${{ matrix.block }}'             --path '${{ matrix.path }}'             --quartile '${{ matrix.quartile }}'             --out-dir out/cases
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-phaseb-3.11-${{ matrix.causal }}-b${{ matrix.block }}-p${{ matrix.path }}-q${{ matrix.quartile }}
+          path: out
+          if-no-files-found: error
+
+  cases-313:
+    name: cases (3.13, ${{ matrix.causal }}, b${{ matrix.block }}, p${{ matrix.path }}, q${{ matrix.quartile }})
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        causal: [0to5, 1to4, 2to3]
+        block: [0, 1, 2, 3]
+        path: [0, 1, 2, 3]
+        quartile: [0, 1, 2, 3]
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath sympy 'python-flint==0.9.0'
+      - name: Capture environment
+        shell: bash
+        run: |
+          mkdir -p out
+          python -VV > out/python.txt 2>&1
+          python -m pip freeze > out/pip-freeze.txt
+          python - <<'PY' > out/flint.txt
+          import flint
+          print(getattr(flint,'__version__','unknown'))
+          PY
+          uname -a > out/uname.txt
+          nproc > out/nproc.txt
+      - name: Execute frozen quartile shard
+        env:
+          PYTHONPATH: code
+        run: |
+          python code/iter504v_phase_b_shard.py             --causal '${{ matrix.causal }}'             --block '${{ matrix.block }}'             --path '${{ matrix.path }}'             --quartile '${{ matrix.quartile }}'             --out-dir out/cases
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-phaseb-3.13-${{ matrix.causal }}-b${{ matrix.block }}-p${{ matrix.path }}-q${{ matrix.quartile }}
+          path: out
+          if-no-files-found: error
+
+  assemble-311:
+    name: assemble (3.11)
+    needs: cases-311
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504v-phaseb-3.11-*
+          path: cases
+          merge-multiple: false
+      - name: Assemble complete 3.11 domain
+        run: python code/iter504v_phase_b_assemble.py --cases-root cases --out out/iter504v-phaseb-3.11.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-phaseb-assembled-3.11
+          path: out/iter504v-phaseb-3.11.json
+          if-no-files-found: error
+
+  assemble-313:
+    name: assemble (3.13)
+    needs: cases-313
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504v-phaseb-3.13-*
+          path: cases
+          merge-multiple: false
+      - name: Assemble complete 3.13 domain
+        run: python code/iter504v_phase_b_assemble.py --cases-root cases --out out/iter504v-phaseb-3.13.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-phaseb-assembled-3.13
+          path: out/iter504v-phaseb-3.13.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: [assemble-311, assemble-313]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504v-phaseb-assembled-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504v-phaseb-assembled-3.13
+          path: b
+      - name: Aggregate exact cross-Python Phase-B decision
+        run: |
+          mkdir -p out
+          python code/iter504v_phase_b_aggregate.py             --a a/iter504v-phaseb-3.11.json             --b b/iter504v-phaseb-3.13.json             --out out/iter504v-phaseb-aggregate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-phaseb-aggregate
+          path: out/iter504v-phaseb-aggregate.json
+          if-no-files-found: error
