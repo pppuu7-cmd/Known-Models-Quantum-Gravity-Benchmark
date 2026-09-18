@@ -1,0 +1,83 @@
+{
+  "gate": "ITER504V_INDEPENDENT_CRITIC",
+  "parent_gate": "ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_FIRST",
+  "status": "PROSPECTIVELY_FROZEN_BEFORE_CRITIC_EXECUTION",
+  "execution_authorized": true,
+  "execution_count": 1,
+  "source_run_id": 35365466861,
+  "source_run_head": "d10ccd5f9bb465d306dad0b74bedfd3ecf5ad05e",
+  "source_run_number": 3,
+  "source_run_attempt": 1,
+  "source_metadata_freeze_commit": "7a60b8450ae6ecd1023f3f1a012e4a0b5b443ea4",
+  "source_metadata_freeze_blob_sha": "fec48d5099df36503414be433b5ec9d2781c1d59",
+  "source_aggregate_artifact": {
+    "id": 10571306408,
+    "digest": "sha256:3732ffe44162e7874ba4178d89ebef045f3cbb97d3293b492aa23074acd3f1f5"
+  },
+  "source_assembled_artifacts": [
+    {
+      "python": "3.11",
+      "id": 10570926458,
+      "digest": "sha256:6af96d13ed55f46be76a16d5dbd06d7182d863b23656c828905306fd26f45f3a"
+    },
+    {
+      "python": "3.13",
+      "id": 10570767526,
+      "digest": "sha256:162fe64f5770f3079adc07fab64580ce384310a3c491fde7faddeeedec8d563a"
+    }
+  ],
+  "source_case_artifact_count": 32,
+  "critic_entrypoint": "code/iter504v_sentinel_independent_critic.py",
+  "critic_blob_sha": "8b1dcd419627474cd9e0c98ff2dac2af598414cb",
+  "workflow_path": ".github/workflows/iter504v-sentinel-independent-critic.yml",
+  "workflow_blob_sha": "0d74793feb9e04859524950e78db671043059e85",
+  "critic_python_environments": [
+    "3.11",
+    "3.13"
+  ],
+  "exact_semantic_agreement_required": true,
+  "frozen_reconstruction_contract": {
+    "sentinel_sequence_sha256": "b56a2a32cd96b28c14aaaa86f1062d1f2f2a167a2295ed99f904a99fd8371e82",
+    "state_count": 16,
+    "channels": 243,
+    "r_cohort": [
+      6,
+      8,
+      10,
+      12
+    ],
+    "rho_cohort": [
+      0.35,
+      0.9,
+      1.6,
+      2.7
+    ],
+    "max_depth": 3,
+    "threshold_exact": "1/20",
+    "robust_floor_exact": "1",
+    "dyadic_partition": "deterministic_dyadic_midpoint",
+    "local_derivative_recomputed_each_visited_node": true,
+    "leaf_certification_binding": "all_per_rho_exact"
+  },
+  "required_negative_controls": [
+    "C4_true_leaf_false_rho",
+    "premature_unresolved_leaf_depth",
+    "midpoint_binding",
+    "tree_partition_binding",
+    "wrong_state_identity",
+    "changed_threshold",
+    "changed_floor",
+    "changed_depth",
+    "channel_pruning",
+    "wrong_R_cohort",
+    "wrong_rho_cohort",
+    "root_derivative_reuse"
+  ],
+  "allowed_terminal_classifications": [
+    "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+    "ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_TO_UNIFORM_CERTIFICATION_SCOPED",
+    "ITER504V_SENTINEL_INVALID"
+  ],
+  "phase_b_authorized": false,
+  "claim_ceiling": "Independent Critic of frozen 16-state Iter504V sentinel only; no full q=1-domain claim"
+}
