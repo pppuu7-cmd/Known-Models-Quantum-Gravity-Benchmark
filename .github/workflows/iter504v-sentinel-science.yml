@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'recovery/ITER504V_SENTINEL_LAUNCH_AUTHORIZED_2026-09-18.txt'
+      - 'recovery/ITER504V_SENTINEL_RELAUNCH_AUTHORIZED_2026-09-18.txt'
 
 permissions:
   contents: read
@@ -20,14 +20,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          AUTH='inputs/iter504v_sentinel_execution_authority.json'
-          MARK='recovery/ITER504V_SENTINEL_LAUNCH_AUTHORIZED_2026-09-18.txt'
+          AUTH='inputs/iter504v_sentinel_execution_authority_v2.json'
+          MARK='recovery/ITER504V_SENTINEL_RELAUNCH_AUTHORIZED_2026-09-18.txt'
           test -f "$AUTH"
           test -f "$MARK"
           python - <<'PY'
           import hashlib, json
           from pathlib import Path
-          a=json.loads(Path('inputs/iter504v_sentinel_execution_authority.json').read_text())
+          a=json.loads(Path('inputs/iter504v_sentinel_execution_authority_v2.json').read_text())
           assert a['EXECUTION_AUTHORIZED'] is True
           assert a['NO_REFIT'] is True
           assert a['CASE_COUNT'] == 16
@@ -52,6 +52,8 @@ jobs:
           git merge-base --is-ancestor dd32ae2616f4cbe3826f73c7a1d2f51818b4954c HEAD
           git merge-base --is-ancestor 6a789730833120a5e3037fdc11fe03b28ed5b9cb HEAD
           git merge-base --is-ancestor c0a87e65fca4e8ae91f828d68559f08f2bd2ade3 HEAD
+          git merge-base --is-ancestor 95745da22a9a9e59b0cfb83443048445259d8e71 HEAD
+          test "$(git hash-object research/prereg/ITER504V_SOURCE_LOCK_FROZEN_CORE_IDENTITY_REPAIR_2026-09-18.md)" = 'edc1b93460d7e7a9899075adb2ec6744254bb723'
           test \"$(git hash-object research/results/ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_TERMINAL_2026-09-18.json)\" = 'ce81ca0d26b93904e6045031602e178e0434bf38'
           git merge-base --is-ancestor "$impl" HEAD
           git merge-base --is-ancestor "$authority" HEAD
@@ -60,7 +62,7 @@ jobs:
           test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
           python - <<'PY'
           import json, subprocess
-          a=json.load(open('inputs/iter504v_sentinel_execution_authority.json'))
+          a=json.load(open('inputs/iter504v_sentinel_execution_authority_v2.json'))
           for path,key in [
               ('code/iter504v_sentinel_local_d_case.py','EVALUATOR_BLOB_SHA'),
               ('code/iter504v_sentinel_assemble.py','ASSEMBLER_BLOB_SHA'),
@@ -70,9 +72,11 @@ jobs:
               got=subprocess.check_output(['git','hash-object',path], text=True).strip()
               assert got == a[key], (path, got, a[key])
           PY
-          for f in             code/iter499_arb_core.py             code/iter500_compact_sandwich_kak.py             code/iter501_direct_max_envelope_interval.py             code/iter503_ad_core.py             code/iter504_centered_shard.py; do
-            test "$(git hash-object "$f")" = "$(git rev-parse 10ae6bcc8447d14cecc6e550065504b23f792953:"$f")"
-          done
+          test "$(git hash-object code/iter499_arb_core.py)" = '1736f727ee956c181d8ff513eb0c243085131668'
+          test "$(git hash-object code/iter500_compact_sandwich_kak.py)" = '081515547f6c4793d148fcc3227aa6efb9a73b8f'
+          test "$(git hash-object code/iter501_direct_max_envelope_interval.py)" = 'dd912ff1753cf270c120e01719be92e0d2df7a9f'
+          test "$(git hash-object code/iter503_ad_core.py)" = '68cad1cb38a8c382c77894ffc7bbea0b9ab7c1bd'
+          test "$(git hash-object code/iter504_centered_shard.py)" = 'fee4f4f44e71aaac8ad9d9c47d27a63301f9c43b'
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
