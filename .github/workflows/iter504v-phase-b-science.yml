@@ -35,6 +35,8 @@ jobs:
           assert a['execution_authorized'] is True
           assert a['actions_launch_authorized'] is True
           assert a['phase_b_science_consumption_authorized'] is False
+          assert a['source_workflow_contains_authoritative_critic'] is False
+          assert len(a['static_implementation_review_commit']) == 40
           assert a['record_count'] == 768
           assert a['compute_shards_per_environment'] == 192
           assert a['total_source_compute_shards'] == 384
@@ -56,11 +58,16 @@ jobs:
               assert got == a[key], (path,got,a[key])
           PY
           authority="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          authority_blob="$(sed -n 's/^AUTHORITY_BLOB_SHA=//p' "$MARK")"
+          static_review="$(python -c 'import json; print(json.load(open("inputs/iter504v_phase_b_execution_authority.json"))["static_implementation_review_commit"])')"
           test -n "$authority"
+          test -n "$authority_blob"
+          test "$(git hash-object "$AUTH")" = "$authority_blob"
           git merge-base --is-ancestor e42caf47f9201d79cd89b79dc72b90f696e3ec5d HEAD
           git merge-base --is-ancestor a4006f336a49f655534a2f76a443a3d60a47cd85 HEAD
           git merge-base --is-ancestor 722c7e09bf077c0cb29c3ac0ac2ed724b99290f4 HEAD
           git merge-base --is-ancestor 42a2f035a80c474ebc7e5f57934ad9ba78ce9937 HEAD
+          git merge-base --is-ancestor "$static_review" HEAD
           git merge-base --is-ancestor "$authority" HEAD
           test "$(git hash-object inputs/iter504v_broader_domain_campaign_manifest.json)" = 'd3b8821e08243016bd475f3faf9f2161deed13d8'
           test "$(git hash-object code/iter504_centered_shard.py)" = 'fee4f4f44e71aaac8ad9d9c47d27a63301f9c43b'
