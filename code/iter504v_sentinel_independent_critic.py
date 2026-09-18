@@ -114,7 +114,12 @@ def projection(cases):
    'parent_amp_lower_q':o['parent_amp_lower_q'],'parent_amp_upper_q':o['parent_amp_upper_q'],'visited_node_count':o['visited_node_count'],'terminal_leaf_count':o['terminal_leaf_count'],'unresolved_leaf_count':o['unresolved_leaf_count'],
    'leaves':[{'depth':x['depth'],'amp_lower_q':x['amp_lower_q'],'amp_upper_q':x['amp_upper_q'],'local_mid_q':x['local_mid_q'],'certified':x['certified'],
     'per_rho':[(float(r['rho']),r['slope_floor_satisfied'],r['drift_within_tolerance'],r['certified']) for r in x['per_rho']],
-    'possible_max':[(p['R'],float(p['rho']),tuple(p['indices'])) for p in x['possible_max']]} for x in o['leaves']]})
+    'possible_max':[(p['R'],float(p['rho']),tuple(p['indices'])) for p in x['possible_max']]} for x in o['leaves']],
+   'parent_inclusion':[{
+    'depth':x['depth'],'amp_lower_q':x['amp_lower_q'],'amp_upper_q':x['amp_upper_q'],'parent_depth':x['parent_depth'],
+    'parent_amp_lower_q':x['parent_amp_lower_q'],'parent_amp_upper_q':x['parent_amp_upper_q'],'haar':x['haar_log_inclusion_by_R'],
+    'rows':[(r['R'],float(r['rho']),tuple(r['componentwise_inclusion'])) for r in x['channel_inclusion_rows']],
+    'all_componentwise_parent_inclusion':x['all_componentwise_parent_inclusion']} for x in o['componentwise_parent_inclusion_records']]})
  return out
 
 def classify(cases): return INC if any(cases[s]['unresolved_leaf_count']>0 for s in STATE_IDS) else PASS
@@ -145,7 +150,7 @@ def negative_controls(base):
 
 def main():
  ap=argparse.ArgumentParser(); ap.add_argument('--source-dir',required=True); ap.add_argument('--out',required=True); a=ap.parse_args()
- errors=[]; lanes={}; hashes={}; projections={}; classes={}; assembled={}
+ errors=[]; lanes={}; hashes={}; projections={}; classes={}; assembled={}; asmhashes={}
  for py in ('3.11','3.13'):
   cases,h,dup=discover(a.source_dir,py); lanes[py]=cases; hashes[py]=h
   if dup: errors.append(f'{py}:duplicate_cases')
@@ -155,8 +160,9 @@ def main():
   else: classes[py]=INVALID; projections[py]=None
   apath=Path(a.source_dir)/f'iter504v-sentinel-assembled-{py}'/f'iter504v-{py}.json'
   if not apath.exists(): errors.append(f'{py}:missing_assembly'); continue
-  assembled[py],_=load(apath)
+  assembled[py],asmhashes[py]=load(apath)
   if assembled[py].get('classification')!=classes[py]: errors.append(f'{py}:assembled_classification')
+  if assembled[py].get('case_file_sha256')!=hashes[py]: errors.append(f'{py}:assembled_case_provenance')
   if projections[py] is not None and assembled[py].get('decision_projection_sha256')!=sha_json(projections[py]): errors.append(f'{py}:assembled_projection')
  agg_path=Path(a.source_dir)/'iter504v-sentinel-aggregate'/'iter504v-aggregate.json'
  agg,aggh=load(agg_path) if agg_path.exists() else ({},None)
@@ -164,6 +170,12 @@ def main():
  if not cross: errors.append('cross_environment_exact_projection')
  source_class=classes.get('3.11') if cross else INVALID
  if agg.get('classification')!=source_class or agg.get('cross_environment_exact_decision_agreement') is not True: errors.append('aggregate_authority')
+ if agg.get('lane_a_sha256')!=asmhashes.get('3.11') or agg.get('lane_b_sha256')!=asmhashes.get('3.13'): errors.append('aggregate_assembly_provenance')
+ if projections.get('3.11') is not None and agg.get('lane_a_projection_sha256')!=sha_json(projections['3.11']): errors.append('aggregate_projection_a')
+ if projections.get('3.13') is not None and agg.get('lane_b_projection_sha256')!=sha_json(projections['3.13']): errors.append('aggregate_projection_b')
+ expected_counterexamples=[sid for sid in STATE_IDS if lanes.get('3.11',{}).get(sid,{}).get('unresolved_leaf_count',0)>0]
+ if agg.get('counterexample_state_ids')!=expected_counterexamples: errors.append('aggregate_counterexample_set')
+ if agg.get('total_cases')!=16 or agg.get('channels')!=243 or agg.get('max_depth')!=3 or agg.get('threshold_exact')!='1/20' or agg.get('robust_floor_exact')!='1': errors.append('aggregate_constants')
  neg=negative_controls(lanes['3.11']) if set(lanes.get('3.11',{}))==set(EXPECTED) and not [e for e in errors if e.startswith('3.11:')] else {}
  if not neg or not all(neg.values()): errors.append('negative_controls')
  final=source_class if not errors else INVALID
