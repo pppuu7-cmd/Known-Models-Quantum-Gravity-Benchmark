@@ -1,0 +1,92 @@
+{
+  "gate": "ITER504V_PHASE_B_SOURCE_EXECUTION",
+  "parent_gate": "ITER504V_BROADER_DOMAIN_COMPLETE_Q1_COVERAGE",
+  "date": "2026-09-19",
+  "status": "PROSPECTIVELY_FROZEN_BEFORE_SOURCE_EXECUTION",
+  "execution_count": 1,
+  "design_prereg_commit": "e42caf47f9201d79cd89b79dc72b90f696e3ec5d",
+  "design_authority_commit": "a4006f336a49f655534a2f76a443a3d60a47cd85",
+  "design_static_critic_commit": "722c7e09bf077c0cb29c3ac0ac2ed724b99290f4",
+  "implementation_authority_commit": "42a2f035a80c474ebc7e5f57934ad9ba78ce9937",
+  "static_implementation_review_commit": "eaa2d1ef84fe8370f33cec360233f60571f9bcd0",
+  "static_implementation_review_verdict": "PASS_SCOPED",
+  "terminal_parent_commit": "d03cae09c04638cb02412435a284cfd9acdf8406",
+  "canonical_768_record_sequence_sha256": "3cac282175830e795394dca5202f5368b27120817f2d4abd9eba54fc6c9f1e6f",
+  "record_count": 768,
+  "compute_shards_per_environment": 192,
+  "total_source_compute_shards": 384,
+  "records_per_shard": 4,
+  "python_environments": [
+    "3.11",
+    "3.13"
+  ],
+  "fail_fast": false,
+  "max_parallel": 12,
+  "shard_execution_topology": "four isolated box processes within each frozen quartile shard",
+  "shard_blob_sha": "b8a0e398e3cc50debbd931caf70c3427045d047c",
+  "assembler_blob_sha": "f93bea2c32ed383a054beebb4d4b1c64fcbbd2c1",
+  "aggregate_blob_sha": "ae1932a7cdd98a1cc74f1b2f07bc295e0c097274",
+  "workflow_blob_sha": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360",
+  "campaign_manifest_blob_sha": "d3b8821e08243016bd475f3faf9f2161deed13d8",
+  "frozen_scientific_core_blobs": {
+    "code/iter504_centered_shard.py": "fee4f4f44e71aaac8ad9d9c47d27a63301f9c43b",
+    "code/iter504u_heldout_local_d_case.py": "bf457eef08f7df32523c9e22ce3b3713f10d97a0"
+  },
+  "science_contract": {
+    "precision_bits": 384,
+    "python_flint": "0.9.0",
+    "channels": 243,
+    "channel_pruning": false,
+    "R": [
+      6,
+      8,
+      10,
+      12
+    ],
+    "rho": [
+      0.35,
+      0.9,
+      1.6,
+      2.7
+    ],
+    "threshold_exact": "1/20",
+    "robust_floor_exact": "1",
+    "max_depth": 3,
+    "partition": "deterministic_dyadic_midpoint",
+    "local_D_recomputed_each_visited_node": true,
+    "leaf_certification_binding": "all_per_rho_exact",
+    "decision_transport": "exact_arb_booleans_float_bounds_display_only",
+    "unresolved_terminal_depth_binding": "uncertified terminal leaf => depth == 3"
+  },
+  "terminal_taxonomy": [
+    "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+    "ITER504V_BROADER_DOMAIN_LOCAL_D_INCONCLUSIVE_SCOPED",
+    "ITER504V_BROADER_DOMAIN_INVALID"
+  ],
+  "expected_source_artifacts": {
+    "shard_artifacts_per_environment": 192,
+    "total_shard_artifacts": 384,
+    "assemblies": 2,
+    "aggregate": 1
+  },
+  "source_workflow_contains_authoritative_critic": false,
+  "separate_independent_critic_required_after_source_terminal": true,
+  "partial_science_firewall": {
+    "inspect_run_status": true,
+    "inspect_job_status": true,
+    "inspect_artifact_metadata": true,
+    "inspect_partial_case_payload": false,
+    "inspect_partial_assembly_payload": false,
+    "infer_counterexamples_from_partial_jobs": false,
+    "adaptive_stop": false,
+    "adaptive_rerun_based_on_science": false
+  },
+  "implementation_changed_after_static_review": false,
+  "execution_authorized": true,
+  "actions_launch_authorized": true,
+  "phase_b_science_consumption_authorized": false,
+  "full_domain_claim_authorized": false,
+  "phase_b_terminal_authority_requires_independent_critic": true,
+  "claim_ceiling": "Source execution of frozen complete 768-record q=1 certificate domain only; no model-level physics claim.",
+  "next_stage": "ONE_SOURCE_LAUNCH;_THEN_STATUS_ONLY_UNTIL_TERMINAL_SOURCE"
+}
