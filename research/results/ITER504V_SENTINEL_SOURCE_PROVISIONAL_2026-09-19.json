@@ -1,0 +1,107 @@
+{
+  "gate": "ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_FIRST",
+  "status": "PROVISIONAL_SOURCE_RESULT_FROZEN_PENDING_INDEPENDENT_CRITIC",
+  "date": "2026-09-19",
+  "source_run": {
+    "run_id": 35365466861,
+    "run_number": 3,
+    "attempt": 1,
+    "head_sha": "d10ccd5f9bb465d306dad0b74bedfd3ecf5ad05e",
+    "status": "completed",
+    "conclusion": "success",
+    "source_lock_job_id": 105666729295,
+    "source_lock_conclusion": "success",
+    "exact_job_count": 36,
+    "exact_success_job_count": 36
+  },
+  "complete_metadata_freeze": {
+    "path": "research/results/ITER504V_SOURCE_RUN_35365466861_COMPLETE_METADATA_FREEZE_2026-09-19.json",
+    "git_blob_sha1": "4886caa5d1e77e515b7ad0cda8698ab089f761b9",
+    "creation_commit": "5d093ed6b7ccb2c404515ecb77315d44c271b199"
+  },
+  "frozen_identities": {
+    "original_prereg_commit": "c162f23df45a58c567fa04fcdf99035497e482f2",
+    "original_prereg_git_blob_sha1": "7bdfe2ae3582458ff462127258f1b5a14a620be2",
+    "execution_authority_commit": "4615c329386c77e3948da02e458269854a31ac7e",
+    "execution_authority_git_blob_sha1": "902e1148204a4d4899af3c7699670cd82cd7c12d",
+    "evaluator_git_blob_sha1": "90361f45fdf6174297cb9bcd03d96af125358d26",
+    "assembler_git_blob_sha1": "92deb76625ef54e07d5bf7d9950ee10487715d50",
+    "aggregate_git_blob_sha1": "22631e8b42cb844e19d51512bc2b435c6361e713",
+    "workflow_git_blob_sha1": "72fec7bb027bed2e809b5b648a9d9242da35b307",
+    "sentinel_sequence_sha256": "b56a2a32cd96b28c14aaaa86f1062d1f2f2a167a2295ed99f904a99fd8371e82"
+  },
+  "immutable_artifacts": {
+    "case_count": 32,
+    "assembly_count": 2,
+    "aggregate_count": 1,
+    "total_count": 35,
+    "assembly_3_11": {
+      "artifact_id": 10570926458,
+      "outer_digest": "sha256:6af96d13ed55f46be76a16d5dbd06d7182d863b23656c828905306fd26f45f3a",
+      "inner_json_sha256": "6e5bf892935e01abadc750b18e31ebdfc46079a21fa942d7506b366debc4336e"
+    },
+    "assembly_3_13": {
+      "artifact_id": 10570767526,
+      "outer_digest": "sha256:162fe64f5770f3079adc07fab64580ce384310a3c491fde7faddeeedec8d563a",
+      "inner_json_sha256": "6e5bf892935e01abadc750b18e31ebdfc46079a21fa942d7506b366debc4336e"
+    },
+    "aggregate": {
+      "artifact_id": 10571306408,
+      "outer_digest": "sha256:3732ffe44162e7874ba4178d89ebef045f3cbb97d3293b492aa23074acd3f1f5",
+      "inner_json_sha256": "6ac9681ce0d33ed98d932aa77adc1516dff1909548a5ed1937ed2d28bfa50fa6"
+    }
+  },
+  "source_result": {
+    "classification": "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+    "errors": [],
+    "cross_environment_exact_decision_agreement": true,
+    "python_3_11_classification": "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+    "python_3_13_classification": "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+    "assembly_inner_json_byte_identity": true,
+    "decision_projection_sha256": "add907d5bc89de728a9faf5cec6bad7b78e6d4263c5b043bd5f7400d6d742235",
+    "total_cases": 16,
+    "total_visited_nodes": 62,
+    "total_terminal_leaves": 39,
+    "total_unresolved_leaves": 0,
+    "counterexample_state_ids": [],
+    "channels": 243,
+    "R_cohort": [
+      6,
+      8,
+      10,
+      12
+    ],
+    "rho_cohort": [
+      0.35,
+      0.9,
+      1.6,
+      2.7
+    ],
+    "threshold_exact": "1/20",
+    "robust_floor_exact": "1",
+    "max_depth": 3,
+    "all_16_case_payloads_exactly_equal_cross_python": true,
+    "all_case_covers_valid": true,
+    "all_terminal_leaves_certified": true,
+    "all_unresolved_leaf_counts_zero": true,
+    "local_derivative_recomputed_each_visited_node_declared_true": true,
+    "channel_pruning_used": false
+  },
+  "interpretation": {
+    "provisional": true,
+    "supported": "No counterexample was found in the prospectively frozen 16-state Iter504V sentinel under the frozen depth-3 local-D certification procedure.",
+    "not_supported": [
+      "full q=1 domain certification",
+      "all 768 records certified",
+      "all known models fail",
+      "new quantum-gravity theory required",
+      "quantum gravity solved",
+      "new physics found"
+    ]
+  },
+  "independent_critic_required": true,
+  "phase_B_authorized": false,
+  "terminal_claim_authorized": false,
+  "next_stage": "PROSPECTIVELY_FREEZE_AND_RUN_SEPARATE_INDEPENDENT_CRITIC_OVER_ONLY_THE_FROZEN_SOURCE_ARTIFACTS",
+  "token": "ITER504V_SOURCE_NO_COUNTEREXAMPLE_SCOPED_PROVISIONAL_PENDING_CRITIC"
+}
