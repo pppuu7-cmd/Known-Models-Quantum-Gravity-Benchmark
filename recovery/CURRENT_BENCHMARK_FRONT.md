@@ -4,6 +4,16 @@ Updated: 2026-09-17
 
 Fresh repository `main` and fresh GitHub Actions state always outrank this navigation snapshot.
 
+## Independent Critical Review qualification — 2026-09-18
+
+Independent audit commit `b3d4a81b65ec0f4d2ac8a8210c45b5c98a0354cd` reviewed the terminal repaired-Critic authority and returned `INVALID_IMPLEMENTATION`.
+
+Decisive authority-path defect: the frozen science contract requires exact rational local midpoint `m_J=(a+b)/2`, but the environment assembler and repaired Critic accept/project serialized `local_mid_q` without recomputing that equality. A same wrong-midpoint mutation in both lanes survives validation and cross-environment equality. Source producer inspection still shows the actual producer computes the midpoint correctly; this is an independent-verifier binding defect, not a scientific FAIL and not evidence that the active producer emitted a wrong midpoint.
+
+Historical Actions classification `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED` remains immutable, but is not independently confirmed as full frozen-contract authority until a prospectively frozen same-science verifier repair binds the exact midpoint (and should also bind serialized parent-inclusion child/parent interval identities to the reconstructed dyadic tree). No physics rerun is required if immutable source artifacts remain available and unchanged.
+
+The later Iter504V design/preregistration remains prospective only. Do not execute it using the qualified Iter504U closure as fully validated authority until this verifier repair is terminally closed.
+
 ## Latest terminal science — Iter504U
 
 `ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL`
