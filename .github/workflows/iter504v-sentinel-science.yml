@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'recovery/ITER504V_SENTINEL_RELAUNCH_AUTHORIZED_2026-09-18.txt'
+      - 'recovery/ITER504V_SENTINEL_RELAUNCH2_AUTHORIZED_2026-09-18.txt'
 
 permissions:
   contents: read
@@ -20,14 +20,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          AUTH='inputs/iter504v_sentinel_execution_authority_v2.json'
-          MARK='recovery/ITER504V_SENTINEL_RELAUNCH_AUTHORIZED_2026-09-18.txt'
+          AUTH='inputs/iter504v_sentinel_execution_authority_v3.json'
+          MARK='recovery/ITER504V_SENTINEL_RELAUNCH2_AUTHORIZED_2026-09-18.txt'
           test -f "$AUTH"
           test -f "$MARK"
           python - <<'PY'
           import hashlib, json
           from pathlib import Path
-          a=json.loads(Path('inputs/iter504v_sentinel_execution_authority_v2.json').read_text())
+          a=json.loads(Path('inputs/iter504v_sentinel_execution_authority_v3.json').read_text())
           assert a['EXECUTION_AUTHORIZED'] is True
           assert a['NO_REFIT'] is True
           assert a['CASE_COUNT'] == 16
@@ -53,8 +53,10 @@ jobs:
           git merge-base --is-ancestor 6a789730833120a5e3037fdc11fe03b28ed5b9cb HEAD
           git merge-base --is-ancestor c0a87e65fca4e8ae91f828d68559f08f2bd2ade3 HEAD
           git merge-base --is-ancestor 95745da22a9a9e59b0cfb83443048445259d8e71 HEAD
+          git merge-base --is-ancestor f1aa10ddc122f06c911b18e578225563f46af061 HEAD
+          test "$(git hash-object research/prereg/ITER504V_SOURCE_LOCK_LITERAL_QUOTE_REPAIR_2026-09-18.md)" = '79d0006e0ce7eea59ad36824beea32a9f97efa4c'
           test "$(git hash-object research/prereg/ITER504V_SOURCE_LOCK_FROZEN_CORE_IDENTITY_REPAIR_2026-09-18.md)" = 'edc1b93460d7e7a9899075adb2ec6744254bb723'
-          test \"$(git hash-object research/results/ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_TERMINAL_2026-09-18.json)\" = 'ce81ca0d26b93904e6045031602e178e0434bf38'
+          test "$(git hash-object research/results/ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_TERMINAL_2026-09-18.json)" = 'ce81ca0d26b93904e6045031602e178e0434bf38'
           git merge-base --is-ancestor "$impl" HEAD
           git merge-base --is-ancestor "$authority" HEAD
           test "$(git hash-object research/prereg/ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_FIRST_2026-09-17.md)" = '7bdfe2ae3582458ff462127258f1b5a14a620be2'
@@ -62,7 +64,7 @@ jobs:
           test "$(git hash-object code/iter504u_heldout_local_d_case.py)" = 'bf457eef08f7df32523c9e22ce3b3713f10d97a0'
           python - <<'PY'
           import json, subprocess
-          a=json.load(open('inputs/iter504v_sentinel_execution_authority_v2.json'))
+          a=json.load(open('inputs/iter504v_sentinel_execution_authority_v3.json'))
           for path,key in [
               ('code/iter504v_sentinel_local_d_case.py','EVALUATOR_BLOB_SHA'),
               ('code/iter504v_sentinel_assemble.py','ASSEMBLER_BLOB_SHA'),
