@@ -1,0 +1,70 @@
+name: KMQGB Iter504V independent Critic
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504V_INDEPENDENT_CRITIC_LAUNCH_2026-09-19.txt'
+permissions:
+  actions: read
+  contents: read
+jobs:
+  critic:
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11','3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: 35365466861
+          github-token: ${{ github.token }}
+          pattern: iter504v-sentinel-*
+          path: source
+          merge-multiple: false
+      - name: Verify frozen Critic authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object code/iter504v_sentinel_independent_critic.py)" = "$(python -c "import json; print(json.load(open('inputs/iter504v_independent_critic_authority.json'))['critic_blob_sha'])")"
+          test "$(git hash-object .github/workflows/iter504v-sentinel-independent-critic.yml)" = "$(python -c "import json; print(json.load(open('inputs/iter504v_independent_critic_authority.json'))['workflow_blob_sha'])")"
+      - name: Independently reconstruct frozen source science
+        run: python code/iter504v_sentinel_independent_critic.py --source-dir source --out out/critic-${{ matrix.python }}.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-independent-critic-${{ matrix.python }}
+          path: out/critic-${{ matrix.python }}.json
+          if-no-files-found: error
+  aggregate-critic:
+    needs: critic
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iter504v-independent-critic-*
+          path: c
+          merge-multiple: false
+      - name: Require exact semantic Critic agreement
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json,glob,os
+          fs=sorted(glob.glob('c/*/*.json')); assert len(fs)==2,fs
+          xs=[json.load(open(f)) for f in fs]
+          keys=['classification','critic_errors','cross_environment_exact_decision_agreement','decision_projection_sha256','negative_controls','counterexample_state_ids','total_cases','total_unresolved_leaves','channels','r_cohort','rho_cohort','max_depth','threshold_exact','robust_floor_exact','sentinel_sequence_sha256']
+          assert all(xs[0].get(k)==xs[1].get(k) for k in keys), 'semantic disagreement'
+          out={'gate':'ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_FIRST','critic_cross_python_exact_semantic_agreement':True,'terminal_classification':xs[0]['classification'],'critic_payload_sha256_3_11':xs[0]['critic_payload_sha256'],'critic_payload_sha256_3_13':xs[1]['critic_payload_sha256'],'counterexample_state_ids':xs[0]['counterexample_state_ids'],'negative_controls':xs[0]['negative_controls'],'claim_ceiling':'Terminal independent Critic of frozen 16-state Iter504V sentinel only'}
+          os.makedirs('out',exist_ok=True); json.dump(out,open('out/critic-aggregate.json','w'),indent=2,sort_keys=True); open('out/critic-aggregate.json','a').write('\n')
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504v-independent-critic-aggregate
+          path: out/critic-aggregate.json
+          if-no-files-found: error
