@@ -4,6 +4,15 @@ Updated: 2026-09-17
 
 Fresh repository `main` and fresh GitHub Actions state always outrank this navigation snapshot.
 
+## Iter504U verifier repair terminal — 2026-09-18
+
+Terminal repair run `35364505282` classified `ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_VALIDATED_SCOPED`.
+Exact local midpoint and rooted dyadic parent-inclusion identities are now independently bound in both repaired assembler and repaired Critic, with malformed midpoint/tree controls rejected. Python 3.11/3.13 repaired review payloads are exactly equal. No producer physics rerun occurred.
+
+Historical Iter504U `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED` is therefore re-qualified for the same frozen six-case object (6 cases, 19 terminal leaves, 0 unresolved), without scope expansion.
+
+The previously blocked Iter504V sentinel may now execute under frozen preregistration `c162f23df45a58c567fa04fcdf99035497e482f2`. Phase B remains unauthorized until sentinel terminal closure.
+
 ## Independent Critical Review qualification — 2026-09-18
 
 Independent audit commit `b3d4a81b65ec0f4d2ac8a8210c45b5c98a0354cd` reviewed the terminal repaired-Critic authority and returned `INVALID_IMPLEMENTATION`.

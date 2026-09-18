@@ -1,0 +1,51 @@
+{
+  "gate": "ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR",
+  "date": "2026-09-18",
+  "status": "TERMINAL_METHODOLOGY_AUTHORITY",
+  "classification": "ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_VALIDATED_SCOPED",
+  "run_id": 35364505282,
+  "run_head": "5665ef6b6b4a682ee35ddbf4ff9cacf179a6a651",
+  "run_attempt": 1,
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "source_run_id": 35246605860,
+  "historical_science_classification": "ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED",
+  "cross_python_repaired_review_equal": true,
+  "cross_environment_exact_decision_agreement": true,
+  "total_cases": 6,
+  "total_terminal_leaves": 19,
+  "total_unresolved_leaves": 0,
+  "decision_projection_sha256": "b44f7bd0711a45d5469c8c1ce968f9b7f7e4cbe773dd33e0fb1bcf5beb22d3e6",
+  "repaired_critic_sha256": "e6ba8fdc7221b065a92662fd9411ce525bcce0115161965f085868d61f13d214",
+  "closure_payload_sha256": "5ddf2717d7b954a57347b41a186388c474157880cf94e17b7e72bb2aeae22e30",
+  "negative_controls": {
+    "C4_true_leaf_false_rho": true,
+    "premature_unresolved_leaf_depth": true,
+    "wrong_exact_local_midpoint": true,
+    "wrong_parent_inclusion_child_interval": true,
+    "wrong_parent_inclusion_parent_interval": true
+  },
+  "artifacts": [
+    {
+      "name": "iter504u-midpoint-tree-repair-review-3.11",
+      "id": 10556385581,
+      "digest": "sha256:7f251a969f810a1712e3f53dd6c65314b109db1851089d5a6082d539aaf338c5",
+      "expired": false
+    },
+    {
+      "name": "iter504u-midpoint-tree-repair-review-3.13",
+      "id": 10556190878,
+      "digest": "sha256:74db6a0cd2076d13a501072c993b6ec849287eae005ac2005cd9c67d71ca7266",
+      "expired": false
+    },
+    {
+      "name": "iter504u-midpoint-tree-repair-closure",
+      "id": 10555801284,
+      "digest": "sha256:edbc32b83358c4ea68edf5de69683182302a840ffea78fb9db09765a8e936cdf",
+      "expired": false
+    }
+  ],
+  "source_physics_rerun": false,
+  "science_changed": false,
+  "claim_ceiling": "same frozen Iter504U six-case held-out object only"
+}
