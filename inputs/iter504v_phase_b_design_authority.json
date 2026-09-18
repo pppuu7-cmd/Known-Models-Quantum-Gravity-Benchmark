@@ -1,0 +1,143 @@
+{
+  "gate": "ITER504V_BROADER_DOMAIN_COMPLETE_Q1_COVERAGE",
+  "status": "PROSPECTIVE_DESIGN_ONLY_AUTHORITY",
+  "date": "2026-09-19",
+  "terminal_parent": {
+    "iter504v_sentinel_terminal_commit": "d03cae09c04638cb02412435a284cfd9acdf8406",
+    "iter504v_sentinel_terminal_blob": "2dbdcf3a611c014bd4ff52c9859a3890df06c9b2",
+    "classification": "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+    "source_run_id": 35365466861,
+    "independent_critic_run_id": 35403877439
+  },
+  "phase_b_prereg": {
+    "commit": "e42caf47f9201d79cd89b79dc72b90f696e3ec5d",
+    "git_blob_sha1": "32b88365c553cfd5ea61d3f201d9c1a22d23bbd9",
+    "path": "research/prereg/ITER504V_PHASE_B_COMPLETE_Q1_COVERAGE_2026-09-19.md"
+  },
+  "frozen_campaign": {
+    "design_commit": "6a789730833120a5e3037fdc11fe03b28ed5b9cb",
+    "design_git_blob_sha1": "0a0f4408b60710010cdcf4d2cd64a01ab2123487",
+    "manifest_git_blob_sha1": "d3b8821e08243016bd475f3faf9f2161deed13d8",
+    "canonical_768_record_sequence_sha256": "3cac282175830e795394dca5202f5368b27120817f2d4abd9eba54fc6c9f1e6f"
+  },
+  "domain": {
+    "causal_count": 3,
+    "blocks": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "paths": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "boxes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "total_records": 768,
+    "rho_values": [
+      0.35,
+      0.9,
+      1.6,
+      2.7
+    ],
+    "rho_level_states": 3072,
+    "R_values": [
+      6,
+      8,
+      10,
+      12
+    ],
+    "channels": 243
+  },
+  "science_contract": {
+    "precision_bits": 384,
+    "python_flint": "0.9.0",
+    "threshold_exact": "1/20",
+    "robust_floor_exact": "1",
+    "max_depth": 3,
+    "partition": "deterministic_dyadic_midpoint",
+    "local_D_recomputed_each_visited_node": true,
+    "leaf_certification_binding": "all_per_rho_exact",
+    "decision_transport": "exact_arb_booleans_float_bounds_display_only",
+    "channel_pruning": false
+  },
+  "deterministic_partition": {
+    "logical_path_lanes": 48,
+    "box_quartiles": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        8,
+        9,
+        10,
+        11
+      ],
+      [
+        12,
+        13,
+        14,
+        15
+      ]
+    ],
+    "compute_shards_per_environment": 192,
+    "python_environments": [
+      "3.11",
+      "3.13"
+    ],
+    "total_source_compute_shards": 384,
+    "fail_fast": false,
+    "max_parallel": 12
+  },
+  "terminal_taxonomy": [
+    "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+    "ITER504V_BROADER_DOMAIN_LOCAL_D_INCONCLUSIVE_SCOPED",
+    "ITER504V_BROADER_DOMAIN_INVALID"
+  ],
+  "firewall": {
+    "partial_science_consumption_before_source_terminal": false,
+    "implementation_authorized": false,
+    "execution_authorized": false,
+    "actions_launch_authorized": false,
+    "phase_b_science_consumption_authorized": false,
+    "source_workflow_may_contain_authoritative_critic": false,
+    "separate_independent_critic_required": true
+  },
+  "claim_locks": [
+    "ALL_KNOWN_MODELS_FAIL",
+    "NEW_QG_THEORY_REQUIRED",
+    "QUANTUM_GRAVITY_SOLVED",
+    "UNIQUE_MECHANISM",
+    "NEW_PHYSICS_FOUND"
+  ],
+  "next_stage": "INDEPENDENT_STATIC_DESIGN_CRITIC_ONLY;_NO_IMPLEMENTATION_OR_EXECUTION",
+  "token": "ITER504V_PHASE_B_DESIGN_FROZEN_EXECUTION_CLOSED"
+}
