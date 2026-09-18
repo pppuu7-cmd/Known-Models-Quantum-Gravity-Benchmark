@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'recovery/ITER504V_INDEPENDENT_CRITIC_LAUNCH_2026-09-19.txt'
+      - 'recovery/ITER504V_INDEPENDENT_CRITIC_REPAIR_LAUNCH_2026-09-19.txt'
 permissions:
   actions: read
   contents: read
@@ -30,8 +30,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          expected_critic="$(python -c 'import json; print(json.load(open("inputs/iter504v_independent_critic_authority.json"))["critic_blob_sha"])')"
-          expected_workflow="$(python -c 'import json; print(json.load(open("inputs/iter504v_independent_critic_authority.json"))["workflow_blob_sha"])')"
+          expected_critic="$(python -c 'import json; print(json.load(open("inputs/iter504v_independent_critic_repair_authority.json"))["critic_blob_sha"])')"
+          expected_workflow="$(python -c 'import json; print(json.load(open("inputs/iter504v_independent_critic_repair_authority.json"))["workflow_blob_sha"])')"
           test "$(git hash-object code/iter504v_sentinel_independent_critic.py)" = "$expected_critic"
           test "$(git hash-object .github/workflows/iter504v-sentinel-independent-critic.yml)" = "$expected_workflow"
       - name: Independently reconstruct frozen source science
