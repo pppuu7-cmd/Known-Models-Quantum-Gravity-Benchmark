@@ -1,0 +1,46 @@
+{
+  "gate": "ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR",
+  "date": "2026-09-18",
+  "status": "PROSPECTIVELY_FROZEN_BEFORE_EXECUTION",
+  "repair_prereg_commit": "71403ec9a82106a7a2aa2d5bae37336ced25fcc5",
+  "repair_prereg_blob": "3fe70e7531f3c97a077922ccbb9274251de9f699",
+  "implementation_commit": "c5625a8b76dbb02df1e8778670304d515ae88cde",
+  "binding_blob": "1813287645f4619db9902fa4ddea2dca22c9e063",
+  "assembler_repair_blob": "2b1b100e9f87ed5a2c6f033653097ff6b6ec70e7",
+  "critic_repair_blob": "2c0b2b8f0651cc2cdff4fd6f18cfb365e357d9ba",
+  "workflow_blob": "71da29c236cdfe8cb9e02ccaf04e4528f7ac134e",
+  "source_run_id": 35246605860,
+  "source_run_head": "102c7f9cafec956f3bc7bed4384ae755c98f761a",
+  "source_run_attempt": 1,
+  "source_run_status": "completed",
+  "source_run_conclusion": "success",
+  "frozen_source_authority_commit": "3302f77593e668ab48fdff887801571fa46467b1",
+  "frozen_source_authority_blob": "6154f02e9e04c8c14c3b4433f1afddce37e4fb9f",
+  "critical_review_commit": "b3d4a81b65ec0f4d2ac8a8210c45b5c98a0354cd",
+  "critical_review_verdict": "INVALID_IMPLEMENTATION",
+  "historical_science_classification": "ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED",
+  "physics_rerun_authorized": false,
+  "science_changed": false,
+  "cohort_changed": false,
+  "classifier_changed": false,
+  "required_new_bindings": [
+    "exact_local_midpoint",
+    "rooted_dyadic_parent_inclusion_tree"
+  ],
+  "required_negative_controls": [
+    "C4_true_leaf_false_rho",
+    "premature_unresolved_leaf_depth",
+    "wrong_exact_local_midpoint",
+    "wrong_parent_inclusion_child_interval",
+    "wrong_parent_inclusion_parent_interval"
+  ],
+  "python_environments": [
+    "3.11",
+    "3.13"
+  ],
+  "terminal_labels": [
+    "ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_VALIDATED_SCOPED",
+    "ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_INVALID"
+  ],
+  "claim_ceiling": "same frozen Iter504U six-case held-out object only"
+}
