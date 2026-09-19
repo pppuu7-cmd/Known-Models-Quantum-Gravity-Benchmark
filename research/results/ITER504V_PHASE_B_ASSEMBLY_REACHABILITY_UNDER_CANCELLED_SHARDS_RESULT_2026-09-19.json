@@ -8,7 +8,7 @@
     "required_successful_complete_shards_per_environment": 192,
     "same_attempt_can_reach_valid_complete_inventory": false
   },
-  "canonical_sha256": "e07665be4a044f7abfe8e09ebc79d6cd87db9c5aa9611df8669b2349e7960c67",
+  "decision_projection_sha256": "e07665be4a044f7abfe8e09ebc79d6cd87db9c5aa9611df8669b2349e7960c67",
   "claim_ceiling": "Exact-run orchestration/provenance reachability only; no Phase-B scientific classification, no scientific FAIL, no rerun authorization.",
   "classification": "ITER504V_PHASE_B_ASSEMBLY_REACHABILITY_CANCELLED_SHARD_BLOCK_VERIFIED_SCOPED",
   "first_page_snapshot": {
