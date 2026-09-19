@@ -17,7 +17,7 @@ Authority chain:
 - source launch/head `31fcdacffcc394e96b73917083281edb90d6753c`;
 - authoritative source run `35405065903`.
 
-Fresh state after the latest closure work: the source run remains nonterminal. The run endpoint reports `queued / conclusion=null`; source-lock job `105792998164` is terminal `success`; source case jobs remain active/queued. Fresh source artifact metadata is still empty. No case, leaf, slope, drift, certification, assembly, aggregate or counterexample scientific value has been consumed.
+Fresh state after the latest closure work: source run `35405065903` remains nonterminal. The run endpoint reports `queued / conclusion=null`; source-lock `105792998164` is terminal `success`; source case jobs remain active/queued. Fresh partial source artifact metadata count is now `2`. Those two artifacts were **not downloaded or opened** and no case, leaf, slope, drift, certification, assembly, aggregate or counterexample scientific value has been consumed.
 
 Current scientific status: `IN_PROGRESS_NOT_CLASSIFIED`.
 
@@ -34,47 +34,64 @@ Frozen source taxonomy remains unchanged:
 
 There is no model-level or physics-level scientific FAIL label for this gate.
 
-## Terminal preterminal closure result — source-assembler binding
+## Terminal preterminal closure — source assembler binding
 
-Gate: `ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE`.
+`ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE` -> `ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED`.
+
+Independent Critical Review commit `c641e1083473000307c3399c4c1e51e8194cb43c` = `CONFIRMED_SCOPED`.
+
+Two exact-source-assembler authority gaps remain mandatory future-Critic obligations:
+
+1. independently reconstruct and bind every serialized parent-inclusion child/parent dyadic edge;
+2. bind every expected artifact/shard identity plus `shard.json` to the exact frozen four physical case records.
+
+These are verifier defects only, not evidence that active source artifacts are malformed.
+
+## Terminal preterminal closure — source aggregate binding
+
+Gate: `ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_ADVERSARIAL_GATE`.
 
 Terminal classification:
 
-`ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED`.
+`ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_DEFECTS_VERIFIED_SCOPED`.
 
 Authority/result chain:
-- preregistration `93670f89688d9ad673fe35274892701a43f818d9`;
-- implementation `0d76824a93b3650a8f7ab770940300db4c0eecb1`;
-- workflow `d5f80fff18ced2f015b7223a6aab148a858fb983`;
-- execution authority `74477c32d4227db60cfee307fb9e0ff563941682`;
-- launch head `ec58663bbc7db7007a8a1be3442cdd460eaaeaf0`;
-- Actions run `35417735617`, terminal `completed/success`;
-- terminal result `research/results/ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md`.
+- preregistration `04a47f859323bea69472f142ec1a2f4b97e5df0b`;
+- implementation `31d58bec122ca0995f576660b3dfeeda15b0ba3d`;
+- workflow `0485a04ab4646b6e80df7c7555db4b3b5bcddd72`;
+- execution authority `32f9f5cbf2d95fb31938b0d163a446a8fa43549a`;
+- launch head `2514581ed3d93bbdc9ccefd8383627e8cb1e7e28`;
+- Actions run `35420614607`, terminal `completed/success`;
+- terminal result `research/results/ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md`;
+- canonical lane result SHA256 `6c62ffe7e6d75d2246e5b25bedd971ba08541fd41d06a4e98e1f1bad32ce686b`;
+- frozen gate decision SHA256 `bfd4a7d6b853b1a6c885086bf1851c0923187aaaa6b36044eec0042a9a310f63`.
 
-Both Python 3.11 and 3.13 produced byte-identical canonical results. The gate consumed no production science payload and did not classify source run `35405065903`.
+Both Python 3.11 and 3.13 were byte-identical and all frozen positive/sensitivity controls passed. Against exact immutable source aggregate blob `ae1932a7cdd98a1cc74f1b2f07bc295e0c097274`, three additional outcome-independent verifier/authority-path defects were reproduced:
 
-Two outcome-independent verifier/authority-path defects were terminally reproduced against the exact immutable source assembler blob `f93bea2c32ed383a054beebb4d4b1c64fcbbd2c1`:
+1. source PASS classification is not independently rebound to zero-unresolved evidence; a synthetic pair with one unresolved state, total unresolved `1`, and the matching counterexample was still accepted as source PASS with `errors=[]`;
+2. `decision_projection_sha256_by_state` key set is not independently rebound to the canonical 768-state identity; one canonical key could be replaced by a foreign key while preserving cardinality 768 and cross-environment equality and still receive source PASS;
+3. `case_file_sha256` key set is not independently rebound to the canonical 768-state identity; one canonical provenance key could be replaced by a foreign key while preserving cardinality 768 and still receive source PASS.
 
-1. **Parent-inclusion dyadic identity is not bound.** A malformed serialized child/parent depth relation was independently detected by the gate oracle, while the exact source assembler still returned nominal PASS with `errors=[]`.
-2. **Frozen shard/artifact placement is not bound.** Two case files were exchanged between quartile shard directories while their bytes/internal state IDs remained unchanged and the original `shard.json` declarations stayed in place. The independent shard oracle detected the mismatch, while the exact source assembler returned the same nominal PASS and the same complete 768-state decision projection as the coherent baseline.
+Sensitivity controls rejected cross-environment classification, state-identity and projection-map disagreements, so the aggregate is not universally accepting.
 
-Sensitivity controls showed that this is not a universally accepting validator: duplicate-state and leaf/per-rho contradictions were correctly classified INVALID.
-
-These defects do **not** assert that the active producer emitted malformed artifacts. They establish that green source assembler/aggregate output alone cannot prove the full frozen authority contract.
+This result consumed no production science and did not classify source run `35405065903`.
 
 ## Firewall and next admissible action
 
 While source run `35405065903` remains nonterminal: status/provenance checking only. Do not consume partial source science, adaptively stop, rerun the producer based on observed values, or launch a competing same-object scientific gate.
 
-After complete source terminalization:
+After complete source terminalization, prospectively freeze every exact terminal source artifact ID/digest before opening substantive science payloads, then execute exactly one separately frozen independent Critic closure against those immutable artifacts.
 
-1. prospectively freeze every exact terminal source artifact ID/digest before opening substantive science payloads;
-2. execute exactly one separately frozen independent Critic closure against those immutable artifacts;
-3. that Critic must explicitly bind all 192 shard identities per environment to their exact four-record cohorts and validate each `shard.json` against physically contained case files;
-4. that Critic must independently reconstruct every parent-inclusion child/parent dyadic edge and reject duplicate/orphan/malformed edges;
-5. it must also retain all existing leaf/per-rho, unresolved-depth, exact-midpoint, source/cohort/channel and cross-environment controls.
+That Critic must independently satisfy all now-verified authority obligations:
 
-Expected complete source inventory remains 384 shard artifacts + 2 assemblies + 1 aggregate. No producer rerun is authorized merely because the verifier-binding defects were found.
+1. bind every expected shard/artifact identity and `shard.json` to exactly its frozen four physical case records and prove exactly 192 unique complete shards per environment;
+2. reconstruct every parent-inclusion child/parent dyadic edge and reject malformed/duplicate/orphan records;
+3. rebind source PASS/INCONCLUSIVE classification to the independently recomputed unresolved evidence;
+4. rebind decision-projection map keys and projection sequence to the exact canonical 768-state identity;
+5. rebind case-provenance keys/content hashes to the exact canonical 768-state identity;
+6. retain all inherited source/cohort/channel/precision/R/rho/tree/leaf/per-rho/unresolved-depth/cross-environment controls.
+
+Expected complete source inventory remains 384 shard artifacts + 2 assemblies + 1 aggregate. No producer rerun is authorized merely because verifier-binding defects were found.
 
 If a valid unresolved record exists after a fully valid independent closure, freeze the smallest exact unresolved record/cell as the counterexample-first successor; do not increase `MAX_DEPTH` first.
 
@@ -90,4 +107,4 @@ Iter504U remains scoped terminal `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED` f
 
 No authority exists for `ALL_KNOWN_MODELS_FAIL`, `NEW_QG_THEORY_REQUIRED`, `QUANTUM_GRAVITY_SOLVED`, `UNIQUE_MECHANISM`, `D7_FULLY_CLOSED`, `CANDIDATE_GRAVITY_ESTABLISHED`, or `NEW_PHYSICS_FOUND`.
 
-Latest handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_ASSEMBLER_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md`.
+Latest handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_AGGREGATE_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md`.
