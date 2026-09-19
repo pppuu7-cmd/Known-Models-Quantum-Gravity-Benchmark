@@ -17,30 +17,32 @@ Authority chain:
 - immutable launch/head `31fcdacffcc394e96b73917083281edb90d6753c`;
 - source run `35405065903`, attempt 1.
 
-Fresh run metadata remains `queued / conclusion=null`. Complete exact-run job pagination reports `total_count=385`; source-lock `105792998164 = completed/success`; nonterminal jobs remain present on later pages, including queued jobs `105793035543`, `105793039803`, and `105793044215`. Artifact metadata first page now contains 29 exact-run/head-bound non-expired SHA256-digested records; artifact ZIP bytes remain unopened. No scientific case/leaf/slope/drift/certification/assembly/aggregate/counterexample payload has been consumed. Phase-B science remains `IN_PROGRESS_NOT_CLASSIFIED`.
+Fresh post-freeze run metadata remains `queued / conclusion=null`. Complete exact-run job pagination reports `total_count=385`: `completed=100`, `queued=285`, `in_progress=0`; source-lock `105792998164 = completed/success`. No source-run artifact ZIP bytes were opened and no scientific case/leaf/slope/drift/certification/assembly/aggregate/counterexample payload has been consumed. Phase-B science remains `IN_PROGRESS_NOT_CLASSIFIED`.
 
-## Latest closure — run/job terminality coherence
+## Latest closure — queue-only nonterminal execution topology
+
+`ITER504V_PHASE_B_ZERO_ACTIVE_RUNNER_QUEUE_STATE_PROVENANCE_GATE` -> `ITER504V_PHASE_B_QUEUE_ONLY_NONTERMINAL_STATE_VERIFIED_SCOPED`.
+
+- prospective prereg `499ae185c2cd2f27cc0ca2191ff73fe07b2aa50c`;
+- canonical result commit `05c71ac24fc9323b8f1c5830fdee4387e73aa0e9`;
+- canonical result SHA256 `5c4c021e4a645bd2e3acca7f22bc763a5f3d562af5cafd91434f4d5a96a06021`;
+- terminal record commit `9b87fd73a71903aae363efe614c5fbca350ee6bb`;
+- state delta commit `7107a438436411f166cda70b8a7b1e2022d6225a`;
+- durable handoff commit `753a89e22980b0d900f7968be9163a93a9f3e009`.
+
+The exact post-preregistration snapshot has zero actively executing jobs and 285 queued jobs. This establishes an instantaneous queue-only nonterminal topology only. It does **not** identify the cause of queuing and does not classify Phase-B science. No claim is authorized about billing, account limits, GitHub capacity, runner scarcity, scheduler policy, or any other queue cause.
+
+## Retained run/job terminality coherence
 
 `ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENCE_PROVENANCE_GATE` -> `ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENT_SCOPED`.
 
-- prospective prereg `5e67991ca4c09a9098ad3ae3a1d91601d2bbc7c7`;
-- raw result commit `c9dacc08c9152900bfcb393d28aaa8f245c03956`, SHA256 `4b9c3727630f7631f5ae8d5c5f61b6f4ab842caac933c89d8ed10ae9b299e8e1`;
-- canonical result commit `50bac01a4068d21f5a3e9d4d497e5b618424c0e7`, SHA256 `4fb7f7709ccc0ed62af5b402d9e04cfac356626fc5681d378255e6f3cc6ff10b`;
-- terminal record `2f00b7af91e5e9249e7f01b4eb561b4cdeb5169e`;
-- state delta `2807c7f051a5577482ede24abcb15c639fe0b640`.
-
-The apparently stale-looking workflow-run endpoint is not currently contradicted by the complete job inventory: the run is nonterminal and the exact 385-job collection still contains nonterminal jobs. This is metadata/provenance coherence only. It does not validate successful-execution completeness and does not classify Phase-B science.
+The earlier apparently stale-looking workflow-run endpoint was not contradicted by the complete inventory because nonterminal jobs existed. The newer queue-only gate sharpens the topology: the source run is still nonterminal, but all remaining nonterminal jobs are currently queued rather than active.
 
 ## Full job-inventory authority
 
 `ITER504V_PHASE_B_FULL_JOB_INVENTORY_PROVENANCE_GATE` -> `ITER504V_PHASE_B_FULL_JOB_INVENTORY_AUTHORITY_INCOMPLETE_VERIFIED_SCOPED`.
 
-- prereg `cb69a9057a0b74cf8680e57f2d810d72ccdc6f93`;
-- terminal record `4f2ee5a7f6312733ec782ec3a6ee461fc6527a3b`;
-- state delta `aaff29bb277f012b4327f4e19a57397253fd324b`;
-- exact instantiated inventory: 385 jobs = source-lock 1 + matrix jobs 384.
-
-The defect is successful-execution completeness, not matrix instantiation. Terminal cancelled required shards exist in both Python environments, so attempt 1 can no longer satisfy exactly 192 successful-complete shards in Python 3.11 and exactly 192 in Python 3.13.
+Exact instantiated inventory: 385 jobs = source-lock 1 + matrix jobs 384. Terminal cancelled required shards exist in both Python environments, so attempt 1 can no longer satisfy exactly 192 successful-complete shards in Python 3.11 and exactly 192 in Python 3.13. The new queue-only topology does not repair this already terminal provenance fact.
 
 ## Check-suite closure retained
 
@@ -86,11 +88,11 @@ There is no scientific FAIL label for this bounded source gate.
 
 ## Next admissible action
 
-While run `35405065903` remains nonterminal: status/provenance work only; no partial science, no adaptive rerun, no competing same-object scientific gate. Do not reopen the blocked check-suite gate unless exact check-suite metadata becomes available under the same frozen object.
+While run `35405065903` remains nonterminal: status/provenance work only and only on material state changes; no partial science, no adaptive rerun, no competing same-object scientific gate. Do not infer the queue cause from the queue-only topology. Do not reopen the blocked check-suite gate unless exact check-suite metadata becomes available under the same frozen object.
 
 After natural terminalization, prospectively freeze the exact terminal run/job/step/artifact inventory and digests before substantive payload access, then execute one separately frozen terminal closure/Critic. Attempt 1 is already unable to satisfy 192+192 successful-complete shards; terminal closure must preserve implementation/provenance incompleteness and never reinterpret cancellation/timeout as scientific FAIL. Any repair/re-execution requires separate prospective authority.
 
-Durable current recovery override: `recovery/ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENCE_STATE_DELTA_2026-09-19.json` plus the earlier full-job-inventory and check-suite terminality state deltas and fresh GitHub state. `recovery/state.json` contains older Phase-B counters.
+Durable current recovery override: `recovery/ITER504V_PHASE_B_ZERO_ACTIVE_RUNNER_QUEUE_STATE_PROVENANCE_STATE_DELTA_2026-09-19.json` plus prior Phase-B state deltas and fresh GitHub state. `recovery/state.json` contains older Phase-B counters and is lower authority than this front plus the latest state delta.
 
 ## Governance
 
