@@ -1,10 +1,10 @@
 # Current Benchmark Front
 
-Updated: 2026-09-18
+Updated: 2026-09-19
 
 Fresh repository `main` and fresh GitHub Actions state always outrank this navigation snapshot.
 
-## Active front
+## Active scientific front
 
 Gate: `ITER504V_BROADER_DOMAIN_COMPLETE_Q1_COVERAGE`.
 Execution gate: `ITER504V_PHASE_B_SOURCE_EXECUTION`.
@@ -17,31 +17,66 @@ Authority chain:
 - source launch/head `31fcdacffcc394e96b73917083281edb90d6753c`;
 - authoritative source run `35405065903`.
 
-The source run is nonterminal. The run endpoint reports `queued / conclusion=null`, while the job endpoint shows active execution. Source-lock job `105792998164` is terminal `success`; case-shard jobs are `in_progress` or `queued`. Fresh artifact metadata is empty. No partial scientific payload has been consumed.
+Fresh state after the latest closure work: the source run remains nonterminal. The run endpoint reports `queued / conclusion=null`; source-lock job `105792998164` is terminal `success`; source case jobs remain active/queued. Fresh source artifact metadata is still empty. No case, leaf, slope, drift, certification, assembly, aggregate or counterexample scientific value has been consumed.
 
-Current status: `IN_PROGRESS_NOT_CLASSIFIED`.
+Current scientific status: `IN_PROGRESS_NOT_CLASSIFIED`.
 
-## Frozen object and topology
+## Frozen Phase-B object
 
 Complete q=1 domain: causals `0to5,1to4,2to3` x blocks `0..3` x signed paths `0..3` x amplitude boxes `0..15` = 768 canonical records. Frozen contract: rho `0.35,0.9,1.6,2.7`; R `6,8,10,12`; all 243 channels; 384-bit precision; deterministic dyadic midpoint partition; `MAX_DEPTH=3`; local validated `D(J)` recomputed at every visited node; exact leaf/per-rho and unresolved-depth binding.
 
-Execution: 192 deterministic quartile shards per Python environment, Python 3.11 and 3.13, 384 source compute shards total, `fail-fast:false`, `max-parallel:12`.
+Execution topology remains 192 deterministic quartile shards per Python environment, Python 3.11 and 3.13, 384 source compute shards total, `fail-fast:false`, `max-parallel:12`.
 
-## Frozen taxonomy
+Frozen source taxonomy remains unchanged:
+- PASS `ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED` iff the complete source object is structurally/provenance valid and total unresolved terminal leaves are zero;
+- INCONCLUSIVE `ITER504V_BROADER_DOMAIN_LOCAL_D_INCONCLUSIVE_SCOPED` iff structurally/provenance valid and at least one terminal leaf is unresolved at depth exactly 3;
+- INVALID `ITER504V_BROADER_DOMAIN_INVALID` for implementation/provenance/cohort/channel/depth/partition/source/artifact/cross-environment contract invalidity.
 
-PASS `ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED` iff structure/provenance are valid and total unresolved terminal leaves across all 768 records are zero.
+There is no model-level or physics-level scientific FAIL label for this gate.
 
-INCONCLUSIVE `ITER504V_BROADER_DOMAIN_LOCAL_D_INCONCLUSIVE_SCOPED` iff structure/provenance are valid and at least one record has an uncertified terminal leaf at depth exactly 3.
+## Terminal preterminal closure result — source-assembler binding
 
-INVALID `ITER504V_BROADER_DOMAIN_INVALID` for implementation/provenance/cohort/channel/depth/partition/source/artifact/cross-environment contract invalidity. There is no model-level or physics-level scientific FAIL label for this gate.
+Gate: `ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE`.
+
+Terminal classification:
+
+`ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED`.
+
+Authority/result chain:
+- preregistration `93670f89688d9ad673fe35274892701a43f818d9`;
+- implementation `0d76824a93b3650a8f7ab770940300db4c0eecb1`;
+- workflow `d5f80fff18ced2f015b7223a6aab148a858fb983`;
+- execution authority `74477c32d4227db60cfee307fb9e0ff563941682`;
+- launch head `ec58663bbc7db7007a8a1be3442cdd460eaaeaf0`;
+- Actions run `35417735617`, terminal `completed/success`;
+- terminal result `research/results/ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md`.
+
+Both Python 3.11 and 3.13 produced byte-identical canonical results. The gate consumed no production science payload and did not classify source run `35405065903`.
+
+Two outcome-independent verifier/authority-path defects were terminally reproduced against the exact immutable source assembler blob `f93bea2c32ed383a054beebb4d4b1c64fcbbd2c1`:
+
+1. **Parent-inclusion dyadic identity is not bound.** A malformed serialized child/parent depth relation was independently detected by the gate oracle, while the exact source assembler still returned nominal PASS with `errors=[]`.
+2. **Frozen shard/artifact placement is not bound.** Two case files were exchanged between quartile shard directories while their bytes/internal state IDs remained unchanged and the original `shard.json` declarations stayed in place. The independent shard oracle detected the mismatch, while the exact source assembler returned the same nominal PASS and the same complete 768-state decision projection as the coherent baseline.
+
+Sensitivity controls showed that this is not a universally accepting validator: duplicate-state and leaf/per-rho contradictions were correctly classified INVALID.
+
+These defects do **not** assert that the active producer emitted malformed artifacts. They establish that green source assembler/aggregate output alone cannot prove the full frozen authority contract.
 
 ## Firewall and next admissible action
 
-Before complete source terminalization, inspect status/job/artifact metadata only. Do not consume leaf/slope/drift/certification/counterexample values, classify partial lanes, adaptively stop, or launch a competing same-object gate.
+While source run `35405065903` remains nonterminal: status/provenance checking only. Do not consume partial source science, adaptively stop, rerun the producer based on observed values, or launch a competing same-object scientific gate.
 
-After source terminalization: prospectively freeze exact terminal artifact IDs/digests, then run exactly one separately frozen independent Critic against the immutable source artifacts. Expected terminal source inventory is 384 shard artifacts + 2 assemblies + 1 aggregate. Terminal Phase-B authority requires independent Critic closure.
+After complete source terminalization:
 
-If a valid unresolved record exists, freeze the smallest exact unresolved record/cell as the counterexample-first successor; do not increase `MAX_DEPTH` first.
+1. prospectively freeze every exact terminal source artifact ID/digest before opening substantive science payloads;
+2. execute exactly one separately frozen independent Critic closure against those immutable artifacts;
+3. that Critic must explicitly bind all 192 shard identities per environment to their exact four-record cohorts and validate each `shard.json` against physically contained case files;
+4. that Critic must independently reconstruct every parent-inclusion child/parent dyadic edge and reject duplicate/orphan/malformed edges;
+5. it must also retain all existing leaf/per-rho, unresolved-depth, exact-midpoint, source/cohort/channel and cross-environment controls.
+
+Expected complete source inventory remains 384 shard artifacts + 2 assemblies + 1 aggregate. No producer rerun is authorized merely because the verifier-binding defects were found.
+
+If a valid unresolved record exists after a fully valid independent closure, freeze the smallest exact unresolved record/cell as the counterexample-first successor; do not increase `MAX_DEPTH` first.
 
 ## Retained lower authority
 
@@ -55,4 +90,4 @@ Iter504U remains scoped terminal `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED` f
 
 No authority exists for `ALL_KNOWN_MODELS_FAIL`, `NEW_QG_THEORY_REQUIRED`, `QUANTUM_GRAVITY_SOLVED`, `UNIQUE_MECHANISM`, `D7_FULLY_CLOSED`, `CANDIDATE_GRAVITY_ESTABLISHED`, or `NEW_PHYSICS_FOUND`.
 
-Preterminal handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_SOURCE_PRETERMINAL_2026-09-18.md`.
+Latest handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_ASSEMBLER_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md`.
