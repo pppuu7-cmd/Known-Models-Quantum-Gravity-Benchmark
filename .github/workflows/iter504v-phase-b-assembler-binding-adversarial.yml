@@ -1,0 +1,151 @@
+name: KMQGB Iter504V Phase-B assembler binding adversarial
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recovery/ITER504V_PHASE_B_ASSEMBLER_BINDING_GATE_LAUNCH_2026-09-19.txt'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify prospectively frozen gate authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUTH='inputs/iter504v_phase_b_assembler_binding_gate_authority.json'
+          MARK='recovery/ITER504V_PHASE_B_ASSEMBLER_BINDING_GATE_LAUNCH_2026-09-19.txt'
+          test -f "$AUTH"
+          test -f "$MARK"
+          authority="$(sed -n 's/^AUTHORITY_COMMIT=//p' "$MARK")"
+          authority_blob="$(sed -n 's/^AUTHORITY_BLOB_SHA=//p' "$MARK")"
+          test -n "$authority"
+          test -n "$authority_blob"
+          test "$(git hash-object "$AUTH")" = "$authority_blob"
+          git merge-base --is-ancestor 93670f89688d9ad673fe35274892701a43f818d9 HEAD
+          git merge-base --is-ancestor 0d76824a93b3650a8f7ab770940300db4c0eecb1 HEAD
+          git merge-base --is-ancestor "$authority" HEAD
+          python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          a=json.loads(Path('inputs/iter504v_phase_b_assembler_binding_gate_authority.json').read_text())
+          assert a['gate'] == 'ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE'
+          assert a['preregistration_commit'] == '93670f89688d9ad673fe35274892701a43f818d9'
+          assert a['source_run_id'] == 35405065903
+          assert a['source_launch_head'] == '31fcdacffcc394e96b73917083281edb90d6753c'
+          assert a['production_science_consumption_authorized'] is False
+          assert a['competing_science_execution_authorized'] is False
+          for path,key in [
+              ('research/ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_PREREG_2026-09-19.md','preregistration_blob_sha'),
+              ('code/iter504v_phase_b_assembler_binding_adversarial_gate.py','gate_script_blob_sha'),
+              ('code/iter504v_phase_b_assemble.py','source_assembler_blob_sha'),
+              ('inputs/iter504v_broader_domain_campaign_manifest.json','campaign_manifest_blob_sha'),
+              ('.github/workflows/iter504v-phase-b-assembler-binding-adversarial.yml','workflow_blob_sha'),
+          ]:
+              got=subprocess.check_output(['git','hash-object',path],text=True).strip()
+              assert got == a[key], (path,got,a[key])
+          assert a['preregistration_blob_sha'] == 'd98d612d6b19598c02206cfa9c6024b700bc410e'
+          assert a['gate_script_blob_sha'] == '480982a33101a883b675072c7fad7d6d3426252e'
+          assert a['source_assembler_blob_sha'] == 'f93bea2c32ed383a054beebb4d4b1c64fcbbd2c1'
+          assert a['campaign_manifest_blob_sha'] == 'd3b8821e08243016bd475f3faf9f2161deed13d8'
+          PY
+      - name: Syntax and frozen no-science audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile code/iter504v_phase_b_assembler_binding_adversarial_gate.py code/iter504v_phase_b_assemble.py
+          grep -F "production_science_consumed': False" code/iter504v_phase_b_assembler_binding_adversarial_gate.py
+          grep -F "source_run_classified': False" code/iter504v_phase_b_assembler_binding_adversarial_gate.py
+
+  gate:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Execute exact synthetic adversarial gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python code/iter504v_phase_b_assembler_binding_adversarial_gate.py > out/result.json
+          python - <<'PY'
+          import json
+          o=json.load(open('out/result.json'))
+          allowed={
+            'ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED',
+            'ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECT_PARTIAL_SCOPED',
+            'ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_CANDIDATES_REFUTED_SCOPED',
+            'ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_BLOCKED_SCOPED',
+            'INVALID_IMPLEMENTATION',
+          }
+          assert o['classification'] in allowed
+          assert o['production_science_consumed'] is False
+          assert o['source_run_classified'] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-phaseb-assembler-binding-${{ matrix.python }}
+          path: out/result.json
+          if-no-files-found: error
+
+  aggregate:
+    needs: gate
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504v-phaseb-assembler-binding-3.11
+          path: a
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504v-phaseb-assembler-binding-3.13
+          path: b
+      - name: Require exact cross-environment decision agreement
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          cmp a/result.json b/result.json
+          python - <<'PY'
+          import hashlib,json
+          raw=open('a/result.json','rb').read()
+          o=json.loads(raw)
+          agg={
+            'gate':'ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE',
+            'classification':o['classification'],
+            'cross_environment_byte_identical':True,
+            'result_json_sha256':hashlib.sha256(raw).hexdigest(),
+            'decision_sha256':o['decision_sha256'],
+            'production_science_consumed':False,
+            'source_run_classified':False,
+            'claim_ceiling':'Exact Phase-B source-assembler verifier binding only; no source-run science classification or broader closure',
+          }
+          open('out/aggregate.json','w').write(json.dumps(agg,indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iter504v-phaseb-assembler-binding-aggregate
+          path: out/aggregate.json
+          if-no-files-found: error
