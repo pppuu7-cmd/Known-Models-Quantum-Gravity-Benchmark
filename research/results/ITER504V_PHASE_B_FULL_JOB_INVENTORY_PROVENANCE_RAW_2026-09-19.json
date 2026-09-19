@@ -1,0 +1,55 @@
+{
+  "snapshot_date": "2026-09-19",
+  "source_run": {
+    "id": 35405065903,
+    "attempt": 1,
+    "head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "status": "queued",
+    "conclusion": null,
+    "workflow_blob": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360"
+  },
+  "job_inventory": {
+    "github_total_count": 385,
+    "pages_read": [1, 2, 3, 4],
+    "per_page": 100,
+    "assemble_name_found": false,
+    "aggregate_name_found": false,
+    "source_lock": {"id": 105792998164, "status": "completed", "conclusion": "success"},
+    "first_page_matrix_counts": {"success": 8, "cancelled": 12, "in_progress": 9, "queued": 0},
+    "positive_control": {"id": 105793032770, "name": "cases (3.13, 0to5, b0, p0, q1)", "job_conclusion": "success", "execute_step_conclusion": "success"},
+    "cancelled_control_313": {"id": 105793032797, "name": "cases (3.13, 0to5, b0, p1, q1)", "job_conclusion": "cancelled", "execute_step_conclusion": "cancelled", "upload_step_conclusion": "success"},
+    "cancelled_control_311": {"id": 105793033008, "name": "cases (3.11, 0to5, b0, p2, q0)", "job_conclusion": "cancelled", "execute_step_conclusion": "cancelled", "upload_step_conclusion": "success"}
+  },
+  "artifact_metadata": {
+    "count": 25,
+    "bytes_opened": false,
+    "artifacts": [
+      {"id":10580144165,"name":"iter504v-phaseb-3.11-0to5-b0-p3-q1","digest":"sha256:49dded437b443880db774f8cef30254bfb8b0901b78b6b5abbfb20ee718619f4"},
+      {"id":10579646830,"name":"iter504v-phaseb-3.11-0to5-b0-p0-q2","digest":"sha256:d2d4f33753d6b4aec2f87e21baf2a40a41f847cd9513c07a35043c3bd9ebea8e"},
+      {"id":10579606542,"name":"iter504v-phaseb-3.13-0to5-b0-p1-q0","digest":"sha256:cd03ca801213c4257feb1cc3d8a42665d91ca6ca4333054ea981176a42411c87"},
+      {"id":10579217288,"name":"iter504v-phaseb-3.11-0to5-b0-p2-q1","digest":"sha256:0d5cc277ced83e6a19913b04f33a9f8db8d8658dc2987bed5e1c8be7b80f5033"},
+      {"id":10579099372,"name":"iter504v-phaseb-3.11-0to5-b0-p2-q3","digest":"sha256:ae3c21d6c4ca00352c6a08a9f8719994c86fb2946b4ec16f547c9cefce9fe8ef"},
+      {"id":10579040908,"name":"iter504v-phaseb-3.11-0to5-b0-p1-q0","digest":"sha256:b0ab586e8fba8a1aa8b41645b7ea49d6c53c73906fecca0cb63afa63cc17ef1a"},
+      {"id":10578986244,"name":"iter504v-phaseb-3.13-0to5-b0-p0-q0","digest":"sha256:14af8253cc3585da5a795bc3ebde1e9b0c682564ffdabbb6ff206f95369ce294"},
+      {"id":10578891469,"name":"iter504v-phaseb-3.11-0to5-b0-p0-q3","digest":"sha256:d9e750d15c4c2c7484536e78b2e1ec4e742b62fc05ea7265daefb98f254986a5"},
+      {"id":10578656499,"name":"iter504v-phaseb-3.11-0to5-b0-p1-q1","digest":"sha256:eb9010aa5b5a0b820f4e6216d97bbb32768e5d0fc23e22881b4c5addff764b49"},
+      {"id":10578616501,"name":"iter504v-phaseb-3.11-0to5-b0-p0-q1","digest":"sha256:5e6391a29e01515a8cfdcfee3c4c2963ea966f2c2f9e6e74eddc21bac4764291"},
+      {"id":10578511467,"name":"iter504v-phaseb-3.13-0to5-b0-p0-q2","digest":"sha256:d3afa37a445d2d0144eb75643ef7c4b438ede1edfe07c04b70345a56cb69e05d"},
+      {"id":10578476614,"name":"iter504v-phaseb-3.13-0to5-b0-p2-q1","digest":"sha256:fdf7a7208432559187ba3b1551d6c6895623072e545f5868d062198647bd0d47"},
+      {"id":10578411191,"name":"iter504v-phaseb-3.13-0to5-b0-p2-q0","digest":"sha256:96497406f68a7d8f153e9eeeda0614e64366f35fc953c39da63b7262c2ba2afc"},
+      {"id":10578271736,"name":"iter504v-phaseb-3.13-0to5-b0-p2-q3","digest":"sha256:94678b89d99779ed236dacc93a9e94998849831b8f7162fc74720667ec9c1e90"},
+      {"id":10578206801,"name":"iter504v-phaseb-3.11-0to5-b0-p2-q2","digest":"sha256:58e83e527fcdd1ee70912b4bbf0169d1194d1a5479068987e7a41848d6291a09"},
+      {"id":10578180957,"name":"iter504v-phaseb-3.11-0to5-b0-p1-q3","digest":"sha256:202169f766674328690329ab82a9fd0373440e34d0210a463bea8f9a64136e49"},
+      {"id":10578151776,"name":"iter504v-phaseb-3.13-0to5-b0-p1-q1","digest":"sha256:568b1de7db028d7374b9f96df3b105901a987d4f69550c49d425057139dcd412"},
+      {"id":10578026205,"name":"iter504v-phaseb-3.11-0to5-b0-p2-q0","digest":"sha256:73f9e0e0984209dcd2741d239e8c675d4d08ee79a34fa381dd2997c1706e9a2d"},
+      {"id":10577986131,"name":"iter504v-phaseb-3.13-0to5-b0-p0-q3","digest":"sha256:b697adfb4384968a81dff57bae51eaefaaf38d008ed173aca266e31062bb281f"},
+      {"id":10577932219,"name":"iter504v-phaseb-3.11-0to5-b0-p1-q2","digest":"sha256:34bbfebf78242ea92d0182d9ec55bf0530d6878071712ca3e75a35c6741dbb21"},
+      {"id":10577890240,"name":"iter504v-phaseb-3.13-0to5-b0-p0-q1","digest":"sha256:a58ba8e11b971b94a1b9640e150e14985ffa5372c9d60a3eb4ca270de48b9ff3"},
+      {"id":10577549272,"name":"iter504v-phaseb-3.13-0to5-b0-p1-q2","digest":"sha256:f85beab4e3e03a575f422b05f9de59acc2776be825516ca5f131ba9f17c6650d"},
+      {"id":10577545665,"name":"iter504v-phaseb-3.13-0to5-b0-p1-q3","digest":"sha256:e1c8b1c1ae2bb3e9deeab8a5927f819ee23afa767dbe2b5b3fed0b6eaf656a49"},
+      {"id":10577284750,"name":"iter504v-phaseb-3.13-0to5-b0-p2-q2","digest":"sha256:f10f71c9ef56b452660f467f14c1a8b575fdbf7f022509d1b8f595bfa5f1eb54"},
+      {"id":10576779303,"name":"iter504v-phaseb-3.11-0to5-b0-p0-q0","digest":"sha256:5934c8884344b1260706b89821e51e951dbe98462c4266dfd0e06a98b612188a"}
+    ]
+  },
+  "scientific_payload_consumed": false
+}
