@@ -17,9 +17,23 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 
 Prospective authority: prereg `e42caf47f9201d79cd89b79dc72b90f696e3ec5d`; static implementation Critic `eaa2d1ef84fe8370f33cec360233f60571f9bcd0 = PASS_SCOPED`; execution authority `caf67585a9fad990dd90948df51839e6ed7cf891`; source launch/head `31fcdacffcc394e96b73917083281edb90d6753c`; source run `35405065903`.
 
-Latest fresh state remains nonterminal: run endpoint `queued / conclusion=null`; source-lock `105792998164 = success`; source matrix active/queued; partial source artifact metadata count `2`. Those partial artifacts were not opened/downloaded. No partial scientific values were consumed and no duplicate source execution was launched.
+Latest fresh state remains nonterminal: run endpoint `queued / conclusion=null`; source-lock `105792998164 = success`; source matrix active/queued; partial source artifact metadata count `6`. Those partial artifacts were not opened/downloaded. No partial scientific values were consumed and no duplicate source execution was launched.
 
 Operational classification: `IN_PROGRESS_NOT_CLASSIFIED`.
+
+## Latest preterminal status/provenance gate
+
+`ITER504V_PHASE_B_PRETERMINAL_SOURCE_STATUS_PROVENANCE_GATE` -> `ITER504V_PHASE_B_PRETERMINAL_SOURCE_PROVENANCE_CONSISTENT_SCOPED`.
+
+- preregistration `8737545156b2a64a514e28652bfe761a660cf575`;
+- exact source run/head `35405065903` / `31fcdacffcc394e96b73917083281edb90d6753c`;
+- first-page job snapshot: 30 = 7 completed/success, 17 in progress, 6 queued, 0 visible failed/cancelled;
+- six exposed artifact metadata records all non-expired, SHA256-digested and bound to the exact source run/head;
+- artifact bytes opened/downloaded: false;
+- partial science consumed: false;
+- canonical result SHA256 `6f9cff143a11842f8c2bd349bc58fc4d7c2ec87944fdb0318ad9c0e03e81d4ad`.
+
+This is closure metadata only and cannot classify Phase-B science.
 
 ## Terminal preterminal verifier closures
 
@@ -60,4 +74,4 @@ After complete source terminalization: prospectively freeze the exact complete t
 
 Expected source inventory: 384 shard artifacts + 2 assemblies + 1 aggregate. No producer rerun is authorized merely because the verifier-binding defects were verified.
 
-Latest handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_AGGREGATE_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md`.
+Latest handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_PRETERMINAL_SOURCE_STATUS_PROVENANCE_2026-09-19.md`.
