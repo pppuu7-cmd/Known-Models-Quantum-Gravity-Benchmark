@@ -9,60 +9,60 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 - `D7-S2 = NOT_CLOSED`; `D7-S3 = NOT_CLOSED`; `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`.
 - terminal D7 selectors remain unauthorized.
 - Candidate Gravity inactive; Paper IV `NOT_YET_AUTHORIZED`.
-- `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`; `INCONCLUSIVE != FAIL`; green CI != science; scoped result != family/global closure.
+- `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`; `INCONCLUSIVE != FAIL`; green CI/artifact upload != science; scoped result != family/global closure.
 
 ## Active scientific gate
 
 `ITER504V_BROADER_DOMAIN_COMPLETE_Q1_COVERAGE` / execution `ITER504V_PHASE_B_SOURCE_EXECUTION`.
 
-Prospective authority: prereg `e42caf47f9201d79cd89b79dc72b90f696e3ec5d`; static implementation Critic `eaa2d1ef84fe8370f33cec360233f60571f9bcd0 = PASS_SCOPED`; execution authority `caf67585a9fad990dd90948df51839e6ed7cf891`; source launch/head `31fcdacffcc394e96b73917083281edb90d6753c`; source run `35405065903`.
+Prospective authority: prereg `e42caf47f9201d79cd89b79dc72b90f696e3ec5d`; static implementation Critic `eaa2d1ef84fe8370f33cec360233f60571f9bcd0 = PASS_SCOPED`; execution authority `caf67585a9fad990dd90948df51839e6ed7cf891`; source launch/head `31fcdacffcc394e96b73917083281edb90d6753c`; source run `35405065903` attempt 1.
 
-Latest fresh state remains nonterminal: run endpoint `queued / conclusion=null`; source-lock `105792998164 = success`; source matrix active/queued; partial source artifact metadata count `6`. Those partial artifacts were not opened/downloaded. No partial scientific values were consumed and no duplicate source execution was launched.
+Latest fresh state remains nonterminal: run endpoint `queued / conclusion=null`; source-lock `105792998164 = success`. First-page job snapshot: 30 = 8 completed/success, 12 completed/cancelled, 8 in progress, 2 queued. Fresh artifact metadata count `20`. Artifact bytes were not opened/downloaded. No partial scientific values were consumed and no duplicate source execution was launched.
 
 Operational classification: `IN_PROGRESS_NOT_CLASSIFIED`.
 
-## Latest preterminal status/provenance gate
+## Latest terminal preterminal provenance closure
 
-`ITER504V_PHASE_B_PRETERMINAL_SOURCE_STATUS_PROVENANCE_GATE` -> `ITER504V_PHASE_B_PRETERMINAL_SOURCE_PROVENANCE_CONSISTENT_SCOPED`.
+`ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_GATE` -> `ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_DEFECT_VERIFIED_SCOPED`.
 
-- preregistration `8737545156b2a64a514e28652bfe761a660cf575`;
-- exact source run/head `35405065903` / `31fcdacffcc394e96b73917083281edb90d6753c`;
-- first-page job snapshot: 30 = 7 completed/success, 17 in progress, 6 queued, 0 visible failed/cancelled;
-- six exposed artifact metadata records all non-expired, SHA256-digested and bound to the exact source run/head;
-- artifact bytes opened/downloaded: false;
-- partial science consumed: false;
-- canonical result SHA256 `6f9cff143a11842f8c2bd349bc58fc4d7c2ec87944fdb0318ad9c0e03e81d4ad`.
+- preregistration `a0e28e3a96e109ee9ed440a267ee1407cddf2d55`;
+- canonical result `research/results/ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_RESULT_2026-09-19.json`;
+- terminal record `research/results/ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_TERMINAL_2026-09-19.md`;
+- 12 visible cancelled case jobs had cancelled frozen execution step, successful artifact upload, and matching non-expired SHA256-digested artifact metadata;
+- chain-list SHA256 `d0d7c9840e76300feeffe40eb09650eaf0a00f4ddd117c77ccfff5832a6b4dee`;
+- canonical decision SHA256 `6e2de425bc3b8cc83c75641c160e352061c2479b2f0564ce3b5b2eb3882f9e2f`;
+- artifact bytes opened: false;
+- production science consumed: false;
+- source science classified: false.
 
-This is closure metadata only and cannot classify Phase-B science.
+New mandatory terminal-Critic rule: artifact presence/ID/digest is insufficient. Every required shard artifact must be bound to both `job.conclusion == success` and `Execute frozen quartile shard` step conclusion `success`; cancelled-execution artifacts cannot count as complete source shards.
 
-## Terminal preterminal verifier closures
+## Historical time-local metadata closure
+
+`ITER504V_PHASE_B_PRETERMINAL_SOURCE_STATUS_PROVENANCE_GATE` remains historically valid only for its earlier frozen observation and was independently reviewed at `1989e28d78fdddf2117c3b79b5f90af4bd752603 = CONFIRMED_SCOPED`. It is superseded as a current-status statement by later Actions cancellations and artifact growth.
+
+## Existing terminal preterminal verifier closures
 
 ### Source assembler binding
 
-`ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE` -> `ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED`, independent review commit `c641e1083473000307c3399c4c1e51e8194cb43c = CONFIRMED_SCOPED`.
+`ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE` -> `ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED`, independently confirmed at `c641e1083473000307c3399c4c1e51e8194cb43c`.
 
-Verified obligations for the terminal Critic:
-
+Mandatory obligations:
 - reconstruct and bind every parent-inclusion child/parent dyadic edge;
-- bind every exact artifact/shard identity and `shard.json` to its frozen four physically contained records.
+- bind every exact artifact/shard identity plus `shard.json` to its frozen four physically contained records.
 
 ### Source aggregate binding
 
 `ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_ADVERSARIAL_GATE` -> `ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_DEFECTS_VERIFIED_SCOPED`.
 
-Authority: prereg `04a47f859323bea69472f142ec1a2f4b97e5df0b`; execution authority `32f9f5cbf2d95fb31938b0d163a446a8fa43549a`; launch `2514581ed3d93bbdc9ccefd8383627e8cb1e7e28`; run `35420614607 = completed/success`; lane result SHA256 `6c62ffe7e6d75d2246e5b25bedd971ba08541fd41d06a4e98e1f1bad32ce686b`; decision SHA256 `bfd4a7d6b853b1a6c885086bf1851c0923187aaaa6b36044eec0042a9a310f63`.
-
-Verified additional terminal-Critic obligations:
-
+Mandatory additional obligations:
 - rebind PASS/INCONCLUSIVE classification to independently recomputed unresolved evidence;
-- require exact canonical 768-state key set and sequence for `decision_projection_sha256_by_state`;
+- require exact canonical 768-state key set/sequence for `decision_projection_sha256_by_state`;
 - require exact canonical 768-state key set and independently bound content hashes for `case_file_sha256`.
-
-All controls were outcome-independent; Python 3.11/3.13 results were byte-identical; production science was not consumed and source run `35405065903` was not classified.
 
 ## Frozen Phase-B object
 
-Complete canonical q=1 cover: 768 records = 3 causals x 4 blocks x 4 signed paths x 16 amplitude boxes. Frozen no-refit contract retains 384-bit precision, python-flint 0.9.0, all 243 channels, R `6,8,10,12`, rho `0.35,0.9,1.6,2.7`, threshold `1/20`, robust floor `1`, deterministic dyadic midpoint partition, `MAX_DEPTH=3`, local `D(J)` recomputation on every visited node, exact leaf/per-rho binding and unresolved-only-at-depth-3 semantics.
+Complete canonical q=1 cover: 768 records = 3 causals x 4 blocks x 4 signed paths x 16 amplitude boxes. Frozen no-refit contract retains 384-bit precision, all 243 channels, R `6,8,10,12`, rho `0.35,0.9,1.6,2.7`, threshold `1/20`, robust floor `1`, deterministic dyadic midpoint partition, `MAX_DEPTH=3`, local `D(J)` recomputation on every visited node, exact leaf/per-rho binding and unresolved-only-at-depth-3 semantics.
 
 Execution topology: 192 deterministic quartile shards per Python environment, 384 source compute shards total, Python 3.11/3.13, `fail-fast:false`, `max-parallel:12`.
 
@@ -70,8 +70,6 @@ Execution topology: 192 deterministic quartile shards per Python environment, 38
 
 While source run `35405065903` is nonterminal: status/provenance checks only. Do not consume partial science, rerun based on observed values, or launch a competing same-object scientific gate.
 
-After complete source terminalization: prospectively freeze the exact complete terminal source artifact IDs/digests before opening substantive source payloads, then execute exactly one separately frozen independent Critic closure. It must satisfy the complete set of verified obligations from both assembler and aggregate adversarial gates plus all inherited source/cohort/channel/precision/R/rho/tree/leaf/per-rho/unresolved-depth/cross-environment controls.
+After complete terminalization: prospectively freeze the exact terminal run/job/artifact inventory and digests before substantive payload access. Exclude cancelled/incomplete shard artifacts from valid-completion inventory. Then execute exactly one separately frozen independent Critic closure satisfying all assembler, aggregate, job/step completion and inherited scientific-contract controls.
 
-Expected source inventory: 384 shard artifacts + 2 assemblies + 1 aggregate. No producer rerun is authorized merely because the verifier-binding defects were verified.
-
-Latest handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_PRETERMINAL_SOURCE_STATUS_PROVENANCE_2026-09-19.md`.
+Nominal complete inventory remains 384 **successful-complete** shard artifacts + 2 assemblies + 1 aggregate. If the source execution terminalizes incomplete/cancelled, classify the execution only under frozen implementation/provenance semantics, never as scientific FAIL.
