@@ -1,0 +1,111 @@
+{
+  "claim_ceiling": "Exact Phase-B source-assembler verifier binding only; no source-run science classification or broader closure",
+  "classification": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED",
+  "controls": {
+    "baseline_exact_assembler_pass": true,
+    "baseline_parent_oracle_clean": true,
+    "baseline_shard_oracle_clean": true,
+    "candidate_a_oracle_detects": true,
+    "candidate_b_oracle_detects": true,
+    "duplicate_state_sensitivity": true,
+    "leaf_binding_sensitivity": true
+  },
+  "decision_sha256": "161b800d9d161c8067c6241052320139180bb505b4752ca2224186f4d3f35c9a",
+  "diagnostics": {
+    "baseline": {
+      "assembly_payload_sha256": "1f5daa984e9ed370ee3dac250c4fe796b338aad62e27202e9a08c32eca161f73",
+      "classification": "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+      "counterexample_state_ids": [],
+      "decision_projection_sequence_sha256": "ddfe9b630d46a8096fac41f79928f6688d9a4fdf39e3897fdafa6d2d58e77fbf",
+      "errors": [],
+      "output_missing": false,
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "fa884d7018a9b7e27e77f2506ca626c89219f2da3e01450e9f3a7e01091c675e",
+      "total_cases": 768,
+      "total_unresolved_leaves": 0
+    },
+    "candidate_a": {
+      "assembler": {
+        "assembly_payload_sha256": "1973e1f33e376de12d53aae9c37f42c42f2d532849024b68ba970feb645c81b9",
+        "classification": "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+        "counterexample_state_ids": [],
+        "decision_projection_sequence_sha256": "67c886bb626dd3c60428322afc54fde8cc543c51b8bc39c907e0a223852ee484",
+        "errors": [],
+        "output_missing": false,
+        "returncode": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "fa884d7018a9b7e27e77f2506ca626c89219f2da3e01450e9f3a7e01091c675e",
+        "total_cases": 768,
+        "total_unresolved_leaves": 0
+      },
+      "oracle_errors": [
+        "0:depth"
+      ],
+      "survives_exact_assembler": true
+    },
+    "candidate_b": {
+      "assembler": {
+        "assembly_payload_sha256": "1f5daa984e9ed370ee3dac250c4fe796b338aad62e27202e9a08c32eca161f73",
+        "classification": "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+        "counterexample_state_ids": [],
+        "decision_projection_sequence_sha256": "ddfe9b630d46a8096fac41f79928f6688d9a4fdf39e3897fdafa6d2d58e77fbf",
+        "errors": [],
+        "output_missing": false,
+        "returncode": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "fa884d7018a9b7e27e77f2506ca626c89219f2da3e01450e9f3a7e01091c675e",
+        "total_cases": 768,
+        "total_unresolved_leaves": 0
+      },
+      "oracle_error_count": 2,
+      "oracle_errors_sha256": "8fec09689497ef0478196b86bb7c933fd096964982341ff4b261acc30d9a0c17",
+      "projection_unchanged_vs_baseline": true,
+      "survives_exact_assembler": true
+    },
+    "canonical_record_count": 768,
+    "sensitivity_duplicate": {
+      "assembly_payload_sha256": "d4aa371c72b014c74f608c3fb0c42302ed348d77e84c244c0ec92e62aa03bedc",
+      "classification": "ITER504V_BROADER_DOMAIN_INVALID",
+      "counterexample_state_ids": null,
+      "decision_projection_sequence_sha256": null,
+      "errors": [
+        "duplicate_states",
+        "case_set",
+        "case_count",
+        "projection_count"
+      ],
+      "output_missing": false,
+      "returncode": 2,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9915b51ad206850fbcfee1f3aea22be07861e24a9e81679a09eb6c1de79a810a",
+      "total_cases": 767,
+      "total_unresolved_leaves": null
+    },
+    "sensitivity_leaf_binding": {
+      "assembly_payload_sha256": "f20b1ea27e0e929530e30a981f3e9f57af3ae30c62e6c2e1b64751b7c9cadab2",
+      "classification": "ITER504V_BROADER_DOMAIN_INVALID",
+      "counterexample_state_ids": [
+        "0to5|b0|p0|x02"
+      ],
+      "decision_projection_sequence_sha256": "a2231d348cbd8c9c191ef3d19a8e7b25bdff36a3d744f1f93829518a8add35cb",
+      "errors": [
+        "0to5|b0|p0|x02:leaf_per_rho_binding",
+        "0to5|b0|p0|x02:premature_unresolved_leaf_depth"
+      ],
+      "output_missing": false,
+      "returncode": 2,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b71925c0a986c97a918062aa13d078f84399cc239605189c6c8b86c1f71823f8",
+      "total_cases": 768,
+      "total_unresolved_leaves": 1
+    }
+  },
+  "gate": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE",
+  "preregistration_commit": "93670f89688d9ad673fe35274892701a43f818d9",
+  "production_science_consumed": false,
+  "source_assembler_blob": "f93bea2c32ed383a054beebb4d4b1c64fcbbd2c1",
+  "source_launch_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "source_run_classified": false,
+  "source_run_id": 35405065903
+}
