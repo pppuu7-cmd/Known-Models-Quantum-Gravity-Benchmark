@@ -1,0 +1,50 @@
+{
+  "gate": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE",
+  "classification": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED",
+  "workflow_run": {
+    "id": 35417735617,
+    "attempt": 1,
+    "head_sha": "ec58663bbc7db7007a8a1be3442cdd460eaaeaf0",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "jobs": {
+    "source_lock": 105829513588,
+    "python_3_11": 105829537677,
+    "python_3_13": 105829537739,
+    "aggregate": 105829568772
+  },
+  "artifacts": [
+    {
+      "id": 10575754497,
+      "name": "iter504v-phaseb-assembler-binding-3.11",
+      "github_digest": "sha256:5e0dae63cc7a3d3fc98016ca00e60b61c9a2dc3ce124698c839004e9820c87aa",
+      "independent_zip_sha256": "5e0dae63cc7a3d3fc98016ca00e60b61c9a2dc3ce124698c839004e9820c87aa",
+      "expired": false
+    },
+    {
+      "id": 10575569736,
+      "name": "iter504v-phaseb-assembler-binding-3.13",
+      "github_digest": "sha256:bca4cf613d1c031c8b6c7c6f37c09793fde434bded90fe38bb1903579cc365df",
+      "independent_zip_sha256": "bca4cf613d1c031c8b6c7c6f37c09793fde434bded90fe38bb1903579cc365df",
+      "expired": false
+    },
+    {
+      "id": 10576178004,
+      "name": "iter504v-phaseb-assembler-binding-aggregate",
+      "github_digest": "sha256:cc2d6a49f72db79b2ff8fb4f52db20650b5b2e3beaf672554883bcc8873e230c",
+      "independent_zip_sha256": "cc2d6a49f72db79b2ff8fb4f52db20650b5b2e3beaf672554883bcc8873e230c",
+      "expired": false
+    }
+  ],
+  "canonical_result_sha256": "69029333114a3fda2fd208f166055896df0f259c57704682b4e28c7118d87fbf",
+  "decision_sha256": "161b800d9d161c8067c6241052320139180bb505b4752ca2224186f4d3f35c9a",
+  "cross_environment_byte_identical": true,
+  "source_assembler_blob": "f93bea2c32ed383a054beebb4d4b1c64fcbbd2c1",
+  "preregistration_commit": "93670f89688d9ad673fe35274892701a43f818d9",
+  "gate_authority_commit": "74477c32d4227db60cfee307fb9e0ff563941682",
+  "gate_authority_blob": "acfdaf3f2a009aab360abea6e9e60246f117faa8",
+  "source_run_id": 35405065903,
+  "production_science_consumed": false,
+  "source_run_classified": false
+}
