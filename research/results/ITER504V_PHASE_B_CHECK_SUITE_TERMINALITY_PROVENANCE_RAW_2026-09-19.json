@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-19",
+  "gate": "ITER504V_PHASE_B_CHECK_SUITE_TERMINALITY_PROVENANCE_GATE",
+  "observed_after_preregistration_commit": "27e2176d488770ef425916d2fd6da1836724017e",
+  "run_endpoint": {
+    "id": 35405065903,
+    "run_attempt": 1,
+    "head_sha": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "status": "queued",
+    "conclusion": null,
+    "check_suite_id": 95888147622,
+    "check_suite_url": "https://api.github.com/repos/pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark/check-suites/95888147622",
+    "updated_at": "2026-09-18T23:16:58Z"
+  },
+  "check_suite_attempt": {
+    "requested_exact_id": 95888147622,
+    "result": "not_read",
+    "connector_error": "INVALID_ARGUMENT: GitHub Fetch URL is not an allowed public GitHub repository or search endpoint",
+    "criteria_changed_after_result": false
+  },
+  "fresh_first_page_jobs": {
+    "page_size_observed": 30,
+    "source_lock": {"id": 105792998164, "status": "completed", "conclusion": "success"},
+    "matrix_counts": {"completed_success": 8, "completed_cancelled": 12, "in_progress": 9, "queued": 0},
+    "in_progress_examples": [105793032964, 105793032991, 105793032996, 105793033002, 105793033021, 105793033026, 105793033049, 105793033051, 105793033058],
+    "cancelled_examples": [105793032797, 105793032807, 105793032871, 105793032873, 105793032949, 105793033008, 105793033032, 105793033033, 105793033035, 105793033038, 105793033039, 105793033047],
+    "successful_case_control": 105793032770
+  },
+  "artifact_zip_bytes_opened": false,
+  "scientific_payload_consumed": false
+}
