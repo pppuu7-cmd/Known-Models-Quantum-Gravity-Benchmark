@@ -1,0 +1,40 @@
+{
+  "schema": "kmqgb-recovery-state-delta-v1",
+  "date": "2026-09-19",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "gate": "ITER504V_PHASE_B_FULL_JOB_INVENTORY_PROVENANCE_GATE",
+  "classification": "ITER504V_PHASE_B_FULL_JOB_INVENTORY_AUTHORITY_INCOMPLETE_VERIFIED_SCOPED",
+  "preregistration_commit": "cb69a9057a0b74cf8680e57f2d810d72ccdc6f93",
+  "raw_result_commit": "edca9138617c568d6ea28b04913b477ecf69b9a9",
+  "canonical_result_commit": "e8872fcfcae0a36c1c0dcbe40d12327929359fba",
+  "terminal_record_commit": "4f2ee5a7f6312733ec782ec3a6ee461fc6527a3b",
+  "raw_sha256": "1a3f18c9a33f9966f99e7d82a6095e266e54ccf74234033af44b51dfafd8a2d6",
+  "canonical_sha256": "a478bb8f8b0f15641ddf1d46eebed00345a61aaa29d69642041a33f3fbd8154c",
+  "source_run": {
+    "id": 35405065903,
+    "attempt": 1,
+    "head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "status": "queued",
+    "conclusion": null,
+    "science_status": "IN_PROGRESS_NOT_CLASSIFIED"
+  },
+  "workflow_blob": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360",
+  "job_inventory": {
+    "total_count": 385,
+    "source_lock_count": 1,
+    "matrix_job_count": 384,
+    "expected_matrix_jobs_per_environment": 192,
+    "downstream_assembly_present": false,
+    "downstream_aggregate_present": false,
+    "first_page_matrix_status": {"success": 8, "cancelled": 12, "in_progress": 9, "queued": 0},
+    "cancelled_required_job_python_3_11": 105793033008,
+    "cancelled_required_job_python_3_13": 105793032797,
+    "successful_control_job_python_3_13": 105793032770
+  },
+  "artifact_metadata_count": 25,
+  "artifact_bytes_opened": false,
+  "production_science_consumed": false,
+  "source_run_classified": false,
+  "new_fact": "All 384 required matrix jobs are instantiated; the attempt-1 authority defect is successful-execution completeness, not matrix-instantiation completeness. Terminal cancelled required shards exist in both Python environments, so this same attempt cannot satisfy the frozen 192+192 successful-complete inventory.",
+  "next_authorized_action": "While source run 35405065903 remains nonterminal, status/provenance monitoring only. After natural terminalization, prospectively freeze exact terminal run/job/step/artifact inventory and digests before substantive payload access, then perform one separately frozen terminal closure/Critic respecting all existing binding obligations. Any repair or rerun requires separate prospective authority."
+}
