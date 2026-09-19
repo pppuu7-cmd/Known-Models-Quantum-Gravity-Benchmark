@@ -1,136 +1,58 @@
 # Current Benchmark Front
 
-Updated: 2026-09-17
+Updated: 2026-09-18
 
 Fresh repository `main` and fresh GitHub Actions state always outrank this navigation snapshot.
 
-## Iter504U verifier repair terminal — 2026-09-18
+## Active front
 
-Terminal repair run `35364505282` classified `ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_VALIDATED_SCOPED`.
-Exact local midpoint and rooted dyadic parent-inclusion identities are now independently bound in both repaired assembler and repaired Critic, with malformed midpoint/tree controls rejected. Python 3.11/3.13 repaired review payloads are exactly equal. No producer physics rerun occurred.
+Gate: `ITER504V_BROADER_DOMAIN_COMPLETE_Q1_COVERAGE`.
+Execution gate: `ITER504V_PHASE_B_SOURCE_EXECUTION`.
 
-Historical Iter504U `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED` is therefore re-qualified for the same frozen six-case object (6 cases, 19 terminal leaves, 0 unresolved), without scope expansion.
+Authority chain:
+- terminal Phase-A result `d03cae09c04638cb02412435a284cfd9acdf8406` -> `ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED` for the frozen 16-state sentinel only;
+- Phase-B prereg `e42caf47f9201d79cd89b79dc72b90f696e3ec5d`;
+- static implementation Critic `eaa2d1ef84fe8370f33cec360233f60571f9bcd0` -> `PASS_SCOPED`;
+- one-source execution authority `caf67585a9fad990dd90948df51839e6ed7cf891`;
+- source launch/head `31fcdacffcc394e96b73917083281edb90d6753c`;
+- authoritative source run `35405065903`.
 
-The previously blocked Iter504V sentinel may now execute under frozen preregistration `c162f23df45a58c567fa04fcdf99035497e482f2`. Phase B remains unauthorized until sentinel terminal closure.
+The source run is nonterminal. The run endpoint reports `queued / conclusion=null`, while the job endpoint shows active execution. Source-lock job `105792998164` is terminal `success`; case-shard jobs are `in_progress` or `queued`. Fresh artifact metadata is empty. No partial scientific payload has been consumed.
 
-## Independent Critical Review qualification — 2026-09-18
+Current status: `IN_PROGRESS_NOT_CLASSIFIED`.
 
-Independent audit commit `b3d4a81b65ec0f4d2ac8a8210c45b5c98a0354cd` reviewed the terminal repaired-Critic authority and returned `INVALID_IMPLEMENTATION`.
+## Frozen object and topology
 
-Decisive authority-path defect: the frozen science contract requires exact rational local midpoint `m_J=(a+b)/2`, but the environment assembler and repaired Critic accept/project serialized `local_mid_q` without recomputing that equality. A same wrong-midpoint mutation in both lanes survives validation and cross-environment equality. Source producer inspection still shows the actual producer computes the midpoint correctly; this is an independent-verifier binding defect, not a scientific FAIL and not evidence that the active producer emitted a wrong midpoint.
+Complete q=1 domain: causals `0to5,1to4,2to3` x blocks `0..3` x signed paths `0..3` x amplitude boxes `0..15` = 768 canonical records. Frozen contract: rho `0.35,0.9,1.6,2.7`; R `6,8,10,12`; all 243 channels; 384-bit precision; deterministic dyadic midpoint partition; `MAX_DEPTH=3`; local validated `D(J)` recomputed at every visited node; exact leaf/per-rho and unresolved-depth binding.
 
-Historical Actions classification `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED` remains immutable, but is not independently confirmed as full frozen-contract authority until a prospectively frozen same-science verifier repair binds the exact midpoint (and should also bind serialized parent-inclusion child/parent interval identities to the reconstructed dyadic tree). No physics rerun is required if immutable source artifacts remain available and unchanged.
+Execution: 192 deterministic quartile shards per Python environment, Python 3.11 and 3.13, 384 source compute shards total, `fail-fast:false`, `max-parallel:12`.
 
-The later Iter504V design/preregistration remains prospective only. Do not execute it using the qualified Iter504U closure as fully validated authority until this verifier repair is terminally closed.
+## Frozen taxonomy
 
-## Latest terminal science — Iter504U
+PASS `ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED` iff structure/provenance are valid and total unresolved terminal leaves across all 768 records are zero.
 
-`ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL`
+INCONCLUSIVE `ITER504V_BROADER_DOMAIN_LOCAL_D_INCONCLUSIVE_SCOPED` iff structure/provenance are valid and at least one record has an uncertified terminal leaf at depth exactly 3.
 
-Terminal scientific classification:
+INVALID `ITER504V_BROADER_DOMAIN_INVALID` for implementation/provenance/cohort/channel/depth/partition/source/artifact/cross-environment contract invalidity. There is no model-level or physics-level scientific FAIL label for this gate.
 
-`ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED`.
+## Firewall and next admissible action
 
-Terminal science authority commit: `a31db0d6b9f98448977a6fcdde80a45e3e7195fe`.
+Before complete source terminalization, inspect status/job/artifact metadata only. Do not consume leaf/slope/drift/certification/counterexample values, classify partial lanes, adaptively stop, or launch a competing same-object gate.
 
-Scope remains exactly the six prospectively frozen held-out cases H0–H5. This does not promote to all-domain, all-1888-state, D7, model-family, Candidate Gravity, Paper IV, or universal quantum-gravity authority.
+After source terminalization: prospectively freeze exact terminal artifact IDs/digests, then run exactly one separately frozen independent Critic against the immutable source artifacts. Expected terminal source inventory is 384 shard artifacts + 2 assemblies + 1 aggregate. Terminal Phase-B authority requires independent Critic closure.
 
-Source run `35246605860`, head `102c7f9cafec956f3bc7bed4384ae755c98f761a`, attempt 1, terminal `completed/success`.
+If a valid unresolved record exists, freeze the smallest exact unresolved record/cell as the counterexample-first successor; do not increase `MAX_DEPTH` first.
 
-Prospective closure/artifact authority commit `3302f77593e668ab48fdff887801571fa46467b1` froze exact 16 successful upstream jobs and 15 immutable upstream artifacts before any repaired-Critic science consumption.
+## Retained lower authority
 
-Single repaired-Critic closure run `35267499787`, head `732b9a035472f3b67b00ce985f695c03d7e90bb8`, run number 1 / attempt 1, terminal `completed/success`.
+Iter504U remains scoped terminal `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED` for its frozen six-case object. No Iter504U or Iter504V result is promoted to all-domain/model-family/D7/global closure.
 
-Canonical terminal values:
+## Governance
 
-- 6 cases;
-- 19 terminal leaves;
-- 0 unresolved leaves;
-- `critic_errors=[]`;
-- cross-environment exact decision agreement `true`;
-- cross-Python repaired-review equality `true`;
-- repaired Critic SHA256 `5e81675fa60f344643675d45e3211e41406721fd96d53b1a5329755bda5956b2`;
-- decision projection SHA256 `b44f7bd0711a45d5469c8c1ce968f9b7f7e4cbe773dd33e0fb1bcf5beb22d3e6`;
-- closure payload SHA256 `56b86f4d8a8224544c55344cd08bfd8b9a6a05022059d1fb0af84e9e76439d6c`.
+`RQIR Core v1.0 = FROZEN`. `D7-S2 = NOT_CLOSED`; `D7-S3 = NOT_CLOSED`; `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`. Terminal D7 selectors and `EXISTING_SUFFICIENT / ADAPT_EXISTING / HYBRID_REQUIRED / NEW_REQUIRED` remain forbidden. Candidate Gravity inactive; Paper IV `NOT_YET_AUTHORIZED`.
 
-## Post-closure bounded infrastructure audit — terminal PASS
+`INCONCLUSIVE != FAIL`; `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`; green CI != science; missing object/certificate != zero residual; scoped child result != family closure.
 
-Exactly one bounded end-to-end audit was performed after terminal science.
+No authority exists for `ALL_KNOWN_MODELS_FAIL`, `NEW_QG_THEORY_REQUIRED`, `QUANTUM_GRAVITY_SOLVED`, `UNIQUE_MECHANISM`, `D7_FULLY_CLOSED`, `CANDIDATE_GRAVITY_ESTABLISHED`, or `NEW_PHYSICS_FOUND`.
 
-Classification:
-
-`ITER504U_END_TO_END_INFRASTRUCTURE_AUDIT_PASS_SCOPED`.
-
-Audit result verifies all eight required risks:
-
-- duplicate launch prevention: PASS;
-- partial-value firewall: PASS;
-- artifact identity: PASS;
-- source identity: PASS;
-- chronology: PASS;
-- outcome-independent controls: PASS;
-- Critic independence: PASS;
-- recovery continuity: PASS.
-
-Recovery continuity is independently supported by repository-wide `methodology-ci` run `35267834370` on terminal authority head `a31db0d6...`: preflight PASS, all four deterministic methodology shards PASS, independent repository completion validation PASS, deterministic bundle PASS, recovery/frozen-core checks PASS, overall conclusion `success`.
-
-## Infrastructure freeze
-
-No concrete infrastructure blocker remains from Iter504U.
-
-Effective state:
-
-`ITER504U_POSTCLOSURE_INFRASTRUCTURE_FROZEN_SCOPED`.
-
-Do not add dashboards, readiness frameworks, duplicate manifests, cosmetic CI refactors, generalized recovery machinery, or additional authority layers. Infrastructure may be modified only when a future substantive scientific gate exposes a concrete blocker that requires a prospective repair.
-
-## Current scientific task
-
-Iter504U is closed. Infrastructure is frozen.
-
-The current task is now scientific DAG reconstruction, not another infrastructure cycle.
-
-For each unresolved admissible scientific gate, compare approximately:
-
-`expected information gain × downstream unlocks × falsifiability / compute cost`.
-
-Prefer a cheap exact counterexample or structural discriminator capable of eliminating an entire mechanism explanation over a broad expensive sweep.
-
-Do not select Iter504V merely because it is numerically next. Do not extend Iter504U thresholds/cohorts/channels/depth/partition post hoc.
-
-## Mechanism implications of Iter504U
-
-The bounded held-out result supports the no-refit local-D certificate across the six frozen amplitude/causal/direction/sign held-out configurations tested. Therefore a simple claim that the development result was only an accident of boxes 13–15 or one held-out variation is weakened within the tested scope.
-
-It does not discriminate all remaining explanations of why the certificate succeeds outside that scope. Relevant next discriminators should target mechanism-level alternatives such as:
-
-- broader-domain/local-D stability versus a hidden boundary failure;
-- local derivative enclosure versus channel-switching obstruction;
-- realization dependence versus structural continuity;
-- physical D7 normalization/observable obstruction versus group-variable-only closure.
-
-## Parallel D7 retained state
-
-- raw K5 group-variable tangent pushforward = `CLOSED_SCOPED`;
-- group-only simultaneous contact-covector restriction/conditioning = `BLOCKED_SCOPED`;
-- physical transverse quotient/projection = `BLOCKED_SCOPED`;
-- measure/Haar/contact normalization = open;
-- observable/distributional final pushforward = open.
-
-No D7 branch is promoted by Iter504U.
-
-## Governance / claim lock
-
-- `RQIR Core v1.0 = FROZEN`;
-- `D7-S2 = NOT_CLOSED`;
-- `D7-S3 = NOT_CLOSED`;
-- `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`;
-- Candidate Gravity inactive;
-- Paper IV `NOT_YET_AUTHORIZED`;
-- `INCONCLUSIVE != FAIL`;
-- `BLOCKED != FAIL`;
-- `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`;
-- green CI != scientific PASS;
-- bounded held-out authority != all-domain/global authority.
-
-No authority exists for `ALL_KNOWN_MODELS_FAIL`, `NEW_QG_THEORY_REQUIRED`, `QUANTUM_GRAVITY_SOLVED`, `UNIQUE_MECHANISM`, `D7_FULLY_CLOSED`, `CANDIDATE_GRAVITY_ESTABLISHED`, `NEW_PHYSICS_FOUND`, or equivalent claims.
+Preterminal handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_SOURCE_PRETERMINAL_2026-09-18.md`.
