@@ -17,7 +17,7 @@ Exactly one active substantive Research object is reviewed preterminally:
 - immutable launch head: `31fcdacffcc394e96b73917083281edb90d6753c`;
 - source run: `35405065903`, attempt 1.
 
-Fresh Actions state is nonterminal. Source-lock job `105792998164` completed `success`; source case matrix jobs are active/nonterminal. No case, leaf, slope, drift, certification, assembly, aggregate or counterexample scientific value was consumed in this audit.
+Fresh Actions state remains nonterminal. The run endpoint is `queued / conclusion=null` while the job endpoint reports active/queued matrix execution. Source-lock is terminal `success`; no complete terminal source inventory exists. No case, leaf, slope, drift, certification, assembly, aggregate or counterexample scientific value was consumed in this audit.
 
 ## Chronology / provenance precheck
 
@@ -57,7 +57,7 @@ The source stack statically retains the preregistered domain and main science co
 - exact midpoint check in the Phase-B assembler;
 - no authoritative Critic inside the source workflow.
 
-## Outcome-independent counterexample candidate — parent-inclusion tree identity is not bound by the source assembler
+## Outcome-independent counterexample candidate A — parent-inclusion tree identity is not bound by the source assembler
 
 The static implementation review records:
 
@@ -84,7 +84,7 @@ But it does **not** reconstruct or validate the serialized inclusion-record tree
 
 Those fields are copied into `case_projection()` and hashed, but no parent-child dyadic relation is checked before classification.
 
-### Explicit same-realization mutation
+### Explicit same-realization mutation A
 
 Starting from any otherwise structurally valid case with at least one inclusion record:
 
@@ -96,19 +96,47 @@ The current source assembler has no predicate that rejects this mutation. Its pe
 
 This is an outcome-independent verifier-binding counterexample candidate. It does **not** assert that the active producer emitted malformed inclusion identities. The producer code constructs inclusion records from the actual recursion stack and is statically consistent with the frozen tree.
 
+## Outcome-independent counterexample candidate B — frozen shard identity/cover is not bound by source assembly
+
+A second, distinct preterminal gap is present at the execution-topology/provenance layer.
+
+The Phase-B preregistration freezes exactly 192 deterministic quartile shards per Python environment, with shard identity
+
+`(python, causal, block, path, box_quartile)`,
+
+and requires the eventual independent Critic to verify the **exact complete shard cover**. The frozen shard producer writes a `shard.json` containing the shard's `causal`, `block`, `path`, `quartile`, exact four boxes, exact four state IDs, record count and invalid count.
+
+However, `code/iter504v_phase_b_assemble.py` does not read or validate any `shard.json` at all. It recursively discovers only `case-*.json`, keys them by the internal `state_id`, and validates that the union is the canonical 768-state set. The aggregate then compares only the two assembled 768-state projections/counts. No source classifier binds a case file to the artifact/shard identity that was supposed to produce it.
+
+### Explicit topology-preserving-science mutation B
+
+Starting from a structurally valid complete source inventory in one Python environment:
+
+1. keep all 768 `case-*.json` bytes unchanged;
+2. permute case files between two quartile shard artifact directories so that each case's internal `state_id` remains unchanged but at least one file is stored under the wrong frozen `(causal,block,path,quartile)` shard;
+3. optionally leave each original `shard.json` in place, creating a direct mismatch between its declared four state IDs and the case files actually present below that artifact directory;
+4. apply the same directory/artifact permutation in the other Python environment.
+
+The current assembler still sees exactly the same 768 unique internal state IDs and exactly the same scientific case payloads, so its classification and per-state decision map are unchanged. Because it never consumes `shard.json` or derives expected state IDs from the artifact directory identity, the frozen shard-partition violation is invisible to source assembly. Cross-environment aggregate equality also remains unchanged if the same mutation is present in both lanes.
+
+This candidate is about provenance/topology binding, **not** about the numerical science values. The actual workflow matrix passes the correct causal/block/path/quartile arguments to the shard producer and artifact names are deterministic, so no claim is made that the active Actions run actually permuted records. The point is that the current source validation path cannot independently detect that class of contract violation.
+
 ## Significance
 
-The active source run is not terminal and is not terminal scientific authority in any case: the execution authority explicitly requires a separately frozen independent Critic after source terminalization.
+The active source run is nonterminal and is not terminal scientific authority in any case: the execution authority explicitly requires a separately frozen independent Critic after source terminalization.
 
 Therefore no competing PASS/INCONCLUSIVE/INVALID scientific verdict is issued now.
 
-However, the current static-review assertion that the source assembler reconstructs exact parent-inclusion tree identity is overstated. A later independent Critic must not inherit that assertion without an explicit reconstruction check and adversarial fixture.
+The two prepared candidates identify requirements that the future Critic must close independently rather than inherit from source green CI:
 
-The source assembler may still be a valid preliminary source classifier if final authority is conditioned on a genuinely independent Critic that closes this binding. The final authority path must independently decide whether this candidate is repaired/refuted or surviving.
+1. reconstruct and bind every parent-inclusion child/parent dyadic edge;
+2. bind every immutable source artifact/shard identity to exactly its frozen four-record cohort, consume/validate `shard.json`, and prove exact 192-shard cover per environment before accepting the 768-state union.
 
-## Prepared terminal control
+The source producer/workflow may still be correct in the actual execution. These are independent-verification gaps, not observed scientific failures.
 
-A future independent Phase-B Critic should reconstruct the expected rooted dyadic visited tree per state from leaf cells and/or a canonical node representation, then require every non-root inclusion record to correspond to exactly one actual visited child-parent edge:
+## Prepared terminal controls
+
+A future independent Phase-B Critic should reconstruct the expected rooted dyadic visited tree per state and require every non-root inclusion record to correspond to exactly one actual visited child-parent edge:
 
 - `child.depth = parent.depth + 1`;
 - child interval is exactly the left or right half of the serialized parent interval;
@@ -117,7 +145,11 @@ A future independent Phase-B Critic should reconstruct the expected rooted dyadi
 - each non-root visited node has exactly one inclusion record;
 - no duplicate or orphan inclusion record exists.
 
-Negative control: mutate only one inclusion record's parent interval/depth while holding all inclusion booleans and scientific leaf decisions fixed; the Critic must reject it.
+Negative control A: mutate only one inclusion record's parent interval/depth while holding all inclusion booleans and scientific leaf decisions fixed; the Critic must reject it.
+
+For source topology, the Critic should freeze the exact terminal artifact IDs/digests, map every expected artifact name to one exact `(python, causal, block, path, quartile)`, parse that artifact's `shard.json`, require its four state IDs to equal the frozen quartile and require the case files physically contained in that artifact to match exactly those four states. Across artifacts, require exactly 192 unique shard identities per environment and no missing/duplicate/misplaced case artifact.
+
+Negative control B: swap one case file between two shard directories without changing either case payload; the Critic must reject the resulting shard/content mismatch even though the 768-state union is unchanged.
 
 ## Governance
 
@@ -129,14 +161,14 @@ No partial Phase-B science was consumed. No model-level FAIL exists in this gate
 
 - `RESULT_REVIEWED = none; Iter504V Phase-B source run 35405065903 nonterminal`
 - `PREREG_CHECK = PASS`
-- `OBJECT_IDENTITY_CHECK = static PASS for domain/science constants; parent-inclusion tree binding candidate OPEN`
-- `SOURCE/REALIZATION_CHECK = static PASS_SCOPED for producer; assembler semantic binding qualified`
-- `PROVENANCE_CHECK = PRETERMINAL PASS`
-- `SAME_REALIZATION_CHECK = static QUALIFIED; identical malformed inclusion-tree mutation can survive both lanes and aggregate`
+- `OBJECT_IDENTITY_CHECK = static PASS for domain/science constants; parent-inclusion tree binding and shard/artifact topology binding candidates OPEN`
+- `SOURCE/REALIZATION_CHECK = static PASS_SCOPED for producer/workflow; independent source-assembly semantic/provenance binding qualified`
+- `PROVENANCE_CHECK = PRETERMINAL PASS for observed authority chronology; exact terminal shard/artifact binding not yet independently established`
+- `SAME_REALIZATION_CHECK = static QUALIFIED; identical malformed inclusion-tree mutation or identical cross-shard case permutation can survive both lanes and aggregate`
 - `NUMERICAL/STATISTICAL_CHECK = not consumed`
-- `COUNTEREXAMPLE_ATTEMPTS = malformed parent-inclusion tree identity accepted by source assembler in static code path — SUCCESS candidate; exact midpoint, leaf/per-rho binding and premature unresolved depth are statically bound`
+- `COUNTEREXAMPLE_ATTEMPTS = malformed parent-inclusion tree identity accepted by source assembler — SUCCESS candidate A; wrong frozen shard placement with unchanged 768-state union accepted by source assembler — SUCCESS candidate B; exact midpoint, leaf/per-rho binding and premature unresolved depth are statically bound`
 - `OVERCLAIM_CHECK = PASS`
 - `VERDICT = none while authoritative Research workflow is nonterminal`
-- `QUALIFICATIONS = candidate concerns source/verifier semantic binding, not observed producer science; terminal authority still requires a separate independent Critic`
-- `UPDATED_STATE = one outcome-independent Phase-B source-assembler binding candidate durably frozen; static-review claim assembler_reconstructs_exact_tree_and_parent_inclusion is not independently supported`
-- `NEXT_ADMISSIBLE_GATE = wait for source run terminalization without consuming partial science; then freeze exact terminal source artifacts and a separate independent Critic that explicitly reconstructs and adversarially tests parent-inclusion child/parent dyadic identity before any terminal Phase-B authority is accepted`
+- `QUALIFICATIONS = candidates concern source/verifier contract binding, not observed producer science; terminal authority still requires a separately frozen independent Critic`
+- `UPDATED_STATE = two outcome-independent Phase-B verifier-binding candidates durably frozen; source run remains nonterminal and unclassified`
+- `NEXT_ADMISSIBLE_GATE = wait for complete source terminalization without consuming partial science; then prospectively freeze exact terminal source artifact IDs/digests and run one independent Critic that (A) reconstructs parent-inclusion dyadic edges and (B) binds every artifact/shard identity and shard.json cohort to its exact four contained case records before any terminal Phase-B authority is accepted`
