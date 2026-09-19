@@ -1,0 +1,63 @@
+{
+  "updated": "2026-09-19",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "supersedes_current_status_fields_in_recovery_state_json": true,
+  "iter504v_phase_b": {
+    "source_run_id": 35405065903,
+    "source_run_attempt": 1,
+    "source_run_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "source_run_status": "queued",
+    "source_run_conclusion": null,
+    "scientific_status": "IN_PROGRESS_NOT_CLASSIFIED",
+    "source_lock_job_id": 105792998164,
+    "source_lock_conclusion": "success",
+    "first_page_job_snapshot": {
+      "total": 30,
+      "completed_success": 8,
+      "completed_cancelled": 12,
+      "in_progress": 8,
+      "queued": 2
+    },
+    "artifact_metadata_count": 20,
+    "artifact_bytes_opened": false,
+    "partial_scientific_payload_consumed": false,
+    "competing_same_object_gate_launched": false,
+    "latest_preterminal_provenance_gate": {
+      "gate": "ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_GATE",
+      "preregistration_commit": "a0e28e3a96e109ee9ed440a267ee1407cddf2d55",
+      "classification": "ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_DEFECT_VERIFIED_SCOPED",
+      "verified_cancelled_job_artifact_chain_count": 12,
+      "verified_chain_list_sha256": "d0d7c9840e76300feeffe40eb09650eaf0a00f4ddd117c77ccfff5832a6b4dee",
+      "canonical_decision_sha256": "6e2de425bc3b8cc83c75641c160e352061c2479b2f0564ce3b5b2eb3882f9e2f",
+      "production_science_consumed": false,
+      "source_run_classified": false
+    },
+    "terminal_critic_required_obligations": [
+      "bind every exact artifact/shard identity and shard.json to its frozen four-record cohort and content hashes",
+      "reconstruct every parent-inclusion child/parent dyadic edge",
+      "rebind source classification to independently recomputed unresolved evidence",
+      "rebind decision-projection key set and sequence to exact canonical 768-state identity",
+      "rebind case-provenance key set and content hashes to exact canonical 768-state identity",
+      "require job.conclusion==success and Execute frozen quartile shard step conclusion==success for every shard artifact admitted to terminal authority",
+      "retain inherited source/cohort/channel/precision/R/rho/tree/leaf/per-rho/unresolved-depth/cross-environment controls"
+    ]
+  },
+  "next_authorized_action": "Status/provenance monitoring only while run 35405065903 is nonterminal. After terminalization, freeze exact terminal run/job/artifact inventory and digests before substantive payload access; exclude cancelled/incomplete shard artifacts from valid-completion inventory; then run one separately frozen independent Critic closure.",
+  "governance": {
+    "rqir_core": "FROZEN_v1.0",
+    "D7_S2": "NOT_CLOSED",
+    "D7_S3": "NOT_CLOSED",
+    "D7_S4": "PARTIAL_GLOBAL_NOT_CLOSED",
+    "candidate_gravity": "INACTIVE",
+    "paper_iv": "NOT_YET_AUTHORIZED",
+    "terminal_d7_selectors_authorized": false,
+    "semantic_locks": [
+      "INCONCLUSIVE != FAIL",
+      "BLOCKED != FAIL",
+      "INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL",
+      "green CI/artifact upload != scientific PASS",
+      "partial artifact != terminal authority",
+      "scoped child result != family/global closure"
+    ]
+  }
+}
