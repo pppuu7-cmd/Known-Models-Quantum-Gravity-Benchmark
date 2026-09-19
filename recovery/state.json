@@ -1,6 +1,6 @@
 {
-  "schema_version": "iter504u-recovery-v4",
-  "updated": "2026-09-17",
+  "schema_version": "iter504v-recovery-v1",
+  "updated": "2026-09-18",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
   "project": "KMQGB",
@@ -47,81 +47,105 @@
     "activation_condition": "Paper-IV D7 terminal decision NEW_REQUIRED"
   },
   "latest_terminal_science": {
-    "gate": "ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL",
-    "closure_gate": "ITER504U_REPAIRED_CRITIC_CLOSURE",
-    "classification": "ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED",
-    "terminal_authority_commit": "a31db0d6b9f98448977a6fcdde80a45e3e7195fe",
-    "terminal_authority_blob": "1ded12e91e607176647ae78275c3e54b1efc33fc",
-    "source_run_id": 35246605860,
-    "source_run_head": "102c7f9cafec956f3bc7bed4384ae755c98f761a",
+    "gate": "ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_FIRST",
+    "classification": "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+    "terminal_authority_commit": "d03cae09c04638cb02412435a284cfd9acdf8406",
+    "terminal_authority_blob": "2dbdcf3a611c014bd4ff52c9859a3890df06c9b2",
+    "source_run_id": 35365466861,
+    "source_run_number": 3,
     "source_run_attempt": 1,
-    "artifact_freeze_authority_commit": "3302f77593e668ab48fdff887801571fa46467b1",
-    "artifact_freeze_authority_blob": "6154f02e9e04c8c14c3b4433f1afddce37e4fb9f",
-    "closure_run_id": 35267499787,
-    "closure_run_head": "732b9a035472f3b67b00ce985f695c03d7e90bb8",
-    "closure_run_attempt": 1,
-    "closure_payload_sha256": "56b86f4d8a8224544c55344cd08bfd8b9a6a05022059d1fb0af84e9e76439d6c",
-    "repaired_critic_sha256": "5e81675fa60f344643675d45e3211e41406721fd96d53b1a5329755bda5956b2",
-    "decision_projection_sha256": "b44f7bd0711a45d5469c8c1ce968f9b7f7e4cbe773dd33e0fb1bcf5beb22d3e6",
-    "total_cases": 6,
-    "total_terminal_leaves": 19,
+    "source_run_head": "d10ccd5f9bb465d306dad0b74bedfd3ecf5ad05e",
+    "independent_critic_run_id": 35403877439,
+    "independent_critic_run_number": 2,
+    "independent_critic_attempt": 1,
+    "counterexample_state_ids": [],
+    "total_cases": 16,
     "total_unresolved_leaves": 0,
-    "cross_environment_exact_decision_agreement": true,
-    "cross_python_repaired_review_equal": true,
-    "critic_errors": [],
-    "scope": "exact six-case prospectively frozen Iter504U held-out cohort only"
+    "scope": "exact prospectively frozen 16-state Iter504V sentinel only; full q=1 domain remains open"
   },
   "iter504u": {
-    "status": "TERMINAL_CLOSED",
+    "status": "TERMINAL_CLOSED_SCOPED",
     "preregistration_commit": "05b8e9354c9a7805f0fce18b904346a986a0787f",
     "source_run_id": 35246605860,
     "source_run_status": "completed",
     "source_run_conclusion": "success",
-    "artifact_freeze_status": "COMPLETE_PROSPECTIVE_BEFORE_SCIENCE_READ",
-    "required_upstream_job_count": 16,
-    "required_upstream_artifact_count": 15,
-    "science_payload_consumed_before_freeze": false,
-    "duplicate_or_restart_used": false,
     "terminal_classification": "ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED",
-    "frozen_labels": [
-      "ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED",
-      "ITER504U_HELDOUT_LOCAL_D_INCONCLUSIVE_SCOPED",
-      "ITER504U_INVALID"
-    ]
+    "terminal_authority_commit": "a31db0d6b9f98448977a6fcdde80a45e3e7195fe",
+    "scope": "exact six-case prospectively frozen held-out cohort only",
+    "verifier_repairs": {
+      "c4": "ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED",
+      "shallow_unresolved_depth_binding": "ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED",
+      "exact_midpoint_tree_binding": "ITER504U_CRITIC_EXACT_MIDPOINT_TREE_BINDING_REPAIR_VALIDATED_SCOPED"
+    }
+  },
+  "iter504v": {
+    "status": "PHASE_B_SOURCE_IN_PROGRESS_NOT_CLASSIFIED",
+    "phase_a": {
+      "gate": "ITER504V_SENTINEL_LOCAL_D_COUNTEREXAMPLE_FIRST",
+      "terminal_commit": "d03cae09c04638cb02412435a284cfd9acdf8406",
+      "classification": "ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED",
+      "source_run_id": 35365466861,
+      "independent_critic_run_id": 35403877439,
+      "counterexamples": []
+    },
+    "phase_b": {
+      "gate": "ITER504V_BROADER_DOMAIN_COMPLETE_Q1_COVERAGE",
+      "execution_gate": "ITER504V_PHASE_B_SOURCE_EXECUTION",
+      "preregistration_commit": "e42caf47f9201d79cd89b79dc72b90f696e3ec5d",
+      "static_implementation_critic_commit": "eaa2d1ef84fe8370f33cec360233f60571f9bcd0",
+      "static_implementation_critic_verdict": "PASS_SCOPED",
+      "execution_authority_commit": "caf67585a9fad990dd90948df51839e6ed7cf891",
+      "source_launch_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+      "source_run_id": 35405065903,
+      "source_run_attempt": 1,
+      "source_run_status_observed": "NONTERMINAL_RUN_ENDPOINT_QUEUED_JOBS_ACTIVE",
+      "source_run_conclusion": null,
+      "source_lock_job_id": 105792998164,
+      "source_lock_conclusion": "success",
+      "canonical_record_count": 768,
+      "canonical_sequence_sha256": "3cac282175830e795394dca5202f5368b27120817f2d4abd9eba54fc6c9f1e6f",
+      "compute_shards_per_environment": 192,
+      "total_source_compute_shards": 384,
+      "python_environments": ["3.11", "3.13"],
+      "fail_fast": false,
+      "max_parallel": 12,
+      "artifact_metadata_count_at_latest_read": 0,
+      "partial_scientific_payload_consumed": false,
+      "competing_same_object_gate_launched": false,
+      "operational_classification": "IN_PROGRESS_NOT_CLASSIFIED",
+      "frozen_terminal_taxonomy": [
+        "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+        "ITER504V_BROADER_DOMAIN_LOCAL_D_INCONCLUSIVE_SCOPED",
+        "ITER504V_BROADER_DOMAIN_INVALID"
+      ],
+      "source_workflow_contains_authoritative_critic": false,
+      "independent_critic_required_after_terminal_source": true,
+      "expected_terminal_source_artifacts": {
+        "shards": 384,
+        "assemblies": 2,
+        "aggregate": 1
+      },
+      "claim_ceiling": "frozen 768-record q=1 signed-direction amplitude domain under the exact local-D contract only; no model-family, D7, Candidate Gravity or global quantum-gravity claim"
+    }
   },
   "critic_repairs": {
-    "c4": {
+    "iter504u_c4": {
       "status": "terminal_validated_scoped",
       "classification": "ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED",
       "run_id": 35252175158,
-      "payload_sha256": "974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f",
-      "wrapper_blob": "bcea2946a0f9676b50897dc4bbe74fa1122a9965"
+      "payload_sha256": "974114fb7fd1d062984846cb9c984d1ec0bed1df915fb2f25aac871f5ab7242f"
     },
-    "shallow_unresolved_depth_binding": {
+    "iter504u_shallow_unresolved_depth_binding": {
       "status": "terminal_validated_scoped",
       "classification": "ITER504U_CRITIC_SHALLOW_UNRESOLVED_DEPTH_BINDING_REPAIR_VALIDATED_SCOPED",
-      "preregistration_commit": "a2dc229c849f5b15668e984b5947eb45386757f3",
-      "wrapper_blob": "d10bb168e93b3e3b5496a4f40bb0f16a9bd59dd4",
       "run_id": 35266020916,
       "payload_sha256": "71766a16b881c0358e2aded5bdf085dc6e4944ca0ffa4db4c2385f6bc3c42bc5"
-    },
-    "source_terminal_semantics": {
-      "status": "frozen_and_applied",
-      "preregistration_commit": "31f9870b608ea244d4384354d09210e270f1b524",
-      "preregistration_blob": "f5b79cf62fd8072ceefe43404289132fe5e3388a"
     }
   },
-  "closure_artifacts": [
-    {"name": "iter504u-repaired-critic-review-3.11", "id": 10517615531, "digest": "sha256:1d5301cc8f6cd7609989af78d1141588773e2d7c230194263cde56fa87771f2a", "expired": false},
-    {"name": "iter504u-repaired-critic-review-3.13", "id": 10517600640, "digest": "sha256:1eda7268243dfe6d2168e5063788582cf91023a5c80af0ac9004cfe76cfe271d", "expired": false},
-    {"name": "iter504u-repaired-critic-closure", "id": 10516579339, "digest": "sha256:ee2399d5efdf58a829edfab57b30e31c2955663d538f89623bbba85c8390afdc", "expired": false}
-  ],
   "bounded_infrastructure_audit": {
     "status": "TERMINAL_PASS_SCOPED",
     "classification": "ITER504U_END_TO_END_INFRASTRUCTURE_AUDIT_PASS_SCOPED",
-    "result_blob": "8b0bc144aa0366fb1a96909c6cafed089333f02c",
     "methodology_ci_run_id": 35267834370,
-    "methodology_ci_conclusion": "success",
     "checks": {
       "duplicate_launch_prevention": "PASS",
       "partial_value_firewall": "PASS",
@@ -138,8 +162,9 @@
     "freeze_label": "ITER504U_POSTCLOSURE_INFRASTRUCTURE_FROZEN_SCOPED",
     "modification_rule": "Modify infrastructure only for a concrete blocker exposed by a future scientific gate; no new dashboards/readiness layers/duplicate manifests/cosmetic CI."
   },
-  "current_blocker": "No remaining Iter504U infrastructure blocker; scientific DAG must now be rebuilt before freezing the next substantive gate",
-  "next_authorized_action": "Rebuild the unresolved scientific DAG from repository authority and select the strongest counterexample-first mechanism discriminator by EIG*downstream_unlocks*falsifiability/compute_cost. Do not mechanically advance the iteration number and do not expand Iter504U scope post hoc.",
+  "current_blocker": "Iter504V Phase-B source run 35405065903 is nonterminal; partial scientific payload consumption and competing same-object gates are forbidden.",
+  "next_authorized_action": "Status/provenance monitoring only until run 35405065903 is completely terminal. Then prospectively freeze exact terminal source artifact IDs/digests and execute one separately frozen independent Critic closure against those immutable artifacts.",
+  "recovery_handoff": "recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_SOURCE_PRETERMINAL_2026-09-18.md",
   "governance": {
     "rqir_core": "FROZEN_v1.0",
     "D7_S2": "NOT_CLOSED",
@@ -147,12 +172,14 @@
     "D7_S4": "PARTIAL_GLOBAL_NOT_CLOSED",
     "candidate_gravity": "INACTIVE",
     "paper_iv": "NOT_YET_AUTHORIZED",
+    "terminal_d7_selectors_authorized": false,
     "semantic_locks": [
       "INCONCLUSIVE != FAIL",
       "BLOCKED != FAIL",
       "INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL",
       "green CI != scientific PASS",
-      "scoped result != global closure"
+      "missing object/certificate != zero residual",
+      "scoped result != family/global closure"
     ],
     "forbidden_claims_without_terminal_authority": [
       "ALL_KNOWN_MODELS_FAIL",
