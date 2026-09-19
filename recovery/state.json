@@ -109,7 +109,7 @@
       "python_environments": ["3.11", "3.13"],
       "fail_fast": false,
       "max_parallel": 12,
-      "artifact_metadata_count_at_latest_read": 0,
+      "artifact_metadata_count_at_latest_read": 2,
       "partial_scientific_payload_consumed": false,
       "competing_same_object_gate_launched": false,
       "operational_classification": "IN_PROGRESS_NOT_CLASSIFIED",
@@ -127,7 +127,7 @@
       },
       "preterminal_verifier_binding_closure": {
         "gate": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE",
-        "status": "TERMINAL_VERIFIED_SCOPED",
+        "status": "TERMINAL_VERIFIED_SCOPED_INDEPENDENTLY_CONFIRMED",
         "classification": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED",
         "preregistration_commit": "93670f89688d9ad673fe35274892701a43f818d9",
         "gate_authority_commit": "74477c32d4227db60cfee307fb9e0ff563941682",
@@ -138,6 +138,7 @@
         "decision_sha256": "161b800d9d161c8067c6241052320139180bb505b4752ca2224186f4d3f35c9a",
         "canonical_result_sha256": "69029333114a3fda2fd208f166055896df0f259c57704682b4e28c7118d87fbf",
         "cross_environment_byte_identical": true,
+        "independent_review_commit": "c641e1083473000307c3399c4c1e51e8194cb43c",
         "production_science_consumed": false,
         "source_run_classified": false,
         "verified_obligations_for_terminal_critic": [
@@ -145,6 +146,35 @@
           "bind_every_exact_artifact_and_shard_identity_to_its_frozen_four_record_cohort_and_validate_shard_json_physical_contents"
         ],
         "interpretation": "verifier/authority-path defects only; no assertion that active source artifacts are malformed"
+      },
+      "preterminal_aggregate_binding_closure": {
+        "gate": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_ADVERSARIAL_GATE",
+        "status": "TERMINAL_VERIFIED_SCOPED",
+        "classification": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_DEFECTS_VERIFIED_SCOPED",
+        "preregistration_commit": "04a47f859323bea69472f142ec1a2f4b97e5df0b",
+        "implementation_commit": "31d58bec122ca0995f576660b3dfeeda15b0ba3d",
+        "workflow_commit": "0485a04ab4646b6e80df7c7555db4b3b5bcddd72",
+        "gate_authority_commit": "32f9f5cbf2d95fb31938b0d163a446a8fa43549a",
+        "launch_head": "2514581ed3d93bbdc9ccefd8383627e8cb1e7e28",
+        "run_id": 35420614607,
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "decision_sha256": "bfd4a7d6b853b1a6c885086bf1851c0923187aaaa6b36044eec0042a9a310f63",
+        "canonical_result_sha256": "6c62ffe7e6d75d2246e5b25bedd971ba08541fd41d06a4e98e1f1bad32ce686b",
+        "cross_environment_byte_identical": true,
+        "artifacts": {
+          "python_3_11": {"id": 10577352415, "digest": "sha256:8fe0d0cfe1905428952c1a82b618866c1ce56c56faaf424151fc8cbb32a5aae0"},
+          "python_3_13": {"id": 10577866791, "digest": "sha256:8fe0d0cfe1905428952c1a82b618866c1ce56c56faaf424151fc8cbb32a5aae0"},
+          "aggregate": {"id": 10576787892, "digest": "sha256:feda26c081203f1640be3eab91ba4461ad2e741f7fc94ff318db2a1e560ed95a"}
+        },
+        "production_science_consumed": false,
+        "source_run_classified": false,
+        "verified_obligations_for_terminal_critic": [
+          "rebind_source_classification_to_independently_recomputed_unresolved_evidence",
+          "rebind_decision_projection_keyset_and_sequence_to_exact_canonical_768_state_identity",
+          "rebind_case_provenance_keyset_and_content_hashes_to_exact_canonical_768_state_identity"
+        ],
+        "interpretation": "synthetic source-aggregate verifier/authority-path defects only; no assertion that active source artifacts are malformed"
       },
       "claim_ceiling": "frozen 768-record q=1 signed-direction amplitude domain under the exact local-D contract only; no model-family, D7, Candidate Gravity or global quantum-gravity claim"
     }
@@ -183,9 +213,9 @@
     "freeze_label": "ITER504U_POSTCLOSURE_INFRASTRUCTURE_FROZEN_SCOPED",
     "modification_rule": "Modify infrastructure only for a concrete blocker exposed by a future scientific gate; no new dashboards/readiness layers/duplicate manifests/cosmetic CI."
   },
-  "current_blocker": "Iter504V Phase-B source run 35405065903 is nonterminal; partial scientific payload consumption and competing same-object scientific gates are forbidden. Terminal independent Critic must close the verified parent-inclusion and shard/artifact binding gaps before any Phase-B terminal authority is accepted.",
-  "next_authorized_action": "Status/provenance monitoring only until run 35405065903 is completely terminal. Then prospectively freeze exact terminal source artifact IDs/digests and execute one separately frozen independent Critic closure against those immutable artifacts, explicitly validating shard.json/physical four-record artifact binding and reconstructing every parent-inclusion dyadic edge in addition to inherited controls.",
-  "recovery_handoff": "recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_ASSEMBLER_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md",
+  "current_blocker": "Iter504V Phase-B source run 35405065903 is nonterminal; partial scientific payload consumption and competing same-object scientific gates are forbidden. Terminal independent Critic must close all verified source-assembler and source-aggregate authority-binding gaps before any Phase-B terminal authority is accepted.",
+  "next_authorized_action": "Status/provenance monitoring only until run 35405065903 is completely terminal. Then prospectively freeze exact complete terminal source artifact IDs/digests before substantive payload consumption and execute one separately frozen independent Critic closure against those immutable artifacts. The Critic must bind shard.json/physical four-record artifact identity, reconstruct every parent-inclusion dyadic edge, rebind classification to unresolved evidence, and rebind decision-projection/provenance key sets and hashes to the exact canonical 768-state identity, plus all inherited controls.",
+  "recovery_handoff": "recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_AGGREGATE_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md",
   "governance": {
     "rqir_core": "FROZEN_v1.0",
     "D7_S2": "NOT_CLOSED",
