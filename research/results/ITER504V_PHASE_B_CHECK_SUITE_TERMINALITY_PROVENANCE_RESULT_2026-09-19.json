@@ -1,0 +1,35 @@
+{
+  "schema": "kmqgb-closure-result-v1",
+  "date": "2026-09-19",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "gate": "ITER504V_PHASE_B_CHECK_SUITE_TERMINALITY_PROVENANCE_GATE",
+  "preregistration_commit": "27e2176d488770ef425916d2fd6da1836724017e",
+  "source_run": {
+    "id": 35405065903,
+    "attempt": 1,
+    "head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "status": "queued",
+    "conclusion": null,
+    "check_suite_id": 95888147622
+  },
+  "fresh_job_control": {
+    "first_page_count": 30,
+    "source_lock": {"id": 105792998164, "status": "completed", "conclusion": "success"},
+    "matrix_completed_success": 8,
+    "matrix_completed_cancelled": 12,
+    "matrix_in_progress": 9,
+    "matrix_queued": 0,
+    "nonterminal_job_observed": true
+  },
+  "check_suite_read": {
+    "available_through_current_connector": false,
+    "error_class": "CONNECTOR_ENDPOINT_NOT_ALLOWED",
+    "exact_check_suite_state_observed": false
+  },
+  "artifact_bytes_opened": false,
+  "production_science_consumed": false,
+  "source_run_classified": false,
+  "classification": "ITER504V_PHASE_B_CHECK_SUITE_TERMINALITY_PROVENANCE_BLOCKED_SCOPED",
+  "new_fact": "Fresh exact-run job metadata remains readable and contains nine in-progress matrix jobs, but the exact check-suite endpoint required by the prospective gate is not exposed by the current GitHub connector, so check-suite/job terminality coherence cannot be adjudicated without changing the frozen object.",
+  "claim_ceiling": "metadata/provenance blockage only; no Phase-B science classification, no repair or rerun authority, no D7/family/global promotion"
+}
