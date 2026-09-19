@@ -1,0 +1,10 @@
+{
+  "classification": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_DEFECTS_VERIFIED_SCOPED",
+  "cross_environment_byte_identical": true,
+  "decision_sha256": "bfd4a7d6b853b1a6c885086bf1851c0923187aaaa6b36044eec0042a9a310f63",
+  "gate": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_ADVERSARIAL_GATE",
+  "gate_returncode": 0,
+  "lane_result_sha256": "6c62ffe7e6d75d2246e5b25bedd971ba08541fd41d06a4e98e1f1bad32ce686b",
+  "production_science_consumed": false,
+  "source_run_classified": false
+}
