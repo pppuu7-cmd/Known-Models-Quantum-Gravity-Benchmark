@@ -20,31 +20,31 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 - execution authority `caf67585a9fad990dd90948df51839e6ed7cf891`;
 - launch/head `31fcdacffcc394e96b73917083281edb90d6753c`;
 - source run `35405065903`, attempt 1;
-- fresh run endpoint `queued / conclusion=null`;
-- complete latest-attempt job collection `total_count=385` across pages 1..4;
+- fresh post-freeze run endpoint `queued / conclusion=null`;
+- complete job collection `total_count=385`;
+- `completed=100`, `queued=285`, `in_progress=0`;
 - source-lock `105792998164 = completed/success`;
-- nonterminal exact-run jobs remain present, including queued witnesses `105793035543`, `105793039803`, `105793044215`;
-- artifact metadata first-page count: 29; artifact bytes unopened;
-- partial scientific values consumed: false;
+- artifact/science payload bytes consumed: false;
 - science classification: `IN_PROGRESS_NOT_CLASSIFIED`.
 
 ## Latest closure
 
-`ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENCE_PROVENANCE_GATE` -> `ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENT_SCOPED`.
+`ITER504V_PHASE_B_ZERO_ACTIVE_RUNNER_QUEUE_STATE_PROVENANCE_GATE` -> `ITER504V_PHASE_B_QUEUE_ONLY_NONTERMINAL_STATE_VERIFIED_SCOPED`.
 
-- prereg `5e67991ca4c09a9098ad3ae3a1d91601d2bbc7c7`;
-- raw result `c9dacc08c9152900bfcb393d28aaa8f245c03956`, SHA256 `4b9c3727630f7631f5ae8d5c5f61b6f4ab842caac933c89d8ed10ae9b299e8e1`;
-- canonical result `50bac01a4068d21f5a3e9d4d497e5b618424c0e7`, SHA256 `4fb7f7709ccc0ed62af5b402d9e04cfac356626fc5681d378255e6f3cc6ff10b`;
-- terminal record `2f00b7af91e5e9249e7f01b4eb561b4cdeb5169e`;
-- state delta `2807c7f051a5577482ede24abcb15c639fe0b640`.
+- prospective prereg `499ae185c2cd2f27cc0ca2191ff73fe07b2aa50c`;
+- canonical result commit `05c71ac24fc9323b8f1c5830fdee4387e73aa0e9`;
+- canonical result SHA256 `5c4c021e4a645bd2e3acca7f22bc763a5f3d562af5cafd91434f4d5a96a06021`;
+- terminal record commit `9b87fd73a71903aae363efe614c5fbca350ee6bb`;
+- state delta commit `7107a438436411f166cda70b8a7b1e2022d6225a`;
+- durable handoff commit `753a89e22980b0d900f7968be9163a93a9f3e009`.
 
-The run/job terminality relation is currently coherent: the workflow run is nonterminal and the exact complete job inventory still contains nonterminal jobs. This is provenance coherence only, not science and not successful-execution completeness.
+The exact post-preregistration snapshot contains zero `in_progress` jobs and 285 queued jobs. This is execution-topology provenance only. It does not identify a queue cause and it does not classify Phase-B science.
 
-## Retained full-job authority incompleteness
+## Retained authority incompleteness
 
-`ITER504V_PHASE_B_FULL_JOB_INVENTORY_PROVENANCE_GATE` -> `ITER504V_PHASE_B_FULL_JOB_INVENTORY_AUTHORITY_INCOMPLETE_VERIFIED_SCOPED`.
+`ITER504V_PHASE_B_FULL_JOB_INVENTORY_PROVENANCE_GATE` remains `ITER504V_PHASE_B_FULL_JOB_INVENTORY_AUTHORITY_INCOMPLETE_VERIFIED_SCOPED`.
 
-Exact instantiated inventory is 385 jobs = one source-lock + 384 matrix jobs. Required cancelled/timeout shards exist in both Python environments, so attempt 1 cannot satisfy exactly 192 successful-complete shards per environment.
+Exact instantiated inventory is 385 jobs = one source-lock + 384 matrix jobs. Required cancelled/timeout shards exist in both Python environments, so attempt 1 cannot satisfy exactly 192 successful-complete shards per environment. The current queue-only state does not repair that terminal fact.
 
 ## Retained check-suite closure
 
@@ -65,12 +65,12 @@ The exact check-suite endpoint remains unavailable through the current connector
 9. distinguish scheduler reachability from semantic authority validity;
 10. preserve run/job terminality coherence and do not substitute inaccessible check-suite state with a surrogate.
 
-Earlier assembler-binding, aggregate-binding, cancelled-artifact, timeout-causality, assembly-reachability, and full-job-inventory closures remain in force. Historical FAIL/BLOCKED/INVALID labels are unchanged.
+Earlier assembler-binding, aggregate-binding, cancelled-artifact, timeout-causality, assembly-reachability, full-job-inventory, and run/job-coherence closures remain in force. Historical FAIL/BLOCKED/INVALID labels are unchanged.
 
 ## Next admissible action
 
-While run `35405065903` remains nonterminal: status/provenance only. No partial science, no adaptive rerun, no competing same-object scientific gate.
+While run `35405065903` remains nonterminal: status/provenance only, and only for a material state change. No partial science, no causal queue inference, no adaptive rerun, no competing same-object scientific gate.
 
 After natural terminalization: prospectively freeze exact terminal run/job/step/artifact inventory and digests before substantive payload access, then perform one separately frozen terminal closure/Critic. Attempt 1 remains authority-incomplete because of cancelled/timeout required shards; this must not be reinterpreted as scientific FAIL. Any repair/re-execution requires separate prospective authority.
 
-Durable recovery override: `recovery/ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENCE_STATE_DELTA_2026-09-19.json` plus earlier Phase-B state deltas and fresh GitHub state. `recovery/state.json` contains older Phase-B counters.
+Durable recovery override: `recovery/ITER504V_PHASE_B_ZERO_ACTIVE_RUNNER_QUEUE_STATE_PROVENANCE_STATE_DELTA_2026-09-19.json` plus prior Phase-B state deltas and fresh GitHub state. `recovery/state.json` contains older Phase-B counters.
