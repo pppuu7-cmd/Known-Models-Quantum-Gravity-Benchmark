@@ -1,0 +1,39 @@
+{
+  "artifact_bytes_opened": false,
+  "artifact_metadata_count": 25,
+  "classification": "ITER504V_PHASE_B_FULL_JOB_INVENTORY_AUTHORITY_INCOMPLETE_VERIFIED_SCOPED",
+  "complete_job_api_total_count": 385,
+  "downstream_aggregate_job_present": false,
+  "downstream_assembly_job_present": false,
+  "expected_matrix_jobs_per_environment": 192,
+  "expected_total_matrix_jobs": 384,
+  "first_page_matrix_status": {
+    "cancelled": 12,
+    "in_progress": 9,
+    "success": 8
+  },
+  "gate": "ITER504V_PHASE_B_FULL_JOB_INVENTORY_PROVENANCE_GATE",
+  "matrix_inventory_count_inferred": 384,
+  "negative_controls": {
+    "python_3_11_cancelled_job_id": 105793033008,
+    "python_3_11_execute_step": "cancelled",
+    "python_3_13_cancelled_job_id": 105793032797,
+    "python_3_13_execute_step": "cancelled"
+  },
+  "positive_controls": {
+    "python_3_13_success_job_id": 105793032770,
+    "python_3_13_success_execute_step": "success",
+    "source_lock_job_id": 105792998164,
+    "source_lock_conclusion": "success"
+  },
+  "preregistration_commit": "cb69a9057a0b74cf8680e57f2d810d72ccdc6f93",
+  "production_science_consumed": false,
+  "run_attempt": 1,
+  "run_conclusion": null,
+  "run_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "run_id": 35405065903,
+  "run_status": "queued",
+  "science_status": "IN_PROGRESS_NOT_CLASSIFIED",
+  "source_run_classified": false,
+  "workflow_blob": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360"
+}
