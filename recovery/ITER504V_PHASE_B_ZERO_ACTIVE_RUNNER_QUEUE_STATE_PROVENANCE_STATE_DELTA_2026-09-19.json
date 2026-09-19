@@ -1,0 +1,39 @@
+{
+  "schema": "kmqgb-phase-b-state-delta-v1",
+  "date": "2026-09-19",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "source_run": {
+    "id": 35405065903,
+    "attempt": 1,
+    "head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "status": "queued",
+    "conclusion": null,
+    "science_status": "IN_PROGRESS_NOT_CLASSIFIED"
+  },
+  "latest_closure": {
+    "gate": "ITER504V_PHASE_B_ZERO_ACTIVE_RUNNER_QUEUE_STATE_PROVENANCE_GATE",
+    "preregistration_commit": "499ae185c2cd2f27cc0ca2191ff73fe07b2aa50c",
+    "classification": "ITER504V_PHASE_B_QUEUE_ONLY_NONTERMINAL_STATE_VERIFIED_SCOPED",
+    "canonical_result_commit": "05c71ac24fc9323b8f1c5830fdee4387e73aa0e9",
+    "canonical_result_sha256": "5c4c021e4a645bd2e3acca7f22bc763a5f3d562af5cafd91434f4d5a96a06021",
+    "terminal_record_commit": "9b87fd73a71903aae363efe614c5fbca350ee6bb",
+    "complete_job_inventory": 385,
+    "completed": 100,
+    "queued": 285,
+    "in_progress": 0,
+    "source_lock_job": 105792998164,
+    "source_lock_conclusion": "success",
+    "science_payload_consumed": false,
+    "artifact_bytes_opened": false,
+    "cause_attributed": false
+  },
+  "retained_authority_incompleteness": "Attempt 1 cannot satisfy exactly 192 successful-complete shards per Python environment because required timeout/cancelled shards already exist in both environments.",
+  "next_authorized_action": "While run 35405065903 remains nonterminal, status/provenance only. After natural terminalization, prospectively freeze exact terminal run/job/step/artifact inventory and digests before substantive payload access, then execute one separately frozen terminal Critic closure.",
+  "governance": {
+    "rqir_core": "1.0 FROZEN",
+    "d7_terminal_selectors_authorized": false,
+    "candidate_gravity_active": false,
+    "paper_iv_authorized": false,
+    "global_claims_authorized": false
+  }
+}
