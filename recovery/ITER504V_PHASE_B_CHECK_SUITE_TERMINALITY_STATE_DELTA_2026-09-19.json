@@ -1,0 +1,51 @@
+{
+  "schema": "kmqgb-recovery-state-delta-v1",
+  "date": "2026-09-19",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "active_scientific_gate": "ITER504V_BROADER_DOMAIN_COMPLETE_Q1_COVERAGE",
+  "execution_gate": "ITER504V_PHASE_B_SOURCE_EXECUTION",
+  "source_run": {
+    "id": 35405065903,
+    "attempt": 1,
+    "head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "fresh_status": "queued",
+    "fresh_conclusion": null,
+    "science_status": "IN_PROGRESS_NOT_CLASSIFIED"
+  },
+  "prior_full_job_inventory_authority": {
+    "gate": "ITER504V_PHASE_B_FULL_JOB_INVENTORY_PROVENANCE_GATE",
+    "classification": "ITER504V_PHASE_B_FULL_JOB_INVENTORY_AUTHORITY_INCOMPLETE_VERIFIED_SCOPED",
+    "preregistration_commit": "cb69a9057a0b74cf8680e57f2d810d72ccdc6f93",
+    "terminal_record_commit": "4f2ee5a7f6312733ec782ec3a6ee461fc6527a3b",
+    "state_delta_commit": "aaff29bb277f012b4327f4e19a57397253fd324b",
+    "total_jobs": 385,
+    "matrix_jobs": 384,
+    "expected_successful_complete_per_environment": 192,
+    "authority_completeness_possible_in_attempt_1": false
+  },
+  "latest_closure_gate": {
+    "gate": "ITER504V_PHASE_B_CHECK_SUITE_TERMINALITY_PROVENANCE_GATE",
+    "classification": "ITER504V_PHASE_B_CHECK_SUITE_TERMINALITY_PROVENANCE_BLOCKED_SCOPED",
+    "preregistration_commit": "27e2176d488770ef425916d2fd6da1836724017e",
+    "raw_result_commit": "fdef83468c59645f37fed8598d9ce8bb7226bdb2",
+    "canonical_result_commit": "90da05534b53a7eda107abc22096310cd765a390",
+    "terminal_record_commit": "b092611ae361abca4d89316d69ce2298841caaae",
+    "raw_sha256": "e757e32bf6402c0a0e5b28795a618fa1911d8f57c0aa93c1377ebc041017fb51",
+    "canonical_sha256": "ad3b09294df45a7e0a4b35eafeef9d7054b3ab2236cea13c8d74f4add9709e2f",
+    "check_suite_id": 95888147622,
+    "check_suite_state_observed": false,
+    "blocker": "current GitHub connector does not expose the exact check-suite endpoint required by the prospectively frozen gate"
+  },
+  "fresh_first_page_job_control": {
+    "source_lock": {"id": 105792998164, "status": "completed", "conclusion": "success"},
+    "matrix_completed_success": 8,
+    "matrix_completed_cancelled": 12,
+    "matrix_in_progress": 9,
+    "matrix_queued": 0,
+    "partial_scientific_payload_consumed": false
+  },
+  "artifact_zip_bytes_opened": false,
+  "source_run_classified": false,
+  "claim_ceiling": "metadata/provenance only; no Phase-B science classification or higher-scope promotion",
+  "next_authorized_action": "While source run 35405065903 remains nonterminal, only status/provenance work that does not consume partial science is admissible. After natural terminalization, prospectively freeze the exact terminal run/job/step/artifact inventory and digests before substantive payload access and execute one separately frozen terminal closure/Critic. Do not reopen the check-suite gate unless exact check-suite metadata becomes available without changing its frozen object."
+}
