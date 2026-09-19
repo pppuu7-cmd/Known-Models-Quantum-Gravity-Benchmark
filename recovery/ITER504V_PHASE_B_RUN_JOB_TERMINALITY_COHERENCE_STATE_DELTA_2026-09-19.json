@@ -1,0 +1,37 @@
+{
+  "schema": "kmqgb-recovery-state-delta-v1",
+  "date": "2026-09-19",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "gate": "ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENCE_PROVENANCE_GATE",
+  "classification": "ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENT_SCOPED",
+  "preregistration_commit": "5e67991ca4c09a9098ad3ae3a1d91601d2bbc7c7",
+  "terminal_record_commit": "2f00b7af91e5e9249e7f01b4eb561b4cdeb5169e",
+  "source_run": {
+    "id": 35405065903,
+    "attempt": 1,
+    "head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "status": "queued",
+    "conclusion": null,
+    "science_classification": "IN_PROGRESS_NOT_CLASSIFIED"
+  },
+  "job_inventory": {
+    "github_total_count": 385,
+    "pages_read": [1, 2, 3, 4],
+    "source_lock_id": 105792998164,
+    "source_lock_status": "completed",
+    "source_lock_conclusion": "success",
+    "nonterminal_jobs_present": true,
+    "witness_nonterminal_job_ids": [105793035543, 105793039803, 105793044215]
+  },
+  "artifact_metadata": {
+    "first_page_count": 29,
+    "artifact_bytes_opened": false
+  },
+  "science_firewall": {
+    "production_science_consumed": false,
+    "source_run_classified": false,
+    "competing_same_object_science_gate_launched": false
+  },
+  "interpretation": "run/job terminality is coherent at this read because the run is nonterminal and the complete job collection still contains nonterminal jobs; existing successful-execution authority incompleteness from cancelled/timeout shards remains unchanged",
+  "next_authorized_action": "while source run 35405065903 remains nonterminal, status/provenance only. After natural terminalization, prospectively freeze exact terminal run/job/step/artifact inventory and digests before substantive payload access, then execute one separately frozen independent terminal Critic closure under all accumulated Phase-B binding obligations."
+}
