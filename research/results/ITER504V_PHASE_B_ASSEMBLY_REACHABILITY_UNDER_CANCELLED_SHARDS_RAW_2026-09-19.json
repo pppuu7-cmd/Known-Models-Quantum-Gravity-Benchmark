@@ -1,0 +1,36 @@
+{
+  "source_run": 35405065903,
+  "attempt": 1,
+  "launch_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "workflow_blob_sha": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360",
+  "run_status": "queued",
+  "run_conclusion": null,
+  "first_page_job_counts": {
+    "jobs": 30,
+    "completed_success": 8,
+    "completed_cancelled": 12,
+    "in_progress": 8,
+    "queued": 2
+  },
+  "cancelled_jobs": {
+    "3.13": [105793032797, 105793032807, 105793032871, 105793032873, 105793032949],
+    "3.11": [105793033008, 105793033032, 105793033033, 105793033035, 105793033038, 105793033039, 105793033047]
+  },
+  "successful_positive_control": {
+    "job_id": 105793032770,
+    "environment": "3.13",
+    "job_conclusion": "success",
+    "execute_step_conclusion": "success"
+  },
+  "source_lock": {
+    "job_id": 105792998164,
+    "conclusion": "success"
+  },
+  "workflow_dependency_graph": {
+    "assemble-311": {"needs": "cases-311", "if": "always()"},
+    "assemble-313": {"needs": "cases-313", "if": "always()"},
+    "aggregate": {"needs": ["assemble-311", "assemble-313"], "if": "always()"}
+  },
+  "artifact_zip_bytes_opened": false,
+  "science_payload_consumed": false
+}
