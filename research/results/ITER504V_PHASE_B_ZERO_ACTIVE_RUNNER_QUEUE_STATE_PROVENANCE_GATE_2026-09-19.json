@@ -1,0 +1,30 @@
+{
+  "gate": "ITER504V_PHASE_B_ZERO_ACTIVE_RUNNER_QUEUE_STATE_PROVENANCE_GATE",
+  "classification": "ITER504V_PHASE_B_QUEUE_ONLY_NONTERMINAL_STATE_VERIFIED_SCOPED",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "run_id": 35405065903,
+  "run_attempt": 1,
+  "head_sha": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "prereg_commit": "499ae185c2cd2f27cc0ca2191ff73fe07b2aa50c",
+  "workflow_blob": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360",
+  "fresh_run_status": "queued",
+  "fresh_run_conclusion": null,
+  "job_total_count": 385,
+  "job_status_counts": {
+    "completed": 100,
+    "queued": 285,
+    "in_progress": 0
+  },
+  "source_lock": {
+    "job_id": 105792998164,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "complete_pagination_pages": [1, 2, 3, 4],
+  "science_payload_consumed": false,
+  "artifact_bytes_opened": false,
+  "cause_attributed": false,
+  "phase_b_science_classified": false,
+  "new_fact": "At the frozen post-preregistration snapshot, all 285 nonterminal jobs are queued and zero jobs are actively executing.",
+  "claim_ceiling": "Instantaneous GitHub Actions execution topology only; no queue-cause attribution, scientific result, rerun authority, or global promotion."
+}
