@@ -1,4 +1,4 @@
-# Current active front index — 2026-09-17
+# Current active front index — 2026-09-18
 
 Fresh repository `main` and fresh Actions state always outrank this index if they diverge.
 
@@ -7,59 +7,39 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 - Repository: `pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark` only.
 - `RQIR Core v1.0 = FROZEN`.
 - `D7-S2 = NOT_CLOSED`; `D7-S3 = NOT_CLOSED`; `D7-S4 = PARTIAL_GLOBAL_NOT_CLOSED`.
-- terminal D7 selectors remain unauthorized until required subgates close.
-- Candidate Gravity remains inactive; Paper IV remains `NOT_YET_AUTHORIZED`.
-- `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`; `INCONCLUSIVE != FAIL`; missing object/certificate/rank != zero; scoped child result != family closure; green CI != science.
+- terminal D7 selectors remain unauthorized.
+- Candidate Gravity inactive; Paper IV `NOT_YET_AUTHORIZED`.
+- `BLOCKED != FAIL`; `INVALID_IMPLEMENTATION != SCIENTIFIC_FAIL`; `INCONCLUSIVE != FAIL`; green CI != science; scoped result != family/global closure.
 
-## Latest terminal methodology/closure authority
+## Latest terminal Iter504V parent
 
-`ITER504U_C4_SHARED_VALIDATOR_DIAGNOSTIC` terminalized the repaired Critic C4 fixture on the actual shared validator path.
+Phase A / sentinel terminal commit `d03cae09c04638cb02412435a284cfd9acdf8406` classified `ITER504V_SENTINEL_LOCAL_D_NO_COUNTEREXAMPLE_SCOPED` for the exact frozen 16-state sentinel. Independent repaired Critic closure agreed exactly. No counterexample was found. This does not certify the complete q=1 domain.
 
-Exact evaluator classification: `ITER504U_CRITIC_C4_FIXTURE_REPAIR_VALIDATED_SCOPED`.
+## Active gate
 
-Authority:
+`ITER504V_BROADER_DOMAIN_COMPLETE_Q1_COVERAGE` / execution `ITER504V_PHASE_B_SOURCE_EXECUTION`.
 
-- formal repair prereg `662e1b40c4584a5b1989b821cd7a5c334ef8fc44`;
-- diagnostic prereg `dd8ea4c0f6df3f0da6139e293d6b8fd5bea5d02a`;
-- diagnostic authority `79e4a6a1e6ee100812f6247219fa79501c3720f3`;
-- launch/head `c0f45fb93a2298221fb0c60a2b2ee770a8bb8dc2`;
-- run `35252175158`, terminal `completed/success`;
-- jobs `105306929508`, `105307014713`, `105307014763`, `105307454169`;
-- artifacts 3.11 `10510475771` / `sha256:583c1935ee815b7d4ba80e0396212d725933f6eabe4ac1f8fb4279f3a16ad0a1`; 3.13 `10510765344` / `sha256:f768f75cdc9794d70c4b5cced1ee8692c2fb8e38873094251baed9694c907cea`; aggregate `10509679536` / `sha256:9df7eed7be9e89c0083d2cb6b0631f3d190b12085253b5786e8808ba70883880`.
+Prospective authority:
+- prereg `e42caf47f9201d79cd89b79dc72b90f696e3ec5d`;
+- static implementation Critic `eaa2d1ef84fe8370f33cec360233f60571f9bcd0` = `PASS_SCOPED`;
+- separate execution authority `caf67585a9fad990dd90948df51839e6ed7cf891`;
+- source launch/head `31fcdacffcc394e96b73917083281edb90d6753c`;
+- source run `35405065903`.
 
-Shared-validator outcome:
+Latest fresh state: nonterminal. Source-lock `105792998164` = `success`; source shard jobs are active/queued. The run-level endpoint still reports `queued / conclusion=null`. Artifact metadata was empty at the latest read. No partial scientific values were consumed.
 
-- coherent baseline accepted;
-- repaired C4 contradiction rejected exactly as `H0_AMP_LOW:C4_leaf_binding`;
-- false-carrier contradiction rejected by the same exact binding;
-- full repaired negative-control suite passes;
-- Python 3.11/3.13 result payloads byte-identical;
-- `production_science_consumed=false`, `source_run_classified=false`.
+Operational classification: `IN_PROGRESS_NOT_CLASSIFIED`.
 
-The earlier formal repair result at commit `77189486ba4db1dd281832b962b1be290e323944` remains historical `INVALID_IMPLEMENTATION`; this successor closes only its missing shared-validator-path coverage.
+## Frozen Phase-B object
 
-## Active scientific run
+Complete canonical q=1 cover: 768 records = 3 causals x 4 blocks x 4 signed paths x 16 amplitude boxes. Frozen no-refit contract retains 384-bit precision, python-flint 0.9.0, all 243 channels, R `6,8,10,12`, rho `0.35,0.9,1.6,2.7`, threshold `1/20`, robust floor `1`, deterministic dyadic midpoint partition, `MAX_DEPTH=3`, local `D(J)` recomputation on every visited node, exact leaf/per-rho binding and unresolved-only-at-depth-3 semantics.
 
-`ITER504U_HELDOUT_LOCAL_D_GENERALIZATION_FIREWALL`, run `35246605860`, head `102c7f9cafec956f3bc7bed4384ae755c98f761a`.
-
-Latest fresh Actions state: `in_progress / conclusion=null`. No partial scientific payload has been consumed. No duplicate producer run is authorized.
-
-## Open independent Critic issue for terminal science review
-
-Preterminal Critic commit `97a99cdcfaacec1e87b216e0d3a4282b165ae59b` identified a separate outcome-independent validation-path defect candidate: an uncertified terminal leaf at depth `< MAX_DEPTH=3` is not explicitly rejected by assembler/Critic validation, even though producer recursion appears to split correctly.
-
-This shallow-unresolved-leaf depth-binding candidate remains open. The C4 diagnostic does not repair or adjudicate it.
-
-## Latest independently closed science authority below Iter504U
-
-Iter504T exact repair/canonicalization remains independently `CONFIRMED_SCOPED`; bounded development authority remains `ITER504T_LOCAL_D_CERTIFIES_THREE_ROOT_CONTINUOUS_DRIFT_SCOPED` for boxes 13–15 only.
+Execution topology: 192 deterministic quartile shards per Python environment, 384 source compute shards total, Python 3.11/3.13, `fail-fast:false`, `max-parallel:12`.
 
 ## Next admissible action
 
-While run `35246605860` is nonterminal: status/provenance checking only; do not consume partial science and do not launch a duplicate/competing gate.
+While source run `35405065903` is nonterminal: status/provenance checks only. Do not consume partial science, rerun based on observed values, or launch a competing same-object gate.
 
-After terminalization: prospectively freeze the exact terminal production artifact IDs/digests, then execute one closure-only terminal authority review against those immutable artifacts. It must preserve the validated C4 repair and separately adjudicate the shallow-unresolved-leaf depth-binding candidate before any scientific Iter504U classification is accepted as authority.
+After source terminalization: prospectively freeze the exact terminal source artifact inventory, then execute one separately frozen independent Critic closure against those immutable artifacts. Expected inventory: 384 shard artifacts + 2 assemblies + 1 aggregate. Terminal Phase-B authority requires Critic closure.
 
-## Governance
-
-No all-1888, D7, model/family, selector, Candidate Gravity, Paper IV or global quantum-gravity conclusion is authorized.
+Preterminal handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_SOURCE_PRETERMINAL_2026-09-18.md`.
