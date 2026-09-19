@@ -1,0 +1,126 @@
+{
+  "candidate_acceptance": {
+    "A_pass_with_unresolved_accepted_as_pass": true,
+    "B_noncanonical_projection_keyset_accepted_as_pass": true,
+    "C_noncanonical_provenance_keyset_accepted_as_pass": true
+  },
+  "candidate_oracle_errors": {
+    "A": ["classification_unresolved_binding"],
+    "B": ["projection_key_set"],
+    "C": ["provenance_key_set"]
+  },
+  "claim_ceiling": "Phase-B source aggregate verifier/authority-path binding only; no scientific classification of source run 35405065903",
+  "classification": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_DEFECTS_VERIFIED_SCOPED",
+  "controls": {
+    "negative_classification_disagreement_rejected": true,
+    "negative_projection_disagreement_rejected": true,
+    "negative_state_identity_disagreement_rejected": true,
+    "positive_inconclusive_one_unresolved": true,
+    "positive_pass_zero_unresolved": true
+  },
+  "decision_sha256": "bfd4a7d6b853b1a6c885086bf1851c0923187aaaa6b36044eec0042a9a310f63",
+  "gate": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_ADVERSARIAL_GATE",
+  "harness_errors": [],
+  "oracle_checks": {
+    "candidate_A_independently_invalid": true,
+    "candidate_B_independently_invalid": true,
+    "candidate_C_independently_invalid": true
+  },
+  "preregistration_commit": "04a47f859323bea69472f142ec1a2f4b97e5df0b",
+  "production_science_consumed": false,
+  "scenario_results": [
+    {
+      "aggregate_payload_sha256": "3e99e2c237076c8c79c14e8ab10d928481d9dd9eec78321ee4beea9d8b670787",
+      "classification": "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+      "cross_environment_exact_decision_agreement": true,
+      "errors": [],
+      "label": "positive_pass_zero_unresolved",
+      "output_present": true,
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3f761d146b81c92a36056f18eaab59ccca5388c8ed6691c44d2417c8e2612660"
+    },
+    {
+      "aggregate_payload_sha256": "8719d457bebd35952073f152dfe94584753e8eccc16cc1a8350b8162ffe2ccd4",
+      "classification": "ITER504V_BROADER_DOMAIN_LOCAL_D_INCONCLUSIVE_SCOPED",
+      "cross_environment_exact_decision_agreement": true,
+      "errors": [],
+      "label": "positive_inconclusive_one_unresolved",
+      "output_present": true,
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "0042e8452f31ac4127a4b13e4a58ff79cf64fac40f9afefcedea7528215751f6"
+    },
+    {
+      "aggregate_payload_sha256": "447d03d10dca5ab8cb2ecf8470dfeb97f319276dbbaffef3bfc7c033e71e3c23",
+      "classification": "ITER504V_BROADER_DOMAIN_INVALID",
+      "cross_environment_exact_decision_agreement": false,
+      "errors": ["cross_environment_classification"],
+      "label": "negative_cross_environment_classification_disagreement",
+      "output_present": true,
+      "returncode": 2,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9948a08286953648cc051f767e27e00a277bfa22212af50bb67bed2435683b12"
+    },
+    {
+      "aggregate_payload_sha256": "f03712bf77e25a272a5901af440700c1fe685e7e56b2e17cfca922b2e760b1a5",
+      "classification": "ITER504V_BROADER_DOMAIN_INVALID",
+      "cross_environment_exact_decision_agreement": false,
+      "errors": ["cross_environment_state_identity"],
+      "label": "negative_cross_environment_state_identity_disagreement",
+      "output_present": true,
+      "returncode": 2,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "41b5e56a48d139bd6478f3f3b9278c4b66b06785c2e8056097ac67118846d58e"
+    },
+    {
+      "aggregate_payload_sha256": "4aeabfdf4cde140ae0c9d2104c5419187894cf6b7226d7a161a0404e173ad12b",
+      "classification": "ITER504V_BROADER_DOMAIN_INVALID",
+      "cross_environment_exact_decision_agreement": false,
+      "errors": ["cross_environment_projection_map"],
+      "label": "negative_cross_environment_projection_disagreement",
+      "output_present": true,
+      "returncode": 2,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "203dfea82480c83f54eeaac11f0387831a38b37001605a4ec9274b3088961525"
+    },
+    {
+      "aggregate_payload_sha256": "c8b3045dd95e795271f910086e3676ea3037b4e7ac2eeaab65cb88982e91329e",
+      "classification": "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+      "cross_environment_exact_decision_agreement": true,
+      "errors": [],
+      "label": "candidate_A_pass_with_unresolved_evidence",
+      "output_present": true,
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3f761d146b81c92a36056f18eaab59ccca5388c8ed6691c44d2417c8e2612660"
+    },
+    {
+      "aggregate_payload_sha256": "9a385f4be56581123b37ea15d5e58f91c550b75658d634de335d4fbdfd297372",
+      "classification": "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+      "cross_environment_exact_decision_agreement": true,
+      "errors": [],
+      "label": "candidate_B_noncanonical_projection_keyset",
+      "output_present": true,
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3f761d146b81c92a36056f18eaab59ccca5388c8ed6691c44d2417c8e2612660"
+    },
+    {
+      "aggregate_payload_sha256": "2dd91f79c05517a57b984a463079f3ac252344f53234d1e5742bd6c0d89a8068",
+      "classification": "ITER504V_BROADER_DOMAIN_LOCAL_D_CERTIFIES_COMPLETE_Q1_SCOPED",
+      "cross_environment_exact_decision_agreement": true,
+      "errors": [],
+      "label": "candidate_C_noncanonical_provenance_keyset",
+      "output_present": true,
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3f761d146b81c92a36056f18eaab59ccca5388c8ed6691c44d2417c8e2612660"
+    }
+  ],
+  "source_aggregate_blob_expected": "ae1932a7cdd98a1cc74f1b2f07bc295e0c097274",
+  "source_aggregate_blob_runtime": "ae1932a7cdd98a1cc74f1b2f07bc295e0c097274",
+  "source_launch_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "source_run": 35405065903,
+  "source_run_classified": false
+}
