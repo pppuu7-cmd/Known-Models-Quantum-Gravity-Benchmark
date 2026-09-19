@@ -1,0 +1,50 @@
+{
+  "schema": "kmqgb-recovery-state-delta-v1",
+  "updated": "2026-09-19",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "fresh_state_overrides_older_recovery": true,
+  "source_run": {
+    "id": 35405065903,
+    "attempt": 1,
+    "head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "status": "queued",
+    "conclusion": null,
+    "source_lock_job_id": 105792998164,
+    "source_lock_conclusion": "success",
+    "first_page_job_snapshot": {
+      "jobs": 30,
+      "completed_success": 8,
+      "completed_cancelled": 12,
+      "in_progress": 8,
+      "queued": 2
+    },
+    "artifact_metadata_count_latest_read": 24,
+    "artifact_zip_bytes_opened": false,
+    "partial_scientific_payload_consumed": false,
+    "scientific_classification": "IN_PROGRESS_NOT_CLASSIFIED"
+  },
+  "latest_closure_gate": {
+    "gate": "ITER504V_PHASE_B_ASSEMBLY_REACHABILITY_UNDER_CANCELLED_SHARDS_PROVENANCE_GATE",
+    "preregistration_commit": "97b4251fbcf690cedbfc475232ec607e90044b75",
+    "classification": "ITER504V_PHASE_B_ASSEMBLY_REACHABILITY_CANCELLED_SHARD_BLOCK_VERIFIED_SCOPED",
+    "decision_projection_sha256": "e07665be4a044f7abfe8e09ebc79d6cd87db9c5aa9611df8669b2349e7960c67",
+    "workflow_blob_sha": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360",
+    "authority_reachability_blocked": true,
+    "scheduler_reachability_blocked": false,
+    "reason": "terminal-cancelled required shards exist in both Python environments; exact valid authority requires 192 successful-complete shards per environment; downstream jobs use if: always() and may still run nominally but cannot repair missing successful-complete provenance within attempt 1",
+    "science_payload_consumed": false,
+    "source_science_classified": false
+  },
+  "independent_critic_latest": {
+    "commit": "08e60368119cc3c06dd8d493eb3fdf955300d88e",
+    "result_reviewed": "ITER504V_PHASE_B_CASE_JOB_TIMEOUT_CAUSALITY_PROVENANCE_GATE",
+    "verdict": "CONFIRMED_SCOPED"
+  },
+  "mandatory_terminal_critic_obligations_added": [
+    "distinguish_scheduler_reachability_from_semantic_authority_validity",
+    "require_exactly_192_successful_complete_shards_per_environment",
+    "reject_nominal_assembly_or_aggregate_authority if any required shard job or frozen execution step is cancelled/incomplete",
+    "exclude all cancelled/time-limited shard artifacts even when downstream if:always jobs execute"
+  ],
+  "next_authorized_action": "While source run 35405065903 remains nonterminal, status/provenance checks only. After natural terminalization, prospectively freeze the exact terminal run/job/step/artifact inventory before substantive payload access and classify attempt completeness under frozen implementation/provenance semantics; do not convert incomplete execution into scientific FAIL."
+}
