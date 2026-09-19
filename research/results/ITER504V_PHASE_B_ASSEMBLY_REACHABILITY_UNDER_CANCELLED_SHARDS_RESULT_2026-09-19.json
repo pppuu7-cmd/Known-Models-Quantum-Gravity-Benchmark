@@ -1,0 +1,61 @@
+{
+  "artifact_zip_bytes_opened": false,
+  "attempt": 1,
+  "authority_reasoning": {
+    "cancelled_shards_are_terminal_in_attempt_1": true,
+    "distinction": "authority reachability block, not scheduler reachability block",
+    "nominal_downstream_jobs_may_run": true,
+    "required_successful_complete_shards_per_environment": 192,
+    "same_attempt_can_reach_valid_complete_inventory": false
+  },
+  "canonical_sha256": "e07665be4a044f7abfe8e09ebc79d6cd87db9c5aa9611df8669b2349e7960c67",
+  "claim_ceiling": "Exact-run orchestration/provenance reachability only; no Phase-B scientific classification, no scientific FAIL, no rerun authorization.",
+  "classification": "ITER504V_PHASE_B_ASSEMBLY_REACHABILITY_CANCELLED_SHARD_BLOCK_VERIFIED_SCOPED",
+  "first_page_snapshot": {
+    "cancelled_by_environment": {
+      "3.11": 7,
+      "3.13": 5
+    },
+    "completed_cancelled": 12,
+    "completed_success": 8,
+    "in_progress": 8,
+    "jobs": 30,
+    "queued": 2
+  },
+  "gate": "ITER504V_PHASE_B_ASSEMBLY_REACHABILITY_UNDER_CANCELLED_SHARDS_PROVENANCE_GATE",
+  "launch_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "positive_control": {
+    "environment": "3.13",
+    "execute_step_conclusion": "success",
+    "job_conclusion": "success",
+    "job_id": 105793032770
+  },
+  "prereg_commit": "97b4251fbcf690cedbfc475232ec607e90044b75",
+  "science_payload_consumed": false,
+  "source_lock": {
+    "conclusion": "success",
+    "job_id": 105792998164
+  },
+  "source_run": 35405065903,
+  "source_run_conclusion": null,
+  "source_run_status": "queued",
+  "workflow_blob_sha": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360",
+  "workflow_downstream": {
+    "aggregate": {
+      "if": "always()",
+      "needs": [
+        "assemble-311",
+        "assemble-313"
+      ]
+    },
+    "assemble_311": {
+      "if": "always()",
+      "needs": "cases-311"
+    },
+    "assemble_313": {
+      "if": "always()",
+      "needs": "cases-313"
+    }
+  },
+  "workflow_path": ".github/workflows/iter504v-phase-b-science.yml"
+}
