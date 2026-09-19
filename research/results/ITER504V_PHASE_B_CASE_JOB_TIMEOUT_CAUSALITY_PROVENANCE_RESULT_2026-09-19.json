@@ -1,0 +1,42 @@
+{
+  "gate": "ITER504V_PHASE_B_CASE_JOB_TIMEOUT_CAUSALITY_PROVENANCE_GATE",
+  "classification": "ITER504V_PHASE_B_CASE_JOB_TIMEOUT_CAUSALITY_VERIFIED_SCOPED",
+  "preregistration_commit": "2fc02a80c7d4db6f05813cbb571eb01cb4fb7c53",
+  "source_run_id": 35405065903,
+  "source_run_attempt": 1,
+  "source_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "workflow_blob_sha": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360",
+  "workflow_timeout_minutes": {
+    "python_3_11": 360,
+    "python_3_13": 360
+  },
+  "source_lock_job_id": 105792998164,
+  "source_lock_conclusion": "success",
+  "selected_cancelled_jobs": [
+    {"job_id": 105793032797, "python": "3.13", "shard": "0to5|b0|p1|q1", "execute_started_at": "2026-09-18T23:17:20.4148042Z", "cancelled_at": "2026-09-19T05:17:17.5037328Z", "elapsed_seconds": 21597.088928, "distance_from_360min_seconds": -2.911072, "job_conclusion": "cancelled", "execute_step_conclusion": "cancelled", "upload_step_conclusion": "success", "log_marker": "The operation was canceled."},
+    {"job_id": 105793032807, "python": "3.13", "shard": "0to5|b0|p0|q2", "execute_started_at": "2026-09-18T23:17:16.6224536Z", "cancelled_at": "2026-09-19T05:17:16.9587084Z", "elapsed_seconds": 21600.336255, "distance_from_360min_seconds": 0.336255, "job_conclusion": "cancelled", "execute_step_conclusion": "cancelled", "upload_step_conclusion": "success", "log_marker": "The operation was canceled."},
+    {"job_id": 105793032871, "python": "3.13", "shard": "0to5|b0|p2|q1", "execute_started_at": "2026-09-18T23:17:41.6980762Z", "cancelled_at": "2026-09-19T05:17:38.1915040Z", "elapsed_seconds": 21596.493428, "distance_from_360min_seconds": -3.506572, "job_conclusion": "cancelled", "execute_step_conclusion": "cancelled", "upload_step_conclusion": "success", "log_marker": "The operation was canceled."},
+    {"job_id": 105793032873, "python": "3.13", "shard": "0to5|b0|p0|q3", "execute_started_at": "2026-09-18T23:17:23.2565373Z", "cancelled_at": "2026-09-19T05:17:19.9906958Z", "elapsed_seconds": 21596.734158, "distance_from_360min_seconds": -3.265842, "job_conclusion": "cancelled", "execute_step_conclusion": "cancelled", "upload_step_conclusion": "success", "log_marker": "The operation was canceled."},
+    {"job_id": 105793032949, "python": "3.13", "shard": "0to5|b0|p0|q0", "execute_started_at": "2026-09-18T23:17:27.4623635Z", "cancelled_at": "2026-09-19T05:17:25.3525950Z", "elapsed_seconds": 21597.890232, "distance_from_360min_seconds": -2.109768, "job_conclusion": "cancelled", "execute_step_conclusion": "cancelled", "upload_step_conclusion": "success", "log_marker": "The operation was canceled."},
+    {"job_id": 105793033008, "python": "3.11", "shard": "0to5|b0|p2|q0", "execute_started_at": "2026-09-18T23:18:15.9567302Z", "cancelled_at": "2026-09-19T05:18:14.6164692Z", "elapsed_seconds": 21598.659739, "distance_from_360min_seconds": -1.340261, "job_conclusion": "cancelled", "execute_step_conclusion": "cancelled", "upload_step_conclusion": "success", "log_marker": "The operation was canceled."}
+  ],
+  "successful_control": {
+    "job_id": 105793032770,
+    "python": "3.13",
+    "shard": "0to5|b0|p0|q1",
+    "execute_started_at": "2026-09-18T23:17:18.4717614Z",
+    "completed_science_step_at": "2026-09-19T03:50:18.0335048Z",
+    "elapsed_seconds": 16379.561743,
+    "elapsed_minutes": 272.992696,
+    "job_conclusion": "success",
+    "execute_step_conclusion": "success",
+    "upload_step_conclusion": "success"
+  },
+  "selected_cancelled_count": 6,
+  "selected_cancelled_within_4_seconds_of_360min_boundary": 6,
+  "cross_python_timeout_pattern_observed": true,
+  "production_scientific_payload_consumed": false,
+  "source_run_classified": false,
+  "new_fact": "The first six deterministically selected cancelled case jobs all terminate at the workflow's explicit timeout-minutes=360 boundary, across Python 3.13 and 3.11, with the frozen numerical step cancelled and if-always artifact upload succeeding afterward.",
+  "claim_ceiling": "Execution-timeout/provenance causality only; no Phase-B scientific classification, no scientific FAIL, no producer rerun authorization while the source run is nonterminal, and no family/D7/Candidate-Gravity/global quantum-gravity promotion."
+}
