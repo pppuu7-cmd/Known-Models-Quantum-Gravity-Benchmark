@@ -1,0 +1,10 @@
+{
+  "claim_ceiling": "Exact Phase-B source-assembler verifier binding only; no source-run science classification or broader closure",
+  "classification": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED",
+  "cross_environment_byte_identical": true,
+  "decision_sha256": "161b800d9d161c8067c6241052320139180bb505b4752ca2224186f4d3f35c9a",
+  "gate": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE",
+  "production_science_consumed": false,
+  "result_json_sha256": "69029333114a3fda2fd208f166055896df0f259c57704682b4e28c7118d87fbf",
+  "source_run_classified": false
+}
