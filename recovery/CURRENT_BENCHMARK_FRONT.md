@@ -17,7 +17,7 @@ Authority chain:
 - source launch/head `31fcdacffcc394e96b73917083281edb90d6753c`;
 - authoritative source run `35405065903`.
 
-Fresh state after the latest closure work: source run `35405065903` remains nonterminal. The run endpoint reports `queued / conclusion=null`; source-lock `105792998164` is terminal `success`; source case jobs remain active/queued. Fresh partial source artifact metadata count is now `2`. Those two artifacts were **not downloaded or opened** and no case, leaf, slope, drift, certification, assembly, aggregate or counterexample scientific value has been consumed.
+Fresh state after the latest closure work: source run `35405065903` remains nonterminal. The run endpoint reports `queued / conclusion=null`; source-lock `105792998164` is terminal `success`; source case jobs remain active/queued. Fresh partial source artifact metadata count is now `6`. Those six artifacts were **not downloaded or opened** and no case, leaf, slope, drift, certification, assembly, aggregate or counterexample scientific value has been consumed.
 
 Current scientific status: `IN_PROGRESS_NOT_CLASSIFIED`.
 
@@ -33,6 +33,20 @@ Frozen source taxonomy remains unchanged:
 - INVALID `ITER504V_BROADER_DOMAIN_INVALID` for implementation/provenance/cohort/channel/depth/partition/source/artifact/cross-environment contract invalidity.
 
 There is no model-level or physics-level scientific FAIL label for this gate.
+
+## Latest preterminal status/provenance closure
+
+`ITER504V_PHASE_B_PRETERMINAL_SOURCE_STATUS_PROVENANCE_GATE` -> `ITER504V_PHASE_B_PRETERMINAL_SOURCE_PROVENANCE_CONSISTENT_SCOPED`.
+
+- preregistration: `8737545156b2a64a514e28652bfe761a660cf575`;
+- exact source object: run `35405065903`, attempt 1, head `31fcdacffcc394e96b73917083281edb90d6753c`;
+- frozen first-page job snapshot: 30 jobs = 7 completed/success, 17 in progress, 6 queued, 0 visible failed/cancelled;
+- exposed artifact metadata: 6 partial shard artifacts, all non-expired, all with GitHub SHA256 digests and exact run/head binding;
+- source artifact bytes opened/downloaded: false;
+- partial scientific payload consumed: false;
+- canonical result SHA256: `6f9cff143a11842f8c2bd349bc58fc4d7c2ec87944fdb0318ad9c0e03e81d4ad`.
+
+This is a metadata/provenance closure only. It does not classify Phase-B science and does not relax the terminal artifact-freeze requirement.
 
 ## Terminal preterminal closure — source assembler binding
 
@@ -107,4 +121,4 @@ Iter504U remains scoped terminal `ITER504U_HELDOUT_LOCAL_D_GENERALIZES_SCOPED` f
 
 No authority exists for `ALL_KNOWN_MODELS_FAIL`, `NEW_QG_THEORY_REQUIRED`, `QUANTUM_GRAVITY_SOLVED`, `UNIQUE_MECHANISM`, `D7_FULLY_CLOSED`, `CANDIDATE_GRAVITY_ESTABLISHED`, or `NEW_PHYSICS_FOUND`.
 
-Latest handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_AGGREGATE_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md`.
+Latest handoff: `recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_PRETERMINAL_SOURCE_STATUS_PROVENANCE_2026-09-19.md`.
