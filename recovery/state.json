@@ -1,6 +1,6 @@
 {
   "schema_version": "iter504v-recovery-v1",
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
   "branch": "main",
   "project": "KMQGB",
@@ -125,6 +125,27 @@
         "assemblies": 2,
         "aggregate": 1
       },
+      "preterminal_verifier_binding_closure": {
+        "gate": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE",
+        "status": "TERMINAL_VERIFIED_SCOPED",
+        "classification": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED",
+        "preregistration_commit": "93670f89688d9ad673fe35274892701a43f818d9",
+        "gate_authority_commit": "74477c32d4227db60cfee307fb9e0ff563941682",
+        "launch_head": "ec58663bbc7db7007a8a1be3442cdd460eaaeaf0",
+        "run_id": 35417735617,
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "decision_sha256": "161b800d9d161c8067c6241052320139180bb505b4752ca2224186f4d3f35c9a",
+        "canonical_result_sha256": "69029333114a3fda2fd208f166055896df0f259c57704682b4e28c7118d87fbf",
+        "cross_environment_byte_identical": true,
+        "production_science_consumed": false,
+        "source_run_classified": false,
+        "verified_obligations_for_terminal_critic": [
+          "reconstruct_and_bind_every_parent_inclusion_child_parent_dyadic_edge",
+          "bind_every_exact_artifact_and_shard_identity_to_its_frozen_four_record_cohort_and_validate_shard_json_physical_contents"
+        ],
+        "interpretation": "verifier/authority-path defects only; no assertion that active source artifacts are malformed"
+      },
       "claim_ceiling": "frozen 768-record q=1 signed-direction amplitude domain under the exact local-D contract only; no model-family, D7, Candidate Gravity or global quantum-gravity claim"
     }
   },
@@ -162,9 +183,9 @@
     "freeze_label": "ITER504U_POSTCLOSURE_INFRASTRUCTURE_FROZEN_SCOPED",
     "modification_rule": "Modify infrastructure only for a concrete blocker exposed by a future scientific gate; no new dashboards/readiness layers/duplicate manifests/cosmetic CI."
   },
-  "current_blocker": "Iter504V Phase-B source run 35405065903 is nonterminal; partial scientific payload consumption and competing same-object gates are forbidden.",
-  "next_authorized_action": "Status/provenance monitoring only until run 35405065903 is completely terminal. Then prospectively freeze exact terminal source artifact IDs/digests and execute one separately frozen independent Critic closure against those immutable artifacts.",
-  "recovery_handoff": "recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_SOURCE_PRETERMINAL_2026-09-18.md",
+  "current_blocker": "Iter504V Phase-B source run 35405065903 is nonterminal; partial scientific payload consumption and competing same-object scientific gates are forbidden. Terminal independent Critic must close the verified parent-inclusion and shard/artifact binding gaps before any Phase-B terminal authority is accepted.",
+  "next_authorized_action": "Status/provenance monitoring only until run 35405065903 is completely terminal. Then prospectively freeze exact terminal source artifact IDs/digests and execute one separately frozen independent Critic closure against those immutable artifacts, explicitly validating shard.json/physical four-record artifact binding and reconstructing every parent-inclusion dyadic edge in addition to inherited controls.",
+  "recovery_handoff": "recovery/KMQGB_HANDOFF_ITER504V_PHASE_B_ASSEMBLER_BINDING_ADVERSARIAL_TERMINAL_2026-09-19.md",
   "governance": {
     "rqir_core": "FROZEN_v1.0",
     "D7_S2": "NOT_CLOSED",
