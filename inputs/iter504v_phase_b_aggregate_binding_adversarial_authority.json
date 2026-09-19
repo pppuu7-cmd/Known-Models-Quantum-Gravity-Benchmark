@@ -1,0 +1,46 @@
+{
+  "gate": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_ADVERSARIAL_GATE",
+  "date": "2026-09-19",
+  "status": "PROSPECTIVELY_FROZEN_BEFORE_EXECUTION",
+  "execution_count": 1,
+  "preregistration_commit": "04a47f859323bea69472f142ec1a2f4b97e5df0b",
+  "implementation_commit": "31d58bec122ca0995f576660b3dfeeda15b0ba3d",
+  "workflow_commit": "0485a04ab4646b6e80df7c7555db4b3b5bcddd72",
+  "source_run": 35405065903,
+  "source_launch_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "source_phase_b_preregistration_commit": "e42caf47f9201d79cd89b79dc72b90f696e3ec5d",
+  "source_execution_authority_commit": "caf67585a9fad990dd90948df51839e6ed7cf891",
+  "source_aggregate_blob": "ae1932a7cdd98a1cc74f1b2f07bc295e0c097274",
+  "blob_locks": {
+    "research/prereg/ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_ADVERSARIAL_GATE_2026-09-19.md": "9b8317e7c1bc7acea2b68dc1bd799d0921ad5d89",
+    "code/iter504v_phase_b_aggregate_binding_adversarial_gate.py": "bb223f6fed7db9eead64e70a88f5a63f1e9a0398",
+    ".github/workflows/iter504v-phase-b-aggregate-binding-adversarial.yml": "d481c301607db8b42cd6ecbe1e012aadb8b30b78",
+    "code/iter504v_phase_b_aggregate.py": "ae1932a7cdd98a1cc74f1b2f07bc295e0c097274",
+    "research/prereg/ITER504V_PHASE_B_COMPLETE_Q1_COVERAGE_2026-09-19.md": "32b88365c553cfd5ea61d3f201d9c1a22d23bbd9",
+    "inputs/iter504v_phase_b_execution_authority.json": "ffb82d686f3ae33d95816b8cd23c75f92eea2f18"
+  },
+  "python_environments": ["3.11", "3.13"],
+  "fail_fast": false,
+  "candidate_set": [
+    "classification_to_unresolved_semantic_binding",
+    "canonical_decision_projection_key_binding",
+    "case_provenance_key_binding"
+  ],
+  "positive_controls": [
+    "coherent_PASS_zero_unresolved",
+    "coherent_INCONCLUSIVE_one_unresolved"
+  ],
+  "negative_controls": [
+    "cross_environment_classification_disagreement_rejected",
+    "cross_environment_state_identity_disagreement_rejected",
+    "cross_environment_projection_disagreement_rejected"
+  ],
+  "pass_label": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_DEFECTS_VERIFIED_SCOPED",
+  "fail_label": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_DEFECTS_NOT_REPRODUCED_SCOPED",
+  "blocked_label": "ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_GATE_BLOCKED_SCOPED",
+  "invalid_label": "INVALID_IMPLEMENTATION",
+  "production_science_consumption_authorized": false,
+  "source_run_classification_authorized": false,
+  "competing_source_execution_authorized": false,
+  "claim_ceiling": "Synthetic Phase-B source aggregate verifier/authority-path binding only; no classification of source run 35405065903 and no model-family/D7/global promotion."
+}
