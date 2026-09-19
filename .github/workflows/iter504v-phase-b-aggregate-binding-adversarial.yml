@@ -1,0 +1,132 @@
+name: KMQGB Iter504V Phase-B aggregate binding adversarial
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - recovery/ITER504V_PHASE_B_AGGREGATE_BINDING_ADVERSARIAL_LAUNCH_2026-09-19.txt
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen diagnostic-only authority
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+
+          authority_path = Path('inputs/iter504v_phase_b_aggregate_binding_adversarial_authority.json')
+          if not authority_path.is_file():
+              raise SystemExit('missing execution authority')
+          a = json.loads(authority_path.read_text())
+          if a.get('gate') != 'ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_ADVERSARIAL_GATE':
+              raise SystemExit('wrong gate')
+          if a.get('source_run') != 35405065903 or a.get('source_launch_head') != '31fcdacffcc394e96b73917083281edb90d6753c':
+              raise SystemExit('wrong source-run binding')
+          if a.get('production_science_consumption_authorized') is not False:
+              raise SystemExit('science consumption must remain forbidden')
+          checks = a['blob_locks']
+          for path, expected in checks.items():
+              if not Path(path).is_file():
+                  raise SystemExit(f'missing locked path: {path}')
+              got = subprocess.check_output(['git', 'hash-object', path], text=True).strip()
+              if got != expected:
+                  raise SystemExit(f'blob mismatch {path}: {got} != {expected}')
+          if checks.get('code/iter504v_phase_b_aggregate.py') != 'ae1932a7cdd98a1cc74f1b2f07bc295e0c097274':
+              raise SystemExit('source aggregate lock mismatch')
+          print(json.dumps({'source_lock': 'PASS', 'locked_paths': len(checks)}, sort_keys=True))
+          PY
+
+  replay:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.13']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Execute frozen synthetic aggregate adversarial gate
+        run: |
+          set +e
+          python code/iter504v_phase_b_aggregate_binding_adversarial_gate.py > result.json
+          rc=$?
+          printf '%s\n' "$rc" > returncode.txt
+          cat result.json
+          exit 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504v-phase-b-aggregate-binding-${{ matrix.python }}
+          path: |
+            result.json
+            returncode.txt
+          if-no-files-found: error
+
+  aggregate:
+    needs: replay
+    if: always() && needs.replay.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504v-phase-b-aggregate-binding-3.11
+          path: lane311
+      - uses: actions/download-artifact@v4
+        with:
+          name: iter504v-phase-b-aggregate-binding-3.13
+          path: lane313
+      - name: Require exact cross-environment canonical agreement
+        run: |
+          cmp lane311/result.json lane313/result.json
+          cmp lane311/returncode.txt lane313/returncode.txt
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+
+          raw = Path('lane311/result.json').read_bytes()
+          obj = json.loads(raw)
+          allowed = {
+              'ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_DEFECTS_VERIFIED_SCOPED',
+              'ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_DEFECTS_NOT_REPRODUCED_SCOPED',
+              'ITER504V_PHASE_B_SOURCE_AGGREGATE_BINDING_GATE_BLOCKED_SCOPED',
+              'INVALID_IMPLEMENTATION',
+          }
+          if obj.get('classification') not in allowed:
+              raise SystemExit('unexpected gate classification')
+          if obj.get('production_science_consumed') is not False or obj.get('source_run_classified') is not False:
+              raise SystemExit('science firewall violated')
+          rc = int(Path('lane311/returncode.txt').read_text().strip())
+          out = {
+              'gate': obj['gate'],
+              'classification': obj['classification'],
+              'cross_environment_byte_identical': True,
+              'lane_result_sha256': hashlib.sha256(raw).hexdigest(),
+              'decision_sha256': obj.get('decision_sha256'),
+              'gate_returncode': rc,
+              'production_science_consumed': False,
+              'source_run_classified': False,
+          }
+          Path('aggregate_result.json').write_text(json.dumps(out, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(out, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iter504v-phase-b-aggregate-binding-aggregate
+          path: aggregate_result.json
+          if-no-files-found: error
