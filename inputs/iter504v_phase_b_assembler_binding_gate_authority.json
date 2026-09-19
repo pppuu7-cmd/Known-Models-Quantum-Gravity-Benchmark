@@ -1,0 +1,33 @@
+{
+  "schema_version": "iter504v-phase-b-assembler-binding-gate-authority-v1",
+  "gate": "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_ADVERSARIAL_GATE",
+  "methodology_execution_authorized": true,
+  "production_science_consumption_authorized": false,
+  "competing_science_execution_authorized": false,
+  "preregistration_commit": "93670f89688d9ad673fe35274892701a43f818d9",
+  "preregistration_blob_sha": "d98d612d6b19598c02206cfa9c6024b700bc410e",
+  "gate_implementation_commit": "0d76824a93b3650a8f7ab770940300db4c0eecb1",
+  "gate_script_blob_sha": "480982a33101a883b675072c7fad7d6d3426252e",
+  "workflow_commit": "d5f80fff18ced2f015b7223a6aab148a858fb983",
+  "workflow_blob_sha": "2ee3c034b2ca5a52210653526fafcde068b72d63",
+  "source_run_id": 35405065903,
+  "source_launch_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "source_assembler_blob_sha": "f93bea2c32ed383a054beebb4d4b1c64fcbbd2c1",
+  "source_shard_blob_sha": "b8a0e398e3cc50debbd931caf70c3427045d047c",
+  "source_workflow_blob_sha": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360",
+  "campaign_manifest_blob_sha": "d3b8821e08243016bd475f3faf9f2161deed13d8",
+  "phase_b_preregistration_commit": "e42caf47f9201d79cd89b79dc72b90f696e3ec5d",
+  "phase_b_execution_authority_commit": "caf67585a9fad990dd90948df51839e6ed7cf891",
+  "preterminal_audit_commit": "20cf389c1a85a6aba4f49820b945a6dca78cc654",
+  "canonical_768_record_sequence_sha256": "3cac282175830e795394dca5202f5368b27120817f2d4abd9eba54fc6c9f1e6f",
+  "python_environments": ["3.11", "3.13"],
+  "fail_fast": false,
+  "frozen_outcomes": [
+    "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECTS_VERIFIED_SCOPED",
+    "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_DEFECT_PARTIAL_SCOPED",
+    "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_CANDIDATES_REFUTED_SCOPED",
+    "ITER504V_PHASE_B_SOURCE_ASSEMBLER_BINDING_BLOCKED_SCOPED",
+    "INVALID_IMPLEMENTATION"
+  ],
+  "interpretation_ceiling": "Exact Phase-B source-assembler verifier binding only; no source-run science classification, no claim that active source artifacts are malformed, and no model-family/D7/Candidate-Gravity/global-QG promotion."
+}
