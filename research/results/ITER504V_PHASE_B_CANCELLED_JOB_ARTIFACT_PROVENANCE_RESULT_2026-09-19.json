@@ -1,0 +1,50 @@
+{
+  "gate": "ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_GATE",
+  "preregistration_commit": "a0e28e3a96e109ee9ed440a267ee1407cddf2d55",
+  "classification": "ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_DEFECT_VERIFIED_SCOPED",
+  "source_run": {
+    "id": 35405065903,
+    "attempt": 1,
+    "head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "status": "queued",
+    "conclusion": null,
+    "source_lock_job_id": 105792998164,
+    "source_lock_conclusion": "success"
+  },
+  "first_page_job_snapshot": {
+    "total": 30,
+    "completed_success": 8,
+    "completed_cancelled": 12,
+    "in_progress": 8,
+    "queued": 2
+  },
+  "artifact_metadata_count": 20,
+  "artifact_bytes_opened": false,
+  "production_science_consumed": false,
+  "source_run_scientifically_classified": false,
+  "positive_controls": {
+    "source_lock_success": true,
+    "successful_case_job_with_successful_execution_upload_and_matching_artifact": true,
+    "all_inspected_artifact_metadata_exact_run_head_bound_and_digested": true
+  },
+  "verified_cancelled_job_artifact_chain_count": 12,
+  "verified_cancelled_job_artifact_chains_sha256": "d0d7c9840e76300feeffe40eb09650eaf0a00f4ddd117c77ccfff5832a6b4dee",
+  "canonical_decision_projection": "ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_DEFECT_VERIFIED_SCOPED|run=35405065903|head=31fcdacffcc394e96b73917083281edb90d6753c|cancelled_chains=12|artifact_metadata=20|science_consumed=false",
+  "canonical_decision_sha256": "6e2de425bc3b8cc83c75641c160e352061c2479b2f0564ce3b5b2eb3882f9e2f",
+  "verified_cancelled_job_artifact_chains": [
+    {"job_id":105793032797,"job":"cases (3.13, 0to5, b0, p1, q1)","artifact_id":10578151776,"artifact":"iter504v-phaseb-3.13-0to5-b0-p1-q1","size_in_bytes":816,"digest":"sha256:568b1de7db028d7374b9f96df3b105901a987d4f69550c49d425057139dcd412"},
+    {"job_id":105793032807,"job":"cases (3.13, 0to5, b0, p0, q2)","artifact_id":10578511467,"artifact":"iter504v-phaseb-3.13-0to5-b0-p0-q2","size_in_bytes":816,"digest":"sha256:d3afa37a445d2d0144eb75643ef7c4b438ede1edfe07c04b70345a56cb69e05d"},
+    {"job_id":105793032871,"job":"cases (3.13, 0to5, b0, p2, q1)","artifact_id":10578476614,"artifact":"iter504v-phaseb-3.13-0to5-b0-p2-q1","size_in_bytes":816,"digest":"sha256:fdf7a7208432559187ba3b1551d6c6895623072e545f5868d062198647bd0d47"},
+    {"job_id":105793032873,"job":"cases (3.13, 0to5, b0, p0, q3)","artifact_id":10577986131,"artifact":"iter504v-phaseb-3.13-0to5-b0-p0-q3","size_in_bytes":816,"digest":"sha256:b697adfb4384968a81dff57bae51eaefaaf38d008ed173aca266e31062bb281f"},
+    {"job_id":105793032949,"job":"cases (3.13, 0to5, b0, p0, q0)","artifact_id":10578986244,"artifact":"iter504v-phaseb-3.13-0to5-b0-p0-q0","size_in_bytes":816,"digest":"sha256:14af8253cc3585da5a795bc3ebde1e9b0c682564ffdabbb6ff206f95369ce294"},
+    {"job_id":105793033008,"job":"cases (3.11, 0to5, b0, p2, q0)","artifact_id":10578026205,"artifact":"iter504v-phaseb-3.11-0to5-b0-p2-q0","size_in_bytes":816,"digest":"sha256:73f9e0e0984209dcd2741d239e8c675d4d08ee79a34fa381dd2997c1706e9a2d"},
+    {"job_id":105793033032,"job":"cases (3.11, 0to5, b0, p1, q3)","artifact_id":10578180957,"artifact":"iter504v-phaseb-3.11-0to5-b0-p1-q3","size_in_bytes":816,"digest":"sha256:202169f766674328690329ab82a9fd0373440e34d0210a463bea8f9a64136e49"},
+    {"job_id":105793033033,"job":"cases (3.11, 0to5, b0, p0, q3)","artifact_id":10578891469,"artifact":"iter504v-phaseb-3.11-0to5-b0-p0-q3","size_in_bytes":816,"digest":"sha256:d9e750d15c4c2c7484536e78b2e1ec4e742b62fc05ea7265daefb98f254986a5"},
+    {"job_id":105793033035,"job":"cases (3.11, 0to5, b0, p2, q2)","artifact_id":10578206801,"artifact":"iter504v-phaseb-3.11-0to5-b0-p2-q2","size_in_bytes":816,"digest":"sha256:58e83e527fcdd1ee70912b4bbf0169d1194d1a5479068987e7a41848d6291a09"},
+    {"job_id":105793033038,"job":"cases (3.11, 0to5, b0, p1, q2)","artifact_id":10577932219,"artifact":"iter504v-phaseb-3.11-0to5-b0-p1-q2","size_in_bytes":816,"digest":"sha256:34bbfebf78242ea92d0182d9ec55bf0530d6878071712ca3e75a35c6741dbb21"},
+    {"job_id":105793033039,"job":"cases (3.11, 0to5, b0, p0, q1)","artifact_id":10578616501,"artifact":"iter504v-phaseb-3.11-0to5-b0-p0-q1","size_in_bytes":816,"digest":"sha256:5e6391a29e01515a8cfdcfee3c4c2963ea966f2c2f9e6e74eddc21bac4764291"},
+    {"job_id":105793033047,"job":"cases (3.11, 0to5, b0, p1, q1)","artifact_id":10578656499,"artifact":"iter504v-phaseb-3.11-0to5-b0-p1-q1","size_in_bytes":816,"digest":"sha256:eb9010aa5b5a0b820f4e6216d97bbb32768e5d0fc23e22881b4c5addff764b49"}
+  ],
+  "required_terminal_critic_obligation": "bind every required shard artifact to job.conclusion==success and Execute frozen quartile shard step conclusion==success before artifact content can enter terminal authority",
+  "claim_ceiling": "execution provenance/authority-path fact for exact run 35405065903 only; no Phase-B scientific PASS/INCONCLUSIVE/INVALID while run is nonterminal and no physics FAIL"
+}
