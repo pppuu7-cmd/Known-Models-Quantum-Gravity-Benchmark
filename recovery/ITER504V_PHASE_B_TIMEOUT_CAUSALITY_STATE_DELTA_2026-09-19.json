@@ -1,0 +1,62 @@
+{
+  "schema": "kmqgb-recovery-state-delta-v1",
+  "date": "2026-09-19",
+  "repository": "pppuu7-cmd/Known-Models-Quantum-Gravity-Benchmark",
+  "base_state_file": "recovery/state.json",
+  "reason": "reconcile validated GitHub/Actions state that is newer than selected fields in recovery/state.json without replacing unrelated historical state",
+  "authoritative_overrides": {
+    "iter504v.phase_b.source_run_id": 35405065903,
+    "iter504v.phase_b.source_run_attempt": 1,
+    "iter504v.phase_b.source_launch_head": "31fcdacffcc394e96b73917083281edb90d6753c",
+    "iter504v.phase_b.source_run_status_observed": "NONTERMINAL_RUN_ENDPOINT_QUEUED_JOBS_ACTIVE_WITH_TIMEOUT_CANCELLATIONS",
+    "iter504v.phase_b.source_run_conclusion": null,
+    "iter504v.phase_b.operational_classification": "IN_PROGRESS_NOT_CLASSIFIED",
+    "iter504v.phase_b.partial_scientific_payload_consumed": false,
+    "iter504v.phase_b.competing_same_object_gate_launched": false,
+    "iter504v.phase_b.latest_first_page_job_snapshot": {
+      "visible_jobs": 30,
+      "completed_success": 8,
+      "completed_cancelled": 12,
+      "in_progress": 8,
+      "queued": 2,
+      "source_lock_job_id": 105792998164,
+      "source_lock_conclusion": "success"
+    },
+    "iter504v.phase_b.artifact_metadata_count_at_latest_validated_front_read": 20,
+    "iter504v.phase_b.preterminal_cancelled_job_artifact_provenance": {
+      "classification": "ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_DEFECT_VERIFIED_SCOPED",
+      "preregistration_commit": "a0e28e3a96e109ee9ed440a267ee1407cddf2d55",
+      "independent_review_commit": "171d8ee9b0945de095ed9f5cbc1f9296aa2007fc",
+      "verdict": "CONFIRMED_SCOPED"
+    },
+    "iter504v.phase_b.preterminal_timeout_causality_provenance": {
+      "gate": "ITER504V_PHASE_B_CASE_JOB_TIMEOUT_CAUSALITY_PROVENANCE_GATE",
+      "classification": "ITER504V_PHASE_B_CASE_JOB_TIMEOUT_CAUSALITY_VERIFIED_SCOPED",
+      "preregistration_commit": "2fc02a80c7d4db6f05813cbb571eb01cb4fb7c53",
+      "canonical_result_commit": "558c02abd710812437f8616397d27cef7091af44",
+      "terminal_record_commit": "a1ca2288e774895ab6f77dedc2065299df8f2b89",
+      "canonical_result_sha256": "471a8369cbfdb763ef5193984fe0f60d058d183e6f5bd5fb19e61bcb1e822504",
+      "workflow_blob_sha": "a34f23eaab9b7fec0a1da2b0b684031a24cfa360",
+      "workflow_case_timeout_minutes": 360,
+      "selected_cancelled_jobs": 6,
+      "selected_cancelled_within_four_seconds_of_timeout_boundary": 6,
+      "python_environments_observed": ["3.11", "3.13"],
+      "successful_control_job_id": 105793032770,
+      "successful_control_elapsed_minutes": 272.992696,
+      "artifact_bytes_opened": false,
+      "production_science_consumed": false,
+      "source_run_classified": false,
+      "interpretation": "execution-timeout/provenance causality only; timeout cancellation is not scientific FAIL"
+    }
+  },
+  "new_terminal_critic_obligation": "timeout-cancelled shards are incomplete implementation/provenance objects and cannot enter the required successful-complete shard inventory even if if:always artifact upload succeeded; terminal authority requires successful job and successful Execute frozen quartile shard step in addition to inherited shard/artifact/physical-record bindings",
+  "current_blocker": "authoritative Phase-B source run 35405065903 remains nonterminal; no partial science consumption or competing same-object source execution is authorized",
+  "next_authorized_action": "while nonterminal, status/provenance monitoring only. After natural terminalization, prospectively freeze exact terminal run/job/step/artifact inventory and digests before opening substantive payload, distinguish successful-complete from timeout-cancelled shards, then execute exactly one separately frozen independent terminal Critic closure.",
+  "governance": {
+    "rqir_core": "FROZEN",
+    "d7_terminal_selectors_authorized": false,
+    "candidate_gravity_active": false,
+    "paper_iv_authorized": false,
+    "global_qg_claim_authorized": false
+  }
+}
