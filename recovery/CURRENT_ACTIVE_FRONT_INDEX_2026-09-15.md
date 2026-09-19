@@ -17,17 +17,35 @@ Fresh repository `main` and fresh Actions state always outrank this index if the
 
 Prospective authority: prereg `e42caf47f9201d79cd89b79dc72b90f696e3ec5d`; static implementation Critic `eaa2d1ef84fe8370f33cec360233f60571f9bcd0 = PASS_SCOPED`; execution authority `caf67585a9fad990dd90948df51839e6ed7cf891`; source launch/head `31fcdacffcc394e96b73917083281edb90d6753c`; source run `35405065903` attempt 1.
 
-Latest fresh state remains nonterminal: run endpoint `queued / conclusion=null`; source-lock `105792998164 = success`. First-page job snapshot: 30 = 8 completed/success, 12 completed/cancelled, 8 in progress, 2 queued. Fresh artifact metadata count `20`. Artifact bytes were not opened/downloaded. No partial scientific values were consumed and no duplicate source execution was launched.
+Latest fresh state remains nonterminal: run endpoint `queued / conclusion=null`; source-lock `105792998164 = success`. Latest validated first-page job snapshot: 30 = 8 completed/success, 12 completed/cancelled, 8 in progress, 2 queued. Latest validated artifact metadata count `20`. Artifact bytes were not opened/downloaded. No partial scientific values were consumed and no duplicate source execution was launched.
 
 Operational classification: `IN_PROGRESS_NOT_CLASSIFIED`.
 
-## Latest terminal preterminal provenance closure
+Recovery delta `recovery/ITER504V_PHASE_B_TIMEOUT_CAUSALITY_STATE_DELTA_2026-09-19.json` overrides stale selected Phase-B fields in `recovery/state.json` until the consolidated state file is next rewritten.
 
-`ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_GATE` -> `ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_DEFECT_VERIFIED_SCOPED`.
+## Latest terminal preterminal provenance closure — timeout causality
+
+`ITER504V_PHASE_B_CASE_JOB_TIMEOUT_CAUSALITY_PROVENANCE_GATE` -> `ITER504V_PHASE_B_CASE_JOB_TIMEOUT_CAUSALITY_VERIFIED_SCOPED`.
+
+- preregistration `2fc02a80c7d4db6f05813cbb571eb01cb4fb7c53`;
+- canonical result commit `558c02abd710812437f8616397d27cef7091af44`;
+- terminal record commit `a1ca2288e774895ab6f77dedc2065299df8f2b89`;
+- canonical result SHA256 `471a8369cbfdb763ef5193984fe0f60d058d183e6f5bd5fb19e61bcb1e822504`;
+- frozen workflow blob `a34f23eaab9b7fec0a1da2b0b684031a24cfa360` sets `timeout-minutes: 360` for both Python case matrices and artifact upload `if: always()`;
+- first six visible cancelled case jobs selected by ascending job id before log inspection all cancelled the frozen execution step within four seconds of the 360-minute boundary, across Python 3.13 and 3.11;
+- each showed runner marker `The operation was canceled.` and a successful post-cancellation artifact upload;
+- successful control job `105793032770` completed the execution step successfully at `272.992696` minutes;
+- artifact bytes opened: false;
+- production science consumed: false;
+- source science classified: false.
+
+New fact: the prospectively sampled Phase-B cancellations are execution-timeout/provenance events caused by the frozen six-hour case-job limit. Timeout-cancelled artifacts are incomplete shards and cannot enter terminal scientific authority even if upload succeeds and a SHA256 digest exists.
+
+## Independently confirmed cancelled-job artifact provenance
+
+`ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_GATE` -> `ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_DEFECT_VERIFIED_SCOPED`, independently reviewed at `171d8ee9b0945de095ed9f5cbc1f9296aa2007fc = CONFIRMED_SCOPED`.
 
 - preregistration `a0e28e3a96e109ee9ed440a267ee1407cddf2d55`;
-- canonical result `research/results/ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_RESULT_2026-09-19.json`;
-- terminal record `research/results/ITER504V_PHASE_B_CANCELLED_JOB_ARTIFACT_PROVENANCE_TERMINAL_2026-09-19.md`;
 - 12 visible cancelled case jobs had cancelled frozen execution step, successful artifact upload, and matching non-expired SHA256-digested artifact metadata;
 - chain-list SHA256 `d0d7c9840e76300feeffe40eb09650eaf0a00f4ddd117c77ccfff5832a6b4dee`;
 - canonical decision SHA256 `6e2de425bc3b8cc83c75641c160e352061c2479b2f0564ce3b5b2eb3882f9e2f`;
@@ -35,7 +53,7 @@ Operational classification: `IN_PROGRESS_NOT_CLASSIFIED`.
 - production science consumed: false;
 - source science classified: false.
 
-New mandatory terminal-Critic rule: artifact presence/ID/digest is insufficient. Every required shard artifact must be bound to both `job.conclusion == success` and `Execute frozen quartile shard` step conclusion `success`; cancelled-execution artifacts cannot count as complete source shards.
+Mandatory rule: artifact presence/ID/digest is insufficient. Every required shard artifact must be bound to both `job.conclusion == success` and `Execute frozen quartile shard` step conclusion `success`; timeout/cancelled execution artifacts cannot count as complete source shards.
 
 ## Historical time-local metadata closure
 
@@ -64,12 +82,12 @@ Mandatory additional obligations:
 
 Complete canonical q=1 cover: 768 records = 3 causals x 4 blocks x 4 signed paths x 16 amplitude boxes. Frozen no-refit contract retains 384-bit precision, all 243 channels, R `6,8,10,12`, rho `0.35,0.9,1.6,2.7`, threshold `1/20`, robust floor `1`, deterministic dyadic midpoint partition, `MAX_DEPTH=3`, local `D(J)` recomputation on every visited node, exact leaf/per-rho binding and unresolved-only-at-depth-3 semantics.
 
-Execution topology: 192 deterministic quartile shards per Python environment, 384 source compute shards total, Python 3.11/3.13, `fail-fast:false`, `max-parallel:12`.
+Execution topology: 192 deterministic quartile shards per Python environment, 384 source compute shards total, Python 3.11/3.13, `fail-fast:false`, `max-parallel:12`, frozen case-job timeout 360 minutes.
 
 ## Next admissible action
 
 While source run `35405065903` is nonterminal: status/provenance checks only. Do not consume partial science, rerun based on observed values, or launch a competing same-object scientific gate.
 
-After complete terminalization: prospectively freeze the exact terminal run/job/artifact inventory and digests before substantive payload access. Exclude cancelled/incomplete shard artifacts from valid-completion inventory. Then execute exactly one separately frozen independent Critic closure satisfying all assembler, aggregate, job/step completion and inherited scientific-contract controls.
+After complete terminalization: prospectively freeze the exact terminal run/job/step/artifact inventory and digests before substantive payload access. Exclude cancelled/time-limited/incomplete shard artifacts from valid-completion inventory. Then execute exactly one separately frozen independent Critic closure satisfying all assembler, aggregate, job/step completion, timeout-completeness and inherited scientific-contract controls.
 
 Nominal complete inventory remains 384 **successful-complete** shard artifacts + 2 assemblies + 1 aggregate. If the source execution terminalizes incomplete/cancelled, classify the execution only under frozen implementation/provenance semantics, never as scientific FAIL.
