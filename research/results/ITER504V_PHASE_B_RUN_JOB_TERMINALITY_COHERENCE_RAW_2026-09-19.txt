@@ -1,0 +1,20 @@
+ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENCE_PROVENANCE_GATE raw metadata summary
+prereg_commit=5e67991ca4c09a9098ad3ae3a1d91601d2bbc7c7
+run_id=35405065903
+run_attempt=1
+head_sha=31fcdacffcc394e96b73917083281edb90d6753c
+run_status=queued
+run_conclusion=null
+jobs_total_count=385
+pages_read=1,2,3,4
+source_lock_id=105792998164
+source_lock_status=completed
+source_lock_conclusion=success
+witness_nonterminal_job_1=105793035543 status=queued conclusion=null name=cases_(3.11,_0to5,_b3,_p0,_q2)
+witness_nonterminal_job_2=105793039803 status=queued conclusion=null name=cases_(3.11,_1to4,_b2,_p1,_q0)
+witness_nonterminal_job_3=105793044215 status=queued conclusion=null name=cases_(3.11,_2to3,_b1,_p1,_q1)
+artifact_metadata_first_page_count=29
+artifact_bytes_opened=false
+production_science_consumed=false
+source_run_classified=false
+classification=ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENT_SCOPED
