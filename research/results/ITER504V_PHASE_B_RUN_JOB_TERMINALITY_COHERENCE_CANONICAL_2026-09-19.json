@@ -1,0 +1,24 @@
+{
+  "artifact_bytes_opened": false,
+  "classification": "ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENT_SCOPED",
+  "gate": "ITER504V_PHASE_B_RUN_JOB_TERMINALITY_COHERENCE_PROVENANCE_GATE",
+  "head_sha": "31fcdacffcc394e96b73917083281edb90d6753c",
+  "inventory": {
+    "complete_pagination_pages_read": [1, 2, 3, 4],
+    "expected_total_jobs": 385,
+    "github_total_count": 385,
+    "nonterminal_job_observed": true,
+    "source_lock_conclusion": "success",
+    "source_lock_id": 105792998164,
+    "source_lock_status": "completed"
+  },
+  "positive_controls_pass": true,
+  "production_science_consumed": false,
+  "run_attempt": 1,
+  "run_conclusion": null,
+  "run_id": 35405065903,
+  "run_status": "queued",
+  "source_run_classified": false,
+  "terminality_relation": "run_nonterminal_and_job_inventory_contains_nonterminal_jobs",
+  "witness_nonterminal_jobs": [105793035543, 105793039803, 105793044215]
+}
